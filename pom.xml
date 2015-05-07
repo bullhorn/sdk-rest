@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bullhornsdk.data</groupId>
-	<artifactId>bullhorn-api-rest</artifactId>
+	<artifactId>bullhorn-data</artifactId>
 	<version>1.0.0-RELEASE</version>
 	<packaging>jar</packaging>
-	<name>BullhornApiRest</name>
+	<name>BullhornData</name>
 	<description>Java implementation handling the Bullhorn rest apis</description>
 
 	<properties>
