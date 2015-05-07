@@ -1,0 +1,1280 @@
+{
+    "searchFields": [
+        {
+            "name": "address.address1",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "address.address2",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "address.city",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.name",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.latitude",
+            "type": "LATITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.longitude",
+            "type": "LONGITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.state",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.zip",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "appointments.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "businessSectors.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "candidateSource.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "categories.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "category.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.boardCertification",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "certificationList.certification.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.certification.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "certificationList.compact",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.copyOnFile",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.dateCertified",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.dateExpiration",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.dateLastModified",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.issuedBy",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "certificationList.licenseNumber",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.licenseType",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.location",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "certificationList.modifyingUser.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "certificationList.results",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "certificationList.status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "certifications",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "clientCorporationBlackList.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "clientCorporationWhiteList.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "companyName",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "companyURL",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "corporation.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "customDate1",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate2",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate3",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt1",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt2",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt3",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText10",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText11",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText12",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText13",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText14",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText15",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText16",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText17",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText18",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText19",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText20",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText6",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText7",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText8",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText9",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateAvailable",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "dateAvailableEnd",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "dateI9Expiration",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "dateLastComment",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateNextCall",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateOfBirth",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "dayRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "dayRateLow",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "degreeList",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "description",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "desiredLocations",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "disability",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "distributionLists.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "educationDegree",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "educations.degree",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "educations.endDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "educations.expirationDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "educations.gpa",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "educations.graduationDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "educations.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "educations.major",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "educations.school",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "educations.startDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "educations.state",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "email",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "email2",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "email3",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "employeeType",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "employmentPreference",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "enableJobPostingAlerts",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "ethnicity",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "experience",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "externalID",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "fax",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax2",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax2_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax3",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax3_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "federalAddtionalWitholdingsAmount",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "federalExemptions",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "federalFilingStatus",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "fileAttachments.description",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "fileAttachments.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "contentSubType",
+                        "contentType",
+                        "dateAdded",
+                        "type"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "firstName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "gender",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "hourlyRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "hourlyRateLow",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "i9OnFile",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "id",
+            "type": "ID",
+            "isSortable": true
+        },
+        {
+            "name": "interviews.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "isDeleted",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "isEditable",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "jobResponses.jobOrder.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "lastName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "linkedPerson.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "linkedPerson.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "localAddtionalWitholdingsAmount",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "localExemptions",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "localFilingStatus",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "localTaxCode",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "massMailOptOut",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "middleName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "mobile",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "mobile_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "namePrefix",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "nameSuffix",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "nickName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "notes.action",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "notes.commentingPerson.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "notes.comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "notes.dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "notes.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "action",
+                        "commentingPerson_id",
+                        "comments",
+                        "dateAdded",
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "occupation",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "owner.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "owner.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "ownerCorporation.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "ownerCorporation.name",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "pager",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "paperWorkOnFile",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "phone",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone2",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone2_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone3",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone3_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "placements.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "preferredContact",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "primarySkills.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "recentClientList",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "references.clientCorporation.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "references.companyName",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "references.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "references.referenceClientContact.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "references.referenceEmail",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "references.referenceFirstName",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "references.referenceLastName",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "references.referencePhone",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "references.referencePhone_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "references.referenceTitle",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "referredBy",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "referredByPerson.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "referredByPerson.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "salary",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "salaryLow",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.address1",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.address2",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.city",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.country.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.country.name",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.latitude",
+            "type": "LATITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.longitude",
+            "type": "LONGITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.state",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryAddress.zip",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "secondaryOwners.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "secondarySkills.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "sendouts.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "skillSet",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "smsOptIn",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "source",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "specialties.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "ssn",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "stateAddtionalWitholdingsAmount",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "stateExemptions",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "stateFilingStatus",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "submissions.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "taxID",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "taxState",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "tearsheets.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "travelLimit",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "type",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "userType.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "username",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "veteran",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "webResponses.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "webResponses.jobOrder.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "willRelocate",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "willTravel",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "workAuthorized",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "workHistories.companyName",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "workHistories.endDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "workHistories.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "workHistories.isLastJob",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "workHistories.jobOrder.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "workHistories.startDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "workHistories.terminationReason",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "workHistories.title",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "workPhone",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "workPhone_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        }
+    ]
+}

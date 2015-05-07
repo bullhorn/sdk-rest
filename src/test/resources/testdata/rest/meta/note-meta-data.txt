@@ -1,0 +1,491 @@
+{
+    "entity": "Note",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Note?fields=*",
+    "label": "Note",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "action",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": true,
+            "label": "Action",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "options": [
+                {
+                    "value": "---General---",
+                    "label": "---General---"
+                },
+                {
+                    "value": "Outbound Call",
+                    "label": "Outbound Call"
+                },
+                {
+                    "value": "Left Message",
+                    "label": "Left Message"
+                },
+                {
+                    "value": "Inbound Call",
+                    "label": "Inbound Call"
+                },
+                {
+                    "value": "Email",
+                    "label": "Email"
+                },
+                {
+                    "value": "Meeting",
+                    "label": "Meeting"
+                },
+                {
+                    "value": "CP Interview",
+                    "label": "CP Interview"
+                },
+                {
+                    "value": "VP Interview",
+                    "label": "VP Interview"
+                },
+                {
+                    "value": "Panel Presented",
+                    "label": "Panel Presented"
+                },
+                {
+                    "value": "Client Phone Interview",
+                    "label": "Client Phone Interview"
+                },
+                {
+                    "value": "Client Video Interview",
+                    "label": "Client Video Interview"
+                },
+                {
+                    "value": "Client Onsite Interview",
+                    "label": "Client Onsite Interview"
+                },
+                {
+                    "value": "Candidate Validation",
+                    "label": "Candidate Validation"
+                },
+                {
+                    "value": "NCI",
+                    "label": "NCI"
+                },
+                {
+                    "value": "Canvass Call",
+                    "label": "Canvass Call"
+                },
+                {
+                    "value": "Candidate Review",
+                    "label": "Candidate Review"
+                },
+                {
+                    "value": "Reference Check Done",
+                    "label": "Reference Check Done"
+                },
+                {
+                    "value": "Recruiter Qualified",
+                    "label": "Recruiter Qualified"
+                },
+                {
+                    "value": "Manager Added",
+                    "label": "Manager Added"
+                },
+                {
+                    "value": "Profile Complete",
+                    "label": "Profile Complete"
+                }
+            ]
+        },
+        {
+            "name": "bhTimeStamp",
+            "type": "SCALAR",
+            "dataType": "byte[]",
+            "confidential": false,
+            "optional": false,
+            "label": "Bh Time Stamp",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "candidates",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Candidates",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Candidate",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Candidate",
+            "associatedEntity": {
+                "entity": "Candidate",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Candidate?fields=*",
+                "label": "Candidate",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "First Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Last Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "clientContacts",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Client Contacts",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ClientContact",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientContact",
+            "associatedEntity": {
+                "entity": "ClientContact",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientContact?fields=*",
+                "label": "Client Contact",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "commentingPerson",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Author",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "associatedEntity": {
+                "entity": "Person",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Person?fields=*",
+                "label": "Person",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "_subtype",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 255,
+                        "optional": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": false,
+            "label": "J-TEST",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "CHECKBOX"
+        },
+        {
+            "name": "corporateUsers",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Corporate Users",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATETIME",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "entities",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Entities",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "NoteEntity",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/NoteEntity",
+            "associatedEntity": {
+                "entity": "NoteEntity",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/NoteEntity?fields=*",
+                "label": "Note Entity",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "optional": false,
+            "label": "Is Deleted",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "jobOrder",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Job Order",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "JobOrder",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/JobOrder",
+            "associatedEntity": {
+                "entity": "JobOrder",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/JobOrder?fields=*",
+                "label": "Job Order",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Job Title",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "jobOrders",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Job Orders",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "JobOrder",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/JobOrder",
+            "associatedEntity": {
+                "entity": "JobOrder",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/JobOrder?fields=*",
+                "label": "Job Order",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Job Title",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "optional": true,
+            "label": "Migrate GUID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "minutesSpent",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "Time Spent (min)",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "personReference",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "About",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "Candidate",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Candidate",
+            "associatedEntity": {
+                "entity": "Person",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Person?fields=*",
+                "label": "Person",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "_subtype",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 255,
+                        "optional": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "placements",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Placements",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Placement",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Placement",
+            "associatedEntity": {
+                "entity": "Placement",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Placement?fields=*",
+                "label": "Placement",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        }
+    ]
+}

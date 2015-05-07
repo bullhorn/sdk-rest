@@ -1,0 +1,72 @@
+{
+    "entity": "Specialty",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Specialty?fields=*",
+    "label": "Specialty",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "enabled",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "optional": false,
+            "label": "Enabled",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "parentCategory",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Parent Category",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Category",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Category",
+            "associatedEntity": {
+                "entity": "Category",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Category?fields=*",
+                "label": "Category",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        }
+    ]
+}

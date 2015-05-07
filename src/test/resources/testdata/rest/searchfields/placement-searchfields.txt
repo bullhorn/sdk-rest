@@ -1,0 +1,1003 @@
+{
+    "searchFields": [
+        {
+            "name": "appointments.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "approvingClientContact.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "approvingClientContact.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "backupApprovingClientContact.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "backupApprovingClientContact.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "billingClientContact.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "billingClientContact.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "billingFrequency",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "bonusPackage",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "candidate.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "disability",
+                        "ethnicity",
+                        "gender",
+                        "source",
+                        "veteran"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "candidate.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "changeRequests.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "dateAdded",
+                        "dateApproved",
+                        "requestStatus",
+                        "requestType",
+                        "requestingUser.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "clientBillRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "clientOvertimeRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "commissions.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "role",
+                        "user.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomDate1",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomDate2",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomDate3",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomFloat1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomFloat2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomFloat3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomInt1",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomInt2",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomInt3",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText10",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText6",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText7",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText8",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText9",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomTextBlock1",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "correlatedCustomTextBlock2",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "correlatedCustomTextBlock3",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "costCenter",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate10",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate4",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate5",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate6",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate7",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate8",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customBillRate9",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customDate1",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate2",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate3",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt1",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt2",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt3",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate10",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate4",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate5",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate6",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate7",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate8",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customPayRate9",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText10",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText11",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText12",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText13",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText14",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText15",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText16",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText17",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText18",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText19",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText20",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText21",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText22",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText23",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText24",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText25",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText26",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText27",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText28",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText29",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText30",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText31",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText32",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText33",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText34",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText35",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText36",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText37",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText38",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText39",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText40",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText6",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText7",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText8",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText9",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateBegin",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "dateClientEffective",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "dateEffective",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "dateEnd",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "daysGuaranteed",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "daysProRated",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "durationWeeks",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "employeeType",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "employmentType",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "fee",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "fileAttachments.description",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "fileAttachments.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "contentSubType",
+                        "contentType",
+                        "dateAdded",
+                        "type"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "flatFee",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "hoursOfOperation",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "hoursPerDay",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "housingAmenities.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "housingManagerID",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "housingStatus",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "id",
+            "type": "ID",
+            "isSortable": true
+        },
+        {
+            "name": "invoice.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "invoiceGroup.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "invoiceGroupName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "invoiceItems.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.clientContact.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.clientContact.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.clientCorporation.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name",
+                        "parentClientCorporation.id",
+                        "parentClientCorporation.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.clientCorporation.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "categories.id",
+                        "categories.name",
+                        "skills.id",
+                        "skills.name",
+                        "specialties.id",
+                        "specialties.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.isDeleted",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.title",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "jobSubmission.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "sendingUser.id",
+                        "source"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "notes.comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "notes.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "optionsPackage",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "otExemption",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "otherHourlyFee",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "otherHourlyFeeComments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "overtimeRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "owners.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "payRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "placementHistories.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "projectCodeList",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "recruitingManagerPercentGrossMargin",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "referralFee",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "referralFeeType",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "reportTo",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "reportedMargin",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "salary",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "salaryUnit",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "salesManagerPercentGrossMargin",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "shift.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "statementClientContact.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "statementClientContact.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "surveys.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "taxRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "taxState",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "terminationReason",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "timeUnits.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "timecardExpenses.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "timecardTimes.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "timecards.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "vendorClientCorporation.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "workWeekStart",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "workersCompensationRate.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "workersCompensationRate.rate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        }
+    ]
+}

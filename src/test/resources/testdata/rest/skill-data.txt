@@ -1,0 +1,187 @@
+{
+    "total": 1417,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Vault Auditing"
+        },
+        {
+            "id": 2,
+            "categories": {
+                "total": 5,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Trade Support Analyst"
+        },
+        {
+            "id": 3,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Rep/Margin Analyst"
+        },
+        {
+            "id": 4,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Project Associate"
+        },
+        {
+            "id": 5,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Print Delivery Runner"
+        },
+        {
+            "id": 6,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "PMI Closer"
+        },
+        {
+            "id": 7,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Pack Out-RTA"
+        },
+        {
+            "id": 8,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Merchant CSR"
+        },
+        {
+            "id": 9,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Med Cab & PPW"
+        },
+        {
+            "id": 10,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Machine Operator-Press"
+        },
+        {
+            "id": 11,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Loan Doc Specialist"
+        },
+        {
+            "id": 12,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "KYC Analyst"
+        },
+        {
+            "id": 13,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Jr. Recruiter"
+        },
+        {
+            "id": 14,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Jr. Graphic Designer"
+        },
+        {
+            "id": 15,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Investment Data Ops Analyst"
+        },
+        {
+            "id": 16,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Equity Paralegal"
+        },
+        {
+            "id": 17,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "Data & Doc Processor"
+        },
+        {
+            "id": 18,
+            "categories": {
+                "total": 2,
+                "data": []
+            },
+            "enabled": true,
+            "name": "AML List Screening Analyst"
+        },
+        {
+            "id": 19,
+            "categories": {
+                "total": 4,
+                "data": []
+            },
+            "enabled": true,
+            "name": "mass mailing"
+        },
+        {
+            "id": 20,
+            "categories": {
+                "total": 3,
+                "data": []
+            },
+            "enabled": true,
+            "name": "!.Undetermined"
+        }
+    ]
+}

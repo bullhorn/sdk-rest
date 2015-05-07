@@ -1,0 +1,4029 @@
+{
+    "total": 159,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "address": {
+                "address1": "33-41 Farnsworth Street",
+                "city": "city",
+                "state": "Massachusetts",
+                "zip": "02121",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 75,
+            "clientContact": {
+                "id": 1,
+                "firstName": "Iam",
+                "lastName": "contact"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "Bullhorn"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 120000,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1056",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "1056",
+            "correlatedCustomText5": "Magnus Palm",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "Ryan Lopesz",
+            "correlatedCustomText8": "cheryls API",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 50,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 90,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "5th Floor",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632928633,
+            "dateEnd": 1291093200000,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>desc desc \r\n<P></P></DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "50 - Direct Hire",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 40,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "On-Site",
+            "optionsPackage": "",
+            "owner": {
+                "id": 1
+            },
+            "payRate": 50,
+            "placements": {
+                "total": 1,
+                "data": []
+            },
+            "publicDescription": "",
+            "publishedZip": "02210",
+            "reasonClosed": "",
+            "reportTo": "abc",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 1
+            },
+            "salary": 100000,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1290402000000,
+            "status": "Submitted",
+            "submissions": {
+                "total": 0,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "W2",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Job1",
+            "travelRequirements": "",
+            "type": 0,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": false,
+            "willSponsor": false,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 2,
+            "address": {
+                "address1": "",
+                "city": "San Antonio",
+                "state": "Texas",
+                "zip": "78240",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 1,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 2,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 58,
+            "clientContact": {
+                "id": 2,
+                "firstName": "Tina",
+                "lastName": "F'ey"
+            },
+            "clientCorporation": {
+                "id": 2,
+                "name": "The Funky Bunch"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 2,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": -4,
+            "correlatedCustomInt3": 1,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1065",
+            "correlatedCustomText3": "0",
+            "correlatedCustomText4": "1065",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 5,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "update test",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "new value",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "0",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "0",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632928667,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Parent job to overlook all activites \r\n<P></P></DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 40,
+            "interviews": {
+                "total": 1,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 4,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "On-Site",
+            "optionsPackage": "",
+            "owner": {
+                "id": 2
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 5,
+                "data": []
+            },
+            "publicDescription": "",
+            "publishedZip": "02210",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": {
+                "id": 2,
+                "firstName": "Kevin",
+                "lastName": "Bacon"
+            },
+            "responseUser": {
+                "id": 2
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 1,
+                "data": []
+            },
+            "skillList": "test",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1292216400000,
+            "status": "Placed",
+            "submissions": {
+                "total": 7,
+                "data": []
+            },
+            "tasks": {
+                "total": 2,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "W2",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "1",
+            "travelRequirements": "",
+            "type": 0,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": false,
+            "willSponsor": false,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 3,
+            "address": {
+                "address1": "",
+                "city": "Boston",
+                "state": "Arkansas",
+                "zip": "32434",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 4,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 3,
+                "firstName": "HC Ian",
+                "lastName": "Fleming"
+            },
+            "clientCorporation": {
+                "id": 3,
+                "name": "Sterling Cooper Draper Pryce"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 1,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 1,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1033",
+            "correlatedCustomText3": "ABN",
+            "correlatedCustomText4": "1033",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632928733,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>fdasfs</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Observation",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 2,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 3
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 8,
+                "data": []
+            },
+            "publicDescription": "<DIV>fdasfs</DIV>",
+            "publishedZip": "34433",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 3
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 2,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1292302800000,
+            "status": "Placed",
+            "submissions": {
+                "total": 4,
+                "data": []
+            },
+            "tasks": {
+                "total": 22,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Butler",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 4,
+            "address": {
+                "address1": "72 2nd StreetApt 87",
+                "city": "Deluth",
+                "state": "Colorado",
+                "zip": "34332",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 4,
+                "firstName": "HC First",
+                "lastName": "Contact"
+            },
+            "clientCorporation": {
+                "id": 4,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "11J3",
+            "correlatedCustomText3": "1",
+            "correlatedCustomText4": "11J3",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "0",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "500",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632928763,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>TBD</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Observation",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": -1,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 4
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 37,
+                "data": []
+            },
+            "publicDescription": "<DIV>TBD</DIV>",
+            "publishedZip": "34332",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 4
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1292389200000,
+            "status": "Placed",
+            "submissions": {
+                "total": 2,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Test Perm Job",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 3,
+            "_score": 1
+        },
+        {
+            "id": 5,
+            "address": {
+                "address1": "72 2nd StreetApt 87",
+                "city": "Deluth",
+                "state": "Colorado",
+                "zip": "34332",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 7,
+                "firstName": "HC First",
+                "lastName": "Contact"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1113",
+            "correlatedCustomText3": "ABN",
+            "correlatedCustomText4": "1113",
+            "correlatedCustomText5": "32",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "32",
+            "correlatedCustomText8": "32",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "0",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "500",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632929060,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>&nbsp;test</DIV>\r\n<DIV>&nbsp;</DIV>\r\n<DIV><IMG border=0 src=\"http://psstaging.bullhornstaffing.com/BullhornStaffing/GetFile.cfm?filename=test&amp;id=7E183AB8AC15434FCF958024A063E184test&amp;fileType=EmbededAttachments&amp;directory=UserAttachments%5C4072%5CEmbededAttachments%5C&amp;extension=%2Ejpg&amp;key=09C1F266D2E458161BD9ED8A9B6050E7\"></DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Permanent",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 5
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 2,
+                "data": []
+            },
+            "publicDescription": "<DIV>\r\n<P>&nbsp;</P></DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 5
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1292389200000,
+            "status": "Placed",
+            "submissions": {
+                "total": 1,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "test",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 3,
+            "_score": 1
+        },
+        {
+            "id": 6,
+            "address": {
+                "address1": "",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02137",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 1,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 6,
+                "firstName": "Jergens",
+                "lastName": "Lotion"
+            },
+            "clientCorporation": {
+                "id": 5,
+                "name": "Jergens"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1054",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "1054",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "0",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "500",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632929110,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Develop Multithreaded applications</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Freelance",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": -1,
+            "jobBoardList": null,
+            "notes": {
+                "total": 3,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 6
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 1,
+                "data": []
+            },
+            "publicDescription": "<DIV>Develop Multithreaded applications</DIV>",
+            "publishedZip": "02137",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 7
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1293080400000,
+            "status": "Placed",
+            "submissions": {
+                "total": 1,
+                "data": []
+            },
+            "tasks": {
+                "total": 1,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Java Developer",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 3,
+            "_score": 1
+        },
+        {
+            "id": 7,
+            "address": {
+                "address1": "",
+                "city": "Delut",
+                "state": "Colorado",
+                "zip": "34332",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 1,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 2,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 8,
+                "firstName": "HC Jon",
+                "lastName": "Stone"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 5,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1201",
+            "correlatedCustomText3": "ABN",
+            "correlatedCustomText4": "1201",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "1",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "Hello 4",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632929147,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 40,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "On-Site",
+            "optionsPackage": "",
+            "owner": {
+                "id": 3
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 5,
+                "data": []
+            },
+            "publicDescription": "",
+            "publishedZip": "33333",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 8
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 2,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1298005200000,
+            "status": "Placed",
+            "submissions": {
+                "total": 3,
+                "data": []
+            },
+            "tasks": {
+                "total": 7,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "W2",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "testJob",
+            "travelRequirements": "",
+            "type": 0,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": false,
+            "willSponsor": false,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 8,
+            "address": {
+                "address1": "",
+                "city": "Mordor",
+                "state": "Georgia",
+                "zip": "32546",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 300,
+            "clientContact": {
+                "id": 7,
+                "firstName": "Job Order",
+                "lastName": "Contact"
+            },
+            "clientCorporation": {
+                "id": 6,
+                "name": "Order Servicing 1"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1063",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "1063",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "No",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "Singing",
+            "customText3": "",
+            "customText4": "500",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "A",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1303790400000,
+            "dateClosed": 1327632929157,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Anyone have time to fight orcs? And has a nursing certification?</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Lead",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 1,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 3
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 0,
+                "data": []
+            },
+            "publicDescription": "<DIV>Anyone have time to fight orcs? And has a nursing certification?</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 3
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 1,
+                "data": []
+            },
+            "skillList": "Good to have: amulet",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 2,
+                "data": []
+            },
+            "startDate": 1299733200000,
+            "status": "Lost",
+            "submissions": {
+                "total": 1,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Orc Fighter",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 3,
+            "_score": 1
+        },
+        {
+            "id": 9,
+            "address": {
+                "address1": "34 Farsworth St4th floor",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02111",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 8,
+                "firstName": "John",
+                "lastName": "Anderson"
+            },
+            "clientCorporation": {
+                "id": 2,
+                "name": "Bullhorn"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331127446607,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 10
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 0,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 3
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331096400000,
+            "status": "Accepting Candidates",
+            "submissions": {
+                "total": 10,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "DBM JLV Test II",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 10,
+            "address": {
+                "address1": "34 Farsworth St4th floor",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02111",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 2,
+                "firstName": "John",
+                "lastName": "Anderson"
+            },
+            "clientCorporation": {
+                "id": 2,
+                "name": "Bullhorn"
+            },
+            "correlatedCustomDate1": 1331127901493,
+            "correlatedCustomDate2": 1331127901493,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 4,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 4,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331127691930,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 2
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 0,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 1
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 4,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331096400000,
+            "status": "Accepting Candidates",
+            "submissions": {
+                "total": 10,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "DBM JLV Test III",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 11,
+            "address": {
+                "address1": "34 Farsworth St4th floor",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02111",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 3,
+                "firstName": "John",
+                "lastName": "Anderson"
+            },
+            "clientCorporation": {
+                "id": 2,
+                "name": "Bullhorn"
+            },
+            "correlatedCustomDate1": 1331129086123,
+            "correlatedCustomDate2": 1331132098423,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 8,
+            "correlatedCustomInt1": 1,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 4,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 2,
+            "customInt2": 4,
+            "customInt3": 4,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331129041690,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 4
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 1,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 5
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 4,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331096400000,
+            "status": "Placed",
+            "submissions": {
+                "total": 7,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "JLV Test10",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 12,
+            "address": {
+                "address1": "34 Farsworth St4th floor",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02111",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 4,
+                "firstName": "John",
+                "lastName": "Anderson"
+            },
+            "clientCorporation": {
+                "id": 2,
+                "name": "Bullhorn"
+            },
+            "correlatedCustomDate1": 1331127901000,
+            "correlatedCustomDate2": 1331129786900,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 6,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 4,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 2,
+            "customInt2": 4,
+            "customInt3": -1,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331129425710,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 2,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 1
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 0,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 1
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 4,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331096400000,
+            "status": "Accepting Candidates",
+            "submissions": {
+                "total": 10,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "DBM JLV Test IV",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 13,
+            "address": {
+                "address1": "34 Farsworth St4th floor",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02111",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 4,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 2,
+                "firstName": "John",
+                "lastName": "Anderson"
+            },
+            "clientCorporation": {
+                "id": 2,
+                "name": "Bullhorn"
+            },
+            "correlatedCustomDate1": 1331130897040,
+            "correlatedCustomDate2": 1331130930033,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 9,
+            "correlatedCustomInt1": 3,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 3,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 3,
+            "customInt2": 3,
+            "customInt3": 1,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331130527713,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 4,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 12
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 0,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 34
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 3,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331096400000,
+            "status": "Accepting Candidates",
+            "submissions": {
+                "total": 10,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "JLV Test V",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 14,
+            "address": {
+                "address1": "12 Silvermani Rd",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "01245",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 2,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 12,
+                "firstName": "second",
+                "lastName": "contact"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": 1331145387717,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 2,
+            "correlatedCustomInt1": 1,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 1,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331144797280,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 2,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 1
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 1,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 1
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 3,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331096400000,
+            "status": "Placed",
+            "submissions": {
+                "total": 3,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "BullhornQA Test1",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 15,
+            "address": {
+                "address1": "12 Silvermani Rd",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "01245",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 4,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 1,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 1,
+                "firstName": "second",
+                "lastName": "contact"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 3,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "test",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 3,
+            "customInt2": 3,
+            "customInt3": 2,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "test",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "No",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331148418363,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 4,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 1
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 8,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 1
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 6,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331096400000,
+            "status": "Placed",
+            "submissions": {
+                "total": 6,
+                "data": []
+            },
+            "tasks": {
+                "total": 1,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "BullhornQA Test2",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 16,
+            "address": {
+                "address1": "33-41 Farnsworth St5th Floor",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02210-1210",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 2,
+                "firstName": "David",
+                "lastName": "Muller"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331478393527,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 3
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 0,
+                "data": []
+            },
+            "publicDescription": "<DIV>Test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 4
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331442000000,
+            "status": "Accepting Candidates",
+            "submissions": {
+                "total": 18,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Test",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 17,
+            "address": {
+                "address1": "33-41 Farnsworth St5th Floor",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02210-1210",
+                "countryID": 2216
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 2,
+                "firstName": "David",
+                "lastName": "Muller"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "No",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1331728042900,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Harvey Nash JLV Test VI</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "Yes",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": true,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 1,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 2
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 5,
+                "data": []
+            },
+            "publicDescription": "<DIV>Harvey Nash JLV Test VI</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 2
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 7,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "0",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1331697600000,
+            "status": "Closed",
+            "submissions": {
+                "total": 8,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Solomon Page Interview Module",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 18,
+            "address": {
+                "address1": null,
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "02210",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": null,
+            "bonusPackage": null,
+            "branchCode": null,
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 2,
+                "firstName": "John",
+                "lastName": "Henry"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "Boston Red Sox"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": null,
+            "correlatedCustomFloat2": null,
+            "correlatedCustomFloat3": null,
+            "correlatedCustomInt1": null,
+            "correlatedCustomInt2": null,
+            "correlatedCustomInt3": null,
+            "correlatedCustomText1": null,
+            "correlatedCustomText10": null,
+            "correlatedCustomText2": null,
+            "correlatedCustomText3": null,
+            "correlatedCustomText4": null,
+            "correlatedCustomText5": null,
+            "correlatedCustomText6": null,
+            "correlatedCustomText7": null,
+            "correlatedCustomText8": null,
+            "correlatedCustomText9": null,
+            "correlatedCustomTextBlock1": null,
+            "correlatedCustomTextBlock2": null,
+            "correlatedCustomTextBlock3": null,
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText11": null,
+            "customText12": null,
+            "customText13": null,
+            "customText14": null,
+            "customText15": null,
+            "customText16": null,
+            "customText17": null,
+            "customText18": null,
+            "customText19": null,
+            "customText2": null,
+            "customText20": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "customTextBlock1": null,
+            "customTextBlock2": null,
+            "customTextBlock3": null,
+            "customTextBlock4": null,
+            "customTextBlock5": null,
+            "dateAdded": 1332939778710,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "Test",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": null,
+            "externalID": null,
+            "feeArrangement": null,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 40,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "On-Site",
+            "optionsPackage": null,
+            "owner": {
+                "id": 5
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 1,
+                "data": []
+            },
+            "publicDescription": null,
+            "publishedZip": null,
+            "reasonClosed": null,
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": null,
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": null,
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1332907200000,
+            "status": "Submitted",
+            "submissions": {
+                "total": 0,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "W2",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "March28_Java",
+            "travelRequirements": null,
+            "type": 0,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": false,
+            "willSponsor": false,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 19,
+            "address": {
+                "address1": "12 Silvermani Rd",
+                "city": "Boston",
+                "state": "Massachusetts",
+                "zip": "01245",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 17,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 0,
+            "clientContact": {
+                "id": 1,
+                "firstName": "second",
+                "lastName": "contact"
+            },
+            "clientCorporation": {
+                "id": 1,
+                "name": "First Company(Do not touch)"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "",
+            "customText3": "",
+            "customText4": "",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1334783587863,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>test</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Contract",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 17,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": false,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 1,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 1
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 3,
+                "data": []
+            },
+            "publicDescription": "<DIV>test</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 1
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "startDate": 1334721600000,
+            "status": "Placed",
+            "submissions": {
+                "total": 3,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "testing job test",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 0,
+            "_score": 1
+        },
+        {
+            "id": 20,
+            "address": {
+                "address1": "",
+                "city": "Mordor",
+                "state": "Georgia",
+                "zip": "32546",
+                "countryID": 1
+            },
+            "appointments": {
+                "total": 0,
+                "data": []
+            },
+            "approvedPlacements": {
+                "total": 0,
+                "data": []
+            },
+            "assignedUsers": {
+                "total": 0,
+                "data": []
+            },
+            "benefits": null,
+            "billRateCategoryID": 0,
+            "bonusPackage": "",
+            "branchCode": "",
+            "businessSectors": {
+                "total": 0,
+                "data": []
+            },
+            "categories": {
+                "total": 1,
+                "data": []
+            },
+            "certificationList": null,
+            "certifications": {
+                "total": 0,
+                "data": []
+            },
+            "clientBillRate": 300,
+            "clientContact": {
+                "id": 1,
+                "firstName": "Job Order",
+                "lastName": "Contact"
+            },
+            "clientCorporation": {
+                "id": 6,
+                "name": "Order Servicing 1"
+            },
+            "correlatedCustomDate1": null,
+            "correlatedCustomDate2": null,
+            "correlatedCustomDate3": null,
+            "correlatedCustomFloat1": 0,
+            "correlatedCustomFloat2": 0,
+            "correlatedCustomFloat3": 0,
+            "correlatedCustomInt1": 0,
+            "correlatedCustomInt2": 0,
+            "correlatedCustomInt3": 0,
+            "correlatedCustomText1": "",
+            "correlatedCustomText10": "",
+            "correlatedCustomText2": "1063",
+            "correlatedCustomText3": "",
+            "correlatedCustomText4": "1063",
+            "correlatedCustomText5": "",
+            "correlatedCustomText6": "",
+            "correlatedCustomText7": "",
+            "correlatedCustomText8": "",
+            "correlatedCustomText9": "",
+            "correlatedCustomTextBlock1": "",
+            "correlatedCustomTextBlock2": "",
+            "correlatedCustomTextBlock3": "",
+            "costCenter": "",
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": 0,
+            "customFloat2": 0,
+            "customFloat3": 0,
+            "customInt1": 0,
+            "customInt2": 0,
+            "customInt3": 0,
+            "customText1": "No",
+            "customText10": "",
+            "customText11": "",
+            "customText12": "",
+            "customText13": "",
+            "customText14": "",
+            "customText15": "",
+            "customText16": "",
+            "customText17": "",
+            "customText18": "",
+            "customText19": "",
+            "customText2": "",
+            "customText20": "Singing",
+            "customText3": "",
+            "customText4": "500",
+            "customText5": "",
+            "customText6": "",
+            "customText7": null,
+            "customText8": "",
+            "customText9": "A",
+            "customTextBlock1": "",
+            "customTextBlock2": "",
+            "customTextBlock3": "",
+            "customTextBlock4": "",
+            "customTextBlock5": "",
+            "dateAdded": 1336509296390,
+            "dateClosed": null,
+            "dateEnd": null,
+            "dateLastExported": null,
+            "degreeList": null,
+            "description": "<DIV>Anyone have time to fight orcs? And has a nursing certification?</DIV>",
+            "durationWeeks": 0,
+            "educationDegree": null,
+            "employmentType": "Lead",
+            "externalCategoryID": 0,
+            "externalID": "",
+            "feeArrangement": 0,
+            "hoursOfOperation": null,
+            "hoursPerWeek": 0,
+            "interviews": {
+                "total": 0,
+                "data": []
+            },
+            "isClientEditable": false,
+            "isDeleted": false,
+            "isInterviewRequired": true,
+            "isJobcastPublished": null,
+            "isOpen": false,
+            "isPublic": 0,
+            "jobBoardList": null,
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numOpenings": 1,
+            "onSite": "",
+            "optionsPackage": "",
+            "owner": {
+                "id": 3
+            },
+            "payRate": 0,
+            "placements": {
+                "total": 0,
+                "data": []
+            },
+            "publicDescription": "<DIV>Anyone have time to fight orcs? And has a nursing certification?</DIV>",
+            "publishedZip": "",
+            "reasonClosed": "",
+            "reportTo": "",
+            "reportToClientContact": null,
+            "responseUser": {
+                "id": 3
+            },
+            "salary": 0,
+            "salaryUnit": "Per Hour",
+            "sendouts": {
+                "total": 0,
+                "data": []
+            },
+            "skillList": "Good to have: amulet",
+            "skills": {
+                "total": 0,
+                "data": []
+            },
+            "source": "",
+            "specialties": {
+                "total": 2,
+                "data": []
+            },
+            "startDate": 1299733200000,
+            "status": "Lost",
+            "submissions": {
+                "total": 0,
+                "data": []
+            },
+            "tasks": {
+                "total": 0,
+                "data": []
+            },
+            "taxRate": 0,
+            "taxStatus": "",
+            "tearsheets": {
+                "total": 0,
+                "data": []
+            },
+            "timeUnits": {
+                "total": 0,
+                "data": []
+            },
+            "title": "Orc Fighter",
+            "travelRequirements": "",
+            "type": 1,
+            "webResponses": {
+                "total": 0,
+                "data": []
+            },
+            "willRelocate": true,
+            "willSponsor": true,
+            "yearsRequired": 3,
+            "_score": 1
+        }
+    ]
+}

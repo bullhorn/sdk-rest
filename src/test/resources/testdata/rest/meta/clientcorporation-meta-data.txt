@@ -1,0 +1,1970 @@
+{
+    "entity": "ClientCorporation",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientCorporation?fields=*",
+    "label": "Client",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "address",
+            "type": "COMPOSITE",
+            "dataType": "Address",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Address",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "fields": [
+                {
+                    "name": "address1",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 40,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Address",
+                    "required": false,
+                    "readOnly": false,
+                    "multiValue": false
+                },
+                {
+                    "name": "address2",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 40,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Address2",
+                    "required": false,
+                    "readOnly": false,
+                    "multiValue": false
+                },
+                {
+                    "name": "city",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 40,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "City",
+                    "required": false,
+                    "readOnly": false,
+                    "multiValue": false
+                },
+                {
+                    "name": "state",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 30,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "State",
+                    "required": false,
+                    "readOnly": false,
+                    "multiValue": false,
+                    "inputType": "SELECT",
+                    "optionsType": "StateText",
+                    "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/StateText"
+                },
+                {
+                    "name": "zip",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 15,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Zip",
+                    "required": false,
+                    "readOnly": false,
+                    "multiValue": false
+                },
+                {
+                    "name": "countryID",
+                    "type": "SCALAR",
+                    "dataType": "Integer",
+                    "confidential": false,
+                    "optional": false,
+                    "label": "Country",
+                    "required": false,
+                    "readOnly": false,
+                    "multiValue": false,
+                    "inputType": "SELECT",
+                    "optionsType": "Country",
+                    "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Country",
+                    "defaultValue": 1
+                }
+            ]
+        },
+        {
+            "name": "annualRevenue",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "dataSpecialization": "MONEY",
+            "confidential": false,
+            "optional": false,
+            "label": "Annual Revenue (Millions)",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "billingAddress",
+            "type": "COMPOSITE",
+            "dataType": "AddressWithoutCountry",
+            "confidential": false,
+            "optional": true,
+            "label": "Billing Address",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "fields": [
+                {
+                    "name": "address1",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 40,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Billing Address",
+                    "required": false,
+                    "readOnly": true,
+                    "multiValue": false
+                },
+                {
+                    "name": "address2",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 40,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Address2",
+                    "required": false,
+                    "readOnly": true,
+                    "multiValue": false
+                },
+                {
+                    "name": "city",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 40,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Billing City",
+                    "required": false,
+                    "readOnly": true,
+                    "multiValue": false
+                },
+                {
+                    "name": "state",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 30,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Billing State",
+                    "required": false,
+                    "readOnly": true,
+                    "multiValue": false,
+                    "inputType": "SELECT",
+                    "optionsType": "StateText",
+                    "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/StateText"
+                },
+                {
+                    "name": "zip",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 15,
+                    "confidential": false,
+                    "optional": true,
+                    "label": "Billing Zip",
+                    "required": false,
+                    "readOnly": true,
+                    "multiValue": false
+                }
+            ]
+        },
+        {
+            "name": "billingContact",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Billing Contact",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "ClientText",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientText"
+        },
+        {
+            "name": "billingFrequency",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": true,
+            "label": "Billing Frequency",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Weekly",
+                    "label": "Weekly"
+                },
+                {
+                    "value": "Bi-Weekly",
+                    "label": "Bi-Weekly"
+                },
+                {
+                    "value": "Semi-Monthly",
+                    "label": "Semi-Monthly"
+                },
+                {
+                    "value": "Monthly",
+                    "label": "Monthly"
+                }
+            ]
+        },
+        {
+            "name": "billingPhone",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": true,
+            "label": "Billing Phone",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "businessSectorList",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Business Sectors",
+            "required": false,
+            "readOnly": false,
+            "multiValue": true,
+            "inputType": "SELECT",
+            "optionsType": "BusinessSectorText",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/BusinessSectorText"
+        },
+        {
+            "name": "childClientCorporations",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Child Client Corporations",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ClientCorporation",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientCorporation",
+            "associatedEntity": {
+                "entity": "ClientCorporation",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientCorporation?fields=*",
+                "label": "Client",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Company Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "clientContactNotes",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Client Contact Notes",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Note",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Note",
+            "associatedEntity": {
+                "entity": "Note",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Note?fields=*",
+                "label": "Note",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "clientContacts",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Client Contacts",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ClientContact",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientContact",
+            "associatedEntity": {
+                "entity": "ClientContact",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientContact?fields=*",
+                "label": "Client Contact",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "companyDescription",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "dataSpecialization": "HTML",
+            "confidential": false,
+            "optional": true,
+            "label": "Company Description",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "companyURL",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Company Website",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "competitors",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Competitors",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "culture",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Culture / Perks",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "Target Close Date",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "customDate2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "customDate3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "Overtime factor",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "customFloat2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "customFloat3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "options": [
+                {
+                    "value": "Single",
+                    "label": "Single"
+                },
+                {
+                    "value": "Departmental",
+                    "label": "Departmental"
+                },
+                {
+                    "value": "Regional",
+                    "label": "Regional"
+                },
+                {
+                    "value": "Corporate HQ",
+                    "label": "Corporate HQ"
+                },
+                {
+                    "value": "Master Vendor",
+                    "label": "Master Vendor"
+                },
+                {
+                    "value": "National",
+                    "label": "National"
+                }
+            ]
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Assigned Vendors",
+            "required": false,
+            "readOnly": false,
+            "multiValue": true,
+            "inputType": "SELECT",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser"
+        },
+        {
+            "name": "customText11",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText11",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText12",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText12",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText13",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "dataSpecialization": "CUSTOM_EXTERNAL_CONTROL",
+            "confidential": false,
+            "optional": true,
+            "label": "Medmal Approved",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText14",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText14",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText15",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText15",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText16",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText16",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText17",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customtext17",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Not Specified",
+                    "label": "Not Specified"
+                },
+                {
+                    "value": "nothing",
+                    "label": "nothing"
+                },
+                {
+                    "value": "okay",
+                    "label": "okay"
+                },
+                {
+                    "value": "bad",
+                    "label": "bad"
+                }
+            ]
+        },
+        {
+            "name": "customText18",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText18",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText19",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText19",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText20",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "customText20",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "TOPS Export Flag",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Y",
+                    "label": "Y"
+                },
+                {
+                    "value": "E",
+                    "label": "E"
+                },
+                {
+                    "value": "A",
+                    "label": "A"
+                }
+            ]
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Parent Type",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Not Specified",
+                    "label": "Not Specified"
+                },
+                {
+                    "value": "Whatever",
+                    "label": "Whatever"
+                },
+                {
+                    "value": "Gum",
+                    "label": "Gum"
+                }
+            ]
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Credit Result",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "options": [
+                {
+                    "value": "Please Select",
+                    "label": "Please Select"
+                },
+                {
+                    "value": "Approved",
+                    "label": "Approved"
+                },
+                {
+                    "value": "Conditional",
+                    "label": "Conditional"
+                },
+                {
+                    "value": "Expired",
+                    "label": "Expired"
+                },
+                {
+                    "value": "Rejected",
+                    "label": "Rejected"
+                },
+                {
+                    "value": "Deposit Required",
+                    "label": "Deposit Required"
+                }
+            ]
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Client Tier",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Tier 1",
+                    "label": "Tier 1"
+                },
+                {
+                    "value": "Tier 2",
+                    "label": "Tier 2"
+                }
+            ]
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "dataSpecialization": "CUSTOM_EXTERNAL_CONTROL",
+            "confidential": false,
+            "optional": true,
+            "label": "customText7",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text8",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "RADIO",
+            "options": [
+                {
+                    "value": "No",
+                    "label": "No"
+                },
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                }
+            ]
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Primary Contact",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "Client",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Client"
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "PSA",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "customTextBlock2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "customTextBlock3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "customTextBlock4",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Onboarding Requirements",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateFounded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Date Founded",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "department",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Managed From",
+            "required": true,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "CorporationDepartment",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporationDepartment",
+            "associatedEntity": {
+                "entity": "CorporationDepartment",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporationDepartment?fields=*",
+                "label": "Corporation Department",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "externalID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": true,
+            "label": "External ID",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "fax",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": true,
+            "label": "Fax",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "feeArrangement",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "PERCENTAGE",
+            "confidential": false,
+            "optional": false,
+            "label": "Standard Perm Fee (%)",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "fileAttachments",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "File Attachments",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ClientCorporationFileAttachment",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientCorporationFileAttachment",
+            "associatedEntity": {
+                "entity": "ClientCorporationFileAttachment",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientCorporationFileAttachment?fields=*",
+                "label": "Client Corporation File Attachment",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "funding",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Funding Status",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "industryList",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Sector",
+            "required": false,
+            "readOnly": true,
+            "multiValue": true,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Aerospace & Defense",
+                    "label": "Aerospace & Defense"
+                },
+                {
+                    "value": "Aerospace & Defense > Aerospace",
+                    "label": "Aerospace & Defense > Aerospace"
+                },
+                {
+                    "value": "Aerospace & Defense > Defense",
+                    "label": "Aerospace & Defense > Defense"
+                },
+                {
+                    "value": "Automobiles",
+                    "label": "Automobiles"
+                },
+                {
+                    "value": "Automobiles > Automobiles",
+                    "label": "Automobiles > Automobiles"
+                },
+                {
+                    "value": "Automobiles > Auto Parts",
+                    "label": "Automobiles > Auto Parts"
+                },
+                {
+                    "value": "Automobiles > Tires & Rubber",
+                    "label": "Automobiles > Tires & Rubber"
+                },
+                {
+                    "value": "Banks",
+                    "label": "Banks"
+                },
+                {
+                    "value": "Banks > Banks",
+                    "label": "Banks > Banks"
+                },
+                {
+                    "value": "Beverages",
+                    "label": "Beverages"
+                },
+                {
+                    "value": "Beverages > Brewers",
+                    "label": "Beverages > Brewers"
+                },
+                {
+                    "value": "Beverages > Distillers & Vintners",
+                    "label": "Beverages > Distillers & Vintners"
+                },
+                {
+                    "value": "Beverages > Soft Drinks",
+                    "label": "Beverages > Soft Drinks"
+                },
+                {
+                    "value": "Chemicals",
+                    "label": "Chemicals"
+                },
+                {
+                    "value": "Chemicals > Commodity",
+                    "label": "Chemicals > Commodity"
+                },
+                {
+                    "value": "Chemicals > Advanced Materials",
+                    "label": "Chemicals > Advanced Materials"
+                },
+                {
+                    "value": "Chemicals > Speciality",
+                    "label": "Chemicals > Speciality"
+                },
+                {
+                    "value": "Construction & Building Mats.",
+                    "label": "Construction & Building Mats."
+                },
+                {
+                    "value": "Construction & Building Mats. > Builders Merchants",
+                    "label": "Construction & Building Mats. > Builders Merchants"
+                },
+                {
+                    "value": "Construction & Building Mats. > Building & Construction Materials",
+                    "label": "Construction & Building Mats. > Building & Construction Materials"
+                },
+                {
+                    "value": "Construction & Building Mats. > House Building",
+                    "label": "Construction & Building Mats. > House Building"
+                },
+                {
+                    "value": "Construction & Building Mats. > Other Construction",
+                    "label": "Construction & Building Mats. > Other Construction"
+                },
+                {
+                    "value": "Distributors",
+                    "label": "Distributors"
+                },
+                {
+                    "value": "Distributors > Distributors of Industrial Components & --Equipment",
+                    "label": "Distributors > Distributors of Industrial Components & --Equipment"
+                },
+                {
+                    "value": "Distributors > Vehicle Distribution",
+                    "label": "Distributors > Vehicle Distribution"
+                },
+                {
+                    "value": "Distributors > Other",
+                    "label": "Distributors > Other"
+                },
+                {
+                    "value": "General Retailers",
+                    "label": "General Retailers"
+                },
+                {
+                    "value": "General Retailers > Discount & Super Stores and Warehouses",
+                    "label": "General Retailers > Discount & Super Stores and Warehouses"
+                },
+                {
+                    "value": "General Retailers > Hardlines",
+                    "label": "General Retailers > Hardlines"
+                },
+                {
+                    "value": "General Retailers > Multi Department",
+                    "label": "General Retailers > Multi Department"
+                },
+                {
+                    "value": "General Retailers > Soft Goods",
+                    "label": "General Retailers > Soft Goods"
+                },
+                {
+                    "value": "Divers. Industrials",
+                    "label": "Divers. Industrials"
+                },
+                {
+                    "value": "Divers. Industrials > Diversified Industrials",
+                    "label": "Divers. Industrials > Diversified Industrials"
+                },
+                {
+                    "value": "Electronic & Electrical Eqptmt",
+                    "label": "Electronic & Electrical Eqptmt"
+                },
+                {
+                    "value": "Electronic & Electrical Eqptmt > Electrical Equipment",
+                    "label": "Electronic & Electrical Eqptmt > Electrical Equipment"
+                },
+                {
+                    "value": "Electronic & Electrical Eqptmt > Electronic Equipment",
+                    "label": "Electronic & Electrical Eqptmt > Electronic Equipment"
+                },
+                {
+                    "value": "Engineering & Machinery",
+                    "label": "Engineering & Machinery"
+                },
+                {
+                    "value": "Engineering & Machinery > Commercial Vehicles & Trucks",
+                    "label": "Engineering & Machinery > Commercial Vehicles & Trucks"
+                },
+                {
+                    "value": "Engineering & Machinery > Contractors",
+                    "label": "Engineering & Machinery > Contractors"
+                },
+                {
+                    "value": "Engineering & Machinery > Engineering Fabricators",
+                    "label": "Engineering & Machinery > Engineering Fabricators"
+                },
+                {
+                    "value": "Engineering & Machinery > General",
+                    "label": "Engineering & Machinery > General"
+                },
+                {
+                    "value": "Food & Drug Retailers",
+                    "label": "Food & Drug Retailers"
+                },
+                {
+                    "value": "Food & Drug Retailers > Food & Drug Retailers",
+                    "label": "Food & Drug Retailers > Food & Drug Retailers"
+                },
+                {
+                    "value": "Telecommunications Services",
+                    "label": "Telecommunications Services"
+                },
+                {
+                    "value": "Telecommunications Services > Fixed-Line Telecommunication Services",
+                    "label": "Telecommunications Services > Fixed-Line Telecommunication Services"
+                },
+                {
+                    "value": "Telecommunications Services > Wireless Telecommunication Services",
+                    "label": "Telecommunications Services > Wireless Telecommunication Services"
+                },
+                {
+                    "value": "Food Producers & Processors",
+                    "label": "Food Producers & Processors"
+                },
+                {
+                    "value": "Food Producers & Processors > Farming & Fishing",
+                    "label": "Food Producers & Processors > Farming & Fishing"
+                },
+                {
+                    "value": "Food Producers & Processors > Food Processors",
+                    "label": "Food Producers & Processors > Food Processors"
+                },
+                {
+                    "value": "Forestry & Paper",
+                    "label": "Forestry & Paper"
+                },
+                {
+                    "value": "Forestry & Paper > Forestry",
+                    "label": "Forestry & Paper > Forestry"
+                },
+                {
+                    "value": "Forestry & Paper > Paper",
+                    "label": "Forestry & Paper > Paper"
+                },
+                {
+                    "value": "Health",
+                    "label": "Health"
+                },
+                {
+                    "value": "Health > Health Maintenance Organisations",
+                    "label": "Health > Health Maintenance Organisations"
+                },
+                {
+                    "value": "Health > Hospital Management & Long Term Care",
+                    "label": "Health > Hospital Management & Long Term Care"
+                },
+                {
+                    "value": "Health > Medical Equipment & Supplies",
+                    "label": "Health > Medical Equipment & Supplies"
+                },
+                {
+                    "value": "Health > Other Health Care",
+                    "label": "Health > Other Health Care"
+                },
+                {
+                    "value": "Household Goods & Textiles",
+                    "label": "Household Goods & Textiles"
+                },
+                {
+                    "value": "Household Goods & Textiles > Clothing & Footwear",
+                    "label": "Household Goods & Textiles > Clothing & Footwear"
+                },
+                {
+                    "value": "Household Goods & Textiles > Furnishings & Floor Coverings",
+                    "label": "Household Goods & Textiles > Furnishings & Floor Coverings"
+                },
+                {
+                    "value": "Household Goods & Textiles > Household Appliances & Housewares",
+                    "label": "Household Goods & Textiles > Household Appliances & Housewares"
+                },
+                {
+                    "value": "Household Goods & Textiles > Leisure Equipment",
+                    "label": "Household Goods & Textiles > Leisure Equipment"
+                },
+                {
+                    "value": "Household Goods & Textiles > Other Textiles & Leather Goods",
+                    "label": "Household Goods & Textiles > Other Textiles & Leather Goods"
+                },
+                {
+                    "value": "Information Technology",
+                    "label": "Information Technology"
+                },
+                {
+                    "value": "Information Technology > Computer Hardware",
+                    "label": "Information Technology > Computer Hardware"
+                },
+                {
+                    "value": "Information Technology > Semiconductors",
+                    "label": "Information Technology > Semiconductors"
+                },
+                {
+                    "value": "Information Technology > Telecommunications Equipment",
+                    "label": "Information Technology > Telecommunications Equipment"
+                },
+                {
+                    "value": "Information Technology > Computer Services",
+                    "label": "Information Technology > Computer Services"
+                },
+                {
+                    "value": "Information Technology > Internet",
+                    "label": "Information Technology > Internet"
+                },
+                {
+                    "value": "Information Technology > Software",
+                    "label": "Information Technology > Software"
+                },
+                {
+                    "value": "Insurance",
+                    "label": "Insurance"
+                },
+                {
+                    "value": "Insurance > Insurance Brokers",
+                    "label": "Insurance > Insurance Brokers"
+                },
+                {
+                    "value": "Insurance > Non-Life",
+                    "label": "Insurance > Non-Life"
+                },
+                {
+                    "value": "Insurance > Lloyd's Funds",
+                    "label": "Insurance > Lloyd's Funds"
+                },
+                {
+                    "value": "Insurance > Re-insurance",
+                    "label": "Insurance > Re-insurance"
+                },
+                {
+                    "value": "Insurance > Other Insurance",
+                    "label": "Insurance > Other Insurance"
+                },
+                {
+                    "value": "Investment Co.'S",
+                    "label": "Investment Co.'S"
+                },
+                {
+                    "value": "Investment Co.'S > Investment Companies",
+                    "label": "Investment Co.'S > Investment Companies"
+                },
+                {
+                    "value": "Investment Co.'S > International Investment Trusts",
+                    "label": "Investment Co.'S > International Investment Trusts"
+                },
+                {
+                    "value": "Investment Co.'S > UK Investment Trusts",
+                    "label": "Investment Co.'S > UK Investment Trusts"
+                },
+                {
+                    "value": "Investment Co.'S > European Investment Trusts",
+                    "label": "Investment Co.'S > European Investment Trusts"
+                },
+                {
+                    "value": "Investment Co.'S > Venture & Development Capital",
+                    "label": "Investment Co.'S > Venture & Development Capital"
+                },
+                {
+                    "value": "Lesiure / Entertainment / Hotels",
+                    "label": "Lesiure / Entertainment / Hotels"
+                },
+                {
+                    "value": "Lesiure / Entertainment / Hotels > Gaming",
+                    "label": "Lesiure / Entertainment / Hotels > Gaming"
+                },
+                {
+                    "value": "Lesiure / Entertainment / Hotels > Home Entertainment",
+                    "label": "Lesiure / Entertainment / Hotels > Home Entertainment"
+                },
+                {
+                    "value": "Lesiure / Entertainment / Hotels > Hotels",
+                    "label": "Lesiure / Entertainment / Hotels > Hotels"
+                },
+                {
+                    "value": "Lesiure / Entertainment / Hotels > Leisure Facilities",
+                    "label": "Lesiure / Entertainment / Hotels > Leisure Facilities"
+                },
+                {
+                    "value": "Life Assurance",
+                    "label": "Life Assurance"
+                },
+                {
+                    "value": "Life Assurance > Life Assurance",
+                    "label": "Life Assurance > Life Assurance"
+                },
+                {
+                    "value": "Media & Photography",
+                    "label": "Media & Photography"
+                },
+                {
+                    "value": "Media & Photography > Broadcasting Contractors",
+                    "label": "Media & Photography > Broadcasting Contractors"
+                },
+                {
+                    "value": "Media & Photography > Cable & Satellite",
+                    "label": "Media & Photography > Cable & Satellite"
+                },
+                {
+                    "value": "Media & Photography > Media Agencies",
+                    "label": "Media & Photography > Media Agencies"
+                },
+                {
+                    "value": "Media & Photography > Photography",
+                    "label": "Media & Photography > Photography"
+                },
+                {
+                    "value": "Media & Photography > Publishing & Printing",
+                    "label": "Media & Photography > Publishing & Printing"
+                },
+                {
+                    "value": "Mining",
+                    "label": "Mining"
+                },
+                {
+                    "value": "Mining > Gold Mining",
+                    "label": "Mining > Gold Mining"
+                },
+                {
+                    "value": "Mining > Mining Finance",
+                    "label": "Mining > Mining Finance"
+                },
+                {
+                    "value": "Mining > Other Mineral Extractors & Mines",
+                    "label": "Mining > Other Mineral Extractors & Mines"
+                },
+                {
+                    "value": "Oil & Gas",
+                    "label": "Oil & Gas"
+                },
+                {
+                    "value": "Oil & Gas > Exploration & Production",
+                    "label": "Oil & Gas > Exploration & Production"
+                },
+                {
+                    "value": "Oil & Gas > Services",
+                    "label": "Oil & Gas > Services"
+                },
+                {
+                    "value": "Oil & Gas > Integrated",
+                    "label": "Oil & Gas > Integrated"
+                },
+                {
+                    "value": "Packaging",
+                    "label": "Packaging"
+                },
+                {
+                    "value": "Packaging > Packaging",
+                    "label": "Packaging > Packaging"
+                },
+                {
+                    "value": "Personal Care & Household Products",
+                    "label": "Personal Care & Household Products"
+                },
+                {
+                    "value": "Personal Care & Household Products > Household Products",
+                    "label": "Personal Care & Household Products > Household Products"
+                },
+                {
+                    "value": "Personal Care & Household Products > Personal Products",
+                    "label": "Personal Care & Household Products > Personal Products"
+                },
+                {
+                    "value": "Pharmaceuticals",
+                    "label": "Pharmaceuticals"
+                },
+                {
+                    "value": "Pharmaceuticals > Pharmaceuticals",
+                    "label": "Pharmaceuticals > Pharmaceuticals"
+                },
+                {
+                    "value": "Real Estate",
+                    "label": "Real Estate"
+                },
+                {
+                    "value": "Real Estate > Real Estate Holding & Development",
+                    "label": "Real Estate > Real Estate Holding & Development"
+                },
+                {
+                    "value": "Real Estate > Property Agencies",
+                    "label": "Real Estate > Property Agencies"
+                },
+                {
+                    "value": "Real Estate > Real Estate Investment Trusts",
+                    "label": "Real Estate > Real Estate Investment Trusts"
+                },
+                {
+                    "value": "Restaurants / Pubs / Breweries",
+                    "label": "Restaurants / Pubs / Breweries"
+                },
+                {
+                    "value": "Speciality & Other Finance",
+                    "label": "Speciality & Other Finance"
+                },
+                {
+                    "value": "Speciality & Other Finance > Asset Managers",
+                    "label": "Speciality & Other Finance > Asset Managers"
+                },
+                {
+                    "value": "Speciality & Other Finance > Consumer Finance",
+                    "label": "Speciality & Other Finance > Consumer Finance"
+                },
+                {
+                    "value": "Speciality & Other Finance > Investment Banks",
+                    "label": "Speciality & Other Finance > Investment Banks"
+                },
+                {
+                    "value": "Speciality & Other Finance > Mortgage Finance",
+                    "label": "Speciality & Other Finance > Mortgage Finance"
+                },
+                {
+                    "value": "Speciality & Other Finance > Other Financial",
+                    "label": "Speciality & Other Finance > Other Financial"
+                },
+                {
+                    "value": "Speciality & Other Finance > Housing Income Investment Trusts",
+                    "label": "Speciality & Other Finance > Housing Income Investment Trusts"
+                },
+                {
+                    "value": "Speciality & Other Finance > Open-Ended Investment Companies",
+                    "label": "Speciality & Other Finance > Open-Ended Investment Companies"
+                },
+                {
+                    "value": "Speciality & Other Finance > Off-Shore Investment Companies & Funds",
+                    "label": "Speciality & Other Finance > Off-Shore Investment Companies & Funds"
+                },
+                {
+                    "value": "Speciality & Other Finance > Venture Capital Trusts",
+                    "label": "Speciality & Other Finance > Venture Capital Trusts"
+                },
+                {
+                    "value": "Speciality & Other Finance > Currency Funds",
+                    "label": "Speciality & Other Finance > Currency Funds"
+                },
+                {
+                    "value": "Speciality & Other Finance > Other S.842 Investment Trusts",
+                    "label": "Speciality & Other Finance > Other S.842 Investment Trusts"
+                },
+                {
+                    "value": "Speciality & Other Finance > Split Capital Investment Trusts",
+                    "label": "Speciality & Other Finance > Split Capital Investment Trusts"
+                },
+                {
+                    "value": "Steel & Other Metals",
+                    "label": "Steel & Other Metals"
+                },
+                {
+                    "value": "Steel & Other Metals > Non-Ferrous Metals",
+                    "label": "Steel & Other Metals > Non-Ferrous Metals"
+                },
+                {
+                    "value": "Steel & Other Metals > Steel",
+                    "label": "Steel & Other Metals > Steel"
+                },
+                {
+                    "value": "Support Services",
+                    "label": "Support Services"
+                },
+                {
+                    "value": "Support Services > Business Support Services",
+                    "label": "Support Services > Business Support Services"
+                },
+                {
+                    "value": "Support Services > Education / Business Training / Employment Agencies",
+                    "label": "Support Services > Education / Business Training / Employment Agencies"
+                },
+                {
+                    "value": "Support Services > Environmental Control",
+                    "label": "Support Services > Environmental Control"
+                },
+                {
+                    "value": "Support Services > Funerals & Cemeteries",
+                    "label": "Support Services > Funerals & Cemeteries"
+                },
+                {
+                    "value": "Support Services > Laundries & Cleaners",
+                    "label": "Support Services > Laundries & Cleaners"
+                },
+                {
+                    "value": "Support Services > Security & Alarm Services",
+                    "label": "Support Services > Security & Alarm Services"
+                },
+                {
+                    "value": "Tobacco",
+                    "label": "Tobacco"
+                },
+                {
+                    "value": "Tobacco > Tobacco",
+                    "label": "Tobacco > Tobacco"
+                },
+                {
+                    "value": "Transport",
+                    "label": "Transport"
+                },
+                {
+                    "value": "Transport > Airlines & Airports",
+                    "label": "Transport > Airlines & Airports"
+                },
+                {
+                    "value": "Transport > Rail / Road / Freight",
+                    "label": "Transport > Rail / Road / Freight"
+                },
+                {
+                    "value": "Transport > Shipping & Ports",
+                    "label": "Transport > Shipping & Ports"
+                },
+                {
+                    "value": "Utilities",
+                    "label": "Utilities"
+                },
+                {
+                    "value": "Utilities > Electricity",
+                    "label": "Utilities > Electricity"
+                },
+                {
+                    "value": "Utilities > Gas Distribution",
+                    "label": "Utilities > Gas Distribution"
+                },
+                {
+                    "value": "Utilities > Water",
+                    "label": "Utilities > Water"
+                }
+            ]
+        },
+        {
+            "name": "invoiceFormat",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "Invoice Format",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Company Name",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "notes",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Company Overview",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "numEmployees",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": false,
+            "label": "# of Employees",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "numOffices",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": false,
+            "label": "# of Offices",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "ownerShip",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": true,
+            "label": "Owner Ship",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "owners",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Owners",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "parentClientCorporation",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Parent Company",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "ClientCorporation",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientCorporation",
+            "associatedEntity": {
+                "entity": "ClientCorporation",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientCorporation?fields=*",
+                "label": "Client",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Company Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "phone",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": true,
+            "label": "Main Phone",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "revenue",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Revenue",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "status",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": false,
+            "label": "Status",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Unqualified",
+                    "label": "Unqualified"
+                },
+                {
+                    "value": "Qualified Lead",
+                    "label": "Qualified Lead"
+                },
+                {
+                    "value": "Proposal",
+                    "label": "Proposal"
+                },
+                {
+                    "value": "Negotiation",
+                    "label": "Negotiation"
+                },
+                {
+                    "value": "Active Account",
+                    "label": "Active Account"
+                },
+                {
+                    "value": "Passive Account",
+                    "label": "Passive Account"
+                },
+                {
+                    "value": "DNC",
+                    "label": "DNC"
+                },
+                {
+                    "value": "Archive",
+                    "label": "Archive"
+                },
+                {
+                    "value": "Credit Hold",
+                    "label": "Credit Hold"
+                },
+                {
+                    "value": "Lead",
+                    "label": "Lead"
+                },
+                {
+                    "value": "Prospect",
+                    "label": "Prospect"
+                },
+                {
+                    "value": "Client",
+                    "label": "Client"
+                }
+            ]
+        },
+        {
+            "name": "taxRate",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "PERCENTAGE",
+            "confidential": false,
+            "optional": true,
+            "label": "Tax %",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "tickerSymbol",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": true,
+            "label": "Ticker Symbol",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "workWeekStart",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Work Week Begin",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Sunday"
+                },
+                {
+                    "value": 2,
+                    "label": "Monday"
+                }
+            ]
+        }
+    ]
+}

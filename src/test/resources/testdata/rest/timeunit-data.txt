@@ -1,0 +1,127 @@
+{
+    "total": 335,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "name": "11:30 PM",
+            "timeMarker": 2330,
+            "weekDay": 6
+        },
+        {
+            "id": 2,
+            "name": "11:00 PM",
+            "timeMarker": 2300,
+            "weekDay": 6
+        },
+        {
+            "id": 3,
+            "name": "10:30 PM",
+            "timeMarker": 2230,
+            "weekDay": 6
+        },
+        {
+            "id": 4,
+            "name": "10:00 PM",
+            "timeMarker": 2200,
+            "weekDay": 6
+        },
+        {
+            "id": 5,
+            "name": "9:30 PM",
+            "timeMarker": 2130,
+            "weekDay": 6
+        },
+        {
+            "id": 6,
+            "name": "9:00 PM",
+            "timeMarker": 2100,
+            "weekDay": 6
+        },
+        {
+            "id": 7,
+            "name": "8:30 PM",
+            "timeMarker": 2030,
+            "weekDay": 6
+        },
+        {
+            "id": 8,
+            "name": "8:00 PM",
+            "timeMarker": 2000,
+            "weekDay": 6
+        },
+        {
+            "id": 9,
+            "name": "7:30 PM",
+            "timeMarker": 1930,
+            "weekDay": 6
+        },
+        {
+            "id": 10,
+            "name": "7:00 PM",
+            "timeMarker": 1900,
+            "weekDay": 6
+        },
+        {
+            "id": 11,
+            "name": "6:30 PM",
+            "timeMarker": 1830,
+            "weekDay": 6
+        },
+        {
+            "id": 12,
+            "name": "6:00 PM",
+            "timeMarker": 1800,
+            "weekDay": 6
+        },
+        {
+            "id": 13,
+            "name": "5:30 PM",
+            "timeMarker": 1730,
+            "weekDay": 6
+        },
+        {
+            "id": 14,
+            "name": "5:00 PM",
+            "timeMarker": 1700,
+            "weekDay": 6
+        },
+        {
+            "id": 15,
+            "name": "4:30 PM",
+            "timeMarker": 1630,
+            "weekDay": 6
+        },
+        {
+            "id": 16,
+            "name": "4:00 PM",
+            "timeMarker": 1600,
+            "weekDay": 6
+        },
+        {
+            "id": 17,
+            "name": "3:30 PM",
+            "timeMarker": 1530,
+            "weekDay": 6
+        },
+        {
+            "id": 18,
+            "name": "3:00 PM",
+            "timeMarker": 1500,
+            "weekDay": 6
+        },
+        {
+            "id": 19,
+            "name": "2:30 PM",
+            "timeMarker": 1430,
+            "weekDay": 6
+        },
+        {
+            "id": 20,
+            "name": "2:00 PM",
+            "timeMarker": 1400,
+            "weekDay": 6
+        }
+    ]
+}
