@@ -24,7 +24,7 @@ There is a private maven repo on Artifactory
 	<dependency>
 		<groupId>com.bullhornsdk.data</groupId>
 		<artifactId>bullhorn-data</artifactId>
-		<version>1.0.0-RELEASE</version>
+		<version>1.0.1-RELEASE</version>
 	</dependency>
 ```
 
