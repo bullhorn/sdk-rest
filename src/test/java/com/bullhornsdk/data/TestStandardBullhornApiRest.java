@@ -483,8 +483,12 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindJobOrderFields() {
 
-		JobOrder entity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId(), this.getFieldSet());
+		JobOrder entity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id","dateAdded"));
 
+		assertNull("title should be null since it's not specified in the fields",entity.getTitle());
+		assertNotNull("dateAdded should NOT be null.",entity.getDateAdded());
+		assertNotNull("id should NOT be null.",entity.getId());
+		
 		assertNotNull("JobOrder is null", entity);
 
 	}

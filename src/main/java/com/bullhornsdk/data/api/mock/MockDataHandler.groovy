@@ -272,6 +272,7 @@ public class MockDataHandler {
 			List<T> entitiesOverCountRemoved = handleCount(allEntities, params.getCount());
 			ListWrapper<T> wrapper = new StandardListWrapper<T>(entitiesOverCountRemoved);
 			wrapper.setTotal(allEntities.size());
+			wrapper.setStart(params.getStart());
 			return wrapper;
 		}
 
