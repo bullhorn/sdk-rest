@@ -121,7 +121,7 @@ public interface BullhornData {
 	 * @param query
 	 * 				fast-find query string
 	 * @param params
-	 * 				optional SearchParams parameters to use in the api request, pass in null for default.
+	 * 				optional FastFindParams parameters to use in the api request, pass in null for default.
 	 *
 	 * @see FastFindParams
 	 * @see ParamFactory
@@ -172,7 +172,7 @@ public interface BullhornData {
 			SearchParams params);
 
 	/**
-	 * Fast-finds FastFindResult of type T and returns a ListWrapper<T>.
+	 * Fast-finds and returns a FastFindListWrapper.
 	 *
 	 * @param query
 	 * 				fast find query string
