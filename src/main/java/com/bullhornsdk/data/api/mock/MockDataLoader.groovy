@@ -20,6 +20,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment
 import com.bullhornsdk.data.model.entity.core.standard.Country
+import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission
@@ -40,6 +41,7 @@ import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
 import com.bullhornsdk.data.model.enums.RestEntityInfo
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
@@ -51,9 +53,11 @@ public class MockDataLoader {
 	private final RestJsonConverter restJsonConverter;
 
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMapCache;
+	private List<FastFindResult> fastFindResultListCache;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
+	private List<FastFindResult> fastFindResultList;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
 
 	private Map<Class<? extends BullhornEntity>, String> entityFileNames;
@@ -96,6 +100,14 @@ public class MockDataLoader {
 		return restEntityMap;
 	}
 
+	public List<FastFindResult> getFastFindResults() {
+		if (fastFindResultList == null) {
+			reloadFastFindResults();
+			this.fastFindResultListCache = KryoObjectCopyHelper.copy(fastFindResultList);
+		}
+		return fastFindResultList;
+	}
+
 	/**
 	 * Returns a map with entities loaded fresh from the test data.
 	 * 
@@ -112,6 +124,13 @@ public class MockDataLoader {
 		
 		return restEntityMap;
 
+	}
+
+	public void reloadFastFindResults() {
+
+		String jsonData = getFileData("fastfind-data.txt");
+		FastFindListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, FastFindListWrapper.class);
+		this.fastFindResultList = listWrapper.getData();
 	}
 
 	/**

@@ -10,6 +10,7 @@ import com.bullhornsdk.data.api.helper.RestApiSession
 import com.bullhornsdk.data.api.helper.RestErrorHandler
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
+import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
 import com.bullhornsdk.data.model.entity.core.standard.Note
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity
@@ -23,6 +24,7 @@ import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.MetaParameter
 import com.bullhornsdk.data.model.parameter.AssociationParams
 import com.bullhornsdk.data.model.parameter.CorpNotesParams
+import com.bullhornsdk.data.model.parameter.FastFindParams
 import com.bullhornsdk.data.model.parameter.FileParams
 import com.bullhornsdk.data.model.parameter.QueryParams
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams
@@ -35,6 +37,7 @@ import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
 import com.bullhornsdk.data.model.response.file.FileMeta
 import com.bullhornsdk.data.model.response.file.FileWrapper
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.validation.RestEntityValidator
@@ -104,6 +107,11 @@ public class MockBullhornData implements BullhornData {
 	}
 
 	@Override
+	public List<FastFindResult> fastFindForList(String query, FastFindParams params) {
+		return mockDataHandler.fastFindForList(query, params);
+	}
+
+	@Override
 	public <T extends QueryEntity,L extends ListWrapper<T>> L query(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
 		return mockDataHandler.query(type, where, fieldSet, params);
 	}
@@ -119,7 +127,12 @@ public class MockBullhornData implements BullhornData {
 			SearchParams params) {
 		return mockDataHandler.search(type, query, fieldSet, params);
 	}
-			
+
+	@Override
+	public FastFindListWrapper fastFind(String query, FastFindParams params) {
+		return mockDataHandler.fastFind(query, params);
+	}
+
 	@Override
 	public <T extends QueryEntity,L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
 			QueryParams params) {

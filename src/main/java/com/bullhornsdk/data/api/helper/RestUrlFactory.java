@@ -3,6 +3,7 @@ package com.bullhornsdk.data.api.helper;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
@@ -173,4 +174,14 @@ public class RestUrlFactory {
                 + params.getUrlString();
     }
 
+    /**
+     * Assemble url for fastFind request.
+     *
+     * @param params
+     *            SearchParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public String assembleFastFindUrl(FastFindParams params) {
+        return restUrl + "find?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
 }
