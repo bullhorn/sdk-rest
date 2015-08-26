@@ -17,6 +17,7 @@ import com.bullhornsdk.data.model.enums.RestEntityInfo;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
@@ -389,6 +390,23 @@ public class RestUriVariablesFactory {
 		}
 		return interim.stream().collect(Collectors.joining(","));
 
+	}
+
+	/**
+	 * Returns the uri variables needed for a "fastFind" request
+	 *
+	 * @param query
+	 * @param params
+	 * @return all uriVariables needed for the api call
+	 */
+	public Map<String, String> getUriVariablesForFastFind(String query, FastFindParams params) {
+
+		Map<String, String> uriVariables = params.getParameterMap();
+
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+		uriVariables.put(QUERY, query);
+
+		return uriVariables;
 	}
 
 }

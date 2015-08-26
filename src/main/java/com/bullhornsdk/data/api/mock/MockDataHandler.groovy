@@ -18,6 +18,7 @@ import com.bullhornsdk.data.model.entity.association.AssociationField
 import com.bullhornsdk.data.model.entity.core.standard.Candidate
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation
 import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory
+import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
 import com.bullhornsdk.data.model.entity.core.standard.Note
 import com.bullhornsdk.data.model.entity.core.standard.Skill
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity
@@ -33,6 +34,7 @@ import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.MetaParameter
 import com.bullhornsdk.data.model.parameter.AssociationParams
 import com.bullhornsdk.data.model.parameter.CorpNotesParams
+import com.bullhornsdk.data.model.parameter.FastFindParams
 import com.bullhornsdk.data.model.parameter.FileParams
 import com.bullhornsdk.data.model.parameter.QueryParams
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams
@@ -51,6 +53,7 @@ import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent
 import com.bullhornsdk.data.model.response.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.list.StandardListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
@@ -74,6 +77,7 @@ public class MockDataHandler {
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMap;
 	private Map<String,Closure> queryClosures = new HashMap<String,Closure>();
+	private List<FastFindResult> fastFindResults;
 
 
 	public MockDataHandler() {
@@ -81,6 +85,7 @@ public class MockDataHandler {
 		this.restEntityMap = mockDataLoader.getEntityTestData();
 		this.restMetaDataMap = mockDataLoader.getMetaTestData();
 		this.searchFieldsMap = mockDataLoader.getSearchFields();
+		this.fastFindResults = mockDataLoader.getFastFindResults();
 		this.queryClosures = addQueryClosures();
 	}
 
@@ -261,7 +266,11 @@ public class MockDataHandler {
 	public <T extends SearchEntity> List<T> searchForList(Class<T> type, String query, Set<String> fieldSet, SearchParams params) {
 		return search(type,query,fieldSet,params).getData();
 	}
-	
+
+	public List<FastFindResult> fastFindForList(String query, FastFindParams params) {
+		return fastFind(query, params).getData();
+	}
+
 	public <T extends SearchEntity,L extends ListWrapper<T>> L search(Class<T> type, String query, Set<String> fieldSet,
 		SearchParams params) {
 			if(params == null){
@@ -277,8 +286,16 @@ public class MockDataHandler {
 			return wrapper;
 		}
 
+	public FastFindListWrapper fastFind(String query, FastFindParams params) {
+		if(params == null){
+			params = ParamFactory.fastFindParams();
+		}
 
-	
+		List<FastFindResult> result = getFastFindResults();
+		FastFindListWrapper wrapper = new FastFindListWrapper(result);
+		return wrapper;
+	}
+
 	private <T> List<T> handleCount(List<T> entities, Integer count){
 		if(count != null && count < entities.size()){
 			return entities.subList(0, count);
@@ -579,6 +596,10 @@ public class MockDataHandler {
 		return currentValues.values().findAll(){
 			it
 		};
+	}
+
+	private List<FastFindResult> getFastFindResults() {
+		return this.fastFindResults;
 	}
 
 	/**
