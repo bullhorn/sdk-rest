@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.bullhornsdk.data.api.helper.RestApiSession;
 import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
+import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -22,6 +23,7 @@ import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
@@ -33,6 +35,7 @@ import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
 import com.bullhornsdk.data.model.response.file.FileMeta;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 
@@ -113,6 +116,21 @@ public interface BullhornData {
 	public <T extends SearchEntity> List<T> searchForList(Class<T> type, String query, Set<String> fieldSet, SearchParams params);
 
 	/**
+	 * Fast-finds and returns a List of FastFindResult.
+	 *
+	 * @param query
+	 * 				fast-find query string
+	 * @param params
+	 * 				optional FastFindParams parameters to use in the api request, pass in null for default.
+	 *
+	 * @see FastFindParams
+	 * @see ParamFactory
+	 *
+	 * @return a List of FastFindResult
+	 */
+	public List<FastFindResult> fastFindForList(String query, FastFindParams params);
+
+	/**
 	 * Queries for QueryEntity of type T and returns a ListWrapper<T>.
 	 * 
 	 * @param type
@@ -152,6 +170,21 @@ public interface BullhornData {
 	 */
 	public <T extends SearchEntity, L extends ListWrapper<T>> L search(Class<T> type, String query, Set<String> fieldSet,
 			SearchParams params);
+
+	/**
+	 * Fast-finds and returns a FastFindListWrapper.
+	 *
+	 * @param query
+	 * 				fast find query string
+	 * @param params
+	 * 				optional FastFindParams parameters to use in the api request, pass in null for default.
+	 *
+	 * @see FastFindParams
+	 * @see ParamFactory
+	 *
+	 * @return a FastFindListWrapper that wraps a List<FastFindEntity> plus some additional info about the data
+	 */
+	public FastFindListWrapper fastFind(String query, FastFindParams params);
 
 	/**
 	 * Same as {@link BullhornData#query(Class, String, Set, QueryParams)} but with one important difference: This method will pull all

@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -34,6 +35,7 @@ import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
+import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
@@ -55,6 +57,7 @@ import com.bullhornsdk.data.model.enums.RestEntityInfo;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
@@ -216,6 +219,18 @@ public class StandardBullhornData implements BullhornData {
 	 * {@inheritDoc}
 	 */
 	@Override
+	public List<FastFindResult> fastFindForList(String query, FastFindParams params) {
+		FastFindListWrapper wrapper = this.handleFastFindForEntities(query, params);
+		if (wrapper == null) {
+			return Collections.emptyList();
+		}
+		return wrapper.getData();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public <T extends QueryEntity, L extends ListWrapper<T>> L query(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
 		return this.handleQueryForEntities(type, where, fieldSet, params);
 	}
@@ -228,6 +243,15 @@ public class StandardBullhornData implements BullhornData {
 			SearchParams params) {
 		return this.handleSearchForEntities(type, query, fieldSet, params);
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public FastFindListWrapper fastFind(String query, FastFindParams params) {
+		return this.handleFastFindForEntities(query, params);
+	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -711,6 +735,27 @@ public class StandardBullhornData implements BullhornData {
 
 		return (L) this.performGetRequest(url, RestEntityInfo.getTypesListWrapperType(type), uriVariables);
 
+	}
+
+	/**
+	 * Makes the "fast find" api call
+	 *
+	 * HTTP Method: GET
+	 *
+	 * @param query
+	 * 				fast find query string
+	 * @param params
+	 * 				optional FastFindParams .
+	 * @return a ListWrapper containing the records plus some additional information
+	 */
+	private FastFindListWrapper handleFastFindForEntities(String query, FastFindParams params) {
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForFastFind(query, params);
+
+		String url = restUrlFactory.assembleFastFindUrl(params);
+
+		String jsonString = this.performGetRequest(url, String.class, uriVariables);
+
+		return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString, FastFindListWrapper.class);
 	}
 
 	/**
