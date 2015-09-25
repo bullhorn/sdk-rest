@@ -78,7 +78,8 @@ public class MockDataHandler {
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMap;
 	private Map<String,Closure> queryClosures = new HashMap<String,Closure>();
 	private List<FastFindResult> fastFindResults;
-
+	private Map<String, Object> settingsResults;
+	
 
 	public MockDataHandler() {
 		this.mockDataLoader = new MockDataLoader();
@@ -86,6 +87,7 @@ public class MockDataHandler {
 		this.restMetaDataMap = mockDataLoader.getMetaTestData();
 		this.searchFieldsMap = mockDataLoader.getSearchFields();
 		this.fastFindResults = mockDataLoader.getFastFindResults();
+		this.settingsResults = mockDataLoader.getSettingsResults();
 		this.queryClosures = addQueryClosures();
 	}
 
@@ -389,6 +391,14 @@ public class MockDataHandler {
 		return restMetaDataMap.get(type);
 	}
 
+	/**
+	 * Returns the settings data. 
+	 * @param settingSet
+	 * @return
+	 */
+	public Map<String,Object> getSettingsData(Set<String> settingSet){
+		return this.settingsResults;
+	}
 
 	/**
 	 * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -602,7 +612,11 @@ public class MockDataHandler {
 		return this.fastFindResults;
 	}
 
-	/**
+	private Map<String,Object> getSettingsResults() {
+		return this.settingsResults;
+	}
+
+		/**
 	 * Merges non-null values from an entity to another entity. This mimics the update function where Jackson does not serialize the null
 	 * values to send in the bh rest api update call.
 	 *

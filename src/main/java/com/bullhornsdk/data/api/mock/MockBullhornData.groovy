@@ -202,6 +202,11 @@ public class MockBullhornData implements BullhornData {
 	}
 
 	@Override
+	public Map<String,Object> getSettings(java.util.Set settingSet) { 
+		return mockDataHandler.getSettingsData(settingSet);
+	}
+	
+	@Override
 	public String getBhRestToken() {
 		return "mock-bh-rest-token";
 	}

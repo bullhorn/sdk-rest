@@ -54,10 +54,12 @@ public class MockDataLoader {
 
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMapCache;
 	private List<FastFindResult> fastFindResultListCache;
+	private Map<String,Object> settingsResultMapCache;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
 	private List<FastFindResult> fastFindResultList;
+	private Map<String,Object> settingsResultMap;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
 
 	private Map<Class<? extends BullhornEntity>, String> entityFileNames;
@@ -108,6 +110,14 @@ public class MockDataLoader {
 		return fastFindResultList;
 	}
 
+	public Map<String,Object> getSettingsResults() {
+		if (settingsResultMap == null) {
+			reloadSettingsResults();
+			this.settingsResultMapCache = KryoObjectCopyHelper.copy(settingsResultMap);
+		}
+		return settingsResultMap;
+	}
+
 	/**
 	 * Returns a map with entities loaded fresh from the test data.
 	 * 
@@ -131,6 +141,13 @@ public class MockDataLoader {
 		String jsonData = getFileData("fastfind-data.txt");
 		FastFindListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, FastFindListWrapper.class);
 		this.fastFindResultList = listWrapper.getData();
+	}
+
+	public void reloadSettingsResults() {
+
+		String jsonData = getFileData("settings-data.txt");
+		Map<String,Object> resultData = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, Map.class);
+		this.settingsResultMap = resultData;
 	}
 
 	/**

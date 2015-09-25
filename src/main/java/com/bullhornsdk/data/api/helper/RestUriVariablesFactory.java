@@ -5,6 +5,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.Sets;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -46,7 +49,8 @@ public class RestUriVariablesFactory {
 	private static final String ACCOCIATION_NAME = "associationName";
 	private static final String ACCOCIATION_IDS = "associationIds";
 	private static final String CLIENT_CORP_ID = "clientCorpId";
-
+	private static final String SETTINGS = "settings";
+	
 	public RestUriVariablesFactory(BullhornData bullhornApiRest, RestFileManager restFileManager) {
 		super();
 		this.bullhornApiRest = bullhornApiRest;
@@ -405,6 +409,16 @@ public class RestUriVariablesFactory {
 
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
 		uriVariables.put(QUERY, query);
+
+		return uriVariables;
+	}
+
+	public Map<String, String> getUriVariablesForSettings(Set<String> settingSet) {
+
+		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
+
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+		uriVariables.put(SETTINGS, convertFieldSetToString(settingSet));
 
 		return uriVariables;
 	}
