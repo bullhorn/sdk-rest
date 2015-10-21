@@ -8,6 +8,7 @@ import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
@@ -29,6 +30,7 @@ import com.google.common.base.Splitter;
  * 
  */
 
+@JsonIgnoreProperties({"sessionExpired"})
 public class RestApiSession {
 	private static final String AUTH_CODE_ACTION = "Login";
 
@@ -63,6 +65,12 @@ public class RestApiSession {
 	private final String apiKey;
 
 	public final static int MAX_TTL = 2880;
+
+	public RestApiSession() {
+		this.restCredentials = null;
+		this.corporationID = 0;
+		this.apiKey = null;
+	}
 
 	public RestApiSession(RestApiSettings restApiSettings) {
 		this.restApiSettings = restApiSettings;
@@ -327,4 +335,11 @@ public class RestApiSession {
 		return restCredentials;
 	}
 
+	public RestApiSettings getRestApiSettings() {
+		return restApiSettings;
+	}
+
+	public void setRestApiSettings(RestApiSettings restApiSettings) {
+		this.restApiSettings = restApiSettings;
+	}
 }
