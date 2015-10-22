@@ -66,6 +66,10 @@ public class RestApiSession {
 
 	public final static int MAX_TTL = 2880;
 
+	/**
+	 * It is expected that the final members below are not used
+	 * (unlike another constructor that takes RestCredentials)
+	 */
 	public RestApiSession() {
 		this.restCredentials = null;
 		this.corporationID = 0;
