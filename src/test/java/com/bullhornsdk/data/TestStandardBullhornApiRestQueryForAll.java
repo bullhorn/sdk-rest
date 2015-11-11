@@ -20,7 +20,9 @@ import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
@@ -243,6 +245,14 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
 	}
 
+    @Test
+    public void testQueryLead() {
+
+        ListWrapper<Lead> wrapper = bullhornApiRest.queryForAllRecords(Lead.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<Lead>", wrapper);
+    }
+
 	@Test
 	public void testQueryNoteEntity() {
 
@@ -250,6 +260,14 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
 		runAssertions("ListWrapper<Note>", wrapper);
 	}
+
+    @Test
+    public void testQueryOpportunity() {
+
+        ListWrapper<Opportunity> wrapper = bullhornApiRest.queryForAllRecords(Opportunity.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<Opportunity>", wrapper);
+    }
 
 	@Test
 	public void testQueryPlacement() {

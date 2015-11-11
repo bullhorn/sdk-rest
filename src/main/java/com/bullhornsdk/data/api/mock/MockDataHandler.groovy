@@ -1,45 +1,12 @@
-package com.bullhornsdk.data.api.mock;
-
-import groovy.transform.TypeChecked;
-
-import java.beans.BeanInfo
-import java.beans.Introspector
-import java.beans.PropertyDescriptor
-
-import org.apache.commons.lang3.StringUtils
-import org.apache.commons.logging.Log
-import org.apache.commons.logging.LogFactory
-import org.codehaus.groovy.runtime.NullObject
-import org.joda.time.DateTime
-import org.springframework.web.multipart.MultipartFile
-
+package com.bullhornsdk.data.api.mock
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
-import com.bullhornsdk.data.model.entity.core.standard.Candidate
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory
-import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
-import com.bullhornsdk.data.model.entity.core.standard.Note
-import com.bullhornsdk.data.model.entity.core.standard.Skill
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity
-import com.bullhornsdk.data.model.entity.core.type.FileEntity
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity
+import com.bullhornsdk.data.model.entity.core.standard.*
+import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.embedded.OneToMany
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.MetaParameter
-import com.bullhornsdk.data.model.parameter.AssociationParams
-import com.bullhornsdk.data.model.parameter.CorpNotesParams
-import com.bullhornsdk.data.model.parameter.FastFindParams
-import com.bullhornsdk.data.model.parameter.FileParams
-import com.bullhornsdk.data.model.parameter.QueryParams
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams
-import com.bullhornsdk.data.model.parameter.SearchParams
+import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory
 import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
@@ -53,12 +20,22 @@ import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent
 import com.bullhornsdk.data.model.response.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper
-import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.list.StandardListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
+import org.apache.commons.lang3.StringUtils
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
+import org.codehaus.groovy.runtime.NullObject
+import org.joda.time.DateTime
+import org.springframework.web.multipart.MultipartFile
+
+import java.beans.BeanInfo
+import java.beans.Introspector
+import java.beans.PropertyDescriptor
 /**
  * This class is stand in for the actual BH Rest api. It tries to mimic the way the Rest apis work.
  * 

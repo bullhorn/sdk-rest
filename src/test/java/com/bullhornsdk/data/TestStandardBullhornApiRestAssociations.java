@@ -17,7 +17,9 @@ import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -104,6 +106,23 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
 	}
 
+    @Test
+    public void testAssociateLead() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Lead entity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+        for (AssociationField<Lead, ? extends BullhornEntity> association : AssociationFactory.leadAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                    association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(Lead.class, testEntities.getLeadId(), associationIds, association);
+
+            }
+        }
+    }
+
 	@Test
 	public void testAssociateNote() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		Note entity = bullhornApiRest.findEntity(Note.class, testEntities.getNoteId());
@@ -120,6 +139,23 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 			}
 		}
 	}
+
+    @Test
+    public void testAssociateOpportunity() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Opportunity entity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+        for (AssociationField<Opportunity, ? extends BullhornEntity> association : AssociationFactory.opportunityAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                    association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(Opportunity.class, testEntities.getOpportunityId(), associationIds, association);
+
+            }
+        }
+    }
 
 	@Test
 	public void testAssociatePlacement() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
