@@ -23,8 +23,10 @@ import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
@@ -179,6 +181,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
 	}
 
+    @Test
+    public void testMetaLead() {
+
+        MetaData<Lead> meta = bullhornApiRest.getMetaData(Lead.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Lead.class);
+
+    }
+
 	@Test
 	public void testMetaNote() {
 
@@ -194,6 +204,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 		runAssertions(meta, NoteEntity.class);
 
 	}
+
+    @Test
+    public void testMetaOpportunity() {
+
+        MetaData<Opportunity> meta = bullhornApiRest.getMetaData(Opportunity.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Opportunity.class);
+
+    }
 
 	@Test
 	public void testMetaPlacement() {

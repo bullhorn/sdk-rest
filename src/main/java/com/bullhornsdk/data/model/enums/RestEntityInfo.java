@@ -23,8 +23,10 @@ import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmissionHistory;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
@@ -53,9 +55,11 @@ import com.bullhornsdk.data.model.response.list.HousingComplexListWrapper;
 import com.bullhornsdk.data.model.response.list.JobOrderListWrapper;
 import com.bullhornsdk.data.model.response.list.JobSubmissionHistoryListWrapper;
 import com.bullhornsdk.data.model.response.list.JobSubmissionListWrapper;
+import com.bullhornsdk.data.model.response.list.LeadListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.list.NoteEntityListWrapper;
 import com.bullhornsdk.data.model.response.list.NoteListWrapper;
+import com.bullhornsdk.data.model.response.list.OpportunityListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementChangeRequestListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementCommissionListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementListWrapper;
@@ -83,8 +87,10 @@ import com.bullhornsdk.data.model.response.single.HousingComplexWrapper;
 import com.bullhornsdk.data.model.response.single.JobOrderWrapper;
 import com.bullhornsdk.data.model.response.single.JobSubmissionHistoryWrapper;
 import com.bullhornsdk.data.model.response.single.JobSubmissionWrapper;
+import com.bullhornsdk.data.model.response.single.LeadWrapper;
 import com.bullhornsdk.data.model.response.single.NoteEntityWrapper;
 import com.bullhornsdk.data.model.response.single.NoteWrapper;
+import com.bullhornsdk.data.model.response.single.OpportunityWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementChangeRequestWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementCommissionWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementWrapper;
@@ -139,9 +145,11 @@ public enum RestEntityInfo {
     JOB_ORDER("JobOrder", JobOrder.class, JobOrderWrapper.class, JobOrderListWrapper.class),
     JOB_SUBMISSION("JobSubmission", JobSubmission.class, JobSubmissionWrapper.class, JobSubmissionListWrapper.class),
     JOB_SUBMISSION_HISTORY("JobSubmissionHistory", JobSubmissionHistory.class, JobSubmissionHistoryWrapper.class, JobSubmissionHistoryListWrapper.class),
+    LEAD("Lead", Lead.class, LeadWrapper.class, LeadListWrapper.class),
     LOGIN_RESTRICTIONS("LoginRestrictions", null, null, null),
     NOTE("Note", Note.class, NoteWrapper.class, NoteListWrapper.class),
     NOTE_ENTITY("NoteEntity", NoteEntity.class, NoteEntityWrapper.class, NoteEntityListWrapper.class),
+    OPPORTUNITY("Opportunity", Opportunity.class, OpportunityWrapper.class, OpportunityListWrapper.class),
     PLACEMENT("Placement", Placement.class, PlacementWrapper.class, PlacementListWrapper.class),
     PLACEMENT_CHANGE_REQUEST("PlacementChangeRequest", PlacementChangeRequest.class, PlacementChangeRequestWrapper.class,
             PlacementChangeRequestListWrapper.class),

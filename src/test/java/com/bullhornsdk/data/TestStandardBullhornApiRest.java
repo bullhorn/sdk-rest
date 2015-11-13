@@ -28,8 +28,10 @@ import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmissionHistory;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
@@ -210,6 +212,15 @@ public class TestStandardBullhornApiRest extends BaseTest {
 
 	}
 
+    @Test
+    public void testFindLead() {
+
+        Lead entity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+
+        assertNotNull("Lead is null", entity);
+
+    }
+
 	@Test
 	public void testFindNote() {
 
@@ -227,6 +238,15 @@ public class TestStandardBullhornApiRest extends BaseTest {
 		assertNotNull("NoteEntity is null", entity);
 
 	}
+
+    @Test
+    public void testFindOpportunity() {
+
+        Opportunity entity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+
+        assertNotNull("Opportunity is null", entity);
+
+    }
 
 	@Test
 	public void testFindPlacement() {
