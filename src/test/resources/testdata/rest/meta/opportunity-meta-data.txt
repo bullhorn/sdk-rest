@@ -1,0 +1,1742 @@
+{
+    "entity": "Opportunity",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Opportunity?fields=*",
+    "label": "Opportunity",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "actualCloseDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Actual Close Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "address",
+            "type": "COMPOSITE",
+            "dataType": "Address1",
+            "confidential": false,
+            "label": "Full Address",
+            "hideFromSearch": false,
+            "fields": [
+                {
+                    "name": "address1",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 100
+                },
+                {
+                    "name": "city",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 100,
+                    "confidential": false,
+                    "label": "City",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "state",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 50,
+                    "confidential": false,
+                    "label": "State or Province",
+                    "optionsType": "NorthAmericaState",
+                    "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/NorthAmericaState",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "zip",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 18,
+                    "confidential": false,
+                    "label": "Zip/Postal Code",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "countryID",
+                    "type": "SCALAR",
+                    "dataType": "Integer",
+                    "confidential": false,
+                    "label": "Country",
+                    "optionsType": "Country",
+                    "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Country",
+                    "hideFromSearch": false
+                }
+            ]
+        },
+        {
+            "name": "appointments",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Appointments",
+            "optionsType": "Appointment",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Appointment",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Appointment",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Appointment?fields=*",
+                "label": "Appointment",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "assignedDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Assigned Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "assignedUsers",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Assigned to",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "benefits",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Benefits",
+            "options": [
+                {
+                    "value": "100",
+                    "label": "100"
+                },
+                {
+                    "value": "500",
+                    "label": "500"
+                },
+                {
+                    "value": "1000",
+                    "label": "1000"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "billRateCategoryID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Bill Rate Category",
+            "optionsType": "BillRateCategory",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/BillRateCategory",
+            "hideFromSearch": false
+        },
+        {
+            "name": "bonusPackage",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Bonus Package",
+            "hideFromSearch": false
+        },
+        {
+            "name": "branchCode",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Branch",
+            "options": [
+                {
+                    "value": "001",
+                    "label": "001"
+                },
+                {
+                    "value": "002",
+                    "label": "002"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "businessSector",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Business Sector",
+            "optionsType": "BusinessSector",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/BusinessSector",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BusinessSector",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/BusinessSector?fields=*",
+                "label": "Business Sector",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "businessSectors",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Additional Business Sectors",
+            "optionsType": "BusinessSector",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/BusinessSector",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BusinessSector",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/BusinessSector?fields=*",
+                "label": "Business Sector",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "campaignSource",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Campaign Source",
+            "hideFromSearch": false
+        },
+        {
+            "name": "categories",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Additional Categories",
+            "optionsType": "Category",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Category",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Category",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Category?fields=*",
+                "label": "Category",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "category",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Category",
+            "optionsType": "Category",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Category",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Category",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Category?fields=*",
+                "label": "Category",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "certifications",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Certification Requirements",
+            "optionsType": "Certification",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Certification",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Certification",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Certification?fields=*",
+                "label": "Certification",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "clientContact",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Contact",
+            "optionsType": "Client",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Client",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "ClientContact",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientContact?fields=*",
+                "label": "Client Contact",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Contact Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Contact Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "clientCorporation",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Client Company",
+            "optionsType": "ClientCorporation",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientCorporation",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "ClientCorporation",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientCorporation?fields=*",
+                "label": "Client",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Company Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "committed",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Committed",
+            "options": [
+                {
+                    "value": true,
+                    "label": "Yes"
+                },
+                {
+                    "value": false,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "correlatedCustomDate1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "correlatedCustomFloat1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "correlatedCustomFloat2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "correlatedCustomFloat3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "correlatedCustomInt1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "correlatedCustomInt2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "correlatedCustomInt3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText10",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText8",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "correlatedCustomText9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "correlatedCustomTextBlock1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "correlatedCustomTextBlock2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "correlatedCustomTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "correlatedCustomTextBlock3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "costCenter",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "Client Cost Center",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText10",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText11",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText11",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText12",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText12",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText13",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText13",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText14",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText14",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText15",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText15",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText16",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText16",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText17",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText17",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText18",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText18",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText19",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText19",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText20",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText20",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText8",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dealValue",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Deal Value",
+            "hideFromSearch": false
+        },
+        {
+            "name": "degreeList",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Degree Requirements",
+            "options": [
+                {
+                    "value": "BS",
+                    "label": "BS"
+                },
+                {
+                    "value": "MS",
+                    "label": "MS"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Opportunity Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "educationDegree",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Education Requirements",
+            "options": [
+                {
+                    "value": "Master",
+                    "label": "Master"
+                },
+                {
+                    "value": "Bachlor",
+                    "label": "Bachlor"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "effectiveDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Effective Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "estimatedDuration",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Estimated Duration",
+            "hideFromSearch": false
+        },
+        {
+            "name": "estimatedEndDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Estimated End",
+            "hideFromSearch": false
+        },
+        {
+            "name": "estimatedHoursPerWeek",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Estimated Hours Per Week",
+            "hideFromSearch": false
+        },
+        {
+            "name": "estimatedStartDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Estimated Start",
+            "hideFromSearch": false
+        },
+        {
+            "name": "expectedBillRate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Expected Bill Rate",
+            "hideFromSearch": false
+        },
+        {
+            "name": "expectedCloseDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Expected Close Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "expectedFee",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Expected Fee",
+            "hideFromSearch": false
+        },
+        {
+            "name": "expectedPayRate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Expected Pay Rate",
+            "hideFromSearch": false
+        },
+        {
+            "name": "externalCategoryID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Public Category",
+            "options": [
+                {
+                    "value": 123,
+                    "label": "123"
+                },
+                {
+                    "value": 234,
+                    "label": "234"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "externalID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "External ID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "history",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "History",
+            "optionsType": "OpportunityHistory",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/OpportunityHistory",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "OpportunityHistory",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/OpportunityHistory?fields=*",
+                "label": "Opportunity History",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "hoursOfOperation",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "Hours of Operation",
+            "options": [
+                {
+                    "value": "9-5",
+                    "label": "9-5"
+                },
+                {
+                    "value": "8-4",
+                    "label": "8-4"
+                },
+                {
+                    "value": "9-6",
+                    "label": "9-6"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "ignoreUntilDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Ignore Until Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isOpen",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Open",
+            "hideFromSearch": false
+        },
+        {
+            "name": "jobOrders",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Job Orders",
+            "optionsType": "JobOrder",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/JobOrder",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "JobOrder",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/JobOrder?fields=*",
+                "label": "Job Order",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Job Title",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "lead",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Lead User ID",
+            "optionsType": "Lead",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Lead",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Lead",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Lead?fields=*",
+                "label": "Lead",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "markUpPercentage",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Mark-up %",
+            "hideFromSearch": false
+        },
+        {
+            "name": "notes",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Notes",
+            "optionsType": "Note",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Note",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Note",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Note?fields=*",
+                "label": "Note",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "numOpenings",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "# of Openings",
+            "hideFromSearch": false
+        },
+        {
+            "name": "onSite",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "label": "Location Requirements",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "Yes"
+                },
+                {
+                    "value": "0",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "optionsPackage",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Options Package",
+            "hideFromSearch": false
+        },
+        {
+            "name": "owner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Owner",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "priority",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Priority",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "1"
+                },
+                {
+                    "value": 2,
+                    "label": "2"
+                },
+                {
+                    "value": 3,
+                    "label": "3"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "publicDescription",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Published Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "publishedZip",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 18,
+            "confidential": false,
+            "label": "Published Zip Code",
+            "hideFromSearch": false
+        },
+        {
+            "name": "reasonClosed",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "label": "Reason Closed",
+            "hideFromSearch": false
+        },
+        {
+            "name": "reportTo",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Reporting to (other)",
+            "hideFromSearch": false
+        },
+        {
+            "name": "reportToClientContact",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Reporting to (contact)",
+            "optionsType": "Client",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Client",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "ClientContact",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientContact?fields=*",
+                "label": "Client Contact",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Contact Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Contact Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "responseUser",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Published Contact Info",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "salary",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Salary",
+            "hideFromSearch": false
+        },
+        {
+            "name": "salaryUnit",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 12,
+            "confidential": false,
+            "label": "Pay Rate",
+            "options": [
+                {
+                    "value": "hourly",
+                    "label": "hourly"
+                },
+                {
+                    "value": "biweekly",
+                    "label": "biweekly"
+                },
+                {
+                    "value": "monthly",
+                    "label": "monthly"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "shift",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Shift",
+            "optionsType": "Shift",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Shift",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Shift",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Shift?fields=*",
+                "label": "Shift",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "skillList",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Additional Skills / Keywords",
+            "hideFromSearch": false
+        },
+        {
+            "name": "skills",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Skills",
+            "optionsType": "Skill",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Skill",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Skill",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Skill?fields=*",
+                "label": "Skill",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "source",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Source",
+            "hideFromSearch": false
+        },
+        {
+            "name": "specialties",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Specialties",
+            "optionsType": "Specialty",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Specialty",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Specialty",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Specialty?fields=*",
+                "label": "Specialty",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "status",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 200,
+            "confidential": false,
+            "label": "Status",
+            "options": [
+                {
+                    "value": "Open",
+                    "label": "Open"
+                },
+                {
+                    "value": "Qualifying",
+                    "label": "Qualifying"
+                },
+                {
+                    "value": "Negotiating",
+                    "label": "Negotiating"
+                },
+                {
+                    "value": "Signing",
+                    "label": "Signing"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "tasks",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Tasks",
+            "optionsType": "Task",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Task",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Task",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Task?fields=*",
+                "label": "Task",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "taxRate",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Tax %",
+            "hideFromSearch": false
+        },
+        {
+            "name": "taxStatus",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "label": "Tax Preference",
+            "options": [
+                {
+                    "value": "yes",
+                    "label": "yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "tearsheets",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Tearsheets",
+            "optionsType": "Tearsheet",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Tearsheet",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Tearsheet",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Tearsheet?fields=*",
+                "label": "Tearsheet",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "title",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Title",
+            "hideFromSearch": false
+        },
+        {
+            "name": "type",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 200,
+            "confidential": false,
+            "label": "Type",
+            "options": [
+                {
+                    "value": "Contract",
+                    "label": "Contract"
+                },
+                {
+                    "value": "Contract to Hire",
+                    "label": "Contract to Hire"
+                },
+                {
+                    "value": "Permanent",
+                    "label": "Permanent"
+                },
+                {
+                    "value": "SOW",
+                    "label": "SOW"
+                },
+                {
+                    "value": "RFP",
+                    "label": "RFP"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "weightedDealValue",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Weighted Deal Value",
+            "hideFromSearch": false
+        },
+        {
+            "name": "willRelocate",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Will Relocate?",
+            "options": [
+                {
+                    "value": true,
+                    "label": "Yes"
+                },
+                {
+                    "value": false,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "winProbabilityPercent",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Probability of Win %",
+            "hideFromSearch": false
+        },
+        {
+            "name": "workersCompRate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Workers Comp Code",
+            "optionsType": "WorkersComp",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/WorkersComp",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "WorkersCompensationRate",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/WorkersCompensationRate?fields=*",
+                "label": "Workers Compensation Rate",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "yearsRequired",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Minimum Experience",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "1"
+                },
+                {
+                    "value": 3,
+                    "label": "3"
+                },
+                {
+                    "value": 5,
+                    "label": "5"
+                },
+                {
+                    "value": 7,
+                    "label": "7"
+                }
+            ],
+            "hideFromSearch": false
+        }
+    ]
+}

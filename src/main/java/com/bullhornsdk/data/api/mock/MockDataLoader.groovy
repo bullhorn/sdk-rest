@@ -1,41 +1,8 @@
-package com.bullhornsdk.data.api.mock;
-
-import groovy.transform.TypeChecked;
-import java.util.concurrent.ConcurrentHashMap
-import org.apache.commons.io.IOUtils
-import org.apache.log4j.Logger
-import org.springframework.core.io.ClassPathResource
+package com.bullhornsdk.data.api.mock
 import com.bullhornsdk.data.api.helper.RestJsonConverter
-import com.bullhornsdk.data.model.entity.core.standard.Appointment
-import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee
-import com.bullhornsdk.data.model.entity.core.standard.BusinessSector
-import com.bullhornsdk.data.model.entity.core.standard.Candidate
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory
-import com.bullhornsdk.data.model.entity.core.standard.Category
-import com.bullhornsdk.data.model.entity.core.standard.Certification
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser
-import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment
-import com.bullhornsdk.data.model.entity.core.standard.Country
-import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
-import com.bullhornsdk.data.model.entity.core.standard.HousingComplex
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmissionHistory
-import com.bullhornsdk.data.model.entity.core.standard.Note
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity
-import com.bullhornsdk.data.model.entity.core.standard.Placement
-import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission
-import com.bullhornsdk.data.model.entity.core.standard.Sendout
-import com.bullhornsdk.data.model.entity.core.standard.Skill
-import com.bullhornsdk.data.model.entity.core.standard.Specialty
-import com.bullhornsdk.data.model.entity.core.standard.State
-import com.bullhornsdk.data.model.entity.core.standard.Task
-import com.bullhornsdk.data.model.entity.core.standard.TimeUnit
+import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
+import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
+import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
@@ -43,9 +10,12 @@ import com.bullhornsdk.data.model.entity.meta.StandardMetaData
 import com.bullhornsdk.data.model.enums.RestEntityInfo
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
-import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
-import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
+import org.apache.commons.io.IOUtils
+import org.apache.log4j.Logger
+import org.springframework.core.io.ClassPathResource
+
+import java.util.concurrent.ConcurrentHashMap
 
 public class MockDataLoader {
 
@@ -54,10 +24,12 @@ public class MockDataLoader {
 
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMapCache;
 	private List<FastFindResult> fastFindResultListCache;
+	private Map<String,Object> settingsResultMapCache;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
 	private List<FastFindResult> fastFindResultList;
+	private Map<String,Object> settingsResultMap;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
 
 	private Map<Class<? extends BullhornEntity>, String> entityFileNames;
@@ -108,6 +80,14 @@ public class MockDataLoader {
 		return fastFindResultList;
 	}
 
+	public Map<String,Object> getSettingsResults() {
+		if (settingsResultMap == null) {
+			reloadSettingsResults();
+			this.settingsResultMapCache = KryoObjectCopyHelper.copy(settingsResultMap);
+		}
+		return settingsResultMap;
+	}
+
 	/**
 	 * Returns a map with entities loaded fresh from the test data.
 	 * 
@@ -131,6 +111,13 @@ public class MockDataLoader {
 		String jsonData = getFileData("fastfind-data.txt");
 		FastFindListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, FastFindListWrapper.class);
 		this.fastFindResultList = listWrapper.getData();
+	}
+
+	public void reloadSettingsResults() {
+
+		String jsonData = getFileData("settings-data.txt");
+		Map<String,Object> resultData = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, Map.class);
+		this.settingsResultMap = resultData;
 	}
 
 	/**
@@ -290,8 +277,10 @@ public class MockDataLoader {
 		entityFiles.put(JobOrder.class, "joborder-data.txt");
 		entityFiles.put(JobSubmission.class, "jobsubmission-data.txt");
 		entityFiles.put(JobSubmissionHistory.class, "jobsubmissionhistory-data.txt");
+        entityFiles.put(Lead.class, "lead-data.txt");
 		entityFiles.put(Note.class, "note-data.txt");
 		entityFiles.put(NoteEntity.class, "noteentity-data.txt");
+        entityFiles.put(Opportunity.class, "opportunity-data.txt");
 		entityFiles.put(Placement.class, "placement-data.txt");
 		entityFiles.put(PlacementChangeRequest.class, "placementchangerequest-data.txt");
 		entityFiles.put(PlacementCommission.class, "placementcommission-data.txt");
@@ -325,8 +314,10 @@ public class MockDataLoader {
 		entityMetaFiles.put(JobOrder.class, "meta/joborder-meta-data.txt");
 		entityMetaFiles.put(JobSubmission.class, "meta/jobsubmission-meta-data.txt");
 		entityMetaFiles.put(JobSubmissionHistory.class, "meta/jobsubmissionhistory-meta-data.txt");
+        entityMetaFiles.put(Lead.class, "meta/lead-meta-data.txt");
 		entityMetaFiles.put(Note.class, "meta/note-meta-data.txt");
 		entityMetaFiles.put(NoteEntity.class, "meta/noteentity-meta-data.txt");
+        entityMetaFiles.put(Opportunity.class, "meta/opportunity-meta-data.txt");
 		entityMetaFiles.put(Placement.class, "meta/placement-meta-data.txt");
 		entityMetaFiles.put(PlacementChangeRequest.class, "meta/placementchangerequest-meta-data.txt");
 		entityMetaFiles.put(PlacementCommission.class, "meta/placementcommission-meta-data.txt");
@@ -348,7 +339,9 @@ public class MockDataLoader {
 		searchFieldsFiles.put(ClientCorporation.class, "searchfields/clientcorporation-searchfields.txt");
 		searchFieldsFiles.put(JobOrder.class, "searchfields/joborder-searchfields.txt");
 		searchFieldsFiles.put(JobSubmission.class, "searchfields/jobsubmission-searchfields.txt");
+        searchFieldsFiles.put(Lead.class, "searchfields/lead-searchfields.txt");
 		searchFieldsFiles.put(Note.class, "searchfields/note-searchfields.txt");
+        searchFieldsFiles.put(Opportunity.class, "searchfields/opportunity-searchfields.txt");
 		searchFieldsFiles.put(Placement.class, "searchfields/placement-searchfields.txt");
 
 		return searchFieldsFiles;

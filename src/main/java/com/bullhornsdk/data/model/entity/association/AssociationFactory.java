@@ -5,14 +5,18 @@ import com.bullhornsdk.data.model.entity.association.standard.CategoryAssociatio
 import com.bullhornsdk.data.model.entity.association.standard.ClientContactAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.ClientCorporationAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.JobOrderAssociations;
+import com.bullhornsdk.data.model.entity.association.standard.LeadAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.NoteAssociations;
+import com.bullhornsdk.data.model.entity.association.standard.OpportunityAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.PlacementAssociations;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.Category;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -34,6 +38,8 @@ public class AssociationFactory {
     private static final JobOrderAssociations jobOrderAssociations = JobOrderAssociations.getInstance();
     private static final NoteAssociations noteAssociations = NoteAssociations.getInstance();
     private static final PlacementAssociations placementAssociations = PlacementAssociations.getInstance();
+    private static final OpportunityAssociations opportunityAssociations = OpportunityAssociations.getInstance();
+    private static final LeadAssociations leadAssociations = LeadAssociations.getInstance();
 
     /**
      * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
@@ -86,6 +92,14 @@ public class AssociationFactory {
 
         if (type == Placement.class) {
             return (EntityAssociations<T>) placementAssociations;
+        }
+
+        if (type == Opportunity.class) {
+            return (EntityAssociations<T>) opportunityAssociations;
+        }
+
+        if (type == Lead.class) {
+            return (EntityAssociations<T>) leadAssociations;
         }
         return null;
 
@@ -152,6 +166,24 @@ public class AssociationFactory {
      */
     public static PlacementAssociations placementAssociations() {
         return placementAssociations;
+    }
+
+    /**
+     * Returns the associations for Opportunity
+     *
+     * @return
+     */
+    public static OpportunityAssociations opportunityAssociations() {
+        return opportunityAssociations;
+    }
+
+    /**
+     * Returns the associations for Lead
+     *
+     * @return
+     */
+    public static LeadAssociations leadAssociations() {
+        return leadAssociations;
     }
 
 }

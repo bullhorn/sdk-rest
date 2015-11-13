@@ -184,4 +184,8 @@ public class RestUrlFactory {
     public String assembleFastFindUrl(FastFindParams params) {
         return restUrl + "find?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
     }
+
+	public String assembleUrlForSettings() {
+        return restUrl + "settings/{settings}?BhRestToken={bhRestToken}";
+	}
 }

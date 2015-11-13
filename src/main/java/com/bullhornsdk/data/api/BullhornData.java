@@ -2,6 +2,7 @@ package com.bullhornsdk.data.api;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -304,6 +305,16 @@ public interface BullhornData {
 	 */
 
 	public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet);
+
+	/**
+	 * 
+	 * Returns the Settings for passed in name(s).
+	 * 
+	 * @param settingSet
+	 *            settings to return data for. Pass in null for all settings.
+	 * @return
+	 */
+	public Map<String,Object> getSettings(Set<String> settingSet);
 
 	/**
 	 * Returns a valid bhRestToken to be used in a bh rest api call.

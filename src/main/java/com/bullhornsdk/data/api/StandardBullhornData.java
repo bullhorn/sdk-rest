@@ -13,7 +13,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -30,6 +29,17 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bullhornsdk.data.api.helper.EntityUpdateWorker;
+import com.bullhornsdk.data.api.helper.FileWorker;
+import com.bullhornsdk.data.api.helper.RestApiSession;
+import com.bullhornsdk.data.api.helper.RestErrorHandler;
+import com.bullhornsdk.data.api.helper.RestFileManager;
+import com.bullhornsdk.data.api.helper.RestJsonConverter;
+import com.bullhornsdk.data.api.helper.RestTemplateFactory;
+import com.bullhornsdk.data.api.helper.RestUriVariablesFactory;
+import com.bullhornsdk.data.api.helper.RestUrlFactory;
+import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService;
+import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService;
 import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
@@ -78,6 +88,7 @@ import com.bullhornsdk.data.model.response.file.standard.StandardEntityMetaFiles
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper;
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.list.NoteListWrapper;
 import com.bullhornsdk.data.model.response.list.StandardListWrapper;
@@ -85,17 +96,6 @@ import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume;
 import com.bullhornsdk.data.validation.RestEntityValidator;
 import com.bullhornsdk.data.validation.StandardRestEntityValidator;
-import com.bullhornsdk.data.api.helper.EntityUpdateWorker;
-import com.bullhornsdk.data.api.helper.FileWorker;
-import com.bullhornsdk.data.api.helper.RestApiSession;
-import com.bullhornsdk.data.api.helper.RestErrorHandler;
-import com.bullhornsdk.data.api.helper.RestFileManager;
-import com.bullhornsdk.data.api.helper.RestJsonConverter;
-import com.bullhornsdk.data.api.helper.RestTemplateFactory;
-import com.bullhornsdk.data.api.helper.RestUriVariablesFactory;
-import com.bullhornsdk.data.api.helper.RestUrlFactory;
-import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService;
-import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService;
 
 /**
  * Standard implementation of the BullhornData interface that manages all rest calls and data binding from/to json - java.
@@ -311,6 +311,14 @@ public class StandardBullhornData implements BullhornData {
 		return this.handleGetMetaData(type, metaParameter, fieldSet);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Map<String, Object> getSettings(Set<String> settingSet) {
+		return this.handleGetSettingsData(settingSet);
+	}
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -912,6 +920,26 @@ public class StandardBullhornData implements BullhornData {
 		String url = restUrlFactory.assembleEntityUrlForMeta();
 
 		MetaData<T> response = this.performGetRequest(url, StandardMetaData.class, uriVariables);
+
+		return response;
+
+	}
+
+	/**
+	 * Makes the "settings" api call
+	 * 
+	 * HttpMethod: GET
+	 * 
+	 * @param settingSet
+	 *            settings to return information about. Pass in null for all fields.
+	 * @return the settings
+	 */
+	@SuppressWarnings("unchecked")
+    private Map<String,Object> handleGetSettingsData(Set<String> settingSet) {
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSettings(settingSet);
+		String url = restUrlFactory.assembleUrlForSettings();
+
+		Map<String,Object> response = this.performGetRequest(url, Map.class, uriVariables);
 
 		return response;
 
