@@ -20,8 +20,10 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
 import com.bullhornsdk.data.model.entity.core.standard.Sendout;
@@ -306,6 +308,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 	}
 
+    @Test
+    public void testUpdateLead() {
+
+        Lead entity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getCustomText1();
+
+        newValue = previousValue + "toad";
+
+        entity.setCustomText1(newValue);
+
+        UpdateResponse response = bullhornApiRest.updateEntity(entity);
+
+        Lead updatedEntity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+
+    }
+
 	@Test
 	public void testUpdateNote() {
 
@@ -347,6 +370,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		this.runAssertions(response, newValue, updatedEntity.getTargetEntityName());
 
 	}
+
+    @Test
+    public void testUpdateOpportunity() {
+
+        Opportunity entity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getCustomText1();
+
+        newValue = previousValue + "toad";
+
+        entity.setCustomText1(newValue);
+
+        UpdateResponse response = bullhornApiRest.updateEntity(entity);
+
+        Opportunity updatedEntity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+
+    }
 
 	@Test
 	public void testUpdatePlacement() {

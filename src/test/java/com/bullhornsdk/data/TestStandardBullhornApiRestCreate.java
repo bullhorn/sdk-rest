@@ -17,8 +17,10 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
 import com.bullhornsdk.data.model.entity.core.standard.Sendout;
@@ -251,6 +253,26 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 
 	}
 
+    @Test
+    public void testCreateLead() {
+
+        Lead entity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornApiRest.insertEntity(entity);
+
+        Lead newEntity = bullhornApiRest.findEntity(Lead.class, response.getChangedEntityId());
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) Lead.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+
+    }
+
 	@Test
 	public void testCreateNote() {
 
@@ -290,6 +312,26 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 		this.runAssertions(response, entity, newEntity);
 
 	}
+
+    @Test
+    public void testCreateOpportunity() {
+
+        Opportunity entity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornApiRest.insertEntity(entity);
+
+        Opportunity newEntity = bullhornApiRest.findEntity(Opportunity.class, response.getChangedEntityId());
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) Opportunity.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+
+    }
 
 	// @Test
 	public void testCreatePlacement() {

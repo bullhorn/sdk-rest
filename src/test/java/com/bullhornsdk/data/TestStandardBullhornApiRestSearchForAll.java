@@ -11,7 +11,9 @@ import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
@@ -64,6 +66,24 @@ public class TestStandardBullhornApiRestSearchForAll extends BaseTest {
 		runAssertions("ListWrapper<JobOrder>", wrapper);
 
 	}
+
+    @Test
+    public void testSearchLead() {
+
+        ListWrapper<Lead> wrapper = bullhornApiRest.searchForAllRecords(Lead.class, query, null, searchParams);
+
+        runAssertions("ListWrapper<Lead>", wrapper);
+
+    }
+
+    @Test
+    public void testSearchOpportunity() {
+
+        ListWrapper<Opportunity> wrapper = bullhornApiRest.searchForAllRecords(Opportunity.class, query, null, searchParams);
+
+        runAssertions("ListWrapper<Opportunity>", wrapper);
+
+    }
 
 	// @Test
 	public void getSearchMetaData() {

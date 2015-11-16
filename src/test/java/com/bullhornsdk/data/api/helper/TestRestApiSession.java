@@ -4,6 +4,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Before;
@@ -12,6 +14,8 @@ import org.junit.Test;
 
 import com.bullhornsdk.data.BaseTest;
 import com.bullhornsdk.data.api.RestApiSettings;
+
+import java.io.IOException;
 
 @Ignore
 public class TestRestApiSession extends BaseTest {
@@ -119,6 +123,21 @@ public class TestRestApiSession extends BaseTest {
 
 		String restUrl = restApiSessionManual.getRestUrl();
 		assertNotNull("restUrl is null", restUrl);
+
+	}
+
+	@Test
+	public void testSessionSerialization() throws IOException {
+
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.registerModule(new JodaModule());
+
+		String json = mapper.writeValueAsString(restApiSession);
+
+		System.out.println(json);
+
+		final RestApiSession newSession = mapper.readValue(json, RestApiSession.class);
+		assertNotNull(newSession);
 
 	}
 
