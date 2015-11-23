@@ -4,8 +4,20 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.joda.time.DateTime;
 
+import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.FileEntity;
@@ -22,6 +34,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -42,7 +55,9 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"isOpen", "isPublic", "jobBoardList", "notes", "numOpenings", "onSite", "optionsPackage", "owner", "payRate", "placements",
 		"publicDescription", "publishedZip", "reasonClosed", "reportTo", "reportToClientContact", "responseUser", "salary", "salaryUnit",
 		"sendouts", "skillList", "skills", "source", "specialties", "startDate", "status", "submissions", "tasks", "taxRate", "taxStatus",
-		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "webResponses", "willRelocate", "willSponsor", "yearsRequired" })
+		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "webResponses", "willRelocate", "willSponsor", "yearsRequired",
+        "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
+        "customObject8s", "customObject9s", "customObject10s"})
 public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity {
 
@@ -235,6 +250,26 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 	private Boolean willSponsor;
 
 	private Integer yearsRequired;
+
+    private OneToMany<JobOrderCustomObjectInstance1> customObject1s;
+
+    private OneToMany<JobOrderCustomObjectInstance2> customObject2s;
+
+    private OneToMany<JobOrderCustomObjectInstance3> customObject3s;
+
+    private OneToMany<JobOrderCustomObjectInstance4> customObject4s;
+
+    private OneToMany<JobOrderCustomObjectInstance5> customObject5s;
+
+    private OneToMany<JobOrderCustomObjectInstance6> customObject6s;
+
+    private OneToMany<JobOrderCustomObjectInstance7> customObject7s;
+
+    private OneToMany<JobOrderCustomObjectInstance8> customObject8s;
+
+    private OneToMany<JobOrderCustomObjectInstance9> customObject9s;
+
+    private OneToMany<JobOrderCustomObjectInstance10> customObject10s;
 
 	public JobOrder() {
 		super();
@@ -997,623 +1032,560 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		this.yearsRequired = yearsRequired;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result + ((appointments == null) ? 0 : appointments.hashCode());
-		result = prime * result + ((approvedPlacements == null) ? 0 : approvedPlacements.hashCode());
-		result = prime * result + ((assignedUsers == null) ? 0 : assignedUsers.hashCode());
-		result = prime * result + ((benefits == null) ? 0 : benefits.hashCode());
-		result = prime * result + ((billRateCategoryID == null) ? 0 : billRateCategoryID.hashCode());
-		result = prime * result + ((bonusPackage == null) ? 0 : bonusPackage.hashCode());
-		result = prime * result + ((branchCode == null) ? 0 : branchCode.hashCode());
-		result = prime * result + ((businessSectors == null) ? 0 : businessSectors.hashCode());
-		result = prime * result + ((categories == null) ? 0 : categories.hashCode());
-		result = prime * result + ((certificationList == null) ? 0 : certificationList.hashCode());
-		result = prime * result + ((certifications == null) ? 0 : certifications.hashCode());
-		result = prime * result + ((clientBillRate == null) ? 0 : clientBillRate.hashCode());
-		result = prime * result + ((clientContact == null) ? 0 : clientContact.hashCode());
-		result = prime * result + ((clientCorporation == null) ? 0 : clientCorporation.hashCode());
-		result = prime * result + ((costCenter == null) ? 0 : costCenter.hashCode());
-		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-		result = prime * result + ((dateClosed == null) ? 0 : dateClosed.hashCode());
-		result = prime * result + ((dateEnd == null) ? 0 : dateEnd.hashCode());
-		result = prime * result + ((dateLastExported == null) ? 0 : dateLastExported.hashCode());
-		result = prime * result + ((degreeList == null) ? 0 : degreeList.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((durationWeeks == null) ? 0 : durationWeeks.hashCode());
-		result = prime * result + ((educationDegree == null) ? 0 : educationDegree.hashCode());
-		result = prime * result + ((employmentType == null) ? 0 : employmentType.hashCode());
-		result = prime * result + ((externalCategoryID == null) ? 0 : externalCategoryID.hashCode());
-		result = prime * result + ((externalID == null) ? 0 : externalID.hashCode());
-		result = prime * result + ((feeArrangement == null) ? 0 : feeArrangement.hashCode());
-		result = prime * result + ((hoursOfOperation == null) ? 0 : hoursOfOperation.hashCode());
-		result = prime * result + ((hoursPerWeek == null) ? 0 : hoursPerWeek.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((interviews == null) ? 0 : interviews.hashCode());
-		result = prime * result + ((isClientEditable == null) ? 0 : isClientEditable.hashCode());
-		result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
-		result = prime * result + ((isInterviewRequired == null) ? 0 : isInterviewRequired.hashCode());
-		result = prime * result + ((isJobcastPublished == null) ? 0 : isJobcastPublished.hashCode());
-		result = prime * result + ((isOpen == null) ? 0 : isOpen.hashCode());
-		result = prime * result + ((isPublic == null) ? 0 : isPublic.hashCode());
-		result = prime * result + ((jobBoardList == null) ? 0 : jobBoardList.hashCode());
-		result = prime * result + ((notes == null) ? 0 : notes.hashCode());
-		result = prime * result + ((numOpenings == null) ? 0 : numOpenings.hashCode());
-		result = prime * result + ((onSite == null) ? 0 : onSite.hashCode());
-		result = prime * result + ((optionsPackage == null) ? 0 : optionsPackage.hashCode());
-		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-		result = prime * result + ((payRate == null) ? 0 : payRate.hashCode());
-		result = prime * result + ((placements == null) ? 0 : placements.hashCode());
-		result = prime * result + ((publicDescription == null) ? 0 : publicDescription.hashCode());
-		result = prime * result + ((publishedZip == null) ? 0 : publishedZip.hashCode());
-		result = prime * result + ((reasonClosed == null) ? 0 : reasonClosed.hashCode());
-		result = prime * result + ((reportTo == null) ? 0 : reportTo.hashCode());
-		result = prime * result + ((reportToClientContact == null) ? 0 : reportToClientContact.hashCode());
-		result = prime * result + ((responseUser == null) ? 0 : responseUser.hashCode());
-		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
-		result = prime * result + ((salaryUnit == null) ? 0 : salaryUnit.hashCode());
-		result = prime * result + ((sendouts == null) ? 0 : sendouts.hashCode());
-		result = prime * result + ((skillList == null) ? 0 : skillList.hashCode());
-		result = prime * result + ((skills == null) ? 0 : skills.hashCode());
-		result = prime * result + ((source == null) ? 0 : source.hashCode());
-		result = prime * result + ((specialties == null) ? 0 : specialties.hashCode());
-		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime * result + ((submissions == null) ? 0 : submissions.hashCode());
-		result = prime * result + ((tasks == null) ? 0 : tasks.hashCode());
-		result = prime * result + ((taxRate == null) ? 0 : taxRate.hashCode());
-		result = prime * result + ((taxStatus == null) ? 0 : taxStatus.hashCode());
-		result = prime * result + ((tearsheets == null) ? 0 : tearsheets.hashCode());
-		result = prime * result + ((timeUnits == null) ? 0 : timeUnits.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		result = prime * result + ((travelRequirements == null) ? 0 : travelRequirements.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((webResponses == null) ? 0 : webResponses.hashCode());
-		result = prime * result + ((willRelocate == null) ? 0 : willRelocate.hashCode());
-		result = prime * result + ((willSponsor == null) ? 0 : willSponsor.hashCode());
-		result = prime * result + ((yearsRequired == null) ? 0 : yearsRequired.hashCode());
-		return result;
-	}
+    @JsonProperty("customObject1s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance1> getCustomObject1s() {
+        return customObject1s;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		JobOrder other = (JobOrder) obj;
-		if (address == null) {
-			if (other.address != null)
-				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (appointments == null) {
-			if (other.appointments != null)
-				return false;
-		} else if (!appointments.equals(other.appointments))
-			return false;
-		if (approvedPlacements == null) {
-			if (other.approvedPlacements != null)
-				return false;
-		} else if (!approvedPlacements.equals(other.approvedPlacements))
-			return false;
-		if (assignedUsers == null) {
-			if (other.assignedUsers != null)
-				return false;
-		} else if (!assignedUsers.equals(other.assignedUsers))
-			return false;
-		if (benefits == null) {
-			if (other.benefits != null)
-				return false;
-		} else if (!benefits.equals(other.benefits))
-			return false;
-		if (billRateCategoryID == null) {
-			if (other.billRateCategoryID != null)
-				return false;
-		} else if (!billRateCategoryID.equals(other.billRateCategoryID))
-			return false;
-		if (bonusPackage == null) {
-			if (other.bonusPackage != null)
-				return false;
-		} else if (!bonusPackage.equals(other.bonusPackage))
-			return false;
-		if (branchCode == null) {
-			if (other.branchCode != null)
-				return false;
-		} else if (!branchCode.equals(other.branchCode))
-			return false;
-		if (businessSectors == null) {
-			if (other.businessSectors != null)
-				return false;
-		} else if (!businessSectors.equals(other.businessSectors))
-			return false;
-		if (categories == null) {
-			if (other.categories != null)
-				return false;
-		} else if (!categories.equals(other.categories))
-			return false;
-		if (certificationList == null) {
-			if (other.certificationList != null)
-				return false;
-		} else if (!certificationList.equals(other.certificationList))
-			return false;
-		if (certifications == null) {
-			if (other.certifications != null)
-				return false;
-		} else if (!certifications.equals(other.certifications))
-			return false;
-		if (clientBillRate == null) {
-			if (other.clientBillRate != null)
-				return false;
-		} else if (!clientBillRate.equals(other.clientBillRate))
-			return false;
-		if (clientContact == null) {
-			if (other.clientContact != null)
-				return false;
-		} else if (!clientContact.equals(other.clientContact))
-			return false;
-		if (clientCorporation == null) {
-			if (other.clientCorporation != null)
-				return false;
-		} else if (!clientCorporation.equals(other.clientCorporation))
-			return false;
-		if (costCenter == null) {
-			if (other.costCenter != null)
-				return false;
-		} else if (!costCenter.equals(other.costCenter))
-			return false;
-		if (dateAdded == null) {
-			if (other.dateAdded != null)
-				return false;
-		} else if (!dateAdded.isEqual(other.dateAdded))
-			return false;
-		if (dateClosed == null) {
-			if (other.dateClosed != null)
-				return false;
-		} else if (!dateClosed.isEqual(other.dateClosed))
-			return false;
-		if (dateEnd == null) {
-			if (other.dateEnd != null)
-				return false;
-		} else if (!dateEnd.isEqual(other.dateEnd))
-			return false;
-		if (dateLastExported == null) {
-			if (other.dateLastExported != null)
-				return false;
-		} else if (!dateLastExported.isEqual(other.dateLastExported))
-			return false;
-		if (degreeList == null) {
-			if (other.degreeList != null)
-				return false;
-		} else if (!degreeList.equals(other.degreeList))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (durationWeeks == null) {
-			if (other.durationWeeks != null)
-				return false;
-		} else if (!durationWeeks.equals(other.durationWeeks))
-			return false;
-		if (educationDegree == null) {
-			if (other.educationDegree != null)
-				return false;
-		} else if (!educationDegree.equals(other.educationDegree))
-			return false;
-		if (employmentType == null) {
-			if (other.employmentType != null)
-				return false;
-		} else if (!employmentType.equals(other.employmentType))
-			return false;
-		if (externalCategoryID == null) {
-			if (other.externalCategoryID != null)
-				return false;
-		} else if (!externalCategoryID.equals(other.externalCategoryID))
-			return false;
-		if (externalID == null) {
-			if (other.externalID != null)
-				return false;
-		} else if (!externalID.equals(other.externalID))
-			return false;
-		if (feeArrangement == null) {
-			if (other.feeArrangement != null)
-				return false;
-		} else if (!feeArrangement.equals(other.feeArrangement))
-			return false;
-		if (hoursOfOperation == null) {
-			if (other.hoursOfOperation != null)
-				return false;
-		} else if (!hoursOfOperation.equals(other.hoursOfOperation))
-			return false;
-		if (hoursPerWeek == null) {
-			if (other.hoursPerWeek != null)
-				return false;
-		} else if (!hoursPerWeek.equals(other.hoursPerWeek))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (interviews == null) {
-			if (other.interviews != null)
-				return false;
-		} else if (!interviews.equals(other.interviews))
-			return false;
-		if (isClientEditable == null) {
-			if (other.isClientEditable != null)
-				return false;
-		} else if (!isClientEditable.equals(other.isClientEditable))
-			return false;
-		if (isDeleted == null) {
-			if (other.isDeleted != null)
-				return false;
-		} else if (!isDeleted.equals(other.isDeleted))
-			return false;
-		if (isInterviewRequired == null) {
-			if (other.isInterviewRequired != null)
-				return false;
-		} else if (!isInterviewRequired.equals(other.isInterviewRequired))
-			return false;
-		if (isJobcastPublished == null) {
-			if (other.isJobcastPublished != null)
-				return false;
-		} else if (!isJobcastPublished.equals(other.isJobcastPublished))
-			return false;
-		if (isOpen == null) {
-			if (other.isOpen != null)
-				return false;
-		} else if (!isOpen.equals(other.isOpen))
-			return false;
-		if (isPublic == null) {
-			if (other.isPublic != null)
-				return false;
-		} else if (!isPublic.equals(other.isPublic))
-			return false;
-		if (jobBoardList == null) {
-			if (other.jobBoardList != null)
-				return false;
-		} else if (!jobBoardList.equals(other.jobBoardList))
-			return false;
-		if (notes == null) {
-			if (other.notes != null)
-				return false;
-		} else if (!notes.equals(other.notes))
-			return false;
-		if (numOpenings == null) {
-			if (other.numOpenings != null)
-				return false;
-		} else if (!numOpenings.equals(other.numOpenings))
-			return false;
-		if (onSite == null) {
-			if (other.onSite != null)
-				return false;
-		} else if (!onSite.equals(other.onSite))
-			return false;
-		if (optionsPackage == null) {
-			if (other.optionsPackage != null)
-				return false;
-		} else if (!optionsPackage.equals(other.optionsPackage))
-			return false;
-		if (owner == null) {
-			if (other.owner != null)
-				return false;
-		} else if (!owner.equals(other.owner))
-			return false;
-		if (payRate == null) {
-			if (other.payRate != null)
-				return false;
-		} else if (!payRate.equals(other.payRate))
-			return false;
-		if (placements == null) {
-			if (other.placements != null)
-				return false;
-		} else if (!placements.equals(other.placements))
-			return false;
-		if (publicDescription == null) {
-			if (other.publicDescription != null)
-				return false;
-		} else if (!publicDescription.equals(other.publicDescription))
-			return false;
-		if (publishedZip == null) {
-			if (other.publishedZip != null)
-				return false;
-		} else if (!publishedZip.equals(other.publishedZip))
-			return false;
-		if (reasonClosed == null) {
-			if (other.reasonClosed != null)
-				return false;
-		} else if (!reasonClosed.equals(other.reasonClosed))
-			return false;
-		if (reportTo == null) {
-			if (other.reportTo != null)
-				return false;
-		} else if (!reportTo.equals(other.reportTo))
-			return false;
-		if (reportToClientContact == null) {
-			if (other.reportToClientContact != null)
-				return false;
-		} else if (!reportToClientContact.equals(other.reportToClientContact))
-			return false;
-		if (responseUser == null) {
-			if (other.responseUser != null)
-				return false;
-		} else if (!responseUser.equals(other.responseUser))
-			return false;
-		if (salary == null) {
-			if (other.salary != null)
-				return false;
-		} else if (!salary.equals(other.salary))
-			return false;
-		if (salaryUnit == null) {
-			if (other.salaryUnit != null)
-				return false;
-		} else if (!salaryUnit.equals(other.salaryUnit))
-			return false;
-		if (sendouts == null) {
-			if (other.sendouts != null)
-				return false;
-		} else if (!sendouts.equals(other.sendouts))
-			return false;
-		if (skillList == null) {
-			if (other.skillList != null)
-				return false;
-		} else if (!skillList.equals(other.skillList))
-			return false;
-		if (skills == null) {
-			if (other.skills != null)
-				return false;
-		} else if (!skills.equals(other.skills))
-			return false;
-		if (source == null) {
-			if (other.source != null)
-				return false;
-		} else if (!source.equals(other.source))
-			return false;
-		if (specialties == null) {
-			if (other.specialties != null)
-				return false;
-		} else if (!specialties.equals(other.specialties))
-			return false;
-		if (startDate == null) {
-			if (other.startDate != null)
-				return false;
-		} else if (!startDate.isEqual(other.startDate))
-			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
-			return false;
-		if (submissions == null) {
-			if (other.submissions != null)
-				return false;
-		} else if (!submissions.equals(other.submissions))
-			return false;
-		if (tasks == null) {
-			if (other.tasks != null)
-				return false;
-		} else if (!tasks.equals(other.tasks))
-			return false;
-		if (taxRate == null) {
-			if (other.taxRate != null)
-				return false;
-		} else if (!taxRate.equals(other.taxRate))
-			return false;
-		if (taxStatus == null) {
-			if (other.taxStatus != null)
-				return false;
-		} else if (!taxStatus.equals(other.taxStatus))
-			return false;
-		if (tearsheets == null) {
-			if (other.tearsheets != null)
-				return false;
-		} else if (!tearsheets.equals(other.tearsheets))
-			return false;
-		if (timeUnits == null) {
-			if (other.timeUnits != null)
-				return false;
-		} else if (!timeUnits.equals(other.timeUnits))
-			return false;
-		if (title == null) {
-			if (other.title != null)
-				return false;
-		} else if (!title.equals(other.title))
-			return false;
-		if (travelRequirements == null) {
-			if (other.travelRequirements != null)
-				return false;
-		} else if (!travelRequirements.equals(other.travelRequirements))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		if (webResponses == null) {
-			if (other.webResponses != null)
-				return false;
-		} else if (!webResponses.equals(other.webResponses))
-			return false;
-		if (willRelocate == null) {
-			if (other.willRelocate != null)
-				return false;
-		} else if (!willRelocate.equals(other.willRelocate))
-			return false;
-		if (willSponsor == null) {
-			if (other.willSponsor != null)
-				return false;
-		} else if (!willSponsor.equals(other.willSponsor))
-			return false;
-		if (yearsRequired == null) {
-			if (other.yearsRequired != null)
-				return false;
-		} else if (!yearsRequired.equals(other.yearsRequired))
-			return false;
-		return true;
-	}
+    @JsonProperty("customObject1s")
+    public void setCustomObject1s(OneToMany<JobOrderCustomObjectInstance1> customObject1s) {
+        this.customObject1s = customObject1s;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("JobOrder {\nid=");
-		builder.append(id);
-		builder.append(", \naddress=");
-		builder.append(address);
-		builder.append(", \nappointments=");
-		builder.append(appointments);
-		builder.append(", \napprovedPlacements=");
-		builder.append(approvedPlacements);
-		builder.append(", \nassignedUsers=");
-		builder.append(assignedUsers);
-		builder.append(", \nbenefits=");
-		builder.append(benefits);
-		builder.append(", \nbillRateCategoryID=");
-		builder.append(billRateCategoryID);
-		builder.append(", \nbonusPackage=");
-		builder.append(bonusPackage);
-		builder.append(", \nbranchCode=");
-		builder.append(branchCode);
-		builder.append(", \nbusinessSectors=");
-		builder.append(businessSectors);
-		builder.append(", \ncategories=");
-		builder.append(categories);
-		builder.append(", \ncertificationList=");
-		builder.append(certificationList);
-		builder.append(", \ncertifications=");
-		builder.append(certifications);
-		builder.append(", \nclientBillRate=");
-		builder.append(clientBillRate);
-		builder.append(", \nclientContact=");
-		builder.append(clientContact);
-		builder.append(", \nclientCorporation=");
-		builder.append(clientCorporation);
-		builder.append(", \ncostCenter=");
-		builder.append(costCenter);
-		builder.append(super.toString());
-		builder.append(", \ndateAdded=");
-		builder.append(dateAdded);
-		builder.append(", \ndateClosed=");
-		builder.append(dateClosed);
-		builder.append(", \ndateEnd=");
-		builder.append(dateEnd);
-		builder.append(", \ndateLastExported=");
-		builder.append(dateLastExported);
-		builder.append(", \ndegreeList=");
-		builder.append(degreeList);
-		builder.append(", \ndescription=");
-		builder.append(description);
-		builder.append(", \ndurationWeeks=");
-		builder.append(durationWeeks);
-		builder.append(", \neducationDegree=");
-		builder.append(educationDegree);
-		builder.append(", \nemploymentType=");
-		builder.append(employmentType);
-		builder.append(", \nexternalCategoryID=");
-		builder.append(externalCategoryID);
-		builder.append(", \nexternalID=");
-		builder.append(externalID);
-		builder.append(", \nfeeArrangement=");
-		builder.append(feeArrangement);
-		builder.append(", \nhoursOfOperation=");
-		builder.append(hoursOfOperation);
-		builder.append(", \nhoursPerWeek=");
-		builder.append(hoursPerWeek);
-		builder.append(", \ninterviews=");
-		builder.append(interviews);
-		builder.append(", \nisClientEditable=");
-		builder.append(isClientEditable);
-		builder.append(", \nisDeleted=");
-		builder.append(isDeleted);
-		builder.append(", \nisInterviewRequired=");
-		builder.append(isInterviewRequired);
-		builder.append(", \nisJobcastPublished=");
-		builder.append(isJobcastPublished);
-		builder.append(", \nisOpen=");
-		builder.append(isOpen);
-		builder.append(", \nisPublic=");
-		builder.append(isPublic);
-		builder.append(", \njobBoardList=");
-		builder.append(jobBoardList);
-		builder.append(", \nnotes=");
-		builder.append(notes);
-		builder.append(", \nnumOpenings=");
-		builder.append(numOpenings);
-		builder.append(", \nonSite=");
-		builder.append(onSite);
-		builder.append(", \noptionsPackage=");
-		builder.append(optionsPackage);
-		builder.append(", \nowner=");
-		builder.append(owner);
-		builder.append(", \npayRate=");
-		builder.append(payRate);
-		builder.append(", \nplacements=");
-		builder.append(placements);
-		builder.append(", \npublicDescription=");
-		builder.append(publicDescription);
-		builder.append(", \npublishedZip=");
-		builder.append(publishedZip);
-		builder.append(", \nreasonClosed=");
-		builder.append(reasonClosed);
-		builder.append(", \nreportTo=");
-		builder.append(reportTo);
-		builder.append(", \nreportToClientContact=");
-		builder.append(reportToClientContact);
-		builder.append(", \nresponseUser=");
-		builder.append(responseUser);
-		builder.append(", \nsalary=");
-		builder.append(salary);
-		builder.append(", \nsalaryUnit=");
-		builder.append(salaryUnit);
-		builder.append(", \nsendouts=");
-		builder.append(sendouts);
-		builder.append(", \nskillList=");
-		builder.append(skillList);
-		builder.append(", \nskills=");
-		builder.append(skills);
-		builder.append(", \nsource=");
-		builder.append(source);
-		builder.append(", \nspecialties=");
-		builder.append(specialties);
-		builder.append(", \nstartDate=");
-		builder.append(startDate);
-		builder.append(", \nstatus=");
-		builder.append(status);
-		builder.append(", \nsubmissions=");
-		builder.append(submissions);
-		builder.append(", \ntasks=");
-		builder.append(tasks);
-		builder.append(", \ntaxRate=");
-		builder.append(taxRate);
-		builder.append(", \ntaxStatus=");
-		builder.append(taxStatus);
-		builder.append(", \ntearsheets=");
-		builder.append(tearsheets);
-		builder.append(", \ntimeUnits=");
-		builder.append(timeUnits);
-		builder.append(", \ntitle=");
-		builder.append(title);
-		builder.append(", \ntravelRequirements=");
-		builder.append(travelRequirements);
-		builder.append(", \ntype=");
-		builder.append(type);
-		builder.append(", \nwebResponses=");
-		builder.append(webResponses);
-		builder.append(", \nwillRelocate=");
-		builder.append(willRelocate);
-		builder.append(", \nwillSponsor=");
-		builder.append(willSponsor);
-		builder.append(", \nyearsRequired=");
-		builder.append(yearsRequired);
-		builder.append("\n}");
-		return builder.toString();
-	}
+    @JsonProperty("customObject2s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance2> getCustomObject2s() {
+        return customObject2s;
+    }
 
+    @JsonProperty("customObject2s")
+    public void setCustomObject2s(OneToMany<JobOrderCustomObjectInstance2> customObject2s) {
+        this.customObject2s = customObject2s;
+    }
+
+    @JsonProperty("customObject3s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance3> getCustomObject3s() {
+        return customObject3s;
+    }
+
+    @JsonProperty("customObject3s")
+    public void setCustomObject3s(OneToMany<JobOrderCustomObjectInstance3> customObject3s) {
+        this.customObject3s = customObject3s;
+    }
+
+    @JsonProperty("customObject4s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance4> getCustomObject4s() {
+        return customObject4s;
+    }
+
+    @JsonProperty("customObject4s")
+    public void setCustomObject4s(OneToMany<JobOrderCustomObjectInstance4> customObject4s) {
+        this.customObject4s = customObject4s;
+    }
+
+    @JsonProperty("customObject5s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance5> getCustomObject5s() {
+        return customObject5s;
+    }
+
+    @JsonProperty("customObject5s")
+    public void setCustomObject5s(OneToMany<JobOrderCustomObjectInstance5> customObject5s) {
+        this.customObject5s = customObject5s;
+    }
+
+    @JsonProperty("customObject6s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance6> getCustomObject6s() {
+        return customObject6s;
+    }
+
+    @JsonProperty("customObject6s")
+    public void setCustomObject6s(OneToMany<JobOrderCustomObjectInstance6> customObject6s) {
+        this.customObject6s = customObject6s;
+    }
+
+    @JsonProperty("customObject7s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance7> getCustomObject7s() {
+        return customObject7s;
+    }
+
+    @JsonProperty("customObject7s")
+    public void setCustomObject7s(OneToMany<JobOrderCustomObjectInstance7> customObject7s) {
+        this.customObject7s = customObject7s;
+    }
+
+    @JsonProperty("customObject8s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance8> getCustomObject8s() {
+        return customObject8s;
+    }
+
+    @JsonProperty("customObject8s")
+    public void setCustomObject8s(OneToMany<JobOrderCustomObjectInstance8> customObject8s) {
+        this.customObject8s = customObject8s;
+    }
+
+    @JsonProperty("customObject9s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance9> getCustomObject9s() {
+        return customObject9s;
+    }
+
+    @JsonProperty("customObject9s")
+    public void setCustomObject9s(OneToMany<JobOrderCustomObjectInstance9> customObject9s) {
+        this.customObject9s = customObject9s;
+    }
+
+    @JsonProperty("customObject10s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance10> getCustomObject10s() {
+        return customObject10s;
+    }
+
+    @JsonProperty("customObject10s")
+    public void setCustomObject10s(OneToMany<JobOrderCustomObjectInstance10> customObject10s) {
+        this.customObject10s = customObject10s;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JobOrder)) return false;
+        if (!super.equals(o)) return false;
+
+        JobOrder jobOrder = (JobOrder) o;
+
+        if (luceneScore != null ? !luceneScore.equals(jobOrder.luceneScore) : jobOrder.luceneScore != null)
+            return false;
+        if (id != null ? !id.equals(jobOrder.id) : jobOrder.id != null) return false;
+        if (address != null ? !address.equals(jobOrder.address) : jobOrder.address != null) return false;
+        if (appointments != null ? !appointments.equals(jobOrder.appointments) : jobOrder.appointments != null)
+            return false;
+        if (approvedPlacements != null ? !approvedPlacements.equals(jobOrder.approvedPlacements) : jobOrder.approvedPlacements != null)
+            return false;
+        if (assignedUsers != null ? !assignedUsers.equals(jobOrder.assignedUsers) : jobOrder.assignedUsers != null)
+            return false;
+        if (benefits != null ? !benefits.equals(jobOrder.benefits) : jobOrder.benefits != null) return false;
+        if (billRateCategoryID != null ? !billRateCategoryID.equals(jobOrder.billRateCategoryID) : jobOrder.billRateCategoryID != null)
+            return false;
+        if (bonusPackage != null ? !bonusPackage.equals(jobOrder.bonusPackage) : jobOrder.bonusPackage != null)
+            return false;
+        if (branchCode != null ? !branchCode.equals(jobOrder.branchCode) : jobOrder.branchCode != null) return false;
+        if (businessSectors != null ? !businessSectors.equals(jobOrder.businessSectors) : jobOrder.businessSectors != null)
+            return false;
+        if (categories != null ? !categories.equals(jobOrder.categories) : jobOrder.categories != null) return false;
+        if (certificationList != null ? !certificationList.equals(jobOrder.certificationList) : jobOrder.certificationList != null)
+            return false;
+        if (certifications != null ? !certifications.equals(jobOrder.certifications) : jobOrder.certifications != null)
+            return false;
+        if (clientBillRate != null ? !clientBillRate.equals(jobOrder.clientBillRate) : jobOrder.clientBillRate != null)
+            return false;
+        if (clientContact != null ? !clientContact.equals(jobOrder.clientContact) : jobOrder.clientContact != null)
+            return false;
+        if (clientCorporation != null ? !clientCorporation.equals(jobOrder.clientCorporation) : jobOrder.clientCorporation != null)
+            return false;
+        if (costCenter != null ? !costCenter.equals(jobOrder.costCenter) : jobOrder.costCenter != null) return false;
+        if (dateAdded != null ? !dateAdded.equals(jobOrder.dateAdded) : jobOrder.dateAdded != null) return false;
+        if (dateClosed != null ? !dateClosed.equals(jobOrder.dateClosed) : jobOrder.dateClosed != null) return false;
+        if (dateEnd != null ? !dateEnd.equals(jobOrder.dateEnd) : jobOrder.dateEnd != null) return false;
+        if (dateLastExported != null ? !dateLastExported.equals(jobOrder.dateLastExported) : jobOrder.dateLastExported != null)
+            return false;
+        if (degreeList != null ? !degreeList.equals(jobOrder.degreeList) : jobOrder.degreeList != null) return false;
+        if (description != null ? !description.equals(jobOrder.description) : jobOrder.description != null)
+            return false;
+        if (durationWeeks != null ? !durationWeeks.equals(jobOrder.durationWeeks) : jobOrder.durationWeeks != null)
+            return false;
+        if (educationDegree != null ? !educationDegree.equals(jobOrder.educationDegree) : jobOrder.educationDegree != null)
+            return false;
+        if (employmentType != null ? !employmentType.equals(jobOrder.employmentType) : jobOrder.employmentType != null)
+            return false;
+        if (externalCategoryID != null ? !externalCategoryID.equals(jobOrder.externalCategoryID) : jobOrder.externalCategoryID != null)
+            return false;
+        if (externalID != null ? !externalID.equals(jobOrder.externalID) : jobOrder.externalID != null) return false;
+        if (feeArrangement != null ? !feeArrangement.equals(jobOrder.feeArrangement) : jobOrder.feeArrangement != null)
+            return false;
+        if (hoursOfOperation != null ? !hoursOfOperation.equals(jobOrder.hoursOfOperation) : jobOrder.hoursOfOperation != null)
+            return false;
+        if (hoursPerWeek != null ? !hoursPerWeek.equals(jobOrder.hoursPerWeek) : jobOrder.hoursPerWeek != null)
+            return false;
+        if (interviews != null ? !interviews.equals(jobOrder.interviews) : jobOrder.interviews != null) return false;
+        if (isClientEditable != null ? !isClientEditable.equals(jobOrder.isClientEditable) : jobOrder.isClientEditable != null)
+            return false;
+        if (isDeleted != null ? !isDeleted.equals(jobOrder.isDeleted) : jobOrder.isDeleted != null) return false;
+        if (isInterviewRequired != null ? !isInterviewRequired.equals(jobOrder.isInterviewRequired) : jobOrder.isInterviewRequired != null)
+            return false;
+        if (isJobcastPublished != null ? !isJobcastPublished.equals(jobOrder.isJobcastPublished) : jobOrder.isJobcastPublished != null)
+            return false;
+        if (isOpen != null ? !isOpen.equals(jobOrder.isOpen) : jobOrder.isOpen != null) return false;
+        if (isPublic != null ? !isPublic.equals(jobOrder.isPublic) : jobOrder.isPublic != null) return false;
+        if (jobBoardList != null ? !jobBoardList.equals(jobOrder.jobBoardList) : jobOrder.jobBoardList != null)
+            return false;
+        if (notes != null ? !notes.equals(jobOrder.notes) : jobOrder.notes != null) return false;
+        if (numOpenings != null ? !numOpenings.equals(jobOrder.numOpenings) : jobOrder.numOpenings != null)
+            return false;
+        if (onSite != null ? !onSite.equals(jobOrder.onSite) : jobOrder.onSite != null) return false;
+        if (optionsPackage != null ? !optionsPackage.equals(jobOrder.optionsPackage) : jobOrder.optionsPackage != null)
+            return false;
+        if (owner != null ? !owner.equals(jobOrder.owner) : jobOrder.owner != null) return false;
+        if (payRate != null ? !payRate.equals(jobOrder.payRate) : jobOrder.payRate != null) return false;
+        if (placements != null ? !placements.equals(jobOrder.placements) : jobOrder.placements != null) return false;
+        if (publicDescription != null ? !publicDescription.equals(jobOrder.publicDescription) : jobOrder.publicDescription != null)
+            return false;
+        if (publishedZip != null ? !publishedZip.equals(jobOrder.publishedZip) : jobOrder.publishedZip != null)
+            return false;
+        if (reasonClosed != null ? !reasonClosed.equals(jobOrder.reasonClosed) : jobOrder.reasonClosed != null)
+            return false;
+        if (reportTo != null ? !reportTo.equals(jobOrder.reportTo) : jobOrder.reportTo != null) return false;
+        if (reportToClientContact != null ? !reportToClientContact.equals(jobOrder.reportToClientContact) : jobOrder.reportToClientContact != null)
+            return false;
+        if (responseUser != null ? !responseUser.equals(jobOrder.responseUser) : jobOrder.responseUser != null)
+            return false;
+        if (salary != null ? !salary.equals(jobOrder.salary) : jobOrder.salary != null) return false;
+        if (salaryUnit != null ? !salaryUnit.equals(jobOrder.salaryUnit) : jobOrder.salaryUnit != null) return false;
+        if (sendouts != null ? !sendouts.equals(jobOrder.sendouts) : jobOrder.sendouts != null) return false;
+        if (skillList != null ? !skillList.equals(jobOrder.skillList) : jobOrder.skillList != null) return false;
+        if (skills != null ? !skills.equals(jobOrder.skills) : jobOrder.skills != null) return false;
+        if (source != null ? !source.equals(jobOrder.source) : jobOrder.source != null) return false;
+        if (specialties != null ? !specialties.equals(jobOrder.specialties) : jobOrder.specialties != null)
+            return false;
+        if (startDate != null ? !startDate.equals(jobOrder.startDate) : jobOrder.startDate != null) return false;
+        if (status != null ? !status.equals(jobOrder.status) : jobOrder.status != null) return false;
+        if (submissions != null ? !submissions.equals(jobOrder.submissions) : jobOrder.submissions != null)
+            return false;
+        if (tasks != null ? !tasks.equals(jobOrder.tasks) : jobOrder.tasks != null) return false;
+        if (taxRate != null ? !taxRate.equals(jobOrder.taxRate) : jobOrder.taxRate != null) return false;
+        if (taxStatus != null ? !taxStatus.equals(jobOrder.taxStatus) : jobOrder.taxStatus != null) return false;
+        if (tearsheets != null ? !tearsheets.equals(jobOrder.tearsheets) : jobOrder.tearsheets != null) return false;
+        if (timeUnits != null ? !timeUnits.equals(jobOrder.timeUnits) : jobOrder.timeUnits != null) return false;
+        if (title != null ? !title.equals(jobOrder.title) : jobOrder.title != null) return false;
+        if (travelRequirements != null ? !travelRequirements.equals(jobOrder.travelRequirements) : jobOrder.travelRequirements != null)
+            return false;
+        if (type != null ? !type.equals(jobOrder.type) : jobOrder.type != null) return false;
+        if (webResponses != null ? !webResponses.equals(jobOrder.webResponses) : jobOrder.webResponses != null)
+            return false;
+        if (willRelocate != null ? !willRelocate.equals(jobOrder.willRelocate) : jobOrder.willRelocate != null)
+            return false;
+        if (willSponsor != null ? !willSponsor.equals(jobOrder.willSponsor) : jobOrder.willSponsor != null)
+            return false;
+        if (yearsRequired != null ? !yearsRequired.equals(jobOrder.yearsRequired) : jobOrder.yearsRequired != null)
+            return false;
+        if (customObject1s != null ? !customObject1s.equals(jobOrder.customObject1s) : jobOrder.customObject1s != null)
+            return false;
+        if (customObject2s != null ? !customObject2s.equals(jobOrder.customObject2s) : jobOrder.customObject2s != null)
+            return false;
+        if (customObject3s != null ? !customObject3s.equals(jobOrder.customObject3s) : jobOrder.customObject3s != null)
+            return false;
+        if (customObject4s != null ? !customObject4s.equals(jobOrder.customObject4s) : jobOrder.customObject4s != null)
+            return false;
+        if (customObject5s != null ? !customObject5s.equals(jobOrder.customObject5s) : jobOrder.customObject5s != null)
+            return false;
+        if (customObject6s != null ? !customObject6s.equals(jobOrder.customObject6s) : jobOrder.customObject6s != null)
+            return false;
+        if (customObject7s != null ? !customObject7s.equals(jobOrder.customObject7s) : jobOrder.customObject7s != null)
+            return false;
+        if (customObject8s != null ? !customObject8s.equals(jobOrder.customObject8s) : jobOrder.customObject8s != null)
+            return false;
+        if (customObject9s != null ? !customObject9s.equals(jobOrder.customObject9s) : jobOrder.customObject9s != null)
+            return false;
+        return !(customObject10s != null ? !customObject10s.equals(jobOrder.customObject10s) : jobOrder.customObject10s != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (luceneScore != null ? luceneScore.hashCode() : 0);
+        result = 31 * result + (id != null ? id.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
+        result = 31 * result + (approvedPlacements != null ? approvedPlacements.hashCode() : 0);
+        result = 31 * result + (assignedUsers != null ? assignedUsers.hashCode() : 0);
+        result = 31 * result + (benefits != null ? benefits.hashCode() : 0);
+        result = 31 * result + (billRateCategoryID != null ? billRateCategoryID.hashCode() : 0);
+        result = 31 * result + (bonusPackage != null ? bonusPackage.hashCode() : 0);
+        result = 31 * result + (branchCode != null ? branchCode.hashCode() : 0);
+        result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
+        result = 31 * result + (categories != null ? categories.hashCode() : 0);
+        result = 31 * result + (certificationList != null ? certificationList.hashCode() : 0);
+        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
+        result = 31 * result + (clientBillRate != null ? clientBillRate.hashCode() : 0);
+        result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
+        result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
+        result = 31 * result + (costCenter != null ? costCenter.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (dateClosed != null ? dateClosed.hashCode() : 0);
+        result = 31 * result + (dateEnd != null ? dateEnd.hashCode() : 0);
+        result = 31 * result + (dateLastExported != null ? dateLastExported.hashCode() : 0);
+        result = 31 * result + (degreeList != null ? degreeList.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (durationWeeks != null ? durationWeeks.hashCode() : 0);
+        result = 31 * result + (educationDegree != null ? educationDegree.hashCode() : 0);
+        result = 31 * result + (employmentType != null ? employmentType.hashCode() : 0);
+        result = 31 * result + (externalCategoryID != null ? externalCategoryID.hashCode() : 0);
+        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
+        result = 31 * result + (feeArrangement != null ? feeArrangement.hashCode() : 0);
+        result = 31 * result + (hoursOfOperation != null ? hoursOfOperation.hashCode() : 0);
+        result = 31 * result + (hoursPerWeek != null ? hoursPerWeek.hashCode() : 0);
+        result = 31 * result + (interviews != null ? interviews.hashCode() : 0);
+        result = 31 * result + (isClientEditable != null ? isClientEditable.hashCode() : 0);
+        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+        result = 31 * result + (isInterviewRequired != null ? isInterviewRequired.hashCode() : 0);
+        result = 31 * result + (isJobcastPublished != null ? isJobcastPublished.hashCode() : 0);
+        result = 31 * result + (isOpen != null ? isOpen.hashCode() : 0);
+        result = 31 * result + (isPublic != null ? isPublic.hashCode() : 0);
+        result = 31 * result + (jobBoardList != null ? jobBoardList.hashCode() : 0);
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
+        result = 31 * result + (numOpenings != null ? numOpenings.hashCode() : 0);
+        result = 31 * result + (onSite != null ? onSite.hashCode() : 0);
+        result = 31 * result + (optionsPackage != null ? optionsPackage.hashCode() : 0);
+        result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
+        result = 31 * result + (placements != null ? placements.hashCode() : 0);
+        result = 31 * result + (publicDescription != null ? publicDescription.hashCode() : 0);
+        result = 31 * result + (publishedZip != null ? publishedZip.hashCode() : 0);
+        result = 31 * result + (reasonClosed != null ? reasonClosed.hashCode() : 0);
+        result = 31 * result + (reportTo != null ? reportTo.hashCode() : 0);
+        result = 31 * result + (reportToClientContact != null ? reportToClientContact.hashCode() : 0);
+        result = 31 * result + (responseUser != null ? responseUser.hashCode() : 0);
+        result = 31 * result + (salary != null ? salary.hashCode() : 0);
+        result = 31 * result + (salaryUnit != null ? salaryUnit.hashCode() : 0);
+        result = 31 * result + (sendouts != null ? sendouts.hashCode() : 0);
+        result = 31 * result + (skillList != null ? skillList.hashCode() : 0);
+        result = 31 * result + (skills != null ? skills.hashCode() : 0);
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
+        result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (submissions != null ? submissions.hashCode() : 0);
+        result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
+        result = 31 * result + (taxRate != null ? taxRate.hashCode() : 0);
+        result = 31 * result + (taxStatus != null ? taxStatus.hashCode() : 0);
+        result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
+        result = 31 * result + (timeUnits != null ? timeUnits.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (travelRequirements != null ? travelRequirements.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (webResponses != null ? webResponses.hashCode() : 0);
+        result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
+        result = 31 * result + (willSponsor != null ? willSponsor.hashCode() : 0);
+        result = 31 * result + (yearsRequired != null ? yearsRequired.hashCode() : 0);
+        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
+        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
+        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
+        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
+        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
+        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
+        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
+        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
+        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
+        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder("JobOrder {")
+                .append("\n\t\"address\": ")
+                .append(address)
+                .append(",\n\t\"luceneScore\": ")
+                .append(luceneScore)
+                .append(",\n\t\"id\": ")
+                .append(id)
+                .append(",\n\t\"appointments\": ")
+                .append(appointments)
+                .append(",\n\t\"approvedPlacements\": ")
+                .append(approvedPlacements)
+                .append(",\n\t\"assignedUsers\": ")
+                .append(assignedUsers)
+                .append(",\n\t\"benefits\": ")
+                .append("'")
+                .append(benefits).append('\'')
+                .append(",\n\t\"billRateCategoryID\": ")
+                .append(billRateCategoryID)
+                .append(",\n\t\"bonusPackage\": ")
+                .append("'")
+                .append(bonusPackage).append('\'')
+                .append(",\n\t\"branchCode\": ")
+                .append("'")
+                .append(branchCode).append('\'')
+                .append(",\n\t\"businessSectors\": ")
+                .append(businessSectors)
+                .append(",\n\t\"categories\": ")
+                .append(categories)
+                .append(",\n\t\"certificationList\": ")
+                .append("'")
+                .append(certificationList).append('\'')
+                .append(",\n\t\"certifications\": ")
+                .append(certifications)
+                .append(",\n\t\"clientBillRate\": ")
+                .append(clientBillRate)
+                .append(",\n\t\"clientContact\": ")
+                .append(clientContact)
+                .append(",\n\t\"clientCorporation\": ")
+                .append(clientCorporation)
+                .append(",\n\t\"costCenter\": ")
+                .append("'")
+                .append(costCenter).append('\'')
+                .append(",\n\t\"dateAdded\": ")
+                .append(dateAdded)
+                .append(",\n\t\"dateClosed\": ")
+                .append(dateClosed)
+                .append(",\n\t\"dateEnd\": ")
+                .append(dateEnd)
+                .append(",\n\t\"dateLastExported\": ")
+                .append(dateLastExported)
+                .append(",\n\t\"degreeList\": ")
+                .append("'")
+                .append(degreeList).append('\'')
+                .append(",\n\t\"description\": ")
+                .append("'")
+                .append(description).append('\'')
+                .append(",\n\t\"durationWeeks\": ")
+                .append(durationWeeks)
+                .append(",\n\t\"educationDegree\": ")
+                .append("'")
+                .append(educationDegree).append('\'')
+                .append(",\n\t\"employmentType\": ")
+                .append("'")
+                .append(employmentType).append('\'')
+                .append(",\n\t\"externalCategoryID\": ")
+                .append(externalCategoryID)
+                .append(",\n\t\"externalID\": ")
+                .append("'")
+                .append(externalID).append('\'')
+                .append(",\n\t\"feeArrangement\": ")
+                .append(feeArrangement)
+                .append(",\n\t\"hoursOfOperation\": ")
+                .append("'")
+                .append(hoursOfOperation).append('\'')
+                .append(",\n\t\"hoursPerWeek\": ")
+                .append(hoursPerWeek)
+                .append(",\n\t\"interviews\": ")
+                .append(interviews)
+                .append(",\n\t\"isClientEditable\": ")
+                .append(isClientEditable)
+                .append(",\n\t\"isDeleted\": ")
+                .append(isDeleted)
+                .append(",\n\t\"isInterviewRequired\": ")
+                .append(isInterviewRequired)
+                .append(",\n\t\"isJobcastPublished\": ")
+                .append(isJobcastPublished)
+                .append(",\n\t\"isOpen\": ")
+                .append(isOpen)
+                .append(",\n\t\"isPublic\": ")
+                .append(isPublic)
+                .append(",\n\t\"jobBoardList\": ")
+                .append("'")
+                .append(jobBoardList).append('\'')
+                .append(",\n\t\"notes\": ")
+                .append(notes)
+                .append(",\n\t\"numOpenings\": ")
+                .append(numOpenings)
+                .append(",\n\t\"onSite\": ")
+                .append("'")
+                .append(onSite).append('\'')
+                .append(",\n\t\"optionsPackage\": ")
+                .append("'")
+                .append(optionsPackage).append('\'')
+                .append(",\n\t\"owner\": ")
+                .append(owner)
+                .append(",\n\t\"payRate\": ")
+                .append(payRate)
+                .append(",\n\t\"placements\": ")
+                .append(placements)
+                .append(",\n\t\"publicDescription\": ")
+                .append("'")
+                .append(publicDescription).append('\'')
+                .append(",\n\t\"publishedZip\": ")
+                .append("'")
+                .append(publishedZip).append('\'')
+                .append(",\n\t\"reasonClosed\": ")
+                .append("'")
+                .append(reasonClosed).append('\'')
+                .append(",\n\t\"reportTo\": ")
+                .append("'")
+                .append(reportTo).append('\'')
+                .append(",\n\t\"reportToClientContact\": ")
+                .append(reportToClientContact)
+                .append(",\n\t\"responseUser\": ")
+                .append(responseUser)
+                .append(",\n\t\"salary\": ")
+                .append(salary)
+                .append(",\n\t\"salaryUnit\": ")
+                .append("'")
+                .append(salaryUnit).append('\'')
+                .append(",\n\t\"sendouts\": ")
+                .append(sendouts)
+                .append(",\n\t\"skillList\": ")
+                .append("'")
+                .append(skillList).append('\'')
+                .append(",\n\t\"skills\": ")
+                .append(skills)
+                .append(",\n\t\"source\": ")
+                .append("'")
+                .append(source).append('\'')
+                .append(",\n\t\"specialties\": ")
+                .append(specialties)
+                .append(",\n\t\"startDate\": ")
+                .append(startDate)
+                .append(",\n\t\"status\": ")
+                .append("'")
+                .append(status).append('\'')
+                .append(",\n\t\"submissions\": ")
+                .append(submissions)
+                .append(",\n\t\"tasks\": ")
+                .append(tasks)
+                .append(",\n\t\"taxRate\": ")
+                .append(taxRate)
+                .append(",\n\t\"taxStatus\": ")
+                .append("'")
+                .append(taxStatus).append('\'')
+                .append(",\n\t\"tearsheets\": ")
+                .append(tearsheets)
+                .append(",\n\t\"timeUnits\": ")
+                .append(timeUnits)
+                .append(",\n\t\"title\": ")
+                .append("'")
+                .append(title).append('\'')
+                .append(",\n\t\"travelRequirements\": ")
+                .append("'")
+                .append(travelRequirements).append('\'')
+                .append(",\n\t\"type\": ")
+                .append(type)
+                .append(",\n\t\"webResponses\": ")
+                .append(webResponses)
+                .append(",\n\t\"willRelocate\": ")
+                .append(willRelocate)
+                .append(",\n\t\"willSponsor\": ")
+                .append(willSponsor)
+                .append(",\n\t\"yearsRequired\": ")
+                .append(yearsRequired)
+                .append(",\n\t\"customObject1s\": ")
+                .append(customObject1s)
+                .append(",\n\t\"customObject2s\": ")
+                .append(customObject2s)
+                .append(",\n\t\"customObject3s\": ")
+                .append(customObject3s)
+                .append(",\n\t\"customObject4s\": ")
+                .append(customObject4s)
+                .append(",\n\t\"customObject5s\": ")
+                .append(customObject5s)
+                .append(",\n\t\"customObject6s\": ")
+                .append(customObject6s)
+                .append(",\n\t\"customObject7s\": ")
+                .append(customObject7s)
+                .append(",\n\t\"customObject8s\": ")
+                .append(customObject8s)
+                .append(",\n\t\"customObject9s\": ")
+                .append(customObject9s)
+                .append(",\n\t\"customObject10s\": ")
+                .append(customObject10s)
+                .append('}')
+                .toString();
+    }
 }
