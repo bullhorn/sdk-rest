@@ -76,10 +76,6 @@ public class TestCoreEntities extends BaseTest {
 	}
 	
 	private void checkToString(BullhornEntity entityOne, BullhornEntity entityTwo) {
-        System.out.println(entityOne.toString());
-        System.out.println(entityTwo.toString());
-        System.out.println(entityOne.toString().equals(entityTwo.toString()));
-
 		assertTrue("Error with toString for "+entityOne.getClass().getSimpleName(),entityOne.toString().equals(entityTwo.toString()));
 	}
 
