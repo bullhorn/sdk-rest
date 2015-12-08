@@ -1,7 +1,5 @@
 package com.bullhornsdk.data;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 /**
  * Contains the PS Sandbox test entities that should be used in unit tests.
  * 
@@ -72,7 +70,7 @@ public class TestEntities {
 
 	private Integer timeUnitId;
 
-	
+    private Integer allCustomObjectsId;
 	
 	public TestEntities() {
 		super();
@@ -137,6 +135,8 @@ public class TestEntities {
 		this.taskId=1;
 
 		this.timeUnitId=1;
+
+        this.allCustomObjectsId = 1;
 	}
 
 	public Integer getAppointmentId() {
@@ -387,40 +387,82 @@ public class TestEntities {
 		this.timeUnitId = timeUnitId;
 	}
 
+    public Integer getAllCustomObjectsId() {
+        return allCustomObjectsId;
+    }
+
+    public void setAllCustomObjectsId(Integer allCustomObjectsId) {
+        this.allCustomObjectsId = allCustomObjectsId;
+    }
+
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("appointmentAttendeeId", appointmentAttendeeId)
-                .append("appointmentId", appointmentId)
-                .append("businessSectorId", businessSectorId)
-                .append("candidateId", candidateId)
-                .append("candidateEducationId", candidateEducationId)
-                .append("candidateReferenceId", candidateReferenceId)
-                .append("candidateWorkHistoryId", candidateWorkHistoryId)
-                .append("categoryId", categoryId)
-                .append("certificationId", certificationId)
-                .append("clientContactId", clientContactId)
-                .append("clientCorporationId", clientCorporationId)
-                .append("corporateUserId", corporateUserId)
-                .append("corporationDepartmentId", corporationDepartmentId)
-                .append("countryId", countryId)
-                .append("housingComplexId", housingComplexId)
-                .append("jobOrderId", jobOrderId)
-                .append("jobSubmissionId", jobSubmissionId)
-                .append("jobSubmissionHistoryId", jobSubmissionHistoryId)
-                .append("leadId", leadId)
-                .append("noteId", noteId)
-                .append("noteEntityId", noteEntityId)
-                .append("opportunityId", opportunityId)
-                .append("placementId", placementId)
-                .append("placementChangeRequestId", placementChangeRequestId)
-                .append("placementCommissionId", placementCommissionId)
-                .append("sendoutId", sendoutId)
-                .append("skillId", skillId)
-                .append("specialtyId", specialtyId)
-                .append("stateId", stateId)
-                .append("taskId", taskId)
-                .append("timeUnitId", timeUnitId)
+        return new StringBuilder("TestEntities {")
+                .append("\n\t\"allCustomObjectsId\": ")
+                .append(allCustomObjectsId)
+                .append(",\n\t\"appointmentId\": ")
+                .append(appointmentId)
+                .append(",\n\t\"appointmentAttendeeId\": ")
+                .append(appointmentAttendeeId)
+                .append(",\n\t\"businessSectorId\": ")
+                .append(businessSectorId)
+                .append(",\n\t\"candidateId\": ")
+                .append(candidateId)
+                .append(",\n\t\"candidateEducationId\": ")
+                .append(candidateEducationId)
+                .append(",\n\t\"candidateReferenceId\": ")
+                .append(candidateReferenceId)
+                .append(",\n\t\"candidateWorkHistoryId\": ")
+                .append(candidateWorkHistoryId)
+                .append(",\n\t\"categoryId\": ")
+                .append(categoryId)
+                .append(",\n\t\"certificationId\": ")
+                .append(certificationId)
+                .append(",\n\t\"clientContactId\": ")
+                .append(clientContactId)
+                .append(",\n\t\"clientCorporationId\": ")
+                .append(clientCorporationId)
+                .append(",\n\t\"corporateUserId\": ")
+                .append(corporateUserId)
+                .append(",\n\t\"corporationDepartmentId\": ")
+                .append(corporationDepartmentId)
+                .append(",\n\t\"countryId\": ")
+                .append(countryId)
+                .append(",\n\t\"housingComplexId\": ")
+                .append(housingComplexId)
+                .append(",\n\t\"jobOrderId\": ")
+                .append(jobOrderId)
+                .append(",\n\t\"jobSubmissionId\": ")
+                .append(jobSubmissionId)
+                .append(",\n\t\"jobSubmissionHistoryId\": ")
+                .append(jobSubmissionHistoryId)
+                .append(",\n\t\"leadId\": ")
+                .append(leadId)
+                .append(",\n\t\"noteId\": ")
+                .append(noteId)
+                .append(",\n\t\"noteEntityId\": ")
+                .append(noteEntityId)
+                .append(",\n\t\"opportunityId\": ")
+                .append(opportunityId)
+                .append(",\n\t\"placementId\": ")
+                .append(placementId)
+                .append(",\n\t\"placementChangeRequestId\": ")
+                .append(placementChangeRequestId)
+                .append(",\n\t\"placementCommissionId\": ")
+                .append(placementCommissionId)
+                .append(",\n\t\"sendoutId\": ")
+                .append(sendoutId)
+                .append(",\n\t\"skillId\": ")
+                .append(skillId)
+                .append(",\n\t\"specialtyId\": ")
+                .append(specialtyId)
+                .append(",\n\t\"stateId\": ")
+                .append(stateId)
+                .append(",\n\t\"taskId\": ")
+                .append(taskId)
+                .append(",\n\t\"timeUnitId\": ")
+                .append(timeUnitId)
+                .append('}')
                 .toString();
     }
 }
