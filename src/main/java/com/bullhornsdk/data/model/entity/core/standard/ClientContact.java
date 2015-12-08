@@ -2,9 +2,21 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import javax.validation.constraints.Size;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
+import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.FileEntity;
@@ -23,6 +35,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -48,7 +61,9 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"preferredContact", "referredByPerson", "reportToPerson",
 		"secondaryAddress", "secondaryOwners", "skills", "smsOptIn", "source",
 		"specialties", "status", "tearsheets", "timeZoneOffsetEST", "type",
-		"username" })
+		"username", "customObject1s", "customObject2s", "customObject3s",
+        "customObject4s", "customObject5s", "customObject6s", "customObject7s",
+        "customObject8s", "customObject9s", "customObject10s" })
 public class ClientContact extends CustomFieldsB implements QueryEntity,
 		UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, SearchEntity {
@@ -237,6 +252,26 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
 	@JsonIgnore
 	private String username;
+
+    private OneToMany<PersonCustomObjectInstance1> customObject1s;
+
+    private OneToMany<PersonCustomObjectInstance2> customObject2s;
+
+    private OneToMany<PersonCustomObjectInstance3> customObject3s;
+
+    private OneToMany<PersonCustomObjectInstance4> customObject4s;
+
+    private OneToMany<PersonCustomObjectInstance5> customObject5s;
+
+    private OneToMany<PersonCustomObjectInstance6> customObject6s;
+
+    private OneToMany<PersonCustomObjectInstance7> customObject7s;
+
+    private OneToMany<PersonCustomObjectInstance8> customObject8s;
+
+    private OneToMany<PersonCustomObjectInstance9> customObject9s;
+
+    private OneToMany<PersonCustomObjectInstance10> customObject10s;
 
 	public ClientContact() {
 		super();
@@ -892,572 +927,495 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		this.username = username;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result
-				+ ((businessSectors == null) ? 0 : businessSectors.hashCode());
-		result = prime * result
-				+ ((categories == null) ? 0 : categories.hashCode());
-		result = prime * result
-				+ ((category == null) ? 0 : category.hashCode());
-		result = prime * result
-				+ ((certifications == null) ? 0 : certifications.hashCode());
-		result = prime * result
-				+ ((clientContactID == null) ? 0 : clientContactID.hashCode());
-		result = prime
-				* result
-				+ ((clientCorporation == null) ? 0 : clientCorporation
-						.hashCode());
-		result = prime * result
-				+ ((comments == null) ? 0 : comments.hashCode());
-		result = prime * result
-				+ ((dateAdded == null) ? 0 : dateAdded.hashCode());
-		result = prime * result
-				+ ((dateLastComment == null) ? 0 : dateLastComment.hashCode());
-		result = prime * result
-				+ ((dateLastVisit == null) ? 0 : dateLastVisit.hashCode());
-		result = prime * result
-				+ ((deleteMe == null) ? 0 : deleteMe.hashCode());
-		result = prime * result
-				+ ((description == null) ? 0 : description.hashCode());
-		result = prime
-				* result
-				+ ((desiredCategories == null) ? 0 : desiredCategories
-						.hashCode());
-		result = prime * result
-				+ ((desiredSkills == null) ? 0 : desiredSkills.hashCode());
-		result = prime
-				* result
-				+ ((desiredSpecialties == null) ? 0 : desiredSpecialties
-						.hashCode());
-		result = prime * result
-				+ ((division == null) ? 0 : division.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((email2 == null) ? 0 : email2.hashCode());
-		result = prime * result + ((email3 == null) ? 0 : email3.hashCode());
-		result = prime * result
-				+ ((externalID == null) ? 0 : externalID.hashCode());
-		result = prime * result + ((fax == null) ? 0 : fax.hashCode());
-		result = prime * result + ((fax2 == null) ? 0 : fax2.hashCode());
-		result = prime * result + ((fax3 == null) ? 0 : fax3.hashCode());
-		result = prime * result
-				+ ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime
-				* result
-				+ ((isDayLightSavings == null) ? 0 : isDayLightSavings
-						.hashCode());
-		result = prime * result
-				+ ((isDeleted == null) ? 0 : isDeleted.hashCode());
-		result = prime * result
-				+ ((isLockedOut == null) ? 0 : isLockedOut.hashCode());
-		result = prime * result
-				+ ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result
-				+ ((linkedPerson == null) ? 0 : linkedPerson.hashCode());
-		result = prime * result
-				+ ((massMailOptOut == null) ? 0 : massMailOptOut.hashCode());
-		result = prime * result
-				+ ((middleName == null) ? 0 : middleName.hashCode());
-		result = prime * result
-				+ ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-		result = prime * result + ((mobile == null) ? 0 : mobile.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result
-				+ ((namePrefix == null) ? 0 : namePrefix.hashCode());
-		result = prime * result
-				+ ((nameSuffix == null) ? 0 : nameSuffix.hashCode());
-		result = prime * result
-				+ ((nickName == null) ? 0 : nickName.hashCode());
-		result = prime * result
-				+ ((numEmployees == null) ? 0 : numEmployees.hashCode());
-		result = prime * result
-				+ ((occupation == null) ? 0 : occupation.hashCode());
-		result = prime * result + ((office == null) ? 0 : office.hashCode());
-		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-		result = prime * result + ((pager == null) ? 0 : pager.hashCode());
-		result = prime * result
-				+ ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
-		result = prime * result + ((phone2 == null) ? 0 : phone2.hashCode());
-		result = prime * result + ((phone3 == null) ? 0 : phone3.hashCode());
-		result = prime
-				* result
-				+ ((preferredContact == null) ? 0 : preferredContact.hashCode());
-		result = prime
-				* result
-				+ ((referredByPerson == null) ? 0 : referredByPerson.hashCode());
-		result = prime * result
-				+ ((reportToPerson == null) ? 0 : reportToPerson.hashCode());
-		result = prime
-				* result
-				+ ((secondaryAddress == null) ? 0 : secondaryAddress.hashCode());
-		result = prime * result
-				+ ((secondaryOwners == null) ? 0 : secondaryOwners.hashCode());
-		result = prime * result + ((skills == null) ? 0 : skills.hashCode());
-		result = prime * result
-				+ ((smsOptIn == null) ? 0 : smsOptIn.hashCode());
-		result = prime * result + ((source == null) ? 0 : source.hashCode());
-		result = prime * result
-				+ ((specialties == null) ? 0 : specialties.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime
-				* result
-				+ ((timeZoneOffsetEST == null) ? 0 : timeZoneOffsetEST
-						.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result
-				+ ((username == null) ? 0 : username.hashCode());
-		return result;
-	}
+    @JsonProperty("customObject1s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance1> getCustomObject1s() {
+        return customObject1s;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ClientContact other = (ClientContact) obj;
-		if (address == null) {
-			if (other.address != null)
-				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (businessSectors == null) {
-			if (other.businessSectors != null)
-				return false;
-		} else if (!businessSectors.equals(other.businessSectors))
-			return false;
-		if (categories == null) {
-			if (other.categories != null)
-				return false;
-		} else if (!categories.equals(other.categories))
-			return false;
-		if (category == null) {
-			if (other.category != null)
-				return false;
-		} else if (!category.equals(other.category))
-			return false;
-		if (certifications == null) {
-			if (other.certifications != null)
-				return false;
-		} else if (!certifications.equals(other.certifications))
-			return false;
-		if (clientContactID == null) {
-			if (other.clientContactID != null)
-				return false;
-		} else if (!clientContactID.equals(other.clientContactID))
-			return false;
-		if (clientCorporation == null) {
-			if (other.clientCorporation != null)
-				return false;
-		} else if (!clientCorporation.equals(other.clientCorporation))
-			return false;
-		if (comments == null) {
-			if (other.comments != null)
-				return false;
-		} else if (!comments.equals(other.comments))
-			return false;
-		if (dateAdded == null) {
-			if (other.dateAdded != null)
-				return false;
-		} else if (!dateAdded.isEqual(other.dateAdded))
-			return false;
-		if (dateLastComment == null) {
-			if (other.dateLastComment != null)
-				return false;
-		} else if (!dateLastComment.isEqual(other.dateLastComment))
-			return false;
-		if (dateLastVisit == null) {
-			if (other.dateLastVisit != null)
-				return false;
-		} else if (!dateLastVisit.isEqual(other.dateLastVisit))
-			return false;
-		if (deleteMe == null) {
-			if (other.deleteMe != null)
-				return false;
-		} else if (!deleteMe.equals(other.deleteMe))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (desiredCategories == null) {
-			if (other.desiredCategories != null)
-				return false;
-		} else if (!desiredCategories.equals(other.desiredCategories))
-			return false;
-		if (desiredSkills == null) {
-			if (other.desiredSkills != null)
-				return false;
-		} else if (!desiredSkills.equals(other.desiredSkills))
-			return false;
-		if (desiredSpecialties == null) {
-			if (other.desiredSpecialties != null)
-				return false;
-		} else if (!desiredSpecialties.equals(other.desiredSpecialties))
-			return false;
-		if (division == null) {
-			if (other.division != null)
-				return false;
-		} else if (!division.equals(other.division))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (email2 == null) {
-			if (other.email2 != null)
-				return false;
-		} else if (!email2.equals(other.email2))
-			return false;
-		if (email3 == null) {
-			if (other.email3 != null)
-				return false;
-		} else if (!email3.equals(other.email3))
-			return false;
-		if (externalID == null) {
-			if (other.externalID != null)
-				return false;
-		} else if (!externalID.equals(other.externalID))
-			return false;
-		if (fax == null) {
-			if (other.fax != null)
-				return false;
-		} else if (!fax.equals(other.fax))
-			return false;
-		if (fax2 == null) {
-			if (other.fax2 != null)
-				return false;
-		} else if (!fax2.equals(other.fax2))
-			return false;
-		if (fax3 == null) {
-			if (other.fax3 != null)
-				return false;
-		} else if (!fax3.equals(other.fax3))
-			return false;
-		if (firstName == null) {
-			if (other.firstName != null)
-				return false;
-		} else if (!firstName.equals(other.firstName))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (isDayLightSavings == null) {
-			if (other.isDayLightSavings != null)
-				return false;
-		} else if (!isDayLightSavings.equals(other.isDayLightSavings))
-			return false;
-		if (isDeleted == null) {
-			if (other.isDeleted != null)
-				return false;
-		} else if (!isDeleted.equals(other.isDeleted))
-			return false;
-		if (isLockedOut == null) {
-			if (other.isLockedOut != null)
-				return false;
-		} else if (!isLockedOut.equals(other.isLockedOut))
-			return false;
-		if (lastName == null) {
-			if (other.lastName != null)
-				return false;
-		} else if (!lastName.equals(other.lastName))
-			return false;
-		if (linkedPerson == null) {
-			if (other.linkedPerson != null)
-				return false;
-		} else if (!linkedPerson.equals(other.linkedPerson))
-			return false;
-		if (massMailOptOut == null) {
-			if (other.massMailOptOut != null)
-				return false;
-		} else if (!massMailOptOut.equals(other.massMailOptOut))
-			return false;
-		if (middleName == null) {
-			if (other.middleName != null)
-				return false;
-		} else if (!middleName.equals(other.middleName))
-			return false;
-		if (migrateGUID == null) {
-			if (other.migrateGUID != null)
-				return false;
-		} else if (!migrateGUID.equals(other.migrateGUID))
-			return false;
-		if (mobile == null) {
-			if (other.mobile != null)
-				return false;
-		} else if (!mobile.equals(other.mobile))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (namePrefix == null) {
-			if (other.namePrefix != null)
-				return false;
-		} else if (!namePrefix.equals(other.namePrefix))
-			return false;
-		if (nameSuffix == null) {
-			if (other.nameSuffix != null)
-				return false;
-		} else if (!nameSuffix.equals(other.nameSuffix))
-			return false;
-		if (nickName == null) {
-			if (other.nickName != null)
-				return false;
-		} else if (!nickName.equals(other.nickName))
-			return false;
-		if (numEmployees == null) {
-			if (other.numEmployees != null)
-				return false;
-		} else if (!numEmployees.equals(other.numEmployees))
-			return false;
-		if (occupation == null) {
-			if (other.occupation != null)
-				return false;
-		} else if (!occupation.equals(other.occupation))
-			return false;
-		if (office == null) {
-			if (other.office != null)
-				return false;
-		} else if (!office.equals(other.office))
-			return false;
-		if (owner == null) {
-			if (other.owner != null)
-				return false;
-		} else if (!owner.equals(other.owner))
-			return false;
-		if (pager == null) {
-			if (other.pager != null)
-				return false;
-		} else if (!pager.equals(other.pager))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (phone == null) {
-			if (other.phone != null)
-				return false;
-		} else if (!phone.equals(other.phone))
-			return false;
-		if (phone2 == null) {
-			if (other.phone2 != null)
-				return false;
-		} else if (!phone2.equals(other.phone2))
-			return false;
-		if (phone3 == null) {
-			if (other.phone3 != null)
-				return false;
-		} else if (!phone3.equals(other.phone3))
-			return false;
-		if (preferredContact == null) {
-			if (other.preferredContact != null)
-				return false;
-		} else if (!preferredContact.equals(other.preferredContact))
-			return false;
-		if (referredByPerson == null) {
-			if (other.referredByPerson != null)
-				return false;
-		} else if (!referredByPerson.equals(other.referredByPerson))
-			return false;
-		if (reportToPerson == null) {
-			if (other.reportToPerson != null)
-				return false;
-		} else if (!reportToPerson.equals(other.reportToPerson))
-			return false;
-		if (secondaryAddress == null) {
-			if (other.secondaryAddress != null)
-				return false;
-		} else if (!secondaryAddress.equals(other.secondaryAddress))
-			return false;
-		if (secondaryOwners == null) {
-			if (other.secondaryOwners != null)
-				return false;
-		} else if (!secondaryOwners.equals(other.secondaryOwners))
-			return false;
-		if (skills == null) {
-			if (other.skills != null)
-				return false;
-		} else if (!skills.equals(other.skills))
-			return false;
-		if (smsOptIn == null) {
-			if (other.smsOptIn != null)
-				return false;
-		} else if (!smsOptIn.equals(other.smsOptIn))
-			return false;
-		if (source == null) {
-			if (other.source != null)
-				return false;
-		} else if (!source.equals(other.source))
-			return false;
-		if (specialties == null) {
-			if (other.specialties != null)
-				return false;
-		} else if (!specialties.equals(other.specialties))
-			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
-			return false;
-		if (timeZoneOffsetEST == null) {
-			if (other.timeZoneOffsetEST != null)
-				return false;
-		} else if (!timeZoneOffsetEST.equals(other.timeZoneOffsetEST))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		return true;
-	}
+    @JsonProperty("customObject1s")
+    public void setCustomObject1s(OneToMany<PersonCustomObjectInstance1> customObject1s) {
+        this.customObject1s = customObject1s;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("ClientContact {\nid=");
-		builder.append(id);
-		builder.append(", \naddress=");
-		builder.append(address);
-		builder.append(", \nbusinessSectors=");
-		builder.append(businessSectors);
-		builder.append(", \ncategories=");
-		builder.append(categories);
-		builder.append(", \ncategory=");
-		builder.append(category);
-		builder.append(", \ncertifications=");
-		builder.append(certifications);
-		builder.append(", \nclientContactID=");
-		builder.append(clientContactID);
-		builder.append(", \nclientCorporation=");
-		builder.append(clientCorporation);
-		builder.append(", \ncomments=");
-		builder.append(comments);
-		builder.append(", \ndateAdded=");
-		builder.append(dateAdded);
-		builder.append(", \ndateLastComment=");
-		builder.append(dateLastComment);
-		builder.append(", \ndateLastVisit=");
-		builder.append(dateLastVisit);
-		builder.append(", \ndeleteMe=");
-		builder.append(deleteMe);
-		builder.append(", \ndescription=");
-		builder.append(description);
-		builder.append(", \ndesiredCategories=");
-		builder.append(desiredCategories);
-		builder.append(", \ndesiredSkills=");
-		builder.append(desiredSkills);
-		builder.append(", \ndesiredSpecialties=");
-		builder.append(desiredSpecialties);
-		builder.append(", \ndivision=");
-		builder.append(division);
-		builder.append(", \nemail=");
-		builder.append(email);
-		builder.append(", \nemail2=");
-		builder.append(email2);
-		builder.append(", \nemail3=");
-		builder.append(email3);
-		builder.append(", \nexternalID=");
-		builder.append(externalID);
-		builder.append(", \nfax=");
-		builder.append(fax);
-		builder.append(", \nfax2=");
-		builder.append(fax2);
-		builder.append(", \nfax3=");
-		builder.append(fax3);
-		builder.append(", \nfirstName=");
-		builder.append(firstName);
-		builder.append(", \nisDayLightSavings=");
-		builder.append(isDayLightSavings);
-		builder.append(", \nisDeleted=");
-		builder.append(isDeleted);
-		builder.append(", \nisLockedOut=");
-		builder.append(isLockedOut);
-		builder.append(", \nlastName=");
-		builder.append(lastName);
-		builder.append(", \nlinkedPerson=");
-		builder.append(linkedPerson);
-		builder.append(", \nmassMailOptOut=");
-		builder.append(massMailOptOut);
-		builder.append(", \nmiddleName=");
-		builder.append(middleName);
-		builder.append(", \nmigrateGUID=");
-		builder.append(migrateGUID);
-		builder.append(", \nmobile=");
-		builder.append(mobile);
-		builder.append(", \nname=");
-		builder.append(name);
-		builder.append(", \nnamePrefix=");
-		builder.append(namePrefix);
-		builder.append(", \nnameSuffix=");
-		builder.append(nameSuffix);
-		builder.append(", \nnickName=");
-		builder.append(nickName);
-		builder.append(", \nnumEmployees=");
-		builder.append(numEmployees);
-		builder.append(", \noccupation=");
-		builder.append(occupation);
-		builder.append(", \noffice=");
-		builder.append(office);
-		builder.append(", \nowner=");
-		builder.append(owner);
-		builder.append(", \npager=");
-		builder.append(pager);
-		builder.append(", \npassword=");
-		builder.append(password);
-		builder.append(", \nphone=");
-		builder.append(phone);
-		builder.append(", \nphone2=");
-		builder.append(phone2);
-		builder.append(", \nphone3=");
-		builder.append(phone3);
-		builder.append(", \npreferredContact=");
-		builder.append(preferredContact);
-		builder.append(", \nreferredByPerson=");
-		builder.append(referredByPerson);
-		builder.append(", \nreportToPerson=");
-		builder.append(reportToPerson);
-		builder.append(", \nsecondaryAddress=");
-		builder.append(secondaryAddress);
-		builder.append(", \nsecondaryOwners=");
-		builder.append(secondaryOwners);
-		builder.append(", \nskills=");
-		builder.append(skills);
-		builder.append(", \nsmsOptIn=");
-		builder.append(smsOptIn);
-		builder.append(", \nsource=");
-		builder.append(source);
-		builder.append(", \nspecialties=");
-		builder.append(specialties);
-		builder.append(", \nstatus=");
-		builder.append(status);
-		builder.append(", \ntimeZoneOffsetEST=");
-		builder.append(timeZoneOffsetEST);
-		builder.append(", \ntype=");
-		builder.append(type);
-		builder.append(", \nusername=");
-		builder.append(username);
-		builder.append("\n}");
-		return builder.toString();
-	}
+    @JsonProperty("customObject2s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance2> getCustomObject2s() {
+        return customObject2s;
+    }
 
+    @JsonProperty("customObject2s")
+    public void setCustomObject2s(OneToMany<PersonCustomObjectInstance2> customObject2s) {
+        this.customObject2s = customObject2s;
+    }
+
+    @JsonProperty("customObject3s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance3> getCustomObject3s() {
+        return customObject3s;
+    }
+
+    @JsonProperty("customObject3s")
+    public void setCustomObject3s(OneToMany<PersonCustomObjectInstance3> customObject3s) {
+        this.customObject3s = customObject3s;
+    }
+
+    @JsonProperty("customObject4s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance4> getCustomObject4s() {
+        return customObject4s;
+    }
+
+    @JsonProperty("customObject4s")
+    public void setCustomObject4s(OneToMany<PersonCustomObjectInstance4> customObject4s) {
+        this.customObject4s = customObject4s;
+    }
+
+    @JsonProperty("customObject5s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance5> getCustomObject5s() {
+        return customObject5s;
+    }
+
+    @JsonProperty("customObject5s")
+    public void setCustomObject5s(OneToMany<PersonCustomObjectInstance5> customObject5s) {
+        this.customObject5s = customObject5s;
+    }
+
+    @JsonProperty("customObject6s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance6> getCustomObject6s() {
+        return customObject6s;
+    }
+
+    @JsonProperty("customObject6s")
+    public void setCustomObject6s(OneToMany<PersonCustomObjectInstance6> customObject6s) {
+        this.customObject6s = customObject6s;
+    }
+
+    @JsonProperty("customObject7s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance7> getCustomObject7s() {
+        return customObject7s;
+    }
+
+    @JsonProperty("customObject7s")
+    public void setCustomObject7s(OneToMany<PersonCustomObjectInstance7> customObject7s) {
+        this.customObject7s = customObject7s;
+    }
+
+    @JsonProperty("customObject8s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance8> getCustomObject8s() {
+        return customObject8s;
+    }
+
+    @JsonProperty("customObject8s")
+    public void setCustomObject8s(OneToMany<PersonCustomObjectInstance8> customObject8s) {
+        this.customObject8s = customObject8s;
+    }
+
+    @JsonProperty("customObject9s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance9> getCustomObject9s() {
+        return customObject9s;
+    }
+
+    @JsonProperty("customObject9s")
+    public void setCustomObject9s(OneToMany<PersonCustomObjectInstance9> customObject9s) {
+        this.customObject9s = customObject9s;
+    }
+
+    @JsonProperty("customObject10s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance10> getCustomObject10s() {
+        return customObject10s;
+    }
+
+    @JsonProperty("customObject10s")
+    public void setCustomObject10s(OneToMany<PersonCustomObjectInstance10> customObject10s) {
+        this.customObject10s = customObject10s;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ClientContact)) return false;
+        if (!super.equals(o)) return false;
+
+        ClientContact that = (ClientContact) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
+        if (businessSectors != null ? !businessSectors.equals(that.businessSectors) : that.businessSectors != null)
+            return false;
+        if (categories != null ? !categories.equals(that.categories) : that.categories != null) return false;
+        if (category != null ? !category.equals(that.category) : that.category != null) return false;
+        if (certifications != null ? !certifications.equals(that.certifications) : that.certifications != null)
+            return false;
+        if (clientContactID != null ? !clientContactID.equals(that.clientContactID) : that.clientContactID != null)
+            return false;
+        if (clientCorporation != null ? !clientCorporation.equals(that.clientCorporation) : that.clientCorporation != null)
+            return false;
+        if (comments != null ? !comments.equals(that.comments) : that.comments != null) return false;
+        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+        if (dateLastComment != null ? !dateLastComment.equals(that.dateLastComment) : that.dateLastComment != null)
+            return false;
+        if (dateLastVisit != null ? !dateLastVisit.equals(that.dateLastVisit) : that.dateLastVisit != null)
+            return false;
+        if (deleteMe != null ? !deleteMe.equals(that.deleteMe) : that.deleteMe != null) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (desiredCategories != null ? !desiredCategories.equals(that.desiredCategories) : that.desiredCategories != null)
+            return false;
+        if (desiredSkills != null ? !desiredSkills.equals(that.desiredSkills) : that.desiredSkills != null)
+            return false;
+        if (desiredSpecialties != null ? !desiredSpecialties.equals(that.desiredSpecialties) : that.desiredSpecialties != null)
+            return false;
+        if (division != null ? !division.equals(that.division) : that.division != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
+        if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
+        if (externalID != null ? !externalID.equals(that.externalID) : that.externalID != null) return false;
+        if (fax != null ? !fax.equals(that.fax) : that.fax != null) return false;
+        if (fax2 != null ? !fax2.equals(that.fax2) : that.fax2 != null) return false;
+        if (fax3 != null ? !fax3.equals(that.fax3) : that.fax3 != null) return false;
+        if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
+        if (isDayLightSavings != null ? !isDayLightSavings.equals(that.isDayLightSavings) : that.isDayLightSavings != null)
+            return false;
+        if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
+        if (isLockedOut != null ? !isLockedOut.equals(that.isLockedOut) : that.isLockedOut != null) return false;
+        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+        if (linkedPerson != null ? !linkedPerson.equals(that.linkedPerson) : that.linkedPerson != null) return false;
+        if (massMailOptOut != null ? !massMailOptOut.equals(that.massMailOptOut) : that.massMailOptOut != null)
+            return false;
+        if (middleName != null ? !middleName.equals(that.middleName) : that.middleName != null) return false;
+        if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+        if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (namePrefix != null ? !namePrefix.equals(that.namePrefix) : that.namePrefix != null) return false;
+        if (nameSuffix != null ? !nameSuffix.equals(that.nameSuffix) : that.nameSuffix != null) return false;
+        if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
+        if (numEmployees != null ? !numEmployees.equals(that.numEmployees) : that.numEmployees != null) return false;
+        if (occupation != null ? !occupation.equals(that.occupation) : that.occupation != null) return false;
+        if (office != null ? !office.equals(that.office) : that.office != null) return false;
+        if (owner != null ? !owner.equals(that.owner) : that.owner != null) return false;
+        if (pager != null ? !pager.equals(that.pager) : that.pager != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
+        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
+        if (phone2 != null ? !phone2.equals(that.phone2) : that.phone2 != null) return false;
+        if (phone3 != null ? !phone3.equals(that.phone3) : that.phone3 != null) return false;
+        if (preferredContact != null ? !preferredContact.equals(that.preferredContact) : that.preferredContact != null)
+            return false;
+        if (referredByPerson != null ? !referredByPerson.equals(that.referredByPerson) : that.referredByPerson != null)
+            return false;
+        if (reportToPerson != null ? !reportToPerson.equals(that.reportToPerson) : that.reportToPerson != null)
+            return false;
+        if (secondaryAddress != null ? !secondaryAddress.equals(that.secondaryAddress) : that.secondaryAddress != null)
+            return false;
+        if (secondaryOwners != null ? !secondaryOwners.equals(that.secondaryOwners) : that.secondaryOwners != null)
+            return false;
+        if (skills != null ? !skills.equals(that.skills) : that.skills != null) return false;
+        if (smsOptIn != null ? !smsOptIn.equals(that.smsOptIn) : that.smsOptIn != null) return false;
+        if (source != null ? !source.equals(that.source) : that.source != null) return false;
+        if (specialties != null ? !specialties.equals(that.specialties) : that.specialties != null) return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (tearsheets != null ? !tearsheets.equals(that.tearsheets) : that.tearsheets != null) return false;
+        if (timeZoneOffsetEST != null ? !timeZoneOffsetEST.equals(that.timeZoneOffsetEST) : that.timeZoneOffsetEST != null)
+            return false;
+        if (type != null ? !type.equals(that.type) : that.type != null) return false;
+        if (username != null ? !username.equals(that.username) : that.username != null) return false;
+        if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
+            return false;
+        if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
+            return false;
+        if (customObject3s != null ? !customObject3s.equals(that.customObject3s) : that.customObject3s != null)
+            return false;
+        if (customObject4s != null ? !customObject4s.equals(that.customObject4s) : that.customObject4s != null)
+            return false;
+        if (customObject5s != null ? !customObject5s.equals(that.customObject5s) : that.customObject5s != null)
+            return false;
+        if (customObject6s != null ? !customObject6s.equals(that.customObject6s) : that.customObject6s != null)
+            return false;
+        if (customObject7s != null ? !customObject7s.equals(that.customObject7s) : that.customObject7s != null)
+            return false;
+        if (customObject8s != null ? !customObject8s.equals(that.customObject8s) : that.customObject8s != null)
+            return false;
+        if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
+            return false;
+        return !(customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (id != null ? id.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
+        result = 31 * result + (categories != null ? categories.hashCode() : 0);
+        result = 31 * result + (category != null ? category.hashCode() : 0);
+        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
+        result = 31 * result + (clientContactID != null ? clientContactID.hashCode() : 0);
+        result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
+        result = 31 * result + (comments != null ? comments.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (dateLastComment != null ? dateLastComment.hashCode() : 0);
+        result = 31 * result + (dateLastVisit != null ? dateLastVisit.hashCode() : 0);
+        result = 31 * result + (deleteMe != null ? deleteMe.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (desiredCategories != null ? desiredCategories.hashCode() : 0);
+        result = 31 * result + (desiredSkills != null ? desiredSkills.hashCode() : 0);
+        result = 31 * result + (desiredSpecialties != null ? desiredSpecialties.hashCode() : 0);
+        result = 31 * result + (division != null ? division.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (email2 != null ? email2.hashCode() : 0);
+        result = 31 * result + (email3 != null ? email3.hashCode() : 0);
+        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
+        result = 31 * result + (fax != null ? fax.hashCode() : 0);
+        result = 31 * result + (fax2 != null ? fax2.hashCode() : 0);
+        result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (isDayLightSavings != null ? isDayLightSavings.hashCode() : 0);
+        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+        result = 31 * result + (isLockedOut != null ? isLockedOut.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (linkedPerson != null ? linkedPerson.hashCode() : 0);
+        result = 31 * result + (massMailOptOut != null ? massMailOptOut.hashCode() : 0);
+        result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
+        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+        result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (namePrefix != null ? namePrefix.hashCode() : 0);
+        result = 31 * result + (nameSuffix != null ? nameSuffix.hashCode() : 0);
+        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+        result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
+        result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
+        result = 31 * result + (office != null ? office.hashCode() : 0);
+        result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (pager != null ? pager.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (phone2 != null ? phone2.hashCode() : 0);
+        result = 31 * result + (phone3 != null ? phone3.hashCode() : 0);
+        result = 31 * result + (preferredContact != null ? preferredContact.hashCode() : 0);
+        result = 31 * result + (referredByPerson != null ? referredByPerson.hashCode() : 0);
+        result = 31 * result + (reportToPerson != null ? reportToPerson.hashCode() : 0);
+        result = 31 * result + (secondaryAddress != null ? secondaryAddress.hashCode() : 0);
+        result = 31 * result + (secondaryOwners != null ? secondaryOwners.hashCode() : 0);
+        result = 31 * result + (skills != null ? skills.hashCode() : 0);
+        result = 31 * result + (smsOptIn != null ? smsOptIn.hashCode() : 0);
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
+        result = 31 * result + (timeZoneOffsetEST != null ? timeZoneOffsetEST.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (username != null ? username.hashCode() : 0);
+        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
+        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
+        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
+        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
+        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
+        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
+        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
+        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
+        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
+        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder("ClientContact {")
+                .append("\n\t\"address\": ")
+                .append(address)
+                .append(",\n\t\"id\": ")
+                .append(id)
+                .append(",\n\t\"businessSectors\": ")
+                .append(businessSectors)
+                .append(",\n\t\"categories\": ")
+                .append(categories)
+                .append(",\n\t\"category\": ")
+                .append(category)
+                .append(",\n\t\"certifications\": ")
+                .append("'")
+                .append(certifications).append('\'')
+                .append(",\n\t\"clientContactID\": ")
+                .append(clientContactID)
+                .append(",\n\t\"clientCorporation\": ")
+                .append(clientCorporation)
+                .append(",\n\t\"comments\": ")
+                .append("'")
+                .append(comments).append('\'')
+                .append(",\n\t\"dateAdded\": ")
+                .append(dateAdded)
+                .append(",\n\t\"dateLastComment\": ")
+                .append(dateLastComment)
+                .append(",\n\t\"dateLastVisit\": ")
+                .append(dateLastVisit)
+                .append(",\n\t\"deleteMe\": ")
+                .append(deleteMe)
+                .append(",\n\t\"description\": ")
+                .append("'")
+                .append(description).append('\'')
+                .append(",\n\t\"desiredCategories\": ")
+                .append("'")
+                .append(desiredCategories).append('\'')
+                .append(",\n\t\"desiredSkills\": ")
+                .append("'")
+                .append(desiredSkills).append('\'')
+                .append(",\n\t\"desiredSpecialties\": ")
+                .append("'")
+                .append(desiredSpecialties).append('\'')
+                .append(",\n\t\"division\": ")
+                .append("'")
+                .append(division).append('\'')
+                .append(",\n\t\"email\": ")
+                .append("'")
+                .append(email).append('\'')
+                .append(",\n\t\"email2\": ")
+                .append("'")
+                .append(email2).append('\'')
+                .append(",\n\t\"email3\": ")
+                .append("'")
+                .append(email3).append('\'')
+                .append(",\n\t\"externalID\": ")
+                .append("'")
+                .append(externalID).append('\'')
+                .append(",\n\t\"fax\": ")
+                .append("'")
+                .append(fax).append('\'')
+                .append(",\n\t\"fax2\": ")
+                .append("'")
+                .append(fax2).append('\'')
+                .append(",\n\t\"fax3\": ")
+                .append("'")
+                .append(fax3).append('\'')
+                .append(",\n\t\"firstName\": ")
+                .append("'")
+                .append(firstName).append('\'')
+                .append(",\n\t\"isDayLightSavings\": ")
+                .append(isDayLightSavings)
+                .append(",\n\t\"isDeleted\": ")
+                .append(isDeleted)
+                .append(",\n\t\"isLockedOut\": ")
+                .append(isLockedOut)
+                .append(",\n\t\"lastName\": ")
+                .append("'")
+                .append(lastName).append('\'')
+                .append(",\n\t\"linkedPerson\": ")
+                .append(linkedPerson)
+                .append(",\n\t\"massMailOptOut\": ")
+                .append(massMailOptOut)
+                .append(",\n\t\"middleName\": ")
+                .append("'")
+                .append(middleName).append('\'')
+                .append(",\n\t\"migrateGUID\": ")
+                .append(migrateGUID)
+                .append(",\n\t\"mobile\": ")
+                .append("'")
+                .append(mobile).append('\'')
+                .append(",\n\t\"name\": ")
+                .append("'")
+                .append(name).append('\'')
+                .append(",\n\t\"namePrefix\": ")
+                .append("'")
+                .append(namePrefix).append('\'')
+                .append(",\n\t\"nameSuffix\": ")
+                .append("'")
+                .append(nameSuffix).append('\'')
+                .append(",\n\t\"nickName\": ")
+                .append("'")
+                .append(nickName).append('\'')
+                .append(",\n\t\"numEmployees\": ")
+                .append(numEmployees)
+                .append(",\n\t\"occupation\": ")
+                .append("'")
+                .append(occupation).append('\'')
+                .append(",\n\t\"office\": ")
+                .append("'")
+                .append(office).append('\'')
+                .append(",\n\t\"owner\": ")
+                .append(owner)
+                .append(",\n\t\"pager\": ")
+                .append("'")
+                .append(pager).append('\'')
+                .append(",\n\t\"password\": ")
+                .append("'")
+                .append(password).append('\'')
+                .append(",\n\t\"phone\": ")
+                .append("'")
+                .append(phone).append('\'')
+                .append(",\n\t\"phone2\": ")
+                .append("'")
+                .append(phone2).append('\'')
+                .append(",\n\t\"phone3\": ")
+                .append("'")
+                .append(phone3).append('\'')
+                .append(",\n\t\"preferredContact\": ")
+                .append("'")
+                .append(preferredContact).append('\'')
+                .append(",\n\t\"referredByPerson\": ")
+                .append(referredByPerson)
+                .append(",\n\t\"reportToPerson\": ")
+                .append(reportToPerson)
+                .append(",\n\t\"secondaryAddress\": ")
+                .append(secondaryAddress)
+                .append(",\n\t\"secondaryOwners\": ")
+                .append(secondaryOwners)
+                .append(",\n\t\"skills\": ")
+                .append(skills)
+                .append(",\n\t\"smsOptIn\": ")
+                .append(smsOptIn)
+                .append(",\n\t\"source\": ")
+                .append("'")
+                .append(source).append('\'')
+                .append(",\n\t\"specialties\": ")
+                .append(specialties)
+                .append(",\n\t\"status\": ")
+                .append("'")
+                .append(status).append('\'')
+                .append(",\n\t\"tearsheets\": ")
+                .append(tearsheets)
+                .append(",\n\t\"timeZoneOffsetEST\": ")
+                .append(timeZoneOffsetEST)
+                .append(",\n\t\"type\": ")
+                .append("'")
+                .append(type).append('\'')
+                .append(",\n\t\"username\": ")
+                .append("'")
+                .append(username).append('\'')
+                .append(",\n\t\"customObject1s\": ")
+                .append(customObject1s)
+                .append(",\n\t\"customObject2s\": ")
+                .append(customObject2s)
+                .append(",\n\t\"customObject3s\": ")
+                .append(customObject3s)
+                .append(",\n\t\"customObject4s\": ")
+                .append(customObject4s)
+                .append(",\n\t\"customObject5s\": ")
+                .append(customObject5s)
+                .append(",\n\t\"customObject6s\": ")
+                .append(customObject6s)
+                .append(",\n\t\"customObject7s\": ")
+                .append(customObject7s)
+                .append(",\n\t\"customObject8s\": ")
+                .append(customObject8s)
+                .append(",\n\t\"customObject9s\": ")
+                .append(customObject9s)
+                .append(",\n\t\"customObject10s\": ")
+                .append(customObject10s)
+                .append('}')
+                .toString();
+    }
 }

@@ -10,6 +10,10 @@ import java.util.Set;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
 import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
 import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
@@ -632,6 +636,34 @@ public class TestStandardBullhornApiRest extends BaseTest {
 		assertNotNull("TimeUnit is null", entity);
 
 	}
+
+    @Test
+    public void testFindPersonCustomObject() {
+        PersonCustomObjectInstance1 entity = bullhornApiRest.findEntity(PersonCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+        assertNotNull("PersonCustomObjectInstance1 is null", entity);
+    }
+
+    @Test
+    public void testFindJobCustomObject() {
+        JobOrderCustomObjectInstance1 entity = bullhornApiRest.findEntity(JobOrderCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+        assertNotNull("JobOrderCustomObjectInstance1 is null", entity);
+    }
+
+    @Test
+    public void testFindPlacementCustomObject() {
+        PlacementCustomObjectInstance1 entity = bullhornApiRest.findEntity(PlacementCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+        assertNotNull("PlacementCustomObjectInstance1 is null", entity);
+    }
+
+    @Test
+    public void testFindCustomObject() {
+        ClientCorporationCustomObjectInstance1 entity = bullhornApiRest.findEntity(ClientCorporationCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+        assertNotNull("ClientCorporationCustomObjectInstance1 is null", entity);
+    }
 
 	private Set<String> getFieldSet() {
 		Set<String> fieldSet = new LinkedHashSet<String>();

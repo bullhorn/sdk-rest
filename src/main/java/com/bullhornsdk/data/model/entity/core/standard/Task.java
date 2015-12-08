@@ -627,73 +627,80 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Task {\nid=");
-		builder.append(id);
-		builder.append(", \ncandidate=");
-		builder.append(candidate);
-		builder.append(", \nchildTasks=");
-		builder.append(childTasks);
-		builder.append(", \nclientContact=");
-		builder.append(clientContact);
-		builder.append(", \ndateAdded=");
-		builder.append(dateAdded);
-		builder.append(", \ndateBegin=");
-		builder.append(dateBegin);
-		builder.append(", \ndateCompleted=");
-		builder.append(dateCompleted);
-		builder.append(", \ndateEnd=");
-		builder.append(dateEnd);
-		builder.append(", \ndateLastModified=");
-		builder.append(dateLastModified);
-		builder.append(", \ndescription=");
-		builder.append(description);
-		builder.append(", \nisCompleted=");
-		builder.append(isCompleted);
-		builder.append(", \nisDeleted=");
-		builder.append(isDeleted);
-		builder.append(", \nisPrivate=");
-		builder.append(isPrivate);
-		builder.append(", \nisSystemTask=");
-		builder.append(isSystemTask);
-		builder.append(", \njobOrder=");
-		builder.append(jobOrder);
-		builder.append(", \njobSubmission=");
-		builder.append(jobSubmission);
-		builder.append(", \nmigrateGUID=");
-		builder.append(migrateGUID);
-		builder.append(", \nnotificationMinutes=");
-		builder.append(notificationMinutes);
-		builder.append(", \nowner=");
-		builder.append(owner);
-		builder.append(", \nparentTask=");
-		builder.append(parentTask);
-		builder.append(", \nplacement=");
-		builder.append(placement);
-		builder.append(", \nrecurrenceDayBits=");
-		builder.append(recurrenceDayBits);
-		builder.append(", \nrecurrenceFrequency=");
-		builder.append(recurrenceFrequency);
-		builder.append(", \nrecurrenceMax=");
-		builder.append(recurrenceMax);
-		builder.append(", \nrecurrenceMonthBits=");
-		builder.append(recurrenceMonthBits);
-		builder.append(", \nrecurrenceStyle=");
-		builder.append(recurrenceStyle);
-		builder.append(", \nrecurrenceType=");
-		builder.append(recurrenceType);
-		builder.append(", \nsubject=");
-		builder.append(subject);
-		builder.append(", \ntaskUUID=");
-		builder.append(taskUUID);
-		builder.append(", \ntimeZoneID=");
-		builder.append(timeZoneID);
-		builder.append(", \ntype=");
-		builder.append(type);
-		builder.append("\n}");
-		return builder.toString();
-	}
-
+    @Override
+    public String toString() {
+        return new StringBuilder("Task {")
+                .append("\n\t\"candidate\": ")
+                .append(candidate)
+                .append(",\n\t\"id\": ")
+                .append(id)
+                .append(",\n\t\"childTasks\": ")
+                .append(childTasks)
+                .append(",\n\t\"clientContact\": ")
+                .append(clientContact)
+                .append(",\n\t\"dateAdded\": ")
+                .append(dateAdded)
+                .append(",\n\t\"dateBegin\": ")
+                .append(dateBegin)
+                .append(",\n\t\"dateCompleted\": ")
+                .append(dateCompleted)
+                .append(",\n\t\"dateEnd\": ")
+                .append(dateEnd)
+                .append(",\n\t\"dateLastModified\": ")
+                .append(dateLastModified)
+                .append(",\n\t\"description\": ")
+                .append("'")
+                .append(description).append('\'')
+                .append(",\n\t\"isCompleted\": ")
+                .append(isCompleted)
+                .append(",\n\t\"isDeleted\": ")
+                .append(isDeleted)
+                .append(",\n\t\"isPrivate\": ")
+                .append(isPrivate)
+                .append(",\n\t\"isSystemTask\": ")
+                .append(isSystemTask)
+                .append(",\n\t\"jobOrder\": ")
+                .append(jobOrder)
+                .append(",\n\t\"jobSubmission\": ")
+                .append(jobSubmission)
+                .append(",\n\t\"migrateGUID\": ")
+                .append("'")
+                .append(migrateGUID).append('\'')
+                .append(",\n\t\"notificationMinutes\": ")
+                .append(notificationMinutes)
+                .append(",\n\t\"owner\": ")
+                .append(owner)
+                .append(",\n\t\"parentTask\": ")
+                .append(parentTask)
+                .append(",\n\t\"placement\": ")
+                .append(placement)
+                .append(",\n\t\"recurrenceDayBits\": ")
+                .append(recurrenceDayBits)
+                .append(",\n\t\"recurrenceFrequency\": ")
+                .append(recurrenceFrequency)
+                .append(",\n\t\"recurrenceMax\": ")
+                .append(recurrenceMax)
+                .append(",\n\t\"recurrenceMonthBits\": ")
+                .append(recurrenceMonthBits)
+                .append(",\n\t\"recurrenceStyle\": ")
+                .append("'")
+                .append(recurrenceStyle).append('\'')
+                .append(",\n\t\"recurrenceType\": ")
+                .append("'")
+                .append(recurrenceType).append('\'')
+                .append(",\n\t\"subject\": ")
+                .append("'")
+                .append(subject).append('\'')
+                .append(",\n\t\"taskUUID\": ")
+                .append("'")
+                .append(taskUUID).append('\'')
+                .append(",\n\t\"timeZoneID\": ")
+                .append("'")
+                .append(timeZoneID).append('\'')
+                .append(",\n\t\"type\": ")
+                .append("'")
+                .append(type).append('\'')
+                .append('}')
+                .toString();
+    }
 }

@@ -4,8 +4,20 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.joda.time.DateTime;
 
+import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.FileEntity;
@@ -21,6 +33,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -32,7 +45,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"description", "educationDegree", "effectiveDate", "estimatedDuration", "estimatedEndDate", "estimatedHoursPerWeek", "estimatedStartDate", "estimatedBillRate", "expectedCloseDate",
 		"expectedFee", "expectedParRate", "externalCategoryID", "externalID", "history", "isDeleted", "ignoreUntilDate", "isOpen", "jobOrders", "lead", "markUpPercentage", "notes", "numOpenings",
 		"onSite", "optionsPackage", "owner", "priority", "publicDescription", "publishedZip", "reasonClosed", "salary", "salaryUnit", "skillList", "skills", "source", "specialties", "status",
-		"tasks", "tearsheets", "title", "type", "weightedDealValue", "willRelocate", "winProbabilityPercent", "yearsRequired" })
+		"tasks", "tearsheets", "title", "type", "weightedDealValue", "willRelocate", "winProbabilityPercent", "yearsRequired", "customObject1s", "customObject2s", "customObject3s",
+        "customObject4s", "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
 public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity {
 
 	private BigDecimal luceneScore;
@@ -234,6 +248,26 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	private BigDecimal weightedDealValue;
 	
 	private DateTime dateLastModified;
+
+    private OneToMany<JobOrderCustomObjectInstance1> customObject1s;
+
+    private OneToMany<JobOrderCustomObjectInstance2> customObject2s;
+
+    private OneToMany<JobOrderCustomObjectInstance3> customObject3s;
+
+    private OneToMany<JobOrderCustomObjectInstance4> customObject4s;
+
+    private OneToMany<JobOrderCustomObjectInstance5> customObject5s;
+
+    private OneToMany<JobOrderCustomObjectInstance6> customObject6s;
+
+    private OneToMany<JobOrderCustomObjectInstance7> customObject7s;
+
+    private OneToMany<JobOrderCustomObjectInstance8> customObject8s;
+
+    private OneToMany<JobOrderCustomObjectInstance9> customObject9s;
+
+    private OneToMany<JobOrderCustomObjectInstance10> customObject10s;
 	
 	public Opportunity() {
 		super();
@@ -1095,586 +1129,597 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		this.dateLastModified = dateLastModified;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((actualCloseDate == null) ? 0 : actualCloseDate.hashCode());
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result + ((appointments == null) ? 0 : appointments.hashCode());
-		result = prime * result + ((assignedDate == null) ? 0 : assignedDate.hashCode());
-		result = prime * result + ((assignedUsers == null) ? 0 : assignedUsers.hashCode());
-		result = prime * result + ((benefits == null) ? 0 : benefits.hashCode());
-		result = prime * result + ((billRateCategoryID == null) ? 0 : billRateCategoryID.hashCode());
-		result = prime * result + ((bonusPackage == null) ? 0 : bonusPackage.hashCode());
-		result = prime * result + ((branchCode == null) ? 0 : branchCode.hashCode());
-		result = prime * result + ((businessSector == null) ? 0 : businessSector.hashCode());
-		result = prime * result + ((businessSectors == null) ? 0 : businessSectors.hashCode());
-		result = prime * result + ((campaignSource == null) ? 0 : campaignSource.hashCode());
-		result = prime * result + ((categories == null) ? 0 : categories.hashCode());
-		result = prime * result + ((category == null) ? 0 : category.hashCode());
-		result = prime * result + ((certifications == null) ? 0 : certifications.hashCode());
-		result = prime * result + ((clientContact == null) ? 0 : clientContact.hashCode());
-		result = prime * result + ((clientCorporation == null) ? 0 : clientCorporation.hashCode());
-		result = prime * result + ((committed == null) ? 0 : committed.hashCode());
-		result = prime * result + ((costCenter == null) ? 0 : costCenter.hashCode());
-		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-		result = prime * result + ((dateClientInterview == null) ? 0 : dateClientInterview.hashCode());
-		result = prime * result + ((dateLastExported == null) ? 0 : dateLastExported.hashCode());
-		result = prime * result + ((dateLastModified == null) ? 0 : dateLastModified.hashCode());
-		result = prime * result + ((dealValue == null) ? 0 : dealValue.hashCode());
-		result = prime * result + ((degreeList == null) ? 0 : degreeList.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((educationDegree == null) ? 0 : educationDegree.hashCode());
-		result = prime * result + ((effectiveDate == null) ? 0 : effectiveDate.hashCode());
-		result = prime * result + ((estimatedDuration == null) ? 0 : estimatedDuration.hashCode());
-		result = prime * result + ((estimatedEndDate == null) ? 0 : estimatedEndDate.hashCode());
-		result = prime * result + ((estimatedHoursPerWeek == null) ? 0 : estimatedHoursPerWeek.hashCode());
-		result = prime * result + ((estimatedStartDate == null) ? 0 : estimatedStartDate.hashCode());
-		result = prime * result + ((expectedBillRate == null) ? 0 : expectedBillRate.hashCode());
-		result = prime * result + ((expectedCloseDate == null) ? 0 : expectedCloseDate.hashCode());
-		result = prime * result + ((expectedFee == null) ? 0 : expectedFee.hashCode());
-		result = prime * result + ((expectedPayRate == null) ? 0 : expectedPayRate.hashCode());
-		result = prime * result + ((externalCategoryID == null) ? 0 : externalCategoryID.hashCode());
-		result = prime * result + ((externalID == null) ? 0 : externalID.hashCode());
-		result = prime * result + ((hoursOfOperation == null) ? 0 : hoursOfOperation.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((ignoreUntilDate == null) ? 0 : ignoreUntilDate.hashCode());
-		result = prime * result + ((isClientContact == null) ? 0 : isClientContact.hashCode());
-		result = prime * result + ((isClientEditable == null) ? 0 : isClientEditable.hashCode());
-		result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
-		result = prime * result + ((isExtendable == null) ? 0 : isExtendable.hashCode());
-		result = prime * result + ((isInterviewRequired == null) ? 0 : isInterviewRequired.hashCode());
-		result = prime * result + ((isOpen == null) ? 0 : isOpen.hashCode());
-		result = prime * result + ((isOpportunity == null) ? 0 : isOpportunity.hashCode());
-		result = prime * result + ((isPublic == null) ? 0 : isPublic.hashCode());
-		result = prime * result + ((jobOrderUUID == null) ? 0 : jobOrderUUID.hashCode());
-		result = prime * result + ((jobOrders == null) ? 0 : jobOrders.hashCode());
-		result = prime * result + ((lead == null) ? 0 : lead.hashCode());
-		result = prime * result + ((luceneScore == null) ? 0 : luceneScore.hashCode());
-		result = prime * result + ((markUpPercentage == null) ? 0 : markUpPercentage.hashCode());
-		result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-		result = prime * result + ((notes == null) ? 0 : notes.hashCode());
-		result = prime * result + ((numOpenings == null) ? 0 : numOpenings.hashCode());
-		result = prime * result + ((onSite == null) ? 0 : onSite.hashCode());
-		result = prime * result + ((optionsPackage == null) ? 0 : optionsPackage.hashCode());
-		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-		result = prime * result + ((priority == null) ? 0 : priority.hashCode());
-		result = prime * result + ((publicDescription == null) ? 0 : publicDescription.hashCode());
-		result = prime * result + ((publishedZip == null) ? 0 : publishedZip.hashCode());
-		result = prime * result + ((reasonClosed == null) ? 0 : reasonClosed.hashCode());
-		result = prime * result + ((reportTo == null) ? 0 : reportTo.hashCode());
-		result = prime * result + ((reportToClientContact == null) ? 0 : reportToClientContact.hashCode());
-		result = prime * result + ((responseUser == null) ? 0 : responseUser.hashCode());
-		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
-		result = prime * result + ((salaryRange == null) ? 0 : salaryRange.hashCode());
-		result = prime * result + ((salaryUnit == null) ? 0 : salaryUnit.hashCode());
-		result = prime * result + ((skillList == null) ? 0 : skillList.hashCode());
-		result = prime * result + ((skills == null) ? 0 : skills.hashCode());
-		result = prime * result + ((source == null) ? 0 : source.hashCode());
-		result = prime * result + ((specialties == null) ? 0 : specialties.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime * result + ((tasks == null) ? 0 : tasks.hashCode());
-		result = prime * result + ((taxRate == null) ? 0 : taxRate.hashCode());
-		result = prime * result + ((taxStatus == null) ? 0 : taxStatus.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((webResponses == null) ? 0 : webResponses.hashCode());
-		result = prime * result + ((weightedDealValue == null) ? 0 : weightedDealValue.hashCode());
-		result = prime * result + ((willRelocate == null) ? 0 : willRelocate.hashCode());
-		result = prime * result + ((winProbabilityPercent == null) ? 0 : winProbabilityPercent.hashCode());
-		result = prime * result + ((yearsRequired == null) ? 0 : yearsRequired.hashCode());
-		return result;
-	}
+    @JsonProperty("customObject1s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance1> getCustomObject1s() {
+        return customObject1s;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Opportunity other = (Opportunity) obj;
-		if (actualCloseDate == null) {
-			if (other.actualCloseDate != null)
-				return false;
-		} else if (!actualCloseDate.equals(other.actualCloseDate))
-			return false;
-		if (address == null) {
-			if (other.address != null)
-				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (appointments == null) {
-			if (other.appointments != null)
-				return false;
-		} else if (!appointments.equals(other.appointments))
-			return false;
-		if (assignedDate == null) {
-			if (other.assignedDate != null)
-				return false;
-		} else if (!assignedDate.equals(other.assignedDate))
-			return false;
-		if (assignedUsers == null) {
-			if (other.assignedUsers != null)
-				return false;
-		} else if (!assignedUsers.equals(other.assignedUsers))
-			return false;
-		if (benefits == null) {
-			if (other.benefits != null)
-				return false;
-		} else if (!benefits.equals(other.benefits))
-			return false;
-		if (billRateCategoryID == null) {
-			if (other.billRateCategoryID != null)
-				return false;
-		} else if (!billRateCategoryID.equals(other.billRateCategoryID))
-			return false;
-		if (bonusPackage == null) {
-			if (other.bonusPackage != null)
-				return false;
-		} else if (!bonusPackage.equals(other.bonusPackage))
-			return false;
-		if (branchCode == null) {
-			if (other.branchCode != null)
-				return false;
-		} else if (!branchCode.equals(other.branchCode))
-			return false;
-		if (businessSector == null) {
-			if (other.businessSector != null)
-				return false;
-		} else if (!businessSector.equals(other.businessSector))
-			return false;
-		if (businessSectors == null) {
-			if (other.businessSectors != null)
-				return false;
-		} else if (!businessSectors.equals(other.businessSectors))
-			return false;
-		if (campaignSource == null) {
-			if (other.campaignSource != null)
-				return false;
-		} else if (!campaignSource.equals(other.campaignSource))
-			return false;
-		if (categories == null) {
-			if (other.categories != null)
-				return false;
-		} else if (!categories.equals(other.categories))
-			return false;
-		if (category == null) {
-			if (other.category != null)
-				return false;
-		} else if (!category.equals(other.category))
-			return false;
-		if (certifications == null) {
-			if (other.certifications != null)
-				return false;
-		} else if (!certifications.equals(other.certifications))
-			return false;
-		if (clientContact == null) {
-			if (other.clientContact != null)
-				return false;
-		} else if (!clientContact.equals(other.clientContact))
-			return false;
-		if (clientCorporation == null) {
-			if (other.clientCorporation != null)
-				return false;
-		} else if (!clientCorporation.equals(other.clientCorporation))
-			return false;
-		if (committed == null) {
-			if (other.committed != null)
-				return false;
-		} else if (!committed.equals(other.committed))
-			return false;
-		if (costCenter == null) {
-			if (other.costCenter != null)
-				return false;
-		} else if (!costCenter.equals(other.costCenter))
-			return false;
-		if (dateAdded == null) {
-			if (other.dateAdded != null)
-				return false;
-		} else if (!dateAdded.equals(other.dateAdded))
-			return false;
-		if (dateClientInterview == null) {
-			if (other.dateClientInterview != null)
-				return false;
-		} else if (!dateClientInterview.equals(other.dateClientInterview))
-			return false;
-		if (dateLastExported == null) {
-			if (other.dateLastExported != null)
-				return false;
-		} else if (!dateLastExported.equals(other.dateLastExported))
-			return false;
-		if (dateLastModified == null) {
-			if (other.dateLastModified != null)
-				return false;
-		} else if (!dateLastModified.equals(other.dateLastModified))
-			return false;
-		if (dealValue == null) {
-			if (other.dealValue != null)
-				return false;
-		} else if (!dealValue.equals(other.dealValue))
-			return false;
-		if (degreeList == null) {
-			if (other.degreeList != null)
-				return false;
-		} else if (!degreeList.equals(other.degreeList))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (educationDegree == null) {
-			if (other.educationDegree != null)
-				return false;
-		} else if (!educationDegree.equals(other.educationDegree))
-			return false;
-		if (effectiveDate == null) {
-			if (other.effectiveDate != null)
-				return false;
-		} else if (!effectiveDate.equals(other.effectiveDate))
-			return false;
-		if (estimatedDuration == null) {
-			if (other.estimatedDuration != null)
-				return false;
-		} else if (!estimatedDuration.equals(other.estimatedDuration))
-			return false;
-		if (estimatedEndDate == null) {
-			if (other.estimatedEndDate != null)
-				return false;
-		} else if (!estimatedEndDate.equals(other.estimatedEndDate))
-			return false;
-		if (estimatedHoursPerWeek == null) {
-			if (other.estimatedHoursPerWeek != null)
-				return false;
-		} else if (!estimatedHoursPerWeek.equals(other.estimatedHoursPerWeek))
-			return false;
-		if (estimatedStartDate == null) {
-			if (other.estimatedStartDate != null)
-				return false;
-		} else if (!estimatedStartDate.equals(other.estimatedStartDate))
-			return false;
-		if (expectedBillRate == null) {
-			if (other.expectedBillRate != null)
-				return false;
-		} else if (!expectedBillRate.equals(other.expectedBillRate))
-			return false;
-		if (expectedCloseDate == null) {
-			if (other.expectedCloseDate != null)
-				return false;
-		} else if (!expectedCloseDate.equals(other.expectedCloseDate))
-			return false;
-		if (expectedFee == null) {
-			if (other.expectedFee != null)
-				return false;
-		} else if (!expectedFee.equals(other.expectedFee))
-			return false;
-		if (expectedPayRate == null) {
-			if (other.expectedPayRate != null)
-				return false;
-		} else if (!expectedPayRate.equals(other.expectedPayRate))
-			return false;
-		if (externalCategoryID == null) {
-			if (other.externalCategoryID != null)
-				return false;
-		} else if (!externalCategoryID.equals(other.externalCategoryID))
-			return false;
-		if (externalID == null) {
-			if (other.externalID != null)
-				return false;
-		} else if (!externalID.equals(other.externalID))
-			return false;
-		if (hoursOfOperation == null) {
-			if (other.hoursOfOperation != null)
-				return false;
-		} else if (!hoursOfOperation.equals(other.hoursOfOperation))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (ignoreUntilDate == null) {
-			if (other.ignoreUntilDate != null)
-				return false;
-		} else if (!ignoreUntilDate.equals(other.ignoreUntilDate))
-			return false;
-		if (isClientContact == null) {
-			if (other.isClientContact != null)
-				return false;
-		} else if (!isClientContact.equals(other.isClientContact))
-			return false;
-		if (isClientEditable == null) {
-			if (other.isClientEditable != null)
-				return false;
-		} else if (!isClientEditable.equals(other.isClientEditable))
-			return false;
-		if (isDeleted == null) {
-			if (other.isDeleted != null)
-				return false;
-		} else if (!isDeleted.equals(other.isDeleted))
-			return false;
-		if (isExtendable == null) {
-			if (other.isExtendable != null)
-				return false;
-		} else if (!isExtendable.equals(other.isExtendable))
-			return false;
-		if (isInterviewRequired == null) {
-			if (other.isInterviewRequired != null)
-				return false;
-		} else if (!isInterviewRequired.equals(other.isInterviewRequired))
-			return false;
-		if (isOpen == null) {
-			if (other.isOpen != null)
-				return false;
-		} else if (!isOpen.equals(other.isOpen))
-			return false;
-		if (isOpportunity == null) {
-			if (other.isOpportunity != null)
-				return false;
-		} else if (!isOpportunity.equals(other.isOpportunity))
-			return false;
-		if (isPublic == null) {
-			if (other.isPublic != null)
-				return false;
-		} else if (!isPublic.equals(other.isPublic))
-			return false;
-		if (jobOrderUUID == null) {
-			if (other.jobOrderUUID != null)
-				return false;
-		} else if (!jobOrderUUID.equals(other.jobOrderUUID))
-			return false;
-		if (jobOrders == null) {
-			if (other.jobOrders != null)
-				return false;
-		} else if (!jobOrders.equals(other.jobOrders))
-			return false;
-		if (lead == null) {
-			if (other.lead != null)
-				return false;
-		} else if (!lead.equals(other.lead))
-			return false;
-		if (luceneScore == null) {
-			if (other.luceneScore != null)
-				return false;
-		} else if (!luceneScore.equals(other.luceneScore))
-			return false;
-		if (markUpPercentage == null) {
-			if (other.markUpPercentage != null)
-				return false;
-		} else if (!markUpPercentage.equals(other.markUpPercentage))
-			return false;
-		if (migrateGUID == null) {
-			if (other.migrateGUID != null)
-				return false;
-		} else if (!migrateGUID.equals(other.migrateGUID))
-			return false;
-		if (notes == null) {
-			if (other.notes != null)
-				return false;
-		} else if (!notes.equals(other.notes))
-			return false;
-		if (numOpenings == null) {
-			if (other.numOpenings != null)
-				return false;
-		} else if (!numOpenings.equals(other.numOpenings))
-			return false;
-		if (onSite == null) {
-			if (other.onSite != null)
-				return false;
-		} else if (!onSite.equals(other.onSite))
-			return false;
-		if (optionsPackage == null) {
-			if (other.optionsPackage != null)
-				return false;
-		} else if (!optionsPackage.equals(other.optionsPackage))
-			return false;
-		if (owner == null) {
-			if (other.owner != null)
-				return false;
-		} else if (!owner.equals(other.owner))
-			return false;
-		if (priority == null) {
-			if (other.priority != null)
-				return false;
-		} else if (!priority.equals(other.priority))
-			return false;
-		if (publicDescription == null) {
-			if (other.publicDescription != null)
-				return false;
-		} else if (!publicDescription.equals(other.publicDescription))
-			return false;
-		if (publishedZip == null) {
-			if (other.publishedZip != null)
-				return false;
-		} else if (!publishedZip.equals(other.publishedZip))
-			return false;
-		if (reasonClosed == null) {
-			if (other.reasonClosed != null)
-				return false;
-		} else if (!reasonClosed.equals(other.reasonClosed))
-			return false;
-		if (reportTo == null) {
-			if (other.reportTo != null)
-				return false;
-		} else if (!reportTo.equals(other.reportTo))
-			return false;
-		if (reportToClientContact == null) {
-			if (other.reportToClientContact != null)
-				return false;
-		} else if (!reportToClientContact.equals(other.reportToClientContact))
-			return false;
-		if (responseUser == null) {
-			if (other.responseUser != null)
-				return false;
-		} else if (!responseUser.equals(other.responseUser))
-			return false;
-		if (salary == null) {
-			if (other.salary != null)
-				return false;
-		} else if (!salary.equals(other.salary))
-			return false;
-		if (salaryRange == null) {
-			if (other.salaryRange != null)
-				return false;
-		} else if (!salaryRange.equals(other.salaryRange))
-			return false;
-		if (salaryUnit == null) {
-			if (other.salaryUnit != null)
-				return false;
-		} else if (!salaryUnit.equals(other.salaryUnit))
-			return false;
-		if (skillList == null) {
-			if (other.skillList != null)
-				return false;
-		} else if (!skillList.equals(other.skillList))
-			return false;
-		if (skills == null) {
-			if (other.skills != null)
-				return false;
-		} else if (!skills.equals(other.skills))
-			return false;
-		if (source == null) {
-			if (other.source != null)
-				return false;
-		} else if (!source.equals(other.source))
-			return false;
-		if (specialties == null) {
-			if (other.specialties != null)
-				return false;
-		} else if (!specialties.equals(other.specialties))
-			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
-			return false;
-		if (tasks == null) {
-			if (other.tasks != null)
-				return false;
-		} else if (!tasks.equals(other.tasks))
-			return false;
-		if (taxRate == null) {
-			if (other.taxRate != null)
-				return false;
-		} else if (!taxRate.equals(other.taxRate))
-			return false;
-		if (taxStatus == null) {
-			if (other.taxStatus != null)
-				return false;
-		} else if (!taxStatus.equals(other.taxStatus))
-			return false;
-		if (title == null) {
-			if (other.title != null)
-				return false;
-		} else if (!title.equals(other.title))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		if (webResponses == null) {
-			if (other.webResponses != null)
-				return false;
-		} else if (!webResponses.equals(other.webResponses))
-			return false;
-		if (weightedDealValue == null) {
-			if (other.weightedDealValue != null)
-				return false;
-		} else if (!weightedDealValue.equals(other.weightedDealValue))
-			return false;
-		if (willRelocate == null) {
-			if (other.willRelocate != null)
-				return false;
-		} else if (!willRelocate.equals(other.willRelocate))
-			return false;
-		if (winProbabilityPercent == null) {
-			if (other.winProbabilityPercent != null)
-				return false;
-		} else if (!winProbabilityPercent.equals(other.winProbabilityPercent))
-			return false;
-		if (yearsRequired == null) {
-			if (other.yearsRequired != null)
-				return false;
-		} else if (!yearsRequired.equals(other.yearsRequired))
-			return false;
-		return true;
-	}
+    @JsonProperty("customObject1s")
+    public void setCustomObject1s(OneToMany<JobOrderCustomObjectInstance1> customObject1s) {
+        this.customObject1s = customObject1s;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Opportunity {\n\tluceneScore: ").append(luceneScore).append(",\n\tid: ").append(id)
-				.append(",\n\towner: ").append(owner).append(",\n\ttitle: ").append(title).append(",\n\ttype: ")
-				.append(type).append(",\n\tdescription: ").append(description).append(",\n\testimatedStartDate: ")
-				.append(estimatedStartDate).append(",\n\testimatedHoursPerWeek: ").append(estimatedHoursPerWeek)
-				.append(",\n\testimatedDuration: ").append(estimatedDuration).append(",\n\tsalary: ").append(salary)
-				.append(",\n\tsalaryUnit: ").append(salaryUnit).append(",\n\tonSite: ").append(onSite)
-				.append(",\n\ttaxStatus: ").append(taxStatus).append(",\n\tbranchCode: ").append(branchCode)
-				.append(",\n\tisOpen: ").append(isOpen).append(",\n\taddress: ").append(address)
-				.append(",\n\tdateAdded: ").append(dateAdded).append(",\n\tisDeleted: ").append(isDeleted)
-				.append(",\n\texternalCategoryID: ").append(externalCategoryID).append(",\n\tstatus: ").append(status)
-				.append(",\n\tclientContact: ").append(clientContact).append(",\n\tpriority: ").append(priority)
-				.append(",\n\tisClientContact: ").append(isClientContact).append(",\n\tdateClientInterview: ")
-				.append(dateClientInterview).append(",\n\tisPublic: ").append(isPublic).append(",\n\tnumOpenings: ")
-				.append(numOpenings).append(",\n\tisExtendable: ").append(isExtendable).append(",\n\tyearsRequired: ")
-				.append(yearsRequired).append(",\n\texternalID: ").append(externalID).append(",\n\tactualCloseDate: ")
-				.append(actualCloseDate).append(",\n\treasonClosed: ").append(reasonClosed).append(",\n\tsalaryRange: ")
-				.append(salaryRange).append(",\n\tcommitted: ").append(committed).append(",\n\twillRelocate: ")
-				.append(willRelocate).append(",\n\teducationDegree: ").append(educationDegree)
-				.append(",\n\treportToClientContact: ").append(reportToClientContact).append(",\n\testimatedEndDate: ")
-				.append(estimatedEndDate).append(",\n\tisInterviewRequired: ").append(isInterviewRequired)
-				.append(",\n\tbenefits: ").append(benefits).append(",\n\tcostCenter: ").append(costCenter)
-				.append(",\n\treportTo: ").append(reportTo).append(",\n\tskillList: ").append(skillList)
-				.append(",\n\tdegreeList: ").append(degreeList).append(",\n\texpectedBillRate: ")
-				.append(expectedBillRate).append(",\n\tpublicDescription: ").append(publicDescription)
-				.append(",\n\thoursOfOperation: ").append(hoursOfOperation).append(",\n\tsource: ").append(source)
-				.append(",\n\toptionsPackage: ").append(optionsPackage).append(",\n\tbonusPackage: ")
-				.append(bonusPackage).append(",\n\tjobOrders: ").append(jobOrders).append(",\n\tclientCorporation: ")
-				.append(clientCorporation).append(",\n\texpectedPayRate: ").append(expectedPayRate)
-				.append(",\n\texpectedFee: ").append(expectedFee).append(",\n\tisClientEditable: ")
-				.append(isClientEditable).append(",\n\tresponseUser: ").append(responseUser)
-				.append(",\n\tbillRateCategoryID: ").append(billRateCategoryID).append(",\n\texpectedCloseDate: ")
-				.append(expectedCloseDate).append(",\n\tassignedDate: ").append(assignedDate)
-				.append(",\n\tjobOrderUUID: ").append(jobOrderUUID).append(",\n\tpublishedZip: ").append(publishedZip)
-				.append(",\n\tmigrateGUID: ").append(migrateGUID).append(",\n\ttaxRate: ").append(taxRate)
-				.append(",\n\tisOpportunity: ").append(isOpportunity).append(",\n\tdateLastExported: ")
-				.append(dateLastExported).append(",\n\tignoreUntilDate: ").append(ignoreUntilDate)
-				.append(",\n\tappointments: ").append(appointments).append(",\n\ttasks: ").append(tasks)
-				.append(",\n\tcertifications: ").append(certifications).append(",\n\tassignedUsers: ")
-				.append(assignedUsers).append(",\n\tcategories: ").append(categories).append(",\n\tcategory: ")
-				.append(category).append(",\n\tbusinessSector: ").append(businessSector).append(",\n\tspecialties: ")
-				.append(specialties).append(",\n\tskills: ").append(skills).append(",\n\tnotes: ").append(notes)
-				.append(",\n\tbusinessSectors: ").append(businessSectors).append(",\n\twebResponses: ")
-				.append(webResponses).append(",\n\teffectiveDate: ").append(effectiveDate).append(",\n\tlead: ")
-				.append(lead).append(",\n\tcampaignSource: ").append(campaignSource).append(",\n\tmarkUpPercentage: ")
-				.append(markUpPercentage).append(",\n\twinProbabilityPercent: ").append(winProbabilityPercent)
-				.append(",\n\tdealValue: ").append(dealValue).append(",\n\tweightedDealValue: ")
-				.append(weightedDealValue).append(",\n\tdateLastModified: ").append(dateLastModified).append("\n}");
-		return builder.toString();
-	}
+    @JsonProperty("customObject2s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance2> getCustomObject2s() {
+        return customObject2s;
+    }
 
+    @JsonProperty("customObject2s")
+    public void setCustomObject2s(OneToMany<JobOrderCustomObjectInstance2> customObject2s) {
+        this.customObject2s = customObject2s;
+    }
+
+    @JsonProperty("customObject3s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance3> getCustomObject3s() {
+        return customObject3s;
+    }
+
+    @JsonProperty("customObject3s")
+    public void setCustomObject3s(OneToMany<JobOrderCustomObjectInstance3> customObject3s) {
+        this.customObject3s = customObject3s;
+    }
+
+    @JsonProperty("customObject4s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance4> getCustomObject4s() {
+        return customObject4s;
+    }
+
+    @JsonProperty("customObject4s")
+    public void setCustomObject4s(OneToMany<JobOrderCustomObjectInstance4> customObject4s) {
+        this.customObject4s = customObject4s;
+    }
+
+    @JsonProperty("customObject5s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance5> getCustomObject5s() {
+        return customObject5s;
+    }
+
+    @JsonProperty("customObject5s")
+    public void setCustomObject5s(OneToMany<JobOrderCustomObjectInstance5> customObject5s) {
+        this.customObject5s = customObject5s;
+    }
+
+    @JsonProperty("customObject6s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance6> getCustomObject6s() {
+        return customObject6s;
+    }
+
+    @JsonProperty("customObject6s")
+    public void setCustomObject6s(OneToMany<JobOrderCustomObjectInstance6> customObject6s) {
+        this.customObject6s = customObject6s;
+    }
+
+    @JsonProperty("customObject7s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance7> getCustomObject7s() {
+        return customObject7s;
+    }
+
+    @JsonProperty("customObject7s")
+    public void setCustomObject7s(OneToMany<JobOrderCustomObjectInstance7> customObject7s) {
+        this.customObject7s = customObject7s;
+    }
+
+    @JsonProperty("customObject8s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance8> getCustomObject8s() {
+        return customObject8s;
+    }
+
+    @JsonProperty("customObject8s")
+    public void setCustomObject8s(OneToMany<JobOrderCustomObjectInstance8> customObject8s) {
+        this.customObject8s = customObject8s;
+    }
+
+    @JsonProperty("customObject9s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance9> getCustomObject9s() {
+        return customObject9s;
+    }
+
+    @JsonProperty("customObject9s")
+    public void setCustomObject9s(OneToMany<JobOrderCustomObjectInstance9> customObject9s) {
+        this.customObject9s = customObject9s;
+    }
+
+    @JsonProperty("customObject10s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<JobOrderCustomObjectInstance10> getCustomObject10s() {
+        return customObject10s;
+    }
+
+    @JsonProperty("customObject10s")
+    public void setCustomObject10s(OneToMany<JobOrderCustomObjectInstance10> customObject10s) {
+        this.customObject10s = customObject10s;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Opportunity)) return false;
+        if (!super.equals(o)) return false;
+
+        Opportunity that = (Opportunity) o;
+
+        if (luceneScore != null ? !luceneScore.equals(that.luceneScore) : that.luceneScore != null) return false;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (owner != null ? !owner.equals(that.owner) : that.owner != null) return false;
+        if (title != null ? !title.equals(that.title) : that.title != null) return false;
+        if (type != null ? !type.equals(that.type) : that.type != null) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (estimatedStartDate != null ? !estimatedStartDate.equals(that.estimatedStartDate) : that.estimatedStartDate != null)
+            return false;
+        if (estimatedHoursPerWeek != null ? !estimatedHoursPerWeek.equals(that.estimatedHoursPerWeek) : that.estimatedHoursPerWeek != null)
+            return false;
+        if (estimatedDuration != null ? !estimatedDuration.equals(that.estimatedDuration) : that.estimatedDuration != null)
+            return false;
+        if (salary != null ? !salary.equals(that.salary) : that.salary != null) return false;
+        if (salaryUnit != null ? !salaryUnit.equals(that.salaryUnit) : that.salaryUnit != null) return false;
+        if (onSite != null ? !onSite.equals(that.onSite) : that.onSite != null) return false;
+        if (taxStatus != null ? !taxStatus.equals(that.taxStatus) : that.taxStatus != null) return false;
+        if (branchCode != null ? !branchCode.equals(that.branchCode) : that.branchCode != null) return false;
+        if (isOpen != null ? !isOpen.equals(that.isOpen) : that.isOpen != null) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
+        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+        if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
+        if (externalCategoryID != null ? !externalCategoryID.equals(that.externalCategoryID) : that.externalCategoryID != null)
+            return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (clientContact != null ? !clientContact.equals(that.clientContact) : that.clientContact != null)
+            return false;
+        if (priority != null ? !priority.equals(that.priority) : that.priority != null) return false;
+        if (isClientContact != null ? !isClientContact.equals(that.isClientContact) : that.isClientContact != null)
+            return false;
+        if (dateClientInterview != null ? !dateClientInterview.equals(that.dateClientInterview) : that.dateClientInterview != null)
+            return false;
+        if (isPublic != null ? !isPublic.equals(that.isPublic) : that.isPublic != null) return false;
+        if (numOpenings != null ? !numOpenings.equals(that.numOpenings) : that.numOpenings != null) return false;
+        if (isExtendable != null ? !isExtendable.equals(that.isExtendable) : that.isExtendable != null) return false;
+        if (yearsRequired != null ? !yearsRequired.equals(that.yearsRequired) : that.yearsRequired != null)
+            return false;
+        if (externalID != null ? !externalID.equals(that.externalID) : that.externalID != null) return false;
+        if (actualCloseDate != null ? !actualCloseDate.equals(that.actualCloseDate) : that.actualCloseDate != null)
+            return false;
+        if (reasonClosed != null ? !reasonClosed.equals(that.reasonClosed) : that.reasonClosed != null) return false;
+        if (salaryRange != null ? !salaryRange.equals(that.salaryRange) : that.salaryRange != null) return false;
+        if (committed != null ? !committed.equals(that.committed) : that.committed != null) return false;
+        if (willRelocate != null ? !willRelocate.equals(that.willRelocate) : that.willRelocate != null) return false;
+        if (educationDegree != null ? !educationDegree.equals(that.educationDegree) : that.educationDegree != null)
+            return false;
+        if (reportToClientContact != null ? !reportToClientContact.equals(that.reportToClientContact) : that.reportToClientContact != null)
+            return false;
+        if (estimatedEndDate != null ? !estimatedEndDate.equals(that.estimatedEndDate) : that.estimatedEndDate != null)
+            return false;
+        if (isInterviewRequired != null ? !isInterviewRequired.equals(that.isInterviewRequired) : that.isInterviewRequired != null)
+            return false;
+        if (benefits != null ? !benefits.equals(that.benefits) : that.benefits != null) return false;
+        if (costCenter != null ? !costCenter.equals(that.costCenter) : that.costCenter != null) return false;
+        if (reportTo != null ? !reportTo.equals(that.reportTo) : that.reportTo != null) return false;
+        if (skillList != null ? !skillList.equals(that.skillList) : that.skillList != null) return false;
+        if (degreeList != null ? !degreeList.equals(that.degreeList) : that.degreeList != null) return false;
+        if (expectedBillRate != null ? !expectedBillRate.equals(that.expectedBillRate) : that.expectedBillRate != null)
+            return false;
+        if (publicDescription != null ? !publicDescription.equals(that.publicDescription) : that.publicDescription != null)
+            return false;
+        if (hoursOfOperation != null ? !hoursOfOperation.equals(that.hoursOfOperation) : that.hoursOfOperation != null)
+            return false;
+        if (source != null ? !source.equals(that.source) : that.source != null) return false;
+        if (optionsPackage != null ? !optionsPackage.equals(that.optionsPackage) : that.optionsPackage != null)
+            return false;
+        if (bonusPackage != null ? !bonusPackage.equals(that.bonusPackage) : that.bonusPackage != null) return false;
+        if (jobOrders != null ? !jobOrders.equals(that.jobOrders) : that.jobOrders != null) return false;
+        if (clientCorporation != null ? !clientCorporation.equals(that.clientCorporation) : that.clientCorporation != null)
+            return false;
+        if (expectedPayRate != null ? !expectedPayRate.equals(that.expectedPayRate) : that.expectedPayRate != null)
+            return false;
+        if (expectedFee != null ? !expectedFee.equals(that.expectedFee) : that.expectedFee != null) return false;
+        if (isClientEditable != null ? !isClientEditable.equals(that.isClientEditable) : that.isClientEditable != null)
+            return false;
+        if (responseUser != null ? !responseUser.equals(that.responseUser) : that.responseUser != null) return false;
+        if (billRateCategoryID != null ? !billRateCategoryID.equals(that.billRateCategoryID) : that.billRateCategoryID != null)
+            return false;
+        if (expectedCloseDate != null ? !expectedCloseDate.equals(that.expectedCloseDate) : that.expectedCloseDate != null)
+            return false;
+        if (assignedDate != null ? !assignedDate.equals(that.assignedDate) : that.assignedDate != null) return false;
+        if (jobOrderUUID != null ? !jobOrderUUID.equals(that.jobOrderUUID) : that.jobOrderUUID != null) return false;
+        if (publishedZip != null ? !publishedZip.equals(that.publishedZip) : that.publishedZip != null) return false;
+        if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+        if (taxRate != null ? !taxRate.equals(that.taxRate) : that.taxRate != null) return false;
+        if (isOpportunity != null ? !isOpportunity.equals(that.isOpportunity) : that.isOpportunity != null)
+            return false;
+        if (dateLastExported != null ? !dateLastExported.equals(that.dateLastExported) : that.dateLastExported != null)
+            return false;
+        if (ignoreUntilDate != null ? !ignoreUntilDate.equals(that.ignoreUntilDate) : that.ignoreUntilDate != null)
+            return false;
+        if (appointments != null ? !appointments.equals(that.appointments) : that.appointments != null) return false;
+        if (tasks != null ? !tasks.equals(that.tasks) : that.tasks != null) return false;
+        if (certifications != null ? !certifications.equals(that.certifications) : that.certifications != null)
+            return false;
+        if (assignedUsers != null ? !assignedUsers.equals(that.assignedUsers) : that.assignedUsers != null)
+            return false;
+        if (categories != null ? !categories.equals(that.categories) : that.categories != null) return false;
+        if (category != null ? !category.equals(that.category) : that.category != null) return false;
+        if (businessSector != null ? !businessSector.equals(that.businessSector) : that.businessSector != null)
+            return false;
+        if (specialties != null ? !specialties.equals(that.specialties) : that.specialties != null) return false;
+        if (skills != null ? !skills.equals(that.skills) : that.skills != null) return false;
+        if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
+        if (businessSectors != null ? !businessSectors.equals(that.businessSectors) : that.businessSectors != null)
+            return false;
+        if (webResponses != null ? !webResponses.equals(that.webResponses) : that.webResponses != null) return false;
+        if (effectiveDate != null ? !effectiveDate.equals(that.effectiveDate) : that.effectiveDate != null)
+            return false;
+        if (lead != null ? !lead.equals(that.lead) : that.lead != null) return false;
+        if (campaignSource != null ? !campaignSource.equals(that.campaignSource) : that.campaignSource != null)
+            return false;
+        if (markUpPercentage != null ? !markUpPercentage.equals(that.markUpPercentage) : that.markUpPercentage != null)
+            return false;
+        if (winProbabilityPercent != null ? !winProbabilityPercent.equals(that.winProbabilityPercent) : that.winProbabilityPercent != null)
+            return false;
+        if (dealValue != null ? !dealValue.equals(that.dealValue) : that.dealValue != null) return false;
+        if (weightedDealValue != null ? !weightedDealValue.equals(that.weightedDealValue) : that.weightedDealValue != null)
+            return false;
+        if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
+            return false;
+        if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
+            return false;
+        if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
+            return false;
+        if (customObject3s != null ? !customObject3s.equals(that.customObject3s) : that.customObject3s != null)
+            return false;
+        if (customObject4s != null ? !customObject4s.equals(that.customObject4s) : that.customObject4s != null)
+            return false;
+        if (customObject5s != null ? !customObject5s.equals(that.customObject5s) : that.customObject5s != null)
+            return false;
+        if (customObject6s != null ? !customObject6s.equals(that.customObject6s) : that.customObject6s != null)
+            return false;
+        if (customObject7s != null ? !customObject7s.equals(that.customObject7s) : that.customObject7s != null)
+            return false;
+        if (customObject8s != null ? !customObject8s.equals(that.customObject8s) : that.customObject8s != null)
+            return false;
+        if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
+            return false;
+        return !(customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (luceneScore != null ? luceneScore.hashCode() : 0);
+        result = 31 * result + (id != null ? id.hashCode() : 0);
+        result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (estimatedStartDate != null ? estimatedStartDate.hashCode() : 0);
+        result = 31 * result + (estimatedHoursPerWeek != null ? estimatedHoursPerWeek.hashCode() : 0);
+        result = 31 * result + (estimatedDuration != null ? estimatedDuration.hashCode() : 0);
+        result = 31 * result + (salary != null ? salary.hashCode() : 0);
+        result = 31 * result + (salaryUnit != null ? salaryUnit.hashCode() : 0);
+        result = 31 * result + (onSite != null ? onSite.hashCode() : 0);
+        result = 31 * result + (taxStatus != null ? taxStatus.hashCode() : 0);
+        result = 31 * result + (branchCode != null ? branchCode.hashCode() : 0);
+        result = 31 * result + (isOpen != null ? isOpen.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+        result = 31 * result + (externalCategoryID != null ? externalCategoryID.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
+        result = 31 * result + (priority != null ? priority.hashCode() : 0);
+        result = 31 * result + (isClientContact != null ? isClientContact.hashCode() : 0);
+        result = 31 * result + (dateClientInterview != null ? dateClientInterview.hashCode() : 0);
+        result = 31 * result + (isPublic != null ? isPublic.hashCode() : 0);
+        result = 31 * result + (numOpenings != null ? numOpenings.hashCode() : 0);
+        result = 31 * result + (isExtendable != null ? isExtendable.hashCode() : 0);
+        result = 31 * result + (yearsRequired != null ? yearsRequired.hashCode() : 0);
+        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
+        result = 31 * result + (actualCloseDate != null ? actualCloseDate.hashCode() : 0);
+        result = 31 * result + (reasonClosed != null ? reasonClosed.hashCode() : 0);
+        result = 31 * result + (salaryRange != null ? salaryRange.hashCode() : 0);
+        result = 31 * result + (committed != null ? committed.hashCode() : 0);
+        result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
+        result = 31 * result + (educationDegree != null ? educationDegree.hashCode() : 0);
+        result = 31 * result + (reportToClientContact != null ? reportToClientContact.hashCode() : 0);
+        result = 31 * result + (estimatedEndDate != null ? estimatedEndDate.hashCode() : 0);
+        result = 31 * result + (isInterviewRequired != null ? isInterviewRequired.hashCode() : 0);
+        result = 31 * result + (benefits != null ? benefits.hashCode() : 0);
+        result = 31 * result + (costCenter != null ? costCenter.hashCode() : 0);
+        result = 31 * result + (reportTo != null ? reportTo.hashCode() : 0);
+        result = 31 * result + (skillList != null ? skillList.hashCode() : 0);
+        result = 31 * result + (degreeList != null ? degreeList.hashCode() : 0);
+        result = 31 * result + (expectedBillRate != null ? expectedBillRate.hashCode() : 0);
+        result = 31 * result + (publicDescription != null ? publicDescription.hashCode() : 0);
+        result = 31 * result + (hoursOfOperation != null ? hoursOfOperation.hashCode() : 0);
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        result = 31 * result + (optionsPackage != null ? optionsPackage.hashCode() : 0);
+        result = 31 * result + (bonusPackage != null ? bonusPackage.hashCode() : 0);
+        result = 31 * result + (jobOrders != null ? jobOrders.hashCode() : 0);
+        result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
+        result = 31 * result + (expectedPayRate != null ? expectedPayRate.hashCode() : 0);
+        result = 31 * result + (expectedFee != null ? expectedFee.hashCode() : 0);
+        result = 31 * result + (isClientEditable != null ? isClientEditable.hashCode() : 0);
+        result = 31 * result + (responseUser != null ? responseUser.hashCode() : 0);
+        result = 31 * result + (billRateCategoryID != null ? billRateCategoryID.hashCode() : 0);
+        result = 31 * result + (expectedCloseDate != null ? expectedCloseDate.hashCode() : 0);
+        result = 31 * result + (assignedDate != null ? assignedDate.hashCode() : 0);
+        result = 31 * result + (jobOrderUUID != null ? jobOrderUUID.hashCode() : 0);
+        result = 31 * result + (publishedZip != null ? publishedZip.hashCode() : 0);
+        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+        result = 31 * result + (taxRate != null ? taxRate.hashCode() : 0);
+        result = 31 * result + (isOpportunity != null ? isOpportunity.hashCode() : 0);
+        result = 31 * result + (dateLastExported != null ? dateLastExported.hashCode() : 0);
+        result = 31 * result + (ignoreUntilDate != null ? ignoreUntilDate.hashCode() : 0);
+        result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
+        result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
+        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
+        result = 31 * result + (assignedUsers != null ? assignedUsers.hashCode() : 0);
+        result = 31 * result + (categories != null ? categories.hashCode() : 0);
+        result = 31 * result + (category != null ? category.hashCode() : 0);
+        result = 31 * result + (businessSector != null ? businessSector.hashCode() : 0);
+        result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
+        result = 31 * result + (skills != null ? skills.hashCode() : 0);
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
+        result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
+        result = 31 * result + (webResponses != null ? webResponses.hashCode() : 0);
+        result = 31 * result + (effectiveDate != null ? effectiveDate.hashCode() : 0);
+        result = 31 * result + (lead != null ? lead.hashCode() : 0);
+        result = 31 * result + (campaignSource != null ? campaignSource.hashCode() : 0);
+        result = 31 * result + (markUpPercentage != null ? markUpPercentage.hashCode() : 0);
+        result = 31 * result + (winProbabilityPercent != null ? winProbabilityPercent.hashCode() : 0);
+        result = 31 * result + (dealValue != null ? dealValue.hashCode() : 0);
+        result = 31 * result + (weightedDealValue != null ? weightedDealValue.hashCode() : 0);
+        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
+        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
+        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
+        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
+        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
+        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
+        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
+        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
+        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
+        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder("Opportunity {")
+                .append("\n\t\"actualCloseDate\": ")
+                .append(actualCloseDate)
+                .append(",\n\t\"luceneScore\": ")
+                .append(luceneScore)
+                .append(",\n\t\"id\": ")
+                .append(id)
+                .append(",\n\t\"owner\": ")
+                .append(owner)
+                .append(",\n\t\"title\": ")
+                .append("'")
+                .append(title).append('\'')
+                .append(",\n\t\"type\": ")
+                .append("'")
+                .append(type).append('\'')
+                .append(",\n\t\"description\": ")
+                .append("'")
+                .append(description).append('\'')
+                .append(",\n\t\"estimatedStartDate\": ")
+                .append(estimatedStartDate)
+                .append(",\n\t\"estimatedHoursPerWeek\": ")
+                .append(estimatedHoursPerWeek)
+                .append(",\n\t\"estimatedDuration\": ")
+                .append(estimatedDuration)
+                .append(",\n\t\"salary\": ")
+                .append(salary)
+                .append(",\n\t\"salaryUnit\": ")
+                .append("'")
+                .append(salaryUnit).append('\'')
+                .append(",\n\t\"onSite\": ")
+                .append("'")
+                .append(onSite).append('\'')
+                .append(",\n\t\"taxStatus\": ")
+                .append("'")
+                .append(taxStatus).append('\'')
+                .append(",\n\t\"branchCode\": ")
+                .append("'")
+                .append(branchCode).append('\'')
+                .append(",\n\t\"isOpen\": ")
+                .append(isOpen)
+                .append(",\n\t\"address\": ")
+                .append(address)
+                .append(",\n\t\"dateAdded\": ")
+                .append(dateAdded)
+                .append(",\n\t\"isDeleted\": ")
+                .append(isDeleted)
+                .append(",\n\t\"externalCategoryID\": ")
+                .append(externalCategoryID)
+                .append(",\n\t\"status\": ")
+                .append("'")
+                .append(status).append('\'')
+                .append(",\n\t\"clientContact\": ")
+                .append(clientContact)
+                .append(",\n\t\"priority\": ")
+                .append(priority)
+                .append(",\n\t\"isClientContact\": ")
+                .append(isClientContact)
+                .append(",\n\t\"dateClientInterview\": ")
+                .append(dateClientInterview)
+                .append(",\n\t\"isPublic\": ")
+                .append(isPublic)
+                .append(",\n\t\"numOpenings\": ")
+                .append(numOpenings)
+                .append(",\n\t\"isExtendable\": ")
+                .append(isExtendable)
+                .append(",\n\t\"yearsRequired\": ")
+                .append(yearsRequired)
+                .append(",\n\t\"externalID\": ")
+                .append("'")
+                .append(externalID).append('\'')
+                .append(",\n\t\"reasonClosed\": ")
+                .append("'")
+                .append(reasonClosed).append('\'')
+                .append(",\n\t\"salaryRange\": ")
+                .append("'")
+                .append(salaryRange).append('\'')
+                .append(",\n\t\"committed\": ")
+                .append(committed)
+                .append(",\n\t\"willRelocate\": ")
+                .append(willRelocate)
+                .append(",\n\t\"educationDegree\": ")
+                .append("'")
+                .append(educationDegree).append('\'')
+                .append(",\n\t\"reportToClientContact\": ")
+                .append(reportToClientContact)
+                .append(",\n\t\"estimatedEndDate\": ")
+                .append(estimatedEndDate)
+                .append(",\n\t\"isInterviewRequired\": ")
+                .append(isInterviewRequired)
+                .append(",\n\t\"benefits\": ")
+                .append("'")
+                .append(benefits).append('\'')
+                .append(",\n\t\"costCenter\": ")
+                .append("'")
+                .append(costCenter).append('\'')
+                .append(",\n\t\"reportTo\": ")
+                .append("'")
+                .append(reportTo).append('\'')
+                .append(",\n\t\"skillList\": ")
+                .append("'")
+                .append(skillList).append('\'')
+                .append(",\n\t\"degreeList\": ")
+                .append("'")
+                .append(degreeList).append('\'')
+                .append(",\n\t\"expectedBillRate\": ")
+                .append(expectedBillRate)
+                .append(",\n\t\"publicDescription\": ")
+                .append("'")
+                .append(publicDescription).append('\'')
+                .append(",\n\t\"hoursOfOperation\": ")
+                .append("'")
+                .append(hoursOfOperation).append('\'')
+                .append(",\n\t\"source\": ")
+                .append("'")
+                .append(source).append('\'')
+                .append(",\n\t\"optionsPackage\": ")
+                .append("'")
+                .append(optionsPackage).append('\'')
+                .append(",\n\t\"bonusPackage\": ")
+                .append("'")
+                .append(bonusPackage).append('\'')
+                .append(",\n\t\"jobOrders\": ")
+                .append(jobOrders)
+                .append(",\n\t\"clientCorporation\": ")
+                .append(clientCorporation)
+                .append(",\n\t\"expectedPayRate\": ")
+                .append(expectedPayRate)
+                .append(",\n\t\"expectedFee\": ")
+                .append(expectedFee)
+                .append(",\n\t\"isClientEditable\": ")
+                .append(isClientEditable)
+                .append(",\n\t\"responseUser\": ")
+                .append(responseUser)
+                .append(",\n\t\"billRateCategoryID\": ")
+                .append(billRateCategoryID)
+                .append(",\n\t\"expectedCloseDate\": ")
+                .append(expectedCloseDate)
+                .append(",\n\t\"assignedDate\": ")
+                .append(assignedDate)
+                .append(",\n\t\"jobOrderUUID\": ")
+                .append("'")
+                .append(jobOrderUUID).append('\'')
+                .append(",\n\t\"publishedZip\": ")
+                .append("'")
+                .append(publishedZip).append('\'')
+                .append(",\n\t\"migrateGUID\": ")
+                .append("'")
+                .append(migrateGUID).append('\'')
+                .append(",\n\t\"taxRate\": ")
+                .append(taxRate)
+                .append(",\n\t\"isOpportunity\": ")
+                .append(isOpportunity)
+                .append(",\n\t\"dateLastExported\": ")
+                .append(dateLastExported)
+                .append(",\n\t\"ignoreUntilDate\": ")
+                .append(ignoreUntilDate)
+                .append(",\n\t\"appointments\": ")
+                .append(appointments)
+                .append(",\n\t\"tasks\": ")
+                .append(tasks)
+                .append(",\n\t\"certifications\": ")
+                .append(certifications)
+                .append(",\n\t\"assignedUsers\": ")
+                .append(assignedUsers)
+                .append(",\n\t\"categories\": ")
+                .append(categories)
+                .append(",\n\t\"category\": ")
+                .append(category)
+                .append(",\n\t\"businessSector\": ")
+                .append(businessSector)
+                .append(",\n\t\"specialties\": ")
+                .append(specialties)
+                .append(",\n\t\"skills\": ")
+                .append(skills)
+                .append(",\n\t\"notes\": ")
+                .append(notes)
+                .append(",\n\t\"businessSectors\": ")
+                .append(businessSectors)
+                .append(",\n\t\"webResponses\": ")
+                .append(webResponses)
+                .append(",\n\t\"effectiveDate\": ")
+                .append(effectiveDate)
+                .append(",\n\t\"lead\": ")
+                .append(lead)
+                .append(",\n\t\"campaignSource\": ")
+                .append("'")
+                .append(campaignSource).append('\'')
+                .append(",\n\t\"markUpPercentage\": ")
+                .append(markUpPercentage)
+                .append(",\n\t\"winProbabilityPercent\": ")
+                .append(winProbabilityPercent)
+                .append(",\n\t\"dealValue\": ")
+                .append(dealValue)
+                .append(",\n\t\"weightedDealValue\": ")
+                .append(weightedDealValue)
+                .append(",\n\t\"dateLastModified\": ")
+                .append(dateLastModified)
+                .append(",\n\t\"customObject1s\": ")
+                .append(customObject1s)
+                .append(",\n\t\"customObject2s\": ")
+                .append(customObject2s)
+                .append(",\n\t\"customObject3s\": ")
+                .append(customObject3s)
+                .append(",\n\t\"customObject4s\": ")
+                .append(customObject4s)
+                .append(",\n\t\"customObject5s\": ")
+                .append(customObject5s)
+                .append(",\n\t\"customObject6s\": ")
+                .append(customObject6s)
+                .append(",\n\t\"customObject7s\": ")
+                .append(customObject7s)
+                .append(",\n\t\"customObject8s\": ")
+                .append(customObject8s)
+                .append(",\n\t\"customObject9s\": ")
+                .append(customObject9s)
+                .append(",\n\t\"customObject10s\": ")
+                .append(customObject10s)
+                .append('}')
+                .toString();
+    }
 }
