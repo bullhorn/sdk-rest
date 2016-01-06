@@ -1,11 +1,11 @@
 # bullhorn-data
 A Java client library for working with the Bullhorn REST API service. Handles authentication as well as interaction with the API operations.
 
-## Available as maven dependency
+## Available as a Maven dependency
 
 There is a private Maven repository on Artifactory.
 
-### Add repository to your pom
+### Add repository to your pom file
 
 ```xml
 
@@ -17,7 +17,7 @@ There is a private Maven repository on Artifactory.
 		</repository>
 	</repositories>
 ```
-### Add dependency to your pom
+### Add dependency to your pom file
 
 ```xml
 
