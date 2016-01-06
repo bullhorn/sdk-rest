@@ -3,7 +3,7 @@ A Java client library for working with the Bullhorn REST API service. Handles au
 
 ## Available as maven dependency
 
-There is a private maven repo on Artifactory
+There is a private Maven repository on Artifactory.
 
 ### Add repository to your pom
 
