@@ -31,7 +31,7 @@ There is a private maven repo on Artifactory
 
 ## Basic setup:
 
-Provide your credentials and instantiate StandardBullhornApiRest
+Provide your credentials and instantiate StandardBullhornApiRest:
 ```java
         RestApiSettings creds = new RestApiSettings();
 		creds.setPassword("apipassword");
