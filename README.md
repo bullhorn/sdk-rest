@@ -1,5 +1,5 @@
 # bullhorn-data
-A java implementation of the Bullhorn REST apis. Handling authentication, json/java conversation etc.
+A Java client library for working with the Bullhorn REST API service. Handles authentication as well as interaction with the API operations.
 
 ## Available as maven dependency
 
