@@ -48,7 +48,7 @@ Provide your credentials and instantiate StandardBullhornApiRest:
 
 
 
-## Using with Spring Boot
+## Use with Spring Boot
 
 Add a configuration class:
 ```java
