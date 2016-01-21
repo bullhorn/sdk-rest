@@ -5,6 +5,16 @@ import java.util.List;
 
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
@@ -21,6 +31,17 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
 
     private static final ClientCorporationAssociations INSTANCE = new ClientCorporationAssociations();
 
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", ClientCorporationCustomObjectInstance1.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", ClientCorporationCustomObjectInstance2.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance3> customObject3s = instantiateAssociationField("customObject3s", ClientCorporationCustomObjectInstance3.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance4> customObject4s = instantiateAssociationField("customObject4s", ClientCorporationCustomObjectInstance4.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance5> customObject5s = instantiateAssociationField("customObject5s", ClientCorporationCustomObjectInstance5.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance6> customObject6s = instantiateAssociationField("customObject6s", ClientCorporationCustomObjectInstance6.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance7> customObject7s = instantiateAssociationField("customObject7s", ClientCorporationCustomObjectInstance7.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", ClientCorporationCustomObjectInstance8.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", ClientCorporationCustomObjectInstance9.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", ClientCorporationCustomObjectInstance10.class);
+
     private ClientCorporationAssociations() {
         super();
     }
@@ -33,6 +54,46 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
         return childClientCorporations;
     }
 
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance1> customObject1s() {
+        return customObject1s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance2> customObject2s() {
+        return customObject2s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance3> customObject3s() {
+        return customObject3s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance4> customObject4s() {
+        return customObject4s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance5> customObject5s() {
+        return customObject5s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance6> customObject6s() {
+        return customObject6s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance7> customObject7s() {
+        return customObject7s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance8> customObject8s() {
+        return customObject8s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance9> customObject9s() {
+        return customObject9s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance10> customObject10s() {
+        return customObject10s;
+    }
+
     private <E extends BullhornEntity> AssociationField<ClientCorporation, E> instantiateAssociationField(String associationName,
             Class<E> associationType) {
         return new StandardAssociationField<ClientCorporation, E>(associationName, associationType);
@@ -43,6 +104,16 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<ClientCorporation, ? extends BullhornEntity>>();
             allAssociations.add(childClientCorporations());
+            allAssociations.add(customObject1s());
+            allAssociations.add(customObject2s());
+            allAssociations.add(customObject3s());
+            allAssociations.add(customObject4s());
+            allAssociations.add(customObject5s());
+            allAssociations.add(customObject6s());
+            allAssociations.add(customObject7s());
+            allAssociations.add(customObject8s());
+            allAssociations.add(customObject9s());
+            allAssociations.add(customObject10s());
         }
         return allAssociations;
 
