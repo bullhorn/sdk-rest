@@ -20,14 +20,12 @@ public class RestConcurrencyService implements ConcurrencyService {
 
 	@Override
 	public <T, C extends Callable<T>> List<T> spinThreadsAndWaitForResult(List<C> taskList) {
-
-		return this.handleList(taskList, true);
+        return this.handleList(taskList, true);
 	}
 
 	@Override
 	public <T, C extends Callable<T>> void spinThreadsAndDoNotWaitForResult(List<C> taskList) {
 		handleList(taskList, false);
-
 	}
 
 	private <T, C extends Callable<T>> List<T> handleList(List<C> taskList, boolean wait) {

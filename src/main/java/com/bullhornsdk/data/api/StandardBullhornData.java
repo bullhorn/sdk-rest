@@ -1045,7 +1045,6 @@ public class StandardBullhornData implements BullhornData {
 		Candidate candidate = parsedResume.getCandidate();
 
 		if (candidate != null) {
-
 			// first check for duplicates
 			candidate = checkForDuplicates(candidate);
 			parsedResume.setCandidate(candidate);
@@ -1097,7 +1096,6 @@ public class StandardBullhornData implements BullhornData {
 	 * @return
 	 */
 	private Candidate checkForDuplicates(Candidate candidate) {
-
 		if (candidate == null || candidate.getId() != null) {
 			return candidate;
 		}
@@ -1122,7 +1120,6 @@ public class StandardBullhornData implements BullhornData {
 			List<Candidate> candidateSearch = this.searchForList(Candidate.class, query.toString(), null, params);
 
 			if (candidateSearch != null && candidateSearch.size() > 0) {
-
 				return candidateSearch.get(0);
 			}
 		}
@@ -1289,6 +1286,11 @@ public class StandardBullhornData implements BullhornData {
 	 */
 	private FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId,
 			FileParams params) {
+
+
+
+
+
 
 		MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
 

@@ -51,27 +51,21 @@ public interface BullhornData {
 	/**
 	 * Returns all fields for passed in entity type with the passed in id
 	 * 
-	 * @param type
-	 *            type of BullhornEntity
-	 * @param id
-	 *            id of BullhornEntity
+	 * @param type type of BullhornEntity
+	 * @param id id of BullhornEntity
 	 * @return an entity of type T, or null if an error occurred
 	 */
-
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id);
 
 	/**
 	 * Returns the entity of passed in type with the passed in id, fields to get are specifed by the fieldSet.
 	 * 
-	 * @param type
-	 *            type of BullhornEntity
-	 * @param id
-	 *            id of BullhornEntity
-	 * @param fieldSet
-	 *            fields to query for
+	 * @param type type of BullhornEntity
+	 * @param id id of BullhornEntity
+	 * @param fieldSet fields to query for
 	 * 
-	 * @throws RestApiException
-	 *             when the api call fails
+	 * @throws RestApiException when the api call fails
+     *
 	 * @return an entity of type T, or null if an error occurred
 	 */
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet);
@@ -79,15 +73,11 @@ public interface BullhornData {
 	/**
 	 * Queries for QueryEntity of type T and returns a List<T>.
 	 * 
-	 * @param type
-	 *            type of QueryEntity to query for
-	 * @param where
-	 *            SQL-style filter clause
-	 * @param fieldSet
-	 *            fields to query for
+	 * @param type type of QueryEntity to query for
+	 * @param where SQL-style filter clause
+	 * @param fieldSet fields to query for
 	 * 
-	 * @param params
-	 *            optional QueryParams parameters to use in the api request, pass in null for default.
+	 * @param params optional QueryParams parameters to use in the api request, pass in null for default.
 	 * 
 	 * @see QueryParams
 	 * @see ParamFactory
@@ -99,14 +89,10 @@ public interface BullhornData {
 	/**
 	 * Searches for SearchEntity of type T and returns a List<T>.
 	 * 
-	 * @param type
-	 *            type of SearchEntity to query for
-	 * @param query
-	 *            Lucene query string
-	 * @param fieldSet
-	 *            fields to query for
-	 * @param params
-	 *            optional SearchParams parameters to use in the api request, pass in null for default.
+	 * @param type type of SearchEntity to query for
+	 * @param query Lucene query string
+	 * @param fieldSet fields to query for
+	 * @param params optional SearchParams parameters to use in the api request, pass in null for default.
 	 * 
 	 * @see SearchParams
 	 * @see ParamFactory
@@ -119,10 +105,8 @@ public interface BullhornData {
 	/**
 	 * Fast-finds and returns a List of FastFindResult.
 	 *
-	 * @param query
-	 * 				fast-find query string
-	 * @param params
-	 * 				optional FastFindParams parameters to use in the api request, pass in null for default.
+	 * @param query fast-find query string
+	 * @param params optional FastFindParams parameters to use in the api request, pass in null for default.
 	 *
 	 * @see FastFindParams
 	 * @see ParamFactory
@@ -134,15 +118,11 @@ public interface BullhornData {
 	/**
 	 * Queries for QueryEntity of type T and returns a ListWrapper<T>.
 	 * 
-	 * @param type
-	 *            type of QueryEntity to query for
-	 * @param where
-	 *            SQL-style filter clause
-	 * @param fieldSet
-	 *            fields to query for
+	 * @param type type of QueryEntity to query for
+	 * @param where SQL-style filter clause
+	 * @param fieldSet fields to query for
 	 * 
-	 * @param params
-	 *            optional QueryParams parameters to use in the api request, pass in null for default.
+	 * @param params optional QueryParams parameters to use in the api request, pass in null for default.
 	 * 
 	 * @see QueryParams
 	 * @see ParamFactory
@@ -154,14 +134,10 @@ public interface BullhornData {
 	/**
 	 * Searches for SearchEntity of type T and returns a ListWrapper<T>.
 	 * 
-	 * @param type
-	 *            type of SearchEntity to query for
-	 * @param query
-	 *            Lucene query string
-	 * @param fieldSet
-	 *            fields to query for
-	 * @param params
-	 *            optional SearchParams parameters to use in the api request, pass in null for default.
+	 * @param type type of SearchEntity to query for
+	 * @param query Lucene query string
+	 * @param fieldSet fields to query for
+	 * @param params optional SearchParams parameters to use in the api request, pass in null for default.
 	 * 
 	 * @see SearchParams
 	 * @see ParamFactory
@@ -175,10 +151,8 @@ public interface BullhornData {
 	/**
 	 * Fast-finds and returns a FastFindListWrapper.
 	 *
-	 * @param query
-	 * 				fast find query string
-	 * @param params
-	 * 				optional FastFindParams parameters to use in the api request, pass in null for default.
+	 * @param query fast find query string
+	 * @param params optional FastFindParams parameters to use in the api request, pass in null for default.
 	 *
 	 * @see FastFindParams
 	 * @see ParamFactory
@@ -199,15 +173,11 @@ public interface BullhornData {
 	 * RETURNS A REASONABLE AMOUNT OF RECORDS.
 	 * </p>
 	 * 
-	 * @param type
-	 *            type of QueryEntity to query for
-	 * @param where
-	 *            SQL-style filter clause
-	 * @param fieldSet
-	 *            fields to query for
+	 * @param type type of QueryEntity to query for
+	 * @param where SQL-style filter clause
+	 * @param fieldSet fields to query for
 	 * 
-	 * @param params
-	 *            optional QueryParams parameters to use in the api request, pass in null for default.
+	 * @param params optional QueryParams parameters to use in the api request, pass in null for default.
 	 * 
 	 * @see QueryParams
 	 * @see ParamFactory
@@ -229,14 +199,10 @@ public interface BullhornData {
 	 * RETURNS A REASONABLE AMOUNT OF RECORDS.
 	 * </p>
 	 * 
-	 * @param type
-	 *            type of SearchEntity to query for
-	 * @param query
-	 *            Lucene query string
-	 * @param fieldSet
-	 *            fields to query for
-	 * @param params
-	 *            optional SearchParams parameters to use in the api request, pass in null for default.
+	 * @param type type of SearchEntity to query for
+	 * @param query  Lucene query string
+	 * @param fieldSet fields to query for
+	 * @param params optional SearchParams parameters to use in the api request, pass in null for default.
 	 * 
 	 * @see SearchParams
 	 * @see ParamFactory
@@ -253,10 +219,9 @@ public interface BullhornData {
 	 * 
 	 * Please note, the id of the passed in entity cannot be null.
 	 * 
-	 * @param the
-	 *            entity to update, must have the id field set.
+	 * @param entity the entity to update, must have the id field set.
 	 * 
-	 * @return a CrudResponse
+	 * @return an UpdateResponse with updated entity information
 	 */
 
 	public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity);
@@ -265,7 +230,7 @@ public interface BullhornData {
 	 * Same as updateEntity, but handles a list of entities to update.
 	 * 
 	 * @param entityList
-	 * @return
+	 * @return a List of UpdateResponses, one UpdateResponse per entity passed in with corresponding transaction information
 	 */
 	public <C extends CrudResponse, T extends UpdateEntity> List<C> updateMultipleEntities(List<T> entityList);
 
@@ -273,10 +238,9 @@ public interface BullhornData {
 	 * Inserts a CreateEntity that is a sub type of BullhornEntity and returns a CrudResponse with info on the update, such as warnings, errors
 	 * and validation errors.
 	 * 
-	 * @param the
-	 *            CreateEntity to insert
+	 * @param entity the CreateEntity to insert
 	 * 
-	 * @return a CrudResponse
+	 * @return a CreateResponse with created entity information
 	 */
 
 	public <C extends CrudResponse, T extends CreateEntity> C insertEntity(T entity);
@@ -285,8 +249,10 @@ public interface BullhornData {
 	 * Soft deletes a SoftDelete entity and hard deletes a HardDeleteEntity both are sub types of DeleteEntity that is a sub type of
 	 * BullhornEntity and returns a CrudResponse with info on the delete.
 	 * 
-	 * @param entity
-	 * @return
+	 * @param type the type of DeleteEntity to delete
+     * @param id the id of the entity to delete
+     *
+	 * @return a DeleteResponse with deleted entity information
 	 */
 	public <C extends CrudResponse, T extends DeleteEntity> C deleteEntity(Class<T> type, Integer id);
 
@@ -294,14 +260,12 @@ public interface BullhornData {
 	 * 
 	 * Returns the MetaData for passed in type.
 	 * 
-	 * @param type
-	 *            a BullhornEntity
-	 * @param metaParameter
-	 *            specifies how much meta data to fetch (basic or full). Null will default to basic.
+	 * @param type  a BullhornEntity
+	 * @param metaParameter specifies how much meta data to fetch (basic or full). Null will default to basic.
 	 * 
-	 * @param fieldSet
-	 *            fields to return meta data for. Pass in null for all fields.
-	 * @return
+	 * @param fieldSet fields to return meta data for. Pass in null for all fields.
+     *
+	 * @return a MetaData object with the requested meta data
 	 */
 
 	public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet);
@@ -310,11 +274,11 @@ public interface BullhornData {
 	 * 
 	 * Returns the Settings for passed in name(s).
 	 * 
-	 * @param settingSet
-	 *            settings to return data for. Pass in null for all settings.
-	 * @return
+	 * @param settingSet  settings to return data for. Pass in null for all settings.
+     *
+	 * @return a Map of setting name to setting value
 	 */
-	public Map<String,Object> getSettings(Set<String> settingSet);
+	public Map<String, Object> getSettings(Set<String> settingSet);
 
 	/**
 	 * Returns a valid bhRestToken to be used in a bh rest api call.
@@ -343,10 +307,9 @@ public interface BullhornData {
 	 * Please note that this method will only parse the the information but it will not save the data to Bullhorn. In order to save the
 	 * parsed data make subsequent api calls using the saveParsedResumeDataToBullhorn method.
 	 * 
-	 * @param resume
-	 *            the MultipartFile to parse
-	 * @param params
-	 *            the additional parameters to pass in the api call, pass in null for defaults.
+	 * @param resume the MultipartFile to parse
+	 * @param params the additional parameters to pass in the api call, pass in null for defaults.
+     *
 	 * @return the parsed resume values.
 	 */
 	public ParsedResume parseResumeFile(MultipartFile resume, ResumeFileParseParams params);
@@ -358,10 +321,9 @@ public interface BullhornData {
 	 * Please note that this method will only parse the the information but it will not save the data to Bullhorn. In order to save the
 	 * parsed data make subsequent api calls using the saveParsedResumeDataToBullhorn method.
 	 * 
-	 * @param resume
-	 *            the the resume text to parse
-	 * @param params
-	 *            the additional parameters to pass in the api call, pass in null for defaults.
+	 * @param resume the resume text to parse
+	 * @param params the additional parameters to pass in the api call, pass in null for defaults.
+     *
 	 * @return the parsed resume values.
 	 */
 	public ParsedResume parseResumeText(String resume, ResumeTextParseParams params);
@@ -374,8 +336,8 @@ public interface BullhornData {
 	 * If no id on the candidate exists then this method will make a duplicate check on the passed in data. If an existing candidate is
 	 * found then that candidate will be updated otherwise a new candidate will be inserted.
 	 * 
-	 * @param parsedResume
-	 *            a ParsedResume object, usually fetched using the parseResumeFile method.
+	 * @param parsedResume a ParsedResume object, usually fetched using the parseResumeFile method.
+     *
 	 * @return the ParsedResume with the objects updated with the ids in bullhorn. Null if save failed.
 	 */
 	public ParsedResume saveParsedResumeDataToBullhorn(ParsedResume parsedResume);
@@ -385,17 +347,14 @@ public interface BullhornData {
 	 * 
 	 * If the parse is successful the file will be attached. In that case a FileWrapper will be added to the ParsedResume returned.
 	 * 
-	 * @param type
-	 *            the FileEntity to attach the file to
-	 * @param entityId
-	 *            the id of the file entity
-	 * @param file
-	 *            the resume
-	 * @param externalId
-	 *            External identifier for the file. Example: "portfolio"
-	 * @param fileParams
-	 * @param resumeFileParseParams
-	 * @return The ParsedResume. If the parse was successful, then the ParsedResume will contain a FileWrapper.
+	 * @param type the FileEntity to attach the file to
+	 * @param entityId the id of the file entity
+	 * @param file the resume
+	 * @param externalId external identifier for the file. Example: "portfolio"
+	 * @param fileParams additional parameters for the add file call
+	 * @param resumeFileParseParams additional parameters for the resume parse call
+     *
+	 * @return the ParsedResume. If the parse was successful, then the ParsedResume will contain a FileWrapper.
 	 */
 	public ParsedResume parseResumeThenAddfile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId,
 			FileParams fileParams, ResumeFileParseParams resumeFileParseParams);
@@ -403,76 +362,67 @@ public interface BullhornData {
 	/**
 	 * Adds a file to the bh entity with the entityId, passing in a File.
 	 * 
-	 * @param type
-	 * @param entityId
-	 * @param file
-	 * @param externalId
-	 * @param params
-	 * @return
+	 * @param type the FileEntity to attach the file to
+	 * @param entityId the id of the file entity
+	 * @param file the file to add
+	 * @param externalId external identifier for the file. Example: "portfolio"
+	 * @param params additional parameters for the add file call
+     *
+	 * @return a FileWrapper with information about the attached file
 	 */
 	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params);
 
 	/**
 	 * Returns a file for the passed in FileEntity type. No FileMeta data included.
 	 * 
-	 * @param type
-	 *            the bh type of the entity that has a file attached
-	 * @param entityId
-	 *            the entity of the bh entity with an attached file
-	 * @param fileId
-	 *            the file id
-	 * @return
+	 * @param type the bh type of the entity that has a file attached
+	 * @param entityId the entity of the bh entity with an attached file
+	 * @param fileId the file id
+     *
+	 * @return a FileContent for the requested file
 	 */
 	public FileContent getFileContent(Class<? extends FileEntity> type, Integer entityId, Integer fileId);
 
 	/**
 	 * Returns a list containing the FileMeta data for all files for the bullhorn type with entityId.
 	 * 
-	 * @param type
-	 *            the bh type of the entity that has a file attached
-	 * @param entityId
-	 *            the entity of the bh entity with an attached file
-	 * @return
+	 * @param type the bh type of the entity that has a file attached
+	 * @param entityId the entity of the bh entity with an attached file
+     *
+	 * @return a List of FileMetas, one for each file on the requested entity
 	 */
 	public List<FileMeta> getFileMetaData(Class<? extends FileEntity> type, Integer entityId);
 
 	/**
 	 * Return file content + FileMeta data for a file
 	 * 
-	 * @param type
-	 *            the bh type of the entity that has a file attached
-	 * @param entityId
-	 *            the entity of the bh entity with an attached file
-	 * @param fileId
-	 *            the file id
-	 * @return
+	 * @param type the bh type of the entity that has a file attached
+	 * @param entityId the entity of the bh entity with an attached file
+	 * @param fileId the file id
+     *
+	 * @return a FileWrapper for the requested file
 	 */
 	public FileWrapper getFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId);
 
 	/**
 	 * Return a list of file content + FileMeta data for a bullhorn entity.
 	 * 
-	 * @param type
-	 *            the bh type of the entity that has a file attached
-	 * @param entityId
-	 *            the entity of the bh entity with an attached file
-	 * @return
+	 * @param type the bh type of the entity that has a file attached
+	 * @param entityId the entity of the bh entity with an attached file
+     *
+	 * @return a List of FileWrappers, one for each file on the requested entity
 	 */
 	public List<FileWrapper> getAllFiles(Class<? extends FileEntity> type, Integer entityId);
 
 	/**
 	 * Adds a file to the bh entity with the entityId.
 	 * 
-	 * @param type
-	 *            the bullhorn type, such as a Candidate
-	 * @param entityId
-	 *            the id of the bullhorn type
-	 * @param file
-	 *            the file to attach
-	 * @param externalId
-	 *            External identifier for the type of file attached. Pass in null for default value.
-	 * @param params
-	 *            optional parameters.
+	 * @param type  the bullhorn type, such as a Candidate
+	 * @param entityId the id of the bullhorn type
+	 * @param file  the file to attach
+	 * @param externalId External identifier for the type of file attached. Pass in null for default value.
+	 * @param params optional parameters.
+     *
 	 * @return a FileWrapper containing the added file
 	 */
 	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params);
@@ -482,15 +432,11 @@ public interface BullhornData {
 	 * 
 	 * This method is intended to mimic the legacy api for attaching resumes to a candidate + updating the candidate.description.
 	 * 
-	 * @param candidateId
-	 *            the id of the candidate to update with file and description
-	 * @param file
-	 *            the file to attach to the candidate
-	 * @param candidateDescription
-	 *            Will be used to populate the candidate description
-	 * @param externalId
-	 * @param params
-	 *            the FileParams. User ParamFactory.fileParams()
+	 * @param candidateId the id of the candidate to update with file and description
+	 * @param file the file to attach to the candidate
+	 * @param candidateDescription Will be used to populate the candidate description
+	 * @param externalId External identifier for the type of file attached. Pass in null for default value.
+	 * @param params the FileParams. User ParamFactory.fileParams()
 	 * 
 	 * @return a FileWrapper with the file information
 	 */
@@ -500,25 +446,24 @@ public interface BullhornData {
 	/**
 	 * Deletes a file from the bullhorn entity
 	 * 
-	 * @param type
-	 * @param entityId
-	 * @param fileId
-	 * @return A FileApiResponse
+	 * @param type the type of FileEntity to delete a file from
+	 * @param entityId the id of the entity that has the file to delete
+	 * @param fileId the id of the file to delete
+     *
+	 * @return a FileApiResponse containing information about the deleted file
 	 */
 	public FileApiResponse deleteFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId);
 
 	/**
 	 * Associates the associationName with the entity.
 	 * 
-	 * @param type
-	 *            the AssociationEntity type that will have associations added
-	 * @param entityId
-	 *            the id of the AssociationEntity type. Example candidate.id
-	 * @param associationName
-	 *            the name of the association on the entity. Use the factory classes in
-	 *            com.bullhornsdk.data.model.entity.association.standard to see what associations are available.
-	 * @param associationIds
-	 *            the ids of the associations to be added to the entity
+	 * @param type the AssociationEntity type that will have associations added
+	 * @param entityId the id of the AssociationEntity type. Example candidate.id
+	 * @param associationName the name of the association on the entity.
+	 * @param associationIds  the ids of the associations to be added to the entity
+     *
+     * @see com.bullhornsdk.data.model.entity.association.AssociationFactory
+     *
 	 * @return a CrudResponse
 	 */
 	public <C extends CrudResponse, T extends AssociationEntity> C associateWithEntity(Class<T> type, Integer entityId,
@@ -527,14 +472,13 @@ public interface BullhornData {
 	/**
 	 * Disassociates the associationName with the entity.
 	 * 
-	 * @param type
-	 *            the AssociationEntity type that will have associations added
-	 * @param entityId
-	 *            the id of the AssociationEntity type. Example candidate.id
-	 * @param associationName
-	 *            Use the factory classes in com.bullhornsdk.data.model.entity.association.standard to see what associations are available.
-	 * @param associationIds
-	 *            the ids of the associations to be removed from the entity
+	 * @param type the AssociationEntity type that will have associations added
+	 * @param entityId the id of the AssociationEntity type. Example candidate.id
+	 * @param associationName the name of the association to disassociate entities for
+	 * @param associationIds the ids of the associations to be removed from the entity
+     *
+     * @see com.bullhornsdk.data.model.entity.association.AssociationFactory
+     *
 	 * @return a CrudResponse
 	 */
 	public <C extends CrudResponse, T extends AssociationEntity> C disassociateWithEntity(Class<T> type, Integer entityId,
@@ -545,17 +489,14 @@ public interface BullhornData {
 	 * 
 	 * Example: Pass in Category.class as Class<T> and Skill.class as Class<E> to get a list of List<Skill> associated with the category
 	 * 
-	 * @param type
-	 *            a AssociationEntity of type T that has associations of type E
-	 * @param entityIds
-	 *            the ids of the type T BullhornEntity to return associations from
-	 * @param associationType
-	 *            a BullhornEntity of type E to be returned
-	 * @param fieldSet
-	 *            fields of the associationType to return
+	 * @param type a AssociationEntity of type T that has associations of type E
+	 * @param entityIds the ids of the type T BullhornEntity to return associations from
+	 * @param associationName the type of association to retrieve records for
+	 * @param fieldSet fields of the associationType to return
 	 * 
-	 * @param params
-	 *            optional parameters such as count and order by
+	 * @param params optional parameters such as count and order by
+     *
+     * @see com.bullhornsdk.data.model.entity.association.AssociationFactory
 	 * 
 	 * @return a list containing type E
 	 */
@@ -565,12 +506,10 @@ public interface BullhornData {
 	/**
 	 * Returns a List<Note> of all notes associated with ClientContacts of the give ClientCorporation
 	 * 
-	 * @param clientCorporationID
-	 *            the id of the ClientCorporation whose notes we want to retrieve
-	 * @param fieldSet
-	 *            fields of the Notes to return
-	 * @param params
-	 *            optional parameters such as count and order by
+	 * @param clientCorporationID the id of the ClientCorporation whose notes we want to retrieve
+	 * @param fieldSet fields of the Notes to return
+	 * @param params optional parameters such as count and order by
+     *
 	 * @return a list<Note> of the clientCorporation's notes
 	 */
 	public List<Note> getAllCorpNotes(Integer clientCorporationID, Set<String> fieldSet, CorpNotesParams params);
@@ -587,18 +526,17 @@ public interface BullhornData {
 	 * 
 	 * If the Note insert fails no attempt to add a NoteEntity will occur.
 	 * 
-	 * @param note
-	 *            The {@link Note} to add. The note.personReference,note.jobOrder and note.placements determine what entities the note will
+	 * @param note The {@link Note} to add. The note.personReference,note.jobOrder and note.placements determine what entities the note will
 	 *            be associated with via a NoteEntity.
 	 * 
-	 * @return a CrudResponse
+	 * @return a CreateResponse with information about the new file
 	 */
 	public <C extends CrudResponse> C addNoteAndAssociateWithEntity(Note note);
 
 	/**
 	 * Returns the RestApiSession that manages the sessions for one corporation. Use this get access to corporationID and apiKey.
 	 * 
-	 * @return
+	 * @return the restApiSession
 	 */
 	public RestApiSession getRestApiSession();
 
