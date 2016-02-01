@@ -8,7 +8,9 @@ import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
@@ -74,6 +76,19 @@ public class RestApiSession {
 		this.restCredentials = null;
 		this.corporationID = 0;
 		this.apiKey = null;
+	}
+
+	/**
+	 * This factory method is used when deserializing from JSON.
+	 * It guarantees that "restApiSettings" property gets assigned first,
+	 * ensuring no NullPointerException when other setters are trying to access it,
+	 * e.g. setBhRestToken->updateDateTimeBhRestTokenWillExpire
+	 */
+	@JsonCreator
+	public static RestApiSession create(@JsonProperty("restApiSettings") RestApiSettings restApiSettings) {
+		RestApiSession result = new RestApiSession();
+		result.setRestApiSettings(restApiSettings);
+		return result;
 	}
 
 	public RestApiSession(RestApiSettings restApiSettings) {
