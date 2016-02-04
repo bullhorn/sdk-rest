@@ -14,7 +14,6 @@ import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -50,7 +49,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 
 	private DateTime dateAdded;
 
-	private OneToManyLinkedId entities;
+	private OneToMany<NoteEntity> entities;
 
 	private Boolean isDeleted;
 
@@ -184,12 +183,12 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 	}
 
 	@JsonIgnore
-	public OneToManyLinkedId getEntities() {
+	public OneToMany<NoteEntity> getEntities() {
 		return entities;
 	}
 
 	@JsonProperty("entities")
-	public void setEntities(OneToManyLinkedId entities) {
+	public void setEntities(OneToMany<NoteEntity> entities) {
 		this.entities = entities;
 	}
 
