@@ -1,0 +1,62 @@
+{
+    "entity": "State",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/State?fields=*",
+    "label": "State",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "code",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "Code",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "country",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Country",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Country",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Country",
+            "associatedEntity": {
+                "entity": "Country",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Country?fields=*",
+                "label": "Country",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "optional": false,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        }
+    ]
+}

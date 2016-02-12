@@ -1,0 +1,72 @@
+{
+    "searchFields": [
+        {
+            "name": "action",
+            "isSortable": true
+        },
+        {
+            "name": "candidateUserID",
+            "isSortable": true
+        },
+        {
+            "name": "clientContactUserID",
+            "isSortable": true
+        },
+        {
+            "name": "commentingPerson",
+            "isSortable": true
+        },
+        {
+            "name": "commentingUserID",
+            "isSortable": true
+        },
+        {
+            "name": "comments",
+            "isSortable": false
+        },
+        {
+            "name": "corporateUserID",
+            "isSortable": true
+        },
+        {
+            "name": "dateAdded",
+            "isSortable": true
+        },
+        {
+            "name": "entities.noteEntityID",
+            "isSortable": true
+        },
+        {
+            "name": "entities.targetEntity",
+            "isSortable": true
+        },
+        {
+            "name": "isDeleted",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrderID",
+            "isSortable": true
+        },
+        {
+            "name": "minutesSpent",
+            "isSortable": true
+        },
+        {
+            "name": "noteID",
+            "isSortable": true
+        },
+        {
+            "name": "placementID",
+            "isSortable": true
+        },
+        {
+            "name": "userID",
+            "isSortable": true
+        },
+        {
+            "name": "userRequestID",
+            "isSortable": true
+        }
+    ]
+}

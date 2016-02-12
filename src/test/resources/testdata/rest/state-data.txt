@@ -1,0 +1,463 @@
+{
+    "total": 57,
+    "start": 0,
+    "count": 57,
+    "data": [
+        {
+            "id": 57,
+            "code": "WY",
+            "country": {
+                "id": 1
+            },
+            "name": "Wyoming"
+        },
+        {
+            "id": 56,
+            "code": "WI",
+            "country": {
+                "id": 1
+            },
+            "name": "Wisconsin"
+        },
+        {
+            "id": 55,
+            "code": "WV",
+            "country": {
+                "id": 1
+            },
+            "name": "West Virginia"
+        },
+        {
+            "id": 54,
+            "code": "WA",
+            "country": {
+                "id": 1
+            },
+            "name": "Washington"
+        },
+        {
+            "id": 53,
+            "code": "VA",
+            "country": {
+                "id": 1
+            },
+            "name": "Virginia"
+        },
+        {
+            "id": 52,
+            "code": "VI",
+            "country": {
+                "id": 1
+            },
+            "name": "Virgin Islands"
+        },
+        {
+            "id": 51,
+            "code": "VT",
+            "country": {
+                "id": 1
+            },
+            "name": "Vermont"
+        },
+        {
+            "id": 50,
+            "code": "UT",
+            "country": {
+                "id": 1
+            },
+            "name": "Utah"
+        },
+        {
+            "id": 49,
+            "code": "TX",
+            "country": {
+                "id": 1
+            },
+            "name": "Texas"
+        },
+        {
+            "id": 48,
+            "code": "TN",
+            "country": {
+                "id": 1
+            },
+            "name": "Tennessee"
+        },
+        {
+            "id": 47,
+            "code": "SD",
+            "country": {
+                "id": 1
+            },
+            "name": "South Dakota"
+        },
+        {
+            "id": 46,
+            "code": "SC",
+            "country": {
+                "id": 1
+            },
+            "name": "South Carolina"
+        },
+        {
+            "id": 45,
+            "code": "RI",
+            "country": {
+                "id": 1
+            },
+            "name": "Rhode Island"
+        },
+        {
+            "id": 44,
+            "code": "PR",
+            "country": {
+                "id": 1
+            },
+            "name": "Puerto Rico"
+        },
+        {
+            "id": 43,
+            "code": "PA",
+            "country": {
+                "id": 1
+            },
+            "name": "Pennsylvania"
+        },
+        {
+            "id": 42,
+            "code": "PW",
+            "country": {
+                "id": 1
+            },
+            "name": "Palau"
+        },
+        {
+            "id": 41,
+            "code": "OR",
+            "country": {
+                "id": 1
+            },
+            "name": "Oregon"
+        },
+        {
+            "id": 40,
+            "code": "OK",
+            "country": {
+                "id": 1
+            },
+            "name": "Oklahoma"
+        },
+        {
+            "id": 39,
+            "code": "OH",
+            "country": {
+                "id": 1
+            },
+            "name": "Ohio"
+        },
+        {
+            "id": 38,
+            "code": "MP",
+            "country": {
+                "id": 1
+            },
+            "name": "Northern Mariana Islands"
+        },
+        {
+            "id": 37,
+            "code": "ND",
+            "country": {
+                "id": 1
+            },
+            "name": "North Dakota"
+        },
+        {
+            "id": 36,
+            "code": "NC",
+            "country": {
+                "id": 1
+            },
+            "name": "North Carolina"
+        },
+        {
+            "id": 35,
+            "code": "NY",
+            "country": {
+                "id": 1
+            },
+            "name": "New York"
+        },
+        {
+            "id": 34,
+            "code": "NM",
+            "country": {
+                "id": 1
+            },
+            "name": "New Mexico"
+        },
+        {
+            "id": 33,
+            "code": "NJ",
+            "country": {
+                "id": 1
+            },
+            "name": "New Jersey"
+        },
+        {
+            "id": 32,
+            "code": "NH",
+            "country": {
+                "id": 1
+            },
+            "name": "New Hampshire"
+        },
+        {
+            "id": 31,
+            "code": "NV",
+            "country": {
+                "id": 1
+            },
+            "name": "Nevada"
+        },
+        {
+            "id": 30,
+            "code": "NE",
+            "country": {
+                "id": 1
+            },
+            "name": "Nebraska"
+        },
+        {
+            "id": 29,
+            "code": "MT",
+            "country": {
+                "id": 1
+            },
+            "name": "Montana"
+        },
+        {
+            "id": 28,
+            "code": "MO",
+            "country": {
+                "id": 1
+            },
+            "name": "Missouri"
+        },
+        {
+            "id": 27,
+            "code": "MS",
+            "country": {
+                "id": 1
+            },
+            "name": "Mississippi"
+        },
+        {
+            "id": 26,
+            "code": "MN",
+            "country": {
+                "id": 1
+            },
+            "name": "Minnesota"
+        },
+        {
+            "id": 25,
+            "code": "MI",
+            "country": {
+                "id": 1
+            },
+            "name": "Michigan"
+        },
+        {
+            "id": 24,
+            "code": "MA",
+            "country": {
+                "id": 1
+            },
+            "name": "Massachusetts"
+        },
+        {
+            "id": 23,
+            "code": "MD",
+            "country": {
+                "id": 1
+            },
+            "name": "Maryland"
+        },
+        {
+            "id": 22,
+            "code": "MH",
+            "country": {
+                "id": 1
+            },
+            "name": "Marshall Islands"
+        },
+        {
+            "id": 21,
+            "code": "ME",
+            "country": {
+                "id": 1
+            },
+            "name": "Maine"
+        },
+        {
+            "id": 20,
+            "code": "LA",
+            "country": {
+                "id": 1
+            },
+            "name": "Louisiana"
+        },
+        {
+            "id": 19,
+            "code": "KY",
+            "country": {
+                "id": 1
+            },
+            "name": "Kentucky"
+        },
+        {
+            "id": 18,
+            "code": "KS",
+            "country": {
+                "id": 1
+            },
+            "name": "Kansas"
+        },
+        {
+            "id": 17,
+            "code": "IA",
+            "country": {
+                "id": 1
+            },
+            "name": "Iowa"
+        },
+        {
+            "id": 16,
+            "code": "IN",
+            "country": {
+                "id": 1
+            },
+            "name": "Indiana"
+        },
+        {
+            "id": 15,
+            "code": "IL",
+            "country": {
+                "id": 1
+            },
+            "name": "Illinois"
+        },
+        {
+            "id": 14,
+            "code": "ID",
+            "country": {
+                "id": 1
+            },
+            "name": "Idaho"
+        },
+        {
+            "id": 13,
+            "code": "HI",
+            "country": {
+                "id": 1
+            },
+            "name": "Hawaii"
+        },
+        {
+            "id": 12,
+            "code": "GU",
+            "country": {
+                "id": 1
+            },
+            "name": "Guam"
+        },
+        {
+            "id": 11,
+            "code": "GA",
+            "country": {
+                "id": 1
+            },
+            "name": "Georgia"
+        },
+        {
+            "id": 10,
+            "code": "FL",
+            "country": {
+                "id": 1
+            },
+            "name": "Florida"
+        },
+        {
+            "id": 9,
+            "code": "DC",
+            "country": {
+                "id": 1
+            },
+            "name": "District Of Columbia"
+        },
+        {
+            "id": 8,
+            "code": "DE",
+            "country": {
+                "id": 1
+            },
+            "name": "Delaware"
+        },
+        {
+            "id": 7,
+            "code": "CT",
+            "country": {
+                "id": 1
+            },
+            "name": "Connecticut"
+        },
+        {
+            "id": 6,
+            "code": "CO",
+            "country": {
+                "id": 1
+            },
+            "name": "Colorado"
+        },
+        {
+            "id": 5,
+            "code": "CA",
+            "country": {
+                "id": 1
+            },
+            "name": "California"
+        },
+        {
+            "id": 4,
+            "code": "AR",
+            "country": {
+                "id": 1
+            },
+            "name": "Arkansas"
+        },
+        {
+            "id": 3,
+            "code": "AZ",
+            "country": {
+                "id": 1
+            },
+            "name": "Arizona"
+        },
+        {
+            "id": 2,
+            "code": "AK",
+            "country": {
+                "id": 1
+            },
+            "name": "Alaska"
+        },
+        {
+            "id": 1,
+            "code": "AL",
+            "country": {
+                "id": 1
+            },
+            "name": "Alabama"
+        }
+    ]
+}

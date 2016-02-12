@@ -1,0 +1,91 @@
+{
+    "entity": "JobSubmissionHistory",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/rzro1/meta/JobSubmissionHistory?fields=*",
+    "label": "Job Submission History",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Comments"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added"
+        },
+        {
+            "name": "jobSubmission",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Job Submission",
+            "optionsType": "JobSubmission",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/rzro1/options/JobSubmission",
+            "associatedEntity": {
+                "entity": "JobSubmission",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/rzro1/meta/JobSubmission?fields=*",
+                "label": "Submission",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "label": "Migrate GUID"
+        },
+        {
+            "name": "modifyingUser",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Modifying User",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/rzro1/options/CorporateUser",
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/rzro1/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "status",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "Status"
+        },
+        {
+            "name": "transactionID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "label": "Transaction ID"
+        }
+    ]
+}

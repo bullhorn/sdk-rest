@@ -1,0 +1,178 @@
+{
+    "entity": "PlacementCommission",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/PlacementCommission?fields=*",
+    "label": "Placement Commission",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Comments",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "commissionPercentage",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Commission Percentage",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "externalRecipient",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "External Recipient",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "flatPayout",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Flat Payout",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "grossMarginPercentage",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Gross Margin Percentage",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "hourlyPayout",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Hourly Payout",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "optional": true,
+            "label": "Migrate GUID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "placement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Placement",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Placement",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Placement",
+            "associatedEntity": {
+                "entity": "Placement",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Placement?fields=*",
+                "label": "Placement",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "role",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "Role",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "status",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": false,
+            "label": "Status",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "user",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "User",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        }
+    ]
+}

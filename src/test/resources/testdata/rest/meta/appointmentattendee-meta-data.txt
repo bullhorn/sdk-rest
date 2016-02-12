@@ -1,0 +1,93 @@
+{
+    "entity": "AppointmentAttendee",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/AppointmentAttendee?fields=*",
+    "label": "Appointment Attendee",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "acceptanceStatus",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Acceptance Status",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "appointment",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Appointment",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Appointment",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Appointment",
+            "associatedEntity": {
+                "entity": "Appointment",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Appointment?fields=*",
+                "label": "Appointment",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "attendee",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Attendee",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Person",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Person",
+            "associatedEntity": {
+                "entity": "Person",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Person?fields=*",
+                "label": "Person",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "_subtype",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 255,
+                        "optional": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "optional": true,
+            "label": "Migrate GUID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        }
+    ]
+}

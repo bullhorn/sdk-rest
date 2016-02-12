@@ -1,0 +1,1047 @@
+{
+    "total": 3648,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100852273,
+            "dateBegin": 1395100852117,
+            "dateCompleted": null,
+            "dateEnd": 1395100852117,
+            "dateLastModified": 1395100852880,
+            "description": "Placement #2913 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 1
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 2,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100851750,
+            "dateBegin": 1395100851263,
+            "dateCompleted": null,
+            "dateEnd": 1395100851263,
+            "dateLastModified": 1395100852297,
+            "description": "Placement #2912 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 2
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 3,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100850880,
+            "dateBegin": 1395100850673,
+            "dateCompleted": null,
+            "dateEnd": 1395100850673,
+            "dateLastModified": 1395100851427,
+            "description": "Placement #2910 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 1
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 4,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100850797,
+            "dateBegin": 1395100849583,
+            "dateCompleted": null,
+            "dateEnd": 1395100849583,
+            "dateLastModified": 1395100851347,
+            "description": "Placement #2907 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 1
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 5,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100850243,
+            "dateBegin": 1395100850033,
+            "dateCompleted": null,
+            "dateEnd": 1395100850033,
+            "dateLastModified": 1395100850803,
+            "description": "Placement #2909 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 1
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 6,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100849603,
+            "dateBegin": 1395100849173,
+            "dateCompleted": null,
+            "dateEnd": 1395100849173,
+            "dateLastModified": 1395100850200,
+            "description": "Placement #2907 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 2
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 7,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100849023,
+            "dateBegin": 1395100848807,
+            "dateCompleted": null,
+            "dateEnd": 1395100848807,
+            "dateLastModified": 1395100849570,
+            "description": "Placement #2905 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 3
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 8,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100848837,
+            "dateBegin": 1395100848610,
+            "dateCompleted": null,
+            "dateEnd": 1395100848610,
+            "dateLastModified": 1395100849387,
+            "description": "Placement #2905 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 4
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 9,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100848220,
+            "dateBegin": 1395100848020,
+            "dateCompleted": null,
+            "dateEnd": 1395100848020,
+            "dateLastModified": 1395100848773,
+            "description": "Placement #2903 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 5
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 10,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100847730,
+            "dateBegin": 1395100847543,
+            "dateCompleted": null,
+            "dateEnd": 1395100847543,
+            "dateLastModified": 1395100848327,
+            "description": "Placement #2902 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 6
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 11,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100847673,
+            "dateBegin": 1395100847177,
+            "dateCompleted": null,
+            "dateEnd": 1395100847177,
+            "dateLastModified": 1395100848223,
+            "description": "Placement #2902 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 7
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 12,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100846787,
+            "dateBegin": 1395100846620,
+            "dateCompleted": null,
+            "dateEnd": 1395100846620,
+            "dateLastModified": 1395100847380,
+            "description": "Placement #2899 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 8
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 13,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100846277,
+            "dateBegin": 1395100846077,
+            "dateCompleted": null,
+            "dateEnd": 1395100846077,
+            "dateLastModified": 1395100846823,
+            "description": "Placement #2898 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 9
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 14,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100845970,
+            "dateBegin": 1395100845660,
+            "dateCompleted": null,
+            "dateEnd": 1395100845660,
+            "dateLastModified": 1395100846520,
+            "description": "Placement #2896 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 10
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 15,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100845733,
+            "dateBegin": 1395100845537,
+            "dateCompleted": null,
+            "dateEnd": 1395100845537,
+            "dateLastModified": 1395100846280,
+            "description": "Placement #2896 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 11
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 16,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100845090,
+            "dateBegin": 1395100844783,
+            "dateCompleted": null,
+            "dateEnd": 1395100844783,
+            "dateLastModified": 1395100845687,
+            "description": "Placement #2894 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 12
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 17,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100844870,
+            "dateBegin": 1395100844707,
+            "dateCompleted": null,
+            "dateEnd": 1395100844707,
+            "dateLastModified": 1395100845463,
+            "description": "Placement #2894 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 13
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 18,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100844123,
+            "dateBegin": 1395100843947,
+            "dateCompleted": null,
+            "dateEnd": 1395100843947,
+            "dateLastModified": 1395100844717,
+            "description": "Placement #2893 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 14
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 19,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100843707,
+            "dateBegin": 1395100843447,
+            "dateCompleted": null,
+            "dateEnd": 1395100843447,
+            "dateLastModified": 1395100844253,
+            "description": "Placement #2891 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 1
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        },
+        {
+            "id": 20,
+            "candidate": {
+                "id": 1,
+                "firstName": "Toad",
+                "lastName": "Toad"
+            },
+            "childTaskOwners": {
+                "total": 0,
+                "data": []
+            },
+            "childTasks": {
+                "total": 0,
+                "data": []
+            },
+            "clientContact": null,
+            "dateAdded": 1395100843580,
+            "dateBegin": 1395100843380,
+            "dateCompleted": null,
+            "dateEnd": 1395100843380,
+            "dateLastModified": 1395100844127,
+            "description": "Placement #2891 is at risk of violating the AWR Equal Treatment threshold.  Please contact Unit Test Client Contact DO NOT DELETEtoadtoad to obtain the required information.",
+            "isCompleted": false,
+            "isDeleted": false,
+            "isPrivate": false,
+            "isSystemTask": false,
+            "jobOrder": {
+                "id": 1,
+                "title": "Dubstep Artist"
+            },
+            "jobSubmission": null,
+            "migrateGUID": null,
+            "notificationMinutes": 0,
+            "owner": {
+                "id": 1
+            },
+            "parentTask": null,
+            "placement": {
+                "id": 1
+            },
+            "priority": null,
+            "recurrenceDayBits": null,
+            "recurrenceFrequency": 1,
+            "recurrenceMax": null,
+            "recurrenceMonthBits": null,
+            "recurrenceStyle": "R",
+            "recurrenceType": "W",
+            "subject": "AWR Compliance Reminder",
+            "taskUUID": null,
+            "timeZoneID": null,
+            "type": "AWR Compliance"
+        }
+    ]
+}

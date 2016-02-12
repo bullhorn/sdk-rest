@@ -1,0 +1,47 @@
+{
+    "entity": "TimeUnit",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/TimeUnit?fields=*",
+    "label": "Time Unit",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "timeMarker",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Time Marker",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "weekDay",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Week Day",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        }
+    ]
+}

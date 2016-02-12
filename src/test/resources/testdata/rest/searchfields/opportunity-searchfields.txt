@@ -1,0 +1,1431 @@
+{
+    "searchFields": [
+        {
+            "name": "actualCloseDate",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "address.address1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "address.city",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.name",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.latitude",
+            "type": "LATITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.longitude",
+            "type": "LONGITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.state",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.zip",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "appointments.dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "appointments.dateBegin",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "appointments.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "appointments.type",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "assignedDate",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "assignedUsers.departments.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "assignedUsers.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "benefits",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "billRateCategoryID",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "bonusPackage",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "branchCode",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "businessSector.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "businessSectors.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "campaignSource",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "categories.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "category.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "certifications.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "clientContact.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "clientContact.leads.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "clientContact.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "clientCorporation.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name",
+                        "parentClientCorporation.id",
+                        "parentClientCorporation.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "clientCorporation.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "committed",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "conversionDate",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomDate1",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomFloat1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomFloat2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomFloat3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomInt1",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomInt2",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomInt3",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText10",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText6",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText7",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText8",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomText9",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "correlatedCustomTextBlock1",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "correlatedCustomTextBlock2",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "correlatedCustomTextBlock3",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "costCenter",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "customDate1",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate2",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate3",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt1",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt2",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt3",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText10",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText11",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText12",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText13",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText14",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText15",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText16",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText17",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText18",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText19",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText20",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText6",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText7",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText8",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText9",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateLastModified",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dealValue",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "degreeList",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "description",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "educationDegree",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "effectiveDate",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "email",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "estimatedDuration",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "estimatedEndDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "estimatedHoursPerWeek",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "estimatedStartDate",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "expectedBillRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "expectedCloseDate",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "expectedFee",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "expectedPayRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "externalCategoryID",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "externalID",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "hoursOfOperation",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "id",
+            "type": "ID",
+            "lookupNames": [
+                {
+                    "names": [
+                        "tearsheets.id"
+                    ]
+                },
+                {
+                    "names": [
+                        "customObject10s.date1",
+                        "customObject10s.date10",
+                        "customObject10s.date2",
+                        "customObject10s.date3",
+                        "customObject10s.date4",
+                        "customObject10s.date5",
+                        "customObject10s.date6",
+                        "customObject10s.date7",
+                        "customObject10s.date8",
+                        "customObject10s.date9",
+                        "customObject10s.dateAdded",
+                        "customObject10s.float1",
+                        "customObject10s.float10",
+                        "customObject10s.float2",
+                        "customObject10s.float3",
+                        "customObject10s.float4",
+                        "customObject10s.float5",
+                        "customObject10s.float6",
+                        "customObject10s.float7",
+                        "customObject10s.float8",
+                        "customObject10s.float9",
+                        "customObject10s.int1",
+                        "customObject10s.int10",
+                        "customObject10s.int2",
+                        "customObject10s.int3",
+                        "customObject10s.int4",
+                        "customObject10s.int5",
+                        "customObject10s.int6",
+                        "customObject10s.int7",
+                        "customObject10s.int8",
+                        "customObject10s.int9",
+                        "customObject10s.text1",
+                        "customObject10s.text10",
+                        "customObject10s.text11",
+                        "customObject10s.text12",
+                        "customObject10s.text13",
+                        "customObject10s.text14",
+                        "customObject10s.text15",
+                        "customObject10s.text16",
+                        "customObject10s.text17",
+                        "customObject10s.text18",
+                        "customObject10s.text19",
+                        "customObject10s.text2",
+                        "customObject10s.text20",
+                        "customObject10s.text3",
+                        "customObject10s.text4",
+                        "customObject10s.text5",
+                        "customObject10s.text6",
+                        "customObject10s.text7",
+                        "customObject10s.text8",
+                        "customObject10s.text9",
+                        "customObject10s.textBlock1",
+                        "customObject10s.textBlock2",
+                        "customObject10s.textBlock3",
+                        "customObject10s.textBlock4",
+                        "customObject10s.textBlock5",
+                        "customObject1s.date1",
+                        "customObject1s.date10",
+                        "customObject1s.date2",
+                        "customObject1s.date3",
+                        "customObject1s.date4",
+                        "customObject1s.date5",
+                        "customObject1s.date6",
+                        "customObject1s.date7",
+                        "customObject1s.date8",
+                        "customObject1s.date9",
+                        "customObject1s.dateAdded",
+                        "customObject1s.float1",
+                        "customObject1s.float10",
+                        "customObject1s.float2",
+                        "customObject1s.float3",
+                        "customObject1s.float4",
+                        "customObject1s.float5",
+                        "customObject1s.float6",
+                        "customObject1s.float7",
+                        "customObject1s.float8",
+                        "customObject1s.float9",
+                        "customObject1s.int1",
+                        "customObject1s.int10",
+                        "customObject1s.int2",
+                        "customObject1s.int3",
+                        "customObject1s.int4",
+                        "customObject1s.int5",
+                        "customObject1s.int6",
+                        "customObject1s.int7",
+                        "customObject1s.int8",
+                        "customObject1s.int9",
+                        "customObject1s.text1",
+                        "customObject1s.text10",
+                        "customObject1s.text11",
+                        "customObject1s.text12",
+                        "customObject1s.text13",
+                        "customObject1s.text14",
+                        "customObject1s.text15",
+                        "customObject1s.text16",
+                        "customObject1s.text17",
+                        "customObject1s.text18",
+                        "customObject1s.text19",
+                        "customObject1s.text2",
+                        "customObject1s.text20",
+                        "customObject1s.text3",
+                        "customObject1s.text4",
+                        "customObject1s.text5",
+                        "customObject1s.text6",
+                        "customObject1s.text7",
+                        "customObject1s.text8",
+                        "customObject1s.text9",
+                        "customObject1s.textBlock1",
+                        "customObject1s.textBlock2",
+                        "customObject1s.textBlock3",
+                        "customObject1s.textBlock4",
+                        "customObject1s.textBlock5",
+                        "customObject2s.date1",
+                        "customObject2s.date10",
+                        "customObject2s.date2",
+                        "customObject2s.date3",
+                        "customObject2s.date4",
+                        "customObject2s.date5",
+                        "customObject2s.date6",
+                        "customObject2s.date7",
+                        "customObject2s.date8",
+                        "customObject2s.date9",
+                        "customObject2s.dateAdded",
+                        "customObject2s.float1",
+                        "customObject2s.float10",
+                        "customObject2s.float2",
+                        "customObject2s.float3",
+                        "customObject2s.float4",
+                        "customObject2s.float5",
+                        "customObject2s.float6",
+                        "customObject2s.float7",
+                        "customObject2s.float8",
+                        "customObject2s.float9",
+                        "customObject2s.int1",
+                        "customObject2s.int10",
+                        "customObject2s.int2",
+                        "customObject2s.int3",
+                        "customObject2s.int4",
+                        "customObject2s.int5",
+                        "customObject2s.int6",
+                        "customObject2s.int7",
+                        "customObject2s.int8",
+                        "customObject2s.int9",
+                        "customObject2s.text1",
+                        "customObject2s.text10",
+                        "customObject2s.text11",
+                        "customObject2s.text12",
+                        "customObject2s.text13",
+                        "customObject2s.text14",
+                        "customObject2s.text15",
+                        "customObject2s.text16",
+                        "customObject2s.text17",
+                        "customObject2s.text18",
+                        "customObject2s.text19",
+                        "customObject2s.text2",
+                        "customObject2s.text20",
+                        "customObject2s.text3",
+                        "customObject2s.text4",
+                        "customObject2s.text5",
+                        "customObject2s.text6",
+                        "customObject2s.text7",
+                        "customObject2s.text8",
+                        "customObject2s.text9",
+                        "customObject2s.textBlock1",
+                        "customObject2s.textBlock2",
+                        "customObject2s.textBlock3",
+                        "customObject2s.textBlock4",
+                        "customObject2s.textBlock5",
+                        "customObject3s.date1",
+                        "customObject3s.date10",
+                        "customObject3s.date2",
+                        "customObject3s.date3",
+                        "customObject3s.date4",
+                        "customObject3s.date5",
+                        "customObject3s.date6",
+                        "customObject3s.date7",
+                        "customObject3s.date8",
+                        "customObject3s.date9",
+                        "customObject3s.dateAdded",
+                        "customObject3s.float1",
+                        "customObject3s.float10",
+                        "customObject3s.float2",
+                        "customObject3s.float3",
+                        "customObject3s.float4",
+                        "customObject3s.float5",
+                        "customObject3s.float6",
+                        "customObject3s.float7",
+                        "customObject3s.float8",
+                        "customObject3s.float9",
+                        "customObject3s.int1",
+                        "customObject3s.int10",
+                        "customObject3s.int2",
+                        "customObject3s.int3",
+                        "customObject3s.int4",
+                        "customObject3s.int5",
+                        "customObject3s.int6",
+                        "customObject3s.int7",
+                        "customObject3s.int8",
+                        "customObject3s.int9",
+                        "customObject3s.text1",
+                        "customObject3s.text10",
+                        "customObject3s.text11",
+                        "customObject3s.text12",
+                        "customObject3s.text13",
+                        "customObject3s.text14",
+                        "customObject3s.text15",
+                        "customObject3s.text16",
+                        "customObject3s.text17",
+                        "customObject3s.text18",
+                        "customObject3s.text19",
+                        "customObject3s.text2",
+                        "customObject3s.text20",
+                        "customObject3s.text3",
+                        "customObject3s.text4",
+                        "customObject3s.text5",
+                        "customObject3s.text6",
+                        "customObject3s.text7",
+                        "customObject3s.text8",
+                        "customObject3s.text9",
+                        "customObject3s.textBlock1",
+                        "customObject3s.textBlock2",
+                        "customObject3s.textBlock3",
+                        "customObject3s.textBlock4",
+                        "customObject3s.textBlock5",
+                        "customObject4s.date1",
+                        "customObject4s.date10",
+                        "customObject4s.date2",
+                        "customObject4s.date3",
+                        "customObject4s.date4",
+                        "customObject4s.date5",
+                        "customObject4s.date6",
+                        "customObject4s.date7",
+                        "customObject4s.date8",
+                        "customObject4s.date9",
+                        "customObject4s.dateAdded",
+                        "customObject4s.float1",
+                        "customObject4s.float10",
+                        "customObject4s.float2",
+                        "customObject4s.float3",
+                        "customObject4s.float4",
+                        "customObject4s.float5",
+                        "customObject4s.float6",
+                        "customObject4s.float7",
+                        "customObject4s.float8",
+                        "customObject4s.float9",
+                        "customObject4s.int1",
+                        "customObject4s.int10",
+                        "customObject4s.int2",
+                        "customObject4s.int3",
+                        "customObject4s.int4",
+                        "customObject4s.int5",
+                        "customObject4s.int6",
+                        "customObject4s.int7",
+                        "customObject4s.int8",
+                        "customObject4s.int9",
+                        "customObject4s.text1",
+                        "customObject4s.text10",
+                        "customObject4s.text11",
+                        "customObject4s.text12",
+                        "customObject4s.text13",
+                        "customObject4s.text14",
+                        "customObject4s.text15",
+                        "customObject4s.text16",
+                        "customObject4s.text17",
+                        "customObject4s.text18",
+                        "customObject4s.text19",
+                        "customObject4s.text2",
+                        "customObject4s.text20",
+                        "customObject4s.text3",
+                        "customObject4s.text4",
+                        "customObject4s.text5",
+                        "customObject4s.text6",
+                        "customObject4s.text7",
+                        "customObject4s.text8",
+                        "customObject4s.text9",
+                        "customObject4s.textBlock1",
+                        "customObject4s.textBlock2",
+                        "customObject4s.textBlock3",
+                        "customObject4s.textBlock4",
+                        "customObject4s.textBlock5",
+                        "customObject5s.date1",
+                        "customObject5s.date10",
+                        "customObject5s.date2",
+                        "customObject5s.date3",
+                        "customObject5s.date4",
+                        "customObject5s.date5",
+                        "customObject5s.date6",
+                        "customObject5s.date7",
+                        "customObject5s.date8",
+                        "customObject5s.date9",
+                        "customObject5s.dateAdded",
+                        "customObject5s.float1",
+                        "customObject5s.float10",
+                        "customObject5s.float2",
+                        "customObject5s.float3",
+                        "customObject5s.float4",
+                        "customObject5s.float5",
+                        "customObject5s.float6",
+                        "customObject5s.float7",
+                        "customObject5s.float8",
+                        "customObject5s.float9",
+                        "customObject5s.int1",
+                        "customObject5s.int10",
+                        "customObject5s.int2",
+                        "customObject5s.int3",
+                        "customObject5s.int4",
+                        "customObject5s.int5",
+                        "customObject5s.int6",
+                        "customObject5s.int7",
+                        "customObject5s.int8",
+                        "customObject5s.int9",
+                        "customObject5s.text1",
+                        "customObject5s.text10",
+                        "customObject5s.text11",
+                        "customObject5s.text12",
+                        "customObject5s.text13",
+                        "customObject5s.text14",
+                        "customObject5s.text15",
+                        "customObject5s.text16",
+                        "customObject5s.text17",
+                        "customObject5s.text18",
+                        "customObject5s.text19",
+                        "customObject5s.text2",
+                        "customObject5s.text20",
+                        "customObject5s.text3",
+                        "customObject5s.text4",
+                        "customObject5s.text5",
+                        "customObject5s.text6",
+                        "customObject5s.text7",
+                        "customObject5s.text8",
+                        "customObject5s.text9",
+                        "customObject5s.textBlock1",
+                        "customObject5s.textBlock2",
+                        "customObject5s.textBlock3",
+                        "customObject5s.textBlock4",
+                        "customObject5s.textBlock5",
+                        "customObject6s.date1",
+                        "customObject6s.date10",
+                        "customObject6s.date2",
+                        "customObject6s.date3",
+                        "customObject6s.date4",
+                        "customObject6s.date5",
+                        "customObject6s.date6",
+                        "customObject6s.date7",
+                        "customObject6s.date8",
+                        "customObject6s.date9",
+                        "customObject6s.dateAdded",
+                        "customObject6s.float1",
+                        "customObject6s.float10",
+                        "customObject6s.float2",
+                        "customObject6s.float3",
+                        "customObject6s.float4",
+                        "customObject6s.float5",
+                        "customObject6s.float6",
+                        "customObject6s.float7",
+                        "customObject6s.float8",
+                        "customObject6s.float9",
+                        "customObject6s.int1",
+                        "customObject6s.int10",
+                        "customObject6s.int2",
+                        "customObject6s.int3",
+                        "customObject6s.int4",
+                        "customObject6s.int5",
+                        "customObject6s.int6",
+                        "customObject6s.int7",
+                        "customObject6s.int8",
+                        "customObject6s.int9",
+                        "customObject6s.text1",
+                        "customObject6s.text10",
+                        "customObject6s.text11",
+                        "customObject6s.text12",
+                        "customObject6s.text13",
+                        "customObject6s.text14",
+                        "customObject6s.text15",
+                        "customObject6s.text16",
+                        "customObject6s.text17",
+                        "customObject6s.text18",
+                        "customObject6s.text19",
+                        "customObject6s.text2",
+                        "customObject6s.text20",
+                        "customObject6s.text3",
+                        "customObject6s.text4",
+                        "customObject6s.text5",
+                        "customObject6s.text6",
+                        "customObject6s.text7",
+                        "customObject6s.text8",
+                        "customObject6s.text9",
+                        "customObject6s.textBlock1",
+                        "customObject6s.textBlock2",
+                        "customObject6s.textBlock3",
+                        "customObject6s.textBlock4",
+                        "customObject6s.textBlock5",
+                        "customObject7s.date1",
+                        "customObject7s.date10",
+                        "customObject7s.date2",
+                        "customObject7s.date3",
+                        "customObject7s.date4",
+                        "customObject7s.date5",
+                        "customObject7s.date6",
+                        "customObject7s.date7",
+                        "customObject7s.date8",
+                        "customObject7s.date9",
+                        "customObject7s.dateAdded",
+                        "customObject7s.float1",
+                        "customObject7s.float10",
+                        "customObject7s.float2",
+                        "customObject7s.float3",
+                        "customObject7s.float4",
+                        "customObject7s.float5",
+                        "customObject7s.float6",
+                        "customObject7s.float7",
+                        "customObject7s.float8",
+                        "customObject7s.float9",
+                        "customObject7s.int1",
+                        "customObject7s.int10",
+                        "customObject7s.int2",
+                        "customObject7s.int3",
+                        "customObject7s.int4",
+                        "customObject7s.int5",
+                        "customObject7s.int6",
+                        "customObject7s.int7",
+                        "customObject7s.int8",
+                        "customObject7s.int9",
+                        "customObject7s.text1",
+                        "customObject7s.text10",
+                        "customObject7s.text11",
+                        "customObject7s.text12",
+                        "customObject7s.text13",
+                        "customObject7s.text14",
+                        "customObject7s.text15",
+                        "customObject7s.text16",
+                        "customObject7s.text17",
+                        "customObject7s.text18",
+                        "customObject7s.text19",
+                        "customObject7s.text2",
+                        "customObject7s.text20",
+                        "customObject7s.text3",
+                        "customObject7s.text4",
+                        "customObject7s.text5",
+                        "customObject7s.text6",
+                        "customObject7s.text7",
+                        "customObject7s.text8",
+                        "customObject7s.text9",
+                        "customObject7s.textBlock1",
+                        "customObject7s.textBlock2",
+                        "customObject7s.textBlock3",
+                        "customObject7s.textBlock4",
+                        "customObject7s.textBlock5",
+                        "customObject8s.date1",
+                        "customObject8s.date10",
+                        "customObject8s.date2",
+                        "customObject8s.date3",
+                        "customObject8s.date4",
+                        "customObject8s.date5",
+                        "customObject8s.date6",
+                        "customObject8s.date7",
+                        "customObject8s.date8",
+                        "customObject8s.date9",
+                        "customObject8s.dateAdded",
+                        "customObject8s.float1",
+                        "customObject8s.float10",
+                        "customObject8s.float2",
+                        "customObject8s.float3",
+                        "customObject8s.float4",
+                        "customObject8s.float5",
+                        "customObject8s.float6",
+                        "customObject8s.float7",
+                        "customObject8s.float8",
+                        "customObject8s.float9",
+                        "customObject8s.int1",
+                        "customObject8s.int10",
+                        "customObject8s.int2",
+                        "customObject8s.int3",
+                        "customObject8s.int4",
+                        "customObject8s.int5",
+                        "customObject8s.int6",
+                        "customObject8s.int7",
+                        "customObject8s.int8",
+                        "customObject8s.int9",
+                        "customObject8s.text1",
+                        "customObject8s.text10",
+                        "customObject8s.text11",
+                        "customObject8s.text12",
+                        "customObject8s.text13",
+                        "customObject8s.text14",
+                        "customObject8s.text15",
+                        "customObject8s.text16",
+                        "customObject8s.text17",
+                        "customObject8s.text18",
+                        "customObject8s.text19",
+                        "customObject8s.text2",
+                        "customObject8s.text20",
+                        "customObject8s.text3",
+                        "customObject8s.text4",
+                        "customObject8s.text5",
+                        "customObject8s.text6",
+                        "customObject8s.text7",
+                        "customObject8s.text8",
+                        "customObject8s.text9",
+                        "customObject8s.textBlock1",
+                        "customObject8s.textBlock2",
+                        "customObject8s.textBlock3",
+                        "customObject8s.textBlock4",
+                        "customObject8s.textBlock5",
+                        "customObject9s.date1",
+                        "customObject9s.date10",
+                        "customObject9s.date2",
+                        "customObject9s.date3",
+                        "customObject9s.date4",
+                        "customObject9s.date5",
+                        "customObject9s.date6",
+                        "customObject9s.date7",
+                        "customObject9s.date8",
+                        "customObject9s.date9",
+                        "customObject9s.dateAdded",
+                        "customObject9s.float1",
+                        "customObject9s.float10",
+                        "customObject9s.float2",
+                        "customObject9s.float3",
+                        "customObject9s.float4",
+                        "customObject9s.float5",
+                        "customObject9s.float6",
+                        "customObject9s.float7",
+                        "customObject9s.float8",
+                        "customObject9s.float9",
+                        "customObject9s.int1",
+                        "customObject9s.int10",
+                        "customObject9s.int2",
+                        "customObject9s.int3",
+                        "customObject9s.int4",
+                        "customObject9s.int5",
+                        "customObject9s.int6",
+                        "customObject9s.int7",
+                        "customObject9s.int8",
+                        "customObject9s.int9",
+                        "customObject9s.text1",
+                        "customObject9s.text10",
+                        "customObject9s.text11",
+                        "customObject9s.text12",
+                        "customObject9s.text13",
+                        "customObject9s.text14",
+                        "customObject9s.text15",
+                        "customObject9s.text16",
+                        "customObject9s.text17",
+                        "customObject9s.text18",
+                        "customObject9s.text19",
+                        "customObject9s.text2",
+                        "customObject9s.text20",
+                        "customObject9s.text3",
+                        "customObject9s.text4",
+                        "customObject9s.text5",
+                        "customObject9s.text6",
+                        "customObject9s.text7",
+                        "customObject9s.text8",
+                        "customObject9s.text9",
+                        "customObject9s.textBlock1",
+                        "customObject9s.textBlock2",
+                        "customObject9s.textBlock3",
+                        "customObject9s.textBlock4",
+                        "customObject9s.textBlock5"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "ignoreUntilDate",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "isDeleted",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "isOpen",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "lead.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "lead.leadSource",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "lead.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "linkedJobPosting.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "markUp",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "notes.action",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "notes.commentingPerson.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "notes.comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "notes.dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "notes.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "numLostOpenings",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "numOpenings",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "onSite",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "opportunitiesPerJob",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "optionsPackage",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "owner.departments.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "owner.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "owner.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "phone",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "priority",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "reasonClosed",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "reportTo",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "responseUser.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "salary",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "salaryUnit",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "skills.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "source",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "specialties.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "taxRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "taxStatus",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "tearsheets.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "title",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "type",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "weightedDealValue",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "willRelocate",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "winProbabilityPercent",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "workersCompRate.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "yearsRequired",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        }
+    ]
+}

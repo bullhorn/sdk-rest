@@ -1,0 +1,343 @@
+{
+    "searchFields": [
+        {
+            "name": "appointments.dateBegin",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "appointments.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "appointments.type",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "billRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "candidate.categories.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "candidate.companyName",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "candidate.dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "candidate.description",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "candidate.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "candidate.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "candidate.occupation",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "candidate.owner.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "candidate.secondaryOwners.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "candidate.source",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "candidate.status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "customText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateWebResponse",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "histories.comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "histories.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "id",
+            "type": "ID",
+            "isSortable": true
+        },
+        {
+            "name": "isDeleted",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "isHidden",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.categories.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.categories.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.clientContact.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.clientCorporation.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name",
+                        "parentClientCorporation.id",
+                        "parentClientCorporation.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.description",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "jobOrder.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.owner.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "jobOrder.title",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "owners.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "payRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "salary",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "sendingUser.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "sendingUser.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "source",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.dateBegin",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.dateEnd",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.isCompleted",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.isDeleted",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "tasks.type",
+            "type": "STRING",
+            "isSortable": true
+        }
+    ]
+}

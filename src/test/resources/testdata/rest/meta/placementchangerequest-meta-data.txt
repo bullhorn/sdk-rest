@@ -1,0 +1,2390 @@
+{
+    "entity": "PlacementChangeRequest",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/PlacementChangeRequest?fields=*",
+    "label": "Change Request",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "approvingUser",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Approving User",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billingClientContact",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Billing Client Contact",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ClientContact",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientContact",
+            "associatedEntity": {
+                "entity": "ClientContact",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientContact?fields=*",
+                "label": "Client Contact",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billingFrequency",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": true,
+            "label": "Billing Frequency",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "bonusPackage",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Bonus Package",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "clientBillRate",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Client Bill Rate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "clientOvertimeRate",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Client Overtime Rate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Comments",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Date1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Date2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Date3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Float1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Float2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Float3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Int1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Int2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Int3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text10",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text4",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text5",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text6",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text7",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text8",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text9",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text Block1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text Block2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "correlatedCustomTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Correlated Custom Text Block3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "costCenter",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Cost Center",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate1",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate10",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate10",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate2",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate3",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate4",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate4",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate5",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate5",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate6",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate6",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate7",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate7",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate8",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate8",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customBillRate9",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Bill Rate9",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Date1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Date2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Date3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Float1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Float2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Float3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Int1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Int2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Int3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate1",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate10",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate10",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate2",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate3",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate4",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate4",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate5",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate5",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate6",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate6",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate7",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate7",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate8",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate8",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customPayRate9",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Pay Rate9",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text10",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText11",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text11",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText12",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text12",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText13",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text13",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText14",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text14",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText15",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text15",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText16",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text16",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText17",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text17",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText18",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text18",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText19",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text19",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText20",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text20",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText21",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text21",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText22",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text22",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText23",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text23",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText24",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text24",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText25",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text25",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText26",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text26",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText27",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text27",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText28",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text28",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText29",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text29",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText30",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text30",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText31",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text31",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText32",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text32",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText33",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text33",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText34",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text34",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText35",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text35",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText36",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text36",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText37",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text37",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText38",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text38",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText39",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text39",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text4",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText40",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text40",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text5",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text6",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text7",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text8",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text9",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text Block1",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text Block2",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text Block3",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text Block4",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Custom Text Block5",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateApproved",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Date Approved",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateBegin",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Begin",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateClientEffective",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Date Client Effective",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateEffective",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Date Effective",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "dateEnd",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Date End",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "daysGuaranteed",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Days Guaranteed",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "daysProRated",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Days Pro Rated",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "durationWeeks",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Duration Weeks",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "employeeType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": true,
+            "label": "Employee Type",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "employmentType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": false,
+            "label": "Employment Type",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "fee",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Fee",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "hoursOfOperation",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Hours Of Operation",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "hoursPerDay",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Hours Per Day",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "housingManagerID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Housing Manager ID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "housingStatus",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": true,
+            "label": "Housing Status",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "optional": true,
+            "label": "Migrate GUID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "optionsPackage",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Options Package",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "otExemption",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Ot Exemption",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "otherHourlyFee",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Other Hourly Fee",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "otherHourlyFeeComments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Other Hourly Fee Comments",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "overtimeRate",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": true,
+            "label": "Overtime Rate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "payRate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": false,
+            "label": "Pay Rate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "placement",
+            "type": "TO_ONE",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": false,
+            "label": "Placement #",
+            "required": true,
+            "readOnly": true,
+            "multiValue": false,
+            "optionsType": "Placement",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Placement",
+            "associatedEntity": {
+                "entity": "Placement",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Placement?fields=*",
+                "label": "Placement",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "recruitingManagerPercentGrossMargin",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Recruiting Manager Percent Gross Margin",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "referralFee",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": true,
+            "label": "Referral Fee",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "referralFeeType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": true,
+            "label": "Referral Fee Type",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "reportTo",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Report To",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "effectiveDate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATETIME",
+            "confidential": false,
+            "optional": true,
+            "label": "Time Off Start",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATETIME",
+            "confidential": false,
+            "optional": true,
+            "label": "Time Off End",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomFloat1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomFloat2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomFloat3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomInt1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomInt2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomInt3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText10",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText11",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText11",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText12",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText12",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText13",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText13",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText14",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText14",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText15",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText15",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT"
+        },
+        {
+            "name": "requestCustomText16",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText16",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText17",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText17",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText18",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText18",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText19",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText19",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText20",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText20",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText4",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText5",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText6",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText7",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText8",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomText9",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "requestCustomTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomTextBlock1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "requestCustomTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "PCR Types",
+            "required": false,
+            "readOnly": true,
+            "multiValue": true,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Bill",
+                    "label": "Bill"
+                },
+                {
+                    "value": "Pay",
+                    "label": "Pay"
+                },
+                {
+                    "value": "Extension - No Rate Change - DIRM",
+                    "label": "Extension - No Rate Change - DIRM"
+                },
+                {
+                    "value": "Extension - Rate Change - DIRM",
+                    "label": "Extension - Rate Change - DIRM"
+                },
+                {
+                    "value": "Change of Rate in Current Contract - DIRM",
+                    "label": "Change of Rate in Current Contract - DIRM"
+                },
+                {
+                    "value": "Change of Start Date in Current Contract",
+                    "label": "Change of Start Date in Current Contract"
+                },
+                {
+                    "value": "Early Termination-DIRM",
+                    "label": "Early Termination-DIRM"
+                },
+                {
+                    "value": "Termination - DIRM",
+                    "label": "Termination - DIRM"
+                },
+                {
+                    "value": "Termination Transfer",
+                    "label": "Termination Transfer"
+                },
+                {
+                    "value": "Interim Extension",
+                    "label": "Interim Extension"
+                },
+                {
+                    "value": "Conversion to Permanent",
+                    "label": "Conversion to Permanent"
+                },
+                {
+                    "value": "Permanent Fee Credit Request",
+                    "label": "Permanent Fee Credit Request"
+                },
+                {
+                    "value": "Chg of Start or End Date in Curr Contract - DIRM",
+                    "label": "Chg of Start or End Date in Curr Contract - DIRM"
+                },
+                {
+                    "value": "Telstra Ext Rate Change",
+                    "label": "Telstra Ext Rate Change"
+                },
+                {
+                    "value": "Telstra Ext No Rate Change",
+                    "label": "Telstra Ext No Rate Change"
+                },
+                {
+                    "value": "Telstra Move to Different Invoice Group",
+                    "label": "Telstra Move to Different Invoice Group"
+                },
+                {
+                    "value": "Change to Account Manager or Team",
+                    "label": "Change to Account Manager or Team"
+                },
+                {
+                    "value": "Billing Contact Information Changes",
+                    "label": "Billing Contact Information Changes"
+                },
+                {
+                    "value": "Finish Assignment",
+                    "label": "Finish Assignment"
+                },
+                {
+                    "value": "Rate",
+                    "label": "Rate"
+                },
+                {
+                    "value": "Recruiter",
+                    "label": "Recruiter"
+                },
+                {
+                    "value": "Billing Information",
+                    "label": "Billing Information"
+                },
+                {
+                    "value": "Special Fields",
+                    "label": "Special Fields"
+                },
+                {
+                    "value": "Purchase Order",
+                    "label": "Purchase Order"
+                },
+                {
+                    "value": "Worked State Tax",
+                    "label": "Worked State Tax"
+                },
+                {
+                    "value": "Time Approver",
+                    "label": "Time Approver"
+                },
+                {
+                    "value": "Job Title",
+                    "label": "Job Title"
+                }
+            ]
+        },
+        {
+            "name": "requestCustomTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomTextBlock3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "requestCustomTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomTextBlock4",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "requestCustomTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "requestCustomTextBlock5",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "requestStatus",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Request Status",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Submitted",
+                    "label": "Submitted"
+                },
+                {
+                    "value": "Approved",
+                    "label": "Approved"
+                },
+                {
+                    "value": "Branch Approval",
+                    "label": "Branch Approval"
+                },
+                {
+                    "value": "Rejected",
+                    "label": "Rejected"
+                },
+                {
+                    "value": "Withdrawn",
+                    "label": "Withdrawn"
+                },
+                {
+                    "value": "Pre-Approved",
+                    "label": "Pre-Approved"
+                }
+            ]
+        },
+        {
+            "name": "requestType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Request Type",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Pay Rate Change",
+                    "label": "Pay Rate Change"
+                },
+                {
+                    "value": "Bill Rate Change",
+                    "label": "Bill Rate Change"
+                },
+                {
+                    "value": "Pay/Bill Change",
+                    "label": "Pay/Bill Change"
+                },
+                {
+                    "value": "Start Date Change",
+                    "label": "Start Date Change"
+                },
+                {
+                    "value": "End Date Change",
+                    "label": "End Date Change"
+                },
+                {
+                    "value": "Status Change",
+                    "label": "Status Change"
+                },
+                {
+                    "value": "Other",
+                    "label": "Other"
+                }
+            ]
+        },
+        {
+            "name": "requestingUser",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Requested by",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "salary",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": false,
+            "label": "Salary",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "salaryUnit",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "optional": false,
+            "label": "Salary Unit",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "salesManagerPercentGrossMargin",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "optional": false,
+            "label": "Sales Manager Percent Gross Margin",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "statementClientContact",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Statement Client Contact",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ClientContact",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientContact",
+            "associatedEntity": {
+                "entity": "ClientContact",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientContact?fields=*",
+                "label": "Client Contact",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Contact Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "status",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Status",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "terminationReason",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Termination Reason",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "vendorClientCorporation",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Vendor Client Corporation",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ClientCorporation",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ClientCorporation",
+            "associatedEntity": {
+                "entity": "ClientCorporation",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ClientCorporation?fields=*",
+                "label": "Client",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Company Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "workWeekStart",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Work Week Start",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        }
+    ]
+}

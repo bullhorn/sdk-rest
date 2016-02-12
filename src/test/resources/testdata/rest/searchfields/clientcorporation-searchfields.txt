@@ -1,0 +1,607 @@
+{
+    "searchFields": [
+        {
+            "name": "address.address1",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "address.address2",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "address.city",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.name",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.latitude",
+            "type": "LATITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.longitude",
+            "type": "LONGITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.state",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.zip",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "annualRevenue",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "billingAddress.address1",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "billingAddress.address2",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "billingAddress.city",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "billingAddress.state",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "billingAddress.zip",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "billingContact",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "billingFrequency",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "billingPhone",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "billingPhone_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "businessSectorList",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "certifications.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "certification.id",
+                        "certification.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "childClientCorporations.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "childClientCorporations.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "clientContactNotes.action",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "clientContactNotes.commentingPerson.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "clientContactNotes.comments",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "clientContactNotes.dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "clientContactNotes.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "clientContacts.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "clientContacts.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "clientCorporationAttributes.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "companyDescription",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "companyURL",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "competitors",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "culture",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customDate1",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate2",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate3",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt1",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt2",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt3",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText10",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText11",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText12",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText13",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText14",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText15",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText16",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText17",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText18",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText19",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText20",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText6",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText7",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText8",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText9",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateFounded",
+            "type": "DATE",
+            "isSortable": true
+        },
+        {
+            "name": "department.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "externalID",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "fax",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "feeArrangement",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "fileAttachments.description",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "fileAttachments.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "contentSubType",
+                        "contentType",
+                        "dateAdded",
+                        "type"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "funding",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "housingComplexWhitelist.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "id",
+            "type": "ID",
+            "isSortable": true
+        },
+        {
+            "name": "industryList",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "invoiceFormat",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "invoiceGroups.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "invoices.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "dateInvoice",
+                        "status"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "lineOfBusiness",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "notes",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "numEmployees",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "numOffices",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "outstandingBalance",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "ownerShip",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "owners.id",
+            "type": "INTEGER",
+            "lookupNames": [
+                {
+                    "names": [
+                        "firstName",
+                        "lastName",
+                        "primaryDepartment.id",
+                        "primaryDepartment.name"
+                    ]
+                }
+            ],
+            "isSortable": true
+        },
+        {
+            "name": "owners.name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "parentClientCorporation.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "parentClientCorporation.name",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "phone",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone_REVERSED",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "rateCards.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "revenue",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "sellingPoints",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "shiftPositions.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "taxRate",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "tickerSymbol",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "workWeekStart",
+            "type": "INTEGER",
+            "isSortable": true
+        }
+    ]
+}

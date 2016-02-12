@@ -1,0 +1,748 @@
+{
+    "entity": "CandidateEducation",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CandidateEducation?fields=*",
+    "label": "Education",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "candidate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Candidate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "Candidate",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Candidate",
+            "associatedEntity": {
+                "entity": "Candidate",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Candidate?fields=*",
+                "label": "Candidate",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "First Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Last Name",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "certification",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Certification",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "CCM",
+                    "label": "CCM"
+                },
+                {
+                    "value": "CFA",
+                    "label": "CFA"
+                },
+                {
+                    "value": "Chartered Accountant",
+                    "label": "Chartered Accountant"
+                },
+                {
+                    "value": "CMA",
+                    "label": "CMA"
+                },
+                {
+                    "value": "CAN",
+                    "label": "CAN"
+                },
+                {
+                    "value": "CNE",
+                    "label": "CNE"
+                },
+                {
+                    "value": "CPA",
+                    "label": "CPA"
+                },
+                {
+                    "value": "Lotus Notes Designer",
+                    "label": "Lotus Notes Designer"
+                },
+                {
+                    "value": "Lotus Notes System Administrator",
+                    "label": "Lotus Notes System Administrator"
+                },
+                {
+                    "value": "MCE",
+                    "label": "MCE"
+                },
+                {
+                    "value": "MacPC Windows NT Server",
+                    "label": "MacPC Windows NT Server"
+                },
+                {
+                    "value": "MacPC Windows NT Workstation",
+                    "label": "MacPC Windows NT Workstation"
+                },
+                {
+                    "value": "MCPS",
+                    "label": "MCPS"
+                },
+                {
+                    "value": "MCSE",
+                    "label": "MCSE"
+                },
+                {
+                    "value": "MS SQL Server Administration",
+                    "label": "MS SQL Server Administration"
+                },
+                {
+                    "value": "Notary Public",
+                    "label": "Notary Public"
+                },
+                {
+                    "value": "Oracle",
+                    "label": "Oracle"
+                },
+                {
+                    "value": "Paralegal",
+                    "label": "Paralegal"
+                },
+                {
+                    "value": "Series 63",
+                    "label": "Series 63"
+                },
+                {
+                    "value": "Series 7",
+                    "label": "Series 7"
+                },
+                {
+                    "value": "Unix system Administration",
+                    "label": "Unix system Administration"
+                },
+                {
+                    "value": "Unix System Programming",
+                    "label": "Unix System Programming"
+                }
+            ]
+        },
+        {
+            "name": "city",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 40,
+            "confidential": false,
+            "optional": true,
+            "label": "City",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Comments",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "customDate1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "customDate2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "customDate3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customDate4",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "customDate4",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customDate5",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "customDate5",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "customFloat1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "customFloat2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "customFloat3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat4",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "customFloat4",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customFloat5",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "customFloat5",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customInt4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt4",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customInt5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "INTEGER",
+            "confidential": false,
+            "optional": true,
+            "label": "customInt5",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 500,
+            "confidential": false,
+            "optional": true,
+            "label": "customText1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 500,
+            "confidential": false,
+            "optional": true,
+            "label": "customText2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 500,
+            "confidential": false,
+            "optional": true,
+            "label": "customText3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 500,
+            "confidential": false,
+            "optional": true,
+            "label": "Minor",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 500,
+            "confidential": false,
+            "optional": true,
+            "label": "customText5",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "optional": true,
+            "label": "customTextBlock1",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "optional": true,
+            "label": "customTextBlock2",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "optional": true,
+            "label": "customTextBlock3",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "inputType": "TEXTAREA"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "degree",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Degree",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Associate",
+                    "label": "Associate"
+                },
+                {
+                    "value": "BA",
+                    "label": "BA"
+                },
+                {
+                    "value": "BBA",
+                    "label": "BBA"
+                },
+                {
+                    "value": "BFA",
+                    "label": "BFA"
+                },
+                {
+                    "value": "BS",
+                    "label": "BS"
+                },
+                {
+                    "value": "MA",
+                    "label": "MA"
+                },
+                {
+                    "value": "MBA",
+                    "label": "MBA"
+                },
+                {
+                    "value": "MS",
+                    "label": "MS"
+                },
+                {
+                    "value": "MD",
+                    "label": "MD"
+                },
+                {
+                    "value": "Paralegal Certificate",
+                    "label": "Paralegal Certificate"
+                },
+                {
+                    "value": "Phd",
+                    "label": "Phd"
+                }
+            ]
+        },
+        {
+            "name": "endDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "End Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "expirationDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "Expiration Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "gpa",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "dataSpecialization": "FLOAT",
+            "confidential": false,
+            "optional": true,
+            "label": "GPA",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "graduationDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "Graduation Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "optional": false,
+            "label": "Is Deleted",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "major",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Major",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "Accounting",
+                    "label": "Accounting"
+                },
+                {
+                    "value": "Finance",
+                    "label": "Finance"
+                },
+                {
+                    "value": "Marketing",
+                    "label": "Marketing"
+                },
+                {
+                    "value": "Business Admin",
+                    "label": "Business Admin"
+                },
+                {
+                    "value": "Liberal Arts",
+                    "label": "Liberal Arts"
+                },
+                {
+                    "value": "Economics",
+                    "label": "Economics"
+                },
+                {
+                    "value": "Math",
+                    "label": "Math"
+                },
+                {
+                    "value": "Computer Science",
+                    "label": "Computer Science"
+                },
+                {
+                    "value": "English",
+                    "label": "English"
+                },
+                {
+                    "value": "Political Science",
+                    "label": "Political Science"
+                },
+                {
+                    "value": "Law",
+                    "label": "Law"
+                },
+                {
+                    "value": "Human Resources",
+                    "label": "Human Resources"
+                },
+                {
+                    "value": "Engineering",
+                    "label": "Engineering"
+                },
+                {
+                    "value": "Secretarial Sciences",
+                    "label": "Secretarial Sciences"
+                },
+                {
+                    "value": "Organizational Development",
+                    "label": "Organizational Development"
+                },
+                {
+                    "value": "Psychology",
+                    "label": "Psychology"
+                },
+                {
+                    "value": "Other",
+                    "label": "Other"
+                }
+            ]
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "optional": true,
+            "label": "Migrate GUID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "school",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "School",
+            "required": false,
+            "readOnly": false,
+            "multiValue": true,
+            "inputType": "SELECT",
+            "options": [
+                {
+                    "value": "MIT",
+                    "label": "MIT"
+                },
+                {
+                    "value": "Other",
+                    "label": "Other"
+                },
+                {
+                    "value": "Test",
+                    "label": "Test"
+                }
+            ]
+        },
+        {
+            "name": "startDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "DATE",
+            "confidential": false,
+            "optional": true,
+            "label": "Start Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false
+        },
+        {
+            "name": "state",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "State",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "NorthAmericaState",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/NorthAmericaState"
+        }
+    ]
+}
