@@ -32,7 +32,9 @@ Provide your credentials and instantiate StandardBullhornApiRest:
 ```
 
 
+## Usage
 
+See the unit tests for sample usage.
 
 ## Use with Spring Boot
 
