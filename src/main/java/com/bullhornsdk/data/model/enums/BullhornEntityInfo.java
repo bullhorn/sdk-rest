@@ -238,7 +238,7 @@ import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomOb
  * @author magnus.palm
  * 
  */
-public enum RestEntityInfo {
+public enum BullhornEntityInfo {
 
     ADDRESS("Address", null, null, null),
     APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class),
@@ -332,10 +332,10 @@ public enum RestEntityInfo {
 
     private final Class<? extends ListWrapper<?>> listWrapperType;
 
-    private static Map<Class<?>, RestEntityInfo> classToRestEntityName;
+    private static Map<Class<?>, BullhornEntityInfo> classToRestEntityName;
 
-    <T extends BullhornEntity> RestEntityInfo(String name, Class<T> type, Class<? extends Wrapper<T>> wrapperType,
-            Class<? extends ListWrapper<T>> listWrapperType) {
+    <T extends BullhornEntity> BullhornEntityInfo(String name, Class<T> type, Class<? extends Wrapper<T>> wrapperType,
+                                                  Class<? extends ListWrapper<T>> listWrapperType) {
         this.name = name;
         this.type = type;
         this.wrapperType = wrapperType;
@@ -374,8 +374,8 @@ public enum RestEntityInfo {
      * 
      * @return
      */
-    public List<RestEntityInfo> getAllEntities() {
-        return Arrays.asList(RestEntityInfo.values());
+    public List<BullhornEntityInfo> getAllEntities() {
+        return Arrays.asList(BullhornEntityInfo.values());
     }
 
     /**
@@ -386,7 +386,7 @@ public enum RestEntityInfo {
      * @return
      */
     public static <T extends BullhornEntity, E extends Wrapper<T>> Class<E> getTypesWrapperType(Class<T> type) {
-        return (Class<E>) RestEntityInfo.getTypesRestEntityName(type).wrapperType;
+        return (Class<E>) BullhornEntityInfo.getTypesRestEntityName(type).wrapperType;
 
     }
 
@@ -397,7 +397,7 @@ public enum RestEntityInfo {
      * @return
      */
     public static <T extends BullhornEntity, E extends ListWrapper<T>> Class<E> getTypesListWrapperType(Class<T> type) {
-        return (Class<E>) RestEntityInfo.getTypesRestEntityName(type).listWrapperType;
+        return (Class<E>) BullhornEntityInfo.getTypesRestEntityName(type).listWrapperType;
 
     }
 
@@ -408,44 +408,44 @@ public enum RestEntityInfo {
      * @return
      */
     public static <T extends BullhornEntity> String getTypesName(Class<T> type) {
-        return RestEntityInfo.getTypesRestEntityName(type).name;
+        return BullhornEntityInfo.getTypesRestEntityName(type).name;
 
     }
 
     /**
-     * Returns the RestEntityInfo for the BullhornEntity Class<T> passed in
+     * Returns the BullhornEntityInfo for the BullhornEntity Class<T> passed in
      * 
      * @param type
      * @return
      */
-    public static <T extends BullhornEntity> RestEntityInfo getTypesRestEntityName(Class<T> type) {
-        if (RestEntityInfo.classToRestEntityName == null) {
-            RestEntityInfo.initMapping();
+    public static <T extends BullhornEntity> BullhornEntityInfo getTypesRestEntityName(Class<T> type) {
+        if (BullhornEntityInfo.classToRestEntityName == null) {
+            BullhornEntityInfo.initMapping();
         }
 
-        RestEntityInfo value = RestEntityInfo.classToRestEntityName.get(type);
+        BullhornEntityInfo value = BullhornEntityInfo.classToRestEntityName.get(type);
 
         if (value == null) {
-            RestEntityInfo.initMapping();
+            BullhornEntityInfo.initMapping();
         } else {
             return value;
         }
 
-        return RestEntityInfo.classToRestEntityName.get(type);
+        return BullhornEntityInfo.classToRestEntityName.get(type);
 
     }
 
     /**
-     * Returns the RestEntityInfo for the name of the BullhornEntity passed in. Not case sensitive.
+     * Returns the BullhornEntityInfo for the name of the BullhornEntity passed in. Not case sensitive.
      * 
      * @param name
      * @return
      */
-    public static RestEntityInfo getTypeFromName(String name) {
+    public static BullhornEntityInfo getTypeFromName(String name) {
 
-        for (RestEntityInfo restEntityInfo : RestEntityInfo.values()) {
-            if (restEntityInfo.getName().equalsIgnoreCase(name)) {
-                return restEntityInfo;
+        for (BullhornEntityInfo bullhornEntityInfo : BullhornEntityInfo.values()) {
+            if (bullhornEntityInfo.getName().equalsIgnoreCase(name)) {
+                return bullhornEntityInfo;
             }
         }
         throw new IllegalArgumentException("No BullhornEntity exists with the name: " + name);
@@ -453,8 +453,8 @@ public enum RestEntityInfo {
     }
 
     private synchronized static void initMapping() {
-        classToRestEntityName = new HashMap<Class<?>, RestEntityInfo>();
-        for (RestEntityInfo s : values()) {
+        classToRestEntityName = new HashMap<Class<?>, BullhornEntityInfo>();
+        for (BullhornEntityInfo s : values()) {
             classToRestEntityName.put(s.type, s);
         }
     }

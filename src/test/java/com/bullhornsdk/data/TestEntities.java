@@ -71,6 +71,10 @@ public class TestEntities {
 	private Integer timeUnitId;
 
     private Integer allCustomObjectsId;
+
+    private Integer requestId;
+
+    private String subscriptionId;
 	
 	public TestEntities() {
 		super();
@@ -137,6 +141,10 @@ public class TestEntities {
 		this.timeUnitId=1;
 
         this.allCustomObjectsId = 1;
+
+        this.requestId = 1;
+
+        this.subscriptionId = "bhps_test_subscription";
 	}
 
 	public Integer getAppointmentId() {
@@ -395,12 +403,26 @@ public class TestEntities {
         this.allCustomObjectsId = allCustomObjectsId;
     }
 
+    public Integer getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(Integer requestId) {
+        this.requestId = requestId;
+    }
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("TestEntities {")
-                .append("\n\t\"allCustomObjectsId\": ")
-                .append(allCustomObjectsId)
-                .append(",\n\t\"appointmentId\": ")
+                .append("\n\t\"appointmentId\": ")
                 .append(appointmentId)
                 .append(",\n\t\"appointmentAttendeeId\": ")
                 .append(appointmentAttendeeId)
@@ -462,6 +484,13 @@ public class TestEntities {
                 .append(taskId)
                 .append(",\n\t\"timeUnitId\": ")
                 .append(timeUnitId)
+                .append(",\n\t\"allCustomObjectsId\": ")
+                .append(allCustomObjectsId)
+                .append(",\n\t\"requestId\": ")
+                .append(requestId)
+                .append(",\n\t\"subscriptionId\": ")
+                .append("'")
+                .append(subscriptionId).append('\'')
                 .append('}')
                 .toString();
     }

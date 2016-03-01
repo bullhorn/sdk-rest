@@ -32,6 +32,7 @@ import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
 import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
+import com.bullhornsdk.data.model.response.event.GetEventsResponse;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
 import com.bullhornsdk.data.model.response.file.FileMeta;
@@ -532,6 +533,32 @@ public interface BullhornData {
 	 * @return a CreateResponse with information about the new file
 	 */
 	public <C extends CrudResponse> C addNoteAndAssociateWithEntity(Note note);
+
+    /**
+     * Returns the last request ID processed for the passed in subscription
+     *
+     * @param subscriptionId the name of the subscription we want the last request ID for
+     * @return the last request ID for the subscription passed in, -1 if there was no last request ID
+     */
+    public Integer getLastRequestId(String subscriptionId);
+
+    /**
+     * Returns a {@link GetEventsResponse} containing at most maxEvents number of events for the given subscriptionId.
+     *
+     * @param subscriptionId the name of the subscription we want to retrieve events for
+     * @param maxEvents the maximum number of events to return
+     * @return a GetEventsResponse containing the id of the request we just made as well as the events for the subscription
+     */
+    public GetEventsResponse getEvents(String subscriptionId, Integer maxEvents);
+
+    /**
+     * Returns a {@link GetEventsResponse} containing the events that were previously returned for the given requestId.
+     *
+     * @param subscriptionId the name of the subscription we want to retrieve events for
+     * @param requestId the request that we want to pull events for.  Use the requestId returned in the response from {@link #getEvents(String, Integer)}
+     * @return a GetEventsResponse containing the id of the request we asked for as well as the events for that request
+     */
+    public GetEventsResponse regetEvents(String subscriptionId, Integer requestId);
 
 	/**
 	 * Returns the RestApiSession that manages the sessions for one corporation. Use this get access to corporationID and apiKey.

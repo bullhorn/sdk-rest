@@ -30,7 +30,7 @@ public class TestStandardBullhornApiRestDateHandling<T extends UpdateEntity> ext
 	@After
 	public void restoreEntityToInitialValue() {
 		if (entity != null) {
-			UpdateResponse response = bullhornApiRest.updateEntity(entity);
+			UpdateResponse response = bullhornData.updateEntity(entity);
 			assertFalse("Error restoring entity", response.hasValidationErrors());
 		}
 	}
@@ -38,7 +38,7 @@ public class TestStandardBullhornApiRestDateHandling<T extends UpdateEntity> ext
 	@Test
 	public void testDateHandlingJobOrder() {
 
-		JobOrder entity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 
 		this.entity = (T) entity;
 
@@ -50,9 +50,9 @@ public class TestStandardBullhornApiRestDateHandling<T extends UpdateEntity> ext
 
 		entity.setStartDate(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		JobOrder updatedEntity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 		entity.setStartDate(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getStartDate());
 
