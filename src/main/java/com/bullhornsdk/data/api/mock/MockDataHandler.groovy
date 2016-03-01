@@ -12,6 +12,10 @@ import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
 import com.bullhornsdk.data.model.response.crud.DeleteResponse
 import com.bullhornsdk.data.model.response.crud.UpdateResponse
+import com.bullhornsdk.data.model.response.event.GetEventsResponse
+import com.bullhornsdk.data.model.response.event.GetLastRequestIdResponse
+import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse
+import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
 import com.bullhornsdk.data.model.response.file.FileMeta
@@ -55,7 +59,8 @@ public class MockDataHandler {
 	private Map<String,Closure> queryClosures = new HashMap<String,Closure>();
 	private List<FastFindResult> fastFindResults;
 	private Map<String, Object> settingsResults;
-	
+    private StandardGetEventsResponse getEventsResponse;
+    private StandardGetLastRequestIdResponse getLastRequestIdResponse;
 
 	public MockDataHandler() {
 		this.mockDataLoader = new MockDataLoader();
@@ -64,6 +69,8 @@ public class MockDataHandler {
 		this.searchFieldsMap = mockDataLoader.getSearchFields();
 		this.fastFindResults = mockDataLoader.getFastFindResults();
 		this.settingsResults = mockDataLoader.getSettingsResults();
+        this.getEventsResponse = mockDataLoader.getEventsResponse();
+        this.getLastRequestIdResponse = mockDataLoader.getLastRequestIdResponse();
 		this.queryClosures = addQueryClosures();
 	}
 
@@ -376,6 +383,34 @@ public class MockDataHandler {
 		return this.settingsResults;
 	}
 
+    public GetEventsResponse getEventsData(Integer maxResults) {
+        if(this.getEventsResponse.events.size() > maxResults) {
+            StandardGetEventsResponse response = KryoObjectCopyHelper.copy(this.getEventsResponse);
+
+            response.setEvents(response.getEvents().subList(0, maxResults));
+
+            return response;
+        }
+
+        return this.getEventsResponse;
+    }
+
+    public GetEventsResponse getEventsDataByRequest(Integer requestId) {
+        if(!this.getEventsResponse.getRequestId().equals(requestId)) {
+            StandardGetEventsResponse response = KryoObjectCopyHelper.copy(this.getEventsResponse);
+
+            response.setRequestId(requestId);
+
+            return response;
+        }
+
+        return this.getEventsResponse;
+    }
+
+    public GetLastRequestIdResponse getLastRequestId(String subscriptionId) {
+        return this.getLastRequestIdResponse;
+    }
+
 	/**
 	 * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	 * FILE HANDLING
@@ -416,7 +451,7 @@ public class MockDataHandler {
 
 
 	public ParsedResume parseResumeThenAddfile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId,
-	FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
+	    FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
 
 		StandardFileWrapper fileWrapper = createMockFileWrapper(file.getOriginalFilename());
 

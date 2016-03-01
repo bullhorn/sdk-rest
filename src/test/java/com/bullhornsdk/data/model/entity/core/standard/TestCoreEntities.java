@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import com.bullhornsdk.data.BaseTest;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.enums.RestEntityInfo;
+import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
 
 public class TestCoreEntities extends BaseTest {
 
@@ -20,16 +20,16 @@ public class TestCoreEntities extends BaseTest {
 	private final int id = 1;
 	
 	public void load() {
-		for (RestEntityInfo restEntityInfo : RestEntityInfo.values()) {
-			if(restEntityInfo.getType() != null){
-				one.put(restEntityInfo.getType(), bullhornApiRest.findEntity(restEntityInfo.getType(), id));	
+		for (BullhornEntityInfo bullhornEntityInfo : BullhornEntityInfo.values()) {
+			if(bullhornEntityInfo.getType() != null){
+				one.put(bullhornEntityInfo.getType(), bullhornData.findEntity(bullhornEntityInfo.getType(), id));
 			}
 			
 		}
 
-		for (RestEntityInfo restEntityInfo : RestEntityInfo.values()) {
-			if(restEntityInfo.getType() != null){
-				two.put(restEntityInfo.getType(), bullhornApiRest.findEntity(restEntityInfo.getType(), id));	
+		for (BullhornEntityInfo bullhornEntityInfo : BullhornEntityInfo.values()) {
+			if(bullhornEntityInfo.getType() != null){
+				two.put(bullhornEntityInfo.getType(), bullhornData.findEntity(bullhornEntityInfo.getType(), id));
 			}
 		}
 	}

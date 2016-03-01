@@ -8,11 +8,20 @@ import com.bullhornsdk.data.model.entity.meta.MetaData
 import org.apache.log4j.Logger
 import org.junit.Test
 
+import static org.junit.Assert.assertFalse
+
 public class TestMockDataLoader {
 
 	private final static Logger log = Logger.getLogger(TestMockDataHandler.class);
 	private MockDataLoader mockDataLoader = new MockDataLoader();
 
+
+    @Test
+    public void testLoadData() {
+        Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> testData = mockDataLoader.getEntityTestData();
+
+        assertFalse(testData.isEmpty());
+    }
 
 	@Test
 	public void testLoadEntityData(){

@@ -9,7 +9,9 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
-import com.bullhornsdk.data.model.enums.RestEntityInfo
+import com.bullhornsdk.data.model.enums.BullhornEntityInfo
+import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse
+import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
@@ -26,11 +28,16 @@ public class MockDataLoader {
 
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMapCache;
 	private List<FastFindResult> fastFindResultListCache;
+    private StandardGetEventsResponse getEventsResponseCache;
+    private StandardGetLastRequestIdResponse getLastRequestIdResponseCache;
 	private Map<String,Object> settingsResultMapCache;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
+
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
 	private List<FastFindResult> fastFindResultList;
+    private StandardGetEventsResponse getEventsResponse;
+    private StandardGetLastRequestIdResponse getLastRequestIdResponse;
 	private Map<String,Object> settingsResultMap;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
 
@@ -82,6 +89,26 @@ public class MockDataLoader {
 		return fastFindResultList;
 	}
 
+    public StandardGetEventsResponse getEventsResponse() {
+        if(getEventsResponse == null) {
+            reloadGetEventsResponses();
+            this.getEventsResponseCache = KryoObjectCopyHelper.copy(getEventsResponse);
+        }
+
+        return getEventsResponse;
+    }
+
+    public StandardGetLastRequestIdResponse getLastRequestIdResponse() {
+        if(getLastRequestIdResponse == null) {
+            reloadGetLastRequestIdResponses();
+            this.getLastRequestIdResponseCache = KryoObjectCopyHelper.copy(getLastRequestIdResponse);
+        }
+
+        return getLastRequestIdResponse;
+    }
+
+
+
 	public Map<String,Object> getSettingsResults() {
 		if (settingsResultMap == null) {
 			reloadSettingsResults();
@@ -114,6 +141,18 @@ public class MockDataLoader {
 		FastFindListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, FastFindListWrapper.class);
 		this.fastFindResultList = listWrapper.getData();
 	}
+
+    public void reloadGetEventsResponses() {
+        String jsonData = getFileData("event-data.txt");
+        StandardGetEventsResponse eventsResponse = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, StandardGetEventsResponse.class);
+        this.getEventsResponse = eventsResponse;
+    }
+
+    public void reloadGetLastRequestIdResponses() {
+        String jsonData = getFileData("lastrequestid-data.txt");
+        StandardGetLastRequestIdResponse response = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, StandardGetLastRequestIdResponse.class);
+        this.getLastRequestIdResponse = response;
+    }
 
 	public void reloadSettingsResults() {
 
@@ -210,7 +249,7 @@ public class MockDataLoader {
 	 */
 	private <T extends BullhornEntity> List<T> jsonStringToEntityList(String jsonData, Class<T> type) {
 
-		ListWrapper<T> listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, RestEntityInfo.getTypesListWrapperType(type));
+		ListWrapper<T> listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, BullhornEntityInfo.getTypesListWrapperType(type));
 
 		return listWrapper.getData();
 

@@ -8,9 +8,6 @@ import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
@@ -20,8 +17,11 @@ import org.joda.time.DateTimeZone;
 import org.json.JSONObject;
 import org.springframework.web.client.RestTemplate;
 
-import com.bullhornsdk.data.api.RestApiSettings;
+import com.bullhornsdk.data.api.BullhornRestCredentials;
 import com.bullhornsdk.data.exception.RestApiException;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Splitter;
 
 /**
@@ -44,11 +44,9 @@ public class RestApiSession {
 
 	private static Logger log = Logger.getLogger(RestApiSession.class);
 
-	private RestApiSettings restApiSettings;
-
 	private RestTemplate restTemplate;
 
-	private final RestCredentials restCredentials;
+	private final BullhornRestCredentials restCredentials;
 
 	private AccessTokenInfo accessTokenInfo;
 
@@ -62,10 +60,6 @@ public class RestApiSession {
 
 	private static int SESSION_RETRY = 3;
 
-	private final Integer corporationID;
-
-	private final String apiKey;
-
 	public final static int MAX_TTL = 2880;
 
 	/**
@@ -74,40 +68,23 @@ public class RestApiSession {
 	 */
 	public RestApiSession() {
 		this.restCredentials = null;
-		this.corporationID = 0;
-		this.apiKey = null;
 	}
 
 	/**
 	 * This factory method is used when deserializing from JSON.
-	 * It guarantees that "restApiSettings" property gets assigned first,
+	 * It guarantees that "bullhornRestCredentials" property gets assigned first,
 	 * ensuring no NullPointerException when other setters are trying to access it,
 	 * e.g. setBhRestToken->updateDateTimeBhRestTokenWillExpire
 	 */
 	@JsonCreator
-	public static RestApiSession create(@JsonProperty("restApiSettings") RestApiSettings restApiSettings) {
-		RestApiSession result = new RestApiSession();
-		result.setRestApiSettings(restApiSettings);
-		return result;
+	public static RestApiSession create(@JsonProperty("bullhornRestCredentials") BullhornRestCredentials bullhornRestCredentials) {
+		return new RestApiSession(bullhornRestCredentials);
 	}
 
-	public RestApiSession(RestApiSettings restApiSettings) {
-		this.restApiSettings = restApiSettings;
+	public RestApiSession(BullhornRestCredentials bullhornRestCredentials) {
+		this.restCredentials = bullhornRestCredentials;
 		this.restTemplate = RestTemplateFactory.getInstance();
 		this.dateTimeBhRestTokenWillExpire = getNow();
-		this.restCredentials = null;
-		this.corporationID = 0;
-		this.apiKey = "No api key needed for single tenant solution";
-		createSession();
-	}
-
-	public RestApiSession(RestApiSettings restApiSettings, RestCredentials restCredentials) {
-		this.restApiSettings = restApiSettings;
-		this.restTemplate = RestTemplateFactory.getInstance();
-		this.restCredentials = restCredentials;
-		this.dateTimeBhRestTokenWillExpire = getNow();
-		this.corporationID = restCredentials.getCorporationId();
-		this.apiKey = restCredentials.getApiKey();
 		createSession();
 	}
 
@@ -163,8 +140,8 @@ public class RestApiSession {
 	}
 
 	private String getAuthorizationCode() throws RestApiException {
-		String authorizeUrl = restApiSettings.getRestAuthorizeUrl();
-		String clientId = restApiSettings.getRestClientId();
+		String authorizeUrl = restCredentials.getRestAuthorizeUrl();
+		String clientId = restCredentials.getRestClientId();
 		String username = getUserName();
 		String password = getPassword();
 		String authCode = null;
@@ -197,10 +174,7 @@ public class RestApiSession {
 	 * @return
 	 */
 	private String getUserName() {
-		if (restCredentials != null) {
-			return restCredentials.getBhUserName();
-		}
-		return restApiSettings.getUsername();
+		return restCredentials.getUsername();
 	}
 
 	/**
@@ -209,10 +183,7 @@ public class RestApiSession {
 	 * @return
 	 */
 	private String getPassword() {
-		if (restCredentials != null) {
-			return restCredentials.getBhPassword();
-		}
-		return restApiSettings.getPassword();
+		return restCredentials.getPassword();
 	}
 
 	// query: code=###&client_id=
@@ -223,9 +194,9 @@ public class RestApiSession {
 	}
 
 	private void getAccessToken(String authCode) throws RestApiException {
-		String tokenUrl = restApiSettings.getRestTokenUrl();
-		String clientId = restApiSettings.getRestClientId();
-		String clientSecret = restApiSettings.getRestClientSecret();
+		String tokenUrl = restCredentials.getRestTokenUrl();
+		String clientId = restCredentials.getRestClientId();
+		String clientSecret = restCredentials.getRestClientSecret();
 
 		String url = tokenUrl + "?grant_type={grantType}&code={authCode}&client_id={clientId}&client_secret={clientSecret}";
 
@@ -249,8 +220,8 @@ public class RestApiSession {
 		JSONObject responseJson = null;
 		try {
 			String accessTokenString = URLEncoder.encode(accessTokenInfo.getAccessToken(), "UTF-8");
-			String loginUrl = restApiSettings.getRestLoginUrl();
-			String sessionMinutesToLive = restApiSettings.getRestSessionMinutesToLive();
+			String loginUrl = restCredentials.getRestLoginUrl();
+			String sessionMinutesToLive = restCredentials.getRestSessionMinutesToLive();
 			String url = loginUrl + "?version=" + version + "&access_token=" + accessTokenString + "&ttl=" + sessionMinutesToLive;
 			GetMethod get = new GetMethod(url);
 
@@ -325,7 +296,7 @@ public class RestApiSession {
 	private void updateDateTimeBhRestTokenWillExpire() {
 		// set the DateTime the session will expire, subtracting one minute to be on the safe side.
 		DateTime timeToExpire = getNow();
-		int sessionMinutesToLive = Integer.valueOf(restApiSettings.getRestSessionMinutesToLive());
+		int sessionMinutesToLive = Integer.valueOf(restCredentials.getRestSessionMinutesToLive());
 		if (sessionMinutesToLive > MAX_TTL) {
 			sessionMinutesToLive = MAX_TTL;
 		}
@@ -350,15 +321,7 @@ public class RestApiSession {
 	 * 
 	 * @return a valid {@link RestCredentials} object if multi-tenant otherwise null
 	 */
-	public RestCredentials getRestCredentials() {
+	public BullhornRestCredentials getRestCredentials() {
 		return restCredentials;
-	}
-
-	public RestApiSettings getRestApiSettings() {
-		return restApiSettings;
-	}
-
-	public void setRestApiSettings(RestApiSettings restApiSettings) {
-		this.restApiSettings = restApiSettings;
 	}
 }

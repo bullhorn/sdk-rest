@@ -32,7 +32,7 @@ public class TestStandardBullhornApiRestFastFind extends BaseTest {
 	@Test
 	public void testFastFindCandidate() {
 
-		List<FastFindResult> result = bullhornApiRest.fastFindForList("test", fastFindParams);
+		List<FastFindResult> result = bullhornData.fastFindForList("test", fastFindParams);
 
 		assertNotNull(result);
 

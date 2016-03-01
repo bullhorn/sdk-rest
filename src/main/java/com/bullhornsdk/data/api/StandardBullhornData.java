@@ -61,8 +61,8 @@ import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData;
+import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
 import com.bullhornsdk.data.model.enums.MetaParameter;
-import com.bullhornsdk.data.model.enums.RestEntityInfo;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
@@ -78,6 +78,10 @@ import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.crud.DeleteResponse;
 import com.bullhornsdk.data.model.response.crud.Message;
 import com.bullhornsdk.data.model.response.crud.UpdateResponse;
+import com.bullhornsdk.data.model.response.event.GetEventsResponse;
+import com.bullhornsdk.data.model.response.event.GetLastRequestIdResponse;
+import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse;
+import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse;
 import com.bullhornsdk.data.model.response.file.EntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
@@ -148,7 +152,7 @@ public class StandardBullhornData implements BullhornData {
 
 	private final static int MAX_RECORDS_TO_RETURN_TOTAL = 20000;
 
-	public StandardBullhornData(RestApiSettings bullhornRestCredentials) {
+	public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials) {
 		this.restSession = new RestApiSession(bullhornRestCredentials);
 		this.restTemplate = RestTemplateFactory.getInstance();
 		this.restUrl = restSession.getRestUrl();
@@ -467,6 +471,21 @@ public class StandardBullhornData implements BullhornData {
 		return this.handleAddNoteAndAssociateToEntity(note);
 	}
 
+    @Override
+    public Integer getLastRequestId(String subscriptionId) {
+        return this.handleGetLastRequestId(subscriptionId);
+    }
+
+    @Override
+    public GetEventsResponse getEvents(String subscriptionId, Integer maxEvents) {
+        return this.handleGetEvents(subscriptionId, maxEvents);
+    }
+
+    @Override
+    public GetEventsResponse regetEvents(String subscriptionId, Integer requestId) {
+        return this.handleRegetEvents(subscriptionId, requestId);
+    }
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -537,10 +556,10 @@ public class StandardBullhornData implements BullhornData {
 			AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
 
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetAssociation(
-				RestEntityInfo.getTypesRestEntityName(type), entityIds, associationName, fieldSet, params);
+				BullhornEntityInfo.getTypesRestEntityName(type), entityIds, associationName, fieldSet, params);
 		String url = restUrlFactory.assembleGetAssociationUrl(params);
 		ListWrapper<E> listWrapper = this.performGetRequest(url,
-				RestEntityInfo.getTypesListWrapperType(associationName.getAssociationType()), uriVariables);
+				BullhornEntityInfo.getTypesListWrapperType(associationName.getAssociationType()), uriVariables);
 
 		if (listWrapper == null) {
 			return Collections.emptyList();
@@ -605,7 +624,7 @@ public class StandardBullhornData implements BullhornData {
 	 * @return
 	 */
 	protected <T extends BullhornEntity> T handleGetEntity(Class<T> type, Integer id, Set<String> fieldSet, EntityParams params) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntity(RestEntityInfo.getTypesRestEntityName(type),
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntity(BullhornEntityInfo.getTypesRestEntityName(type),
 				id, fieldSet, params);
 		String url = restUrlFactory.assembleEntityUrl(params);
 		String jsonString = this.performGetRequest(url, String.class, uriVariables);
@@ -632,12 +651,12 @@ public class StandardBullhornData implements BullhornData {
 	 */
 	private <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntities(Class<T> type, String where, Set<String> fieldSet,
 			QueryParams params) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(RestEntityInfo.getTypesRestEntityName(type),
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(type),
 				where, fieldSet, params);
 
 		String url = restUrlFactory.assembleQueryUrl(params);
 
-		return (L) this.performGetRequest(url, RestEntityInfo.getTypesListWrapperType(type), uriVariables);
+		return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 
 	}
 
@@ -730,7 +749,7 @@ public class StandardBullhornData implements BullhornData {
 	 */
 	private <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForEntities(Class<T> type, String query, Set<String> fieldSet,
 			SearchParams params) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearch(RestEntityInfo.getTypesRestEntityName(type),
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearch(BullhornEntityInfo.getTypesRestEntityName(type),
 				query, fieldSet, params);
 
 		String url = restUrlFactory.assembleSearchUrl(params);
@@ -740,7 +759,7 @@ public class StandardBullhornData implements BullhornData {
 		}
 		// String jsonString = this.performGetRequest(url, String.class, uriVariables);
 
-		return (L) this.performGetRequest(url, RestEntityInfo.getTypesListWrapperType(type), uriVariables);
+		return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 
 	}
 
@@ -776,7 +795,7 @@ public class StandardBullhornData implements BullhornData {
 	 */
 	private <C extends CrudResponse, T extends UpdateEntity> C handleUpdateEntity(T entity) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityUpdate(
-				RestEntityInfo.getTypesRestEntityName(entity.getClass()), entity.getId());
+				BullhornEntityInfo.getTypesRestEntityName(entity.getClass()), entity.getId());
 		String url = restUrlFactory.assembleEntityUrlForUpdate();
 
 		CrudResponse response = null;
@@ -830,7 +849,7 @@ public class StandardBullhornData implements BullhornData {
 	 * @return a UpdateResponse
 	 */
 	private <C extends CrudResponse, T extends CreateEntity> C handleInsertEntity(T entity) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityInsert(RestEntityInfo
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityInsert(BullhornEntityInfo
 				.getTypesRestEntityName(entity.getClass()));
 		String url = restUrlFactory.assembleEntityUrlForInsert();
 
@@ -863,7 +882,7 @@ public class StandardBullhornData implements BullhornData {
 	 */
 	private <C extends CrudResponse, T extends DeleteEntity> C handleDeleteEntity(Class<T> type, Integer id) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityDelete(
-				RestEntityInfo.getTypesRestEntityName(type), id);
+				BullhornEntityInfo.getTypesRestEntityName(type), id);
 		String url = restUrlFactory.assembleEntityDeleteUrl();
 
 		CrudResponse response = null;
@@ -914,7 +933,7 @@ public class StandardBullhornData implements BullhornData {
 	 * @return the MetaData
 	 */
 	private <T extends BullhornEntity> MetaData<T> handleGetMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(RestEntityInfo.getTypesRestEntityName(type),
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(BullhornEntityInfo.getTypesRestEntityName(type),
 				metaParameter, fieldSet);
 		String url = restUrlFactory.assembleEntityUrlForMeta();
 
@@ -1220,7 +1239,7 @@ public class StandardBullhornData implements BullhornData {
 	 */
 	private List<FileMeta> handleGetEntityMetaFiles(Class<? extends FileEntity> type, Integer entityId) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetEntityMetaFiles(
-				RestEntityInfo.getTypesRestEntityName(type), entityId);
+				BullhornEntityInfo.getTypesRestEntityName(type), entityId);
 		String url = restUrlFactory.assembleGetEntityMetaFilesUrl();
 		String jsonString = this.performGetRequest(url, String.class, uriVariables);
 		EntityMetaFiles<? extends FileMeta> entityMetaFiles = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString,
@@ -1240,7 +1259,7 @@ public class StandardBullhornData implements BullhornData {
 	 * @return
 	 */
 	private FileContent handleGetFileContent(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetFile(RestEntityInfo.getTypesRestEntityName(type),
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetFile(BullhornEntityInfo.getTypesRestEntityName(type),
 				entityId, fileId);
 		String url = restUrlFactory.assembleGetFileUrl();
 		String jsonString = this.performGetRequest(url, String.class, uriVariables);
@@ -1298,7 +1317,7 @@ public class StandardBullhornData implements BullhornData {
 
 	private FileWrapper handleAddFile(Class<? extends FileEntity> type, Integer entityId, MultiValueMap<String, Object> multiValueMap,
 			String externalId, FileParams params, String fileName) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(RestEntityInfo.getTypesRestEntityName(type),
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
 				entityId, externalId, params);
 		String url = restUrlFactory.assembleAddFileUrl(params);
 		StandardFileApiResponse fileApiResponse = this.performCustomRequest(url, multiValueMap, StandardFileApiResponse.class,
@@ -1375,7 +1394,7 @@ public class StandardBullhornData implements BullhornData {
 	 * @return
 	 */
 	private FileApiResponse handleDeleteFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesDeleteFile(RestEntityInfo.getTypesRestEntityName(type),
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesDeleteFile(BullhornEntityInfo.getTypesRestEntityName(type),
 				entityId, fileId);
 		String url = restUrlFactory.assembleDeleteFileUrl();
 		StandardFileApiResponse fileApiResponse = this.performCustomRequest(url, null, StandardFileApiResponse.class, uriVariables,
@@ -1396,7 +1415,7 @@ public class StandardBullhornData implements BullhornData {
 	private <C extends CrudResponse, T extends AssociationEntity> C handleAssociateWithEntity(Class<T> type, Integer entityId,
 			AssociationField<T, ? extends BullhornEntity> associationName, Set<Integer> associationIds) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAssociateWithEntity(
-				RestEntityInfo.getTypesRestEntityName(type), entityId, associationName, associationIds);
+				BullhornEntityInfo.getTypesRestEntityName(type), entityId, associationName, associationIds);
 		String url = restUrlFactory.assembleEntityUrlForAssociateWithEntity();
 
 		CrudResponse response = null;
@@ -1421,7 +1440,7 @@ public class StandardBullhornData implements BullhornData {
 	private <C extends CrudResponse, T extends AssociationEntity> C handleDisassociateWithEntity(Class<T> type, Integer entityId,
 			AssociationField<T, ? extends BullhornEntity> associationName, Set<Integer> associationIds) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAssociateWithEntity(
-				RestEntityInfo.getTypesRestEntityName(type), entityId, associationName, associationIds);
+				BullhornEntityInfo.getTypesRestEntityName(type), entityId, associationName, associationIds);
 		String url = restUrlFactory.assembleEntityUrlForAssociateWithEntity();
 
 		CrudResponse response = null;
@@ -1433,6 +1452,35 @@ public class StandardBullhornData implements BullhornData {
 
 		return (C) response;
 	}
+
+    private Integer handleGetLastRequestId(String subscriptionId) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetLastRequestId(subscriptionId);
+        String url = restUrlFactory.assembleGetLastRequstIdUrl();
+
+        Integer lastRequestId = -1;
+
+        GetLastRequestIdResponse response = this.performGetRequest(url, StandardGetLastRequestIdResponse.class, uriVariables);
+
+        if(response != null && response.getResult() != null) {
+            lastRequestId = response.getResult();
+        }
+
+        return lastRequestId;
+    }
+
+    private GetEventsResponse handleGetEvents(String subscriptionId, Integer maxEvents) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetEvents(subscriptionId, maxEvents);
+        String url = restUrlFactory.assembleGetEventsUrl();
+
+        return this.performGetRequest(url, StandardGetEventsResponse.class, uriVariables);
+    }
+
+    private GetEventsResponse handleRegetEvents(String subscriptionId, Integer requestId) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForRegetEvents(subscriptionId, requestId);
+        String url = restUrlFactory.assembleRegetEventsUrl();
+
+        return this.performGetRequest(url, StandardGetEventsResponse.class, uriVariables);
+    }
 
 	/*
 	 * *************************************************************************
