@@ -1,22 +1,17 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "externalID", "name", "occupation", "skills", "specialties", "type" })
+@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "externalID", "name", "occupation", "privateLabels", "skills", "specialties", "type" })
 public class Category extends AbstractEntity implements QueryEntity, AssociationEntity {
 
 	private Integer id;
@@ -38,6 +33,8 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 	@JsonIgnore
 	@Size(max = 50)
 	private String occupation;
+
+	private OneToMany<PrivateLabel> privateLabels;
 
 	private OneToMany<Skill> skills;
 
