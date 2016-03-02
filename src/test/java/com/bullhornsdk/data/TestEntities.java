@@ -68,6 +68,8 @@ public class TestEntities {
 
 	private Integer taskId;
 
+	private Integer tearsheetId;
+
 	private Integer timeUnitId;
 
     private Integer allCustomObjectsId;
@@ -137,6 +139,8 @@ public class TestEntities {
 		this.stateId=1;
 
 		this.taskId=1;
+
+		this.tearsheetId=1;
 
 		this.timeUnitId=1;
 
@@ -395,7 +399,15 @@ public class TestEntities {
 		this.timeUnitId = timeUnitId;
 	}
 
-    public Integer getAllCustomObjectsId() {
+	public Integer getTearsheetId() {
+		return tearsheetId;
+	}
+
+	public void setTearsheetId(Integer tearsheetId) {
+		this.tearsheetId = tearsheetId;
+	}
+
+	public Integer getAllCustomObjectsId() {
         return allCustomObjectsId;
     }
 
@@ -424,7 +436,7 @@ public class TestEntities {
         return new StringBuilder("TestEntities {")
                 .append("\n\t\"appointmentId\": ")
                 .append(appointmentId)
-                .append(",\n\t\"appointmentAttendeeId\": ")
+				.append(",\n\t\"appointmentAttendeeId\": ")
                 .append(appointmentAttendeeId)
                 .append(",\n\t\"businessSectorId\": ")
                 .append(businessSectorId)
@@ -482,7 +494,9 @@ public class TestEntities {
                 .append(stateId)
                 .append(",\n\t\"taskId\": ")
                 .append(taskId)
-                .append(",\n\t\"timeUnitId\": ")
+				.append(",\n\t\"tearsheetId\": ")
+				.append(tearsheetId)
+				.append(",\n\t\"timeUnitId\": ")
                 .append(timeUnitId)
                 .append(",\n\t\"allCustomObjectsId\": ")
                 .append(allCustomObjectsId)

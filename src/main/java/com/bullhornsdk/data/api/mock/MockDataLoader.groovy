@@ -330,6 +330,7 @@ public class MockDataLoader {
 		entityFiles.put(Specialty.class, "specialty-data.txt");
 		entityFiles.put(State.class, "state-data.txt");
 		entityFiles.put(Task.class, "task-data.txt");
+		entityFiles.put(Tearsheet.class, "tearsheet-data.txt");
 		entityFiles.put(TimeUnit.class, "timeunit-data.txt");
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobject/jobordercustomobjectinstance1-data.txt");
