@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "candidate", "childTasks", "clientContact", "dateAdded", "dateBegin", "dateCompleted", "dateEnd",
 		"dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission", "lead",
-		"migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "placement", "recurrenceDayBits", "recurrenceFrequency",
+		"migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "priority", "placement", "recurrenceDayBits", "recurrenceFrequency",
 		"recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type" })
 public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity {
 
@@ -62,6 +62,8 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 	private CorporateUser owner;
 
 	private Task parentTask;
+
+	private Integer priority;
 
 	private Placement placement;
 
@@ -331,6 +333,16 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		this.parentTask = parentTask;
 	}
 
+	@JsonProperty("priority")
+	public Integer getPriority() {
+		return priority;
+	}
+
+	@JsonProperty("priority")
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+	}
+
 	@JsonProperty("placement")
 	public Placement getPlacement() {
 		return placement;
@@ -475,6 +487,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		if (opportunity != null ? !opportunity.equals(task.opportunity) : task.opportunity != null) return false;
 		if (owner != null ? !owner.equals(task.owner) : task.owner != null) return false;
 		if (parentTask != null ? !parentTask.equals(task.parentTask) : task.parentTask != null) return false;
+		if (priority != null ? !priority.equals(task.priority) : task.priority != null) return false;
 		if (placement != null ? !placement.equals(task.placement) : task.placement != null) return false;
 		if (recurrenceDayBits != null ? !recurrenceDayBits.equals(task.recurrenceDayBits) : task.recurrenceDayBits != null)
 			return false;
@@ -519,6 +532,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		result = 31 * result + (opportunity != null ? opportunity.hashCode() : 0);
 		result = 31 * result + (owner != null ? owner.hashCode() : 0);
 		result = 31 * result + (parentTask != null ? parentTask.hashCode() : 0);
+		result = 31 * result + (priority != null ? priority.hashCode() : 0);
 		result = 31 * result + (placement != null ? placement.hashCode() : 0);
 		result = 31 * result + (recurrenceDayBits != null ? recurrenceDayBits.hashCode() : 0);
 		result = 31 * result + (recurrenceFrequency != null ? recurrenceFrequency.hashCode() : 0);
@@ -558,6 +572,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 				", opportunity=" + opportunity +
 				", owner=" + owner +
 				", parentTask=" + parentTask +
+				", priority=" + priority +
 				", placement=" + placement +
 				", recurrenceDayBits=" + recurrenceDayBits +
 				", recurrenceFrequency=" + recurrenceFrequency +

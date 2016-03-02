@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @JsonPropertyOrder({ "id", "appointmentUUID", "attendees", "candidateReference", "childAppointments", "clientContactReference",
         "communicationMethod", "dateAdded", "dateBegin", "dateEnd", "dateLastModified", "description", "isAllDay", "isDeleted",
         "isPrivate", "jobOrder", "lead", "location", "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentAppointment", "placement",
-        "priority", "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
+        "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
         "showTimeAs", "subject", "timeZoneID", "type" })
 public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity {
 
@@ -69,8 +69,6 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     private LinkedId parentAppointment;
 
     private LinkedId placement;
-
-    private Integer priority;
 
     private Integer recurrenceDayBits;
 
@@ -355,16 +353,6 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         this.placement = placement;
     }
 
-    @JsonProperty("priority")
-    public Integer getPriority() {
-        return priority;
-    }
-
-    @JsonProperty("priority")
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
-
     @JsonProperty("recurrenceDayBits")
     public Integer getRecurrenceDayBits() {
         return recurrenceDayBits;
@@ -504,7 +492,6 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         if (parentAppointment != null ? !parentAppointment.equals(that.parentAppointment) : that.parentAppointment != null)
             return false;
         if (placement != null ? !placement.equals(that.placement) : that.placement != null) return false;
-        if (priority != null ? !priority.equals(that.priority) : that.priority != null) return false;
         if (recurrenceDayBits != null ? !recurrenceDayBits.equals(that.recurrenceDayBits) : that.recurrenceDayBits != null)
             return false;
         if (recurrenceFrequency != null ? !recurrenceFrequency.equals(that.recurrenceFrequency) : that.recurrenceFrequency != null)
@@ -550,7 +537,6 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         result = 31 * result + (owner != null ? owner.hashCode() : 0);
         result = 31 * result + (parentAppointment != null ? parentAppointment.hashCode() : 0);
         result = 31 * result + (placement != null ? placement.hashCode() : 0);
-        result = 31 * result + (priority != null ? priority.hashCode() : 0);
         result = 31 * result + (recurrenceDayBits != null ? recurrenceDayBits.hashCode() : 0);
         result = 31 * result + (recurrenceFrequency != null ? recurrenceFrequency.hashCode() : 0);
         result = 31 * result + (recurrenceMax != null ? recurrenceMax.hashCode() : 0);
@@ -564,44 +550,6 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "Appointment{" +
-                "id=" + id +
-                ", appointmentUUID='" + appointmentUUID + '\'' +
-                ", attendees=" + attendees +
-                ", candidateReference=" + candidateReference +
-                ", childAppointments=" + childAppointments +
-                ", clientContactReference=" + clientContactReference +
-                ", communicationMethod='" + communicationMethod + '\'' +
-                ", dateAdded=" + dateAdded +
-                ", dateBegin=" + dateBegin +
-                ", dateEnd=" + dateEnd +
-                ", dateLastModified=" + dateLastModified +
-                ", description='" + description + '\'' +
-                ", isAllDay=" + isAllDay +
-                ", isDeleted=" + isDeleted +
-                ", isPrivate=" + isPrivate +
-                ", jobOrder=" + jobOrder +
-                ", lead=" + lead +
-                ", location='" + location + '\'' +
-                ", migrateGUID=" + migrateGUID +
-                ", notificationMinutes=" + notificationMinutes +
-                ", opportunity=" + opportunity +
-                ", owner=" + owner +
-                ", parentAppointment=" + parentAppointment +
-                ", placement=" + placement +
-                ", priority=" + priority +
-                ", recurrenceDayBits=" + recurrenceDayBits +
-                ", recurrenceFrequency=" + recurrenceFrequency +
-                ", recurrenceMax=" + recurrenceMax +
-                ", recurrenceMonthBits=" + recurrenceMonthBits +
-                ", recurrenceStyle='" + recurrenceStyle + '\'' +
-                ", recurrenceType='" + recurrenceType + '\'' +
-                ", showTimeAs='" + showTimeAs + '\'' +
-                ", subject='" + subject + '\'' +
-                ", timeZoneID='" + timeZoneID + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
+
+
 }
