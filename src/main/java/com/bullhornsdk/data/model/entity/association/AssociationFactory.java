@@ -1,23 +1,7 @@
 package com.bullhornsdk.data.model.entity.association;
 
-import com.bullhornsdk.data.model.entity.association.standard.CandidateAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.CategoryAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.ClientContactAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.ClientCorporationAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.JobOrderAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.LeadAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.NoteAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.OpportunityAssociations;
-import com.bullhornsdk.data.model.entity.association.standard.PlacementAssociations;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.Category;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.association.standard.*;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
@@ -40,6 +24,7 @@ public class AssociationFactory {
     private static final PlacementAssociations placementAssociations = PlacementAssociations.getInstance();
     private static final OpportunityAssociations opportunityAssociations = OpportunityAssociations.getInstance();
     private static final LeadAssociations leadAssociations = LeadAssociations.getInstance();
+    private static final TearsheetAssociations tearsheetAssociations = TearsheetAssociations.getInstance();
 
     /**
      * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
@@ -101,6 +86,11 @@ public class AssociationFactory {
         if (type == Lead.class) {
             return (EntityAssociations<T>) leadAssociations;
         }
+
+        if (type == Tearsheet.class) {
+            return (EntityAssociations<T>) tearsheetAssociations;
+        }
+
         return null;
 
     }
@@ -184,6 +174,15 @@ public class AssociationFactory {
      */
     public static LeadAssociations leadAssociations() {
         return leadAssociations;
+    }
+
+    /**
+     * Returns the associations for Tearsheet
+     *
+     * @return
+     */
+    public static TearsheetAssociations tearsheetAssociations() {
+        return tearsheetAssociations;
     }
 
 }

@@ -1,36 +1,26 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "appointments", "billRate", "candidate", "dateAdded", "dateWebResponse", "isDeleted", "isHidden", "jobOrder",
+@JsonPropertyOrder({ "id", "appointments", "billRate", "candidate", "dateAdded", "dateLastModified", "dateWebResponse", "isDeleted", "isHidden", "jobOrder",
 		"migrateGUID", "payRate", "salary", "sendingUser", "source", "status", "tasks" })
-public class JobSubmission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity {
+public class JobSubmission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity {
 
 	private Integer id;
 	private OneToManyLinkedId appointments;
 	private BigDecimal billRate;
 	private Candidate candidate;
 	private DateTime dateAdded;
+	private DateTime dateLastModified;
 	private DateTime dateWebResponse;
 	private Boolean isDeleted;
 	private Boolean isHidden;
@@ -120,6 +110,16 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
+	}
+
+	@JsonProperty("dateLastModified")
+	public DateTime getDateLastModified() {
+		return dateLastModified;
+	}
+
+	@JsonProperty("dateLastModified")
+	public void setDateLastModified(DateTime dateLastModified) {
+		this.dateLastModified = dateLastModified;
 	}
 
 	@JsonProperty("dateWebResponse")
@@ -233,158 +233,76 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		JobSubmission that = (JobSubmission) o;
+
+		if (id != null ? !id.equals(that.id) : that.id != null) return false;
+		if (appointments != null ? !appointments.equals(that.appointments) : that.appointments != null) return false;
+		if (billRate != null ? !billRate.equals(that.billRate) : that.billRate != null) return false;
+		if (candidate != null ? !candidate.equals(that.candidate) : that.candidate != null) return false;
+		if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+		if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
+			return false;
+		if (dateWebResponse != null ? !dateWebResponse.equals(that.dateWebResponse) : that.dateWebResponse != null)
+			return false;
+		if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
+		if (isHidden != null ? !isHidden.equals(that.isHidden) : that.isHidden != null) return false;
+		if (jobOrder != null ? !jobOrder.equals(that.jobOrder) : that.jobOrder != null) return false;
+		if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+		if (payRate != null ? !payRate.equals(that.payRate) : that.payRate != null) return false;
+		if (salary != null ? !salary.equals(that.salary) : that.salary != null) return false;
+		if (sendingUser != null ? !sendingUser.equals(that.sendingUser) : that.sendingUser != null) return false;
+		if (source != null ? !source.equals(that.source) : that.source != null) return false;
+		if (status != null ? !status.equals(that.status) : that.status != null) return false;
+		return !(tasks != null ? !tasks.equals(that.tasks) : that.tasks != null);
+
+	}
+
+	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((appointments == null) ? 0 : appointments.hashCode());
-		result = prime * result + ((billRate == null) ? 0 : billRate.hashCode());
-		result = prime * result + ((candidate == null) ? 0 : candidate.hashCode());
-		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-		result = prime * result + ((dateWebResponse == null) ? 0 : dateWebResponse.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
-		result = prime * result + ((isHidden == null) ? 0 : isHidden.hashCode());
-		result = prime * result + ((jobOrder == null) ? 0 : jobOrder.hashCode());
-		result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-		result = prime * result + ((payRate == null) ? 0 : payRate.hashCode());
-		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
-		result = prime * result + ((sendingUser == null) ? 0 : sendingUser.hashCode());
-		result = prime * result + ((source == null) ? 0 : source.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime * result + ((tasks == null) ? 0 : tasks.hashCode());
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
+		result = 31 * result + (billRate != null ? billRate.hashCode() : 0);
+		result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
+		result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+		result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+		result = 31 * result + (dateWebResponse != null ? dateWebResponse.hashCode() : 0);
+		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+		result = 31 * result + (isHidden != null ? isHidden.hashCode() : 0);
+		result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
+		result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+		result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
+		result = 31 * result + (salary != null ? salary.hashCode() : 0);
+		result = 31 * result + (sendingUser != null ? sendingUser.hashCode() : 0);
+		result = 31 * result + (source != null ? source.hashCode() : 0);
+		result = 31 * result + (status != null ? status.hashCode() : 0);
+		result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
 		return result;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		JobSubmission other = (JobSubmission) obj;
-		if (appointments == null) {
-			if (other.appointments != null)
-				return false;
-		} else if (!appointments.equals(other.appointments))
-			return false;
-		if (billRate == null) {
-			if (other.billRate != null)
-				return false;
-		} else if (!billRate.equals(other.billRate))
-			return false;
-		if (candidate == null) {
-			if (other.candidate != null)
-				return false;
-		} else if (!candidate.equals(other.candidate))
-			return false;
-		if (dateAdded == null) {
-			if (other.dateAdded != null)
-				return false;
-		} else if (!dateAdded.equals(other.dateAdded))
-			return false;
-		if (dateWebResponse == null) {
-			if (other.dateWebResponse != null)
-				return false;
-		} else if (!dateWebResponse.equals(other.dateWebResponse))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (isDeleted == null) {
-			if (other.isDeleted != null)
-				return false;
-		} else if (!isDeleted.equals(other.isDeleted))
-			return false;
-		if (isHidden == null) {
-			if (other.isHidden != null)
-				return false;
-		} else if (!isHidden.equals(other.isHidden))
-			return false;
-		if (jobOrder == null) {
-			if (other.jobOrder != null)
-				return false;
-		} else if (!jobOrder.equals(other.jobOrder))
-			return false;
-		if (migrateGUID == null) {
-			if (other.migrateGUID != null)
-				return false;
-		} else if (!migrateGUID.equals(other.migrateGUID))
-			return false;
-		if (payRate == null) {
-			if (other.payRate != null)
-				return false;
-		} else if (!payRate.equals(other.payRate))
-			return false;
-		if (salary == null) {
-			if (other.salary != null)
-				return false;
-		} else if (!salary.equals(other.salary))
-			return false;
-		if (sendingUser == null) {
-			if (other.sendingUser != null)
-				return false;
-		} else if (!sendingUser.equals(other.sendingUser))
-			return false;
-		if (source == null) {
-			if (other.source != null)
-				return false;
-		} else if (!source.equals(other.source))
-			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
-			return false;
-		if (tasks == null) {
-			if (other.tasks != null)
-				return false;
-		} else if (!tasks.equals(other.tasks))
-			return false;
-		return true;
-	}
-
-	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(getClass().getName());
-		builder.append(" {\n\tid: ");
-		builder.append(id);
-		builder.append("\n\tappointments: ");
-		builder.append(appointments);
-		builder.append("\n\tbillRate: ");
-		builder.append(billRate);
-		builder.append("\n\tcandidate: ");
-		builder.append(candidate);
-		builder.append("\n\tdateAdded: ");
-		builder.append(dateAdded);
-		builder.append("\n\tdateWebResponse: ");
-		builder.append(dateWebResponse);
-		builder.append("\n\tisDeleted: ");
-		builder.append(isDeleted);
-		builder.append("\n\tisHidden: ");
-		builder.append(isHidden);
-		builder.append("\n\tjobOrder: ");
-		builder.append(jobOrder);
-		builder.append("\n\tmigrateGUID: ");
-		builder.append(migrateGUID);
-		builder.append("\n\tpayRate: ");
-		builder.append(payRate);
-		builder.append("\n\tsalary: ");
-		builder.append(salary);
-		builder.append("\n\tsendingUser: ");
-		builder.append(sendingUser);
-		builder.append("\n\tsource: ");
-		builder.append(source);
-		builder.append("\n\tstatus: ");
-		builder.append(status);
-		builder.append("\n\ttasks: ");
-		builder.append(tasks);
-		builder.append("\n}");
-		return builder.toString();
+		return "JobSubmission{" +
+				"id=" + id +
+				", appointments=" + appointments +
+				", billRate=" + billRate +
+				", candidate=" + candidate +
+				", dateAdded=" + dateAdded +
+				", dateLastModified=" + dateLastModified +
+				", dateWebResponse=" + dateWebResponse +
+				", isDeleted=" + isDeleted +
+				", isHidden=" + isHidden +
+				", jobOrder=" + jobOrder +
+				", migrateGUID='" + migrateGUID + '\'' +
+				", payRate=" + payRate +
+				", salary=" + salary +
+				", sendingUser=" + sendingUser +
+				", source='" + source + '\'' +
+				", status='" + status + '\'' +
+				", tasks=" + tasks +
+				'}';
 	}
-
 }
