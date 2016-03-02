@@ -1,5 +1,9 @@
 package com.bullhornsdk.data;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * Contains the PS Sandbox test entities that should be used in unit tests.
  * 
@@ -47,6 +51,8 @@ public class TestEntities {
     private Integer leadId;
 
 	private Integer noteId;
+
+	private List<Integer> noteIdList;
 
 	private Integer noteEntityId;
 
@@ -119,6 +125,8 @@ public class TestEntities {
         this.leadId = 1;
 
 		this.noteId=1;
+
+		this.noteIdList= Stream.of(1,2).collect(Collectors.toList());
 
 		this.noteEntityId=1;
 
@@ -311,6 +319,14 @@ public class TestEntities {
 		this.noteId = noteId;
 	}
 
+	public List<Integer> getNoteIdList() {
+		return noteIdList;
+	}
+
+	public void setNoteIdList(List<Integer> noteIdList) {
+		this.noteIdList = noteIdList;
+	}
+
 	public Integer getNoteEntityId() {
 		return noteEntityId;
 	}
@@ -474,6 +490,8 @@ public class TestEntities {
                 .append(leadId)
                 .append(",\n\t\"noteId\": ")
                 .append(noteId)
+				.append(",\n\t\"noteIdList\": ")
+				.append(noteIdList.toString())
                 .append(",\n\t\"noteEntityId\": ")
                 .append(noteEntityId)
                 .append(",\n\t\"opportunityId\": ")

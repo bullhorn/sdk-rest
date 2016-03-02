@@ -5,6 +5,7 @@ import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectI
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.standard.*;
+import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -516,7 +517,16 @@ public class TestStandardBullhornApiRest extends BaseTest {
 
 		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId(), this.getFieldSet());
 
-		assertNotNull("Appointment is null", entity);
+		assertNotNull("Note is null", entity);
+
+	}
+
+	@Test
+	public void testFindMultipleNotes() {
+
+		ListWrapper<Note> entityList = bullhornData.findMultipleEntity(Note.class, testEntities.getNoteIdList(), this.getFieldSet());
+
+		assertNotNull("NoteList is null", entityList);
 
 	}
 

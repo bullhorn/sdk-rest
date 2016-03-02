@@ -115,6 +115,32 @@ public class MockDataHandler {
 
 		return newEntity;
 	}
+
+	/**
+	 * Returns a copy of the entity stored in restEntityMap.
+	 *
+	 * @param type
+	 * @param id
+	 * @return
+	 */
+	public <T extends BullhornEntity> ListWrapper<T> findMultipleEntities(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
+		List<T> entityList = new ArrayList<T>();
+		for (Integer id : idList) {
+			T entity = getEntityFromMap(type, id)
+			if(entity == null){
+				throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
+			}
+			Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+
+			T newEntity = createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields);
+			entityList.add(newEntity);
+		}
+
+		ListWrapper<T> wrapper = new StandardListWrapper<T>(entityList);
+		wrapper.setTotal(entityList.size());
+		wrapper.setStart(0);
+		return wrapper;
+	}
 	
 	private <T extends BullhornEntity> T getEntityFromMap(Class<T> type, Integer id){
 		T entity = null;
