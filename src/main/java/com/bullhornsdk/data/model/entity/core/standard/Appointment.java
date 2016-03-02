@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "appointmentUUID", "attendees", "candidateReference", "childAppointments", "clientContactReference",
         "communicationMethod", "dateAdded", "dateBegin", "dateEnd", "dateLastModified", "description", "isAllDay", "isDeleted",
-        "isPrivate", "jobOrder", "location", "migrateGUID", "notificationMinutes", "owner", "parentAppointment", "placement",
+        "isPrivate", "jobOrder", "lead", "location", "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentAppointment", "placement",
         "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
         "showTimeAs", "subject", "timeZoneID", "type" })
 public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity {
@@ -53,12 +53,16 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     private JobOrder jobOrder;
 
+    private Lead lead;
+
     @Size(max = 100)
     private String location;
 
     private Object migrateGUID;
 
     private Integer notificationMinutes;
+
+    private Opportunity opportunity;
 
     private LinkedPerson owner;
 
@@ -269,6 +273,16 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         this.jobOrder = jobOrder;
     }
 
+    @JsonProperty("lead")
+    public Lead getLead() {
+        return lead;
+    }
+
+    @JsonProperty("lead")
+    public void setLead(Lead lead) {
+        this.lead = lead;
+    }
+
     @JsonProperty("location")
     public String getLocation() {
         return location;
@@ -297,6 +311,16 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     @JsonProperty("notificationMinutes")
     public void setNotificationMinutes(Integer notificationMinutes) {
         this.notificationMinutes = notificationMinutes;
+    }
+
+    @JsonProperty("opportunity")
+    public Opportunity getOpportunity() {
+        return opportunity;
+    }
+
+    @JsonProperty("opportunity")
+    public void setOpportunity(Opportunity opportunity) {
+        this.opportunity = opportunity;
     }
 
     @JsonProperty("owner")
@@ -430,287 +454,139 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Appointment that = (Appointment) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (appointmentUUID != null ? !appointmentUUID.equals(that.appointmentUUID) : that.appointmentUUID != null)
+            return false;
+        if (attendees != null ? !attendees.equals(that.attendees) : that.attendees != null) return false;
+        if (candidateReference != null ? !candidateReference.equals(that.candidateReference) : that.candidateReference != null)
+            return false;
+        if (childAppointments != null ? !childAppointments.equals(that.childAppointments) : that.childAppointments != null)
+            return false;
+        if (clientContactReference != null ? !clientContactReference.equals(that.clientContactReference) : that.clientContactReference != null)
+            return false;
+        if (communicationMethod != null ? !communicationMethod.equals(that.communicationMethod) : that.communicationMethod != null)
+            return false;
+        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+        if (dateBegin != null ? !dateBegin.equals(that.dateBegin) : that.dateBegin != null) return false;
+        if (dateEnd != null ? !dateEnd.equals(that.dateEnd) : that.dateEnd != null) return false;
+        if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
+            return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
+        if (isAllDay != null ? !isAllDay.equals(that.isAllDay) : that.isAllDay != null) return false;
+        if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
+        if (isPrivate != null ? !isPrivate.equals(that.isPrivate) : that.isPrivate != null) return false;
+        if (jobOrder != null ? !jobOrder.equals(that.jobOrder) : that.jobOrder != null) return false;
+        if (lead != null ? !lead.equals(that.lead) : that.lead != null) return false;
+        if (location != null ? !location.equals(that.location) : that.location != null) return false;
+        if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+        if (notificationMinutes != null ? !notificationMinutes.equals(that.notificationMinutes) : that.notificationMinutes != null)
+            return false;
+        if (opportunity != null ? !opportunity.equals(that.opportunity) : that.opportunity != null) return false;
+        if (owner != null ? !owner.equals(that.owner) : that.owner != null) return false;
+        if (parentAppointment != null ? !parentAppointment.equals(that.parentAppointment) : that.parentAppointment != null)
+            return false;
+        if (placement != null ? !placement.equals(that.placement) : that.placement != null) return false;
+        if (recurrenceDayBits != null ? !recurrenceDayBits.equals(that.recurrenceDayBits) : that.recurrenceDayBits != null)
+            return false;
+        if (recurrenceFrequency != null ? !recurrenceFrequency.equals(that.recurrenceFrequency) : that.recurrenceFrequency != null)
+            return false;
+        if (recurrenceMax != null ? !recurrenceMax.equals(that.recurrenceMax) : that.recurrenceMax != null)
+            return false;
+        if (recurrenceMonthBits != null ? !recurrenceMonthBits.equals(that.recurrenceMonthBits) : that.recurrenceMonthBits != null)
+            return false;
+        if (recurrenceStyle != null ? !recurrenceStyle.equals(that.recurrenceStyle) : that.recurrenceStyle != null)
+            return false;
+        if (recurrenceType != null ? !recurrenceType.equals(that.recurrenceType) : that.recurrenceType != null)
+            return false;
+        if (showTimeAs != null ? !showTimeAs.equals(that.showTimeAs) : that.showTimeAs != null) return false;
+        if (subject != null ? !subject.equals(that.subject) : that.subject != null) return false;
+        if (timeZoneID != null ? !timeZoneID.equals(that.timeZoneID) : that.timeZoneID != null) return false;
+        return !(type != null ? !type.equals(that.type) : that.type != null);
+
+    }
+
+    @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((appointmentUUID == null) ? 0 : appointmentUUID.hashCode());
-        result = prime * result + ((attendees == null) ? 0 : attendees.hashCode());
-        result = prime * result + ((candidateReference == null) ? 0 : candidateReference.hashCode());
-        result = prime * result + ((childAppointments == null) ? 0 : childAppointments.hashCode());
-        result = prime * result + ((clientContactReference == null) ? 0 : clientContactReference.hashCode());
-        result = prime * result + ((communicationMethod == null) ? 0 : communicationMethod.hashCode());
-        result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-        result = prime * result + ((dateBegin == null) ? 0 : dateBegin.hashCode());
-        result = prime * result + ((dateEnd == null) ? 0 : dateEnd.hashCode());
-        result = prime * result + ((dateLastModified == null) ? 0 : dateLastModified.hashCode());
-        result = prime * result + ((description == null) ? 0 : description.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((isAllDay == null) ? 0 : isAllDay.hashCode());
-        result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
-        result = prime * result + ((isPrivate == null) ? 0 : isPrivate.hashCode());
-        result = prime * result + ((jobOrder == null) ? 0 : jobOrder.hashCode());
-        result = prime * result + ((location == null) ? 0 : location.hashCode());
-        result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-        result = prime * result + ((notificationMinutes == null) ? 0 : notificationMinutes.hashCode());
-        result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-        result = prime * result + ((parentAppointment == null) ? 0 : parentAppointment.hashCode());
-        result = prime * result + ((placement == null) ? 0 : placement.hashCode());
-        result = prime * result + ((recurrenceDayBits == null) ? 0 : recurrenceDayBits.hashCode());
-        result = prime * result + ((recurrenceFrequency == null) ? 0 : recurrenceFrequency.hashCode());
-        result = prime * result + ((recurrenceMax == null) ? 0 : recurrenceMax.hashCode());
-        result = prime * result + ((recurrenceMonthBits == null) ? 0 : recurrenceMonthBits.hashCode());
-        result = prime * result + ((recurrenceStyle == null) ? 0 : recurrenceStyle.hashCode());
-        result = prime * result + ((recurrenceType == null) ? 0 : recurrenceType.hashCode());
-        result = prime * result + ((showTimeAs == null) ? 0 : showTimeAs.hashCode());
-        result = prime * result + ((subject == null) ? 0 : subject.hashCode());
-        result = prime * result + ((timeZoneID == null) ? 0 : timeZoneID.hashCode());
-        result = prime * result + ((type == null) ? 0 : type.hashCode());
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (appointmentUUID != null ? appointmentUUID.hashCode() : 0);
+        result = 31 * result + (attendees != null ? attendees.hashCode() : 0);
+        result = 31 * result + (candidateReference != null ? candidateReference.hashCode() : 0);
+        result = 31 * result + (childAppointments != null ? childAppointments.hashCode() : 0);
+        result = 31 * result + (clientContactReference != null ? clientContactReference.hashCode() : 0);
+        result = 31 * result + (communicationMethod != null ? communicationMethod.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (dateBegin != null ? dateBegin.hashCode() : 0);
+        result = 31 * result + (dateEnd != null ? dateEnd.hashCode() : 0);
+        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (isAllDay != null ? isAllDay.hashCode() : 0);
+        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+        result = 31 * result + (isPrivate != null ? isPrivate.hashCode() : 0);
+        result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
+        result = 31 * result + (lead != null ? lead.hashCode() : 0);
+        result = 31 * result + (location != null ? location.hashCode() : 0);
+        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+        result = 31 * result + (notificationMinutes != null ? notificationMinutes.hashCode() : 0);
+        result = 31 * result + (opportunity != null ? opportunity.hashCode() : 0);
+        result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (parentAppointment != null ? parentAppointment.hashCode() : 0);
+        result = 31 * result + (placement != null ? placement.hashCode() : 0);
+        result = 31 * result + (recurrenceDayBits != null ? recurrenceDayBits.hashCode() : 0);
+        result = 31 * result + (recurrenceFrequency != null ? recurrenceFrequency.hashCode() : 0);
+        result = 31 * result + (recurrenceMax != null ? recurrenceMax.hashCode() : 0);
+        result = 31 * result + (recurrenceMonthBits != null ? recurrenceMonthBits.hashCode() : 0);
+        result = 31 * result + (recurrenceStyle != null ? recurrenceStyle.hashCode() : 0);
+        result = 31 * result + (recurrenceType != null ? recurrenceType.hashCode() : 0);
+        result = 31 * result + (showTimeAs != null ? showTimeAs.hashCode() : 0);
+        result = 31 * result + (subject != null ? subject.hashCode() : 0);
+        result = 31 * result + (timeZoneID != null ? timeZoneID.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Appointment other = (Appointment) obj;
-        if (appointmentUUID == null) {
-            if (other.appointmentUUID != null)
-                return false;
-        } else if (!appointmentUUID.equals(other.appointmentUUID))
-            return false;
-        if (attendees == null) {
-            if (other.attendees != null)
-                return false;
-        } else if (!attendees.equals(other.attendees))
-            return false;
-        if (candidateReference == null) {
-            if (other.candidateReference != null)
-                return false;
-        } else if (!candidateReference.equals(other.candidateReference))
-            return false;
-        if (childAppointments == null) {
-            if (other.childAppointments != null)
-                return false;
-        } else if (!childAppointments.equals(other.childAppointments))
-            return false;
-        if (clientContactReference == null) {
-            if (other.clientContactReference != null)
-                return false;
-        } else if (!clientContactReference.equals(other.clientContactReference))
-            return false;
-        if (communicationMethod == null) {
-            if (other.communicationMethod != null)
-                return false;
-        } else if (!communicationMethod.equals(other.communicationMethod))
-            return false;
-        if (dateAdded == null) {
-            if (other.dateAdded != null)
-                return false;
-        } else if (!dateAdded.isEqual(other.dateAdded))
-            return false;
-        if (dateBegin == null) {
-            if (other.dateBegin != null)
-                return false;
-        } else if (!dateBegin.isEqual(other.dateBegin))
-            return false;
-        if (dateEnd == null) {
-            if (other.dateEnd != null)
-                return false;
-        } else if (!dateEnd.isEqual(other.dateEnd))
-            return false;
-        if (dateLastModified == null) {
-            if (other.dateLastModified != null)
-                return false;
-        } else if (!dateLastModified.isEqual(other.dateLastModified))
-            return false;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (isAllDay == null) {
-            if (other.isAllDay != null)
-                return false;
-        } else if (!isAllDay.equals(other.isAllDay))
-            return false;
-        if (isDeleted == null) {
-            if (other.isDeleted != null)
-                return false;
-        } else if (!isDeleted.equals(other.isDeleted))
-            return false;
-        if (isPrivate == null) {
-            if (other.isPrivate != null)
-                return false;
-        } else if (!isPrivate.equals(other.isPrivate))
-            return false;
-        if (jobOrder == null) {
-            if (other.jobOrder != null)
-                return false;
-        } else if (!jobOrder.equals(other.jobOrder))
-            return false;
-        if (location == null) {
-            if (other.location != null)
-                return false;
-        } else if (!location.equals(other.location))
-            return false;
-        if (migrateGUID == null) {
-            if (other.migrateGUID != null)
-                return false;
-        } else if (!migrateGUID.equals(other.migrateGUID))
-            return false;
-        if (notificationMinutes == null) {
-            if (other.notificationMinutes != null)
-                return false;
-        } else if (!notificationMinutes.equals(other.notificationMinutes))
-            return false;
-        if (owner == null) {
-            if (other.owner != null)
-                return false;
-        } else if (!owner.equals(other.owner))
-            return false;
-        if (parentAppointment == null) {
-            if (other.parentAppointment != null)
-                return false;
-        } else if (!parentAppointment.equals(other.parentAppointment))
-            return false;
-        if (placement == null) {
-            if (other.placement != null)
-                return false;
-        } else if (!placement.equals(other.placement))
-            return false;
-        if (recurrenceDayBits == null) {
-            if (other.recurrenceDayBits != null)
-                return false;
-        } else if (!recurrenceDayBits.equals(other.recurrenceDayBits))
-            return false;
-        if (recurrenceFrequency == null) {
-            if (other.recurrenceFrequency != null)
-                return false;
-        } else if (!recurrenceFrequency.equals(other.recurrenceFrequency))
-            return false;
-        if (recurrenceMax == null) {
-            if (other.recurrenceMax != null)
-                return false;
-        } else if (!recurrenceMax.equals(other.recurrenceMax))
-            return false;
-        if (recurrenceMonthBits == null) {
-            if (other.recurrenceMonthBits != null)
-                return false;
-        } else if (!recurrenceMonthBits.equals(other.recurrenceMonthBits))
-            return false;
-        if (recurrenceStyle == null) {
-            if (other.recurrenceStyle != null)
-                return false;
-        } else if (!recurrenceStyle.equals(other.recurrenceStyle))
-            return false;
-        if (recurrenceType == null) {
-            if (other.recurrenceType != null)
-                return false;
-        } else if (!recurrenceType.equals(other.recurrenceType))
-            return false;
-        if (showTimeAs == null) {
-            if (other.showTimeAs != null)
-                return false;
-        } else if (!showTimeAs.equals(other.showTimeAs))
-            return false;
-        if (subject == null) {
-            if (other.subject != null)
-                return false;
-        } else if (!subject.equals(other.subject))
-            return false;
-        if (timeZoneID == null) {
-            if (other.timeZoneID != null)
-                return false;
-        } else if (!timeZoneID.equals(other.timeZoneID))
-            return false;
-        if (type == null) {
-            if (other.type != null)
-                return false;
-        } else if (!type.equals(other.type))
-            return false;
-        return true;
-    }
-
-    @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Appointment {\nid=");
-        builder.append(id);
-        builder.append(", \nappointmentUUID=");
-        builder.append(appointmentUUID);
-        builder.append(", \nattendees=");
-        builder.append(attendees);
-        builder.append(", \ncandidateReference=");
-        builder.append(candidateReference);
-        builder.append(", \nchildAppointments=");
-        builder.append(childAppointments);
-        builder.append(", \nclientContactReference=");
-        builder.append(clientContactReference);
-        builder.append(", \ncommunicationMethod=");
-        builder.append(communicationMethod);
-        builder.append(", \ndateAdded=");
-        builder.append(dateAdded);
-        builder.append(", \ndateBegin=");
-        builder.append(dateBegin);
-        builder.append(", \ndateEnd=");
-        builder.append(dateEnd);
-        builder.append(", \ndateLastModified=");
-        builder.append(dateLastModified);
-        builder.append(", \ndescription=");
-        builder.append(description);
-        builder.append(", \nisAllDay=");
-        builder.append(isAllDay);
-        builder.append(", \nisDeleted=");
-        builder.append(isDeleted);
-        builder.append(", \nisPrivate=");
-        builder.append(isPrivate);
-        builder.append(", \njobOrder=");
-        builder.append(jobOrder);
-        builder.append(", \nlocation=");
-        builder.append(location);
-        builder.append(", \nmigrateGUID=");
-        builder.append(migrateGUID);
-        builder.append(", \nnotificationMinutes=");
-        builder.append(notificationMinutes);
-        builder.append(", \nowner=");
-        builder.append(owner);
-        builder.append(", \nparentAppointment=");
-        builder.append(parentAppointment);
-        builder.append(", \nplacement=");
-        builder.append(placement);
-        builder.append(", \nrecurrenceDayBits=");
-        builder.append(recurrenceDayBits);
-        builder.append(", \nrecurrenceFrequency=");
-        builder.append(recurrenceFrequency);
-        builder.append(", \nrecurrenceMax=");
-        builder.append(recurrenceMax);
-        builder.append(", \nrecurrenceMonthBits=");
-        builder.append(recurrenceMonthBits);
-        builder.append(", \nrecurrenceStyle=");
-        builder.append(recurrenceStyle);
-        builder.append(", \nrecurrenceType=");
-        builder.append(recurrenceType);
-        builder.append(", \nshowTimeAs=");
-        builder.append(showTimeAs);
-        builder.append(", \nsubject=");
-        builder.append(subject);
-        builder.append(", \ntimeZoneID=");
-        builder.append(timeZoneID);
-        builder.append(", \ntype=");
-        builder.append(type);
-        builder.append(", \nadditionalProperties=");
-        builder.append(this.getAdditionalProperties());
-        builder.append("\n}");
-        return builder.toString();
+        return "Appointment{" +
+                "id=" + id +
+                ", appointmentUUID='" + appointmentUUID + '\'' +
+                ", attendees=" + attendees +
+                ", candidateReference=" + candidateReference +
+                ", childAppointments=" + childAppointments +
+                ", clientContactReference=" + clientContactReference +
+                ", communicationMethod='" + communicationMethod + '\'' +
+                ", dateAdded=" + dateAdded +
+                ", dateBegin=" + dateBegin +
+                ", dateEnd=" + dateEnd +
+                ", dateLastModified=" + dateLastModified +
+                ", description='" + description + '\'' +
+                ", isAllDay=" + isAllDay +
+                ", isDeleted=" + isDeleted +
+                ", isPrivate=" + isPrivate +
+                ", jobOrder=" + jobOrder +
+                ", lead=" + lead +
+                ", location='" + location + '\'' +
+                ", migrateGUID=" + migrateGUID +
+                ", notificationMinutes=" + notificationMinutes +
+                ", opportunity=" + opportunity +
+                ", owner=" + owner +
+                ", parentAppointment=" + parentAppointment +
+                ", placement=" + placement +
+                ", recurrenceDayBits=" + recurrenceDayBits +
+                ", recurrenceFrequency=" + recurrenceFrequency +
+                ", recurrenceMax=" + recurrenceMax +
+                ", recurrenceMonthBits=" + recurrenceMonthBits +
+                ", recurrenceStyle='" + recurrenceStyle + '\'' +
+                ", recurrenceType='" + recurrenceType + '\'' +
+                ", showTimeAs='" + showTimeAs + '\'' +
+                ", subject='" + subject + '\'' +
+                ", timeZoneID='" + timeZoneID + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
-
 }
