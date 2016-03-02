@@ -67,11 +67,15 @@ public class MockBullhornData implements BullhornData {
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id) {
 		return mockDataHandler.findEntity(type, id);
 	}
-	
 
 	@Override
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
 		return mockDataHandler.findEntity(type, id, fieldSet);
+	}
+
+	@Override
+	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
+		return mockDataHandler.findMultipleEntities(type, idList, fieldSet);
 	}
 
 	@Override

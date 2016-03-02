@@ -2,16 +2,12 @@ package com.bullhornsdk.data.api;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -192,6 +188,25 @@ public class StandardBullhornData implements BullhornData {
 	@Override
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
 		return this.handleGetEntity(type, id, fieldSet, ParamFactory.entityParams());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
+		List<Integer> uniqueIdList = new ArrayList<Integer>();
+		for (Integer id : idList) {
+			if (!uniqueIdList.contains(id)) {
+				uniqueIdList.add(id);
+			}
+		}
+		if (uniqueIdList.size() == 1) {
+			List<T> list = new ArrayList<T>();
+			list.add(this.handleGetEntity(type, uniqueIdList.get(0), fieldSet, ParamFactory.entityParams()));
+			return (L) new StandardListWrapper<T>(list);
+		}
+		return this.handleGetMultipleEntities(type, uniqueIdList, fieldSet, ParamFactory.entityParams());
 	}
 
 	/**
@@ -631,6 +646,28 @@ public class StandardBullhornData implements BullhornData {
 
 		return restJsonConverter.jsonToEntityUnwrapRoot(jsonString, type);
 
+	}
+
+	/**
+	 * Makes the "entity" api call for getting multiple entities.
+	 *
+	 *
+	 * HTTP Method: GET
+	 *
+	 * @param type
+	 * @param idList
+	 * @param fieldSet
+	 * @param params
+	 * @param <L>
+	 * @param <T>
+	 * @return
+	 */
+	private <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, List<Integer> idList, Set<String> fieldSet, EntityParams params) {
+		String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
+		String url = restUrlFactory.assembleEntityUrl(params);
+
+		return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 	}
 
 	/**
