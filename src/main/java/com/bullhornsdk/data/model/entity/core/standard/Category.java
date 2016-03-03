@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "externalID", "isDeleted", "name", "occupation", "privateLabels", "skills", "specialties", "type" })
+@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "externalID", "name", "occupation", "privateLabels", "skills", "specialties", "type" })
 public class Category extends AbstractEntity implements QueryEntity, AssociationEntity {
 
 	private Integer id;
@@ -25,8 +25,6 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 	private Boolean enabled;
 
 	private Object externalID;
-
-	private Boolean isDeleted;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -106,16 +104,6 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 		this.externalID = externalID;
 	}
 
-	@JsonProperty("isDeleted")
-	public Boolean getIsDeleted() {
-		return isDeleted;
-	}
-
-	@JsonProperty("isDeleted")
-	public void setIsDeleted(Boolean isDeleted) {
-		this.isDeleted = isDeleted;
-	}
-
 	@JsonProperty("name")
 	public String getName() {
 		return name;
@@ -189,7 +177,6 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 			return false;
 		if (enabled != null ? !enabled.equals(category.enabled) : category.enabled != null) return false;
 		if (externalID != null ? !externalID.equals(category.externalID) : category.externalID != null) return false;
-		if (isDeleted != null ? !isDeleted.equals(category.isDeleted) : category.isDeleted != null) return false;
 		if (name != null ? !name.equals(category.name) : category.name != null) return false;
 		if (occupation != null ? !occupation.equals(category.occupation) : category.occupation != null) return false;
 		if (privateLabels != null ? !privateLabels.equals(category.privateLabels) : category.privateLabels != null)
@@ -208,7 +195,6 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 		result = 31 * result + (description != null ? description.hashCode() : 0);
 		result = 31 * result + (enabled != null ? enabled.hashCode() : 0);
 		result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
-		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
 		result = 31 * result + (name != null ? name.hashCode() : 0);
 		result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
 		result = 31 * result + (privateLabels != null ? privateLabels.hashCode() : 0);
@@ -226,7 +212,6 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 				", description='" + description + '\'' +
 				", enabled=" + enabled +
 				", externalID=" + externalID +
-				", isDeleted=" + isDeleted +
 				", name='" + name + '\'' +
 				", occupation='" + occupation + '\'' +
 				", privateLabels=" + privateLabels +
