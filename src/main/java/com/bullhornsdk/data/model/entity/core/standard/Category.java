@@ -1,22 +1,17 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "externalID", "name", "occupation", "skills", "specialties", "type" })
+@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "externalID", "isDeleted", "name", "occupation", "privateLabels", "skills", "specialties", "type" })
 public class Category extends AbstractEntity implements QueryEntity, AssociationEntity {
 
 	private Integer id;
@@ -31,6 +26,8 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 
 	private Object externalID;
 
+	private Boolean isDeleted;
+
 	@JsonIgnore
 	@Size(max = 100)
 	private String name;
@@ -38,6 +35,8 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 	@JsonIgnore
 	@Size(max = 50)
 	private String occupation;
+
+	private OneToMany<PrivateLabel> privateLabels;
 
 	private OneToMany<Skill> skills;
 
@@ -107,6 +106,16 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 		this.externalID = externalID;
 	}
 
+	@JsonProperty("isDeleted")
+	public Boolean getIsDeleted() {
+		return isDeleted;
+	}
+
+	@JsonProperty("isDeleted")
+	public void setIsDeleted(Boolean isDeleted) {
+		this.isDeleted = isDeleted;
+	}
+
 	@JsonProperty("name")
 	public String getName() {
 		return name;
@@ -125,6 +134,16 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 	@JsonIgnore
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
+	}
+
+	@JsonProperty("privateLabels")
+	public OneToMany<PrivateLabel> getPrivateLabels() {
+		return privateLabels;
+	}
+
+	@JsonProperty("privateLabels")
+	public void setPrivateLabels(OneToMany<PrivateLabel> privateLabels) {
+		this.privateLabels = privateLabels;
 	}
 
 	@JsonProperty("skills")
@@ -158,111 +177,62 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Category category = (Category) o;
+
+		if (id != null ? !id.equals(category.id) : category.id != null) return false;
+		if (dateAdded != null ? !dateAdded.equals(category.dateAdded) : category.dateAdded != null) return false;
+		if (description != null ? !description.equals(category.description) : category.description != null)
+			return false;
+		if (enabled != null ? !enabled.equals(category.enabled) : category.enabled != null) return false;
+		if (externalID != null ? !externalID.equals(category.externalID) : category.externalID != null) return false;
+		if (isDeleted != null ? !isDeleted.equals(category.isDeleted) : category.isDeleted != null) return false;
+		if (name != null ? !name.equals(category.name) : category.name != null) return false;
+		if (occupation != null ? !occupation.equals(category.occupation) : category.occupation != null) return false;
+		if (privateLabels != null ? !privateLabels.equals(category.privateLabels) : category.privateLabels != null)
+			return false;
+		if (skills != null ? !skills.equals(category.skills) : category.skills != null) return false;
+		if (specialties != null ? !specialties.equals(category.specialties) : category.specialties != null)
+			return false;
+		return !(type != null ? !type.equals(category.type) : category.type != null);
+
+	}
+
+	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((enabled == null) ? 0 : enabled.hashCode());
-		result = prime * result + ((externalID == null) ? 0 : externalID.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((occupation == null) ? 0 : occupation.hashCode());
-		result = prime * result + ((skills == null) ? 0 : skills.hashCode());
-		result = prime * result + ((specialties == null) ? 0 : specialties.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+		result = 31 * result + (description != null ? description.hashCode() : 0);
+		result = 31 * result + (enabled != null ? enabled.hashCode() : 0);
+		result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
+		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
+		result = 31 * result + (privateLabels != null ? privateLabels.hashCode() : 0);
+		result = 31 * result + (skills != null ? skills.hashCode() : 0);
+		result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
+		result = 31 * result + (type != null ? type.hashCode() : 0);
 		return result;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Category other = (Category) obj;
-		if (dateAdded == null) {
-			if (other.dateAdded != null)
-				return false;
-		} else if (!dateAdded.isEqual(other.dateAdded))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (enabled == null) {
-			if (other.enabled != null)
-				return false;
-		} else if (!enabled.equals(other.enabled))
-			return false;
-		if (externalID == null) {
-			if (other.externalID != null)
-				return false;
-		} else if (!externalID.equals(other.externalID))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (occupation == null) {
-			if (other.occupation != null)
-				return false;
-		} else if (!occupation.equals(other.occupation))
-			return false;
-		if (skills == null) {
-			if (other.skills != null)
-				return false;
-		} else if (!skills.equals(other.skills))
-			return false;
-		if (specialties == null) {
-			if (other.specialties != null)
-				return false;
-		} else if (!specialties.equals(other.specialties))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		return true;
-	}
-
-	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Category {\nid=");
-		builder.append(id);
-		builder.append(", \ndateAdded=");
-		builder.append(dateAdded);
-		builder.append(", \ndescription=");
-		builder.append(description);
-		builder.append(", \nenabled=");
-		builder.append(enabled);
-		builder.append(", \nexternalID=");
-		builder.append(externalID);
-		builder.append(", \nname=");
-		builder.append(name);
-		builder.append(", \noccupation=");
-		builder.append(occupation);
-		builder.append(", \nskills=");
-		builder.append(skills);
-		builder.append(", \nspecialties=");
-		builder.append(specialties);
-		builder.append(", \ntype=");
-		builder.append(type);
-		builder.append(", \nadditionalProperties=");
-		builder.append(this.getAdditionalProperties());
-		builder.append("\n}");
-		return builder.toString();
+		return "Category{" +
+				"id=" + id +
+				", dateAdded=" + dateAdded +
+				", description='" + description + '\'' +
+				", enabled=" + enabled +
+				", externalID=" + externalID +
+				", isDeleted=" + isDeleted +
+				", name='" + name + '\'' +
+				", occupation='" + occupation + '\'' +
+				", privateLabels=" + privateLabels +
+				", skills=" + skills +
+				", specialties=" + specialties +
+				", type='" + type + '\'' +
+				'}';
 	}
-
 }

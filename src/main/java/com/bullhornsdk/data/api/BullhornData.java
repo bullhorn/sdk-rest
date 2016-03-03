@@ -1,37 +1,17 @@
 package com.bullhornsdk.data.api;
 
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import org.springframework.web.multipart.MultipartFile;
-
 import com.bullhornsdk.data.api.helper.RestApiSession;
 import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.FileEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.enums.MetaParameter;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
+import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
+import com.bullhornsdk.data.model.response.event.GetEventsResponse;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
 import com.bullhornsdk.data.model.response.file.FileMeta;
@@ -39,6 +19,12 @@ import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Core bullhorn data service, handles api calls and data mapping.
@@ -56,6 +42,15 @@ public interface BullhornData {
 	 * @return an entity of type T, or null if an error occurred
 	 */
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id);
+
+	/**
+	 * Returns all fields for passed in entity type with the passed in id or ids
+	 *
+	 * @param type type of BullhornEntity
+	 * @param idList idList of BullhornEntity
+	 * @return an entity of type T, or null if an error occurred
+	 */
+	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet);
 
 	/**
 	 * Returns the entity of passed in type with the passed in id, fields to get are specifed by the fieldSet.
@@ -532,6 +527,32 @@ public interface BullhornData {
 	 * @return a CreateResponse with information about the new file
 	 */
 	public <C extends CrudResponse> C addNoteAndAssociateWithEntity(Note note);
+
+    /**
+     * Returns the last request ID processed for the passed in subscription
+     *
+     * @param subscriptionId the name of the subscription we want the last request ID for
+     * @return the last request ID for the subscription passed in, -1 if there was no last request ID
+     */
+    public Integer getLastRequestId(String subscriptionId);
+
+    /**
+     * Returns a {@link GetEventsResponse} containing at most maxEvents number of events for the given subscriptionId.
+     *
+     * @param subscriptionId the name of the subscription we want to retrieve events for
+     * @param maxEvents the maximum number of events to return
+     * @return a GetEventsResponse containing the id of the request we just made as well as the events for the subscription
+     */
+    public GetEventsResponse getEvents(String subscriptionId, Integer maxEvents);
+
+    /**
+     * Returns a {@link GetEventsResponse} containing the events that were previously returned for the given requestId.
+     *
+     * @param subscriptionId the name of the subscription we want to retrieve events for
+     * @param requestId the request that we want to pull events for.  Use the requestId returned in the response from {@link #getEvents(String, Integer)}
+     * @return a GetEventsResponse containing the id of the request we asked for as well as the events for that request
+     */
+    public GetEventsResponse regetEvents(String subscriptionId, Integer requestId);
 
 	/**
 	 * Returns the RestApiSession that manages the sessions for one corporation. Use this get access to corporationID and apiKey.

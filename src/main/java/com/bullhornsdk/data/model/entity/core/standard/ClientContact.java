@@ -1,41 +1,20 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.FileEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.RestUtil;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -50,11 +29,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"customText4", "customText5", "customText6", "customText7",
 		"customText8", "customText9", "customTextBlock1", "customTextBlock2",
 		"customTextBlock3", "customTextBlock4", "customTextBlock5",
-		"dateAdded", "dateLastComment", "dateLastVisit", "deleteMe",
+		"dateAdded", "dateLastComment", "dateLastModified", "dateLastVisit", "deleteMe",
 		"description", "desiredCategories", "desiredSkills",
 		"desiredSpecialties", "division", "email", "email2", "email3",
 		"externalID", "fax", "fax2", "fax3", "firstName", "isDayLightSavings",
-		"isDeleted", "isLockedOut", "lastName", "linkedPerson",
+		"isDeleted", "isLockedOut", "lastName", "linkedPerson", "leads",
 		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name",
 		"namePrefix", "nameSuffix", "nickName", "numEmployees", "occupation",
 		"office", "owner", "pager", "password", "phone", "phone2", "phone3",
@@ -66,7 +45,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
         "customObject8s", "customObject9s", "customObject10s" })
 public class ClientContact extends CustomFieldsB implements QueryEntity,
 		UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
-		AssociationEntity, SearchEntity {
+		AssociationEntity, SearchEntity, DateLastModifiedEntity {
 
 	private Integer id;
 
@@ -91,6 +70,8 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	private DateTime dateAdded;
 
 	private DateTime dateLastComment;
+
+	private DateTime dateLastModified;
 
 	private DateTime dateLastVisit;
 
@@ -158,6 +139,8 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	private String lastName;
 
 	private LinkedPerson linkedPerson;
+
+	private OneToMany<Lead> leads;
 
 	private Boolean massMailOptOut;
 
@@ -417,6 +400,16 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		this.dateLastComment = dateLastComment;
 	}
 
+	@JsonProperty("dateLastModified")
+	public DateTime getDateLastModified() {
+		return dateLastModified;
+	}
+
+	@JsonProperty("dateLastModified")
+	public void setDateLastModified(DateTime dateLastModified) {
+		this.dateLastModified = dateLastModified;
+	}
+
 	@JsonProperty("dateLastVisit")
 	public DateTime getDateLastVisit() {
 		return dateLastVisit;
@@ -615,6 +608,16 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	@JsonProperty("linkedPerson")
 	public void setLinkedPerson(LinkedPerson linkedPerson) {
 		this.linkedPerson = linkedPerson;
+	}
+
+	@JsonProperty("leads")
+	public OneToMany<Lead> getLeads() {
+		return leads;
+	}
+
+	@JsonProperty("leads")
+	public void setLeads(OneToMany<Lead> leads) {
+		this.leads = leads;
 	}
 
 	@JsonProperty("massMailOptOut")
@@ -1047,375 +1050,275 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         this.customObject10s = customObject10s;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ClientContact)) return false;
-        if (!super.equals(o)) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		if (!super.equals(o)) return false;
 
-        ClientContact that = (ClientContact) o;
+		ClientContact that = (ClientContact) o;
 
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (businessSectors != null ? !businessSectors.equals(that.businessSectors) : that.businessSectors != null)
-            return false;
-        if (categories != null ? !categories.equals(that.categories) : that.categories != null) return false;
-        if (category != null ? !category.equals(that.category) : that.category != null) return false;
-        if (certifications != null ? !certifications.equals(that.certifications) : that.certifications != null)
-            return false;
-        if (clientContactID != null ? !clientContactID.equals(that.clientContactID) : that.clientContactID != null)
-            return false;
-        if (clientCorporation != null ? !clientCorporation.equals(that.clientCorporation) : that.clientCorporation != null)
-            return false;
-        if (comments != null ? !comments.equals(that.comments) : that.comments != null) return false;
-        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
-        if (dateLastComment != null ? !dateLastComment.equals(that.dateLastComment) : that.dateLastComment != null)
-            return false;
-        if (dateLastVisit != null ? !dateLastVisit.equals(that.dateLastVisit) : that.dateLastVisit != null)
-            return false;
-        if (deleteMe != null ? !deleteMe.equals(that.deleteMe) : that.deleteMe != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (desiredCategories != null ? !desiredCategories.equals(that.desiredCategories) : that.desiredCategories != null)
-            return false;
-        if (desiredSkills != null ? !desiredSkills.equals(that.desiredSkills) : that.desiredSkills != null)
-            return false;
-        if (desiredSpecialties != null ? !desiredSpecialties.equals(that.desiredSpecialties) : that.desiredSpecialties != null)
-            return false;
-        if (division != null ? !division.equals(that.division) : that.division != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
-        if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
-        if (externalID != null ? !externalID.equals(that.externalID) : that.externalID != null) return false;
-        if (fax != null ? !fax.equals(that.fax) : that.fax != null) return false;
-        if (fax2 != null ? !fax2.equals(that.fax2) : that.fax2 != null) return false;
-        if (fax3 != null ? !fax3.equals(that.fax3) : that.fax3 != null) return false;
-        if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
-        if (isDayLightSavings != null ? !isDayLightSavings.equals(that.isDayLightSavings) : that.isDayLightSavings != null)
-            return false;
-        if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
-        if (isLockedOut != null ? !isLockedOut.equals(that.isLockedOut) : that.isLockedOut != null) return false;
-        if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
-        if (linkedPerson != null ? !linkedPerson.equals(that.linkedPerson) : that.linkedPerson != null) return false;
-        if (massMailOptOut != null ? !massMailOptOut.equals(that.massMailOptOut) : that.massMailOptOut != null)
-            return false;
-        if (middleName != null ? !middleName.equals(that.middleName) : that.middleName != null) return false;
-        if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
-        if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (namePrefix != null ? !namePrefix.equals(that.namePrefix) : that.namePrefix != null) return false;
-        if (nameSuffix != null ? !nameSuffix.equals(that.nameSuffix) : that.nameSuffix != null) return false;
-        if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
-        if (numEmployees != null ? !numEmployees.equals(that.numEmployees) : that.numEmployees != null) return false;
-        if (occupation != null ? !occupation.equals(that.occupation) : that.occupation != null) return false;
-        if (office != null ? !office.equals(that.office) : that.office != null) return false;
-        if (owner != null ? !owner.equals(that.owner) : that.owner != null) return false;
-        if (pager != null ? !pager.equals(that.pager) : that.pager != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
-        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        if (phone2 != null ? !phone2.equals(that.phone2) : that.phone2 != null) return false;
-        if (phone3 != null ? !phone3.equals(that.phone3) : that.phone3 != null) return false;
-        if (preferredContact != null ? !preferredContact.equals(that.preferredContact) : that.preferredContact != null)
-            return false;
-        if (referredByPerson != null ? !referredByPerson.equals(that.referredByPerson) : that.referredByPerson != null)
-            return false;
-        if (reportToPerson != null ? !reportToPerson.equals(that.reportToPerson) : that.reportToPerson != null)
-            return false;
-        if (secondaryAddress != null ? !secondaryAddress.equals(that.secondaryAddress) : that.secondaryAddress != null)
-            return false;
-        if (secondaryOwners != null ? !secondaryOwners.equals(that.secondaryOwners) : that.secondaryOwners != null)
-            return false;
-        if (skills != null ? !skills.equals(that.skills) : that.skills != null) return false;
-        if (smsOptIn != null ? !smsOptIn.equals(that.smsOptIn) : that.smsOptIn != null) return false;
-        if (source != null ? !source.equals(that.source) : that.source != null) return false;
-        if (specialties != null ? !specialties.equals(that.specialties) : that.specialties != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (tearsheets != null ? !tearsheets.equals(that.tearsheets) : that.tearsheets != null) return false;
-        if (timeZoneOffsetEST != null ? !timeZoneOffsetEST.equals(that.timeZoneOffsetEST) : that.timeZoneOffsetEST != null)
-            return false;
-        if (type != null ? !type.equals(that.type) : that.type != null) return false;
-        if (username != null ? !username.equals(that.username) : that.username != null) return false;
-        if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
-            return false;
-        if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
-            return false;
-        if (customObject3s != null ? !customObject3s.equals(that.customObject3s) : that.customObject3s != null)
-            return false;
-        if (customObject4s != null ? !customObject4s.equals(that.customObject4s) : that.customObject4s != null)
-            return false;
-        if (customObject5s != null ? !customObject5s.equals(that.customObject5s) : that.customObject5s != null)
-            return false;
-        if (customObject6s != null ? !customObject6s.equals(that.customObject6s) : that.customObject6s != null)
-            return false;
-        if (customObject7s != null ? !customObject7s.equals(that.customObject7s) : that.customObject7s != null)
-            return false;
-        if (customObject8s != null ? !customObject8s.equals(that.customObject8s) : that.customObject8s != null)
-            return false;
-        if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
-            return false;
-        return !(customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null);
+		if (id != null ? !id.equals(that.id) : that.id != null) return false;
+		if (address != null ? !address.equals(that.address) : that.address != null) return false;
+		if (businessSectors != null ? !businessSectors.equals(that.businessSectors) : that.businessSectors != null)
+			return false;
+		if (categories != null ? !categories.equals(that.categories) : that.categories != null) return false;
+		if (category != null ? !category.equals(that.category) : that.category != null) return false;
+		if (certifications != null ? !certifications.equals(that.certifications) : that.certifications != null)
+			return false;
+		if (clientContactID != null ? !clientContactID.equals(that.clientContactID) : that.clientContactID != null)
+			return false;
+		if (clientCorporation != null ? !clientCorporation.equals(that.clientCorporation) : that.clientCorporation != null)
+			return false;
+		if (comments != null ? !comments.equals(that.comments) : that.comments != null) return false;
+		if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+		if (dateLastComment != null ? !dateLastComment.equals(that.dateLastComment) : that.dateLastComment != null)
+			return false;
+		if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
+			return false;
+		if (dateLastVisit != null ? !dateLastVisit.equals(that.dateLastVisit) : that.dateLastVisit != null)
+			return false;
+		if (deleteMe != null ? !deleteMe.equals(that.deleteMe) : that.deleteMe != null) return false;
+		if (description != null ? !description.equals(that.description) : that.description != null) return false;
+		if (desiredCategories != null ? !desiredCategories.equals(that.desiredCategories) : that.desiredCategories != null)
+			return false;
+		if (desiredSkills != null ? !desiredSkills.equals(that.desiredSkills) : that.desiredSkills != null)
+			return false;
+		if (desiredSpecialties != null ? !desiredSpecialties.equals(that.desiredSpecialties) : that.desiredSpecialties != null)
+			return false;
+		if (division != null ? !division.equals(that.division) : that.division != null) return false;
+		if (email != null ? !email.equals(that.email) : that.email != null) return false;
+		if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
+		if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
+		if (externalID != null ? !externalID.equals(that.externalID) : that.externalID != null) return false;
+		if (fax != null ? !fax.equals(that.fax) : that.fax != null) return false;
+		if (fax2 != null ? !fax2.equals(that.fax2) : that.fax2 != null) return false;
+		if (fax3 != null ? !fax3.equals(that.fax3) : that.fax3 != null) return false;
+		if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
+		if (isDayLightSavings != null ? !isDayLightSavings.equals(that.isDayLightSavings) : that.isDayLightSavings != null)
+			return false;
+		if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
+		if (isLockedOut != null ? !isLockedOut.equals(that.isLockedOut) : that.isLockedOut != null) return false;
+		if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
+		if (linkedPerson != null ? !linkedPerson.equals(that.linkedPerson) : that.linkedPerson != null) return false;
+		if (leads != null ? !leads.equals(that.leads) : that.leads != null) return false;
+		if (massMailOptOut != null ? !massMailOptOut.equals(that.massMailOptOut) : that.massMailOptOut != null)
+			return false;
+		if (middleName != null ? !middleName.equals(that.middleName) : that.middleName != null) return false;
+		if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+		if (mobile != null ? !mobile.equals(that.mobile) : that.mobile != null) return false;
+		if (name != null ? !name.equals(that.name) : that.name != null) return false;
+		if (namePrefix != null ? !namePrefix.equals(that.namePrefix) : that.namePrefix != null) return false;
+		if (nameSuffix != null ? !nameSuffix.equals(that.nameSuffix) : that.nameSuffix != null) return false;
+		if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
+		if (numEmployees != null ? !numEmployees.equals(that.numEmployees) : that.numEmployees != null) return false;
+		if (occupation != null ? !occupation.equals(that.occupation) : that.occupation != null) return false;
+		if (office != null ? !office.equals(that.office) : that.office != null) return false;
+		if (owner != null ? !owner.equals(that.owner) : that.owner != null) return false;
+		if (pager != null ? !pager.equals(that.pager) : that.pager != null) return false;
+		if (password != null ? !password.equals(that.password) : that.password != null) return false;
+		if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
+		if (phone2 != null ? !phone2.equals(that.phone2) : that.phone2 != null) return false;
+		if (phone3 != null ? !phone3.equals(that.phone3) : that.phone3 != null) return false;
+		if (preferredContact != null ? !preferredContact.equals(that.preferredContact) : that.preferredContact != null)
+			return false;
+		if (referredByPerson != null ? !referredByPerson.equals(that.referredByPerson) : that.referredByPerson != null)
+			return false;
+		if (reportToPerson != null ? !reportToPerson.equals(that.reportToPerson) : that.reportToPerson != null)
+			return false;
+		if (secondaryAddress != null ? !secondaryAddress.equals(that.secondaryAddress) : that.secondaryAddress != null)
+			return false;
+		if (secondaryOwners != null ? !secondaryOwners.equals(that.secondaryOwners) : that.secondaryOwners != null)
+			return false;
+		if (skills != null ? !skills.equals(that.skills) : that.skills != null) return false;
+		if (smsOptIn != null ? !smsOptIn.equals(that.smsOptIn) : that.smsOptIn != null) return false;
+		if (source != null ? !source.equals(that.source) : that.source != null) return false;
+		if (specialties != null ? !specialties.equals(that.specialties) : that.specialties != null) return false;
+		if (status != null ? !status.equals(that.status) : that.status != null) return false;
+		if (tearsheets != null ? !tearsheets.equals(that.tearsheets) : that.tearsheets != null) return false;
+		if (timeZoneOffsetEST != null ? !timeZoneOffsetEST.equals(that.timeZoneOffsetEST) : that.timeZoneOffsetEST != null)
+			return false;
+		if (type != null ? !type.equals(that.type) : that.type != null) return false;
+		if (username != null ? !username.equals(that.username) : that.username != null) return false;
+		if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
+			return false;
+		if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
+			return false;
+		if (customObject3s != null ? !customObject3s.equals(that.customObject3s) : that.customObject3s != null)
+			return false;
+		if (customObject4s != null ? !customObject4s.equals(that.customObject4s) : that.customObject4s != null)
+			return false;
+		if (customObject5s != null ? !customObject5s.equals(that.customObject5s) : that.customObject5s != null)
+			return false;
+		if (customObject6s != null ? !customObject6s.equals(that.customObject6s) : that.customObject6s != null)
+			return false;
+		if (customObject7s != null ? !customObject7s.equals(that.customObject7s) : that.customObject7s != null)
+			return false;
+		if (customObject8s != null ? !customObject8s.equals(that.customObject8s) : that.customObject8s != null)
+			return false;
+		if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
+			return false;
+		return !(customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null);
 
-    }
+	}
 
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (id != null ? id.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
-        result = 31 * result + (categories != null ? categories.hashCode() : 0);
-        result = 31 * result + (category != null ? category.hashCode() : 0);
-        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
-        result = 31 * result + (clientContactID != null ? clientContactID.hashCode() : 0);
-        result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
-        result = 31 * result + (comments != null ? comments.hashCode() : 0);
-        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-        result = 31 * result + (dateLastComment != null ? dateLastComment.hashCode() : 0);
-        result = 31 * result + (dateLastVisit != null ? dateLastVisit.hashCode() : 0);
-        result = 31 * result + (deleteMe != null ? deleteMe.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (desiredCategories != null ? desiredCategories.hashCode() : 0);
-        result = 31 * result + (desiredSkills != null ? desiredSkills.hashCode() : 0);
-        result = 31 * result + (desiredSpecialties != null ? desiredSpecialties.hashCode() : 0);
-        result = 31 * result + (division != null ? division.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (email2 != null ? email2.hashCode() : 0);
-        result = 31 * result + (email3 != null ? email3.hashCode() : 0);
-        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
-        result = 31 * result + (fax != null ? fax.hashCode() : 0);
-        result = 31 * result + (fax2 != null ? fax2.hashCode() : 0);
-        result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (isDayLightSavings != null ? isDayLightSavings.hashCode() : 0);
-        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
-        result = 31 * result + (isLockedOut != null ? isLockedOut.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (linkedPerson != null ? linkedPerson.hashCode() : 0);
-        result = 31 * result + (massMailOptOut != null ? massMailOptOut.hashCode() : 0);
-        result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
-        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
-        result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (namePrefix != null ? namePrefix.hashCode() : 0);
-        result = 31 * result + (nameSuffix != null ? nameSuffix.hashCode() : 0);
-        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
-        result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
-        result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
-        result = 31 * result + (office != null ? office.hashCode() : 0);
-        result = 31 * result + (owner != null ? owner.hashCode() : 0);
-        result = 31 * result + (pager != null ? pager.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (phone2 != null ? phone2.hashCode() : 0);
-        result = 31 * result + (phone3 != null ? phone3.hashCode() : 0);
-        result = 31 * result + (preferredContact != null ? preferredContact.hashCode() : 0);
-        result = 31 * result + (referredByPerson != null ? referredByPerson.hashCode() : 0);
-        result = 31 * result + (reportToPerson != null ? reportToPerson.hashCode() : 0);
-        result = 31 * result + (secondaryAddress != null ? secondaryAddress.hashCode() : 0);
-        result = 31 * result + (secondaryOwners != null ? secondaryOwners.hashCode() : 0);
-        result = 31 * result + (skills != null ? skills.hashCode() : 0);
-        result = 31 * result + (smsOptIn != null ? smsOptIn.hashCode() : 0);
-        result = 31 * result + (source != null ? source.hashCode() : 0);
-        result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
-        result = 31 * result + (timeZoneOffsetEST != null ? timeZoneOffsetEST.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (username != null ? username.hashCode() : 0);
-        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
-        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
-        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
-        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
-        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
-        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
-        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
-        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
-        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
-        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
-        return result;
-    }
+	@Override
+	public int hashCode() {
+		int result = super.hashCode();
+		result = 31 * result + (id != null ? id.hashCode() : 0);
+		result = 31 * result + (address != null ? address.hashCode() : 0);
+		result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
+		result = 31 * result + (categories != null ? categories.hashCode() : 0);
+		result = 31 * result + (category != null ? category.hashCode() : 0);
+		result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
+		result = 31 * result + (clientContactID != null ? clientContactID.hashCode() : 0);
+		result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
+		result = 31 * result + (comments != null ? comments.hashCode() : 0);
+		result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+		result = 31 * result + (dateLastComment != null ? dateLastComment.hashCode() : 0);
+		result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+		result = 31 * result + (dateLastVisit != null ? dateLastVisit.hashCode() : 0);
+		result = 31 * result + (deleteMe != null ? deleteMe.hashCode() : 0);
+		result = 31 * result + (description != null ? description.hashCode() : 0);
+		result = 31 * result + (desiredCategories != null ? desiredCategories.hashCode() : 0);
+		result = 31 * result + (desiredSkills != null ? desiredSkills.hashCode() : 0);
+		result = 31 * result + (desiredSpecialties != null ? desiredSpecialties.hashCode() : 0);
+		result = 31 * result + (division != null ? division.hashCode() : 0);
+		result = 31 * result + (email != null ? email.hashCode() : 0);
+		result = 31 * result + (email2 != null ? email2.hashCode() : 0);
+		result = 31 * result + (email3 != null ? email3.hashCode() : 0);
+		result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
+		result = 31 * result + (fax != null ? fax.hashCode() : 0);
+		result = 31 * result + (fax2 != null ? fax2.hashCode() : 0);
+		result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
+		result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+		result = 31 * result + (isDayLightSavings != null ? isDayLightSavings.hashCode() : 0);
+		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+		result = 31 * result + (isLockedOut != null ? isLockedOut.hashCode() : 0);
+		result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+		result = 31 * result + (linkedPerson != null ? linkedPerson.hashCode() : 0);
+		result = 31 * result + (leads != null ? leads.hashCode() : 0);
+		result = 31 * result + (massMailOptOut != null ? massMailOptOut.hashCode() : 0);
+		result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
+		result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+		result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (namePrefix != null ? namePrefix.hashCode() : 0);
+		result = 31 * result + (nameSuffix != null ? nameSuffix.hashCode() : 0);
+		result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+		result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
+		result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
+		result = 31 * result + (office != null ? office.hashCode() : 0);
+		result = 31 * result + (owner != null ? owner.hashCode() : 0);
+		result = 31 * result + (pager != null ? pager.hashCode() : 0);
+		result = 31 * result + (password != null ? password.hashCode() : 0);
+		result = 31 * result + (phone != null ? phone.hashCode() : 0);
+		result = 31 * result + (phone2 != null ? phone2.hashCode() : 0);
+		result = 31 * result + (phone3 != null ? phone3.hashCode() : 0);
+		result = 31 * result + (preferredContact != null ? preferredContact.hashCode() : 0);
+		result = 31 * result + (referredByPerson != null ? referredByPerson.hashCode() : 0);
+		result = 31 * result + (reportToPerson != null ? reportToPerson.hashCode() : 0);
+		result = 31 * result + (secondaryAddress != null ? secondaryAddress.hashCode() : 0);
+		result = 31 * result + (secondaryOwners != null ? secondaryOwners.hashCode() : 0);
+		result = 31 * result + (skills != null ? skills.hashCode() : 0);
+		result = 31 * result + (smsOptIn != null ? smsOptIn.hashCode() : 0);
+		result = 31 * result + (source != null ? source.hashCode() : 0);
+		result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
+		result = 31 * result + (status != null ? status.hashCode() : 0);
+		result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
+		result = 31 * result + (timeZoneOffsetEST != null ? timeZoneOffsetEST.hashCode() : 0);
+		result = 31 * result + (type != null ? type.hashCode() : 0);
+		result = 31 * result + (username != null ? username.hashCode() : 0);
+		result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
+		result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
+		result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
+		result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
+		result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
+		result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
+		result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
+		result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
+		result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
+		result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
+		return result;
+	}
 
-    @Override
-    public String toString() {
-        return new StringBuilder("ClientContact {")
-                .append("\n\t\"address\": ")
-                .append(address)
-                .append(",\n\t\"id\": ")
-                .append(id)
-                .append(",\n\t\"businessSectors\": ")
-                .append(businessSectors)
-                .append(",\n\t\"categories\": ")
-                .append(categories)
-                .append(",\n\t\"category\": ")
-                .append(category)
-                .append(",\n\t\"certifications\": ")
-                .append("'")
-                .append(certifications).append('\'')
-                .append(",\n\t\"clientContactID\": ")
-                .append(clientContactID)
-                .append(",\n\t\"clientCorporation\": ")
-                .append(clientCorporation)
-                .append(",\n\t\"comments\": ")
-                .append("'")
-                .append(comments).append('\'')
-                .append(",\n\t\"dateAdded\": ")
-                .append(dateAdded)
-                .append(",\n\t\"dateLastComment\": ")
-                .append(dateLastComment)
-                .append(",\n\t\"dateLastVisit\": ")
-                .append(dateLastVisit)
-                .append(",\n\t\"deleteMe\": ")
-                .append(deleteMe)
-                .append(",\n\t\"description\": ")
-                .append("'")
-                .append(description).append('\'')
-                .append(",\n\t\"desiredCategories\": ")
-                .append("'")
-                .append(desiredCategories).append('\'')
-                .append(",\n\t\"desiredSkills\": ")
-                .append("'")
-                .append(desiredSkills).append('\'')
-                .append(",\n\t\"desiredSpecialties\": ")
-                .append("'")
-                .append(desiredSpecialties).append('\'')
-                .append(",\n\t\"division\": ")
-                .append("'")
-                .append(division).append('\'')
-                .append(",\n\t\"email\": ")
-                .append("'")
-                .append(email).append('\'')
-                .append(",\n\t\"email2\": ")
-                .append("'")
-                .append(email2).append('\'')
-                .append(",\n\t\"email3\": ")
-                .append("'")
-                .append(email3).append('\'')
-                .append(",\n\t\"externalID\": ")
-                .append("'")
-                .append(externalID).append('\'')
-                .append(",\n\t\"fax\": ")
-                .append("'")
-                .append(fax).append('\'')
-                .append(",\n\t\"fax2\": ")
-                .append("'")
-                .append(fax2).append('\'')
-                .append(",\n\t\"fax3\": ")
-                .append("'")
-                .append(fax3).append('\'')
-                .append(",\n\t\"firstName\": ")
-                .append("'")
-                .append(firstName).append('\'')
-                .append(",\n\t\"isDayLightSavings\": ")
-                .append(isDayLightSavings)
-                .append(",\n\t\"isDeleted\": ")
-                .append(isDeleted)
-                .append(",\n\t\"isLockedOut\": ")
-                .append(isLockedOut)
-                .append(",\n\t\"lastName\": ")
-                .append("'")
-                .append(lastName).append('\'')
-                .append(",\n\t\"linkedPerson\": ")
-                .append(linkedPerson)
-                .append(",\n\t\"massMailOptOut\": ")
-                .append(massMailOptOut)
-                .append(",\n\t\"middleName\": ")
-                .append("'")
-                .append(middleName).append('\'')
-                .append(",\n\t\"migrateGUID\": ")
-                .append(migrateGUID)
-                .append(",\n\t\"mobile\": ")
-                .append("'")
-                .append(mobile).append('\'')
-                .append(",\n\t\"name\": ")
-                .append("'")
-                .append(name).append('\'')
-                .append(",\n\t\"namePrefix\": ")
-                .append("'")
-                .append(namePrefix).append('\'')
-                .append(",\n\t\"nameSuffix\": ")
-                .append("'")
-                .append(nameSuffix).append('\'')
-                .append(",\n\t\"nickName\": ")
-                .append("'")
-                .append(nickName).append('\'')
-                .append(",\n\t\"numEmployees\": ")
-                .append(numEmployees)
-                .append(",\n\t\"occupation\": ")
-                .append("'")
-                .append(occupation).append('\'')
-                .append(",\n\t\"office\": ")
-                .append("'")
-                .append(office).append('\'')
-                .append(",\n\t\"owner\": ")
-                .append(owner)
-                .append(",\n\t\"pager\": ")
-                .append("'")
-                .append(pager).append('\'')
-                .append(",\n\t\"password\": ")
-                .append("'")
-                .append(password).append('\'')
-                .append(",\n\t\"phone\": ")
-                .append("'")
-                .append(phone).append('\'')
-                .append(",\n\t\"phone2\": ")
-                .append("'")
-                .append(phone2).append('\'')
-                .append(",\n\t\"phone3\": ")
-                .append("'")
-                .append(phone3).append('\'')
-                .append(",\n\t\"preferredContact\": ")
-                .append("'")
-                .append(preferredContact).append('\'')
-                .append(",\n\t\"referredByPerson\": ")
-                .append(referredByPerson)
-                .append(",\n\t\"reportToPerson\": ")
-                .append(reportToPerson)
-                .append(",\n\t\"secondaryAddress\": ")
-                .append(secondaryAddress)
-                .append(",\n\t\"secondaryOwners\": ")
-                .append(secondaryOwners)
-                .append(",\n\t\"skills\": ")
-                .append(skills)
-                .append(",\n\t\"smsOptIn\": ")
-                .append(smsOptIn)
-                .append(",\n\t\"source\": ")
-                .append("'")
-                .append(source).append('\'')
-                .append(",\n\t\"specialties\": ")
-                .append(specialties)
-                .append(",\n\t\"status\": ")
-                .append("'")
-                .append(status).append('\'')
-                .append(",\n\t\"tearsheets\": ")
-                .append(tearsheets)
-                .append(",\n\t\"timeZoneOffsetEST\": ")
-                .append(timeZoneOffsetEST)
-                .append(",\n\t\"type\": ")
-                .append("'")
-                .append(type).append('\'')
-                .append(",\n\t\"username\": ")
-                .append("'")
-                .append(username).append('\'')
-                .append(",\n\t\"customObject1s\": ")
-                .append(customObject1s)
-                .append(",\n\t\"customObject2s\": ")
-                .append(customObject2s)
-                .append(",\n\t\"customObject3s\": ")
-                .append(customObject3s)
-                .append(",\n\t\"customObject4s\": ")
-                .append(customObject4s)
-                .append(",\n\t\"customObject5s\": ")
-                .append(customObject5s)
-                .append(",\n\t\"customObject6s\": ")
-                .append(customObject6s)
-                .append(",\n\t\"customObject7s\": ")
-                .append(customObject7s)
-                .append(",\n\t\"customObject8s\": ")
-                .append(customObject8s)
-                .append(",\n\t\"customObject9s\": ")
-                .append(customObject9s)
-                .append(",\n\t\"customObject10s\": ")
-                .append(customObject10s)
-                .append('}')
-                .toString();
-    }
+	@Override
+	public String toString() {
+		return "ClientContact{" +
+				"id=" + id +
+				", address=" + address +
+				", businessSectors=" + businessSectors +
+				", categories=" + categories +
+				", category=" + category +
+				", certifications='" + certifications + '\'' +
+				", clientContactID=" + clientContactID +
+				", clientCorporation=" + clientCorporation +
+				", comments='" + comments + '\'' +
+				", dateAdded=" + dateAdded +
+				", dateLastComment=" + dateLastComment +
+				", dateLastModified=" + dateLastModified +
+				", dateLastVisit=" + dateLastVisit +
+				", deleteMe=" + deleteMe +
+				", description='" + description + '\'' +
+				", desiredCategories='" + desiredCategories + '\'' +
+				", desiredSkills='" + desiredSkills + '\'' +
+				", desiredSpecialties='" + desiredSpecialties + '\'' +
+				", division='" + division + '\'' +
+				", email='" + email + '\'' +
+				", email2='" + email2 + '\'' +
+				", email3='" + email3 + '\'' +
+				", externalID='" + externalID + '\'' +
+				", fax='" + fax + '\'' +
+				", fax2='" + fax2 + '\'' +
+				", fax3='" + fax3 + '\'' +
+				", firstName='" + firstName + '\'' +
+				", isDayLightSavings=" + isDayLightSavings +
+				", isDeleted=" + isDeleted +
+				", isLockedOut=" + isLockedOut +
+				", lastName='" + lastName + '\'' +
+				", linkedPerson=" + linkedPerson +
+				", leads=" + leads +
+				", massMailOptOut=" + massMailOptOut +
+				", middleName='" + middleName + '\'' +
+				", migrateGUID=" + migrateGUID +
+				", mobile='" + mobile + '\'' +
+				", name='" + name + '\'' +
+				", namePrefix='" + namePrefix + '\'' +
+				", nameSuffix='" + nameSuffix + '\'' +
+				", nickName='" + nickName + '\'' +
+				", numEmployees=" + numEmployees +
+				", occupation='" + occupation + '\'' +
+				", office='" + office + '\'' +
+				", owner=" + owner +
+				", pager='" + pager + '\'' +
+				", password='" + password + '\'' +
+				", phone='" + phone + '\'' +
+				", phone2='" + phone2 + '\'' +
+				", phone3='" + phone3 + '\'' +
+				", preferredContact='" + preferredContact + '\'' +
+				", referredByPerson=" + referredByPerson +
+				", reportToPerson=" + reportToPerson +
+				", secondaryAddress=" + secondaryAddress +
+				", secondaryOwners=" + secondaryOwners +
+				", skills=" + skills +
+				", smsOptIn=" + smsOptIn +
+				", source='" + source + '\'' +
+				", specialties=" + specialties +
+				", status='" + status + '\'' +
+				", tearsheets=" + tearsheets +
+				", timeZoneOffsetEST=" + timeZoneOffsetEST +
+				", type='" + type + '\'' +
+				", username='" + username + '\'' +
+				", customObject1s=" + customObject1s +
+				", customObject2s=" + customObject2s +
+				", customObject3s=" + customObject3s +
+				", customObject4s=" + customObject4s +
+				", customObject5s=" + customObject5s +
+				", customObject6s=" + customObject6s +
+				", customObject7s=" + customObject7s +
+				", customObject8s=" + customObject8s +
+				", customObject9s=" + customObject9s +
+				", customObject10s=" + customObject10s +
+				'}';
+	}
 }

@@ -1,9 +1,4 @@
-package com.bullhornsdk.data.api.mock;
-
-
-import org.apache.log4j.Logger
-import org.springframework.validation.Errors
-import org.springframework.web.multipart.MultipartFile
+package com.bullhornsdk.data.api.mock
 
 import com.bullhornsdk.data.api.BullhornData
 import com.bullhornsdk.data.api.helper.RestApiSession
@@ -12,37 +7,26 @@ import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
 import com.bullhornsdk.data.model.entity.core.standard.Note
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity
-import com.bullhornsdk.data.model.entity.core.type.FileEntity
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity
+import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.MetaParameter
-import com.bullhornsdk.data.model.parameter.AssociationParams
-import com.bullhornsdk.data.model.parameter.CorpNotesParams
-import com.bullhornsdk.data.model.parameter.FastFindParams
-import com.bullhornsdk.data.model.parameter.FileParams
-import com.bullhornsdk.data.model.parameter.QueryParams
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams
-import com.bullhornsdk.data.model.parameter.SearchParams
+import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
 import com.bullhornsdk.data.model.response.crud.UpdateResponse
+import com.bullhornsdk.data.model.response.event.GetEventsResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
 import com.bullhornsdk.data.model.response.file.FileMeta
 import com.bullhornsdk.data.model.response.file.FileWrapper
-import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
+import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.validation.RestEntityValidator
 import com.bullhornsdk.data.validation.StandardRestEntityValidator
-
+import org.apache.log4j.Logger
+import org.springframework.validation.Errors
+import org.springframework.web.multipart.MultipartFile
 /**
  * Testing implementation populated with local in memory test data.
  * 
@@ -83,11 +67,15 @@ public class MockBullhornData implements BullhornData {
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id) {
 		return mockDataHandler.findEntity(type, id);
 	}
-	
 
 	@Override
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
 		return mockDataHandler.findEntity(type, id, fieldSet);
+	}
+
+	@Override
+	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
+		return mockDataHandler.findMultipleEntities(type, idList, fieldSet);
 	}
 
 	@Override
@@ -311,6 +299,21 @@ public class MockBullhornData implements BullhornData {
 	public <C extends CrudResponse> C addNoteAndAssociateWithEntity(Note note) {
 		return mockDataHandler.addNoteAndAssociateWithEntity(note);
 	}
+
+    @Override
+    public Integer getLastRequestId(String subscriptionId) {
+        return mockDataHandler.getLastRequestId(subscriptionId).getResult();
+    }
+
+    @Override
+    public GetEventsResponse getEvents(String subscriptionId, Integer maxEvents) {
+        return mockDataHandler.getEventsData(maxEvents);
+    }
+
+    @Override
+    public GetEventsResponse regetEvents(String subscriptionId, Integer requestId) {
+        return mockDataHandler.getEventsDataByRequest(requestId);
+    }
 	
 	@Override
 	public RestApiSession getRestApiSession(){
