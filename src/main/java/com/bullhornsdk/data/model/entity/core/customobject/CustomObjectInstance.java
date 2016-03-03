@@ -2,16 +2,9 @@
 
  import java.math.BigDecimal;
 
-import org.joda.time.DateTime;
-
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.fasterxml.jackson.annotation.JsonProperty;
+ import com.bullhornsdk.data.model.entity.core.type.*;
+ import com.fasterxml.jackson.annotation.JsonProperty;
+ import org.joda.time.DateTime;
 
 public abstract class CustomObjectInstance extends AbstractEntity implements UpdateEntity, CreateEntity, SearchEntity, QueryEntity, AssociationEntity, HardDeleteEntity {
 
@@ -72,6 +65,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Upd
     private DateTime date9;
     private DateTime date10;
 	private DateTime dateAdded;
+    private DateTime dateLastModified;
 
     public CustomObjectInstance() {
         super();
@@ -647,10 +641,20 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Upd
         this.dateAdded = dateAdded;
     }
 
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CustomObjectInstance)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         CustomObjectInstance that = (CustomObjectInstance) o;
 
@@ -710,7 +714,8 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Upd
         if (date8 != null ? !date8.equals(that.date8) : that.date8 != null) return false;
         if (date9 != null ? !date9.equals(that.date9) : that.date9 != null) return false;
         if (date10 != null ? !date10.equals(that.date10) : that.date10 != null) return false;
-        return !(dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null);
+        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+        return !(dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null);
 
     }
 
@@ -773,152 +778,71 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Upd
         result = 31 * result + (date9 != null ? date9.hashCode() : 0);
         result = 31 * result + (date10 != null ? date10.hashCode() : 0);
         result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        return new StringBuilder("CustomObjectInstance {")
-                .append("\n\t\"date10\": ")
-                .append(date10)
-                .append(",\n\t\"id\": ")
-                .append(id)
-                .append(",\n\t\"text1\": ")
-                .append("'")
-                .append(text1).append('\'')
-                .append(",\n\t\"text2\": ")
-                .append("'")
-                .append(text2).append('\'')
-                .append(",\n\t\"text3\": ")
-                .append("'")
-                .append(text3).append('\'')
-                .append(",\n\t\"text4\": ")
-                .append("'")
-                .append(text4).append('\'')
-                .append(",\n\t\"text5\": ")
-                .append("'")
-                .append(text5).append('\'')
-                .append(",\n\t\"text6\": ")
-                .append("'")
-                .append(text6).append('\'')
-                .append(",\n\t\"text7\": ")
-                .append("'")
-                .append(text7).append('\'')
-                .append(",\n\t\"text8\": ")
-                .append("'")
-                .append(text8).append('\'')
-                .append(",\n\t\"text9\": ")
-                .append("'")
-                .append(text9).append('\'')
-                .append(",\n\t\"text10\": ")
-                .append("'")
-                .append(text10).append('\'')
-                .append(",\n\t\"text11\": ")
-                .append("'")
-                .append(text11).append('\'')
-                .append(",\n\t\"text12\": ")
-                .append("'")
-                .append(text12).append('\'')
-                .append(",\n\t\"text13\": ")
-                .append("'")
-                .append(text13).append('\'')
-                .append(",\n\t\"text14\": ")
-                .append("'")
-                .append(text14).append('\'')
-                .append(",\n\t\"text15\": ")
-                .append("'")
-                .append(text15).append('\'')
-                .append(",\n\t\"text16\": ")
-                .append("'")
-                .append(text16).append('\'')
-                .append(",\n\t\"text17\": ")
-                .append("'")
-                .append(text17).append('\'')
-                .append(",\n\t\"text18\": ")
-                .append("'")
-                .append(text18).append('\'')
-                .append(",\n\t\"text19\": ")
-                .append("'")
-                .append(text19).append('\'')
-                .append(",\n\t\"text20\": ")
-                .append("'")
-                .append(text20).append('\'')
-                .append(",\n\t\"int1\": ")
-                .append(int1)
-                .append(",\n\t\"int2\": ")
-                .append(int2)
-                .append(",\n\t\"int3\": ")
-                .append(int3)
-                .append(",\n\t\"int4\": ")
-                .append(int4)
-                .append(",\n\t\"int5\": ")
-                .append(int5)
-                .append(",\n\t\"int6\": ")
-                .append(int6)
-                .append(",\n\t\"int7\": ")
-                .append(int7)
-                .append(",\n\t\"int8\": ")
-                .append(int8)
-                .append(",\n\t\"int9\": ")
-                .append(int9)
-                .append(",\n\t\"int10\": ")
-                .append(int10)
-                .append(",\n\t\"float1\": ")
-                .append(float1)
-                .append(",\n\t\"float2\": ")
-                .append(float2)
-                .append(",\n\t\"float3\": ")
-                .append(float3)
-                .append(",\n\t\"float4\": ")
-                .append(float4)
-                .append(",\n\t\"float5\": ")
-                .append(float5)
-                .append(",\n\t\"float6\": ")
-                .append(float6)
-                .append(",\n\t\"float7\": ")
-                .append(float7)
-                .append(",\n\t\"float8\": ")
-                .append(float8)
-                .append(",\n\t\"float9\": ")
-                .append(float9)
-                .append(",\n\t\"float10\": ")
-                .append(float10)
-                .append(",\n\t\"textBlock1\": ")
-                .append("'")
-                .append(textBlock1).append('\'')
-                .append(",\n\t\"textBlock2\": ")
-                .append("'")
-                .append(textBlock2).append('\'')
-                .append(",\n\t\"textBlock3\": ")
-                .append("'")
-                .append(textBlock3).append('\'')
-                .append(",\n\t\"textBlock4\": ")
-                .append("'")
-                .append(textBlock4).append('\'')
-                .append(",\n\t\"textBlock5\": ")
-                .append("'")
-                .append(textBlock5).append('\'')
-                .append(",\n\t\"date1\": ")
-                .append(date1)
-                .append(",\n\t\"date2\": ")
-                .append(date2)
-                .append(",\n\t\"date3\": ")
-                .append(date3)
-                .append(",\n\t\"date4\": ")
-                .append(date4)
-                .append(",\n\t\"date5\": ")
-                .append(date5)
-                .append(",\n\t\"date6\": ")
-                .append(date6)
-                .append(",\n\t\"date7\": ")
-                .append(date7)
-                .append(",\n\t\"date8\": ")
-                .append(date8)
-                .append(",\n\t\"date9\": ")
-                .append(date9)
-                .append(",\n\t\"dateAdded\": ")
-                .append(dateAdded)
-                .append('}')
-                .toString();
+        return "CustomObjectInstance{" +
+                "id=" + id +
+                ", text1='" + text1 + '\'' +
+                ", text2='" + text2 + '\'' +
+                ", text3='" + text3 + '\'' +
+                ", text4='" + text4 + '\'' +
+                ", text5='" + text5 + '\'' +
+                ", text6='" + text6 + '\'' +
+                ", text7='" + text7 + '\'' +
+                ", text8='" + text8 + '\'' +
+                ", text9='" + text9 + '\'' +
+                ", text10='" + text10 + '\'' +
+                ", text11='" + text11 + '\'' +
+                ", text12='" + text12 + '\'' +
+                ", text13='" + text13 + '\'' +
+                ", text14='" + text14 + '\'' +
+                ", text15='" + text15 + '\'' +
+                ", text16='" + text16 + '\'' +
+                ", text17='" + text17 + '\'' +
+                ", text18='" + text18 + '\'' +
+                ", text19='" + text19 + '\'' +
+                ", text20='" + text20 + '\'' +
+                ", int1=" + int1 +
+                ", int2=" + int2 +
+                ", int3=" + int3 +
+                ", int4=" + int4 +
+                ", int5=" + int5 +
+                ", int6=" + int6 +
+                ", int7=" + int7 +
+                ", int8=" + int8 +
+                ", int9=" + int9 +
+                ", int10=" + int10 +
+                ", float1=" + float1 +
+                ", float2=" + float2 +
+                ", float3=" + float3 +
+                ", float4=" + float4 +
+                ", float5=" + float5 +
+                ", float6=" + float6 +
+                ", float7=" + float7 +
+                ", float8=" + float8 +
+                ", float9=" + float9 +
+                ", float10=" + float10 +
+                ", textBlock1='" + textBlock1 + '\'' +
+                ", textBlock2='" + textBlock2 + '\'' +
+                ", textBlock3='" + textBlock3 + '\'' +
+                ", textBlock4='" + textBlock4 + '\'' +
+                ", textBlock5='" + textBlock5 + '\'' +
+                ", date1=" + date1 +
+                ", date2=" + date2 +
+                ", date3=" + date3 +
+                ", date4=" + date4 +
+                ", date5=" + date5 +
+                ", date6=" + date6 +
+                ", date7=" + date7 +
+                ", date8=" + date8 +
+                ", date9=" + date9 +
+                ", date10=" + date10 +
+                ", dateAdded=" + dateAdded +
+                ", dateLastModified=" + dateLastModified +
+                '}';
     }
 }
