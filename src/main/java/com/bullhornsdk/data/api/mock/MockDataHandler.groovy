@@ -62,6 +62,8 @@ public class MockDataHandler {
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMap;
 	private Map<String,Closure> queryClosures = new HashMap<String,Closure>();
 	private List<FastFindResult> fastFindResults;
+	private List<EditHistory> editHistoryList;
+	private List<FieldChange> editHistoryFieldChangeList;
 	private Map<String, Object> settingsResults;
     private StandardGetEventsResponse getEventsResponse;
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
