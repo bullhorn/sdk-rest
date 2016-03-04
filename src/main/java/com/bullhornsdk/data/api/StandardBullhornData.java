@@ -74,6 +74,8 @@ import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.crud.DeleteResponse;
 import com.bullhornsdk.data.model.response.crud.Message;
 import com.bullhornsdk.data.model.response.crud.UpdateResponse;
+import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper;
+import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper;
 import com.bullhornsdk.data.model.response.event.GetEventsResponse;
 import com.bullhornsdk.data.model.response.event.GetLastRequestIdResponse;
 import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse;
@@ -251,6 +253,22 @@ public class StandardBullhornData implements BullhornData {
 	@Override
 	public <T extends QueryEntity, L extends ListWrapper<T>> L query(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
 		return this.handleQueryForEntities(type, where, fieldSet, params);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public <T extends BullhornEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		return this.handleQueryForEntityEditHistory(entityType, where, fieldSet, params);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public <T extends BullhornEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		return this.handleQueryForEntityEditHistoryFieldChange(entityType, where, fieldSet, params);
 	}
 
 	/**
@@ -697,6 +715,58 @@ public class StandardBullhornData implements BullhornData {
 
 	}
 
+	/**
+	 * Makes the "query" api call for EditHistory
+	 *
+	 *
+	 * HTTP Method: GET
+	 *
+	 * @param entityType
+	 *            the BullhornEntity type
+	 * @param where
+	 *            a SQL type where clause
+	 * @param fieldSet
+	 *            the fields to return, if null or emtpy will default to "*" all
+	 * @param params
+	 *            optional QueryParams.
+	 * @return a EditHistoryListWrapper containing the records plus some additional information
+	 */
+	private <T extends BullhornEntity> EditHistoryListWrapper handleQueryForEntityEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
+		uriVariables.put("entityType", uriVariables.get("entityType") + "EditHistory");
+
+		String url = restUrlFactory.assembleQueryUrl(params);
+
+		return (EditHistoryListWrapper) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(entityType), uriVariables);
+
+	}
+
+	/**
+	 * Makes the "query" api call for EditHistoryFieldChange
+	 *
+	 *
+	 * HTTP Method: GET
+	 *
+	 * @param entityType
+	 *            the BullhornEntity type
+	 * @param where
+	 *            a SQL type where clause
+	 * @param fieldSet
+	 *            the fields to return, if null or emtpy will default to "*" all
+	 * @param params
+	 *            optional QueryParams.
+	 * @return a FieldChangeWrapper containing the records plus some additional information
+	 */
+	private <T extends BullhornEntity> FieldChangeListWrapper handleQueryForEntityEditHistoryFieldChange(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
+		uriVariables.put("entityType", uriVariables.get("entityType") + "EditHistoryFieldChange");
+
+		String url = restUrlFactory.assembleQueryUrl(params);
+
+		return (FieldChangeListWrapper) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(entityType), uriVariables);
+
+	}
+
 	private <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
 			QueryParams params) {
 		List<T> allEntities = new ArrayList<T>();
@@ -827,7 +897,6 @@ public class StandardBullhornData implements BullhornData {
 	 * HTTP Method: POST
 	 * 
 	 * @param entity
-	 * @param id
 	 * @return a UpdateResponse
 	 */
 	private <C extends CrudResponse, T extends UpdateEntity> C handleUpdateEntity(T entity) {

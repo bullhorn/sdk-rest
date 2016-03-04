@@ -4,12 +4,16 @@ import com.bullhornsdk.data.api.helper.RestJsonConverter
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
 import com.bullhornsdk.data.model.entity.core.customobject.*
+import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
+import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo
+import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
+import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
@@ -28,6 +32,8 @@ public class MockDataLoader {
 
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMapCache;
 	private List<FastFindResult> fastFindResultListCache;
+	private List<EditHistory> editHistoryListCache;
+	private List<FieldChange> editHistoryFieldChangeListCache;
     private StandardGetEventsResponse getEventsResponseCache;
     private StandardGetLastRequestIdResponse getLastRequestIdResponseCache;
 	private Map<String,Object> settingsResultMapCache;
@@ -36,6 +42,8 @@ public class MockDataLoader {
 
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
 	private List<FastFindResult> fastFindResultList;
+	private List<EditHistory> editHistoryList;
+	private List<FieldChange> editHistoryFieldChangeList;
     private StandardGetEventsResponse getEventsResponse;
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
 	private Map<String,Object> settingsResultMap;
@@ -79,6 +87,22 @@ public class MockDataLoader {
 			this.restEntityMapCache = KryoObjectCopyHelper.copy(restEntityMap);
 		}
 		return restEntityMap;
+	}
+
+	public List<EditHistory> getEditHistoryList() {
+		if (editHistoryList == null) {
+			reloadEditHistoryResults();
+			this.editHistoryListCache = KryoObjectCopyHelper.copy(editHistoryList);
+		}
+		return editHistoryList;
+	}
+
+	public List<EditHistory> getEditHistoryFieldChangeList() {
+		if (editHistoryFieldChangeList == null) {
+			reloadEditHistoryFieldChangeResults();
+			this.editHistoryFieldChangeListCache = KryoObjectCopyHelper.copy(editHistoryFieldChangeList);
+		}
+		return editHistoryFieldChangeList;
 	}
 
 	public List<FastFindResult> getFastFindResults() {
@@ -133,6 +157,18 @@ public class MockDataLoader {
 		
 		return restEntityMap;
 
+	}
+
+	public void reloadEditHistoryResults() {
+		String jsonData = getFileData("edithistory/edithistory-data.txt");
+		EditHistoryListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, EditHistoryListWrapper.class);
+		this.editHistoryList = listWrapper.getData();
+	}
+
+	public void reloadEditHistoryFieldChangeResults() {
+		String jsonData = getFileData("edithistory/fieldchange-data.txt");
+		FieldChangeListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, FieldChangeListWrapper.class);
+		this.editHistoryFieldChangeList = listWrapper.getData();
 	}
 
 	public void reloadFastFindResults() {

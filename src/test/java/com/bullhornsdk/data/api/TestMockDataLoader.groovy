@@ -2,6 +2,8 @@ package com.bullhornsdk.data.api
 
 import com.bullhornsdk.data.api.mock.MockDataLoader
 import com.bullhornsdk.data.api.mock.MockSearchField
+import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
+import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
@@ -82,6 +84,20 @@ public class TestMockDataLoader {
 		}
 	
 	}
-	
-	
+
+	@Test
+	public void testGetEditHistory(){
+
+		List<EditHistory> result = mockDataLoader.getEditHistoryList();
+		assertFalse(result.isEmpty());
+
+	}
+
+	@Test
+	public void testGetEditHistoryFieldChange(){
+
+		List<FieldChange> result = mockDataLoader.getEditHistoryFieldChangeList();
+		assertFalse(result.isEmpty());
+
+	}
 }

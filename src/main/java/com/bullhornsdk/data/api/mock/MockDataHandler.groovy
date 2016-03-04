@@ -1,6 +1,8 @@
 package com.bullhornsdk.data.api.mock
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
+import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
+import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.embedded.OneToMany
@@ -12,6 +14,8 @@ import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
 import com.bullhornsdk.data.model.response.crud.DeleteResponse
 import com.bullhornsdk.data.model.response.crud.UpdateResponse
+import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
+import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.GetEventsResponse
 import com.bullhornsdk.data.model.response.event.GetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse
@@ -68,6 +72,8 @@ public class MockDataHandler {
 		this.restMetaDataMap = mockDataLoader.getMetaTestData();
 		this.searchFieldsMap = mockDataLoader.getSearchFields();
 		this.fastFindResults = mockDataLoader.getFastFindResults();
+		this.editHistoryList = mockDataLoader.getEditHistoryList();
+		this.editHistoryFieldChangeList = mockDataLoader.getEditHistoryFieldChangeList()
 		this.settingsResults = mockDataLoader.getSettingsResults();
         this.getEventsResponse = mockDataLoader.getEventsResponse();
         this.getLastRequestIdResponse = mockDataLoader.getLastRequestIdResponse();
@@ -267,6 +273,24 @@ public class MockDataHandler {
 		return wrapper;
 
 		return new StandardListWrapper<T>(filteredValuesWithFieldsSet);
+	}
+
+	public <T extends BullhornEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		if(params == null){
+			params = ParamFactory.queryParams();
+		}
+		List<EditHistory> result = getEditHistoryList();
+		EditHistoryListWrapper wrapper = new EditHistoryListWrapper(result);
+		return wrapper;
+	}
+
+	public <T extends BullhornEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		if(params == null){
+			params = ParamFactory.queryParams();
+		}
+		List<EditHistory> result = getEditHistoryFieldChangeList();
+		FieldChangeListWrapper wrapper = new FieldChangeListWrapper(result);
+		return wrapper;
 	}
 	
 	public <T extends QueryEntity> List<T> queryForList(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
@@ -647,6 +671,14 @@ public class MockDataHandler {
 
 	private List<FastFindResult> getFastFindResults() {
 		return this.fastFindResults;
+	}
+
+	private List<EditHistory> getEditHistoryList() {
+		return this.editHistoryList;
+	}
+
+	private List<FieldChange> getEditHistoryFieldChangeList() {
+		return this.editHistoryFieldChangeList;
 	}
 
 	private Map<String,Object> getSettingsResults() {

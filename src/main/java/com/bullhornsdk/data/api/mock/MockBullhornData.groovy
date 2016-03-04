@@ -14,6 +14,8 @@ import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
 import com.bullhornsdk.data.model.response.crud.UpdateResponse
+import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
+import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.GetEventsResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
@@ -27,6 +29,7 @@ import com.bullhornsdk.data.validation.StandardRestEntityValidator
 import org.apache.log4j.Logger
 import org.springframework.validation.Errors
 import org.springframework.web.multipart.MultipartFile
+
 /**
  * Testing implementation populated with local in memory test data.
  * 
@@ -102,6 +105,16 @@ public class MockBullhornData implements BullhornData {
 	@Override
 	public <T extends QueryEntity,L extends ListWrapper<T>> L query(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
 		return mockDataHandler.query(type, where, fieldSet, params);
+	}
+
+	@Override
+	public <T extends BullhornEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		return mockDataHandler.queryEntityForEditHistory(entityType, where, fieldSet, params);
+	}
+
+	@Override
+	public <T extends BullhornEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		return mockDataHandler.queryEntityForEditHistoryFieldChanges(entityType, where, fieldSet, params);
 	}
 
 	/**

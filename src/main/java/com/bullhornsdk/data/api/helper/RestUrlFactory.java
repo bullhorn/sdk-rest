@@ -200,4 +200,5 @@ public class RestUrlFactory {
 	public String assembleUrlForSettings() {
         return restUrl + "settings/{settings}?BhRestToken={bhRestToken}";
 	}
+
 }
