@@ -6,7 +6,7 @@
  import com.fasterxml.jackson.annotation.JsonProperty;
  import org.joda.time.DateTime;
 
-public abstract class CustomObjectInstance extends AbstractEntity implements UpdateEntity, CreateEntity, SearchEntity, QueryEntity, AssociationEntity, HardDeleteEntity {
+public abstract class CustomObjectInstance extends AbstractEntity implements UpdateEntity, CreateEntity, SearchEntity, QueryEntity, AssociationEntity, HardDeleteEntity, DateLastModifiedEntity {
 
 	private Integer id;
     private String text1;
