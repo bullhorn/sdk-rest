@@ -21,7 +21,6 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
     private final AssociationField<JobOrder, BusinessSector> businessSectors = instantiateAssociationField("businessSectors", BusinessSector.class);
     private final AssociationField<JobOrder, Category> categories = instantiateAssociationField("categories", Category.class);
     private final AssociationField<JobOrder, Certification> certifications = instantiateAssociationField("certifications", Certification.class);
-    private final AssociationField<JobOrder, Opportunity> opportunities = instantiateAssociationField("opportunities", Opportunity.class);
     private final AssociationField<JobOrder, Skill> skills = instantiateAssociationField("skills", Skill.class);
     private final AssociationField<JobOrder, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
     private List<AssociationField<JobOrder, ? extends BullhornEntity>> allAssociations;
@@ -63,10 +62,6 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
 
     public AssociationField<JobOrder, Certification> certifications() {
         return certifications;
-    }
-
-    public AssociationField<JobOrder, Opportunity> opportunities() {
-        return opportunities;
     }
 
     public AssociationField<JobOrder, Skill> skills() {
@@ -129,7 +124,6 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
             allAssociations.add(businessSectors());
             allAssociations.add(categories());
             allAssociations.add(certifications());
-            allAssociations.add(opportunities());
             allAssociations.add(skills());
             allAssociations.add(tearsheets());
             allAssociations.add(customObject1s());
