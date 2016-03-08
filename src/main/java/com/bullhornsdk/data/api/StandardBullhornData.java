@@ -728,7 +728,7 @@ public class StandardBullhornData implements BullhornData {
 	private <T extends BullhornEntity> EditHistoryListWrapper handleQueryForEntityEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 		String entity = uriVariables.get("entityType");
-		if (entity == "Candidate" || entity == "ClientContact") {
+		if ("Candidate".equals(entity) || "ClientContact".equals(entity)) {
 			uriVariables.put("entityType", "User");
 		}
 		uriVariables.put("entityType", uriVariables.get("entityType") + "EditHistory");
@@ -758,7 +758,7 @@ public class StandardBullhornData implements BullhornData {
 	private <T extends BullhornEntity> FieldChangeListWrapper handleQueryForEntityEditHistoryFieldChange(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 		String entity = uriVariables.get("entityType");
-		if (entity == "Candidate" || entity == "ClientContact") {
+		if ("Candidate".equals(entity) || "ClientContact".equals(entity)) {
 			uriVariables.put("entityType", "User");
 		}
 		uriVariables.put("entityType", uriVariables.get("entityType") + "EditHistoryFieldChange");

@@ -7,7 +7,6 @@ package com.bullhornsdk.data.model.entity.core.edithistory;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
@@ -19,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "auditTrail", "dateAdded", "fieldChanges", "migrateGUID", "modifyingPerson", "targetEntity", "transactionID"})
-public class EditHistory <T extends BullhornEntity> implements QueryEntity {
+public class EditHistory implements QueryEntity {
     private Integer id;
 
     private String auditTrail;
@@ -121,7 +120,7 @@ public class EditHistory <T extends BullhornEntity> implements QueryEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EditHistory<?> that = (EditHistory<?>) o;
+        EditHistory that = (EditHistory) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (auditTrail != null ? !auditTrail.equals(that.auditTrail) : that.auditTrail != null) return false;
