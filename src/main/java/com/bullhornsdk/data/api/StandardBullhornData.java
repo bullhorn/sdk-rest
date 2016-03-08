@@ -197,6 +197,7 @@ public class StandardBullhornData implements BullhornData {
 	 */
 	@Override
 	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
+		idList = idList.stream().distinct().collect(Collectors.toList());
 		if (idList.size() == 1) {
 			List<T> list = new ArrayList<T>();
 			list.add(this.handleGetEntity(type, idList.get(0), fieldSet, ParamFactory.entityParams()));
@@ -675,7 +676,7 @@ public class StandardBullhornData implements BullhornData {
 	 * @return
 	 */
 	private <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, List<Integer> idList, Set<String> fieldSet, EntityParams params) {
-		String ids = idList.stream().distinct().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
+		String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
 		String url = restUrlFactory.assembleEntityUrl(params);
 
