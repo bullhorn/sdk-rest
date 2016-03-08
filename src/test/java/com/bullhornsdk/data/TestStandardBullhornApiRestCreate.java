@@ -48,7 +48,7 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@After
 	public void removeTheEntityAfterCreation() {
 		if (entityId != null && deleteType != null) {
-			DeleteResponse response = bullhornApiRest.deleteEntity(deleteType, entityId);
+			DeleteResponse response = bullhornData.deleteEntity(deleteType, entityId);
 			assertNotNull("Error deleting entity", response);
 			assertFalse("Error deleting entity", response.isError());
 		}
@@ -57,16 +57,16 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateAppointment() {
 
-		Appointment entity = bullhornApiRest.findEntity(Appointment.class, testEntities.getAppointmentId());
+		Appointment entity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 		entity.setType("Meeting");
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		Appointment newEntity = bullhornApiRest.findEntity(Appointment.class, response.getChangedEntityId());
+		Appointment newEntity = bullhornData.findEntity(Appointment.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) Appointment.class;
@@ -83,9 +83,9 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 		entity.setFirstName("New");
 		entity.setLastName("Candidate");
 		entity.setCustomText5("test");
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		Candidate newEntity = bullhornApiRest.findEntity(Candidate.class, response.getChangedEntityId());
+		Candidate newEntity = bullhornData.findEntity(Candidate.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) Candidate.class;
@@ -97,15 +97,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateCandidateEducation() {
 
-		CandidateEducation entity = bullhornApiRest.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
+		CandidateEducation entity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		CandidateEducation newEntity = bullhornApiRest.findEntity(CandidateEducation.class, response.getChangedEntityId());
+		CandidateEducation newEntity = bullhornData.findEntity(CandidateEducation.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) CandidateEducation.class;
@@ -117,15 +117,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateCandidateReference() {
 
-		CandidateReference entity = bullhornApiRest.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
+		CandidateReference entity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		CandidateReference newEntity = bullhornApiRest.findEntity(CandidateReference.class, response.getChangedEntityId());
+		CandidateReference newEntity = bullhornData.findEntity(CandidateReference.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) CandidateReference.class;
@@ -137,15 +137,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateCandidateWorkHistory() {
 
-		CandidateWorkHistory entity = bullhornApiRest.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId());
+		CandidateWorkHistory entity = bullhornData.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		CandidateWorkHistory newEntity = bullhornApiRest.findEntity(CandidateWorkHistory.class, response.getChangedEntityId());
+		CandidateWorkHistory newEntity = bullhornData.findEntity(CandidateWorkHistory.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) CandidateWorkHistory.class;
@@ -156,15 +156,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 
 	public void testCreateCertification() {
 
-		Certification entity = bullhornApiRest.findEntity(Certification.class, testEntities.getCertificationId());
+		Certification entity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		Certification newEntity = bullhornApiRest.findEntity(Certification.class, response.getChangedEntityId());
+		Certification newEntity = bullhornData.findEntity(Certification.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) Certification.class;
@@ -176,15 +176,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateClientContact() {
 
-		ClientContact entity = bullhornApiRest.findEntity(ClientContact.class, testEntities.getClientContactId());
+		ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		ClientContact newEntity = bullhornApiRest.findEntity(ClientContact.class, response.getChangedEntityId());
+		ClientContact newEntity = bullhornData.findEntity(ClientContact.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) ClientContact.class;
@@ -196,15 +196,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	// @Test
 	public void testCreateClientCorporation() {
 
-		ClientCorporation entity = bullhornApiRest.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
+		ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		ClientCorporation newEntity = bullhornApiRest.findEntity(ClientCorporation.class, response.getChangedEntityId());
+		ClientCorporation newEntity = bullhornData.findEntity(ClientCorporation.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 
@@ -216,15 +216,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateJobOrder() {
 
-		JobOrder entity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		JobOrder newEntity = bullhornApiRest.findEntity(JobOrder.class, response.getChangedEntityId());
+		JobOrder newEntity = bullhornData.findEntity(JobOrder.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) JobOrder.class;
@@ -236,15 +236,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateJobSubmission() {
 
-		JobSubmission entity = bullhornApiRest.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
+		JobSubmission entity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		JobSubmission newEntity = bullhornApiRest.findEntity(JobSubmission.class, response.getChangedEntityId());
+		JobSubmission newEntity = bullhornData.findEntity(JobSubmission.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) JobSubmission.class;
@@ -256,15 +256,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
     @Test
     public void testCreateLead() {
 
-        Lead entity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+        Lead entity = bullhornData.findEntity(Lead.class, testEntities.getLeadId());
 
         Integer oldId = entity.getId();
 
         entity.setId(null);
 
-        CreateResponse response = bullhornApiRest.insertEntity(entity);
+        CreateResponse response = bullhornData.insertEntity(entity);
 
-        Lead newEntity = bullhornApiRest.findEntity(Lead.class, response.getChangedEntityId());
+        Lead newEntity = bullhornData.findEntity(Lead.class, response.getChangedEntityId());
 
         this.entityId = response.getChangedEntityId();
         this.deleteType = (Class<D>) Lead.class;
@@ -276,15 +276,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateNote() {
 
-		Note entity = bullhornApiRest.findEntity(Note.class, testEntities.getNoteId());
+		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		Note newEntity = bullhornApiRest.findEntity(Note.class, response.getChangedEntityId());
+		Note newEntity = bullhornData.findEntity(Note.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) Note.class;
@@ -296,15 +296,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateNoteEntity() {
 
-		NoteEntity entity = bullhornApiRest.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
+		NoteEntity entity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		NoteEntity newEntity = bullhornApiRest.findEntity(NoteEntity.class, response.getChangedEntityId());
+		NoteEntity newEntity = bullhornData.findEntity(NoteEntity.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) NoteEntity.class;
@@ -316,15 +316,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
     @Test
     public void testCreateOpportunity() {
 
-        Opportunity entity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+        Opportunity entity = bullhornData.findEntity(Opportunity.class, testEntities.getOpportunityId());
 
         Integer oldId = entity.getId();
 
         entity.setId(null);
 
-        CreateResponse response = bullhornApiRest.insertEntity(entity);
+        CreateResponse response = bullhornData.insertEntity(entity);
 
-        Opportunity newEntity = bullhornApiRest.findEntity(Opportunity.class, response.getChangedEntityId());
+        Opportunity newEntity = bullhornData.findEntity(Opportunity.class, response.getChangedEntityId());
 
         this.entityId = response.getChangedEntityId();
         this.deleteType = (Class<D>) Opportunity.class;
@@ -336,15 +336,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	// @Test
 	public void testCreatePlacement() {
 
-		Placement entity = bullhornApiRest.findEntity(Placement.class, testEntities.getPlacementId());
+		Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		Placement newEntity = bullhornApiRest.findEntity(Placement.class, response.getChangedEntityId());
+		Placement newEntity = bullhornData.findEntity(Placement.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) Placement.class;
@@ -355,15 +355,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 
 	@Test
 	public void testCreatePlacementCommission() {
-		PlacementCommission entity = bullhornApiRest.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
+		PlacementCommission entity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		PlacementCommission newEntity = bullhornApiRest.findEntity(PlacementCommission.class, response.getChangedEntityId());
+		PlacementCommission newEntity = bullhornData.findEntity(PlacementCommission.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) PlacementCommission.class;
@@ -375,15 +375,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateSendout() {
 
-		Sendout entity = bullhornApiRest.findEntity(Sendout.class, testEntities.getSendoutId());
+		Sendout entity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		Sendout newEntity = bullhornApiRest.findEntity(Sendout.class, response.getChangedEntityId());
+		Sendout newEntity = bullhornData.findEntity(Sendout.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) Sendout.class;
@@ -395,15 +395,15 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateTask() {
 
-		Task entity = bullhornApiRest.findEntity(Task.class, testEntities.getTaskId());
+		Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId());
 
 		Integer oldId = entity.getId();
 
 		entity.setId(null);
 
-		CreateResponse response = bullhornApiRest.insertEntity(entity);
+		CreateResponse response = bullhornData.insertEntity(entity);
 
-		Task newEntity = bullhornApiRest.findEntity(Task.class, response.getChangedEntityId());
+		Task newEntity = bullhornData.findEntity(Task.class, response.getChangedEntityId());
 
 		this.entityId = response.getChangedEntityId();
 		this.deleteType = (Class<D>) Task.class;

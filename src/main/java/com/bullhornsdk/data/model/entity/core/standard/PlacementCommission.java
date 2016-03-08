@@ -1,28 +1,18 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
+import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.embedded.LinkedId;
+import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "comments", "commissionPercentage", "dateAdded", "externalRecipient", "flatPayout",
+@JsonPropertyOrder({ "id", "comments", "commissionPercentage", "dateAdded", "dateLastModified", "externalRecipient", "flatPayout",
         "grossMarginPercentage", "hourlyPayout", "migrateGUID", "placement", "role", "status", "user" })
-public class PlacementCommission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity {
+public class PlacementCommission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity, DateLastModifiedEntity {
 
     private Integer id;
 
@@ -32,6 +22,8 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
     private BigDecimal commissionPercentage;
 
     private DateTime dateAdded;
+
+    private DateTime dateLastModified;
 
     @Size(max = 100)
     private String externalRecipient;
@@ -93,6 +85,16 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
     @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
     }
 
     @JsonProperty("externalRecipient")
@@ -186,133 +188,69 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PlacementCommission that = (PlacementCommission) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (comments != null ? !comments.equals(that.comments) : that.comments != null) return false;
+        if (commissionPercentage != null ? !commissionPercentage.equals(that.commissionPercentage) : that.commissionPercentage != null)
+            return false;
+        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+        if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
+            return false;
+        if (externalRecipient != null ? !externalRecipient.equals(that.externalRecipient) : that.externalRecipient != null)
+            return false;
+        if (flatPayout != null ? !flatPayout.equals(that.flatPayout) : that.flatPayout != null) return false;
+        if (grossMarginPercentage != null ? !grossMarginPercentage.equals(that.grossMarginPercentage) : that.grossMarginPercentage != null)
+            return false;
+        if (hourlyPayout != null ? !hourlyPayout.equals(that.hourlyPayout) : that.hourlyPayout != null) return false;
+        if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+        if (placement != null ? !placement.equals(that.placement) : that.placement != null) return false;
+        if (role != null ? !role.equals(that.role) : that.role != null) return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        return !(user != null ? !user.equals(that.user) : that.user != null);
+
+    }
+
+    @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((comments == null) ? 0 : comments.hashCode());
-        result = prime * result + ((commissionPercentage == null) ? 0 : commissionPercentage.hashCode());
-        result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-        result = prime * result + ((externalRecipient == null) ? 0 : externalRecipient.hashCode());
-        result = prime * result + ((flatPayout == null) ? 0 : flatPayout.hashCode());
-        result = prime * result + ((grossMarginPercentage == null) ? 0 : grossMarginPercentage.hashCode());
-        result = prime * result + ((hourlyPayout == null) ? 0 : hourlyPayout.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-        result = prime * result + ((placement == null) ? 0 : placement.hashCode());
-        result = prime * result + ((role == null) ? 0 : role.hashCode());
-        result = prime * result + ((status == null) ? 0 : status.hashCode());
-        result = prime * result + ((user == null) ? 0 : user.hashCode());
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (comments != null ? comments.hashCode() : 0);
+        result = 31 * result + (commissionPercentage != null ? commissionPercentage.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+        result = 31 * result + (externalRecipient != null ? externalRecipient.hashCode() : 0);
+        result = 31 * result + (flatPayout != null ? flatPayout.hashCode() : 0);
+        result = 31 * result + (grossMarginPercentage != null ? grossMarginPercentage.hashCode() : 0);
+        result = 31 * result + (hourlyPayout != null ? hourlyPayout.hashCode() : 0);
+        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+        result = 31 * result + (placement != null ? placement.hashCode() : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (user != null ? user.hashCode() : 0);
         return result;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        PlacementCommission other = (PlacementCommission) obj;
-        if (comments == null) {
-            if (other.comments != null)
-                return false;
-        } else if (!comments.equals(other.comments))
-            return false;
-        if (commissionPercentage == null) {
-            if (other.commissionPercentage != null)
-                return false;
-        } else if (!commissionPercentage.equals(other.commissionPercentage))
-            return false;
-        if (dateAdded == null) {
-            if (other.dateAdded != null)
-                return false;
-        } else if (!dateAdded.isEqual(other.dateAdded))
-            return false;
-        if (externalRecipient == null) {
-            if (other.externalRecipient != null)
-                return false;
-        } else if (!externalRecipient.equals(other.externalRecipient))
-            return false;
-        if (flatPayout == null) {
-            if (other.flatPayout != null)
-                return false;
-        } else if (!flatPayout.equals(other.flatPayout))
-            return false;
-        if (grossMarginPercentage == null) {
-            if (other.grossMarginPercentage != null)
-                return false;
-        } else if (!grossMarginPercentage.equals(other.grossMarginPercentage))
-            return false;
-        if (hourlyPayout == null) {
-            if (other.hourlyPayout != null)
-                return false;
-        } else if (!hourlyPayout.equals(other.hourlyPayout))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (migrateGUID == null) {
-            if (other.migrateGUID != null)
-                return false;
-        } else if (!migrateGUID.equals(other.migrateGUID))
-            return false;
-        if (placement == null) {
-            if (other.placement != null)
-                return false;
-        } else if (!placement.equals(other.placement))
-            return false;
-        if (role == null) {
-            if (other.role != null)
-                return false;
-        } else if (!role.equals(other.role))
-            return false;
-        if (status == null) {
-            if (other.status != null)
-                return false;
-        } else if (!status.equals(other.status))
-            return false;
-        if (user == null) {
-            if (other.user != null)
-                return false;
-        } else if (!user.equals(other.user))
-            return false;
-        return true;
-    }
-
-    @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("PlacementCommission {\nid=");
-        builder.append(id);
-        builder.append(", \ncomments=");
-        builder.append(comments);
-        builder.append(", \ncommissionPercentage=");
-        builder.append(commissionPercentage);
-        builder.append(", \ndateAdded=");
-        builder.append(dateAdded);
-        builder.append(", \nexternalRecipient=");
-        builder.append(externalRecipient);
-        builder.append(", \nflatPayout=");
-        builder.append(flatPayout);
-        builder.append(", \ngrossMarginPercentage=");
-        builder.append(grossMarginPercentage);
-        builder.append(", \nhourlyPayout=");
-        builder.append(hourlyPayout);
-        builder.append(", \nmigrateGUID=");
-        builder.append(migrateGUID);
-        builder.append(", \nplacement=");
-        builder.append(placement);
-        builder.append(", \nrole=");
-        builder.append(role);
-        builder.append(", \nstatus=");
-        builder.append(status);
-        builder.append(", \nuser=");
-        builder.append(user);
-        builder.append("\n}");
-        return builder.toString();
+        return "PlacementCommission{" +
+                "id=" + id +
+                ", comments='" + comments + '\'' +
+                ", commissionPercentage=" + commissionPercentage +
+                ", dateAdded=" + dateAdded +
+                ", dateLastModified=" + dateLastModified +
+                ", externalRecipient='" + externalRecipient + '\'' +
+                ", flatPayout=" + flatPayout +
+                ", grossMarginPercentage=" + grossMarginPercentage +
+                ", hourlyPayout=" + hourlyPayout +
+                ", migrateGUID='" + migrateGUID + '\'' +
+                ", placement=" + placement +
+                ", role='" + role + '\'' +
+                ", status='" + status + '\'' +
+                ", user=" + user +
+                '}';
     }
-
 }

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertFalse
 import static org.junit.Assert.assertNotNull
 import static org.junit.Assert.assertTrue
-import static org.junit.Assert.fail
+
 import org.apache.commons.io.FileUtils
 import org.apache.commons.lang3.StringUtils
 import org.joda.time.DateTime
@@ -427,7 +427,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 
 	@Test
 	public void testGetMetaData() {
-		MetaData<JobOrder> meta = bullhornApiRest.getMetaData(JobOrder.class, MetaParameter.FULL,null);
+		MetaData<JobOrder> meta = bullhornData.getMetaData(JobOrder.class, MetaParameter.FULL,null);
 		runAssertionsOnMetaData(meta, JobOrder.class);
 	}
 

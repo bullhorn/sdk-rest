@@ -4,8 +4,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
+import java.io.IOException;
+
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Before;
@@ -13,23 +13,23 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.bullhornsdk.data.BaseTest;
-import com.bullhornsdk.data.api.RestApiSettings;
-
-import java.io.IOException;
+import com.bullhornsdk.data.api.BullhornRestCredentials;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
 
 @Ignore
 public class TestRestApiSession extends BaseTest {
 
 	private RestApiSession restApiSession;
 
-	private RestApiSettings bullhornRestCredentials;
+	private BullhornRestCredentials bullhornRestCredentials;
 
 	/**
 	 * Add your own rest credentials here to test the connection.
 	 */
 	@Before
 	public void setupTheCredentials() {
-		RestApiSettings creds = new RestApiSettings();
+		BullhornRestCredentials creds = new BullhornRestCredentials();
 
 		creds.setRestAuthorizeUrl("https://auth9.bullhornstaffing.com/oauth/authorize");
 		creds.setRestClientId("MY-CLIENT-ID");

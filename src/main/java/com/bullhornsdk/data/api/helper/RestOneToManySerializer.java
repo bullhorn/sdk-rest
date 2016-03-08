@@ -17,7 +17,6 @@ public class RestOneToManySerializer extends JsonSerializer<OneToMany<CustomObje
 	@Override
 	public void serialize(OneToMany<CustomObjectInstance> value, JsonGenerator jgen, SerializerProvider provider)
 			throws IOException, JsonProcessingException {
-		
 		jgen.writeStartArray();
 		
 		for(CustomObjectInstance customObjectInstance : value.getData()) {
