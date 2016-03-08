@@ -1,39 +1,17 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.FileEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -47,7 +25,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"onSite", "optionsPackage", "owner", "priority", "publicDescription", "publishedZip", "reasonClosed", "salary", "salaryUnit", "skillList", "skills", "source", "specialties", "status",
 		"tasks", "tearsheets", "title", "type", "weightedDealValue", "willRelocate", "winProbabilityPercent", "yearsRequired", "customObject1s", "customObject2s", "customObject3s",
         "customObject4s", "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
-public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity {
+public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity {
 
 	private BigDecimal luceneScore;
 	
@@ -248,6 +226,8 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	private BigDecimal weightedDealValue;
 	
 	private DateTime dateLastModified;
+
+	private OneToMany<Tearsheet> tearsheets;
 
     private OneToMany<JobOrderCustomObjectInstance1> customObject1s;
 
@@ -1129,7 +1109,17 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		this.dateLastModified = dateLastModified;
 	}
 
-    @JsonProperty("customObject1s")
+	@JsonProperty("tearsheets")
+	public OneToMany<Tearsheet> getTearsheets() {
+		return tearsheets;
+	}
+
+	@JsonProperty("tearsheets")
+	public void setTearsheets(OneToMany<Tearsheet> tearsheets) {
+		this.tearsheets = tearsheets;
+	}
+
+	@JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<JobOrderCustomObjectInstance1> getCustomObject1s() {
@@ -1249,477 +1239,358 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
         this.customObject10s = customObject10s;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Opportunity)) return false;
-        if (!super.equals(o)) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		if (!super.equals(o)) return false;
 
-        Opportunity that = (Opportunity) o;
+		Opportunity that = (Opportunity) o;
 
-        if (luceneScore != null ? !luceneScore.equals(that.luceneScore) : that.luceneScore != null) return false;
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (owner != null ? !owner.equals(that.owner) : that.owner != null) return false;
-        if (title != null ? !title.equals(that.title) : that.title != null) return false;
-        if (type != null ? !type.equals(that.type) : that.type != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (estimatedStartDate != null ? !estimatedStartDate.equals(that.estimatedStartDate) : that.estimatedStartDate != null)
-            return false;
-        if (estimatedHoursPerWeek != null ? !estimatedHoursPerWeek.equals(that.estimatedHoursPerWeek) : that.estimatedHoursPerWeek != null)
-            return false;
-        if (estimatedDuration != null ? !estimatedDuration.equals(that.estimatedDuration) : that.estimatedDuration != null)
-            return false;
-        if (salary != null ? !salary.equals(that.salary) : that.salary != null) return false;
-        if (salaryUnit != null ? !salaryUnit.equals(that.salaryUnit) : that.salaryUnit != null) return false;
-        if (onSite != null ? !onSite.equals(that.onSite) : that.onSite != null) return false;
-        if (taxStatus != null ? !taxStatus.equals(that.taxStatus) : that.taxStatus != null) return false;
-        if (branchCode != null ? !branchCode.equals(that.branchCode) : that.branchCode != null) return false;
-        if (isOpen != null ? !isOpen.equals(that.isOpen) : that.isOpen != null) return false;
-        if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
-        if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
-        if (externalCategoryID != null ? !externalCategoryID.equals(that.externalCategoryID) : that.externalCategoryID != null)
-            return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (clientContact != null ? !clientContact.equals(that.clientContact) : that.clientContact != null)
-            return false;
-        if (priority != null ? !priority.equals(that.priority) : that.priority != null) return false;
-        if (isClientContact != null ? !isClientContact.equals(that.isClientContact) : that.isClientContact != null)
-            return false;
-        if (dateClientInterview != null ? !dateClientInterview.equals(that.dateClientInterview) : that.dateClientInterview != null)
-            return false;
-        if (isPublic != null ? !isPublic.equals(that.isPublic) : that.isPublic != null) return false;
-        if (numOpenings != null ? !numOpenings.equals(that.numOpenings) : that.numOpenings != null) return false;
-        if (isExtendable != null ? !isExtendable.equals(that.isExtendable) : that.isExtendable != null) return false;
-        if (yearsRequired != null ? !yearsRequired.equals(that.yearsRequired) : that.yearsRequired != null)
-            return false;
-        if (externalID != null ? !externalID.equals(that.externalID) : that.externalID != null) return false;
-        if (actualCloseDate != null ? !actualCloseDate.equals(that.actualCloseDate) : that.actualCloseDate != null)
-            return false;
-        if (reasonClosed != null ? !reasonClosed.equals(that.reasonClosed) : that.reasonClosed != null) return false;
-        if (salaryRange != null ? !salaryRange.equals(that.salaryRange) : that.salaryRange != null) return false;
-        if (committed != null ? !committed.equals(that.committed) : that.committed != null) return false;
-        if (willRelocate != null ? !willRelocate.equals(that.willRelocate) : that.willRelocate != null) return false;
-        if (educationDegree != null ? !educationDegree.equals(that.educationDegree) : that.educationDegree != null)
-            return false;
-        if (reportToClientContact != null ? !reportToClientContact.equals(that.reportToClientContact) : that.reportToClientContact != null)
-            return false;
-        if (estimatedEndDate != null ? !estimatedEndDate.equals(that.estimatedEndDate) : that.estimatedEndDate != null)
-            return false;
-        if (isInterviewRequired != null ? !isInterviewRequired.equals(that.isInterviewRequired) : that.isInterviewRequired != null)
-            return false;
-        if (benefits != null ? !benefits.equals(that.benefits) : that.benefits != null) return false;
-        if (costCenter != null ? !costCenter.equals(that.costCenter) : that.costCenter != null) return false;
-        if (reportTo != null ? !reportTo.equals(that.reportTo) : that.reportTo != null) return false;
-        if (skillList != null ? !skillList.equals(that.skillList) : that.skillList != null) return false;
-        if (degreeList != null ? !degreeList.equals(that.degreeList) : that.degreeList != null) return false;
-        if (expectedBillRate != null ? !expectedBillRate.equals(that.expectedBillRate) : that.expectedBillRate != null)
-            return false;
-        if (publicDescription != null ? !publicDescription.equals(that.publicDescription) : that.publicDescription != null)
-            return false;
-        if (hoursOfOperation != null ? !hoursOfOperation.equals(that.hoursOfOperation) : that.hoursOfOperation != null)
-            return false;
-        if (source != null ? !source.equals(that.source) : that.source != null) return false;
-        if (optionsPackage != null ? !optionsPackage.equals(that.optionsPackage) : that.optionsPackage != null)
-            return false;
-        if (bonusPackage != null ? !bonusPackage.equals(that.bonusPackage) : that.bonusPackage != null) return false;
-        if (jobOrders != null ? !jobOrders.equals(that.jobOrders) : that.jobOrders != null) return false;
-        if (clientCorporation != null ? !clientCorporation.equals(that.clientCorporation) : that.clientCorporation != null)
-            return false;
-        if (expectedPayRate != null ? !expectedPayRate.equals(that.expectedPayRate) : that.expectedPayRate != null)
-            return false;
-        if (expectedFee != null ? !expectedFee.equals(that.expectedFee) : that.expectedFee != null) return false;
-        if (isClientEditable != null ? !isClientEditable.equals(that.isClientEditable) : that.isClientEditable != null)
-            return false;
-        if (responseUser != null ? !responseUser.equals(that.responseUser) : that.responseUser != null) return false;
-        if (billRateCategoryID != null ? !billRateCategoryID.equals(that.billRateCategoryID) : that.billRateCategoryID != null)
-            return false;
-        if (expectedCloseDate != null ? !expectedCloseDate.equals(that.expectedCloseDate) : that.expectedCloseDate != null)
-            return false;
-        if (assignedDate != null ? !assignedDate.equals(that.assignedDate) : that.assignedDate != null) return false;
-        if (jobOrderUUID != null ? !jobOrderUUID.equals(that.jobOrderUUID) : that.jobOrderUUID != null) return false;
-        if (publishedZip != null ? !publishedZip.equals(that.publishedZip) : that.publishedZip != null) return false;
-        if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
-        if (taxRate != null ? !taxRate.equals(that.taxRate) : that.taxRate != null) return false;
-        if (isOpportunity != null ? !isOpportunity.equals(that.isOpportunity) : that.isOpportunity != null)
-            return false;
-        if (dateLastExported != null ? !dateLastExported.equals(that.dateLastExported) : that.dateLastExported != null)
-            return false;
-        if (ignoreUntilDate != null ? !ignoreUntilDate.equals(that.ignoreUntilDate) : that.ignoreUntilDate != null)
-            return false;
-        if (appointments != null ? !appointments.equals(that.appointments) : that.appointments != null) return false;
-        if (tasks != null ? !tasks.equals(that.tasks) : that.tasks != null) return false;
-        if (certifications != null ? !certifications.equals(that.certifications) : that.certifications != null)
-            return false;
-        if (assignedUsers != null ? !assignedUsers.equals(that.assignedUsers) : that.assignedUsers != null)
-            return false;
-        if (categories != null ? !categories.equals(that.categories) : that.categories != null) return false;
-        if (category != null ? !category.equals(that.category) : that.category != null) return false;
-        if (businessSector != null ? !businessSector.equals(that.businessSector) : that.businessSector != null)
-            return false;
-        if (specialties != null ? !specialties.equals(that.specialties) : that.specialties != null) return false;
-        if (skills != null ? !skills.equals(that.skills) : that.skills != null) return false;
-        if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
-        if (businessSectors != null ? !businessSectors.equals(that.businessSectors) : that.businessSectors != null)
-            return false;
-        if (webResponses != null ? !webResponses.equals(that.webResponses) : that.webResponses != null) return false;
-        if (effectiveDate != null ? !effectiveDate.equals(that.effectiveDate) : that.effectiveDate != null)
-            return false;
-        if (lead != null ? !lead.equals(that.lead) : that.lead != null) return false;
-        if (campaignSource != null ? !campaignSource.equals(that.campaignSource) : that.campaignSource != null)
-            return false;
-        if (markUpPercentage != null ? !markUpPercentage.equals(that.markUpPercentage) : that.markUpPercentage != null)
-            return false;
-        if (winProbabilityPercent != null ? !winProbabilityPercent.equals(that.winProbabilityPercent) : that.winProbabilityPercent != null)
-            return false;
-        if (dealValue != null ? !dealValue.equals(that.dealValue) : that.dealValue != null) return false;
-        if (weightedDealValue != null ? !weightedDealValue.equals(that.weightedDealValue) : that.weightedDealValue != null)
-            return false;
-        if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
-            return false;
-        if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
-            return false;
-        if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
-            return false;
-        if (customObject3s != null ? !customObject3s.equals(that.customObject3s) : that.customObject3s != null)
-            return false;
-        if (customObject4s != null ? !customObject4s.equals(that.customObject4s) : that.customObject4s != null)
-            return false;
-        if (customObject5s != null ? !customObject5s.equals(that.customObject5s) : that.customObject5s != null)
-            return false;
-        if (customObject6s != null ? !customObject6s.equals(that.customObject6s) : that.customObject6s != null)
-            return false;
-        if (customObject7s != null ? !customObject7s.equals(that.customObject7s) : that.customObject7s != null)
-            return false;
-        if (customObject8s != null ? !customObject8s.equals(that.customObject8s) : that.customObject8s != null)
-            return false;
-        if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
-            return false;
-        return !(customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null);
+		if (luceneScore != null ? !luceneScore.equals(that.luceneScore) : that.luceneScore != null) return false;
+		if (id != null ? !id.equals(that.id) : that.id != null) return false;
+		if (owner != null ? !owner.equals(that.owner) : that.owner != null) return false;
+		if (title != null ? !title.equals(that.title) : that.title != null) return false;
+		if (type != null ? !type.equals(that.type) : that.type != null) return false;
+		if (description != null ? !description.equals(that.description) : that.description != null) return false;
+		if (estimatedStartDate != null ? !estimatedStartDate.equals(that.estimatedStartDate) : that.estimatedStartDate != null)
+			return false;
+		if (estimatedHoursPerWeek != null ? !estimatedHoursPerWeek.equals(that.estimatedHoursPerWeek) : that.estimatedHoursPerWeek != null)
+			return false;
+		if (estimatedDuration != null ? !estimatedDuration.equals(that.estimatedDuration) : that.estimatedDuration != null)
+			return false;
+		if (salary != null ? !salary.equals(that.salary) : that.salary != null) return false;
+		if (salaryUnit != null ? !salaryUnit.equals(that.salaryUnit) : that.salaryUnit != null) return false;
+		if (onSite != null ? !onSite.equals(that.onSite) : that.onSite != null) return false;
+		if (taxStatus != null ? !taxStatus.equals(that.taxStatus) : that.taxStatus != null) return false;
+		if (branchCode != null ? !branchCode.equals(that.branchCode) : that.branchCode != null) return false;
+		if (isOpen != null ? !isOpen.equals(that.isOpen) : that.isOpen != null) return false;
+		if (address != null ? !address.equals(that.address) : that.address != null) return false;
+		if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+		if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
+		if (externalCategoryID != null ? !externalCategoryID.equals(that.externalCategoryID) : that.externalCategoryID != null)
+			return false;
+		if (status != null ? !status.equals(that.status) : that.status != null) return false;
+		if (clientContact != null ? !clientContact.equals(that.clientContact) : that.clientContact != null)
+			return false;
+		if (priority != null ? !priority.equals(that.priority) : that.priority != null) return false;
+		if (isClientContact != null ? !isClientContact.equals(that.isClientContact) : that.isClientContact != null)
+			return false;
+		if (dateClientInterview != null ? !dateClientInterview.equals(that.dateClientInterview) : that.dateClientInterview != null)
+			return false;
+		if (isPublic != null ? !isPublic.equals(that.isPublic) : that.isPublic != null) return false;
+		if (numOpenings != null ? !numOpenings.equals(that.numOpenings) : that.numOpenings != null) return false;
+		if (isExtendable != null ? !isExtendable.equals(that.isExtendable) : that.isExtendable != null) return false;
+		if (yearsRequired != null ? !yearsRequired.equals(that.yearsRequired) : that.yearsRequired != null)
+			return false;
+		if (externalID != null ? !externalID.equals(that.externalID) : that.externalID != null) return false;
+		if (actualCloseDate != null ? !actualCloseDate.equals(that.actualCloseDate) : that.actualCloseDate != null)
+			return false;
+		if (reasonClosed != null ? !reasonClosed.equals(that.reasonClosed) : that.reasonClosed != null) return false;
+		if (salaryRange != null ? !salaryRange.equals(that.salaryRange) : that.salaryRange != null) return false;
+		if (committed != null ? !committed.equals(that.committed) : that.committed != null) return false;
+		if (willRelocate != null ? !willRelocate.equals(that.willRelocate) : that.willRelocate != null) return false;
+		if (educationDegree != null ? !educationDegree.equals(that.educationDegree) : that.educationDegree != null)
+			return false;
+		if (reportToClientContact != null ? !reportToClientContact.equals(that.reportToClientContact) : that.reportToClientContact != null)
+			return false;
+		if (estimatedEndDate != null ? !estimatedEndDate.equals(that.estimatedEndDate) : that.estimatedEndDate != null)
+			return false;
+		if (isInterviewRequired != null ? !isInterviewRequired.equals(that.isInterviewRequired) : that.isInterviewRequired != null)
+			return false;
+		if (benefits != null ? !benefits.equals(that.benefits) : that.benefits != null) return false;
+		if (costCenter != null ? !costCenter.equals(that.costCenter) : that.costCenter != null) return false;
+		if (reportTo != null ? !reportTo.equals(that.reportTo) : that.reportTo != null) return false;
+		if (skillList != null ? !skillList.equals(that.skillList) : that.skillList != null) return false;
+		if (degreeList != null ? !degreeList.equals(that.degreeList) : that.degreeList != null) return false;
+		if (expectedBillRate != null ? !expectedBillRate.equals(that.expectedBillRate) : that.expectedBillRate != null)
+			return false;
+		if (publicDescription != null ? !publicDescription.equals(that.publicDescription) : that.publicDescription != null)
+			return false;
+		if (hoursOfOperation != null ? !hoursOfOperation.equals(that.hoursOfOperation) : that.hoursOfOperation != null)
+			return false;
+		if (source != null ? !source.equals(that.source) : that.source != null) return false;
+		if (optionsPackage != null ? !optionsPackage.equals(that.optionsPackage) : that.optionsPackage != null)
+			return false;
+		if (bonusPackage != null ? !bonusPackage.equals(that.bonusPackage) : that.bonusPackage != null) return false;
+		if (jobOrders != null ? !jobOrders.equals(that.jobOrders) : that.jobOrders != null) return false;
+		if (clientCorporation != null ? !clientCorporation.equals(that.clientCorporation) : that.clientCorporation != null)
+			return false;
+		if (expectedPayRate != null ? !expectedPayRate.equals(that.expectedPayRate) : that.expectedPayRate != null)
+			return false;
+		if (expectedFee != null ? !expectedFee.equals(that.expectedFee) : that.expectedFee != null) return false;
+		if (isClientEditable != null ? !isClientEditable.equals(that.isClientEditable) : that.isClientEditable != null)
+			return false;
+		if (responseUser != null ? !responseUser.equals(that.responseUser) : that.responseUser != null) return false;
+		if (billRateCategoryID != null ? !billRateCategoryID.equals(that.billRateCategoryID) : that.billRateCategoryID != null)
+			return false;
+		if (expectedCloseDate != null ? !expectedCloseDate.equals(that.expectedCloseDate) : that.expectedCloseDate != null)
+			return false;
+		if (assignedDate != null ? !assignedDate.equals(that.assignedDate) : that.assignedDate != null) return false;
+		if (jobOrderUUID != null ? !jobOrderUUID.equals(that.jobOrderUUID) : that.jobOrderUUID != null) return false;
+		if (publishedZip != null ? !publishedZip.equals(that.publishedZip) : that.publishedZip != null) return false;
+		if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+		if (taxRate != null ? !taxRate.equals(that.taxRate) : that.taxRate != null) return false;
+		if (isOpportunity != null ? !isOpportunity.equals(that.isOpportunity) : that.isOpportunity != null)
+			return false;
+		if (dateLastExported != null ? !dateLastExported.equals(that.dateLastExported) : that.dateLastExported != null)
+			return false;
+		if (ignoreUntilDate != null ? !ignoreUntilDate.equals(that.ignoreUntilDate) : that.ignoreUntilDate != null)
+			return false;
+		if (appointments != null ? !appointments.equals(that.appointments) : that.appointments != null) return false;
+		if (tasks != null ? !tasks.equals(that.tasks) : that.tasks != null) return false;
+		if (certifications != null ? !certifications.equals(that.certifications) : that.certifications != null)
+			return false;
+		if (assignedUsers != null ? !assignedUsers.equals(that.assignedUsers) : that.assignedUsers != null)
+			return false;
+		if (categories != null ? !categories.equals(that.categories) : that.categories != null) return false;
+		if (category != null ? !category.equals(that.category) : that.category != null) return false;
+		if (businessSector != null ? !businessSector.equals(that.businessSector) : that.businessSector != null)
+			return false;
+		if (specialties != null ? !specialties.equals(that.specialties) : that.specialties != null) return false;
+		if (skills != null ? !skills.equals(that.skills) : that.skills != null) return false;
+		if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
+		if (businessSectors != null ? !businessSectors.equals(that.businessSectors) : that.businessSectors != null)
+			return false;
+		if (webResponses != null ? !webResponses.equals(that.webResponses) : that.webResponses != null) return false;
+		if (effectiveDate != null ? !effectiveDate.equals(that.effectiveDate) : that.effectiveDate != null)
+			return false;
+		if (lead != null ? !lead.equals(that.lead) : that.lead != null) return false;
+		if (campaignSource != null ? !campaignSource.equals(that.campaignSource) : that.campaignSource != null)
+			return false;
+		if (markUpPercentage != null ? !markUpPercentage.equals(that.markUpPercentage) : that.markUpPercentage != null)
+			return false;
+		if (winProbabilityPercent != null ? !winProbabilityPercent.equals(that.winProbabilityPercent) : that.winProbabilityPercent != null)
+			return false;
+		if (dealValue != null ? !dealValue.equals(that.dealValue) : that.dealValue != null) return false;
+		if (weightedDealValue != null ? !weightedDealValue.equals(that.weightedDealValue) : that.weightedDealValue != null)
+			return false;
+		if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
+			return false;
+		if (tearsheets != null ? !tearsheets.equals(that.tearsheets) : that.tearsheets != null) return false;
+		if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
+			return false;
+		if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
+			return false;
+		if (customObject3s != null ? !customObject3s.equals(that.customObject3s) : that.customObject3s != null)
+			return false;
+		if (customObject4s != null ? !customObject4s.equals(that.customObject4s) : that.customObject4s != null)
+			return false;
+		if (customObject5s != null ? !customObject5s.equals(that.customObject5s) : that.customObject5s != null)
+			return false;
+		if (customObject6s != null ? !customObject6s.equals(that.customObject6s) : that.customObject6s != null)
+			return false;
+		if (customObject7s != null ? !customObject7s.equals(that.customObject7s) : that.customObject7s != null)
+			return false;
+		if (customObject8s != null ? !customObject8s.equals(that.customObject8s) : that.customObject8s != null)
+			return false;
+		if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
+			return false;
+		return !(customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null);
 
-    }
+	}
 
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (luceneScore != null ? luceneScore.hashCode() : 0);
-        result = 31 * result + (id != null ? id.hashCode() : 0);
-        result = 31 * result + (owner != null ? owner.hashCode() : 0);
-        result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (estimatedStartDate != null ? estimatedStartDate.hashCode() : 0);
-        result = 31 * result + (estimatedHoursPerWeek != null ? estimatedHoursPerWeek.hashCode() : 0);
-        result = 31 * result + (estimatedDuration != null ? estimatedDuration.hashCode() : 0);
-        result = 31 * result + (salary != null ? salary.hashCode() : 0);
-        result = 31 * result + (salaryUnit != null ? salaryUnit.hashCode() : 0);
-        result = 31 * result + (onSite != null ? onSite.hashCode() : 0);
-        result = 31 * result + (taxStatus != null ? taxStatus.hashCode() : 0);
-        result = 31 * result + (branchCode != null ? branchCode.hashCode() : 0);
-        result = 31 * result + (isOpen != null ? isOpen.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
-        result = 31 * result + (externalCategoryID != null ? externalCategoryID.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
-        result = 31 * result + (priority != null ? priority.hashCode() : 0);
-        result = 31 * result + (isClientContact != null ? isClientContact.hashCode() : 0);
-        result = 31 * result + (dateClientInterview != null ? dateClientInterview.hashCode() : 0);
-        result = 31 * result + (isPublic != null ? isPublic.hashCode() : 0);
-        result = 31 * result + (numOpenings != null ? numOpenings.hashCode() : 0);
-        result = 31 * result + (isExtendable != null ? isExtendable.hashCode() : 0);
-        result = 31 * result + (yearsRequired != null ? yearsRequired.hashCode() : 0);
-        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
-        result = 31 * result + (actualCloseDate != null ? actualCloseDate.hashCode() : 0);
-        result = 31 * result + (reasonClosed != null ? reasonClosed.hashCode() : 0);
-        result = 31 * result + (salaryRange != null ? salaryRange.hashCode() : 0);
-        result = 31 * result + (committed != null ? committed.hashCode() : 0);
-        result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
-        result = 31 * result + (educationDegree != null ? educationDegree.hashCode() : 0);
-        result = 31 * result + (reportToClientContact != null ? reportToClientContact.hashCode() : 0);
-        result = 31 * result + (estimatedEndDate != null ? estimatedEndDate.hashCode() : 0);
-        result = 31 * result + (isInterviewRequired != null ? isInterviewRequired.hashCode() : 0);
-        result = 31 * result + (benefits != null ? benefits.hashCode() : 0);
-        result = 31 * result + (costCenter != null ? costCenter.hashCode() : 0);
-        result = 31 * result + (reportTo != null ? reportTo.hashCode() : 0);
-        result = 31 * result + (skillList != null ? skillList.hashCode() : 0);
-        result = 31 * result + (degreeList != null ? degreeList.hashCode() : 0);
-        result = 31 * result + (expectedBillRate != null ? expectedBillRate.hashCode() : 0);
-        result = 31 * result + (publicDescription != null ? publicDescription.hashCode() : 0);
-        result = 31 * result + (hoursOfOperation != null ? hoursOfOperation.hashCode() : 0);
-        result = 31 * result + (source != null ? source.hashCode() : 0);
-        result = 31 * result + (optionsPackage != null ? optionsPackage.hashCode() : 0);
-        result = 31 * result + (bonusPackage != null ? bonusPackage.hashCode() : 0);
-        result = 31 * result + (jobOrders != null ? jobOrders.hashCode() : 0);
-        result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
-        result = 31 * result + (expectedPayRate != null ? expectedPayRate.hashCode() : 0);
-        result = 31 * result + (expectedFee != null ? expectedFee.hashCode() : 0);
-        result = 31 * result + (isClientEditable != null ? isClientEditable.hashCode() : 0);
-        result = 31 * result + (responseUser != null ? responseUser.hashCode() : 0);
-        result = 31 * result + (billRateCategoryID != null ? billRateCategoryID.hashCode() : 0);
-        result = 31 * result + (expectedCloseDate != null ? expectedCloseDate.hashCode() : 0);
-        result = 31 * result + (assignedDate != null ? assignedDate.hashCode() : 0);
-        result = 31 * result + (jobOrderUUID != null ? jobOrderUUID.hashCode() : 0);
-        result = 31 * result + (publishedZip != null ? publishedZip.hashCode() : 0);
-        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
-        result = 31 * result + (taxRate != null ? taxRate.hashCode() : 0);
-        result = 31 * result + (isOpportunity != null ? isOpportunity.hashCode() : 0);
-        result = 31 * result + (dateLastExported != null ? dateLastExported.hashCode() : 0);
-        result = 31 * result + (ignoreUntilDate != null ? ignoreUntilDate.hashCode() : 0);
-        result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
-        result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
-        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
-        result = 31 * result + (assignedUsers != null ? assignedUsers.hashCode() : 0);
-        result = 31 * result + (categories != null ? categories.hashCode() : 0);
-        result = 31 * result + (category != null ? category.hashCode() : 0);
-        result = 31 * result + (businessSector != null ? businessSector.hashCode() : 0);
-        result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
-        result = 31 * result + (skills != null ? skills.hashCode() : 0);
-        result = 31 * result + (notes != null ? notes.hashCode() : 0);
-        result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
-        result = 31 * result + (webResponses != null ? webResponses.hashCode() : 0);
-        result = 31 * result + (effectiveDate != null ? effectiveDate.hashCode() : 0);
-        result = 31 * result + (lead != null ? lead.hashCode() : 0);
-        result = 31 * result + (campaignSource != null ? campaignSource.hashCode() : 0);
-        result = 31 * result + (markUpPercentage != null ? markUpPercentage.hashCode() : 0);
-        result = 31 * result + (winProbabilityPercent != null ? winProbabilityPercent.hashCode() : 0);
-        result = 31 * result + (dealValue != null ? dealValue.hashCode() : 0);
-        result = 31 * result + (weightedDealValue != null ? weightedDealValue.hashCode() : 0);
-        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
-        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
-        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
-        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
-        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
-        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
-        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
-        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
-        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
-        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
-        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
-        return result;
-    }
+	@Override
+	public int hashCode() {
+		int result = super.hashCode();
+		result = 31 * result + (luceneScore != null ? luceneScore.hashCode() : 0);
+		result = 31 * result + (id != null ? id.hashCode() : 0);
+		result = 31 * result + (owner != null ? owner.hashCode() : 0);
+		result = 31 * result + (title != null ? title.hashCode() : 0);
+		result = 31 * result + (type != null ? type.hashCode() : 0);
+		result = 31 * result + (description != null ? description.hashCode() : 0);
+		result = 31 * result + (estimatedStartDate != null ? estimatedStartDate.hashCode() : 0);
+		result = 31 * result + (estimatedHoursPerWeek != null ? estimatedHoursPerWeek.hashCode() : 0);
+		result = 31 * result + (estimatedDuration != null ? estimatedDuration.hashCode() : 0);
+		result = 31 * result + (salary != null ? salary.hashCode() : 0);
+		result = 31 * result + (salaryUnit != null ? salaryUnit.hashCode() : 0);
+		result = 31 * result + (onSite != null ? onSite.hashCode() : 0);
+		result = 31 * result + (taxStatus != null ? taxStatus.hashCode() : 0);
+		result = 31 * result + (branchCode != null ? branchCode.hashCode() : 0);
+		result = 31 * result + (isOpen != null ? isOpen.hashCode() : 0);
+		result = 31 * result + (address != null ? address.hashCode() : 0);
+		result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+		result = 31 * result + (externalCategoryID != null ? externalCategoryID.hashCode() : 0);
+		result = 31 * result + (status != null ? status.hashCode() : 0);
+		result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
+		result = 31 * result + (priority != null ? priority.hashCode() : 0);
+		result = 31 * result + (isClientContact != null ? isClientContact.hashCode() : 0);
+		result = 31 * result + (dateClientInterview != null ? dateClientInterview.hashCode() : 0);
+		result = 31 * result + (isPublic != null ? isPublic.hashCode() : 0);
+		result = 31 * result + (numOpenings != null ? numOpenings.hashCode() : 0);
+		result = 31 * result + (isExtendable != null ? isExtendable.hashCode() : 0);
+		result = 31 * result + (yearsRequired != null ? yearsRequired.hashCode() : 0);
+		result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
+		result = 31 * result + (actualCloseDate != null ? actualCloseDate.hashCode() : 0);
+		result = 31 * result + (reasonClosed != null ? reasonClosed.hashCode() : 0);
+		result = 31 * result + (salaryRange != null ? salaryRange.hashCode() : 0);
+		result = 31 * result + (committed != null ? committed.hashCode() : 0);
+		result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
+		result = 31 * result + (educationDegree != null ? educationDegree.hashCode() : 0);
+		result = 31 * result + (reportToClientContact != null ? reportToClientContact.hashCode() : 0);
+		result = 31 * result + (estimatedEndDate != null ? estimatedEndDate.hashCode() : 0);
+		result = 31 * result + (isInterviewRequired != null ? isInterviewRequired.hashCode() : 0);
+		result = 31 * result + (benefits != null ? benefits.hashCode() : 0);
+		result = 31 * result + (costCenter != null ? costCenter.hashCode() : 0);
+		result = 31 * result + (reportTo != null ? reportTo.hashCode() : 0);
+		result = 31 * result + (skillList != null ? skillList.hashCode() : 0);
+		result = 31 * result + (degreeList != null ? degreeList.hashCode() : 0);
+		result = 31 * result + (expectedBillRate != null ? expectedBillRate.hashCode() : 0);
+		result = 31 * result + (publicDescription != null ? publicDescription.hashCode() : 0);
+		result = 31 * result + (hoursOfOperation != null ? hoursOfOperation.hashCode() : 0);
+		result = 31 * result + (source != null ? source.hashCode() : 0);
+		result = 31 * result + (optionsPackage != null ? optionsPackage.hashCode() : 0);
+		result = 31 * result + (bonusPackage != null ? bonusPackage.hashCode() : 0);
+		result = 31 * result + (jobOrders != null ? jobOrders.hashCode() : 0);
+		result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
+		result = 31 * result + (expectedPayRate != null ? expectedPayRate.hashCode() : 0);
+		result = 31 * result + (expectedFee != null ? expectedFee.hashCode() : 0);
+		result = 31 * result + (isClientEditable != null ? isClientEditable.hashCode() : 0);
+		result = 31 * result + (responseUser != null ? responseUser.hashCode() : 0);
+		result = 31 * result + (billRateCategoryID != null ? billRateCategoryID.hashCode() : 0);
+		result = 31 * result + (expectedCloseDate != null ? expectedCloseDate.hashCode() : 0);
+		result = 31 * result + (assignedDate != null ? assignedDate.hashCode() : 0);
+		result = 31 * result + (jobOrderUUID != null ? jobOrderUUID.hashCode() : 0);
+		result = 31 * result + (publishedZip != null ? publishedZip.hashCode() : 0);
+		result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+		result = 31 * result + (taxRate != null ? taxRate.hashCode() : 0);
+		result = 31 * result + (isOpportunity != null ? isOpportunity.hashCode() : 0);
+		result = 31 * result + (dateLastExported != null ? dateLastExported.hashCode() : 0);
+		result = 31 * result + (ignoreUntilDate != null ? ignoreUntilDate.hashCode() : 0);
+		result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
+		result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
+		result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
+		result = 31 * result + (assignedUsers != null ? assignedUsers.hashCode() : 0);
+		result = 31 * result + (categories != null ? categories.hashCode() : 0);
+		result = 31 * result + (category != null ? category.hashCode() : 0);
+		result = 31 * result + (businessSector != null ? businessSector.hashCode() : 0);
+		result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
+		result = 31 * result + (skills != null ? skills.hashCode() : 0);
+		result = 31 * result + (notes != null ? notes.hashCode() : 0);
+		result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
+		result = 31 * result + (webResponses != null ? webResponses.hashCode() : 0);
+		result = 31 * result + (effectiveDate != null ? effectiveDate.hashCode() : 0);
+		result = 31 * result + (lead != null ? lead.hashCode() : 0);
+		result = 31 * result + (campaignSource != null ? campaignSource.hashCode() : 0);
+		result = 31 * result + (markUpPercentage != null ? markUpPercentage.hashCode() : 0);
+		result = 31 * result + (winProbabilityPercent != null ? winProbabilityPercent.hashCode() : 0);
+		result = 31 * result + (dealValue != null ? dealValue.hashCode() : 0);
+		result = 31 * result + (weightedDealValue != null ? weightedDealValue.hashCode() : 0);
+		result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+		result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
+		result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
+		result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
+		result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
+		result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
+		result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
+		result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
+		result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
+		result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
+		result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
+		result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
+		return result;
+	}
 
-    @Override
-    public String toString() {
-        return new StringBuilder("Opportunity {")
-                .append("\n\t\"actualCloseDate\": ")
-                .append(actualCloseDate)
-                .append(",\n\t\"luceneScore\": ")
-                .append(luceneScore)
-                .append(",\n\t\"id\": ")
-                .append(id)
-                .append(",\n\t\"owner\": ")
-                .append(owner)
-                .append(",\n\t\"title\": ")
-                .append("'")
-                .append(title).append('\'')
-                .append(",\n\t\"type\": ")
-                .append("'")
-                .append(type).append('\'')
-                .append(",\n\t\"description\": ")
-                .append("'")
-                .append(description).append('\'')
-                .append(",\n\t\"estimatedStartDate\": ")
-                .append(estimatedStartDate)
-                .append(",\n\t\"estimatedHoursPerWeek\": ")
-                .append(estimatedHoursPerWeek)
-                .append(",\n\t\"estimatedDuration\": ")
-                .append(estimatedDuration)
-                .append(",\n\t\"salary\": ")
-                .append(salary)
-                .append(",\n\t\"salaryUnit\": ")
-                .append("'")
-                .append(salaryUnit).append('\'')
-                .append(",\n\t\"onSite\": ")
-                .append("'")
-                .append(onSite).append('\'')
-                .append(",\n\t\"taxStatus\": ")
-                .append("'")
-                .append(taxStatus).append('\'')
-                .append(",\n\t\"branchCode\": ")
-                .append("'")
-                .append(branchCode).append('\'')
-                .append(",\n\t\"isOpen\": ")
-                .append(isOpen)
-                .append(",\n\t\"address\": ")
-                .append(address)
-                .append(",\n\t\"dateAdded\": ")
-                .append(dateAdded)
-                .append(",\n\t\"isDeleted\": ")
-                .append(isDeleted)
-                .append(",\n\t\"externalCategoryID\": ")
-                .append(externalCategoryID)
-                .append(",\n\t\"status\": ")
-                .append("'")
-                .append(status).append('\'')
-                .append(",\n\t\"clientContact\": ")
-                .append(clientContact)
-                .append(",\n\t\"priority\": ")
-                .append(priority)
-                .append(",\n\t\"isClientContact\": ")
-                .append(isClientContact)
-                .append(",\n\t\"dateClientInterview\": ")
-                .append(dateClientInterview)
-                .append(",\n\t\"isPublic\": ")
-                .append(isPublic)
-                .append(",\n\t\"numOpenings\": ")
-                .append(numOpenings)
-                .append(",\n\t\"isExtendable\": ")
-                .append(isExtendable)
-                .append(",\n\t\"yearsRequired\": ")
-                .append(yearsRequired)
-                .append(",\n\t\"externalID\": ")
-                .append("'")
-                .append(externalID).append('\'')
-                .append(",\n\t\"reasonClosed\": ")
-                .append("'")
-                .append(reasonClosed).append('\'')
-                .append(",\n\t\"salaryRange\": ")
-                .append("'")
-                .append(salaryRange).append('\'')
-                .append(",\n\t\"committed\": ")
-                .append(committed)
-                .append(",\n\t\"willRelocate\": ")
-                .append(willRelocate)
-                .append(",\n\t\"educationDegree\": ")
-                .append("'")
-                .append(educationDegree).append('\'')
-                .append(",\n\t\"reportToClientContact\": ")
-                .append(reportToClientContact)
-                .append(",\n\t\"estimatedEndDate\": ")
-                .append(estimatedEndDate)
-                .append(",\n\t\"isInterviewRequired\": ")
-                .append(isInterviewRequired)
-                .append(",\n\t\"benefits\": ")
-                .append("'")
-                .append(benefits).append('\'')
-                .append(",\n\t\"costCenter\": ")
-                .append("'")
-                .append(costCenter).append('\'')
-                .append(",\n\t\"reportTo\": ")
-                .append("'")
-                .append(reportTo).append('\'')
-                .append(",\n\t\"skillList\": ")
-                .append("'")
-                .append(skillList).append('\'')
-                .append(",\n\t\"degreeList\": ")
-                .append("'")
-                .append(degreeList).append('\'')
-                .append(",\n\t\"expectedBillRate\": ")
-                .append(expectedBillRate)
-                .append(",\n\t\"publicDescription\": ")
-                .append("'")
-                .append(publicDescription).append('\'')
-                .append(",\n\t\"hoursOfOperation\": ")
-                .append("'")
-                .append(hoursOfOperation).append('\'')
-                .append(",\n\t\"source\": ")
-                .append("'")
-                .append(source).append('\'')
-                .append(",\n\t\"optionsPackage\": ")
-                .append("'")
-                .append(optionsPackage).append('\'')
-                .append(",\n\t\"bonusPackage\": ")
-                .append("'")
-                .append(bonusPackage).append('\'')
-                .append(",\n\t\"jobOrders\": ")
-                .append(jobOrders)
-                .append(",\n\t\"clientCorporation\": ")
-                .append(clientCorporation)
-                .append(",\n\t\"expectedPayRate\": ")
-                .append(expectedPayRate)
-                .append(",\n\t\"expectedFee\": ")
-                .append(expectedFee)
-                .append(",\n\t\"isClientEditable\": ")
-                .append(isClientEditable)
-                .append(",\n\t\"responseUser\": ")
-                .append(responseUser)
-                .append(",\n\t\"billRateCategoryID\": ")
-                .append(billRateCategoryID)
-                .append(",\n\t\"expectedCloseDate\": ")
-                .append(expectedCloseDate)
-                .append(",\n\t\"assignedDate\": ")
-                .append(assignedDate)
-                .append(",\n\t\"jobOrderUUID\": ")
-                .append("'")
-                .append(jobOrderUUID).append('\'')
-                .append(",\n\t\"publishedZip\": ")
-                .append("'")
-                .append(publishedZip).append('\'')
-                .append(",\n\t\"migrateGUID\": ")
-                .append("'")
-                .append(migrateGUID).append('\'')
-                .append(",\n\t\"taxRate\": ")
-                .append(taxRate)
-                .append(",\n\t\"isOpportunity\": ")
-                .append(isOpportunity)
-                .append(",\n\t\"dateLastExported\": ")
-                .append(dateLastExported)
-                .append(",\n\t\"ignoreUntilDate\": ")
-                .append(ignoreUntilDate)
-                .append(",\n\t\"appointments\": ")
-                .append(appointments)
-                .append(",\n\t\"tasks\": ")
-                .append(tasks)
-                .append(",\n\t\"certifications\": ")
-                .append(certifications)
-                .append(",\n\t\"assignedUsers\": ")
-                .append(assignedUsers)
-                .append(",\n\t\"categories\": ")
-                .append(categories)
-                .append(",\n\t\"category\": ")
-                .append(category)
-                .append(",\n\t\"businessSector\": ")
-                .append(businessSector)
-                .append(",\n\t\"specialties\": ")
-                .append(specialties)
-                .append(",\n\t\"skills\": ")
-                .append(skills)
-                .append(",\n\t\"notes\": ")
-                .append(notes)
-                .append(",\n\t\"businessSectors\": ")
-                .append(businessSectors)
-                .append(",\n\t\"webResponses\": ")
-                .append(webResponses)
-                .append(",\n\t\"effectiveDate\": ")
-                .append(effectiveDate)
-                .append(",\n\t\"lead\": ")
-                .append(lead)
-                .append(",\n\t\"campaignSource\": ")
-                .append("'")
-                .append(campaignSource).append('\'')
-                .append(",\n\t\"markUpPercentage\": ")
-                .append(markUpPercentage)
-                .append(",\n\t\"winProbabilityPercent\": ")
-                .append(winProbabilityPercent)
-                .append(",\n\t\"dealValue\": ")
-                .append(dealValue)
-                .append(",\n\t\"weightedDealValue\": ")
-                .append(weightedDealValue)
-                .append(",\n\t\"dateLastModified\": ")
-                .append(dateLastModified)
-                .append(",\n\t\"customObject1s\": ")
-                .append(customObject1s)
-                .append(",\n\t\"customObject2s\": ")
-                .append(customObject2s)
-                .append(",\n\t\"customObject3s\": ")
-                .append(customObject3s)
-                .append(",\n\t\"customObject4s\": ")
-                .append(customObject4s)
-                .append(",\n\t\"customObject5s\": ")
-                .append(customObject5s)
-                .append(",\n\t\"customObject6s\": ")
-                .append(customObject6s)
-                .append(",\n\t\"customObject7s\": ")
-                .append(customObject7s)
-                .append(",\n\t\"customObject8s\": ")
-                .append(customObject8s)
-                .append(",\n\t\"customObject9s\": ")
-                .append(customObject9s)
-                .append(",\n\t\"customObject10s\": ")
-                .append(customObject10s)
-                .append('}')
-                .toString();
-    }
+	@Override
+	public String toString() {
+		return "Opportunity{" +
+				"luceneScore=" + luceneScore +
+				", id=" + id +
+				", owner=" + owner +
+				", title='" + title + '\'' +
+				", type='" + type + '\'' +
+				", description='" + description + '\'' +
+				", estimatedStartDate=" + estimatedStartDate +
+				", estimatedHoursPerWeek=" + estimatedHoursPerWeek +
+				", estimatedDuration=" + estimatedDuration +
+				", salary=" + salary +
+				", salaryUnit='" + salaryUnit + '\'' +
+				", onSite='" + onSite + '\'' +
+				", taxStatus='" + taxStatus + '\'' +
+				", branchCode='" + branchCode + '\'' +
+				", isOpen=" + isOpen +
+				", address=" + address +
+				", dateAdded=" + dateAdded +
+				", isDeleted=" + isDeleted +
+				", externalCategoryID=" + externalCategoryID +
+				", status='" + status + '\'' +
+				", clientContact=" + clientContact +
+				", priority=" + priority +
+				", isClientContact=" + isClientContact +
+				", dateClientInterview=" + dateClientInterview +
+				", isPublic=" + isPublic +
+				", numOpenings=" + numOpenings +
+				", isExtendable=" + isExtendable +
+				", yearsRequired=" + yearsRequired +
+				", externalID='" + externalID + '\'' +
+				", actualCloseDate=" + actualCloseDate +
+				", reasonClosed='" + reasonClosed + '\'' +
+				", salaryRange='" + salaryRange + '\'' +
+				", committed=" + committed +
+				", willRelocate=" + willRelocate +
+				", educationDegree='" + educationDegree + '\'' +
+				", reportToClientContact=" + reportToClientContact +
+				", estimatedEndDate=" + estimatedEndDate +
+				", isInterviewRequired=" + isInterviewRequired +
+				", benefits='" + benefits + '\'' +
+				", costCenter='" + costCenter + '\'' +
+				", reportTo='" + reportTo + '\'' +
+				", skillList='" + skillList + '\'' +
+				", degreeList='" + degreeList + '\'' +
+				", expectedBillRate=" + expectedBillRate +
+				", publicDescription='" + publicDescription + '\'' +
+				", hoursOfOperation='" + hoursOfOperation + '\'' +
+				", source='" + source + '\'' +
+				", optionsPackage='" + optionsPackage + '\'' +
+				", bonusPackage='" + bonusPackage + '\'' +
+				", jobOrders=" + jobOrders +
+				", clientCorporation=" + clientCorporation +
+				", expectedPayRate=" + expectedPayRate +
+				", expectedFee=" + expectedFee +
+				", isClientEditable=" + isClientEditable +
+				", responseUser=" + responseUser +
+				", billRateCategoryID=" + billRateCategoryID +
+				", expectedCloseDate=" + expectedCloseDate +
+				", assignedDate=" + assignedDate +
+				", jobOrderUUID='" + jobOrderUUID + '\'' +
+				", publishedZip='" + publishedZip + '\'' +
+				", migrateGUID='" + migrateGUID + '\'' +
+				", taxRate=" + taxRate +
+				", isOpportunity=" + isOpportunity +
+				", dateLastExported=" + dateLastExported +
+				", ignoreUntilDate=" + ignoreUntilDate +
+				", appointments=" + appointments +
+				", tasks=" + tasks +
+				", certifications=" + certifications +
+				", assignedUsers=" + assignedUsers +
+				", categories=" + categories +
+				", category=" + category +
+				", businessSector=" + businessSector +
+				", specialties=" + specialties +
+				", skills=" + skills +
+				", notes=" + notes +
+				", businessSectors=" + businessSectors +
+				", webResponses=" + webResponses +
+				", effectiveDate=" + effectiveDate +
+				", lead=" + lead +
+				", campaignSource='" + campaignSource + '\'' +
+				", markUpPercentage=" + markUpPercentage +
+				", winProbabilityPercent=" + winProbabilityPercent +
+				", dealValue=" + dealValue +
+				", weightedDealValue=" + weightedDealValue +
+				", dateLastModified=" + dateLastModified +
+				", tearsheets=" + tearsheets +
+				", customObject1s=" + customObject1s +
+				", customObject2s=" + customObject2s +
+				", customObject3s=" + customObject3s +
+				", customObject4s=" + customObject4s +
+				", customObject5s=" + customObject5s +
+				", customObject6s=" + customObject6s +
+				", customObject7s=" + customObject7s +
+				", customObject8s=" + customObject8s +
+				", customObject9s=" + customObject9s +
+				", customObject10s=" + customObject10s +
+				'}';
+	}
 }

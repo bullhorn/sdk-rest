@@ -1,44 +1,31 @@
 package com.bullhornsdk.data.model.entity.association.standard;
 
+import com.bullhornsdk.data.model.entity.association.AssociationField;
+import com.bullhornsdk.data.model.entity.association.EntityAssociations;
+import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.standard.*;
+import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bullhornsdk.data.model.entity.association.AssociationField;
-import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
-import com.bullhornsdk.data.model.entity.core.standard.Category;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Skill;
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-
 /**
  * Factory class for Opportunity Associations.
- * 
+ *
  * @author Magnus Fiore Palm
- * 
+ *
  */
 public final class OpportunityAssociations implements EntityAssociations<Opportunity> {
 
-    private final AssociationField<Opportunity, CorporateUser> assignedUsers = instantiateAssociationField("assignedUsers",
-            CorporateUser.class);
-    private final AssociationField<Opportunity, BusinessSector> businessSectors = instantiateAssociationField("businessSectors",
-            BusinessSector.class);
+    private final AssociationField<Opportunity, Appointment> appointments = instantiateAssociationField("appointments", Appointment.class);
+    private final AssociationField<Opportunity, CorporateUser> assignedUsers = instantiateAssociationField("assignedUsers", CorporateUser.class);
+    private final AssociationField<Opportunity, BusinessSector> businessSectors = instantiateAssociationField("businessSectors", BusinessSector.class);
     private final AssociationField<Opportunity, Category> categories = instantiateAssociationField("categories", Category.class);
-    private final AssociationField<Opportunity, Certification> certifications = instantiateAssociationField("certifications",
-            Certification.class);
+    private final AssociationField<Opportunity, Certification> certifications = instantiateAssociationField("certifications", Certification.class);
+    private final AssociationField<Opportunity, JobOrder> jobOrders = instantiateAssociationField("jobOrders", JobOrder.class);
     private final AssociationField<Opportunity, Skill> skills = instantiateAssociationField("skills", Skill.class);
+    private final AssociationField<Opportunity, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
+    private final AssociationField<Opportunity, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
 
     private final AssociationField<Opportunity, JobOrderCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", JobOrderCustomObjectInstance1.class);
     private final AssociationField<Opportunity, JobOrderCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", JobOrderCustomObjectInstance2.class);
@@ -63,24 +50,40 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
         return INSTANCE;
     }
 
-    public AssociationField<Opportunity,CorporateUser> assignedUsers() {
+    public AssociationField<Opportunity, Appointment> appointments() {
+        return appointments;
+    }
+
+    public AssociationField<Opportunity, CorporateUser> assignedUsers() {
         return assignedUsers;
     }
 
-    public AssociationField<Opportunity,BusinessSector> businessSectors() {
+    public AssociationField<Opportunity, BusinessSector> businessSectors() {
         return businessSectors;
     }
 
-    public AssociationField<Opportunity,Category> categories() {
+    public AssociationField<Opportunity, Category> categories() {
         return categories;
     }
 
-    public AssociationField<Opportunity,Certification> certifications() {
+    public AssociationField<Opportunity, Certification> certifications() {
         return certifications;
     }
 
-    public AssociationField<Opportunity,Skill> skills() {
+    public AssociationField<Opportunity, JobOrder> jobOrders() {
+        return jobOrders;
+    }
+
+    public AssociationField<Opportunity, Skill> skills() {
         return skills;
+    }
+
+    public AssociationField<Opportunity, Specialty> specialties() {
+        return specialties;
+    }
+
+    public AssociationField<Opportunity, Tearsheet> tearsheets() {
+        return tearsheets;
     }
 
     public AssociationField<Opportunity, JobOrderCustomObjectInstance1> customObject1s() {
@@ -123,8 +126,7 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
         return customObject10s;
     }
 
-    private <E extends BullhornEntity> AssociationField<Opportunity, E> instantiateAssociationField(String associationName,
-            Class<E> associationType) {
+    private <E extends BullhornEntity> AssociationField<Opportunity, E> instantiateAssociationField(String associationName, Class<E> associationType) {
         return new StandardAssociationField<Opportunity, E>(associationName, associationType);
     }
 
@@ -132,11 +134,15 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
     public List<AssociationField<Opportunity, ? extends BullhornEntity>> allAssociations() {
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<Opportunity, ? extends BullhornEntity>>();
+            allAssociations.add(appointments());
             allAssociations.add(assignedUsers());
             allAssociations.add(businessSectors());
             allAssociations.add(categories());
             allAssociations.add(certifications());
+            allAssociations.add(jobOrders());
             allAssociations.add(skills());
+            allAssociations.add(specialties());
+            allAssociations.add(tearsheets());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());
@@ -147,7 +153,6 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
-            //allAssociations.add(tearsheets());
         }
         return allAssociations;
     }

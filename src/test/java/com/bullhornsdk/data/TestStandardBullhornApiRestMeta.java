@@ -49,7 +49,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaAppointment() {
 
-		MetaData<Appointment> meta = bullhornApiRest.getMetaData(Appointment.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Appointment> meta = bullhornData.getMetaData(Appointment.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Appointment.class);
 	}
 
@@ -62,7 +62,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaAppointmentAttendee() {
 
-		MetaData<AppointmentAttendee> meta = bullhornApiRest.getMetaData(AppointmentAttendee.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<AppointmentAttendee> meta = bullhornData.getMetaData(AppointmentAttendee.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, AppointmentAttendee.class);
 
 	}
@@ -70,7 +70,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaBusinessSector() {
 
-		MetaData<BusinessSector> meta = bullhornApiRest.getMetaData(BusinessSector.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<BusinessSector> meta = bullhornData.getMetaData(BusinessSector.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, BusinessSector.class);
 
 	}
@@ -78,7 +78,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCandidate() {
 
-		MetaData<Candidate> meta = bullhornApiRest.getMetaData(Candidate.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Candidate> meta = bullhornData.getMetaData(Candidate.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Candidate.class);
 
 	}
@@ -86,7 +86,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCandidateEducation() {
 
-		MetaData<CandidateEducation> meta = bullhornApiRest.getMetaData(CandidateEducation.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<CandidateEducation> meta = bullhornData.getMetaData(CandidateEducation.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, CandidateEducation.class);
 
 	}
@@ -94,7 +94,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCandidateReference() {
 
-		MetaData<CandidateReference> meta = bullhornApiRest.getMetaData(CandidateReference.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<CandidateReference> meta = bullhornData.getMetaData(CandidateReference.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, CandidateReference.class);
 
 	}
@@ -102,7 +102,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCandidateWorkHistory() {
 
-		MetaData<CandidateWorkHistory> meta = bullhornApiRest.getMetaData(CandidateWorkHistory.class, MetaParameter.FULL,
+		MetaData<CandidateWorkHistory> meta = bullhornData.getMetaData(CandidateWorkHistory.class, MetaParameter.FULL,
 				this.getFieldSet());
 		runAssertions(meta, CandidateWorkHistory.class);
 
@@ -111,7 +111,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCategory() {
 
-		MetaData<Category> meta = bullhornApiRest.getMetaData(Category.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Category> meta = bullhornData.getMetaData(Category.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Category.class);
 
 	}
@@ -119,7 +119,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCertification() {
 
-		MetaData<Certification> meta = bullhornApiRest.getMetaData(Certification.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Certification> meta = bullhornData.getMetaData(Certification.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Certification.class);
 
 	}
@@ -127,7 +127,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaClientContact() {
 
-		MetaData<ClientContact> meta = bullhornApiRest.getMetaData(ClientContact.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<ClientContact> meta = bullhornData.getMetaData(ClientContact.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, ClientContact.class);
 
 	}
@@ -135,7 +135,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaClientCorporation() {
 
-		MetaData<ClientCorporation> meta = bullhornApiRest.getMetaData(ClientCorporation.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<ClientCorporation> meta = bullhornData.getMetaData(ClientCorporation.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, ClientCorporation.class);
 
 	}
@@ -143,7 +143,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCorporateUser() {
 
-		MetaData<CorporateUser> meta = bullhornApiRest.getMetaData(CorporateUser.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<CorporateUser> meta = bullhornData.getMetaData(CorporateUser.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, CorporateUser.class);
 
 	}
@@ -151,7 +151,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCorporationDepartment() {
 
-		MetaData<CorporationDepartment> meta = bullhornApiRest.getMetaData(CorporationDepartment.class, MetaParameter.FULL,
+		MetaData<CorporationDepartment> meta = bullhornData.getMetaData(CorporationDepartment.class, MetaParameter.FULL,
 				this.getFieldSet());
 		runAssertions(meta, CorporationDepartment.class);
 
@@ -160,7 +160,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaCountry() {
 
-		MetaData<Country> meta = bullhornApiRest.getMetaData(Country.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Country> meta = bullhornData.getMetaData(Country.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Country.class);
 
 	}
@@ -168,7 +168,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaJobOrder() {
 
-		MetaData<JobOrder> meta = bullhornApiRest.getMetaData(JobOrder.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<JobOrder> meta = bullhornData.getMetaData(JobOrder.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, JobOrder.class);
 
 	}
@@ -176,7 +176,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaJobSubmission() {
 
-		MetaData<JobSubmission> meta = bullhornApiRest.getMetaData(JobSubmission.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<JobSubmission> meta = bullhornData.getMetaData(JobSubmission.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, JobSubmission.class);
 
 	}
@@ -184,7 +184,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
     @Test
     public void testMetaLead() {
 
-        MetaData<Lead> meta = bullhornApiRest.getMetaData(Lead.class, MetaParameter.FULL, this.getFieldSet());
+        MetaData<Lead> meta = bullhornData.getMetaData(Lead.class, MetaParameter.FULL, this.getFieldSet());
         runAssertions(meta, Lead.class);
 
     }
@@ -192,7 +192,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaNote() {
 
-		MetaData<Note> meta = bullhornApiRest.getMetaData(Note.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Note> meta = bullhornData.getMetaData(Note.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Note.class);
 
 	}
@@ -200,7 +200,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaNoteEntity() {
 
-		MetaData<NoteEntity> meta = bullhornApiRest.getMetaData(NoteEntity.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<NoteEntity> meta = bullhornData.getMetaData(NoteEntity.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, NoteEntity.class);
 
 	}
@@ -208,7 +208,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
     @Test
     public void testMetaOpportunity() {
 
-        MetaData<Opportunity> meta = bullhornApiRest.getMetaData(Opportunity.class, MetaParameter.FULL, this.getFieldSet());
+        MetaData<Opportunity> meta = bullhornData.getMetaData(Opportunity.class, MetaParameter.FULL, this.getFieldSet());
         runAssertions(meta, Opportunity.class);
 
     }
@@ -216,7 +216,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaPlacement() {
 
-		MetaData<Placement> meta = bullhornApiRest.getMetaData(Placement.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Placement> meta = bullhornData.getMetaData(Placement.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Placement.class);
 
 	}
@@ -224,7 +224,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaPlacementChangeRequest() {
 
-		MetaData<PlacementChangeRequest> meta = bullhornApiRest.getMetaData(PlacementChangeRequest.class, MetaParameter.FULL,
+		MetaData<PlacementChangeRequest> meta = bullhornData.getMetaData(PlacementChangeRequest.class, MetaParameter.FULL,
 				this.getFieldSet());
 		runAssertions(meta, PlacementChangeRequest.class);
 
@@ -233,7 +233,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaPlacementCommission() {
 
-		MetaData<PlacementCommission> meta = bullhornApiRest.getMetaData(PlacementCommission.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<PlacementCommission> meta = bullhornData.getMetaData(PlacementCommission.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, PlacementCommission.class);
 
 	}
@@ -241,7 +241,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaSendout() {
 
-		MetaData<Sendout> meta = bullhornApiRest.getMetaData(Sendout.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Sendout> meta = bullhornData.getMetaData(Sendout.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Sendout.class);
 
 	}
@@ -249,7 +249,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaSkill() {
 
-		MetaData<Skill> meta = bullhornApiRest.getMetaData(Skill.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Skill> meta = bullhornData.getMetaData(Skill.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Skill.class);
 
 	}
@@ -257,7 +257,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaSpecialty() {
 
-		MetaData<Specialty> meta = bullhornApiRest.getMetaData(Specialty.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Specialty> meta = bullhornData.getMetaData(Specialty.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Specialty.class);
 
 	}
@@ -265,7 +265,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaState() {
 
-		MetaData<State> meta = bullhornApiRest.getMetaData(State.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<State> meta = bullhornData.getMetaData(State.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, State.class);
 
 	}
@@ -273,7 +273,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaTask() {
 
-		MetaData<Task> meta = bullhornApiRest.getMetaData(Task.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<Task> meta = bullhornData.getMetaData(Task.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, Task.class);
 
 	}
@@ -281,7 +281,7 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 	@Test
 	public void testMetaTimeUnit() {
 
-		MetaData<TimeUnit> meta = bullhornApiRest.getMetaData(TimeUnit.class, MetaParameter.FULL, this.getFieldSet());
+		MetaData<TimeUnit> meta = bullhornData.getMetaData(TimeUnit.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, TimeUnit.class);
 
 	}

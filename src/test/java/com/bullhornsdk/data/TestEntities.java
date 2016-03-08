@@ -1,5 +1,9 @@
 package com.bullhornsdk.data;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * Contains the PS Sandbox test entities that should be used in unit tests.
  * 
@@ -48,6 +52,8 @@ public class TestEntities {
 
 	private Integer noteId;
 
+	private List<Integer> noteIdList;
+
 	private Integer noteEntityId;
 
     private Integer opportunityId;
@@ -68,9 +74,15 @@ public class TestEntities {
 
 	private Integer taskId;
 
+	private Integer tearsheetId;
+
 	private Integer timeUnitId;
 
     private Integer allCustomObjectsId;
+
+    private Integer requestId;
+
+    private String subscriptionId;
 	
 	public TestEntities() {
 		super();
@@ -114,6 +126,8 @@ public class TestEntities {
 
 		this.noteId=1;
 
+		this.noteIdList= Stream.of(1,2).collect(Collectors.toList());
+
 		this.noteEntityId=1;
 
         this.opportunityId = 1;
@@ -134,9 +148,15 @@ public class TestEntities {
 
 		this.taskId=1;
 
+		this.tearsheetId=1;
+
 		this.timeUnitId=1;
 
         this.allCustomObjectsId = 1;
+
+        this.requestId = 1;
+
+        this.subscriptionId = "bhps_test_subscription";
 	}
 
 	public Integer getAppointmentId() {
@@ -299,6 +319,14 @@ public class TestEntities {
 		this.noteId = noteId;
 	}
 
+	public List<Integer> getNoteIdList() {
+		return noteIdList;
+	}
+
+	public void setNoteIdList(List<Integer> noteIdList) {
+		this.noteIdList = noteIdList;
+	}
+
 	public Integer getNoteEntityId() {
 		return noteEntityId;
 	}
@@ -387,7 +415,15 @@ public class TestEntities {
 		this.timeUnitId = timeUnitId;
 	}
 
-    public Integer getAllCustomObjectsId() {
+	public Integer getTearsheetId() {
+		return tearsheetId;
+	}
+
+	public void setTearsheetId(Integer tearsheetId) {
+		this.tearsheetId = tearsheetId;
+	}
+
+	public Integer getAllCustomObjectsId() {
         return allCustomObjectsId;
     }
 
@@ -395,14 +431,28 @@ public class TestEntities {
         this.allCustomObjectsId = allCustomObjectsId;
     }
 
+    public Integer getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(Integer requestId) {
+        this.requestId = requestId;
+    }
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("TestEntities {")
-                .append("\n\t\"allCustomObjectsId\": ")
-                .append(allCustomObjectsId)
-                .append(",\n\t\"appointmentId\": ")
+                .append("\n\t\"appointmentId\": ")
                 .append(appointmentId)
-                .append(",\n\t\"appointmentAttendeeId\": ")
+				.append(",\n\t\"appointmentAttendeeId\": ")
                 .append(appointmentAttendeeId)
                 .append(",\n\t\"businessSectorId\": ")
                 .append(businessSectorId)
@@ -440,6 +490,8 @@ public class TestEntities {
                 .append(leadId)
                 .append(",\n\t\"noteId\": ")
                 .append(noteId)
+				.append(",\n\t\"noteIdList\": ")
+				.append(noteIdList.toString())
                 .append(",\n\t\"noteEntityId\": ")
                 .append(noteEntityId)
                 .append(",\n\t\"opportunityId\": ")
@@ -460,8 +512,17 @@ public class TestEntities {
                 .append(stateId)
                 .append(",\n\t\"taskId\": ")
                 .append(taskId)
-                .append(",\n\t\"timeUnitId\": ")
+				.append(",\n\t\"tearsheetId\": ")
+				.append(tearsheetId)
+				.append(",\n\t\"timeUnitId\": ")
                 .append(timeUnitId)
+                .append(",\n\t\"allCustomObjectsId\": ")
+                .append(allCustomObjectsId)
+                .append(",\n\t\"requestId\": ")
+                .append(requestId)
+                .append(",\n\t\"subscriptionId\": ")
+                .append("'")
+                .append(subscriptionId).append('\'')
                 .append('}')
                 .toString();
     }
