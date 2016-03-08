@@ -741,7 +741,7 @@ public class StandardBullhornData implements BullhornData {
 
 		String url = restUrlFactory.assembleQueryUrl(params);
 
-		return (EditHistoryListWrapper) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(entityType), uriVariables);
+		return this.performGetRequest(url, EditHistoryListWrapper.class, uriVariables);
 
 	}
 
@@ -767,7 +767,7 @@ public class StandardBullhornData implements BullhornData {
 
 		String url = restUrlFactory.assembleQueryUrl(params);
 
-		return (FieldChangeListWrapper) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(entityType), uriVariables);
+		return this.performGetRequest(url, FieldChangeListWrapper.class, uriVariables);
 
 	}
 
