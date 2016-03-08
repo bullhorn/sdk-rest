@@ -30,7 +30,7 @@ import java.math.BigDecimal;
 		"customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateClosed", "dateEnd", "dateLastExported", "dateLastModified", "degreeList",
 		"description", "durationWeeks", "educationDegree", "employmentType", "externalCategoryID", "externalID", "feeArrangement",
 		"hoursOfOperation", "hoursPerWeek", "interviews", "isClientEditable", "isDeleted", "isInterviewRequired", "isJobcastPublished",
-		"isOpen", "isPublic", "jobBoardList", "notes", "numOpenings", "onSite", "opportunities", "optionsPackage", "owner", "payRate", "placements",
+		"isOpen", "isPublic", "jobBoardList", "notes", "numOpenings", "onSite", "opportunity", "optionsPackage", "owner", "payRate", "placements",
 		"publicDescription", "publishedZip", "reasonClosed", "reportTo", "reportToClientContact", "responseUser", "salary", "salaryUnit",
 		"sendouts", "skillList", "skills", "source", "specialties", "startDate", "status", "submissions", "tasks", "taxRate", "taxStatus",
 		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "webResponses", "willRelocate", "willSponsor", "yearsRequired",
@@ -149,7 +149,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 	@JsonIgnore
 	private String optionsPackage;
 
-	private OneToMany<Opportunity> opportunities;
+	private Opportunity opportunity;
 
 	private CorporateUser owner;
 
@@ -714,14 +714,14 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		this.optionsPackage = optionsPackage;
 	}
 
-	@JsonProperty("opportunities")
-	public OneToMany<Opportunity> getOpportunities() {
-		return opportunities;
+	@JsonProperty("opportunity")
+	public Opportunity getOpportunity() {
+		return opportunity;
 	}
 
-	@JsonProperty("opportunities")
-	public void setOpportunities(OneToMany<Opportunity> opportunities) {
-		this.opportunities = opportunities;
+	@JsonProperty("opportunity")
+	public void setOpportunity(Opportunity opportunity) {
+		this.opportunity = opportunity;
 	}
 
 	@JsonProperty("owner")
@@ -1235,7 +1235,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		if (onSite != null ? !onSite.equals(jobOrder.onSite) : jobOrder.onSite != null) return false;
 		if (optionsPackage != null ? !optionsPackage.equals(jobOrder.optionsPackage) : jobOrder.optionsPackage != null)
 			return false;
-		if (opportunities != null ? !opportunities.equals(jobOrder.opportunities) : jobOrder.opportunities != null)
+		if (opportunity != null ? !opportunity.equals(jobOrder.opportunity) : jobOrder.opportunity != null)
 			return false;
 		if (owner != null ? !owner.equals(jobOrder.owner) : jobOrder.owner != null) return false;
 		if (payRate != null ? !payRate.equals(jobOrder.payRate) : jobOrder.payRate != null) return false;
@@ -1350,7 +1350,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		result = 31 * result + (numOpenings != null ? numOpenings.hashCode() : 0);
 		result = 31 * result + (onSite != null ? onSite.hashCode() : 0);
 		result = 31 * result + (optionsPackage != null ? optionsPackage.hashCode() : 0);
-		result = 31 * result + (opportunities != null ? opportunities.hashCode() : 0);
+		result = 31 * result + (opportunity != null ? opportunity.hashCode() : 0);
 		result = 31 * result + (owner != null ? owner.hashCode() : 0);
 		result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
 		result = 31 * result + (placements != null ? placements.hashCode() : 0);
@@ -1443,7 +1443,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 				", numOpenings=" + numOpenings +
 				", onSite='" + onSite + '\'' +
 				", optionsPackage='" + optionsPackage + '\'' +
-				", opportunities=" + opportunities +
+				", opportunity=" + opportunity +
 				", owner=" + owner +
 				", payRate=" + payRate +
 				", placements=" + placements +
