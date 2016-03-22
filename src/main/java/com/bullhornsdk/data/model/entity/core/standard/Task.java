@@ -1,28 +1,23 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.validation.BullhornUUID;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "candidate", "childTasks", "clientContact", "dateAdded", "dateBegin", "dateCompleted", "dateEnd",
-		"dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission",
-		"migrateGUID", "notificationMinutes", "owner", "parentTask", "placement", "recurrenceDayBits", "recurrenceFrequency",
+		"dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission", "lead",
+		"migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "priority", "placement", "recurrenceDayBits", "recurrenceFrequency",
 		"recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type" })
-public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
+public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity {
 
 	private Integer id;
 
@@ -56,13 +51,19 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 
 	private JobSubmission jobSubmission;
 
+	private Lead lead;
+
 	private String migrateGUID;
 
 	private Integer notificationMinutes;
 
+	private Opportunity opportunity;
+
 	private CorporateUser owner;
 
 	private Task parentTask;
+
+	private Integer priority;
 
 	private Placement placement;
 
@@ -99,7 +100,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 
 	/**
 	 * Returns the entity with the required fields for an insert set.
-	 * 
+	 *
 	 * @return
 	 */
 	public Task instantiateForInsert() {
@@ -272,6 +273,16 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		this.jobSubmission = jobSubmission;
 	}
 
+	@JsonProperty("lead")
+	public Lead getLead() {
+		return lead;
+	}
+
+	@JsonProperty("lead")
+	public void setLead(Lead lead) {
+		this.lead = lead;
+	}
+
 	@JsonProperty("migrateGUID")
 	public String getMigrateGUID() {
 		return migrateGUID;
@@ -292,6 +303,16 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		this.notificationMinutes = notificationMinutes;
 	}
 
+	@JsonProperty("opportunity")
+	public Opportunity getOpportunity() {
+		return opportunity;
+	}
+
+	@JsonProperty("opportunity")
+	public void setOpportunity(Opportunity opportunity) {
+		this.opportunity = opportunity;
+	}
+
 	@JsonProperty("owner")
 	public CorporateUser getOwner() {
 		return owner;
@@ -310,6 +331,16 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 	@JsonProperty("parentTask")
 	public void setParentTask(Task parentTask) {
 		this.parentTask = parentTask;
+	}
+
+	@JsonProperty("priority")
+	public Integer getPriority() {
+		return priority;
+	}
+
+	@JsonProperty("priority")
+	public void setPriority(Integer priority) {
+		this.priority = priority;
 	}
 
 	@JsonProperty("placement")
@@ -423,284 +454,136 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Task task = (Task) o;
+
+		if (id != null ? !id.equals(task.id) : task.id != null) return false;
+		if (candidate != null ? !candidate.equals(task.candidate) : task.candidate != null) return false;
+		if (childTasks != null ? !childTasks.equals(task.childTasks) : task.childTasks != null) return false;
+		if (clientContact != null ? !clientContact.equals(task.clientContact) : task.clientContact != null)
+			return false;
+		if (dateAdded != null ? !dateAdded.equals(task.dateAdded) : task.dateAdded != null) return false;
+		if (dateBegin != null ? !dateBegin.equals(task.dateBegin) : task.dateBegin != null) return false;
+		if (dateCompleted != null ? !dateCompleted.equals(task.dateCompleted) : task.dateCompleted != null)
+			return false;
+		if (dateEnd != null ? !dateEnd.equals(task.dateEnd) : task.dateEnd != null) return false;
+		if (dateLastModified != null ? !dateLastModified.equals(task.dateLastModified) : task.dateLastModified != null)
+			return false;
+		if (description != null ? !description.equals(task.description) : task.description != null) return false;
+		if (isCompleted != null ? !isCompleted.equals(task.isCompleted) : task.isCompleted != null) return false;
+		if (isDeleted != null ? !isDeleted.equals(task.isDeleted) : task.isDeleted != null) return false;
+		if (isPrivate != null ? !isPrivate.equals(task.isPrivate) : task.isPrivate != null) return false;
+		if (isSystemTask != null ? !isSystemTask.equals(task.isSystemTask) : task.isSystemTask != null) return false;
+		if (jobOrder != null ? !jobOrder.equals(task.jobOrder) : task.jobOrder != null) return false;
+		if (jobSubmission != null ? !jobSubmission.equals(task.jobSubmission) : task.jobSubmission != null)
+			return false;
+		if (lead != null ? !lead.equals(task.lead) : task.lead != null) return false;
+		if (migrateGUID != null ? !migrateGUID.equals(task.migrateGUID) : task.migrateGUID != null) return false;
+		if (notificationMinutes != null ? !notificationMinutes.equals(task.notificationMinutes) : task.notificationMinutes != null)
+			return false;
+		if (opportunity != null ? !opportunity.equals(task.opportunity) : task.opportunity != null) return false;
+		if (owner != null ? !owner.equals(task.owner) : task.owner != null) return false;
+		if (parentTask != null ? !parentTask.equals(task.parentTask) : task.parentTask != null) return false;
+		if (priority != null ? !priority.equals(task.priority) : task.priority != null) return false;
+		if (placement != null ? !placement.equals(task.placement) : task.placement != null) return false;
+		if (recurrenceDayBits != null ? !recurrenceDayBits.equals(task.recurrenceDayBits) : task.recurrenceDayBits != null)
+			return false;
+		if (recurrenceFrequency != null ? !recurrenceFrequency.equals(task.recurrenceFrequency) : task.recurrenceFrequency != null)
+			return false;
+		if (recurrenceMax != null ? !recurrenceMax.equals(task.recurrenceMax) : task.recurrenceMax != null)
+			return false;
+		if (recurrenceMonthBits != null ? !recurrenceMonthBits.equals(task.recurrenceMonthBits) : task.recurrenceMonthBits != null)
+			return false;
+		if (recurrenceStyle != null ? !recurrenceStyle.equals(task.recurrenceStyle) : task.recurrenceStyle != null)
+			return false;
+		if (recurrenceType != null ? !recurrenceType.equals(task.recurrenceType) : task.recurrenceType != null)
+			return false;
+		if (subject != null ? !subject.equals(task.subject) : task.subject != null) return false;
+		if (taskUUID != null ? !taskUUID.equals(task.taskUUID) : task.taskUUID != null) return false;
+		if (timeZoneID != null ? !timeZoneID.equals(task.timeZoneID) : task.timeZoneID != null) return false;
+		return !(type != null ? !type.equals(task.type) : task.type != null);
+
+	}
+
+	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((candidate == null) ? 0 : candidate.hashCode());
-		result = prime * result + ((childTasks == null) ? 0 : childTasks.hashCode());
-		result = prime * result + ((clientContact == null) ? 0 : clientContact.hashCode());
-		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-		result = prime * result + ((dateBegin == null) ? 0 : dateBegin.hashCode());
-		result = prime * result + ((dateCompleted == null) ? 0 : dateCompleted.hashCode());
-		result = prime * result + ((dateEnd == null) ? 0 : dateEnd.hashCode());
-		result = prime * result + ((dateLastModified == null) ? 0 : dateLastModified.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((isCompleted == null) ? 0 : isCompleted.hashCode());
-		result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
-		result = prime * result + ((isPrivate == null) ? 0 : isPrivate.hashCode());
-		result = prime * result + ((isSystemTask == null) ? 0 : isSystemTask.hashCode());
-		result = prime * result + ((jobOrder == null) ? 0 : jobOrder.hashCode());
-		result = prime * result + ((jobSubmission == null) ? 0 : jobSubmission.hashCode());
-		result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-		result = prime * result + ((notificationMinutes == null) ? 0 : notificationMinutes.hashCode());
-		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-		result = prime * result + ((parentTask == null) ? 0 : parentTask.hashCode());
-		result = prime * result + ((placement == null) ? 0 : placement.hashCode());
-		result = prime * result + ((recurrenceDayBits == null) ? 0 : recurrenceDayBits.hashCode());
-		result = prime * result + ((recurrenceFrequency == null) ? 0 : recurrenceFrequency.hashCode());
-		result = prime * result + ((recurrenceMax == null) ? 0 : recurrenceMax.hashCode());
-		result = prime * result + ((recurrenceMonthBits == null) ? 0 : recurrenceMonthBits.hashCode());
-		result = prime * result + ((recurrenceStyle == null) ? 0 : recurrenceStyle.hashCode());
-		result = prime * result + ((recurrenceType == null) ? 0 : recurrenceType.hashCode());
-		result = prime * result + ((subject == null) ? 0 : subject.hashCode());
-		result = prime * result + ((taskUUID == null) ? 0 : taskUUID.hashCode());
-		result = prime * result + ((timeZoneID == null) ? 0 : timeZoneID.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
+		result = 31 * result + (childTasks != null ? childTasks.hashCode() : 0);
+		result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
+		result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+		result = 31 * result + (dateBegin != null ? dateBegin.hashCode() : 0);
+		result = 31 * result + (dateCompleted != null ? dateCompleted.hashCode() : 0);
+		result = 31 * result + (dateEnd != null ? dateEnd.hashCode() : 0);
+		result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+		result = 31 * result + (description != null ? description.hashCode() : 0);
+		result = 31 * result + (isCompleted != null ? isCompleted.hashCode() : 0);
+		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+		result = 31 * result + (isPrivate != null ? isPrivate.hashCode() : 0);
+		result = 31 * result + (isSystemTask != null ? isSystemTask.hashCode() : 0);
+		result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
+		result = 31 * result + (jobSubmission != null ? jobSubmission.hashCode() : 0);
+		result = 31 * result + (lead != null ? lead.hashCode() : 0);
+		result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+		result = 31 * result + (notificationMinutes != null ? notificationMinutes.hashCode() : 0);
+		result = 31 * result + (opportunity != null ? opportunity.hashCode() : 0);
+		result = 31 * result + (owner != null ? owner.hashCode() : 0);
+		result = 31 * result + (parentTask != null ? parentTask.hashCode() : 0);
+		result = 31 * result + (priority != null ? priority.hashCode() : 0);
+		result = 31 * result + (placement != null ? placement.hashCode() : 0);
+		result = 31 * result + (recurrenceDayBits != null ? recurrenceDayBits.hashCode() : 0);
+		result = 31 * result + (recurrenceFrequency != null ? recurrenceFrequency.hashCode() : 0);
+		result = 31 * result + (recurrenceMax != null ? recurrenceMax.hashCode() : 0);
+		result = 31 * result + (recurrenceMonthBits != null ? recurrenceMonthBits.hashCode() : 0);
+		result = 31 * result + (recurrenceStyle != null ? recurrenceStyle.hashCode() : 0);
+		result = 31 * result + (recurrenceType != null ? recurrenceType.hashCode() : 0);
+		result = 31 * result + (subject != null ? subject.hashCode() : 0);
+		result = 31 * result + (taskUUID != null ? taskUUID.hashCode() : 0);
+		result = 31 * result + (timeZoneID != null ? timeZoneID.hashCode() : 0);
+		result = 31 * result + (type != null ? type.hashCode() : 0);
 		return result;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Task other = (Task) obj;
-		if (candidate == null) {
-			if (other.candidate != null)
-				return false;
-		} else if (!candidate.equals(other.candidate))
-			return false;
-		if (childTasks == null) {
-			if (other.childTasks != null)
-				return false;
-		} else if (!childTasks.equals(other.childTasks))
-			return false;
-		if (clientContact == null) {
-			if (other.clientContact != null)
-				return false;
-		} else if (!clientContact.equals(other.clientContact))
-			return false;
-		if (dateAdded == null) {
-			if (other.dateAdded != null)
-				return false;
-		} else if (!dateAdded.isEqual(other.dateAdded))
-			return false;
-		if (dateBegin == null) {
-			if (other.dateBegin != null)
-				return false;
-		} else if (!dateBegin.isEqual(other.dateBegin))
-			return false;
-		if (dateCompleted == null) {
-			if (other.dateCompleted != null)
-				return false;
-		} else if (!dateCompleted.isEqual(other.dateCompleted))
-			return false;
-		if (dateEnd == null) {
-			if (other.dateEnd != null)
-				return false;
-		} else if (!dateEnd.isEqual(other.dateEnd))
-			return false;
-		if (dateLastModified == null) {
-			if (other.dateLastModified != null)
-				return false;
-		} else if (!dateLastModified.isEqual(other.dateLastModified))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (isCompleted == null) {
-			if (other.isCompleted != null)
-				return false;
-		} else if (!isCompleted.equals(other.isCompleted))
-			return false;
-		if (isDeleted == null) {
-			if (other.isDeleted != null)
-				return false;
-		} else if (!isDeleted.equals(other.isDeleted))
-			return false;
-		if (isPrivate == null) {
-			if (other.isPrivate != null)
-				return false;
-		} else if (!isPrivate.equals(other.isPrivate))
-			return false;
-		if (isSystemTask == null) {
-			if (other.isSystemTask != null)
-				return false;
-		} else if (!isSystemTask.equals(other.isSystemTask))
-			return false;
-		if (jobOrder == null) {
-			if (other.jobOrder != null)
-				return false;
-		} else if (!jobOrder.equals(other.jobOrder))
-			return false;
-		if (jobSubmission == null) {
-			if (other.jobSubmission != null)
-				return false;
-		} else if (!jobSubmission.equals(other.jobSubmission))
-			return false;
-		if (migrateGUID == null) {
-			if (other.migrateGUID != null)
-				return false;
-		} else if (!migrateGUID.equals(other.migrateGUID))
-			return false;
-		if (notificationMinutes == null) {
-			if (other.notificationMinutes != null)
-				return false;
-		} else if (!notificationMinutes.equals(other.notificationMinutes))
-			return false;
-		if (owner == null) {
-			if (other.owner != null)
-				return false;
-		} else if (!owner.equals(other.owner))
-			return false;
-		if (parentTask == null) {
-			if (other.parentTask != null)
-				return false;
-		} else if (!parentTask.equals(other.parentTask))
-			return false;
-		if (placement == null) {
-			if (other.placement != null)
-				return false;
-		} else if (!placement.equals(other.placement))
-			return false;
-		if (recurrenceDayBits == null) {
-			if (other.recurrenceDayBits != null)
-				return false;
-		} else if (!recurrenceDayBits.equals(other.recurrenceDayBits))
-			return false;
-		if (recurrenceFrequency == null) {
-			if (other.recurrenceFrequency != null)
-				return false;
-		} else if (!recurrenceFrequency.equals(other.recurrenceFrequency))
-			return false;
-		if (recurrenceMax == null) {
-			if (other.recurrenceMax != null)
-				return false;
-		} else if (!recurrenceMax.equals(other.recurrenceMax))
-			return false;
-		if (recurrenceMonthBits == null) {
-			if (other.recurrenceMonthBits != null)
-				return false;
-		} else if (!recurrenceMonthBits.equals(other.recurrenceMonthBits))
-			return false;
-		if (recurrenceStyle == null) {
-			if (other.recurrenceStyle != null)
-				return false;
-		} else if (!recurrenceStyle.equals(other.recurrenceStyle))
-			return false;
-		if (recurrenceType == null) {
-			if (other.recurrenceType != null)
-				return false;
-		} else if (!recurrenceType.equals(other.recurrenceType))
-			return false;
-		if (subject == null) {
-			if (other.subject != null)
-				return false;
-		} else if (!subject.equals(other.subject))
-			return false;
-		if (taskUUID == null) {
-			if (other.taskUUID != null)
-				return false;
-		} else if (!taskUUID.equals(other.taskUUID))
-			return false;
-		if (timeZoneID == null) {
-			if (other.timeZoneID != null)
-				return false;
-		} else if (!timeZoneID.equals(other.timeZoneID))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		return true;
+	public String toString() {
+		return "Task{" +
+				"id=" + id +
+				", candidate=" + candidate +
+				", childTasks=" + childTasks +
+				", clientContact=" + clientContact +
+				", dateAdded=" + dateAdded +
+				", dateBegin=" + dateBegin +
+				", dateCompleted=" + dateCompleted +
+				", dateEnd=" + dateEnd +
+				", dateLastModified=" + dateLastModified +
+				", description='" + description + '\'' +
+				", isCompleted=" + isCompleted +
+				", isDeleted=" + isDeleted +
+				", isPrivate=" + isPrivate +
+				", isSystemTask=" + isSystemTask +
+				", jobOrder=" + jobOrder +
+				", jobSubmission=" + jobSubmission +
+				", lead=" + lead +
+				", migrateGUID='" + migrateGUID + '\'' +
+				", notificationMinutes=" + notificationMinutes +
+				", opportunity=" + opportunity +
+				", owner=" + owner +
+				", parentTask=" + parentTask +
+				", priority=" + priority +
+				", placement=" + placement +
+				", recurrenceDayBits=" + recurrenceDayBits +
+				", recurrenceFrequency=" + recurrenceFrequency +
+				", recurrenceMax=" + recurrenceMax +
+				", recurrenceMonthBits=" + recurrenceMonthBits +
+				", recurrenceStyle='" + recurrenceStyle + '\'' +
+				", recurrenceType='" + recurrenceType + '\'' +
+				", subject='" + subject + '\'' +
+				", taskUUID='" + taskUUID + '\'' +
+				", timeZoneID='" + timeZoneID + '\'' +
+				", type='" + type + '\'' +
+				'}';
 	}
-
-    @Override
-    public String toString() {
-        return new StringBuilder("Task {")
-                .append("\n\t\"candidate\": ")
-                .append(candidate)
-                .append(",\n\t\"id\": ")
-                .append(id)
-                .append(",\n\t\"childTasks\": ")
-                .append(childTasks)
-                .append(",\n\t\"clientContact\": ")
-                .append(clientContact)
-                .append(",\n\t\"dateAdded\": ")
-                .append(dateAdded)
-                .append(",\n\t\"dateBegin\": ")
-                .append(dateBegin)
-                .append(",\n\t\"dateCompleted\": ")
-                .append(dateCompleted)
-                .append(",\n\t\"dateEnd\": ")
-                .append(dateEnd)
-                .append(",\n\t\"dateLastModified\": ")
-                .append(dateLastModified)
-                .append(",\n\t\"description\": ")
-                .append("'")
-                .append(description).append('\'')
-                .append(",\n\t\"isCompleted\": ")
-                .append(isCompleted)
-                .append(",\n\t\"isDeleted\": ")
-                .append(isDeleted)
-                .append(",\n\t\"isPrivate\": ")
-                .append(isPrivate)
-                .append(",\n\t\"isSystemTask\": ")
-                .append(isSystemTask)
-                .append(",\n\t\"jobOrder\": ")
-                .append(jobOrder)
-                .append(",\n\t\"jobSubmission\": ")
-                .append(jobSubmission)
-                .append(",\n\t\"migrateGUID\": ")
-                .append("'")
-                .append(migrateGUID).append('\'')
-                .append(",\n\t\"notificationMinutes\": ")
-                .append(notificationMinutes)
-                .append(",\n\t\"owner\": ")
-                .append(owner)
-                .append(",\n\t\"parentTask\": ")
-                .append(parentTask)
-                .append(",\n\t\"placement\": ")
-                .append(placement)
-                .append(",\n\t\"recurrenceDayBits\": ")
-                .append(recurrenceDayBits)
-                .append(",\n\t\"recurrenceFrequency\": ")
-                .append(recurrenceFrequency)
-                .append(",\n\t\"recurrenceMax\": ")
-                .append(recurrenceMax)
-                .append(",\n\t\"recurrenceMonthBits\": ")
-                .append(recurrenceMonthBits)
-                .append(",\n\t\"recurrenceStyle\": ")
-                .append("'")
-                .append(recurrenceStyle).append('\'')
-                .append(",\n\t\"recurrenceType\": ")
-                .append("'")
-                .append(recurrenceType).append('\'')
-                .append(",\n\t\"subject\": ")
-                .append("'")
-                .append(subject).append('\'')
-                .append(",\n\t\"taskUUID\": ")
-                .append("'")
-                .append(taskUUID).append('\'')
-                .append(",\n\t\"timeZoneID\": ")
-                .append("'")
-                .append(timeZoneID).append('\'')
-                .append(",\n\t\"type\": ")
-                .append("'")
-                .append(type).append('\'')
-                .append('}')
-                .toString();
-    }
 }
