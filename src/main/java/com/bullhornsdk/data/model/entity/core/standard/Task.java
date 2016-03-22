@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "candidate", "childTasks", "clientContact", "dateAdded", "dateBegin", "dateCompleted", "dateEnd",
 		"dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission",
-		"migrateGUID", "notificationMinutes", "owner", "parentTask", "placement", "recurrenceDayBits", "recurrenceFrequency",
+		"migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "placement", "recurrenceDayBits", "recurrenceFrequency",
 		"recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type" })
 public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
 
@@ -59,6 +59,8 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 	private String migrateGUID;
 
 	private Integer notificationMinutes;
+
+	private Opportunity opportunity;
 
 	private CorporateUser owner;
 
@@ -292,6 +294,15 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		this.notificationMinutes = notificationMinutes;
 	}
 
+	@JsonProperty("opportunity")
+	public Opportunity getOpportunity() {
+		return opportunity;
+	}
+
+	public void setOpportunity(Opportunity opportunity) {
+		this.opportunity = opportunity;
+	}
+
 	@JsonProperty("owner")
 	public CorporateUser getOwner() {
 		return owner;
@@ -444,6 +455,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		result = prime * result + ((jobSubmission == null) ? 0 : jobSubmission.hashCode());
 		result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
 		result = prime * result + ((notificationMinutes == null) ? 0 : notificationMinutes.hashCode());
+		result = prime * result + ((opportunity == null) ? 0 : opportunity.hashCode());
 		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
 		result = prime * result + ((parentTask == null) ? 0 : parentTask.hashCode());
 		result = prime * result + ((placement == null) ? 0 : placement.hashCode());
@@ -559,6 +571,11 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 				return false;
 		} else if (!notificationMinutes.equals(other.notificationMinutes))
 			return false;
+		if (opportunity == null) {
+			if (other.opportunity != null)
+				return false;
+		} else if (!opportunity.equals(other.opportunity))
+			return false;
 		if (owner == null) {
 			if (other.owner != null)
 				return false;
@@ -668,6 +685,8 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
                 .append(migrateGUID).append('\'')
                 .append(",\n\t\"notificationMinutes\": ")
                 .append(notificationMinutes)
+				.append(",\n\t\"opportunity\": ")
+				.append(opportunity)
                 .append(",\n\t\"owner\": ")
                 .append(owner)
                 .append(",\n\t\"parentTask\": ")
