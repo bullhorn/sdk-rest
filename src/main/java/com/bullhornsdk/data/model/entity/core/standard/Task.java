@@ -100,7 +100,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 
 	/**
 	 * Returns the entity with the required fields for an insert set.
-	 * 
+	 *
 	 * @return
 	 */
 	public Task instantiateForInsert() {
