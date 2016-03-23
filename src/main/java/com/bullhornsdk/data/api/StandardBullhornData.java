@@ -187,13 +187,7 @@ public class StandardBullhornData implements BullhornData {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
-		idList = idList.stream().distinct().collect(Collectors.toList());
-		if (idList.size() == 1) {
-			List<T> list = new ArrayList<T>();
-			list.add(this.handleGetEntity(type, idList.get(0), fieldSet, ParamFactory.entityParams()));
-			return (L) new StandardListWrapper<T>(list);
-		}
+	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, Set<Integer> idList, Set<String> fieldSet) {
 		return this.handleGetMultipleEntities(type, idList, fieldSet, ParamFactory.entityParams());
 	}
 
@@ -253,7 +247,7 @@ public class StandardBullhornData implements BullhornData {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <T extends BullhornEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+	public <T extends EditHistoryEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		return this.handleQueryForEntityEditHistoryFieldChange(entityType, where, fieldSet, params);
 	}
 
@@ -666,7 +660,7 @@ public class StandardBullhornData implements BullhornData {
 	 * @param <T>
 	 * @return
 	 */
-	private <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, List<Integer> idList, Set<String> fieldSet, EntityParams params) {
+	private <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
 		String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
 		String url = restUrlFactory.assembleEntityUrl(params);
@@ -747,7 +741,7 @@ public class StandardBullhornData implements BullhornData {
 	 *            optional QueryParams.
 	 * @return a FieldChangeWrapper containing the records plus some additional information
 	 */
-	private <T extends BullhornEntity> FieldChangeListWrapper handleQueryForEntityEditHistoryFieldChange(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+	private <T extends EditHistoryEntity> FieldChangeListWrapper handleQueryForEntityEditHistoryFieldChange(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 		String entity = uriVariables.get("entityType");
 		if ("Candidate".equals(entity) || "ClientContact".equals(entity)) {

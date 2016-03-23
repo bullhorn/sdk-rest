@@ -131,7 +131,7 @@ public class MockDataHandler {
 	 * @param id
 	 * @return
 	 */
-	public <T extends BullhornEntity> ListWrapper<T> findMultipleEntities(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
+	public <T extends BullhornEntity> ListWrapper<T> findMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet) {
 		List<T> entityList = new ArrayList<T>();
 		for (Integer id : idList) {
 			T entity = getEntityFromMap(type, id)

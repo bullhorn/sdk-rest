@@ -77,7 +77,7 @@ public class MockBullhornData implements BullhornData {
 	}
 
 	@Override
-	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet) {
+	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, Set<Integer> idList, Set<String> fieldSet) {
 		return mockDataHandler.findMultipleEntities(type, idList, fieldSet);
 	}
 
@@ -108,12 +108,12 @@ public class MockBullhornData implements BullhornData {
 	}
 
 	@Override
-	public <T extends BullhornEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+	public <T extends EditHistoryEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		return mockDataHandler.queryEntityForEditHistory(entityType, where, fieldSet, params);
 	}
 
 	@Override
-	public <T extends BullhornEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+	public <T extends EditHistoryEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		return mockDataHandler.queryEntityForEditHistoryFieldChanges(entityType, where, fieldSet, params);
 	}
 

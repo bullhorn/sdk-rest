@@ -1,6 +1,7 @@
 package com.bullhornsdk.data;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -52,7 +53,7 @@ public class TestEntities {
 
 	private Integer noteId;
 
-	private List<Integer> noteIdList;
+	private Set<Integer> noteIdList;
 
 	private Integer noteEntityId;
 
@@ -126,7 +127,7 @@ public class TestEntities {
 
 		this.noteId=1;
 
-		this.noteIdList= Stream.of(1,2).collect(Collectors.toList());
+		this.noteIdList= Stream.of(1,2).collect(Collectors.toSet());
 
 		this.noteEntityId=1;
 
@@ -319,11 +320,11 @@ public class TestEntities {
 		this.noteId = noteId;
 	}
 
-	public List<Integer> getNoteIdList() {
+	public Set<Integer> getNoteIdList() {
 		return noteIdList;
 	}
 
-	public void setNoteIdList(List<Integer> noteIdList) {
+	public void setNoteIdList(Set<Integer> noteIdList) {
 		this.noteIdList = noteIdList;
 	}
 

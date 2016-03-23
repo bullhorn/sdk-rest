@@ -60,7 +60,7 @@ public interface BullhornData {
 	 * @param idList idList of BullhornEntity
 	 * @return an entity of type T, or null if an error occurred
 	 */
-	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, List<Integer> idList, Set<String> fieldSet);
+	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, Set<Integer> idList, Set<String> fieldSet);
 
 	/**
 	 * Returns the entity of passed in type with the passed in id, fields to get are specifed by the fieldSet.
@@ -166,7 +166,7 @@ public interface BullhornData {
 	 *
 	 * @return a FieldChangeListWrapper that wraps a List<FieldChange> plus some additional info about the data
 	 */
-	public <T extends BullhornEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params);
+	public <T extends EditHistoryEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params);
 
 	/**
 	 * Searches for SearchEntity of type T and returns a ListWrapper<T>.
