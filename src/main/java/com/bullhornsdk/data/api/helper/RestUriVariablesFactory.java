@@ -41,7 +41,7 @@ public class RestUriVariablesFactory {
     private static final String SUBSCRIPTION_ID = "subscriptionId";
     private static final String MAX_EVENTS = "maxEvents";
     private static final String REQUEST_ID = "requestId";
-	
+
 	public RestUriVariablesFactory(BullhornData bullhornApiRest, RestFileManager restFileManager) {
 		super();
 		this.bullhornApiRest = bullhornApiRest;
@@ -455,5 +455,25 @@ public class RestUriVariablesFactory {
 
         return uriVariables;
     }
+
+	public Map<String, String> getUriVariablesForEditHistoryQuery(BullhornEntityInfo entityInfo, String where, Set<String> fieldSet, QueryParams params) {
+		Map<String, String> uriVariables = params.getParameterMap();
+
+		this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+		uriVariables.put(WHERE, where);
+		uriVariables.put(ENTITY_TYPE, entityInfo.getEditHistoryName());
+
+		return uriVariables;
+	}
+
+	public Map<String, String> getUriVariablesForEditHistoryFieldChangeQuery(BullhornEntityInfo entityInfo, String where, Set<String> fieldSet, QueryParams params) {
+		Map<String, String> uriVariables = params.getParameterMap();
+
+		this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+		uriVariables.put(WHERE, where);
+		uriVariables.put(ENTITY_TYPE, entityInfo.getEditHistoryFieldChangeName());
+
+		return uriVariables;
+	}
 
 }

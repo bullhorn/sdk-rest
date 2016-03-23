@@ -702,7 +702,7 @@ public class StandardBullhornData implements BullhornData {
 	 * HTTP Method: GET
 	 *
 	 * @param entityType
-	 *            the BullhornEntity type
+	 *            the EditHistoryEntity type
 	 * @param where
 	 *            a SQL type where clause
 	 * @param fieldSet
@@ -712,17 +712,11 @@ public class StandardBullhornData implements BullhornData {
 	 * @return a EditHistoryListWrapper containing the records plus some additional information
 	 */
 	private <T extends EditHistoryEntity> EditHistoryListWrapper handleQueryForEntityEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
-		String entity = uriVariables.get("entityType");
-		if ("Candidate".equals(entity) || "ClientContact".equals(entity)) {
-			uriVariables.put("entityType", "User");
-		}
-		uriVariables.put("entityType", uriVariables.get("entityType") + "EditHistory");
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEditHistoryQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 
 		String url = restUrlFactory.assembleQueryUrl(params);
 
 		return this.performGetRequest(url, EditHistoryListWrapper.class, uriVariables);
-
 	}
 
 	/**
@@ -732,7 +726,7 @@ public class StandardBullhornData implements BullhornData {
 	 * HTTP Method: GET
 	 *
 	 * @param entityType
-	 *            the BullhornEntity type
+	 *            the EditHistoryEntity type
 	 * @param where
 	 *            a SQL type where clause
 	 * @param fieldSet
@@ -742,17 +736,11 @@ public class StandardBullhornData implements BullhornData {
 	 * @return a FieldChangeWrapper containing the records plus some additional information
 	 */
 	private <T extends EditHistoryEntity> FieldChangeListWrapper handleQueryForEntityEditHistoryFieldChange(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
-		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
-		String entity = uriVariables.get("entityType");
-		if ("Candidate".equals(entity) || "ClientContact".equals(entity)) {
-			uriVariables.put("entityType", "User");
-		}
-		uriVariables.put("entityType", uriVariables.get("entityType") + "EditHistoryFieldChange");
+		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEditHistoryFieldChangeQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 
 		String url = restUrlFactory.assembleQueryUrl(params);
 
 		return this.performGetRequest(url, FieldChangeListWrapper.class, uriVariables);
-
 	}
 
 	private <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
