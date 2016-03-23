@@ -43,7 +43,7 @@ public class TestStandardBullhornApiRestSearch extends BaseTest {
 	@Test
 	public void testSearchCandidate() {
 
-		ListWrapper<Candidate> wrapper = bullhornApiRest.search(Candidate.class, query, null, searchParams);
+		ListWrapper<Candidate> wrapper = bullhornData.search(Candidate.class, query, null, searchParams);
 
 		runAssertions("ListWrapper<Candidate>", wrapper);
 
@@ -52,7 +52,7 @@ public class TestStandardBullhornApiRestSearch extends BaseTest {
 	@Test
 	public void testSearchNote() {
 		String customQuery = "noteID:" + testEntities.getNoteId();
-		ListWrapper<Note> wrapper = bullhornApiRest.search(Note.class, customQuery, null, searchParams);
+		ListWrapper<Note> wrapper = bullhornData.search(Note.class, customQuery, null, searchParams);
 
 		runAssertions("ListWrapper<Note>", wrapper);
 
@@ -61,7 +61,7 @@ public class TestStandardBullhornApiRestSearch extends BaseTest {
 	@Test
 	public void testSearchJobOrder() {
 
-		ListWrapper<JobOrder> wrapper = bullhornApiRest.search(JobOrder.class, query, null, searchParams);
+		ListWrapper<JobOrder> wrapper = bullhornData.search(JobOrder.class, query, null, searchParams);
 
 		runAssertions("ListWrapper<JobOrder>", wrapper);
 
@@ -70,7 +70,7 @@ public class TestStandardBullhornApiRestSearch extends BaseTest {
     @Test
     public void testSearchLead() {
 
-        ListWrapper<Lead> wrapper = bullhornApiRest.search(Lead.class, query, null, searchParams);
+        ListWrapper<Lead> wrapper = bullhornData.search(Lead.class, query, null, searchParams);
 
         runAssertions("ListWrapper<Lead>", wrapper);
 
@@ -79,7 +79,7 @@ public class TestStandardBullhornApiRestSearch extends BaseTest {
     @Test
     public void testSearchOpportunity() {
 
-        ListWrapper<Opportunity> wrapper = bullhornApiRest.search(Opportunity.class, query, null, searchParams);
+        ListWrapper<Opportunity> wrapper = bullhornData.search(Opportunity.class, query, null, searchParams);
 
         runAssertions("ListWrapper<Opportunity>", wrapper);
 
@@ -87,12 +87,12 @@ public class TestStandardBullhornApiRestSearch extends BaseTest {
 
 	// @Test
 	public void getSearchMetaData() {
-		String url = bullhornApiRest.getRestUrl();
+		String url = bullhornData.getRestUrl();
 		url = url + "meta/{entityType}?BhRestToken={bhRestToken}&meta=full&fields=*";
 		Map<String, String> urlParams = new HashMap<String, String>();
-		urlParams.put("bhRestToken", bullhornApiRest.getBhRestToken());
+		urlParams.put("bhRestToken", bullhornData.getBhRestToken());
 		urlParams.put("entityType", "Note");
-		// String jsonValue = bullhornApiRest.performGetRequest(url, String.class, urlParams);
+		// String jsonValue = bullhornData.performGetRequest(url, String.class, urlParams);
 
 	}
 

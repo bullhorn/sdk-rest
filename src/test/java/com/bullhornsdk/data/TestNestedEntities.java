@@ -20,7 +20,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId());
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
 
 		assertNotNull("Candidate is null", entity);
 
@@ -29,7 +29,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_educations() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "educations"));
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "educations"));
 
 		assertNotNull(entity.getEducations().getTotal());
 		assertNotNull(entity.getEducations().getData());
@@ -39,7 +39,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_notes() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "notes"));
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "notes"));
 
 		assertNotNull(entity.getNotes().getTotal());
 		assertNotNull(entity.getNotes().getData());
@@ -49,7 +49,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_clientCorporationWhiteList() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "clientCorporationWhiteList(id,name)"));
 
 		assertNotNull(entity.getClientCorporationWhiteList().getTotal());
@@ -60,7 +60,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_clientCorporationBlackList() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "clientCorporationBlackList(id,name)"));
 
 		assertNotNull(entity.getClientCorporationBlackList().getTotal());
@@ -71,7 +71,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_fileAttachments() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "fileAttachments(*)"));
 
 		assertNotNull(entity.getFileAttachments().getTotal());
@@ -82,7 +82,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_interviews() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "interviews(id,dateAdded,type)"));
 
 		assertNotNull(entity.getInterviews().getTotal());
@@ -93,7 +93,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_placements() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "placements(id,customText2)"));
 
 		assertNotNull(entity.getPlacements().getTotal());
@@ -104,7 +104,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_sendouts() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "sendouts(id,dateAdded)"));
 
 		assertNotNull(entity.getSendouts().getTotal());
@@ -115,7 +115,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_jobSubmissions() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "submissions(id,status)"));
 
 		assertNotNull(entity.getSubmissions().getTotal());
@@ -126,7 +126,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_webResponses() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "webResponses(id,status)"));
 
 		assertNotNull(entity.getWebResponses().getTotal());
@@ -137,7 +137,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_workHistories() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "workHistories(id,dateAdded)"));
 
 		assertNotNull(entity.getWorkHistories().getTotal());
@@ -148,7 +148,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate_references() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(),
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
 				Sets.newHashSet("id", "references(id,companyName)"));
 
 		assertNotNull(entity.getReferences().getTotal());
@@ -159,7 +159,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testPlacementChangeRequest_placement() {
 
-		PlacementChangeRequest entity = bullhornApiRest.findEntity(PlacementChangeRequest.class,
+		PlacementChangeRequest entity = bullhornData.findEntity(PlacementChangeRequest.class,
 				testEntities.getPlacementChangeRequestId(), Sets.newHashSet("id", "placement(id,customText2)"));
 
 		assertNotNull(entity.getPlacement().getId());

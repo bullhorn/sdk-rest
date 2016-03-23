@@ -8,4 +8,6 @@ package com.bullhornsdk.data.model.entity.core.type;
  */
 public interface SoftDeleteEntity extends DeleteEntity {
 
+    public Boolean getIsDeleted();
+
 }

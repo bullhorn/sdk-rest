@@ -1,29 +1,20 @@
 package com.bullhornsdk.data.model.entity.association.standard;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobject.*;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Factory class for Placement Associations.
- * 
+ *
  * @author Magnus Fiore Palm
- * 
+ *
  */
 public final class PlacementAssociations implements EntityAssociations<Placement> {
 
@@ -95,7 +86,7 @@ public final class PlacementAssociations implements EntityAssociations<Placement
     }
 
     private <E extends BullhornEntity> AssociationField<Placement, E> instantiateAssociationField(String associationName,
-            Class<E> associationType) {
+                                                                                              Class<E> associationType) {
         return new StandardAssociationField<Placement, E>(associationName, associationType);
     }
 

@@ -45,7 +45,7 @@ public class TestStandardBullhornApiRestResumeParse extends BaseTest {
 	public void testParseResumeFile() {
 
 		MultipartFile resume = getResume();
-		ParsedResume parsedResume = bullhornApiRest.parseResumeFile(resume, ParamFactory.resumeFileParseParams());
+		ParsedResume parsedResume = bullhornData.parseResumeFile(resume, ParamFactory.resumeFileParseParams());
 		assertParsedResume(parsedResume);
 
 	}
@@ -57,7 +57,7 @@ public class TestStandardBullhornApiRestResumeParse extends BaseTest {
 		MultipartFile resume = getResume();
 		String resumeText = new String(resume.getBytes(), "UTF-8");
 
-		ParsedResume parsedResume = bullhornApiRest.parseResumeText(resumeText, ParamFactory.resumeTextParseParams());
+		ParsedResume parsedResume = bullhornData.parseResumeText(resumeText, ParamFactory.resumeTextParseParams());
 		assertParsedResume(parsedResume);
 
 	}
@@ -67,10 +67,10 @@ public class TestStandardBullhornApiRestResumeParse extends BaseTest {
 	public void testSaveParseResume() {
 
 		MultipartFile resume = getResume();
-		ParsedResume parsedResume = bullhornApiRest.parseResumeFile(resume, ParamFactory.resumeFileParseParams());
+		ParsedResume parsedResume = bullhornData.parseResumeFile(resume, ParamFactory.resumeFileParseParams());
 		assertParsedResume(parsedResume);
 
-		ParsedResume savedParsedResume = bullhornApiRest.saveParsedResumeDataToBullhorn(parsedResume);
+		ParsedResume savedParsedResume = bullhornData.saveParsedResumeDataToBullhorn(parsedResume);
 		assertNotNull("ParsedResume.candidate.id is null", savedParsedResume.getCandidate().getId());
 		this.parsedResume = savedParsedResume;
 
@@ -81,7 +81,7 @@ public class TestStandardBullhornApiRestResumeParse extends BaseTest {
 	public void testAddFileThenParseResumeFile() {
 
 		MultipartFile resume = getResume();
-		ParsedResume parsedResume = bullhornApiRest.parseResumeThenAddfile(Candidate.class, testEntities.getCandidateId(), resume,
+		ParsedResume parsedResume = bullhornData.parseResumeThenAddfile(Candidate.class, testEntities.getCandidateId(), resume,
 				"portfolio", ParamFactory.fileParams(), ParamFactory.resumeFileParseParams());
 		assertParsedResume(parsedResume);
 		assertFileWrapperIncludingFileName(parsedResume.getFileWrapper());
@@ -126,7 +126,7 @@ public class TestStandardBullhornApiRestResumeParse extends BaseTest {
 	public void cleanUp() {
 		if (parsedResume != null) {
 			Candidate candidate = parsedResume.getCandidate();
-			CrudResponse crudResponse = bullhornApiRest.deleteEntity(Candidate.class, candidate.getId());
+			CrudResponse crudResponse = bullhornData.deleteEntity(Candidate.class, candidate.getId());
 			assertFalse("Error deleting candidate", crudResponse.isError());
 
 			List<CandidateEducation> candidateEducationList = parsedResume.getCandidateEducation();
@@ -135,7 +135,7 @@ public class TestStandardBullhornApiRestResumeParse extends BaseTest {
 
 				for (CandidateEducation candidateEducation : candidateEducationList) {
 					candidateEducation.setCandidate(candidate);
-					CrudResponse response = bullhornApiRest.deleteEntity(CandidateEducation.class, candidateEducation.getId());
+					CrudResponse response = bullhornData.deleteEntity(CandidateEducation.class, candidateEducation.getId());
 					assertFalse("Error deleting CandidateEducation", response.isError());
 				}
 			}
@@ -146,7 +146,7 @@ public class TestStandardBullhornApiRestResumeParse extends BaseTest {
 
 				for (CandidateWorkHistory candidateWorkHistory : candidateWorkHistoryList) {
 					candidateWorkHistory.setCandidate(candidate);
-					CrudResponse response = bullhornApiRest.deleteEntity(CandidateWorkHistory.class, candidateWorkHistory.getId());
+					CrudResponse response = bullhornData.deleteEntity(CandidateWorkHistory.class, candidateWorkHistory.getId());
 					assertFalse("Error deleting CandidateWorkHistory", response.isError());
 				}
 			}

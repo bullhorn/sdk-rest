@@ -1,44 +1,30 @@
 package com.bullhornsdk.data.model.entity.association.standard;
 
+import com.bullhornsdk.data.model.entity.association.AssociationField;
+import com.bullhornsdk.data.model.entity.association.EntityAssociations;
+import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.standard.*;
+import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bullhornsdk.data.model.entity.association.AssociationField;
-import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.Category;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.Skill;
-import com.bullhornsdk.data.model.entity.core.standard.Specialty;
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-
 /**
  * Factory class for Candidate Associations.
- * 
+ *
  * @author Magnus
- * 
+ *
  */
 public final class CandidateAssociations implements EntityAssociations<Candidate> {
 
-    private final AssociationField<Candidate, BusinessSector> businessSectors = instantiateAssociationField("businessSectors",
-            BusinessSector.class);
+    private final AssociationField<Candidate, BusinessSector> businessSectors = instantiateAssociationField("businessSectors", BusinessSector.class);
     private final AssociationField<Candidate, Category> categories = instantiateAssociationField("categories", Category.class);
+    private final AssociationField<Candidate, Lead> leads = instantiateAssociationField("leads", Lead.class);
     private final AssociationField<Candidate, Skill> primarySkills = instantiateAssociationField("primarySkills", Skill.class);
-    private final AssociationField<Candidate, CorporateUser> secondaryOwners = instantiateAssociationField("secondaryOwners",
-            CorporateUser.class);
+    private final AssociationField<Candidate, CorporateUser> secondaryOwners = instantiateAssociationField("secondaryOwners", CorporateUser.class);
     private final AssociationField<Candidate, Skill> secondarySkills = instantiateAssociationField("secondarySkills", Skill.class);
     private final AssociationField<Candidate, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
+    private final AssociationField<Candidate, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
 
     private final AssociationField<Candidate, PersonCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", PersonCustomObjectInstance1.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", PersonCustomObjectInstance2.class);
@@ -50,6 +36,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     private final AssociationField<Candidate, PersonCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", PersonCustomObjectInstance8.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", PersonCustomObjectInstance9.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", PersonCustomObjectInstance10.class);
+
 
     private List<AssociationField<Candidate, ? extends BullhornEntity>> allAssociations;
     private static final CandidateAssociations INSTANCE = new CandidateAssociations();
@@ -70,6 +57,10 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
         return categories;
     }
 
+    public AssociationField<Candidate, Lead> leads() {
+        return leads;
+    }
+
     public AssociationField<Candidate, Skill> primarySkills() {
         return primarySkills;
     }
@@ -81,9 +72,13 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     public AssociationField<Candidate, Skill> secondarySkills() {
         return secondarySkills;
     }
-    
+
     public AssociationField<Candidate, Specialty> specialties() {
         return specialties;
+    }
+
+    public AssociationField<Candidate, Tearsheet> tearsheets() {
+        return tearsheets;
     }
 
     public AssociationField<Candidate, PersonCustomObjectInstance1> customObject1s() {
@@ -126,8 +121,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
         return customObject10s;
     }
 
-    private <E extends BullhornEntity> AssociationField<Candidate, E> instantiateAssociationField(String associationName,
-            Class<E> associationType) {
+    private <E extends BullhornEntity> AssociationField<Candidate, E> instantiateAssociationField(String associationName, Class<E> associationType) {
         return new StandardAssociationField<Candidate, E>(associationName, associationType);
     }
 
@@ -137,10 +131,12 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
             allAssociations = new ArrayList<AssociationField<Candidate, ? extends BullhornEntity>>();
             allAssociations.add(businessSectors());
             allAssociations.add(categories());
+            allAssociations.add(leads());
             allAssociations.add(primarySkills());
             allAssociations.add(secondaryOwners());
             allAssociations.add(secondarySkills());
             allAssociations.add(specialties());
+            allAssociations.add(tearsheets());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());
@@ -151,6 +147,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
+
         }
         return allAssociations;
 

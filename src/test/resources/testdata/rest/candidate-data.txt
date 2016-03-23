@@ -133,6 +133,10 @@
             "isEditable": true,
             "isLockedOut": false,
             "lastName": "Job's",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": {
                 "id": 2332,
                 "_subtype": "ClientContact"
@@ -395,6 +399,10 @@
             "isEditable": true,
             "isLockedOut": false,
             "lastName": "Smokes",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": {
                 "id": 2329,
                 "_subtype": "ClientContact"
@@ -649,6 +657,10 @@
             "isEditable": true,
             "isLockedOut": false,
             "lastName": "Meller",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": {
                 "id": 2323,
                 "_subtype": "ClientContact"
@@ -907,6 +919,10 @@
             "isEditable": true,
             "isLockedOut": false,
             "lastName": "Flintstone",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": 0,
             "localExemptions": 0,
@@ -1158,6 +1174,10 @@
             "isEditable": true,
             "isLockedOut": false,
             "lastName": "pan",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -1409,6 +1429,10 @@
             "isEditable": true,
             "isLockedOut": false,
             "lastName": "bell",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": {
                 "id": 2330,
                 "_subtype": "ClientContact"
@@ -1663,6 +1687,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burns",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -1967,6 +1995,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burns",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -2322,6 +2354,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burnham",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -2618,6 +2654,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burnet",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -2914,6 +2954,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burnett",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -3230,6 +3274,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burleigh",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -3532,6 +3580,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burnazoglu",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -3830,6 +3882,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burns",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -4282,6 +4338,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burks",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -4614,6 +4674,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burkitt",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -4933,6 +4997,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burland",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -5295,6 +5363,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burke",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -5594,6 +5666,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "Burkhalter",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,
@@ -5921,6 +5997,10 @@
             "isEditable": true,
             "isLockedOut": null,
             "lastName": "BURLACU",
+            "leads": {
+                "total": 0,
+                "data": [0]
+            },
             "linkedPerson": null,
             "localAddtionalWitholdingsAmount": null,
             "localExemptions": null,

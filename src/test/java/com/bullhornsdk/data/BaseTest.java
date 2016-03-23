@@ -11,11 +11,11 @@ public class BaseTest {
 	
 	public TestEntities testEntities;
 
-	public BullhornData bullhornApiRest;
+	public BullhornData bullhornData;
 
 	@Before
 	public void scaffoldTests() {
-		this.bullhornApiRest = new MockBullhornData();
+		this.bullhornData = new MockBullhornData();
 		this.testEntities = new TestEntities();
 	}
 
