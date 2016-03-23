@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "auditTrail", "dateAdded", "fieldChanges", "migrateGUID", "modifyingPerson", "targetEntity", "transactionID"})
-public class EditHistory implements QueryEntity, EditHistoryEntity {
+public class EditHistory implements QueryEntity {
     private Integer id;
 
     private String auditTrail;
