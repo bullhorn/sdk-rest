@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 		"firstName", "history", "isDayLightSavingsTime", "isDeleted", "lastName", "leadSource", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes",
 		"numEmployees", "occupation", "owner", "ownerCorporation", "pager", "phone", "phone2", "phone3", "preferredContact", "primarySkills", "priority", "referredByPerson", "reportToPerson", "role",
 		"salary", "salaryLow", "secondarySkills", "skillSet", "smsOptIn", "specialties", "status", "tearsheets", "timeZoneOffsetEST", "type", "willRelocate" })
-public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity {
+public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 

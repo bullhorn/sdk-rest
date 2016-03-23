@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.model.entity.core.type.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -44,16 +45,6 @@ import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.FileEntity;
-import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData;
@@ -254,7 +245,7 @@ public class StandardBullhornData implements BullhornData {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <T extends BullhornEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+	public <T extends EditHistoryEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		return this.handleQueryForEntityEditHistory(entityType, where, fieldSet, params);
 	}
 
@@ -726,7 +717,7 @@ public class StandardBullhornData implements BullhornData {
 	 *            optional QueryParams.
 	 * @return a EditHistoryListWrapper containing the records plus some additional information
 	 */
-	private <T extends BullhornEntity> EditHistoryListWrapper handleQueryForEntityEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+	private <T extends EditHistoryEntity> EditHistoryListWrapper handleQueryForEntityEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 		String entity = uriVariables.get("entityType");
 		if ("Candidate".equals(entity) || "ClientContact".equals(entity)) {

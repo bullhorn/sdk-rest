@@ -12,7 +12,8 @@ import java.math.BigDecimal;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "comments", "commissionPercentage", "dateAdded", "dateLastModified", "externalRecipient", "flatPayout",
         "grossMarginPercentage", "hourlyPayout", "migrateGUID", "placement", "role", "status", "user" })
-public class PlacementCommission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity, DateLastModifiedEntity {
+public class PlacementCommission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
+        DateLastModifiedEntity, EditHistoryEntity {
 
     private Integer id;
 

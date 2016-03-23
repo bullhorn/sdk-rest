@@ -41,7 +41,7 @@ import java.math.BigDecimal;
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
         "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
-		FileEntity, AssociationEntity, DateLastModifiedEntity {
+		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 

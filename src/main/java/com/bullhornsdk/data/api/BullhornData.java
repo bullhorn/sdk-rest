@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.bullhornsdk.data.model.entity.core.type.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.helper.RestApiSession;
@@ -12,14 +13,6 @@ import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.FileEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
@@ -157,7 +150,7 @@ public interface BullhornData {
 	 *
 	 * @return a EditHistoryListWrapper that wraps a List<EditHistory> plus some additional info about the data
 	 */
-	public <T extends BullhornEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params);
+	public <T extends EditHistoryEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params);
 
 	/**
 	 * Queries for EditHistoryFieldChange of type T and returns a FieldChangeListWrapper.

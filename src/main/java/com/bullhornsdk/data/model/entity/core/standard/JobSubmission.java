@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "appointments", "billRate", "candidate", "dateAdded", "dateLastModified", "dateWebResponse", "isDeleted", "isHidden", "jobOrder",
 		"migrateGUID", "payRate", "salary", "sendingUser", "source", "status", "tasks" })
-public class JobSubmission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity {
+public class JobSubmission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 	private OneToManyLinkedId appointments;

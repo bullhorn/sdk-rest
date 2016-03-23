@@ -37,7 +37,7 @@ import java.math.BigDecimal;
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s"})
 public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
-		AssociationEntity, DateLastModifiedEntity {
+		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
 

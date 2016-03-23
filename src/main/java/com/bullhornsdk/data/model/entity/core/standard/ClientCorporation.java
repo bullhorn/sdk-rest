@@ -29,7 +29,7 @@ import java.math.BigDecimal;
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s" })
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
-		SearchEntity, DateLastModifiedEntity {
+		SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 

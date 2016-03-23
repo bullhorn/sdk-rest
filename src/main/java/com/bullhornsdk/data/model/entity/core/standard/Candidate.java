@@ -39,7 +39,7 @@ import java.math.BigDecimal;
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
         "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
 public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
-		AssociationEntity, DateLastModifiedEntity {
+		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
 

@@ -4,6 +4,7 @@ package com.bullhornsdk.data.model.entity.core.edithistory;
  * Created by acrowe on 3/2/2016.
  */
 
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -18,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "auditTrail", "dateAdded", "fieldChanges", "migrateGUID", "modifyingPerson", "targetEntity", "transactionID"})
-public class EditHistory implements QueryEntity {
+public class EditHistory implements QueryEntity, EditHistoryEntity {
     private Integer id;
 
     private String auditTrail;

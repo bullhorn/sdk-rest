@@ -45,7 +45,7 @@ import javax.validation.constraints.Size;
         "customObject8s", "customObject9s", "customObject10s" })
 public class ClientContact extends CustomFieldsB implements QueryEntity,
 		UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
-		AssociationEntity, SearchEntity, DateLastModifiedEntity {
+		AssociationEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 
