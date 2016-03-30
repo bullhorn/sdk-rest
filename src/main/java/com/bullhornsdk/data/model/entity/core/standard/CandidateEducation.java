@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.validation.constraints.Size;
 
@@ -31,7 +32,7 @@ public class CandidateEducation extends AbstractEntity implements QueryEntity, U
 	private Candidate candidate;
 
 	@JsonIgnore
-	private String certification;
+	private List<String> certification;
 
 	@JsonIgnore
 	@Size(max = 40)
@@ -149,12 +150,12 @@ public class CandidateEducation extends AbstractEntity implements QueryEntity, U
 	}
 
 	@JsonProperty("certification")
-	public String getCertification() {
+	public List<String> getCertification() {
 		return certification;
 	}
 
 	@JsonProperty("certification")
-	public void setCertification(String certification) {
+	public void setCertification(List<String> certification) {
 		this.certification = certification;
 	}
 
