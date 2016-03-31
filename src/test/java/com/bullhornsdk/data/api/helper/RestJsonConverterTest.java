@@ -16,10 +16,10 @@ public class RestJsonConverterTest {
     
     @Test
     public void testBasicParse() throws Exception { 
-        InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("candidate_example.json");
-        StringWriter writer = new StringWriter();
-        IOUtils.copy(is, writer, "UTF-8");
-        String jsonCandidate = writer.toString();
+        InputStream candidateInputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("candidate_with_confidential_fields.json");
+        StringWriter strWriter = new StringWriter();
+        IOUtils.copy(candidateInputStream, strWriter, "UTF-8");
+        String jsonCandidate = strWriter.toString();
 //        System.out.println("before: " + jsonCandidate);
 //        jsonCandidate = jsonCandidate.replaceAll("\\*\\*CONFIDENTIAL\\*\\*", "");
 //        System.out.println("**********************************************");
