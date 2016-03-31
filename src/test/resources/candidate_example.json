@@ -1,0 +1,254 @@
+{
+  "data" : {
+    "id" : 12345,
+    "address" : {
+      "address1" : "",
+      "address2" : "",
+      "city" : "San Jose",
+      "state" : "California",
+      "zip" : "95050",
+      "countryID" : 1,
+      "countryName" : "United States                                                   ",
+      "countryCode" : "US"
+    },
+    "businessSectors" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "canEnterTime" : true,
+    "candidateSource" : null,
+    "categories" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "category" : {
+      "id" : 1234
+    },
+    "certificationList" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "certifications" : null,
+    "clientCorporationBlackList" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "clientCorporationWhiteList" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "comments" : "",
+    "companyName" : "Acme, Inc",
+    "companyURL" : "",
+    "customDate1" : null,
+    "customDate2" : null,
+    "customDate3" : null,
+    "customFloat1" : 0.0,
+    "customFloat2" : 0.0,
+    "customFloat3" : 0.0,
+    "customInt1" : 0,
+    "customInt2" : 0,
+    "customInt3" : 0,
+    "customText1" : "",
+    "customText10" : "",
+    "customText11" : "",
+    "customText12" : "",
+    "customText13" : "",
+    "customText14" : "",
+    "customText15" : "",
+    "customText16" : "",
+    "customText17" : "",
+    "customText18" : "",
+    "customText19" : "",
+    "customText2" : "Unknown",
+    "customText20" : "",
+    "customText3" : "Unknown",
+    "customText4" : "No",
+    "customText5" : "",
+    "customText6" : "",
+    "customText7" : "",
+    "customText8" : "",
+    "customText9" : "",
+    "customTextBlock1" : null,
+    "customTextBlock2" : "",
+    "customTextBlock3" : "",
+    "customTextBlock4" : "",
+    "customTextBlock5" : "",
+    "dateAdded" : 1303239954120,
+    "dateAvailable" : null,
+    "dateAvailableEnd" : null,
+    "dateI9Expiration" : null,
+    "dateLastComment" : 1445283827180,
+    "dateLastModified" : 1436522203080,
+    "dateNextCall" : null,
+    "dateOfBirth" : "**CONFIDENTIAL**",
+    "dayRate" : 0.0000,
+    "dayRateLow" : 0.0000,
+    "degreeList" : null,
+    "description" : "",
+    "desiredLocations" : null,
+    "disability" : " ",
+    "educationDegree" : null,
+    "educations" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "email" : "testtester@nowhere.com",
+    "email2" : "",
+    "email3" : "",
+    "employeeType" : "Undetermined",
+    "employmentPreference" : "Contract",
+    "ethnicity" : "",
+    "experience" : 0,
+    "externalID" : "",
+    "fax" : "",
+    "fax2" : "",
+    "fax3" : "",
+    "federalAddtionalWitholdingsAmount" : null,
+    "federalExemptions" : null,
+    "federalFilingStatus" : null,
+    "fileAttachments" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "firstName" : "Test",
+    "gender" : " ",
+    "hourlyRate" : 0.0000,
+    "hourlyRateLow" : 0.0000,
+    "i9OnFile" : null,
+    "interviews" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "isDayLightSavings" : true,
+    "isDeleted" : false,
+    "isEditable" : true,
+    "isLockedOut" : false,
+    "lastName" : "User",
+    "leads" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "linkedPerson" : null,
+    "localAddtionalWitholdingsAmount" : null,
+    "localExemptions" : null,
+    "localFilingStatus" : null,
+    "localTaxCode" : null,
+    "massMailOptOut" : false,
+    "masterUserID" : null,
+    "middleName" : "",
+    "migrateGUID" : null,
+    "mobile" : "1 408-555-1212",
+    "name" : "Test Tester",
+    "namePrefix" : "",
+    "nameSuffix" : "",
+    "nickName" : "Test",
+    "notes" : {
+      "total" : 3,
+      "data" : [ ]
+    },
+    "numCategories" : 1,
+    "numOwners" : 1,
+    "occupation" : "Senior Product Manager",
+    "owner" : {
+      "id" : 117,
+      "firstName" : "Joe",
+      "lastName" : "GetHired"
+    },
+    "pager" : "",
+    "paperWorkOnFile" : null,
+    "password" : "somethingthatnoonewilleverguess",
+    "personSubtype" : "Candidate",
+    "phone" : "1 408-555-1000",
+    "phone2" : "",
+    "phone3" : "",
+    "placements" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "preferredContact" : "",
+    "primarySkills" : {
+      "total" : 33,
+      "data" : [ ]
+    },
+    "recentClientList" : null,
+    "references" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "referredBy" : "",
+    "referredByPerson" : null,
+    "salary" : 0.0000,
+    "salaryLow" : 0.0000,
+    "secondaryAddress" : {
+      "address1" : "",
+      "address2" : "",
+      "city" : "",
+      "state" : "",
+      "zip" : "",
+      "countryID" : 2216,
+      "countryName" : "United States                                                   ",
+      "countryCode" : "US"
+    },
+    "secondaryOwners" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "secondarySkills" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "sendouts" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "shifts" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "skillSet" : [ ],
+    "smsOptIn" : false,
+    "source" : "Search-Monster",
+    "specialties" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "ssn" : "**CONFIDENTIAL**",
+    "stateAddtionalWitholdingsAmount" : null,
+    "stateExemptions" : null,
+    "stateFilingStatus" : null,
+    "status" : "Open",
+    "submissions" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "tasks" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "taxID" : "",
+    "taxState" : null,
+    "tearsheets" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "timeZoneOffsetEST" : -60,
+    "travelLimit" : 0,
+    "travelMethod" : null,
+    "type" : "",
+    "userType" : null,
+    "username" : "testtester",
+    "veteran" : " ",
+    "webResponses" : {
+      "total" : 0,
+      "data" : [ ]
+    },
+    "willRelocate" : false,
+    "workAuthorized" : true,
+    "workHistories" : {
+      "total" : 13,
+      "data" : [ ]
+    },
+    "workPhone" : ""
+  }
+}

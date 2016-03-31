@@ -87,6 +87,11 @@ public class RestJsonConverter {
         T entity = null;
 
         try {
+            /**
+             * special case- value ignored for PII information which won't match data type of field. 
+             */
+            jsonString = jsonString.replaceAll("\\*\\*CONFIDENTIAL\\*\\*", "");
+
             entity = objectMapper.readValue(jsonString, type);
         } catch (JsonParseException e) {
             log.error("Error parsing jsonString to " + type + ". jsonString = " + jsonString, e);
