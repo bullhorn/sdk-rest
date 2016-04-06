@@ -25,6 +25,7 @@ public class AssociationFactory {
     private static final OpportunityAssociations opportunityAssociations = OpportunityAssociations.getInstance();
     private static final LeadAssociations leadAssociations = LeadAssociations.getInstance();
     private static final TearsheetAssociations tearsheetAssociations = TearsheetAssociations.getInstance();
+    private static final AppointmentAssociations appointmentAssociations = AppointmentAssociations.getInstance();
 
     /**
      * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
@@ -89,6 +90,10 @@ public class AssociationFactory {
 
         if (type == Tearsheet.class) {
             return (EntityAssociations<T>) tearsheetAssociations;
+        }
+
+        if (type == Appointment.class) {
+            return (EntityAssociations<T>) appointmentAssociations;
         }
 
         return null;
@@ -183,6 +188,15 @@ public class AssociationFactory {
      */
     public static TearsheetAssociations tearsheetAssociations() {
         return tearsheetAssociations;
+    }
+
+    /**
+     * Returns the associations for Appointment
+     *
+     * @return
+     */
+    public static AppointmentAssociations appointmentAssociations() {
+        return appointmentAssociations;
     }
 
 }

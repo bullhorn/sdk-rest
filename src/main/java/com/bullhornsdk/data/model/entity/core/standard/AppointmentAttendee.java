@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
@@ -14,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "acceptanceStatus", "appointment", "attendee", "migrateGUID" })
-public class AppointmentAttendee extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity {
+public class AppointmentAttendee extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, AssociationEntity {
 
     private Integer id;
 
