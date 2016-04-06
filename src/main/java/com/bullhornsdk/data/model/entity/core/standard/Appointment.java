@@ -28,8 +28,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
         "isPrivate", "jobOrder", "lead", "location", "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentAppointment", "placement",
         "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
         "showTimeAs", "subject", "timeZoneID", "type" })
-public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity,
-        AssociationEntity {
+public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity {
 
     private Integer id;
 
