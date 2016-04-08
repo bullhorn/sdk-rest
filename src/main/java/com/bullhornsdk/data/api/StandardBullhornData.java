@@ -661,6 +661,11 @@ public class StandardBullhornData implements BullhornData {
 	 * @return
 	 */
 	private <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
+		if (idList.size() == 1){
+			List<T> list = new ArrayList<T>();
+			list.add(this.handleGetEntity(type, idList.iterator().next(), fieldSet, ParamFactory.entityParams()));
+			return (L) new StandardListWrapper<T>(list);
+		}
 		String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
 		Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
 		String url = restUrlFactory.assembleEntityUrl(params);
