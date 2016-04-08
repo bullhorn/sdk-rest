@@ -10,7 +10,9 @@
                 "firstName": "BH",
                 "lastName": "Tester"
             },
-            "certification": "CCM",
+            "certification": [
+                "CCM"
+            ],
             "city": "",
             "comments": "",
             "customDate1": null,
@@ -58,7 +60,9 @@
                 "firstName": "Toad",
                 "lastName": "Toad"
             },
-            "certification": "BA",
+            "certification": [
+                "BA"
+            ],
             "city": "",
             "comments": "Like summer tempests came his tears",
             "customDate1": null,
@@ -346,7 +350,9 @@
                 "firstName": "Toad",
                 "lastName": "Toad"
             },
-            "certification": "BA",
+            "certification": [
+                "BA"
+            ],
             "city": "",
             "comments": "Like summer tempests came his tears",
             "customDate1": null,
@@ -538,7 +544,9 @@
                 "firstName": "Test",
                 "lastName": "User"
             },
-            "certification": "CCM",
+            "certification": [
+                "CCM"
+            ],
             "city": "",
             "comments": "",
             "customDate1": null,
@@ -632,7 +640,9 @@
                 "firstName": "Toad",
                 "lastName": "Toad"
             },
-            "certification": "BA",
+            "certification": [
+                "BA"
+            ],
             "city": "",
             "comments": "Like summer tempests came his tears",
             "customDate1": null,
@@ -680,7 +690,7 @@
                 "firstName": "Badger 2",
                 "lastName": "Wood Creature"
             },
-            "certification": "",
+            "certification": null,
             "city": "",
             "comments": "",
             "customDate1": null,
@@ -728,7 +738,7 @@
                 "firstName": "Badger 1",
                 "lastName": "Wood Creature"
             },
-            "certification": "",
+            "certification": null,
             "city": "",
             "comments": "",
             "customDate1": null,
@@ -824,7 +834,9 @@
                 "firstName": "Toad",
                 "lastName": "Toad"
             },
-            "certification": "BA",
+            "certification": [
+                "BA"
+            ],
             "city": "",
             "comments": "Like summer tempests came his tears",
             "customDate1": null,
@@ -920,7 +932,9 @@
                 "firstName": "Toad",
                 "lastName": "Toad"
             },
-            "certification": "BA",
+            "certification": [
+                "BA"
+            ],
             "city": "",
             "comments": "Like summer tempests came his tears",
             "customDate1": null,
