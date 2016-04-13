@@ -1,17 +1,39 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import java.math.BigDecimal;
+
+import javax.validation.constraints.Size;
+
+import org.joda.time.DateTime;
+
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.joda.time.DateTime;
-
-import javax.validation.constraints.Size;
-import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -36,7 +58,8 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	@JsonIgnore
 	@Size(max = 100)
 	private String title;
-	
+
+    @JsonIgnore
 	private String type;
 
 	@Size(max = 200000)
@@ -304,7 +327,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return type;
 	}
 
-	@JsonProperty("type")
+    @JsonIgnore
 	public void setType(String type) {
 		this.type = type;
 	}
