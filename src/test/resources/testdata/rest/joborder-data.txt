@@ -169,8 +169,8 @@
             },
             "source": "",
             "specialties": {
-                "total": 0,
-                "data": []
+                "total": 1,
+                "data": [12]
             },
             "startDate": 1290402000000,
             "status": "Submitted",

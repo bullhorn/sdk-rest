@@ -27,6 +27,15 @@ public class Specialty extends AbstractEntity implements QueryEntity {
 
 	private Category parentCategory;
 
+    public Specialty() {
+        super();
+    }
+
+    public Specialty(Integer id) {
+        super();
+        this.id = id;
+    }
+
 	@Override
 	@JsonProperty("id")
 	public Integer getId() {
