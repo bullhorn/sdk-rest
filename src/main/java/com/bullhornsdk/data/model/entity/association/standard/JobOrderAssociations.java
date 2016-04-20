@@ -4,6 +4,23 @@ import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.core.customobject.*;
 import com.bullhornsdk.data.model.entity.core.standard.*;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
+import com.bullhornsdk.data.model.entity.core.standard.Category;
+import com.bullhornsdk.data.model.entity.core.standard.Certification;
+import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
+import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
+import com.bullhornsdk.data.model.entity.core.standard.Skill;
+import com.bullhornsdk.data.model.entity.core.standard.Specialty;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
 import java.util.ArrayList;
@@ -23,6 +40,8 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
     private final AssociationField<JobOrder, Certification> certifications = instantiateAssociationField("certifications", Certification.class);
     private final AssociationField<JobOrder, Skill> skills = instantiateAssociationField("skills", Skill.class);
     private final AssociationField<JobOrder, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
+    private final AssociationField<JobOrder, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
+
     private List<AssociationField<JobOrder, ? extends BullhornEntity>> allAssociations;
 
 
@@ -72,6 +91,10 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
         return tearsheets;
     }
 
+    public AssociationField<JobOrder, Specialty> specialties() {
+        return specialties;
+    }
+
     public AssociationField<JobOrder, JobOrderCustomObjectInstance1> customObject1s() {
         return customObject1s;
     }
@@ -112,7 +135,9 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
         return customObject10s;
     }
 
-    private <E extends BullhornEntity> AssociationField<JobOrder, E> instantiateAssociationField(String associationName, Class<E> associationType) {
+    private <E extends BullhornEntity> AssociationField<JobOrder, E> instantiateAssociationField(String associationName,
+                                                                                                 Class<E> associationType) {
+
         return new StandardAssociationField<JobOrder, E>(associationName, associationType);
     }
 
@@ -126,6 +151,7 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
             allAssociations.add(certifications());
             allAssociations.add(skills());
             allAssociations.add(tearsheets());
+            allAssociations.add(specialties());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());
