@@ -5,16 +5,16 @@
 
  public abstract class PersonCustomObjectInstance extends CustomObjectInstance {
 
-     private LinkedPerson linkedPerson;
+     private LinkedPerson person;
 
      @JsonProperty("person")
-     public LinkedPerson getLinkedPerson() {
-         return linkedPerson;
+     public LinkedPerson getPerson() {
+         return person;
      }
 
      @JsonProperty("person")
-     public void setLinkedPersoninkedPerson(LinkedPerson linkedPerson) {
-         this.linkedPerson = linkedPerson;
+     public void setPerson(LinkedPerson person) {
+         this.person = person;
      }
 
  }
