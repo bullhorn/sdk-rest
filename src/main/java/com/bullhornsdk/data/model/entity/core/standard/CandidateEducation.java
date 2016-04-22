@@ -32,7 +32,7 @@ public class CandidateEducation extends AbstractEntity implements QueryEntity, U
 	private Candidate candidate;
 
 	@JsonIgnore
-	private List<String> certification;
+	private String certification;
 
 	@JsonIgnore
 	@Size(max = 40)
@@ -150,12 +150,12 @@ public class CandidateEducation extends AbstractEntity implements QueryEntity, U
 	}
 
 	@JsonProperty("certification")
-	public List<String> getCertification() {
+	public String getCertification() {
 		return certification;
 	}
 
-	@JsonProperty("certification")
-	public void setCertification(List<String> certification) {
+	@JsonIgnore
+	public void setCertification(String certification) {
 		this.certification = certification;
 	}
 
