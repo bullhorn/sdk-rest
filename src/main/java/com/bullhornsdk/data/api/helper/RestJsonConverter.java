@@ -2,6 +2,7 @@ package com.bullhornsdk.data.api.helper;
 
 import java.io.IOException;
 
+import com.bullhornsdk.data.exception.RestMappingException;
 import org.apache.log4j.Logger;
 
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -84,19 +85,19 @@ public class RestJsonConverter {
     }
 
     public <T> T jsonToEntity(String jsonString, Class<T> type, ObjectMapper objectMapper) {
-        T entity = null;
 
         try {
-            entity = objectMapper.readValue(jsonString, type);
+            T entity = objectMapper.readValue(jsonString, type);
+            return entity;
         } catch (JsonParseException e) {
             log.error("Error parsing jsonString to " + type + ". jsonString = " + jsonString, e);
         } catch (JsonMappingException e) {
-            log.error("Error parsing jsonString to " + type + ". jsonString = " + jsonString, e);
+            log.error("Error mapping jsonString to " + type + ". jsonString = " + jsonString, e);
         } catch (IOException e) {
             log.error("IOException. Error parsing jsonString to " + type + ". jsonString = " + jsonString, e);
         }
 
-        return entity;
+        throw new RestMappingException("Error parsing jsonString to " + type + ". jsonString = " + jsonString);
     }
 
     /**
