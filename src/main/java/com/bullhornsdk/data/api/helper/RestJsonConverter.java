@@ -87,17 +87,14 @@ public class RestJsonConverter {
     public <T> T jsonToEntity(String jsonString, Class<T> type, ObjectMapper objectMapper) {
 
         try {
-            T entity = objectMapper.readValue(jsonString, type);
-            return entity;
-        } catch (JsonParseException e) {
-            log.error("Error parsing jsonString to " + type + ". jsonString = " + jsonString, e);
-        } catch (JsonMappingException e) {
-            log.error("Error mapping jsonString to " + type + ". jsonString = " + jsonString, e);
-        } catch (IOException e) {
-            log.error("IOException. Error parsing jsonString to " + type + ". jsonString = " + jsonString, e);
+            return objectMapper.readValue(jsonString, type);
+        } catch(JsonParseException e) {
+            throw new RestMappingException("Error mapping jsonString to " + type + ". jsonString = " + jsonString, e);
+        } catch(JsonMappingException e) {
+            throw new RestMappingException("Error mapping jsonString to " + type + ". jsonString = " + jsonString, e);
+        } catch(IOException e) {
+            throw new RestMappingException("Error mapping jsonString to " + type + ". jsonString = " + jsonString, e);
         }
-
-        throw new RestMappingException("Error parsing jsonString to " + type + ". jsonString = " + jsonString);
     }
 
     /**
