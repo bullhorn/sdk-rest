@@ -1,16 +1,30 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.*;
+import java.math.BigDecimal;
+
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.fasterxml.jackson.annotation.*;
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
-import javax.validation.constraints.Size;
-import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -32,6 +46,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 
 	private OneToMany<BusinessSector> businessSectors;
 
+	@JsonIgnore
 	private String campaignSource;
 
 	private OneToMany<Candidate> candidates;
@@ -193,6 +208,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 
 	private LinkedPerson reportToPerson;
 
+	@JsonIgnore
 	private String role;
 
 	private BigDecimal salary;
@@ -753,7 +769,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return campaignSource;
 	}
 
-	@JsonProperty("campaignSource")
+	@JsonIgnore
 	public void setCampaignSource(String campaignSource) {
 		this.campaignSource = campaignSource;
 	}
@@ -853,7 +869,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return leadSource;
 	}
 
-	@JsonProperty("leadSource")
+	@JsonIgnore
 	public void setLeadSource(String leadSource) {
 		this.leadSource = leadSource;
 	}
@@ -913,7 +929,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return role;
 	}
 
-	@JsonProperty("role")
+	@JsonIgnore
 	public void setRole(String role) {
 		this.role = role;
 	}
