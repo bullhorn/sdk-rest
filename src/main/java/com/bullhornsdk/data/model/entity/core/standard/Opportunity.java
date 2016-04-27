@@ -1077,7 +1077,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return campaignSource;
 	}
 
-	@JsonProperty("campaignSource")
+	@JsonIgnore
 	public void setCampaignSource(String campaignSource) {
 		this.campaignSource = campaignSource;
 	}

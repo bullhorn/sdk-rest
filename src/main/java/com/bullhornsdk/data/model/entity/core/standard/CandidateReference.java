@@ -33,6 +33,7 @@ public class CandidateReference extends AbstractEntity implements QueryEntity, U
 
 	private Candidate candidate;
 
+	@JsonIgnore
 	@Size(max = 50)
 	private String candidateTitle;
 

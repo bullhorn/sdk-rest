@@ -43,6 +43,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     private ClientContact clientContactReference;
 
+    @JsonIgnore
     @Size(max = 30)
     private String communicationMethod;
 
@@ -66,6 +67,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     private Lead lead;
 
+    @JsonIgnore
     @Size(max = 100)
     private String location;
 
@@ -102,6 +104,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     private String timeZoneID;
 
+    @JsonIgnore
     @Size(max = 30)
     private String type;
 
@@ -189,7 +192,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return communicationMethod;
     }
 
-    @JsonProperty("communicationMethod")
+    @JsonIgnore
     public void setCommunicationMethod(String communicationMethod) {
         this.communicationMethod = communicationMethod;
     }
@@ -299,7 +302,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return location;
     }
 
-    @JsonProperty("location")
+    @JsonIgnore
     public void setLocation(String location) {
         this.location = location;
     }
@@ -459,7 +462,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return type;
     }
 
-    @JsonProperty("type")
+    @JsonIgnore
     public void setType(String type) {
         this.type = type;
     }
