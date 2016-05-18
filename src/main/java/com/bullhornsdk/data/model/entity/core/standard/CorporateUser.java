@@ -5,6 +5,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsA;
 import com.bullhornsdk.data.model.entity.embedded.Address;
@@ -29,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"lastName", "loginRestrictions", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName",
 		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "smsOptIn", "taskAssignments", "timeZoneOffsetEST",
 		"username" })
-public class CorporateUser extends CustomFieldsA implements QueryEntity {
+public class CorporateUser extends CustomFieldsA implements QueryEntity, AssociationEntity {
 
 	private Integer id;
 
