@@ -121,22 +121,22 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
     }
 
     @JsonProperty("complexManagerID")
-    public Integer setComplexManagerID() {
+    public Integer getComplexManagerID() {
 	return complexManagerID;
     }
 
     @JsonProperty("complexManagerID")
-    public void getComplexManagerID(Integer billingContactID) {
+    public void setComplexManagerID(Integer billingContactID) {
 	this.complexManagerID = billingContactID;
     }
 
     @JsonProperty("complexOwnerID")
-    public Integer setComplexOwnerID() {
+    public Integer getComplexOwnerID() {
 	return complexOwnerID;
     }
 
     @JsonProperty("complexOwnerID")
-    public void getComplexOwnerID(Integer billingContactID) {
+    public void setComplexOwnerID(Integer billingContactID) {
 	this.complexOwnerID = billingContactID;
     }
 
@@ -151,32 +151,32 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
     }
     
     @JsonProperty("customContactID1")
-    public Integer setCustomContactID1() {
+    public Integer getCustomContactID1() {
 	return customContactID1;
     }
 
     @JsonProperty("customContactID1")
-    public void getCustomContactID1(Integer customContactID1) {
+    public void setCustomContactID1(Integer customContactID1) {
 	this.customContactID1 = customContactID1;
     }
     
     @JsonProperty("customContactID2")
-    public Integer setCustomContactID2() {
+    public Integer getCustomContactID2() {
 	return customContactID2;
     }
 
     @JsonProperty("customContactID2")
-    public void getCustomContactID2(Integer customContactID2) {
+    public void setCustomContactID2(Integer customContactID2) {
 	this.customContactID2 = customContactID2;
     }
     
     @JsonProperty("customContactID3")
-    public Integer setCustomContactID3() {
+    public Integer getCustomContactID3() {
 	return customContactID3;
     }
 
     @JsonProperty("customContactID3")
-    public void getCustomContactID3(Integer customContactID3) {
+    public void setCustomContactID3(Integer customContactID3) {
 	this.customContactID3 = customContactID3;
     }
 
@@ -221,12 +221,12 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
     }
 
     @JsonProperty("owner")
-    public CorporateUser setOwner() {
+    public CorporateUser getOwner() {
 	return owner;
     }
 
     @JsonProperty("owner")
-    public void getOwner(CorporateUser owner) {
+    public void setOwner(CorporateUser owner) {
 	this.owner = owner;
     }
 
