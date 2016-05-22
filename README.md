@@ -60,15 +60,15 @@ public class AppConfig {
 	@Bean
 	public BullhornData bullhornData() {
 
-		RestApiSettings creds = new RestApiSettings();
-		creds.setPassword(env.getProperty("apipassword"));
-		creds.setRestAuthorizeUrl(env.getProperty("rest.authorizeUrl"));
-		creds.setRestClientId(env.getProperty("rest.clientId"));
-		creds.setRestClientSecret(env.getProperty("rest.clientSecret"));
-		creds.setRestLoginUrl(env.getProperty("rest.loginUrl"));
-		creds.setRestSessionMinutesToLive(env.getProperty("rest.sessionMinutesToLive"));
-		creds.setRestTokenUrl(env.getProperty("rest.tokenUrl"));
-		creds.setUsername(env.getProperty("apiusername"));
+		RestCredentials creds = new BullhornRestCredentials();
+        creds.setPassword("apipassword");
+        creds.setRestAuthorizeUrl("rest.authorizeUrl");
+        creds.setRestClientId("rest.clientId");
+        creds.setRestClientSecret("rest.clientSecret");
+        creds.setRestLoginUrl(env.getProperty("rest.loginUrl");
+        creds.setRestSessionMinutesToLive("rest.sessionMinutesToLive");
+        creds.setRestTokenUrl("rest.tokenUrl");
+        creds.setUsername("apiusername");
 		return new StandardBullhornData(creds);
 
 	}
