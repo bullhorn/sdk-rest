@@ -201,4 +201,13 @@ public class RestUrlFactory {
         return restUrl + "settings/{settings}?BhRestToken={bhRestToken}";
 	}
 
+    public String assembleSubscribeToEventsUrl(boolean withNames) {
+        return restUrl + "event/subscription/{subscriptionId}?type={type}&ventTypes={eventTypes}&BhRestToken={bhRestToken}"
+                + (withNames ? "&names={names}" : "");
+    }
+
+    public String assembleUnsubscribeToEventsUrl(){
+        return restUrl + "event/subscription/{subscriptionId}?BhRestToken={bhRestToken}";
+    }
+
 }

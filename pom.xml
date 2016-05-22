@@ -166,6 +166,19 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
+			<version>0.7-groovy-2.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>3.1</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- kryo used for object deep clone -->
 		<dependency>
 			<groupId>com.esotericsoftware.kryo</groupId>
@@ -229,6 +242,10 @@
 					<version>2.18.1</version>
 					<configuration>
 						<argLine>-Xms512m -Xmx1024m -XX:MaxPermSize=512m</argLine>
+						<includes>
+							<include>**/Test*.java</include>
+							<include>**/*Spec.*</include>
+						</includes>
 						<excludes>
 							<exclude>**/Test*closure*.java</exclude>
 							<exclude>**/TestUtil.java</exclude>
