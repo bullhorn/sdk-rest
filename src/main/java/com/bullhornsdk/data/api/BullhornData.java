@@ -6,6 +6,10 @@ import java.util.Map;
 import java.util.Set;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.enums.EntityEventType;
+import com.bullhornsdk.data.model.enums.EventType;
+import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
+import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.helper.RestApiSession;
@@ -602,5 +606,27 @@ public interface BullhornData {
 	 * @return the restApiSession
 	 */
 	public RestApiSession getRestApiSession();
+
+
+	/**
+	 * Subscribe to events
+	 *
+	 * @param subscriptionId the name of the subscription we want to subscribe to events for
+	 * @param eventType Event type: entity, fieldMapChange, jobMatchSearch
+	 * @param entityClasses List of entity classes, required for event type entity
+	 * @param entityEventTypes List of entity event types
+	 * @return SubscribeToEventsResponse containing subscriptionId, jms selector and last request id
+     */
+	public SubscribeToEventsResponse subscribeToEvents(String subscriptionId, EventType eventType,
+													   List<Class> entityClasses,
+													   List<EntityEventType> entityEventTypes);
+
+	/**
+	 * Unsubscribe to events
+	 *
+	 * @param subscriptionId the name of the subscription we want to unsubscribe to events for
+	 * @return true when successful unsubscribed
+     */
+	public boolean unsubscribeToEvents(String subscriptionId);
 
 }

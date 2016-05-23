@@ -5,6 +5,8 @@ import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
+import com.bullhornsdk.data.model.enums.EntityEventType;
+import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
@@ -12,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -475,5 +478,29 @@ public class RestUriVariablesFactory {
 
 		return uriVariables;
 	}
+
+	public Map<String, String> getUriVariablesForSubscribeToEvents(String subscriptionId, EventType eventType,
+																   List<Class> entityClasses,
+																   List<EntityEventType> entityEventTypes){
+		Map<String, String> uriVariables = new LinkedHashMap<>();
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+		uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
+		uriVariables.put("type", eventType.typeValue());
+		if (EventType.ENTITY == eventType && entityClasses != null){
+			uriVariables.put("names", entityClasses.stream().map(Class::getSimpleName).collect(Collectors.joining(",")));
+		}
+		uriVariables.put("eventTypes", entityEventTypes != null ?
+				entityEventTypes.stream().map(EntityEventType::value).collect(Collectors.joining(",")) : "");
+		return uriVariables;
+	}
+
+	public Map<String, String> getUriVariablesForUnsubscribeToEvents(String subscriptionId){
+		Map<String, String> uriVariables = new LinkedHashMap<>();
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+		uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
+		return uriVariables;
+	}
+
+
 
 }
