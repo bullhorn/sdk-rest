@@ -1,6 +1,33 @@
 package com.bullhornsdk.data.api;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.stream.Collectors;
+
 import com.bullhornsdk.data.api.helper.*;
+import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
+import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
+import org.springframework.validation.Errors;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService;
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService;
 import com.bullhornsdk.data.exception.RestApiException;
@@ -474,6 +501,22 @@ public class StandardBullhornData implements BullhornData {
     public RestApiSession getRestApiSession() {
         return restSession;
     }
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public <T extends QueryEntity> EntityIdBoundaries queryForIdBoundaries(Class<T> entityClass) {
+		return handleQueryForIdBoundaries(entityClass);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public <T extends SearchEntity> EntityIdBoundaries searchForIdBoundaries(Class<T> entityClass) {
+		return handleSearchForIdBoundaries(entityClass);
+	}
 
     /**
      * {@inheritDoc}
@@ -1531,23 +1574,80 @@ public class StandardBullhornData implements BullhornData {
                                                               List<EntityEventType> entityEventTypes) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSubscribeToEvents(subscriptionId,
                 eventType, entityClasses, entityEventTypes);
+
         String url = restUrlFactory.assembleSubscribeToEventsUrl(EventType.ENTITY == eventType);
         String json = performCustomRequest(url, null, String.class, uriVariables, HttpMethod.PUT, null);
-        return StringUtils.isNotBlank(json) ? restJsonConverter.jsonToEntityDoNotUnwrapRoot(json,
+
+	    return StringUtils.isNotBlank(json) ? restJsonConverter.jsonToEntityDoNotUnwrapRoot(json,
                 StandardSubscribeToEventsResponse.class) : null;
     }
 
     private boolean handleUnsubscribeToEvents(String subscriptionId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForUnsubscribeToEvents(subscriptionId);
+
         String url = restUrlFactory.assembleUnsubscribeToEventsUrl();
+
         String json = performCustomRequest(url, null, String.class, uriVariables, HttpMethod.DELETE, null);
+
         if (StringUtils.isNotBlank(json)){
             UnsubscribeToEventsResponse response = restJsonConverter.jsonToEntityDoNotUnwrapRoot(json,
                     StandardUnsubscribeToEventsResponse.class);
+
             return response.getResult();
         }
+
         return false;
     }
+
+	private <T extends QueryEntity> EntityIdBoundaries handleQueryForIdBoundaries(Class<T> entityClass){
+		EntityIdBoundaries boundaries = new EntityIdBoundaries();
+		boundaries.setEntityClass(entityClass);
+
+		String where = "isDeleted = false";
+		QueryParams queryParams = StandardQueryParams.getInstance();
+		queryParams.setCount(10);
+		queryParams.setOrderBy("id");
+
+		List<T> results = queryForList(entityClass, where, Collections.singleton("id"), queryParams);
+
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMin(results.get(0).getId());
+		}
+
+		queryParams.setOrderBy("-id");
+		results = queryForList(entityClass, where, Collections.singleton("id"), queryParams);
+
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMax(results.get(0).getId());
+		}
+
+		return boundaries;
+	}
+
+	private <T extends SearchEntity> EntityIdBoundaries handleSearchForIdBoundaries(Class<T> entityClass){
+		EntityIdBoundaries boundaries = new EntityIdBoundaries();
+		boundaries.setEntityClass(entityClass);
+
+		String query = "isDeleted: false";
+		SearchParams searchParams = StandardSearchParams.getInstance();
+		searchParams.setCount(10);
+		searchParams.setSort("id");
+
+		List<T> results = searchForList(entityClass, query, Collections.singleton("id"), searchParams);
+
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMin(results.get(0).getId());
+		}
+		searchParams.setSort("-id");
+
+		results = searchForList(entityClass, query, Collections.singleton("id"), searchParams);
+
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMax(results.get(0).getId());
+		}
+
+		return boundaries;
+	}
 
 	/*
      * *************************************************************************

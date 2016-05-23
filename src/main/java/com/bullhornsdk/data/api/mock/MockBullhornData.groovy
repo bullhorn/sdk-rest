@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.api.mock
 
 import com.bullhornsdk.data.api.BullhornData
+import com.bullhornsdk.data.api.helper.EntityIdBoundaries
 import com.bullhornsdk.data.api.helper.RestApiSession
 import com.bullhornsdk.data.api.helper.RestErrorHandler
 import com.bullhornsdk.data.exception.RestApiException
@@ -13,6 +14,8 @@ import com.bullhornsdk.data.model.enums.EntityEventType
 import com.bullhornsdk.data.model.enums.EventType
 import com.bullhornsdk.data.model.enums.MetaParameter
 import com.bullhornsdk.data.model.parameter.*
+import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams
+import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams
 import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
 import com.bullhornsdk.data.model.response.crud.UpdateResponse
@@ -368,4 +371,23 @@ public class MockBullhornData implements BullhornData {
     boolean unsubscribeToEvents(String subscriptionId) {
         true
     }
+
+
+	def <T extends QueryEntity> EntityIdBoundaries queryForIdBoundaries(Class<T> entityClass) {
+		List<T> entities = mockDataHandler.queryForList(entityClass, "id>0", ["id"].toSet(), StandardQueryParams.instance)
+
+		List<Integer> ids = entities.collect { it.id }
+
+		new EntityIdBoundaries(ids.min(), ids.max(), entityClass)
+	}
+
+	@Override
+	def <T extends SearchEntity> EntityIdBoundaries searchForIdBoundaries(Class<T> entityClass) {
+		List<T> entities = mockDataHandler.searchForList(entityClass, "id>0", ["id"].toSet(), StandardSearchParams.instance)
+
+		List<Integer> ids = entities.collect { it.id }
+
+		new EntityIdBoundaries(ids.min(), ids.max(), entityClass)
+	}
+
 }
