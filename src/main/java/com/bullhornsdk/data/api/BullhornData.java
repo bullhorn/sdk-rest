@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -603,25 +602,5 @@ public interface BullhornData {
 	 * @return the restApiSession
 	 */
 	public RestApiSession getRestApiSession();
-
-
-	/**
-	 * Query for entity id boundaries of active entities (isDeleted is false)
-	 *
-	 * @param entityClass       Class of entity
-	 * @param <T>               Class extending QueryEntity
-	 * @return Range with minimum and maximum id
-	 */
-	public <T extends QueryEntity> EntityIdBoundaries queryForIdBoundaries(Class<T> entityClass);
-
-
-	/**
-	 * Search for entity id boundaries of active entities (isDeleted is false)
-	 *
-	 * @param entityClass       Class of entity
-	 * @param <T>               Class extending SearchEntity
-	 * @return Range with minimum and maximum id
-	 */
-	public <T extends SearchEntity> EntityIdBoundaries searchForIdBoundaries(Class<T> entityClass);
 
 }
