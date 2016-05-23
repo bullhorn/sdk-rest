@@ -202,7 +202,7 @@ public class RestUrlFactory {
 	}
 
     public String assembleSubscribeToEventsUrl(boolean withNames) {
-        return restUrl + "event/subscription/{subscriptionId}?type={type}&ventTypes={eventTypes}&BhRestToken={bhRestToken}"
+        return restUrl + "event/subscription/{subscriptionId}?type={type}&eventTypes={eventTypes}&BhRestToken={bhRestToken}"
                 + (withNames ? "&names={names}" : "");
     }
 
