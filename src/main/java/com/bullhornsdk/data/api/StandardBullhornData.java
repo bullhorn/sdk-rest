@@ -9,7 +9,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.api.helper.*;
 import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
+import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -25,15 +28,6 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bullhornsdk.data.api.helper.EntityUpdateWorker;
-import com.bullhornsdk.data.api.helper.FileWorker;
-import com.bullhornsdk.data.api.helper.RestApiSession;
-import com.bullhornsdk.data.api.helper.RestErrorHandler;
-import com.bullhornsdk.data.api.helper.RestFileManager;
-import com.bullhornsdk.data.api.helper.RestJsonConverter;
-import com.bullhornsdk.data.api.helper.RestTemplateFactory;
-import com.bullhornsdk.data.api.helper.RestUriVariablesFactory;
-import com.bullhornsdk.data.api.helper.RestUrlFactory;
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService;
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService;
 import com.bullhornsdk.data.exception.RestApiException;
@@ -505,6 +499,22 @@ public class StandardBullhornData implements BullhornData {
 	@Override
 	public RestApiSession getRestApiSession() {
 		return restSession;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public <T extends QueryEntity> EntityIdBoundaries queryForIdBoundaries(Class<T> entityClass) {
+		return handleQueryForIdBoundaries(entityClass);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public <T extends SearchEntity> EntityIdBoundaries searchForIdBoundaries(Class<T> entityClass) {
+		return handleSearchForIdBoundaries(entityClass);
 	}
 
 	private <C extends CrudResponse> C handleAddNoteAndAssociateToEntity(Note note) {
@@ -1568,6 +1578,45 @@ public class StandardBullhornData implements BullhornData {
 
         return this.performGetRequest(url, StandardGetEventsResponse.class, uriVariables);
     }
+
+	private <T extends QueryEntity> EntityIdBoundaries handleQueryForIdBoundaries(Class<T> entityClass){
+		EntityIdBoundaries boundaries = new EntityIdBoundaries();
+		boundaries.setEntityClass(entityClass);
+		String where = "isDeleted = false";
+		QueryParams queryParams = StandardQueryParams.getInstance();
+		queryParams.setCount(10);
+		queryParams.setOrderBy("id");
+		List<T> results = queryForList(entityClass, where, Collections.singleton("id"), queryParams);
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMin(results.get(0).getId());
+		}
+		queryParams.setOrderBy("-id");
+		results = queryForList(entityClass, where, Collections.singleton("id"), queryParams);
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMax(results.get(0).getId());
+		}
+
+		return boundaries;
+	}
+
+	private <T extends SearchEntity> EntityIdBoundaries handleSearchForIdBoundaries(Class<T> entityClass){
+		EntityIdBoundaries boundaries = new EntityIdBoundaries();
+		boundaries.setEntityClass(entityClass);
+		String query = "isDeleted: false";
+		SearchParams searchParams = StandardSearchParams.getInstance();
+		searchParams.setCount(10);
+		searchParams.setSort("id");
+		List<T> results = searchForList(entityClass, query, Collections.singleton("id"), searchParams);
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMin(results.get(0).getId());
+		}
+		searchParams.setSort("-id");
+		results = searchForList(entityClass, query, Collections.singleton("id"), searchParams);
+		if (results != null && !results.isEmpty()) {
+			boundaries.setMax(results.get(0).getId());
+		}
+		return boundaries;
+	}
 
 	/*
 	 * *************************************************************************
