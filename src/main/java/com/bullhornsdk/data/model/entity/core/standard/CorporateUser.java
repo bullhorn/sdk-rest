@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"departments", "email", "email2", "email3", "emailNotify", "emailSignature", "enabled", "externalEmail", "fax", "fax2", "fax3",
 		"firstName", "inboundEmailEnabled", "isDayLightSavings", "isDeleted", "isLockedOut", "isOutboundFaxEnabled", "jobAssignments",
 		"lastName", "loginRestrictions", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName",
-		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "smsOptIn", "taskAssignments", "timeZoneOffsetEST",
+		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "privateLabel", "smsOptIn", "taskAssignments", "timeZoneOffsetEST",
 		"username" })
 public class CorporateUser extends CustomFieldsA implements QueryEntity, AssociationEntity {
 
@@ -141,6 +141,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	private String phone3;
 
 	private CorporationDepartment primaryDepartment;
+
+	private PrivateLabel privateLabel;
 
 	private Boolean smsOptIn;
 
@@ -523,6 +525,16 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		this.primaryDepartment = primaryDepartment;
 	}
 
+	@JsonProperty("privateLabel")
+	public PrivateLabel getPrivateLabel() {
+		return privateLabel;
+	}
+
+	@JsonProperty("privateLabel")
+	public void setPrivateLabel(PrivateLabel privateLabel) {
+		this.privateLabel = privateLabel;
+	}
+
 	@JsonProperty("smsOptIn")
 	public Boolean getSmsOptIn() {
 		return smsOptIn;
@@ -613,6 +625,7 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		result = prime * result + ((phone2 == null) ? 0 : phone2.hashCode());
 		result = prime * result + ((phone3 == null) ? 0 : phone3.hashCode());
 		result = prime * result + ((primaryDepartment == null) ? 0 : primaryDepartment.hashCode());
+		result = prime * result + ((privateLabel == null) ? 0 : privateLabel.hashCode());
 		result = prime * result + ((smsOptIn == null) ? 0 : smsOptIn.hashCode());
 		result = prime * result + ((taskAssignments == null) ? 0 : taskAssignments.hashCode());
 		result = prime * result + ((timeZoneOffsetEST == null) ? 0 : timeZoneOffsetEST.hashCode());
@@ -810,6 +823,11 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 				return false;
 		} else if (!primaryDepartment.equals(other.primaryDepartment))
 			return false;
+		if (privateLabel == null) {
+			if (other.privateLabel != null)
+				return false;
+		} else if (!privateLabel.equals(other.privateLabel))
+			return false;
 		if (smsOptIn == null) {
 			if (other.smsOptIn != null)
 				return false;
@@ -914,6 +932,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		builder.append(phone3);
 		builder.append("\n\tprimaryDepartment: ");
 		builder.append(primaryDepartment);
+		builder.append("\n\tprivateLabel: ");
+		builder.append(privateLabel);
 		builder.append("\n\tsmsOptIn: ");
 		builder.append(smsOptIn);
 		builder.append("\n\ttaskAssignments: ");
