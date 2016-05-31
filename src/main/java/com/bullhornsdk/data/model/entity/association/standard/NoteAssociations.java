@@ -9,6 +9,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
@@ -24,6 +25,7 @@ public final class NoteAssociations implements EntityAssociations<Note> {
     private final AssociationField<Note,CorporateUser> corporateUsers = instantiateAssociationField("corporateUsers",CorporateUser.class);
     private final AssociationField<Note,JobOrder> jobOrders = instantiateAssociationField("jobOrders",JobOrder.class);
     private final AssociationField<Note,Placement> placements = instantiateAssociationField("placements",Placement.class);
+    private final AssociationField<Note,NoteEntity> entities = instantiateAssociationField("entities", NoteEntity.class);
     private List<AssociationField<Note,? extends BullhornEntity>> allAssociations;
 
     private static final NoteAssociations INSTANCE = new NoteAssociations();
@@ -52,6 +54,10 @@ public final class NoteAssociations implements EntityAssociations<Note> {
         return placements;
     }
 
+    public AssociationField<Note, NoteEntity> entities() {
+        return entities;
+    }
+
     private <E extends BullhornEntity> AssociationField<Note, E> instantiateAssociationField(String associationName,
             Class<E> associationType) {
         return new StandardAssociationField<Note, E>(associationName, associationType);
@@ -66,6 +72,7 @@ public final class NoteAssociations implements EntityAssociations<Note> {
             allAssociations.add(corporateUsers());
             allAssociations.add(jobOrders());
             allAssociations.add(placements());
+            allAssociations.add(entities());
         }
         return allAssociations;
 
