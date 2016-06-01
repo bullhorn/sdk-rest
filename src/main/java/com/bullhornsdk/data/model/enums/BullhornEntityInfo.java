@@ -248,7 +248,8 @@ import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomOb
 public enum BullhornEntityInfo {
 
     ADDRESS("Address", null, null, null, null, null),
-    APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class, null, null),
+    APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class, "AppointmentEditHistory",
+            "AppointmentEditHistoryFieldChange"),
     APPOINTMENT_ATTENDEE("AppointmentAttendee", AppointmentAttendee.class, AppointmentAttendeeWrapper.class,
             AppointmentAttendeeListWrapper.class, null, null),
     BUSINESS_SECTOR("BusinessSector", BusinessSector.class, BusinessSectorWrapper.class, BusinessSectorListWrapper.class, null, null),
