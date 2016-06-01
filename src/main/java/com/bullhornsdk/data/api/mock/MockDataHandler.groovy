@@ -1,4 +1,5 @@
 package com.bullhornsdk.data.api.mock
+
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
@@ -39,6 +40,7 @@ import org.apache.log4j.Logger
 import org.codehaus.groovy.runtime.NullObject
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
+import java.io.File as JavaFile
 
 import java.beans.BeanInfo
 import java.beans.Introspector
@@ -553,7 +555,7 @@ public class MockDataHandler {
 
 
 
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params) {
+	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, JavaFile file, String externalId, FileParams params) {
 		String fileName = file.getName();
 		return createMockFileWrapper(fileName);
 	}
@@ -584,7 +586,7 @@ public class MockDataHandler {
 	}
 
 
-	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, File file, String candidateDescription,
+	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, JavaFile file, String candidateDescription,
 	String externalId, FileParams params) {
 	     
 		 Candidate candidate = findEntity(Candidate.class, candidateId);

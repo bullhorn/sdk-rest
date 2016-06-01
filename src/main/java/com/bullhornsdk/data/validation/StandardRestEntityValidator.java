@@ -51,7 +51,7 @@ public class StandardRestEntityValidator implements RestEntityValidator {
 			RestCandidateReferenceValidator restCandidateReferenceValidator,
 			RestCandidateWorkHistoryValidator restCandidateWorkHistoryValidator, RestCertificationValidator restCertificationValidator,
 			RestClientContactValidator restClientContactValidator, RestClientCorporationValidator restClientCorporationValidator,
-			RestJobOrderValidator restJobOrderValidator, RestJobSubmissionValidator restJobSubmissionValidator,
+            RestJobOrderValidator restJobOrderValidator, RestJobSubmissionValidator restJobSubmissionValidator,
 			RestLeadValidator restLeadValidator, RestNoteValidator restNoteValidator, RestNoteEntityValidator restNoteEntityValidator,
 			RestOpportunityValidator restOpportunityValidator, RestPlacementValidator restPlacementValidator,
             RestPlacementCommissionValidator restPlacementCommissionValidator, RestSendoutValidator restSendoutValidator,
