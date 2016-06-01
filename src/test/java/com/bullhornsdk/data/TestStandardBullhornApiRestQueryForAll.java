@@ -18,6 +18,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
+import com.bullhornsdk.data.model.entity.core.standard.File;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
 import com.bullhornsdk.data.model.entity.core.standard.Lead;
@@ -172,6 +173,15 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 		runAssertions("ListWrapper<Country>", wrapper);
 
 	}
+
+    @Test
+    public void testQueryFile() {
+
+        ListWrapper<File> wrapper = bullhornData.queryForAllRecords(File.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<File>", wrapper);
+
+    }
 
 	@Test
 	public void testQueryJobOrderGreaterThan() {

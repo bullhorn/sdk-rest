@@ -1,6 +1,5 @@
 package com.bullhornsdk.data;
 
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -40,6 +39,8 @@ public class TestEntities {
 	private Integer corporationDepartmentId;
 
 	private Integer countryId;
+
+    private Integer fileId;
 
 	private Integer housingComplexId;
 
@@ -114,6 +115,8 @@ public class TestEntities {
 		this.corporationDepartmentId=1;
 
 		this.countryId=1;
+
+        this.fileId = 1;
 
 		this.housingComplexId=1;
 
@@ -272,7 +275,15 @@ public class TestEntities {
 		this.countryId = countryId;
 	}
 
-	public Integer getHousingComplexId() {
+    public Integer getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(Integer fileId) {
+        this.fileId = fileId;
+    }
+
+    public Integer getHousingComplexId() {
 		return housingComplexId;
 	}
 
@@ -453,7 +464,7 @@ public class TestEntities {
         return new StringBuilder("TestEntities {")
                 .append("\n\t\"appointmentId\": ")
                 .append(appointmentId)
-				.append(",\n\t\"appointmentAttendeeId\": ")
+                .append(",\n\t\"appointmentAttendeeId\": ")
                 .append(appointmentAttendeeId)
                 .append(",\n\t\"businessSectorId\": ")
                 .append(businessSectorId)
@@ -479,6 +490,8 @@ public class TestEntities {
                 .append(corporationDepartmentId)
                 .append(",\n\t\"countryId\": ")
                 .append(countryId)
+                .append(",\n\t\"fileId\": ")
+                .append(fileId)
                 .append(",\n\t\"housingComplexId\": ")
                 .append(housingComplexId)
                 .append(",\n\t\"jobOrderId\": ")
@@ -491,8 +504,8 @@ public class TestEntities {
                 .append(leadId)
                 .append(",\n\t\"noteId\": ")
                 .append(noteId)
-				.append(",\n\t\"noteIdList\": ")
-				.append(noteIdList.toString())
+                .append(",\n\t\"noteIdList\": ")
+                .append(noteIdList)
                 .append(",\n\t\"noteEntityId\": ")
                 .append(noteEntityId)
                 .append(",\n\t\"opportunityId\": ")
@@ -513,9 +526,9 @@ public class TestEntities {
                 .append(stateId)
                 .append(",\n\t\"taskId\": ")
                 .append(taskId)
-				.append(",\n\t\"tearsheetId\": ")
-				.append(tearsheetId)
-				.append(",\n\t\"timeUnitId\": ")
+                .append(",\n\t\"tearsheetId\": ")
+                .append(tearsheetId)
+                .append(",\n\t\"timeUnitId\": ")
                 .append(timeUnitId)
                 .append(",\n\t\"allCustomObjectsId\": ")
                 .append(allCustomObjectsId)
