@@ -3,6 +3,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.validation.BullhornUUID;
 import com.fasterxml.jackson.annotation.*;
@@ -12,7 +13,7 @@ import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "appointmentUUID", "attendees", "candidateReference", "childAppointments", "clientContactReference",
+@JsonPropertyOrder({ "id", "appointmentUUID", "guests", "candidateReference", "childAppointments", "clientContactReference",
         "communicationMethod", "dateAdded", "dateBegin", "dateEnd", "dateLastModified", "description", "isAllDay", "isDeleted",
         "isPrivate", "jobOrder", "lead", "location", "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentAppointment", "placement",
         "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
@@ -24,7 +25,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     @BullhornUUID
     private String appointmentUUID;
 
-    private OneToManyLinkedId attendees;
+    private OneToMany<LinkedPerson> guests;
 
     private Candidate candidateReference;
 
@@ -137,13 +138,13 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @JsonIgnore
-    public OneToManyLinkedId getAttendees() {
-        return attendees;
+    public OneToMany<LinkedPerson> getGuests() {
+        return guests;
     }
 
-    @JsonProperty("attendees")
-    public void setAttendees(OneToManyLinkedId attendees) {
-        this.attendees = attendees;
+    @JsonProperty("guests")
+    public void setGuests(OneToMany<LinkedPerson> guests) {
+        this.guests = guests;
     }
 
     @JsonProperty("candidateReference")
@@ -465,7 +466,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (appointmentUUID != null ? !appointmentUUID.equals(that.appointmentUUID) : that.appointmentUUID != null)
             return false;
-        if (attendees != null ? !attendees.equals(that.attendees) : that.attendees != null) return false;
+        if (guests != null ? !guests.equals(that.guests) : that.guests != null) return false;
         if (candidateReference != null ? !candidateReference.equals(that.candidateReference) : that.candidateReference != null)
             return false;
         if (childAppointments != null ? !childAppointments.equals(that.childAppointments) : that.childAppointments != null)
@@ -519,8 +520,8 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         builder.append(id);
         builder.append(", \nappointmentUUID=");
         builder.append(appointmentUUID);
-        builder.append(", \nattendees=");
-        builder.append(attendees);
+        builder.append(", \nguests=");
+        builder.append(guests);
         builder.append(", \ncandidateReference=");
         builder.append(candidateReference);
         builder.append(", \nchildAppointments=");
@@ -591,7 +592,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (appointmentUUID != null ? appointmentUUID.hashCode() : 0);
-        result = 31 * result + (attendees != null ? attendees.hashCode() : 0);
+        result = 31 * result + (guests != null ? guests.hashCode() : 0);
         result = 31 * result + (candidateReference != null ? candidateReference.hashCode() : 0);
         result = 31 * result + (childAppointments != null ? childAppointments.hashCode() : 0);
         result = 31 * result + (clientContactReference != null ? clientContactReference.hashCode() : 0);

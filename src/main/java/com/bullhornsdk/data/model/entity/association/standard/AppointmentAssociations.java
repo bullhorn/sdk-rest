@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class AppointmentAssociations implements EntityAssociations<Appointment> {
 
-    private final AssociationField<Appointment, AppointmentAttendee> attendees = instantiateAssociationField("guests",
+    private final AssociationField<Appointment, AppointmentAttendee> guests = instantiateAssociationField("guests",
             AppointmentAttendee.class);
     private final AssociationField<Appointment, Appointment> childAppointments = instantiateAssociationField("childAppointments", Appointment.class);
 
@@ -30,8 +30,8 @@ public class AppointmentAssociations implements EntityAssociations<Appointment> 
         return INSTANCE;
     }
 
-    public AssociationField<Appointment, AppointmentAttendee> attendees() {
-        return attendees;
+    public AssociationField<Appointment, AppointmentAttendee> guests() {
+        return guests;
     }
 
     public AssociationField<Appointment, Appointment> childAppointments() {
@@ -47,7 +47,7 @@ public class AppointmentAssociations implements EntityAssociations<Appointment> 
     public List<AssociationField<Appointment, ? extends BullhornEntity>> allAssociations() {
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<Appointment, ? extends BullhornEntity>>();
-            allAssociations.add(attendees());
+            allAssociations.add(guests());
             allAssociations.add(childAppointments());
         }
         return allAssociations;
