@@ -1,43 +1,31 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
-import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.validation.BullhornUUID;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "appointmentUUID", "attendees", "candidateReference", "childAppointments", "clientContactReference",
+@JsonPropertyOrder({ "id", "appointmentUUID", "guests", "candidateReference", "childAppointments", "clientContactReference",
         "communicationMethod", "dateAdded", "dateBegin", "dateEnd", "dateLastModified", "description", "isAllDay", "isDeleted",
         "isPrivate", "jobOrder", "lead", "location", "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentAppointment", "placement",
         "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
         "showTimeAs", "subject", "timeZoneID", "type" })
 public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity,
-        DateLastModifiedEntity, EditHistoryEntity {
-
+        DateLastModifiedEntity, EditHistoryEntity, AssociationEntity {
     private Integer id;
 
     @BullhornUUID
     private String appointmentUUID;
 
-    private OneToManyLinkedId attendees;
+    private OneToMany<LinkedPerson> guests;
 
     private Candidate candidateReference;
 
@@ -150,13 +138,13 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @JsonIgnore
-    public OneToManyLinkedId getAttendees() {
-        return attendees;
+    public OneToMany<LinkedPerson> getGuests() {
+        return guests;
     }
 
-    @JsonProperty("attendees")
-    public void setAttendees(OneToManyLinkedId attendees) {
-        this.attendees = attendees;
+    @JsonProperty("guests")
+    public void setGuests(OneToMany<LinkedPerson> guests) {
+        this.guests = guests;
     }
 
     @JsonProperty("candidateReference")
@@ -329,16 +317,6 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         this.notificationMinutes = notificationMinutes;
     }
 
-    @JsonProperty("opportunity")
-    public Opportunity getOpportunity() {
-        return opportunity;
-    }
-
-    @JsonProperty("opportunity")
-    public void setOpportunity(Opportunity opportunity) {
-        this.opportunity = opportunity;
-    }
-
     @JsonProperty("owner")
     public LinkedPerson getOwner() {
         return owner;
@@ -469,17 +447,26 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         this.type = type;
     }
 
-    @Override
+    @JsonProperty("opportunity")
+    public Opportunity getOpportunity() {
+        return opportunity;
+    }
+
+    @JsonProperty("opportunity")
+    public void setOpportunity(Opportunity opportunity) {
+        this.opportunity = opportunity;
+    }
+
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Appointment that = (Appointment) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (appointmentUUID != null ? !appointmentUUID.equals(that.appointmentUUID) : that.appointmentUUID != null)
             return false;
-        if (attendees != null ? !attendees.equals(that.attendees) : that.attendees != null) return false;
+        if (guests != null ? !guests.equals(that.guests) : that.guests != null) return false;
         if (candidateReference != null ? !candidateReference.equals(that.candidateReference) : that.candidateReference != null)
             return false;
         if (childAppointments != null ? !childAppointments.equals(that.childAppointments) : that.childAppointments != null)
@@ -524,14 +511,88 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         if (subject != null ? !subject.equals(that.subject) : that.subject != null) return false;
         if (timeZoneID != null ? !timeZoneID.equals(that.timeZoneID) : that.timeZoneID != null) return false;
         return !(type != null ? !type.equals(that.type) : that.type != null);
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Appointment {\nid=");
+        builder.append(id);
+        builder.append(", \nappointmentUUID=");
+        builder.append(appointmentUUID);
+        builder.append(", \nguests=");
+        builder.append(guests);
+        builder.append(", \ncandidateReference=");
+        builder.append(candidateReference);
+        builder.append(", \nchildAppointments=");
+        builder.append(childAppointments);
+        builder.append(", \nclientContactReference=");
+        builder.append(clientContactReference);
+        builder.append(", \ncommunicationMethod=");
+        builder.append(communicationMethod);
+        builder.append(", \ndateAdded=");
+        builder.append(dateAdded);
+        builder.append(", \ndateBegin=");
+        builder.append(dateBegin);
+        builder.append(", \ndateEnd=");
+        builder.append(dateEnd);
+        builder.append(", \ndateLastModified=");
+        builder.append(dateLastModified);
+        builder.append(", \ndescription=");
+        builder.append(description);
+        builder.append(", \nisAllDay=");
+        builder.append(isAllDay);
+        builder.append(", \nisDeleted=");
+        builder.append(isDeleted);
+        builder.append(", \nisPrivate=");
+        builder.append(isPrivate);
+        builder.append(", \njobOrder=");
+        builder.append(jobOrder);
+        builder.append(", \nlocation=");
+        builder.append(location);
+        builder.append(", \nmigrateGUID=");
+        builder.append(migrateGUID);
+        builder.append(", \nnotificationMinutes=");
+        builder.append(notificationMinutes);
+        builder.append(", \nowner=");
+        builder.append(owner);
+        builder.append(", \nparentAppointment=");
+        builder.append(parentAppointment);
+        builder.append(", \nplacement=");
+        builder.append(placement);
+        builder.append(", \nrecurrenceDayBits=");
+        builder.append(recurrenceDayBits);
+        builder.append(", \nrecurrenceFrequency=");
+        builder.append(recurrenceFrequency);
+        builder.append(", \nrecurrenceMax=");
+        builder.append(recurrenceMax);
+        builder.append(", \nrecurrenceMonthBits=");
+        builder.append(recurrenceMonthBits);
+        builder.append(", \nrecurrenceStyle=");
+        builder.append(recurrenceStyle);
+        builder.append(", \nrecurrenceType=");
+        builder.append(recurrenceType);
+        builder.append(", \nshowTimeAs=");
+        builder.append(showTimeAs);
+        builder.append(", \nsubject=");
+        builder.append(subject);
+        builder.append(", \ntimeZoneID=");
+        builder.append(timeZoneID);
+        builder.append(", \ntype=");
+        builder.append(type);
+        builder.append(", \nopportunity=");
+        builder.append(opportunity);
+        builder.append(", \nadditionalProperties=");
+        builder.append(this.getAdditionalProperties());
+        builder.append("\n}");
+        return builder.toString();
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (appointmentUUID != null ? appointmentUUID.hashCode() : 0);
-        result = 31 * result + (attendees != null ? attendees.hashCode() : 0);
+        result = 31 * result + (guests != null ? guests.hashCode() : 0);
         result = 31 * result + (candidateReference != null ? candidateReference.hashCode() : 0);
         result = 31 * result + (childAppointments != null ? childAppointments.hashCode() : 0);
         result = 31 * result + (clientContactReference != null ? clientContactReference.hashCode() : 0);

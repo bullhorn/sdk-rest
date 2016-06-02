@@ -11,5 +11,4 @@
          "int10", "float1", "float2", "float3", "float4", "float5", "float6", "float7", "float8", "float9", "float10", "textBlock1", "textBlock2",
          "textBlock3", "textBlock4", "textBlock5", "date1", "date2", "date3", "date4", "date5", "date6", "date7", "date8", "date9", "date10", "dateAdded" })
  public class PersonCustomObjectInstance1 extends PersonCustomObjectInstance {
-
  }
