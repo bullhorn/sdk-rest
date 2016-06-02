@@ -92,7 +92,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForMeta() {
-        return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}";
+        return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}&meta={meta}";
     }
 
     /**

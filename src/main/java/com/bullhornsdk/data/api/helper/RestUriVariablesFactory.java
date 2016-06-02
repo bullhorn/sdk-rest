@@ -78,6 +78,7 @@ public class RestUriVariablesFactory {
 		} else {
 			uriVariables.put(META, metaParameter.getName());
 		}
+
 		return uriVariables;
 	}
 
