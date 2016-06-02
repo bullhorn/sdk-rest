@@ -28,6 +28,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
+import com.bullhornsdk.data.model.entity.core.standard.File;
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
@@ -44,7 +45,9 @@ import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
 import com.bullhornsdk.data.model.entity.core.standard.State;
 import com.bullhornsdk.data.model.entity.core.standard.Task;
+import com.bullhornsdk.data.model.entity.core.standard.Tearsheet;
 import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
+import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.google.common.collect.Sets;
 
 public class TestStandardBullhornApiRest extends BaseTest {
@@ -57,7 +60,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindAppointment() {
 
-		Appointment entity = bullhornApiRest.findEntity(Appointment.class, testEntities.getAppointmentId());
+		Appointment entity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId());
 
 		assertNotNull("Appointment is null", entity);
 
@@ -66,7 +69,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindAppointmentAttendee() {
 
-		AppointmentAttendee entity = bullhornApiRest.findEntity(AppointmentAttendee.class, testEntities.getAppointmentAttendeeId());
+		AppointmentAttendee entity = bullhornData.findEntity(AppointmentAttendee.class, testEntities.getAppointmentAttendeeId());
 
 		assertNotNull("AppointmentAttendee is null", entity);
 
@@ -75,7 +78,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindBusinessSector() {
 
-		BusinessSector entity = bullhornApiRest.findEntity(BusinessSector.class, testEntities.getBusinessSectorId());
+		BusinessSector entity = bullhornData.findEntity(BusinessSector.class, testEntities.getBusinessSectorId());
 
 		assertNotNull("BusinessSector is null", entity);
 
@@ -84,7 +87,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidate() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId());
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
 
 		assertNotNull("Candidate is null", entity);
 
@@ -93,7 +96,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidateEducation() {
 
-		CandidateEducation entity = bullhornApiRest.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
+		CandidateEducation entity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
 
 		assertNotNull("CandidateEducation is null", entity);
 
@@ -102,7 +105,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidateReference() {
 
-		CandidateReference entity = bullhornApiRest.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
+		CandidateReference entity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
 
 		assertNotNull("CandidateReference is null", entity);
 
@@ -111,7 +114,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidateWorkHistory() {
 
-		CandidateWorkHistory entity = bullhornApiRest.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId());
+		CandidateWorkHistory entity = bullhornData.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId());
 
 		assertNotNull("CandidateWorkHistory is null", entity);
 
@@ -120,7 +123,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCategory() {
 
-		Category entity = bullhornApiRest.findEntity(Category.class, testEntities.getCategoryId());
+		Category entity = bullhornData.findEntity(Category.class, testEntities.getCategoryId());
 
 		assertNotNull("Category is null", entity);
 
@@ -129,7 +132,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCertification() {
 
-		Certification entity = bullhornApiRest.findEntity(Certification.class, testEntities.getCertificationId());
+		Certification entity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId());
 
 		assertNotNull("Certification is null", entity);
 
@@ -138,7 +141,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindClientContact() {
 
-		ClientContact entity = bullhornApiRest.findEntity(ClientContact.class, testEntities.getClientContactId());
+		ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
 
 		assertNotNull("ClientContact is null", entity);
 
@@ -147,7 +150,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindClientCorporation() {
 
-		ClientCorporation entity = bullhornApiRest.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
+		ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
 
 		assertNotNull("ClientCorporation is null", entity);
 
@@ -156,7 +159,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCorporateUser() {
 
-		CorporateUser entity = bullhornApiRest.findEntity(CorporateUser.class, testEntities.getCorporateUserId());
+		CorporateUser entity = bullhornData.findEntity(CorporateUser.class, testEntities.getCorporateUserId());
 
 		assertNotNull("CorporateUser is null", entity);
 
@@ -165,7 +168,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCorporationDepartment() {
 
-		CorporationDepartment entity = bullhornApiRest.findEntity(CorporationDepartment.class, testEntities.getCorporationDepartmentId());
+		CorporationDepartment entity = bullhornData.findEntity(CorporationDepartment.class, testEntities.getCorporationDepartmentId());
 
 		assertNotNull("CorporationDepartment is null", entity);
 
@@ -174,16 +177,25 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCountry() {
 
-		Country entity = bullhornApiRest.findEntity(Country.class, testEntities.getCountryId());
+		Country entity = bullhornData.findEntity(Country.class, testEntities.getCountryId());
 
 		assertNotNull("Country is null", entity);
 
 	}
 
+    @Test
+    public void testFindFile() {
+
+        File entity = bullhornData.findEntity(File.class, testEntities.getFileId());
+
+        assertNotNull("File is null", entity);
+
+    }
+
 	@Test
 	public void testFindHousingComplex() {
 
-		HousingComplex entity = bullhornApiRest.findEntity(HousingComplex.class, testEntities.getHousingComplexId());
+		HousingComplex entity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId());
 
 		assertNotNull("HousingComplex is null", entity);
 
@@ -192,7 +204,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindJobOrder() {
 
-		JobOrder entity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 
 		assertNotNull("JobOrder is null", entity);
 
@@ -201,7 +213,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindJobSubmission() {
 
-		JobSubmission entity = bullhornApiRest.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
+		JobSubmission entity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
 
 		assertNotNull("JobSubmission is null", entity);
 
@@ -210,7 +222,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindJobSubmissionHistory() {
 
-		JobSubmissionHistory entity = bullhornApiRest.findEntity(JobSubmissionHistory.class, testEntities.getJobSubmissionHistoryId());
+		JobSubmissionHistory entity = bullhornData.findEntity(JobSubmissionHistory.class, testEntities.getJobSubmissionHistoryId());
 
 		assertNotNull("JobSubmission is null", entity);
 
@@ -219,7 +231,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
     @Test
     public void testFindLead() {
 
-        Lead entity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+        Lead entity = bullhornData.findEntity(Lead.class, testEntities.getLeadId());
 
         assertNotNull("Lead is null", entity);
 
@@ -228,7 +240,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindNote() {
 
-		Note entity = bullhornApiRest.findEntity(Note.class, testEntities.getNoteId());
+		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
 
 		assertNotNull("Appointment is null", entity);
 
@@ -237,7 +249,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindNoteEntity() {
 
-		NoteEntity entity = bullhornApiRest.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
+		NoteEntity entity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
 
 		assertNotNull("NoteEntity is null", entity);
 
@@ -246,7 +258,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
     @Test
     public void testFindOpportunity() {
 
-        Opportunity entity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+        Opportunity entity = bullhornData.findEntity(Opportunity.class, testEntities.getOpportunityId());
 
         assertNotNull("Opportunity is null", entity);
 
@@ -255,7 +267,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindPlacement() {
 
-		Placement entity = bullhornApiRest.findEntity(Placement.class, testEntities.getPlacementId());
+		Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId());
 
 		assertNotNull("Placement is null", entity);
 
@@ -264,7 +276,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindPlacementChangeRequest() {
 
-		PlacementChangeRequest entity = bullhornApiRest
+		PlacementChangeRequest entity = bullhornData
 				.findEntity(PlacementChangeRequest.class, testEntities.getPlacementChangeRequestId());
 
 		assertNotNull("PlacementChangeRequest is null", entity);
@@ -274,7 +286,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindPlacementCommission() {
 
-		PlacementCommission entity = bullhornApiRest.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
+		PlacementCommission entity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
 
 		assertNotNull("PlacementCommission is null", entity);
 
@@ -283,7 +295,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindSendout() {
 
-		Sendout entity = bullhornApiRest.findEntity(Sendout.class, testEntities.getSendoutId());
+		Sendout entity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId());
 
 		assertNotNull("Sendout is null", entity);
 
@@ -292,7 +304,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindSkill() {
 
-		Skill entity = bullhornApiRest.findEntity(Skill.class, testEntities.getSkillId());
+		Skill entity = bullhornData.findEntity(Skill.class, testEntities.getSkillId());
 
 		assertNotNull("Skill is null", entity);
 
@@ -301,7 +313,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindSpecialty() {
 
-		Specialty entity = bullhornApiRest.findEntity(Specialty.class, testEntities.getSpecialtyId());
+		Specialty entity = bullhornData.findEntity(Specialty.class, testEntities.getSpecialtyId());
 
 		assertNotNull("Specialty is null", entity);
 
@@ -310,7 +322,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindState() {
 
-		State entity = bullhornApiRest.findEntity(State.class, testEntities.getStateId());
+		State entity = bullhornData.findEntity(State.class, testEntities.getStateId());
 
 		assertNotNull("STATE is null", entity);
 
@@ -319,7 +331,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindTask() {
 
-		Task entity = bullhornApiRest.findEntity(Task.class, testEntities.getTaskId());
+		Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId());
 
 		assertNotNull("Task is null", entity);
 
@@ -328,16 +340,22 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindTask_placement() {
 
-		Task entity = bullhornApiRest.findEntity(Task.class, testEntities.getTaskId(), Sets.newHashSet("id", "placement(id,customText10)"));
+		Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId(), Sets.newHashSet("id", "placement(id,customText10)"));
 		assertNotNull(entity.getPlacement().getCustomText10());
 		assertNotNull("Task is null", entity);
 
 	}
 
 	@Test
+	public void testFindTearsheet() {
+		Tearsheet entity = bullhornData.findEntity(Tearsheet.class, testEntities.getTearsheetId());
+		assertNotNull("Tearsheet is null", entity);
+	}
+
+	@Test
 	public void testFindTimeUnit() {
 
-		TimeUnit entity = bullhornApiRest.findEntity(TimeUnit.class, testEntities.getTimeUnitId());
+		TimeUnit entity = bullhornData.findEntity(TimeUnit.class, testEntities.getTimeUnitId());
 
 		assertNotNull("TimeUnit is null", entity);
 
@@ -346,7 +364,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindAppointmentFields() {
 
-		Appointment entity = bullhornApiRest.findEntity(Appointment.class, testEntities.getAppointmentId(), this.getFieldSet());
+		Appointment entity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId(), this.getFieldSet());
 
 		assertNotNull("Appointment is null", entity);
 
@@ -355,7 +373,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindAppointmentAttendeeFields() {
 
-		AppointmentAttendee entity = bullhornApiRest.findEntity(AppointmentAttendee.class, testEntities.getAppointmentAttendeeId(),
+		AppointmentAttendee entity = bullhornData.findEntity(AppointmentAttendee.class, testEntities.getAppointmentAttendeeId(),
 				this.getFieldSet());
 
 		assertNotNull("AppointmentAttendee is null", entity);
@@ -365,7 +383,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindBusinessSectorFields() {
 
-		BusinessSector entity = bullhornApiRest.findEntity(BusinessSector.class, testEntities.getBusinessSectorId(), this.getFieldSet());
+		BusinessSector entity = bullhornData.findEntity(BusinessSector.class, testEntities.getBusinessSectorId(), this.getFieldSet());
 
 		assertNotNull("BusinessSector is null", entity);
 
@@ -374,7 +392,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidateFields() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(), this.getCandidateFieldSet());
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), this.getCandidateFieldSet());
 
 		assertNotNull("Candidate.id is null", entity.getId());
 		assertNotNull("Candidate.businessSectors is null", entity.getBusinessSectors());
@@ -392,7 +410,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidateEducationFields() {
 
-		CandidateEducation entity = bullhornApiRest.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId(),
+		CandidateEducation entity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId(),
 				this.getFieldSet());
 
 		assertNotNull("CandidateEducation is null", entity);
@@ -402,7 +420,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidateReferenceFields() {
 
-		CandidateReference entity = bullhornApiRest.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId(),
+		CandidateReference entity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId(),
 				this.getFieldSet());
 
 		assertNotNull("CandidateReference is null", entity);
@@ -412,7 +430,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCandidateWorkHistoryFields() {
 
-		CandidateWorkHistory entity = bullhornApiRest.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId(),
+		CandidateWorkHistory entity = bullhornData.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId(),
 				this.getFieldSet());
 
 		assertNotNull("CandidateWorkHistory is null", entity);
@@ -422,7 +440,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCategoryFields() {
 
-		Category entity = bullhornApiRest.findEntity(Category.class, testEntities.getCategoryId(), this.getCategoryFields());
+		Category entity = bullhornData.findEntity(Category.class, testEntities.getCategoryId(), this.getCategoryFields());
 
 		assertNotNull("Category is null", entity);
 
@@ -442,7 +460,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCertificationFields() {
 
-		Certification entity = bullhornApiRest.findEntity(Certification.class, testEntities.getCertificationId(), this.getFieldSet());
+		Certification entity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId(), this.getFieldSet());
 
 		assertNotNull("Certification is null", entity);
 
@@ -451,7 +469,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindClientContactFields() {
 
-		ClientContact entity = bullhornApiRest.findEntity(ClientContact.class, testEntities.getClientContactId(), this.getFieldSet());
+		ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId(), this.getFieldSet());
 
 		assertNotNull("ClientContact is null", entity);
 
@@ -460,7 +478,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindClientCorporationFields() {
 
-		ClientCorporation entity = bullhornApiRest.findEntity(ClientCorporation.class, testEntities.getClientCorporationId(),
+		ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId(),
 				this.getFieldSet());
 
 		assertNotNull("ClientCorporation is null", entity);
@@ -470,7 +488,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCorporateUserFields() {
 
-		CorporateUser entity = bullhornApiRest.findEntity(CorporateUser.class, testEntities.getCorporateUserId(), this.getFieldSet());
+		CorporateUser entity = bullhornData.findEntity(CorporateUser.class, testEntities.getCorporateUserId(), this.getFieldSet());
 
 		assertNotNull("CorporateUser is null", entity);
 
@@ -479,7 +497,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCorporationDepartmentFields() {
 
-		CorporationDepartment entity = bullhornApiRest.findEntity(CorporationDepartment.class, testEntities.getCorporationDepartmentId(),
+		CorporationDepartment entity = bullhornData.findEntity(CorporationDepartment.class, testEntities.getCorporationDepartmentId(),
 				this.getFieldSet());
 
 		assertNotNull("CorporationDepartment is null", entity);
@@ -489,7 +507,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindCountryFields() {
 
-		Country entity = bullhornApiRest.findEntity(Country.class, testEntities.getCountryId(), this.getFieldSet());
+		Country entity = bullhornData.findEntity(Country.class, testEntities.getCountryId(), this.getFieldSet());
 
 		assertNotNull("Country is null", entity);
 
@@ -498,7 +516,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindHousingComplexFields() {
 
-		HousingComplex entity = bullhornApiRest.findEntity(HousingComplex.class, testEntities.getHousingComplexId(), this.getFieldSet());
+		HousingComplex entity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId(), this.getFieldSet());
 
 		assertNotNull("HousingComplex is null", entity);
 
@@ -507,7 +525,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindJobOrderFields() {
 
-		JobOrder entity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id","dateAdded"));
+		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id","dateAdded"));
 
 		assertNull("title should be null since it's not specified in the fields",entity.getTitle());
 		assertNotNull("dateAdded should NOT be null.",entity.getDateAdded());
@@ -520,7 +538,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindJobSubmissionFields() {
 
-		JobSubmission entity = bullhornApiRest.findEntity(JobSubmission.class, testEntities.getJobSubmissionId(), this.getFieldSet());
+		JobSubmission entity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId(), this.getFieldSet());
 
 		assertNotNull("JobSubmission is null", entity);
 
@@ -529,7 +547,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindJobSubmissionHistoryFields() {
 
-		JobSubmissionHistory entity = bullhornApiRest.findEntity(JobSubmissionHistory.class, testEntities.getJobSubmissionHistoryId(),
+		JobSubmissionHistory entity = bullhornData.findEntity(JobSubmissionHistory.class, testEntities.getJobSubmissionHistoryId(),
 				this.getFieldSet());
 
 		assertNotNull("JobSubmission is null", entity);
@@ -539,16 +557,25 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindNoteFields() {
 
-		Note entity = bullhornApiRest.findEntity(Note.class, testEntities.getNoteId(), this.getFieldSet());
+		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId(), this.getFieldSet());
 
-		assertNotNull("Appointment is null", entity);
+		assertNotNull("Note is null", entity);
+
+	}
+
+	@Test
+	public void testFindMultipleNotes() {
+
+		ListWrapper<Note> entityList = bullhornData.findMultipleEntity(Note.class, testEntities.getNoteIdList(), this.getFieldSet());
+
+		assertNotNull("NoteList is null", entityList);
 
 	}
 
 	@Test
 	public void testFindNoteEntityFields() {
 
-		NoteEntity entity = bullhornApiRest.findEntity(NoteEntity.class, testEntities.getNoteEntityId(), this.getFieldSet());
+		NoteEntity entity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId(), this.getFieldSet());
 
 		assertNotNull("NoteEntity is null", entity);
 
@@ -557,7 +584,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindPlacementFields() {
 
-		Placement entity = bullhornApiRest.findEntity(Placement.class, testEntities.getPlacementId(), this.getFieldSet());
+		Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId(), this.getFieldSet());
 
 		assertNotNull("Placement is null", entity);
 
@@ -566,7 +593,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindPlacementChangeRequestFields() {
 
-		PlacementChangeRequest entity = bullhornApiRest.findEntity(PlacementChangeRequest.class,
+		PlacementChangeRequest entity = bullhornData.findEntity(PlacementChangeRequest.class,
 				testEntities.getPlacementChangeRequestId(), this.getFieldSet());
 
 		assertNotNull("PlacementChangeRequest is null", entity);
@@ -576,7 +603,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindPlacementCommissionFields() {
 
-		PlacementCommission entity = bullhornApiRest.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId(),
+		PlacementCommission entity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId(),
 				this.getFieldSet());
 
 		assertNotNull("PlacementCommission is null", entity);
@@ -586,7 +613,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindSendoutFields() {
 
-		Sendout entity = bullhornApiRest.findEntity(Sendout.class, testEntities.getSendoutId(), this.getFieldSet());
+		Sendout entity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId(), this.getFieldSet());
 
 		assertNotNull("Sendout is null", entity);
 
@@ -595,7 +622,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindSkillFields() {
 
-		Skill entity = bullhornApiRest.findEntity(Skill.class, testEntities.getSkillId(), this.getFieldSet());
+		Skill entity = bullhornData.findEntity(Skill.class, testEntities.getSkillId(), this.getFieldSet());
 
 		assertNotNull("Skill is null", entity);
 
@@ -604,7 +631,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindSpecialtyFields() {
 
-		Specialty entity = bullhornApiRest.findEntity(Specialty.class, testEntities.getSpecialtyId(), this.getFieldSet());
+		Specialty entity = bullhornData.findEntity(Specialty.class, testEntities.getSpecialtyId(), this.getFieldSet());
 
 		assertNotNull("Specialty is null", entity);
 
@@ -613,7 +640,7 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindStateFields() {
 
-		State entity = bullhornApiRest.findEntity(State.class, testEntities.getStateId(), this.getFieldSet());
+		State entity = bullhornData.findEntity(State.class, testEntities.getStateId(), this.getFieldSet());
 
 		assertNotNull("STATE is null", entity);
 
@@ -622,16 +649,25 @@ public class TestStandardBullhornApiRest extends BaseTest {
 	@Test
 	public void testFindTaskFields() {
 
-		Task entity = bullhornApiRest.findEntity(Task.class, testEntities.getTaskId(), this.getFieldSet());
+		Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId(), this.getFieldSet());
 
 		assertNotNull("Task is null", entity);
 
 	}
 
 	@Test
+	public void testFindTearsheetFields() {
+
+		Tearsheet entity = bullhornData.findEntity(Tearsheet.class, testEntities.getTearsheetId(), this.getFieldSet());
+
+		assertNotNull("Tearsheet is null", entity);
+
+	}
+
+	@Test
 	public void testFindTimeUnitFields() {
 
-		TimeUnit entity = bullhornApiRest.findEntity(TimeUnit.class, testEntities.getTimeUnitId(), this.getFieldSet());
+		TimeUnit entity = bullhornData.findEntity(TimeUnit.class, testEntities.getTimeUnitId(), this.getFieldSet());
 
 		assertNotNull("TimeUnit is null", entity);
 
@@ -639,28 +675,28 @@ public class TestStandardBullhornApiRest extends BaseTest {
 
     @Test
     public void testFindPersonCustomObject() {
-        PersonCustomObjectInstance1 entity = bullhornApiRest.findEntity(PersonCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+        PersonCustomObjectInstance1 entity = bullhornData.findEntity(PersonCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
 
         assertNotNull("PersonCustomObjectInstance1 is null", entity);
     }
 
     @Test
     public void testFindJobCustomObject() {
-        JobOrderCustomObjectInstance1 entity = bullhornApiRest.findEntity(JobOrderCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+        JobOrderCustomObjectInstance1 entity = bullhornData.findEntity(JobOrderCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
 
         assertNotNull("JobOrderCustomObjectInstance1 is null", entity);
     }
 
     @Test
     public void testFindPlacementCustomObject() {
-        PlacementCustomObjectInstance1 entity = bullhornApiRest.findEntity(PlacementCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+        PlacementCustomObjectInstance1 entity = bullhornData.findEntity(PlacementCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
 
         assertNotNull("PlacementCustomObjectInstance1 is null", entity);
     }
 
     @Test
     public void testFindCustomObject() {
-        ClientCorporationCustomObjectInstance1 entity = bullhornApiRest.findEntity(ClientCorporationCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+        ClientCorporationCustomObjectInstance1 entity = bullhornData.findEntity(ClientCorporationCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
 
         assertNotNull("ClientCorporationCustomObjectInstance1 is null", entity);
     }

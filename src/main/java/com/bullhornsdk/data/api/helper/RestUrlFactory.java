@@ -92,7 +92,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForMeta() {
-        return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}";
+        return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}&meta={meta}";
     }
 
     /**
@@ -158,6 +158,18 @@ public class RestUrlFactory {
         return restUrl + "entity/{entityType}/{entityId}/{associationName}/{associationIds}?BhRestToken={bhRestToken}";
     }
 
+    public String assembleGetLastRequstIdUrl() {
+        return restUrl+"event/subscription/{subscriptionId}/lastRequestId?BhRestToken={bhRestToken}";
+    }
+
+    public String assembleGetEventsUrl() {
+        return restUrl+"event/subscription/{subscriptionId}?maxEvents={maxEvents}&BhRestToken={bhRestToken}";
+    }
+
+    public String assembleRegetEventsUrl() {
+        return restUrl+"event/subscription/{subscriptionId}?requestId={requestId}&BhRestToken={bhRestToken}";
+    }
+
     public String assembleGetAssociationUrl(AssociationParams params) {
         return restUrl + "entity/{entityType}/{entityId}/{associationName}?fields={fields}&BhRestToken={bhRestToken}"
                 + params.getUrlString();
@@ -188,4 +200,14 @@ public class RestUrlFactory {
 	public String assembleUrlForSettings() {
         return restUrl + "settings/{settings}?BhRestToken={bhRestToken}";
 	}
+
+    public String assembleSubscribeToEventsUrl(boolean withNames) {
+        return restUrl + "event/subscription/{subscriptionId}?type={type}&eventTypes={eventTypes}&BhRestToken={bhRestToken}"
+                + (withNames ? "&names={names}" : "");
+    }
+
+    public String assembleUnsubscribeToEventsUrl(){
+        return restUrl + "event/subscription/{subscriptionId}?BhRestToken={bhRestToken}";
+    }
+
 }

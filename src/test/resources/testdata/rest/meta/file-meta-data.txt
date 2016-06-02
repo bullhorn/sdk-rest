@@ -1,0 +1,134 @@
+{
+  "entity": "File",
+  "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/File?fields=*",
+  "label": "File",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer"
+    },
+    {
+      "name": "company",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Company",
+      "hideFromSearch": false
+    },
+    {
+      "name": "companyID",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "Company ID",
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date Added",
+      "hideFromSearch": false
+    },
+    {
+      "name": "description",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Description",
+      "hideFromSearch": false
+    },
+    {
+      "name": "distribution",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 8,
+      "confidential": false,
+      "label": "Distribution",
+      "hideFromSearch": false
+    },
+    {
+      "name": "fileName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "File Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "firstName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 50,
+      "confidential": false,
+      "label": "First Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "jobPostingID",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "Job Posting ID",
+      "hideFromSearch": false
+    },
+    {
+      "name": "lastName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 50,
+      "confidential": false,
+      "label": "Last Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "name",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "title",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Title",
+      "hideFromSearch": false
+    },
+    {
+      "name": "type",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 50,
+      "confidential": false,
+      "label": "Type",
+      "hideFromSearch": false
+    },
+    {
+      "name": "userID",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "User ID",
+      "hideFromSearch": false
+    },
+    {
+      "name": "userType",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 14,
+      "confidential": false,
+      "label": "User Type",
+      "hideFromSearch": false
+    }
+  ]
+}

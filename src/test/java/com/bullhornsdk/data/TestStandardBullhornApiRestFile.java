@@ -49,7 +49,7 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 	@Test
 	public void testGetFileContent() throws UnsupportedEncodingException, IOException {
 		try {
-			FileContent fileContent = bullhornApiRest.getFileContent(Candidate.class, testEntities.getCandidateId(), getFileId());
+			FileContent fileContent = bullhornData.getFileContent(Candidate.class, testEntities.getCandidateId(), getFileId());
 			assertNotNull("FileContent is null", fileContent);
 			assertNotNull("FileContent is null", fileContent.getContentType());
 			assertNotNull("FileContent is null", fileContent.getName());
@@ -60,7 +60,7 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 	}
 
 	private Integer getFileId() {
-		List<FileMeta> entityMetaFiles = bullhornApiRest.getFileMetaData(Candidate.class, testEntities.getCandidateId());
+		List<FileMeta> entityMetaFiles = bullhornData.getFileMetaData(Candidate.class, testEntities.getCandidateId());
 		assertEntityMetaFiles(entityMetaFiles);
 
 		FileMeta fileMeta = entityMetaFiles.get(0);
@@ -71,7 +71,7 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 	@Test
 	public void testGetEntityMetaFiles() throws UnsupportedEncodingException, IOException {
 		try {
-			List<FileMeta> entityMetaFiles = bullhornApiRest.getFileMetaData(Candidate.class, testEntities.getCandidateId());
+			List<FileMeta> entityMetaFiles = bullhornData.getFileMetaData(Candidate.class, testEntities.getCandidateId());
 			assertEntityMetaFiles(entityMetaFiles);
 		} catch (HttpStatusCodeException error) {
 			assertTrue(StringUtils.equals("" + error.getStatusCode().value(), "500"));
@@ -82,7 +82,7 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 	@Test
 	public void testGetFileContentWithMetaData() throws UnsupportedEncodingException, IOException {
 		try {
-			FileWrapper fileWrapper = bullhornApiRest.getFile(Candidate.class, testEntities.getCandidateId(), getFileId());
+			FileWrapper fileWrapper = bullhornData.getFile(Candidate.class, testEntities.getCandidateId(), getFileId());
 			assertFileWrapper(fileWrapper);
 		} catch (HttpStatusCodeException error) {
 			assertTrue(StringUtils.equals("" + error.getStatusCode().value(), "500"));
@@ -93,7 +93,7 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 	@Test
 	public void testGetAllFileContentWithMetaData() throws UnsupportedEncodingException, IOException {
 		try {
-			List<FileWrapper> fileWrapperList = bullhornApiRest.getAllFiles(Candidate.class, testEntities.getCandidateId());
+			List<FileWrapper> fileWrapperList = bullhornData.getAllFiles(Candidate.class, testEntities.getCandidateId());
 
 			for (FileWrapper fileWrapper : fileWrapperList) {
 				assertFileWrapper(fileWrapper);
@@ -109,10 +109,10 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 		MultipartFile file = getResume();
 		FileParams params = ParamFactory.fileParams();
 		try {
-			FileWrapper fileWrapper = bullhornApiRest.addFile(Candidate.class, testEntities.getCandidateId(), file, "portfolio", params);
+			FileWrapper fileWrapper = bullhornData.addFile(Candidate.class, testEntities.getCandidateId(), file, "portfolio", params);
 			assertFileWrapperIncludingFileName(fileWrapper);
 
-			FileApiResponse fileApiResponse = bullhornApiRest.deleteFile(Candidate.class, testEntities.getCandidateId(),
+			FileApiResponse fileApiResponse = bullhornData.deleteFile(Candidate.class, testEntities.getCandidateId(),
 					fileWrapper.getId());
 
 			assertFileApiResponse(fileApiResponse, fileWrapper.getId());
@@ -128,10 +128,10 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 		File file = getFile();
 		FileParams params = ParamFactory.fileParams();
 		try {
-			FileWrapper fileWrapper = bullhornApiRest.addFile(Candidate.class, testEntities.getCandidateId(), file, "portfolio", params);
+			FileWrapper fileWrapper = bullhornData.addFile(Candidate.class, testEntities.getCandidateId(), file, "portfolio", params);
 			assertFileWrapperIncludingFileName(fileWrapper);
 
-			FileApiResponse fileApiResponse = bullhornApiRest.deleteFile(Candidate.class, testEntities.getCandidateId(),
+			FileApiResponse fileApiResponse = bullhornData.deleteFile(Candidate.class, testEntities.getCandidateId(),
 					fileWrapper.getId());
 
 			assertFileApiResponse(fileApiResponse, fileWrapper.getId());
@@ -151,25 +151,25 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 			Candidate testCandidate = new Candidate();
 			testCandidate.setId(testEntities.getCandidateId());
 			testCandidate.setDescription("");
-			bullhornApiRest.updateEntity(testCandidate);
+			bullhornData.updateEntity(testCandidate);
 
 			Set<String> fields = new HashSet<String>(Arrays.asList(new String[] { "id", "description" }));
 
-			Candidate shouldHaveNoDescription = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(), fields);
+			Candidate shouldHaveNoDescription = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), fields);
 			assertTrue("The test candidate should have a blank description. But it is not.",
 					StringUtils.isBlank(shouldHaveNoDescription.getDescription()));
 
 			String candidateDescription = "new description";
-			FileWrapper fileWrapper = bullhornApiRest.addResumeFileAndPopulateCandidateDescription(testEntities.getCandidateId(), file,
+			FileWrapper fileWrapper = bullhornData.addResumeFileAndPopulateCandidateDescription(testEntities.getCandidateId(), file,
 					candidateDescription, "portfolio", params);
 			assertFileWrapperIncludingFileName(fileWrapper);
 
-			Candidate shouldHaveDescription = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId(), fields);
+			Candidate shouldHaveDescription = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), fields);
 
 			assertTrue("Error with addResumeFileAndPopulateCandidateDescription. Description not populated",
 					StringUtils.equalsIgnoreCase(candidateDescription, shouldHaveDescription.getDescription()));
 
-			FileApiResponse fileApiResponse = bullhornApiRest.deleteFile(Candidate.class, testEntities.getCandidateId(),
+			FileApiResponse fileApiResponse = bullhornData.deleteFile(Candidate.class, testEntities.getCandidateId(),
 					fileWrapper.getId());
 
 			assertFileApiResponse(fileApiResponse, fileWrapper.getId());
@@ -185,11 +185,11 @@ public class TestStandardBullhornApiRestFile extends BaseTest {
 		MultipartFile file = getResume();
 		FileParams params = ParamFactory.fileParams();
 		try {
-			FileWrapper fileWrapper = bullhornApiRest.addFile(Candidate.class, testEntities.getCandidateId(), file, "portfolio", params);
+			FileWrapper fileWrapper = bullhornData.addFile(Candidate.class, testEntities.getCandidateId(), file, "portfolio", params);
 
 			assertFileWrapper(fileWrapper);
 
-			FileApiResponse fileApiResponse = bullhornApiRest.deleteFile(Candidate.class, testEntities.getCandidateId(),
+			FileApiResponse fileApiResponse = bullhornData.deleteFile(Candidate.class, testEntities.getCandidateId(),
 					fileWrapper.getId());
 
 			assertFileApiResponse(fileApiResponse, fileWrapper.getId());

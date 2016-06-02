@@ -9,6 +9,8 @@ import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import com.bullhornsdk.data.model.entity.core.type.FileEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
@@ -34,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"firstName", "history", "isDayLightSavingsTime", "isDeleted", "lastName", "leadSource", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes",
 		"numEmployees", "occupation", "owner", "ownerCorporation", "pager", "phone", "phone2", "phone3", "preferredContact", "primarySkills", "priority", "referredByPerson", "reportToPerson", "role",
 		"salary", "salaryLow", "secondarySkills", "skillSet", "smsOptIn", "specialties", "status", "tearsheets", "timeZoneOffsetEST", "type", "willRelocate" })
-public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity {
+public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 
@@ -44,6 +46,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 
 	private OneToMany<BusinessSector> businessSectors;
 
+	@JsonIgnore
 	private String campaignSource;
 
 	private OneToMany<Candidate> candidates;
@@ -205,6 +208,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 
 	private LinkedPerson reportToPerson;
 
+	@JsonIgnore
 	private String role;
 
 	private BigDecimal salary;
@@ -765,7 +769,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return campaignSource;
 	}
 
-	@JsonProperty("campaignSource")
+	@JsonIgnore
 	public void setCampaignSource(String campaignSource) {
 		this.campaignSource = campaignSource;
 	}
@@ -865,7 +869,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return leadSource;
 	}
 
-	@JsonProperty("leadSource")
+	@JsonIgnore
 	public void setLeadSource(String leadSource) {
 		this.leadSource = leadSource;
 	}
@@ -925,7 +929,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return role;
 	}
 
-	@JsonProperty("role")
+	@JsonIgnore
 	public void setRole(String role) {
 		this.role = role;
 	}

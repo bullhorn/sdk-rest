@@ -1,0 +1,26 @@
+{
+  "count":2,
+  "start":0,
+  "data":[
+    {
+      "editHistory":{
+        "id":7134
+      },
+      "id":1,
+      "newValue":"1975-01-01 12:00:00.0",
+      "columnName":"correlatedCustomDate3",
+      "oldValue":"[blank]",
+      "display":"correlatedCustomDate3"
+    },
+    {
+      "editHistory":{
+        "id":7134
+      },
+      "id":28530,
+      "newValue":"1975-01-01 12:00:00.0",
+      "columnName":"customDate3",
+      "oldValue":"[blank]",
+      "display":"customDate3"
+    }
+  ]
+}

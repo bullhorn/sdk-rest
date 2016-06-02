@@ -1,6 +1,9 @@
 package com.bullhornsdk.data.api.mock
+
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
+import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
+import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.embedded.OneToMany
@@ -12,6 +15,12 @@ import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
 import com.bullhornsdk.data.model.response.crud.DeleteResponse
 import com.bullhornsdk.data.model.response.crud.UpdateResponse
+import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
+import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
+import com.bullhornsdk.data.model.response.event.GetEventsResponse
+import com.bullhornsdk.data.model.response.event.GetLastRequestIdResponse
+import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse
+import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
 import com.bullhornsdk.data.model.response.file.FileMeta
@@ -31,6 +40,7 @@ import org.apache.log4j.Logger
 import org.codehaus.groovy.runtime.NullObject
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
+import java.io.File as JavaFile
 
 import java.beans.BeanInfo
 import java.beans.Introspector
@@ -54,8 +64,11 @@ public class MockDataHandler {
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMap;
 	private Map<String,Closure> queryClosures = new HashMap<String,Closure>();
 	private List<FastFindResult> fastFindResults;
+	private List<EditHistory> editHistoryList;
+	private List<FieldChange> editHistoryFieldChangeList;
 	private Map<String, Object> settingsResults;
-	
+    private StandardGetEventsResponse getEventsResponse;
+    private StandardGetLastRequestIdResponse getLastRequestIdResponse;
 
 	public MockDataHandler() {
 		this.mockDataLoader = new MockDataLoader();
@@ -63,7 +76,11 @@ public class MockDataHandler {
 		this.restMetaDataMap = mockDataLoader.getMetaTestData();
 		this.searchFieldsMap = mockDataLoader.getSearchFields();
 		this.fastFindResults = mockDataLoader.getFastFindResults();
+		this.editHistoryList = mockDataLoader.getEditHistoryList();
+		this.editHistoryFieldChangeList = mockDataLoader.getEditHistoryFieldChangeList()
 		this.settingsResults = mockDataLoader.getSettingsResults();
+        this.getEventsResponse = mockDataLoader.getEventsResponse();
+        this.getLastRequestIdResponse = mockDataLoader.getLastRequestIdResponse();
 		this.queryClosures = addQueryClosures();
 	}
 
@@ -107,6 +124,32 @@ public class MockDataHandler {
 		T newEntity = createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields);
 
 		return newEntity;
+	}
+
+	/**
+	 * Returns a copy of the entity stored in restEntityMap.
+	 *
+	 * @param type
+	 * @param id
+	 * @return
+	 */
+	public <T extends BullhornEntity> ListWrapper<T> findMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet) {
+		List<T> entityList = new ArrayList<T>();
+		for (Integer id : idList) {
+			T entity = getEntityFromMap(type, id)
+			if(entity == null){
+				throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
+			}
+			Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+
+			T newEntity = createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields);
+			entityList.add(newEntity);
+		}
+
+		ListWrapper<T> wrapper = new StandardListWrapper<T>(entityList);
+		wrapper.setTotal(entityList.size());
+		wrapper.setStart(0);
+		return wrapper;
 	}
 	
 	private <T extends BullhornEntity> T getEntityFromMap(Class<T> type, Integer id){
@@ -234,6 +277,24 @@ public class MockDataHandler {
 		return wrapper;
 
 		return new StandardListWrapper<T>(filteredValuesWithFieldsSet);
+	}
+
+	public <T extends BullhornEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		if(params == null){
+			params = ParamFactory.queryParams();
+		}
+		List<EditHistory> result = getEditHistoryList();
+		EditHistoryListWrapper wrapper = new EditHistoryListWrapper(result);
+		return wrapper;
+	}
+
+	public <T extends BullhornEntity> FieldChangeListWrapper queryEntityForEditHistoryFieldChanges(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+		if(params == null){
+			params = ParamFactory.queryParams();
+		}
+		List<EditHistory> result = getEditHistoryFieldChangeList();
+		FieldChangeListWrapper wrapper = new FieldChangeListWrapper(result);
+		return wrapper;
 	}
 	
 	public <T extends QueryEntity> List<T> queryForList(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
@@ -376,6 +437,34 @@ public class MockDataHandler {
 		return this.settingsResults;
 	}
 
+    public GetEventsResponse getEventsData(Integer maxResults) {
+        if(this.getEventsResponse.events.size() > maxResults) {
+            StandardGetEventsResponse response = KryoObjectCopyHelper.copy(this.getEventsResponse);
+
+            response.setEvents(response.getEvents().subList(0, maxResults));
+
+            return response;
+        }
+
+        return this.getEventsResponse;
+    }
+
+    public GetEventsResponse getEventsDataByRequest(Integer requestId) {
+        if(!this.getEventsResponse.getRequestId().equals(requestId)) {
+            StandardGetEventsResponse response = KryoObjectCopyHelper.copy(this.getEventsResponse);
+
+            response.setRequestId(requestId);
+
+            return response;
+        }
+
+        return this.getEventsResponse;
+    }
+
+    public GetLastRequestIdResponse getLastRequestId(String subscriptionId) {
+        return this.getLastRequestIdResponse;
+    }
+
 	/**
 	 * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	 * FILE HANDLING
@@ -416,7 +505,7 @@ public class MockDataHandler {
 
 
 	public ParsedResume parseResumeThenAddfile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId,
-	FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
+	    FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
 
 		StandardFileWrapper fileWrapper = createMockFileWrapper(file.getOriginalFilename());
 
@@ -466,7 +555,7 @@ public class MockDataHandler {
 
 
 
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params) {
+	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, JavaFile file, String externalId, FileParams params) {
 		String fileName = file.getName();
 		return createMockFileWrapper(fileName);
 	}
@@ -497,7 +586,7 @@ public class MockDataHandler {
 	}
 
 
-	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, File file, String candidateDescription,
+	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, JavaFile file, String candidateDescription,
 	String externalId, FileParams params) {
 	     
 		 Candidate candidate = findEntity(Candidate.class, candidateId);
@@ -586,6 +675,14 @@ public class MockDataHandler {
 
 	private List<FastFindResult> getFastFindResults() {
 		return this.fastFindResults;
+	}
+
+	private List<EditHistory> getEditHistoryList() {
+		return this.editHistoryList;
+	}
+
+	private List<FieldChange> getEditHistoryFieldChangeList() {
+		return this.editHistoryFieldChangeList;
 	}
 
 	private Map<String,Object> getSettingsResults() {

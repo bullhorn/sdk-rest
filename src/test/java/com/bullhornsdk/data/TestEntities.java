@@ -1,5 +1,9 @@
 package com.bullhornsdk.data;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /**
  * Contains the PS Sandbox test entities that should be used in unit tests.
  * 
@@ -36,6 +40,8 @@ public class TestEntities {
 
 	private Integer countryId;
 
+    private Integer fileId;
+
 	private Integer housingComplexId;
 
 	private Integer jobOrderId;
@@ -47,6 +53,8 @@ public class TestEntities {
     private Integer leadId;
 
 	private Integer noteId;
+
+	private Set<Integer> noteIdList;
 
 	private Integer noteEntityId;
 
@@ -68,9 +76,15 @@ public class TestEntities {
 
 	private Integer taskId;
 
+	private Integer tearsheetId;
+
 	private Integer timeUnitId;
 
     private Integer allCustomObjectsId;
+
+    private Integer requestId;
+
+    private String subscriptionId;
 	
 	public TestEntities() {
 		super();
@@ -102,6 +116,8 @@ public class TestEntities {
 
 		this.countryId=1;
 
+        this.fileId = 1;
+
 		this.housingComplexId=1;
 
 		this.jobOrderId=1;
@@ -113,6 +129,8 @@ public class TestEntities {
         this.leadId = 1;
 
 		this.noteId=1;
+
+		this.noteIdList= Stream.of(1,2).collect(Collectors.toSet());
 
 		this.noteEntityId=1;
 
@@ -134,9 +152,15 @@ public class TestEntities {
 
 		this.taskId=1;
 
+		this.tearsheetId=1;
+
 		this.timeUnitId=1;
 
         this.allCustomObjectsId = 1;
+
+        this.requestId = 1;
+
+        this.subscriptionId = "bhps_test_subscription";
 	}
 
 	public Integer getAppointmentId() {
@@ -251,7 +275,15 @@ public class TestEntities {
 		this.countryId = countryId;
 	}
 
-	public Integer getHousingComplexId() {
+    public Integer getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(Integer fileId) {
+        this.fileId = fileId;
+    }
+
+    public Integer getHousingComplexId() {
 		return housingComplexId;
 	}
 
@@ -297,6 +329,14 @@ public class TestEntities {
 
 	public void setNoteId(Integer noteId) {
 		this.noteId = noteId;
+	}
+
+	public Set<Integer> getNoteIdList() {
+		return noteIdList;
+	}
+
+	public void setNoteIdList(Set<Integer> noteIdList) {
+		this.noteIdList = noteIdList;
 	}
 
 	public Integer getNoteEntityId() {
@@ -387,7 +427,15 @@ public class TestEntities {
 		this.timeUnitId = timeUnitId;
 	}
 
-    public Integer getAllCustomObjectsId() {
+	public Integer getTearsheetId() {
+		return tearsheetId;
+	}
+
+	public void setTearsheetId(Integer tearsheetId) {
+		this.tearsheetId = tearsheetId;
+	}
+
+	public Integer getAllCustomObjectsId() {
         return allCustomObjectsId;
     }
 
@@ -395,12 +443,26 @@ public class TestEntities {
         this.allCustomObjectsId = allCustomObjectsId;
     }
 
+    public Integer getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(Integer requestId) {
+        this.requestId = requestId;
+    }
+
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    public void setSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("TestEntities {")
-                .append("\n\t\"allCustomObjectsId\": ")
-                .append(allCustomObjectsId)
-                .append(",\n\t\"appointmentId\": ")
+                .append("\n\t\"appointmentId\": ")
                 .append(appointmentId)
                 .append(",\n\t\"appointmentAttendeeId\": ")
                 .append(appointmentAttendeeId)
@@ -428,6 +490,8 @@ public class TestEntities {
                 .append(corporationDepartmentId)
                 .append(",\n\t\"countryId\": ")
                 .append(countryId)
+                .append(",\n\t\"fileId\": ")
+                .append(fileId)
                 .append(",\n\t\"housingComplexId\": ")
                 .append(housingComplexId)
                 .append(",\n\t\"jobOrderId\": ")
@@ -440,6 +504,8 @@ public class TestEntities {
                 .append(leadId)
                 .append(",\n\t\"noteId\": ")
                 .append(noteId)
+                .append(",\n\t\"noteIdList\": ")
+                .append(noteIdList)
                 .append(",\n\t\"noteEntityId\": ")
                 .append(noteEntityId)
                 .append(",\n\t\"opportunityId\": ")
@@ -460,8 +526,17 @@ public class TestEntities {
                 .append(stateId)
                 .append(",\n\t\"taskId\": ")
                 .append(taskId)
+                .append(",\n\t\"tearsheetId\": ")
+                .append(tearsheetId)
                 .append(",\n\t\"timeUnitId\": ")
                 .append(timeUnitId)
+                .append(",\n\t\"allCustomObjectsId\": ")
+                .append(allCustomObjectsId)
+                .append(",\n\t\"requestId\": ")
+                .append(requestId)
+                .append(",\n\t\"subscriptionId\": ")
+                .append("'")
+                .append(subscriptionId).append('\'')
                 .append('}')
                 .toString();
     }

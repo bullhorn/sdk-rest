@@ -18,6 +18,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
+import com.bullhornsdk.data.model.entity.core.standard.File;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
 import com.bullhornsdk.data.model.entity.core.standard.Lead;
@@ -59,7 +60,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryAppointment() {
 
-		ListWrapper<Appointment> wrapper = bullhornApiRest.queryForAllRecords(Appointment.class, where, null, queryParams);
+		ListWrapper<Appointment> wrapper = bullhornData.queryForAllRecords(Appointment.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Appointment>", wrapper);
 	}
@@ -67,7 +68,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryAppointmentAttendee() {
 
-		ListWrapper<AppointmentAttendee> wrapper = bullhornApiRest.queryForAllRecords(AppointmentAttendee.class, where, null, queryParams);
+		ListWrapper<AppointmentAttendee> wrapper = bullhornData.queryForAllRecords(AppointmentAttendee.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<AppointmentAttendee>", wrapper);
 
@@ -76,7 +77,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryBusinessSector() {
 
-		ListWrapper<BusinessSector> wrapper = bullhornApiRest.queryForAllRecords(BusinessSector.class, where, null, queryParams);
+		ListWrapper<BusinessSector> wrapper = bullhornData.queryForAllRecords(BusinessSector.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<BusinessSector>", wrapper);
 	}
@@ -84,7 +85,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryCandidateEducation() {
 
-		ListWrapper<CandidateEducation> wrapper = bullhornApiRest.queryForAllRecords(CandidateEducation.class, where, null, queryParams);
+		ListWrapper<CandidateEducation> wrapper = bullhornData.queryForAllRecords(CandidateEducation.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<CandidateEducation>", wrapper);
 
@@ -93,7 +94,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryCandidateReference() {
 
-		ListWrapper<CandidateReference> wrapper = bullhornApiRest.queryForAllRecords(CandidateReference.class, where, null, queryParams);
+		ListWrapper<CandidateReference> wrapper = bullhornData.queryForAllRecords(CandidateReference.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<CandidateEducation>", wrapper);
 
@@ -102,7 +103,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryCandidateWorkHistory() {
 
-		ListWrapper<CandidateWorkHistory> wrapper = bullhornApiRest
+		ListWrapper<CandidateWorkHistory> wrapper = bullhornData
 				.queryForAllRecords(CandidateWorkHistory.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<CandidateWorkHistory>", wrapper);
@@ -111,7 +112,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryCategory() {
 
-		ListWrapper<Category> wrapper = bullhornApiRest.queryForAllRecords(Category.class, where, null, queryParams);
+		ListWrapper<Category> wrapper = bullhornData.queryForAllRecords(Category.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Category>", wrapper);
 
@@ -120,7 +121,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryCertification() {
 
-		ListWrapper<Certification> wrapper = bullhornApiRest.queryForAllRecords(Certification.class, where, null, queryParams);
+		ListWrapper<Certification> wrapper = bullhornData.queryForAllRecords(Certification.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Certification>", wrapper);
 
@@ -129,7 +130,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryClientContact() {
 
-		ListWrapper<ClientContact> wrapper = bullhornApiRest.queryForAllRecords(ClientContact.class, where, null, queryParams);
+		ListWrapper<ClientContact> wrapper = bullhornData.queryForAllRecords(ClientContact.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<ClientContact>", wrapper);
 
@@ -138,7 +139,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryClientCorporation() {
 
-		ListWrapper<ClientCorporation> wrapper = bullhornApiRest.queryForAllRecords(ClientCorporation.class, where, null, queryParams);
+		ListWrapper<ClientCorporation> wrapper = bullhornData.queryForAllRecords(ClientCorporation.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<ClientCorporation>", wrapper);
 
@@ -148,7 +149,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	public void testQueryCorporateUser() {
 
 		String where = "isDeleted=true";
-		ListWrapper<CorporateUser> wrapper = bullhornApiRest.queryForAllRecords(CorporateUser.class, where, null, queryParams);
+		ListWrapper<CorporateUser> wrapper = bullhornData.queryForAllRecords(CorporateUser.class, where, null, queryParams);
 		assertTrue(wrapper.getCount() == 1);
 		runAssertions("ListWrapper<CorporateUser>", wrapper);
 
@@ -157,7 +158,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryCorporationDepartment() {
 
-		ListWrapper<CorporationDepartment> wrapper = bullhornApiRest.queryForAllRecords(CorporationDepartment.class, where, null,
+		ListWrapper<CorporationDepartment> wrapper = bullhornData.queryForAllRecords(CorporationDepartment.class, where, null,
 				queryParams);
 
 		runAssertions("ListWrapper<CorporationDepartment>", wrapper);
@@ -167,16 +168,25 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryCountry() {
 
-		ListWrapper<Country> wrapper = bullhornApiRest.queryForAllRecords(Country.class, where, null, queryParams);
+		ListWrapper<Country> wrapper = bullhornData.queryForAllRecords(Country.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Country>", wrapper);
 
 	}
 
+    @Test
+    public void testQueryFile() {
+
+        ListWrapper<File> wrapper = bullhornData.queryForAllRecords(File.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<File>", wrapper);
+
+    }
+
 	@Test
 	public void testQueryJobOrderGreaterThan() {
 
-		ListWrapper<JobOrder> wrapper = bullhornApiRest.queryForAllRecords(JobOrder.class, "id > 10", null, queryParams);
+		ListWrapper<JobOrder> wrapper = bullhornData.queryForAllRecords(JobOrder.class, "id > 10", null, queryParams);
 
 		assertTrue(wrapper.getCount() == 10);
 		runAssertions("ListWrapper<JobOrder>", wrapper);
@@ -186,7 +196,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryJobOrderGreaterThanEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornApiRest.queryForAllRecords(JobOrder.class, "id >= 10", null, queryParams);
+		ListWrapper<JobOrder> wrapper = bullhornData.queryForAllRecords(JobOrder.class, "id >= 10", null, queryParams);
 
 		assertTrue(wrapper.getCount() == 11);
 		runAssertions("ListWrapper<JobOrder>", wrapper);
@@ -196,7 +206,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryJobOrderLessThan() {
 
-		ListWrapper<JobOrder> wrapper = bullhornApiRest.queryForAllRecords(JobOrder.class, "id < 5", null, queryParams);
+		ListWrapper<JobOrder> wrapper = bullhornData.queryForAllRecords(JobOrder.class, "id < 5", null, queryParams);
 
 		assertTrue(wrapper.getCount() == 4);
 		runAssertions("ListWrapper<JobOrder>", wrapper);
@@ -206,12 +216,12 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryJobOrderLessThanEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornApiRest.queryForAllRecords(JobOrder.class, "id <= 5", null, queryParams);
+		ListWrapper<JobOrder> wrapper = bullhornData.queryForAllRecords(JobOrder.class, "id <= 5", null, queryParams);
 
 		assertTrue(wrapper.getCount() == 5);
 		runAssertions("ListWrapper<JobOrder>", wrapper);
 
-		ListWrapper<JobOrder> wrapper2 = bullhornApiRest.queryForAllRecords(JobOrder.class, "status = 'Submitted'", null, queryParams);
+		ListWrapper<JobOrder> wrapper2 = bullhornData.queryForAllRecords(JobOrder.class, "status = 'Submitted'", null, queryParams);
 
 		assertTrue(wrapper2.getCount() == 2);
 
@@ -220,7 +230,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryJobOrderEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornApiRest.queryForAllRecords(JobOrder.class, "id = 5", null, queryParams);
+		ListWrapper<JobOrder> wrapper = bullhornData.queryForAllRecords(JobOrder.class, "id = 5", null, queryParams);
 
 		assertTrue(wrapper.getCount() == 1);
 		runAssertions("ListWrapper<JobOrder>", wrapper);
@@ -230,7 +240,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryJobOrderNotEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornApiRest.queryForAllRecords(JobOrder.class, "id <> 5", null, queryParams);
+		ListWrapper<JobOrder> wrapper = bullhornData.queryForAllRecords(JobOrder.class, "id <> 5", null, queryParams);
 
 		assertTrue(wrapper.getCount() == 19);
 		runAssertions("ListWrapper<JobOrder>", wrapper);
@@ -240,7 +250,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryJobSubmission() {
 
-		ListWrapper<JobSubmission> wrapper = bullhornApiRest.queryForAllRecords(JobSubmission.class, where, null, queryParams);
+		ListWrapper<JobSubmission> wrapper = bullhornData.queryForAllRecords(JobSubmission.class, where, null, queryParams);
 		runAssertions("ListWrapper<JobSubmission>", wrapper);
 
 	}
@@ -248,7 +258,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
     @Test
     public void testQueryLead() {
 
-        ListWrapper<Lead> wrapper = bullhornApiRest.queryForAllRecords(Lead.class, where, null, queryParams);
+        ListWrapper<Lead> wrapper = bullhornData.queryForAllRecords(Lead.class, where, null, queryParams);
 
         runAssertions("ListWrapper<Lead>", wrapper);
     }
@@ -256,7 +266,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryNoteEntity() {
 
-		ListWrapper<NoteEntity> wrapper = bullhornApiRest.queryForAllRecords(NoteEntity.class, where, null, queryParams);
+		ListWrapper<NoteEntity> wrapper = bullhornData.queryForAllRecords(NoteEntity.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Note>", wrapper);
 	}
@@ -264,7 +274,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
     @Test
     public void testQueryOpportunity() {
 
-        ListWrapper<Opportunity> wrapper = bullhornApiRest.queryForAllRecords(Opportunity.class, where, null, queryParams);
+        ListWrapper<Opportunity> wrapper = bullhornData.queryForAllRecords(Opportunity.class, where, null, queryParams);
 
         runAssertions("ListWrapper<Opportunity>", wrapper);
     }
@@ -272,7 +282,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryPlacement() {
 
-		ListWrapper<Placement> wrapper = bullhornApiRest.queryForAllRecords(Placement.class, where, null, queryParams);
+		ListWrapper<Placement> wrapper = bullhornData.queryForAllRecords(Placement.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<ClientContact>", wrapper);
 
@@ -281,7 +291,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryPlacementChangeRequest() {
 
-		ListWrapper<PlacementChangeRequest> wrapper = bullhornApiRest.queryForAllRecords(PlacementChangeRequest.class, where, null,
+		ListWrapper<PlacementChangeRequest> wrapper = bullhornData.queryForAllRecords(PlacementChangeRequest.class, where, null,
 				queryParams);
 
 		runAssertions("ListWrapper<PlacementChangeRequest>", wrapper);
@@ -291,7 +301,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryPlacementCommission() {
 
-		ListWrapper<PlacementCommission> wrapper = bullhornApiRest.queryForAllRecords(PlacementCommission.class, where, null, queryParams);
+		ListWrapper<PlacementCommission> wrapper = bullhornData.queryForAllRecords(PlacementCommission.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<PlacementCommission>", wrapper);
 
@@ -300,7 +310,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQuerySendout() {
 
-		ListWrapper<Sendout> wrapper = bullhornApiRest.queryForAllRecords(Sendout.class, where, null, queryParams);
+		ListWrapper<Sendout> wrapper = bullhornData.queryForAllRecords(Sendout.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Sendout>", wrapper);
 
@@ -309,7 +319,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQuerySkill() {
 
-		ListWrapper<Skill> wrapper = bullhornApiRest.queryForAllRecords(Skill.class, where, null, queryParams);
+		ListWrapper<Skill> wrapper = bullhornData.queryForAllRecords(Skill.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Skill>", wrapper);
 
@@ -318,7 +328,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQuerySpecialty() {
 
-		ListWrapper<Specialty> wrapper = bullhornApiRest.queryForAllRecords(Specialty.class, where, null, queryParams);
+		ListWrapper<Specialty> wrapper = bullhornData.queryForAllRecords(Specialty.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Specialty>", wrapper);
 
@@ -327,7 +337,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryState() {
 
-		ListWrapper<State> wrapper = bullhornApiRest.queryForAllRecords(State.class, where, null, queryParams);
+		ListWrapper<State> wrapper = bullhornData.queryForAllRecords(State.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<State>", wrapper);
 
@@ -336,7 +346,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryTask() {
 
-		ListWrapper<Task> wrapper = bullhornApiRest.queryForAllRecords(Task.class, where, null, queryParams);
+		ListWrapper<Task> wrapper = bullhornData.queryForAllRecords(Task.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<Task>", wrapper);
 
@@ -345,7 +355,7 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 	@Test
 	public void testQueryTimeUnit() {
 
-		ListWrapper<TimeUnit> wrapper = bullhornApiRest.queryForAllRecords(TimeUnit.class, where, null, queryParams);
+		ListWrapper<TimeUnit> wrapper = bullhornData.queryForAllRecords(TimeUnit.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<TimeUnit>", wrapper);
 

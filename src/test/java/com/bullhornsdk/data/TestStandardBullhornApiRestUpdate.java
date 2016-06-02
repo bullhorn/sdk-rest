@@ -48,7 +48,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@After
 	public void restoreEntityToInitialValue() {
 		if (entity != null) {
-			UpdateResponse response = bullhornApiRest.updateEntity(entity);
+			UpdateResponse response = bullhornData.updateEntity(entity);
 			assertFalse("Error restoring entity. Validation errors", response.hasValidationErrors());
 			assertFalse("Error restoring entity. Error.", response.isError());
 		}
@@ -57,13 +57,13 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testGenericUpdate() {
 		String newStatus = "STABLE";
-		JobOrder preUpdateEntity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder preUpdateEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 
 		JobOrder update = new JobOrder(testEntities.getJobOrderId());
 
 		update.setStatus(newStatus);
-		UpdateResponse response = bullhornApiRest.updateEntity(update);
-		JobOrder updatedEntity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		UpdateResponse response = bullhornData.updateEntity(update);
+		JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 
 		this.runAssertions(response, newStatus, updatedEntity.getStatus());
 
@@ -76,7 +76,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateAppointment() {
 
-		Appointment entity = bullhornApiRest.findEntity(Appointment.class, testEntities.getAppointmentId());
+		Appointment entity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId());
 
 		this.entity = (T) entity;
 
@@ -86,9 +86,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setSubject(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Appointment updatedEntity = bullhornApiRest.findEntity(Appointment.class, testEntities.getAppointmentId());
+		Appointment updatedEntity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId());
 		entity.setSubject(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getSubject());
 
@@ -97,7 +97,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateCandidate() {
 
-		Candidate entity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId());
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
 
 		this.entity = (T) entity;
 
@@ -109,9 +109,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		entity.setCustomText5("test");
 		entity.setIsDeleted(Boolean.FALSE);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Candidate updatedEntity = bullhornApiRest.findEntity(Candidate.class, testEntities.getCandidateId());
+		Candidate updatedEntity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
 		entity.setCustomText1(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
@@ -120,7 +120,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateCandidateEducation() {
 
-		CandidateEducation entity = bullhornApiRest.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
+		CandidateEducation entity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
 
 		this.entity = (T) entity;
 
@@ -130,9 +130,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setCustomText4(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		CandidateEducation updatedEntity = bullhornApiRest.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
+		CandidateEducation updatedEntity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId());
 		entity.setCustomText4(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getCustomText4());
 
@@ -141,7 +141,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateCandidateReference() {
 
-		CandidateReference entity = bullhornApiRest.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
+		CandidateReference entity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
 
 		this.entity = (T) entity;
 
@@ -151,9 +151,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setCustomText1(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		CandidateReference updatedEntity = bullhornApiRest.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
+		CandidateReference updatedEntity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId());
 		entity.setCustomText1(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
@@ -162,7 +162,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateCandidateWorkHistory() {
 
-		CandidateWorkHistory entity = bullhornApiRest.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId());
+		CandidateWorkHistory entity = bullhornData.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId());
 
 		this.entity = (T) entity;
 
@@ -172,9 +172,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setCustomText1(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		CandidateWorkHistory updatedEntity = bullhornApiRest.findEntity(CandidateWorkHistory.class,
+		CandidateWorkHistory updatedEntity = bullhornData.findEntity(CandidateWorkHistory.class,
 				testEntities.getCandidateWorkHistoryId());
 		entity.setCustomText1(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
@@ -183,7 +183,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 	public void testUpdateCertification() {
 
-		Certification entity = bullhornApiRest.findEntity(Certification.class, testEntities.getCertificationId());
+		Certification entity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId());
 
 		this.entity = (T) entity;
 
@@ -193,9 +193,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setName(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Certification updatedEntity = bullhornApiRest.findEntity(Certification.class, testEntities.getCertificationId());
+		Certification updatedEntity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId());
 		entity.setName(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getName());
 
@@ -204,7 +204,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateClientContact() {
 
-		ClientContact entity = bullhornApiRest.findEntity(ClientContact.class, testEntities.getClientContactId());
+		ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
 
 		this.entity = (T) entity;
 
@@ -214,9 +214,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setName(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		ClientContact updatedEntity = bullhornApiRest.findEntity(ClientContact.class, testEntities.getClientContactId());
+		ClientContact updatedEntity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
 		entity.setName(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getName());
 
@@ -225,7 +225,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateClientCorporation() {
 
-		ClientCorporation entity = bullhornApiRest.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
+		ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
 
 		this.entity = (T) entity;
 
@@ -235,9 +235,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setName(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		ClientCorporation updatedEntity = bullhornApiRest.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
+		ClientCorporation updatedEntity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
 		entity.setName(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getName());
 
@@ -246,7 +246,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateHousingComplex() {
 
-		HousingComplex entity = bullhornApiRest.findEntity(HousingComplex.class, testEntities.getHousingComplexId());
+		HousingComplex entity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId());
 
 		this.entity = (T) entity;
 
@@ -257,9 +257,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		entity.setCustomText1(newValue);
 		entity.setIsDeleted(false);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		HousingComplex updatedEntity = bullhornApiRest.findEntity(HousingComplex.class, testEntities.getHousingComplexId());
+		HousingComplex updatedEntity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId());
 		entity.setCustomText1(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
@@ -268,7 +268,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateJobOrder() {
 
-		JobOrder entity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 
 		this.entity = (T) entity;
 
@@ -279,9 +279,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		entity.setCustomText1(newValue);
 		entity.setIsDeleted(false);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		JobOrder updatedEntity = bullhornApiRest.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
 		entity.setCustomText1(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
@@ -290,7 +290,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateJobSubmission() {
 
-		JobSubmission entity = bullhornApiRest.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
+		JobSubmission entity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
 
 		this.entity = (T) entity;
 
@@ -300,9 +300,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setSource(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		JobSubmission updatedEntity = bullhornApiRest.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
+		JobSubmission updatedEntity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
 		entity.setSource(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getSource());
 
@@ -311,7 +311,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
     @Test
     public void testUpdateLead() {
 
-        Lead entity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+        Lead entity = bullhornData.findEntity(Lead.class, testEntities.getLeadId());
 
         this.entity = (T) entity;
 
@@ -321,9 +321,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
         entity.setCustomText1(newValue);
 
-        UpdateResponse response = bullhornApiRest.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-        Lead updatedEntity = bullhornApiRest.findEntity(Lead.class, testEntities.getLeadId());
+        Lead updatedEntity = bullhornData.findEntity(Lead.class, testEntities.getLeadId());
         entity.setCustomText1(previousValue);
         this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
@@ -332,7 +332,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateNote() {
 
-		Note entity = bullhornApiRest.findEntity(Note.class, testEntities.getNoteId());
+		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
 
 		this.entity = (T) entity;
 
@@ -342,9 +342,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setComments(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Note updatedEntity = bullhornApiRest.findEntity(Note.class, testEntities.getNoteId());
+		Note updatedEntity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
 		entity.setComments(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getComments());
 
@@ -353,7 +353,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateNoteEntity() {
 
-		NoteEntity entity = bullhornApiRest.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
+		NoteEntity entity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
 
 		this.entity = (T) entity;
 
@@ -363,9 +363,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setTargetEntityName(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		NoteEntity updatedEntity = bullhornApiRest.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
+		NoteEntity updatedEntity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId());
 		entity.setTargetEntityName(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getTargetEntityName());
 
@@ -374,7 +374,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
     @Test
     public void testUpdateOpportunity() {
 
-        Opportunity entity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+        Opportunity entity = bullhornData.findEntity(Opportunity.class, testEntities.getOpportunityId());
 
         this.entity = (T) entity;
 
@@ -384,9 +384,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
         entity.setCustomText1(newValue);
 
-        UpdateResponse response = bullhornApiRest.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-        Opportunity updatedEntity = bullhornApiRest.findEntity(Opportunity.class, testEntities.getOpportunityId());
+        Opportunity updatedEntity = bullhornData.findEntity(Opportunity.class, testEntities.getOpportunityId());
         entity.setCustomText1(previousValue);
         this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
@@ -395,7 +395,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdatePlacement() {
 
-		Placement entity = bullhornApiRest.findEntity(Placement.class, testEntities.getPlacementId());
+		Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId());
 
 		this.entity = (T) entity;
 
@@ -405,9 +405,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setCustomText1(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Placement updatedEntity = bullhornApiRest.findEntity(Placement.class, testEntities.getPlacementId());
+		Placement updatedEntity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId());
 		entity.setCustomText1(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
@@ -415,7 +415,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 	@Test
 	public void testUpdatePlacementCommission() {
-		PlacementCommission entity = bullhornApiRest.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
+		PlacementCommission entity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
 
 		this.entity = (T) entity;
 
@@ -425,9 +425,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setComments(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		PlacementCommission updatedEntity = bullhornApiRest.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
+		PlacementCommission updatedEntity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
 		entity.setComments(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getComments());
 
@@ -436,7 +436,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateSendout() {
 
-		Sendout entity = bullhornApiRest.findEntity(Sendout.class, testEntities.getSendoutId());
+		Sendout entity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId());
 
 		this.entity = (T) entity;
 
@@ -450,9 +450,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setEmail(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Sendout updatedEntity = bullhornApiRest.findEntity(Sendout.class, testEntities.getSendoutId());
+		Sendout updatedEntity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId());
 		entity.setEmail(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getEmail());
 
@@ -461,7 +461,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateTask() {
 
-		Task entity = bullhornApiRest.findEntity(Task.class, testEntities.getTaskId());
+		Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId());
 
 		this.entity = (T) entity;
 
@@ -471,9 +471,9 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 		entity.setDescription(newValue);
 
-		UpdateResponse response = bullhornApiRest.updateEntity(entity);
+		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Task updatedEntity = bullhornApiRest.findEntity(Task.class, testEntities.getTaskId());
+		Task updatedEntity = bullhornData.findEntity(Task.class, testEntities.getTaskId());
 		entity.setDescription(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getDescription());
 

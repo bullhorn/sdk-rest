@@ -41,7 +41,7 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
 		AssociationParams params = ParamFactory.associationParams();
 		params.setCount(100);
 
-		List<Category> associationList = bullhornApiRest.getAssociation(Candidate.class, entityIds, AssociationFactory
+		List<Category> associationList = bullhornData.getAssociation(Candidate.class, entityIds, AssociationFactory
 				.candidateAssociations().categories(), getFields(), params);
 		assertResponse(Category.class, associationList);
 
@@ -60,7 +60,7 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
 		AssociationParams params = ParamFactory.associationParams();
 		params.setCount(100);
 
-		List<Specialty> associationList = bullhornApiRest.getAssociation(Candidate.class, entityIds, AssociationFactory
+		List<Specialty> associationList = bullhornData.getAssociation(Candidate.class, entityIds, AssociationFactory
 				.candidateAssociations().specialties(), getFields(), params);
 		assertResponse(Category.class, associationList);
 
@@ -74,7 +74,7 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
 
 		AssociationParams params = ParamFactory.associationParams();
 		params.setCount(100);
-		List<Skill> associationList = bullhornApiRest.getAssociation(Category.class, entityIds, AssociationFactory.categoryAssociations()
+		List<Skill> associationList = bullhornData.getAssociation(Category.class, entityIds, AssociationFactory.categoryAssociations()
 				.skills(), getFields(), params);
 		assertResponse(Category.class, associationList);
 
@@ -95,10 +95,10 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
 
 	private <T extends AssociationEntity> void setUpAssociation(Class<T> type, Integer entityId, Set<Integer> associationIds,
 			AssociationField<T, ? extends BullhornEntity> association) {
-		CrudResponse deleteResponse = bullhornApiRest.disassociateWithEntity(type, entityId, association, associationIds);
+		CrudResponse deleteResponse = bullhornData.disassociateWithEntity(type, entityId, association, associationIds);
 		assertCrudResponse(type, deleteResponse);
 
-		CrudResponse createResponse = bullhornApiRest.associateWithEntity(type, entityId, association, associationIds);
+		CrudResponse createResponse = bullhornData.associateWithEntity(type, entityId, association, associationIds);
 		assertCrudResponse(type, createResponse);
 
 	}

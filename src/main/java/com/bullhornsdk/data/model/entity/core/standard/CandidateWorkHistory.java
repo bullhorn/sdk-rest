@@ -121,9 +121,11 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 
 	private DateTime startDate;
 
+	@JsonIgnore
 	@Size(max = 100)
 	private String terminationReason;
 
+	@JsonIgnore
 	@Size(max = 50)
 	private String title;
 
