@@ -1,6 +1,8 @@
  package com.bullhornsdk.data.model.entity.core.customobject;
 
+ import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
  import com.fasterxml.jackson.annotation.JsonInclude;
+ import com.fasterxml.jackson.annotation.JsonProperty;
  import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -12,4 +14,23 @@
          "textBlock3", "textBlock4", "textBlock5", "date1", "date2", "date3", "date4", "date5", "date6", "date7", "date8", "date9", "date10", "dateAdded" })
  public class PersonCustomObjectInstance2 extends CustomObjectInstance {
 
+     private LinkedPerson person;
+
+
+     @JsonProperty("person")
+     public LinkedPerson getPerson() {
+         return person;
+     }
+
+     @JsonProperty("person")
+     public void setPerson(LinkedPerson person) {
+         this.person = person;
+     }
+
+     @Override
+     public String toString() {
+         return "PersonCustomObjectInstance1{" +
+                 "person=" + person +
+                 "} " + super.toString();
+     }
  }

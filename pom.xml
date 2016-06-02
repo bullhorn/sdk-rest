@@ -9,7 +9,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.version>2.7.1</jackson.version>
-        <org.springframework.version>4.2.4.RELEASE</org.springframework.version>
+        <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
 		<additionalparam>-Xdoclint:none</additionalparam>
 	</properties>
 

@@ -2,13 +2,10 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import org.joda.time.DateTime;
 
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
@@ -19,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+import java.util.List;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "appointmentUUID", "attendees", "candidateReference", "childAppointments", "clientContactReference",
@@ -26,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
         "isPrivate", "jobOrder", "location", "migrateGUID", "notificationMinutes", "owner", "parentAppointment", "placement",
         "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
         "showTimeAs", "subject", "timeZoneID", "type" })
-public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
+public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity {
 
     private Integer id;
 
@@ -98,6 +97,10 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     @Size(max = 30)
     private String type;
+
+    private Opportunity opportunity;
+
+    private OneToMany<LinkedPerson> guests;
 
     @Override
     @JsonProperty("id")
@@ -438,6 +441,26 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         this.type = type;
     }
 
+    @JsonProperty("opportunity")
+    public Opportunity getOpportunity() {
+        return opportunity;
+    }
+
+    @JsonProperty("opportunity")
+    public void setOpportunity(Opportunity opportunity) {
+        this.opportunity = opportunity;
+    }
+
+    @JsonProperty("guests")
+    public OneToMany<LinkedPerson> getGuests() {
+        return guests;
+    }
+
+    @JsonProperty("guests")
+    public void setGuests(OneToMany<LinkedPerson> guests) {
+        this.guests = guests;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -474,6 +497,9 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         result = prime * result + ((subject == null) ? 0 : subject.hashCode());
         result = prime * result + ((timeZoneID == null) ? 0 : timeZoneID.hashCode());
         result = prime * result + ((type == null) ? 0 : type.hashCode());
+        result = prime * result + ((opportunity == null) ? 0 : opportunity.hashCode());
+        result = prime * result + ((guests == null) ? 0 : guests.hashCode());
+
         return result;
     }
 
@@ -646,6 +672,16 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
                 return false;
         } else if (!type.equals(other.type))
             return false;
+        if (opportunity == null) {
+            if (other.opportunity != null)
+                return false;
+        } else if (!opportunity.equals(other.opportunity))
+            return false;
+        if (guests == null) {
+            if (other.guests != null)
+                return false;
+        } else if (!guests.equals(other.guests))
+            return false;
         return true;
     }
 
@@ -716,6 +752,10 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         builder.append(timeZoneID);
         builder.append(", \ntype=");
         builder.append(type);
+        builder.append(", \nopportunity=");
+        builder.append(opportunity);
+        builder.append(", \nguests=");
+        builder.append(guests);
         builder.append(", \nadditionalProperties=");
         builder.append(this.getAdditionalProperties());
         builder.append("\n}");
