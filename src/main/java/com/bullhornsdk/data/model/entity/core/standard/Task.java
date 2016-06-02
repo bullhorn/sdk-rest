@@ -17,7 +17,8 @@ import javax.validation.constraints.Size;
 		"dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission", "lead",
 		"migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "priority", "placement", "recurrenceDayBits", "recurrenceFrequency",
 		"recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type" })
-public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity {
+public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity,
+		DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 

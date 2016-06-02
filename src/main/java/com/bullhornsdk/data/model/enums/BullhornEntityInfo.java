@@ -248,7 +248,8 @@ import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomOb
 public enum BullhornEntityInfo {
 
     ADDRESS("Address", null, null, null, null, null),
-    APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class, null, null),
+    APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class,
+            "AppointmentEditHistory", "AppointmentEditHistoryFieldChange"),
     APPOINTMENT_ATTENDEE("AppointmentAttendee", AppointmentAttendee.class, AppointmentAttendeeWrapper.class,
             AppointmentAttendeeListWrapper.class, null, null),
     BUSINESS_SECTOR("BusinessSector", BusinessSector.class, BusinessSectorWrapper.class, BusinessSectorListWrapper.class, null, null),
@@ -293,7 +294,8 @@ public enum BullhornEntityInfo {
     SKILL("Skill", Skill.class, SkillWrapper.class, SkillListWrapper.class, null, null),
     SPECIALTY("Specialty", Specialty.class, SpecialtyWrapper.class, SpecialtyListWrapper.class, null, null),
     STATE("State", State.class, StateWrapper.class, StateListWrapper.class, null, null),
-    TASK("Task", Task.class, TaskWrapper.class, TaskListWrapper.class, null, null),
+    TASK("Task", Task.class, TaskWrapper.class, TaskListWrapper.class,
+            "TaskEditHistory", "TaskEditHistoryFieldChange"),
     TEARSHEET("Tearsheet", Tearsheet.class, TearsheetWrapper.class, TearsheetListWrapper.class, null, null),
     TIME_UNIT("TimeUnit", TimeUnit.class, TimeUnitWrapper.class, TimeUnitListWrapper.class, null, null),
 
