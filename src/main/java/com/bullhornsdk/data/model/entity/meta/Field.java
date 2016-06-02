@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "name", "type", "dataType", "label", "associatedEntity", "maxLength", "options" })
+@JsonPropertyOrder({ "name", "type", "dataType", "maxLength", "confidential", "optional", "label", "required",
+		"readOnly", "multiValue", "inputType", "optionsType", "optionsUrl", "hideFromSearch", "sortOrder", "hint",
+		"description", "associatedEntity", "options" })
 public class Field {
 
     private String name;
@@ -21,11 +23,35 @@ public class Field {
 
     private String dataType;
 
+	private Integer maxLength;
+
+	private Boolean confidential;
+
+	private Boolean optional;
+
     private String label;
 
-    private StandardMetaData<?> associatedEntity;
+	private Boolean required;
 
-    private Integer maxLength;
+	private Boolean readOnly;
+
+	private Boolean multiValue;
+
+	private String inputType;
+
+	private String optionsType;
+
+	private String optionsUrl;
+
+	private Boolean hideFromSearch;
+
+	private Integer sortOrder;
+
+	private String hint;
+
+	private String description;
+
+    private StandardMetaData<?> associatedEntity;
 
     private List<Option> options = new ArrayList<Option>();
 
@@ -61,7 +87,37 @@ public class Field {
         this.dataType = dataType;
     }
 
-    @JsonProperty("label")
+	@JsonProperty("maxLength")
+	public Integer getMaxLength() {
+		return maxLength;
+	}
+
+	@JsonProperty("maxLength")
+	public void setMaxLength(Integer maxLength) {
+		this.maxLength = maxLength;
+	}
+
+	@JsonProperty("confidential")
+	public Boolean getConfidential() {
+		return confidential;
+	}
+
+	@JsonProperty("confidential")
+	public void setConfidential(Boolean confidential) {
+		this.confidential = confidential;
+	}
+
+	@JsonProperty("optional")
+	public Boolean getOptional() {
+		return optional;
+	}
+
+	@JsonProperty("optional")
+	public void setOptional(Boolean optional) {
+		this.optional = optional;
+	}
+
+	@JsonProperty("label")
     public String getLabel() {
         return label;
     }
@@ -71,7 +127,107 @@ public class Field {
         this.label = label;
     }
 
-    @JsonProperty("associatedEntity")
+	@JsonProperty("description")
+	public String getDescription() {
+		return description;
+	}
+
+	@JsonProperty("description")
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@JsonProperty("required")
+	public Boolean getRequired() {
+		return required;
+	}
+
+	@JsonProperty("required")
+	public void setRequired(Boolean required) {
+		this.required = required;
+	}
+
+	@JsonProperty("readOnly")
+	public Boolean getReadOnly() {
+		return readOnly;
+	}
+
+	@JsonProperty("readOnly")
+	public void setReadOnly(Boolean readOnly) {
+		this.readOnly = readOnly;
+	}
+
+	@JsonProperty("multiValue")
+	public Boolean getMultiValue() {
+		return multiValue;
+	}
+
+	@JsonProperty("multiValue")
+	public void setMultiValue(Boolean multiValue) {
+		this.multiValue = multiValue;
+	}
+
+	@JsonProperty("inputType")
+	public String getInputType() {
+		return inputType;
+	}
+
+	@JsonProperty("inputType")
+	public void setInputType(String inputType) {
+		this.inputType = inputType;
+	}
+
+	@JsonProperty("optionsType")
+	public String getOptionsType() {
+		return optionsType;
+	}
+
+	@JsonProperty("optionsType")
+	public void setOptionsType(String optionsType) {
+		this.optionsType = optionsType;
+	}
+
+	@JsonProperty("optionsUrl")
+	public String getOptionsUrl() {
+		return optionsUrl;
+	}
+
+	@JsonProperty("optionsUrl")
+	public void setOptionsUrl(String optionsUrl) {
+		this.optionsUrl = optionsUrl;
+	}
+
+	@JsonProperty("hideFromSearch")
+	public Boolean getHideFromSearch() {
+		return hideFromSearch;
+	}
+
+	@JsonProperty("hideFromSearch")
+	public void setHideFromSearch(Boolean hideFromSearch) {
+		this.hideFromSearch = hideFromSearch;
+	}
+
+	@JsonProperty("sortOrder")
+	public Integer getSortOrder() {
+		return sortOrder;
+	}
+
+	@JsonProperty("sortOrder")
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	@JsonProperty("hint")
+	public String getHint() {
+		return hint;
+	}
+
+	@JsonProperty("hint")
+	public void setHint(String hint) {
+		this.hint = hint;
+	}
+
+	@JsonProperty("associatedEntity")
     public StandardMetaData<?> getAssociatedEntity() {
         return associatedEntity;
     }
@@ -79,16 +235,6 @@ public class Field {
     @JsonProperty("associatedEntity")
     public void setAssociatedEntity(StandardMetaData<?> associatedEntity) {
         this.associatedEntity = associatedEntity;
-    }
-
-    @JsonProperty("maxLength")
-    public Integer getMaxLength() {
-        return maxLength;
-    }
-
-    @JsonProperty("maxLength")
-    public void setMaxLength(Integer maxLength) {
-        this.maxLength = maxLength;
     }
 
     @JsonProperty("options")
@@ -111,27 +257,30 @@ public class Field {
         this.additionalProperties.put(name, value);
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Field {\nname=");
-        builder.append(name);
-        builder.append(", \ntype=");
-        builder.append(type);
-        builder.append(", \ndataType=");
-        builder.append(dataType);
-        builder.append(", \nlabel=");
-        builder.append(label);
-        builder.append(", \nassociatedEntity=");
-        builder.append(associatedEntity);
-        builder.append(", \nmaxLength=");
-        builder.append(maxLength);
-        builder.append(", \noptions=");
-        builder.append(options);
-        builder.append(", \nadditionalProperties=");
-        builder.append(additionalProperties);
-        builder.append("\n}");
-        return builder.toString();
-    }
-
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("Field{");
+		sb.append("name='").append(name).append('\'');
+		sb.append(", type='").append(type).append('\'');
+		sb.append(", dataType='").append(dataType).append('\'');
+		sb.append(", maxLength=").append(maxLength);
+		sb.append(", confidential=").append(confidential);
+		sb.append(", optional=").append(optional);
+		sb.append(", label='").append(label).append('\'');
+		sb.append(", required=").append(required);
+		sb.append(", readOnly=").append(readOnly);
+		sb.append(", multiValue=").append(multiValue);
+		sb.append(", inputType='").append(inputType).append('\'');
+		sb.append(", optionsType='").append(optionsType).append('\'');
+		sb.append(", optionsUrl='").append(optionsUrl).append('\'');
+		sb.append(", hideFromSearch=").append(hideFromSearch);
+		sb.append(", sortOrder=").append(sortOrder);
+		sb.append(", hint='").append(hint).append('\'');
+		sb.append(", description='").append(description).append('\'');
+		sb.append(", associatedEntity=").append(associatedEntity);
+		sb.append(", options=").append(options);
+		sb.append(", additionalProperties=").append(additionalProperties);
+		sb.append('}');
+		return sb.toString();
+	}
 }
