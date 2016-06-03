@@ -72,6 +72,7 @@ import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
+import com.bullhornsdk.data.model.entity.core.standard.PrivateLabel;
 import com.bullhornsdk.data.model.entity.core.standard.Sendout;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
@@ -107,6 +108,7 @@ import com.bullhornsdk.data.model.response.list.OpportunityListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementChangeRequestListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementCommissionListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementListWrapper;
+import com.bullhornsdk.data.model.response.list.PrivateLabelListWrapper;
 import com.bullhornsdk.data.model.response.list.SendoutListWrapper;
 import com.bullhornsdk.data.model.response.list.SkillListWrapper;
 import com.bullhornsdk.data.model.response.list.SpecialtyListWrapper;
@@ -180,6 +182,7 @@ import com.bullhornsdk.data.model.response.single.OpportunityWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementChangeRequestWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementCommissionWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementWrapper;
+import com.bullhornsdk.data.model.response.single.PrivateLabelWrapper;
 import com.bullhornsdk.data.model.response.single.SendoutWrapper;
 import com.bullhornsdk.data.model.response.single.SkillWrapper;
 import com.bullhornsdk.data.model.response.single.SpecialtyWrapper;
@@ -290,6 +293,7 @@ public enum BullhornEntityInfo {
             PlacementChangeRequestListWrapper.class, null, null),
     PLACEMENT_COMMISSION("PlacementCommission", PlacementCommission.class, PlacementCommissionWrapper.class,
             PlacementCommissionListWrapper.class, "PlacementCommissionEditHistory", "PlacementCommissionEditHistoryFieldChange"),
+    PRIVATE_LABEL("PrivateLabel", PrivateLabel.class, PrivateLabelWrapper.class, PrivateLabelListWrapper.class, null, null),
     SENDOUT("Sendout", Sendout.class, SendoutWrapper.class, SendoutListWrapper.class, null, null),
     SKILL("Skill", Skill.class, SkillWrapper.class, SkillListWrapper.class, null, null),
     SPECIALTY("Specialty", Specialty.class, SpecialtyWrapper.class, SpecialtyListWrapper.class, null, null),
