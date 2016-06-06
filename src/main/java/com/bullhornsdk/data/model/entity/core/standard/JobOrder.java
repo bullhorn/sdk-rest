@@ -1487,4 +1487,12 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 				", customObject10s=" + customObject10s +
 				'}';
 	}
+
+	@Override
+	public JobOrder instantiateForInsert() {
+		JobOrder entity = new JobOrder();
+		entity.setEmploymentType("W2");
+		entity.setStartDate(new DateTime());
+		return entity;
+	}
 }
