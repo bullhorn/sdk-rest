@@ -8,4 +8,6 @@ package com.bullhornsdk.data.model.entity.core.type;
  */
 public interface CreateEntity extends BullhornEntity {
 
+    public <T extends CreateEntity> T instantiateForInsert();
+
 }
