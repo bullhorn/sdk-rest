@@ -20,8 +20,6 @@ public class PrivateLabel extends AbstractEntity implements QueryEntity {
 
     private Integer id;
 
-    private Application application;
-
     @JsonIgnore
     private String attributeList;
 
@@ -95,16 +93,6 @@ public class PrivateLabel extends AbstractEntity implements QueryEntity {
     @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @JsonProperty("application")
-    public Application getApplication() {
-        return application;
-    }
-
-    @JsonProperty("application")
-    public void setApplication(Application application) {
-        this.application = application;
     }
 
     @JsonProperty("attributeList")
@@ -360,7 +348,6 @@ public class PrivateLabel extends AbstractEntity implements QueryEntity {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (application != null ? application.hashCode() : 0);
         result = 31 * result + (attributeList != null ? attributeList.hashCode() : 0);
         result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
         result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
@@ -402,11 +389,6 @@ public class PrivateLabel extends AbstractEntity implements QueryEntity {
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
-            return false;
-        if (application == null) {
-            if (other.application != null)
-                return false;
-        } else if (!application.equals(other.application))
             return false;
         if (attributeList == null) {
             if (other.attributeList != null)
@@ -540,7 +522,6 @@ public class PrivateLabel extends AbstractEntity implements QueryEntity {
     public String toString() {
         return "PrivateLabel{" +
                 "id=" + id +
-                ", application=" + application +
                 ", attributeList=" + attributeList +
                 ", businessSectors=" + businessSectors +
                 ", certifications=" + certifications +
