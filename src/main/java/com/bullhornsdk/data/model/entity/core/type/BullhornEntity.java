@@ -6,7 +6,7 @@ package com.bullhornsdk.data.model.entity.core.type;
  * @author magnus.palm
  * 
  */
-public interface BullhornEntity {
+public interface BullhornEntity{
 
     public Integer getId();
 

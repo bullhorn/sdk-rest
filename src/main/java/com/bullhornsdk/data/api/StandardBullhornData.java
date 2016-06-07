@@ -10,7 +10,9 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 import com.bullhornsdk.data.api.helper.*;
+import com.bullhornsdk.data.exception.NotEnoughFieldsSpecifiedException;
 import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.enums.*;
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
 import org.apache.commons.lang3.StringUtils;
@@ -37,10 +39,6 @@ import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData;
-import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
-import com.bullhornsdk.data.model.enums.EntityEventType;
-import com.bullhornsdk.data.model.enums.EventType;
-import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.*;
@@ -646,6 +644,11 @@ public class StandardBullhornData implements BullhornData {
         return restUrl;
     }
 
+    @Override
+    public Settings getSettingsObject(Set<SettingsFields> fieldsSet){
+        return handleGetSettingsObjectData(fieldsSet);
+    }
+
 	/*
      * ***********************************************************************************************************
 	 * Helper methods that handle the api calls.
@@ -1046,10 +1049,30 @@ public class StandardBullhornData implements BullhornData {
      */
     @SuppressWarnings("unchecked")
     private Map<String, Object> handleGetSettingsData(Set<String> settingSet) {
+
+        if(settingSet == null || settingSet.size() == 0){
+            throw new NotEnoughFieldsSpecifiedException("At least one settings field needs to passed in as an argument.");
+        }
+
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSettings(settingSet);
         String url = restUrlFactory.assembleUrlForSettings();
 
         Map<String, Object> response = this.performGetRequest(url, Map.class, uriVariables);
+
+        return response;
+
+    }
+
+    private Settings handleGetSettingsObjectData(Set<SettingsFields> settingSet) {
+
+        if(settingSet == null || settingSet.size() == 0){
+            throw new NotEnoughFieldsSpecifiedException("At least one settings field needs to passed in as an argument.");
+        }
+        Set<String> settingStringSet = settingSet.stream().map(SettingsFields::getValue).collect(Collectors.toSet());
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSettings(settingStringSet);
+        String url = restUrlFactory.assembleUrlForSettings();
+
+        Settings response = this.performGetRequest(url, Settings.class, uriVariables);
 
         return response;
 

@@ -9,6 +9,7 @@ import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.embedded.OneToMany
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.MetaParameter
+import com.bullhornsdk.data.model.enums.SettingsFields
 import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory
 import com.bullhornsdk.data.model.response.crud.CreateResponse
@@ -67,6 +68,7 @@ public class MockDataHandler {
 	private List<EditHistory> editHistoryList;
 	private List<FieldChange> editHistoryFieldChangeList;
 	private Map<String, Object> settingsResults;
+	private Settings settingsObjectResults;
     private StandardGetEventsResponse getEventsResponse;
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
 
@@ -79,6 +81,7 @@ public class MockDataHandler {
 		this.editHistoryList = mockDataLoader.getEditHistoryList();
 		this.editHistoryFieldChangeList = mockDataLoader.getEditHistoryFieldChangeList()
 		this.settingsResults = mockDataLoader.getSettingsResults();
+		this.settingsObjectResults = mockDataLoader.getSettingsObjectResults();
         this.getEventsResponse = mockDataLoader.getEventsResponse();
         this.getLastRequestIdResponse = mockDataLoader.getLastRequestIdResponse();
 		this.queryClosures = addQueryClosures();
@@ -434,6 +437,10 @@ public class MockDataHandler {
 	 * @return
 	 */
 	public Map<String,Object> getSettingsData(Set<String> settingSet){
+		return this.settingsResults;
+	}
+
+	public Settings getSettingsObjectData(Set<SettingsFields> settingSet){
 		return this.settingsResults;
 	}
 

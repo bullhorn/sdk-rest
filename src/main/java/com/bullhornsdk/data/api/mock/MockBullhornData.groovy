@@ -8,6 +8,7 @@ import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
 import com.bullhornsdk.data.model.entity.core.standard.Note
+import com.bullhornsdk.data.model.entity.core.standard.Settings
 import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.EntityEventType
@@ -213,6 +214,11 @@ public class MockBullhornData implements BullhornData {
     @Override
     public Map<String, Object> getSettings(java.util.Set settingSet) {
         return mockDataHandler.getSettingsData(settingSet);
+    }
+
+    @Override
+    public Settings getSettingsObject(java.util.Set settingSet) {
+        return mockDataHandler.getSettingsObjectData(settingSet);
     }
 
     @Override

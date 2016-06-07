@@ -6,9 +6,11 @@ import java.util.Map;
 import java.util.Set;
 
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
+import com.bullhornsdk.data.model.entity.core.standard.Settings;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
+import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import org.springframework.web.multipart.MultipartFile;
@@ -649,5 +651,13 @@ public interface BullhornData {
 	 * @return true when successful unsubscribed
      */
 	public boolean unsubscribeToEvents(String subscriptionId);
+
+	/**
+	 * Get the settings object
+	 *
+	 * @param fieldsSet the set of feilds on the settings object you need back. Size of this set has be to greater than 0
+	 * @return Settings object
+	 */
+	public Settings getSettingsObject(Set<SettingsFields> fieldsSet);
 
 }
