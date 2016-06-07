@@ -36,6 +36,12 @@ public class Tearsheet extends AbstractEntity implements QueryEntity, UpdateEnti
 	}
 
 	@Override
+	public Tearsheet instantiateForInsert(){
+		Tearsheet tearsheet = new Tearsheet();
+		return tearsheet;
+	}
+
+	@Override
 	@JsonProperty("id")
 	public Integer getId() {
 		return id;

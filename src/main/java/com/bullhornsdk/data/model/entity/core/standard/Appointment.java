@@ -114,10 +114,19 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
      * 
      * @return
      */
+    @Override
     public Appointment instantiateForInsert() {
         Appointment entity = new Appointment();
+        entity.setCommunicationMethod("Test");
+        entity.setDateBegin(new DateTime());
+        entity.setDateEnd(new DateTime());
+        entity.setDescription("Test");
+        entity.setIsDeleted(false);
         entity.setIsDeleted(Boolean.FALSE);
         entity.setIsPrivate(Boolean.FALSE);
+        entity.setNotificationMinutes(0);
+        entity.setSubject("Test");
+        entity.setType("Test");
         return entity;
     }
 

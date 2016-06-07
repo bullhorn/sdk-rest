@@ -223,6 +223,25 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	}
 
 	@Override
+	public Placement instantiateForInsert(){
+		Placement placement = new Placement();
+		placement.setDateBegin(new DateTime());
+		placement.setDaysProRated(0);
+		placement.setDurationWeeks(new BigDecimal(1.0));
+		placement.setEmployeeType("Test");
+		placement.setFee(new BigDecimal(1.0));
+		placement.setHoursPerDay(new BigDecimal(1.0));
+		placement.setPayRate(new BigDecimal(1.0));
+		placement.setRecruitingManagerPercentGrossMargin(new BigDecimal(1.0));
+		placement.setReferralFee(new BigDecimal(1.0));
+		placement.setSalary(new BigDecimal(1.0));
+		placement.setSalaryUnit("Test");
+		placement.setSalesManagerPercentGrossMargin(new BigDecimal(1.0));
+		placement.setStatus("Test");
+		return placement;
+	}
+
+	@Override
 	@JsonProperty("id")
 	public Integer getId() {
 		return id;
