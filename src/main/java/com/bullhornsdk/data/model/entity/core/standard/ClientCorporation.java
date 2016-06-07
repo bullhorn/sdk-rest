@@ -854,4 +854,16 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 				", customObject10s=" + customObject10s +
 				'}';
 	}
+
+	public ClientCorporation instantiateForInsert() {
+		ClientCorporation entity = new ClientCorporation();
+		entity.setAddress(new Address().instantiateForInsert());
+		entity.setAnnualRevenue(new BigDecimal(10000.00));
+		entity.setFeeArrangement(new BigDecimal(100.00));
+		entity.setName("Test Corp");
+		entity.setNumEmployees(500);
+		entity.setNumOffices(1);
+		entity.setStatus("Active");
+		return entity;
+	}
 }

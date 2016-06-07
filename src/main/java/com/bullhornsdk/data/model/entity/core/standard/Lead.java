@@ -1522,4 +1522,15 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return builder.toString();
 	}
 
+	public Lead instantiateForInsert() {
+		Lead entity = new Lead();
+		entity.setEmail("leadTest@email.com");
+		entity.setIsDeleted(Boolean.FALSE);
+		entity.setStatus("New Lead");
+		entity.setType("Unknown");
+		entity.setClientCorporation(new ClientCorporation(1));
+		entity.setOwner(new CorporateUser(1));
+		return entity;
+	}
+
 }

@@ -281,6 +281,17 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		this.id = id;
 	}
 
+	/**
+	 * Returns the entity with the required fields for an insert set.
+	 *
+	 * @return
+	 */
+	public Opportunity instantiateForInsert() {
+		Opportunity entity = new Opportunity();
+		entity.setType("Test");
+		return entity;
+	}
+
 	@JsonIgnore
 	public BigDecimal getLuceneScore() {
 		return luceneScore;

@@ -48,6 +48,16 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
 
     private LinkedId user;
 
+    public PlacementCommission instantiateForInsert(){
+        PlacementCommission placementCommission = new PlacementCommission();
+        placementCommission.setCommissionPercentage(new BigDecimal(1.0));
+        placementCommission.setFlatPayout(new BigDecimal(1.0));
+        placementCommission.setGrossMarginPercentage(new BigDecimal(1.0));
+        placementCommission.setHourlyPayout(new BigDecimal(1.0));
+        placementCommission.setPlacement(new LinkedId(1));
+        return  placementCommission;
+    }
+
     @JsonProperty("id")
     public Integer getId() {
         return id;

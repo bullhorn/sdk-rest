@@ -78,7 +78,7 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 	@Test
 	public void testCreateCandidate() {
 
-		Candidate entity = Candidate.instantiateForInsert();
+		Candidate entity = new Candidate().instantiateForInsert();
 		entity.setName("New Candidate");
 		entity.setFirstName("New");
 		entity.setLastName("Candidate");

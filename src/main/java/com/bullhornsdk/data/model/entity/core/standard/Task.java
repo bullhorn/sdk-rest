@@ -109,6 +109,12 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		entity.setIsCompleted(Boolean.FALSE);
 		entity.setIsDeleted(Boolean.FALSE);
 		entity.setIsPrivate(Boolean.FALSE);
+		entity.setDateBegin(new DateTime());
+		entity.setDateEnd(new DateTime());
+		entity.setNotificationMinutes(0);
+		entity.setDescription("Test Task created by REST");
+		entity.setSubject("Task Created by REST");
+		entity.setType("Unknown");
 		return entity;
 	}
 

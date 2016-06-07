@@ -56,6 +56,8 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     public Sendout instantiateForInsert() {
         Sendout entity = new Sendout();
         entity.setIsRead(Boolean.FALSE);
+        entity.setCandidate(new Candidate(1));
+        entity.setUser(new LinkedId(1));
         return entity;
     }
 

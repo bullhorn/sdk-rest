@@ -419,13 +419,13 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	 * 
 	 * @return
 	 */
-	public static Candidate instantiateForInsert() {
+	public Candidate instantiateForInsert() {
 		Candidate entity = new Candidate();
 		entity.setCategory(new Category(512973));
 		entity.setComments("New lead candidate");
 		entity.setEmployeeType("W2");
 		entity.setIsDeleted(Boolean.FALSE);
-		entity.setIsEditable(Boolean.FALSE);
+		entity.setIsEditable(Boolean.TRUE);
 		entity.setPreferredContact("Email");
 		entity.setStatus("New Lead");
 		entity.setOwner(new CorporateUser(1));

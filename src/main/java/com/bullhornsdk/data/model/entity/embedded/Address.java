@@ -162,4 +162,13 @@ public class Address extends AbstractEntity {
         return builder.toString();
     }
 
+    public Address instantiateForInsert() {
+        Address address = new Address();
+        address.setAddress1("123 Main St");
+        address.setCity("St Louis");
+        address.setState("MO");
+        address.setZip("1234563");
+        return address;
+    }
+
 }
