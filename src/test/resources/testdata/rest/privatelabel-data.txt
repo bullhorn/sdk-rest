@@ -4,7 +4,7 @@
     "count": 20,
     "data": [
     {
-      "id": 7371,
+      "id": 1,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -54,7 +54,7 @@
       }
     },
     {
-      "id": 7234,
+      "id": 2,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": 7056,
+      "id": 3,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -162,7 +162,7 @@
       }
     },
     {
-      "id": 6905,
+      "id": 4,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -216,7 +216,7 @@
       }
     },
     {
-      "id": 6721,
+      "id": 5,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -270,7 +270,7 @@
       }
     },
     {
-      "id": 6715,
+      "id": 6,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -324,7 +324,7 @@
       }
     },
     {
-      "id": 6707,
+      "id": 7,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -374,7 +374,7 @@
       }
     },
     {
-      "id": 6706,
+      "id": 8,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -424,7 +424,7 @@
       }
     },
     {
-      "id": 6694,
+      "id": 9,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -478,7 +478,7 @@
       }
     },
     {
-      "id": 6691,
+      "id": 10,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -532,7 +532,7 @@
       }
     },
     {
-      "id": 6683,
+      "id": 11,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -582,7 +582,7 @@
       }
     },
     {
-      "id": 6644,
+      "id": 12,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -636,7 +636,7 @@
       }
     },
     {
-      "id": 6599,
+      "id": 13,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -690,7 +690,7 @@
       }
     },
     {
-      "id": 6515,
+      "id": 14,
       "application": null,
       "attributeList": null,
       "businessSectors": {
@@ -738,6 +738,38 @@
       "userType": {
         "id": 5
       }
+    },
+    {
+        "id": 15,
+        "application": {
+        "id": 26
+        },
+        "attributeList": "<wddxPacket version='1.0'><header></header><data><struct><var name='CANDIDATEREQUIREDFIELDS'><string>recruiterUserID,source,categoryID,employeeType,realNameFirst,realNameLast,address1,city,state,zip,countryID,preferredContact,status</string></var><var name='CLIENTREQUIREDFIELDS'><string>clientCorporationID,name,division,office,status,address1,city,state,zip,countryID,phone</string></var></struct></data></wddxPacket>",
+        "coBrandedTitle": null,
+        "coBrandedURL": null,
+        "dateAdded": 985366326933,
+        "defaultWebLeadRecruiter": {
+        "id": 5183873,
+        "firstName": null,
+        "lastName": null
+        },
+        "description": null,
+        "enabled": 1,
+        "footerHTML": "",
+        "headerHTML": "<TABLE>\r\n  <TR>\r\n    \r\n\t<TD>\r\n\t\t<a href=\"http://www.baysidesolutions.com\"><IMG align=left alt=\"\" border=0 src=\"http://www.bullhorn.com/BullhornPageContent/2465/bayside2.jpg\"></a>\r\n\t</TD>\r\n    \r\n\t<TD>\r\n\t\r\n\t  <FONT face=\"Arial Rounded MT Bold\">\r\n\t\t<a href=\"http://www.baysidesolutions.com/about.html\">About Bayside Solutions</A>/ \r\n\t\t<a href=\"http://www.baysidesolutions.com/services.html\">Services</A> / \r\n\t  \t<a href=\"http://www.baysidesolutions.com/jobs.asp\">Job Listings</a> / \r\n\t\t<a href=\"http://www.baysidesolutions.com/submit.asp\">Resume Upload</a> / \r\n\t\t<a href=\"http://www.baysidesolutions.com\">Home</A>\r\n\t  </FONT>\r\n\r\n\t</TD>\r\n\t\r\n  </TR>\r\n</TABLE>\r\n",
+        "keyWords": null,
+        "name": "Smoke Test Env",
+        "noLookAndFeel": 0,
+        "onLoadScript": "",
+        "parentPrivateLabel": null,
+        "splashPage": " Bayside Staffing Resume Upload Page",
+        "styleHTML": "",
+        "title": "Smoke Test Env",
+        "type": "Base",
+        "url": null,
+        "userType": {
+        "id": 47
+        }
     },
     {
         "id": 16,
