@@ -54,4 +54,16 @@ public interface QueryParams extends RequestParameters {
 	 */
 	public void setShowTotalMatched(boolean showTotalMatched);
 
+	/**
+	 * Whether to use the default part of the query.
+	 */
+	public Boolean getUseDefaultQueryFilter();
+
+	/**
+	 * Default value is true. Whether to use the default part of the query.
+	 *
+	 * @param useDefaultQueryFilter
+	 */
+	public void setUseDefaultQueryFilter(boolean useDefaultQueryFilter);
+
 }

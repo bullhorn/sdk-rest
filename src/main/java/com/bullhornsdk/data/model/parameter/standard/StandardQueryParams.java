@@ -17,6 +17,8 @@ public class StandardQueryParams implements QueryParams {
 
 	private boolean showTotalMatched;
 
+	private boolean useDefaultQueryFilter;
+
 	private StandardQueryParams() {
 		super();
 
@@ -25,6 +27,7 @@ public class StandardQueryParams implements QueryParams {
 		this.start = null;
 		this.orderBy = null;
 		this.showTotalMatched = true;
+		this.useDefaultQueryFilter = true;
 	}
 
 	public static StandardQueryParams getInstance() {
@@ -80,6 +83,16 @@ public class StandardQueryParams implements QueryParams {
 	}
 
 	@Override
+	public Boolean getUseDefaultQueryFilter() {
+		return useDefaultQueryFilter;
+	}
+
+	@Override
+	public void setUseDefaultQueryFilter(boolean useDefaultQueryFilter) {
+		this.useDefaultQueryFilter = useDefaultQueryFilter;
+	}
+
+	@Override
 	public String getUrlString() {
 		StringBuilder url = new StringBuilder();
 
@@ -97,6 +110,9 @@ public class StandardQueryParams implements QueryParams {
 		}
 		if (showTotalMatched != false) {
 			url.append("&showTotalMatched={showTotalMatched}");
+		}
+		if (useDefaultQueryFilter != true) {
+			url.append("&useDefaultQueryFilter={useDefaultQueryFilter}");
 		}
 
 		return url.toString();
@@ -122,6 +138,10 @@ public class StandardQueryParams implements QueryParams {
 
 		if (showTotalMatched != false) {
 			uriVariables.put("showTotalMatched", "" + showTotalMatched);
+		}
+
+		if (useDefaultQueryFilter != true) {
+			uriVariables.put("useDefaultQueryFilter", "" + useDefaultQueryFilter);
 		}
 
 		return uriVariables;
