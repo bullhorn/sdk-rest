@@ -10,7 +10,6 @@ import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.sun.deploy.util.SessionState;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
@@ -856,7 +855,6 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 				'}';
 	}
 
-	@Override
 	public ClientCorporation instantiateForInsert() {
 		ClientCorporation entity = new ClientCorporation();
 		entity.setAddress(address.instantiateForInsert());

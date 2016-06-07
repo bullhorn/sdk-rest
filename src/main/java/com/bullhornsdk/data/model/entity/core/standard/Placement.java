@@ -222,7 +222,6 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.id = id;
 	}
 
-	@Override
 	public Placement instantiateForInsert(){
 		Placement placement = new Placement();
 		placement.setDateBegin(new DateTime());

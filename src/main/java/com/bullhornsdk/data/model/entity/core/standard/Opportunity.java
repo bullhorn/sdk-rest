@@ -286,7 +286,6 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	 *
 	 * @return
 	 */
-	@Override
 	public Opportunity instantiateForInsert() {
 		Opportunity entity = new Opportunity();
 		entity.setType("Test");

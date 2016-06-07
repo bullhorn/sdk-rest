@@ -53,7 +53,6 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
      * 
      * @return
      */
-    @Override
     public Sendout instantiateForInsert() {
         Sendout entity = new Sendout();
         entity.setIsRead(Boolean.FALSE);

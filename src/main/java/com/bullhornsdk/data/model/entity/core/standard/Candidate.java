@@ -419,8 +419,6 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	 * 
 	 * @return
 	 */
-
-	@Override
 	public Candidate instantiateForInsert() {
 		Candidate entity = new Candidate();
 		entity.setCategory(new Category(512973));

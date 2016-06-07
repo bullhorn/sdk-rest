@@ -48,7 +48,6 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
 
     private LinkedId user;
 
-    @Override
     public PlacementCommission instantiateForInsert(){
         PlacementCommission placementCommission = new PlacementCommission();
         placementCommission.setCommissionPercentage(new BigDecimal(1.0));

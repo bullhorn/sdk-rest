@@ -35,7 +35,6 @@ public class Tearsheet extends AbstractEntity implements QueryEntity, UpdateEnti
 		super();
 	}
 
-	@Override
 	public Tearsheet instantiateForInsert(){
 		Tearsheet tearsheet = new Tearsheet();
 		return tearsheet;

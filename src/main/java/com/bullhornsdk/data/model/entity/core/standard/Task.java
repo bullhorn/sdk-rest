@@ -104,8 +104,6 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 	 *
 	 * @return
 	 */
-
-	@Override
 	public Task instantiateForInsert() {
 		Task entity = new Task();
 		entity.setIsCompleted(Boolean.FALSE);

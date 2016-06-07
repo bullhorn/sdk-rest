@@ -54,7 +54,6 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 	 * 
 	 * @return
 	 */
-	@Override
 	public JobSubmission instantiateForInsert() {
 		JobSubmission entity = new JobSubmission();
 		entity.setIsDeleted(Boolean.FALSE);

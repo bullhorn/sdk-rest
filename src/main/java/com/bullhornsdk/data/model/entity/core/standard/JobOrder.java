@@ -1488,7 +1488,6 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 				'}';
 	}
 
-	@Override
 	public JobOrder instantiateForInsert() {
 		JobOrder entity = new JobOrder();
 		entity.setEmploymentType("Contract");

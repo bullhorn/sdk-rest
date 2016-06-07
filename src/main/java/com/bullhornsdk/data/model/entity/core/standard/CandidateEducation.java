@@ -877,7 +877,6 @@ public class CandidateEducation extends AbstractEntity implements QueryEntity, U
 		return builder.toString();
 	}
 
-	@Override
 	public CandidateEducation instantiateForInsert() {
 		CandidateEducation entity = new CandidateEducation();
 		return entity;

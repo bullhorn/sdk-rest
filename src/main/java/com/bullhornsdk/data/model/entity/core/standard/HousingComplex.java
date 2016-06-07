@@ -72,9 +72,7 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
      * 
      * @return
      */
-
-	@Override
-    public HousingComplex instantiateForInsert() {
+	public HousingComplex instantiateForInsert() {
 	HousingComplex entity = new HousingComplex();
 	entity.setIsDeleted(Boolean.FALSE);
 	return entity;
