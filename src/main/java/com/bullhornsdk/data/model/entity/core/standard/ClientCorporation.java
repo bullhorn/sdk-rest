@@ -857,7 +857,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 
 	public ClientCorporation instantiateForInsert() {
 		ClientCorporation entity = new ClientCorporation();
-		entity.setAddress(address.instantiateForInsert());
+		entity.setAddress(new Address().instantiateForInsert());
 		entity.setAnnualRevenue(new BigDecimal(10000.00));
 		entity.setFeeArrangement(new BigDecimal(100.00));
 		entity.setName("Test Corp");
