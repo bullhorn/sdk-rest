@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
         "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
         "customText39", "customText4", "customText40", "customText5", "customText6", "customText7", "customText8", "customText9",
         "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded",
-        "dateApproved", "dateBegin", "dateClientEffective", "dateEffective", "dateEnd", "daysGuaranteed", "daysProRated",
+        "dateApproved", "dateBegin", "dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated",
         "durationWeeks", "employeeType", "employmentType", "fee", "hoursOfOperation", "hoursPerDay", "housingManagerID",
         "housingStatus", "migrateGUID", "optionsPackage", "otExemption", "otherHourlyFee", "otherHourlyFeeComments",
         "overtimeRate", "payRate", "placement", "recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType",
@@ -85,6 +85,8 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     private DateTime dateEffective;
 
     private DateTime dateEnd;
+
+    private DateTime dateLastModified;
 
     private Integer daysGuaranteed;
 
@@ -433,6 +435,16 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     @JsonProperty("dateEnd")
     public void setDateEnd(DateTime dateEnd) {
         this.dateEnd = dateEnd;
+    }
+
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
     }
 
     @JsonProperty("daysGuaranteed")
@@ -1123,6 +1135,7 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         result = prime * result + ((dateClientEffective == null) ? 0 : dateClientEffective.hashCode());
         result = prime * result + ((dateEffective == null) ? 0 : dateEffective.hashCode());
         result = prime * result + ((dateEnd == null) ? 0 : dateEnd.hashCode());
+        result = prime * result + ((dateLastModified == null) ? 0 : dateLastModified.hashCode());
         result = prime * result + ((daysGuaranteed == null) ? 0 : daysGuaranteed.hashCode());
         result = prime * result + ((daysProRated == null) ? 0 : daysProRated.hashCode());
         result = prime * result + ((durationWeeks == null) ? 0 : durationWeeks.hashCode());
@@ -1273,6 +1286,11 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
             if (other.dateEnd != null)
                 return false;
         } else if (!dateEnd.isEqual(other.dateEnd))
+            return false;
+        if (dateLastModified == null) {
+            if (other.dateLastModified != null)
+                return false;
+        } else if (!dateLastModified.isEqual(other.dateLastModified))
             return false;
         if (daysGuaranteed == null) {
             if (other.daysGuaranteed != null)
@@ -1650,6 +1668,8 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         builder.append(dateEffective);
         builder.append(", \ndateEnd=");
         builder.append(dateEnd);
+        builder.append(", \ndateLastModified=");
+        builder.append(dateLastModified);
         builder.append(", \ndaysGuaranteed=");
         builder.append(daysGuaranteed);
         builder.append(", \ndaysProRated=");
