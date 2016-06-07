@@ -1492,6 +1492,9 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		JobOrder entity = new JobOrder();
 		entity.setEmploymentType("Contract");
 		entity.setStartDate(new DateTime());
+		entity.setClientCorporation(new ClientCorporation(1));
+		entity.setClientContact(new ClientContact(1));
+		entity.setOwner(new CorporateUser(1));
 		return entity;
 	}
 }
