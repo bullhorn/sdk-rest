@@ -3,6 +3,7 @@ package com.bullhornsdk.data.validation;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -102,6 +103,7 @@ public class StandardRestEntityValidator implements RestEntityValidator {
 		validatorMap.put(JobOrder.class, new RestJobOrderValidator());
 		validatorMap.put(JobSubmission.class, new RestJobSubmissionValidator());
         validatorMap.put(Lead.class, new RestLeadValidator());
+		validatorMap.put(HousingComplex.class, new RestHousingComplexValidator());
 		validatorMap.put(Note.class, new RestNoteValidator());
 		validatorMap.put(NoteEntity.class, new RestNoteEntityValidator());
         validatorMap.put(Opportunity.class, new RestOpportunityValidator());
