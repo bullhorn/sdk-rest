@@ -239,6 +239,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		placement.setStatus("Test");
 		placement.setCandidate(new Candidate(1));
 		placement.setJobOrder(new JobOrder(1));
+		placement.setDaysGuaranteed(1);
+		placement.setEmploymentType("Contract");
 		return placement;
 	}
 
