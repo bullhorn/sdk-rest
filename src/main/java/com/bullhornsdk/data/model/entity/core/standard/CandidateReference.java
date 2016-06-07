@@ -149,9 +149,11 @@ public class CandidateReference extends AbstractEntity implements QueryEntity, U
 	 * 
 	 * @return
 	 */
+	@Override
 	public CandidateReference instantiateForInsert() {
 		CandidateReference entity = new CandidateReference();
 		entity.setIsDeleted(Boolean.FALSE);
+		entity.setCandidate(new Candidate(1));
 		return entity;
 	}
 

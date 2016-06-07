@@ -127,6 +127,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         entity.setNotificationMinutes(0);
         entity.setSubject("Test");
         entity.setType("Test");
+        entity.setOwner(new LinkedPerson(1));
         return entity;
     }
 

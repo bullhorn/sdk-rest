@@ -1528,7 +1528,9 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		entity.setEmail("leadTest@email.com");
 		entity.setIsDeleted(Boolean.FALSE);
 		entity.setStatus("New Lead");
-		entity.setType("Test");
+		entity.setType("Unknown");
+		entity.setClientCorporation(new ClientCorporation(1));
+		entity.setOwner(new CorporateUser(1));
 		return entity;
 	}
 

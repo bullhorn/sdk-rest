@@ -228,16 +228,18 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		placement.setDateBegin(new DateTime());
 		placement.setDaysProRated(0);
 		placement.setDurationWeeks(new BigDecimal(1.0));
-		placement.setEmployeeType("Test");
+		placement.setEmployeeType("W2");
 		placement.setFee(new BigDecimal(1.0));
 		placement.setHoursPerDay(new BigDecimal(1.0));
 		placement.setPayRate(new BigDecimal(1.0));
 		placement.setRecruitingManagerPercentGrossMargin(new BigDecimal(1.0));
 		placement.setReferralFee(new BigDecimal(1.0));
 		placement.setSalary(new BigDecimal(1.0));
-		placement.setSalaryUnit("Test");
+		placement.setSalaryUnit("Dollars");
 		placement.setSalesManagerPercentGrossMargin(new BigDecimal(1.0));
 		placement.setStatus("Test");
+		placement.setCandidate(new Candidate(1));
+		placement.setJobOrder(new JobOrder(1));
 		return placement;
 	}
 

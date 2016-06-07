@@ -938,4 +938,14 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 		return builder.toString();
 	}
 
+	@Override
+	public CandidateWorkHistory instantiateForInsert() {
+		CandidateWorkHistory entity = new CandidateWorkHistory();
+		entity.setIsDeleted(Boolean.FALSE);
+		entity.setIsLastJob(Boolean.TRUE);
+		entity.setCompanyName("Work History Test Company");
+		entity.setCandidate(new Candidate(1));
+		return entity;
+	}
+
 }

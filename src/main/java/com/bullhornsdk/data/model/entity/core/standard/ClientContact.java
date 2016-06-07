@@ -270,6 +270,8 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	 * 
 	 * @return
 	 */
+
+	@Override
 	public ClientContact instantiateForInsert() {
 		ClientContact entity = new ClientContact();
 		entity.setIsDeleted(Boolean.FALSE);

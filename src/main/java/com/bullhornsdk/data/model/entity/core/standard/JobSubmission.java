@@ -59,6 +59,9 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 		JobSubmission entity = new JobSubmission();
 		entity.setIsDeleted(Boolean.FALSE);
 		entity.setStatus("Submitted");
+		entity.setCandidate(new Candidate(1));
+		entity.setSendingUser(new CorporateUser(1));
+		entity.setJobOrder(new JobOrder(1));
 		return entity;
 	}
 
