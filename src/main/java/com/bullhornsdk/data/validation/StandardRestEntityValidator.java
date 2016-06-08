@@ -54,10 +54,11 @@ public class StandardRestEntityValidator implements RestEntityValidator {
 			RestCandidateWorkHistoryValidator restCandidateWorkHistoryValidator, RestCertificationValidator restCertificationValidator,
 			RestClientContactValidator restClientContactValidator, RestClientCorporationValidator restClientCorporationValidator,
             RestJobOrderValidator restJobOrderValidator, RestJobSubmissionValidator restJobSubmissionValidator,
-			RestLeadValidator restLeadValidator, RestNoteValidator restNoteValidator, RestNoteEntityValidator restNoteEntityValidator,
+			RestLeadValidator restLeadValidator, RestHousingComplexValidator restHousingComplexValidator,
+		    RestNoteValidator restNoteValidator, RestNoteEntityValidator restNoteEntityValidator,
 			RestOpportunityValidator restOpportunityValidator, RestPlacementValidator restPlacementValidator,
             RestPlacementCommissionValidator restPlacementCommissionValidator, RestSendoutValidator restSendoutValidator,
-            RestTaskValidator restTaskValidator) {
+            RestTaskValidator restTaskValidator, RestTearsheetValidator restTearsheetValidator) {
 		super();
 		this.validator = validator;
 		this.validatorMap = new HashMap<Class<? extends CreateEntity>, Validator>();
@@ -72,6 +73,7 @@ public class StandardRestEntityValidator implements RestEntityValidator {
 		this.validatorMap.put(ClientCorporation.class, restClientCorporationValidator);
 		this.validatorMap.put(JobOrder.class, restJobOrderValidator);
 		this.validatorMap.put(JobSubmission.class, restJobSubmissionValidator);
+		this.validatorMap.put(HousingComplex.class, restHousingComplexValidator);
         this.validatorMap.put(Lead.class, restLeadValidator);
 		this.validatorMap.put(Note.class, restNoteValidator);
 		this.validatorMap.put(NoteEntity.class, restNoteEntityValidator);
@@ -80,6 +82,7 @@ public class StandardRestEntityValidator implements RestEntityValidator {
 		this.validatorMap.put(PlacementCommission.class, restPlacementCommissionValidator);
 		this.validatorMap.put(Sendout.class, restSendoutValidator);
 		this.validatorMap.put(Task.class, restTaskValidator);
+		this.validatorMap.put(Tearsheet.class, restTearsheetValidator);
 
 	}
 
