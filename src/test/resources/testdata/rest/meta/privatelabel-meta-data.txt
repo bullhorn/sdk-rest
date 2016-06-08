@@ -1,0 +1,426 @@
+{
+  "entity": "PrivateLabel",
+  "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/PrivateLabel?fields=*",
+  "label": "Private Label",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer"
+    },
+    {
+      "name": "application",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Application",
+      "optionsType": "Application",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/Application",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Application",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/Application?fields=*",
+        "label": "Application",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "attributeList",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Attribute List",
+      "hideFromSearch": false
+    },
+    {
+      "name": "businessSectors",
+      "type": "TO_MANY",
+      "confidential": false,
+      "label": "Business Sectors",
+      "optionsType": "BusinessSector",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/BusinessSector",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "BusinessSector",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/BusinessSector?fields=*",
+        "label": "Business Sector",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "certifications",
+      "type": "TO_MANY",
+      "confidential": false,
+      "label": "Certifications",
+      "optionsType": "Certification",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/Certification",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Certification",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/Certification?fields=*",
+        "label": "Certification",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "childPrivateLabels",
+      "type": "TO_MANY",
+      "confidential": false,
+      "label": "Child Private Labels",
+      "optionsType": "PrivateLabel",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/PrivateLabel",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "PrivateLabel",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/PrivateLabel?fields=*",
+        "label": "Private Label",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "coBrandedTitle",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Co Branded Title",
+      "hideFromSearch": false
+    },
+    {
+      "name": "coBrandedURL",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 255,
+      "confidential": false,
+      "label": "Co Branded URL",
+      "hideFromSearch": false
+    },
+    {
+      "name": "corporateUsers",
+      "type": "TO_MANY",
+      "confidential": false,
+      "label": "Corporate Users",
+      "optionsType": "CorporateUser",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/CorporateUser",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "CorporateUser",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/CorporateUser?fields=*",
+        "label": "Corporate User",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "First Name",
+            "hideFromSearch": false
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Last Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "corporations",
+      "type": "TO_MANY",
+      "confidential": false,
+      "label": "Corporations",
+      "optionsType": "Corporation",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/Corporation",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Corporation",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/Corporation?fields=*",
+        "label": "Corporation",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date Added",
+      "hideFromSearch": false
+    },
+    {
+      "name": "defaultWebLeadRecruiter",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Default Web Lead Recruiter",
+      "optionsType": "CorporateUser",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/CorporateUser",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "CorporateUser",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/CorporateUser?fields=*",
+        "label": "Corporate User",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "First Name",
+            "hideFromSearch": false
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Last Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "description",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1000,
+      "confidential": false,
+      "label": "Description",
+      "hideFromSearch": false
+    },
+    {
+      "name": "enabled",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "Enabled",
+      "hideFromSearch": false
+    },
+    {
+      "name": "footerHTML",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Footer HTML",
+      "hideFromSearch": false
+    },
+    {
+      "name": "headerHTML",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Header HTML",
+      "hideFromSearch": false
+    },
+    {
+      "name": "keyWords",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1000,
+      "confidential": false,
+      "label": "Key Words",
+      "hideFromSearch": false
+    },
+    {
+      "name": "name",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "noLookAndFeel",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "No Look And Feel",
+      "hideFromSearch": false
+    },
+    {
+      "name": "onLoadScript",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1000,
+      "confidential": false,
+      "label": "On Load Script",
+      "hideFromSearch": false
+    },
+    {
+      "name": "parentPrivateLabel",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Parent Private Label",
+      "optionsType": "PrivateLabel",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/PrivateLabel",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "PrivateLabel",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/PrivateLabel?fields=*",
+        "label": "Private Label",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "privateLabelAttributes",
+      "type": "TO_MANY",
+      "confidential": false,
+      "label": "Private Label Attributes",
+      "optionsType": "PrivateLabelAttribute",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/PrivateLabelAttribute",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "PrivateLabelAttribute",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/PrivateLabelAttribute?fields=*",
+        "label": "Private Label Attribute",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "splashPage",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Splash Page",
+      "hideFromSearch": false
+    },
+    {
+      "name": "styleHTML",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Style HTML",
+      "hideFromSearch": false
+    },
+    {
+      "name": "title",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 255,
+      "confidential": false,
+      "label": "Title",
+      "hideFromSearch": false
+    },
+    {
+      "name": "type",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Type",
+      "hideFromSearch": false
+    },
+    {
+      "name": "url",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 255,
+      "confidential": false,
+      "label": "Url",
+      "hideFromSearch": false
+    },
+    {
+      "name": "userType",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "User Type",
+      "optionsType": "UserType",
+      "optionsUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/UserType",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "UserType",
+        "entityMetaUrl": "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/UserType?fields=*",
+        "label": "User Type",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          }
+        ]
+      }
+    }
+  ]
+}

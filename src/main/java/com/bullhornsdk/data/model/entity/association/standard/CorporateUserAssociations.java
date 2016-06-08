@@ -7,6 +7,7 @@ import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
+import com.bullhornsdk.data.model.entity.core.standard.PrivateLabel;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
 /**
@@ -18,6 +19,7 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 public final class CorporateUserAssociations implements EntityAssociations<CorporateUser> {
 
     private final AssociationField<CorporateUser, CorporationDepartment> corporationDepartments = instantiateAssociationField("departments",CorporationDepartment.class);
+    private final AssociationField<CorporateUser, PrivateLabel> privateLabels = instantiateAssociationField("privateLabels",PrivateLabel.class);
 
 
     private List<AssociationField<CorporateUser, ? extends BullhornEntity>> allAssociations;
@@ -35,6 +37,10 @@ public final class CorporateUserAssociations implements EntityAssociations<Corpo
         return corporationDepartments;
     }
 
+    public AssociationField<CorporateUser, PrivateLabel> privateLabels() {
+        return privateLabels;
+    }
+
     private <E extends BullhornEntity> AssociationField<CorporateUser, E> instantiateAssociationField(String associationName,
                                                                                                           Class<E> associationType) {
         return new StandardAssociationField<CorporateUser, E>(associationName, associationType);
@@ -45,7 +51,7 @@ public final class CorporateUserAssociations implements EntityAssociations<Corpo
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<CorporateUser, ? extends BullhornEntity>>();
             allAssociations.add(corporationDepartments());
-
+            allAssociations.add(privateLabels());
         }
         return allAssociations;
 

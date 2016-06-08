@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"departments", "email", "email2", "email3", "emailNotify", "emailSignature", "enabled", "externalEmail", "fax", "fax2", "fax3",
 		"firstName", "inboundEmailEnabled", "isDayLightSavings", "isDeleted", "isLockedOut", "isOutboundFaxEnabled", "jobAssignments",
 		"lastName", "loginRestrictions", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName",
-		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "privateLabel", "smsOptIn", "taskAssignments", "timeZoneOffsetEST",
+		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "privateLabel", "privateLabels", "smsOptIn", "taskAssignments", "timeZoneOffsetEST",
 		"username" })
 public class CorporateUser extends CustomFieldsA implements QueryEntity, AssociationEntity {
 
@@ -39,6 +39,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	private DateTime dateLastComment;
 
 	private OneToMany<CorporationDepartment> departments;
+
+	private OneToMany<PrivateLabel> privateLabels;
 
 	@JsonIgnore
 	@Email
@@ -203,6 +205,16 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	@JsonProperty("departments")
 	public void setDepartments(OneToMany<CorporationDepartment> departments) {
 		this.departments = departments;
+	}
+
+	@JsonProperty("privateLabels")
+	public OneToMany<PrivateLabel> getPrivateLabels() {
+		return privateLabels;
+	}
+
+	@JsonProperty("privateLabels")
+	public void setPrivateLabels(OneToMany<PrivateLabel> privateLabels) {
+		this.privateLabels = privateLabels;
 	}
 
 	@JsonProperty("email")
