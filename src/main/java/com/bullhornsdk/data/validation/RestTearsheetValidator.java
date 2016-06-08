@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.validation;
 
-import com.bullhornsdk.data.model.entity.core.standard.Task;
+import com.bullhornsdk.data.model.entity.core.standard.Tearsheet;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -11,7 +11,7 @@ public class RestTearsheetValidator implements Validator {
 
     @Override
     public boolean supports(Class<?> clazz) {
-        return Task.class.equals(clazz);
+        return Tearsheet.class.equals(clazz);
     }
 
     @Override
