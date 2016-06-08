@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
+import com.bullhornsdk.data.model.entity.core.standard.Tearsheet;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -111,6 +112,7 @@ public class StandardRestEntityValidator implements RestEntityValidator {
 		validatorMap.put(PlacementCommission.class, new RestPlacementCommissionValidator());
 		validatorMap.put(Sendout.class, new RestSendoutValidator());
 		validatorMap.put(Task.class, new RestTaskValidator());
+		validatorMap.put(Tearsheet.class, new RestTearsheetValidator());
 		return new StandardRestEntityValidator(validator, validatorMap);
 	}
 
