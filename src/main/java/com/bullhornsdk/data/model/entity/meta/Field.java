@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "name", "type", "dataType", "dataSpecialization", "maxLength", "confidential", "optional", "label", "required",
 		"readOnly", "multiValue", "inputType", "optionsType", "optionsUrl", "hideFromSearch", "sortOrder", "hint",
-		"description", "associatedEntity", "options" })
+		"description", "associatedEntity", "options", "fields" })
 public class Field {
 
     private String name;
@@ -56,6 +56,8 @@ public class Field {
     private StandardMetaData<?> associatedEntity;
 
     private List<Option> options = new ArrayList<Option>();
+
+	private List<Field> fields = new ArrayList<Field>();
 
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -259,7 +261,17 @@ public class Field {
         this.options = options;
     }
 
-    @JsonAnyGetter
+	@JsonProperty("fields")
+	public List<Field> getFields() {
+		return fields;
+	}
+
+	@JsonProperty("fields")
+	public void setFields(List<Field> fields) {
+		this.fields = fields;
+	}
+
+	@JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
@@ -269,62 +281,32 @@ public class Field {
         this.additionalProperties.put(name, value);
     }
 
-    @Override
-    public String toString() {
-        return new StringBuilder("Field {")
-                .append("\n\t\"name\": ")
-                .append("'")
-                .append(name).append('\'')
-                .append(",\n\t\"type\": ")
-                .append("'")
-                .append(type).append('\'')
-                .append(",\n\t\"dataType\": ")
-                .append("'")
-                .append(dataType).append('\'')
-                .append(",\n\t\"dataSpecialization\": ")
-                .append("'")
-                .append(dataSpecialization).append('\'')
-                .append(",\n\t\"maxLength\": ")
-                .append(maxLength)
-                .append(",\n\t\"confidential\": ")
-                .append(confidential)
-                .append(",\n\t\"optional\": ")
-                .append(optional)
-                .append(",\n\t\"label\": ")
-                .append("'")
-                .append(label).append('\'')
-                .append(",\n\t\"required\": ")
-                .append(required)
-                .append(",\n\t\"readOnly\": ")
-                .append(readOnly)
-                .append(",\n\t\"multiValue\": ")
-                .append(multiValue)
-                .append(",\n\t\"inputType\": ")
-                .append("'")
-                .append(inputType).append('\'')
-                .append(",\n\t\"optionsType\": ")
-                .append("'")
-                .append(optionsType).append('\'')
-                .append(",\n\t\"optionsUrl\": ")
-                .append("'")
-                .append(optionsUrl).append('\'')
-                .append(",\n\t\"hideFromSearch\": ")
-                .append(hideFromSearch)
-                .append(",\n\t\"sortOrder\": ")
-                .append(sortOrder)
-                .append(",\n\t\"hint\": ")
-                .append("'")
-                .append(hint).append('\'')
-                .append(",\n\t\"description\": ")
-                .append("'")
-                .append(description).append('\'')
-                .append(",\n\t\"associatedEntity\": ")
-                .append(associatedEntity)
-                .append(",\n\t\"options\": ")
-                .append(options)
-                .append(",\n\t\"additionalProperties\": ")
-                .append(additionalProperties)
-                .append('}')
-                .toString();
-    }
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("Field{");
+		sb.append("name='").append(name).append('\'');
+		sb.append(", type='").append(type).append('\'');
+		sb.append(", dataType='").append(dataType).append('\'');
+		sb.append(", dataSpecialization='").append(dataSpecialization).append('\'');
+		sb.append(", maxLength=").append(maxLength);
+		sb.append(", confidential=").append(confidential);
+		sb.append(", optional=").append(optional);
+		sb.append(", label='").append(label).append('\'');
+		sb.append(", required=").append(required);
+		sb.append(", readOnly=").append(readOnly);
+		sb.append(", multiValue=").append(multiValue);
+		sb.append(", inputType='").append(inputType).append('\'');
+		sb.append(", optionsType='").append(optionsType).append('\'');
+		sb.append(", optionsUrl='").append(optionsUrl).append('\'');
+		sb.append(", hideFromSearch=").append(hideFromSearch);
+		sb.append(", sortOrder=").append(sortOrder);
+		sb.append(", hint='").append(hint).append('\'');
+		sb.append(", description='").append(description).append('\'');
+		sb.append(", associatedEntity=").append(associatedEntity);
+		sb.append(", options=").append(options);
+		sb.append(", fields=").append(fields);
+		sb.append(", additionalProperties=").append(additionalProperties);
+		sb.append('}');
+		return sb.toString();
+	}
 }
