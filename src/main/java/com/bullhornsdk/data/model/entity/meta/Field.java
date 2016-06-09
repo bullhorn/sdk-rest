@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "name", "type", "dataType", "dataSpecialization", "maxLength", "confidential", "optional", "label", "required",
 		"readOnly", "multiValue", "inputType", "optionsType", "optionsUrl", "hideFromSearch", "sortOrder", "hint",
-		"description", "associatedEntity", "fields", "options" })
+		"description", "associatedEntity", "options", "fields" })
 public class Field {
 
     private String name;
