@@ -399,7 +399,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		JobOrder entity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
 
 		entity.setId(null)
-		entity.setOwner(null);
+		entity.setClientContact(null);
 
 		CrudResponse response = mockBullhornApiRest.insertEntity(entity);
 

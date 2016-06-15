@@ -17,7 +17,6 @@ public class RestNoteValidator implements Validator {
 
     @Override
     public void validate(Object obj, Errors e) {
-        ValidationUtils.rejectIfEmpty(e, "commentingPerson", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "comments", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "isDeleted", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "personReference", "cannot be empty");

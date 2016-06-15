@@ -20,9 +20,7 @@ public class RestJobOrderValidator implements Validator {
         ValidationUtils.rejectIfEmpty(e, "clientContact", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "clientCorporation", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "employmentType", "cannot be empty");
-        ValidationUtils.rejectIfEmpty(e, "owner", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "startDate", "cannot be empty");
-
     }
 
 }

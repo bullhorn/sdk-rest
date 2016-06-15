@@ -272,16 +272,13 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	 */
 	public ClientContact instantiateForInsert() {
 		ClientContact entity = new ClientContact();
-		entity.setIsDeleted(Boolean.FALSE);
 		entity.setCategory(new Category(512973));
 		entity.setClientCorporation(new ClientCorporation(1));
-		entity.setDateAdded(RestUtil.nowInESTWithUTCTimeZone());
 		entity.setEmail("unknown");
 		entity.setNumEmployees(1);
 		entity.setIsDeleted(Boolean.FALSE);
 		entity.setPreferredContact("Email");
 		entity.setStatus("Client");
-		entity.setOwner(new CorporateUser(1));
 		entity.setUsername(new DateTime().toString());
 		entity.setPassword("secret");
 		entity.setType("Unknown");

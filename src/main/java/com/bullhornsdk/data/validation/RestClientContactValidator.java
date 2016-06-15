@@ -22,7 +22,6 @@ public class RestClientContactValidator implements Validator {
         ValidationUtils.rejectIfEmpty(e, "email", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "isDeleted", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "numEmployees", "cannot be empty");
-        ValidationUtils.rejectIfEmpty(e, "owner", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "password", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "preferredContact", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "status", "cannot be empty");
