@@ -20,7 +20,6 @@ public class RestLeadValidator implements Validator {
         ValidationUtils.rejectIfEmpty(e, "clientCorporation", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "email", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "isDeleted", "cannot be empty");
-        ValidationUtils.rejectIfEmpty(e, "owner", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "status", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "type", "cannot be empty");
 

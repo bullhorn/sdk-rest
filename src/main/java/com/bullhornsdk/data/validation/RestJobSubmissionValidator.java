@@ -20,7 +20,6 @@ public class RestJobSubmissionValidator implements Validator {
         ValidationUtils.rejectIfEmpty(e, "candidate", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "isDeleted", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "jobOrder", "cannot be empty");
-        ValidationUtils.rejectIfEmpty(e, "sendingUser", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "status", "cannot be empty");
 
     }

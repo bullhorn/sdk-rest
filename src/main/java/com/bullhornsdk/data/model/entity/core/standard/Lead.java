@@ -1529,7 +1529,6 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		entity.setStatus("New Lead");
 		entity.setType("Unknown");
 		entity.setClientCorporation(new ClientCorporation(1));
-		entity.setOwner(new CorporateUser(1));
 		return entity;
 	}
 
