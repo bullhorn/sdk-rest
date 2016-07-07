@@ -637,6 +637,11 @@ public class MockDataHandler {
 		
 	}
 
+	public <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> getAllAssociations(Class<T> type, Set<Integer> entityIds,
+																						  AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+		return new StandardListWrapper<E>(getAllEntitiesOfType(associationName.getAssociationType()));
+	}
+
 
 
 	

@@ -35,7 +35,6 @@ import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyServi
 import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.*;
-import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData;
@@ -65,25 +64,6 @@ import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeT
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscribeToEventsResponse;
 import com.bullhornsdk.data.validation.RestEntityValidator;
 import com.bullhornsdk.data.validation.StandardRestEntityValidator;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.springframework.http.*;
-import org.springframework.util.MultiValueMap;
-import org.springframework.validation.Errors;
-import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
 /**
  * Standard implementation of the BullhornData interface that manages all rest calls and data binding from/to json - java.
@@ -455,6 +435,12 @@ public class StandardBullhornData implements BullhornData {
         return this.handleGetAssociation(type, entityIds, associationName, fieldSet, params);
     }
 
+    @Override
+    public <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> getAllAssociations(Class<T> type, Set<Integer> entityIds,
+                                                                                          AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+        return this.handleGetAllAssociations(type, entityIds, associationName, fieldSet, params);
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -593,7 +579,7 @@ public class StandardBullhornData implements BullhornData {
     }
 
     private <T extends AssociationEntity, E extends BullhornEntity> List<E> handleGetAssociation(Class<T> type, Set<Integer> entityIds,
-                                                                                                 AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+                         AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
 
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetAssociation(
                 BullhornEntityInfo.getTypesRestEntityName(type), entityIds, associationName, fieldSet, params);
@@ -606,6 +592,41 @@ public class StandardBullhornData implements BullhornData {
         }
         return listWrapper.getData();
 
+    }
+
+    private <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> handleGetAssociationListWrapper(Class<T> type, Set<Integer> entityIds,
+                                                                                                 AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetAssociation(
+                BullhornEntityInfo.getTypesRestEntityName(type), entityIds, associationName, fieldSet, params);
+        String url = restUrlFactory.assembleGetAssociationUrl(params);
+        ListWrapper<E> listWrapper = this.performGetRequest(url,
+                BullhornEntityInfo.getTypesListWrapperType(associationName.getAssociationType()), uriVariables);
+
+        return listWrapper;
+    }
+
+    private <L extends ListWrapper<E>, T extends AssociationEntity,  E extends BullhornEntity> L handleGetAllAssociations(Class<T> type,
+                          Set<Integer> entityIds, AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+        List<E> allEntities = new ArrayList<E>();
+        params.setCount(MAX_RECORDS_TO_RETURN_IN_ONE_PULL);
+        recursiveAssociationPull(allEntities, type, entityIds, associationName, fieldSet, params);
+        return (L) new StandardListWrapper<E>(allEntities);
+    }
+
+    private <T extends AssociationEntity, E extends BullhornEntity> void recursiveAssociationPull(List<E> allEntities, Class<T> type, Set<Integer> entityIds,
+                                                                                                  AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+        ListWrapper<E> onePull = handleGetAssociationListWrapper(type, entityIds, associationName, fieldSet, params);
+
+        allEntities.addAll(onePull.getData());
+        if (moreRecordsExist(onePull) && ceilingNotReached(allEntities)) {
+            setStart(params, allEntities.size());
+            recursiveAssociationPull(allEntities, type, entityIds, associationName, fieldSet, params);
+        }
+    }
+
+
+    private void setStart(AssociationParams params, int numberOfRecordsPulledAlready) {
+        params.setStart(numberOfRecordsPulledAlready);
     }
 
     /**

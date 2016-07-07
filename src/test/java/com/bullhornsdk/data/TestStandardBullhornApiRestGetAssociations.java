@@ -67,6 +67,24 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
 	}
 
 	@Test
+	public void testGetAllCandidateAssociationSpecialties() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		Set<Integer> entityIds = new HashSet<Integer>();
+		entityIds.add(testEntities.getCandidateId());
+		Set<Integer> associationIds = new HashSet<Integer>();
+		associationIds.add(testEntities.getSpecialtyId());
+
+		this.setUpAssociation(Candidate.class, testEntities.getCandidateId(), associationIds, AssociationFactory.candidateAssociations()
+				.specialties());
+
+		AssociationParams params = ParamFactory.associationParams();
+
+		List<Specialty> associationList = bullhornData.getAllAssociations(Candidate.class, entityIds, AssociationFactory
+				.candidateAssociations().specialties(), getFields(), params).getData();
+		assertResponse(Category.class, associationList);
+
+	}
+
+	@Test
 	public void testGetCategoryAssociation() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
 		Set<Integer> entityIds = new HashSet<Integer>();
