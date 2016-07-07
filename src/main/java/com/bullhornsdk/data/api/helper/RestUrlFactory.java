@@ -171,7 +171,7 @@ public class RestUrlFactory {
     }
 
     public String assembleGetAssociationUrl(AssociationParams params) {
-        return restUrl + "entity/{entityType}/{entityId}/{associationName}?fields={fields}&BhRestToken={bhRestToken}"
+        return restUrl + "entity/{entityType}/{entityId}/{associationName}?fields={fields}&BhRestToken={bhRestToken}&showTotalMatched=true"
                 + params.getUrlString();
     }
 

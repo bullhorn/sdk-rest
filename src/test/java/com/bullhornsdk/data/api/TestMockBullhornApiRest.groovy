@@ -553,6 +553,11 @@ public class TestMockBullhornApiRest extends BaseTest {
 	}
 
 	@Test
+	public void testGetAllAssociations() {
+		mockBullhornApiRest.getAllAssociations(Category.class, [1, 2, 3, 4, 5] as Set, AssociationFactory.categoryAssociations.skills, null, null);
+	}
+
+	@Test
 	public void testGetAllCorpNotes() {
 		CorpNotesParams params = ParamFactory.corpNotesParams();
 		List<Note> notes = mockBullhornApiRest.getAllCorpNotes(1, ["*"] as Set, params);

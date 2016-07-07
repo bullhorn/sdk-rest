@@ -318,6 +318,12 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
+    public <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> getAllAssociations(Class<T> type, Set<Integer> entityIds,
+                                                                                          AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+        return mockDataHandler.getAllAssociations(type, entityIds, associationName, fieldSet, params);
+    }
+
+    @Override
     public List<Note> getAllCorpNotes(Integer clientCorporationID, Set<String> fieldSet, CorpNotesParams params) {
         return mockDataHandler.getAllCorpNotes(clientCorporationID, fieldSet, params);
     }

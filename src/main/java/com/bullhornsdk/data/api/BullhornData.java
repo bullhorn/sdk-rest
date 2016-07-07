@@ -548,6 +548,25 @@ public interface BullhornData {
 			AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params);
 
 	/**
+	 * Returns a ListWrapper<E> of all the entities associated with the type T.
+	 *
+	 * Example: Pass in Category.class as Class<T> and Skill.class as Class<E> to get a listwrapper of ListWrapper<Skill> associated with the category
+	 *
+	 * @param type a AssociationEntity of type T that has associations of type E
+	 * @param entityIds the ids of the type T BullhornEntity to return associations from
+	 * @param associationName the type of association to retrieve records for
+	 * @param fieldSet fields of the associationType to return
+	 *
+	 * @param params optional parameters such as count and order by
+	 *
+	 * @see com.bullhornsdk.data.model.entity.association.AssociationFactory
+	 *
+	 * @return a listwrapper containing type E
+	 */
+	public <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> getAllAssociations(Class<T> type, Set<Integer> entityIds,
+		 	AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params);
+
+	/**
 	 * Returns a List<Note> of all notes associated with ClientContacts of the give ClientCorporation
 	 * 
 	 * @param clientCorporationID the id of the ClientCorporation whose notes we want to retrieve
