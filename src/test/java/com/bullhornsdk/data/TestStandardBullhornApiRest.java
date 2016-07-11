@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance1;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -695,11 +696,18 @@ public class TestStandardBullhornApiRest extends BaseTest {
     }
 
     @Test
-    public void testFindCustomObject() {
+    public void testFindClientCorporationCustomObject() {
         ClientCorporationCustomObjectInstance1 entity = bullhornData.findEntity(ClientCorporationCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
 
         assertNotNull("ClientCorporationCustomObjectInstance1 is null", entity);
     }
+
+	@Test
+	public void testFindOpporutnityCustomObject() {
+		OpportunityCustomObjectInstance1 entity = bullhornData.findEntity(OpportunityCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+		assertNotNull("OpportunityCustomObjectInstance1 is null", entity);
+	}
 
 	private Set<String> getFieldSet() {
 		Set<String> fieldSet = new LinkedHashSet<String>();

@@ -27,16 +27,16 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
     private final AssociationField<Opportunity, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
     private final AssociationField<Opportunity, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
 
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", JobOrderCustomObjectInstance1.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", JobOrderCustomObjectInstance2.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance3> customObject3s = instantiateAssociationField("customObject3s", JobOrderCustomObjectInstance3.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance4> customObject4s = instantiateAssociationField("customObject4s", JobOrderCustomObjectInstance4.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance5> customObject5s = instantiateAssociationField("customObject5s", JobOrderCustomObjectInstance5.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance6> customObject6s = instantiateAssociationField("customObject6s", JobOrderCustomObjectInstance6.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance7> customObject7s = instantiateAssociationField("customObject7s", JobOrderCustomObjectInstance7.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", JobOrderCustomObjectInstance8.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", JobOrderCustomObjectInstance9.class);
-    private final AssociationField<Opportunity, JobOrderCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", JobOrderCustomObjectInstance10.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", OpportunityCustomObjectInstance1.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", OpportunityCustomObjectInstance2.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance3> customObject3s = instantiateAssociationField("customObject3s", OpportunityCustomObjectInstance3.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance4> customObject4s = instantiateAssociationField("customObject4s", OpportunityCustomObjectInstance4.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance5> customObject5s = instantiateAssociationField("customObject5s", OpportunityCustomObjectInstance5.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance6> customObject6s = instantiateAssociationField("customObject6s", OpportunityCustomObjectInstance6.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance7> customObject7s = instantiateAssociationField("customObject7s", OpportunityCustomObjectInstance7.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", OpportunityCustomObjectInstance8.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", OpportunityCustomObjectInstance9.class);
+    private final AssociationField<Opportunity, OpportunityCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", OpportunityCustomObjectInstance10.class);
 
     private List<AssociationField<Opportunity, ? extends BullhornEntity>> allAssociations;
 
@@ -86,43 +86,43 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
         return tearsheets;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance1> customObject1s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance1> customObject1s() {
         return customObject1s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance2> customObject2s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance2> customObject2s() {
         return customObject2s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance3> customObject3s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance3> customObject3s() {
         return customObject3s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance4> customObject4s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance4> customObject4s() {
         return customObject4s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance5> customObject5s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance5> customObject5s() {
         return customObject5s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance6> customObject6s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance6> customObject6s() {
         return customObject6s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance7> customObject7s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance7> customObject7s() {
         return customObject7s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance8> customObject8s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance8> customObject8s() {
         return customObject8s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance9> customObject9s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance9> customObject9s() {
         return customObject9s;
     }
 
-    public AssociationField<Opportunity, JobOrderCustomObjectInstance10> customObject10s() {
+    public AssociationField<Opportunity, OpportunityCustomObjectInstance10> customObject10s() {
         return customObject10s;
     }
 
