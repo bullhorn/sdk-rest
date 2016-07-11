@@ -26,6 +26,16 @@ import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectI
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
@@ -136,6 +146,16 @@ import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjec
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance7ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance8ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance10ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance1ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance2ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance3ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance4ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance5ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance6ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance7ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance8ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance9ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance10ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance1ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance2ListWrapper;
@@ -211,6 +231,16 @@ import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObj
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance7Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance8Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance10Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance1Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance2Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance3Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance4Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance5Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance6Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance7Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance8Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance9Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance10Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance1Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance2Wrapper;
@@ -313,6 +343,17 @@ public enum BullhornEntityInfo {
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_8("JobOrderCustomObjectInstance8", JobOrderCustomObjectInstance8.class, JobOrderCustomObjectInstance8Wrapper.class, JobOrderCustomObjectInstance8ListWrapper.class, null, null),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_9("JobOrderCustomObjectInstance9", JobOrderCustomObjectInstance9.class, JobOrderCustomObjectInstance9Wrapper.class, JobOrderCustomObjectInstance9ListWrapper.class, null, null),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_10("JobOrderCustomObjectInstance10", JobOrderCustomObjectInstance10.class, JobOrderCustomObjectInstance10Wrapper.class, JobOrderCustomObjectInstance10ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_1("OpportunityCustomObjectInstance1", OpportunityCustomObjectInstance1.class, OpportunityCustomObjectInstance1Wrapper.class, OpportunityCustomObjectInstance1ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_2("OpportunityCustomObjectInstance2", OpportunityCustomObjectInstance2.class, OpportunityCustomObjectInstance2Wrapper.class, OpportunityCustomObjectInstance2ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_3("OpportunityCustomObjectInstance3", OpportunityCustomObjectInstance3.class, OpportunityCustomObjectInstance3Wrapper.class, OpportunityCustomObjectInstance3ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_4("OpportunityCustomObjectInstance4", OpportunityCustomObjectInstance4.class, OpportunityCustomObjectInstance4Wrapper.class, OpportunityCustomObjectInstance4ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_5("OpportunityCustomObjectInstance5", OpportunityCustomObjectInstance5.class, OpportunityCustomObjectInstance5Wrapper.class, OpportunityCustomObjectInstance5ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_6("OpportunityCustomObjectInstance6", OpportunityCustomObjectInstance6.class, OpportunityCustomObjectInstance6Wrapper.class, OpportunityCustomObjectInstance6ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_7("OpportunityCustomObjectInstance7", OpportunityCustomObjectInstance7.class, OpportunityCustomObjectInstance7Wrapper.class, OpportunityCustomObjectInstance7ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_8("OpportunityCustomObjectInstance8", OpportunityCustomObjectInstance8.class, OpportunityCustomObjectInstance8Wrapper.class, OpportunityCustomObjectInstance8ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_9("OpportunityCustomObjectInstance9", OpportunityCustomObjectInstance9.class, OpportunityCustomObjectInstance9Wrapper.class, OpportunityCustomObjectInstance9ListWrapper.class, null, null),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_10("OpportunityCustomObjectInstance10", OpportunityCustomObjectInstance10.class, OpportunityCustomObjectInstance10Wrapper.class, OpportunityCustomObjectInstance10ListWrapper.class, null, null),
+
     PLACEMENT_CUSTOM_OBJECT_INSTANCE_1("PlacementCustomObjectInstance1", PlacementCustomObjectInstance1.class, PlacementCustomObjectInstance1Wrapper.class, PlacementCustomObjectInstance1ListWrapper.class, null, null),
     PLACEMENT_CUSTOM_OBJECT_INSTANCE_2("PlacementCustomObjectInstance2", PlacementCustomObjectInstance2.class, PlacementCustomObjectInstance2Wrapper.class, PlacementCustomObjectInstance2ListWrapper.class, null, null),
     PLACEMENT_CUSTOM_OBJECT_INSTANCE_3("PlacementCustomObjectInstance3", PlacementCustomObjectInstance3.class, PlacementCustomObjectInstance3Wrapper.class, PlacementCustomObjectInstance3ListWrapper.class, null, null),
