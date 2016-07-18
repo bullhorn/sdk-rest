@@ -24,10 +24,8 @@ public class RestAppointmentValidator implements Validator {
         ValidationUtils.rejectIfEmpty(e, "isDeleted", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "isPrivate", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "notificationMinutes", "cannot be empty");
-        ValidationUtils.rejectIfEmpty(e, "owner", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "subject", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "type", "cannot be empty");
-
     }
 
 }
