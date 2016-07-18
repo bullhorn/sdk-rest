@@ -278,7 +278,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		entity.setNumEmployees(1);
 		entity.setIsDeleted(Boolean.FALSE);
 		entity.setPreferredContact("Email");
-		entity.setStatus("Client");
+		entity.setStatus("Active");
 		entity.setUsername(new DateTime().toString());
 		entity.setPassword("secret");
 		entity.setType("Unknown");
