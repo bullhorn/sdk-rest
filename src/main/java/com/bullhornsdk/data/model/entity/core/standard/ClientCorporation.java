@@ -1,19 +1,41 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import java.math.BigDecimal;
+
+import javax.validation.constraints.Size;
+
+import org.joda.time.DateTime;
+
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.joda.time.DateTime;
-
-import javax.validation.constraints.Size;
-import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -25,7 +47,7 @@ import java.math.BigDecimal;
 		"customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
 		"customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateFounded", "dateLastModified", "department",
 		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "name", "notes", "numEmployees", "numOffices",
-		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "workWeekStart",
+		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s" })
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
@@ -134,6 +156,10 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	@JsonIgnore
 	@Size(max = 20)
 	private String tickerSymbol;
+
+	@JsonIgnore
+	@Size(max = 200)
+	private String trackTitle;
 
 	private Integer workWeekStart;
 
@@ -536,6 +562,16 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		this.tickerSymbol = tickerSymbol;
 	}
 
+	@JsonProperty("trackTitle")
+	public String getTrackTitle() {
+		return trackTitle;
+	}
+
+	@JsonIgnore
+	public void setTrackTitle(String trackTitle) {
+		this.trackTitle = trackTitle;
+	}
+
 	@JsonProperty("workWeekStart")
 	public Integer getWorkWeekStart() {
 		return workWeekStart;
@@ -723,6 +759,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		if (status != null ? !status.equals(that.status) : that.status != null) return false;
 		if (taxRate != null ? !taxRate.equals(that.taxRate) : that.taxRate != null) return false;
 		if (tickerSymbol != null ? !tickerSymbol.equals(that.tickerSymbol) : that.tickerSymbol != null) return false;
+		if (trackTitle != null ? !trackTitle.equals(that.trackTitle) : that.trackTitle != null) return false;
 		if (workWeekStart != null ? !workWeekStart.equals(that.workWeekStart) : that.workWeekStart != null)
 			return false;
 		if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
@@ -787,6 +824,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		result = 31 * result + (status != null ? status.hashCode() : 0);
 		result = 31 * result + (taxRate != null ? taxRate.hashCode() : 0);
 		result = 31 * result + (tickerSymbol != null ? tickerSymbol.hashCode() : 0);
+		result = 31 * result + (trackTitle != null ? trackTitle.hashCode() : 0);
 		result = 31 * result + (workWeekStart != null ? workWeekStart.hashCode() : 0);
 		result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
 		result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
@@ -841,6 +879,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 				", status='" + status + '\'' +
 				", taxRate=" + taxRate +
 				", tickerSymbol='" + tickerSymbol + '\'' +
+				", trackTitle='" + trackTitle + '\'' +
 				", workWeekStart=" + workWeekStart +
 				", customObject1s=" + customObject1s +
 				", customObject2s=" + customObject2s +

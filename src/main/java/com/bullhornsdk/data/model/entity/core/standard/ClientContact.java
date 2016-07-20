@@ -1,20 +1,41 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
-import com.bullhornsdk.data.util.RestUtil;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
-import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -39,7 +60,7 @@ import javax.validation.constraints.Size;
 		"office", "owner", "pager", "password", "phone", "phone2", "phone3",
 		"preferredContact", "referredByPerson", "reportToPerson",
 		"secondaryAddress", "secondaryOwners", "skills", "smsOptIn", "source",
-		"specialties", "status", "tearsheets", "timeZoneOffsetEST", "type",
+		"specialties", "status", "tearsheets", "timeZoneOffsetEST", "trackTitle", "type",
 		"username", "customObject1s", "customObject2s", "customObject3s",
         "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s" })
@@ -230,6 +251,10 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	private Integer timeZoneOffsetEST;
 
 	@JsonIgnore
+	@Size(max = 200)
+	private String trackTitle;
+
+	@JsonIgnore
 	@Size(max = 30)
 	private String type;
 
@@ -267,7 +292,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
 	/**
 	 * Returns the entity with the required fields for an insert set.
-	 * 
+	 *
 	 * @return
 	 */
 	public ClientContact instantiateForInsert() {
@@ -278,7 +303,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		entity.setNumEmployees(1);
 		entity.setIsDeleted(Boolean.FALSE);
 		entity.setPreferredContact("Email");
-		entity.setStatus("Active");
+		entity.setStatus("Client");
 		entity.setUsername(new DateTime().toString());
 		entity.setPassword("secret");
 		entity.setType("Unknown");
@@ -907,6 +932,16 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		this.timeZoneOffsetEST = timeZoneOffsetEST;
 	}
 
+	@JsonProperty("trackTitle")
+	public String getTrackTitle() {
+		return trackTitle;
+	}
+
+	@JsonIgnore
+	public void setTrackTitle(String trackTitle) {
+		this.trackTitle = trackTitle;
+	}
+
 	@JsonProperty("type")
 	public String getType() {
 		return type;
@@ -1135,6 +1170,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		if (tearsheets != null ? !tearsheets.equals(that.tearsheets) : that.tearsheets != null) return false;
 		if (timeZoneOffsetEST != null ? !timeZoneOffsetEST.equals(that.timeZoneOffsetEST) : that.timeZoneOffsetEST != null)
 			return false;
+		if (trackTitle != null ? !trackTitle.equals(that.trackTitle) : that.trackTitle != null) return false;
 		if (type != null ? !type.equals(that.type) : that.type != null) return false;
 		if (username != null ? !username.equals(that.username) : that.username != null) return false;
 		if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
@@ -1224,6 +1260,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		result = 31 * result + (status != null ? status.hashCode() : 0);
 		result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
 		result = 31 * result + (timeZoneOffsetEST != null ? timeZoneOffsetEST.hashCode() : 0);
+		result = 31 * result + (trackTitle != null ? trackTitle.hashCode() : 0);
 		result = 31 * result + (type != null ? type.hashCode() : 0);
 		result = 31 * result + (username != null ? username.hashCode() : 0);
 		result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
@@ -1304,6 +1341,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 				", status='" + status + '\'' +
 				", tearsheets=" + tearsheets +
 				", timeZoneOffsetEST=" + timeZoneOffsetEST +
+				", trackTitle='" + trackTitle + '\'' +
 				", type='" + type + '\'' +
 				", username='" + username + '\'' +
 				", customObject1s=" + customObject1s +
