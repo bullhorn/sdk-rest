@@ -1,53 +1,75 @@
 package com.bullhornsdk.data.api;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
-
-import com.bullhornsdk.data.api.helper.*;
-import com.bullhornsdk.data.exception.NotEnoughFieldsSpecifiedException;
-import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.enums.*;
-import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
-import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.MultiValueMap;
-import org.springframework.validation.Errors;
-import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
-
+import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
+import com.bullhornsdk.data.api.helper.EntityUpdateWorker;
+import com.bullhornsdk.data.api.helper.FileWorker;
+import com.bullhornsdk.data.api.helper.RestApiSession;
+import com.bullhornsdk.data.api.helper.RestErrorHandler;
+import com.bullhornsdk.data.api.helper.RestFileManager;
+import com.bullhornsdk.data.api.helper.RestJsonConverter;
+import com.bullhornsdk.data.api.helper.RestTemplateFactory;
+import com.bullhornsdk.data.api.helper.RestUriVariablesFactory;
+import com.bullhornsdk.data.api.helper.RestUrlFactory;
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService;
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService;
+import com.bullhornsdk.data.exception.NotEnoughFieldsSpecifiedException;
 import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
-import com.bullhornsdk.data.model.entity.core.standard.*;
+import com.bullhornsdk.data.model.entity.core.standard.Candidate;
+import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
+import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
+import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
+import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.Settings;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData;
-import com.bullhornsdk.data.model.parameter.*;
+import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
+import com.bullhornsdk.data.model.enums.EntityEventType;
+import com.bullhornsdk.data.model.enums.EventType;
+import com.bullhornsdk.data.model.enums.MetaParameter;
+import com.bullhornsdk.data.model.enums.SettingsFields;
+import com.bullhornsdk.data.model.parameter.AssociationParams;
+import com.bullhornsdk.data.model.parameter.CorpNotesParams;
+import com.bullhornsdk.data.model.parameter.EntityParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
+import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.QueryParams;
+import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
+import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
+import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
-import com.bullhornsdk.data.model.response.crud.*;
+import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
+import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
+import com.bullhornsdk.data.model.response.crud.CreateResponse;
+import com.bullhornsdk.data.model.response.crud.CrudResponse;
+import com.bullhornsdk.data.model.response.crud.DeleteResponse;
+import com.bullhornsdk.data.model.response.crud.Message;
+import com.bullhornsdk.data.model.response.crud.UpdateResponse;
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper;
 import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper;
 import com.bullhornsdk.data.model.response.event.GetEventsResponse;
 import com.bullhornsdk.data.model.response.event.GetLastRequestIdResponse;
 import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse;
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse;
-import com.bullhornsdk.data.model.response.file.*;
+import com.bullhornsdk.data.model.response.file.EntityMetaFiles;
+import com.bullhornsdk.data.model.response.file.FileApiResponse;
+import com.bullhornsdk.data.model.response.file.FileContent;
+import com.bullhornsdk.data.model.response.file.FileMeta;
+import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.file.standard.StandardEntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent;
@@ -64,6 +86,34 @@ import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeT
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscribeToEventsResponse;
 import com.bullhornsdk.data.validation.RestEntityValidator;
 import com.bullhornsdk.data.validation.StandardRestEntityValidator;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
+import org.springframework.validation.Errors;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 /**
  * Standard implementation of the BullhornData interface that manages all rest calls and data binding from/to json - java.
@@ -369,7 +419,7 @@ public class StandardBullhornData implements BullhornData {
      */
     @Override
     public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params) {
-        return this.handleAddFileWithMultipartFile(type, entityId, file, externalId, params);
+        return this.handleAddFileWithMultipartFile(type, entityId, file, externalId, params, true);
     }
 
     /**
@@ -377,7 +427,23 @@ public class StandardBullhornData implements BullhornData {
      */
     @Override
     public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params) {
-        return this.handleAddFileWithFile(type, entityId, file, externalId, params);
+        return this.handleAddFileWithFile(type, entityId, file, externalId, params, true);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile) {
+        return this.handleAddFileWithMultipartFile(type, entityId, file, externalId, params, deleteFile);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile) {
+        return this.handleAddFileWithFile(type, entityId, file, externalId, params, deleteFile);
     }
 
     /**
@@ -387,7 +453,7 @@ public class StandardBullhornData implements BullhornData {
     public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, File file, String candidateDescription,
                                                                     String externalId, FileParams params) {
 
-        return this.handleAddFileAndUpdateCandidateDescription(candidateId, file, candidateDescription, externalId, params);
+        return this.handleAddFileAndUpdateCandidateDescription(candidateId, file, candidateDescription, externalId, params, true);
     }
 
     /**
@@ -1411,10 +1477,11 @@ public class StandardBullhornData implements BullhornData {
      * @param multipartFile
      * @param externalId
      * @param params
+     * @param deleteFile
      * @return
      */
     private FileWrapper handleAddFileWithMultipartFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile multipartFile,
-                                                       String externalId, FileParams params) {
+                                                       String externalId, FileParams params, boolean deleteFile) {
 
         MultiValueMap<String, Object> multiValueMap = null;
         try {
@@ -1423,7 +1490,7 @@ public class StandardBullhornData implements BullhornData {
             log.error("Error creating temp file", e);
         }
 
-        return this.handleAddFile(type, entityId, multiValueMap, externalId, params, multipartFile.getOriginalFilename());
+        return this.handleAddFile(type, entityId, multiValueMap, externalId, params, multipartFile.getOriginalFilename(), deleteFile);
 
     }
 
@@ -1435,26 +1502,29 @@ public class StandardBullhornData implements BullhornData {
      * @param file
      * @param externalId
      * @param params
+     * @param deleteFile
      * @return
      */
     private FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId,
-                                              FileParams params) {
+                                              FileParams params, boolean deleteFile) {
 
 
         MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
 
-        return this.handleAddFile(type, entityId, multiValueMap, externalId, params, file.getName());
+        return this.handleAddFile(type, entityId, multiValueMap, externalId, params, file.getName(), deleteFile);
     }
 
     private FileWrapper handleAddFile(Class<? extends FileEntity> type, Integer entityId, MultiValueMap<String, Object> multiValueMap,
-                                      String externalId, FileParams params, String fileName) {
+                                      String externalId, FileParams params, String fileName, boolean deleteFile) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
                 entityId, externalId, params);
         String url = restUrlFactory.assembleAddFileUrl(params);
         StandardFileApiResponse fileApiResponse = this.performCustomRequest(url, multiValueMap, StandardFileApiResponse.class,
                 uriVariables, HttpMethod.PUT, this.getMultipartHeadersForFileAttachement(fileName));
 
-        restFileManager.deleteTempFile(multiValueMap);
+        if (deleteFile) {
+            restFileManager.deleteTempFile(multiValueMap);
+        }
 
         Integer fileId = fileApiResponse.getFileId();
 
@@ -1469,12 +1539,13 @@ public class StandardBullhornData implements BullhornData {
      * @param file
      * @param externalId
      * @param params
+     * @param deleteFile
      * @return
      */
     private FileWrapper handleAddFileAndUpdateCandidateDescription(Integer candidateId, File file, String candidateDescription,
-                                                                   String externalId, FileParams params) {
+                                                                   String externalId, FileParams params, boolean deleteFile) {
         // first add the file
-        FileWrapper fileWrapper = this.handleAddFileWithFile(Candidate.class, candidateId, file, externalId, params);
+        FileWrapper fileWrapper = this.handleAddFileWithFile(Candidate.class, candidateId, file, externalId, params, deleteFile);
 
         // second update the candidate
         try {
@@ -1506,7 +1577,7 @@ public class StandardBullhornData implements BullhornData {
      */
     private <P extends ParsedResume> P addFileThenHandleParseResume(Class<? extends FileEntity> type, Integer entityId,
                                                                     MultipartFile multipartFile, String externalId, FileParams fileParams, ResumeFileParseParams params) {
-        FileWrapper fileWrapper = handleAddFileWithMultipartFile(type, entityId, multipartFile, externalId, fileParams);
+        FileWrapper fileWrapper = handleAddFileWithMultipartFile(type, entityId, multipartFile, externalId, fileParams, true);
         P parsedResume = this.handleParseResumeFile(multipartFile, params);
         if (!parsedResume.isError()) {
             parsedResume.setFileWrapper(fileWrapper);
