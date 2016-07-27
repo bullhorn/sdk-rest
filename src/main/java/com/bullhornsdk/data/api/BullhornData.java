@@ -1,27 +1,26 @@
 package com.bullhornsdk.data.api;
 
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
-import com.bullhornsdk.data.model.entity.core.standard.Settings;
-import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.enums.EntityEventType;
-import com.bullhornsdk.data.model.enums.EventType;
-import com.bullhornsdk.data.model.enums.SettingsFields;
-import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
-import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.bullhornsdk.data.api.helper.RestApiSession;
 import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.Settings;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
+import com.bullhornsdk.data.model.enums.EntityEventType;
+import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
+import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
@@ -42,6 +41,13 @@ import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
+import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Core bullhorn data service, handles api calls and data mapping.
@@ -417,6 +423,20 @@ public interface BullhornData {
 	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params);
 
 	/**
+	 * Adds a file to the bh entity with the entityId, passing in a File.
+	 *
+	 * @param type the FileEntity to attach the file to
+	 * @param entityId the id of the file entity
+	 * @param file the file to add
+	 * @param externalId external identifier for the file. Example: "portfolio"
+	 * @param params additional parameters for the add file call
+	 * @param deleteFile determines whether directory file lives in is wiped
+	 *
+	 * @return a FileWrapper with information about the attached file
+	 */
+	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile);
+
+	/**
 	 * Returns a file for the passed in FileEntity type. No FileMeta data included.
 	 * 
 	 * @param type the bh type of the entity that has a file attached
@@ -470,6 +490,20 @@ public interface BullhornData {
 	 * @return a FileWrapper containing the added file
 	 */
 	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params);
+
+	/**
+	 * Adds a file to the bh entity with the entityId.
+	 *
+	 * @param type  the bullhorn type, such as a Candidate
+	 * @param entityId the id of the bullhorn type
+	 * @param file  the file to attach
+	 * @param externalId External identifier for the type of file attached. Pass in null for default value.
+	 * @param params optional parameters.
+	 * @param deleteFile determines whether directory file lives in is wiped
+	 *
+	 * @return a FileWrapper containing the added file
+	 */
+	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile);
 
 	/**
 	 * Adds the resume file to the candidate. Also updates the description on that candidate with the resume text.
