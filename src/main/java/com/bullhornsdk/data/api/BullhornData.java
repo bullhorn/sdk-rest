@@ -430,6 +430,7 @@ public interface BullhornData {
 	 * @param file the file to add
 	 * @param externalId external identifier for the file. Example: "portfolio"
 	 * @param params additional parameters for the add file call
+	 * @param deleteFile determines whether directory file lives in is wiped
 	 *
 	 * @return a FileWrapper with information about the attached file
 	 */
@@ -498,6 +499,7 @@ public interface BullhornData {
 	 * @param file  the file to attach
 	 * @param externalId External identifier for the type of file attached. Pass in null for default value.
 	 * @param params optional parameters.
+	 * @param deleteFile determines whether directory file lives in is wiped
 	 *
 	 * @return a FileWrapper containing the added file
 	 */
