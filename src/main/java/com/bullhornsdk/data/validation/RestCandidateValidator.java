@@ -29,7 +29,6 @@ public class RestCandidateValidator implements Validator {
         ValidationUtils.rejectIfEmpty(e, "password", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "preferredContact", "cannot be empty");
         ValidationUtils.rejectIfEmpty(e, "status", "cannot be empty");
-        ValidationUtils.rejectIfEmpty(e, "username", "cannot be empty");
 
     }
 
