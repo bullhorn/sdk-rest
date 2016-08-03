@@ -1,5 +1,4 @@
 package com.bullhornsdk.data.api.mock
-
 import com.bullhornsdk.data.api.BullhornData
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries
 import com.bullhornsdk.data.api.helper.RestApiSession
@@ -17,9 +16,7 @@ import com.bullhornsdk.data.model.enums.MetaParameter
 import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams
-import com.bullhornsdk.data.model.response.crud.CreateResponse
 import com.bullhornsdk.data.model.response.crud.CrudResponse
-import com.bullhornsdk.data.model.response.crud.UpdateResponse
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
 import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.GetEventsResponse
@@ -32,13 +29,9 @@ import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse
-import com.bullhornsdk.data.validation.RestEntityValidator
-import com.bullhornsdk.data.validation.StandardRestEntityValidator
 import org.apache.log4j.Logger
 import org.joda.time.DateTime
-import org.springframework.validation.Errors
 import org.springframework.web.multipart.MultipartFile
-
 /**
  * Testing implementation populated with local in memory test data.
  *
@@ -49,7 +42,6 @@ import org.springframework.web.multipart.MultipartFile
 public class MockBullhornData implements BullhornData {
 
     private final MockDataHandler mockDataHandler;
-    private final RestEntityValidator restEntityValidator;
     private final RestErrorHandler restErrorHandler;
     private final RestApiSession restSession;
     private final Logger log = Logger.getLogger(MockBullhornData.class);
@@ -57,13 +49,11 @@ public class MockBullhornData implements BullhornData {
 
     public MockBullhornData() {
         this.mockDataHandler = new MockDataHandler();
-        this.restEntityValidator = StandardRestEntityValidator.getDefaultInstance();
         this.restErrorHandler = new RestErrorHandler();
     }
 
     public MockBullhornData(RestApiSession restSession) {
         this.mockDataHandler = new MockDataHandler();
-        this.restEntityValidator = StandardRestEntityValidator.getDefaultInstance();
         this.restErrorHandler = new RestErrorHandler();
         this.restSession = restSession;
     }
@@ -161,14 +151,8 @@ public class MockBullhornData implements BullhornData {
     public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity) {
 
         CrudResponse response = null;
-        Errors validationErrors = restEntityValidator.validateEntityOnUpdate(entity);
 
-        if (validationErrors.hasErrors()) {
-            response = new UpdateResponse();
-            restErrorHandler.handleValidationErrors(response, validationErrors);
-        } else {
-            response = mockDataHandler.updateEntity(entity);
-        }
+        response = mockDataHandler.updateEntity(entity);
 
         return (C) response;
     }
@@ -189,15 +173,8 @@ public class MockBullhornData implements BullhornData {
     @Override
     public <C extends CrudResponse, T extends CreateEntity> C insertEntity(T entity) {
 
-        CrudResponse response = null;
-        Errors validationErrors = restEntityValidator.validateEntityOnInsert(entity);
+        CrudResponse response = mockDataHandler.insertEntity(entity);
 
-        if (validationErrors.hasErrors()) {
-            response = new CreateResponse();
-            restErrorHandler.handleValidationErrors(response, validationErrors);
-        } else {
-            response = mockDataHandler.insertEntity(entity);
-        }
         return (C) response;
     }
 
