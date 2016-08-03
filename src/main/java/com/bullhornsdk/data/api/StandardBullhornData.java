@@ -84,8 +84,6 @@ import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscribeToEventsResponse;
-import com.bullhornsdk.data.validation.RestEntityValidator;
-import com.bullhornsdk.data.validation.StandardRestEntityValidator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -96,7 +94,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
-import org.springframework.validation.Errors;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
@@ -125,7 +122,6 @@ import java.util.stream.Collectors;
  * @see RestApiSession for session management
  * @see RestTemplate for http calls
  * @see ParamFactory for how to pass in parameters to the specific methods
- * @see RestEntityValidator for validations
  * @see RestJsonConverter for json/java conversion
  * @see RestUrlFactory for assembling the urls for the api calls
  * @see RestUriVariablesFactory for adding the specific variables needed for the api calls
@@ -143,8 +139,6 @@ public class StandardBullhornData implements BullhornData {
     private final String restUrl;
 
     private final RestJsonConverter restJsonConverter;
-
-    private final RestEntityValidator restEntityValidator;
 
     private final RestUrlFactory restUrlFactory;
 
@@ -169,7 +163,6 @@ public class StandardBullhornData implements BullhornData {
         this.restTemplate = RestTemplateFactory.getInstance();
         this.restUrl = restSession.getRestUrl();
         this.restJsonConverter = new RestJsonConverter();
-        this.restEntityValidator = StandardRestEntityValidator.getDefaultInstance();
         this.restUrlFactory = new RestUrlFactory(restUrl);
         this.restFileManager = new RestFileManager();
         this.restUriVariablesFactory = new RestUriVariablesFactory(this, this.restFileManager);
@@ -182,7 +175,6 @@ public class StandardBullhornData implements BullhornData {
         this.restTemplate = RestTemplateFactory.getInstance();
         this.restUrl = restSession.getRestUrl();
         this.restJsonConverter = new RestJsonConverter();
-        this.restEntityValidator = StandardRestEntityValidator.getDefaultInstance();
         this.restUrlFactory = new RestUrlFactory(restUrl);
         this.restFileManager = new RestFileManager();
         this.restUriVariablesFactory = new RestUriVariablesFactory(this, this.restFileManager);
@@ -985,23 +977,15 @@ public class StandardBullhornData implements BullhornData {
                 BullhornEntityInfo.getTypesRestEntityName(entity.getClass()), entity.getId());
         String url = restUrlFactory.assembleEntityUrlForUpdate();
 
-        CrudResponse response = null;
-        Errors validationErrors = restEntityValidator.validateEntityOnUpdate(entity);
+        CrudResponse response;
 
-        if (validationErrors.hasErrors()) {
-            response = new UpdateResponse();
-            restErrorHandler.handleValidationErrors(response, validationErrors);
-
-        } else {
-
-            try {
-                String jsonString = restJsonConverter.convertEntityToJsonString(entity);
-                response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
-            } catch (HttpStatusCodeException error) {
-                response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, entity.getId());
-            }
-
+        try {
+            String jsonString = restJsonConverter.convertEntityToJsonString(entity);
+            response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
+        } catch (HttpStatusCodeException error) {
+            response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, entity.getId());
         }
+
         return (C) response;
     }
 
@@ -1039,23 +1023,15 @@ public class StandardBullhornData implements BullhornData {
                 .getTypesRestEntityName(entity.getClass()));
         String url = restUrlFactory.assembleEntityUrlForInsert();
 
-        CrudResponse response = null;
-        Errors validationErrors = restEntityValidator.validateEntityOnInsert(entity);
+        CrudResponse response;
 
-        if (validationErrors.hasErrors()) {
-            response = new CreateResponse();
-            restErrorHandler.handleValidationErrors(response, validationErrors);
-
-        } else {
-
-            try {
-                String jsonString = restJsonConverter.convertEntityToJsonString(entity);
-                response = this.performCustomRequest(url, jsonString, CreateResponse.class, uriVariables, HttpMethod.PUT, null);
-            } catch (HttpStatusCodeException error) {
-                response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new CreateResponse(), error, entity.getId());
-            }
-
+        try {
+            String jsonString = restJsonConverter.convertEntityToJsonString(entity);
+            response = this.performCustomRequest(url, jsonString, CreateResponse.class, uriVariables, HttpMethod.PUT, null);
+        } catch (HttpStatusCodeException error) {
+            response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new CreateResponse(), error, entity.getId());
         }
+
         return (C) response;
     }
 

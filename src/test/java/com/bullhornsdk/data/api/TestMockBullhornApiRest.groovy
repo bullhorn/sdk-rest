@@ -394,19 +394,6 @@ public class TestMockBullhornApiRest extends BaseTest {
 	}
 
 	@Test
-	public void testInsertEntityFailedValidations() {
-
-		JobOrder entity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
-
-		entity.setId(null)
-		entity.setClientContact(null);
-
-		CrudResponse response = mockBullhornApiRest.insertEntity(entity);
-
-		assert response.isError();
-	}
-
-	@Test
 	public void testDeleteEntity() {
 		mockBullhornApiRest.deleteEntity(JobOrder.class, JOB_ORDER_ID);
 
