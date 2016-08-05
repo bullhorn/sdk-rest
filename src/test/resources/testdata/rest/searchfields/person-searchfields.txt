@@ -1,0 +1,384 @@
+{
+    "searchFields": [
+        {
+            "name": "address.address1",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "address.address2",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "address.city",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "address.country.name",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.latitude",
+            "type": "LATITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.longitude",
+            "type": "LONGITUDE",
+            "isSortable": true
+        },
+        {
+            "name": "address.state",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "address.zip",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "companyName",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customDate1",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate2",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customDate3",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat1",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat2",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customFloat3",
+            "type": "DOUBLE_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt1",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt2",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customInt3",
+            "type": "INTEGER_PADDED",
+            "isSortable": true
+        },
+        {
+            "name": "customText1",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText10",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText11",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText12",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText13",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText14",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText15",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText16",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText17",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText18",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText19",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText2",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText20",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText3",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText4",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText5",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText6",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText7",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText8",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customText9",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "STRING_ANALYZED",
+            "isSortable": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "dateLastComment",
+            "type": "DATETIME",
+            "isSortable": true
+        },
+        {
+            "name": "email",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "email2",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "email3",
+            "type": "EMAIL",
+            "isSortable": true
+        },
+        {
+            "name": "fax",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax2",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "fax3",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "firstName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "isDayLightSavings",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "isDeleted",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "isLockedOut",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "lastName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "massMailOptOut",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "middleName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "mobile",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "name",
+            "type": "STRING_ANALYZED_KEYWORD",
+            "isSortable": true
+        },
+        {
+            "name": "namePrefix",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "nameSuffix",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "nickName",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "occupation",
+            "type": "STRING_ANALYZED",
+            "isSortable": true
+        },
+        {
+            "name": "owner.departments.id",
+            "type": "INTEGER",
+            "isSortable": true
+        },
+        {
+            "name": "pager",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "personSubtype",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "phone",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone2",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "phone3",
+            "type": "PHONE",
+            "isSortable": true
+        },
+        {
+            "name": "smsOptIn",
+            "type": "BOOLEAN",
+            "isSortable": true
+        },
+        {
+            "name": "status",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+            "name": "username",
+            "type": "STRING",
+            "isSortable": true
+        },
+        {
+        	"name": "userType.description",
+        	"type": "STRING",
+        	"isSortable": true
+        },
+        {
+        	"name": "userType.name",
+        	"type": "STRING",
+        	"isSortable": true
+        }
+    ]
+}
