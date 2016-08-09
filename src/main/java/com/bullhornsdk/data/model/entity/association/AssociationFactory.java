@@ -14,6 +14,7 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
  */
 public class AssociationFactory {
 
+	private static final AppointmentAssociations appointmentAssociations = AppointmentAssociations.getInstance();
     private static final CandidateAssociations candidateAssociations = CandidateAssociations.getInstance();
     private static final CategoryAssociations categoryAssociations = CategoryAssociations.getInstance();
     private static final ClientContactAssociations clientContactAssociations = ClientContactAssociations.getInstance();
@@ -42,15 +43,19 @@ public class AssociationFactory {
     public static <T extends AssociationEntity> AssociationField<T, ? extends BullhornEntity> getAssociationField(Class<T> type,
             String associationName) {
 
-        EntityAssociations<T> entityAssociations = getEntityAssociation(type, associationName);
+        EntityAssociations<T> entityAssociations = getEntityAssociation(type);
 
         return entityAssociations.getAssociation(associationName);
 
     }
 
     @SuppressWarnings("unchecked")
-    private static <T extends AssociationEntity> EntityAssociations<T> getEntityAssociation(Class<T> type, String associationName) {
+    private static <T extends AssociationEntity> EntityAssociations<T> getEntityAssociation(Class<T> type) {
 
+    	if (type == Appointment.class) {
+    		return (EntityAssociations<T>) appointmentAssociations;
+    	}
+    	
         if (type == Candidate.class) {
             return (EntityAssociations<T>) candidateAssociations;
         }
@@ -97,6 +102,15 @@ public class AssociationFactory {
 
         return null;
 
+    }
+
+    /**
+     * Returns the associations for Appointment
+     * 
+     * @return
+     */
+    public static AppointmentAssociations appointmentAssociations() {
+        return appointmentAssociations;
     }
 
     /**

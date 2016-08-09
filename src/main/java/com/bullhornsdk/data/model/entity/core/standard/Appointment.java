@@ -2,7 +2,6 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.LinkedId;
-import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.validation.BullhornUUID;
@@ -25,7 +24,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     @BullhornUUID
     private String appointmentUUID;
 
-    private OneToMany<LinkedPerson> guests;
+    private OneToMany<Person> guests;
 
     private Candidate candidateReference;
 
@@ -67,7 +66,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     private Opportunity opportunity;
 
-    private LinkedPerson owner;
+    private Person owner;
 
     private LinkedId parentAppointment;
 
@@ -145,12 +144,12 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @JsonIgnore
-    public OneToMany<LinkedPerson> getGuests() {
+    public OneToMany<Person> getGuests() {
         return guests;
     }
 
     @JsonProperty("guests")
-    public void setGuests(OneToMany<LinkedPerson> guests) {
+    public void setGuests(OneToMany<Person> guests) {
         this.guests = guests;
     }
 
@@ -325,12 +324,12 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @JsonProperty("owner")
-    public LinkedPerson getOwner() {
+    public Person getOwner() {
         return owner;
     }
 
     @JsonProperty("owner")
-    public void setOwner(LinkedPerson owner) {
+    public void setOwner(Person owner) {
         this.owner = owner;
     }
 

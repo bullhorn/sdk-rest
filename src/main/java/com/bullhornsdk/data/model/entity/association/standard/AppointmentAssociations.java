@@ -3,7 +3,7 @@ package com.bullhornsdk.data.model.entity.association.standard;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
+import com.bullhornsdk.data.model.entity.core.standard.Person;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
 import java.util.ArrayList;
@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class AppointmentAssociations implements EntityAssociations<Appointment> {
 
-    private final AssociationField<Appointment, AppointmentAttendee> guests = instantiateAssociationField("guests",
-            AppointmentAttendee.class);
+    private final AssociationField<Appointment, Person> guests = instantiateAssociationField("guests",
+            Person.class);
     private final AssociationField<Appointment, Appointment> childAppointments = instantiateAssociationField("childAppointments", Appointment.class);
 
     private List<AssociationField<Appointment, ? extends BullhornEntity>> allAssociations;
@@ -30,7 +30,7 @@ public class AppointmentAssociations implements EntityAssociations<Appointment> 
         return INSTANCE;
     }
 
-    public AssociationField<Appointment, AppointmentAttendee> guests() {
+    public AssociationField<Appointment, Person> guests() {
         return guests;
     }
 

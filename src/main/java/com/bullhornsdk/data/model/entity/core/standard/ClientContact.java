@@ -27,7 +27,6 @@ import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
-import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -159,7 +158,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	@Size(max = 50)
 	private String lastName;
 
-	private LinkedPerson linkedPerson;
+	private Person linkedPerson;
 
 	private OneToMany<Lead> leads;
 
@@ -224,9 +223,9 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	@Size(max = 15)
 	private String preferredContact;
 
-	private LinkedPerson referredByPerson;
+	private Person referredByPerson;
 
-	private LinkedPerson reportToPerson;
+	private Person reportToPerson;
 
 	private Address secondaryAddress;
 
@@ -623,12 +622,12 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	}
 
 	@JsonProperty("linkedPerson")
-	public LinkedPerson getLinkedPerson() {
+	public Person getLinkedPerson() {
 		return linkedPerson;
 	}
 
 	@JsonProperty("linkedPerson")
-	public void setLinkedPerson(LinkedPerson linkedPerson) {
+	public void setLinkedPerson(Person linkedPerson) {
 		this.linkedPerson = linkedPerson;
 	}
 
@@ -823,22 +822,22 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	}
 
 	@JsonProperty("referredByPerson")
-	public LinkedPerson getReferredByPerson() {
+	public Person getReferredByPerson() {
 		return referredByPerson;
 	}
 
 	@JsonProperty("referredByPerson")
-	public void setReferredByPerson(LinkedPerson referredByPerson) {
+	public void setReferredByPerson(Person referredByPerson) {
 		this.referredByPerson = referredByPerson;
 	}
 
 	@JsonProperty("reportToPerson")
-	public LinkedPerson getReportToPerson() {
+	public Person getReportToPerson() {
 		return reportToPerson;
 	}
 
 	@JsonProperty("reportToPerson")
-	public void setReportToPerson(LinkedPerson reportToPerson) {
+	public void setReportToPerson(Person reportToPerson) {
 		this.reportToPerson = reportToPerson;
 	}
 

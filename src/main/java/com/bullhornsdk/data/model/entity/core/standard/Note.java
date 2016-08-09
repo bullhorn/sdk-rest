@@ -13,7 +13,6 @@ import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -42,7 +41,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 
 	private OneToMany<ClientContact> clientContacts;
 
-	private LinkedPerson commentingPerson;
+	private Person commentingPerson;
 
 	@JsonIgnore
 	private String comments;
@@ -69,7 +68,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 
     private OneToMany<Opportunity> opportunities;
 
-	private LinkedPerson personReference;
+	private Person personReference;
 
 	private OneToMany<Placement> placements;
 
@@ -151,12 +150,12 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 	}
 
 	@JsonProperty("commentingPerson")
-	public LinkedPerson getCommentingPerson() {
+	public Person getCommentingPerson() {
 		return commentingPerson;
 	}
 
 	@JsonProperty("commentingPerson")
-	public void setCommentingPerson(LinkedPerson commentingPerson) {
+	public void setCommentingPerson(Person commentingPerson) {
 		this.commentingPerson = commentingPerson;
 	}
 
@@ -281,12 +280,12 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
     }
 
     @JsonProperty("personReference")
-	public LinkedPerson getPersonReference() {
+	public Person getPersonReference() {
 		return personReference;
 	}
 
 	@JsonProperty("personReference")
-	public void setPersonReference(LinkedPerson personReference) {
+	public void setPersonReference(Person personReference) {
 		this.personReference = personReference;
 	}
 

@@ -23,9 +23,9 @@ import com.bullhornsdk.data.model.entity.association.AssociationFactory
 import com.bullhornsdk.data.model.entity.core.standard.Candidate
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder
 import com.bullhornsdk.data.model.entity.core.standard.Note
+import com.bullhornsdk.data.model.entity.core.standard.Person
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.standard.Placement
-import com.bullhornsdk.data.model.entity.embedded.LinkedPerson
 import com.bullhornsdk.data.model.entity.embedded.OneToMany
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.MetaParameter
@@ -581,7 +581,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		note.setAction("Inteview Scheduled");
 		note.setIsDeleted(false);
 		//the note has to have a commentingPerson
-		LinkedPerson commentingPerson = new LinkedPerson(testEntities.getCorporateUserId());
+		Person commentingPerson = new Person(testEntities.getCorporateUserId());
 		note.setCommentingPerson(commentingPerson);
 		//set job to associate with job
 		JobOrder job = new JobOrder(testEntities.getJobOrderId());
@@ -592,7 +592,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		note.setPlacements(placements);
 
 		//set personReference to associate with Person
-		LinkedPerson personReference = new LinkedPerson(testEntities.getCandidateId());
+		Person personReference = new Person(testEntities.getCandidateId());
 		note.setPersonReference(personReference);
 
 		return note;
