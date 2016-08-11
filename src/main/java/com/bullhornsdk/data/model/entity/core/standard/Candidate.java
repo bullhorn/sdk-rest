@@ -28,7 +28,6 @@ import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
-import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -215,7 +214,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	@Size(max = 50)
 	private String lastName;
 
-	private LinkedPerson linkedPerson;
+	private Person linkedPerson;
 
 	private OneToMany<Lead> leads;
 
@@ -304,7 +303,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	@Size(max = 50)
 	private String referredBy;
 
-	private LinkedPerson referredByPerson;
+	private Person referredByPerson;
 
 	private OneToMany<CandidateReference> references;
 
@@ -1033,12 +1032,12 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	}
 
 	@JsonProperty("linkedPerson")
-	public LinkedPerson getLinkedPerson() {
+	public Person getLinkedPerson() {
 		return linkedPerson;
 	}
 
 	@JsonProperty("linkedPerson")
-	public void setLinkedPerson(LinkedPerson linkedPerson) {
+	public void setLinkedPerson(Person linkedPerson) {
 		this.linkedPerson = linkedPerson;
 	}
 
@@ -1333,12 +1332,12 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	}
 
 	@JsonProperty("referredByPerson")
-	public LinkedPerson getReferredByPerson() {
+	public Person getReferredByPerson() {
 		return referredByPerson;
 	}
 
 	@JsonProperty("referredByPerson")
-	public void setReferredByPerson(LinkedPerson referredByPerson) {
+	public void setReferredByPerson(Person referredByPerson) {
 		this.referredByPerson = referredByPerson;
 	}
 

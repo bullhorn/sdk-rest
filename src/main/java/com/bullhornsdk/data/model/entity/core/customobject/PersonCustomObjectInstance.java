@@ -1,20 +1,21 @@
- package com.bullhornsdk.data.model.entity.core.customobject;
+package com.bullhornsdk.data.model.entity.core.customobject;
 
- import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
- import com.fasterxml.jackson.annotation.JsonProperty;
+import com.bullhornsdk.data.model.entity.core.standard.Person;
 
- public abstract class PersonCustomObjectInstance extends CustomObjectInstance {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-     private LinkedPerson person;
+public abstract class PersonCustomObjectInstance extends CustomObjectInstance {
 
-     @JsonProperty("person")
-     public LinkedPerson getPerson() {
-         return person;
-     }
+	private Person person;
 
-     @JsonProperty("person")
-     public void setPerson(LinkedPerson person) {
-         this.person = person;
-     }
+	@JsonProperty("person")
+	public Person getPerson() {
+		return person;
+	}
 
- }
+	@JsonProperty("person")
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+}

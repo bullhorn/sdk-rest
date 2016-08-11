@@ -1,0 +1,543 @@
+{
+  "entity" : "Person",
+  "entityMetaUrl" : "http://jl-backend.bh-bos2.bullhorn.com:8181/rest-services/7s3i9/meta/Person?fields=*",
+  "label" : "Person",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "ID",
+    "dataType" : "Integer"
+  }, {
+    "name" : "_subtype",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 255
+  }, {
+    "name" : "address",
+    "type" : "COMPOSITE",
+    "dataType" : "Address",
+    "confidential" : false,
+    "label" : "Address",
+    "hideFromSearch" : false,
+    "fields" : [ {
+      "name" : "address1",
+      "type" : "SCALAR",
+      "dataType" : "String",
+      "maxLength" : 40
+    }, {
+      "name" : "address2",
+      "type" : "SCALAR",
+      "dataType" : "String",
+      "maxLength" : 40
+    }, {
+      "name" : "city",
+      "type" : "SCALAR",
+      "dataType" : "String",
+      "maxLength" : 40
+    }, {
+      "name" : "state",
+      "type" : "SCALAR",
+      "dataType" : "String",
+      "maxLength" : 30
+    }, {
+      "name" : "zip",
+      "type" : "SCALAR",
+      "dataType" : "String",
+      "maxLength" : 15
+    }, {
+      "name" : "countryID",
+      "type" : "SCALAR",
+      "dataType" : "Integer"
+    }, {
+      "name" : "countryCode",
+      "type" : "SCALAR",
+      "dataType" : "String",
+      "maxLength" : 0
+    }, {
+      "name" : "countryName",
+      "type" : "SCALAR",
+      "dataType" : "String",
+      "maxLength" : 0
+    } ]
+  }, {
+    "name" : "companyName",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Company Name",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customDate1",
+    "type" : "SCALAR",
+    "dataType" : "Timestamp",
+    "confidential" : false,
+    "label" : "Custom Date1",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customDate2",
+    "type" : "SCALAR",
+    "dataType" : "Timestamp",
+    "confidential" : false,
+    "label" : "Custom Date2",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customDate3",
+    "type" : "SCALAR",
+    "dataType" : "Timestamp",
+    "confidential" : false,
+    "label" : "Custom Date3",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customFloat1",
+    "type" : "SCALAR",
+    "dataType" : "Double",
+    "confidential" : false,
+    "label" : "Custom Float1",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customFloat2",
+    "type" : "SCALAR",
+    "dataType" : "Double",
+    "confidential" : false,
+    "label" : "Custom Float2",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customFloat3",
+    "type" : "SCALAR",
+    "dataType" : "Double",
+    "confidential" : false,
+    "label" : "Custom Float3",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customInt1",
+    "type" : "SCALAR",
+    "dataType" : "Integer",
+    "confidential" : false,
+    "label" : "Custom Int1",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customInt2",
+    "type" : "SCALAR",
+    "dataType" : "Integer",
+    "confidential" : false,
+    "label" : "Custom Int2",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customInt3",
+    "type" : "SCALAR",
+    "dataType" : "Integer",
+    "confidential" : false,
+    "label" : "Custom Int3",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText1",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text1",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText10",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text10",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText11",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text11",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText12",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text12",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText13",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text13",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText14",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text14",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText15",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text15",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText16",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text16",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText17",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text17",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText18",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text18",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText19",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text19",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText2",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text2",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText20",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text20",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText3",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text3",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText4",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text4",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText5",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text5",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText6",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text6",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText7",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text7",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText8",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text8",
+    "hideFromSearch" : false
+  }, {
+    "name" : "customText9",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Custom Text9",
+    "hideFromSearch" : false
+  }, {
+    "name" : "dateLastComment",
+    "type" : "SCALAR",
+    "dataType" : "Timestamp",
+    "confidential" : false,
+    "label" : "Date Last Comment",
+    "hideFromSearch" : false
+  }, {
+    "name" : "email",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Email",
+    "hideFromSearch" : false
+  }, {
+    "name" : "email2",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Email2",
+    "hideFromSearch" : false
+  }, {
+    "name" : "email3",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Email3",
+    "hideFromSearch" : false
+  }, {
+    "name" : "fax",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Fax",
+    "hideFromSearch" : false
+  }, {
+    "name" : "fax2",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Fax2",
+    "hideFromSearch" : false
+  }, {
+    "name" : "fax3",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Fax3",
+    "hideFromSearch" : false
+  }, {
+    "name" : "firstName",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 50,
+    "confidential" : false,
+    "label" : "First Name",
+    "hideFromSearch" : false
+  }, {
+    "name" : "isDayLightSavings",
+    "type" : "SCALAR",
+    "dataType" : "Boolean",
+    "confidential" : false,
+    "label" : "Is Day Light Savings",
+    "hideFromSearch" : false
+  }, {
+    "name" : "isDeleted",
+    "type" : "SCALAR",
+    "dataType" : "Boolean",
+    "confidential" : false,
+    "label" : "Is Deleted",
+    "hideFromSearch" : false
+  }, {
+    "name" : "isLockedOut",
+    "type" : "SCALAR",
+    "dataType" : "Boolean",
+    "confidential" : false,
+    "label" : "Is Locked Out",
+    "hideFromSearch" : false
+  }, {
+    "name" : "lastName",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 50,
+    "confidential" : false,
+    "label" : "Last Name",
+    "hideFromSearch" : false
+  }, {
+    "name" : "massMailOptOut",
+    "type" : "SCALAR",
+    "dataType" : "Boolean",
+    "confidential" : false,
+    "label" : "Mass Mail Opt Out",
+    "hideFromSearch" : false
+  }, {
+    "name" : "masterUserID",
+    "type" : "SCALAR",
+    "dataType" : "Integer",
+    "confidential" : false,
+    "label" : "Master User ID",
+    "hideFromSearch" : false
+  }, {
+    "name" : "middleName",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 50,
+    "confidential" : false,
+    "label" : "Middle Name",
+    "hideFromSearch" : false
+  }, {
+    "name" : "mobile",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Mobile",
+    "hideFromSearch" : false
+  }, {
+    "name" : "name",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Name",
+    "hideFromSearch" : false
+  }, {
+    "name" : "namePrefix",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 5,
+    "confidential" : false,
+    "label" : "Name Prefix",
+    "hideFromSearch" : false
+  }, {
+    "name" : "nameSuffix",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 5,
+    "confidential" : false,
+    "label" : "Name Suffix",
+    "hideFromSearch" : false
+  }, {
+    "name" : "nickName",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 50,
+    "confidential" : false,
+    "label" : "Nick Name",
+    "hideFromSearch" : false
+  }, {
+    "name" : "occupation",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 50,
+    "confidential" : false,
+    "label" : "Occupation",
+    "hideFromSearch" : false
+  }, {
+    "name" : "pager",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Pager",
+    "hideFromSearch" : false
+  }, {
+    "name" : "personSubtype",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 13,
+    "confidential" : false,
+    "label" : "Person Subtype",
+    "hideFromSearch" : false
+  }, {
+    "name" : "phone",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Phone",
+    "hideFromSearch" : false
+  }, {
+    "name" : "phone2",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Phone2",
+    "hideFromSearch" : false
+  }, {
+    "name" : "phone3",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 20,
+    "confidential" : false,
+    "label" : "Phone3",
+    "hideFromSearch" : false
+  }, {
+    "name" : "smsOptIn",
+    "type" : "SCALAR",
+    "dataType" : "Boolean",
+    "confidential" : false,
+    "label" : "Sms Opt In",
+    "hideFromSearch" : false
+  }, {
+    "name" : "status",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Status",
+    "hideFromSearch" : false
+  }, {
+    "name" : "timeZoneOffsetEST",
+    "type" : "SCALAR",
+    "dataType" : "Integer",
+    "confidential" : false,
+    "label" : "Time Zone Offset EST",
+    "hideFromSearch" : false
+  }, {
+    "name" : "userType",
+    "type" : "TO_ONE",
+    "confidential" : false,
+    "label" : "User Type",
+    "optionsType" : "UserType",
+    "optionsUrl" : "http://jl-backend.bh-bos2.bullhorn.com:8181/rest-services/7s3i9/options/UserType",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "UserType",
+      "entityMetaUrl" : "http://jl-backend.bh-bos2.bullhorn.com:8181/rest-services/7s3i9/meta/UserType?fields=*",
+      "label" : "User Type",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer"
+      } ]
+    }
+  }, {
+    "name" : "username",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Username",
+    "hideFromSearch" : false
+  } ]
+}

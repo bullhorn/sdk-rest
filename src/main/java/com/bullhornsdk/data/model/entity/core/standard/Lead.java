@@ -18,7 +18,6 @@ import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
-import com.bullhornsdk.data.model.entity.embedded.LinkedPerson;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -204,9 +203,9 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	@Size(max = 15)
 	private String priority;
 
-	private LinkedPerson referredByPerson;
+	private Person referredByPerson;
 
-	private LinkedPerson reportToPerson;
+	private Person reportToPerson;
 
 	@JsonIgnore
 	private String role;
@@ -635,12 +634,12 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	}
 
 	@JsonProperty("referredByPerson")
-	public LinkedPerson getReferredByPerson() {
+	public Person getReferredByPerson() {
 		return referredByPerson;
 	}
 
 	@JsonProperty("referredByPerson")
-	public void setReferredByPerson(LinkedPerson referredByPerson) {
+	public void setReferredByPerson(Person referredByPerson) {
 		this.referredByPerson = referredByPerson;
 	}
 
@@ -915,12 +914,12 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	}
 
 	@JsonProperty("reportToPerson")
-	public LinkedPerson getReportToPerson() {
+	public Person getReportToPerson() {
 		return reportToPerson;
 	}
 
 	@JsonProperty("reportToPerson")
-	public void setReportToPerson(LinkedPerson reportToPerson) {
+	public void setReportToPerson(Person reportToPerson) {
 		this.reportToPerson = reportToPerson;
 	}
 

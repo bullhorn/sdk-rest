@@ -79,6 +79,7 @@ import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
+import com.bullhornsdk.data.model.entity.core.standard.Person;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
@@ -115,6 +116,7 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.list.NoteEntityListWrapper;
 import com.bullhornsdk.data.model.response.list.NoteListWrapper;
 import com.bullhornsdk.data.model.response.list.OpportunityListWrapper;
+import com.bullhornsdk.data.model.response.list.PersonListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementChangeRequestListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementCommissionListWrapper;
 import com.bullhornsdk.data.model.response.list.PlacementListWrapper;
@@ -199,6 +201,7 @@ import com.bullhornsdk.data.model.response.single.LeadWrapper;
 import com.bullhornsdk.data.model.response.single.NoteEntityWrapper;
 import com.bullhornsdk.data.model.response.single.NoteWrapper;
 import com.bullhornsdk.data.model.response.single.OpportunityWrapper;
+import com.bullhornsdk.data.model.response.single.PersonWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementChangeRequestWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementCommissionWrapper;
 import com.bullhornsdk.data.model.response.single.PlacementWrapper;
@@ -317,6 +320,7 @@ public enum BullhornEntityInfo {
     NOTE("Note", Note.class, NoteWrapper.class, NoteListWrapper.class, null, null),
     NOTE_ENTITY("NoteEntity", NoteEntity.class, NoteEntityWrapper.class, NoteEntityListWrapper.class, null, null),
     OPPORTUNITY("Opportunity", Opportunity.class, OpportunityWrapper.class, OpportunityListWrapper.class, null, null),
+    PERSON("Person", Person.class, PersonWrapper.class, PersonListWrapper.class, null, null),
     PLACEMENT("Placement", Placement.class, PlacementWrapper.class, PlacementListWrapper.class, "PlacementEditHistory",
             "PlacementEditHistoryFieldChange"),
     PLACEMENT_CHANGE_REQUEST("PlacementChangeRequest", PlacementChangeRequest.class, PlacementChangeRequestWrapper.class,
