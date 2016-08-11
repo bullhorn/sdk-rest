@@ -19,6 +19,7 @@ public interface FileAttachment {
 	 */
 	public Integer getId();
 
+	// TODO refactor this to handle generic bullhorn entity if adding attachments for other entities
 	public Candidate getCandidate();
 
 	public String getContentSubType();

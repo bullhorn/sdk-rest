@@ -3,6 +3,7 @@ package com.bullhornsdk.data.model.response.file.standard;
 import java.util.List;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.file.standard.StandardFileMeta;
 import com.bullhornsdk.data.model.response.file.EntityMetaFiles;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

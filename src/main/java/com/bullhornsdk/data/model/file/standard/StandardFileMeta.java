@@ -1,16 +1,24 @@
-package com.bullhornsdk.data.model.response.file.standard;
+package com.bullhornsdk.data.model.file.standard;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.response.file.FileMeta;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.file.FileMeta;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "id", "type", "name", "description", "contentType", "contentSubType", "fileType", "externalID","dateAdded","fileUrl" })
-public class StandardFileMeta extends AbstractEntity implements FileMeta {
+@JsonPropertyOrder({ "id", "type", "name", "description", "contentType", "contentSubType", "fileType", "externalID",
+		"dateAdded", "distribution", "fileUrl" })
+public class StandardFileMeta extends AbstractEntity implements FileMeta, UpdateEntity {
 
 	private Integer id;
 
@@ -30,7 +38,11 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta {
 
 	private DateTime dateAdded;
 
+	private String distribution;
+
 	private String fileUrl;
+
+	private String fileContent;
 
 	@Override
 	@JsonProperty("id")
@@ -115,6 +127,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta {
 		return externalID;
 	}
 
+	@Override
 	@JsonProperty("externalID")
 	public void setExternalID(String externalID) {
 		this.externalID = externalID;
@@ -132,6 +145,17 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta {
 	}
 
 	@Override
+	@JsonProperty("distribution")
+	public String getDistribution() {
+		return distribution;
+	}
+
+	@JsonProperty("distribution")
+	public void setDistribution(String distribution) {
+		this.distribution = distribution;
+	}
+
+	@Override
 	@JsonProperty("fileUrl")
 	public String getFileUrl() {
 		return fileUrl;
@@ -142,6 +166,92 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta {
 		this.fileUrl = fileUrl;
 	}
 
+	@Override
+	@JsonProperty("fileContent")
+	public String getFileContent() {
+		return fileContent;
+	}
+
+	@Override
+	@JsonProperty("fileContent")
+	public void setFileContent(String fileContent) {
+		this.fileContent = fileContent;
+	}
+
+	@JsonIgnore
+	public String getUrlString() {
+		StringBuilder url = new StringBuilder();
+
+		if (type != null) {
+			url.append("&type={type}");
+		}
+		if (name != null) {
+			url.append("&name={name}");
+		}
+		if (description != null) {
+			url.append("&description={description}");
+		}
+		if (contentType != null) {
+			url.append("&contentType={contentType}");
+		}
+		if (contentSubType != null) {
+			url.append("&contentSubType={contentSubType}");
+		}
+		if (fileType != null) {
+			url.append("&fileType={fileType}");
+		}
+		if (externalID != null) {
+			url.append("&externalID={externalID}");
+		}
+		if (dateAdded != null) {
+			url.append("&dateAdded={dateAdded}");
+		}
+		if (distribution != null) {
+			url.append("&distribution={distribution}");
+		}
+		if (fileUrl != null) {
+			url.append("&fileUrl={fileUrl}");
+		}
+
+		return url.toString();
+	}
+
+	@JsonIgnore
+	public Map<String, String> getParameterMap() {
+		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
+
+		if (type != null) {
+			uriVariables.put("type", type);
+		}
+		if (name != null) {
+			uriVariables.put("name", name);
+		}
+		if (description != null) {
+			uriVariables.put("description", description);
+		}
+		if (contentType != null) {
+			uriVariables.put("contentType", contentType);
+		}
+		if (contentSubType != null) {
+			uriVariables.put("contentSubType", contentSubType);
+		}
+		if (fileType != null) {
+			uriVariables.put("fileType", fileType);
+		}
+		if (externalID != null) {
+			uriVariables.put("externalID", externalID);
+		}
+		if (distribution != null) {
+			uriVariables.put("distribution", distribution);
+		}
+		if (fileUrl != null) {
+			uriVariables.put("fileUrl", fileUrl);
+		}
+
+		return uriVariables;
+	}
+
+	@JsonIgnore
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -164,12 +274,15 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta {
 		builder.append(externalID);
 		builder.append("\n\tdateAdded: ");
 		builder.append(dateAdded);
+		builder.append("\n\tdistribution: ");
+		builder.append(distribution);
 		builder.append("\n\tfileUrl: ");
 		builder.append(fileUrl);
 		builder.append("\n}");
 		return builder.toString();
 	}
 
+	@JsonIgnore
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -184,9 +297,11 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((distribution == null) ? 0 : distribution.hashCode());
 		return result;
 	}
 
+	@JsonIgnore
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -246,7 +361,18 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta {
 				return false;
 		} else if (!type.equals(other.type))
 			return false;
+		if (distribution == null) {
+			if (other.distribution != null)
+				return false;
+		} else if (!distribution.equals(other.distribution))
+			return false;
 		return true;
+	}
+
+	@Override
+	// don't include additional properties in json conversion because isPrivate is not hooked up
+	public Map<String, Object> getAdditionalProperties() {
+		return new HashMap<String, Object>() ;
 	}
 
 }

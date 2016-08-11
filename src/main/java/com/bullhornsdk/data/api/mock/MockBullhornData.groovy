@@ -22,7 +22,7 @@ import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.GetEventsResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
-import com.bullhornsdk.data.model.response.file.FileMeta
+import com.bullhornsdk.data.model.file.FileMeta
 import com.bullhornsdk.data.model.response.file.FileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
@@ -276,6 +276,11 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
+    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
+        return mockDataHandler.addFile(type, entityId, file, fileParams.getExternalId(), null);
+    }
+
+    @Override
     public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, File file, String candidateDescription,
                                                                     String externalId, FileParams params) {
         return mockDataHandler.addResumeFileAndPopulateCandidateDescription(candidateId, file, candidateDescription, externalId, params);
@@ -284,6 +289,11 @@ public class MockBullhornData implements BullhornData {
     @Override
     public FileApiResponse deleteFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
         return mockDataHandler.deleteFile(type, entityId, fileId);
+    }
+
+    @Override
+    public FileWrapper updateFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+        return mockDataHandler.updateFile(type, entityId, fileMeta);
     }
 
     @Override

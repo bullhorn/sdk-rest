@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.api.helper;
 
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
@@ -136,13 +137,24 @@ public class RestUrlFactory {
 
     /**
      * Assemble the url for the put raw file request.
-     * 
+     *
      * @param params
      * @return
      */
     public String assembleAddFileUrl(FileParams params) {
         return restUrl + "file/{entityType}/{entityId}/raw?BhRestToken={bhRestToken}&externalID={externalID}"
                 + params.getUrlString();
+    }
+
+    /**
+     * Assemble the url for the put raw file request.
+     *
+     * @param fileMeta
+     * @return
+     */
+    public String assembleAddFileUrl(FileMeta fileMeta) {
+        return restUrl + "file/{entityType}/{entityId}/raw?BhRestToken={bhRestToken}"
+                + fileMeta.getUrlString();
     }
 
     /**
