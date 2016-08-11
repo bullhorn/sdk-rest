@@ -1,12 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -24,6 +17,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -34,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"customTextBlock5", "dateAdded", "dateLastComment", "dateLastModified", "dateLastVisited", "description", "distributionLists", "division", "email", "email2", "email3", "fax", "fax2", "fax3",
 		"firstName", "history", "isDayLightSavingsTime", "isDeleted", "lastName", "leadSource", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes",
 		"numEmployees", "occupation", "owner", "ownerCorporation", "pager", "phone", "phone2", "phone3", "preferredContact", "primarySkills", "priority", "referredByPerson", "reportToPerson", "role",
-		"salary", "salaryLow", "secondarySkills", "skillSet", "smsOptIn", "specialties", "status", "tearsheets", "timeZoneOffsetEST", "type", "willRelocate" })
+		"salary", "salaryLow", "secondaryAddress", "secondarySkills", "skillSet", "smsOptIn", "specialties", "status", "tearsheets", "timeZoneOffsetEST", "type", "willRelocate" })
 public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
@@ -213,6 +211,8 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	private BigDecimal salary;
 
 	private BigDecimal salaryLow;
+
+	private Address secondaryAddress;
 
 	private OneToMany<Skill> secondarySkills;
 
@@ -663,6 +663,16 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		this.salaryLow = salaryLow;
 	}
 
+	@JsonProperty("secondaryAddress")
+	public Address getSecondaryAddress() {
+		return secondaryAddress;
+	}
+
+	@JsonProperty("secondaryAddress")
+	public void setSecondaryAddress(Address secondaryAddress) {
+		this.secondaryAddress = secondaryAddress;
+	}
+
 	@JsonIgnore
 	public OneToMany<Skill> getSecondarySkills() {
 		return secondarySkills;
@@ -1006,6 +1016,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		result = prime * result + ((role == null) ? 0 : role.hashCode());
 		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
 		result = prime * result + ((salaryLow == null) ? 0 : salaryLow.hashCode());
+		result = prime * result + ((secondaryAddress == null) ? 0 : secondaryAddress.hashCode());
 		result = prime * result + ((secondarySkills == null) ? 0 : secondarySkills.hashCode());
 		result = prime * result + ((skillSet == null) ? 0 : skillSet.hashCode());
 		result = prime * result + ((smsOptIn == null) ? 0 : smsOptIn.hashCode());
@@ -1323,6 +1334,11 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 				return false;
 		} else if (!salaryLow.equals(other.salaryLow))
 			return false;
+		if (secondaryAddress == null) {
+			if (other.secondaryAddress != null)
+				return false;
+		} else if (!secondaryAddress.equals(other.secondaryAddress))
+			return false;
 		if (secondarySkills == null) {
 			if (other.secondarySkills != null)
 				return false;
@@ -1497,6 +1513,8 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		builder.append(salary);
 		builder.append(", salaryLow=");
 		builder.append(salaryLow);
+		builder.append(", secondaryAddress=");
+		builder.append(secondaryAddress);
 		builder.append(", secondarySkills=");
 		builder.append(secondarySkills);
 		builder.append(", skillSet=");
