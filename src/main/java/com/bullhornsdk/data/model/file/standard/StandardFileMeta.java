@@ -50,6 +50,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return id;
 	}
 
+	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
 		this.id = id;
@@ -61,6 +62,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return type;
 	}
 
+	@Override
 	@JsonProperty("type")
 	public void setType(String type) {
 		this.type = type;
@@ -72,6 +74,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return name;
 	}
 
+	@Override
 	@JsonProperty("name")
 	public void setName(String name) {
 		this.name = name;
@@ -83,6 +86,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return description;
 	}
 
+	@Override
 	@JsonProperty("description")
 	public void setDescription(String description) {
 		this.description = description;
@@ -94,6 +98,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return contentType;
 	}
 
+	@Override
 	@JsonProperty("contentType")
 	public void setContentType(String contentType) {
 		this.contentType = contentType;
@@ -105,6 +110,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return contentSubType;
 	}
 
+	@Override
 	@JsonProperty("contentSubType")
 	public void setContentSubType(String contentSubType) {
 		this.contentSubType = contentSubType;
@@ -116,6 +122,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return fileType;
 	}
 
+	@Override
 	@JsonProperty("fileType")
 	public void setFileType(String fileType) {
 		this.fileType = fileType;
@@ -139,6 +146,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return dateAdded;
 	}
 
+	@Override
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -150,6 +158,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return distribution;
 	}
 
+	@Override
 	@JsonProperty("distribution")
 	public void setDistribution(String distribution) {
 		this.distribution = distribution;
@@ -161,6 +170,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		return fileUrl;
 	}
 
+	@Override
 	@JsonProperty("fileUrl")
 	public void setFileUrl(String fileUrl) {
 		this.fileUrl = fileUrl;
