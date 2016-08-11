@@ -24,11 +24,11 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsRespo
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
-import com.bullhornsdk.data.model.response.file.FileMeta
+import com.bullhornsdk.data.model.file.FileMeta
 import com.bullhornsdk.data.model.response.file.FileWrapper
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent
-import com.bullhornsdk.data.model.response.file.standard.StandardFileMeta
+import com.bullhornsdk.data.model.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper

@@ -8,6 +8,7 @@ import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
 import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import org.apache.commons.lang3.StringUtils;
@@ -296,6 +297,29 @@ public class RestUriVariablesFactory {
 		uriVariables.put(EXTERNAL_ID, externalId);
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 		uriVariables.put(ENTITY_ID, entityId.toString());
+		return uriVariables;
+	}
+
+	/**
+	 * Returns the uri variables needed for adding a file
+	 *
+	 * @param entityInfo
+	 * @param entityId
+	 * @param fileMeta
+	 * @return
+	 */
+	public Map<String, String> getUriVariablesForAddFile(BullhornEntityInfo entityInfo, Integer entityId, FileMeta fileMeta) {
+		Map<String, String> uriVariables = fileMeta.getParameterMap();
+
+		String bhRestToken = bullhornApiRest.getBhRestToken();
+		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+		uriVariables.put(ENTITY_ID, entityId.toString());
+
+		if (fileMeta.getId() != null) {
+			uriVariables.put(FILE_ID, fileMeta.getId().toString());
+		}
+
 		return uriVariables;
 	}
 

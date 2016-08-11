@@ -27,7 +27,7 @@ import com.bullhornsdk.data.model.parameter.FileParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
-import com.bullhornsdk.data.model.response.file.FileMeta;
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 
 public class TestStandardBullhornApiRestFile extends BaseTest {

@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import org.springframework.util.FileCopyUtils;
 
 import com.bullhornsdk.data.model.response.file.FileContent;
-import com.bullhornsdk.data.model.response.file.FileMeta;
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 
 public final class StandardFileWrapper implements FileWrapper {

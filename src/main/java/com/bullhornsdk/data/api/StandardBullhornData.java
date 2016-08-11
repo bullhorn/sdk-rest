@@ -68,7 +68,7 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequest
 import com.bullhornsdk.data.model.response.file.EntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
-import com.bullhornsdk.data.model.response.file.FileMeta;
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.file.standard.StandardEntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse;
@@ -436,6 +436,34 @@ public class StandardBullhornData implements BullhornData {
     @Override
     public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile) {
         return this.handleAddFileWithFile(type, entityId, file, externalId, params, deleteFile);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
+        return this.handleAddFileWithFile(type, entityId, file, fileMeta, deleteFile);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public FileWrapper updateFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
+                entityId, fileMeta);
+        String url = restUrlFactory.assembleGetFileUrl();
+
+        CrudResponse response;
+        try {
+            String jsonString = restJsonConverter.convertEntityToJsonString((BullhornEntity)fileMeta);
+            response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
+        } catch (HttpStatusCodeException error) {
+            response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, fileMeta.getId());
+        }
+
+        return this.handleGetFileContentWithMetaData(type, entityId, fileMeta.getId());
     }
 
     /**
@@ -1465,8 +1493,11 @@ public class StandardBullhornData implements BullhornData {
         } catch (IOException e) {
             log.error("Error creating temp file", e);
         }
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
+                entityId, externalId, params);
+        String url = restUrlFactory.assembleAddFileUrl(params);
 
-        return this.handleAddFile(type, entityId, multiValueMap, externalId, params, multipartFile.getOriginalFilename(), deleteFile);
+        return this.handleAddFile(type, entityId, multiValueMap, url, uriVariables, multipartFile.getOriginalFilename(), deleteFile);
 
     }
 
@@ -1483,18 +1514,26 @@ public class StandardBullhornData implements BullhornData {
      */
     private FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId,
                                               FileParams params, boolean deleteFile) {
-
-
         MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
-
-        return this.handleAddFile(type, entityId, multiValueMap, externalId, params, file.getName(), deleteFile);
-    }
-
-    private FileWrapper handleAddFile(Class<? extends FileEntity> type, Integer entityId, MultiValueMap<String, Object> multiValueMap,
-                                      String externalId, FileParams params, String fileName, boolean deleteFile) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
                 entityId, externalId, params);
         String url = restUrlFactory.assembleAddFileUrl(params);
+
+        return this.handleAddFile(type, entityId, multiValueMap, url, uriVariables, file.getName(), deleteFile);
+    }
+
+    private FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
+        MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
+                entityId, fileMeta);
+        String url = restUrlFactory.assembleAddFileUrl(fileMeta);
+
+        return this.handleAddFile(type, entityId, multiValueMap, url, uriVariables, file.getName(), deleteFile);
+    }
+
+    private FileWrapper handleAddFile(Class<? extends FileEntity> type, Integer entityId, MultiValueMap<String, Object> multiValueMap ,
+                                      String url,  Map<String, String> uriVariables, String fileName, boolean deleteFile) {
+
         StandardFileApiResponse fileApiResponse = this.performCustomRequest(url, multiValueMap, StandardFileApiResponse.class,
                 uriVariables, HttpMethod.PUT, this.getMultipartHeadersForFileAttachement(fileName));
 
