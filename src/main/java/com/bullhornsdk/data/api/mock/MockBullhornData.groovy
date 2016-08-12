@@ -276,8 +276,8 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
-        return mockDataHandler.addFile(type, entityId, file, fileParams.getExternalId(), null);
+    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+        return mockDataHandler.addFile(type, entityId, fileMeta);
     }
 
     @Override

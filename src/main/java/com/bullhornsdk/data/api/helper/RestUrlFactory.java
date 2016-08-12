@@ -118,6 +118,16 @@ public class RestUrlFactory {
 
     /**
      * Assemble the url for a get file request
+     *
+     * @return
+     */
+
+    public String assemblePutFileUrl() {
+        return restUrl + "file/{entityType}/{entityId}?BhRestToken={bhRestToken}";
+    }
+
+    /**
+     * Assemble the url for a get file request
      * 
      * @return
      */

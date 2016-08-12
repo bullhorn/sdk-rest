@@ -54,6 +54,7 @@ import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
+import com.bullhornsdk.data.model.response.crud.AbstractCrudResponse;
 import com.bullhornsdk.data.model.response.crud.CreateResponse;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.crud.DeleteResponse;
@@ -445,17 +446,13 @@ public class StandardBullhornData implements BullhornData {
     public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
                 entityId, fileMeta);
-        String url = restUrlFactory.assembleGetFileUrl();
+        String url = restUrlFactory.assemblePutFileUrl();
 
-        CrudResponse response;
-        try {
-            String jsonString = restJsonConverter.convertEntityToJsonString((BullhornEntity)fileMeta);
-            response = this.performCustomRequest(url, jsonString, CreateResponse.class, uriVariables, HttpMethod.PUT, null);
-        } catch (HttpStatusCodeException error) {
-            response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, fileMeta.getId());
-        }
+        String jsonString = restJsonConverter.convertEntityToJsonString((BullhornEntity)fileMeta);
+        StandardFileApiResponse fileApiResponse = this.performCustomRequest(url, jsonString, StandardFileApiResponse.class, uriVariables, HttpMethod.PUT, null);
 
-        return this.handleGetFileContentWithMetaData(type, entityId, fileMeta.getId());
+        Integer fileId = fileApiResponse.getFileId();
+        return this.handleGetFileContentWithMetaData(type, entityId, fileId);
     }
 
     /**
