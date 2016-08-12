@@ -427,13 +427,11 @@ public interface BullhornData {
 	 *
 	 * @param type the FileEntity to attach the file to
 	 * @param entityId the id of the file entity
-	 * @param file the file to add
 	 * @param fileMeta fileMeta for file
-	 * @param deleteFile determines whether directory file lives in is wiped
 	 *
 	 * @return a FileWrapper with information about the attached file
 	 */
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile);
+	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta);
 
 	/**
 	 * Adds a file to the bh entity with the entityId, passing in a File.
