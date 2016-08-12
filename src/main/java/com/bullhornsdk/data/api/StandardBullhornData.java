@@ -442,8 +442,20 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
-        return this.handleAddFileWithFile(type, entityId, file, fileMeta, deleteFile);
+    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
+                entityId, fileMeta);
+        String url = restUrlFactory.assembleGetFileUrl();
+
+        CrudResponse response;
+        try {
+            String jsonString = restJsonConverter.convertEntityToJsonString((BullhornEntity)fileMeta);
+            response = this.performCustomRequest(url, jsonString, CreateResponse.class, uriVariables, HttpMethod.PUT, null);
+        } catch (HttpStatusCodeException error) {
+            response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, fileMeta.getId());
+        }
+
+        return this.handleGetFileContentWithMetaData(type, entityId, fileMeta.getId());
     }
 
     /**
