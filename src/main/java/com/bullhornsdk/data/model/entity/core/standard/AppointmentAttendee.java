@@ -1,7 +1,10 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -16,7 +19,7 @@ public class AppointmentAttendee extends AbstractEntity implements QueryEntity, 
 
     private Integer acceptanceStatus;
 
-    private LinkedId appointment;
+    private Appointment appointment;
 
     private Person attendee;
 
@@ -45,12 +48,12 @@ public class AppointmentAttendee extends AbstractEntity implements QueryEntity, 
     }
 
     @JsonProperty("appointment")
-    public LinkedId getAppointment() {
+    public Appointment getAppointment() {
         return appointment;
     }
 
     @JsonProperty("appointment")
-    public void setAppointment(LinkedId appointment) {
+    public void setAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
 

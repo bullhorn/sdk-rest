@@ -1,22 +1,19 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -33,7 +30,7 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 
 	private Candidate candidate;
 
-	private LinkedId clientCorporation;
+	private ClientCorporation clientCorporation;
 
 	@JsonIgnore
 	private String comments;
@@ -109,7 +106,7 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 
 	private Object migrateGUID;
 
-	private LinkedId placement;
+	private ClientCorporation placement;
 
 	private BigDecimal salary1;
 
@@ -161,12 +158,12 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 	}
 
 	@JsonProperty("clientCorporation")
-	public LinkedId getClientCorporation() {
+	public ClientCorporation getClientCorporation() {
 		return clientCorporation;
 	}
 
 	@JsonProperty("clientCorporation")
-	public void setClientCorporation(LinkedId clientCorporation) {
+	public void setClientCorporation(ClientCorporation clientCorporation) {
 		this.clientCorporation = clientCorporation;
 	}
 
@@ -491,12 +488,12 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 	}
 
 	@JsonProperty("placement")
-	public LinkedId getPlacement() {
+	public ClientCorporation getPlacement() {
 		return placement;
 	}
 
 	@JsonProperty("placement")
-	public void setPlacement(LinkedId placement) {
+	public void setPlacement(ClientCorporation placement) {
 		this.placement = placement;
 	}
 

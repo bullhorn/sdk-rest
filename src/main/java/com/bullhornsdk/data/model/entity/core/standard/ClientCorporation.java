@@ -1,11 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance10;
@@ -27,7 +21,6 @@ import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -36,6 +29,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -100,7 +97,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 
 	private DateTime dateLastModified;
 
-	private LinkedId department;
+	private CorporationDepartment department;
 
 	@JsonIgnore
 	private String externalID;
@@ -363,12 +360,12 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	}
 
 	@JsonProperty("department")
-	public LinkedId getDepartment() {
+	public CorporationDepartment getDepartment() {
 		return department;
 	}
 
 	@JsonProperty("department")
-	public void setDepartment(LinkedId department) {
+	public void setDepartment(CorporationDepartment department) {
 		this.department = department;
 	}
 

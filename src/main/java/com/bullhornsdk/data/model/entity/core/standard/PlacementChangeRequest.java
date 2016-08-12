@@ -53,7 +53,7 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
 
     private Integer id;
 
-    private LinkedId approvingUser;
+    private CorporateUser approvingUser;
 
     private ClientContact billingClientContact;
 
@@ -266,7 +266,7 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     @Size(max = 50)
     private String requestType;
 
-    private LinkedId requestingUser;
+    private CorporateUser requestingUser;
 
     private BigDecimal salary;
 
@@ -298,12 +298,12 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     }
 
     @JsonProperty("approvingUser")
-    public LinkedId getApprovingUser() {
+    public CorporateUser getApprovingUser() {
         return approvingUser;
     }
 
     @JsonProperty("approvingUser")
-    public void setApprovingUser(LinkedId approvingUser) {
+    public void setApprovingUser(CorporateUser approvingUser) {
         this.approvingUser = approvingUser;
     }
 
@@ -1028,12 +1028,12 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     }
 
     @JsonProperty("requestingUser")
-    public LinkedId getRequestingUser() {
+    public CorporateUser getRequestingUser() {
         return requestingUser;
     }
 
     @JsonProperty("requestingUser")
-    public void setRequestingUser(LinkedId requestingUser) {
+    public void setRequestingUser(CorporateUser requestingUser) {
         this.requestingUser = requestingUser;
     }
 

@@ -5,7 +5,6 @@ import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -18,7 +17,7 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
 
     private Integer id;
 
-    private LinkedId note;
+    private Note note;
 
     private Integer targetEntityID;
 
@@ -37,12 +36,12 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
     }
 
     @JsonProperty("note")
-    public LinkedId getNote() {
+    public Note getNote() {
         return note;
     }
 
     @JsonProperty("note")
-    public void setNote(LinkedId note) {
+    public void setNote(Note note) {
         this.note = note;
     }
 

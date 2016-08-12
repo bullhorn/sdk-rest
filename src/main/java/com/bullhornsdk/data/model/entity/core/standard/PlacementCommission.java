@@ -1,8 +1,17 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
-import com.fasterxml.jackson.annotation.*;
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
@@ -37,7 +46,7 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
 
     private String migrateGUID;
 
-    private LinkedId placement;
+    private Placement placement;
 
     @JsonIgnore
     @Size(max = 50)
@@ -46,7 +55,7 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
     @JsonIgnore
     private String status;
 
-    private LinkedId user;
+    private CorporateUser user;
 
     public PlacementCommission instantiateForInsert(){
         PlacementCommission placementCommission = new PlacementCommission();
@@ -54,7 +63,7 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
         placementCommission.setFlatPayout(new BigDecimal(1.0));
         placementCommission.setGrossMarginPercentage(new BigDecimal(1.0));
         placementCommission.setHourlyPayout(new BigDecimal(1.0));
-        placementCommission.setPlacement(new LinkedId(1));
+        placementCommission.setPlacement(new Placement(1));
         return  placementCommission;
     }
 
@@ -159,12 +168,12 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
     }
 
     @JsonProperty("placement")
-    public LinkedId getPlacement() {
+    public Placement getPlacement() {
         return placement;
     }
 
     @JsonProperty("placement")
-    public void setPlacement(LinkedId placement) {
+    public void setPlacement(Placement placement) {
         this.placement = placement;
     }
 
@@ -189,12 +198,12 @@ public class PlacementCommission extends AbstractEntity implements QueryEntity, 
     }
 
     @JsonProperty("user")
-    public LinkedId getUser() {
+    public CorporateUser getUser() {
         return user;
     }
 
     @JsonProperty("user")
-    public void setUser(LinkedId user) {
+    public void setUser(CorporateUser user) {
         this.user = user;
     }
 
