@@ -1,23 +1,20 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -37,7 +34,7 @@ public class CandidateReference extends AbstractEntity implements QueryEntity, U
 	@Size(max = 50)
 	private String candidateTitle;
 
-	private LinkedId clientCorporation;
+	private ClientCorporation clientCorporation;
 
 	@JsonIgnore
 	@Size(max = 50)
@@ -189,12 +186,12 @@ public class CandidateReference extends AbstractEntity implements QueryEntity, U
 	}
 
 	@JsonProperty("clientCorporation")
-	public LinkedId getClientCorporation() {
+	public ClientCorporation getClientCorporation() {
 		return clientCorporation;
 	}
 
 	@JsonProperty("clientCorporation")
-	public void setClientCorporation(LinkedId clientCorporation) {
+	public void setClientCorporation(ClientCorporation clientCorporation) {
 		this.clientCorporation = clientCorporation;
 	}
 

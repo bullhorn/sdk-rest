@@ -1,11 +1,21 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.validation.BullhornUUID;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
@@ -68,9 +78,9 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     private Person owner;
 
-    private LinkedId parentAppointment;
+    private Appointment parentAppointment;
 
-    private LinkedId placement;
+    private Placement placement;
 
     private Integer recurrenceDayBits;
 
@@ -334,22 +344,22 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @JsonProperty("parentAppointment")
-    public LinkedId getParentAppointment() {
+    public Appointment getParentAppointment() {
         return parentAppointment;
     }
 
     @JsonProperty("parentAppointment")
-    public void setParentAppointment(LinkedId parentAppointment) {
+    public void setParentAppointment(Appointment parentAppointment) {
         this.parentAppointment = parentAppointment;
     }
 
     @JsonProperty("placement")
-    public LinkedId getPlacement() {
+    public Placement getPlacement() {
         return placement;
     }
 
     @JsonProperty("placement")
-    public void setPlacement(LinkedId placement) {
+    public void setPlacement(Placement placement) {
         this.placement = placement;
     }
 

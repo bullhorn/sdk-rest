@@ -1,12 +1,32 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
 
@@ -123,7 +143,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
 	private JobOrder jobOrder;
 
-	private LinkedId jobSubmission;
+	private JobSubmission jobSubmission;
 
 	private Object migrateGUID;
 
@@ -577,12 +597,12 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	}
 
 	@JsonIgnore
-	public LinkedId getJobSubmission() {
+	public JobSubmission getJobSubmission() {
 		return jobSubmission;
 	}
 
 	@JsonProperty("jobSubmission")
-	public void setJobSubmission(LinkedId jobSubmission) {
+	public void setJobSubmission(JobSubmission jobSubmission) {
 		this.jobSubmission = jobSubmission;
 	}
 

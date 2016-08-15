@@ -1,20 +1,18 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -42,7 +40,7 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
 
     private String migrateGUID;
 
-    private LinkedId user;
+    private CorporateUser user;
 
     public Sendout() {
         super();
@@ -57,7 +55,7 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
         Sendout entity = new Sendout();
         entity.setIsRead(Boolean.FALSE);
         entity.setCandidate(new Candidate(1));
-        entity.setUser(new LinkedId(1));
+        entity.setUser(new CorporateUser(1));
         return entity;
     }
 
@@ -154,12 +152,12 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     }
 
     @JsonProperty("user")
-    public LinkedId getUser() {
+    public CorporateUser getUser() {
         return user;
     }
 
     @JsonProperty("user")
-    public void setUser(LinkedId user) {
+    public void setUser(CorporateUser user) {
         this.user = user;
     }
 

@@ -1,11 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
@@ -19,6 +13,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -74,6 +72,11 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 
 	public Note() {
 		super();
+	}
+
+	public Note(Integer id) {
+		super();
+		setId(id);
 	}
 
 	/**

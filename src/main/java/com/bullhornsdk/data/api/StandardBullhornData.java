@@ -667,7 +667,7 @@ public class StandardBullhornData implements BullhornData {
     private NoteEntity createNoteEntity(CrudResponse noteAdded, String targetEntityName, Integer targetEntityID) {
         NoteEntity noteEntity = new NoteEntity();
 
-        noteEntity.setNote(new LinkedId(noteAdded.getChangedEntityId()));
+        noteEntity.setNote(new Note(noteAdded.getChangedEntityId()));
         noteEntity.setTargetEntityID(targetEntityID);
         noteEntity.setTargetEntityName(targetEntityName);
         return noteEntity;
