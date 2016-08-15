@@ -36,7 +36,7 @@ import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper;
 import com.bullhornsdk.data.model.response.event.GetEventsResponse;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
-import com.bullhornsdk.data.model.response.file.FileMeta;
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
@@ -427,6 +427,17 @@ public interface BullhornData {
 	 *
 	 * @param type the FileEntity to attach the file to
 	 * @param entityId the id of the file entity
+	 * @param fileMeta fileMeta for file
+	 *
+	 * @return a FileWrapper with information about the attached file
+	 */
+	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta);
+
+	/**
+	 * Adds a file to the bh entity with the entityId, passing in a File.
+	 *
+	 * @param type the FileEntity to attach the file to
+	 * @param entityId the id of the file entity
 	 * @param file the file to add
 	 * @param externalId external identifier for the file. Example: "portfolio"
 	 * @param params additional parameters for the add file call
@@ -520,6 +531,17 @@ public interface BullhornData {
 	 */
 	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, File file, String candidateDescription,
 			String externalId, FileParams params);
+
+	/**
+	 * update a file
+	 *
+	 * @param type the type of FileEntity to delete a file from
+	 * @param entityId the id of the entity that has the file to delete
+	 * @param fileMeta the id of the file to delete
+	 *
+	 * @return a FileWrapper with the file information
+	 */
+	public FileWrapper updateFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta);
 
 	/**
 	 * Deletes a file from the bullhorn entity
