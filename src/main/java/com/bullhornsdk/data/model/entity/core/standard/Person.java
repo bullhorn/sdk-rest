@@ -723,7 +723,7 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Lead [id=");
+		builder.append("Person [id=");
 		builder.append(id);
 		builder.append(", address=");
 		builder.append(address);

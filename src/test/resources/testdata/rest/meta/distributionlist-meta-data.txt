@@ -1,0 +1,156 @@
+{
+  "entity": "DistributionList",
+  "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/294i29/meta/DistributionList?fields=*",
+  "label": "Distribution List",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer"
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date Added",
+      "hideFromSearch": false
+    },
+    {
+      "name": "description",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Description",
+      "hideFromSearch": false
+    },
+    {
+      "name": "groupName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Group Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "isPrivate",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "label": "Is Private",
+      "hideFromSearch": false
+    },
+    {
+      "name": "isReadOnly",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "label": "Is Read Only",
+      "hideFromSearch": false
+    },
+    {
+      "name": "members",
+      "type": "TO_MANY",
+      "confidential": false,
+      "label": "Members",
+      "optionsType": "Person",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/294i29/options/Person",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Person",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/294i29/meta/Person?fields=*",
+        "label": "Person",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "_subtype",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255
+          }
+        ]
+      }
+    },
+    {
+      "name": "migrateGUID",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 36,
+      "confidential": false,
+      "label": "Migrate GUID",
+      "hideFromSearch": false
+    },
+    {
+      "name": "name",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "owner",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Owner",
+      "optionsType": "CorporateUser",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/294i29/options/CorporateUser",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "CorporateUser",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/294i29/meta/CorporateUser?fields=*",
+        "label": "Corporate User",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "First Name",
+            "hideFromSearch": false
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Last Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "searchURL",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "label": "Search URL",
+      "hideFromSearch": false
+    },
+    {
+      "name": "type",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 30,
+      "confidential": false,
+      "label": "Type",
+      "hideFromSearch": false
+    }
+  ]
+}
