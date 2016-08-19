@@ -5,37 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import org.junit.Test;
 
-import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
-import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Category;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
-import com.bullhornsdk.data.model.entity.core.standard.Country;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
-import com.bullhornsdk.data.model.entity.core.standard.Sendout;
-import com.bullhornsdk.data.model.entity.core.standard.Skill;
-import com.bullhornsdk.data.model.entity.core.standard.Specialty;
-import com.bullhornsdk.data.model.entity.core.standard.State;
-import com.bullhornsdk.data.model.entity.core.standard.Task;
-import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.enums.MetaParameter;
@@ -164,6 +136,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 		runAssertions(meta, Country.class);
 
 	}
+
+    @Test
+    public void testMetaDistributionList() {
+
+        MetaData<DistributionList> meta = bullhornData.getMetaData(DistributionList.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, DistributionList.class);
+
+    }
 
 	@Test
 	public void testMetaJobOrder() {
