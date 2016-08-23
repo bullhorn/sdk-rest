@@ -1,12 +1,15 @@
  package com.bullhornsdk.data.model.entity.core.customobject;
 
- import java.math.BigDecimal;
+ import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+ import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
+ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.joda.time.DateTime;
 
- import com.bullhornsdk.data.model.entity.core.type.*;
- import com.fasterxml.jackson.annotation.JsonProperty;
- import org.joda.time.DateTime;
+import java.math.BigDecimal;
 
-public abstract class CustomObjectInstance extends AbstractEntity implements QueryEntity, UpdateEntity, AssociationEntity, DateLastModifiedEntity {
+public abstract class CustomObjectInstance extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, HardDeleteEntity {
 
 	private Integer id;
     private String text1;
