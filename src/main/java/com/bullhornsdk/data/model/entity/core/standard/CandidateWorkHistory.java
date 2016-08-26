@@ -106,7 +106,7 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 
 	private Object migrateGUID;
 
-	private ClientCorporation placement;
+	private Placement placement;
 
 	private BigDecimal salary1;
 
@@ -488,12 +488,12 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 	}
 
 	@JsonProperty("placement")
-	public ClientCorporation getPlacement() {
+	public Placement getPlacement() {
 		return placement;
 	}
 
 	@JsonProperty("placement")
-	public void setPlacement(ClientCorporation placement) {
+	public void setPlacement(Placement placement) {
 		this.placement = placement;
 	}
 
