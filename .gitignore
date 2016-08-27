@@ -18,3 +18,7 @@ hs_err_pid*
 #intelliJ files
 *.iml
 .idea/*
+
+#code coverage utilities
+node_modules/
+coverage/
