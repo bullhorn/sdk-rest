@@ -2,7 +2,17 @@ package com.bullhornsdk.data.model.entity.association.standard;
 
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -18,9 +28,8 @@ import java.util.List;
  */
 public final class PlacementAssociations implements EntityAssociations<Placement> {
 
-    private final AssociationField<Placement,TimeUnit> timeUnits= instantiateAssociationField("timeUnits",TimeUnit.class);
-    private List<AssociationField<Placement,? extends BullhornEntity>> allAssociations;
-    private static final PlacementAssociations INSTANCE = new PlacementAssociations();
+    private final AssociationField<Placement, CorporateUser> owners = instantiateAssociationField("owners", CorporateUser.class);
+    private final AssociationField<Placement, TimeUnit> timeUnits = instantiateAssociationField("timeUnits", TimeUnit.class);
 
     private final AssociationField<Placement, PlacementCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", PlacementCustomObjectInstance1.class);
     private final AssociationField<Placement, PlacementCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", PlacementCustomObjectInstance2.class);
@@ -33,6 +42,10 @@ public final class PlacementAssociations implements EntityAssociations<Placement
     private final AssociationField<Placement, PlacementCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", PlacementCustomObjectInstance9.class);
     private final AssociationField<Placement, PlacementCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", PlacementCustomObjectInstance10.class);
 
+    private List<AssociationField<Placement,? extends BullhornEntity>> allAssociations;
+
+    private static final PlacementAssociations INSTANCE = new PlacementAssociations();
+
     private PlacementAssociations() {
         super();
     }
@@ -41,7 +54,11 @@ public final class PlacementAssociations implements EntityAssociations<Placement
         return INSTANCE;
     }
 
-    public AssociationField<Placement,TimeUnit> timeUnits() {
+    public AssociationField<Placement, CorporateUser> owners() {
+        return owners;
+    }
+
+    public AssociationField<Placement, TimeUnit> timeUnits() {
         return timeUnits;
     }
 
@@ -94,6 +111,7 @@ public final class PlacementAssociations implements EntityAssociations<Placement
     public List<AssociationField<Placement,? extends BullhornEntity>> allAssociations() {
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<Placement,? extends BullhornEntity>>();
+            allAssociations.add(owners());
             allAssociations.add(timeUnits());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
@@ -119,5 +137,4 @@ public final class PlacementAssociations implements EntityAssociations<Placement
 
         throw new IllegalArgumentException("There is no association on entity Placement called: " + associationName);
     }
-
 }
