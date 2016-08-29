@@ -25,6 +25,13 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
     private final AssociationField<ClientContact, Skill> skills = instantiateAssociationField("skills", Skill.class);
     private final AssociationField<ClientContact, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
     private final AssociationField<ClientContact, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
+    private final AssociationField<ClientContact, Opportunity> opportunities = instantiateAssociationField("opportunities", Opportunity.class);
+    private final AssociationField<ClientContact, Person> reportToPerson = instantiateAssociationField("reportToPerson", Person.class);
+    private final AssociationField<ClientContact, Person> linkedPerson = instantiateAssociationField("linkedPerson", Person.class);
+    private final AssociationField<ClientContact, Category> category = instantiateAssociationField("category", Category.class);
+    private final AssociationField<ClientContact, ClientCorporation> clientCorporation = instantiateAssociationField("clientCorporation", ClientCorporation.class);
+    private final AssociationField<ClientContact, Person> referredByPerson = instantiateAssociationField("referredByPerson", Person.class);
+    private final AssociationField<ClientContact, CorporateUser> owner = instantiateAssociationField("owner", CorporateUser.class);
 
     private final AssociationField<ClientContact, PersonCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", PersonCustomObjectInstance1.class);
     private final AssociationField<ClientContact, PersonCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", PersonCustomObjectInstance2.class);
@@ -57,8 +64,36 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
         return categories;
     }
 
+    public AssociationField<ClientContact, Category> category() {
+        return category;
+    }
+
+    public AssociationField<ClientContact, ClientCorporation> clientCorporation() {
+        return clientCorporation;
+    }
+
     public AssociationField<ClientContact, Lead> leads() {
         return leads;
+    }
+
+    public AssociationField<ClientContact, Person> linkedPerson() {
+        return linkedPerson;
+    }
+
+    public AssociationField<ClientContact, Opportunity> opportunities() {
+        return opportunities;
+    }
+
+    public AssociationField<ClientContact, CorporateUser> owner() {
+        return owner;
+    }
+
+    public AssociationField<ClientContact, Person> referredByPerson() {
+        return referredByPerson;
+    }
+
+    public AssociationField<ClientContact, Person> reportToPerson() {
+        return reportToPerson;
     }
 
     public AssociationField<ClientContact, CorporateUser> secondaryOwners() {
@@ -127,7 +162,14 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
             allAssociations = new ArrayList<AssociationField<ClientContact, ? extends BullhornEntity>>();
             allAssociations.add(businessSectors());
             allAssociations.add(categories());
+            allAssociations.add(category());
+            allAssociations.add(clientCorporation());
             allAssociations.add(leads());
+            allAssociations.add(linkedPerson());
+            allAssociations.add(opportunities());
+            allAssociations.add(owner());
+            allAssociations.add(referredByPerson());
+            allAssociations.add(reportToPerson());
             allAssociations.add(secondaryOwners());
             allAssociations.add(skills());
             allAssociations.add(specialties());
