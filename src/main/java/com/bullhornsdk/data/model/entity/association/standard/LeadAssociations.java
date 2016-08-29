@@ -26,7 +26,6 @@ public final class LeadAssociations implements EntityAssociations<Lead> {
     private final AssociationField<Lead, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
     private final AssociationField<Lead, Category> category = instantiateAssociationField("category", Category.class);
     private final AssociationField<Lead, DistributionList> distributionLists = instantiateAssociationField("distributionLists", DistributionList.class);
-    private final AssociationField<Lead, Note> notes = instantiateAssociationField("notes", Note.class);
     private final AssociationField<Lead, ClientCorporation> clientCorporation = instantiateAssociationField("clientCorporation", ClientCorporation.class);
     private final AssociationField<Lead, CorporateUser> owner = instantiateAssociationField("owner", CorporateUser.class);
     private final AssociationField<Lead, BusinessSector> businessSectors = instantiateAssociationField("businessSectors", BusinessSector.class);
@@ -87,10 +86,6 @@ public final class LeadAssociations implements EntityAssociations<Lead> {
         return ownerCorporation;
     }
 
-    public AssociationField<Lead, Note> notes() {
-        return notes;
-    }
-
     public AssociationField<Lead, Skill> primarySkills() {
         return primarySkills;
     }
@@ -131,7 +126,6 @@ public final class LeadAssociations implements EntityAssociations<Lead> {
             allAssociations.add(clientContacts());
             allAssociations.add(clientCorporation());
             allAssociations.add(distributionLists());
-            allAssociations.add(notes());
             allAssociations.add(owner());
             allAssociations.add(ownerCorporation());
             allAssociations.add(primarySkills());
