@@ -134,7 +134,7 @@ public class Tearsheet extends AbstractEntity implements QueryEntity, UpdateEnti
 		this.name = name;
 	}
 
-	@JsonIgnore
+	@JsonProperty("owner")
 	public CorporateUser getOwner() {
 		return owner;
 	}
