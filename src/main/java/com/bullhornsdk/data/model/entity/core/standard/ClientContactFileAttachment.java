@@ -12,14 +12,14 @@ import org.joda.time.DateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "candidate", "contentSubType", "contentType", "dateAdded", "description", "directory", "distribution", "externalID",
-					"fileExtension", "fileSize", "fileType", "isCopied", "isDeleted", "isOpen", "isPrivate", "isSendOut", "name", "type",
-					"usersSharedWith", "uuid"})
-public class CandidateFileAttachment extends AbstractEntity implements QueryEntity, AssociationEntity {
+@JsonPropertyOrder({"id", "clientContact", "contentSubType", "contentType", "dateAdded", "description", "directory", "distribution", "externalID",
+		"fileExtension", "fileSize", "fileType", "isCopied", "isDeleted", "isOpen", "isPrivate", "isSendOut", "name", "type",
+		"usersSharedWith", "uuid"})
+public class ClientContactFileAttachment extends AbstractEntity implements QueryEntity, AssociationEntity {
 
 	private Integer id;
 
-	private Candidate candidate;
+	private ClientContact clientContact;
 
 	private String contentSubType;
 
@@ -59,7 +59,7 @@ public class CandidateFileAttachment extends AbstractEntity implements QueryEnti
 
 	private String uuid;
 
-	public CandidateFileAttachment() {
+	public ClientContactFileAttachment() {
 		super();
 	}
 
@@ -75,14 +75,14 @@ public class CandidateFileAttachment extends AbstractEntity implements QueryEnti
 		this.id = id;
 	}
 
-	@JsonProperty("candidate")
-	public Candidate getCandidate() {
-		return candidate;
+	@JsonProperty("clientContact")
+	public ClientContact getClientContact() {
+		return clientContact;
 	}
 
-	@JsonProperty("candidate")
-	public void setCandidate(Candidate candidate) {
-		this.candidate = candidate;
+	@JsonProperty("clientContact")
+	public void setClientContact(ClientContact clientContact) {
+		this.clientContact = clientContact;
 	}
 
 	@JsonProperty("contentSubType")
@@ -280,7 +280,7 @@ public class CandidateFileAttachment extends AbstractEntity implements QueryEnti
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((candidate == null) ? 0 : candidate.hashCode());
+		result = prime * result + ((clientContact == null) ? 0 : clientContact.hashCode());
 		result = prime * result + ((contentSubType == null) ? 0 : contentSubType.hashCode());
 		result = prime * result + ((contentType == null) ? 0 : contentType.hashCode());
 		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
@@ -311,16 +311,16 @@ public class CandidateFileAttachment extends AbstractEntity implements QueryEnti
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CandidateFileAttachment other = (CandidateFileAttachment) obj;
+		ClientContactFileAttachment other = (ClientContactFileAttachment) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (candidate == null) {
-			if (other.candidate != null)
+		if (clientContact == null) {
+			if (other.clientContact != null)
 				return false;
-		} else if (!candidate.equals(other.candidate))
+		} else if (!clientContact.equals(other.clientContact))
 			return false;
 		if (contentSubType == null) {
 			if (other.contentSubType != null)
@@ -423,10 +423,10 @@ public class CandidateFileAttachment extends AbstractEntity implements QueryEnti
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("CandidateFileAttachment{\nid=");
+		builder.append("ClientContactFileAttachment{\nid=");
 		builder.append(id);
-		builder.append(", \ncandidate=");
-		builder.append(candidate);
+		builder.append(", \nclientContact=");
+		builder.append(clientContact);
 		builder.append(", \ncontentSubType=");
 		builder.append(contentSubType);
 		builder.append(", \ncontentType=");

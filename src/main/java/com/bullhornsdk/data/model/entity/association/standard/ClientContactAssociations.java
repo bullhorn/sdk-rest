@@ -29,9 +29,9 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
     private final AssociationField<ClientContact, Person> reportToPerson = instantiateAssociationField("reportToPerson", Person.class);
     private final AssociationField<ClientContact, Person> linkedPerson = instantiateAssociationField("linkedPerson", Person.class);
     private final AssociationField<ClientContact, Category> category = instantiateAssociationField("category", Category.class);
-    private final AssociationField<ClientContact, ClientCorporation> clientCorporation = instantiateAssociationField("clientCorporation", ClientCorporation.class);
     private final AssociationField<ClientContact, Person> referredByPerson = instantiateAssociationField("referredByPerson", Person.class);
     private final AssociationField<ClientContact, CorporateUser> owner = instantiateAssociationField("owner", CorporateUser.class);
+    private final AssociationField<ClientContact, ClientContactFileAttachment> fileAttachments = instantiateAssociationField("fileAttachments", ClientContactFileAttachment.class);
 
     private final AssociationField<ClientContact, PersonCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", PersonCustomObjectInstance1.class);
     private final AssociationField<ClientContact, PersonCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", PersonCustomObjectInstance2.class);
@@ -68,8 +68,8 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
         return category;
     }
 
-    public AssociationField<ClientContact, ClientCorporation> clientCorporation() {
-        return clientCorporation;
+    public AssociationField<ClientContact, ClientContactFileAttachment> fileAttachments() {
+        return fileAttachments;
     }
 
     public AssociationField<ClientContact, Lead> leads() {
@@ -163,7 +163,7 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
             allAssociations.add(businessSectors());
             allAssociations.add(categories());
             allAssociations.add(category());
-            allAssociations.add(clientCorporation());
+            allAssociations.add(fileAttachments());
             allAssociations.add(leads());
             allAssociations.add(linkedPerson());
             allAssociations.add(opportunities());

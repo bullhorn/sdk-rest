@@ -52,7 +52,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"dateAdded", "dateLastComment", "dateLastModified", "dateLastVisit", "deleteMe",
 		"description", "desiredCategories", "desiredSkills",
 		"desiredSpecialties", "division", "email", "email2", "email3",
-		"externalID", "fax", "fax2", "fax3", "firstName", "isDayLightSavings",
+		"externalID", "fax", "fax2", "fax3", "fileAttachments", "firstName", "isDayLightSavings",
 		"isDeleted", "isLockedOut", "lastName", "linkedPerson", "leads",
 		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name",
 		"namePrefix", "nameSuffix", "nickName", "numEmployees", "occupation",
@@ -143,6 +143,8 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	@JsonIgnore
 	@Size(max = 20)
 	private String fax3;
+
+	private ClientContactFileAttachment fileAttachments;
 
 	@JsonIgnore
 	@Size(max = 50)
@@ -569,6 +571,16 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	@JsonIgnore
 	public void setFax3(String fax3) {
 		this.fax3 = fax3;
+	}
+
+	@JsonProperty("fileAttachments")
+	public ClientContactFileAttachment getFileAttachments() {
+		return fileAttachments;
+	}
+
+	@JsonProperty("fileAttachments")
+	public void setFileAttachments(ClientContactFileAttachment fileAttachments) {
+		this.fileAttachments = fileAttachments;
 	}
 
 	@JsonProperty("firstName")
@@ -1125,6 +1137,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		if (fax != null ? !fax.equals(that.fax) : that.fax != null) return false;
 		if (fax2 != null ? !fax2.equals(that.fax2) : that.fax2 != null) return false;
 		if (fax3 != null ? !fax3.equals(that.fax3) : that.fax3 != null) return false;
+		if (fileAttachments != null ? !fileAttachments.equals(that.fileAttachments) : that.fileAttachments != null) return false;
 		if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
 		if (isDayLightSavings != null ? !isDayLightSavings.equals(that.isDayLightSavings) : that.isDayLightSavings != null)
 			return false;
@@ -1223,6 +1236,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		result = 31 * result + (fax != null ? fax.hashCode() : 0);
 		result = 31 * result + (fax2 != null ? fax2.hashCode() : 0);
 		result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
+		result = 31 * result + (fileAttachments != null ? fileAttachments.hashCode() : 0);
 		result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
 		result = 31 * result + (isDayLightSavings != null ? isDayLightSavings.hashCode() : 0);
 		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
@@ -1304,6 +1318,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 				", fax='" + fax + '\'' +
 				", fax2='" + fax2 + '\'' +
 				", fax3='" + fax3 + '\'' +
+				", fileAttachments='" + fileAttachments + '\'' +
 				", firstName='" + firstName + '\'' +
 				", isDayLightSavings=" + isDayLightSavings +
 				", isDeleted=" + isDeleted +

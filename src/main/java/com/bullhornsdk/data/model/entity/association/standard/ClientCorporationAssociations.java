@@ -26,7 +26,6 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
     private final AssociationField<ClientCorporation,Lead> leads = instantiateAssociationField("leads",Lead.class);
     private final AssociationField<ClientCorporation, CorporationDepartment> department = instantiateAssociationField("department", CorporationDepartment.class);
     private final AssociationField<ClientCorporation, CorporateUser> owners = instantiateAssociationField("owners", CorporateUser.class);
-    private final AssociationField<ClientCorporation, ClientContact> clientContacts = instantiateAssociationField("clientContacts", ClientContact.class);
     private final AssociationField<ClientCorporation, ClientCorporation> parentClientCorporation = instantiateAssociationField("parentClientCorporation", ClientCorporation.class);
     private List<AssociationField<ClientCorporation, ? extends BullhornEntity>> allAssociations;
 
@@ -65,10 +64,6 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
 
     public AssociationField<ClientCorporation, CorporateUser> owners() {
         return owners;
-    }
-
-    public AssociationField<ClientCorporation, ClientContact> clientContacts() {
-        return clientContacts;
     }
 
     public AssociationField<ClientCorporation, ClientCorporation> parentClientCorporation() {
@@ -126,7 +121,6 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<ClientCorporation, ? extends BullhornEntity>>();
             allAssociations.add(childClientCorporations());
-            allAssociations.add(clientContacts());
             allAssociations.add(department());
             allAssociations.add(leads());
             allAssociations.add(owners());

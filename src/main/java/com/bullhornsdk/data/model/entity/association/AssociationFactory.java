@@ -16,9 +16,13 @@ public class AssociationFactory {
 
 	private static final AppointmentAssociations appointmentAssociations = AppointmentAssociations.getInstance();
     private static final CandidateAssociations candidateAssociations = CandidateAssociations.getInstance();
+    private static final CandidateCertificationAssociations candidateCertificationAssociations = CandidateCertificationAssociations.getInstance();
     private static final CandidateEducationAssociations candidateEducationAssociations = CandidateEducationAssociations.getInstance();
+    private static final CandidateFileAttachmentAssociations candidateFileAttachmentAssociations = CandidateFileAttachmentAssociations.getInstance();
+    private static final CandidateWorkHistoryAssociations candidateWorkHistoryAssociations = CandidateWorkHistoryAssociations.getInstance();
     private static final CategoryAssociations categoryAssociations = CategoryAssociations.getInstance();
     private static final ClientContactAssociations clientContactAssociations = ClientContactAssociations.getInstance();
+    private static final ClientContactFileAttachmentAssociations clientContactFileAttachmentAssociations = ClientContactFileAttachmentAssociations.getInstance();
     private static final ClientCorporationAssociations clientCorporationAssociations = ClientCorporationAssociations.getInstance();
     private static final CorporateUserAssociations corporateUserAssociations = CorporateUserAssociations.getInstance();
     private static final JobOrderAssociations jobOrderAssociations = JobOrderAssociations.getInstance();
@@ -27,10 +31,6 @@ public class AssociationFactory {
     private static final OpportunityAssociations opportunityAssociations = OpportunityAssociations.getInstance();
     private static final LeadAssociations leadAssociations = LeadAssociations.getInstance();
     private static final TearsheetAssociations tearsheetAssociations = TearsheetAssociations.getInstance();
-
-    private static final CandidateCertificationAssociations candidateCertificationAssociations = CandidateCertificationAssociations.getInstance();
-    private static final CandidateFileAttachmentAssociations candidateFileAttachmentAssociations = CandidateFileAttachmentAssociations.getInstance();
-    private static final CandidateWorkHistoryAssociations candidateWorkHistoryAssociations = CandidateWorkHistoryAssociations.getInstance();
 
     /**
      * Returns the AssociationField for the passed in entity type (Candidate, ClientContact etc.), with the association name of the
@@ -65,8 +65,20 @@ public class AssociationFactory {
             return (EntityAssociations<T>) candidateAssociations;
         }
 
+        if (type == CandidateCertification.class) {
+            return (EntityAssociations<T>) candidateCertificationAssociations;
+        }
+
         if (type == CandidateEducation.class) {
             return (EntityAssociations<T>) candidateEducationAssociations;
+        }
+
+        if (type == CandidateFileAttachment.class) {
+            return (EntityAssociations<T>) candidateFileAttachmentAssociations;
+        }
+
+        if (type == CandidateWorkHistory.class) {
+            return (EntityAssociations<T>) candidateWorkHistoryAssociations;
         }
 
         if (type == Category.class) {
@@ -75,6 +87,10 @@ public class AssociationFactory {
 
         if (type == ClientContact.class) {
             return (EntityAssociations<T>) clientContactAssociations;
+        }
+
+        if (type == ClientContactFileAttachment.class) {
+            return (EntityAssociations<T>) clientContactFileAttachmentAssociations;
         }
 
         if (type == ClientCorporation.class) {
@@ -108,20 +124,7 @@ public class AssociationFactory {
         if (type == Tearsheet.class) {
             return (EntityAssociations<T>) tearsheetAssociations;
         }
-
-        if (type == CandidateCertification.class) {
-            return (EntityAssociations<T>) candidateCertificationAssociations;
-        }
-
-        if (type == CandidateFileAttachment.class) {
-            return (EntityAssociations<T>) candidateFileAttachmentAssociations;
-        }
-
-        if (type == CandidateWorkHistory.class) {
-            return (EntityAssociations<T>) candidateWorkHistoryAssociations;
-        }
         return null;
-
     }
 
     /**
@@ -143,12 +146,39 @@ public class AssociationFactory {
     }
 
     /**
+     * Returns the association for Candidate Certification
+     *
+     * @return
+     */
+    public static CandidateCertificationAssociations candidateCertificationAssociations() {
+        return candidateCertificationAssociations;
+    }
+
+    /**
      * Returns the associations for Candidate Education
      *
      * @return
      */
     public static CandidateEducationAssociations candidateEducationAssociations() {
         return candidateEducationAssociations;
+    }
+
+    /**
+     * Returns the association for Candidate File Attachment
+     *
+     * @return
+     */
+    public static CandidateFileAttachmentAssociations candidateFileAttachmentAssociations() {
+        return candidateFileAttachmentAssociations;
+    }
+
+    /**
+     * Returns the association for Candidate Work History
+     *
+     * @return
+     */
+    public static CandidateWorkHistoryAssociations candidateWorkHistoryAssociations() {
+        return candidateWorkHistoryAssociations;
     }
 
     /**
@@ -167,6 +197,15 @@ public class AssociationFactory {
      */
     public static ClientContactAssociations clientContactAssociations() {
         return clientContactAssociations;
+    }
+
+    /**
+     * Returns the association for Client Contact File Attachment
+     *
+     * @return
+     */
+    public static ClientContactFileAttachmentAssociations clientContactFileAttachmentAssociations() {
+        return clientContactFileAttachmentAssociations;
     }
 
     /**
@@ -239,31 +278,5 @@ public class AssociationFactory {
      */
     public static TearsheetAssociations tearsheetAssociations() {
         return tearsheetAssociations;
-    }
-
-    /**
-     * Returns the association for Candidate Certification
-     *
-     * @return
-     */
-    public static CandidateCertificationAssociations candidateCertificationAssociations() {
-        return candidateCertificationAssociations;
-    }
-
-    /**
-     * Returns the association for Candidate File Attachment
-     *
-     * @return
-     */
-    public static CandidateFileAttachmentAssociations candidateFileAttachmentAssociations() {
-        return candidateFileAttachmentAssociations;
-    }
-
-    /**
-     * Returns the association for Candidate Work History
-     * @return
-     */
-    public static CandidateWorkHistoryAssociations candidateWorkHistoryAssociations() {
-        return candidateWorkHistoryAssociations;
     }
 }
