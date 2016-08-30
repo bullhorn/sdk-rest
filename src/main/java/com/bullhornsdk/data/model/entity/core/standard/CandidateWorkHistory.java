@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
@@ -22,7 +23,7 @@ import java.math.BigDecimal;
 		"customFloat5", "customInt1", "customInt2", "customInt3", "customInt4", "customInt5", "customText1", "customText2", "customText3",
 		"customText4", "customText5", "customTextBlock1", "customTextBlock2", "customTextBlock3", "dateAdded", "endDate", "isDeleted",
 		"isLastJob", "jobOrder", "migrateGUID", "placement", "salary1", "salary2", "salaryType", "startDate", "terminationReason", "title" })
-public class CandidateWorkHistory extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
+public class CandidateWorkHistory extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity {
 
 	private Integer id;
 

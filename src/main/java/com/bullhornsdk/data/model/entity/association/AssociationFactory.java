@@ -16,6 +16,7 @@ public class AssociationFactory {
 
 	private static final AppointmentAssociations appointmentAssociations = AppointmentAssociations.getInstance();
     private static final CandidateAssociations candidateAssociations = CandidateAssociations.getInstance();
+    private static final CandidateEducationAssociations candidateEducationAssociations = CandidateEducationAssociations.getInstance();
     private static final CategoryAssociations categoryAssociations = CategoryAssociations.getInstance();
     private static final ClientContactAssociations clientContactAssociations = ClientContactAssociations.getInstance();
     private static final ClientCorporationAssociations clientCorporationAssociations = ClientCorporationAssociations.getInstance();
@@ -27,8 +28,12 @@ public class AssociationFactory {
     private static final LeadAssociations leadAssociations = LeadAssociations.getInstance();
     private static final TearsheetAssociations tearsheetAssociations = TearsheetAssociations.getInstance();
 
+    private static final CandidateCertificationAssociations candidateCertificationAssociations = CandidateCertificationAssociations.getInstance();
+    private static final CandidateFileAttachmentAssociations candidateFileAttachmentAssociations = CandidateFileAttachmentAssociations.getInstance();
+    private static final CandidateWorkHistoryAssociations candidateWorkHistoryAssociations = CandidateWorkHistoryAssociations.getInstance();
+
     /**
-     * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
+     * Returns the AssociationField for the passed in entity type (Candidate, ClientContact etc.), with the association name of the
      * passed in assocationName.
      * 
      * <b> NOTE: for type safety use candidateAssociations(),categoryAssociations() etc. instead! </b>
@@ -58,6 +63,10 @@ public class AssociationFactory {
     	
         if (type == Candidate.class) {
             return (EntityAssociations<T>) candidateAssociations;
+        }
+
+        if (type == CandidateEducation.class) {
+            return (EntityAssociations<T>) candidateEducationAssociations;
         }
 
         if (type == Category.class) {
@@ -100,6 +109,17 @@ public class AssociationFactory {
             return (EntityAssociations<T>) tearsheetAssociations;
         }
 
+        if (type == CandidateCertification.class) {
+            return (EntityAssociations<T>) candidateCertificationAssociations;
+        }
+
+        if (type == CandidateFileAttachment.class) {
+            return (EntityAssociations<T>) candidateFileAttachmentAssociations;
+        }
+
+        if (type == CandidateWorkHistory.class) {
+            return (EntityAssociations<T>) candidateWorkHistoryAssociations;
+        }
         return null;
 
     }
@@ -120,6 +140,15 @@ public class AssociationFactory {
      */
     public static CandidateAssociations candidateAssociations() {
         return candidateAssociations;
+    }
+
+    /**
+     * Returns the associations for Candidate Education
+     *
+     * @return
+     */
+    public static CandidateEducationAssociations candidateEducationAssociations() {
+        return candidateEducationAssociations;
     }
 
     /**
@@ -212,4 +241,29 @@ public class AssociationFactory {
         return tearsheetAssociations;
     }
 
+    /**
+     * Returns the association for Candidate Certification
+     *
+     * @return
+     */
+    public static CandidateCertificationAssociations candidateCertificationAssociations() {
+        return candidateCertificationAssociations;
+    }
+
+    /**
+     * Returns the association for Candidate File Attachment
+     *
+     * @return
+     */
+    public static CandidateFileAttachmentAssociations candidateFileAttachmentAssociations() {
+        return candidateFileAttachmentAssociations;
+    }
+
+    /**
+     * Returns the association for Candidate Work History
+     * @return
+     */
+    public static CandidateWorkHistoryAssociations candidateWorkHistoryAssociations() {
+        return candidateWorkHistoryAssociations;
+    }
 }

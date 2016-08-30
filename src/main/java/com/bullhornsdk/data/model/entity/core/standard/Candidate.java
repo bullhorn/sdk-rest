@@ -184,7 +184,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	@JsonIgnore
 	private String federalFilingStatus;
 
-	private OneToMany<StandardFileAttachment> fileAttachments;
+	private OneToMany<CandidateFileAttachment> fileAttachments;
 
 	@JsonIgnore
 	@Size(max = 50)
@@ -912,12 +912,12 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	}
 
 	@JsonProperty("fileAttachments")
-	public OneToMany<StandardFileAttachment> getFileAttachments() {
+	public OneToMany<CandidateFileAttachment> getFileAttachments() {
 		return fileAttachments;
 	}
 
 	@JsonProperty("fileAttachments")
-	public void setFileAttachments(OneToMany<StandardFileAttachment> fileAttachments) {
+	public void setFileAttachments(OneToMany<CandidateFileAttachment> fileAttachments) {
 		this.fileAttachments = fileAttachments;
 	}
 

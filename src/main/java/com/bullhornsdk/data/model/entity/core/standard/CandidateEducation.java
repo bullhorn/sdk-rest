@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
@@ -25,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"customInt3", "customInt4", "customInt5", "customText1", "customText2", "customText3", "customText4", "customText5",
 		"customTextBlock1", "customTextBlock2", "customTextBlock3", "dateAdded", "degree", "endDate", "expirationDate", "gpa",
 		"graduationDate", "isDeleted", "major", "migrateGUID", "school", "startDate", "state" })
-public class CandidateEducation extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
+public class CandidateEducation extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity {
 
 	private Integer id;
 
