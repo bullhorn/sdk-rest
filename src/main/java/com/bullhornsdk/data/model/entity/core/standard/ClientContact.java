@@ -144,7 +144,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	@Size(max = 20)
 	private String fax3;
 
-	private ClientContactFileAttachment fileAttachments;
+	private OneToMany<ClientContactFileAttachment> fileAttachments;
 
 	@JsonIgnore
 	@Size(max = 50)
@@ -200,7 +200,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	@Size(max = 40)
 	private String office;
 
-	private CorporateUser owner;
+	private OneToMany<CorporateUser> owner;
 
 	@JsonIgnore
 	@Size(max = 20)
@@ -574,12 +574,12 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	}
 
 	@JsonProperty("fileAttachments")
-	public ClientContactFileAttachment getFileAttachments() {
+	public OneToMany<ClientContactFileAttachment> getFileAttachments() {
 		return fileAttachments;
 	}
 
 	@JsonProperty("fileAttachments")
-	public void setFileAttachments(ClientContactFileAttachment fileAttachments) {
+	public void setFileAttachments(OneToMany<ClientContactFileAttachment> fileAttachments) {
 		this.fileAttachments = fileAttachments;
 	}
 
@@ -764,12 +764,12 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	}
 
 	@JsonProperty("owner")
-	public CorporateUser getOwner() {
+	public OneToMany<CorporateUser> getOwner() {
 		return owner;
 	}
 
 	@JsonProperty("owner")
-	public void setOwner(CorporateUser owner) {
+	public void setOwner(OneToMany<CorporateUser> owner) {
 		this.owner = owner;
 	}
 
