@@ -40,23 +40,23 @@ import java.util.List;
  */
 public final class JobOrderAssociations implements EntityAssociations<JobOrder> {
 
+    private final AssociationField<JobOrder, Appointment> appointments = instantiateAssociationField("appointments", Appointment.class);
+    private final AssociationField<JobOrder, Placement> approvedPlacements = instantiateAssociationField("approvedPlacements", Placement.class);
     private final AssociationField<JobOrder, CorporateUser> assignedUsers = instantiateAssociationField("assignedUsers", CorporateUser.class);
     private final AssociationField<JobOrder, BusinessSector> businessSectors = instantiateAssociationField("businessSectors", BusinessSector.class);
     private final AssociationField<JobOrder, Category> categories = instantiateAssociationField("categories", Category.class);
     private final AssociationField<JobOrder, Certification> certifications = instantiateAssociationField("certifications", Certification.class);
-    private final AssociationField<JobOrder, Skill> skills = instantiateAssociationField("skills", Skill.class);
-    private final AssociationField<JobOrder, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
-    private final AssociationField<JobOrder, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
-    private final AssociationField<JobOrder, Placement> placements = instantiateAssociationField("placements", Placement.class);
-    private final AssociationField<JobOrder, Note> notes = instantiateAssociationField("notes", Note.class);
-    private final AssociationField<JobOrder, Task> tasks = instantiateAssociationField("tasks", Task.class);
-    private final AssociationField<JobOrder, Sendout> sendouts = instantiateAssociationField("sendouts", Sendout.class);
-    private final AssociationField<JobOrder, JobSubmission> webReponses = instantiateAssociationField("webResponses", JobSubmission.class);
-    private final AssociationField<JobOrder, TimeUnit> timeUnits = instantiateAssociationField("timeUnits", TimeUnit.class);
-    private final AssociationField<JobOrder, Placement> approvedPlacements = instantiateAssociationField("approvedPlacements", Placement.class);
-    private final AssociationField<JobOrder, Appointment> appointments = instantiateAssociationField("appointments", Appointment.class);
     private final AssociationField<JobOrder, Appointment> interviews = instantiateAssociationField("interviews", Appointment.class);
+    private final AssociationField<JobOrder, Note> notes = instantiateAssociationField("notes", Note.class);
+    private final AssociationField<JobOrder, Placement> placements = instantiateAssociationField("placements", Placement.class);
+    private final AssociationField<JobOrder, Sendout> sendouts = instantiateAssociationField("sendouts", Sendout.class);
+    private final AssociationField<JobOrder, Skill> skills = instantiateAssociationField("skills", Skill.class);
+    private final AssociationField<JobOrder, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
     private final AssociationField<JobOrder, JobSubmission> submissions = instantiateAssociationField("submissions", JobSubmission.class);
+    private final AssociationField<JobOrder, Task> tasks = instantiateAssociationField("tasks", Task.class);
+    private final AssociationField<JobOrder, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
+    private final AssociationField<JobOrder, TimeUnit> timeUnits = instantiateAssociationField("timeUnits", TimeUnit.class);
+    private final AssociationField<JobOrder, JobSubmission> webReponses = instantiateAssociationField("webResponses", JobSubmission.class);
 
     private final AssociationField<JobOrder, JobOrderCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", JobOrderCustomObjectInstance1.class);
     private final AssociationField<JobOrder, JobOrderCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", JobOrderCustomObjectInstance2.class);
@@ -80,12 +80,12 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
         return INSTANCE;
     }
 
-    public AssociationField<JobOrder, Placement> approvedPlacements() {
-        return approvedPlacements;
-    }
-
     public AssociationField<JobOrder, Appointment> appointments() {
         return appointments;
+    }
+
+    public AssociationField<JobOrder, Placement> approvedPlacements() {
+        return approvedPlacements;
     }
 
     public AssociationField<JobOrder, CorporateUser> assignedUsers() {
@@ -198,8 +198,8 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
     public List<AssociationField<JobOrder, ? extends BullhornEntity>> allAssociations() {
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<JobOrder, ? extends BullhornEntity>>();
-            allAssociations.add(approvedPlacements());
             allAssociations.add(appointments());
+            allAssociations.add(approvedPlacements());
             allAssociations.add(assignedUsers());
             allAssociations.add(businessSectors());
             allAssociations.add(categories());
@@ -209,11 +209,11 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
             allAssociations.add(placements());
             allAssociations.add(sendouts());
             allAssociations.add(skills());
+            allAssociations.add(specialties());
             allAssociations.add(submissions());
             allAssociations.add(tasks());
             allAssociations.add(tearsheets());
             allAssociations.add(timeUnits());
-            allAssociations.add(specialties());
             allAssociations.add(webReponses());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
