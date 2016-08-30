@@ -2,8 +2,6 @@ package com.bullhornsdk.data.model.entity.association.standard;
 
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
-import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
@@ -14,13 +12,21 @@ import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectI
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.standard.Appointment;
 import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
 import com.bullhornsdk.data.model.entity.core.standard.Category;
 import com.bullhornsdk.data.model.entity.core.standard.Certification;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
+import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
+import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.Sendout;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
+import com.bullhornsdk.data.model.entity.core.standard.Task;
+import com.bullhornsdk.data.model.entity.core.standard.Tearsheet;
+import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
 import java.util.ArrayList;
@@ -41,25 +47,16 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
     private final AssociationField<JobOrder, Skill> skills = instantiateAssociationField("skills", Skill.class);
     private final AssociationField<JobOrder, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
     private final AssociationField<JobOrder, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
-    private final AssociationField<JobOrder, Opportunity> opportunities = instantiateAssociationField("opportunities", Opportunity.class);
-    private final AssociationField<JobOrder, ClientContact> reportToClientContact = instantiateAssociationField("reportToClientContact", ClientContact.class);
     private final AssociationField<JobOrder, Placement> placements = instantiateAssociationField("placements", Placement.class);
     private final AssociationField<JobOrder, Note> notes = instantiateAssociationField("notes", Note.class);
     private final AssociationField<JobOrder, Task> tasks = instantiateAssociationField("tasks", Task.class);
-    private final AssociationField<JobOrder, ClientCorporation> clientCorporation = instantiateAssociationField("clientCorporation", ClientCorporation.class);
-    private final AssociationField<JobOrder, ClientContact> clientContact = instantiateAssociationField("clientContact", ClientContact.class);
     private final AssociationField<JobOrder, Sendout> sendouts = instantiateAssociationField("sendouts", Sendout.class);
     private final AssociationField<JobOrder, JobSubmission> webReponses = instantiateAssociationField("webResponses", JobSubmission.class);
     private final AssociationField<JobOrder, TimeUnit> timeUnits = instantiateAssociationField("timeUnits", TimeUnit.class);
     private final AssociationField<JobOrder, Placement> approvedPlacements = instantiateAssociationField("approvedPlacements", Placement.class);
     private final AssociationField<JobOrder, Appointment> appointments = instantiateAssociationField("appointments", Appointment.class);
-    private final AssociationField<JobOrder, CorporateUser> owner = instantiateAssociationField("owner", CorporateUser.class);
-    private final AssociationField<JobOrder, CorporateUser> responseUser = instantiateAssociationField("responseUser", CorporateUser.class);
     private final AssociationField<JobOrder, Appointment> interviews = instantiateAssociationField("interviews", Appointment.class);
     private final AssociationField<JobOrder, JobSubmission> submissions = instantiateAssociationField("submissions", JobSubmission.class);
-
-    private List<AssociationField<JobOrder, ? extends BullhornEntity>> allAssociations;
-
 
     private final AssociationField<JobOrder, JobOrderCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", JobOrderCustomObjectInstance1.class);
     private final AssociationField<JobOrder, JobOrderCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", JobOrderCustomObjectInstance2.class);
@@ -72,7 +69,7 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
     private final AssociationField<JobOrder, JobOrderCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", JobOrderCustomObjectInstance9.class);
     private final AssociationField<JobOrder, JobOrderCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", JobOrderCustomObjectInstance10.class);
 
-
+    private List<AssociationField<JobOrder, ? extends BullhornEntity>> allAssociations;
     private static final JobOrderAssociations INSTANCE = new JobOrderAssociations();
 
     private JobOrderAssociations() {
@@ -107,14 +104,6 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
         return certifications;
     }
 
-    public AssociationField<JobOrder, ClientContact> clientContact() {
-        return clientContact;
-    }
-
-    public AssociationField<JobOrder, ClientCorporation> clientCorporation() {
-        return clientCorporation;
-    }
-
     public AssociationField<JobOrder, Appointment> interviews() {
         return interviews;
     }
@@ -127,24 +116,8 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
         return notes;
     }
 
-    public AssociationField<JobOrder, Opportunity> opportunities() {
-        return opportunities;
-    }
-
-    public AssociationField<JobOrder, CorporateUser> owner() {
-        return owner;
-    }
-
     public AssociationField<JobOrder, Placement> placements() {
         return placements;
-    }
-
-    public AssociationField<JobOrder, CorporateUser> responseUser() {
-        return responseUser;
-    }
-
-    public AssociationField<JobOrder, ClientContact> reportToClientContact() {
-        return reportToClientContact;
     }
 
     public AssociationField<JobOrder, Sendout> sendouts() {
@@ -231,15 +204,9 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
             allAssociations.add(businessSectors());
             allAssociations.add(categories());
             allAssociations.add(certifications());
-            allAssociations.add(clientContact());
-            allAssociations.add(clientCorporation());
             allAssociations.add(interviews());
             allAssociations.add(notes());
-            allAssociations.add(opportunities());
-            allAssociations.add(owner());
             allAssociations.add(placements());
-            allAssociations.add(reportToClientContact());
-            allAssociations.add(responseUser());
             allAssociations.add(sendouts());
             allAssociations.add(skills());
             allAssociations.add(submissions());
