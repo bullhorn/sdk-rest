@@ -41,6 +41,8 @@
         <jackson.version>2.7.1</jackson.version>
         <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
         <additionalparam>-Xdoclint:none</additionalparam>
+        <coveralls-version>4.2.0</coveralls-version>
+        <jacoco-version>0.7.7.201606060606</jacoco-version>
     </properties>
 
     <dependencies>
@@ -246,7 +248,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.18.1</version>
                     <configuration>
-                        <argLine>-Xms512m -Xmx1024m -XX:MaxPermSize=512m</argLine>
+                        <argLine>@{argLine} -Xms512m -Xmx1024m -XX:MaxPermSize=512m</argLine>
                         <includes>
                             <include>**/Test*.java</include>
                             <include>**/*Spec.*</include>
@@ -315,6 +317,27 @@
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>false</autoReleaseAfterClose>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>${coveralls-version}</version>
+                <configuration>
+                    <repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-version}</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
