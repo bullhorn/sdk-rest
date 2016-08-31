@@ -357,12 +357,15 @@ public class MockDataLoader {
 		entityFiles.put(AppointmentAttendee.class, "appointmentattendee-data.json");
 		entityFiles.put(BusinessSector.class, "businesssector-data.json");
 		entityFiles.put(Candidate.class, "candidate-data.json");
+		entityFiles.put(CandidateCertification.class, "candidatecertification-data.json");
 		entityFiles.put(CandidateEducation.class, "candidateeducation-data.json");
+		entityFiles.put(CandidateFileAttachment.class, "candidatefileattachment-data.json");
 		entityFiles.put(CandidateReference.class, "candidatereference-data.json");
 		entityFiles.put(CandidateWorkHistory.class, "candidateworkhistory-data.json");
 		entityFiles.put(Category.class, "category-data.json");
 		entityFiles.put(Certification.class, "certification-data.json");
 		entityFiles.put(ClientContact.class, "clientcontact-data.json");
+		entityFiles.put(ClientContactFileAttachment.class, "clientcontactfileattachment-data.json");
 		entityFiles.put(ClientCorporation.class, "clientcorporation-data.json");
 		entityFiles.put(CorporateUser.class, "corporateuser-data.json");
 		entityFiles.put(CorporationDepartment.class, "corporationdepartment-data.json");
