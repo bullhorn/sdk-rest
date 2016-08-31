@@ -1,0 +1,27 @@
+language: java
+
+install: mvn install -DskipTests=true -Dgpg.skip=true
+
+jdk:
+  - oraclejdk8
+
+env:
+  - NODE_VERSION="5.12.0"
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - nvm install $NODE_VERSION
+
+install:
+  - npm install
+
+after_success:
+  - mvn test jacoco:report coveralls:report
+  - test $TRAVIS_BRANCH = "master" && npm run galaxy -- $FIREBASE_URL $SLACK_WEB_HOOK $SLACK_CHANNEL
+
+notifications:
+  slack:
+    secure: ZRe39TofojyqLJVgiaw5aGHMqGeT6W4JnVVtD8Q5e0+tssNAl/F1mlWzMbZdmdbGrUEJpjOQyL9HCEMIDymCBu/Zsd5RTBZq3PnzmuuF9Tc2GS2CPT0C6mGzkI0eoaVJe5KHiKhc3krcdnbwbi2fjoLnDRO4o3LNDaiVA8jZOjUKO4BgnUB24MDl1WqZzlTbE4o7jRAdO+JT7ums5UwG7EHWmzrQk88ND78z+gg/ZN/92OhUEKNjB7un80QevtMe18p+mcB+NX0Mx/memlNwgXlCOf7eJh7yzi7XNL0gA9MDrsdqPYE8eXSXxLgSpikGGeRAQc8dvS0uzqg1S1FHXG5mHxbdoICNje1xaThwIbORzDtZDzeZYLPEdPCEikGjPA56ZGwh9QCd9S3gysI32a+/BJFtGILWuSHKACpXFby4/iix5Pvyql7dh9O5c2r+JUwOwWenpHEjm0zs1uSGaWGRlu79aYmPNSAdhWVzkeTtq016o1m6YjzsQ5N5wWPWlAkzKei4dgFT0BgOz/S1T1Le7TjxqAXQFhwtyDDZV+rAqxyER+mw0N4N/ksqEcDKCaDTuCXUN5ySiSpFoPo6Qgylj3YyyH/SPxkK5xQgjACXTc9hF/cGQTYc33Io47PUwKmPSMNwwdLbWAwst0VA6hMFWeUaaBmvcvd/kpJECb4=
