@@ -55,7 +55,7 @@ import java.math.BigDecimal;
 		"dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
 		"employmentType", "fee", "flatFee", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
 		"jobOrder", "jobSubmission", "markupPercentage", "migrateGUID", "notes", "overtimeMarkupPercentage", "optionsPackage",
-		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
+		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "owners", "payRate", "projectCodeList",
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
@@ -164,6 +164,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private BigDecimal overtimeMarkupPercentage;
 
 	private BigDecimal overtimeRate;
+
+	private OneToMany<CorporateUser> owners;
 
 	private BigDecimal payRate;
 
@@ -636,6 +638,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.overtimeMarkupPercentage = overtimeMarkupPercentage;
 	}
 
+	@JsonProperty("owners")
+	public OneToMany<CorporateUser> getOwners() {
+		return owners;
+	}
+
+	@JsonProperty("owners")
+	public void setOwners(OneToMany<CorporateUser> owners) {
+		this.owners = owners;
+	}
+
 	@JsonProperty("migrateGUID")
 	public Object getMigrateGUID() {
 		return migrateGUID;
@@ -1089,6 +1101,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 			return false;
 		if (overtimeRate != null ? !overtimeRate.equals(placement.overtimeRate) : placement.overtimeRate != null)
 			return false;
+		if (owners != null ? !owners.equals(placement.owners) : placement.owners != null) return false;
 		if (payRate != null ? !payRate.equals(placement.payRate) : placement.payRate != null) return false;
 		if (projectCodeList != null ? !projectCodeList.equals(placement.projectCodeList) : placement.projectCodeList != null)
 			return false;
@@ -1186,6 +1199,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		result = 31 * result + (otherHourlyFeeComments != null ? otherHourlyFeeComments.hashCode() : 0);
 		result = 31 * result + (overtimeMarkupPercentage != null ? overtimeMarkupPercentage.hashCode() : 0);
 		result = 31 * result + (overtimeRate != null ? overtimeRate.hashCode() : 0);
+		result = 31 * result + (owners != null ? owners.hashCode() : 0);
 		result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
 		result = 31 * result + (projectCodeList != null ? projectCodeList.hashCode() : 0);
 		result = 31 * result + (recruitingManagerPercentGrossMargin != null ? recruitingManagerPercentGrossMargin.hashCode() : 0);
@@ -1264,6 +1278,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 				", otherHourlyFeeComments='" + otherHourlyFeeComments + '\'' +
 				", overtimeMarkupPercentage=" + overtimeMarkupPercentage +
 				", overtimeRate=" + overtimeRate +
+				", owners=" + owners +
 				", payRate=" + payRate +
 				", projectCodeList='" + projectCodeList + '\'' +
 				", recruitingManagerPercentGrossMargin=" + recruitingManagerPercentGrossMargin +
