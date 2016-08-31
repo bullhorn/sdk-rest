@@ -1,2 +1,34 @@
 {
+  "data": [
+    {
+      "id": 1,
+      "clientContact": {
+        "id": 32,
+        "firstName": "Don",
+        "lastName": "Drapered"
+      },
+      "contentSubType": "msword",
+      "contentType": "application",
+      "dateAdded": 1418399801777,
+      "description": null,
+      "directory": "6392\\2014.12\\",
+      "distribution": "general",
+      "externalID": "Portfolio",
+      "fileExtension": ".doc",
+      "fileSize": 301,
+      "fileType": "SAMPLE         ",
+      "isCopied": false,
+      "isDeleted": false,
+      "isOpen": true,
+      "isPrivate": false,
+      "isSendOut": true,
+      "name": "Don Drapered Resume.doc",
+      "type": "Resume",
+      "usersSharedWith": {
+        "total": 0,
+        "data": []
+      },
+      "uuid": null
+    }
+  ]
 }

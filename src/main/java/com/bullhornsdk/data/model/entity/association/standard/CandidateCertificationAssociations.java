@@ -27,14 +27,6 @@ public class CandidateCertificationAssociations implements EntityAssociations<Ca
 		return INSTANCE;
 	}
 
-	public AssociationField<CandidateCertification, Candidate> candidate() {
-		return candidate;
-	}
-
-	public AssociationField<CandidateCertification, Certification> certification() {
-		return certification;
-	}
-
 	public AssociationField<CandidateCertification, CorporateUser> modifyingUser() {
 		return modifyingUser;
 	}
@@ -47,8 +39,6 @@ public class CandidateCertificationAssociations implements EntityAssociations<Ca
 	public List<AssociationField<CandidateCertification, ? extends BullhornEntity>> allAssociations() {
 		if (allAssociations == null) {
 			allAssociations = new ArrayList<AssociationField<CandidateCertification, ? extends BullhornEntity>>();
-			allAssociations.add(candidate());
-			allAssociations.add(certification());
 			allAssociations.add(modifyingUser());
 		}
 		return allAssociations;

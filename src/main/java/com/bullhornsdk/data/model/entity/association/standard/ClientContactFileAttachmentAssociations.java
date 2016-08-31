@@ -12,7 +12,7 @@ import java.util.List;
 public class ClientContactFileAttachmentAssociations implements EntityAssociations<ClientContactFileAttachment> {
 
 
-	private final AssociationField<ClientContactFileAttachment, CorporateUser> usersSharedWith = instantiateAssociationField("usersSharedWidth", CorporateUser.class);
+	private final AssociationField<ClientContactFileAttachment, CorporateUser> usersSharedWith = instantiateAssociationField("usersSharedWith", CorporateUser.class);
 
 	private List<AssociationField<ClientContactFileAttachment, ? extends BullhornEntity>> allAssociations;
 	private static final ClientContactFileAttachmentAssociations INSTANCE = new ClientContactFileAttachmentAssociations();

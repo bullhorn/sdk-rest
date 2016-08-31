@@ -1,2 +1,34 @@
 {
+  "data": [
+    {
+      "id": 1,
+      "candidate": {
+        "id": 5,
+        "firstName": "Tommy",
+        "lastName": "Toothbrush"
+      },
+      "contentSubType": "doc",
+      "contentType": "application",
+      "dateAdded": 1423078910523,
+      "description": null,
+      "directory": "6392\\2015.02\\",
+      "distribution": "internal",
+      "externalID": "Portfolio",
+      "fileExtension": ".doc",
+      "fileSize": 326,
+      "fileType": "SAMPLE         ",
+      "isCopied": false,
+      "isDeleted": false,
+      "isOpen": true,
+      "isPrivate": false,
+      "isSendOut": false,
+      "name": "Tommy Toothbrush Resume",
+      "type": null,
+      "usersSharedWith": {
+        "total": 0,
+        "data": []
+      },
+      "uuid": null
+    }
+  ]
 }

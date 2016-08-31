@@ -2,11 +2,8 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -47,7 +44,7 @@ public class CandidateCertification extends AbstractEntity implements QueryEntit
 
 	private String location;
 
-	private CorporateUser modifyingUser;
+	private OneToMany<CorporateUser> modifyingUser;
 
 	private String results;
 
@@ -200,12 +197,12 @@ public class CandidateCertification extends AbstractEntity implements QueryEntit
 	}
 
 	@JsonProperty("modifyingUser")
-	public CorporateUser getModifyingUser() {
+	public OneToMany<CorporateUser> getModifyingUser() {
 		return modifyingUser;
 	}
 
 	@JsonProperty("modifyingUser")
-	public void setModifyingUser(CorporateUser modifyingUser) {
+	public void setModifyingUser(OneToMany<CorporateUser> modifyingUser) {
 		this.modifyingUser = modifyingUser;
 	}
 

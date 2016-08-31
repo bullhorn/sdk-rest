@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CandidateFileAttachmentAssociations implements EntityAssociations<CandidateFileAttachment> {
 
-	private final AssociationField<CandidateFileAttachment, CorporateUser> usersSharedWith = instantiateAssociationField("usersSharedWidth", CorporateUser.class);
+	private final AssociationField<CandidateFileAttachment, CorporateUser> usersSharedWith = instantiateAssociationField("usersSharedWith", CorporateUser.class);
 	private final AssociationField<CandidateFileAttachment, Candidate> candidate = instantiateAssociationField("candidate", Candidate.class);
 
 	private List<AssociationField<CandidateFileAttachment, ? extends BullhornEntity>> allAssociations;
@@ -34,16 +34,12 @@ public class CandidateFileAttachmentAssociations implements EntityAssociations<C
 	public AssociationField<CandidateFileAttachment, CorporateUser> usersSharedWith() {
 		return usersSharedWith;
 	}
-	public AssociationField<CandidateFileAttachment, Candidate> candidate() {
-		return candidate;
-	}
 
 	@Override
 	public List<AssociationField<CandidateFileAttachment, ? extends BullhornEntity>> allAssociations() {
 		if (allAssociations == null) {
 			allAssociations = new ArrayList<AssociationField<CandidateFileAttachment, ? extends BullhornEntity>>();
 			allAssociations.add(usersSharedWith());
-			allAssociations.add(candidate());
 		}
 		return allAssociations;
 	}
