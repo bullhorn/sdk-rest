@@ -289,6 +289,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return businessSectors;
 	}
 
+    @ReadOnly
 	@JsonProperty("businessSectors")
 	public void setBusinessSectors(OneToMany<BusinessSector> businessSectors) {
 		this.businessSectors = businessSectors;
