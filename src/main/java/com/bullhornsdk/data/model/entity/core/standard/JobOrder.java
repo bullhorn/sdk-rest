@@ -7,6 +7,7 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
@@ -299,6 +300,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return appointments;
 	}
 
+    @ReadOnly
 	@JsonProperty("appointments")
 	public void setAppointments(OneToMany<Specialty> appointments) {
 		this.appointments = appointments;
@@ -309,6 +311,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return approvedPlacements;
 	}
 
+    @ReadOnly
 	@JsonProperty("approvedPlacements")
 	public void setApprovedPlacements(OneToMany<Placement> approvedPlacements) {
 		this.approvedPlacements = approvedPlacements;
@@ -599,6 +602,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return interviews;
 	}
 
+    @ReadOnly
 	@JsonProperty("interviews")
 	public void setInterviews(OneToMany<Appointment> interviews) {
 		this.interviews = interviews;
@@ -679,6 +683,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return notes;
 	}
 
+    @ReadOnly
 	@JsonProperty("notes")
 	public void setNotes(OneToMany<Note> notes) {
 		this.notes = notes;
@@ -749,6 +754,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return placements;
 	}
 
+    @ReadOnly
 	@JsonProperty("placements")
 	public void setPlacements(OneToMany<Placement> placements) {
 		this.placements = placements;
@@ -839,6 +845,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return sendouts;
 	}
 
+    @ReadOnly
 	@JsonProperty("sendouts")
 	public void setSendouts(OneToMany<Sendout> sendouts) {
 		this.sendouts = sendouts;
@@ -909,6 +916,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return submissions;
 	}
 
+    @ReadOnly
 	@JsonProperty("submissions")
 	public void setSubmissions(OneToMany<JobSubmission> submissions) {
 		this.submissions = submissions;
@@ -919,6 +927,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return tasks;
 	}
 
+    @ReadOnly
 	@JsonProperty("tasks")
 	public void setTasks(OneToMany<Task> tasks) {
 		this.tasks = tasks;
@@ -959,6 +968,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return timeUnits;
 	}
 
+    @ReadOnly
 	@JsonProperty("timeUnits")
 	public void setTimeUnits(OneToMany<TimeUnit> timeUnits) {
 		this.timeUnits = timeUnits;
@@ -999,6 +1009,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return webResponses;
 	}
 
+    @ReadOnly
 	@JsonProperty("webResponses")
 	public void setWebResponses(OneToMany<JobSubmission> webResponses) {
 		this.webResponses = webResponses;
