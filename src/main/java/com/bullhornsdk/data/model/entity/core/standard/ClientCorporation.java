@@ -23,6 +23,7 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -284,6 +285,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		return clientContacts;
 	}
 
+    @ReadOnly
 	@JsonProperty("clientContacts")
 	public void setClientContacts(OneToMany<ClientContact> clientContacts) {
 		this.clientContacts = clientContacts;
@@ -494,6 +496,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		return owners;
 	}
 
+    @ReadOnly
 	@JsonProperty("owners")
 	public void setOwners(OneToManyLinkedId owners) {
 		this.owners = owners;

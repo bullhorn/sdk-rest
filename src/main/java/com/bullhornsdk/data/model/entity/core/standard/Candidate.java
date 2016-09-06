@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.util.ReadOnly;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
@@ -545,6 +546,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return certificationList;
 	}
 
+    @ReadOnly
 	@JsonProperty("certificationList")
 	public void setCertificationList(OneToMany<Certification> certificationList) {
 		this.certificationList = certificationList;
@@ -565,6 +567,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return clientCorporationBlackList;
 	}
 
+    @ReadOnly
 	@JsonProperty("clientCorporationBlackList")
 	public void setClientCorporationBlackList(OneToMany<ClientCorporation> clientCorporationBlackList) {
 		this.clientCorporationBlackList = clientCorporationBlackList;
@@ -575,6 +578,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return clientCorporationWhiteList;
 	}
 
+    @ReadOnly
 	@JsonProperty("clientCorporationWhiteList")
 	public void setClientCorporationWhiteList(OneToMany<ClientCorporation> clientCorporationWhiteList) {
 		this.clientCorporationWhiteList = clientCorporationWhiteList;
@@ -766,6 +770,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return educations;
 	}
 
+    @ReadOnly
 	@JsonProperty("educations")
 	public void setEducations(OneToMany<CandidateEducation> educations) {
 		this.educations = educations;
@@ -916,6 +921,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return fileAttachments;
 	}
 
+    @ReadOnly
 	@JsonProperty("fileAttachments")
 	public void setFileAttachments(OneToMany<StandardFileAttachment> fileAttachments) {
 		this.fileAttachments = fileAttachments;
@@ -966,6 +972,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return interviews;
 	}
 
+    @ReadOnly
 	@JsonProperty("interviews")
 	public void setInterviews(OneToMany<Appointment> interviews) {
 		this.interviews = interviews;
@@ -1176,6 +1183,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return notes;
 	}
 
+    @ReadOnly
 	@JsonProperty("notes")
 	public void setNotes(OneToMany<Note> notes) {
 		this.notes = notes;
@@ -1286,6 +1294,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return placements;
 	}
 
+    @ReadOnly
 	@JsonProperty("placements")
 	public void setPlacements(OneToMany<Placement> placements) {
 		this.placements = placements;
@@ -1346,6 +1355,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return references;
 	}
 
+    @ReadOnly
 	@JsonProperty("references")
 	public void setReferences(OneToMany<CandidateReference> references) {
 		this.references = references;
@@ -1406,6 +1416,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return sendouts;
 	}
 
+    @ReadOnly
 	@JsonProperty("sendouts")
 	public void setSendouts(OneToMany<Sendout> sendouts) {
 		this.sendouts = sendouts;
@@ -1506,6 +1517,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return submissions;
 	}
 
+    @ReadOnly
 	@JsonProperty("submissions")
 	public void setSubmissions(OneToMany<JobSubmission> submissions) {
 		this.submissions = submissions;
@@ -1516,6 +1528,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return tasks;
 	}
 
+    @ReadOnly
 	@JsonProperty("tasks")
 	public void setTasks(OneToMany<Task> tasks) {
 		this.tasks = tasks;
@@ -1606,6 +1619,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return webResponses;
 	}
 
+    @ReadOnly
 	@JsonProperty("webResponses")
 	public void setWebResponses(OneToMany<JobSubmission> webResponses) {
 		this.webResponses = webResponses;
@@ -1636,6 +1650,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return workHistories;
 	}
 
+    @ReadOnly
 	@JsonProperty("workHistories")
 	public void setWorkHistories(OneToMany<CandidateWorkHistory> workHistories) {
 		this.workHistories = workHistories;

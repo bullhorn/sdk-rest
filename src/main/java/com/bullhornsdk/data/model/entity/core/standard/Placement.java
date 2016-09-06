@@ -22,6 +22,7 @@ import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -281,6 +282,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return appointments;
 	}
 
+    @ReadOnly
 	@JsonProperty("appointments")
 	public void setAppointments(OneToMany<Appointment> appointments) {
 		this.appointments = appointments;
@@ -351,6 +353,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return changeRequests;
 	}
 
+    @ReadOnly
 	@JsonProperty("changeRequests")
 	public void setChangeRequests(OneToMany<PlacementChangeRequest> changeRequests) {
 		this.changeRequests = changeRequests;
@@ -391,6 +394,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return commissions;
 	}
 
+    @ReadOnly
 	@JsonProperty("commissions")
 	public void setCommissions(OneToMany<PlacementCommission> commissions) {
 		this.commissions = commissions;
@@ -621,6 +625,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return notes;
 	}
 
+    @ReadOnly
 	@JsonProperty("notes")
 	public void setNotes(OneToMany<Note> notes) {
 		this.notes = notes;
@@ -821,6 +826,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return tasks;
 	}
 
+    @ReadOnly
 	@JsonProperty("tasks")
 	public void setTasks(OneToMany<Task> tasks) {
 		this.tasks = tasks;

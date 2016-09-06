@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.util.ReadOnly;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
@@ -958,6 +959,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return tasks;
 	}
 
+    @ReadOnly
 	@JsonProperty("tasks")
 	public void setTasks(OneToMany<Task> tasks) {
 		this.tasks = tasks;
@@ -1038,6 +1040,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return notes;
 	}
 
+    @ReadOnly
 	@JsonProperty("notes")
 	public void setNotes(OneToMany<Note> notes) {
 		this.notes = notes;

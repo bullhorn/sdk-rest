@@ -12,6 +12,7 @@ import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -858,6 +859,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return history;
 	}
 
+    @ReadOnly
 	@JsonProperty("history")
 	public void setHistory(OneToMany<Integer> history) {
 		this.history = history;
@@ -888,6 +890,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return notes;
 	}
 
+    @ReadOnly
 	@JsonProperty("notes")
 	public void setNotes(OneToMany<Note> notes) {
 		this.notes = notes;
