@@ -1,9 +1,21 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
-import com.fasterxml.jackson.annotation.*;
+import com.bullhornsdk.data.util.ReadOnly;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
@@ -69,6 +81,7 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -80,6 +93,7 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 		return appointments;
 	}
 
+    @ReadOnly
 	@JsonProperty("appointments")
 	public void setAppointments(OneToManyLinkedId appointments) {
 		this.appointments = appointments;
@@ -110,6 +124,7 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -120,6 +135,7 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;
@@ -230,6 +246,7 @@ public class JobSubmission extends AbstractEntity implements QueryEntity, Update
 		return tasks;
 	}
 
+	@ReadOnly
 	@JsonProperty("tasks")
 	public void setTasks(OneToMany<Task> tasks) {
 		this.tasks = tasks;

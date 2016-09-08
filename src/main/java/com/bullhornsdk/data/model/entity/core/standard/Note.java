@@ -8,6 +8,7 @@ import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -106,6 +107,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -127,6 +129,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		return bhTimeStamp;
 	}
 
+    @ReadOnly
 	@JsonProperty("bhTimeStamp")
 	public void setBhTimeStamp(String bhTimeStamp) {
 		this.bhTimeStamp = bhTimeStamp;
@@ -187,6 +190,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -197,6 +201,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;
@@ -207,6 +212,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		return entities;
 	}
 
+    @ReadOnly
 	@JsonProperty("entities")
 	public void setEntities(OneToMany<NoteEntity> entities) {
 		this.entities = entities;

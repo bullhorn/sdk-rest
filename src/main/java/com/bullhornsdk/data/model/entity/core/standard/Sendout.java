@@ -5,6 +5,7 @@ import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -65,6 +66,7 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
         return id;
     }
 
+    @ReadOnly
     @Override
     @JsonProperty("id")
     public void setId(Integer id) {

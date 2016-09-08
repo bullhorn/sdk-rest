@@ -5,6 +5,7 @@ import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -131,6 +132,7 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -432,6 +434,7 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;

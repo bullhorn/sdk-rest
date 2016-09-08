@@ -1,13 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import com.bullhornsdk.data.util.ReadOnly;
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
@@ -31,12 +23,18 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -495,6 +493,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -619,6 +618,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -659,6 +659,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return dateLastComment;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastComment")
 	public void setDateLastComment(DateTime dateLastComment) {
 		this.dateLastComment = dateLastComment;
@@ -669,6 +670,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;

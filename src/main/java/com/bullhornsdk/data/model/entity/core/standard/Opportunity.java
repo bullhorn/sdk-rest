@@ -1,12 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.Size;
-
-import com.bullhornsdk.data.util.ReadOnly;
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
@@ -29,12 +22,17 @@ import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -309,6 +307,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -459,6 +458,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -789,6 +789,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return jobOrders;
 	}
 
+    @ReadOnly
 	@JsonProperty("jobOrders")
 	public void setJobOrders(OneToMany<JobOrder> jobOrders) {
 		this.jobOrders = jobOrders;
@@ -929,6 +930,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return dateLastExported;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastExported")
 	public void setDateLastExported(DateTime dateLastExported) {
 		this.dateLastExported = dateLastExported;
@@ -949,6 +951,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return appointments;
 	}
 
+    @ReadOnly
 	@JsonProperty("appointments")
 	public void setAppointments(OneToMany<Appointment> appointments) {
 		this.appointments = appointments;
@@ -1141,6 +1144,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;
@@ -1151,6 +1155,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		return tearsheets;
 	}
 
+    @ReadOnly
 	@JsonProperty("tearsheets")
 	public void setTearsheets(OneToMany<Tearsheet> tearsheets) {
 		this.tearsheets = tearsheets;

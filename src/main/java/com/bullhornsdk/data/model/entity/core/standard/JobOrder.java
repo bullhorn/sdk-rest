@@ -279,6 +279,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -452,6 +453,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -482,6 +484,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return dateLastExported;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastExported")
 	public void setDateLastExported(DateTime dateLastExported) {
 		this.dateLastExported = dateLastExported;
@@ -492,6 +495,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;
@@ -958,6 +962,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		return tearsheets;
 	}
 
+	@ReadOnly
 	@JsonProperty("tearsheets")
 	public void setTearsheets(OneToManyLinkedId tearsheets) {
 		this.tearsheets = tearsheets;
