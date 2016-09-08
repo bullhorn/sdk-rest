@@ -195,6 +195,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		return id;
 	}
 
+    @ReadOnly
 	@JsonProperty("id")
 	public void setId(Integer id) {
 		this.id = id;
@@ -275,6 +276,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		return childClientCorporations;
 	}
 
+    @ReadOnly
 	@JsonProperty("childClientCorporations")
 	public void setChildClientCorporations(OneToMany<ClientCorporation> childClientCorporations) {
 		this.childClientCorporations = childClientCorporations;
@@ -336,6 +338,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -356,6 +359,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;

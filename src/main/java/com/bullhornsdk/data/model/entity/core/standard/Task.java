@@ -1,7 +1,14 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.bullhornsdk.data.validation.BullhornUUID;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -124,6 +131,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -145,6 +153,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		return childTasks;
 	}
 
+    @ReadOnly
 	@JsonProperty("childTasks")
 	public void setChildTasks(OneToManyLinkedId childTasks) {
 		this.childTasks = childTasks;
@@ -205,6 +214,7 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;

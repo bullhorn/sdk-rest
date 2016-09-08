@@ -1,10 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
@@ -29,12 +24,17 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -315,6 +315,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -376,6 +377,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		return clientContactID;
 	}
 
+    @ReadOnly
 	@JsonProperty("clientContactID")
 	public void setClientContactID(Integer clientContactID) {
 		this.clientContactID = clientContactID;
@@ -406,6 +408,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -416,6 +419,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		return dateLastComment;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastComment")
 	public void setDateLastComment(DateTime dateLastComment) {
 		this.dateLastComment = dateLastComment;
@@ -426,6 +430,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;
@@ -916,6 +921,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		return tearsheets;
 	}
 
+	@ReadOnly
 	@JsonProperty("tearsheets")
 	public void setTearsheets(OneToManyLinkedId tearsheets) {
 		this.tearsheets = tearsheets;

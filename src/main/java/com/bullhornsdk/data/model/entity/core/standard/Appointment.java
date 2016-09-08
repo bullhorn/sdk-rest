@@ -10,6 +10,7 @@ import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.bullhornsdk.data.validation.BullhornUUID;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -137,6 +138,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return entity;
     }
 
+    @ReadOnly
     @Override
     @JsonProperty("id")
     public void setId(Integer id) {
@@ -158,6 +160,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return guests;
     }
 
+    @ReadOnly
     @JsonProperty("guests")
     public void setGuests(OneToMany<Person> guests) {
         this.guests = guests;
@@ -208,6 +211,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return dateAdded;
     }
 
+    @ReadOnly
     @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
@@ -238,6 +242,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         return dateLastModified;
     }
 
+    @ReadOnly
     @JsonProperty("dateLastModified")
     public void setDateLastModified(DateTime dateLastModified) {
         this.dateLastModified = dateLastModified;

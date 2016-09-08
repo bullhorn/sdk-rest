@@ -258,6 +258,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -269,6 +270,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;
@@ -350,6 +352,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -360,6 +363,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return dateLastComment;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastComment")
 	public void setDateLastComment(DateTime dateLastComment) {
 		this.dateLastComment = dateLastComment;
@@ -840,6 +844,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return distributionLists;
 	}
 
+    @ReadOnly
 	@JsonProperty("distributionLists")
 	public void setDistributionLists(OneToMany<Integer> distributionLists) {
 		this.distributionLists = distributionLists;
@@ -952,6 +957,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return tearsheets;
 	}
 
+    @ReadOnly
 	@JsonProperty("tearsheets")
 	public void setTearsheets(OneToMany<Integer> tearsheets) {
 		this.tearsheets = tearsheets;

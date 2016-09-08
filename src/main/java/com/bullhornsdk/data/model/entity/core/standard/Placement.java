@@ -271,6 +271,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return id;
 	}
 
+    @ReadOnly
 	@Override
 	@JsonProperty("id")
 	public void setId(Integer id) {
@@ -415,6 +416,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return dateAdded;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateAdded")
 	public void setDateAdded(DateTime dateAdded) {
 		this.dateAdded = dateAdded;
@@ -465,6 +467,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		return dateLastModified;
 	}
 
+    @ReadOnly
 	@JsonProperty("dateLastModified")
 	public void setDateLastModified(DateTime dateLastModified) {
 		this.dateLastModified = dateLastModified;
