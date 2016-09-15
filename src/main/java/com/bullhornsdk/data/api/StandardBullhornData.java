@@ -34,7 +34,6 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData;
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
@@ -42,6 +41,7 @@ import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
@@ -54,7 +54,6 @@ import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
-import com.bullhornsdk.data.model.response.crud.AbstractCrudResponse;
 import com.bullhornsdk.data.model.response.crud.CreateResponse;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.crud.DeleteResponse;
@@ -69,7 +68,6 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequest
 import com.bullhornsdk.data.model.response.file.EntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
-import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.file.standard.StandardEntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse;
@@ -808,16 +806,19 @@ public class StandardBullhornData implements BullhornData {
      * @return
      */
     private <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
-        if (idList.size() == 1) {
-            List<T> list = new ArrayList<T>();
-            list.add(this.handleGetEntity(type, idList.iterator().next(), fieldSet, ParamFactory.entityParams()));
-            return (L) new StandardListWrapper<T>(list);
-        }
         String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
         String url = restUrlFactory.assembleEntityUrl(params);
 
-        return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        String jsonString = this.performGetRequest(url, String.class, uriVariables);
+
+        try {
+            return restJsonConverter.jsonToEntityUnwrapRoot(jsonString, BullhornEntityInfo.getTypesListWrapperType(type));
+        } catch(Exception e) {
+            List<T> list = new ArrayList<T>();
+            list.add(restJsonConverter.jsonToEntityUnwrapRoot(jsonString, type));
+            return (L) new StandardListWrapper<T>(list);
+        }
     }
 
     /**
