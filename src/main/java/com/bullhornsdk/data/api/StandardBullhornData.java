@@ -809,13 +809,11 @@ public class StandardBullhornData implements BullhornData {
         String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
         String url = restUrlFactory.assembleEntityUrl(params);
-
-        String jsonString = this.performGetRequest(url, String.class, uriVariables);
-
         try {
-            return restJsonConverter.jsonToEntityUnwrapRoot(jsonString, BullhornEntityInfo.getTypesListWrapperType(type));
+            return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
         } catch(Exception e) {
             List<T> list = new ArrayList<T>();
+            String jsonString = this.performGetRequest(url, String.class, uriVariables);
             list.add(restJsonConverter.jsonToEntityUnwrapRoot(jsonString, type));
             return (L) new StandardListWrapper<T>(list);
         }
