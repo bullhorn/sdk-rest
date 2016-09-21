@@ -811,11 +811,16 @@ public class StandardBullhornData implements BullhornData {
         String url = restUrlFactory.assembleEntityUrl(params);
         try {
             return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
-        } catch(Exception e) {
-            List<T> list = new ArrayList<T>();
-            String jsonString = this.performGetRequest(url, String.class, uriVariables);
-            list.add(restJsonConverter.jsonToEntityUnwrapRoot(jsonString, type));
-            return (L) new StandardListWrapper<T>(list);
+        } catch(Exception oneOrLessReturned) {
+            try {
+                List<T> list = new ArrayList<T>();
+                String jsonString = this.performGetRequest(url, String.class, uriVariables);
+                list.add(restJsonConverter.jsonToEntityUnwrapRoot(jsonString, type));
+                return (L) new StandardListWrapper<T>(list);
+            } catch(RestApiException noneReturned) {
+                List<T> list = new ArrayList<T>();
+                return (L) new StandardListWrapper<T>(list);
+            }
         }
     }
 
