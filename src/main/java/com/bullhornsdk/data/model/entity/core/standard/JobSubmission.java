@@ -1,6 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
 import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
@@ -8,6 +7,7 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsA;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
@@ -23,9 +23,10 @@ import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "appointments", "billRate", "candidate", "dateAdded", "dateLastModified", "dateWebResponse", "isDeleted", "isHidden", "jobOrder",
-		"migrateGUID", "payRate", "salary", "sendingUser", "source", "status", "tasks" })
-public class JobSubmission extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
+@JsonPropertyOrder({ "id", "appointments", "billRate", "candidate", "customText1", "customText2", "customText3", "customText4",
+        "customText5", "dateAdded", "dateLastModified", "dateWebResponse", "isDeleted", "isHidden", "jobOrder", "migrateGUID",
+        "payRate", "salary", "sendingUser", "source", "status", "tasks" })
+public class JobSubmission extends CustomFieldsA implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 	private OneToManyLinkedId appointments;
