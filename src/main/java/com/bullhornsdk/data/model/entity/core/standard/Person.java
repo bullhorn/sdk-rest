@@ -405,13 +405,13 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
 		this.pager = pager;
 	}
 
-	@JsonProperty("personSubtype")
+	@JsonProperty("_subtype")
 	public String getPersonSubtype() {
 		return personSubtype;
 	}
 
-	@JsonProperty("personSubtype")
-	public void setPersonSubtyper(String personSubtype) {
+	@JsonProperty("_subtype")
+	public void setPersonSubtype(String personSubtype) {
 		this.personSubtype = personSubtype;
 	}
 
