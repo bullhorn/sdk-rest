@@ -7,7 +7,7 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsA;
+import com.bullhornsdk.data.model.entity.customfields.BaseCustomFields;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
@@ -26,7 +26,7 @@ import java.math.BigDecimal;
 @JsonPropertyOrder({ "id", "appointments", "billRate", "candidate", "customText1", "customText2", "customText3", "customText4",
         "customText5", "dateAdded", "dateLastModified", "dateWebResponse", "isDeleted", "isHidden", "jobOrder", "migrateGUID",
         "payRate", "salary", "sendingUser", "source", "status", "tasks" })
-public class JobSubmission extends CustomFieldsA implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
+public class JobSubmission extends BaseCustomFields implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
 	private OneToManyLinkedId appointments;

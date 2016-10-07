@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author magnus.palm
  * 
  */
-public class CustomFieldsA extends AbstractEntity {
+public class CustomFieldsA extends BaseCustomFields {
 
 	private DateTime customDate1;
 
@@ -43,27 +43,6 @@ public class CustomFieldsA extends AbstractEntity {
 	private Integer customInt2;
 
 	private Integer customInt3;
-
-	@JsonIgnore
-	@Size(max = 100)
-	private String customText1;
-
-	@JsonIgnore
-	@Size(max = 100)
-	private String customText2;
-
-	@JsonIgnore
-	@Size(max = 100)
-	private String customText3;
-
-	@JsonIgnore
-	@Size(max = 100)
-	@JsonProperty("customText4")
-	private String customText4;
-
-	@JsonIgnore
-	@Size(max = 100)
-	private String customText5;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -213,57 +192,6 @@ public class CustomFieldsA extends AbstractEntity {
 	@JsonProperty("customInt3")
 	public void setCustomInt3(Integer customInt3) {
 		this.customInt3 = customInt3;
-	}
-
-	@JsonProperty("customText1")
-	public String getCustomText1() {
-		return customText1;
-	}
-
-	@JsonIgnore
-	public void setCustomText1(String customText1) {
-		this.customText1 = customText1;
-	}
-
-	@JsonProperty("customText2")
-	public String getCustomText2() {
-		return customText2;
-	}
-
-	@JsonIgnore
-	public void setCustomText2(String customText2) {
-
-		this.customText2 = customText2;
-	}
-
-	@JsonProperty("customText3")
-	public String getCustomText3() {
-		return customText3;
-	}
-
-	@JsonIgnore
-	public void setCustomText3(String customText3) {
-		this.customText3 = customText3;
-	}
-
-	@JsonProperty("customText4")
-	public String getCustomText4() {
-		return customText4;
-	}
-
-	@JsonIgnore
-	public void setCustomText4(String customText4) {
-		this.customText4 = customText4;
-	}
-
-	@JsonProperty("customText5")
-	public String getCustomText5() {
-		return customText5;
-	}
-
-	@JsonIgnore
-	public void setCustomText5(String customText5) {
-		this.customText5 = customText5;
 	}
 
 	@JsonProperty("customText6")
@@ -420,6 +348,7 @@ public class CustomFieldsA extends AbstractEntity {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + super.hashCode();
 		result = prime * result + ((customDate1 == null) ? 0 : customDate1.hashCode());
 		result = prime * result + ((customDate2 == null) ? 0 : customDate2.hashCode());
 		result = prime * result + ((customDate3 == null) ? 0 : customDate3.hashCode());
@@ -429,7 +358,6 @@ public class CustomFieldsA extends AbstractEntity {
 		result = prime * result + ((customInt1 == null) ? 0 : customInt1.hashCode());
 		result = prime * result + ((customInt2 == null) ? 0 : customInt2.hashCode());
 		result = prime * result + ((customInt3 == null) ? 0 : customInt3.hashCode());
-		result = prime * result + ((customText1 == null) ? 0 : customText1.hashCode());
 		result = prime * result + ((customText10 == null) ? 0 : customText10.hashCode());
 		result = prime * result + ((customText11 == null) ? 0 : customText11.hashCode());
 		result = prime * result + ((customText12 == null) ? 0 : customText12.hashCode());
@@ -440,11 +368,7 @@ public class CustomFieldsA extends AbstractEntity {
 		result = prime * result + ((customText17 == null) ? 0 : customText17.hashCode());
 		result = prime * result + ((customText18 == null) ? 0 : customText18.hashCode());
 		result = prime * result + ((customText19 == null) ? 0 : customText19.hashCode());
-		result = prime * result + ((customText2 == null) ? 0 : customText2.hashCode());
 		result = prime * result + ((customText20 == null) ? 0 : customText20.hashCode());
-		result = prime * result + ((customText3 == null) ? 0 : customText3.hashCode());
-		result = prime * result + ((customText4 == null) ? 0 : customText4.hashCode());
-		result = prime * result + ((customText5 == null) ? 0 : customText5.hashCode());
 		result = prime * result + ((customText6 == null) ? 0 : customText6.hashCode());
 		result = prime * result + ((customText7 == null) ? 0 : customText7.hashCode());
 		result = prime * result + ((customText8 == null) ? 0 : customText8.hashCode());
@@ -457,6 +381,8 @@ public class CustomFieldsA extends AbstractEntity {
 		if (this == obj)
 			return true;
 		if (obj == null)
+			return false;
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
@@ -505,11 +431,6 @@ public class CustomFieldsA extends AbstractEntity {
 			if (other.customInt3 != null)
 				return false;
 		} else if (!customInt3.equals(other.customInt3))
-			return false;
-		if (customText1 == null) {
-			if (other.customText1 != null)
-				return false;
-		} else if (!customText1.equals(other.customText1))
 			return false;
 		if (customText10 == null) {
 			if (other.customText10 != null)
@@ -561,30 +482,10 @@ public class CustomFieldsA extends AbstractEntity {
 				return false;
 		} else if (!customText19.equals(other.customText19))
 			return false;
-		if (customText2 == null) {
-			if (other.customText2 != null)
-				return false;
-		} else if (!customText2.equals(other.customText2))
-			return false;
 		if (customText20 == null) {
 			if (other.customText20 != null)
 				return false;
 		} else if (!customText20.equals(other.customText20))
-			return false;
-		if (customText3 == null) {
-			if (other.customText3 != null)
-				return false;
-		} else if (!customText3.equals(other.customText3))
-			return false;
-		if (customText4 == null) {
-			if (other.customText4 != null)
-				return false;
-		} else if (!customText4.equals(other.customText4))
-			return false;
-		if (customText5 == null) {
-			if (other.customText5 != null)
-				return false;
-		} else if (!customText5.equals(other.customText5))
 			return false;
 		if (customText6 == null) {
 			if (other.customText6 != null)
@@ -612,6 +513,7 @@ public class CustomFieldsA extends AbstractEntity {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append(super.toString());
 		builder.append(", \ncustomDate1=");
 		builder.append(customDate1);
 		builder.append(", \ncustomDate2=");
@@ -630,16 +532,6 @@ public class CustomFieldsA extends AbstractEntity {
 		builder.append(customInt2);
 		builder.append(", \ncustomInt3=");
 		builder.append(customInt3);
-		builder.append(", \ncustomText1=");
-		builder.append(customText1);
-		builder.append(", \ncustomText2=");
-		builder.append(customText2);
-		builder.append(", \ncustomText3=");
-		builder.append(customText3);
-		builder.append(", \ncustomText4=");
-		builder.append(customText4);
-		builder.append(", \ncustomText5=");
-		builder.append(customText5);
 		builder.append(", \ncustomText6=");
 		builder.append(customText6);
 		builder.append(", \ncustomText7=");
