@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * 
  * customInt 1-3
  * 
- * customText 1-20
+ * customText 6-20
  * 
  * @author magnus.palm
  * 
@@ -347,8 +347,7 @@ public class CustomFieldsA extends BaseCustomFields {
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
-		result = prime * result + super.hashCode();
+		int result = super.hashCode();
 		result = prime * result + ((customDate1 == null) ? 0 : customDate1.hashCode());
 		result = prime * result + ((customDate2 == null) ? 0 : customDate2.hashCode());
 		result = prime * result + ((customDate3 == null) ? 0 : customDate3.hashCode());
