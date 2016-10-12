@@ -40,6 +40,8 @@ public class TestEntities {
 
 	private Integer countryId;
 
+    private Integer distributionListId;
+
     private Integer fileId;
 
 	private Integer housingComplexId;
@@ -115,6 +117,8 @@ public class TestEntities {
 		this.corporationDepartmentId=1;
 
 		this.countryId=1;
+
+        this.distributionListId = 1;
 
         this.fileId = 1;
 
@@ -274,6 +278,14 @@ public class TestEntities {
 	public void setCountryId(Integer countryId) {
 		this.countryId = countryId;
 	}
+
+    public Integer getDistributionListId() {
+        return distributionListId;
+    }
+
+    public void setDistributionListId(Integer distributionListId) {
+        this.distributionListId = distributionListId;
+    }
 
     public Integer getFileId() {
         return fileId;
@@ -462,82 +474,84 @@ public class TestEntities {
     @Override
     public String toString() {
         return new StringBuilder("TestEntities {")
-                .append("\n\t\"appointmentId\": ")
-                .append(appointmentId)
-                .append(",\n\t\"appointmentAttendeeId\": ")
-                .append(appointmentAttendeeId)
-                .append(",\n\t\"businessSectorId\": ")
-                .append(businessSectorId)
-                .append(",\n\t\"candidateId\": ")
-                .append(candidateId)
-                .append(",\n\t\"candidateEducationId\": ")
-                .append(candidateEducationId)
-                .append(",\n\t\"candidateReferenceId\": ")
-                .append(candidateReferenceId)
-                .append(",\n\t\"candidateWorkHistoryId\": ")
-                .append(candidateWorkHistoryId)
-                .append(",\n\t\"categoryId\": ")
-                .append(categoryId)
-                .append(",\n\t\"certificationId\": ")
-                .append(certificationId)
-                .append(",\n\t\"clientContactId\": ")
-                .append(clientContactId)
-                .append(",\n\t\"clientCorporationId\": ")
-                .append(clientCorporationId)
-                .append(",\n\t\"corporateUserId\": ")
-                .append(corporateUserId)
-                .append(",\n\t\"corporationDepartmentId\": ")
-                .append(corporationDepartmentId)
-                .append(",\n\t\"countryId\": ")
-                .append(countryId)
-                .append(",\n\t\"fileId\": ")
-                .append(fileId)
-                .append(",\n\t\"housingComplexId\": ")
-                .append(housingComplexId)
-                .append(",\n\t\"jobOrderId\": ")
-                .append(jobOrderId)
-                .append(",\n\t\"jobSubmissionId\": ")
-                .append(jobSubmissionId)
-                .append(",\n\t\"jobSubmissionHistoryId\": ")
-                .append(jobSubmissionHistoryId)
-                .append(",\n\t\"leadId\": ")
-                .append(leadId)
-                .append(",\n\t\"noteId\": ")
-                .append(noteId)
-                .append(",\n\t\"noteIdList\": ")
-                .append(noteIdList)
-                .append(",\n\t\"noteEntityId\": ")
-                .append(noteEntityId)
-                .append(",\n\t\"opportunityId\": ")
-                .append(opportunityId)
-                .append(",\n\t\"placementId\": ")
-                .append(placementId)
-                .append(",\n\t\"placementChangeRequestId\": ")
-                .append(placementChangeRequestId)
-                .append(",\n\t\"placementCommissionId\": ")
-                .append(placementCommissionId)
-                .append(",\n\t\"sendoutId\": ")
-                .append(sendoutId)
-                .append(",\n\t\"skillId\": ")
-                .append(skillId)
-                .append(",\n\t\"specialtyId\": ")
-                .append(specialtyId)
-                .append(",\n\t\"stateId\": ")
-                .append(stateId)
-                .append(",\n\t\"taskId\": ")
-                .append(taskId)
-                .append(",\n\t\"tearsheetId\": ")
-                .append(tearsheetId)
-                .append(",\n\t\"timeUnitId\": ")
-                .append(timeUnitId)
-                .append(",\n\t\"allCustomObjectsId\": ")
-                .append(allCustomObjectsId)
-                .append(",\n\t\"requestId\": ")
-                .append(requestId)
-                .append(",\n\t\"subscriptionId\": ")
-                .append("'")
-                .append(subscriptionId).append('\'')
-                .append('}')
-                .toString();
+            .append("\n\t\"appointmentId\": ")
+            .append(appointmentId)
+            .append(",\n\t\"appointmentAttendeeId\": ")
+            .append(appointmentAttendeeId)
+            .append(",\n\t\"businessSectorId\": ")
+            .append(businessSectorId)
+            .append(",\n\t\"candidateId\": ")
+            .append(candidateId)
+            .append(",\n\t\"candidateEducationId\": ")
+            .append(candidateEducationId)
+            .append(",\n\t\"candidateReferenceId\": ")
+            .append(candidateReferenceId)
+            .append(",\n\t\"candidateWorkHistoryId\": ")
+            .append(candidateWorkHistoryId)
+            .append(",\n\t\"categoryId\": ")
+            .append(categoryId)
+            .append(",\n\t\"certificationId\": ")
+            .append(certificationId)
+            .append(",\n\t\"clientContactId\": ")
+            .append(clientContactId)
+            .append(",\n\t\"clientCorporationId\": ")
+            .append(clientCorporationId)
+            .append(",\n\t\"corporateUserId\": ")
+            .append(corporateUserId)
+            .append(",\n\t\"corporationDepartmentId\": ")
+            .append(corporationDepartmentId)
+            .append(",\n\t\"countryId\": ")
+            .append(countryId)
+            .append(",\n\t\"distributionListId\": ")
+            .append(distributionListId)
+            .append(",\n\t\"fileId\": ")
+            .append(fileId)
+            .append(",\n\t\"housingComplexId\": ")
+            .append(housingComplexId)
+            .append(",\n\t\"jobOrderId\": ")
+            .append(jobOrderId)
+            .append(",\n\t\"jobSubmissionId\": ")
+            .append(jobSubmissionId)
+            .append(",\n\t\"jobSubmissionHistoryId\": ")
+            .append(jobSubmissionHistoryId)
+            .append(",\n\t\"leadId\": ")
+            .append(leadId)
+            .append(",\n\t\"noteId\": ")
+            .append(noteId)
+            .append(",\n\t\"noteIdList\": ")
+            .append(noteIdList)
+            .append(",\n\t\"noteEntityId\": ")
+            .append(noteEntityId)
+            .append(",\n\t\"opportunityId\": ")
+            .append(opportunityId)
+            .append(",\n\t\"placementId\": ")
+            .append(placementId)
+            .append(",\n\t\"placementChangeRequestId\": ")
+            .append(placementChangeRequestId)
+            .append(",\n\t\"placementCommissionId\": ")
+            .append(placementCommissionId)
+            .append(",\n\t\"sendoutId\": ")
+            .append(sendoutId)
+            .append(",\n\t\"skillId\": ")
+            .append(skillId)
+            .append(",\n\t\"specialtyId\": ")
+            .append(specialtyId)
+            .append(",\n\t\"stateId\": ")
+            .append(stateId)
+            .append(",\n\t\"taskId\": ")
+            .append(taskId)
+            .append(",\n\t\"tearsheetId\": ")
+            .append(tearsheetId)
+            .append(",\n\t\"timeUnitId\": ")
+            .append(timeUnitId)
+            .append(",\n\t\"allCustomObjectsId\": ")
+            .append(allCustomObjectsId)
+            .append(",\n\t\"requestId\": ")
+            .append(requestId)
+            .append(",\n\t\"subscriptionId\": ")
+            .append("'")
+            .append(subscriptionId).append('\'')
+            .append('}')
+            .toString();
     }
 }

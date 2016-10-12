@@ -20,6 +20,7 @@ public class AssociationFactory {
     private static final ClientContactAssociations clientContactAssociations = ClientContactAssociations.getInstance();
     private static final ClientCorporationAssociations clientCorporationAssociations = ClientCorporationAssociations.getInstance();
     private static final CorporateUserAssociations corporateUserAssociations = CorporateUserAssociations.getInstance();
+    private static final DistributionListAssociations distributionListAssociations = DistributionListAssociations.getInstance();
     private static final JobOrderAssociations jobOrderAssociations = JobOrderAssociations.getInstance();
     private static final NoteAssociations noteAssociations = NoteAssociations.getInstance();
     private static final PlacementAssociations placementAssociations = PlacementAssociations.getInstance();
@@ -74,6 +75,10 @@ public class AssociationFactory {
 
         if (type == CorporateUser.class) {
             return (EntityAssociations<T>) corporateUserAssociations;
+        }
+
+        if (type == DistributionList.class) {
+            return (EntityAssociations<T>) distributionListAssociations;
         }
 
         if (type == JobOrder.class) {
@@ -156,6 +161,15 @@ public class AssociationFactory {
      */
     public static CorporateUserAssociations corporateUserAssociations() {
         return corporateUserAssociations;
+    }
+
+    /**
+     * Returns the associations for JobOrder
+     *
+     * @return
+     */
+    public static DistributionListAssociations distributionListAssociations() {
+        return distributionListAssociations;
     }
 
     /**

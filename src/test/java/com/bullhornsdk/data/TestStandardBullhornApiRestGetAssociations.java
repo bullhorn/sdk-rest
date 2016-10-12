@@ -14,6 +14,8 @@ import com.bullhornsdk.data.model.entity.association.AssociationFactory;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.Category;
+import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
+import com.bullhornsdk.data.model.entity.core.standard.Person;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -97,6 +99,20 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
 		assertResponse(Category.class, associationList);
 
 	}
+
+    @Test
+    public void testGetDistributionListAssociation() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+
+        Set<Integer> entityIds = new HashSet<Integer>();
+        entityIds.add(testEntities.getDistributionListId());
+
+        AssociationParams params = ParamFactory.associationParams();
+        params.setCount(100);
+        List<Person> associationList = bullhornData.getAssociation(DistributionList.class, entityIds, AssociationFactory.distributionListAssociations()
+            .members(), getFields(), params);
+        assertResponse(DistributionList.class, associationList);
+
+    }
 
 	private Set<String> getFields() {
 		Set<String> fields = new HashSet<String>();

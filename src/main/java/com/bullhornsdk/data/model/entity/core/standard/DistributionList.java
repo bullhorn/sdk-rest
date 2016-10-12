@@ -1,19 +1,24 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.*;
+import javax.validation.constraints.Size;
+
+import org.joda.time.DateTime;
+
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
-import org.joda.time.DateTime;
-
-import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "dateAdded", "groupName", "groupName", "isPrivate", "isReadOnly", "members", "migrateGUID", "name", "owner", "searchURL", "type"})
-public class DistributionList extends AbstractEntity implements QueryEntity, HardDeleteEntity, UpdateEntity {
+public class DistributionList extends AbstractEntity implements QueryEntity, HardDeleteEntity, UpdateEntity, AssociationEntity {
 
     private Integer id;
 
