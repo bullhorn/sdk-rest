@@ -16,6 +16,7 @@ import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
+import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
@@ -174,6 +175,24 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 			}
 		}
 	}
+
+    @Test
+    public void testAssociateDistributionList() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        DistributionList entity = bullhornData.findEntity(DistributionList.class, testEntities.getDistributionListId());
+
+        for (AssociationField<DistributionList, ? extends BullhornEntity> association : AssociationFactory.distributionListAssociations().allAssociations()) {
+            Set<Integer> associationIds = new HashSet<Integer>();
+
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity, association.getAssociationFieldName());
+
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+
+                testAssociation(DistributionList.class, testEntities.getDistributionListId(), associationIds, association);
+            }
+        }
+    }
 
 	private <T extends AssociationEntity> void testAssociation(Class<T> type, Integer entityId, Set<Integer> associationIds,
 			AssociationField<T, ? extends BullhornEntity> association) {
