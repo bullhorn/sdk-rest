@@ -34,8 +34,8 @@ import java.math.BigDecimal;
 		"isOpen", "isPublic", "jobBoardList", "notes", "numOpenings", "onSite", "opportunity", "optionsPackage", "owner", "payRate", "placements",
 		"publicDescription", "publishedZip", "reasonClosed", "reportTo", "reportToClientContact", "responseUser", "salary", "salaryUnit",
 		"sendouts", "skillList", "skills", "source", "specialties", "startDate", "status", "submissions", "tasks", "taxRate", "taxStatus",
-		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "webResponses", "willRelocate", "willSponsor", "yearsRequired",
-        "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
+		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "webResponses", "willRelocate", "willRelocateInt", "willSponsor", "yearsRequired",
+		"customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s"})
 public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
@@ -229,6 +229,8 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 	private OneToMany<JobSubmission> webResponses;
 
 	private Boolean willRelocate;
+
+	private Integer willRelocateInt;
 
 	private Boolean willSponsor;
 
@@ -1030,6 +1032,16 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		this.willRelocate = willRelocate;
 	}
 
+	@JsonProperty("willRelocateInt")
+	public Integer getWillRelocateInt() {
+		return willRelocateInt;
+	}
+
+	@JsonProperty("willRelocateInt")
+	public void setWillRelocateInt(Integer willRelocateInt) {
+		this.willRelocateInt = willRelocateInt;
+	}
+
 	@JsonProperty("willSponsor")
 	public Boolean getWillSponsor() {
 		return willSponsor;
@@ -1292,6 +1304,8 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 			return false;
 		if (willRelocate != null ? !willRelocate.equals(jobOrder.willRelocate) : jobOrder.willRelocate != null)
 			return false;
+		if (willRelocateInt != null ? !willRelocateInt.equals(jobOrder.willRelocateInt) : jobOrder.willRelocateInt != null)
+			return false;
 		if (willSponsor != null ? !willSponsor.equals(jobOrder.willSponsor) : jobOrder.willSponsor != null)
 			return false;
 		if (yearsRequired != null ? !yearsRequired.equals(jobOrder.yearsRequired) : jobOrder.yearsRequired != null)
@@ -1396,6 +1410,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		result = 31 * result + (type != null ? type.hashCode() : 0);
 		result = 31 * result + (webResponses != null ? webResponses.hashCode() : 0);
 		result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
+		result = 31 * result + (willRelocateInt != null ? willRelocateInt.hashCode() : 0);
 		result = 31 * result + (willSponsor != null ? willSponsor.hashCode() : 0);
 		result = 31 * result + (yearsRequired != null ? yearsRequired.hashCode() : 0);
 		result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
@@ -1489,6 +1504,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 				", type=" + type +
 				", webResponses=" + webResponses +
 				", willRelocate=" + willRelocate +
+				", willRelocateInt=" + willRelocateInt +
 				", willSponsor=" + willSponsor +
 				", yearsRequired=" + yearsRequired +
 				", customObject1s=" + customObject1s +
