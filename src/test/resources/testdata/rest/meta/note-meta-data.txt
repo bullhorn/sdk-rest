@@ -321,6 +321,15 @@
             }
         },
         {
+             "name": "externalID",
+             "type": "SCALAR",
+             "dataType": "String",
+             "maxLength": 50,
+             "confidential": false,
+             "label": "External ID",
+             "hideFromSearch": false
+        },
+        {
             "name": "isDeleted",
             "type": "SCALAR",
             "dataType": "Boolean",

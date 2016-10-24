@@ -32,6 +32,22 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 	private OneToManyLinkedId appointments;
 	private BigDecimal billRate;
 	private Candidate candidate;
+
+    @JsonIgnore
+    private String customText1;
+
+    @JsonIgnore
+    private String customText2;
+
+    @JsonIgnore
+    private String customText3;
+
+    @JsonIgnore
+    private String customText4;
+
+    @JsonIgnore
+    private String customText5;
+
 	private DateTime dateAdded;
 	private DateTime dateLastModified;
 	private DateTime dateWebResponse;
@@ -119,6 +135,56 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 	public void setCandidate(Candidate candidate) {
 		this.candidate = candidate;
 	}
+
+    @JsonProperty("customText1")
+    public String getCustomText1() {
+        return customText1;
+    }
+
+    @JsonProperty("customText1")
+    public void setCustomText1(String customText1) {
+        this.customText1 = customText1;
+    }
+
+    @JsonProperty("customText2")
+    public String getCustomText2() {
+        return customText2;
+    }
+
+    @JsonProperty("customText2")
+    public void setCustomText2(String customText2) {
+        this.customText2 = customText2;
+    }
+
+    @JsonProperty("customText3")
+    public String getCustomText3() {
+        return customText3;
+    }
+
+    @JsonProperty("customText3")
+    public void setCustomText3(String customText3) {
+        this.customText3 = customText3;
+    }
+
+    @JsonProperty("customText4")
+    public String getCustomText4() {
+        return customText4;
+    }
+
+    @JsonProperty("customText4")
+    public void setCustomText4(String customText4) {
+        this.customText4 = customText4;
+    }
+
+    @JsonProperty("customText5")
+    public String getCustomText5() {
+        return customText5;
+    }
+
+    @JsonProperty("customText5")
+    public void setCustomText5(String customText5) {
+        this.customText5 = customText5;
+    }
 
 	@JsonProperty("dateAdded")
 	public DateTime getDateAdded() {
@@ -264,7 +330,12 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 		if (appointments != null ? !appointments.equals(that.appointments) : that.appointments != null) return false;
 		if (billRate != null ? !billRate.equals(that.billRate) : that.billRate != null) return false;
 		if (candidate != null ? !candidate.equals(that.candidate) : that.candidate != null) return false;
-		if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
+        if (customText1 != null ? !customText1.equals(that.customText1) : that.customText1 != null) return false;
+        if (customText2 != null ? !customText2.equals(that.customText2) : that.customText2 != null) return false;
+        if (customText3 != null ? !customText3.equals(that.customText3) : that.customText3 != null) return false;
+        if (customText4 != null ? !customText4.equals(that.customText4) : that.customText4 != null) return false;
+        if (customText5 != null ? !customText5.equals(that.customText5) : that.customText5 != null) return false;
+        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
 		if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
 			return false;
 		if (dateWebResponse != null ? !dateWebResponse.equals(that.dateWebResponse) : that.dateWebResponse != null)
@@ -288,7 +359,12 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 		result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
 		result = 31 * result + (billRate != null ? billRate.hashCode() : 0);
 		result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
-		result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (customText1 != null ? customText1.hashCode() : 0);
+        result = 31 * result + (customText2 != null ? customText2.hashCode() : 0);
+        result = 31 * result + (customText3 != null ? customText3.hashCode() : 0);
+        result = 31 * result + (customText4 != null ? customText4.hashCode() : 0);
+        result = 31 * result + (customText5 != null ? customText5.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
 		result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
 		result = 31 * result + (dateWebResponse != null ? dateWebResponse.hashCode() : 0);
 		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
@@ -311,6 +387,11 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 				", appointments=" + appointments +
 				", billRate=" + billRate +
 				", candidate=" + candidate +
+                ", customText1=" + customText1 +
+                ", customText2=" + customText2 +
+                ", customText3=" + customText3 +
+                ", customText4=" + customText4 +
+                ", customText5=" + customText5 +
 				", dateAdded=" + dateAdded +
 				", dateLastModified=" + dateLastModified +
 				", dateWebResponse=" + dateWebResponse +

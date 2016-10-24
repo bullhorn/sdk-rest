@@ -41,6 +41,10 @@
             "isSortable": true
         },
         {
+            "name": "externalID",
+            "isSortable": true
+        },
+        {
             "name": "isDeleted",
             "isSortable": true
         },
