@@ -290,23 +290,30 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateJobSubmission() {
 
+        String previousCustomTextValue;
+        String newCustomTextValue;
+
 		JobSubmission entity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
 
 		this.entity = (T) entity;
 
 		previousValue = entity.getSource();
-
 		newValue = previousValue + "toad";
-
 		entity.setSource(newValue);
+
+        previousCustomTextValue = entity.getCustomText1();
+        newCustomTextValue = previousCustomTextValue + "ribbit";
+        entity.setCustomText1(newCustomTextValue);
 
 		UpdateResponse response = bullhornData.updateEntity(entity);
 
 		JobSubmission updatedEntity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId());
 		entity.setSource(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getSource());
+        entity.setCustomText1(previousCustomTextValue);
+        this.runAssertions(response, newValue, updatedEntity.getSource());
+        this.runAssertions(response, newCustomTextValue, updatedEntity.getCustomText1());
 
-	}
+    }
 
     @Test
     public void testUpdateLead() {
@@ -332,23 +339,30 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	@Test
 	public void testUpdateNote() {
 
+        String previousExternalIDValue;
+        String newExternalIDValue;
+
 		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
 
 		this.entity = (T) entity;
 
 		previousValue = entity.getComments();
-
 		newValue = previousValue + "toad";
-
 		entity.setComments(newValue);
+
+        previousExternalIDValue = entity.getExternalID();
+        newExternalIDValue = previousExternalIDValue + "ribbit";
+        entity.setExternalID(newExternalIDValue);
 
 		UpdateResponse response = bullhornData.updateEntity(entity);
 
 		Note updatedEntity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
 		entity.setComments(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getComments());
+        entity.setExternalID(previousExternalIDValue);
 
-	}
+		this.runAssertions(response, newValue, updatedEntity.getComments());
+        this.runAssertions(response, newExternalIDValue, updatedEntity.getExternalID());
+    }
 
 	@Test
 	public void testUpdateNoteEntity() {

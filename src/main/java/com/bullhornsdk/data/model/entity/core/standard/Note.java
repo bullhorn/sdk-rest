@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "action", "bhTimeStamp", "candidates", "clientContacts", "commentingPerson", "comments", "corporateUsers",
-		"dateAdded", "dateLastModified", "entities", "isDeleted", "jobOrder", "jobOrders", "leads", "migrateGUID", "minutesSpent",
+		"dateAdded", "dateLastModified", "entities", "externalID", "isDeleted", "jobOrder", "jobOrders", "leads", "migrateGUID", "minutesSpent",
         "opportunities", "personReference", "placements" })
 public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity, DateLastModifiedEntity {
 
@@ -52,6 +52,10 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 	private DateTime dateLastModified;
 
 	private OneToMany<NoteEntity> entities;
+
+    @JsonIgnore
+    @Size(max = 50)
+    private String externalID;
 
 	private Boolean isDeleted;
 
@@ -218,6 +222,16 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.entities = entities;
 	}
 
+    @JsonProperty("externalID")
+    public String getExternalID() {
+        return externalID;
+    }
+
+    @JsonProperty("externalID")
+    public void setExternalID(String externalID) {
+        this.externalID = externalID;
+    }
+
 	@JsonProperty("isDeleted")
 	public Boolean getIsDeleted() {
 		return isDeleted;
@@ -331,6 +345,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
         if (dateLastModified != null ? !dateLastModified.equals(note.dateLastModified) : note.dateLastModified != null)
             return false;
         if (entities != null ? !entities.equals(note.entities) : note.entities != null) return false;
+        if (externalID != null ? !externalID.equals(note.externalID) : note.externalID != null) return false;
         if (isDeleted != null ? !isDeleted.equals(note.isDeleted) : note.isDeleted != null) return false;
         if (jobOrder != null ? !jobOrder.equals(note.jobOrder) : note.jobOrder != null) return false;
         if (jobOrders != null ? !jobOrders.equals(note.jobOrders) : note.jobOrders != null) return false;
@@ -359,6 +374,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
         result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
         result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
         result = 31 * result + (entities != null ? entities.hashCode() : 0);
+        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
         result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
         result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
         result = 31 * result + (jobOrders != null ? jobOrders.hashCode() : 0);
@@ -401,6 +417,8 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
                 .append(dateLastModified)
                 .append(",\n\t\"entities\": ")
                 .append(entities)
+                .append(",\n\t\"externalID\": ")
+                .append(externalID)
                 .append(",\n\t\"isDeleted\": ")
                 .append(isDeleted)
                 .append(",\n\t\"jobOrder\": ")
