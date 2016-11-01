@@ -87,11 +87,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
@@ -1808,7 +1804,7 @@ public class StandardBullhornData implements BullhornData {
             } catch (HttpStatusCodeException error) {
                 handleHttpStatusCodeError(uriVariables, tryNumber, error);
             } catch (Exception e) {
-                handleApiError(uriVariables, tryNumber, e);
+                handleApiError(tryNumber, e);
             }
         }
 
@@ -1832,7 +1828,7 @@ public class StandardBullhornData implements BullhornData {
             } catch (HttpStatusCodeException error) {
                 handleHttpStatusCodeError(uriVariables, tryNumber, error);
             } catch (Exception e) {
-                handleApiError(uriVariables, tryNumber, e);
+                handleApiError(tryNumber, e);
             }
         }
 
@@ -1865,8 +1861,8 @@ public class StandardBullhornData implements BullhornData {
                 return responseEntity.getBody();
             } catch (HttpStatusCodeException error) {
                 handleHttpStatusCodeError(uriVariables, tryNumber, error);
-            } catch (Exception e) {
-                handleApiError(uriVariables, tryNumber, e);
+            } catch (RuntimeException e) {
+                handleApiError(tryNumber, e);
             }
         }
 
@@ -1880,7 +1876,9 @@ public class StandardBullhornData implements BullhornData {
      * @throws RestApiException if tryNumber >= API_RETRY.
      */
     private void handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
-        resetBhRestToken(uriVariables);
+        if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+            resetBhRestToken(uriVariables);
+        }
         log.error(
                 "HttpStatusCodeError making api call. Try number:" + tryNumber + " out of " + API_RETRY + ". Http status code: "
                         + error.getStatusCode() + ". Response body: " + error.getResponseBodyAsString(), error);
@@ -1891,8 +1889,7 @@ public class StandardBullhornData implements BullhornData {
         }
     }
 
-    private void handleApiError(Map<String, String> uriVariables, int tryNumber, Exception e) {
-        resetBhRestToken(uriVariables);
+    private void handleApiError(int tryNumber, Exception e) {
         log.error("Error making api call. Try number:" + tryNumber + " out of " + API_RETRY, e);
     }
 
