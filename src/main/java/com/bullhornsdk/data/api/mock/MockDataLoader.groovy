@@ -9,6 +9,7 @@ import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
+import com.bullhornsdk.data.model.entity.embedded.UserType
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo
@@ -390,6 +391,7 @@ public class MockDataLoader {
 		entityFiles.put(Tearsheet.class, "tearsheet-data.txt");
 		entityFiles.put(TearsheetMember.class, "tearsheetmember-data.txt");
 		entityFiles.put(TimeUnit.class, "timeunit-data.txt");
+        entityFiles.put(UserType.class, "usertype-data.txt");
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobject/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobject/jobordercustomobjectinstance2-data.txt");
@@ -483,6 +485,7 @@ public class MockDataLoader {
 		entityMetaFiles.put(State.class, "meta/state-meta-data.txt");
 		entityMetaFiles.put(Task.class, "meta/task-meta-data.txt");
 		entityMetaFiles.put(TimeUnit.class, "meta/timeunit-meta-data.txt");
+        entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
 
         entityMetaFiles.put(JobOrderCustomObjectInstance1.class, "meta/customobject/jobordercustomobjectinstance1-meta-data.txt");
         entityMetaFiles.put(JobOrderCustomObjectInstance2.class, "meta/customobject/jobordercustomobjectinstance2-meta-data.txt");

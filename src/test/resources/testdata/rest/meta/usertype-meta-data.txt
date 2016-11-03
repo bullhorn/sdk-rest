@@ -1,0 +1,102 @@
+{
+  "entity": "UserType",
+  "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/UserType?fields=*",
+  "label": "User Type",
+  "layouts": [],
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer",
+      "optional": false
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": false,
+      "label": "Date Added",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "description",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 255,
+      "confidential": false,
+      "optional": true,
+      "label": "Description",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "enabled",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "optional": false,
+      "label": "Enabled",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "isHidden",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "optional": false,
+      "label": "Is Hidden",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "menus",
+      "type": "TO_MANY",
+      "confidential": false,
+      "optional": true,
+      "label": "Menus",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "Menu",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Menu",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Menu",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Menu?fields=*",
+        "label": "Menu",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "name",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "optional": false,
+      "label": "Name",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    }
+  ]
+}

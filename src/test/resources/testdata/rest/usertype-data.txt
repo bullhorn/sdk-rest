@@ -1,0 +1,247 @@
+{
+  "total": 23,
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 1,
+      "dateAdded": 1473883961853,
+      "description": "View of activity & notes restricted to those added by users within the user's primary department only. No edit rights except on owned entities",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 93,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 2,
+      "dateAdded": 1473784453903,
+      "description": "Used for Sub Vendor Portal",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 12,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 3,
+      "dateAdded": 1433942560623,
+      "description": "Standard User- Can't delete but can edit and view all.  No Admin Rights-can't approve Placements or view commissions.  No Reports",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 52,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 4,
+      "dateAdded": 1433942483900,
+      "description": "Can delete- approve Placements. Have Admin Rights.",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 67,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 5,
+      "dateAdded": 1433942377577,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can log in as user.  Used for Roger Davies' department only",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 78,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 6,
+      "dateAdded": 1433942117583,
+      "description": "Can delete- approve Placements. Have Admin Rights.   No Configuration/Tools",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 55,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 7,
+      "dateAdded": 1428501074807,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 76,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 8,
+      "dateAdded": 1423510494767,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 7,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 9,
+      "dateAdded": 1418940418330,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 76,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 10,
+      "dateAdded": 1396628862340,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 76,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 11,
+      "dateAdded": 1381939398663,
+      "description": "Cannot delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 74,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 12,
+      "dateAdded": 1356968562183,
+      "description": "Standard Standard Implementation Admin user.  Can delete- approve Placements. Have Admin Rights.  Can see all email messages. Biz Author. ATD & EI",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 84,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 13,
+      "dateAdded": 1352927575150,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 74,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 14,
+      "dateAdded": 1352927537910,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 74,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 15,
+      "dateAdded": 1334084116307,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 7,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 16,
+      "dateAdded": 1327937215967,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 77,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 17,
+      "dateAdded": 1327937172637,
+      "description": "Standard User- Can't delete but can edit and view all.  No Admin Rights-can't approve Placements or view commissions.  No Reports",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 59,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 18,
+      "dateAdded": 1309359424900,
+      "description": "Cannot delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 75,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 19,
+      "dateAdded": 1279571993010,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 7,
+        "data": []
+      },
+      "name": "Example UserType"
+    },
+    {
+      "id": 20,
+      "dateAdded": 1274750267380,
+      "description": "Can delete- approve Placements. Have Admin Rights.  Can see all email messages",
+      "enabled": true,
+      "isHidden": false,
+      "menus": {
+        "total": 100,
+        "data": []
+      },
+      "name": "Example UserType"
+    }
+  ]
+}
