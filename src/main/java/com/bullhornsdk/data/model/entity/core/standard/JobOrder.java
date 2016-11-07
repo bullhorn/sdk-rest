@@ -806,7 +806,7 @@ public class JobOrder extends CustomFieldsC implements QueryEntity, SearchEntity
 		this.reportTo = reportTo;
 	}
 
-	@JsonIgnore
+    @JsonProperty("reportToClientContact")
 	public ClientContact getReportToClientContact() {
 		return reportToClientContact;
 	}
