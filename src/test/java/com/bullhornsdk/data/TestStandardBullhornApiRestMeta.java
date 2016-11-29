@@ -1,16 +1,15 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Set;
-
 import com.bullhornsdk.data.model.entity.core.standard.*;
-import org.junit.Test;
-
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.enums.MetaParameter;
+import org.junit.Test;
+
+import java.util.Set;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class TestStandardBullhornApiRestMeta extends BaseTest {
 	
@@ -111,6 +110,13 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 		runAssertions(meta, ClientCorporation.class);
 
 	}
+
+    @Test
+    public void testMetaClientCorporationAppointment() {
+
+        MetaData<ClientCorporationAppointment> meta = bullhornData.getMetaData(ClientCorporationAppointment.class, MetaParameter.FULL, getFieldSet());
+        runAssertions(meta, ClientCorporationAppointment.class);
+    }
 
 	@Test
 	public void testMetaCorporateUser() {

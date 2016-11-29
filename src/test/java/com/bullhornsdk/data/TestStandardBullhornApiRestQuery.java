@@ -1,47 +1,16 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import org.apache.log4j.Logger;
-import org.junit.Test;
-
-import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
-import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Category;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
-import com.bullhornsdk.data.model.entity.core.standard.Country;
-import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
-import com.bullhornsdk.data.model.entity.core.standard.File;
-import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmissionHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
-import com.bullhornsdk.data.model.entity.core.standard.Sendout;
-import com.bullhornsdk.data.model.entity.core.standard.Skill;
-import com.bullhornsdk.data.model.entity.core.standard.Specialty;
-import com.bullhornsdk.data.model.entity.core.standard.State;
-import com.bullhornsdk.data.model.entity.core.standard.Task;
-import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
+import org.apache.log4j.Logger;
+import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the "query" request
@@ -149,6 +118,14 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 		runAssertions("ListWrapper<ClientCorporation>", wrapper);
 
 	}
+
+    @Test
+    public void testQueryClientCorporationAppointment() {
+
+        ListWrapper<ClientCorporationAppointment> wrapper = bullhornData.query(ClientCorporationAppointment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<ClientCorporationAppointment>", wrapper);
+    }
 
 	@Test
 	public void testQueryCorporateUser() {

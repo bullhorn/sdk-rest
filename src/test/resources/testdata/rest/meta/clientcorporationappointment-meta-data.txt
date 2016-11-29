@@ -1,0 +1,102 @@
+{
+  "entity": "ClientCorporationAppointment",
+  "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/1zdxd0/meta/ClientCorporationAppointment?fields=*",
+  "label": "Client Corporation Appointment",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer"
+    },
+    {
+      "name": "appointment",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Appointment",
+      "optionsType": "Appointment",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/1zdxd0/options/Appointment",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Appointment",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/1zdxd0/meta/Appointment?fields=*",
+        "label": "Appointment",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "clientContact",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Client Contact",
+      "optionsType": "ClientContact",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/1zdxd0/options/ClientContact",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "ClientContact",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/1zdxd0/meta/ClientContact?fields=*",
+        "label": "Contact",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "First Name",
+            "hideFromSearch": false
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Last Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "clientCorporation",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Client Corporation",
+      "optionsType": "ClientCorporation",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/1zdxd0/options/ClientCorporation",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "ClientCorporation",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/1zdxd0/meta/ClientCorporation?fields=*",
+        "label": "Account",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Account Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    }
+  ]
+}
