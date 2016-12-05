@@ -1,0 +1,355 @@
+{
+  "entity": "CandidateCertification",
+  "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/2ppp4p/meta/CandidateCertification?fields=*",
+  "label": "Required Document",
+  "layouts": [],
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer",
+      "optional": false
+    },
+    {
+      "name": "boardCertification",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "optional": true,
+      "label": "Board Certification",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "options": [
+        {
+          "value": "NA",
+          "label": "NA"
+        },
+        {
+          "value": "Board Certified",
+          "label": "Board Certified"
+        },
+        {
+          "value": "Board Elligible",
+          "label": "Board Elligible"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "candidate",
+      "type": "TO_ONE",
+      "confidential": false,
+      "optional": false,
+      "label": "Candidate",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "Candidate",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/2ppp4p/options/Candidate",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Candidate",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/2ppp4p/meta/Candidate?fields=*",
+        "label": "Candidate",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "Candidate Name",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 210,
+            "hint": "",
+            "description": ""
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "Candidate Name",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 220,
+            "hint": "",
+            "description": ""
+          }
+        ]
+      }
+    },
+    {
+      "name": "certification",
+      "type": "TO_ONE",
+      "confidential": false,
+      "optional": false,
+      "label": "Certification",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "Certification",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/2ppp4p/options/Certification",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Certification",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/2ppp4p/meta/Certification?fields=*",
+        "label": "Required Document",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          },
+          {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "comments",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 2147483647,
+      "confidential": false,
+      "optional": true,
+      "label": "Comments",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "compact",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "optional": true,
+      "label": "Compact",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "copyOnFile",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "optional": true,
+      "label": "Copy On File",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateCertified",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": true,
+      "label": "Date Certified",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateExpiration",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": true,
+      "label": "Date Expiration",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateLastModified",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": true,
+      "label": "Date Last Modified",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "issuedBy",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "optional": true,
+      "label": "Issued By",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "options": [
+        {
+          "value": "NA",
+          "label": "NA"
+        },
+        {
+          "value": "American Heart Association",
+          "label": "American Heart Association"
+        },
+        {
+          "value": "Red Cross",
+          "label": "Red Cross"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "licenseNumber",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "optional": true,
+      "label": "License Number",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "licenseType",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 30,
+      "confidential": false,
+      "optional": true,
+      "label": "License Type",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "location",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "optional": true,
+      "label": "Location",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "modifyingUser",
+      "type": "TO_ONE",
+      "confidential": false,
+      "optional": false,
+      "label": "Modifying User",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "CorporateUser",
+      "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/2ppp4p/options/CorporateUser",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "CorporateUser",
+        "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/2ppp4p/meta/CorporateUser?fields=*",
+        "label": "Corporate User",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "First Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "optional": true,
+            "label": "Last Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "results",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 255,
+      "confidential": false,
+      "optional": true,
+      "label": "Results",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    },
+    {
+      "name": "status",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 30,
+      "confidential": false,
+      "optional": true,
+      "label": "Status",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false
+    }
+  ]
+}

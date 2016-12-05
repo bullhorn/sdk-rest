@@ -20,6 +20,8 @@ public class TestEntities {
 
 	private Integer candidateId;
 
+    private Integer candidateCertificationId;
+
 	private Integer candidateEducationId;
 
 	private Integer candidateReferenceId;
@@ -97,6 +99,8 @@ public class TestEntities {
 		this.businessSectorId=1;
 
 		this.candidateId=1;
+
+        this.candidateCertificationId = 1;
 
 		this.candidateEducationId = 1;
 
@@ -482,6 +486,8 @@ public class TestEntities {
             .append(businessSectorId)
             .append(",\n\t\"candidateId\": ")
             .append(candidateId)
+            .append(",\n\t\"candidateCertificationId\": ")
+            .append(candidateCertificationId)
             .append(",\n\t\"candidateEducationId\": ")
             .append(candidateEducationId)
             .append(",\n\t\"candidateReferenceId\": ")
@@ -553,5 +559,13 @@ public class TestEntities {
             .append(subscriptionId).append('\'')
             .append('}')
             .toString();
+    }
+
+    public Integer getCandidateCertificationId() {
+        return candidateCertificationId;
+    }
+
+    public void setCandidateCertificationId(Integer candidateCertificationId) {
+        this.candidateCertificationId = candidateCertificationId;
     }
 }

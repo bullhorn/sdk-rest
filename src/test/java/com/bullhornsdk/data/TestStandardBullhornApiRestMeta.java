@@ -55,6 +55,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
 	}
 
+    @Test
+    public void testMetaCandidateCertification() {
+
+        MetaData<CandidateCertification> meta = bullhornData.getMetaData(CandidateCertification.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, CandidateCertification.class);
+
+    }
+
 	@Test
 	public void testMetaCandidateEducation() {
 
