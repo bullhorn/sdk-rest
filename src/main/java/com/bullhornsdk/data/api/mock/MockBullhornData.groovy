@@ -134,17 +134,10 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public <T extends QueryEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
+    public <T extends QueryEntity & AllRecordsEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
                                                                                   QueryParams params) {
         params.setCount(500);
         return query(type, where, fieldSet, params);
-    }
-
-    @Override
-    public <T extends SearchEntity, L extends ListWrapper<T>> L searchForAllRecords(Class<T> type, String query, Set<String> fieldSet,
-                                                                                    SearchParams params) {
-        params.setCount(500);
-        return search(type, query, fieldSet, params);
     }
 
     @Override

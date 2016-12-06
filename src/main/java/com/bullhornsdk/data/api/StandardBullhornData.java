@@ -23,6 +23,7 @@ import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.standard.Settings;
+import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
@@ -283,18 +284,9 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public <T extends QueryEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
-                                                                                  QueryParams params) {
+    public <T extends QueryEntity & AllRecordsEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
+                                                                                                     QueryParams params) {
         return this.handleQueryForAllRecords(type, where, fieldSet, params);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public <T extends SearchEntity, L extends ListWrapper<T>> L searchForAllRecords(Class<T> type, String query, Set<String> fieldSet,
-                                                                                    SearchParams params) {
-        return this.handleSearchForAllRecords(type, query, fieldSet, params);
     }
 
     /**
@@ -903,29 +895,6 @@ public class StandardBullhornData implements BullhornData {
     }
 
     private void setStart(QueryParams params, int numberOfRecordsPulledAlready) {
-        params.setStart(numberOfRecordsPulledAlready);
-    }
-
-    private <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForAllRecords(Class<T> type, String query,
-                                                                                           Set<String> fieldSet, SearchParams params) {
-        List<T> allEntities = new ArrayList<T>();
-        params.setCount(MAX_RECORDS_TO_RETURN_IN_ONE_PULL);
-        recursiveSearchPull(allEntities, type, query, fieldSet, params);
-        return (L) new StandardListWrapper<T>(allEntities);
-    }
-
-    private <T extends SearchEntity> void recursiveSearchPull(List<T> allEntities, Class<T> type, String query, Set<String> fieldSet,
-                                                              SearchParams params) {
-        ListWrapper<T> onePull = handleSearchForEntities(type, query, fieldSet, params);
-
-        allEntities.addAll(onePull.getData());
-        if (moreRecordsExist(onePull) && ceilingNotReached(allEntities)) {
-            setStart(params, allEntities.size());
-            recursiveSearchPull(allEntities, type, query, fieldSet, params);
-        }
-    }
-
-    private void setStart(SearchParams params, int numberOfRecordsPulledAlready) {
         params.setStart(numberOfRecordsPulledAlready);
     }
 

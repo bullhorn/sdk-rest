@@ -5,6 +5,7 @@ import javax.validation.constraints.Size;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
@@ -17,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "externalID", "name", "occupation", "privateLabels", "skills", "specialties", "type" })
-public class Category extends AbstractEntity implements QueryEntity, AssociationEntity {
+public class Category extends AbstractEntity implements QueryEntity, AssociationEntity, AllRecordsEntity {
 
 	private Integer id;
 

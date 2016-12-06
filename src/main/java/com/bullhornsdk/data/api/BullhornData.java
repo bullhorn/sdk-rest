@@ -1,5 +1,12 @@
 package com.bullhornsdk.data.api;
 
+import java.io.File;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
 import com.bullhornsdk.data.api.helper.RestApiSession;
 import com.bullhornsdk.data.exception.RestApiException;
@@ -7,6 +14,7 @@ import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.Settings;
+import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
@@ -21,6 +29,7 @@ import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
+import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
@@ -36,18 +45,11 @@ import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper;
 import com.bullhornsdk.data.model.response.event.GetEventsResponse;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
-import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Core bullhorn data service, handles api calls and data mapping.
@@ -234,34 +236,8 @@ public interface BullhornData {
 	 * 
 	 * @return a ListWrapper<T> that wraps a List<T> plus some additional info about the data
 	 */
-	public <T extends QueryEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
-			QueryParams params);
-
-	/**
-	 * Same as {@link BullhornData#search(Class, String, Set, SearchParams)} but with one important difference: This method will pull all
-	 * records that qualifies using the query.
-	 * <p>
-	 * Since the bullhorn apis has a limit on how many records to pull in one go, this will be achieved through a recursive query that pulls
-	 * 500 records each time. Setting this to true should be used sparingly and only when the number of records will be limited.
-	 * </p>
-	 * <p>
-	 * PLEASE NOTE: Using this method will pull all records from the bullhorn api using the query. ONLY USE THIS IF YOU KNOW YOUR QUERY
-	 * RETURNS A REASONABLE AMOUNT OF RECORDS.
-	 * </p>
-	 * 
-	 * @param type type of SearchEntity to query for
-	 * @param query  Lucene query string
-	 * @param fieldSet fields to query for
-	 * @param params optional SearchParams parameters to use in the api request, pass in null for default.
-	 * 
-	 * @see SearchParams
-	 * @see ParamFactory
-	 * @see <a href="http://www.lucenetutorial.com/lucene-query-syntax.html">lucenetutorial</a>
-	 * 
-	 * @return a ListWrapper<T> that wraps a List<T> plus some additional info about the data
-	 */
-	public <T extends SearchEntity, L extends ListWrapper<T>> L searchForAllRecords(Class<T> type, String query, Set<String> fieldSet,
-			SearchParams params);
+	public <T extends QueryEntity & AllRecordsEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
+                                                                                                     QueryParams params);
 
 	/**
 	 * Updates an UpdateEntity that is a sub type of BullhornEntity and returns a CrudResponse with info on the update, such as warnings, errors

@@ -3,6 +3,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 import javax.validation.constraints.Size;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
@@ -16,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "description", "name" })
-public class Certification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DeleteEntity {
+public class Certification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DeleteEntity, AllRecordsEntity {
 
     private Integer id;
 
