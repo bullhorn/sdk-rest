@@ -3,28 +3,11 @@ package com.bullhornsdk.data;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Test;
 
-import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
-import com.bullhornsdk.data.model.entity.core.standard.Sendout;
-import com.bullhornsdk.data.model.entity.core.standard.Task;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
 import com.bullhornsdk.data.model.response.crud.CreateResponse;
@@ -93,6 +76,26 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 		this.runAssertions(response, entity, newEntity);
 
 	}
+
+    @Test
+    public void testCreateCandidateCertification() {
+
+        CandidateCertification entity = bullhornData.findEntity(CandidateCertification.class, testEntities.getCandidateCertificationId());
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        CandidateCertification newEntity = bullhornData.findEntity(CandidateCertification.class, response.getChangedEntityId());
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) CandidateCertification.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+
+    }
 
 	@Test
 	public void testCreateCandidateEducation() {
