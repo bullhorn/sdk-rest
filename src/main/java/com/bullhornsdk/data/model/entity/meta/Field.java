@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "name", "type", "dataType", "dataSpecialization", "maxLength", "confidential", "optional", "label", "required",
-		"readOnly", "multiValue", "inputType", "optionsType", "optionsUrl", "hideFromSearch", "sortOrder", "hint",
+		"readOnly", "multiValue", "defaultValue", "inputType", "optionsType", "optionsUrl", "hideFromSearch", "sortOrder", "hint",
 		"description", "associatedEntity", "options", "fields" })
 public class Field {
 
@@ -38,6 +38,8 @@ public class Field {
 	private Boolean readOnly;
 
 	private Boolean multiValue;
+
+	private Object defaultValue;
 
 	private String inputType;
 
@@ -181,7 +183,17 @@ public class Field {
 		this.multiValue = multiValue;
 	}
 
-	@JsonProperty("inputType")
+    @JsonProperty("defaultValue")
+    public Object getDefaultValue() {
+        return defaultValue;
+    }
+
+    @JsonProperty("defaultValue")
+    public void setDefaultValue(Object defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    @JsonProperty("inputType")
 	public String getInputType() {
 		return inputType;
 	}
@@ -281,32 +293,33 @@ public class Field {
         this.additionalProperties.put(name, value);
     }
 
-	@Override
-	public String toString() {
-		final StringBuilder sb = new StringBuilder("Field{");
-		sb.append("name='").append(name).append('\'');
-		sb.append(", type='").append(type).append('\'');
-		sb.append(", dataType='").append(dataType).append('\'');
-		sb.append(", dataSpecialization='").append(dataSpecialization).append('\'');
-		sb.append(", maxLength=").append(maxLength);
-		sb.append(", confidential=").append(confidential);
-		sb.append(", optional=").append(optional);
-		sb.append(", label='").append(label).append('\'');
-		sb.append(", required=").append(required);
-		sb.append(", readOnly=").append(readOnly);
-		sb.append(", multiValue=").append(multiValue);
-		sb.append(", inputType='").append(inputType).append('\'');
-		sb.append(", optionsType='").append(optionsType).append('\'');
-		sb.append(", optionsUrl='").append(optionsUrl).append('\'');
-		sb.append(", hideFromSearch=").append(hideFromSearch);
-		sb.append(", sortOrder=").append(sortOrder);
-		sb.append(", hint='").append(hint).append('\'');
-		sb.append(", description='").append(description).append('\'');
-		sb.append(", associatedEntity=").append(associatedEntity);
-		sb.append(", options=").append(options);
-		sb.append(", fields=").append(fields);
-		sb.append(", additionalProperties=").append(additionalProperties);
-		sb.append('}');
-		return sb.toString();
-	}
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Field{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", dataType='").append(dataType).append('\'');
+        sb.append(", dataSpecialization='").append(dataSpecialization).append('\'');
+        sb.append(", maxLength=").append(maxLength);
+        sb.append(", confidential=").append(confidential);
+        sb.append(", optional=").append(optional);
+        sb.append(", label='").append(label).append('\'');
+        sb.append(", required=").append(required);
+        sb.append(", readOnly=").append(readOnly);
+        sb.append(", multiValue=").append(multiValue);
+        sb.append(", defaultValue=").append(defaultValue);
+        sb.append(", inputType='").append(inputType).append('\'');
+        sb.append(", optionsType='").append(optionsType).append('\'');
+        sb.append(", optionsUrl='").append(optionsUrl).append('\'');
+        sb.append(", hideFromSearch=").append(hideFromSearch);
+        sb.append(", sortOrder=").append(sortOrder);
+        sb.append(", hint='").append(hint).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", associatedEntity=").append(associatedEntity);
+        sb.append(", options=").append(options);
+        sb.append(", fields=").append(fields);
+        sb.append(", additionalProperties=").append(additionalProperties);
+        sb.append('}');
+        return sb.toString();
+    }
 }
