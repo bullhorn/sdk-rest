@@ -220,7 +220,7 @@ public enum BullhornEntityInfo {
     LOGIN_RESTRICTIONS("LoginRestrictions", null, null, null, null, null),
     NOTE("Note", Note.class, NoteWrapper.class, NoteListWrapper.class, null, null),
     NOTE_ENTITY("NoteEntity", NoteEntity.class, NoteEntityWrapper.class, NoteEntityListWrapper.class, null, null),
-    OPPORTUNITY("Opportunity", Opportunity.class, OpportunityWrapper.class, OpportunityListWrapper.class, null, null),
+    OPPORTUNITY("Opportunity", Opportunity.class, OpportunityWrapper.class, OpportunityListWrapper.class, "OpportunityEditHistory", "OpportunityEditHistoryFieldChange"),
     PERSON("Person", Person.class, PersonWrapper.class, PersonListWrapper.class, null, null),
     PLACEMENT("Placement", Placement.class, PlacementWrapper.class, PlacementListWrapper.class, "PlacementEditHistory",
             "PlacementEditHistoryFieldChange"),

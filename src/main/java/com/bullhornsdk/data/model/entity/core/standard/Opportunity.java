@@ -19,6 +19,7 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
@@ -46,7 +47,7 @@ import java.math.BigDecimal;
 		"onSite", "optionsPackage", "owner", "priority", "publicDescription", "publishedZip", "reasonClosed", "salary", "salaryUnit", "skillList", "skills", "source", "specialties", "status",
 		"tasks", "tearsheets", "title", "type", "weightedDealValue", "willRelocate", "winProbabilityPercent", "yearsRequired", "customObject1s", "customObject2s", "customObject3s",
         "customObject4s", "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
-public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity {
+public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
 	
