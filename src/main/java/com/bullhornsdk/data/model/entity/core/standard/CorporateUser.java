@@ -29,8 +29,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"departments", "email", "email2", "email3", "emailNotify", "emailSignature", "enabled", "externalEmail", "fax", "fax2", "fax3",
 		"firstName", "inboundEmailEnabled", "isDayLightSavings", "isDeleted", "isLockedOut", "isOutboundFaxEnabled", "jobAssignments",
 		"lastName", "loginRestrictions", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName",
-		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "privateLabel", "privateLabels", "smsOptIn", "taskAssignments", "timeZoneOffsetEST",
-		"username" })
+		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "privateLabel", "privateLabels", "smsOptIn", "taskAssignments",
+        "timeZoneOffsetEST", "userDateAdded", "username" })
 public class CorporateUser extends CustomFieldsA implements QueryEntity, AssociationEntity, EditHistoryEntity {
 
 	private Integer id;
@@ -152,6 +152,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	private OneToManyLinkedId taskAssignments;
 
 	private Integer timeZoneOffsetEST;
+
+    private DateTime userDateAdded;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -578,6 +580,16 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		this.timeZoneOffsetEST = timeZoneOffsetEST;
 	}
 
+    @JsonProperty("userDateAdded")
+    public DateTime getUserDateAdded() {
+        return userDateAdded;
+    }
+
+    @JsonProperty("userDateAdded")
+    public void setUserDateAdded(DateTime userDateAdded) {
+        this.userDateAdded = userDateAdded;
+    }
+
 	@JsonProperty("username")
 	public String getUsername() {
 		return username;
@@ -641,6 +653,7 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		result = prime * result + ((privateLabel == null) ? 0 : privateLabel.hashCode());
 		result = prime * result + ((smsOptIn == null) ? 0 : smsOptIn.hashCode());
 		result = prime * result + ((taskAssignments == null) ? 0 : taskAssignments.hashCode());
+        result = prime * result + ((userDateAdded == null) ? 0 : userDateAdded.hashCode());
 		result = prime * result + ((timeZoneOffsetEST == null) ? 0 : timeZoneOffsetEST.hashCode());
 		result = prime * result + ((userType == null) ? 0 : userType.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
@@ -851,6 +864,11 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 				return false;
 		} else if (!taskAssignments.equals(other.taskAssignments))
 			return false;
+        if (userDateAdded == null) {
+            if (other.userDateAdded != null)
+                return false;
+        } else if (!userDateAdded.equals(other.userDateAdded))
+            return false;
 		if (timeZoneOffsetEST == null) {
 			if (other.timeZoneOffsetEST != null)
 				return false;
@@ -953,6 +971,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		builder.append(taskAssignments);
 		builder.append("\n\ttimeZoneOffsetEST: ");
 		builder.append(timeZoneOffsetEST);
+        builder.append("\n\tuserDateAdded: ");
+        builder.append(userDateAdded);
 		builder.append("\n\tusername: ");
 		builder.append(username);
 		builder.append("\n\tuserType: ");
