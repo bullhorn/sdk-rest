@@ -1,5 +1,12 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import java.math.BigDecimal;
+
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.joda.time.DateTime;
+
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
@@ -30,11 +37,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.hibernate.validator.constraints.Email;
-import org.joda.time.DateTime;
-
-import javax.validation.constraints.Size;
-import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -1175,7 +1177,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return nickName;
 	}
 
-	@JsonProperty("nickName")
+	@JsonIgnore
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
