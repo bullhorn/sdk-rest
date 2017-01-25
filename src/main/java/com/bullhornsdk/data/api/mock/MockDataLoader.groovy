@@ -372,7 +372,8 @@ public class MockDataLoader {
         entityFiles.put(DistributionList.class, "distributionlist-data.txt");
         entityFiles.put(File.class, "file-data.txt");
 		entityFiles.put(HousingComplex.class, "housingcomplex-data.txt");
-		entityFiles.put(JobOrder.class, "joborder-data.txt");
+		entityFiles.put(JobBoardPost.class, "jobboardpost-data.txt");
+        entityFiles.put(JobOrder.class, "joborder-data.txt");
 		entityFiles.put(JobSubmission.class, "jobsubmission-data.txt");
 		entityFiles.put(JobSubmissionHistory.class, "jobsubmissionhistory-data.txt");
         entityFiles.put(Lead.class, "lead-data.txt");
@@ -469,6 +470,7 @@ public class MockDataLoader {
         entityMetaFiles.put(DistributionList.class, "meta/distributionlist-meta-data.txt");
         entityMetaFiles.put(File.class, "meta/file-meta-data.txt");
 		entityMetaFiles.put(HousingComplex.class, "meta/housingcomplex-meta-data.txt");
+        entityMetaFiles.put(JobBoardPost.class, "meta/jobboardpost-meta-data.txt");
 		entityMetaFiles.put(JobOrder.class, "meta/joborder-meta-data.txt");
 		entityMetaFiles.put(JobSubmission.class, "meta/jobsubmission-meta-data.txt");
 		entityMetaFiles.put(JobSubmissionHistory.class, "meta/jobsubmissionhistory-meta-data.txt");

@@ -212,6 +212,7 @@ public enum BullhornEntityInfo {
     HOUSING_COMPLEX("HousingComplex", HousingComplex.class, HousingComplexWrapper.class, HousingComplexListWrapper.class, null, null),
     JOB_ORDER("JobOrder", JobOrder.class, JobOrderWrapper.class, JobOrderListWrapper.class, "JobOrderEditHistory",
             "JobOrderEditHistoryFieldChange"),
+    JOB_BOARD_POST("JobBoardPost", JobBoardPost.class, JobBoardPostWrapper.class, JobBoardPostListWrapper.class, null, null),
     JOB_SUBMISSION("JobSubmission", JobSubmission.class, JobSubmissionWrapper.class, JobSubmissionListWrapper.class,
             "JobSubmissionEditHistory", "JobSubmissionEditHistoryFieldChange"),
     JOB_SUBMISSION_HISTORY("JobSubmissionHistory", JobSubmissionHistory.class, JobSubmissionHistoryWrapper.class,
