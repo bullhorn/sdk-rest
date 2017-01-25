@@ -2,16 +2,11 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import org.joda.time.DateTime;
 
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
-import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
-import com.bullhornsdk.data.model.entity.core.type.FileEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -36,26 +31,46 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"sendouts", "skillList", "skills", "source", "specialties", "startDate", "status", "submissions", "tasks", "taxRate", "taxStatus",
 		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "webResponses", "willRelocate", "willRelocateInt", "willSponsor", "yearsRequired",
 		"customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s"})
-public class JobOrder extends JobData implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
-		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
+        "customObject8s", "customObject9s", "customObject10s", "dateLastPublished"})
+public class JobBoardPost extends JobData implements QueryEntity, DateLastModifiedEntity {
 
-    public JobOrder() {
+    private DateTime dateLastPublished;
+
+    @JsonProperty("dateLastExported")
+    public DateTime getDateLastPublished() {
+        return dateLastPublished;
     }
 
-    public JobOrder(Integer id) {
-        super(id);
+    @ReadOnly
+    @JsonProperty("dateLastExported")
+    public void setDateLastPublished(DateTime dateLastPublished) {
+        this.dateLastPublished = dateLastPublished;
     }
 
-    public JobOrder instantiateForInsert() {
-		JobOrder entity = new JobOrder();
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof JobBoardPost)) return false;
+        if (!super.equals(o)) return false;
 
-		entity.setEmploymentType("Contract");
-		entity.setStartDate(new DateTime());
-		entity.setClientCorporation(new ClientCorporation(1));
-		entity.setClientContact(new ClientContact(1));
+        JobBoardPost that = (JobBoardPost) o;
 
-		return entity;
-	}
+        return dateLastPublished != null ? dateLastPublished.equals(that.dateLastPublished) : that.dateLastPublished == null;
+    }
 
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (dateLastPublished != null ? dateLastPublished.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder("JobBoardPost {")
+            .append("\n\t\"dateLastPublished\": ")
+            .append(dateLastPublished)
+            .append('}')
+            .toString();
+    }
 }

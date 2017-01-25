@@ -7,12 +7,12 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance1;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
@@ -31,6 +31,7 @@ import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
 import com.bullhornsdk.data.model.entity.core.standard.File;
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
+import com.bullhornsdk.data.model.entity.core.standard.JobBoardPost;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmissionHistory;
@@ -210,6 +211,13 @@ public class TestStandardBullhornApiRest extends BaseTest {
 		assertNotNull("JobOrder is null", entity);
 
 	}
+
+    @Test
+    public void testFindJobBoardPost() {
+        JobBoardPost entity = bullhornData.findEntity(JobBoardPost.class, testEntities.getJobOrderId());
+
+        assertNotNull("JobBoardPost is null", entity);
+    }
 
 	@Test
 	public void testFindJobSubmission() {

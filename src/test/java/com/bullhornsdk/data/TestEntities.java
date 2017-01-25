@@ -50,6 +50,8 @@ public class TestEntities {
 
 	private Integer jobOrderId;
 
+    private Integer jobBoardPostId;
+
 	private Integer jobSubmissionId;
 
 	private Integer jobSubmissionHistoryId;
@@ -129,6 +131,8 @@ public class TestEntities {
 		this.housingComplexId=1;
 
 		this.jobOrderId=1;
+
+        this.jobBoardPostId=1;
 
 		this.jobSubmissionId=1;
 
@@ -315,7 +319,15 @@ public class TestEntities {
 		this.jobOrderId = jobOrderId;
 	}
 
-	public Integer getJobSubmissionId() {
+    public Integer getJobBoardPostId() {
+        return jobBoardPostId;
+    }
+
+    public void setJobBoardPostId(Integer jobBoardPostId) {
+        this.jobBoardPostId = jobBoardPostId;
+    }
+
+    public Integer getJobSubmissionId() {
 		return jobSubmissionId;
 	}
 
@@ -475,6 +487,14 @@ public class TestEntities {
         this.subscriptionId = subscriptionId;
     }
 
+    public Integer getCandidateCertificationId() {
+        return candidateCertificationId;
+    }
+
+    public void setCandidateCertificationId(Integer candidateCertificationId) {
+        this.candidateCertificationId = candidateCertificationId;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("TestEntities {")
@@ -516,6 +536,8 @@ public class TestEntities {
             .append(housingComplexId)
             .append(",\n\t\"jobOrderId\": ")
             .append(jobOrderId)
+            .append(",\n\t\"jobBoardPostId\": ")
+            .append(jobBoardPostId)
             .append(",\n\t\"jobSubmissionId\": ")
             .append(jobSubmissionId)
             .append(",\n\t\"jobSubmissionHistoryId\": ")
@@ -559,13 +581,5 @@ public class TestEntities {
             .append(subscriptionId).append('\'')
             .append('}')
             .toString();
-    }
-
-    public Integer getCandidateCertificationId() {
-        return candidateCertificationId;
-    }
-
-    public void setCandidateCertificationId(Integer candidateCertificationId) {
-        this.candidateCertificationId = candidateCertificationId;
     }
 }
