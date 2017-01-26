@@ -814,14 +814,18 @@ public class MockDataHandler {
 
 		String propertyPath;
 		if(StringUtils.containsIgnoreCase(queryString, "IS NULL")){
-			propertyPath = StringUtils.substringBefore(queryString.toLowerCase(), "is null");
+			propertyPath = subStringBeforeIgnoreCase(queryString, "is null");
 		}else if(StringUtils.containsIgnoreCase(queryString, "IS NOT NULL")){
-			propertyPath = StringUtils.substringBefore(queryString.toLowerCase(), "is not null");
+			propertyPath = subStringBeforeIgnoreCase(queryString, "is not null");
 		}else{
 			propertyPath = StringUtils.substringBefore(queryString, operator);
 		}
 		return propertyPath.trim().split("\\.");
 	}
+
+    private static String subStringBeforeIgnoreCase(String value, String separator) {
+        return StringUtils.substring(value, 0, StringUtils.indexOfIgnoreCase(value, separator) - 1).trim();
+    }
 
 	private Object getTypeSpecificValue(String value){
 		if(value?.isNumber()){
