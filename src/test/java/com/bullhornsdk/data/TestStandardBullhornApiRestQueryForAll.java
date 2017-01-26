@@ -112,11 +112,9 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
 	@Test
 	public void testQueryState() {
-
 		ListWrapper<State> wrapper = bullhornData.queryForAllRecords(State.class, where, null, queryParams);
 
 		runAssertions("ListWrapper<State>", wrapper);
-
 	}
 
 	private <T extends BullhornEntity> void runAssertions(String wrapperName, ListWrapper<T> wrapper) {
