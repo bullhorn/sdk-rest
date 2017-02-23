@@ -55,7 +55,7 @@ import java.math.BigDecimal;
 		"customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateBegin",
 		"dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
 		"employmentType", "fee", "flatFee", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
-		"jobOrder", "jobSubmission", "markupPercentage", "migrateGUID", "notes", "overtimeMarkupPercentage", "optionsPackage",
+		"jobOrder", "jobSubmission", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
 		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
@@ -155,14 +155,14 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
 	private BigDecimal otherHourlyFee;
 
-	private BigDecimal markupPercentage;
+	private BigDecimal markUpPercentage;
 
 	private OneToMany<Note> notes;
 
 	@JsonIgnore
 	private String otherHourlyFeeComments;
 
-	private BigDecimal overtimeMarkupPercentage;
+	private BigDecimal overtimeMarkUpPercentage;
 
 	private BigDecimal overtimeRate;
 
@@ -613,14 +613,14 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.jobSubmission = jobSubmission;
 	}
 
-	@JsonProperty("markupPercentage")
-	public BigDecimal getMarkupPercentage() {
-		return markupPercentage;
+	@JsonProperty("markUpPercentage")
+	public BigDecimal getMarkUpPercentage() {
+		return markUpPercentage;
 	}
 
-	@JsonProperty("markupPercentage")
-	public void setMarkupPercentage(BigDecimal markupPercentage) {
-		this.markupPercentage = markupPercentage;
+	@JsonProperty("markUpPercentage")
+	public void setMarkUpPercentage(BigDecimal markUpPercentage) {
+		this.markUpPercentage = markUpPercentage;
 	}
 
 	@JsonProperty("notes")
@@ -634,14 +634,14 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.notes = notes;
 	}
 
-	@JsonProperty("overtimeMarkupPercentage")
-	public BigDecimal getOvertimeMarkupPercentage() {
-		return overtimeMarkupPercentage;
+	@JsonProperty("overtimeMarkUpPercentage")
+	public BigDecimal getOvertimeMarkUpPercentage() {
+		return overtimeMarkUpPercentage;
 	}
 
-	@JsonProperty("overtimeMarkupPercentage")
-	public void setOvertimeMarkupPercentage(BigDecimal overtimeMarkupPercentage) {
-		this.overtimeMarkupPercentage = overtimeMarkupPercentage;
+	@JsonProperty("overtimeMarkUpPercentage")
+	public void setOvertimeMarkUpPercentage(BigDecimal overtimeMarkUpPercentage) {
+		this.overtimeMarkUpPercentage = overtimeMarkUpPercentage;
 	}
 
 	@JsonProperty("migrateGUID")
@@ -1089,12 +1089,12 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 			return false;
 		if (otherHourlyFee != null ? !otherHourlyFee.equals(placement.otherHourlyFee) : placement.otherHourlyFee != null)
 			return false;
-		if (markupPercentage != null ? !markupPercentage.equals(placement.markupPercentage) : placement.markupPercentage != null)
+		if (markUpPercentage != null ? !markUpPercentage.equals(placement.markUpPercentage) : placement.markUpPercentage != null)
 			return false;
 		if (notes != null ? !notes.equals(placement.notes) : placement.notes != null) return false;
 		if (otherHourlyFeeComments != null ? !otherHourlyFeeComments.equals(placement.otherHourlyFeeComments) : placement.otherHourlyFeeComments != null)
 			return false;
-		if (overtimeMarkupPercentage != null ? !overtimeMarkupPercentage.equals(placement.overtimeMarkupPercentage) : placement.overtimeMarkupPercentage != null)
+		if (overtimeMarkUpPercentage != null ? !overtimeMarkUpPercentage.equals(placement.overtimeMarkUpPercentage) : placement.overtimeMarkUpPercentage != null)
 			return false;
 		if (overtimeRate != null ? !overtimeRate.equals(placement.overtimeRate) : placement.overtimeRate != null)
 			return false;
@@ -1190,10 +1190,10 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		result = 31 * result + (optionsPackage != null ? optionsPackage.hashCode() : 0);
 		result = 31 * result + (otExemption != null ? otExemption.hashCode() : 0);
 		result = 31 * result + (otherHourlyFee != null ? otherHourlyFee.hashCode() : 0);
-		result = 31 * result + (markupPercentage != null ? markupPercentage.hashCode() : 0);
+		result = 31 * result + (markUpPercentage != null ? markUpPercentage.hashCode() : 0);
 		result = 31 * result + (notes != null ? notes.hashCode() : 0);
 		result = 31 * result + (otherHourlyFeeComments != null ? otherHourlyFeeComments.hashCode() : 0);
-		result = 31 * result + (overtimeMarkupPercentage != null ? overtimeMarkupPercentage.hashCode() : 0);
+		result = 31 * result + (overtimeMarkUpPercentage != null ? overtimeMarkUpPercentage.hashCode() : 0);
 		result = 31 * result + (overtimeRate != null ? overtimeRate.hashCode() : 0);
 		result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
 		result = 31 * result + (projectCodeList != null ? projectCodeList.hashCode() : 0);
@@ -1268,10 +1268,10 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 				", optionsPackage='" + optionsPackage + '\'' +
 				", otExemption=" + otExemption +
 				", otherHourlyFee=" + otherHourlyFee +
-				", markupPercentage=" + markupPercentage +
+				", markUpPercentage=" + markUpPercentage +
 				", notes=" + notes +
 				", otherHourlyFeeComments='" + otherHourlyFeeComments + '\'' +
-				", overtimeMarkupPercentage=" + overtimeMarkupPercentage +
+				", overtimeMarkUpPercentage=" + overtimeMarkUpPercentage +
 				", overtimeRate=" + overtimeRate +
 				", payRate=" + payRate +
 				", projectCodeList='" + projectCodeList + '\'' +
