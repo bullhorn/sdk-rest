@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
@@ -49,7 +52,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
         "requestCustomTextBlock5", "requestStatus", "requestType", "requestingUser", "salary", "salaryUnit",
         "salesManagerPercentGrossMargin", "statementClientContact", "status", "terminationReason", "vendorClientCorporation",
         "workWeekStart" })
-public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity {
+public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity, CreateEntity, UpdateEntity, HardDeleteEntity {
 
     private Integer id;
 
