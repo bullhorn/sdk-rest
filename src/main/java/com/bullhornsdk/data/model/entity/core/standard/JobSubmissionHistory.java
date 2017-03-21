@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
@@ -12,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "comments", "dateAdded", "jobSubmission", "migrateGUID", "modifyingUser", "status", "transactionID" })
-public class JobSubmissionHistory extends AbstractEntity implements QueryEntity {
+public class JobSubmissionHistory extends AbstractEntity implements QueryEntity, HardDeleteEntity {
 
 	private Integer id;
 

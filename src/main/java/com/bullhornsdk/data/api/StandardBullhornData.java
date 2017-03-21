@@ -114,7 +114,7 @@ import java.util.stream.Collectors;
  * This class can be injected using the standard @Autowired syntax:
  *
  * @author Magnus Fiore Palm
- * @Autowired private BullhornData bullhornData;
+ * @Autowired protected BullhornData bullhornData;
  * @see RestApiSession for session management
  * @see RestTemplate for http calls
  * @see ParamFactory for how to pass in parameters to the specific methods
@@ -126,33 +126,33 @@ import java.util.stream.Collectors;
  */
 
 public class StandardBullhornData implements BullhornData {
-    private static Logger log = Logger.getLogger(StandardBullhornData.class);
+    protected static Logger log = Logger.getLogger(StandardBullhornData.class);
 
-    private final RestApiSession restSession;
+    protected final RestApiSession restSession;
 
-    private final RestTemplate restTemplate;
+    protected final RestTemplate restTemplate;
 
-    private final String restUrl;
+    protected final String restUrl;
 
-    private final RestJsonConverter restJsonConverter;
+    protected final RestJsonConverter restJsonConverter;
 
-    private final RestUrlFactory restUrlFactory;
+    protected final RestUrlFactory restUrlFactory;
 
-    private final RestUriVariablesFactory restUriVariablesFactory;
+    protected final RestUriVariablesFactory restUriVariablesFactory;
 
-    private final RestFileManager restFileManager;
+    protected final RestFileManager restFileManager;
 
-    private final RestErrorHandler restErrorHandler;
+    protected final RestErrorHandler restErrorHandler;
 
-    private final ConcurrencyService concurrencyService;
+    protected final ConcurrencyService concurrencyService;
 
-    private final static int RESUME_PARSE_RETRY = 10;
+    protected final static int RESUME_PARSE_RETRY = 10;
 
-    private final static int API_RETRY = 3;
+    protected final static int API_RETRY = 3;
 
-    private final static int MAX_RECORDS_TO_RETURN_IN_ONE_PULL = 500;
+    protected final static int MAX_RECORDS_TO_RETURN_IN_ONE_PULL = 500;
 
-    private final static int MAX_RECORDS_TO_RETURN_TOTAL = 20000;
+    protected final static int MAX_RECORDS_TO_RETURN_TOTAL = 20000;
 
     public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials) {
         this.restSession = new RestApiSession(bullhornRestCredentials);
@@ -601,7 +601,7 @@ public class StandardBullhornData implements BullhornData {
         return handleUnsubscribeToEvents(subscriptionId);
     }
 
-    private <C extends CrudResponse> C handleAddNoteAndAssociateToEntity(Note note) {
+    protected <C extends CrudResponse> C handleAddNoteAndAssociateToEntity(Note note) {
         C noteAdded = this.insertEntity(note);
 
         if (noteAdded.getChangedEntityId() == null) {
@@ -629,28 +629,28 @@ public class StandardBullhornData implements BullhornData {
         return noteAdded;
     }
 
-    private boolean noteHasPlacementReference(Note note) {
+    protected boolean noteHasPlacementReference(Note note) {
         if (note.getPlacements() != null && note.getPlacements().getData() != null && note.getPlacements().getData().size() > 0) {
             return true;
         }
         return false;
     }
 
-    private boolean noteHasPersonReference(Note note) {
+    protected boolean noteHasPersonReference(Note note) {
         if (note.getPersonReference() != null && note.getPersonReference().getId() != null) {
             return true;
         }
         return false;
     }
 
-    private boolean noteHasJobReference(Note note) {
+    protected boolean noteHasJobReference(Note note) {
         if (note.getJobOrder() != null && note.getJobOrder().getId() != null) {
             return true;
         }
         return false;
     }
 
-    private NoteEntity createNoteEntity(CrudResponse noteAdded, String targetEntityName, Integer targetEntityID) {
+    protected NoteEntity createNoteEntity(CrudResponse noteAdded, String targetEntityName, Integer targetEntityID) {
         NoteEntity noteEntity = new NoteEntity();
 
         noteEntity.setNote(new Note(noteAdded.getChangedEntityId()));
@@ -659,7 +659,7 @@ public class StandardBullhornData implements BullhornData {
         return noteEntity;
     }
 
-    private <T extends AssociationEntity, E extends BullhornEntity> List<E> handleGetAssociation(Class<T> type, Set<Integer> entityIds,
+    protected <T extends AssociationEntity, E extends BullhornEntity> List<E> handleGetAssociation(Class<T> type, Set<Integer> entityIds,
                          AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
 
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetAssociation(
@@ -675,7 +675,7 @@ public class StandardBullhornData implements BullhornData {
 
     }
 
-    private <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> handleGetAssociationListWrapper(Class<T> type, Set<Integer> entityIds,
+    protected <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> handleGetAssociationListWrapper(Class<T> type, Set<Integer> entityIds,
                                                                                                  AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetAssociation(
                 BullhornEntityInfo.getTypesRestEntityName(type), entityIds, associationName, fieldSet, params);
@@ -686,7 +686,7 @@ public class StandardBullhornData implements BullhornData {
         return listWrapper;
     }
 
-    private <L extends ListWrapper<E>, T extends AssociationEntity,  E extends BullhornEntity> L handleGetAllAssociations(Class<T> type,
+    protected <L extends ListWrapper<E>, T extends AssociationEntity,  E extends BullhornEntity> L handleGetAllAssociations(Class<T> type,
                           Set<Integer> entityIds, AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
         List<E> allEntities = new ArrayList<E>();
         params.setCount(MAX_RECORDS_TO_RETURN_IN_ONE_PULL);
@@ -694,7 +694,7 @@ public class StandardBullhornData implements BullhornData {
         return (L) new StandardListWrapper<E>(allEntities);
     }
 
-    private <T extends AssociationEntity, E extends BullhornEntity> void recursiveAssociationPull(List<E> allEntities, Class<T> type, Set<Integer> entityIds,
+    protected <T extends AssociationEntity, E extends BullhornEntity> void recursiveAssociationPull(List<E> allEntities, Class<T> type, Set<Integer> entityIds,
                                                                                                   AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
         ListWrapper<E> onePull = handleGetAssociationListWrapper(type, entityIds, associationName, fieldSet, params);
 
@@ -706,7 +706,7 @@ public class StandardBullhornData implements BullhornData {
     }
 
 
-    private void setStart(AssociationParams params, int numberOfRecordsPulledAlready) {
+    protected void setStart(AssociationParams params, int numberOfRecordsPulledAlready) {
         params.setStart(numberOfRecordsPulledAlready);
     }
 
@@ -793,7 +793,7 @@ public class StandardBullhornData implements BullhornData {
      * @param <T>
      * @return
      */
-    private <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
+    protected <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
         String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
         String url = restUrlFactory.assembleEntityUrl(params);
@@ -824,7 +824,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params   optional QueryParams.
      * @return a LinsWrapper containing the records plus some additional information
      */
-    private <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntities(Class<T> type, String where, Set<String> fieldSet,
+    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntities(Class<T> type, String where, Set<String> fieldSet,
                                                                                        QueryParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(type),
                 where, fieldSet, params);
@@ -847,7 +847,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params     optional QueryParams.
      * @return a EditHistoryListWrapper containing the records plus some additional information
      */
-    private <T extends EditHistoryEntity> EditHistoryListWrapper handleQueryForEntityEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+    protected <T extends EditHistoryEntity> EditHistoryListWrapper handleQueryForEntityEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEditHistoryQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 
         String url = restUrlFactory.assembleQueryUrl(params);
@@ -867,7 +867,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params     optional QueryParams.
      * @return a FieldChangeWrapper containing the records plus some additional information
      */
-    private <T extends EditHistoryEntity> FieldChangeListWrapper handleQueryForEntityEditHistoryFieldChange(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
+    protected <T extends EditHistoryEntity> FieldChangeListWrapper handleQueryForEntityEditHistoryFieldChange(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEditHistoryFieldChangeQuery(BullhornEntityInfo.getTypesRestEntityName(entityType), where, fieldSet, params);
 
         String url = restUrlFactory.assembleQueryUrl(params);
@@ -875,7 +875,7 @@ public class StandardBullhornData implements BullhornData {
         return this.performGetRequest(url, FieldChangeListWrapper.class, uriVariables);
     }
 
-    private <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
+    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
                                                                                          QueryParams params) {
         List<T> allEntities = new ArrayList<T>();
         params.setCount(MAX_RECORDS_TO_RETURN_IN_ONE_PULL);
@@ -883,7 +883,7 @@ public class StandardBullhornData implements BullhornData {
         return (L) new StandardListWrapper<T>(allEntities);
     }
 
-    private <T extends QueryEntity> void recursiveQueryPull(List<T> allEntities, Class<T> type, String where, Set<String> fieldSet,
+    protected <T extends QueryEntity> void recursiveQueryPull(List<T> allEntities, Class<T> type, String where, Set<String> fieldSet,
                                                             QueryParams params) {
         ListWrapper<T> onePull = handleQueryForEntities(type, where, fieldSet, params);
 
@@ -894,7 +894,7 @@ public class StandardBullhornData implements BullhornData {
         }
     }
 
-    private void setStart(QueryParams params, int numberOfRecordsPulledAlready) {
+    protected void setStart(QueryParams params, int numberOfRecordsPulledAlready) {
         params.setStart(numberOfRecordsPulledAlready);
     }
 
@@ -904,7 +904,7 @@ public class StandardBullhornData implements BullhornData {
      * @param allEntities
      * @return true if the MAX_RECORDS_TO_RETURN_TOTAL has been reached
      */
-    private boolean ceilingNotReached(List<?> allEntities) {
+    protected boolean ceilingNotReached(List<?> allEntities) {
         if (allEntities.size() < MAX_RECORDS_TO_RETURN_TOTAL) {
             return true;
         }
@@ -912,7 +912,7 @@ public class StandardBullhornData implements BullhornData {
 
     }
 
-    private boolean moreRecordsExist(ListWrapper<?> onePull) {
+    protected boolean moreRecordsExist(ListWrapper<?> onePull) {
         int total = onePull.getTotal();
         int start = onePull.getStart();
         int count = onePull.getCount();
@@ -935,7 +935,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params   optional SearchParams .
      * @return a LinsWrapper containing the records plus some additional information
      */
-    private <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForEntities(Class<T> type, String query, Set<String> fieldSet,
+    protected <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForEntities(Class<T> type, String query, Set<String> fieldSet,
                                                                                          SearchParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearch(BullhornEntityInfo.getTypesRestEntityName(type),
                 query, fieldSet, params);
@@ -960,7 +960,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params optional FastFindParams .
      * @return a ListWrapper containing the records plus some additional information
      */
-    private FastFindListWrapper handleFastFindForEntities(String query, FastFindParams params) {
+    protected FastFindListWrapper handleFastFindForEntities(String query, FastFindParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForFastFind(query, params);
 
         String url = restUrlFactory.assembleFastFindUrl(params);
@@ -978,7 +978,7 @@ public class StandardBullhornData implements BullhornData {
      * @param entity
      * @return a UpdateResponse
      */
-    private <C extends CrudResponse, T extends UpdateEntity> C handleUpdateEntity(T entity) {
+    protected <C extends CrudResponse, T extends UpdateEntity> C handleUpdateEntity(T entity) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityUpdate(
                 BullhornEntityInfo.getTypesRestEntityName(entity.getClass()), entity.getId());
         String url = restUrlFactory.assembleEntityUrlForUpdate();
@@ -1001,7 +1001,7 @@ public class StandardBullhornData implements BullhornData {
      * @param entityList
      * @return
      */
-    private <C extends CrudResponse, T extends UpdateEntity> List<C> handleMultipleUpdates(List<T> entityList) {
+    protected <C extends CrudResponse, T extends UpdateEntity> List<C> handleMultipleUpdates(List<T> entityList) {
 
         if (entityList == null || entityList.isEmpty()) {
             return Collections.emptyList();
@@ -1024,7 +1024,7 @@ public class StandardBullhornData implements BullhornData {
      * @param entity CreateEntity
      * @return a UpdateResponse
      */
-    private <C extends CrudResponse, T extends CreateEntity> C handleInsertEntity(T entity) {
+    protected <C extends CrudResponse, T extends CreateEntity> C handleInsertEntity(T entity) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityInsert(BullhornEntityInfo
                 .getTypesRestEntityName(entity.getClass()));
         String url = restUrlFactory.assembleEntityUrlForInsert();
@@ -1048,7 +1048,7 @@ public class StandardBullhornData implements BullhornData {
      * @param id
      * @return
      */
-    private <C extends CrudResponse, T extends DeleteEntity> C handleDeleteEntity(Class<T> type, Integer id) {
+    protected <C extends CrudResponse, T extends DeleteEntity> C handleDeleteEntity(Class<T> type, Integer id) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityDelete(
                 BullhornEntityInfo.getTypesRestEntityName(type), id);
         String url = restUrlFactory.assembleEntityDeleteUrl();
@@ -1073,14 +1073,14 @@ public class StandardBullhornData implements BullhornData {
         return (C) response;
     }
 
-    private <T extends DeleteEntity> boolean isSoftDeleteEntity(Class<T> type) {
+    protected <T extends DeleteEntity> boolean isSoftDeleteEntity(Class<T> type) {
         if (SoftDeleteEntity.class.isAssignableFrom(type)) {
             return true;
         }
         return false;
     }
 
-    private <T extends DeleteEntity> boolean isHardDeleteEntity(Class<T> type) {
+    protected <T extends DeleteEntity> boolean isHardDeleteEntity(Class<T> type) {
         if (HardDeleteEntity.class.isAssignableFrom(type)) {
             return true;
         }
@@ -1097,7 +1097,7 @@ public class StandardBullhornData implements BullhornData {
      * @param fieldSet      fields to return meta information about. Pass in null for all fields.
      * @return the MetaData
      */
-    private <T extends BullhornEntity> MetaData<T> handleGetMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet) {
+    protected <T extends BullhornEntity> MetaData<T> handleGetMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(BullhornEntityInfo.getTypesRestEntityName(type),
                 metaParameter, fieldSet);
         String url = restUrlFactory.assembleEntityUrlForMeta();
@@ -1117,7 +1117,7 @@ public class StandardBullhornData implements BullhornData {
      * @return the settings
      */
     @SuppressWarnings("unchecked")
-    private Map<String, Object> handleGetSettingsData(Set<String> settingSet) {
+    protected Map<String, Object> handleGetSettingsData(Set<String> settingSet) {
 
         if(settingSet == null || settingSet.size() == 0){
             throw new NotEnoughFieldsSpecifiedException("At least one settings field needs to passed in as an argument.");
@@ -1132,7 +1132,7 @@ public class StandardBullhornData implements BullhornData {
 
     }
 
-    private Settings handleGetSettingsObjectData(Set<SettingsFields> settingSet) {
+    protected Settings handleGetSettingsObjectData(Set<SettingsFields> settingSet) {
 
         if(settingSet == null || settingSet.size() == 0){
             throw new NotEnoughFieldsSpecifiedException("At least one settings field needs to passed in as an argument.");
@@ -1154,7 +1154,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params
      * @return
      */
-    private <P extends ParsedResume> P handleParseResumeText(String resume, ResumeTextParseParams params) {
+    protected <P extends ParsedResume> P handleParseResumeText(String resume, ResumeTextParseParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForResumeTextParse(params);
         String url = restUrlFactory.assembleParseResumeTextUrl(params);
 
@@ -1172,7 +1172,7 @@ public class StandardBullhornData implements BullhornData {
         return (P) response;
     }
 
-    private <P extends ParsedResume> P handleParseResumeFile(MultipartFile resume, ResumeFileParseParams params) {
+    protected <P extends ParsedResume> P handleParseResumeFile(MultipartFile resume, ResumeFileParseParams params) {
 
         if (!restFileManager.validFile(resume)) {
             return restFileManager.handleNotValidFileFormat(resume);
@@ -1202,7 +1202,7 @@ public class StandardBullhornData implements BullhornData {
      * @param uriVariables
      * @return
      */
-    private ParsedResume parseResume(String url, Object requestPayLoad, Map<String, String> uriVariables) {
+    protected ParsedResume parseResume(String url, Object requestPayLoad, Map<String, String> uriVariables) {
         ParsedResume response = null;
         for (int tryNumber = 1; tryNumber <= RESUME_PARSE_RETRY; tryNumber++) {
             try {
@@ -1218,7 +1218,7 @@ public class StandardBullhornData implements BullhornData {
         return response;
     }
 
-    private ParsedResume handleResumeParseError(int tryNumber, HttpStatusCodeException error) {
+    protected ParsedResume handleResumeParseError(int tryNumber, HttpStatusCodeException error) {
         ParsedResume response = null;
         if (tryNumber >= RESUME_PARSE_RETRY) {
             response = new StandardParsedResume();
@@ -1238,7 +1238,7 @@ public class StandardBullhornData implements BullhornData {
      * @param parsedResume
      * @return
      */
-    private ParsedResume handleSaveParsedResumeDataToBullhorn(ParsedResume parsedResume) {
+    protected ParsedResume handleSaveParsedResumeDataToBullhorn(ParsedResume parsedResume) {
         if (parsedResume == null) {
             return null;
         }
@@ -1296,7 +1296,7 @@ public class StandardBullhornData implements BullhornData {
      * @param candidate
      * @return
      */
-    private Candidate checkForDuplicates(Candidate candidate) {
+    protected Candidate checkForDuplicates(Candidate candidate) {
         if (candidate == null || candidate.getId() != null) {
             return candidate;
         }
@@ -1328,7 +1328,7 @@ public class StandardBullhornData implements BullhornData {
         return candidate;
     }
 
-    private boolean candidateHasId(Candidate candidate) {
+    protected boolean candidateHasId(Candidate candidate) {
         if (candidate != null && candidate.getId() != null) {
             return true;
         }
@@ -1342,7 +1342,7 @@ public class StandardBullhornData implements BullhornData {
      * @param entityId
      * @return
      */
-    private List<FileWrapper> handleGetAllFileContentWithMetaData(Class<? extends FileEntity> type, Integer entityId) {
+    protected List<FileWrapper> handleGetAllFileContentWithMetaData(Class<? extends FileEntity> type, Integer entityId) {
         List<FileMeta> metaDataList = this.handleGetEntityMetaFiles(type, entityId);
         // Create an ExecutorService with the number of processors available to the Java virtual machine.
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
@@ -1391,7 +1391,7 @@ public class StandardBullhornData implements BullhornData {
      * @param fileId
      * @return
      */
-    private FileWrapper handleGetFileContentWithMetaData(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
+    protected FileWrapper handleGetFileContentWithMetaData(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
         FileWrapper fileWrapper = null;
         try {
             FileContent fileContent = this.handleGetFileContent(type, entityId, fileId);
@@ -1420,7 +1420,7 @@ public class StandardBullhornData implements BullhornData {
      * @param entityId
      * @return
      */
-    private List<FileMeta> handleGetEntityMetaFiles(Class<? extends FileEntity> type, Integer entityId) {
+    protected List<FileMeta> handleGetEntityMetaFiles(Class<? extends FileEntity> type, Integer entityId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetEntityMetaFiles(
                 BullhornEntityInfo.getTypesRestEntityName(type), entityId);
         String url = restUrlFactory.assembleGetEntityMetaFilesUrl();
@@ -1441,7 +1441,7 @@ public class StandardBullhornData implements BullhornData {
      * @param fileId
      * @return
      */
-    private FileContent handleGetFileContent(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
+    protected FileContent handleGetFileContent(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetFile(BullhornEntityInfo.getTypesRestEntityName(type),
                 entityId, fileId);
         String url = restUrlFactory.assembleGetFileUrl();
@@ -1462,7 +1462,7 @@ public class StandardBullhornData implements BullhornData {
      * @param deleteFile
      * @return
      */
-    private FileWrapper handleAddFileWithMultipartFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile multipartFile,
+    protected FileWrapper handleAddFileWithMultipartFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile multipartFile,
                                                        String externalId, FileParams params, boolean deleteFile) {
 
         MultiValueMap<String, Object> multiValueMap = null;
@@ -1490,7 +1490,7 @@ public class StandardBullhornData implements BullhornData {
      * @param deleteFile
      * @return
      */
-    private FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId,
+    protected FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId,
                                               FileParams params, boolean deleteFile) {
         MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
@@ -1500,7 +1500,7 @@ public class StandardBullhornData implements BullhornData {
         return this.handleAddFile(type, entityId, multiValueMap, url, uriVariables, file.getName(), deleteFile);
     }
 
-    private FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
+    protected FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
         MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
                 entityId, fileMeta);
@@ -1509,7 +1509,7 @@ public class StandardBullhornData implements BullhornData {
         return this.handleAddFile(type, entityId, multiValueMap, url, uriVariables, file.getName(), deleteFile);
     }
 
-    private FileWrapper handleAddFile(Class<? extends FileEntity> type, Integer entityId, MultiValueMap<String, Object> multiValueMap ,
+    protected FileWrapper handleAddFile(Class<? extends FileEntity> type, Integer entityId, MultiValueMap<String, Object> multiValueMap ,
                                       String url,  Map<String, String> uriVariables, String fileName, boolean deleteFile) {
 
         StandardFileApiResponse fileApiResponse = this.performCustomRequest(url, multiValueMap, StandardFileApiResponse.class,
@@ -1535,7 +1535,7 @@ public class StandardBullhornData implements BullhornData {
      * @param deleteFile
      * @return
      */
-    private FileWrapper handleAddFileAndUpdateCandidateDescription(Integer candidateId, File file, String candidateDescription,
+    protected FileWrapper handleAddFileAndUpdateCandidateDescription(Integer candidateId, File file, String candidateDescription,
                                                                    String externalId, FileParams params, boolean deleteFile) {
         // first add the file
         FileWrapper fileWrapper = this.handleAddFileWithFile(Candidate.class, candidateId, file, externalId, params, deleteFile);
@@ -1568,7 +1568,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params
      * @return
      */
-    private <P extends ParsedResume> P addFileThenHandleParseResume(Class<? extends FileEntity> type, Integer entityId,
+    protected <P extends ParsedResume> P addFileThenHandleParseResume(Class<? extends FileEntity> type, Integer entityId,
                                                                     MultipartFile multipartFile, String externalId, FileParams fileParams, ResumeFileParseParams params) {
         FileWrapper fileWrapper = handleAddFileWithMultipartFile(type, entityId, multipartFile, externalId, fileParams, true);
         P parsedResume = this.handleParseResumeFile(multipartFile, params);
@@ -1588,7 +1588,7 @@ public class StandardBullhornData implements BullhornData {
      * @param fileId
      * @return
      */
-    private FileApiResponse handleDeleteFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
+    protected FileApiResponse handleDeleteFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesDeleteFile(BullhornEntityInfo.getTypesRestEntityName(type),
                 entityId, fileId);
         String url = restUrlFactory.assembleDeleteFileUrl();
@@ -1607,7 +1607,7 @@ public class StandardBullhornData implements BullhornData {
      * @param associationIds
      * @return
      */
-    private <C extends CrudResponse, T extends AssociationEntity> C handleAssociateWithEntity(Class<T> type, Integer entityId,
+    protected <C extends CrudResponse, T extends AssociationEntity> C handleAssociateWithEntity(Class<T> type, Integer entityId,
                                                                                               AssociationField<T, ? extends BullhornEntity> associationName, Set<Integer> associationIds) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAssociateWithEntity(
                 BullhornEntityInfo.getTypesRestEntityName(type), entityId, associationName, associationIds);
@@ -1632,7 +1632,7 @@ public class StandardBullhornData implements BullhornData {
      * @param associationIds
      * @return
      */
-    private <C extends CrudResponse, T extends AssociationEntity> C handleDisassociateWithEntity(Class<T> type, Integer entityId,
+    protected <C extends CrudResponse, T extends AssociationEntity> C handleDisassociateWithEntity(Class<T> type, Integer entityId,
                                                                                                  AssociationField<T, ? extends BullhornEntity> associationName, Set<Integer> associationIds) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAssociateWithEntity(
                 BullhornEntityInfo.getTypesRestEntityName(type), entityId, associationName, associationIds);
@@ -1648,7 +1648,7 @@ public class StandardBullhornData implements BullhornData {
         return (C) response;
     }
 
-    private Integer handleGetLastRequestId(String subscriptionId) {
+    protected Integer handleGetLastRequestId(String subscriptionId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetLastRequestId(subscriptionId);
         String url = restUrlFactory.assembleGetLastRequstIdUrl();
 
@@ -1663,21 +1663,21 @@ public class StandardBullhornData implements BullhornData {
         return lastRequestId;
     }
 
-    private GetEventsResponse handleGetEvents(String subscriptionId, Integer maxEvents) {
+    protected GetEventsResponse handleGetEvents(String subscriptionId, Integer maxEvents) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetEvents(subscriptionId, maxEvents);
         String url = restUrlFactory.assembleGetEventsUrl();
 
         return this.performGetRequest(url, StandardGetEventsResponse.class, uriVariables);
     }
 
-    private GetEventsResponse handleRegetEvents(String subscriptionId, Integer requestId) {
+    protected GetEventsResponse handleRegetEvents(String subscriptionId, Integer requestId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForRegetEvents(subscriptionId, requestId);
         String url = restUrlFactory.assembleRegetEventsUrl();
 
         return this.performGetRequest(url, StandardGetEventsResponse.class, uriVariables);
     }
 
-    private SubscribeToEventsResponse handleSubscribeToEvents(String subscriptionId, EventType eventType,
+    protected SubscribeToEventsResponse handleSubscribeToEvents(String subscriptionId, EventType eventType,
                                                               List<Class> entityClasses,
                                                               List<EntityEventType> entityEventTypes) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSubscribeToEvents(subscriptionId,
@@ -1690,7 +1690,7 @@ public class StandardBullhornData implements BullhornData {
                 StandardSubscribeToEventsResponse.class) : null;
     }
 
-    private boolean handleUnsubscribeToEvents(String subscriptionId) {
+    protected boolean handleUnsubscribeToEvents(String subscriptionId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForUnsubscribeToEvents(subscriptionId);
 
         String url = restUrlFactory.assembleUnsubscribeToEventsUrl();
@@ -1707,7 +1707,7 @@ public class StandardBullhornData implements BullhornData {
         return false;
     }
 
-	private <T extends QueryEntity> EntityIdBoundaries handleQueryForIdBoundaries(Class<T> entityClass){
+	protected <T extends QueryEntity> EntityIdBoundaries handleQueryForIdBoundaries(Class<T> entityClass){
 		EntityIdBoundaries boundaries = new EntityIdBoundaries();
 		boundaries.setEntityClass(entityClass);
 
@@ -1732,7 +1732,7 @@ public class StandardBullhornData implements BullhornData {
 		return boundaries;
 	}
 
-	private <T extends SearchEntity> EntityIdBoundaries handleSearchForIdBoundaries(Class<T> entityClass){
+	protected <T extends SearchEntity> EntityIdBoundaries handleSearchForIdBoundaries(Class<T> entityClass){
 		EntityIdBoundaries boundaries = new EntityIdBoundaries();
 		boundaries.setEntityClass(entityClass);
 
@@ -1790,7 +1790,7 @@ public class StandardBullhornData implements BullhornData {
      * @param uriVariables
      * @return
      */
-    private <T> T performPostRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables) {
+    protected <T> T performPostRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables) {
         for (int tryNumber = 1; tryNumber <= API_RETRY; tryNumber++) {
             try {
                 return restTemplate.postForObject(url, requestPayLoad, returnType, uriVariables);
@@ -1815,7 +1815,7 @@ public class StandardBullhornData implements BullhornData {
      * @param headers        the headers for the request
      * @return
      */
-    private <T> T performCustomRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables,
+    protected <T> T performCustomRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables,
                                        HttpMethod httpMethod, HttpHeaders headers) {
 
         if (headers == null) {
@@ -1844,7 +1844,7 @@ public class StandardBullhornData implements BullhornData {
      * @param error
      * @throws RestApiException if tryNumber >= API_RETRY.
      */
-    private void handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
+    protected void handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
         if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
             resetBhRestToken(uriVariables);
         }
@@ -1858,16 +1858,16 @@ public class StandardBullhornData implements BullhornData {
         }
     }
 
-    private void handleApiError(int tryNumber, Exception e) {
+    protected void handleApiError(int tryNumber, Exception e) {
         log.error("Error making api call. Try number:" + tryNumber + " out of " + API_RETRY, e);
     }
 
-    private void resetBhRestToken(Map<String, String> uriVariables) {
+    protected void resetBhRestToken(Map<String, String> uriVariables) {
         String bhRestToken = this.refreshBhRestToken();
         uriVariables.put("bhRestToken", bhRestToken);
     }
 
-    private ParsedResume performPostResumeRequest(String url, Object requestPayLoad, Map<String, String> uriVariables) {
+    protected ParsedResume performPostResumeRequest(String url, Object requestPayLoad, Map<String, String> uriVariables) {
         if (requestPayLoad instanceof String) {
             return postResume(url, requestPayLoad, StandardParsedResume.class, uriVariables, null);
         } else {
@@ -1875,7 +1875,7 @@ public class StandardBullhornData implements BullhornData {
         }
     }
 
-    private <T> T postResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
+    protected <T> T postResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
 
         if (headers == null) {
             headers = new HttpHeaders();
@@ -1888,13 +1888,13 @@ public class StandardBullhornData implements BullhornData {
 
     }
 
-    private HttpHeaders getMultipartHeadersForFileAttachement(String fileName) {
+    protected HttpHeaders getMultipartHeadersForFileAttachement(String fileName) {
         HttpHeaders headers = getMultipartHeadersForResumeParse();
         headers.setContentDispositionFormData(this.restFileManager.getFormFileName(), fileName);
         return headers;
     }
 
-    private HttpHeaders getMultipartHeadersForResumeParse() {
+    protected HttpHeaders getMultipartHeadersForResumeParse() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.MULTIPART_FORM_DATA);
         return headers;
