@@ -19,7 +19,7 @@ A Java client library for working with the Bullhorn REST API. Handles authentica
 
 Provide your credentials and instantiate StandardBullhornApiRest:
 ```java
-        RestCredentials creds = new BullhornRestCredentials();
+        BullhornRestCredentials creds = new BullhornRestCredentials();
 		creds.setPassword("apipassword");
 		creds.setRestAuthorizeUrl("rest.authorizeUrl");
 		creds.setRestClientId("rest.clientId");
