@@ -11,7 +11,7 @@
 
  import java.math.BigDecimal;
 
-public abstract class CustomObjectInstance extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, CreateEntity, UpdateEntity, HardDeleteEntity {
+public abstract class CustomObjectInstance extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, UpdateEntity, CreateEntity, HardDeleteEntity {
 
 	private Integer id;
     private String text1;
