@@ -49,6 +49,8 @@ import com.bullhornsdk.data.model.entity.core.standard.State;
 import com.bullhornsdk.data.model.entity.core.standard.Task;
 import com.bullhornsdk.data.model.entity.core.standard.Tearsheet;
 import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
+import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensation;
+import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensationRate;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.google.common.collect.Sets;
 
@@ -369,6 +371,24 @@ public class TestStandardBullhornApiRest extends BaseTest {
 		assertNotNull("TimeUnit is null", entity);
 
 	}
+
+    @Test
+    public void testFindWorkersCompensation() {
+
+        WorkersCompensation entity = bullhornData.findEntity(WorkersCompensation.class, testEntities.getWorkersCompensationId());
+
+        assertNotNull("WorkersCompensation is null", entity);
+
+    }
+
+    @Test
+    public void testFindWorkersCompensationRate() {
+
+        WorkersCompensationRate entity = bullhornData.findEntity(WorkersCompensationRate.class, testEntities.getWorkersCompensationRateId());
+
+        assertNotNull("WorkersCompensationRate is null", entity);
+
+    }
 
 	@Test
 	public void testFindAppointmentFields() {

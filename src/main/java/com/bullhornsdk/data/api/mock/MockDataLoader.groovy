@@ -394,6 +394,8 @@ public class MockDataLoader {
 		entityFiles.put(TearsheetMember.class, "tearsheetmember-data.txt");
 		entityFiles.put(TimeUnit.class, "timeunit-data.txt");
         entityFiles.put(UserType.class, "usertype-data.txt");
+        entityFiles.put(WorkersCompensation.class, "workerscompensation-data.txt");
+        entityFiles.put(WorkersCompensationRate.class, "workerscompensationrate-data.txt");
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobject/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobject/jobordercustomobjectinstance2-data.txt");
@@ -490,6 +492,8 @@ public class MockDataLoader {
 		entityMetaFiles.put(Task.class, "meta/task-meta-data.txt");
 		entityMetaFiles.put(TimeUnit.class, "meta/timeunit-meta-data.txt");
         entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
+        entityMetaFiles.put(WorkersCompensation.class, "meta/workerscompensation-meta-data.txt");
+        entityMetaFiles.put(WorkersCompensationRate.class, "meta/workerscompensationrate-meta-data.txt");
 
         entityMetaFiles.put(JobOrderCustomObjectInstance1.class, "meta/customobject/jobordercustomobjectinstance1-meta-data.txt");
         entityMetaFiles.put(JobOrderCustomObjectInstance2.class, "meta/customobject/jobordercustomobjectinstance2-meta-data.txt");

@@ -1,0 +1,226 @@
+{
+  "total" : 20,
+  "start" : 0,
+  "count" : 20,
+  "data" : [ {
+    "id" : 1,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1514696400000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.45,
+    "startDate" : 1483246800000
+  }, {
+    "id" : 2,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1487134800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0515,
+    "startDate" : 1470888000000
+  }, {
+    "id" : 3,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1501041600000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.25,
+    "startDate" : 1469505600000
+  }, {
+    "id" : 4,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1561348800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.075,
+    "startDate" : 1529553600000
+  }, {
+    "id" : 5,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1498276800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0522,
+    "startDate" : 1466740800000
+  }, {
+    "id" : 6,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1514696400000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.45,
+    "startDate" : 1483246800000
+  }, {
+    "id" : 7,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1487134800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0515,
+    "startDate" : 1470888000000
+  }, {
+    "id" : 8,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1501041600000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.25,
+    "startDate" : 1469505600000
+  }, {
+    "id" : 9,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1561348800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.075,
+    "startDate" : 1529553600000
+  }, {
+    "id" : 10,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1498276800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0522,
+    "startDate" : 1466740800000
+  }, {
+    "id" : 11,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1514696400000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.45,
+    "startDate" : 1483246800000
+  }, {
+    "id" : 12,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1487134800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0515,
+    "startDate" : 1470888000000
+  }, {
+    "id" : 13,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1501041600000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.25,
+    "startDate" : 1469505600000
+  }, {
+    "id" : 14,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1561348800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.075,
+    "startDate" : 1529553600000
+  }, {
+    "id" : 15,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1498276800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0522,
+    "startDate" : 1466740800000
+  }, {
+    "id" : 16,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1514696400000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.45,
+    "startDate" : 1483246800000
+  }, {
+    "id" : 17,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1487134800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0515,
+    "startDate" : 1470888000000
+  }, {
+    "id" : 18,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1501041600000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.25,
+    "startDate" : 1469505600000
+  }, {
+    "id" : 19,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1561348800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.075,
+    "startDate" : 1529553600000
+  }, {
+    "id" : 20,
+    "compensation" : {
+      "id" : 1
+    },
+    "endDate" : 1498276800000,
+    "privateLabel" : {
+      "id" : 1
+    },
+    "rate" : 0.0522,
+    "startDate" : 1466740800000
+  } ]
+}

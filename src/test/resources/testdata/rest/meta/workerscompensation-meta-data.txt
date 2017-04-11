@@ -1,0 +1,62 @@
+{
+  "entity" : "WorkersCompensation",
+  "entityMetaUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/meta/WorkersCompensation?fields=*",
+  "label" : "Workers Compensation",
+  "dateLastModified" : "1491919659783",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "ID",
+    "dataType" : "Integer"
+  }, {
+    "name" : "code",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Code",
+    "hideFromSearch" : false
+  }, {
+    "name" : "description",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 200,
+    "confidential" : false,
+    "label" : "Description",
+    "hideFromSearch" : false
+  }, {
+    "name" : "name",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 100,
+    "confidential" : false,
+    "label" : "Name",
+    "hideFromSearch" : false
+  }, {
+    "name" : "rates",
+    "type" : "TO_MANY",
+    "confidential" : false,
+    "label" : "Rates",
+    "optionsType" : "WorkersCompensationRate",
+    "optionsUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/options/WorkersCompensationRate",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "WorkersCompensationRate",
+      "entityMetaUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/meta/WorkersCompensationRate?fields=*",
+      "label" : "Workers Compensation Rate",
+      "dateLastModified" : "1491915582555",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer"
+      } ]
+    }
+  }, {
+    "name" : "state",
+    "type" : "SCALAR",
+    "dataType" : "String",
+    "maxLength" : 2,
+    "confidential" : false,
+    "label" : "State",
+    "hideFromSearch" : false
+  } ]
+}

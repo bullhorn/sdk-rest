@@ -14,6 +14,7 @@ import com.bullhornsdk.data.model.entity.core.standard.PrivateLabel;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
 import com.bullhornsdk.data.model.entity.core.standard.State;
+import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensation;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
@@ -109,6 +110,15 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 		runAssertions("ListWrapper<Specialty>", wrapper);
 
 	}
+
+    @Test
+    public void testQueryWorkersCompensation() {
+
+        ListWrapper<WorkersCompensation> wrapper = bullhornData.queryForAllRecords(WorkersCompensation.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<WorkersCompensation>", wrapper);
+
+    }
 
 	@Test
 	public void testQueryState() {

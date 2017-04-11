@@ -39,6 +39,8 @@ import com.bullhornsdk.data.model.entity.core.standard.Specialty;
 import com.bullhornsdk.data.model.entity.core.standard.State;
 import com.bullhornsdk.data.model.entity.core.standard.Task;
 import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
+import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensation;
+import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensationRate;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
 import com.bullhornsdk.data.model.parameter.QueryParams;
@@ -195,6 +197,24 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
         ListWrapper<DistributionList> wrapper = bullhornData.query(DistributionList.class, where, null, queryParams);
 
         runAssertions("ListWrapper<DistributionList>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryWorkersCompensation() {
+
+        ListWrapper<WorkersCompensation> wrapper = bullhornData.query(WorkersCompensation.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<WorkersCompensation>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryWorkersCompensationRate() {
+
+        ListWrapper<WorkersCompensationRate> wrapper = bullhornData.query(WorkersCompensationRate.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<WorkersCompensationRate>", wrapper);
 
     }
 
