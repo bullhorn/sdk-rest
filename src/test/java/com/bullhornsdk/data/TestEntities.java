@@ -86,6 +86,10 @@ public class TestEntities {
 
 	private Integer timeUnitId;
 
+    private Integer workersCompensationId;
+
+    private Integer workersCompensationRateId;
+
     private Integer allCustomObjectsId;
 
     private Integer requestId;
@@ -167,6 +171,10 @@ public class TestEntities {
 		this.tearsheetId=1;
 
 		this.timeUnitId=1;
+
+		this.workersCompensationId = 1;
+
+        this.workersCompensationRateId = 1;
 
         this.allCustomObjectsId = 1;
 
@@ -463,7 +471,23 @@ public class TestEntities {
 		this.tearsheetId = tearsheetId;
 	}
 
-	public Integer getAllCustomObjectsId() {
+    public Integer getWorkersCompensationId() {
+        return workersCompensationId;
+    }
+
+    public void setWorkersCompensationId(Integer workersCompensationId) {
+        this.workersCompensationId = workersCompensationId;
+    }
+
+    public Integer getWorkersCompensationRateId() {
+        return workersCompensationRateId;
+    }
+
+    public void setWorkersCompensationRateId(Integer workersCompensationRateId) {
+        this.workersCompensationRateId = workersCompensationRateId;
+    }
+
+    public Integer getAllCustomObjectsId() {
         return allCustomObjectsId;
     }
 
@@ -572,6 +596,10 @@ public class TestEntities {
             .append(tearsheetId)
             .append(",\n\t\"timeUnitId\": ")
             .append(timeUnitId)
+            .append(",\n\t\"workersCompensationId\": ")
+            .append(workersCompensationId)
+            .append(",\n\t\"workersCompensationRateId\": ")
+            .append(workersCompensationRateId)
             .append(",\n\t\"allCustomObjectsId\": ")
             .append(allCustomObjectsId)
             .append(",\n\t\"requestId\": ")

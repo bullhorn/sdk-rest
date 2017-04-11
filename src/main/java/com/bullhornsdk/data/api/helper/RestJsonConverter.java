@@ -2,9 +2,9 @@ package com.bullhornsdk.data.api.helper;
 
 import java.io.IOException;
 
-import com.bullhornsdk.data.exception.RestMappingException;
 import org.apache.log4j.Logger;
 
+import com.bullhornsdk.data.exception.RestMappingException;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;

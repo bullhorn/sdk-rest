@@ -18,6 +18,8 @@ import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
 import com.bullhornsdk.data.model.entity.core.standard.Person;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
+import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensation;
+import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensationRate;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
@@ -111,6 +113,20 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
         List<Person> associationList = bullhornData.getAssociation(DistributionList.class, entityIds, AssociationFactory.distributionListAssociations()
             .members(), getFields(), params);
         assertResponse(DistributionList.class, associationList);
+
+    }
+
+    @Test
+    public void testGetWorkersCompensationAssociation() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+
+        Set<Integer> entityIds = new HashSet<Integer>();
+        entityIds.add(testEntities.getWorkersCompensationId());
+
+        AssociationParams params = ParamFactory.associationParams();
+        params.setCount(100);
+        List<WorkersCompensationRate> associationList = bullhornData.getAssociation(WorkersCompensation.class, entityIds, AssociationFactory.workersCompensationAssociations()
+            .rates(), getFields(), params);
+        assertResponse(WorkersCompensation.class, associationList);
 
     }
 

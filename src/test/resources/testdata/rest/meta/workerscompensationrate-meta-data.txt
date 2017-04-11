@@ -1,0 +1,70 @@
+{
+  "entity" : "WorkersCompensationRate",
+  "entityMetaUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/meta/WorkersCompensationRate?fields=*",
+  "label" : "Workers Compensation Rate",
+  "dateLastModified" : "1491915168226",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "ID",
+    "dataType" : "Integer"
+  }, {
+    "name" : "compensation",
+    "type" : "TO_ONE",
+    "confidential" : false,
+    "label" : "Compensation",
+    "optionsType" : "WorkersCompensation",
+    "optionsUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/options/WorkersCompensation",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "WorkersCompensation",
+      "entityMetaUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/meta/WorkersCompensation?fields=*",
+      "label" : "Workers Compensation",
+      "dateLastModified" : "1491919659869",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer"
+      } ]
+    }
+  }, {
+    "name" : "endDate",
+    "type" : "SCALAR",
+    "dataType" : "Timestamp",
+    "confidential" : false,
+    "label" : "End Date",
+    "hideFromSearch" : false
+  }, {
+    "name" : "privateLabel",
+    "type" : "TO_ONE",
+    "confidential" : false,
+    "label" : "Private Label",
+    "optionsType" : "PrivateLabel",
+    "optionsUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/options/PrivateLabel",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "PrivateLabel",
+      "entityMetaUrl" : "https://rest9.bullhornstaffing.com/rest-services/1veh34/meta/PrivateLabel?fields=*",
+      "label" : "Private Label",
+      "dateLastModified" : "1491885144379",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer"
+      } ]
+    }
+  }, {
+    "name" : "rate",
+    "type" : "SCALAR",
+    "dataType" : "Double",
+    "confidential" : false,
+    "label" : "Rate",
+    "hideFromSearch" : false
+  }, {
+    "name" : "startDate",
+    "type" : "SCALAR",
+    "dataType" : "Timestamp",
+    "confidential" : false,
+    "label" : "Start Date",
+    "hideFromSearch" : false
+  } ]
+}

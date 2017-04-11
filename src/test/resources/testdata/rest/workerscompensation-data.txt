@@ -1,0 +1,206 @@
+{
+  "total" : 20,
+  "start" : 0,
+  "count" : 20,
+  "data" : [ {
+    "id" : 1,
+    "code" : "1234",
+    "description" : "TEST",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "NH"
+  }, {
+    "id" : 2,
+    "code" : "324233",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "sd"
+  }, {
+    "id" : 3,
+    "code" : "3632",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "GA"
+  }, {
+    "id" : 4,
+    "code" : "8810",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 2,
+      "data" : [ ]
+    },
+    "state" : "MA"
+  }, {
+    "id" : 5,
+    "code" : "1234",
+    "description" : "TEST",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "NH"
+  }, {
+    "id" : 6,
+    "code" : "324233",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "sd"
+  }, {
+    "id" : 7,
+    "code" : "3632",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "GA"
+  }, {
+    "id" : 8,
+    "code" : "8810",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 2,
+      "data" : [ ]
+    },
+    "state" : "MA"
+  }, {
+    "id" : 9,
+    "code" : "1234",
+    "description" : "TEST",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "NH"
+  }, {
+    "id" : 10,
+    "code" : "324233",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "sd"
+  }, {
+    "id" : 11,
+    "code" : "3632",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "GA"
+  }, {
+    "id" : 12,
+    "code" : "8810",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 2,
+      "data" : [ ]
+    },
+    "state" : "MA"
+  }, {
+    "id" : 13,
+    "code" : "1234",
+    "description" : "TEST",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "NH"
+  }, {
+    "id" : 14,
+    "code" : "324233",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "sd"
+  }, {
+    "id" : 15,
+    "code" : "3632",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "GA"
+  }, {
+    "id" : 16,
+    "code" : "8810",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 2,
+      "data" : [ ]
+    },
+    "state" : "MA"
+  }, {
+    "id" : 17,
+    "code" : "1234",
+    "description" : "TEST",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "NH"
+  }, {
+    "id" : 18,
+    "code" : "324233",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "sd"
+  }, {
+    "id" : 19,
+    "code" : "3632",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 1,
+      "data" : [ ]
+    },
+    "state" : "GA"
+  }, {
+    "id" : 20,
+    "code" : "8810",
+    "description" : "",
+    "name" : "A Test Code",
+    "rates" : {
+      "total" : 2,
+      "data" : [ ]
+    },
+    "state" : "MA"
+  } ]
+}
