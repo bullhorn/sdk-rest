@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Test;
 
@@ -429,6 +430,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
 	}
+
+    @Test
+    public void testUpdatePlacementCertification() {
+
+        PlacementCertification entity = bullhornData.findEntity(PlacementCertification.class, testEntities.getPlacementCertificationId());
+
+        this.entity = (T) entity;
+
+        DateTime newValueDateTime = new DateTime();
+
+        entity.setDateLastModified(newValueDateTime);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        PlacementCertification updatedEntity = bullhornData.findEntity(PlacementCertification.class, testEntities.getPlacementCertificationId());
+
+        // assertions
+        assertNotNull("response is null", response);
+        assertFalse("Validation failed", response.hasValidationErrors());
+        assertTrue("value not updated correctly", newValueDateTime.equals(updatedEntity.getDateLastModified()));
+    }
 
 	@Test
 	public void testUpdatePlacementCommission() {

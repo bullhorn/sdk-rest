@@ -31,6 +31,7 @@ import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.PlacementCertification;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
 import com.bullhornsdk.data.model.entity.core.standard.Sendout;
@@ -247,6 +248,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 		runAssertions(meta, Placement.class);
 
 	}
+
+    @Test
+    public void testMetaPlacementCertification() {
+
+        MetaData<PlacementCertification> meta = bullhornData.getMetaData(PlacementCertification.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, PlacementCertification.class);
+
+    }
 
 	@Test
 	public void testMetaPlacementChangeRequest() {

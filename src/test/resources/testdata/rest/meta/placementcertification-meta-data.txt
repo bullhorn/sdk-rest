@@ -1,0 +1,163 @@
+{
+  "entity" : "PlacementCertification",
+  "entityMetaUrl" : "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/PlacementCertification?fields=*",
+  "label" : "Requirement",
+  "dateLastModified" : "1492023353149",
+  "trackTrigger" : "employmentType",
+  "tracks" : [ {
+    "name" : "PlacementCertification",
+    "values" : [ ]
+  } ],
+  "fields" : [ {
+    "name" : "id",
+    "type" : "ID",
+    "dataType" : "Integer",
+    "optional" : false
+  }, {
+    "name" : "dateAdded",
+    "type" : "SCALAR",
+    "dataType" : "Timestamp",
+    "confidential" : false,
+    "optional" : false,
+    "label" : "Date Added",
+    "required" : false,
+    "readOnly" : false,
+    "multiValue" : false,
+    "hideFromSearch" : false
+  }, {
+    "name" : "modifyingUser",
+    "type" : "TO_ONE",
+    "confidential" : false,
+    "optional" : false,
+    "label" : "Modifying User",
+    "required" : false,
+    "readOnly" : false,
+    "multiValue" : false,
+    "optionsType" : "CorporateUser",
+    "optionsUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/CorporateUser",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "CorporateUser",
+      "entityMetaUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/CorporateUser?fields=*",
+      "label" : "Corporate User",
+      "dateLastModified" : "1492023347859",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer",
+        "optional" : false
+      }, {
+        "name" : "firstName",
+        "type" : "SCALAR",
+        "dataType" : "String",
+        "maxLength" : 50,
+        "confidential" : false,
+        "optional" : true,
+        "label" : "First Name",
+        "required" : false,
+        "readOnly" : false,
+        "multiValue" : false,
+        "hideFromSearch" : false
+      }, {
+        "name" : "lastName",
+        "type" : "SCALAR",
+        "dataType" : "String",
+        "maxLength" : 50,
+        "confidential" : false,
+        "optional" : true,
+        "label" : "Last Name",
+        "required" : false,
+        "readOnly" : false,
+        "multiValue" : false,
+        "hideFromSearch" : false
+      } ]
+    }
+  }, {
+    "name" : "certification",
+    "type" : "TO_ONE",
+    "confidential" : false,
+    "optional" : false,
+    "label" : "Certification",
+    "required" : false,
+    "readOnly" : false,
+    "multiValue" : false,
+    "optionsType" : "Certification",
+    "optionsUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/Certification",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "Certification",
+      "entityMetaUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/Certification?fields=*",
+      "label" : "CREDENTIAL",
+      "dateLastModified" : "1492023613590",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer",
+        "optional" : false
+      }, {
+        "name" : "name",
+        "type" : "SCALAR",
+        "dataType" : "String",
+        "maxLength" : 100,
+        "confidential" : false,
+        "optional" : false,
+        "label" : "Credential",
+        "required" : true,
+        "readOnly" : false,
+        "multiValue" : false,
+        "hideFromSearch" : false,
+        "sortOrder" : 10,
+        "hint" : "",
+        "description" : ""
+      } ]
+    }
+  }, {
+    "name" : "candidateCertification",
+    "type" : "TO_ONE",
+    "confidential" : false,
+    "optional" : true,
+    "label" : "Candidate Certification",
+    "required" : false,
+    "readOnly" : false,
+    "multiValue" : false,
+    "optionsType" : "CandidateCertification",
+    "optionsUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/CandidateCertification",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "CandidateCertification",
+      "entityMetaUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/CandidateCertification?fields=*",
+      "label" : "CREDENTIAL",
+      "dateLastModified" : "1492023613590",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer",
+        "optional" : false
+      } ]
+    }
+  }, {
+    "name" : "placement",
+    "type" : "TO_ONE",
+    "confidential" : false,
+    "optional" : false,
+    "label" : "Placement",
+    "required" : false,
+    "readOnly" : false,
+    "multiValue" : false,
+    "optionsType" : "Placement",
+    "optionsUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/Placement",
+    "hideFromSearch" : false,
+    "associatedEntity" : {
+      "entity" : "Placement",
+      "entityMetaUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/Placement?fields=*",
+      "label" : "Placement",
+      "dateLastModified" : "1492023347470",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "ID",
+        "dataType" : "Integer",
+        "optional" : false
+      } ]
+    }
+  } ]
+}

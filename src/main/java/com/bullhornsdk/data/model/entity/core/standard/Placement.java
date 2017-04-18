@@ -37,8 +37,8 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "appointments", "approvingClientContact", "backupApprovingClientContact", "billingClientContact",
-		"billingFrequency", "bonusPackage", "candidate", "changeRequests", "clientBillRate", "clientOvertimeRate", "comments",
-		"commissions", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3", "correlatedCustomFloat1",
+		"billingFrequency", "bonusPackage", "candidate", "placementCertifications", "changeRequests", "clientBillRate", "clientOvertimeRate",
+        "comments", "commissions", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3", "correlatedCustomFloat1",
 		"correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1", "correlatedCustomInt2", "correlatedCustomInt3",
 		"correlatedCustomText1", "correlatedCustomText10", "correlatedCustomText2", "correlatedCustomText3", "correlatedCustomText4",
 		"correlatedCustomText5", "correlatedCustomText6", "correlatedCustomText7", "correlatedCustomText8", "correlatedCustomText9",
@@ -82,6 +82,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private String bonusPackage;
 
 	private Candidate candidate;
+
+    private OneToMany<PlacementCertification> certifications;
 
 	private OneToMany<PlacementChangeRequest> changeRequests;
 
@@ -348,6 +350,17 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	public void setCandidate(Candidate candidate) {
 		this.candidate = candidate;
 	}
+
+    @JsonIgnore
+    public OneToMany<PlacementCertification> getCertifications() {
+        return certifications;
+    }
+
+    @ReadOnly
+    @JsonProperty("placementCertifications")
+    public void setCertifications(OneToMany<PlacementCertification> certifications) {
+        this.certifications = certifications;
+    }
 
 	@JsonIgnore
 	public OneToMany<PlacementChangeRequest> getChangeRequests() {
@@ -1037,6 +1050,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		if (bonusPackage != null ? !bonusPackage.equals(placement.bonusPackage) : placement.bonusPackage != null)
 			return false;
 		if (candidate != null ? !candidate.equals(placement.candidate) : placement.candidate != null) return false;
+        if (certifications != null ? !certifications.equals(placement.certifications) : placement.certifications != null)
+            return false;
 		if (changeRequests != null ? !changeRequests.equals(placement.changeRequests) : placement.changeRequests != null)
 			return false;
 		if (clientBillRate != null ? !clientBillRate.equals(placement.clientBillRate) : placement.clientBillRate != null)
@@ -1160,6 +1175,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		result = 31 * result + (billingFrequency != null ? billingFrequency.hashCode() : 0);
 		result = 31 * result + (bonusPackage != null ? bonusPackage.hashCode() : 0);
 		result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
+        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
 		result = 31 * result + (changeRequests != null ? changeRequests.hashCode() : 0);
 		result = 31 * result + (clientBillRate != null ? clientBillRate.hashCode() : 0);
 		result = 31 * result + (clientOvertimeRate != null ? clientOvertimeRate.hashCode() : 0);
@@ -1238,6 +1254,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 				", billingFrequency='" + billingFrequency + '\'' +
 				", bonusPackage='" + bonusPackage + '\'' +
 				", candidate=" + candidate +
+                ", certifications=" + certifications +
 				", changeRequests=" + changeRequests +
 				", clientBillRate=" + clientBillRate +
 				", clientOvertimeRate=" + clientOvertimeRate +

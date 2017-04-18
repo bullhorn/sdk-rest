@@ -31,6 +31,7 @@ import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.PlacementCertification;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
 import com.bullhornsdk.data.model.entity.core.standard.Sendout;
@@ -357,6 +358,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 		runAssertions("ListWrapper<ClientContact>", wrapper);
 
 	}
+
+    @Test
+    public void testQueryPlacementCertification() {
+
+        ListWrapper<PlacementCertification> wrapper = bullhornData.query(PlacementCertification.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<PlacementCertification>", wrapper);
+
+    }
 
 	@Test
 	public void testQueryPlacementChangeRequest() {

@@ -68,6 +68,8 @@ public class TestEntities {
 
 	private Integer placementId;
 
+    private Integer placementCertificationId;
+
 	private Integer placementChangeRequestId;
 
 	private Integer placementCommissionId;
@@ -153,6 +155,8 @@ public class TestEntities {
         this.opportunityId = 1;
 
 		this.placementId=1;
+
+        this.placementCertificationId = 1;
 
 		this.placementChangeRequestId=1;
 
@@ -519,6 +523,14 @@ public class TestEntities {
         this.candidateCertificationId = candidateCertificationId;
     }
 
+    public Integer getPlacementCertificationId() {
+        return placementCertificationId;
+    }
+
+    public void setPlacementCertificationId(Integer placementCertificationId) {
+        this.placementCertificationId = placementCertificationId;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("TestEntities {")
@@ -578,6 +590,8 @@ public class TestEntities {
             .append(opportunityId)
             .append(",\n\t\"placementId\": ")
             .append(placementId)
+            .append(",\n\t\"placementCertificationId\": ")
+            .append(placementCertificationId)
             .append(",\n\t\"placementChangeRequestId\": ")
             .append(placementChangeRequestId)
             .append(",\n\t\"placementCommissionId\": ")
