@@ -700,14 +700,18 @@ public class StandardBullhornData implements BullhornData {
 
         allEntities.addAll(onePull.getData());
         if (moreRecordsExist(onePull) && ceilingNotReached(allEntities)) {
-            setStart(params, allEntities.size());
+            setStart(params, onePull.getCount());
             recursiveAssociationPull(allEntities, type, entityIds, associationName, fieldSet, params);
         }
     }
 
 
-    protected void setStart(AssociationParams params, int numberOfRecordsPulledAlready) {
-        params.setStart(numberOfRecordsPulledAlready);
+    protected void setStart(AssociationParams params, int numberOfRecordsThisPull) {
+        if (params.getStart() == null) {
+            params.setStart(numberOfRecordsThisPull);
+        } else {
+            params.setStart(params.getStart() + numberOfRecordsThisPull);
+        }
     }
 
     /**
@@ -889,13 +893,17 @@ public class StandardBullhornData implements BullhornData {
 
         allEntities.addAll(onePull.getData());
         if (moreRecordsExist(onePull) && ceilingNotReached(allEntities)) {
-            setStart(params, allEntities.size());
+            setStart(params, onePull.getCount());
             recursiveQueryPull(allEntities, type, where, fieldSet, params);
         }
     }
 
     protected void setStart(QueryParams params, int numberOfRecordsPulledAlready) {
-        params.setStart(numberOfRecordsPulledAlready);
+        if (params.getStart() == null) {
+            params.setStart(numberOfRecordsThisPull);
+        } else {
+            params.setStart(params.getStart() + numberOfRecordsThisPull);
+        }
     }
 
     /**
