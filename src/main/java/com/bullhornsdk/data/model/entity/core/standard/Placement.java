@@ -83,7 +83,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
 	private Candidate candidate;
 
-    private OneToMany<PlacementCertification> certifications;
+    private OneToMany<PlacementCertification> placementCertifications;
 
 	private OneToMany<PlacementChangeRequest> changeRequests;
 
@@ -352,14 +352,14 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	}
 
     @JsonIgnore
-    public OneToMany<PlacementCertification> getCertifications() {
-        return certifications;
+    public OneToMany<PlacementCertification> getPlacementCertifications() {
+        return placementCertifications;
     }
 
     @ReadOnly
     @JsonProperty("placementCertifications")
-    public void setCertifications(OneToMany<PlacementCertification> certifications) {
-        this.certifications = certifications;
+    public void setPlacementCertifications(OneToMany<PlacementCertification> placementCertifications) {
+        this.placementCertifications = placementCertifications;
     }
 
 	@JsonIgnore
@@ -1050,7 +1050,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		if (bonusPackage != null ? !bonusPackage.equals(placement.bonusPackage) : placement.bonusPackage != null)
 			return false;
 		if (candidate != null ? !candidate.equals(placement.candidate) : placement.candidate != null) return false;
-        if (certifications != null ? !certifications.equals(placement.certifications) : placement.certifications != null)
+        if (placementCertifications != null ? !placementCertifications.equals(placement.placementCertifications) : placement.placementCertifications != null)
             return false;
 		if (changeRequests != null ? !changeRequests.equals(placement.changeRequests) : placement.changeRequests != null)
 			return false;
@@ -1175,7 +1175,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		result = 31 * result + (billingFrequency != null ? billingFrequency.hashCode() : 0);
 		result = 31 * result + (bonusPackage != null ? bonusPackage.hashCode() : 0);
 		result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
-        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
+        result = 31 * result + (placementCertifications != null ? placementCertifications.hashCode() : 0);
 		result = 31 * result + (changeRequests != null ? changeRequests.hashCode() : 0);
 		result = 31 * result + (clientBillRate != null ? clientBillRate.hashCode() : 0);
 		result = 31 * result + (clientOvertimeRate != null ? clientOvertimeRate.hashCode() : 0);
@@ -1254,7 +1254,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 				", billingFrequency='" + billingFrequency + '\'' +
 				", bonusPackage='" + bonusPackage + '\'' +
 				", candidate=" + candidate +
-                ", certifications=" + certifications +
+                ", placementCertifications=" + placementCertifications +
 				", changeRequests=" + changeRequests +
 				", clientBillRate=" + clientBillRate +
 				", clientOvertimeRate=" + clientOvertimeRate +

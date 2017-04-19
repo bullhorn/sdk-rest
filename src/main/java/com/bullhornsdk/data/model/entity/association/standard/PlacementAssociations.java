@@ -20,7 +20,7 @@ import java.util.List;
 public final class PlacementAssociations implements EntityAssociations<Placement> {
 
     private final AssociationField<Placement,TimeUnit> timeUnits= instantiateAssociationField("timeUnits",TimeUnit.class);
-    private final AssociationField<Placement, PlacementCertification> certifications = instantiateAssociationField("certifications", PlacementCertification.class);
+    private final AssociationField<Placement, PlacementCertification> placementCertifications = instantiateAssociationField("placementCertifications", PlacementCertification.class);
 
     private final AssociationField<Placement, PlacementCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", PlacementCustomObjectInstance1.class);
     private final AssociationField<Placement, PlacementCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", PlacementCustomObjectInstance2.class);
@@ -48,9 +48,7 @@ public final class PlacementAssociations implements EntityAssociations<Placement
         return timeUnits;
     }
 
-    public AssociationField<Placement,PlacementCertification> certifications() {
-        return certifications;
-    }
+    public AssociationField<Placement,PlacementCertification> placementCertifications() { return placementCertifications; }
 
     public AssociationField<Placement, PlacementCustomObjectInstance1> customObject1s() {
         return customObject1s;
@@ -102,7 +100,7 @@ public final class PlacementAssociations implements EntityAssociations<Placement
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<Placement,? extends BullhornEntity>>();
             allAssociations.add(timeUnits());
-            allAssociations.add(certifications());
+            allAssociations.add(placementCertifications());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());
