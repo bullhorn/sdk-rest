@@ -29,8 +29,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"departments", "email", "email2", "email3", "emailNotify", "emailSignature", "enabled", "externalEmail", "fax", "fax2", "fax3",
 		"firstName", "inboundEmailEnabled", "isDayLightSavings", "isDeleted", "isLockedOut", "isOutboundFaxEnabled", "jobAssignments",
 		"lastName", "loginRestrictions", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName",
-		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "privateLabel", "privateLabels", "smsOptIn", "taskAssignments",
-        "timeZoneOffsetEST", "userDateAdded", "username" })
+		"occupation", "pager", "phone", "phone2", "phone3", "primaryDepartment", "privateLabel", "privateLabels", "reportToPerson",
+		"smsOptIn","taskAssignments", "timeZoneOffsetEST", "userDateAdded", "username" })
 public class CorporateUser extends CustomFieldsA implements QueryEntity, AssociationEntity, EditHistoryEntity {
 
 	private Integer id;
@@ -146,6 +146,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	private CorporationDepartment primaryDepartment;
 
 	private PrivateLabel privateLabel;
+
+	private Person reportToPerson;
 
 	private Boolean smsOptIn;
 
@@ -550,6 +552,16 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		this.privateLabel = privateLabel;
 	}
 
+	@JsonProperty("reportToPerson")
+	public Person getReportToPerson() {
+        return reportToPerson;
+    }
+
+	@JsonProperty("reportToPerson")
+	public void setReportToPerson(Person reportToPerson) {
+        this.reportToPerson = reportToPerson;
+    }
+
 	@JsonProperty("smsOptIn")
 	public Boolean getSmsOptIn() {
 		return smsOptIn;
@@ -651,6 +663,7 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		result = prime * result + ((phone3 == null) ? 0 : phone3.hashCode());
 		result = prime * result + ((primaryDepartment == null) ? 0 : primaryDepartment.hashCode());
 		result = prime * result + ((privateLabel == null) ? 0 : privateLabel.hashCode());
+        result = prime * result + ((reportToPerson == null) ? 0 : reportToPerson.hashCode());
 		result = prime * result + ((smsOptIn == null) ? 0 : smsOptIn.hashCode());
 		result = prime * result + ((taskAssignments == null) ? 0 : taskAssignments.hashCode());
         result = prime * result + ((userDateAdded == null) ? 0 : userDateAdded.hashCode());
@@ -854,6 +867,11 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 				return false;
 		} else if (!privateLabel.equals(other.privateLabel))
 			return false;
+		if (reportToPerson == null) {
+			if (other.reportToPerson != null)
+				return false;
+	 	} else if (!reportToPerson.equals(other.reportToPerson))
+			return false;
 		if (smsOptIn == null) {
 			if (other.smsOptIn != null)
 				return false;
@@ -965,6 +983,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		builder.append(primaryDepartment);
 		builder.append("\n\tprivateLabel: ");
 		builder.append(privateLabel);
+		builder.append("\n\treportToPerson: ");
+		builder.append(reportToPerson);
 		builder.append("\n\tsmsOptIn: ");
 		builder.append(smsOptIn);
 		builder.append("\n\ttaskAssignments: ");
