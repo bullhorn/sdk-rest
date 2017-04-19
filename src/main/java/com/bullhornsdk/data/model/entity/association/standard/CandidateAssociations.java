@@ -25,6 +25,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     private final AssociationField<Candidate, Skill> secondarySkills = instantiateAssociationField("secondarySkills", Skill.class);
     private final AssociationField<Candidate, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
     private final AssociationField<Candidate, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
+    private final AssociationField<Candidate, CandidateCertification> certificationList = instantiateAssociationField("certificationList", CandidateCertification.class);
 
     private final AssociationField<Candidate, PersonCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", PersonCustomObjectInstance1.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", PersonCustomObjectInstance2.class);
@@ -80,6 +81,8 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     public AssociationField<Candidate, Tearsheet> tearsheets() {
         return tearsheets;
     }
+
+    public AssociationField<Candidate, CandidateCertification> certificationList() { return certificationList; }
 
     public AssociationField<Candidate, PersonCustomObjectInstance1> customObject1s() {
         return customObject1s;
@@ -137,6 +140,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
             allAssociations.add(secondarySkills());
             allAssociations.add(specialties());
             allAssociations.add(tearsheets());
+            allAssociations.add(certificationList());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());

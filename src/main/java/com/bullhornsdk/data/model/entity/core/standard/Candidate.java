@@ -75,7 +75,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 
 	private Category category;
 
-	private OneToMany<Certification> certificationList;
+	private OneToMany<CandidateCertification> certificationList;
 
 	@JsonIgnore
 	private String certifications;
@@ -543,13 +543,13 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	}
 
 	@JsonIgnore
-	public OneToMany<Certification> getCertificationList() {
+	public OneToMany<CandidateCertification> getCertificationList() {
 		return certificationList;
 	}
 
     @ReadOnly
 	@JsonProperty("certificationList")
-	public void setCertificationList(OneToMany<Certification> certificationList) {
+	public void setCertificationList(OneToMany<CandidateCertification> certificationList) {
 		this.certificationList = certificationList;
 	}
 

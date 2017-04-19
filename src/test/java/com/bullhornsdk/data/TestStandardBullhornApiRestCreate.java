@@ -356,6 +356,26 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 
 	}
 
+    @Test
+    public void testCreatePlacementCertification() {
+
+        PlacementCertification entity = bullhornData.findEntity(PlacementCertification.class, testEntities.getPlacementCertificationId());
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        PlacementCertification newEntity = bullhornData.findEntity(PlacementCertification.class, response.getChangedEntityId());
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) PlacementCertification.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+
+    }
+
 	@Test
 	public void testCreatePlacementCommission() {
 		PlacementCommission entity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId());
