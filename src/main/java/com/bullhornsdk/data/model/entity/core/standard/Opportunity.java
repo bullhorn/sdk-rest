@@ -454,7 +454,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 		this.address = address;
 	}
 
-	@JsonIgnore
+    @JsonProperty("dateAdded")
 	public DateTime getDateAdded() {
 		return dateAdded;
 	}

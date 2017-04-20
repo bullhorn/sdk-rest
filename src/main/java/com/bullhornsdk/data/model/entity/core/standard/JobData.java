@@ -440,7 +440,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 		this.costCenter = costCenter;
 	}
 
-	@JsonIgnore
+    @JsonProperty("dateAdded")
 	public DateTime getDateAdded() {
 		return dateAdded;
 	}
