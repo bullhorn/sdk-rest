@@ -21,7 +21,6 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -202,7 +201,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 	@Size(max = 20)
 	private String taxStatus;
 
-	private OneToManyLinkedId tearsheets;
+    private OneToMany<Tearsheet> tearsheets;
 
 	private OneToMany<TimeUnit> timeUnits;
 
@@ -950,13 +949,13 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 	}
 
 	@JsonIgnore
-	public OneToManyLinkedId getTearsheets() {
+	public OneToMany<Tearsheet> getTearsheets() {
 		return tearsheets;
 	}
 
 	@ReadOnly
 	@JsonProperty("tearsheets")
-	public void setTearsheets(OneToManyLinkedId tearsheets) {
+	public void setTearsheets(OneToMany<Tearsheet> tearsheets) {
 		this.tearsheets = tearsheets;
 	}
 
