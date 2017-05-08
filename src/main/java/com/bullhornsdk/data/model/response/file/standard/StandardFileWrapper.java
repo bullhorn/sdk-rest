@@ -7,6 +7,7 @@ import java.util.Arrays;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
 import org.springframework.util.FileCopyUtils;
 
 import com.bullhornsdk.data.model.response.file.FileContent;
@@ -39,6 +40,10 @@ public final class StandardFileWrapper implements FileWrapper {
 
     private final String externalID;
 
+    private final DateTime dateAdded;
+
+    private final String distribution;
+
     public StandardFileWrapper(FileContent fileContent, FileMeta fileMeta) {
         super();
 
@@ -60,6 +65,8 @@ public final class StandardFileWrapper implements FileWrapper {
         this.contentSubType = fileMeta.getContentSubType();
         this.fileType = fileMeta.getFileType();
         this.externalID = fileMeta.getExternalID();
+        this.dateAdded = fileMeta.getDateAdded();
+        this.distribution = fileMeta.getDistribution();
     }
 
     @Override
@@ -167,6 +174,16 @@ public final class StandardFileWrapper implements FileWrapper {
     }
 
     @Override
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
+
+    @Override
+    public String getDistribution() {
+        return distribution;
+    }
+
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append(" {\nfileContentAsByteArray=");
@@ -191,6 +208,10 @@ public final class StandardFileWrapper implements FileWrapper {
         builder.append(fileType);
         builder.append(", \nexternalID=");
         builder.append(externalID);
+        builder.append(", \ndateAdded=");
+        builder.append(dateAdded);
+        builder.append(", \ndistribution=");
+        builder.append(distribution);
         builder.append("}");
         return builder.toString();
     }
