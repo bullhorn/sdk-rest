@@ -557,7 +557,9 @@ public class MockDataHandler {
 			contentType:null,
 			contentSubType:null,
 			fileType:null,
-			externalID:"Portfolio"]);
+			externalID:"Portfolio",
+            dateAdded: DateTime.now(),
+            distribution: "Internal"]);
 	}
 
 

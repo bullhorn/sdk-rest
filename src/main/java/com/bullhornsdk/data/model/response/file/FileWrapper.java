@@ -1,5 +1,7 @@
 package com.bullhornsdk.data.model.response.file;
 
+import org.joda.time.DateTime;
+
 import java.io.File;
 
 /**
@@ -52,4 +54,8 @@ public interface FileWrapper {
     public String getFileType();
 
     public String getExternalID();
+
+    public DateTime getDateAdded();
+
+    public String getDistribution();
 }
