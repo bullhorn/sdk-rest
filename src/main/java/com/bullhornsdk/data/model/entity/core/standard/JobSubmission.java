@@ -69,6 +69,9 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 
 	private OneToMany<Task> tasks;
 
+    @JsonIgnore
+	private String comments;
+    
 	public JobSubmission() {
 		super();
 	}
@@ -318,7 +321,17 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 	public void setTasks(OneToMany<Task> tasks) {
 		this.tasks = tasks;
 	}
-
+    
+    @JsonProperty("comments")
+    public String getComments() {
+        return comments;
+    }
+    
+    @JsonProperty("comments")
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+    
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -349,6 +362,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 		if (sendingUser != null ? !sendingUser.equals(that.sendingUser) : that.sendingUser != null) return false;
 		if (source != null ? !source.equals(that.source) : that.source != null) return false;
 		if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (comments != null ? !comments.equals(that.comments) : that.comments != null) return false;
 		return !(tasks != null ? !tasks.equals(that.tasks) : that.tasks != null);
 
 	}
@@ -377,6 +391,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 		result = 31 * result + (source != null ? source.hashCode() : 0);
 		result = 31 * result + (status != null ? status.hashCode() : 0);
 		result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
+        result = 31 * result + (comments != null ? comments.hashCode() : 0);
 		return result;
 	}
 
@@ -405,6 +420,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 				", source='" + source + '\'' +
 				", status='" + status + '\'' +
 				", tasks=" + tasks +
+                ", comments=" + comments + 
 				'}';
 	}
 }
