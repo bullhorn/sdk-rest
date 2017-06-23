@@ -139,7 +139,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.bhTimeStamp = bhTimeStamp;
 	}
 
-	@JsonIgnore
+    @JsonProperty("candidates")
 	public OneToMany<Candidate> getCandidates() {
 		return candidates;
 	}
@@ -149,7 +149,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.candidates = candidates;
 	}
 
-	@JsonIgnore
+    @JsonProperty("clientContacts")
 	public OneToMany<ClientContact> getClientContacts() {
 		return clientContacts;
 	}
@@ -252,7 +252,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.jobOrder = jobOrder;
 	}
 
-	@JsonIgnore
+    @JsonProperty("jobOrders")
 	public OneToMany<JobOrder> getJobOrders() {
 		return jobOrders;
 	}
@@ -262,7 +262,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.jobOrders = jobOrders;
 	}
 
-    @JsonIgnore
+    @JsonProperty("leads")
     public OneToMany<Lead> getLeads() {
         return leads;
     }
@@ -292,7 +292,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.minutesSpent = minutesSpent;
 	}
 
-    @JsonIgnore
+    @JsonProperty("opportunities")
     public OneToMany<Opportunity> getOpportunities() {
         return opportunities;
     }
@@ -312,7 +312,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.personReference = personReference;
 	}
 
-	@JsonIgnore
+    @JsonProperty("placements")
 	public OneToMany<Placement> getPlacements() {
 		return placements;
 	}
