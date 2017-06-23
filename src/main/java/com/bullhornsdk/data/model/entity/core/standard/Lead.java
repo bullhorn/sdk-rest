@@ -135,7 +135,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	private String lastName;
 
 	@JsonIgnore
-	@Size(max = 15)
+	@Size(max = 100)
 	private String leadSource;
 
 	private Boolean massMailOptOut;
