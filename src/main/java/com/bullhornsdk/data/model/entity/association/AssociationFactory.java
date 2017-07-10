@@ -15,6 +15,7 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 public class AssociationFactory {
 
 	private static final AppointmentAssociations appointmentAssociations = AppointmentAssociations.getInstance();
+    private static final BranchAssociations branchAssociations = BranchAssociations.getInstance();
     private static final CandidateAssociations candidateAssociations = CandidateAssociations.getInstance();
     private static final CategoryAssociations categoryAssociations = CategoryAssociations.getInstance();
     private static final ClientContactAssociations clientContactAssociations = ClientContactAssociations.getInstance();
@@ -57,6 +58,10 @@ public class AssociationFactory {
     	if (type == Appointment.class) {
     		return (EntityAssociations<T>) appointmentAssociations;
     	}
+    	
+    	if(type == Branch.class) {
+    	    return (EntityAssociations<T>) branchAssociations;
+        }
     	
         if (type == Candidate.class) {
             return (EntityAssociations<T>) candidateAssociations;
@@ -121,6 +126,15 @@ public class AssociationFactory {
      */
     public static AppointmentAssociations appointmentAssociations() {
         return appointmentAssociations;
+    }
+
+    /**
+     * Returns the associations for Branch
+     *
+     * @return
+     */
+    public static BranchAssociations branchAssociations() {
+        return branchAssociations;
     }
 
     /**

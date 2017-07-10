@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.bullhornsdk.data.model.entity.core.standard.Branch;
 import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
 import com.bullhornsdk.data.model.entity.core.standard.Category;
 import com.bullhornsdk.data.model.entity.core.standard.Certification;
@@ -46,6 +47,14 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
 		runAssertions("ListWrapper<BusinessSector>", wrapper);
 	}
+
+    @Test
+    public void testQueryBranch() {
+
+        ListWrapper<Branch> wrapper = bullhornData.queryForAllRecords(Branch.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<Branch>", wrapper);
+    }
 
 	@Test
 	public void testQueryCategory() {

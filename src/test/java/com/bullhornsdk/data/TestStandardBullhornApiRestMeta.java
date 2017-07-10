@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
 import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
+import com.bullhornsdk.data.model.entity.core.standard.Branch;
 import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
@@ -70,6 +71,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 		runAssertions(meta, AppointmentAttendee.class);
 
 	}
+
+    @Test
+    public void testMetaBranch() {
+
+        MetaData<Branch> meta = bullhornData.getMetaData(Branch.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Branch.class);
+
+    }
 
 	@Test
 	public void testMetaBusinessSector() {

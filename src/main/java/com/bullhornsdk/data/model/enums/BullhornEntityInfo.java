@@ -185,6 +185,7 @@ public enum BullhornEntityInfo {
             "AppointmentEditHistory", "AppointmentEditHistoryFieldChange"),
     APPOINTMENT_ATTENDEE("AppointmentAttendee", AppointmentAttendee.class, AppointmentAttendeeWrapper.class,
             AppointmentAttendeeListWrapper.class, null, null),
+    BRANCH("Branch", Branch.class, BranchWrapper.class, BranchListWrapper.class, null, null),
     BUSINESS_SECTOR("BusinessSector", BusinessSector.class, BusinessSectorWrapper.class, BusinessSectorListWrapper.class, null, null),
     CANDIDATE("Candidate", Candidate.class, CandidateWrapper.class, CandidateListWrapper.class, "UserEditHistory",
             "UserEditHistoryFieldChange"),

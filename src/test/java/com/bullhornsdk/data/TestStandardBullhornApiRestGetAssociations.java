@@ -12,8 +12,10 @@ import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.association.AssociationFactory;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
+import com.bullhornsdk.data.model.entity.core.standard.Branch;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.Category;
+import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
 import com.bullhornsdk.data.model.entity.core.standard.Person;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
@@ -31,6 +33,25 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
 	public TestStandardBullhornApiRestGetAssociations() {
 		super();
 	}
+
+    @Test
+    public void testGetBranchAssociationCorporateUsers() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Set<Integer> entityIds = new HashSet<Integer>();
+        entityIds.add(testEntities.getBranchId());
+        Set<Integer> associationIds = new HashSet<Integer>();
+        associationIds.add(testEntities.getCorporateUserId());
+
+        this.setUpAssociation(Branch.class, testEntities.getBranchId(), associationIds, AssociationFactory.branchAssociations()
+            .corporateUsers());
+
+        AssociationParams params = ParamFactory.associationParams();
+        params.setCount(100);
+
+        List<CorporateUser> associationList = bullhornData.getAssociation(Branch.class, entityIds, AssociationFactory
+            .branchAssociations().corporateUsers(), getFields(), params);
+        assertResponse(CorporateUser.class, associationList);
+
+    }
 
 	@Test
 	public void testGetCandidateAssociationCategories() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {

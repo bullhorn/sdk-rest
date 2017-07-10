@@ -356,6 +356,7 @@ public class MockDataLoader {
 		Map<Class<? extends BullhornEntity>, String> entityFiles = new LinkedHashMap<Class<? extends BullhornEntity>, String>();
 		entityFiles.put(Appointment.class, "appointment-data.txt");
 		entityFiles.put(AppointmentAttendee.class, "appointmentattendee-data.txt");
+        entityFiles.put(Branch.class, "branch-data.txt");
 		entityFiles.put(BusinessSector.class, "businesssector-data.txt");
 		entityFiles.put(Candidate.class, "candidate-data.txt");
         entityFiles.put(CandidateCertification.class, "candidatecertification-data.txt");
@@ -457,6 +458,7 @@ public class MockDataLoader {
 
 		entityMetaFiles.put(Appointment.class, "meta/appointment-meta-data.txt");
 		entityMetaFiles.put(AppointmentAttendee.class, "meta/appointmentattendee-meta-data.txt");
+        entityMetaFiles.put(Branch.class, "meta/branch-meta-data.txt");
 		entityMetaFiles.put(BusinessSector.class, "meta/businesssector-meta-data.txt");
 		entityMetaFiles.put(Candidate.class, "meta/candidate-meta-data.txt");
         entityMetaFiles.put(CandidateCertification.class, "meta/candidatecertification-meta-data.txt");

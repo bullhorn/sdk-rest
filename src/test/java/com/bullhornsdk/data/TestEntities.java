@@ -16,6 +16,8 @@ public class TestEntities {
 
 	private Integer appointmentAttendeeId;
 
+	private Integer branchId;
+
 	private Integer businessSectorId;
 
 	private Integer candidateId;
@@ -103,6 +105,8 @@ public class TestEntities {
 		this.appointmentId=1;
 
 		this.appointmentAttendeeId=1;
+
+		this.branchId = 1;
 
 		this.businessSectorId=1;
 
@@ -203,7 +207,15 @@ public class TestEntities {
 		this.appointmentAttendeeId = appointmentAttendeeId;
 	}
 
-	public Integer getBusinessSectorId() {
+    public Integer getBranchId() {
+        return branchId;
+    }
+
+    public void setBranchId(Integer branchId) {
+        this.branchId = branchId;
+    }
+
+    public Integer getBusinessSectorId() {
 		return businessSectorId;
 	}
 
@@ -538,6 +550,8 @@ public class TestEntities {
             .append(appointmentId)
             .append(",\n\t\"appointmentAttendeeId\": ")
             .append(appointmentAttendeeId)
+            .append(",\n\t\"branchId\": ")
+            .append(branchId)
             .append(",\n\t\"businessSectorId\": ")
             .append(businessSectorId)
             .append(",\n\t\"candidateId\": ")

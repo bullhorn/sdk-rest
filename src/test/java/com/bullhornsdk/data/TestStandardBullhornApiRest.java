@@ -17,6 +17,7 @@ import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectIns
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
 import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
+import com.bullhornsdk.data.model.entity.core.standard.Branch;
 import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
@@ -78,6 +79,15 @@ public class TestStandardBullhornApiRest extends BaseTest {
 		assertNotNull("AppointmentAttendee is null", entity);
 
 	}
+
+    @Test
+    public void testFindBranch() {
+
+        Branch entity = bullhornData.findEntity(Branch.class, testEntities.getBranchId());
+
+        assertNotNull("Branch is null", entity);
+
+    }
 
 	@Test
 	public void testFindBusinessSector() {
