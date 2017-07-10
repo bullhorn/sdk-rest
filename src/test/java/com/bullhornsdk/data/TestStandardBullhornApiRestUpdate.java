@@ -5,12 +5,33 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.bullhornsdk.data.model.entity.core.standard.*;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Test;
 
+import com.bullhornsdk.data.model.entity.core.standard.Appointment;
+import com.bullhornsdk.data.model.entity.core.standard.Branch;
+import com.bullhornsdk.data.model.entity.core.standard.Candidate;
+import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
+import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
+import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
+import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
+import com.bullhornsdk.data.model.entity.core.standard.Certification;
+import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
+import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
+import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
+import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
+import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
+import com.bullhornsdk.data.model.entity.core.standard.Lead;
+import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
+import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
+import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.PlacementCertification;
+import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
+import com.bullhornsdk.data.model.entity.core.standard.Sendout;
+import com.bullhornsdk.data.model.entity.core.standard.Task;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.response.crud.UpdateResponse;
 
@@ -76,6 +97,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		this.runAssertions(response, newValue, updatedEntity.getSubject());
 
 	}
+
+    @Test
+    public void testUpdateBranch() {
+
+        Branch entity = bullhornData.findEntity(Branch.class, testEntities.getBranchId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getName();
+
+        newValue = previousValue + "toad";
+
+        entity.setName(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        Branch updatedEntity = bullhornData.findEntity(Branch.class, testEntities.getBranchId());
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
+
+    }
 
 	@Test
 	public void testUpdateCandidate() {

@@ -164,59 +164,59 @@ import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomOb
 
 /**
  * Enum that contains the following information about the RestEntities:
- * 
+ * <p>
  * 1. The pretty name.
- * 
+ * <p>
  * 2. The BullhornEntity specific Class<T>
- * 
+ * <p>
  * 3. The ListWrapper<T> class that wraps a list of RestEntities for query/search type requests.
- * 
+ * <p>
  * 4. Mapping between Class<T> and its name.
- * 
+ * <p>
  * 5. Mapping between Class<T> and its ListWrapper<T>.
- * 
+ *
  * @author magnus.palm
- * 
  */
 public enum BullhornEntityInfo {
 
     ADDRESS("Address", null, null, null, null, null),
     APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class,
-            "AppointmentEditHistory", "AppointmentEditHistoryFieldChange"),
+        "AppointmentEditHistory", "AppointmentEditHistoryFieldChange"),
     APPOINTMENT_ATTENDEE("AppointmentAttendee", AppointmentAttendee.class, AppointmentAttendeeWrapper.class,
-            AppointmentAttendeeListWrapper.class, null, null),
+        AppointmentAttendeeListWrapper.class, null, null),
+    BRANCH("Branch", Branch.class, BranchWrapper.class, BranchListWrapper.class, null, null),
     BUSINESS_SECTOR("BusinessSector", BusinessSector.class, BusinessSectorWrapper.class, BusinessSectorListWrapper.class, null, null),
     CANDIDATE("Candidate", Candidate.class, CandidateWrapper.class, CandidateListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CANDIDATE_CERTIFICATION("CandidateCertification", CandidateCertification.class, CandidateCertificationWrapper.class,
         CandidateCertificationListWrapper.class, null, null),
     CANDIDATE_EDUCATION("CandidateEducation", CandidateEducation.class, CandidateEducationWrapper.class,
-            CandidateEducationListWrapper.class, null, null),
+        CandidateEducationListWrapper.class, null, null),
     CANDIDATE_REFERENCE("CandidateReference", CandidateReference.class, CandidateReferenceWrapper.class,
-            CandidateReferenceListWrapper.class, null, null),
+        CandidateReferenceListWrapper.class, null, null),
     CANDIDATE_WORK_HISTORY("CandidateWorkHistory", CandidateWorkHistory.class, CandidateWorkHistoryWrapper.class,
-            CandidateWorkHistoryListWrapper.class, null, null),
+        CandidateWorkHistoryListWrapper.class, null, null),
     CATEGORY("Category", Category.class, CategoryWrapper.class, CategoryListWrapper.class, null, null),
     CERTIFICATION("Certification", Certification.class, CertificationWrapper.class, CertificationListWrapper.class, null, null),
     CLIENT_CONTACT("ClientContact", ClientContact.class, ClientContactWrapper.class, ClientContactListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CLIENT_CORPORATION("ClientCorporation", ClientCorporation.class, ClientCorporationWrapper.class,
-            ClientCorporationListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
+        ClientCorporationListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
     CORPORATE_USER("CorporateUser", CorporateUser.class, CorporateUserWrapper.class, CorporateUserListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CORPORATION_DEPARTMENT("CorporationDepartment", CorporationDepartment.class, CorporationDepartmentWrapper.class,
-            CorporationDepartmentListWrapper.class, null, null),
+        CorporationDepartmentListWrapper.class, null, null),
     COUNTRY("Country", Country.class, CountryWrapper.class, CountryListWrapper.class, null, null),
     DISTRIBUTION_LIST("DistributionList", DistributionList.class, DistributionListWrapper.class, DistributionListListWrapper.class, null, null),
     FILE("File", File.class, FileEntityWrapper.class, FileEntityListWrapper.class, null, null),
     HOUSING_COMPLEX("HousingComplex", HousingComplex.class, HousingComplexWrapper.class, HousingComplexListWrapper.class, null, null),
     JOB_ORDER("JobOrder", JobOrder.class, JobOrderWrapper.class, JobOrderListWrapper.class, "JobOrderEditHistory",
-            "JobOrderEditHistoryFieldChange"),
+        "JobOrderEditHistoryFieldChange"),
     JOB_BOARD_POST("JobBoardPost", JobBoardPost.class, JobBoardPostWrapper.class, JobBoardPostListWrapper.class, null, null),
     JOB_SUBMISSION("JobSubmission", JobSubmission.class, JobSubmissionWrapper.class, JobSubmissionListWrapper.class,
-            "JobSubmissionEditHistory", "JobSubmissionEditHistoryFieldChange"),
+        "JobSubmissionEditHistory", "JobSubmissionEditHistoryFieldChange"),
     JOB_SUBMISSION_HISTORY("JobSubmissionHistory", JobSubmissionHistory.class, JobSubmissionHistoryWrapper.class,
-            JobSubmissionHistoryListWrapper.class, null, null),
+        JobSubmissionHistoryListWrapper.class, null, null),
     LEAD("Lead", Lead.class, LeadWrapper.class, LeadListWrapper.class, "UserEditHistory", "UserEditHistoryFieldChange"),
     LOGIN_RESTRICTIONS("LoginRestrictions", null, null, null, null, null),
     NOTE("Note", Note.class, NoteWrapper.class, NoteListWrapper.class, null, null),
@@ -224,20 +224,20 @@ public enum BullhornEntityInfo {
     OPPORTUNITY("Opportunity", Opportunity.class, OpportunityWrapper.class, OpportunityListWrapper.class, "OpportunityEditHistory", "OpportunityEditHistoryFieldChange"),
     PERSON("Person", Person.class, PersonWrapper.class, PersonListWrapper.class, null, null),
     PLACEMENT("Placement", Placement.class, PlacementWrapper.class, PlacementListWrapper.class, "PlacementEditHistory",
-            "PlacementEditHistoryFieldChange"),
+        "PlacementEditHistoryFieldChange"),
     PLACEMENT_CHANGE_REQUEST("PlacementChangeRequest", PlacementChangeRequest.class, PlacementChangeRequestWrapper.class,
-            PlacementChangeRequestListWrapper.class, null, null),
+        PlacementChangeRequestListWrapper.class, null, null),
     PLACEMENT_CERTIFICATION("PlacementCertification", PlacementCertification.class, PlacementCertificationWrapper.class,
         PlacementCertificationListWrapper.class, null, null),
     PLACEMENT_COMMISSION("PlacementCommission", PlacementCommission.class, PlacementCommissionWrapper.class,
-            PlacementCommissionListWrapper.class, "PlacementCommissionEditHistory", "PlacementCommissionEditHistoryFieldChange"),
+        PlacementCommissionListWrapper.class, "PlacementCommissionEditHistory", "PlacementCommissionEditHistoryFieldChange"),
     PRIVATE_LABEL("PrivateLabel", PrivateLabel.class, PrivateLabelWrapper.class, PrivateLabelListWrapper.class, null, null),
     SENDOUT("Sendout", Sendout.class, SendoutWrapper.class, SendoutListWrapper.class, null, null),
     SKILL("Skill", Skill.class, SkillWrapper.class, SkillListWrapper.class, null, null),
     SPECIALTY("Specialty", Specialty.class, SpecialtyWrapper.class, SpecialtyListWrapper.class, null, null),
     STATE("State", State.class, StateWrapper.class, StateListWrapper.class, null, null),
     TASK("Task", Task.class, TaskWrapper.class, TaskListWrapper.class,
-            "TaskEditHistory", "TaskEditHistoryFieldChange"),
+        "TaskEditHistory", "TaskEditHistoryFieldChange"),
     TEARSHEET("Tearsheet", Tearsheet.class, TearsheetWrapper.class, TearsheetListWrapper.class, null, null),
     TEARSHEET_MEMBER("TearsheetMember", TearsheetMember.class, TearsheetMemberWrapper.class, TearsheetMemberListWrapper.class, null, null),
     TIME_UNIT("TimeUnit", TimeUnit.class, TimeUnitWrapper.class, TimeUnitListWrapper.class, null, null),
@@ -295,8 +295,7 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_7("PersonCustomObjectInstance7", PersonCustomObjectInstance7.class, PersonCustomObjectInstance7Wrapper.class, PersonCustomObjectInstance7ListWrapper.class, null, null),
     PERSON_CUSTOM_OBJECT_INSTANCE_8("PersonCustomObjectInstance8", PersonCustomObjectInstance8.class, PersonCustomObjectInstance8Wrapper.class, PersonCustomObjectInstance8ListWrapper.class, null, null),
     PERSON_CUSTOM_OBJECT_INSTANCE_9("PersonCustomObjectInstance9", PersonCustomObjectInstance9.class, PersonCustomObjectInstance9Wrapper.class, PersonCustomObjectInstance9ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, null, null)
-    ;
+    PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, null, null);
 
     private final String name;
 
@@ -325,7 +324,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the case sensitive name that should be used in bh rest api calls.
-     * 
+     *
      * @return
      */
     public String getName() {
@@ -334,7 +333,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the type of the wrapper for this BullhornEntity
-     * 
+     *
      * @return
      */
     public <T extends BullhornEntity, E extends Wrapper<T>> Class<E> getWrapperType() {
@@ -343,7 +342,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the BullhornEntity class.
-     * 
+     *
      * @return
      */
     public <T extends BullhornEntity> Class<T> getType() {
@@ -352,7 +351,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns a list of all RestEntityNames
-     * 
+     *
      * @return
      */
     public List<BullhornEntityInfo> getAllEntities() {
@@ -361,9 +360,8 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the wrapper class for the BullhornEntity Class<T>
-     * 
-     * @param type
-     *            the BullhornEntity class
+     *
+     * @param type the BullhornEntity class
      * @return
      */
     public static <T extends BullhornEntity, E extends Wrapper<T>> Class<E> getTypesWrapperType(Class<T> type) {
@@ -373,7 +371,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the list wrapper class for the BullhornEntity Class<T>
-     * 
+     *
      * @param type
      * @return
      */
@@ -384,7 +382,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the pretty name for a BullhornEntity Class<T>
-     * 
+     *
      * @param type
      * @return
      */
@@ -395,7 +393,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the BullhornEntityInfo for the BullhornEntity Class<T> passed in
-     * 
+     *
      * @param type
      * @return
      */
@@ -418,7 +416,7 @@ public enum BullhornEntityInfo {
 
     /**
      * Returns the BullhornEntityInfo for the name of the BullhornEntity passed in. Not case sensitive.
-     * 
+     *
      * @param name
      * @return
      */

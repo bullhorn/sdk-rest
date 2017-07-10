@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
 import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
+import com.bullhornsdk.data.model.entity.core.standard.Branch;
 import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
@@ -84,6 +85,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 		runAssertions("ListWrapper<AppointmentAttendee>", wrapper);
 
 	}
+
+    @Test
+    public void testQueryBranch() {
+
+        ListWrapper<Branch> wrapper = bullhornData.query(Branch.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<Branch>", wrapper);
+
+    }
 
 	@Test
 	public void testQueryBusinessSector() {
