@@ -30,11 +30,11 @@ import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 
 public class TestStandardBullhornApiRestAssociations extends BaseTest {
-	private final Logger log = Logger.getLogger(TestStandardBullhornApiRestAssociations.class);
+    private final Logger log = Logger.getLogger(TestStandardBullhornApiRestAssociations.class);
 
-	public TestStandardBullhornApiRestAssociations() {
-		super();
-	}
+    public TestStandardBullhornApiRestAssociations() {
+        super();
+    }
 
     @Test
     public void testAssociateBranch() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
@@ -50,78 +50,78 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
         }
     }
 
-	@Test
-	public void testAssociateCandidate() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
-		for (AssociationField<Candidate, ? extends BullhornEntity> association : AssociationFactory.candidateAssociations().allAssociations()) {
+    @Test
+    public void testAssociateCandidate() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
+        for (AssociationField<Candidate, ? extends BullhornEntity> association : AssociationFactory.candidateAssociations().allAssociations()) {
 
-			Set<Integer> associationIds = new HashSet<Integer>();
-			OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-					association.getAssociationFieldName());
-			if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
-				associationIds.add(linkedIds.getData().get(0).getId());
-				testAssociation(Candidate.class, testEntities.getCandidateId(), associationIds, association);
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(Candidate.class, testEntities.getCandidateId(), associationIds, association);
 
-			}
-		}
+            }
+        }
 
-	}
+    }
 
-	@Test
-	public void testAssociateClientContact() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
-		for (AssociationField<ClientContact, ? extends BullhornEntity> association : AssociationFactory.clientContactAssociations()
-				.allAssociations()) {
+    @Test
+    public void testAssociateClientContact() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
+        for (AssociationField<ClientContact, ? extends BullhornEntity> association : AssociationFactory.clientContactAssociations()
+            .allAssociations()) {
 
-			Set<Integer> associationIds = new HashSet<Integer>();
-			OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-					association.getAssociationFieldName());
-			if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
-				associationIds.add(linkedIds.getData().get(0).getId());
-				testAssociation(ClientContact.class, testEntities.getClientContactId(), associationIds, association);
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(ClientContact.class, testEntities.getClientContactId(), associationIds, association);
 
-			}
-		}
-	}
+            }
+        }
+    }
 
-	@Test
-	public void testAssociateClientCorporation() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
-		for (AssociationField<ClientCorporation, ? extends BullhornEntity> association : AssociationFactory.clientCorporationAssociations()
-				.allAssociations()) {
+    @Test
+    public void testAssociateClientCorporation() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
+        for (AssociationField<ClientCorporation, ? extends BullhornEntity> association : AssociationFactory.clientCorporationAssociations()
+            .allAssociations()) {
 
-			Set<Integer> associationIds = new HashSet<Integer>();
-			OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-					association.getAssociationFieldName());
-			if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
-				associationIds.add(linkedIds.getData().get(0).getId());
-				testAssociation(ClientCorporation.class, testEntities.getClientCorporationId(), associationIds, association);
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(ClientCorporation.class, testEntities.getClientCorporationId(), associationIds, association);
 
-			}
-		}
-	}
+            }
+        }
+    }
 
-	@Test
-	public void testAssociateJobOrder() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+    @Test
+    public void testAssociateJobOrder() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
-		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
-		for (AssociationField<JobOrder, ? extends BullhornEntity> association : AssociationFactory.jobOrderAssociations().allAssociations()) {
+        JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
+        for (AssociationField<JobOrder, ? extends BullhornEntity> association : AssociationFactory.jobOrderAssociations().allAssociations()) {
 
-			Set<Integer> associationIds = new HashSet<Integer>();
-			OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-					association.getAssociationFieldName());
-			if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
-				associationIds.add(linkedIds.getData().get(0).getId());
-				testAssociation(JobOrder.class, testEntities.getJobOrderId(), associationIds, association);
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(JobOrder.class, testEntities.getJobOrderId(), associationIds, association);
 
-			}
-		}
+            }
+        }
 
-	}
+    }
 
     @Test
     public void testAssociateLead() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
@@ -130,7 +130,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
             Set<Integer> associationIds = new HashSet<Integer>();
             OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-                    association.getAssociationFieldName());
+                association.getAssociationFieldName());
             if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
                 associationIds.add(linkedIds.getData().get(0).getId());
@@ -140,22 +140,22 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
         }
     }
 
-	@Test
-	public void testAssociateNote() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
-		for (AssociationField<Note, ? extends BullhornEntity> association : AssociationFactory.noteAssociations().allAssociations()) {
+    @Test
+    public void testAssociateNote() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
+        for (AssociationField<Note, ? extends BullhornEntity> association : AssociationFactory.noteAssociations().allAssociations()) {
 
-			Set<Integer> associationIds = new HashSet<Integer>();
-			OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-					association.getAssociationFieldName());
-			if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
-				associationIds.add(linkedIds.getData().get(0).getId());
-				testAssociation(Note.class, testEntities.getNoteId(), associationIds, association);
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(Note.class, testEntities.getNoteId(), associationIds, association);
 
-			}
-		}
-	}
+            }
+        }
+    }
 
     @Test
     public void testAssociateOpportunity() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
@@ -164,7 +164,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
             Set<Integer> associationIds = new HashSet<Integer>();
             OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-                    association.getAssociationFieldName());
+                association.getAssociationFieldName());
             if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
                 associationIds.add(linkedIds.getData().get(0).getId());
@@ -174,23 +174,23 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
         }
     }
 
-	@Test
-	public void testAssociatePlacement() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId());
-		for (AssociationField<Placement, ? extends BullhornEntity> association : AssociationFactory.placementAssociations().allAssociations()) {
+    @Test
+    public void testAssociatePlacement() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId());
+        for (AssociationField<Placement, ? extends BullhornEntity> association : AssociationFactory.placementAssociations().allAssociations()) {
 
-			Set<Integer> associationIds = new HashSet<Integer>();
-			OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
-					association.getAssociationFieldName());
-			if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
-				associationIds.add(linkedIds.getData().get(0).getId());
+                associationIds.add(linkedIds.getData().get(0).getId());
 
-				testAssociation(Placement.class, testEntities.getPlacementId(), associationIds, association);
+                testAssociation(Placement.class, testEntities.getPlacementId(), associationIds, association);
 
-			}
-		}
-	}
+            }
+        }
+    }
 
     @Test
     public void testAssociateDistributionList() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
@@ -210,21 +210,21 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
         }
     }
 
-	private <T extends AssociationEntity> void testAssociation(Class<T> type, Integer entityId, Set<Integer> associationIds,
-			AssociationField<T, ? extends BullhornEntity> association) {
-		CrudResponse deleteResponse = bullhornData.disassociateWithEntity(type, entityId, association, associationIds);
-		assertCrudResponse(type, deleteResponse);
+    private <T extends AssociationEntity> void testAssociation(Class<T> type, Integer entityId, Set<Integer> associationIds,
+                                                               AssociationField<T, ? extends BullhornEntity> association) {
+        CrudResponse deleteResponse = bullhornData.disassociateWithEntity(type, entityId, association, associationIds);
+        assertCrudResponse(type, deleteResponse);
 
-		CrudResponse createResponse = bullhornData.associateWithEntity(type, entityId, association, associationIds);
-		assertCrudResponse(type, createResponse);
+        CrudResponse createResponse = bullhornData.associateWithEntity(type, entityId, association, associationIds);
+        assertCrudResponse(type, createResponse);
 
-		CrudResponse deleteResponse2 = bullhornData.disassociateWithEntity(type, entityId, association, associationIds);
-		assertCrudResponse(type, deleteResponse2);
-	}
+        CrudResponse deleteResponse2 = bullhornData.disassociateWithEntity(type, entityId, association, associationIds);
+        assertCrudResponse(type, deleteResponse2);
+    }
 
-	private void assertCrudResponse(Class<? extends AssociationEntity> type, CrudResponse response) {
-		assertNotNull(type.getSimpleName() + " is null", response);
-		assertFalse("Error occurred while associating to the " + type.getSimpleName(), response.isError());
-	}
+    private void assertCrudResponse(Class<? extends AssociationEntity> type, CrudResponse response) {
+        assertNotNull(type.getSimpleName() + " is null", response);
+        assertFalse("Error occurred while associating to the " + type.getSimpleName(), response.isError());
+    }
 
 }

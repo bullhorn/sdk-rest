@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "data", "count", "start" })
+@JsonPropertyOrder({"data", "count", "start"})
 public class BranchListWrapper extends StandardListWrapper<Branch> {
 
 }

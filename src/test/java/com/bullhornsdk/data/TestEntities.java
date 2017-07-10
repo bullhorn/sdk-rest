@@ -6,89 +6,88 @@ import java.util.stream.Stream;
 
 /**
  * Contains the PS Sandbox test entities that should be used in unit tests.
- * 
+ *
  * @author magnus.palm
- * 
  */
 public class TestEntities {
 
-	private Integer appointmentId;
+    private Integer appointmentId;
 
-	private Integer appointmentAttendeeId;
+    private Integer appointmentAttendeeId;
 
-	private Integer branchId;
+    private Integer branchId;
 
-	private Integer businessSectorId;
+    private Integer businessSectorId;
 
-	private Integer candidateId;
+    private Integer candidateId;
 
     private Integer candidateCertificationId;
 
-	private Integer candidateEducationId;
+    private Integer candidateEducationId;
 
-	private Integer candidateReferenceId;
+    private Integer candidateReferenceId;
 
-	private Integer candidateWorkHistoryId;
+    private Integer candidateWorkHistoryId;
 
-	private Integer categoryId;
+    private Integer categoryId;
 
-	private Integer certificationId;
+    private Integer certificationId;
 
-	private Integer clientContactId;
+    private Integer clientContactId;
 
-	private Integer clientCorporationId;
+    private Integer clientCorporationId;
 
-	private Integer corporateUserId;
+    private Integer corporateUserId;
 
-	private Integer corporationDepartmentId;
+    private Integer corporationDepartmentId;
 
-	private Integer countryId;
+    private Integer countryId;
 
     private Integer distributionListId;
 
     private Integer fileId;
 
-	private Integer housingComplexId;
+    private Integer housingComplexId;
 
-	private Integer jobOrderId;
+    private Integer jobOrderId;
 
     private Integer jobBoardPostId;
 
-	private Integer jobSubmissionId;
+    private Integer jobSubmissionId;
 
-	private Integer jobSubmissionHistoryId;
+    private Integer jobSubmissionHistoryId;
 
     private Integer leadId;
 
-	private Integer noteId;
+    private Integer noteId;
 
-	private Set<Integer> noteIdList;
+    private Set<Integer> noteIdList;
 
-	private Integer noteEntityId;
+    private Integer noteEntityId;
 
     private Integer opportunityId;
 
-	private Integer placementId;
+    private Integer placementId;
 
     private Integer placementCertificationId;
 
-	private Integer placementChangeRequestId;
+    private Integer placementChangeRequestId;
 
-	private Integer placementCommissionId;
+    private Integer placementCommissionId;
 
-	private Integer sendoutId;
+    private Integer sendoutId;
 
-	private Integer skillId;
+    private Integer skillId;
 
-	private Integer specialtyId;
+    private Integer specialtyId;
 
-	private Integer stateId;
+    private Integer stateId;
 
-	private Integer taskId;
+    private Integer taskId;
 
-	private Integer tearsheetId;
+    private Integer tearsheetId;
 
-	private Integer timeUnitId;
+    private Integer timeUnitId;
 
     private Integer workersCompensationId;
 
@@ -99,88 +98,88 @@ public class TestEntities {
     private Integer requestId;
 
     private String subscriptionId;
-	
-	public TestEntities() {
-		super();
-		this.appointmentId=1;
 
-		this.appointmentAttendeeId=1;
+    public TestEntities() {
+        super();
+        this.appointmentId = 1;
 
-		this.branchId = 1;
+        this.appointmentAttendeeId = 1;
 
-		this.businessSectorId=1;
+        this.branchId = 1;
 
-		this.candidateId=1;
+        this.businessSectorId = 1;
+
+        this.candidateId = 1;
 
         this.candidateCertificationId = 1;
 
-		this.candidateEducationId = 1;
+        this.candidateEducationId = 1;
 
-		this.candidateReferenceId=1;
+        this.candidateReferenceId = 1;
 
-		this.candidateWorkHistoryId=1;
+        this.candidateWorkHistoryId = 1;
 
-		this.categoryId=1;
+        this.categoryId = 1;
 
-		this.certificationId=1;
+        this.certificationId = 1;
 
-		this.clientContactId=1;
+        this.clientContactId = 1;
 
-		this.clientCorporationId=1;
+        this.clientCorporationId = 1;
 
-		this.corporateUserId=1;
+        this.corporateUserId = 1;
 
-		this.corporationDepartmentId=1;
+        this.corporationDepartmentId = 1;
 
-		this.countryId=1;
+        this.countryId = 1;
 
         this.distributionListId = 1;
 
         this.fileId = 1;
 
-		this.housingComplexId=1;
+        this.housingComplexId = 1;
 
-		this.jobOrderId=1;
+        this.jobOrderId = 1;
 
-        this.jobBoardPostId=1;
+        this.jobBoardPostId = 1;
 
-		this.jobSubmissionId=1;
+        this.jobSubmissionId = 1;
 
-		this.jobSubmissionHistoryId=1;
+        this.jobSubmissionHistoryId = 1;
 
         this.leadId = 1;
 
-		this.noteId=1;
+        this.noteId = 1;
 
-		this.noteIdList= Stream.of(1,2).collect(Collectors.toSet());
+        this.noteIdList = Stream.of(1, 2).collect(Collectors.toSet());
 
-		this.noteEntityId=1;
+        this.noteEntityId = 1;
 
         this.opportunityId = 1;
 
-		this.placementId=1;
+        this.placementId = 1;
 
         this.placementCertificationId = 1;
 
-		this.placementChangeRequestId=1;
+        this.placementChangeRequestId = 1;
 
-		this.placementCommissionId=1;
+        this.placementCommissionId = 1;
 
-		this.sendoutId=1;
+        this.sendoutId = 1;
 
-		this.skillId=1;
+        this.skillId = 1;
 
-		this.specialtyId=1;
+        this.specialtyId = 1;
 
-		this.stateId=1;
+        this.stateId = 1;
 
-		this.taskId=1;
+        this.taskId = 1;
 
-		this.tearsheetId=1;
+        this.tearsheetId = 1;
 
-		this.timeUnitId=1;
+        this.timeUnitId = 1;
 
-		this.workersCompensationId = 1;
+        this.workersCompensationId = 1;
 
         this.workersCompensationRateId = 1;
 
@@ -189,23 +188,23 @@ public class TestEntities {
         this.requestId = 1;
 
         this.subscriptionId = "bhps_test_subscription";
-	}
+    }
 
-	public Integer getAppointmentId() {
-		return appointmentId;
-	}
+    public Integer getAppointmentId() {
+        return appointmentId;
+    }
 
-	public void setAppointmentId(Integer appointmentId) {
-		this.appointmentId = appointmentId;
-	}
+    public void setAppointmentId(Integer appointmentId) {
+        this.appointmentId = appointmentId;
+    }
 
-	public Integer getAppointmentAttendeeId() {
-		return appointmentAttendeeId;
-	}
+    public Integer getAppointmentAttendeeId() {
+        return appointmentAttendeeId;
+    }
 
-	public void setAppointmentAttendeeId(Integer appointmentAttendeeId) {
-		this.appointmentAttendeeId = appointmentAttendeeId;
-	}
+    public void setAppointmentAttendeeId(Integer appointmentAttendeeId) {
+        this.appointmentAttendeeId = appointmentAttendeeId;
+    }
 
     public Integer getBranchId() {
         return branchId;
@@ -216,100 +215,100 @@ public class TestEntities {
     }
 
     public Integer getBusinessSectorId() {
-		return businessSectorId;
-	}
+        return businessSectorId;
+    }
 
-	public void setBusinessSectorId(Integer businessSectorId) {
-		this.businessSectorId = businessSectorId;
-	}
+    public void setBusinessSectorId(Integer businessSectorId) {
+        this.businessSectorId = businessSectorId;
+    }
 
-	public Integer getCandidateId() {
-		return candidateId;
-	}
+    public Integer getCandidateId() {
+        return candidateId;
+    }
 
-	public void setCandidateId(Integer candidateId) {
-		this.candidateId = candidateId;
-	}
+    public void setCandidateId(Integer candidateId) {
+        this.candidateId = candidateId;
+    }
 
-	public Integer getCandidateEducationId() {
-		return candidateEducationId;
-	}
+    public Integer getCandidateEducationId() {
+        return candidateEducationId;
+    }
 
-	public void setCandidateEducationId(Integer candidateEducationId) {
-		this.candidateEducationId = candidateEducationId;
-	}
+    public void setCandidateEducationId(Integer candidateEducationId) {
+        this.candidateEducationId = candidateEducationId;
+    }
 
-	public Integer getCandidateReferenceId() {
-		return candidateReferenceId;
-	}
+    public Integer getCandidateReferenceId() {
+        return candidateReferenceId;
+    }
 
-	public void setCandidateReferenceId(Integer candidateReferenceId) {
-		this.candidateReferenceId = candidateReferenceId;
-	}
+    public void setCandidateReferenceId(Integer candidateReferenceId) {
+        this.candidateReferenceId = candidateReferenceId;
+    }
 
-	public Integer getCandidateWorkHistoryId() {
-		return candidateWorkHistoryId;
-	}
+    public Integer getCandidateWorkHistoryId() {
+        return candidateWorkHistoryId;
+    }
 
-	public void setCandidateWorkHistoryId(Integer candidateWorkHistoryId) {
-		this.candidateWorkHistoryId = candidateWorkHistoryId;
-	}
+    public void setCandidateWorkHistoryId(Integer candidateWorkHistoryId) {
+        this.candidateWorkHistoryId = candidateWorkHistoryId;
+    }
 
-	public Integer getCategoryId() {
-		return categoryId;
-	}
+    public Integer getCategoryId() {
+        return categoryId;
+    }
 
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
-	}
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
 
-	public Integer getCertificationId() {
-		return certificationId;
-	}
+    public Integer getCertificationId() {
+        return certificationId;
+    }
 
-	public void setCertificationId(Integer certificationId) {
-		this.certificationId = certificationId;
-	}
+    public void setCertificationId(Integer certificationId) {
+        this.certificationId = certificationId;
+    }
 
-	public Integer getClientContactId() {
-		return clientContactId;
-	}
+    public Integer getClientContactId() {
+        return clientContactId;
+    }
 
-	public void setClientContactId(Integer clientContactId) {
-		this.clientContactId = clientContactId;
-	}
+    public void setClientContactId(Integer clientContactId) {
+        this.clientContactId = clientContactId;
+    }
 
-	public Integer getClientCorporationId() {
-		return clientCorporationId;
-	}
+    public Integer getClientCorporationId() {
+        return clientCorporationId;
+    }
 
-	public void setClientCorporationId(Integer clientCorporationId) {
-		this.clientCorporationId = clientCorporationId;
-	}
+    public void setClientCorporationId(Integer clientCorporationId) {
+        this.clientCorporationId = clientCorporationId;
+    }
 
-	public Integer getCorporateUserId() {
-		return corporateUserId;
-	}
+    public Integer getCorporateUserId() {
+        return corporateUserId;
+    }
 
-	public void setCorporateUserId(Integer corporateUserId) {
-		this.corporateUserId = corporateUserId;
-	}
+    public void setCorporateUserId(Integer corporateUserId) {
+        this.corporateUserId = corporateUserId;
+    }
 
-	public Integer getCorporationDepartmentId() {
-		return corporationDepartmentId;
-	}
+    public Integer getCorporationDepartmentId() {
+        return corporationDepartmentId;
+    }
 
-	public void setCorporationDepartmentId(Integer corporationDepartmentId) {
-		this.corporationDepartmentId = corporationDepartmentId;
-	}
+    public void setCorporationDepartmentId(Integer corporationDepartmentId) {
+        this.corporationDepartmentId = corporationDepartmentId;
+    }
 
-	public Integer getCountryId() {
-		return countryId;
-	}
+    public Integer getCountryId() {
+        return countryId;
+    }
 
-	public void setCountryId(Integer countryId) {
-		this.countryId = countryId;
-	}
+    public void setCountryId(Integer countryId) {
+        this.countryId = countryId;
+    }
 
     public Integer getDistributionListId() {
         return distributionListId;
@@ -328,20 +327,20 @@ public class TestEntities {
     }
 
     public Integer getHousingComplexId() {
-		return housingComplexId;
-	}
+        return housingComplexId;
+    }
 
-	public void setHousingComplexId(Integer housingComplexId) {
-		this.housingComplexId = housingComplexId;
-	}
+    public void setHousingComplexId(Integer housingComplexId) {
+        this.housingComplexId = housingComplexId;
+    }
 
-	public Integer getJobOrderId() {
-		return jobOrderId;
-	}
+    public Integer getJobOrderId() {
+        return jobOrderId;
+    }
 
-	public void setJobOrderId(Integer jobOrderId) {
-		this.jobOrderId = jobOrderId;
-	}
+    public void setJobOrderId(Integer jobOrderId) {
+        this.jobOrderId = jobOrderId;
+    }
 
     public Integer getJobBoardPostId() {
         return jobBoardPostId;
@@ -352,20 +351,20 @@ public class TestEntities {
     }
 
     public Integer getJobSubmissionId() {
-		return jobSubmissionId;
-	}
+        return jobSubmissionId;
+    }
 
-	public void setJobSubmissionId(Integer jobSubmissionId) {
-		this.jobSubmissionId = jobSubmissionId;
-	}
+    public void setJobSubmissionId(Integer jobSubmissionId) {
+        this.jobSubmissionId = jobSubmissionId;
+    }
 
-	public Integer getJobSubmissionHistoryId() {
-		return jobSubmissionHistoryId;
-	}
+    public Integer getJobSubmissionHistoryId() {
+        return jobSubmissionHistoryId;
+    }
 
-	public void setJobSubmissionHistoryId(Integer jobSubmissionHistoryId) {
-		this.jobSubmissionHistoryId = jobSubmissionHistoryId;
-	}
+    public void setJobSubmissionHistoryId(Integer jobSubmissionHistoryId) {
+        this.jobSubmissionHistoryId = jobSubmissionHistoryId;
+    }
 
     public Integer getLeadId() {
         return leadId;
@@ -376,28 +375,28 @@ public class TestEntities {
     }
 
     public Integer getNoteId() {
-		return noteId;
-	}
+        return noteId;
+    }
 
-	public void setNoteId(Integer noteId) {
-		this.noteId = noteId;
-	}
+    public void setNoteId(Integer noteId) {
+        this.noteId = noteId;
+    }
 
-	public Set<Integer> getNoteIdList() {
-		return noteIdList;
-	}
+    public Set<Integer> getNoteIdList() {
+        return noteIdList;
+    }
 
-	public void setNoteIdList(Set<Integer> noteIdList) {
-		this.noteIdList = noteIdList;
-	}
+    public void setNoteIdList(Set<Integer> noteIdList) {
+        this.noteIdList = noteIdList;
+    }
 
-	public Integer getNoteEntityId() {
-		return noteEntityId;
-	}
+    public Integer getNoteEntityId() {
+        return noteEntityId;
+    }
 
-	public void setNoteEntityId(Integer noteEntityId) {
-		this.noteEntityId = noteEntityId;
-	}
+    public void setNoteEntityId(Integer noteEntityId) {
+        this.noteEntityId = noteEntityId;
+    }
 
     public Integer getOpportunityId() {
         return opportunityId;
@@ -408,84 +407,84 @@ public class TestEntities {
     }
 
     public Integer getPlacementId() {
-		return placementId;
-	}
+        return placementId;
+    }
 
-	public void setPlacementId(Integer placementId) {
-		this.placementId = placementId;
-	}
+    public void setPlacementId(Integer placementId) {
+        this.placementId = placementId;
+    }
 
-	public Integer getPlacementChangeRequestId() {
-		return placementChangeRequestId;
-	}
+    public Integer getPlacementChangeRequestId() {
+        return placementChangeRequestId;
+    }
 
-	public void setPlacementChangeRequestId(Integer placementChangeRequestId) {
-		this.placementChangeRequestId = placementChangeRequestId;
-	}
+    public void setPlacementChangeRequestId(Integer placementChangeRequestId) {
+        this.placementChangeRequestId = placementChangeRequestId;
+    }
 
-	public Integer getPlacementCommissionId() {
-		return placementCommissionId;
-	}
+    public Integer getPlacementCommissionId() {
+        return placementCommissionId;
+    }
 
-	public void setPlacementCommissionId(Integer placementCommissionId) {
-		this.placementCommissionId = placementCommissionId;
-	}
+    public void setPlacementCommissionId(Integer placementCommissionId) {
+        this.placementCommissionId = placementCommissionId;
+    }
 
-	public Integer getSendoutId() {
-		return sendoutId;
-	}
+    public Integer getSendoutId() {
+        return sendoutId;
+    }
 
-	public void setSendoutId(Integer sendoutId) {
-		this.sendoutId = sendoutId;
-	}
+    public void setSendoutId(Integer sendoutId) {
+        this.sendoutId = sendoutId;
+    }
 
-	public Integer getSkillId() {
-		return skillId;
-	}
+    public Integer getSkillId() {
+        return skillId;
+    }
 
-	public void setSkillId(Integer skillId) {
-		this.skillId = skillId;
-	}
+    public void setSkillId(Integer skillId) {
+        this.skillId = skillId;
+    }
 
-	public Integer getSpecialtyId() {
-		return specialtyId;
-	}
+    public Integer getSpecialtyId() {
+        return specialtyId;
+    }
 
-	public void setSpecialtyId(Integer specialtyId) {
-		this.specialtyId = specialtyId;
-	}
+    public void setSpecialtyId(Integer specialtyId) {
+        this.specialtyId = specialtyId;
+    }
 
-	public Integer getStateId() {
-		return stateId;
-	}
+    public Integer getStateId() {
+        return stateId;
+    }
 
-	public void setStateId(Integer stateId) {
-		this.stateId = stateId;
-	}
+    public void setStateId(Integer stateId) {
+        this.stateId = stateId;
+    }
 
-	public Integer getTaskId() {
-		return taskId;
-	}
+    public Integer getTaskId() {
+        return taskId;
+    }
 
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
-	}
+    public void setTaskId(Integer taskId) {
+        this.taskId = taskId;
+    }
 
-	public Integer getTimeUnitId() {
-		return timeUnitId;
-	}
+    public Integer getTimeUnitId() {
+        return timeUnitId;
+    }
 
-	public void setTimeUnitId(Integer timeUnitId) {
-		this.timeUnitId = timeUnitId;
-	}
+    public void setTimeUnitId(Integer timeUnitId) {
+        this.timeUnitId = timeUnitId;
+    }
 
-	public Integer getTearsheetId() {
-		return tearsheetId;
-	}
+    public Integer getTearsheetId() {
+        return tearsheetId;
+    }
 
-	public void setTearsheetId(Integer tearsheetId) {
-		this.tearsheetId = tearsheetId;
-	}
+    public void setTearsheetId(Integer tearsheetId) {
+        this.tearsheetId = tearsheetId;
+    }
 
     public Integer getWorkersCompensationId() {
         return workersCompensationId;

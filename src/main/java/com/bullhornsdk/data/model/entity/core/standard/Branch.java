@@ -21,11 +21,11 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "name", "isDeleted", "parentBranch", "externalID", "dateAdded", "customText1", "customText2", "customText3",
+@JsonPropertyOrder({"id", "name", "isDeleted", "parentBranch", "externalID", "dateAdded", "customText1", "customText2", "customText3",
     "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customText10", "customTextBlock1",
     "customTextBlock2", "customTextBlock3", "customDate1", "customDate2", "customDate3", "customDate4", "customDate5", "customDate6",
     "customFloat1", "customFloat2", "customFloat3", "customFloat4", "customFloat5", "customFloat6", "customInt1", "customInt2", "customInt3",
-    "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customInt10", "ancestors", "descendants", "corporateUsers" })
+    "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customInt10", "ancestors", "descendants", "corporateUsers"})
 public class Branch extends BaseCustomFields implements AllRecordsEntity, CreateEntity, UpdateEntity, QueryEntity, SoftDeleteEntity, AssociationEntity {
 
     private Integer id;

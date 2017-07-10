@@ -8,13 +8,12 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 /**
  * Central factory class when dealing with entity associations. In most cases client code will only need to deal with this factory
  * class. This class, and the underlying EntityAssociations<T extends AssociationEntity>, ensures type safety and that only valid associations are used when accessing the REST api.
- * 
+ *
  * @author magnus.palm
- * 
  */
 public class AssociationFactory {
 
-	private static final AppointmentAssociations appointmentAssociations = AppointmentAssociations.getInstance();
+    private static final AppointmentAssociations appointmentAssociations = AppointmentAssociations.getInstance();
     private static final BranchAssociations branchAssociations = BranchAssociations.getInstance();
     private static final CandidateAssociations candidateAssociations = CandidateAssociations.getInstance();
     private static final CategoryAssociations categoryAssociations = CategoryAssociations.getInstance();
@@ -33,18 +32,16 @@ public class AssociationFactory {
     /**
      * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
      * passed in assocationName.
-     * 
+     * <p>
      * <b> NOTE: for type safety use candidateAssociations(),categoryAssociations() etc. instead! </b>
-     * 
-     * @throws IllegalArgumentException
-     *             if no association with the assocationName exists in the type.
-     * 
+     *
      * @param type
      * @param associationName
      * @return
+     * @throws IllegalArgumentException if no association with the assocationName exists in the type.
      */
     public static <T extends AssociationEntity> AssociationField<T, ? extends BullhornEntity> getAssociationField(Class<T> type,
-            String associationName) {
+                                                                                                                  String associationName) {
 
         EntityAssociations<T> entityAssociations = getEntityAssociation(type);
 
@@ -55,14 +52,14 @@ public class AssociationFactory {
     @SuppressWarnings("unchecked")
     private static <T extends AssociationEntity> EntityAssociations<T> getEntityAssociation(Class<T> type) {
 
-    	if (type == Appointment.class) {
-    		return (EntityAssociations<T>) appointmentAssociations;
-    	}
-    	
-    	if(type == Branch.class) {
-    	    return (EntityAssociations<T>) branchAssociations;
+        if (type == Appointment.class) {
+            return (EntityAssociations<T>) appointmentAssociations;
         }
-    	
+
+        if (type == Branch.class) {
+            return (EntityAssociations<T>) branchAssociations;
+        }
+
         if (type == Candidate.class) {
             return (EntityAssociations<T>) candidateAssociations;
         }
@@ -111,8 +108,8 @@ public class AssociationFactory {
             return (EntityAssociations<T>) tearsheetAssociations;
         }
 
-        if(type == WorkersCompensation.class) {
-    	    return (EntityAssociations<T>) workersCompensationAssociations;
+        if (type == WorkersCompensation.class) {
+            return (EntityAssociations<T>) workersCompensationAssociations;
         }
 
         return null;
@@ -121,7 +118,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for Appointment
-     * 
+     *
      * @return
      */
     public static AppointmentAssociations appointmentAssociations() {
@@ -139,7 +136,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for Candidate
-     * 
+     *
      * @return
      */
     public static CandidateAssociations candidateAssociations() {
@@ -148,7 +145,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for Category
-     * 
+     *
      * @return
      */
     public static CategoryAssociations categoryAssociations() {
@@ -157,7 +154,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for ClientContact
-     * 
+     *
      * @return
      */
     public static ClientContactAssociations clientContactAssociations() {
@@ -166,7 +163,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for ClientCorporation
-     * 
+     *
      * @return
      */
     public static ClientCorporationAssociations clientCorporationAssociations() {
@@ -193,7 +190,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for JobOrder
-     * 
+     *
      * @return
      */
     public static JobOrderAssociations jobOrderAssociations() {
@@ -202,7 +199,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for Note
-     * 
+     *
      * @return
      */
     public static NoteAssociations noteAssociations() {
@@ -211,7 +208,7 @@ public class AssociationFactory {
 
     /**
      * Returns the associations for Placement
-     * 
+     *
      * @return
      */
     public static PlacementAssociations placementAssociations() {
