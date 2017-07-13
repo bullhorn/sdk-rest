@@ -16,9 +16,9 @@ public class LoginRestrictions extends AbstractEntity {
 
     private String ipAddress;
 
-    private DateTime timeStart;
+    private String timeStart;
 
-    private DateTime timeEnd;
+    private String timeEnd;
 
     private List<String> weekDays = new ArrayList<String>();
 
@@ -33,22 +33,22 @@ public class LoginRestrictions extends AbstractEntity {
     }
 
     @JsonProperty("timeStart")
-    public DateTime getTimeStart() {
+    public String getTimeStart() {
         return timeStart;
     }
 
     @JsonProperty("timeStart")
-    public void setTimeStart(DateTime timeStart) {
+    public void setTimeStart(String timeStart) {
         this.timeStart = timeStart;
     }
 
     @JsonProperty("timeEnd")
-    public DateTime getTimeEnd() {
+    public String getTimeEnd() {
         return timeEnd;
     }
 
     @JsonProperty("timeEnd")
-    public void setTimeEnd(DateTime timeEnd) {
+    public void setTimeEnd(String timeEnd) {
         this.timeEnd = timeEnd;
     }
 
@@ -90,12 +90,12 @@ public class LoginRestrictions extends AbstractEntity {
         if (timeEnd == null) {
             if (other.timeEnd != null)
                 return false;
-        } else if (!timeEnd.isEqual(other.timeEnd))
+        } else if (!timeEnd.equals(other.timeEnd))
             return false;
         if (timeStart == null) {
             if (other.timeStart != null)
                 return false;
-        } else if (!timeStart.isEqual(other.timeStart))
+        } else if (!timeStart.equals(other.timeStart))
             return false;
         if (weekDays == null) {
             if (other.weekDays != null)
