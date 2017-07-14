@@ -43,6 +43,8 @@ public class TestEntities {
 
     private Integer countryId;
 
+    private Integer departmentId;
+
     private Integer distributionListId;
 
     private Integer fileId;
@@ -132,6 +134,8 @@ public class TestEntities {
         this.corporationDepartmentId = 1;
 
         this.countryId = 1;
+
+        this.departmentId = 1;
 
         this.distributionListId = 1;
 
@@ -308,6 +312,14 @@ public class TestEntities {
 
     public void setCountryId(Integer countryId) {
         this.countryId = countryId;
+    }
+
+    public Integer getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(Integer departmentId) {
+        this.departmentId = departmentId;
     }
 
     public Integer getDistributionListId() {
@@ -577,6 +589,8 @@ public class TestEntities {
             .append(corporationDepartmentId)
             .append(",\n\t\"countryId\": ")
             .append(countryId)
+            .append(",\n\t\"departmentId\": ")
+            .append(departmentId)
             .append(",\n\t\"distributionListId\": ")
             .append(distributionListId)
             .append(",\n\t\"fileId\": ")

@@ -1,0 +1,52 @@
+{
+    "entity": "Department",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/367f6s/meta/Department?fields=*",
+    "label": "Department",
+    "dateLastModified": "1500057815706",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "optional": false,
+            "label": "Description",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "enabled",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "optional": false,
+            "label": "Enabled",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        }
+    ]
+}

@@ -11,6 +11,7 @@ import com.bullhornsdk.data.model.entity.core.standard.Category;
 import com.bullhornsdk.data.model.entity.core.standard.Certification;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
+import com.bullhornsdk.data.model.entity.core.standard.Department;
 import com.bullhornsdk.data.model.entity.core.standard.PrivateLabel;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
@@ -84,12 +85,21 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
 	}
 
+    @Test
+    public void testQueryCountry() {
+
+        ListWrapper<Country> wrapper = bullhornData.queryForAllRecords(Country.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<Country>", wrapper);
+
+    }
+
 	@Test
-	public void testQueryCountry() {
+	public void testQueryDepartment() {
 
-		ListWrapper<Country> wrapper = bullhornData.queryForAllRecords(Country.class, where, null, queryParams);
+		ListWrapper<Department> wrapper = bullhornData.queryForAllRecords(Department.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Country>", wrapper);
+		runAssertions("ListWrapper<Department>", wrapper);
 
 	}
 
