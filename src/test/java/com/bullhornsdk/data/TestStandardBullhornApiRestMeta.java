@@ -23,6 +23,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
+import com.bullhornsdk.data.model.entity.core.standard.Department;
 import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
 import com.bullhornsdk.data.model.entity.core.standard.JobBoardPost;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
@@ -185,6 +186,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 		runAssertions(meta, Country.class);
 
 	}
+
+    @Test
+    public void testMetaDepartment() {
+
+        MetaData<Department> meta = bullhornData.getMetaData(Department.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Department.class);
+
+    }
 
     @Test
     public void testMetaDistributionList() {

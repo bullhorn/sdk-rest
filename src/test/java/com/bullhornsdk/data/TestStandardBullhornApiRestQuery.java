@@ -21,6 +21,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
+import com.bullhornsdk.data.model.entity.core.standard.Department;
 import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
 import com.bullhornsdk.data.model.entity.core.standard.File;
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
@@ -201,6 +202,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 		runAssertions("ListWrapper<Country>", wrapper);
 
 	}
+
+    @Test
+    public void testQueryDepartment() {
+
+        ListWrapper<Department> wrapper = bullhornData.query(Department.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<Department>", wrapper);
+
+    }
 
     @Test
     public void testQueryDistributionList() {

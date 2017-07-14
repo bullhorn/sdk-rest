@@ -20,6 +20,7 @@ import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
 import com.bullhornsdk.data.model.entity.core.standard.Certification;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
+import com.bullhornsdk.data.model.entity.core.standard.Department;
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
@@ -288,6 +289,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		this.runAssertions(response, newValue, updatedEntity.getName());
 
 	}
+
+    @Test
+    public void testUpdateDepartment() {
+
+        Department entity = bullhornData.findEntity(Department.class, testEntities.getDepartmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getName();
+
+        newValue = previousValue + "toad";
+
+        entity.setName(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        Department updatedEntity = bullhornData.findEntity(Department.class, testEntities.getDepartmentId());
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
+
+    }
 
 	@Test
 	public void testUpdateHousingComplex() {

@@ -17,6 +17,7 @@ import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
 import com.bullhornsdk.data.model.entity.core.standard.Certification;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
+import com.bullhornsdk.data.model.entity.core.standard.Department;
 import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
 import com.bullhornsdk.data.model.entity.core.standard.Lead;
@@ -255,6 +256,24 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
         entity.setId(oldId);
         this.runAssertions(response, entity, newEntity);
 
+    }
+
+    @Test
+    public void testCreateDepartment() {
+        Department entity = bullhornData.findEntity(Department.class, testEntities.getDepartmentId());
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        Department newEntity = bullhornData.findEntity(Department.class, response.getChangedEntityId());
+
+        this.entityId = response.getChangedEntityId();
+
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
     }
 
     @Test

@@ -30,6 +30,7 @@ import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.Country;
+import com.bullhornsdk.data.model.entity.core.standard.Department;
 import com.bullhornsdk.data.model.entity.core.standard.File;
 import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
 import com.bullhornsdk.data.model.entity.core.standard.JobBoardPost;
@@ -549,6 +550,15 @@ public class TestStandardBullhornApiRest extends BaseTest {
         Country entity = bullhornData.findEntity(Country.class, testEntities.getCountryId(), this.getFieldSet());
 
         assertNotNull("Country is null", entity);
+
+    }
+
+    @Test
+    public void testFindDepartmentFields() {
+
+        Department entity = bullhornData.findEntity(Department.class, testEntities.getDepartmentId(), this.getFieldSet());
+
+        assertNotNull("Department is null", entity);
 
     }
 
