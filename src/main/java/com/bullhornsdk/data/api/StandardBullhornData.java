@@ -96,6 +96,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -995,14 +996,21 @@ public class StandardBullhornData implements BullhornData {
         try {
             jsonString = restJsonConverter.convertEntityToJsonString(entity);
             response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
+        } catch (RestApiException e) {
+            logIfNeeded(uriVariables, url, jsonString);
+            throw e;
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, entity.getId());
-            if (logRequestsOnFailure) {
-                log.warn("UpdateEntity Request failed. url: " + url + " , json: " + jsonString);
-            }
         }
 
         return (C) response;
+    }
+
+    private void logIfNeeded(Map<String, String> uriVariables, String url, String jsonString) {
+        if (logRequestsOnFailure) {
+			URI uri = restTemplate.getUriTemplateHandler().expand(url, uriVariables);
+			log.warn("UpdateEntity Request failed. url: " + uri + " , json: " + jsonString);
+		}
     }
 
     /**
@@ -1045,11 +1053,11 @@ public class StandardBullhornData implements BullhornData {
         try {
             jsonString = restJsonConverter.convertEntityToJsonString(entity);
             response = this.performCustomRequest(url, jsonString, CreateResponse.class, uriVariables, HttpMethod.PUT, null);
+        } catch (RestApiException e) {
+            logIfNeeded(uriVariables, url, jsonString);
+            throw e;
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new CreateResponse(), error, entity.getId());
-            if (logRequestsOnFailure) {
-                log.warn("CreateEntity Request failed. url: " + url + " , json: " + jsonString);
-            }
         }
         return (C) response;
     }
@@ -1080,11 +1088,11 @@ public class StandardBullhornData implements BullhornData {
             if (isHardDeleteEntity(type)) {
                 response = this.performCustomRequest(url, null, DeleteResponse.class, uriVariables, HttpMethod.DELETE, null);
             }
+        } catch (RestApiException e) {
+            logIfNeeded(uriVariables, url, jsonString);
+            throw e;
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new DeleteResponse(), error, id);
-            if (logRequestsOnFailure) {
-                log.warn("DeleteEntity Request failed. url: " + url + " , json: " + jsonString);
-            }
         }
 
         return (C) response;
