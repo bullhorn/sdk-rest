@@ -154,6 +154,8 @@ public class StandardBullhornData implements BullhornData {
 
     protected final static int MAX_RECORDS_TO_RETURN_TOTAL = 20000;
 
+    protected boolean logRequestsOnFailure = false;
+
     public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials) {
         this.restSession = new RestApiSession(bullhornRestCredentials);
         this.restTemplate = RestTemplateFactory.getInstance();
@@ -176,6 +178,10 @@ public class StandardBullhornData implements BullhornData {
         this.restUriVariablesFactory = new RestUriVariablesFactory(this, this.restFileManager);
         this.restErrorHandler = new RestErrorHandler();
         this.concurrencyService = new RestConcurrencyService();
+    }
+
+    public void setLogRequestsOnFailure(boolean logRequestsOnFailure) {
+        this.logRequestsOnFailure = logRequestsOnFailure;
     }
 
     /**
@@ -985,11 +991,15 @@ public class StandardBullhornData implements BullhornData {
 
         CrudResponse response;
 
+        String jsonString = null;
         try {
-            String jsonString = restJsonConverter.convertEntityToJsonString(entity);
+            jsonString = restJsonConverter.convertEntityToJsonString(entity);
             response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, entity.getId());
+            if (logRequestsOnFailure) {
+                log.warn("UpdateEntity Request failed. url: " + url + " , json: " + jsonString);
+            }
         }
 
         return (C) response;
@@ -1031,13 +1041,16 @@ public class StandardBullhornData implements BullhornData {
 
         CrudResponse response;
 
+        String jsonString = null;
         try {
-            String jsonString = restJsonConverter.convertEntityToJsonString(entity);
+            jsonString = restJsonConverter.convertEntityToJsonString(entity);
             response = this.performCustomRequest(url, jsonString, CreateResponse.class, uriVariables, HttpMethod.PUT, null);
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new CreateResponse(), error, entity.getId());
+            if (logRequestsOnFailure) {
+                log.warn("CreateEntity Request failed. url: " + url + " , json: " + jsonString);
+            }
         }
-
         return (C) response;
     }
 
@@ -1055,10 +1068,11 @@ public class StandardBullhornData implements BullhornData {
 
         CrudResponse response = null;
 
+        String jsonString = null;
         try {
 
             if (isSoftDeleteEntity(type)) {
-                String jsonString = "{\"isDeleted\" : true}";
+                jsonString = "{\"isDeleted\" : true}";
 
                 response = this.performPostRequest(url, jsonString, DeleteResponse.class, uriVariables);
             }
@@ -1068,6 +1082,9 @@ public class StandardBullhornData implements BullhornData {
             }
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new DeleteResponse(), error, id);
+            if (logRequestsOnFailure) {
+                log.warn("DeleteEntity Request failed. url: " + url + " , json: " + jsonString);
+            }
         }
 
         return (C) response;
