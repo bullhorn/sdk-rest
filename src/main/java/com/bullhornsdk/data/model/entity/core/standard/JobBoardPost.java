@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "address", "appointments", "approvedPlacements", "assignedUsers", "benefits", "billRateCategoryID",
-		"bonusPackage", "branchCode", "businessSectors", "categories", "certificationList", "certifications", "clientBillRate",
+		"bonusPackage", "branch", "branchCode", "businessSectors", "categories", "certificationList", "certifications", "clientBillRate",
 		"clientContact", "clientCorporation", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3",
 		"correlatedCustomFloat1", "correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1", "correlatedCustomInt2",
 		"correlatedCustomInt3", "correlatedCustomText1", "correlatedCustomText10", "correlatedCustomText2", "correlatedCustomText3",
