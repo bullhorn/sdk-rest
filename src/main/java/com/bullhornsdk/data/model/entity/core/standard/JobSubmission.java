@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "appointments", "billRate", "candidate", "customText1", "customText2", "customText3", "customText4",
+@JsonPropertyOrder({ "id", "appointments", "billRate", "branch", "candidate", "customText1", "customText2", "customText3", "customText4",
         "customText5", "dateAdded", "dateLastModified", "dateWebResponse", "isDeleted", "isHidden", "jobOrder", "migrateGUID",
         "payRate", "salary", "sendingUser", "source", "status", "tasks" })
 public class JobSubmission extends BaseCustomFields implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
@@ -31,6 +31,9 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 	private Integer id;
 	private OneToManyLinkedId appointments;
 	private BigDecimal billRate;
+
+	private Branch branch;
+
 	private Candidate candidate;
 
     @JsonIgnore
@@ -129,7 +132,17 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 		this.billRate = billRate;
 	}
 
-	@JsonProperty("candidate")
+    @JsonProperty("branch")
+    public Branch getBranch() {
+        return branch;
+    }
+
+    @JsonProperty("branch")
+    public void setBranch(Branch branch) {
+        this.branch = branch;
+    }
+
+    @JsonProperty("candidate")
 	public Candidate getCandidate() {
 		return candidate;
 	}
@@ -331,96 +344,101 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
     public void setComments(String comments) {
         this.comments = comments;
     }
-    
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
 
-		JobSubmission that = (JobSubmission) o;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
-		if (id != null ? !id.equals(that.id) : that.id != null) return false;
-		if (appointments != null ? !appointments.equals(that.appointments) : that.appointments != null) return false;
-		if (billRate != null ? !billRate.equals(that.billRate) : that.billRate != null) return false;
-		if (candidate != null ? !candidate.equals(that.candidate) : that.candidate != null) return false;
+        JobSubmission that = (JobSubmission) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (appointments != null ? !appointments.equals(that.appointments) : that.appointments != null) return false;
+        if (billRate != null ? !billRate.equals(that.billRate) : that.billRate != null) return false;
+        if (branch != null ? !branch.equals(that.branch) : that.branch != null) return false;
+        if (candidate != null ? !candidate.equals(that.candidate) : that.candidate != null) return false;
         if (customText1 != null ? !customText1.equals(that.customText1) : that.customText1 != null) return false;
         if (customText2 != null ? !customText2.equals(that.customText2) : that.customText2 != null) return false;
         if (customText3 != null ? !customText3.equals(that.customText3) : that.customText3 != null) return false;
         if (customText4 != null ? !customText4.equals(that.customText4) : that.customText4 != null) return false;
         if (customText5 != null ? !customText5.equals(that.customText5) : that.customText5 != null) return false;
         if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
-		if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
-			return false;
-		if (dateWebResponse != null ? !dateWebResponse.equals(that.dateWebResponse) : that.dateWebResponse != null)
-			return false;
-		if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
-		if (isHidden != null ? !isHidden.equals(that.isHidden) : that.isHidden != null) return false;
-		if (jobOrder != null ? !jobOrder.equals(that.jobOrder) : that.jobOrder != null) return false;
-		if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
-		if (payRate != null ? !payRate.equals(that.payRate) : that.payRate != null) return false;
-		if (salary != null ? !salary.equals(that.salary) : that.salary != null) return false;
-		if (sendingUser != null ? !sendingUser.equals(that.sendingUser) : that.sendingUser != null) return false;
-		if (source != null ? !source.equals(that.source) : that.source != null) return false;
-		if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (comments != null ? !comments.equals(that.comments) : that.comments != null) return false;
-		return !(tasks != null ? !tasks.equals(that.tasks) : that.tasks != null);
+        if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
+            return false;
+        if (dateWebResponse != null ? !dateWebResponse.equals(that.dateWebResponse) : that.dateWebResponse != null)
+            return false;
+        if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
+        if (isHidden != null ? !isHidden.equals(that.isHidden) : that.isHidden != null) return false;
+        if (jobOrder != null ? !jobOrder.equals(that.jobOrder) : that.jobOrder != null) return false;
+        if (migrateGUID != null ? !migrateGUID.equals(that.migrateGUID) : that.migrateGUID != null) return false;
+        if (payRate != null ? !payRate.equals(that.payRate) : that.payRate != null) return false;
+        if (salary != null ? !salary.equals(that.salary) : that.salary != null) return false;
+        if (sendingUser != null ? !sendingUser.equals(that.sendingUser) : that.sendingUser != null) return false;
+        if (source != null ? !source.equals(that.source) : that.source != null) return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
+        if (tasks != null ? !tasks.equals(that.tasks) : that.tasks != null) return false;
+        return comments != null ? comments.equals(that.comments) : that.comments == null;
+    }
 
-	}
-
-	@Override
-	public int hashCode() {
-		int result = id != null ? id.hashCode() : 0;
-		result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
-		result = 31 * result + (billRate != null ? billRate.hashCode() : 0);
-		result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (id != null ? id.hashCode() : 0);
+        result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
+        result = 31 * result + (billRate != null ? billRate.hashCode() : 0);
+        result = 31 * result + (branch != null ? branch.hashCode() : 0);
+        result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
         result = 31 * result + (customText1 != null ? customText1.hashCode() : 0);
         result = 31 * result + (customText2 != null ? customText2.hashCode() : 0);
         result = 31 * result + (customText3 != null ? customText3.hashCode() : 0);
         result = 31 * result + (customText4 != null ? customText4.hashCode() : 0);
         result = 31 * result + (customText5 != null ? customText5.hashCode() : 0);
         result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-		result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
-		result = 31 * result + (dateWebResponse != null ? dateWebResponse.hashCode() : 0);
-		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
-		result = 31 * result + (isHidden != null ? isHidden.hashCode() : 0);
-		result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
-		result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
-		result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
-		result = 31 * result + (salary != null ? salary.hashCode() : 0);
-		result = 31 * result + (sendingUser != null ? sendingUser.hashCode() : 0);
-		result = 31 * result + (source != null ? source.hashCode() : 0);
-		result = 31 * result + (status != null ? status.hashCode() : 0);
-		result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
+        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+        result = 31 * result + (dateWebResponse != null ? dateWebResponse.hashCode() : 0);
+        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+        result = 31 * result + (isHidden != null ? isHidden.hashCode() : 0);
+        result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
+        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+        result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
+        result = 31 * result + (salary != null ? salary.hashCode() : 0);
+        result = 31 * result + (sendingUser != null ? sendingUser.hashCode() : 0);
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
         result = 31 * result + (comments != null ? comments.hashCode() : 0);
-		return result;
-	}
+        return result;
+    }
 
-	@Override
-	public String toString() {
-		return "JobSubmission{" +
-				"id=" + id +
-				", appointments=" + appointments +
-				", billRate=" + billRate +
-				", candidate=" + candidate +
-                ", customText1=" + customText1 +
-                ", customText2=" + customText2 +
-                ", customText3=" + customText3 +
-                ", customText4=" + customText4 +
-                ", customText5=" + customText5 +
-				", dateAdded=" + dateAdded +
-				", dateLastModified=" + dateLastModified +
-				", dateWebResponse=" + dateWebResponse +
-				", isDeleted=" + isDeleted +
-				", isHidden=" + isHidden +
-				", jobOrder=" + jobOrder +
-				", migrateGUID='" + migrateGUID + '\'' +
-				", payRate=" + payRate +
-				", salary=" + salary +
-				", sendingUser=" + sendingUser +
-				", source='" + source + '\'' +
-				", status='" + status + '\'' +
-				", tasks=" + tasks +
-                ", comments=" + comments + 
-				'}';
-	}
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("JobSubmission{");
+        sb.append("id=").append(id);
+        sb.append(", appointments=").append(appointments);
+        sb.append(", billRate=").append(billRate);
+        sb.append(", branch=").append(branch);
+        sb.append(", candidate=").append(candidate);
+        sb.append(", customText1='").append(customText1).append('\'');
+        sb.append(", customText2='").append(customText2).append('\'');
+        sb.append(", customText3='").append(customText3).append('\'');
+        sb.append(", customText4='").append(customText4).append('\'');
+        sb.append(", customText5='").append(customText5).append('\'');
+        sb.append(", dateAdded=").append(dateAdded);
+        sb.append(", dateLastModified=").append(dateLastModified);
+        sb.append(", dateWebResponse=").append(dateWebResponse);
+        sb.append(", isDeleted=").append(isDeleted);
+        sb.append(", isHidden=").append(isHidden);
+        sb.append(", jobOrder=").append(jobOrder);
+        sb.append(", migrateGUID='").append(migrateGUID).append('\'');
+        sb.append(", payRate=").append(payRate);
+        sb.append(", salary=").append(salary);
+        sb.append(", sendingUser=").append(sendingUser);
+        sb.append(", source='").append(source).append('\'');
+        sb.append(", status='").append(status).append('\'');
+        sb.append(", tasks=").append(tasks);
+        sb.append(", comments='").append(comments).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

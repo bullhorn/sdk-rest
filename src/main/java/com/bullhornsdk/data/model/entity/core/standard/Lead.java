@@ -26,7 +26,7 @@ import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "address", "assignedTo", "businessSectors", "campaignSource", "candidates", "category", "categories", "clientContacts", "clientCorporation", "comments", "companyName",
+@JsonPropertyOrder({ "id", "address", "assignedTo", "branch", "businessSectors", "campaignSource", "candidates", "category", "categories", "clientContacts", "clientCorporation", "comments", "companyName",
 		"companyURL", "conversionSource", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customText1",
 		"customText2", "customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customText10", "customText11", "customText12", "customText13",
 		"customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText20", "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4",
@@ -41,6 +41,8 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	private Address address;
 
 	private OneToMany<CorporateUser> assignedTo;
+
+	private Branch branch;
 
 	private OneToMany<BusinessSector> businessSectors;
 
@@ -286,7 +288,17 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		this.address = address;
 	}
 
-	@JsonIgnore
+    @JsonProperty("branch")
+    public Branch getBranch() {
+        return branch;
+    }
+
+    @JsonProperty("branch")
+    public void setBranch(Branch branch) {
+        this.branch = branch;
+    }
+
+    @JsonIgnore
 	public OneToMany<BusinessSector> getBusinessSectors() {
 		return businessSectors;
 	}
@@ -963,593 +975,263 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		this.tearsheets = tearsheets;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result + ((assignedTo == null) ? 0 : assignedTo.hashCode());
-		result = prime * result + ((businessSectors == null) ? 0 : businessSectors.hashCode());
-		result = prime * result + ((campaignSource == null) ? 0 : campaignSource.hashCode());
-		result = prime * result + ((candidates == null) ? 0 : candidates.hashCode());
-		result = prime * result + ((categories == null) ? 0 : categories.hashCode());
-		result = prime * result + ((category == null) ? 0 : category.hashCode());
-		result = prime * result + ((clientContacts == null) ? 0 : clientContacts.hashCode());
-		result = prime * result + ((clientCorporation == null) ? 0 : clientCorporation.hashCode());
-		result = prime * result + ((comments == null) ? 0 : comments.hashCode());
-		result = prime * result + ((companyName == null) ? 0 : companyName.hashCode());
-		result = prime * result + ((companyURL == null) ? 0 : companyURL.hashCode());
-		result = prime * result + ((conversionSource == null) ? 0 : conversionSource.hashCode());
-		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-		result = prime * result + ((dateLastComment == null) ? 0 : dateLastComment.hashCode());
-		result = prime * result + ((dateLastModified == null) ? 0 : dateLastModified.hashCode());
-		result = prime * result + ((dateLastVisited == null) ? 0 : dateLastVisited.hashCode());
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((distributionLists == null) ? 0 : distributionLists.hashCode());
-		result = prime * result + ((division == null) ? 0 : division.hashCode());
-		result = prime * result + ((educationDegree == null) ? 0 : educationDegree.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((email2 == null) ? 0 : email2.hashCode());
-		result = prime * result + ((email3 == null) ? 0 : email3.hashCode());
-		result = prime * result + ((fax == null) ? 0 : fax.hashCode());
-		result = prime * result + ((fax2 == null) ? 0 : fax2.hashCode());
-		result = prime * result + ((fax3 == null) ? 0 : fax3.hashCode());
-		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((history == null) ? 0 : history.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((isDayLightSavingsTime == null) ? 0 : isDayLightSavingsTime.hashCode());
-		result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
-		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((leadSource == null) ? 0 : leadSource.hashCode());
-		result = prime * result + ((massMailOptOut == null) ? 0 : massMailOptOut.hashCode());
-		result = prime * result + ((middleName == null) ? 0 : middleName.hashCode());
-		result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-		result = prime * result + ((mobile == null) ? 0 : mobile.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((namePrefix == null) ? 0 : namePrefix.hashCode());
-		result = prime * result + ((nameSuffix == null) ? 0 : nameSuffix.hashCode());
-		result = prime * result + ((nickName == null) ? 0 : nickName.hashCode());
-		result = prime * result + ((notes == null) ? 0 : notes.hashCode());
-		result = prime * result + ((numEmployees == null) ? 0 : numEmployees.hashCode());
-		result = prime * result + ((occupation == null) ? 0 : occupation.hashCode());
-		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-		result = prime * result + ((ownerCorporation == null) ? 0 : ownerCorporation.hashCode());
-		result = prime * result + ((pager == null) ? 0 : pager.hashCode());
-		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
-		result = prime * result + ((phone2 == null) ? 0 : phone2.hashCode());
-		result = prime * result + ((phone3 == null) ? 0 : phone3.hashCode());
-		result = prime * result + ((preferredContact == null) ? 0 : preferredContact.hashCode());
-		result = prime * result + ((primarySkills == null) ? 0 : primarySkills.hashCode());
-		result = prime * result + ((priority == null) ? 0 : priority.hashCode());
-		result = prime * result + ((referredByPerson == null) ? 0 : referredByPerson.hashCode());
-		result = prime * result + ((reportToPerson == null) ? 0 : reportToPerson.hashCode());
-		result = prime * result + ((role == null) ? 0 : role.hashCode());
-		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
-		result = prime * result + ((salaryLow == null) ? 0 : salaryLow.hashCode());
-		result = prime * result + ((secondaryAddress == null) ? 0 : secondaryAddress.hashCode());
-		result = prime * result + ((secondarySkills == null) ? 0 : secondarySkills.hashCode());
-		result = prime * result + ((skillSet == null) ? 0 : skillSet.hashCode());
-		result = prime * result + ((smsOptIn == null) ? 0 : smsOptIn.hashCode());
-		result = prime * result + ((source == null) ? 0 : source.hashCode());
-		result = prime * result + ((specialties == null) ? 0 : specialties.hashCode());
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime * result + ((tearsheets == null) ? 0 : tearsheets.hashCode());
-		result = prime * result + ((timeZoneOffsetEST == null) ? 0 : timeZoneOffsetEST.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		result = prime * result + ((willRelocate == null) ? 0 : willRelocate.hashCode());
-		return result;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Lead other = (Lead) obj;
-		if (address == null) {
-			if (other.address != null)
-				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (assignedTo == null) {
-			if (other.assignedTo != null)
-				return false;
-		} else if (!assignedTo.equals(other.assignedTo))
-			return false;
-		if (businessSectors == null) {
-			if (other.businessSectors != null)
-				return false;
-		} else if (!businessSectors.equals(other.businessSectors))
-			return false;
-		if (campaignSource == null) {
-			if (other.campaignSource != null)
-				return false;
-		} else if (!campaignSource.equals(other.campaignSource))
-			return false;
-		if (candidates == null) {
-			if (other.candidates != null)
-				return false;
-		} else if (!candidates.equals(other.candidates))
-			return false;
-		if (categories == null) {
-			if (other.categories != null)
-				return false;
-		} else if (!categories.equals(other.categories))
-			return false;
-		if (category == null) {
-			if (other.category != null)
-				return false;
-		} else if (!category.equals(other.category))
-			return false;
-		if (clientContacts == null) {
-			if (other.clientContacts != null)
-				return false;
-		} else if (!clientContacts.equals(other.clientContacts))
-			return false;
-		if (clientCorporation == null) {
-			if (other.clientCorporation != null)
-				return false;
-		} else if (!clientCorporation.equals(other.clientCorporation))
-			return false;
-		if (comments == null) {
-			if (other.comments != null)
-				return false;
-		} else if (!comments.equals(other.comments))
-			return false;
-		if (companyName == null) {
-			if (other.companyName != null)
-				return false;
-		} else if (!companyName.equals(other.companyName))
-			return false;
-		if (companyURL == null) {
-			if (other.companyURL != null)
-				return false;
-		} else if (!companyURL.equals(other.companyURL))
-			return false;
-		if (conversionSource == null) {
-			if (other.conversionSource != null)
-				return false;
-		} else if (!conversionSource.equals(other.conversionSource))
-			return false;
-		if (dateAdded == null) {
-			if (other.dateAdded != null)
-				return false;
-		} else if (!dateAdded.equals(other.dateAdded))
-			return false;
-		if (dateLastComment == null) {
-			if (other.dateLastComment != null)
-				return false;
-		} else if (!dateLastComment.equals(other.dateLastComment))
-			return false;
-		if (dateLastModified == null) {
-			if (other.dateLastModified != null)
-				return false;
-		} else if (!dateLastModified.equals(other.dateLastModified))
-			return false;
-		if (dateLastVisited == null) {
-			if (other.dateLastVisited != null)
-				return false;
-		} else if (!dateLastVisited.equals(other.dateLastVisited))
-			return false;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
-		if (distributionLists == null) {
-			if (other.distributionLists != null)
-				return false;
-		} else if (!distributionLists.equals(other.distributionLists))
-			return false;
-		if (division == null) {
-			if (other.division != null)
-				return false;
-		} else if (!division.equals(other.division))
-			return false;
-		if (educationDegree == null) {
-			if (other.educationDegree != null)
-				return false;
-		} else if (!educationDegree.equals(other.educationDegree))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (email2 == null) {
-			if (other.email2 != null)
-				return false;
-		} else if (!email2.equals(other.email2))
-			return false;
-		if (email3 == null) {
-			if (other.email3 != null)
-				return false;
-		} else if (!email3.equals(other.email3))
-			return false;
-		if (fax == null) {
-			if (other.fax != null)
-				return false;
-		} else if (!fax.equals(other.fax))
-			return false;
-		if (fax2 == null) {
-			if (other.fax2 != null)
-				return false;
-		} else if (!fax2.equals(other.fax2))
-			return false;
-		if (fax3 == null) {
-			if (other.fax3 != null)
-				return false;
-		} else if (!fax3.equals(other.fax3))
-			return false;
-		if (firstName == null) {
-			if (other.firstName != null)
-				return false;
-		} else if (!firstName.equals(other.firstName))
-			return false;
-		if (history == null) {
-			if (other.history != null)
-				return false;
-		} else if (!history.equals(other.history))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (isDayLightSavingsTime == null) {
-			if (other.isDayLightSavingsTime != null)
-				return false;
-		} else if (!isDayLightSavingsTime.equals(other.isDayLightSavingsTime))
-			return false;
-		if (isDeleted == null) {
-			if (other.isDeleted != null)
-				return false;
-		} else if (!isDeleted.equals(other.isDeleted))
-			return false;
-		if (lastName == null) {
-			if (other.lastName != null)
-				return false;
-		} else if (!lastName.equals(other.lastName))
-			return false;
-		if (leadSource == null) {
-			if (other.leadSource != null)
-				return false;
-		} else if (!leadSource.equals(other.leadSource))
-			return false;
-		if (massMailOptOut == null) {
-			if (other.massMailOptOut != null)
-				return false;
-		} else if (!massMailOptOut.equals(other.massMailOptOut))
-			return false;
-		if (middleName == null) {
-			if (other.middleName != null)
-				return false;
-		} else if (!middleName.equals(other.middleName))
-			return false;
-		if (migrateGUID == null) {
-			if (other.migrateGUID != null)
-				return false;
-		} else if (!migrateGUID.equals(other.migrateGUID))
-			return false;
-		if (mobile == null) {
-			if (other.mobile != null)
-				return false;
-		} else if (!mobile.equals(other.mobile))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (namePrefix == null) {
-			if (other.namePrefix != null)
-				return false;
-		} else if (!namePrefix.equals(other.namePrefix))
-			return false;
-		if (nameSuffix == null) {
-			if (other.nameSuffix != null)
-				return false;
-		} else if (!nameSuffix.equals(other.nameSuffix))
-			return false;
-		if (nickName == null) {
-			if (other.nickName != null)
-				return false;
-		} else if (!nickName.equals(other.nickName))
-			return false;
-		if (notes == null) {
-			if (other.notes != null)
-				return false;
-		} else if (!notes.equals(other.notes))
-			return false;
-		if (numEmployees == null) {
-			if (other.numEmployees != null)
-				return false;
-		} else if (!numEmployees.equals(other.numEmployees))
-			return false;
-		if (occupation == null) {
-			if (other.occupation != null)
-				return false;
-		} else if (!occupation.equals(other.occupation))
-			return false;
-		if (owner == null) {
-			if (other.owner != null)
-				return false;
-		} else if (!owner.equals(other.owner))
-			return false;
-		if (ownerCorporation == null) {
-			if (other.ownerCorporation != null)
-				return false;
-		} else if (!ownerCorporation.equals(other.ownerCorporation))
-			return false;
-		if (pager == null) {
-			if (other.pager != null)
-				return false;
-		} else if (!pager.equals(other.pager))
-			return false;
-		if (phone == null) {
-			if (other.phone != null)
-				return false;
-		} else if (!phone.equals(other.phone))
-			return false;
-		if (phone2 == null) {
-			if (other.phone2 != null)
-				return false;
-		} else if (!phone2.equals(other.phone2))
-			return false;
-		if (phone3 == null) {
-			if (other.phone3 != null)
-				return false;
-		} else if (!phone3.equals(other.phone3))
-			return false;
-		if (preferredContact == null) {
-			if (other.preferredContact != null)
-				return false;
-		} else if (!preferredContact.equals(other.preferredContact))
-			return false;
-		if (primarySkills == null) {
-			if (other.primarySkills != null)
-				return false;
-		} else if (!primarySkills.equals(other.primarySkills))
-			return false;
-		if (priority == null) {
-			if (other.priority != null)
-				return false;
-		} else if (!priority.equals(other.priority))
-			return false;
-		if (referredByPerson == null) {
-			if (other.referredByPerson != null)
-				return false;
-		} else if (!referredByPerson.equals(other.referredByPerson))
-			return false;
-		if (reportToPerson == null) {
-			if (other.reportToPerson != null)
-				return false;
-		} else if (!reportToPerson.equals(other.reportToPerson))
-			return false;
-		if (role == null) {
-			if (other.role != null)
-				return false;
-		} else if (!role.equals(other.role))
-			return false;
-		if (salary == null) {
-			if (other.salary != null)
-				return false;
-		} else if (!salary.equals(other.salary))
-			return false;
-		if (salaryLow == null) {
-			if (other.salaryLow != null)
-				return false;
-		} else if (!salaryLow.equals(other.salaryLow))
-			return false;
-		if (secondaryAddress == null) {
-			if (other.secondaryAddress != null)
-				return false;
-		} else if (!secondaryAddress.equals(other.secondaryAddress))
-			return false;
-		if (secondarySkills == null) {
-			if (other.secondarySkills != null)
-				return false;
-		} else if (!secondarySkills.equals(other.secondarySkills))
-			return false;
-		if (skillSet == null) {
-			if (other.skillSet != null)
-				return false;
-		} else if (!skillSet.equals(other.skillSet))
-			return false;
-		if (smsOptIn == null) {
-			if (other.smsOptIn != null)
-				return false;
-		} else if (!smsOptIn.equals(other.smsOptIn))
-			return false;
-		if (source == null) {
-			if (other.source != null)
-				return false;
-		} else if (!source.equals(other.source))
-			return false;
-		if (specialties == null) {
-			if (other.specialties != null)
-				return false;
-		} else if (!specialties.equals(other.specialties))
-			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
-			return false;
-		if (tearsheets == null) {
-			if (other.tearsheets != null)
-				return false;
-		} else if (!tearsheets.equals(other.tearsheets))
-			return false;
-		if (timeZoneOffsetEST == null) {
-			if (other.timeZoneOffsetEST != null)
-				return false;
-		} else if (!timeZoneOffsetEST.equals(other.timeZoneOffsetEST))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		if (willRelocate == null) {
-			if (other.willRelocate != null)
-				return false;
-		} else if (!willRelocate.equals(other.willRelocate))
-			return false;
-		return true;
-	}
+        Lead lead = (Lead) o;
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Lead [id=");
-		builder.append(id);
-		builder.append(", address=");
-		builder.append(address);
-		builder.append(", assignedTo=");
-		builder.append(assignedTo);
-		builder.append(", businessSectors=");
-		builder.append(businessSectors);
-		builder.append(", campaignSource=");
-		builder.append(campaignSource);
-		builder.append(", candidates=");
-		builder.append(candidates);
-		builder.append(", category=");
-		builder.append(category);
-		builder.append(", categories=");
-		builder.append(categories);
-		builder.append(", clientContacts=");
-		builder.append(clientContacts);
-		builder.append(", clientCorporation=");
-		builder.append(clientCorporation);
-		builder.append(", comments=");
-		builder.append(comments);
-		builder.append(", companyName=");
-		builder.append(companyName);
-		builder.append(", companyURL=");
-		builder.append(companyURL);
-		builder.append(", conversionSource=");
-		builder.append(conversionSource);
-		builder.append(", dateAdded=");
-		builder.append(dateAdded);
-		builder.append(", dateLastComment=");
-		builder.append(dateLastComment);
-		builder.append(", dateLastModified=");
-		builder.append(dateLastModified);
-		builder.append(", dateLastVisited=");
-		builder.append(dateLastVisited);
-		builder.append(", description=");
-		builder.append(description);
-		builder.append(", distributionLists=");
-		builder.append(distributionLists);
-		builder.append(", division=");
-		builder.append(division);
-		builder.append(", educationDegree=");
-		builder.append(educationDegree);
-		builder.append(", email=");
-		builder.append(email);
-		builder.append(", email2=");
-		builder.append(email2);
-		builder.append(", email3=");
-		builder.append(email3);
-		builder.append(", fax=");
-		builder.append(fax);
-		builder.append(", fax2=");
-		builder.append(fax2);
-		builder.append(", fax3=");
-		builder.append(fax3);
-		builder.append(", firstName=");
-		builder.append(firstName);
-		builder.append(", history=");
-		builder.append(history);
-		builder.append(", isDayLightSavingsTime=");
-		builder.append(isDayLightSavingsTime);
-		builder.append(", isDeleted=");
-		builder.append(isDeleted);
-		builder.append(", lastName=");
-		builder.append(lastName);
-		builder.append(", leadSource=");
-		builder.append(leadSource);
-		builder.append(", massMailOptOut=");
-		builder.append(massMailOptOut);
-		builder.append(", middleName=");
-		builder.append(middleName);
-		builder.append(", migrateGUID=");
-		builder.append(migrateGUID);
-		builder.append(", mobile=");
-		builder.append(mobile);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append(", namePrefix=");
-		builder.append(namePrefix);
-		builder.append(", nameSuffix=");
-		builder.append(nameSuffix);
-		builder.append(", nickName=");
-		builder.append(nickName);
-		builder.append(", notes=");
-		builder.append(notes);
-		builder.append(", numEmployees=");
-		builder.append(numEmployees);
-		builder.append(", occupation=");
-		builder.append(occupation);
-		builder.append(", owner=");
-		builder.append(owner);
-		builder.append(", ownerCorporation=");
-		builder.append(ownerCorporation);
-		builder.append(", pager=");
-		builder.append(pager);
-		builder.append(", phone=");
-		builder.append(phone);
-		builder.append(", phone2=");
-		builder.append(phone2);
-		builder.append(", phone3=");
-		builder.append(phone3);
-		builder.append(", preferredContact=");
-		builder.append(preferredContact);
-		builder.append(", primarySkills=");
-		builder.append(primarySkills);
-		builder.append(", priority=");
-		builder.append(priority);
-		builder.append(", referredByPerson=");
-		builder.append(referredByPerson);
-		builder.append(", reportToPerson=");
-		builder.append(reportToPerson);
-		builder.append(", role=");
-		builder.append(role);
-		builder.append(", salary=");
-		builder.append(salary);
-		builder.append(", salaryLow=");
-		builder.append(salaryLow);
-		builder.append(", secondaryAddress=");
-		builder.append(secondaryAddress);
-		builder.append(", secondarySkills=");
-		builder.append(secondarySkills);
-		builder.append(", skillSet=");
-		builder.append(skillSet);
-		builder.append(", smsOptIn=");
-		builder.append(smsOptIn);
-		builder.append(", source=");
-		builder.append(source);
-		builder.append(", specialties=");
-		builder.append(specialties);
-		builder.append(", status=");
-		builder.append(status);
-		builder.append(", tearsheets=");
-		builder.append(tearsheets);
-		builder.append(", timeZoneOffsetEST=");
-		builder.append(timeZoneOffsetEST);
-		builder.append(", type=");
-		builder.append(type);
-		builder.append(", willRelocate=");
-		builder.append(willRelocate);
-		builder.append("]");
-		return builder.toString();
-	}
+        if (id != null ? !id.equals(lead.id) : lead.id != null) return false;
+        if (address != null ? !address.equals(lead.address) : lead.address != null) return false;
+        if (assignedTo != null ? !assignedTo.equals(lead.assignedTo) : lead.assignedTo != null) return false;
+        if (branch != null ? !branch.equals(lead.branch) : lead.branch != null) return false;
+        if (businessSectors != null ? !businessSectors.equals(lead.businessSectors) : lead.businessSectors != null)
+            return false;
+        if (campaignSource != null ? !campaignSource.equals(lead.campaignSource) : lead.campaignSource != null)
+            return false;
+        if (candidates != null ? !candidates.equals(lead.candidates) : lead.candidates != null) return false;
+        if (category != null ? !category.equals(lead.category) : lead.category != null) return false;
+        if (categories != null ? !categories.equals(lead.categories) : lead.categories != null) return false;
+        if (clientContacts != null ? !clientContacts.equals(lead.clientContacts) : lead.clientContacts != null)
+            return false;
+        if (clientCorporation != null ? !clientCorporation.equals(lead.clientCorporation) : lead.clientCorporation != null)
+            return false;
+        if (comments != null ? !comments.equals(lead.comments) : lead.comments != null) return false;
+        if (companyName != null ? !companyName.equals(lead.companyName) : lead.companyName != null) return false;
+        if (companyURL != null ? !companyURL.equals(lead.companyURL) : lead.companyURL != null) return false;
+        if (conversionSource != null ? !conversionSource.equals(lead.conversionSource) : lead.conversionSource != null)
+            return false;
+        if (dateAdded != null ? !dateAdded.equals(lead.dateAdded) : lead.dateAdded != null) return false;
+        if (dateLastComment != null ? !dateLastComment.equals(lead.dateLastComment) : lead.dateLastComment != null)
+            return false;
+        if (dateLastModified != null ? !dateLastModified.equals(lead.dateLastModified) : lead.dateLastModified != null)
+            return false;
+        if (dateLastVisited != null ? !dateLastVisited.equals(lead.dateLastVisited) : lead.dateLastVisited != null)
+            return false;
+        if (description != null ? !description.equals(lead.description) : lead.description != null) return false;
+        if (distributionLists != null ? !distributionLists.equals(lead.distributionLists) : lead.distributionLists != null)
+            return false;
+        if (division != null ? !division.equals(lead.division) : lead.division != null) return false;
+        if (educationDegree != null ? !educationDegree.equals(lead.educationDegree) : lead.educationDegree != null)
+            return false;
+        if (email != null ? !email.equals(lead.email) : lead.email != null) return false;
+        if (email2 != null ? !email2.equals(lead.email2) : lead.email2 != null) return false;
+        if (email3 != null ? !email3.equals(lead.email3) : lead.email3 != null) return false;
+        if (fax != null ? !fax.equals(lead.fax) : lead.fax != null) return false;
+        if (fax2 != null ? !fax2.equals(lead.fax2) : lead.fax2 != null) return false;
+        if (fax3 != null ? !fax3.equals(lead.fax3) : lead.fax3 != null) return false;
+        if (firstName != null ? !firstName.equals(lead.firstName) : lead.firstName != null) return false;
+        if (history != null ? !history.equals(lead.history) : lead.history != null) return false;
+        if (isDayLightSavingsTime != null ? !isDayLightSavingsTime.equals(lead.isDayLightSavingsTime) : lead.isDayLightSavingsTime != null)
+            return false;
+        if (isDeleted != null ? !isDeleted.equals(lead.isDeleted) : lead.isDeleted != null) return false;
+        if (lastName != null ? !lastName.equals(lead.lastName) : lead.lastName != null) return false;
+        if (leadSource != null ? !leadSource.equals(lead.leadSource) : lead.leadSource != null) return false;
+        if (massMailOptOut != null ? !massMailOptOut.equals(lead.massMailOptOut) : lead.massMailOptOut != null)
+            return false;
+        if (middleName != null ? !middleName.equals(lead.middleName) : lead.middleName != null) return false;
+        if (migrateGUID != null ? !migrateGUID.equals(lead.migrateGUID) : lead.migrateGUID != null) return false;
+        if (mobile != null ? !mobile.equals(lead.mobile) : lead.mobile != null) return false;
+        if (name != null ? !name.equals(lead.name) : lead.name != null) return false;
+        if (namePrefix != null ? !namePrefix.equals(lead.namePrefix) : lead.namePrefix != null) return false;
+        if (nameSuffix != null ? !nameSuffix.equals(lead.nameSuffix) : lead.nameSuffix != null) return false;
+        if (nickName != null ? !nickName.equals(lead.nickName) : lead.nickName != null) return false;
+        if (notes != null ? !notes.equals(lead.notes) : lead.notes != null) return false;
+        if (numEmployees != null ? !numEmployees.equals(lead.numEmployees) : lead.numEmployees != null) return false;
+        if (occupation != null ? !occupation.equals(lead.occupation) : lead.occupation != null) return false;
+        if (owner != null ? !owner.equals(lead.owner) : lead.owner != null) return false;
+        if (ownerCorporation != null ? !ownerCorporation.equals(lead.ownerCorporation) : lead.ownerCorporation != null)
+            return false;
+        if (pager != null ? !pager.equals(lead.pager) : lead.pager != null) return false;
+        if (phone != null ? !phone.equals(lead.phone) : lead.phone != null) return false;
+        if (phone2 != null ? !phone2.equals(lead.phone2) : lead.phone2 != null) return false;
+        if (phone3 != null ? !phone3.equals(lead.phone3) : lead.phone3 != null) return false;
+        if (preferredContact != null ? !preferredContact.equals(lead.preferredContact) : lead.preferredContact != null)
+            return false;
+        if (primarySkills != null ? !primarySkills.equals(lead.primarySkills) : lead.primarySkills != null)
+            return false;
+        if (priority != null ? !priority.equals(lead.priority) : lead.priority != null) return false;
+        if (referredByPerson != null ? !referredByPerson.equals(lead.referredByPerson) : lead.referredByPerson != null)
+            return false;
+        if (reportToPerson != null ? !reportToPerson.equals(lead.reportToPerson) : lead.reportToPerson != null)
+            return false;
+        if (role != null ? !role.equals(lead.role) : lead.role != null) return false;
+        if (salary != null ? !salary.equals(lead.salary) : lead.salary != null) return false;
+        if (salaryLow != null ? !salaryLow.equals(lead.salaryLow) : lead.salaryLow != null) return false;
+        if (secondaryAddress != null ? !secondaryAddress.equals(lead.secondaryAddress) : lead.secondaryAddress != null)
+            return false;
+        if (secondarySkills != null ? !secondarySkills.equals(lead.secondarySkills) : lead.secondarySkills != null)
+            return false;
+        if (skillSet != null ? !skillSet.equals(lead.skillSet) : lead.skillSet != null) return false;
+        if (smsOptIn != null ? !smsOptIn.equals(lead.smsOptIn) : lead.smsOptIn != null) return false;
+        if (source != null ? !source.equals(lead.source) : lead.source != null) return false;
+        if (specialties != null ? !specialties.equals(lead.specialties) : lead.specialties != null) return false;
+        if (status != null ? !status.equals(lead.status) : lead.status != null) return false;
+        if (tearsheets != null ? !tearsheets.equals(lead.tearsheets) : lead.tearsheets != null) return false;
+        if (timeZoneOffsetEST != null ? !timeZoneOffsetEST.equals(lead.timeZoneOffsetEST) : lead.timeZoneOffsetEST != null)
+            return false;
+        if (type != null ? !type.equals(lead.type) : lead.type != null) return false;
+        return willRelocate != null ? willRelocate.equals(lead.willRelocate) : lead.willRelocate == null;
+    }
 
-	public Lead instantiateForInsert() {
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (id != null ? id.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (assignedTo != null ? assignedTo.hashCode() : 0);
+        result = 31 * result + (branch != null ? branch.hashCode() : 0);
+        result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
+        result = 31 * result + (campaignSource != null ? campaignSource.hashCode() : 0);
+        result = 31 * result + (candidates != null ? candidates.hashCode() : 0);
+        result = 31 * result + (category != null ? category.hashCode() : 0);
+        result = 31 * result + (categories != null ? categories.hashCode() : 0);
+        result = 31 * result + (clientContacts != null ? clientContacts.hashCode() : 0);
+        result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
+        result = 31 * result + (comments != null ? comments.hashCode() : 0);
+        result = 31 * result + (companyName != null ? companyName.hashCode() : 0);
+        result = 31 * result + (companyURL != null ? companyURL.hashCode() : 0);
+        result = 31 * result + (conversionSource != null ? conversionSource.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (dateLastComment != null ? dateLastComment.hashCode() : 0);
+        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+        result = 31 * result + (dateLastVisited != null ? dateLastVisited.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (distributionLists != null ? distributionLists.hashCode() : 0);
+        result = 31 * result + (division != null ? division.hashCode() : 0);
+        result = 31 * result + (educationDegree != null ? educationDegree.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (email2 != null ? email2.hashCode() : 0);
+        result = 31 * result + (email3 != null ? email3.hashCode() : 0);
+        result = 31 * result + (fax != null ? fax.hashCode() : 0);
+        result = 31 * result + (fax2 != null ? fax2.hashCode() : 0);
+        result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (history != null ? history.hashCode() : 0);
+        result = 31 * result + (isDayLightSavingsTime != null ? isDayLightSavingsTime.hashCode() : 0);
+        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (leadSource != null ? leadSource.hashCode() : 0);
+        result = 31 * result + (massMailOptOut != null ? massMailOptOut.hashCode() : 0);
+        result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
+        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+        result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (namePrefix != null ? namePrefix.hashCode() : 0);
+        result = 31 * result + (nameSuffix != null ? nameSuffix.hashCode() : 0);
+        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
+        result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
+        result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
+        result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (ownerCorporation != null ? ownerCorporation.hashCode() : 0);
+        result = 31 * result + (pager != null ? pager.hashCode() : 0);
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (phone2 != null ? phone2.hashCode() : 0);
+        result = 31 * result + (phone3 != null ? phone3.hashCode() : 0);
+        result = 31 * result + (preferredContact != null ? preferredContact.hashCode() : 0);
+        result = 31 * result + (primarySkills != null ? primarySkills.hashCode() : 0);
+        result = 31 * result + (priority != null ? priority.hashCode() : 0);
+        result = 31 * result + (referredByPerson != null ? referredByPerson.hashCode() : 0);
+        result = 31 * result + (reportToPerson != null ? reportToPerson.hashCode() : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
+        result = 31 * result + (salary != null ? salary.hashCode() : 0);
+        result = 31 * result + (salaryLow != null ? salaryLow.hashCode() : 0);
+        result = 31 * result + (secondaryAddress != null ? secondaryAddress.hashCode() : 0);
+        result = 31 * result + (secondarySkills != null ? secondarySkills.hashCode() : 0);
+        result = 31 * result + (skillSet != null ? skillSet.hashCode() : 0);
+        result = 31 * result + (smsOptIn != null ? smsOptIn.hashCode() : 0);
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
+        result = 31 * result + (timeZoneOffsetEST != null ? timeZoneOffsetEST.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Lead{");
+        sb.append("id=").append(id);
+        sb.append(", address=").append(address);
+        sb.append(", assignedTo=").append(assignedTo);
+        sb.append(", branch=").append(branch);
+        sb.append(", businessSectors=").append(businessSectors);
+        sb.append(", campaignSource='").append(campaignSource).append('\'');
+        sb.append(", candidates=").append(candidates);
+        sb.append(", category=").append(category);
+        sb.append(", categories=").append(categories);
+        sb.append(", clientContacts=").append(clientContacts);
+        sb.append(", clientCorporation=").append(clientCorporation);
+        sb.append(", comments='").append(comments).append('\'');
+        sb.append(", companyName='").append(companyName).append('\'');
+        sb.append(", companyURL='").append(companyURL).append('\'');
+        sb.append(", conversionSource='").append(conversionSource).append('\'');
+        sb.append(", dateAdded=").append(dateAdded);
+        sb.append(", dateLastComment=").append(dateLastComment);
+        sb.append(", dateLastModified=").append(dateLastModified);
+        sb.append(", dateLastVisited=").append(dateLastVisited);
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", distributionLists=").append(distributionLists);
+        sb.append(", division='").append(division).append('\'');
+        sb.append(", educationDegree='").append(educationDegree).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", email2='").append(email2).append('\'');
+        sb.append(", email3='").append(email3).append('\'');
+        sb.append(", fax='").append(fax).append('\'');
+        sb.append(", fax2='").append(fax2).append('\'');
+        sb.append(", fax3='").append(fax3).append('\'');
+        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", history=").append(history);
+        sb.append(", isDayLightSavingsTime=").append(isDayLightSavingsTime);
+        sb.append(", isDeleted=").append(isDeleted);
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", leadSource='").append(leadSource).append('\'');
+        sb.append(", massMailOptOut=").append(massMailOptOut);
+        sb.append(", middleName='").append(middleName).append('\'');
+        sb.append(", migrateGUID=").append(migrateGUID);
+        sb.append(", mobile='").append(mobile).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", namePrefix='").append(namePrefix).append('\'');
+        sb.append(", nameSuffix='").append(nameSuffix).append('\'');
+        sb.append(", nickName='").append(nickName).append('\'');
+        sb.append(", notes=").append(notes);
+        sb.append(", numEmployees=").append(numEmployees);
+        sb.append(", occupation='").append(occupation).append('\'');
+        sb.append(", owner=").append(owner);
+        sb.append(", ownerCorporation=").append(ownerCorporation);
+        sb.append(", pager='").append(pager).append('\'');
+        sb.append(", phone='").append(phone).append('\'');
+        sb.append(", phone2='").append(phone2).append('\'');
+        sb.append(", phone3='").append(phone3).append('\'');
+        sb.append(", preferredContact='").append(preferredContact).append('\'');
+        sb.append(", primarySkills=").append(primarySkills);
+        sb.append(", priority='").append(priority).append('\'');
+        sb.append(", referredByPerson=").append(referredByPerson);
+        sb.append(", reportToPerson=").append(reportToPerson);
+        sb.append(", role='").append(role).append('\'');
+        sb.append(", salary=").append(salary);
+        sb.append(", salaryLow=").append(salaryLow);
+        sb.append(", secondaryAddress=").append(secondaryAddress);
+        sb.append(", secondarySkills=").append(secondarySkills);
+        sb.append(", skillSet='").append(skillSet).append('\'');
+        sb.append(", smsOptIn=").append(smsOptIn);
+        sb.append(", source='").append(source).append('\'');
+        sb.append(", specialties=").append(specialties);
+        sb.append(", status='").append(status).append('\'');
+        sb.append(", tearsheets=").append(tearsheets);
+        sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", willRelocate=").append(willRelocate);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    public Lead instantiateForInsert() {
 		Lead entity = new Lead();
 		entity.setEmail("leadTest@email.com");
 		entity.setIsDeleted(Boolean.FALSE);
