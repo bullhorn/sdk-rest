@@ -218,7 +218,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
 	private Integer workWeekStart;
 
-	private WorkersCompensation workersCompensationRate;
+	private WorkersCompensationRate workersCompensationRate;
 
     private OneToMany<PlacementCustomObjectInstance1> customObject1s;
 
@@ -923,12 +923,12 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	}
 
 	@JsonProperty("workersCompensationRate")
-    public WorkersCompensation getWorkersCompensationRate() {
+    public WorkersCompensationRate getWorkersCompensationRate() {
 	    return workersCompensationRate;
 	}
 
 	@JsonProperty("workersCompensationRate")
-    public void setWorkersCompensationRate(WorkersCompensation workersCompensationRate) {
+    public void setWorkersCompensationRate(WorkersCompensationRate workersCompensationRate) {
 	    this.workersCompensationRate = workersCompensationRate;
 	}
 

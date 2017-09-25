@@ -225,7 +225,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 
 	private Boolean willSponsor;
 
-	private WorkersCompensation workersCompRate;
+	private WorkersCompensationRate workersCompRate;
 
 	private Integer yearsRequired;
 
@@ -1056,12 +1056,12 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 	}
 
 	@JsonProperty("workersCompRate")
-    public WorkersCompensation getWorkersCompRate() {
+    public WorkersCompensationRate getWorkersCompRate() {
 	    return workersCompRate;
 	}
 
 	@JsonProperty("workersCompRate")
-    public void setWorkersCompRate(WorkersCompensation workersCompRate) {
+    public void setWorkersCompRate(WorkersCompensationRate workersCompRate) {
 	    this.workersCompRate = workersCompRate;
 	}
 
