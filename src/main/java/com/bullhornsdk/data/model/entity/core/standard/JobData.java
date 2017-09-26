@@ -225,6 +225,8 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 
 	private Boolean willSponsor;
 
+	private WorkersCompensationRate workersCompRate;
+
 	private Integer yearsRequired;
 
     private OneToMany<JobOrderCustomObjectInstance1> customObject1s;
@@ -1053,6 +1055,16 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 		this.willSponsor = willSponsor;
 	}
 
+	@JsonProperty("workersCompRate")
+    public WorkersCompensationRate getWorkersCompRate() {
+	    return workersCompRate;
+	}
+
+	@JsonProperty("workersCompRate")
+    public void setWorkersCompRate(WorkersCompensationRate workersCompRate) {
+	    this.workersCompRate = workersCompRate;
+	}
+
 	@JsonProperty("yearsRequired")
 	public Integer getYearsRequired() {
 		return yearsRequired;
@@ -1303,6 +1315,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         if (willRelocateInt != null ? !willRelocateInt.equals(jobData.willRelocateInt) : jobData.willRelocateInt != null)
             return false;
         if (willSponsor != null ? !willSponsor.equals(jobData.willSponsor) : jobData.willSponsor != null) return false;
+        if (workersCompRate != null ? !workersCompRate.equals(jobData.workersCompRate) : jobData.workersCompRate != null) return false;
         if (yearsRequired != null ? !yearsRequired.equals(jobData.yearsRequired) : jobData.yearsRequired != null)
             return false;
         if (customObject1s != null ? !customObject1s.equals(jobData.customObject1s) : jobData.customObject1s != null)
@@ -1407,6 +1420,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
         result = 31 * result + (willRelocateInt != null ? willRelocateInt.hashCode() : 0);
         result = 31 * result + (willSponsor != null ? willSponsor.hashCode() : 0);
+        result = 31 * result + (workersCompRate != null ? workersCompRate.hashCode() : 0);
         result = 31 * result + (yearsRequired != null ? yearsRequired.hashCode() : 0);
         result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
         result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
@@ -1502,6 +1516,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         sb.append(", willRelocate=").append(willRelocate);
         sb.append(", willRelocateInt=").append(willRelocateInt);
         sb.append(", willSponsor=").append(willSponsor);
+        sb.append(", workersCompRate=").append(workersCompRate);
         sb.append(", yearsRequired=").append(yearsRequired);
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);

@@ -59,7 +59,7 @@ import java.math.BigDecimal;
 		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
-		"timeUnits", "vendorClientCorporation", "workWeekStart", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
+		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
         "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
@@ -217,6 +217,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private ClientCorporation vendorClientCorporation;
 
 	private Integer workWeekStart;
+
+	private WorkersCompensationRate workersCompensationRate;
 
     private OneToMany<PlacementCustomObjectInstance1> customObject1s;
 
@@ -920,6 +922,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.workWeekStart = workWeekStart;
 	}
 
+	@JsonProperty("workersCompensationRate")
+    public WorkersCompensationRate getWorkersCompensationRate() {
+	    return workersCompensationRate;
+	}
+
+	@JsonProperty("workersCompensationRate")
+    public void setWorkersCompensationRate(WorkersCompensationRate workersCompensationRate) {
+	    this.workersCompensationRate = workersCompensationRate;
+	}
+
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1155,6 +1167,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             return false;
         if (workWeekStart != null ? !workWeekStart.equals(placement.workWeekStart) : placement.workWeekStart != null)
             return false;
+        if (workersCompensationRate != null ? !workersCompensationRate.equals(placement.workersCompensationRate) : placement.workersCompensationRate != null)
+            return false;
         if (customObject1s != null ? !customObject1s.equals(placement.customObject1s) : placement.customObject1s != null)
             return false;
         if (customObject2s != null ? !customObject2s.equals(placement.customObject2s) : placement.customObject2s != null)
@@ -1243,6 +1257,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         result = 31 * result + (timeUnits != null ? timeUnits.hashCode() : 0);
         result = 31 * result + (vendorClientCorporation != null ? vendorClientCorporation.hashCode() : 0);
         result = 31 * result + (workWeekStart != null ? workWeekStart.hashCode() : 0);
+        result = 31 * result + (workersCompensationRate != null ? workersCompensationRate.hashCode() : 0);
         result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
         result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
         result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
@@ -1323,6 +1338,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         sb.append(", timeUnits=").append(timeUnits);
         sb.append(", vendorClientCorporation=").append(vendorClientCorporation);
         sb.append(", workWeekStart=").append(workWeekStart);
+        sb.append(", workersCompensationRate=").append(workersCompensationRate);
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);
