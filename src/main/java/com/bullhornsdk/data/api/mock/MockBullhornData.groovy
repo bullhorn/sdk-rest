@@ -182,6 +182,11 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
+    public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
+        return mockDataHandler.getMetaData(type, metaParameter, fieldSet);
+    }
+
+    @Override
     public Map<String, Object> getSettings(java.util.Set settingSet) {
         return mockDataHandler.getSettingsData(settingSet);
     }
