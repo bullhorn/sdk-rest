@@ -1,4 +1,5 @@
 package com.bullhornsdk.data.api.mock
+
 import com.bullhornsdk.data.api.BullhornData
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries
 import com.bullhornsdk.data.api.helper.RestApiSession
@@ -6,6 +7,7 @@ import com.bullhornsdk.data.api.helper.RestErrorHandler
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
+import com.bullhornsdk.data.model.entity.core.standard.JobOrder
 import com.bullhornsdk.data.model.entity.core.standard.Note
 import com.bullhornsdk.data.model.entity.core.standard.Settings
 import com.bullhornsdk.data.model.entity.core.type.*
@@ -13,6 +15,7 @@ import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.EntityEventType
 import com.bullhornsdk.data.model.enums.EventType
 import com.bullhornsdk.data.model.enums.MetaParameter
+import com.bullhornsdk.data.model.file.FileMeta
 import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams
@@ -22,7 +25,6 @@ import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.GetEventsResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
-import com.bullhornsdk.data.model.file.FileMeta
 import com.bullhornsdk.data.model.response.file.FileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
@@ -32,6 +34,7 @@ import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeT
 import org.apache.log4j.Logger
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
+
 /**
  * Testing implementation populated with local in memory test data.
  *
@@ -184,6 +187,16 @@ public class MockBullhornData implements BullhornData {
     @Override
     public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
         return mockDataHandler.getMetaData(type, metaParameter, fieldSet);
+    }
+
+    @Override
+    def <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track) {
+        return mockDataHandler.getMetaData(JobOrder.class, metaParameter, fieldSet);
+    }
+
+    @Override
+    def <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId) {
+        return mockDataHandler.getMetaData(JobOrder.class, metaParameter, fieldSet);
     }
 
     @Override

@@ -77,25 +77,43 @@ public class RestUriVariablesFactory {
 	 */
 
 	public Map<String, String> getUriVariablesForMeta(BullhornEntityInfo entityInfo, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
-		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
-		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
-		String fields = this.convertFieldSetToString(fieldSet);
-		uriVariables.put(FIELDS, fields);
+		return getUriVariablesForMeta(entityInfo.getName(), metaParameter, fieldSet, privateLabelId);
+	}
 
-		if (metaParameter == null) {
-			uriVariables.put(META, MetaParameter.BASIC.getName());
-		} else {
-			uriVariables.put(META, metaParameter.getName());
-		}
+	/*
+	 * **************************************************************************************************************
+	 * uri variables **************************************************************************************************************
+	 */
 
-		if(privateLabelId != null) {
-		    uriVariables.put(PRIVATE_LABEL_ID, privateLabelId.toString());
+    /**
+     * Returns the uri variables needed for a meta call.
+     *
+     * @param entityType
+     * @param metaParameter
+     * @param fieldSet
+     * @return
+     */
+
+    public Map<String, String> getUriVariablesForMeta(String entityType, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
+        Map<String, String> uriVariables = new LinkedHashMap<String, String>();
+        String bhRestToken = bullhornApiRest.getBhRestToken();
+        uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(ENTITY_TYPE, entityType);
+        String fields = this.convertFieldSetToString(fieldSet);
+        uriVariables.put(FIELDS, fields);
+
+        if (metaParameter == null) {
+            uriVariables.put(META, MetaParameter.BASIC.getName());
+        } else {
+            uriVariables.put(META, metaParameter.getName());
         }
 
-		return uriVariables;
-	}
+        if(privateLabelId != null) {
+            uriVariables.put(PRIVATE_LABEL_ID, privateLabelId.toString());
+        }
+
+        return uriVariables;
+    }
 
 	/**
 	 * Returns the uri variables needed for an "entity" GET
