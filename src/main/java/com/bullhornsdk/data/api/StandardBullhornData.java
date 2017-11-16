@@ -340,6 +340,20 @@ public class StandardBullhornData implements BullhornData {
         return this.handleGetMetaData(type, metaParameter, fieldSet, privateLabelId);
     }
 
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track) {
+        return getJobMetaData(metaParameter, fieldSet, track, null);
+    }
+
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId) {
+        String entityType = "JobOrder" + track;
+
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(entityType, metaParameter, fieldSet, privateLabelId);
+
+        return handleGetMetaData(uriVariables, privateLabelId);
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -1111,6 +1125,20 @@ public class StandardBullhornData implements BullhornData {
     protected <T extends BullhornEntity> MetaData<T> handleGetMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(BullhornEntityInfo.getTypesRestEntityName(type),
                 metaParameter, fieldSet, privateLabelId);
+
+        return handleGetMetaData(uriVariables, privateLabelId);
+    }
+
+    /**
+     * Makes the "meta" api call
+     * <p>
+     * HttpMethod: GET
+     *
+     * @param uriVariables the variables to inject into the url.
+     * @param privateLabelId the privateLabelId to return meta for
+     * @return the MetaData
+     */
+    protected <T extends BullhornEntity> MetaData<T> handleGetMetaData(Map<String, String> uriVariables, Integer privateLabelId) {
         String url = restUrlFactory.assembleEntityUrlForMeta(privateLabelId);
 
         MetaData<T> response = this.performGetRequest(url, StandardMetaData.class, uriVariables);
