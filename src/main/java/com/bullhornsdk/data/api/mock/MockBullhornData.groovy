@@ -6,10 +6,7 @@ import com.bullhornsdk.data.api.helper.RestApiSession
 import com.bullhornsdk.data.api.helper.RestErrorHandler
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
-import com.bullhornsdk.data.model.entity.core.standard.FastFindResult
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder
-import com.bullhornsdk.data.model.entity.core.standard.Note
-import com.bullhornsdk.data.model.entity.core.standard.Settings
+import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.EntityEventType
@@ -34,6 +31,8 @@ import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeT
 import org.apache.log4j.Logger
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
+
+import java.io.File
 
 /**
  * Testing implementation populated with local in memory test data.
@@ -197,6 +196,16 @@ public class MockBullhornData implements BullhornData {
     @Override
     def <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId) {
         return mockDataHandler.getMetaData(JobOrder.class, metaParameter, fieldSet);
+    }
+
+    @Override
+    def <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track) {
+        return mockDataHandler.getMetaData(Opportunity.class, metaParameter, fieldSet);
+    }
+
+    @Override
+    def <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId) {
+        return mockDataHandler.getMetaData(Opportunity.class, metaParameter, fieldSet);
     }
 
     @Override

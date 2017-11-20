@@ -354,6 +354,20 @@ public class StandardBullhornData implements BullhornData {
         return handleGetMetaData(uriVariables, privateLabelId);
     }
 
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track) {
+        return getOpportunityMetaData(metaParameter, fieldSet, track, null);
+    }
+
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId) {
+        String entityType = "Opportunity" + track;
+
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(entityType, metaParameter, fieldSet, privateLabelId);
+
+        return handleGetMetaData(uriVariables, privateLabelId);
+    }
+
     /**
      * {@inheritDoc}
      */
