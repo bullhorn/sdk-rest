@@ -383,6 +383,30 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 
 	private OneToMany<CandidateWorkHistory> workHistories;
 
+    @JsonIgnore
+    @Size(max = 20)
+    private String workPhone;
+
+    private String customEncryptedText1;
+
+    private String customEncryptedText2;
+
+    private String customEncryptedText3;
+
+    private String customEncryptedText4;
+
+    private String customEncryptedText5;
+
+    private String customEncryptedText6;
+
+    private String customEncryptedText7;
+
+    private String customEncryptedText8;
+
+    private String customEncryptedText9;
+
+    private String customEncryptedText10;
+
     private OneToMany<PersonCustomObjectInstance1> customObject1s;
 
     private OneToMany<PersonCustomObjectInstance2> customObject2s;
@@ -402,10 +426,6 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     private OneToMany<PersonCustomObjectInstance9> customObject9s;
 
     private OneToMany<PersonCustomObjectInstance10> customObject10s;
-
-	@JsonIgnore
-	@Size(max = 20)
-	private String workPhone;
 
 	public Candidate() {
 		super();
@@ -1681,6 +1701,106 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	public void setWorkPhone(String workPhone) {
 		this.workPhone = workPhone;
 	}
+
+    @JsonProperty("customEncryptedText1")
+    public String getCustomEncryptedText1() {
+        return customEncryptedText1;
+    }
+
+    @JsonProperty("customEncryptedText1")
+    public void setCustomEncryptedText1(String customEncryptedText1) {
+        this.customEncryptedText1 = customEncryptedText1;
+    }
+
+    @JsonProperty("customEncryptedText2")
+    public String getCustomEncryptedText2() {
+        return customEncryptedText2;
+    }
+
+    @JsonProperty("customEncryptedText2")
+    public void setCustomEncryptedText2(String customEncryptedText2) {
+        this.customEncryptedText2 = customEncryptedText2;
+    }
+
+    @JsonProperty("customEncryptedText3")
+    public String getCustomEncryptedText3() {
+        return customEncryptedText3;
+    }
+
+    @JsonProperty("customEncryptedText3")
+    public void setCustomEncryptedText3(String customEncryptedText3) {
+        this.customEncryptedText3 = customEncryptedText3;
+    }
+
+    @JsonProperty("customEncryptedText4")
+    public String getCustomEncryptedText4() {
+        return customEncryptedText4;
+    }
+
+    @JsonProperty("customEncryptedText4")
+    public void setCustomEncryptedText4(String customEncryptedText4) {
+        this.customEncryptedText4 = customEncryptedText4;
+    }
+
+    @JsonProperty("customEncryptedText5")
+    public String getCustomEncryptedText5() {
+        return customEncryptedText5;
+    }
+
+    @JsonProperty("customEncryptedText5")
+    public void setCustomEncryptedText5(String customEncryptedText5) {
+        this.customEncryptedText5 = customEncryptedText5;
+    }
+
+    @JsonProperty("customEncryptedText6")
+    public String getCustomEncryptedText6() {
+        return customEncryptedText6;
+    }
+
+    @JsonProperty("customEncryptedText6")
+    public void setCustomEncryptedText6(String customEncryptedText6) {
+        this.customEncryptedText6 = customEncryptedText6;
+    }
+
+    @JsonProperty("customEncryptedText7")
+    public String getCustomEncryptedText7() {
+        return customEncryptedText7;
+    }
+
+    @JsonProperty("customEncryptedText7")
+    public void setCustomEncryptedText7(String customEncryptedText7) {
+        this.customEncryptedText7 = customEncryptedText7;
+    }
+
+    @JsonProperty("customEncryptedText8")
+    public String getCustomEncryptedText8() {
+        return customEncryptedText8;
+    }
+
+    @JsonProperty("customEncryptedText8")
+    public void setCustomEncryptedText8(String customEncryptedText8) {
+        this.customEncryptedText8 = customEncryptedText8;
+    }
+
+    @JsonProperty("customEncryptedText9")
+    public String getCustomEncryptedText9() {
+        return customEncryptedText9;
+    }
+
+    @JsonProperty("customEncryptedText9")
+    public void setCustomEncryptedText9(String customEncryptedText9) {
+        this.customEncryptedText9 = customEncryptedText9;
+    }
+
+    @JsonProperty("customEncryptedText10")
+    public String getCustomEncryptedText10() {
+        return customEncryptedText10;
+    }
+
+    @JsonProperty("customEncryptedText10")
+    public void setCustomEncryptedText10(String customEncryptedText10) {
+        this.customEncryptedText10 = customEncryptedText10;
+    }
 
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
