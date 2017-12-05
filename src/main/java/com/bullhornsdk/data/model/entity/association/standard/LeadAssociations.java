@@ -16,6 +16,7 @@ import java.util.List;
  */
 public final class LeadAssociations implements EntityAssociations<Lead> {
 
+    private final AssociationField<Lead, BusinessSector> businessSectors = instantiateAssociationField("businessSectors", BusinessSector.class);
     private final AssociationField<Lead, ClientContact> clientContacts = instantiateAssociationField("clientContacts", ClientContact.class);
     private final AssociationField<Lead, Candidate> candidates = instantiateAssociationField("candidates", Candidate.class);
     private final AssociationField<Lead, CorporateUser> assignedTo = instantiateAssociationField("assignedTo", CorporateUser.class);
@@ -34,6 +35,10 @@ public final class LeadAssociations implements EntityAssociations<Lead> {
 
     public static LeadAssociations getInstance() {
         return INSTANCE;
+    }
+
+    public AssociationField<Lead, BusinessSector> businessSectors() {
+        return businessSectors;
     }
 
     public AssociationField<Lead, ClientContact> clientContacts() {
@@ -76,6 +81,7 @@ public final class LeadAssociations implements EntityAssociations<Lead> {
     public List<AssociationField<Lead, ? extends BullhornEntity>> allAssociations() {
         if (allAssociations == null) {
             allAssociations = new ArrayList<AssociationField<Lead, ? extends BullhornEntity>>();
+            allAssociations.add(businessSectors());
             allAssociations.add(clientContacts());
             allAssociations.add(candidates());
             allAssociations.add(assignedTo());
