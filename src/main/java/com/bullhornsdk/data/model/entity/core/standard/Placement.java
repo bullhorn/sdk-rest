@@ -186,7 +186,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	@Size(max = 100)
 	private String reportTo;
 
-	private Integer reportedMargin;
+	private BigDecimal reportedMargin;
 
 	private BigDecimal salary;
 
@@ -792,12 +792,12 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	}
 
 	@JsonProperty("reportedMargin")
-	public Integer getReportedMargin() {
+	public BigDecimal getReportedMargin() {
 		return reportedMargin;
 	}
 
 	@JsonProperty("reportedMargin")
-	public void setReportedMargin(Integer reportedMargin) {
+	public void setReportedMargin(BigDecimal reportedMargin) {
 		this.reportedMargin = reportedMargin;
 	}
 
