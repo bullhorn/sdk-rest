@@ -56,98 +56,10 @@ import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
-import com.bullhornsdk.data.model.entity.core.standard.Branch;
-import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Category;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
-import com.bullhornsdk.data.model.entity.core.standard.Country;
-import com.bullhornsdk.data.model.entity.core.standard.Department;
-import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
-import com.bullhornsdk.data.model.entity.core.standard.File;
-import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
-import com.bullhornsdk.data.model.entity.core.standard.JobBoardPost;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmissionHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Person;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCertification;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
-import com.bullhornsdk.data.model.entity.core.standard.PrivateLabel;
-import com.bullhornsdk.data.model.entity.core.standard.Sendout;
-import com.bullhornsdk.data.model.entity.core.standard.Skill;
-import com.bullhornsdk.data.model.entity.core.standard.Specialty;
-import com.bullhornsdk.data.model.entity.core.standard.State;
-import com.bullhornsdk.data.model.entity.core.standard.Task;
-import com.bullhornsdk.data.model.entity.core.standard.Tearsheet;
-import com.bullhornsdk.data.model.entity.core.standard.TearsheetMember;
-import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
-import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensation;
-import com.bullhornsdk.data.model.entity.core.standard.WorkersCompensationRate;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
-import com.bullhornsdk.data.model.response.list.AppointmentAttendeeListWrapper;
-import com.bullhornsdk.data.model.response.list.AppointmentListWrapper;
-import com.bullhornsdk.data.model.response.list.BranchListWrapper;
-import com.bullhornsdk.data.model.response.list.BusinessSectorListWrapper;
-import com.bullhornsdk.data.model.response.list.CandidateCertificationListWrapper;
-import com.bullhornsdk.data.model.response.list.CandidateEducationListWrapper;
-import com.bullhornsdk.data.model.response.list.CandidateListWrapper;
-import com.bullhornsdk.data.model.response.list.CandidateReferenceListWrapper;
-import com.bullhornsdk.data.model.response.list.CandidateWorkHistoryListWrapper;
-import com.bullhornsdk.data.model.response.list.CategoryListWrapper;
-import com.bullhornsdk.data.model.response.list.CertificationListWrapper;
-import com.bullhornsdk.data.model.response.list.ClientContactListWrapper;
-import com.bullhornsdk.data.model.response.list.ClientCorporationListWrapper;
-import com.bullhornsdk.data.model.response.list.CorporateUserListWrapper;
-import com.bullhornsdk.data.model.response.list.CorporationDepartmentListWrapper;
-import com.bullhornsdk.data.model.response.list.CountryListWrapper;
-import com.bullhornsdk.data.model.response.list.DepartmentListWrapper;
-import com.bullhornsdk.data.model.response.list.DistributionListListWrapper;
-import com.bullhornsdk.data.model.response.list.FileEntityListWrapper;
-import com.bullhornsdk.data.model.response.list.HousingComplexListWrapper;
-import com.bullhornsdk.data.model.response.list.JobBoardPostListWrapper;
-import com.bullhornsdk.data.model.response.list.JobOrderListWrapper;
-import com.bullhornsdk.data.model.response.list.JobSubmissionHistoryListWrapper;
-import com.bullhornsdk.data.model.response.list.JobSubmissionListWrapper;
-import com.bullhornsdk.data.model.response.list.LeadListWrapper;
-import com.bullhornsdk.data.model.response.list.ListWrapper;
-import com.bullhornsdk.data.model.response.list.NoteEntityListWrapper;
-import com.bullhornsdk.data.model.response.list.NoteListWrapper;
-import com.bullhornsdk.data.model.response.list.OpportunityListWrapper;
-import com.bullhornsdk.data.model.response.list.PersonListWrapper;
-import com.bullhornsdk.data.model.response.list.PlacementCertificationListWrapper;
-import com.bullhornsdk.data.model.response.list.PlacementChangeRequestListWrapper;
-import com.bullhornsdk.data.model.response.list.PlacementCommissionListWrapper;
-import com.bullhornsdk.data.model.response.list.PlacementListWrapper;
-import com.bullhornsdk.data.model.response.list.PrivateLabelListWrapper;
-import com.bullhornsdk.data.model.response.list.SendoutListWrapper;
-import com.bullhornsdk.data.model.response.list.SkillListWrapper;
-import com.bullhornsdk.data.model.response.list.SpecialtyListWrapper;
-import com.bullhornsdk.data.model.response.list.StateListWrapper;
-import com.bullhornsdk.data.model.response.list.TaskListWrapper;
-import com.bullhornsdk.data.model.response.list.TearsheetListWrapper;
-import com.bullhornsdk.data.model.response.list.TearsheetMemberListWrapper;
-import com.bullhornsdk.data.model.response.list.TimeUnitListWrapper;
-import com.bullhornsdk.data.model.response.list.UserTypeListWrapper;
-import com.bullhornsdk.data.model.response.list.WorkersCompensationListWrapper;
-import com.bullhornsdk.data.model.response.list.WorkersCompensationRateListWrapper;
+import com.bullhornsdk.data.model.response.list.*;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance10ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance1ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance2ListWrapper;
@@ -198,52 +110,7 @@ import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObje
 import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance7ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance8ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.single.AppointmentAttendeeWrapper;
-import com.bullhornsdk.data.model.response.single.AppointmentWrapper;
-import com.bullhornsdk.data.model.response.single.BranchWrapper;
-import com.bullhornsdk.data.model.response.single.BusinessSectorWrapper;
-import com.bullhornsdk.data.model.response.single.CandidateCertificationWrapper;
-import com.bullhornsdk.data.model.response.single.CandidateEducationWrapper;
-import com.bullhornsdk.data.model.response.single.CandidateReferenceWrapper;
-import com.bullhornsdk.data.model.response.single.CandidateWorkHistoryWrapper;
-import com.bullhornsdk.data.model.response.single.CandidateWrapper;
-import com.bullhornsdk.data.model.response.single.CategoryWrapper;
-import com.bullhornsdk.data.model.response.single.CertificationWrapper;
-import com.bullhornsdk.data.model.response.single.ClientContactWrapper;
-import com.bullhornsdk.data.model.response.single.ClientCorporationWrapper;
-import com.bullhornsdk.data.model.response.single.CorporateUserWrapper;
-import com.bullhornsdk.data.model.response.single.CorporationDepartmentWrapper;
-import com.bullhornsdk.data.model.response.single.CountryWrapper;
-import com.bullhornsdk.data.model.response.single.DepartmentWrapper;
-import com.bullhornsdk.data.model.response.single.DistributionListWrapper;
-import com.bullhornsdk.data.model.response.single.FileEntityWrapper;
-import com.bullhornsdk.data.model.response.single.HousingComplexWrapper;
-import com.bullhornsdk.data.model.response.single.JobBoardPostWrapper;
-import com.bullhornsdk.data.model.response.single.JobOrderWrapper;
-import com.bullhornsdk.data.model.response.single.JobSubmissionHistoryWrapper;
-import com.bullhornsdk.data.model.response.single.JobSubmissionWrapper;
-import com.bullhornsdk.data.model.response.single.LeadWrapper;
-import com.bullhornsdk.data.model.response.single.NoteEntityWrapper;
-import com.bullhornsdk.data.model.response.single.NoteWrapper;
-import com.bullhornsdk.data.model.response.single.OpportunityWrapper;
-import com.bullhornsdk.data.model.response.single.PersonWrapper;
-import com.bullhornsdk.data.model.response.single.PlacementCertificationWrapper;
-import com.bullhornsdk.data.model.response.single.PlacementChangeRequestWrapper;
-import com.bullhornsdk.data.model.response.single.PlacementCommissionWrapper;
-import com.bullhornsdk.data.model.response.single.PlacementWrapper;
-import com.bullhornsdk.data.model.response.single.PrivateLabelWrapper;
-import com.bullhornsdk.data.model.response.single.SendoutWrapper;
-import com.bullhornsdk.data.model.response.single.SkillWrapper;
-import com.bullhornsdk.data.model.response.single.SpecialtyWrapper;
-import com.bullhornsdk.data.model.response.single.StateWrapper;
-import com.bullhornsdk.data.model.response.single.TaskWrapper;
-import com.bullhornsdk.data.model.response.single.TearsheetMemberWrapper;
-import com.bullhornsdk.data.model.response.single.TearsheetWrapper;
-import com.bullhornsdk.data.model.response.single.TimeUnitWrapper;
-import com.bullhornsdk.data.model.response.single.UserTypeWrapper;
-import com.bullhornsdk.data.model.response.single.WorkersCompensationRateWrapper;
-import com.bullhornsdk.data.model.response.single.WorkersCompensationWrapper;
-import com.bullhornsdk.data.model.response.single.Wrapper;
+import com.bullhornsdk.data.model.response.single.*;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance10Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance1Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance2Wrapper;
@@ -335,6 +202,16 @@ public enum BullhornEntityInfo {
         "UserEditHistoryFieldChange"),
     CLIENT_CORPORATION("ClientCorporation", ClientCorporation.class, ClientCorporationWrapper.class,
         ClientCorporationListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
+    CLIENT_CORPORATION1("ClientCorporation1", ClientCorporation1.class, ClientCorporation1Wrapper.class,
+        ClientCorporation1ListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
+    CLIENT_CORPORATION2("ClientCorporation2", ClientCorporation2.class, ClientCorporation2Wrapper.class,
+        ClientCorporation2ListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
+    CLIENT_CORPORATION3("ClientCorporation3", ClientCorporation3.class, ClientCorporation3Wrapper.class,
+        ClientCorporation3ListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
+    CLIENT_CORPORATION4("ClientCorporation4", ClientCorporation4.class, ClientCorporation4Wrapper.class,
+        ClientCorporation4ListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
+    CLIENT_CORPORATION5("ClientCorporation5", ClientCorporation5.class, ClientCorporation5Wrapper.class,
+        ClientCorporation5ListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
     CORPORATE_USER("CorporateUser", CorporateUser.class, CorporateUserWrapper.class, CorporateUserListWrapper.class, "UserEditHistory",
         "UserEditHistoryFieldChange"),
     CORPORATION_DEPARTMENT("CorporationDepartment", CorporationDepartment.class, CorporationDepartmentWrapper.class,
@@ -360,7 +237,7 @@ public enum BullhornEntityInfo {
     PLACEMENT("Placement", Placement.class, PlacementWrapper.class, PlacementListWrapper.class, "PlacementEditHistory",
         "PlacementEditHistoryFieldChange"),
     PLACEMENT_CHANGE_REQUEST("PlacementChangeRequest", PlacementChangeRequest.class, PlacementChangeRequestWrapper.class,
-        PlacementChangeRequestListWrapper.class, null, null),
+        PlacementChangeRequestListWrapper.class, "PlacementChangeRequestEditHistory", "PlacementChangeRequestEditHistoryFieldChange"),
     PLACEMENT_CERTIFICATION("PlacementCertification", PlacementCertification.class, PlacementCertificationWrapper.class,
         PlacementCertificationListWrapper.class, null, null),
     PLACEMENT_COMMISSION("PlacementCommission", PlacementCommission.class, PlacementCommissionWrapper.class,

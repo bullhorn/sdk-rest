@@ -363,6 +363,11 @@ public class MockDataLoader {
         entityFiles.put(Certification.class, "certification-data.txt");
         entityFiles.put(ClientContact.class, "clientcontact-data.txt");
         entityFiles.put(ClientCorporation.class, "clientcorporation-data.txt");
+        entityFiles.put(ClientCorporation1.class, "clientcorporation1-data.txt");
+        entityFiles.put(ClientCorporation2.class, "clientcorporation2-data.txt");
+        entityFiles.put(ClientCorporation3.class, "clientcorporation3-data.txt");
+        entityFiles.put(ClientCorporation4.class, "clientcorporation4-data.txt");
+        entityFiles.put(ClientCorporation5.class, "clientcorporation5-data.txt");
         entityFiles.put(CorporateUser.class, "corporateuser-data.txt");
         entityFiles.put(CorporationDepartment.class, "corporationdepartment-data.txt");
         entityFiles.put(Country.class, "country-data.txt");

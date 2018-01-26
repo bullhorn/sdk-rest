@@ -50,7 +50,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"dateOfBirth", "dayRate", "dayRateLow", "degreeList", "description", "desiredLocations", "disability", "educationDegree",
 		"educations", "email", "email2", "email3", "employeeType", "employmentPreference", "ethnicity", "experience", "externalID", "fax",
 		"fax2", "fax3", "federalAddtionalWitholdingsAmount", "federalExemptions", "federalFilingStatus", "fileAttachments", "firstName",
-		"gender", "hourlyRate", "hourlyRateLow", "i9OnFile", "isDayLightSavings", "isDeleted", "isEditable", "isLockedOut", "interviews",
+		"gender", "hourlyRate", "hourlyRateLow", "i9OnFile", "isAnonymized", "isDayLightSavings", "isDeleted", "isEditable", "isLockedOut", "interviews",
 		"lastName", "linkedPerson", "leads", "localAddtionalWitholdingsAmount", "localExemptions", "localFilingStatus", "localTaxCode",
 		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes", "numCategories",
 		"numOwners", "occupation", "owner", "pager", "paperWorkOnFile", "password", "phone", "phone2", "phone3", "placements",
@@ -212,6 +212,8 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	private Boolean isEditable;
 
 	private Boolean isLockedOut;
+
+    private Boolean isAnonymized;
 
 	@JsonIgnore
 	@Size(max = 50)
@@ -383,6 +385,30 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 
 	private OneToMany<CandidateWorkHistory> workHistories;
 
+    @JsonIgnore
+    @Size(max = 20)
+    private String workPhone;
+
+    private String customEncryptedText1;
+
+    private String customEncryptedText2;
+
+    private String customEncryptedText3;
+
+    private String customEncryptedText4;
+
+    private String customEncryptedText5;
+
+    private String customEncryptedText6;
+
+    private String customEncryptedText7;
+
+    private String customEncryptedText8;
+
+    private String customEncryptedText9;
+
+    private String customEncryptedText10;
+
     private OneToMany<PersonCustomObjectInstance1> customObject1s;
 
     private OneToMany<PersonCustomObjectInstance2> customObject2s;
@@ -402,10 +428,6 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     private OneToMany<PersonCustomObjectInstance9> customObject9s;
 
     private OneToMany<PersonCustomObjectInstance10> customObject10s;
-
-	@JsonIgnore
-	@Size(max = 20)
-	private String workPhone;
 
 	public Candidate() {
 		super();
@@ -1043,6 +1065,16 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	public void setIsLockedOut(Boolean isLockedOut) {
 		this.isLockedOut = isLockedOut;
 	}
+
+    @JsonProperty("isAnonymized")
+    public Boolean getIsAnonymized() {
+        return isAnonymized;
+    }
+
+    @JsonProperty("isAnonymized")
+    public void setIsAnonymized(Boolean isAnonymized) {
+        this.isAnonymized = isAnonymized;
+    }
 
 	@JsonProperty("lastName")
 	public String getLastName() {
@@ -1682,6 +1714,106 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		this.workPhone = workPhone;
 	}
 
+    @JsonProperty("customEncryptedText1")
+    public String getCustomEncryptedText1() {
+        return customEncryptedText1;
+    }
+
+    @JsonProperty("customEncryptedText1")
+    public void setCustomEncryptedText1(String customEncryptedText1) {
+        this.customEncryptedText1 = customEncryptedText1;
+    }
+
+    @JsonProperty("customEncryptedText2")
+    public String getCustomEncryptedText2() {
+        return customEncryptedText2;
+    }
+
+    @JsonProperty("customEncryptedText2")
+    public void setCustomEncryptedText2(String customEncryptedText2) {
+        this.customEncryptedText2 = customEncryptedText2;
+    }
+
+    @JsonProperty("customEncryptedText3")
+    public String getCustomEncryptedText3() {
+        return customEncryptedText3;
+    }
+
+    @JsonProperty("customEncryptedText3")
+    public void setCustomEncryptedText3(String customEncryptedText3) {
+        this.customEncryptedText3 = customEncryptedText3;
+    }
+
+    @JsonProperty("customEncryptedText4")
+    public String getCustomEncryptedText4() {
+        return customEncryptedText4;
+    }
+
+    @JsonProperty("customEncryptedText4")
+    public void setCustomEncryptedText4(String customEncryptedText4) {
+        this.customEncryptedText4 = customEncryptedText4;
+    }
+
+    @JsonProperty("customEncryptedText5")
+    public String getCustomEncryptedText5() {
+        return customEncryptedText5;
+    }
+
+    @JsonProperty("customEncryptedText5")
+    public void setCustomEncryptedText5(String customEncryptedText5) {
+        this.customEncryptedText5 = customEncryptedText5;
+    }
+
+    @JsonProperty("customEncryptedText6")
+    public String getCustomEncryptedText6() {
+        return customEncryptedText6;
+    }
+
+    @JsonProperty("customEncryptedText6")
+    public void setCustomEncryptedText6(String customEncryptedText6) {
+        this.customEncryptedText6 = customEncryptedText6;
+    }
+
+    @JsonProperty("customEncryptedText7")
+    public String getCustomEncryptedText7() {
+        return customEncryptedText7;
+    }
+
+    @JsonProperty("customEncryptedText7")
+    public void setCustomEncryptedText7(String customEncryptedText7) {
+        this.customEncryptedText7 = customEncryptedText7;
+    }
+
+    @JsonProperty("customEncryptedText8")
+    public String getCustomEncryptedText8() {
+        return customEncryptedText8;
+    }
+
+    @JsonProperty("customEncryptedText8")
+    public void setCustomEncryptedText8(String customEncryptedText8) {
+        this.customEncryptedText8 = customEncryptedText8;
+    }
+
+    @JsonProperty("customEncryptedText9")
+    public String getCustomEncryptedText9() {
+        return customEncryptedText9;
+    }
+
+    @JsonProperty("customEncryptedText9")
+    public void setCustomEncryptedText9(String customEncryptedText9) {
+        this.customEncryptedText9 = customEncryptedText9;
+    }
+
+    @JsonProperty("customEncryptedText10")
+    public String getCustomEncryptedText10() {
+        return customEncryptedText10;
+    }
+
+    @JsonProperty("customEncryptedText10")
+    public void setCustomEncryptedText10(String customEncryptedText10) {
+        this.customEncryptedText10 = customEncryptedText10;
+    }
+
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1891,6 +2023,8 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         if (isEditable != null ? !isEditable.equals(candidate.isEditable) : candidate.isEditable != null) return false;
         if (isLockedOut != null ? !isLockedOut.equals(candidate.isLockedOut) : candidate.isLockedOut != null)
             return false;
+        if (isAnonymized != null ? !isAnonymized.equals(candidate.isAnonymized) : candidate.isAnonymized != null)
+            return false;
         if (lastName != null ? !lastName.equals(candidate.lastName) : candidate.lastName != null) return false;
         if (linkedPerson != null ? !linkedPerson.equals(candidate.linkedPerson) : candidate.linkedPerson != null)
             return false;
@@ -2061,6 +2195,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
         result = 31 * result + (isEditable != null ? isEditable.hashCode() : 0);
         result = 31 * result + (isLockedOut != null ? isLockedOut.hashCode() : 0);
+        result = 31 * result + (isAnonymized != null ? isAnonymized.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (linkedPerson != null ? linkedPerson.hashCode() : 0);
         result = 31 * result + (leads != null ? leads.hashCode() : 0);
@@ -2195,6 +2330,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         sb.append(", isDeleted=").append(isDeleted);
         sb.append(", isEditable=").append(isEditable);
         sb.append(", isLockedOut=").append(isLockedOut);
+        sb.append(", isAnonymized=").append(isAnonymized);
         sb.append(", lastName='").append(lastName).append('\'');
         sb.append(", linkedPerson=").append(linkedPerson);
         sb.append(", leads=").append(leads);

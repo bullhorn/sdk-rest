@@ -296,6 +296,70 @@ public interface BullhornData {
 
 	public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet);
 
+    /**
+     *
+     * Returns the MetaData for passed in type.
+     *
+     * @param type  a BullhornEntity
+     * @param metaParameter specifies how much meta data to fetch (basic or full). Null will default to basic.
+     * @param privateLabelId specifies which private label to return meta data for.  Must be associated to API user
+     *
+     * @param fieldSet fields to return meta data for. Pass in null for all fields.
+     *
+     * @return a MetaData object with the requested meta data
+     */
+    public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId);
+
+    /**
+     *
+     * Returns the MetaData for JobOrder for passed in job track.
+     *
+     * @param metaParameter specifies how much meta data to fetch (basic or full). Null will default to basic.
+     * @param fieldSet fields to return meta data for. Pass in null for all fields.
+     * @param track the job track to return meta for
+     *
+     * @return a MetaData object with the requested meta data
+     */
+    <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track);
+
+    /**
+     *
+     * Returns the MetaData for JobOrder for passed in job track.
+     *
+     * @param metaParameter specifies how much meta data to fetch (basic or full). Null will default to basic.
+     * @param fieldSet fields to return meta data for. Pass in null for all fields.
+     * @param track the job track to return meta for
+     * @param privateLabelId specifies which private label to return meta data for.  Must be associated to API user
+     *
+     * @return a MetaData object with the requested meta data
+     */
+    <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId);
+
+    /**
+     *
+     * Returns the MetaData for Opportunity for passed in opportunity track.
+     *
+     * @param metaParameter specifies how much meta data to fetch (basic or full). Null will default to basic.
+     * @param fieldSet fields to return meta data for. Pass in null for all fields.
+     * @param track the opportunity track to return meta for
+     *
+     * @return a MetaData object with the requested meta data
+     */
+    <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track);
+
+    /**
+     *
+     * Returns the MetaData for Opportunity for passed in opportunity track.
+     *
+     * @param metaParameter specifies how much meta data to fetch (basic or full). Null will default to basic.
+     * @param fieldSet fields to return meta data for. Pass in null for all fields.
+     * @param track the opportunity track to return meta for
+     * @param privateLabelId specifies which private label to return meta data for.  Must be associated to API user
+     *
+     * @return a MetaData object with the requested meta data
+     */
+    <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId);
+
 	/**
 	 * 
 	 * Returns the Settings for passed in name(s).

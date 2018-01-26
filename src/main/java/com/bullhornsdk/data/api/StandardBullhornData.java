@@ -1,5 +1,34 @@
 package com.bullhornsdk.data.api;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
 import com.bullhornsdk.data.api.helper.EntityUpdateWorker;
 import com.bullhornsdk.data.api.helper.FileWorker;
@@ -84,29 +113,6 @@ import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscribeToEventsResponse;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.springframework.http.*;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
 /**
  * Standard implementation of the BullhornData interface that manages all rest calls and data binding from/to json - java.
@@ -326,7 +332,40 @@ public class StandardBullhornData implements BullhornData {
      */
     @Override
     public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet) {
-        return this.handleGetMetaData(type, metaParameter, fieldSet);
+        return this.getMetaData(type, metaParameter, fieldSet, null);
+    }
+
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
+        return this.handleGetMetaData(type, metaParameter, fieldSet, privateLabelId);
+    }
+
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track) {
+        return getJobMetaData(metaParameter, fieldSet, track, null);
+    }
+
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getJobMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId) {
+        String entityType = "JobOrder" + track;
+
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(entityType, metaParameter, fieldSet, privateLabelId);
+
+        return handleGetMetaData(uriVariables, privateLabelId);
+    }
+
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track) {
+        return getOpportunityMetaData(metaParameter, fieldSet, track, null);
+    }
+
+    @Override
+    public <T extends BullhornEntity> MetaData<T> getOpportunityMetaData(MetaParameter metaParameter, Set<String> fieldSet, Integer track, Integer privateLabelId) {
+        String entityType = "Opportunity" + track;
+
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(entityType, metaParameter, fieldSet, privateLabelId);
+
+        return handleGetMetaData(uriVariables, privateLabelId);
     }
 
     /**
@@ -1097,10 +1136,24 @@ public class StandardBullhornData implements BullhornData {
      * @param fieldSet      fields to return meta information about. Pass in null for all fields.
      * @return the MetaData
      */
-    protected <T extends BullhornEntity> MetaData<T> handleGetMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet) {
+    protected <T extends BullhornEntity> MetaData<T> handleGetMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForMeta(BullhornEntityInfo.getTypesRestEntityName(type),
-                metaParameter, fieldSet);
-        String url = restUrlFactory.assembleEntityUrlForMeta();
+                metaParameter, fieldSet, privateLabelId);
+
+        return handleGetMetaData(uriVariables, privateLabelId);
+    }
+
+    /**
+     * Makes the "meta" api call
+     * <p>
+     * HttpMethod: GET
+     *
+     * @param uriVariables the variables to inject into the url.
+     * @param privateLabelId the privateLabelId to return meta for
+     * @return the MetaData
+     */
+    protected <T extends BullhornEntity> MetaData<T> handleGetMetaData(Map<String, String> uriVariables, Integer privateLabelId) {
+        String url = restUrlFactory.assembleEntityUrlForMeta(privateLabelId);
 
         MetaData<T> response = this.performGetRequest(url, StandardMetaData.class, uriVariables);
 

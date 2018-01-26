@@ -1,5 +1,14 @@
 package com.bullhornsdk.data.api.helper;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.bullhornsdk.data.api.BullhornData;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -9,16 +18,16 @@ import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.*;
+import com.bullhornsdk.data.model.parameter.AssociationParams;
+import com.bullhornsdk.data.model.parameter.CorpNotesParams;
+import com.bullhornsdk.data.model.parameter.EntityParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
+import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.QueryParams;
+import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
+import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
+import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class RestUriVariablesFactory {
 
@@ -45,6 +54,7 @@ public class RestUriVariablesFactory {
     private static final String SUBSCRIPTION_ID = "subscriptionId";
     private static final String MAX_EVENTS = "maxEvents";
     private static final String REQUEST_ID = "requestId";
+    private static final String PRIVATE_LABEL_ID = "privateLabelId";
 
 	public RestUriVariablesFactory(BullhornData bullhornApiRest, RestFileManager restFileManager) {
 		super();
@@ -66,22 +76,44 @@ public class RestUriVariablesFactory {
 	 * @return
 	 */
 
-	public Map<String, String> getUriVariablesForMeta(BullhornEntityInfo entityInfo, MetaParameter metaParameter, Set<String> fieldSet) {
-		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
-		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
-		String fields = this.convertFieldSetToString(fieldSet);
-		uriVariables.put(FIELDS, fields);
-
-		if (metaParameter == null) {
-			uriVariables.put(META, MetaParameter.BASIC.getName());
-		} else {
-			uriVariables.put(META, metaParameter.getName());
-		}
-
-		return uriVariables;
+	public Map<String, String> getUriVariablesForMeta(BullhornEntityInfo entityInfo, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
+		return getUriVariablesForMeta(entityInfo.getName(), metaParameter, fieldSet, privateLabelId);
 	}
+
+	/*
+	 * **************************************************************************************************************
+	 * uri variables **************************************************************************************************************
+	 */
+
+    /**
+     * Returns the uri variables needed for a meta call.
+     *
+     * @param entityType
+     * @param metaParameter
+     * @param fieldSet
+     * @return
+     */
+
+    public Map<String, String> getUriVariablesForMeta(String entityType, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
+        Map<String, String> uriVariables = new LinkedHashMap<String, String>();
+        String bhRestToken = bullhornApiRest.getBhRestToken();
+        uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(ENTITY_TYPE, entityType);
+        String fields = this.convertFieldSetToString(fieldSet);
+        uriVariables.put(FIELDS, fields);
+
+        if (metaParameter == null) {
+            uriVariables.put(META, MetaParameter.BASIC.getName());
+        } else {
+            uriVariables.put(META, metaParameter.getName());
+        }
+
+        if(privateLabelId != null) {
+            uriVariables.put(PRIVATE_LABEL_ID, privateLabelId.toString());
+        }
+
+        return uriVariables;
+    }
 
 	/**
 	 * Returns the uri variables needed for an "entity" GET
