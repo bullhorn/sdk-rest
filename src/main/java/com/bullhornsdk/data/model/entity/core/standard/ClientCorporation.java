@@ -44,7 +44,7 @@ import java.math.BigDecimal;
 		"customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText2", "customText20",
 		"customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
 		"customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateFounded", "dateLastModified", "department",
-		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "name", "notes", "numEmployees", "numOffices",
+		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "linkedinProfileName", "name", "notes", "numEmployees", "numOffices",
 		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s" })
@@ -120,6 +120,10 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	private String invoiceFormat;
 
 	private OneToMany<Lead> leads;
+
+    @JsonIgnore
+    @Size(max = 200)
+    private String linkedinProfileName;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -457,6 +461,16 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		this.leads = leads;
 	}
 
+    @JsonProperty("linkedinProfileName")
+    public String getLinkedinProfileName() {
+        return linkedinProfileName;
+    }
+
+    @JsonIgnore
+    public void setLinkedinProfileName(String linkedinProfileName) {
+        this.linkedinProfileName = linkedinProfileName;
+    }
+
 	@JsonProperty("name")
 	public String getName() {
 		return name;
@@ -763,6 +777,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         if (invoiceFormat != null ? !invoiceFormat.equals(that.invoiceFormat) : that.invoiceFormat != null)
             return false;
         if (leads != null ? !leads.equals(that.leads) : that.leads != null) return false;
+        if (linkedinProfileName != null ? !linkedinProfileName.equals(that.linkedinProfileName) : that.linkedinProfileName != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
         if (numEmployees != null ? !numEmployees.equals(that.numEmployees) : that.numEmployees != null) return false;
@@ -829,6 +844,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         result = 31 * result + (industryList != null ? industryList.hashCode() : 0);
         result = 31 * result + (invoiceFormat != null ? invoiceFormat.hashCode() : 0);
         result = 31 * result + (leads != null ? leads.hashCode() : 0);
+        result = 31 * result + (linkedinProfileName != null ? linkedinProfileName.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (notes != null ? notes.hashCode() : 0);
         result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
@@ -885,6 +901,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", industryList='").append(industryList).append('\'');
         sb.append(", invoiceFormat='").append(invoiceFormat).append('\'');
         sb.append(", leads=").append(leads);
+        sb.append(", linkedinProfileName='").append(linkedinProfileName).append('\'');
         sb.append(", name='").append(name).append('\'');
         sb.append(", notes='").append(notes).append('\'');
         sb.append(", numEmployees=").append(numEmployees);
