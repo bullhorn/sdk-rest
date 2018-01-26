@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "usersSharedWith",
     "uuid"
 })
-public class OpportunityFileAttachment extends EntityFileAttachmentExtraFields {
+public class OpportunityFileAttachment extends EntityFileAttachmentExtended {
 
     private Opportunity opportunity;
 

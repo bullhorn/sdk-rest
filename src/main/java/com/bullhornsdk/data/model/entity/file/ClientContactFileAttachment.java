@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "usersSharedWith",
     "uuid"
 })
-public class ClientContactFileAttachment extends EntityFileAttachmentExtraFields {
+public class ClientContactFileAttachment extends EntityFileAttachmentExtended {
 
     private ClientContact clientContact;
 

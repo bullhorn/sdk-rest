@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "usersSharedWith",
     "uuid"
 })
-public class JobOrderFileAttachment extends EntityFileAttachmentExtraFields {
+public class JobOrderFileAttachment extends EntityFileAttachmentExtended {
 
     private JobOrder jobOrder;
 

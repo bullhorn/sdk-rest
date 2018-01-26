@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "usersSharedWith",
     "uuid"
 })
-public class PlacementFileAttachment extends EntityFileAttachmentExtraFields {
+public class PlacementFileAttachment extends EntityFileAttachmentExtended {
 
     private Placement placement;
 

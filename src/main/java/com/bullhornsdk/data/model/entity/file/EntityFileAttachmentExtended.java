@@ -4,7 +4,7 @@ package com.bullhornsdk.data.model.entity.file;
  * @author Murray
  * @since 11/08/2017
  */
-public abstract class EntityFileAttachmentExtraFields extends EntityFileAttachment {
+public abstract class EntityFileAttachmentExtended extends EntityFileAttachment {
 
     private String distribution;
 
@@ -62,7 +62,7 @@ public abstract class EntityFileAttachmentExtraFields extends EntityFileAttachme
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
 
-        EntityFileAttachmentExtraFields that = (EntityFileAttachmentExtraFields) o;
+        EntityFileAttachmentExtended that = (EntityFileAttachmentExtended) o;
 
         if (distribution != null ? !distribution.equals(that.distribution) : that.distribution != null) return false;
         if (fileType != null ? !fileType.equals(that.fileType) : that.fileType != null) return false;
