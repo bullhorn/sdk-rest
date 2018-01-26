@@ -3,6 +3,7 @@ package com.bullhornsdk.data.model.entity.file;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -41,18 +42,22 @@ public class ClientCorporationFileAttachment extends EntityFileAttachment {
 
     private CorporateUser owner;
 
+    @JsonProperty("clientCorporation")
     public ClientCorporation getClientCorporation() {
         return clientCorporation;
     }
 
+    @JsonProperty("clientCorporation")
     public void setClientCorporation(ClientCorporation clientCorporation) {
         this.clientCorporation = clientCorporation;
     }
 
+    @JsonProperty("owner")
     public CorporateUser getOwner() {
         return owner;
     }
 
+    @JsonProperty("owner")
     public void setOwner(CorporateUser owner) {
         this.owner = owner;
     }

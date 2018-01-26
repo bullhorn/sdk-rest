@@ -1,13 +1,19 @@
 package com.bullhornsdk.data.model.entity.file;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.validation.constraints.Size;
+
 /**
  * @author Murray
  * @since 11/08/2017
  */
 public abstract class EntityFileAttachmentExtended extends EntityFileAttachment {
 
+    @Size(max = 8)
     private String distribution;
 
+    @Size(max = 15)
     private String fileType;
 
     private Boolean isCopied;
@@ -16,44 +22,54 @@ public abstract class EntityFileAttachmentExtended extends EntityFileAttachment 
 
     private Boolean isSendOut;
 
+    @JsonProperty("distribution")
     public String getDistribution() {
         return distribution;
     }
 
+    @JsonProperty("distribution")
     public void setDistribution(String distribution) {
         this.distribution = distribution;
     }
 
+    @JsonProperty("fileType")
     public String getFileType() {
         return fileType;
     }
 
+    @JsonProperty("fileType")
     public void setFileType(String fileType) {
         this.fileType = fileType;
     }
 
+    @JsonProperty("isCopied")
     public Boolean getCopied() {
         return isCopied;
     }
 
-    public void setCopied(Boolean copied) {
-        isCopied = copied;
+    @JsonProperty("isCopied")
+    public void setCopied(Boolean isCopied) {
+        this.isCopied = isCopied;
     }
 
+    @JsonProperty("isPrivate")
     public Boolean getPrivate() {
         return isPrivate;
     }
 
-    public void setPrivate(Boolean aPrivate) {
-        isPrivate = aPrivate;
+    @JsonProperty("isPrivate")
+    public void setPrivate(Boolean isPrivate) {
+        this.isPrivate = isPrivate;
     }
 
+    @JsonProperty("isSendOut")
     public Boolean getSendOut() {
         return isSendOut;
     }
 
-    public void setSendOut(Boolean sendOut) {
-        isSendOut = sendOut;
+    @JsonProperty("isSendOut")
+    public void setSendOut(Boolean isSendOut) {
+        this.isSendOut = isSendOut;
     }
 
     @Override

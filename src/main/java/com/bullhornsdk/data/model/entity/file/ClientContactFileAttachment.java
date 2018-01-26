@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.file;
 
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -39,10 +40,12 @@ public class ClientContactFileAttachment extends EntityFileAttachmentExtended {
 
     private ClientContact clientContact;
 
+    @JsonProperty("clientContact")
     public ClientContact getClientContact() {
         return clientContact;
     }
 
+    @JsonProperty("clientContact")
     public void setClientContact(ClientContact clientContact) {
         this.clientContact = clientContact;
     }

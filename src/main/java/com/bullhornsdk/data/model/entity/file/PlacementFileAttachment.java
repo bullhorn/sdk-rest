@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.file;
 
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -39,10 +40,12 @@ public class PlacementFileAttachment extends EntityFileAttachmentExtended {
 
     private Placement placement;
 
+    @JsonProperty("placement")
     public Placement getPlacement() {
         return placement;
     }
 
+    @JsonProperty("placement")
     public void setPlacement(Placement placement) {
         this.placement = placement;
     }

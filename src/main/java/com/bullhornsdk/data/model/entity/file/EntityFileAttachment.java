@@ -3,8 +3,12 @@ package com.bullhornsdk.data.model.entity.file;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
 
 /**
  * @author Murray
@@ -14,18 +18,23 @@ public abstract class EntityFileAttachment implements QueryEntity {
 
     private Integer id;
 
+    @Size(max = 64)
     private String contentSubType;
 
+    @Size(max = 64)
     private String contentType;
 
     private DateTime dateAdded;
 
     private String description;
 
+    @Size(max = 150)
     private String directory;
 
+    @Size(max = 100)
     private String externalID;
 
+    @Size(max = 10)
     private String fileExtension;
 
     private Integer fileSize;
@@ -38,140 +47,175 @@ public abstract class EntityFileAttachment implements QueryEntity {
 
     private String name;
 
+    @Size(max = 50)
     private String type;
 
     @JsonIgnore
     private OneToMany<CorporateUser> usersSharedWith;
 
     @JsonIgnore
+    @Size(max = 36)
     private String uuid;
 
     @Override
+    @JsonProperty("id")
     public Integer getId() {
         return id;
     }
 
+    @ReadOnly
     @Override
+    @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
     }
 
+    @JsonProperty("contentSubType")
     public String getContentSubType() {
         return contentSubType;
     }
 
+    @JsonProperty("contentSubType")
     public void setContentSubType(String contentSubType) {
         this.contentSubType = contentSubType;
     }
 
+    @JsonProperty("contentType")
     public String getContentType() {
         return contentType;
     }
 
+    @JsonProperty("contentType")
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
 
+    @JsonProperty("dateAdded")
     public DateTime getDateAdded() {
         return dateAdded;
     }
 
+    @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
     }
 
+    @JsonProperty("description")
     public String getDescription() {
         return description;
     }
 
+    @JsonProperty("description")
     public void setDescription(String description) {
         this.description = description;
     }
 
+    @JsonProperty("directory")
     public String getDirectory() {
         return directory;
     }
 
+    @JsonProperty("directory")
     public void setDirectory(String directory) {
         this.directory = directory;
     }
 
+    @JsonProperty("externalID")
     public String getExternalID() {
         return externalID;
     }
 
+    @JsonProperty("externalID")
     public void setExternalID(String externalID) {
         this.externalID = externalID;
     }
 
+    @JsonProperty("fileExtension")
     public String getFileExtension() {
         return fileExtension;
     }
 
+    @JsonProperty("fileExtension")
     public void setFileExtension(String fileExtension) {
         this.fileExtension = fileExtension;
     }
 
+    @JsonProperty("fileSize")
     public Integer getFileSize() {
         return fileSize;
     }
 
+    @JsonProperty("fileSize")
     public void setFileSize(Integer fileSize) {
         this.fileSize = fileSize;
     }
 
+    @JsonProperty("isDeleted")
     public Boolean getDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(Boolean deleted) {
-        isDeleted = deleted;
+    @JsonProperty("isDeleted")
+    public void setDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
+    @JsonProperty("isExternal")
     public Boolean getExternal() {
         return isExternal;
     }
 
-    public void setExternal(Boolean external) {
-        isExternal = external;
+    @JsonProperty("isExternal")
+    public void setExternal(Boolean isExternal) {
+        this.isExternal = isExternal;
     }
 
+    @JsonProperty("isOpen")
     public Boolean getOpen() {
         return isOpen;
     }
 
-    public void setOpen(Boolean open) {
-        isOpen = open;
+    @JsonProperty("isOpen")
+    public void setOpen(Boolean isOpen) {
+        this.isOpen = isOpen;
     }
 
+    @JsonProperty("name")
     public String getName() {
         return name;
     }
 
+    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
 
+    @JsonProperty("type")
     public String getType() {
         return type;
     }
 
+    @JsonProperty("type")
     public void setType(String type) {
         this.type = type;
     }
 
+    @JsonProperty("usersSharedWith")
     public OneToMany<CorporateUser> getUsersSharedWith() {
         return usersSharedWith;
     }
 
+    @JsonProperty("usersSharedWith")
     public void setUsersSharedWith(OneToMany<CorporateUser> usersSharedWith) {
         this.usersSharedWith = usersSharedWith;
     }
 
+    @JsonProperty("uuid")
     public String getUuid() {
         return uuid;
     }
 
+    @JsonProperty("uuid")
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

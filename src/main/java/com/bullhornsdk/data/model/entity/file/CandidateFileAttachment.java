@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.file;
 
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
@@ -39,10 +40,12 @@ public class CandidateFileAttachment extends EntityFileAttachment {
 
     private Candidate candidate;
 
+    @JsonProperty("candidate")
     public Candidate getCandidate() {
         return candidate;
     }
 
+    @JsonProperty("candidate")
     public void setCandidate(Candidate candidate) {
         this.candidate = candidate;
     }
