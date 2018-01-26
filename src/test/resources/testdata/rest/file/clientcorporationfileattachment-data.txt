@@ -1,0 +1,41 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        }
+    ]
+}

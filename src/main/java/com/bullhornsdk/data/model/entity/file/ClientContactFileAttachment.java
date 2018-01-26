@@ -18,11 +18,13 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "contentSubType",
     "contentType",
     "dateAdded",
+    "departmentsSharedWith",
     "description",
     "directory",
     "distribution",
     "externalID",
     "fileExtension",
+    "fileOwner",
     "fileSize",
     "fileType",
     "isCopied",
@@ -36,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "usersSharedWith",
     "uuid"
 })
-public class ClientContactFileAttachment extends EntityFileAttachmentExtended {
+public class ClientContactFileAttachment extends EntityFileAttachment {
 
     private ClientContact clientContact;
 

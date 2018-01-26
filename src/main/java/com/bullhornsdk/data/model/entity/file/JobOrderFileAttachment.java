@@ -18,11 +18,13 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "contentSubType",
     "contentType",
     "dateAdded",
+    "departmentsSharedWith",
     "description",
     "directory",
     "distribution",
     "externalID",
     "fileExtension",
+    "fileOwner",
     "fileSize",
     "fileType",
     "isCopied",
@@ -38,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "usersSharedWith",
     "uuid"
 })
-public class JobOrderFileAttachment extends EntityFileAttachmentExtended {
+public class JobOrderFileAttachment extends EntityFileAttachment {
 
     private JobOrder jobOrder;
 

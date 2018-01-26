@@ -1,5 +1,7 @@
 package com.bullhornsdk.data.model.entity.file;
 
+import com.bullhornsdk.data.model.entity.core.standard.Candidate;
+import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -17,11 +19,13 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "contentSubType",
     "contentType",
     "dateAdded",
+    "departmentsSharedWith",
     "description",
     "directory",
     "distribution",
     "externalID",
     "fileExtension",
+    "fileOwner",
     "fileSize",
     "fileType",
     "isCopied",
@@ -30,15 +34,31 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "isOpen",
     "isPrivate",
     "isSendOut",
+    "jobOrder",
     "name",
     "placement",
     "type",
+    "user",
     "usersSharedWith",
     "uuid"
 })
-public class PlacementFileAttachment extends EntityFileAttachmentExtended {
+public class PlacementFileAttachment extends EntityFileAttachment {
+
+    private JobOrder jobOrder;
 
     private Placement placement;
+
+    private Candidate user;
+
+    @JsonProperty("jobOrder")
+    public JobOrder getJobOrder() {
+        return jobOrder;
+    }
+
+    @JsonProperty("jobOrder")
+    public void setJobOrder(JobOrder jobOrder) {
+        this.jobOrder = jobOrder;
+    }
 
     @JsonProperty("placement")
     public Placement getPlacement() {
@@ -48,6 +68,16 @@ public class PlacementFileAttachment extends EntityFileAttachmentExtended {
     @JsonProperty("placement")
     public void setPlacement(Placement placement) {
         this.placement = placement;
+    }
+
+    @JsonProperty("user")
+    public Candidate getUser() {
+        return user;
+    }
+
+    @JsonProperty("user")
+    public void setUser(Candidate user) {
+        this.user = user;
     }
 
     @Override

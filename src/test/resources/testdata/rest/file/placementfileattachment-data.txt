@@ -1,0 +1,86 @@
+{
+    "start": 0,
+    "count": 2,
+    "data": [
+        {
+            "id": 1,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1510005264687,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13449/2017.11/",
+            "distribution": "general",
+            "externalID": "Awesome Doc.pdf",
+            "fileExtension": ".pdf",
+            "fileOwner": null,
+            "fileSize": 238637,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": true,
+            "jobOrder": null,
+            "name": "Awesome Doc.pdf",
+            "placement": {
+                "id": 18
+            },
+            "type": "Awesome Doc",
+            "user": {
+                "id": 3,
+                "firstName": "Alex",
+                "lastName": "van der Valk"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+        },
+        {
+            "id": 4394,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1510005262557,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13449/2017.11/",
+            "distribution": "general",
+            "externalID": "Kyloe UK Recurring Services contract (NEW) (5).pdf",
+            "fileExtension": ".pdf",
+            "fileOwner": null,
+            "fileSize": 643388,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": true,
+            "jobOrder": null,
+            "name": "Kyloe UK Recurring Services contract (NEW) (5).pdf",
+            "placement": {
+                "id": 18
+            },
+            "type": "Awesome Doc",
+            "user": {
+                "id": 3,
+                "firstName": "Alex",
+                "lastName": "van der Valk"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "8FB02B5D-F75A-4A39-A086-6695B1EF26CB"
+        }
+    ]
+}

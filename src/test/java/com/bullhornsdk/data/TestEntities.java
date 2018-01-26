@@ -101,6 +101,18 @@ public class TestEntities {
 
     private String subscriptionId;
 
+    private Integer candidateFileAttachmentId;
+
+    private Integer clientContactFileAttachmentId;
+
+    private Integer clientCorporationFileAttachmentId;
+
+    private Integer jobOrderFileAttachmentId;
+
+    private Integer opportunityFileAttachmentId;
+
+    private Integer placementFileAttachmentId;
+
     public TestEntities() {
         super();
         this.appointmentId = 1;
@@ -192,6 +204,19 @@ public class TestEntities {
         this.requestId = 1;
 
         this.subscriptionId = "bhps_test_subscription";
+
+        this.candidateFileAttachmentId = 1;
+
+        this.clientContactFileAttachmentId = 1;
+
+        this.clientCorporationFileAttachmentId = 1;
+
+        this.jobOrderFileAttachmentId = 1;
+
+        this.opportunityFileAttachmentId = 1;
+
+        this.placementFileAttachmentId = 1;
+
     }
 
     public Integer getAppointmentId() {
@@ -554,6 +579,54 @@ public class TestEntities {
         this.placementCertificationId = placementCertificationId;
     }
 
+    public Integer getCandidateFileAttachmentId() {
+        return candidateFileAttachmentId;
+    }
+
+    public void setCandidateFileAttachmentId(Integer candidateFileAttachmentId) {
+        this.candidateFileAttachmentId = candidateFileAttachmentId;
+    }
+
+    public Integer getClientContactFileAttachmentId() {
+        return clientContactFileAttachmentId;
+    }
+
+    public void setClientContactFileAttachmentId(Integer clientContactFileAttachmentId) {
+        this.clientContactFileAttachmentId = clientContactFileAttachmentId;
+    }
+
+    public Integer getClientCorporationFileAttachmentId() {
+        return clientCorporationFileAttachmentId;
+    }
+
+    public void setClientCorporationFileAttachmentId(Integer clientCorporationFileAttachmentId) {
+        this.clientCorporationFileAttachmentId = clientCorporationFileAttachmentId;
+    }
+
+    public Integer getJobOrderFileAttachmentId() {
+        return jobOrderFileAttachmentId;
+    }
+
+    public void setJobOrderFileAttachmentId(Integer jobOrderFileAttachmentId) {
+        this.jobOrderFileAttachmentId = jobOrderFileAttachmentId;
+    }
+
+    public Integer getOpportunityFileAttachmentId() {
+        return opportunityFileAttachmentId;
+    }
+
+    public void setOpportunityFileAttachmentId(Integer opportunityFileAttachmentId) {
+        this.opportunityFileAttachmentId = opportunityFileAttachmentId;
+    }
+
+    public Integer getPlacementFileAttachmentId() {
+        return placementFileAttachmentId;
+    }
+
+    public void setPlacementFileAttachmentId(Integer placementFileAttachmentId) {
+        this.placementFileAttachmentId = placementFileAttachmentId;
+    }
+
     @Override
     public String toString() {
         return new StringBuilder("TestEntities {")
@@ -646,9 +719,20 @@ public class TestEntities {
             .append(",\n\t\"requestId\": ")
             .append(requestId)
             .append(",\n\t\"subscriptionId\": ")
-            .append("'")
-            .append(subscriptionId).append('\'')
-            .append('}')
+            .append('\'').append(subscriptionId).append('\'')
+            .append(",\n\t\"candidateFileAttachmentId\": ")
+            .append(candidateFileAttachmentId)
+            .append(",\n\t\"clientContactFileAttachmentId\": ")
+            .append(clientContactFileAttachmentId)
+            .append(",\n\t\"clientCorporationFileAttachmentId\": ")
+            .append(clientCorporationFileAttachmentId)
+            .append(",\n\t\"jobOrderFileAttachmentId\": ")
+            .append(jobOrderFileAttachmentId)
+            .append(",\n\t\"opportunityFileAttachmentId\": ")
+            .append(opportunityFileAttachmentId)
+            .append(",\n\t\"placementFileAttachmentId\": ")
+            .append(placementFileAttachmentId)
+            .append("\n}")
             .toString();
     }
 }
