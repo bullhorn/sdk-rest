@@ -4,6 +4,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.bullhornsdk.data.model.entity.core.standard.*;
+import com.bullhornsdk.data.model.entity.file.*;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -448,6 +449,60 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
         ListWrapper<UserType> wrapper = bullhornData.query(UserType.class, where, null, queryParams);
 
         runAssertions("ListWrapper<UserType>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryCandidateFileAttachment() {
+
+        ListWrapper<CandidateFileAttachment> wrapper = bullhornData.query(CandidateFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<CandidateFileAttachment>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryClientContactFileAttachment() {
+
+        ListWrapper<ClientContactFileAttachment> wrapper = bullhornData.query(ClientContactFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<ClientContactFileAttachment>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryClientCorporationFileAttachment() {
+
+        ListWrapper<ClientCorporationFileAttachment> wrapper = bullhornData.query(ClientCorporationFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<ClientCorporationFileAttachment>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryJobOrderFileAttachment() {
+
+        ListWrapper<JobOrderFileAttachment> wrapper = bullhornData.query(JobOrderFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<JobOrderFileAttachment>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryOpportunityFileAttachment() {
+
+        ListWrapper<OpportunityFileAttachment> wrapper = bullhornData.query(OpportunityFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<OpportunityFileAttachment>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryPlacementFileAttachment() {
+
+        ListWrapper<PlacementFileAttachment> wrapper = bullhornData.query(PlacementFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<PlacementFileAttachment>", wrapper);
 
     }
 

@@ -1,0 +1,686 @@
+{
+    "start": 0,
+    "count": 20,
+    "data":[
+       {
+           "id": 1,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 2,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 3,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 4,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 5,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 6,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 7,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 8,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 9,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 10,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 11,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 12,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 13,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 14,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 15,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 16,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 17,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 18,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 19,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       },
+       {
+           "id": 20,
+           "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+           "contentType": "application",
+           "dateAdded": 1501253039887,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": "June 17\r\f1.  Version Control\u0007Version\u0007Author\u0007Date\u0007Description\u0007\u0007\u00071.0\u0007Raymond Pennie\u000721/2/2017\u0007Initial Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u00071.1\u0007Raymond Pennie\u000725/07/2017\u0007Final Draft\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\u0007\f\f",
+           "directory": "13450\\2017.07\\",
+           "distribution": "general",
+           "externalID": "Portfolio",
+           "fileExtension": ".docx",
+           "fileOwner": null,
+           "fileSize": 33672,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "name": "STRIPPED SOW TEMPLATE.docx",
+           "opportunity": {
+               "id": 2
+           },
+           "type": "NA",
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": null
+       }
+   ]
+}

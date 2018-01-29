@@ -1,0 +1,826 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 2,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 3,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 4,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 5,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 6,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 7,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 8,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 9,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 10,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 11,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 12,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 13,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 14,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 15,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 16,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 17,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 18,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 19,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        },
+        {
+            "id": 20,
+            "contentSubType": "vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "contentType": "application",
+            "dateAdded": 1511436678907,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "13439/2017.11/",
+            "distribution": "internal",
+            "externalID": "Awesome Doc.docx",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 8955,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "jobOrder": {
+                "id": 29,
+                "title": "Software Developer"
+            },
+            "name": "Awesome Doc.docx",
+            "type": "Awesome Doc",
+            "user": {
+                "id": 2,
+                "_subtype": "CorporateUser",
+                "firstName": "Stewart",
+                "lastName": "Morgan"
+            },
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "CE913B37-6DC8-4286-9415-CE3FC2D775BC"
+        }
+    ]
+}

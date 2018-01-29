@@ -1,0 +1,806 @@
+{
+    "start": 0,
+    "count": 20,
+    "data":[
+       {
+           "id": 1,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 2,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 3,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 4,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 5,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 6,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 7,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 8,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 9,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 10,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 11,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 12,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 13,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 14,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 15,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 16,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 17,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 18,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 19,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       },
+       {
+           "id": 20,
+           "contentSubType": "pdf",
+           "contentType": "application",
+           "dateAdded": 1510005264687,
+           "departmentsSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "description": null,
+           "directory": "13449/2017.11/",
+           "distribution": "general",
+           "externalID": "Awesome Doc.pdf",
+           "fileExtension": ".pdf",
+           "fileOwner": null,
+           "fileSize": 238637,
+           "fileType": "SAMPLE         ",
+           "isCopied": false,
+           "isDeleted": false,
+           "isExternal": false,
+           "isOpen": true,
+           "isPrivate": false,
+           "isSendOut": true,
+           "jobOrder": null,
+           "name": "Awesome Doc.pdf",
+           "placement": {
+               "id": 18
+           },
+           "type": "Awesome Doc",
+           "user": {
+               "id": 3,
+               "firstName": "Alex",
+               "lastName": "van der Valk"
+           },
+           "usersSharedWith": {
+               "total": 0,
+               "data": []
+           },
+           "uuid": "E164A95F-937E-4421-B41E-0A6C0B679BA8"
+       }
+   ]
+}

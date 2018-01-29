@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.bullhornsdk.data.model.entity.file.*;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.junit.After;
@@ -581,6 +582,132 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		this.runAssertions(response, newValue, updatedEntity.getDescription());
 
 	}
+
+    @Test
+    public void testUpdateCandidateFileAttachment() {
+
+        CandidateFileAttachment entity = bullhornData.findEntity(CandidateFileAttachment.class, testEntities.getCandidateFileAttachmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getDescription();
+
+        newValue = previousValue + "toad";
+
+        entity.setDescription(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        CandidateFileAttachment updatedEntity = bullhornData.findEntity(CandidateFileAttachment.class, testEntities.getCandidateFileAttachmentId());
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
+
+    @Test
+    public void testUpdateClientContactFileAttachment() {
+
+        ClientContactFileAttachment entity = bullhornData.findEntity(ClientContactFileAttachment.class, testEntities.getClientContactFileAttachmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getDescription();
+
+        newValue = previousValue + "toad";
+
+        entity.setDescription(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        ClientContactFileAttachment updatedEntity = bullhornData.findEntity(ClientContactFileAttachment.class, testEntities.getClientContactFileAttachmentId());
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
+
+    @Test
+    public void testUpdateClientCorporationFileAttachment() {
+
+        ClientCorporationFileAttachment entity = bullhornData.findEntity(ClientCorporationFileAttachment.class, testEntities.getClientCorporationFileAttachmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getDescription();
+
+        newValue = previousValue + "toad";
+
+        entity.setDescription(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        ClientCorporationFileAttachment updatedEntity = bullhornData.findEntity(ClientCorporationFileAttachment.class, testEntities.getClientCorporationFileAttachmentId());
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
+
+    @Test
+    public void testUpdateJobOrderFileAttachment() {
+
+        JobOrderFileAttachment entity = bullhornData.findEntity(JobOrderFileAttachment.class, testEntities.getJobOrderFileAttachmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getDescription();
+
+        newValue = previousValue + "toad";
+
+        entity.setDescription(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        JobOrderFileAttachment updatedEntity = bullhornData.findEntity(JobOrderFileAttachment.class, testEntities.getJobOrderFileAttachmentId());
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
+
+    @Test
+    public void testUpdateOpportunityFileAttachment() {
+
+        OpportunityFileAttachment entity = bullhornData.findEntity(OpportunityFileAttachment.class, testEntities.getOpportunityFileAttachmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getDescription();
+
+        newValue = previousValue + "toad";
+
+        entity.setDescription(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        OpportunityFileAttachment updatedEntity = bullhornData.findEntity(OpportunityFileAttachment.class, testEntities.getOpportunityFileAttachmentId());
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
+
+    @Test
+    public void testUpdatePlacementFileAttachment() {
+
+        PlacementFileAttachment entity = bullhornData.findEntity(PlacementFileAttachment.class, testEntities.getPlacementFileAttachmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getDescription();
+
+        newValue = previousValue + "toad";
+
+        entity.setDescription(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        PlacementFileAttachment updatedEntity = bullhornData.findEntity(PlacementFileAttachment.class, testEntities.getPlacementFileAttachmentId());
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
 
 	private void runAssertions(UpdateResponse response, String valueShouldBe, String valueIs) {
 		assertNotNull("response is null", response);

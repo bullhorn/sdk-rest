@@ -10,6 +10,12 @@ import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.embedded.UserType
+import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment
+import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment
+import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment
+import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment
+import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment
+import com.bullhornsdk.data.model.entity.file.PlacementFileAttachment
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo
@@ -451,6 +457,13 @@ public class MockDataLoader {
         entityFiles.put(PersonCustomObjectInstance8.class, "customobject/personcustomobjectinstance8-data.txt");
         entityFiles.put(PersonCustomObjectInstance9.class, "customobject/personcustomobjectinstance9-data.txt");
         entityFiles.put(PersonCustomObjectInstance10.class, "customobject/personcustomobjectinstance10-data.txt");
+
+        entityFiles.put(CandidateFileAttachment.class, "file/candidatefileattachment-data.txt");
+        entityFiles.put(ClientContactFileAttachment.class, "file/clientcontactfileattachment-data.txt");
+        entityFiles.put(ClientCorporationFileAttachment.class, "file/clientcorporationfileattachment-data.txt");
+        entityFiles.put(JobOrderFileAttachment.class, "file/joborderfileattachment-data.txt");
+        entityFiles.put(OpportunityFileAttachment.class, "file/opportunityfileattachment-data.txt");
+        entityFiles.put(PlacementFileAttachment.class, "file/placementfileattachment-data.txt");
 
         return entityFiles;
     }
