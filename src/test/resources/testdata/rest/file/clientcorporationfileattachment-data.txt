@@ -1,9 +1,674 @@
 {
     "start": 0,
-    "count": 1,
+    "count": 20,
     "data": [
         {
             "id": 1,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 2,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 3,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 4,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 5,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 6,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 7,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 8,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 9,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 10,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 11,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 12,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 13,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 14,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 15,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 16,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 17,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 18,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 19,
+            "clientCorporation": {
+                "id": 123123,
+                "name": "Yesmen, Inc."
+            },
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1515075779633,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": "Credit check report retrieved on 04-01-2018",
+            "directory": "ClientCorporationFiles/13449/2018.01/",
+            "externalID": "Credit-Device-Report",
+            "fileExtension": "",
+            "fileOwner": null,
+            "fileSize": 161783,
+            "isDeleted": false,
+            "isExternal": false,
+            "isPrivate": false,
+            "name": "Credit Report",
+            "owner": {
+                "id": 7703,
+                "firstName": "Kyloe",
+                "lastName": "DevApi"
+            },
+            "type": "Credit Report",
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "5D9B29AD-7DA9-4B4B-A786-3155BBF177A9"
+        },
+        {
+            "id": 20,
             "clientCorporation": {
                 "id": 123123,
                 "name": "Yesmen, Inc."
