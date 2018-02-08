@@ -5,6 +5,7 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsE;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -16,7 +17,7 @@ import javax.validation.constraints.Size;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "placement", "candidateCertification", "certification", "dateAdded", "modifyingUser", "dateLastModified" })
-public class PlacementCertification implements UpdateEntity, CreateEntity, QueryEntity, DeleteEntity, AssociationEntity {
+public class PlacementCertification implements UpdateEntity, CreateEntity, QueryEntity, DeleteEntity, AssociationEntity, EditHistoryEntity {
 
     private Integer id;
 
@@ -31,6 +32,18 @@ public class PlacementCertification implements UpdateEntity, CreateEntity, Query
     private CorporateUser modifyingUser;
 
     private DateTime dateLastModified;
+
+    @JsonIgnore
+    private String candidateCertificationName;
+
+    @JsonIgnore
+    private String candidateCertificationStatus;
+
+    @JsonIgnore
+    private int matchingCredentialCount;
+
+    @JsonIgnore
+    private OneToMany<EditHistoryEntity> editHistories;
 
     @Override
     @JsonProperty("id")
@@ -100,6 +113,46 @@ public class PlacementCertification implements UpdateEntity, CreateEntity, Query
     @JsonProperty("modifyingUser")
     public void setModifyingUser(CorporateUser modifyingUser) {
         this.modifyingUser = modifyingUser;
+    }
+
+    @JsonProperty("candidateCertificationName")
+    public String getCandidateCertificationName() {
+        return candidateCertificationName;
+    }
+
+    @JsonIgnore
+    public void setCandidateCertificationName(String candidateCertificationName) {
+        this.candidateCertificationName = candidateCertificationName;
+    }
+
+    @JsonProperty("candidateCertificationStatus")
+    public String getCandidateCertificationStatus() {
+        return candidateCertificationStatus;
+    }
+
+    @JsonIgnore
+    public void setCandidateCertificationStatus(String candidateCertificationStatus) {
+        this.candidateCertificationStatus = candidateCertificationStatus;
+    }
+
+    @JsonProperty("matchingCredentialCount")
+    public int getMatchingCredentialCount() {
+        return matchingCredentialCount;
+    }
+
+    @JsonIgnore
+    public void setMatchingCredentialCount(int matchingCredentialCount) {
+        this.matchingCredentialCount = matchingCredentialCount;
+    }
+
+    @JsonProperty("editHistories")
+    public OneToMany<EditHistoryEntity> getEditHistories() {
+        return editHistories;
+    }
+
+    @JsonIgnore
+    public void setEditHistories(OneToMany<EditHistoryEntity> editHistories) {
+        this.editHistories = editHistories;
     }
 
 

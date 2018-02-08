@@ -19,7 +19,8 @@ import javax.validation.constraints.Size;
     "customTextBlock10","customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "customTextBlock6",
     "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateCertified", "dateExpiration", "dateLastModified",
     "issuedBy", "licenseNumber", "licenseType", "location", "modifyingUser", "name",  "results", "status"})
-public class CandidateCertification extends CustomFieldsE implements UpdateEntity, CreateEntity, QueryEntity, SoftDeleteEntity, AssociationEntity {
+public class CandidateCertification extends CustomFieldsE implements UpdateEntity, CreateEntity, QueryEntity, SoftDeleteEntity,
+        AssociationEntity, EditHistoryEntity {
 
     private Integer id;
 
