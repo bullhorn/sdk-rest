@@ -199,6 +199,7 @@ public enum BullhornEntityInfo {
         CandidateWorkHistoryListWrapper.class, null, null),
     CATEGORY("Category", Category.class, CategoryWrapper.class, CategoryListWrapper.class, null, null),
     CERTIFICATION("Certification", Certification.class, CertificationWrapper.class, CertificationListWrapper.class, null, null),
+    CERTIFICATIONGROUP("CertificationGroup", CertificationGroup.class, CertificationGroupWrapper.class, CertificationGroupListWrapper.class, null, null),
     CLIENT_CONTACT("ClientContact", ClientContact.class, ClientContactWrapper.class, ClientContactListWrapper.class, "UserEditHistory",
         "UserEditHistoryFieldChange"),
     CLIENT_CORPORATION("ClientCorporation", ClientCorporation.class, ClientCorporationWrapper.class,

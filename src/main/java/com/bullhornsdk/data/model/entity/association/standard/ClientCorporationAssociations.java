@@ -3,6 +3,8 @@ package com.bullhornsdk.data.model.entity.association.standard;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.standard.Certification;
+import com.bullhornsdk.data.model.entity.core.standard.CertificationGroup;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.Lead;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -20,8 +22,10 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
 
     private final AssociationField<ClientCorporation,ClientCorporation> childClientCorporations = instantiateAssociationField("childClientCorporations",ClientCorporation.class);
     private final AssociationField<ClientCorporation,Lead> leads = instantiateAssociationField("leads",Lead.class);
-    private List<AssociationField<ClientCorporation, ? extends BullhornEntity>> allAssociations;
+    private final AssociationField<ClientCorporation, Certification> requirements = instantiateAssociationField("requirements", Certification.class);
+    private final AssociationField<ClientCorporation, CertificationGroup> certificationGroups = instantiateAssociationField("certificationGroups", CertificationGroup.class);
 
+    private List<AssociationField<ClientCorporation, ? extends BullhornEntity>> allAssociations;
     private static final ClientCorporationAssociations INSTANCE = new ClientCorporationAssociations();
 
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", ClientCorporationCustomObjectInstance1.class);
@@ -42,13 +46,20 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
     public static ClientCorporationAssociations getInstance() {
         return INSTANCE;
     }
-
     public AssociationField<ClientCorporation,ClientCorporation> childClientCorporations() {
         return childClientCorporations;
     }
 
     public AssociationField<ClientCorporation,Lead> leads() {
         return leads;
+    }
+
+    public AssociationField<ClientCorporation, Certification> requirements() {
+        return requirements;
+    }
+
+    public AssociationField<ClientCorporation, CertificationGroup> certificationGroups() {
+        return certificationGroups;
     }
 
     public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance1> customObject1s() {
@@ -103,6 +114,8 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
             allAssociations = new ArrayList<AssociationField<ClientCorporation, ? extends BullhornEntity>>();
             allAssociations.add(childClientCorporations());
             allAssociations.add(leads());
+            allAssociations.add(requirements());
+            allAssociations.add(certificationGroups());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());

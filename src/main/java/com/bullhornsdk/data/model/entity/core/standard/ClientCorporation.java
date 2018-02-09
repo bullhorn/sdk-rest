@@ -38,8 +38,8 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "address", "annualRevenue", "billingAddress", "billingContact", "billingFrequency", "billingPhone",
-		"branch", "businessSectorList", "childClientCorporations", "clientContacts", "companyDescription", "companyURL",
-		"competitors", "culture", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
+        "branch", "businessSectorList", "certifications", "certificationGroups", "childClientCorporations", "clientContacts", "companyDescription",
+        "companyURL", "competitors", "culture", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
 		"customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
 		"customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText2", "customText20",
 		"customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
@@ -166,6 +166,10 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	private String trackTitle;
 
 	private Integer workWeekStart;
+
+    private OneToMany<Certification> requirements;
+
+    private OneToMany<CertificationGroup> certificationGroups;
 
     private OneToMany<ClientCorporationCustomObjectInstance1> customObject1s;
 
@@ -612,6 +616,30 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 		this.workWeekStart = workWeekStart;
 	}
 
+
+
+    @JsonProperty("requirements")
+    public OneToMany<Certification> getRequirements() {
+        return requirements;
+    }
+
+    @ReadOnly
+    @JsonProperty("requirements")
+    public void setRequirements(OneToMany<Certification> requirements) {
+        this.requirements = requirements;
+    }
+
+    @JsonProperty("certificationGroups")
+    public OneToMany<CertificationGroup> getCertificationGroups() {
+        return certificationGroups;
+    }
+
+    @ReadOnly
+    @JsonProperty("certificationGroups")
+    public void setCertificationGroups(OneToMany<CertificationGroup> certificationGroups) {
+        this.certificationGroups = certificationGroups;
+    }
+
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -794,6 +822,10 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         if (trackTitle != null ? !trackTitle.equals(that.trackTitle) : that.trackTitle != null) return false;
         if (workWeekStart != null ? !workWeekStart.equals(that.workWeekStart) : that.workWeekStart != null)
             return false;
+        if (requirements != null ? !requirements.equals(that.requirements) : that.requirements != null)
+            return false;
+        if (certificationGroups != null ? !certificationGroups.equals(that.certificationGroups) : that.certificationGroups != null)
+            return false;
         if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
             return false;
         if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
@@ -859,6 +891,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         result = 31 * result + (tickerSymbol != null ? tickerSymbol.hashCode() : 0);
         result = 31 * result + (trackTitle != null ? trackTitle.hashCode() : 0);
         result = 31 * result + (workWeekStart != null ? workWeekStart.hashCode() : 0);
+        result = 31 * result + (requirements != null ? requirements.hashCode() : 0);
+        result = 31 * result + (certificationGroups != null ? certificationGroups.hashCode() : 0);
         result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
         result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
         result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
@@ -916,6 +950,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", tickerSymbol='").append(tickerSymbol).append('\'');
         sb.append(", trackTitle='").append(trackTitle).append('\'');
         sb.append(", workWeekStart=").append(workWeekStart);
+        sb.append(", requirements=").append(requirements);
+        sb.append(", certificationGroups=").append(certificationGroups);
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);

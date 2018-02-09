@@ -367,6 +367,7 @@ public class MockDataLoader {
         entityFiles.put(CandidateWorkHistory.class, "candidateworkhistory-data.txt");
         entityFiles.put(Category.class, "category-data.txt");
         entityFiles.put(Certification.class, "certification-data.txt");
+        entityFiles.put(CertificationGroup.class, "certificationgroup-data.txt");
         entityFiles.put(ClientContact.class, "clientcontact-data.txt");
         entityFiles.put(ClientCorporation.class, "clientcorporation-data.txt");
         entityFiles.put(ClientCorporation1.class, "clientcorporation1-data.txt");
@@ -482,6 +483,7 @@ public class MockDataLoader {
         entityMetaFiles.put(CandidateWorkHistory.class, "meta/candidateworkhistory-meta-data.txt");
         entityMetaFiles.put(Category.class, "meta/category-meta-data.txt");
         entityMetaFiles.put(Certification.class, "meta/certification-meta-data.txt");
+        entityMetaFiles.put(CertificationGroup.class, "meta/certificationgroup-meta-data.txt");
         entityMetaFiles.put(ClientContact.class, "meta/clientcontact-meta-data.txt");
         entityMetaFiles.put(ClientCorporation.class, "meta/clientcorporation-meta-data.txt");
         entityMetaFiles.put(CorporateUser.class, "meta/corporateuser-meta-data.txt");
