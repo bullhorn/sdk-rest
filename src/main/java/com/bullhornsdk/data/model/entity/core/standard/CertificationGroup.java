@@ -26,7 +26,7 @@ public class CertificationGroup extends AbstractEntity implements QueryEntity, U
     @Size(max = 100)
     private String name;
 
-    private PrivateLabel privateLabel;
+    private Integer privateLabelID;
 
     private OneToMany<Certification> certifications;
 
@@ -52,14 +52,14 @@ public class CertificationGroup extends AbstractEntity implements QueryEntity, U
         this.name = name;
     }
 
-    @JsonProperty("privateLabel")
-    public PrivateLabel getPrivateLabel() {
-        return privateLabel;
+    @JsonProperty("privateLabelID")
+    public Integer getPrivateLabelID() {
+        return privateLabelID;
     }
 
-    @JsonProperty("privateLabel")
-    public void setPrivateLabel(PrivateLabel privateLabel) {
-        this.privateLabel = privateLabel;
+    @JsonProperty("privateLabelID")
+    public void setPrivateLabelID(Integer privateLabelID) {
+        this.privateLabelID = privateLabelID;
     }
 
     @JsonProperty("certifications")
@@ -77,7 +77,7 @@ public class CertificationGroup extends AbstractEntity implements QueryEntity, U
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((privateLabel == null) ? 0 : privateLabel.hashCode());
+        result = prime * result + ((privateLabelID == null) ? 0 : privateLabelID.hashCode());
         result = prime * result + ((certifications == null) ? 0 : certifications.hashCode());
         return result;
     }
@@ -101,7 +101,7 @@ public class CertificationGroup extends AbstractEntity implements QueryEntity, U
                 return false;
         } else if (!name.equals(other.name))
             return false;
-        if (privateLabel != null ? !privateLabel.equals(other.privateLabel) : other.privateLabel != null)
+        if (privateLabelID != null ? !privateLabelID.equals(other.privateLabelID) : other.privateLabelID != null)
             return false;
         if (certifications != null ? !certifications.equals(other.certifications) : other.certifications != null)
             return false;
@@ -115,8 +115,8 @@ public class CertificationGroup extends AbstractEntity implements QueryEntity, U
         builder.append(id);
         builder.append(", \nname=");
         builder.append(name);
-        builder.append(", \nprivateLabel=");
-        builder.append(privateLabel);
+        builder.append(", \nprivateLabelID=");
+        builder.append(privateLabelID);
         builder.append(", \ncertifications=");
         builder.append(certifications);
         builder.append("\n}");
