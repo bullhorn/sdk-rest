@@ -1,0 +1,227 @@
+{
+    "total": 90,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "name": "Group 1",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 2,
+            "name": "Group 2",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 3,
+            "name": "Group 3",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 4,
+            "name": "Group 4",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 5,
+            "name": "Group 5",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 6,
+            "name": "Group 6",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 7,
+            "name": "Group 7",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 8,
+            "name": "Group 8",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 9,
+            "name": "Group 9",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 10,
+            "name": "Group 10",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 11,
+            "name": "Group 11",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 12,
+            "name": "Group 12",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 13,
+            "name": "Group 13",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 14,
+            "name": "Group 14",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 15,
+            "name": "Group 15",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 16,
+            "name": "Group 16",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 17,
+            "name": "Group 17",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 18,
+            "name": "Group 18",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 19,
+            "name": "Group 19",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        },
+        {
+            "id": 20,
+            "name": "Group 20",
+            "certifications": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1508383929803,
+            "dateLastModified": 1508383929803,
+            "privateLabelID": 1
+        }
+    ]
+}

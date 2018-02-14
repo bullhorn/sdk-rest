@@ -33,6 +33,8 @@ public class TestEntities {
 
     private Integer certificationId;
 
+    private Integer certificationGroupId;
+
     private Integer clientContactId;
 
     private Integer clientCorporationId;
@@ -136,6 +138,8 @@ public class TestEntities {
         this.categoryId = 1;
 
         this.certificationId = 1;
+
+        this.certificationGroupId = 1;
 
         this.clientContactId = 1;
 
@@ -297,6 +301,14 @@ public class TestEntities {
 
     public void setCertificationId(Integer certificationId) {
         this.certificationId = certificationId;
+    }
+
+    public Integer getCertificationGroupId() {
+        return certificationGroupId;
+    }
+
+    public void setCertificationGroupId(Integer certificationGroupId) {
+        this.certificationGroupId = certificationGroupId;
     }
 
     public Integer getClientContactId() {
@@ -652,6 +664,8 @@ public class TestEntities {
             .append(categoryId)
             .append(",\n\t\"certificationId\": ")
             .append(certificationId)
+            .append(",\n\t\"certificationGroupId\": ")
+            .append(certificationGroupId)
             .append(",\n\t\"clientContactId\": ")
             .append(clientContactId)
             .append(",\n\t\"clientCorporationId\": ")

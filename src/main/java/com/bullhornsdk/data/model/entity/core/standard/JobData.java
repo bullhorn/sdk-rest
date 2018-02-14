@@ -64,6 +64,8 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 
 	private OneToMany<Certification> certifications;
 
+    private OneToMany<CertificationGroup> certificationGroups;
+
 	private BigDecimal clientBillRate;
 
 	private ClientContact clientContact;
@@ -413,7 +415,18 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 		this.certifications = certifications;
 	}
 
-	@JsonProperty("clientBillRate")
+    @JsonIgnore
+    public OneToMany<CertificationGroup> getCertificationGroups() {
+        return certificationGroups;
+    }
+
+    @JsonProperty("certificationGroups")
+    public void setCertificationGroups(OneToMany<CertificationGroup> certificationGroups) {
+        this.certificationGroups = certificationGroups;
+    }
+
+
+    @JsonProperty("clientBillRate")
 	public BigDecimal getClientBillRate() {
 		return clientBillRate;
 	}
@@ -1226,6 +1239,8 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
             return false;
         if (certifications != null ? !certifications.equals(jobData.certifications) : jobData.certifications != null)
             return false;
+        if (certificationGroups != null ? !certificationGroups.equals(jobData.certificationGroups) : jobData.certificationGroups != null)
+            return false;
         if (clientBillRate != null ? !clientBillRate.equals(jobData.clientBillRate) : jobData.clientBillRate != null)
             return false;
         if (clientContact != null ? !clientContact.equals(jobData.clientContact) : jobData.clientContact != null)
@@ -1357,6 +1372,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         result = 31 * result + (categories != null ? categories.hashCode() : 0);
         result = 31 * result + (certificationList != null ? certificationList.hashCode() : 0);
         result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
+        result = 31 * result + (certificationGroups != null ? certificationGroups.hashCode() : 0);
         result = 31 * result + (clientBillRate != null ? clientBillRate.hashCode() : 0);
         result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
         result = 31 * result + (clientCorporation != null ? clientCorporation.hashCode() : 0);
@@ -1453,6 +1469,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         sb.append(", categories=").append(categories);
         sb.append(", certificationList='").append(certificationList).append('\'');
         sb.append(", certifications=").append(certifications);
+        sb.append(", certificationGroups=").append(certificationGroups);
         sb.append(", clientBillRate=").append(clientBillRate);
         sb.append(", clientContact=").append(clientContact);
         sb.append(", clientCorporation=").append(clientCorporation);

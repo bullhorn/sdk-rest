@@ -1,0 +1,54 @@
+{
+    "entity": "CertificationGroup",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CertificationGroup?fields=*",
+    "label": "CertificationGroup",
+    "fields":  [
+        {
+          "name": "id",
+          "type": "ID",
+          "dataType": "Integer"
+        },
+        {
+          "name": "certifications",
+          "type": "TO_MANY",
+          "confidential": false,
+          "label": "Certifications",
+          "optionsType": "Certification",
+          "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Certification",
+          "hideFromSearch": false
+        },
+        {
+          "name": "dateAdded",
+          "type": "SCALAR",
+          "dataType": "Timestamp",
+          "confidential": false,
+          "label": "Date Added",
+          "hideFromSearch": false
+        },
+        {
+          "name": "dateLastModified",
+          "type": "SCALAR",
+          "dataType": "Timestamp",
+          "confidential": false,
+          "label": "Date Last Modified",
+          "hideFromSearch": false
+        },
+        {
+          "name": "name",
+          "type": "SCALAR",
+          "dataType": "String",
+          "maxLength": 100,
+          "confidential": false,
+          "label": "Name",
+          "hideFromSearch": false
+        },
+        {
+          "name": "privateLabelID",
+          "type": "SCALAR",
+          "dataType": "Integer",
+          "confidential": false,
+          "label": "Private Label ID",
+          "hideFromSearch": false
+        }
+    ]
+}

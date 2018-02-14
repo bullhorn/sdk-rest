@@ -1,22 +1,16 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsE;
-import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
-import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
-import javax.validation.constraints.Size;
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "placement", "candidateCertification", "certification", "dateAdded", "modifyingUser", "dateLastModified" })
-public class PlacementCertification implements UpdateEntity, CreateEntity, QueryEntity, DeleteEntity, AssociationEntity {
+@JsonPropertyOrder({"id", "placement", "candidateCertification", "certification", "dateAdded", "modifyingUser", "dateLastModified"})
+public class PlacementCertification extends AbstractEntity implements UpdateEntity, CreateEntity, QueryEntity, DeleteEntity, AssociationEntity, EditHistoryEntity {
 
     private Integer id;
 
@@ -102,7 +96,6 @@ public class PlacementCertification implements UpdateEntity, CreateEntity, Query
         this.modifyingUser = modifyingUser;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -121,7 +114,6 @@ public class PlacementCertification implements UpdateEntity, CreateEntity, Query
             return false;
         if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
             return false;
-
         return true;
 
     }
