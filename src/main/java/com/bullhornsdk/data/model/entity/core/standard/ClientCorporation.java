@@ -38,7 +38,7 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "address", "annualRevenue", "billingAddress", "billingContact", "billingFrequency", "billingPhone",
-        "branch", "businessSectorList", "certifications", "certificationGroups", "childClientCorporations", "clientContacts", "companyDescription",
+        "branch", "businessSectorList", "requirements", "certificationGroups", "childClientCorporations", "clientContacts", "companyDescription",
         "companyURL", "competitors", "culture", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
 		"customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
 		"customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText2", "customText20",
