@@ -389,24 +389,34 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     @Size(max = 20)
     private String workPhone;
 
+    @JsonIgnore
     private String customEncryptedText1;
 
+    @JsonIgnore
     private String customEncryptedText2;
 
+    @JsonIgnore
     private String customEncryptedText3;
 
+    @JsonIgnore
     private String customEncryptedText4;
 
+    @JsonIgnore
     private String customEncryptedText5;
 
+    @JsonIgnore
     private String customEncryptedText6;
 
+    @JsonIgnore
     private String customEncryptedText7;
 
+    @JsonIgnore
     private String customEncryptedText8;
 
+    @JsonIgnore
     private String customEncryptedText9;
 
+    @JsonIgnore
     private String customEncryptedText10;
 
     private OneToMany<PersonCustomObjectInstance1> customObject1s;
@@ -1720,6 +1730,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText1")
+    @JsonIgnore
     public void setCustomEncryptedText1(String customEncryptedText1) {
         this.customEncryptedText1 = customEncryptedText1;
     }
@@ -1730,6 +1741,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText2")
+    @JsonIgnore
     public void setCustomEncryptedText2(String customEncryptedText2) {
         this.customEncryptedText2 = customEncryptedText2;
     }
@@ -1740,6 +1752,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText3")
+    @JsonIgnore
     public void setCustomEncryptedText3(String customEncryptedText3) {
         this.customEncryptedText3 = customEncryptedText3;
     }
@@ -1750,6 +1763,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText4")
+    @JsonIgnore
     public void setCustomEncryptedText4(String customEncryptedText4) {
         this.customEncryptedText4 = customEncryptedText4;
     }
@@ -1760,6 +1774,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText5")
+    @JsonIgnore
     public void setCustomEncryptedText5(String customEncryptedText5) {
         this.customEncryptedText5 = customEncryptedText5;
     }
@@ -1770,6 +1785,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText6")
+    @JsonIgnore
     public void setCustomEncryptedText6(String customEncryptedText6) {
         this.customEncryptedText6 = customEncryptedText6;
     }
@@ -1780,6 +1796,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText7")
+    @JsonIgnore
     public void setCustomEncryptedText7(String customEncryptedText7) {
         this.customEncryptedText7 = customEncryptedText7;
     }
@@ -1790,6 +1807,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText8")
+    @JsonIgnore
     public void setCustomEncryptedText8(String customEncryptedText8) {
         this.customEncryptedText8 = customEncryptedText8;
     }
@@ -1800,6 +1818,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText9")
+    @JsonIgnore
     public void setCustomEncryptedText9(String customEncryptedText9) {
         this.customEncryptedText9 = customEncryptedText9;
     }
@@ -1810,6 +1829,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("customEncryptedText10")
+    @JsonIgnore
     public void setCustomEncryptedText10(String customEncryptedText10) {
         this.customEncryptedText10 = customEncryptedText10;
     }
