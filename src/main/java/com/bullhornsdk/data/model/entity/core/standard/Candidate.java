@@ -654,7 +654,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return companyURL;
 	}
 
-	@JsonProperty("companyURL")
+	@JsonIgnore
 	public void setCompanyURL(String companyURL) {
 		this.companyURL = companyURL;
 	}
