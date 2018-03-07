@@ -8,6 +8,7 @@ import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.embedded.OneToMany
 import com.bullhornsdk.data.model.entity.meta.MetaData
+import com.bullhornsdk.data.model.entity.meta.Option
 import com.bullhornsdk.data.model.enums.MetaParameter
 import com.bullhornsdk.data.model.enums.SettingsFields
 import com.bullhornsdk.data.model.parameter.*
@@ -32,6 +33,7 @@ import com.bullhornsdk.data.model.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.OptionListWrapper
 import com.bullhornsdk.data.model.response.list.StandardListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume
@@ -62,6 +64,7 @@ public class MockDataHandler {
 	private final MockDataLoader mockDataLoader;
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
+    private Map<Class<? extends BullhornEntity>, OptionListWrapper> restOptionMap;
 	private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMap;
 	private Map<String,Closure> queryClosures = new HashMap<String,Closure>();
 	private List<FastFindResult> fastFindResults;
@@ -76,6 +79,7 @@ public class MockDataHandler {
 		this.mockDataLoader = new MockDataLoader();
 		this.restEntityMap = mockDataLoader.getEntityTestData();
 		this.restMetaDataMap = mockDataLoader.getMetaTestData();
+        this.restOptionMap = mockDataLoader.getOptionTestData();
 		this.searchFieldsMap = mockDataLoader.getSearchFields();
 		this.fastFindResults = mockDataLoader.getFastFindResults();
 		this.editHistoryList = mockDataLoader.getEditHistoryList();
@@ -90,6 +94,7 @@ public class MockDataHandler {
 	public void refreshTestData(){
 		this.restEntityMap = mockDataLoader.reloadEntityDataFromCache();
 		this.restMetaDataMap = mockDataLoader.reloadMetaDataFromCache();
+        this.restOptionMap = mockDataLoader.reloadOptionsFromCache();
 	}
 
 	/**
@@ -430,6 +435,16 @@ public class MockDataHandler {
 		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
 		return restMetaDataMap.get(type);
 	}
+
+/**
+ * Returns the options data. Ignores params since these were set in the test calls
+ * @param optionsType
+ * @param params
+ * @return
+ */
+    public <T extends BullhornEntity> OptionListWrapper getOptions(OptionParams params, Class<T> optionsType){
+        return restOptionMap.get(optionsType);
+    }
 
 	/**
 	 * Returns the settings data. 

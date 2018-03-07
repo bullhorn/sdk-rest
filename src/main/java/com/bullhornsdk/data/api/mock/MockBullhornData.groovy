@@ -25,6 +25,7 @@ import com.bullhornsdk.data.model.response.file.FileContent
 import com.bullhornsdk.data.model.response.file.FileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.OptionListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse
@@ -176,6 +177,11 @@ public class MockBullhornData implements BullhornData {
     @Override
     public <C extends CrudResponse, T extends DeleteEntity> C deleteEntity(Class<T> type, Integer id) {
         return mockDataHandler.deleteEntity(type, id);
+    }
+
+    @Override
+    public <T extends BullhornEntity> OptionListWrapper getOptions(OptionParams params, Class<T> optionsType) {
+        return mockDataHandler.getOptions(params, optionsType);
     }
 
     @Override

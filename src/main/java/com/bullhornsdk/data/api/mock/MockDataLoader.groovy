@@ -17,6 +17,7 @@ import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment
 import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment
 import com.bullhornsdk.data.model.entity.file.PlacementFileAttachment
 import com.bullhornsdk.data.model.entity.meta.MetaData
+import com.bullhornsdk.data.model.entity.meta.Option
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
@@ -24,7 +25,8 @@ import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
-import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.ListWrapper;
+import com.bullhornsdk.data.model.response.list.OptionListWrapper;
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils
 import org.apache.log4j.Logger
@@ -46,6 +48,7 @@ public class MockDataLoader {
     private Map<String, Object> settingsResultMapCache;
     private Settings settingsObjectResultCache;
     private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
+    private Map<Class<? extends BullhornEntity>, OptionListWrapper> restOptionsMapCache;
     private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
 
     private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
@@ -57,10 +60,12 @@ public class MockDataLoader {
     private Map<String, Object> settingsResultMap;
     private Settings settingsObjectResult;
     private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
+    private Map<Class<? extends BullhornEntity>, OptionListWrapper> restOptionsMap;
 
     private Map<Class<? extends BullhornEntity>, String> entityFileNames;
     private Map<Class<? extends BullhornEntity>, String> metaDataFileNames;
     private Map<Class<? extends SearchEntity>, String> searchFieldsFileNames;
+    private Map<Class<? extends BullhornEntity>, String> optionsFileNames;
     private final ConcurrencyService concurrencyService;
 
     private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMap;
@@ -71,6 +76,7 @@ public class MockDataLoader {
         this.entityFileNames = getEntityFileNames();
         this.metaDataFileNames = getMetaDataFileNames();
         this.searchFieldsFileNames = getSearchFieldFileNames();
+        this.optionsFileNames = getOptionsFileNames();
         this.concurrencyService = new RestConcurrencyService();
     }
 
@@ -88,6 +94,14 @@ public class MockDataLoader {
             this.restMetaDataMapCache = KryoObjectCopyHelper.copy(restMetaDataMap);
         }
         return restMetaDataMap;
+    }
+
+    public Map<Class<? extends BullhornEntity>, OptionListWrapper> getOptionTestData() {
+        if (restOptionsMap == null) {
+            reloadOptionData();
+            this.restOptionsMapCache = KryoObjectCopyHelper.copy(restOptionsMap);
+        }
+        return restOptionsMap;
     }
 
     public Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> getEntityTestData() {
@@ -238,6 +252,23 @@ public class MockDataLoader {
     }
 
     /**
+     * Returns a map with options loaded fresh from the test data.
+     *
+     * @return
+     */
+    public <T extends BullhornEntity> Map<Class<? extends BullhornEntity>, OptionListWrapper> reloadOptionData() {
+        this.restOptionsMap = new ConcurrentHashMap<Class<? extends BullhornEntity>, OptionListWrapper>();
+
+        optionsFileNames.entrySet().parallelStream().each {
+            String jsonData = getFileData(it.getValue());
+            OptionListWrapper options = jsonStringToOptionData(jsonData);
+            restOptionsMap.put(it.getKey(), options);
+        }
+        return restOptionsMap;
+
+    }
+
+    /**
      * Returns a map with entities loaded fresh from the test data.
      *
      * @return
@@ -268,6 +299,17 @@ public class MockDataLoader {
     public <T extends BullhornEntity> Map<Class<? extends BullhornEntity>, MetaData<?>> reloadMetaDataFromCache() {
         this.restMetaDataMap = KryoObjectCopyHelper.copy(restMetaDataMapCache);
         return restMetaDataMap;
+
+    }
+
+    /**
+     * Returns a map with entities loaded fresh from the test data.
+     *
+     * @return
+     */
+    public <T extends BullhornEntity> Map<Class<? extends BullhornEntity>, OptionListWrapper> reloadOptionsFromCache() {
+        this.restOptionsMap = KryoObjectCopyHelper.copy(restOptionsMapCache);
+        return restOptionsMap;
 
     }
 
@@ -321,6 +363,16 @@ public class MockDataLoader {
      */
     private <T extends BullhornEntity> MetaData<T> jsonStringToMetaData(String jsonData) {
         return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, StandardMetaData.class);
+    }
+
+    /**
+     * Converts the json data to a OptionListWrapper object
+     *
+     * @param jsonData
+     * @return
+     */
+    private OptionListWrapper jsonStringToOptionData(String jsonData) {
+        return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, OptionListWrapper.class);
     }
 
     /**
@@ -586,6 +638,18 @@ public class MockDataLoader {
         searchFieldsFiles.put(Placement.class, "searchfields/placement-searchfields.txt");
 
         return searchFieldsFiles;
+    }
+
+    public static Map<Class<? extends BullhornEntity>, String> getOptionsFileNames() {
+        Map<Class<? extends BullhornEntity>, String> optionsFiles = new LinkedHashMap<Class<? extends BullhornEntity>, String>();
+
+        optionsFiles.put(Category.class, "options/category-options.txt");
+        optionsFiles.put(State.class, "options/northAmericaState-options.txt");
+        optionsFiles.put(State.class, "options/state-UKcountry-options.txt");
+        optionsFiles.put(JobOrder.class, "options/jobOrder-options.txt");
+        optionsFiles.put(Person.class, "options/person-options.txt");
+
+        return optionsFiles;
     }
 
 }

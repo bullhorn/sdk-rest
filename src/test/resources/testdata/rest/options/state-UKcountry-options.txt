@@ -1,0 +1,528 @@
+{
+    "data": [
+        {
+            "value": 72,
+            "label": "Aberdeenshire"
+        },
+        {
+            "value": 73,
+            "label": "Alderney"
+        },
+        {
+            "value": 75,
+            "label": "Angus"
+        },
+        {
+            "value": 3833,
+            "label": "Antrim and Newtownabbey"
+        },
+        {
+            "value": 3831,
+            "label": "Argyllshire"
+        },
+        {
+            "value": 3830,
+            "label": "Armagh"
+        },
+        {
+            "value": 3823,
+            "label": "Ayrshire"
+        },
+        {
+            "value": 82,
+            "label": "Ballymena"
+        },
+        {
+            "value": 83,
+            "label": "Ballymoney"
+        },
+        {
+            "value": 84,
+            "label": "Banbridge"
+        },
+        {
+            "value": 85,
+            "label": "Banffshire"
+        },
+        {
+            "value": 86,
+            "label": "Bedfordshire"
+        },
+        {
+            "value": 3834,
+            "label": "Belfast"
+        },
+        {
+            "value": 88,
+            "label": "Berkshire"
+        },
+        {
+            "value": 90,
+            "label": "Blaenau Gwent"
+        },
+        {
+            "value": 3788,
+            "label": "Borders"
+        },
+        {
+            "value": 3835,
+            "label": "Bridgend"
+        },
+        {
+            "value": 3474,
+            "label": "Bristol"
+        },
+        {
+            "value": 94,
+            "label": "Buckinghamshire"
+        },
+        {
+            "value": 3824,
+            "label": "Caerphilly"
+        },
+        {
+            "value": 97,
+            "label": "Caithness"
+        },
+        {
+            "value": 98,
+            "label": "Cambridgeshire"
+        },
+        {
+            "value": 3818,
+            "label": "Cardiff"
+        },
+        {
+            "value": 100,
+            "label": "Carmarthenshire"
+        },
+        {
+            "value": 3827,
+            "label": "Carrickfergus"
+        },
+        {
+            "value": 102,
+            "label": "Castlereagh"
+        },
+        {
+            "value": 3825,
+            "label": "Ceredigion"
+        },
+        {
+            "value": 3826,
+            "label": "Cheshire"
+        },
+        {
+            "value": 105,
+            "label": "Clackmannanshire"
+        },
+        {
+            "value": 3829,
+            "label": "Coleraine"
+        },
+        {
+            "value": 3819,
+            "label": "Conwy"
+        },
+        {
+            "value": 3828,
+            "label": "Cookstown"
+        },
+        {
+            "value": 110,
+            "label": "Cornwall"
+        },
+        {
+            "value": 3822,
+            "label": "County Durham"
+        },
+        {
+            "value": 3821,
+            "label": "County Londonderry"
+        },
+        {
+            "value": 111,
+            "label": "Craigavon"
+        },
+        {
+            "value": 113,
+            "label": "Cumbria"
+        },
+        {
+            "value": 114,
+            "label": "Denbighshire"
+        },
+        {
+            "value": 115,
+            "label": "Derbyshire"
+        },
+        {
+            "value": 117,
+            "label": "Devon"
+        },
+        {
+            "value": 118,
+            "label": "Dorset"
+        },
+        {
+            "value": 3812,
+            "label": "Dumbartonshire"
+        },
+        {
+            "value": 121,
+            "label": "Dumfries and Galloway"
+        },
+        {
+            "value": 3820,
+            "label": "Dungannon and South Tyrone"
+        },
+        {
+            "value": 3813,
+            "label": "East Lothian"
+        },
+        {
+            "value": 3815,
+            "label": "East Sussex"
+        },
+        {
+            "value": 127,
+            "label": "East Yorkshire"
+        },
+        {
+            "value": 129,
+            "label": "Essex"
+        },
+        {
+            "value": 3816,
+            "label": "Fermanagh and Omagh"
+        },
+        {
+            "value": 131,
+            "label": "Fife"
+        },
+        {
+            "value": 132,
+            "label": "Flintshire"
+        },
+        {
+            "value": 3817,
+            "label": "Glasgow"
+        },
+        {
+            "value": 134,
+            "label": "Gloucestershire"
+        },
+        {
+            "value": 3809,
+            "label": "Greater London"
+        },
+        {
+            "value": 3811,
+            "label": "Greater Manchester"
+        },
+        {
+            "value": 138,
+            "label": "Guernsey"
+        },
+        {
+            "value": 140,
+            "label": "Gwynedd"
+        },
+        {
+            "value": 143,
+            "label": "Hampshire"
+        },
+        {
+            "value": 145,
+            "label": "Herefordshire"
+        },
+        {
+            "value": 146,
+            "label": "Herm"
+        },
+        {
+            "value": 147,
+            "label": "Hertfordshire"
+        },
+        {
+            "value": 148,
+            "label": "Highland"
+        },
+        {
+            "value": 151,
+            "label": "Inverness-shire"
+        },
+        {
+            "value": 74,
+            "label": "Isle of Anglesey"
+        },
+        {
+            "value": 3051,
+            "label": "Isle of Man"
+        },
+        {
+            "value": 152,
+            "label": "Isle of Wight"
+        },
+        {
+            "value": 153,
+            "label": "Jersey"
+        },
+        {
+            "value": 154,
+            "label": "Kent"
+        },
+        {
+            "value": 155,
+            "label": "Kincardineshire"
+        },
+        {
+            "value": 157,
+            "label": "Kirkcudbrightshire"
+        },
+        {
+            "value": 159,
+            "label": "Lancashire"
+        },
+        {
+            "value": 3810,
+            "label": "Larne"
+        },
+        {
+            "value": 3807,
+            "label": "Leicestershire"
+        },
+        {
+            "value": 3808,
+            "label": "Limavady"
+        },
+        {
+            "value": 163,
+            "label": "Lincolnshire"
+        },
+        {
+            "value": 3806,
+            "label": "Lisburn and Castlereagh"
+        },
+        {
+            "value": 3800,
+            "label": "Magherafelt"
+        },
+        {
+            "value": 168,
+            "label": "Merseyside"
+        },
+        {
+            "value": 3802,
+            "label": "Merthyr Tydfil"
+        },
+        {
+            "value": 171,
+            "label": "Midlothian"
+        },
+        {
+            "value": 172,
+            "label": "Monmouthshire"
+        },
+        {
+            "value": 3801,
+            "label": "Morayshire"
+        },
+        {
+            "value": 3803,
+            "label": "Moyle"
+        },
+        {
+            "value": 176,
+            "label": "Nairn"
+        },
+        {
+            "value": 3805,
+            "label": "Neath Port Talbot"
+        },
+        {
+            "value": 3795,
+            "label": "Newport"
+        },
+        {
+            "value": 3804,
+            "label": "Newry, Mourne and Down"
+        },
+        {
+            "value": 180,
+            "label": "Norfolk"
+        },
+        {
+            "value": 3832,
+            "label": "North Down and Ards"
+        },
+        {
+            "value": 4546,
+            "label": "North Lanarkshire"
+        },
+        {
+            "value": 3796,
+            "label": "North Yorkshire"
+        },
+        {
+            "value": 183,
+            "label": "Northamptonshire"
+        },
+        {
+            "value": 184,
+            "label": "Northumberland"
+        },
+        {
+            "value": 3794,
+            "label": "Nottinghamshire"
+        },
+        {
+            "value": 186,
+            "label": "Omagh"
+        },
+        {
+            "value": 3797,
+            "label": "Orkney Islands"
+        },
+        {
+            "value": 187,
+            "label": "Oxfordshire"
+        },
+        {
+            "value": 189,
+            "label": "Pembrokeshire"
+        },
+        {
+            "value": 3798,
+            "label": "Perth and Kinross"
+        },
+        {
+            "value": 190,
+            "label": "Perthshire and Kinross"
+        },
+        {
+            "value": 191,
+            "label": "Powys"
+        },
+        {
+            "value": 3799,
+            "label": "Redcar and Cleveland"
+        },
+        {
+            "value": 193,
+            "label": "Renfrewshire"
+        },
+        {
+            "value": 194,
+            "label": "Rhondda Cynon Taff"
+        },
+        {
+            "value": 197,
+            "label": "Rutland"
+        },
+        {
+            "value": 198,
+            "label": "Sark"
+        },
+        {
+            "value": 3787,
+            "label": "Shetland Islands"
+        },
+        {
+            "value": 3789,
+            "label": "Shropshire"
+        },
+        {
+            "value": 202,
+            "label": "Somerset"
+        },
+        {
+            "value": 4547,
+            "label": "South Lanarkshire"
+        },
+        {
+            "value": 204,
+            "label": "South Yorkshire"
+        },
+        {
+            "value": 205,
+            "label": "Staffordshire"
+        },
+        {
+            "value": 3790,
+            "label": "Stirlingshire"
+        },
+        {
+            "value": 207,
+            "label": "Strabane"
+        },
+        {
+            "value": 209,
+            "label": "Suffolk"
+        },
+        {
+            "value": 210,
+            "label": "Surrey"
+        },
+        {
+            "value": 211,
+            "label": "Sussex"
+        },
+        {
+            "value": 212,
+            "label": "Sutherland"
+        },
+        {
+            "value": 213,
+            "label": "Swansea"
+        },
+        {
+            "value": 3791,
+            "label": "Torfaen"
+        },
+        {
+            "value": 216,
+            "label": "Tyne and Wear"
+        },
+        {
+            "value": 3792,
+            "label": "Vale of Glamorgan"
+        },
+        {
+            "value": 219,
+            "label": "Warwickshire"
+        },
+        {
+            "value": 221,
+            "label": "West Lothian"
+        },
+        {
+            "value": 222,
+            "label": "West Midlands"
+        },
+        {
+            "value": 3786,
+            "label": "West Sussex"
+        },
+        {
+            "value": 224,
+            "label": "West Yorkshire"
+        },
+        {
+            "value": 3814,
+            "label": "Western Isles"
+        },
+        {
+            "value": 228,
+            "label": "Wiltshire"
+        },
+        {
+            "value": 229,
+            "label": "Worcestershire"
+        },
+        {
+            "value": 3793,
+            "label": "Wrexham"
+        }
+    ]
+}

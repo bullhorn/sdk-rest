@@ -14,6 +14,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.model.entity.meta.Option;
+import com.bullhornsdk.data.model.parameter.*;
+import com.bullhornsdk.data.model.response.list.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -72,15 +75,6 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
@@ -103,10 +97,6 @@ import com.bullhornsdk.data.model.response.file.standard.StandardEntityMetaFiles
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper;
-import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
-import com.bullhornsdk.data.model.response.list.ListWrapper;
-import com.bullhornsdk.data.model.response.list.NoteListWrapper;
-import com.bullhornsdk.data.model.response.list.StandardListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
@@ -325,6 +315,11 @@ public class StandardBullhornData implements BullhornData {
     @Override
     public <C extends CrudResponse, T extends DeleteEntity> C deleteEntity(Class<T> type, Integer id) {
         return this.handleDeleteEntity(type, id);
+    }
+
+    @Override
+    public <T extends BullhornEntity> OptionListWrapper getOptions(OptionParams params, Class<T> optionsType){
+        return this.handleGetOptions(params, optionsType);
     }
 
     /**
@@ -1156,6 +1151,25 @@ public class StandardBullhornData implements BullhornData {
         String url = restUrlFactory.assembleEntityUrlForMeta(privateLabelId);
 
         MetaData<T> response = this.performGetRequest(url, StandardMetaData.class, uriVariables);
+
+        return response;
+
+    }
+
+    /**
+     * Makes the "options" api call
+     * <p>
+     * HttpMethod: GET
+     *
+     * @param params the variables to inject into the url.
+     * @return the Options list
+     */
+    protected <T extends BullhornEntity> OptionListWrapper handleGetOptions(OptionParams params, Class<T> optionType) {
+        String url = restUrlFactory.assembleEntityUrlForOptions(params);
+
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForOptions(BullhornEntityInfo.getTypesRestEntityName(optionType));
+
+        OptionListWrapper response = this.performGetRequest(url, OptionListWrapper.class, uriVariables);
 
         return response;
 

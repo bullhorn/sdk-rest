@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.bullhornsdk.data.model.parameter.*;
+import com.bullhornsdk.data.model.response.list.OptionListWrapper;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
@@ -30,14 +32,6 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper;
@@ -281,6 +275,18 @@ public interface BullhornData {
 	 * @return a DeleteResponse with deleted entity information
 	 */
 	public <C extends CrudResponse, T extends DeleteEntity> C deleteEntity(Class<T> type, Integer id);
+
+
+    /**
+     *
+     * Returns the Options for passed in type.
+     *
+     * @param optionsType  a BullhornEntity
+     * @param params specifies start, count, filter, and (in case of a specific State call) country
+     *
+     * @return an OptionListWrapper with the list of options from which one could choose
+     */
+    public <T extends BullhornEntity> OptionListWrapper getOptions(OptionParams params, Class<T> optionsType);
 
 	/**
 	 * 

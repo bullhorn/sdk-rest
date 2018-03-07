@@ -6,6 +6,7 @@ import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -98,6 +99,10 @@ public class RestUrlFactory {
         }
 
         return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}&meta={meta}&privateLabelId={privateLabelId}";
+    }
+
+    public String assembleEntityUrlForOptions(OptionParams params) {
+        return restUrl + "options/{optionType}?BhRestToken={bhRestToken}&" + params.getUrlString();
     }
 
     /**

@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.model.parameter.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,15 +19,6 @@ import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 
 public class RestUriVariablesFactory {
@@ -38,11 +30,11 @@ public class RestUriVariablesFactory {
 	// url parameter names
 	private static final String BH_REST_TOKEN = "bhRestToken";
 	private static final String ENTITY_TYPE = "entityType";
-	private static final String FIELDS = "fields";
+    private static final String FIELDS = "fields";
 	private static final String META = "meta";
 	private static final String WHERE = "where";
 	private static final String QUERY = "query";
-	private static final String FORMAT = "format";
+    private static final String FORMAT = "format";
 	private static final String ENTITY_ID = "entityId";
 	private static final String FILE_ID = "fileId";
 	private static final String EXTERNAL_ID = "externalID";
@@ -179,6 +171,21 @@ public class RestUriVariablesFactory {
 		uriVariables.put(ID, id.toString());
 		return uriVariables;
 	}
+
+    /**
+     * Returns the uri variables needed for a "options" GET request
+     *
+     * @param entityInfo
+     * @return all uriVariables needed for the api call
+     */
+    public <T extends BullhornEntity> Map<String, String> getUriVariablesForOptions(BullhornEntityInfo entityInfo) {
+
+        Map<String, String> uriVariables = new LinkedHashMap<>();
+        String bhRestToken = bullhornApiRest.getBhRestToken();
+        uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        return uriVariables;
+    }
 
 	/**
 	 * Returns the uri variables needed for the "entity" PUT request.

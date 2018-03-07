@@ -1,0 +1,1204 @@
+{
+    "data": [
+        {
+            "value": 1437,
+            "label": "Cleaner"
+        },
+        {
+            "value": 1413,
+            "label": "Cleaners"
+        },
+        {
+            "value": 1253,
+            "label": "Clerk"
+        },
+        {
+            "value": 1489,
+            "label": "Clerk"
+        },
+        {
+            "value": 504,
+            "label": "Clerk"
+        },
+        {
+            "value": 534,
+            "label": "Client Relations Manager"
+        },
+        {
+            "value": 692,
+            "label": "Clinical Coordinator"
+        },
+        {
+            "value": 124,
+            "label": "Clinical Coordinator 124"
+        },
+        {
+            "value": 183,
+            "label": "Clinical Coordinator 183"
+        },
+        {
+            "value": 458,
+            "label": "Clinical Director -LCADC"
+        },
+        {
+            "value": 357,
+            "label": "Clinical Director of Population Health 357"
+        },
+        {
+            "value": 784,
+            "label": "Clinical Educator"
+        },
+        {
+            "value": 224,
+            "label": "Clinical Manager 224"
+        },
+        {
+            "value": 783,
+            "label": "Clinical Nurse Supervisor"
+        },
+        {
+            "value": 480,
+            "label": "Clinical Social Worker/Treatment Foster Care 480"
+        },
+        {
+            "value": 1738,
+            "label": "Clinical Supervisor"
+        },
+        {
+            "value": 99,
+            "label": "Clinical Supervisor  LICSW (DC) 99"
+        },
+        {
+            "value": 280,
+            "label": "Clinical Supervisor - Baltimore 280"
+        },
+        {
+            "value": 1858,
+            "label": "Clinical Supervisor - LCSW - LCPC"
+        },
+        {
+            "value": 123,
+            "label": "Clinical Supervisor 123"
+        },
+        {
+            "value": 523,
+            "label": "Clinical Supervisor 523"
+        },
+        {
+            "value": 180,
+            "label": "Clinical Therapist"
+        },
+        {
+            "value": 137,
+            "label": "Clinical Therapist LICSW 137"
+        },
+        {
+            "value": 1243,
+            "label": "CMT"
+        },
+        {
+            "value": 849,
+            "label": "CMT Residential Aide"
+        },
+        {
+            "value": 1815,
+            "label": "CMT Residential Aide"
+        },
+        {
+            "value": 1807,
+            "label": "CNA"
+        },
+        {
+            "value": 615,
+            "label": "CNA"
+        },
+        {
+            "value": 299,
+            "label": "CNA #299"
+        },
+        {
+            "value": 1513,
+            "label": "CNA/TME"
+        },
+        {
+            "value": 755,
+            "label": "Coding Manager - Outpatient"
+        },
+        {
+            "value": 756,
+            "label": "Coding Supervisor"
+        },
+        {
+            "value": 1162,
+            "label": "Collections Analyst"
+        },
+        {
+            "value": 1031,
+            "label": "Collections Analyst"
+        },
+        {
+            "value": 1419,
+            "label": "Commercial Collector"
+        },
+        {
+            "value": 1801,
+            "label": "Community Support Residential Aides"
+        },
+        {
+            "value": 1696,
+            "label": "Compensation Analyst"
+        },
+        {
+            "value": 1469,
+            "label": "Computer Cleaner"
+        },
+        {
+            "value": 453,
+            "label": "Consumer Care Monitor"
+        },
+        {
+            "value": 461,
+            "label": "Contract Accounting Administrator"
+        },
+        {
+            "value": 903,
+            "label": "Contracts Administrator"
+        },
+        {
+            "value": 887,
+            "label": "Controller"
+        },
+        {
+            "value": 578,
+            "label": "Controller"
+        },
+        {
+            "value": 1236,
+            "label": "Controller"
+        },
+        {
+            "value": 1565,
+            "label": "Cook"
+        },
+        {
+            "value": 1523,
+            "label": "Cook/Dishwasher"
+        },
+        {
+            "value": 1482,
+            "label": "Corporate Service Manager"
+        },
+        {
+            "value": 493,
+            "label": "Cost Accountant"
+        },
+        {
+            "value": 781,
+            "label": "Counselor"
+        },
+        {
+            "value": 182,
+            "label": "Counselor 1/CAC-AD 182"
+        },
+        {
+            "value": 199,
+            "label": "Counselor 199"
+        },
+        {
+            "value": 1831,
+            "label": "Crane Operator"
+        },
+        {
+            "value": 1778,
+            "label": "Crew Supervisor"
+        },
+        {
+            "value": 1555,
+            "label": "CSR/Inside sales"
+        },
+        {
+            "value": 272,
+            "label": "Curriculum Specialist 272"
+        },
+        {
+            "value": 669,
+            "label": "Curriculum Specialist 669"
+        },
+        {
+            "value": 1572,
+            "label": "Customer Account Representative"
+        },
+        {
+            "value": 1803,
+            "label": "Customer Service Associate"
+        },
+        {
+            "value": 1817,
+            "label": "Customer Service Representative"
+        },
+        {
+            "value": 573,
+            "label": "Customer Service Representative"
+        },
+        {
+            "value": 1879,
+            "label": "Customer Service Representative"
+        },
+        {
+            "value": 1395,
+            "label": "Customer Service Representatives"
+        },
+        {
+            "value": 852,
+            "label": "Customer Service Represnetative"
+        },
+        {
+            "value": 1293,
+            "label": "Customer Service Specialist"
+        },
+        {
+            "value": 1650,
+            "label": "Customer Service Specialist"
+        },
+        {
+            "value": 1584,
+            "label": "Customer Service/Inside Sales"
+        },
+        {
+            "value": 1852,
+            "label": "Data Entry Clerk"
+        },
+        {
+            "value": 713,
+            "label": "Data Support Specialist"
+        },
+        {
+            "value": 282,
+            "label": "Day Program 282"
+        },
+        {
+            "value": 1814,
+            "label": "Day Program Aide"
+        },
+        {
+            "value": 1705,
+            "label": "Day Program and Residential Counselor"
+        },
+        {
+            "value": 1392,
+            "label": "Day Program Driver"
+        },
+        {
+            "value": 439,
+            "label": "Day Program Residential Aid 439"
+        },
+        {
+            "value": 21,
+            "label": "DC LCSW-C/LICSW Supervisor 21"
+        },
+        {
+            "value": 23,
+            "label": "DC LGSW"
+        },
+        {
+            "value": 24,
+            "label": "DC LGSW"
+        },
+        {
+            "value": 66,
+            "label": "DC LGSW"
+        },
+        {
+            "value": 1459,
+            "label": "Dec. 10th 10:30pm - 4am"
+        },
+        {
+            "value": 1491,
+            "label": "Dec. 10th 10:30pm - 4am"
+        },
+        {
+            "value": 1457,
+            "label": "Dec. 10th 11:30am - 7pm"
+        },
+        {
+            "value": 1456,
+            "label": "Dec. 10th 5am - 12pm"
+        },
+        {
+            "value": 1458,
+            "label": "Dec. 10th 6:30pm - 2am"
+        },
+        {
+            "value": 1439,
+            "label": "Dec. 3rd 10am - 6:30pm"
+        },
+        {
+            "value": 1438,
+            "label": "Dec. 3rd 8am - 4pm"
+        },
+        {
+            "value": 1441,
+            "label": "Dec. 4th 12pm - 8:30pm"
+        },
+        {
+            "value": 1440,
+            "label": "Dec. 4th 4pm - 12:30am"
+        },
+        {
+            "value": 1443,
+            "label": "Dec. 5th 6pm - 3am"
+        },
+        {
+            "value": 1442,
+            "label": "Dec. 5th 9:30am - 6:30pm"
+        },
+        {
+            "value": 1445,
+            "label": "Dec. 6th 12:30pm - 9pm"
+        },
+        {
+            "value": 1444,
+            "label": "Dec. 6th 5am - 1pm"
+        },
+        {
+            "value": 1446,
+            "label": "Dec. 6th 8:30pm - 4:00am"
+        },
+        {
+            "value": 1448,
+            "label": "Dec. 7th 11:30am - 8pm"
+        },
+        {
+            "value": 1447,
+            "label": "Dec. 7th 5am - 12pm"
+        },
+        {
+            "value": 1449,
+            "label": "Dec. 7th 7:30pm - 3am"
+        },
+        {
+            "value": 1451,
+            "label": "Dec. 8th 11:30am - 8pm"
+        },
+        {
+            "value": 1450,
+            "label": "Dec. 8th 5am - 12pm"
+        },
+        {
+            "value": 1452,
+            "label": "Dec. 8th 7:30pm - 3am"
+        },
+        {
+            "value": 1454,
+            "label": "Dec. 9th 11:30am - 8pm"
+        },
+        {
+            "value": 1453,
+            "label": "Dec. 9th 5am - 12pm"
+        },
+        {
+            "value": 1455,
+            "label": "Dec. 9th 7:30pm - 3am"
+        },
+        {
+            "value": 218,
+            "label": "Diagnostic & Assessment Clinician 218"
+        },
+        {
+            "value": 800,
+            "label": "Diagnostic and Prescriptive Specialist"
+        },
+        {
+            "value": 162,
+            "label": "Diagnostic Assessment Clinician 162"
+        },
+        {
+            "value": 246,
+            "label": "Diagnostic Assessment Clinician 246"
+        },
+        {
+            "value": 251,
+            "label": "Direct Support Professional"
+        },
+        {
+            "value": 795,
+            "label": "Direct Support Professional"
+        },
+        {
+            "value": 754,
+            "label": "Direct Support Professional"
+        },
+        {
+            "value": 36,
+            "label": "Direct Support Professional  36"
+        },
+        {
+            "value": 1519,
+            "label": "Direct support Staff - Day program"
+        },
+        {
+            "value": 1784,
+            "label": "Direct support Staff/ Residential"
+        },
+        {
+            "value": 1201,
+            "label": "Direct support Staff/ Residential"
+        },
+        {
+            "value": 311,
+            "label": "Direct support Staff/ Residential 311"
+        },
+        {
+            "value": 367,
+            "label": "Director of Accounting and HR"
+        },
+        {
+            "value": 389,
+            "label": "Director of Behavioral Health Services"
+        },
+        {
+            "value": 264,
+            "label": "Director of Clinical Services 264"
+        },
+        {
+            "value": 297,
+            "label": "Director of Day Program 297"
+        },
+        {
+            "value": 553,
+            "label": "Director of Employment & Community Services 553"
+        },
+        {
+            "value": 34,
+            "label": "Director of Nursing"
+        },
+        {
+            "value": 361,
+            "label": "Director of Recruiting"
+        },
+        {
+            "value": 491,
+            "label": "Director of Social Work"
+        },
+        {
+            "value": 700,
+            "label": "Director of Social Work #700"
+        },
+        {
+            "value": 535,
+            "label": "Disabilities Coordinator 535"
+        },
+        {
+            "value": 1652,
+            "label": "Dispatcher"
+        },
+        {
+            "value": 1676,
+            "label": "Driver"
+        },
+        {
+            "value": 1635,
+            "label": "Driver"
+        },
+        {
+            "value": 1637,
+            "label": "Driver"
+        },
+        {
+            "value": 1337,
+            "label": "Driver"
+        },
+        {
+            "value": 1355,
+            "label": "DRIVER / SALES AGENT"
+        },
+        {
+            "value": 1063,
+            "label": "Driver/Laborer"
+        },
+        {
+            "value": 1524,
+            "label": "Driver/Warehouse"
+        },
+        {
+            "value": 1033,
+            "label": "DSP"
+        },
+        {
+            "value": 1164,
+            "label": "Dsp"
+        },
+        {
+            "value": 1394,
+            "label": "Dsp"
+        },
+        {
+            "value": 1914,
+            "label": "DSP"
+        },
+        {
+            "value": 1913,
+            "label": "DSP Day Program"
+        },
+        {
+            "value": 463,
+            "label": "Early childhood teacher 463"
+        },
+        {
+            "value": 455,
+            "label": "Education Specialist"
+        },
+        {
+            "value": 782,
+            "label": "Education Specialist"
+        },
+        {
+            "value": 177,
+            "label": "Education Specialist"
+        },
+        {
+            "value": 1826,
+            "label": "ELA Teacher"
+        },
+        {
+            "value": 1728,
+            "label": "Employee Benefits Auditor"
+        },
+        {
+            "value": 267,
+            "label": "Employment Specialist 267"
+        },
+        {
+            "value": 532,
+            "label": "Employment Specialist 532"
+        },
+        {
+            "value": 1334,
+            "label": "Engineering - Maintenance"
+        },
+        {
+            "value": 1604,
+            "label": "Enrollment Specialist"
+        },
+        {
+            "value": 1699,
+            "label": "Enrollment Specialist"
+        },
+        {
+            "value": 1212,
+            "label": "Equipment Operator"
+        },
+        {
+            "value": 665,
+            "label": "Estimator"
+        },
+        {
+            "value": 1308,
+            "label": "Event Setup - 11/08 4:30pm - 12:00am Pay: $10 "
+        },
+        {
+            "value": 1721,
+            "label": "Excursion Agent"
+        },
+        {
+            "value": 1845,
+            "label": "Executive Assistant"
+        },
+        {
+            "value": 1329,
+            "label": "Facilities Technician"
+        },
+        {
+            "value": 432,
+            "label": "Facilities Technician 432"
+        },
+        {
+            "value": 1809,
+            "label": "Facility Coordinator"
+        },
+        {
+            "value": 1859,
+            "label": "Family Centered Specialist"
+        },
+        {
+            "value": 1686,
+            "label": "Family Services Coordinator"
+        },
+        {
+            "value": 864,
+            "label": "Family Services Coordinator"
+        },
+        {
+            "value": 273,
+            "label": "Family Services Coordinator 273"
+        },
+        {
+            "value": 670,
+            "label": "Family Services Coordinator 670"
+        },
+        {
+            "value": 35,
+            "label": "Family Support Assistant - 35"
+        },
+        {
+            "value": 1872,
+            "label": "Field Technician"
+        },
+        {
+            "value": 886,
+            "label": "File Clerk"
+        },
+        {
+            "value": 892,
+            "label": "File Clerk"
+        },
+        {
+            "value": 893,
+            "label": "File Clerk"
+        },
+        {
+            "value": 894,
+            "label": "File Clerk"
+        },
+        {
+            "value": 895,
+            "label": "File Clerk"
+        },
+        {
+            "value": 896,
+            "label": "File Clerk"
+        },
+        {
+            "value": 476,
+            "label": "Financial Accounting Supervisor"
+        },
+        {
+            "value": 470,
+            "label": "Financial Assistant"
+        },
+        {
+            "value": 386,
+            "label": "Financial Assistant"
+        },
+        {
+            "value": 441,
+            "label": "Financial Associate"
+        },
+        {
+            "value": 442,
+            "label": "Financial Associate"
+        },
+        {
+            "value": 444,
+            "label": "Financial Associate"
+        },
+        {
+            "value": 446,
+            "label": "Financial Associate"
+        },
+        {
+            "value": 1797,
+            "label": "Financial Auditor"
+        },
+        {
+            "value": 1541,
+            "label": "Fleet Manager"
+        },
+        {
+            "value": 1622,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1791,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1724,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1855,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1288,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1339,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1340,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1239,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1124,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1048,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 902,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 932,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 883,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 753,
+            "label": "Floor Technician"
+        },
+        {
+            "value": 1270,
+            "label": "Fluid Technician"
+        },
+        {
+            "value": 1687,
+            "label": "Fluid Technician"
+        },
+        {
+            "value": 1514,
+            "label": "Forkilft Operator"
+        },
+        {
+            "value": 1848,
+            "label": "Forklift Operator"
+        },
+        {
+            "value": 1854,
+            "label": "ForkLift Operator"
+        },
+        {
+            "value": 1761,
+            "label": "Forklift Operator"
+        },
+        {
+            "value": 1794,
+            "label": "Forklift Operator"
+        },
+        {
+            "value": 266,
+            "label": "Foster Care Case Worker"
+        },
+        {
+            "value": 217,
+            "label": "Foster Care SW for School 217"
+        },
+        {
+            "value": 683,
+            "label": "Foster Case Worker"
+        },
+        {
+            "value": 1763,
+            "label": "Front End Loader"
+        },
+        {
+            "value": 1688,
+            "label": "Front End Loader"
+        },
+        {
+            "value": 1269,
+            "label": "Front End Loader"
+        },
+        {
+            "value": 859,
+            "label": "Fuel Tank Drainer"
+        },
+        {
+            "value": 1785,
+            "label": "Full Charge Bookkeeper"
+        },
+        {
+            "value": 149,
+            "label": "Functional Family Therapist (LGSW/LGPC) 149"
+        },
+        {
+            "value": 161,
+            "label": "Functional Family Therapy Supervisor LICSW/LPC 161"
+        },
+        {
+            "value": 1828,
+            "label": "General Labor"
+        },
+        {
+            "value": 1226,
+            "label": "General Labor"
+        },
+        {
+            "value": 1350,
+            "label": "General Labor"
+        },
+        {
+            "value": 1821,
+            "label": "General Laborers"
+        },
+        {
+            "value": 1823,
+            "label": "General Laborers"
+        },
+        {
+            "value": 927,
+            "label": "General Laborers"
+        },
+        {
+            "value": 790,
+            "label": "General Laborers"
+        },
+        {
+            "value": 1406,
+            "label": "General Laborers - Cleaning"
+        },
+        {
+            "value": 1833,
+            "label": "General Laborers 3/2/18"
+        },
+        {
+            "value": 1834,
+            "label": "General Laborers 3/4/18"
+        },
+        {
+            "value": 1835,
+            "label": "General Laborers 3/5/18"
+        },
+        {
+            "value": 1836,
+            "label": "General Laborers 3/6/18"
+        },
+        {
+            "value": 1837,
+            "label": "General Laborers 3/7/18"
+        },
+        {
+            "value": 1838,
+            "label": "General Laborers 3/8/18"
+        },
+        {
+            "value": 1839,
+            "label": "General Laborers 3/8/18"
+        },
+        {
+            "value": 420,
+            "label": "General Ledger Accountant"
+        },
+        {
+            "value": 9,
+            "label": "GNA"
+        },
+        {
+            "value": 14,
+            "label": "GNA"
+        },
+        {
+            "value": 15,
+            "label": "GNA-15"
+        },
+        {
+            "value": 1907,
+            "label": "Golf Cart Assemblers"
+        },
+        {
+            "value": 1908,
+            "label": "Golf Cart Assemblers"
+        },
+        {
+            "value": 1213,
+            "label": "Grading Foreman"
+        },
+        {
+            "value": 1248,
+            "label": "Granite Polisher"
+        },
+        {
+            "value": 1423,
+            "label": "Granite Warehouse Worker"
+        },
+        {
+            "value": 1112,
+            "label": "Grant Writer"
+        },
+        {
+            "value": 762,
+            "label": "Grants Manager"
+        },
+        {
+            "value": 530,
+            "label": "Grants Manager"
+        },
+        {
+            "value": 184,
+            "label": "Graphic Teacher-Special Education"
+        },
+        {
+            "value": 879,
+            "label": "Handyman"
+        },
+        {
+            "value": 1380,
+            "label": "Harvester"
+        },
+        {
+            "value": 1607,
+            "label": "Harvester"
+        },
+        {
+            "value": 1591,
+            "label": "Harvester"
+        },
+        {
+            "value": 1107,
+            "label": "Head Teacher - Head start"
+        },
+        {
+            "value": 1185,
+            "label": "High School Science Teacher"
+        },
+        {
+            "value": 416,
+            "label": "High School Science Teacher 416"
+        },
+        {
+            "value": 305,
+            "label": "Home Health LPN - Annapolis"
+        },
+        {
+            "value": 316,
+            "label": "Home Health Quality Assurance Manager - Columbia 316"
+        },
+        {
+            "value": 307,
+            "label": "Home Health RN - Annapolis 307"
+        },
+        {
+            "value": 309,
+            "label": "Home Health RN - Columbia 309"
+        },
+        {
+            "value": 322,
+            "label": "Home Health RN - Silver Spring"
+        },
+        {
+            "value": 366,
+            "label": "Home Health RN - VA Beach 366"
+        },
+        {
+            "value": 314,
+            "label": "Home Health RN Manager Of Clinical Practice - Silver Spring 314"
+        },
+        {
+            "value": 303,
+            "label": "Home Health RN Manager Of Clinical Practice- Annapolis 303"
+        },
+        {
+            "value": 325,
+            "label": "Home Health RN Towson"
+        },
+        {
+            "value": 621,
+            "label": "Home Health RN Towson"
+        },
+        {
+            "value": 1576,
+            "label": "Homeless Outreach RN/LPN"
+        },
+        {
+            "value": 501,
+            "label": "House Manager 501"
+        },
+        {
+            "value": 1601,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1697,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1698,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1656,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1651,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1830,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1847,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1856,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1818,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1804,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1789,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1781,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1792,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1722,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1723,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1123,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1238,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1274,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1097,
+            "label": "Housekeeper "
+        },
+        {
+            "value": 1361,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1342,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1330,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1332,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1325,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1432,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1421,
+            "label": "Housekeeper"
+        },
+        {
+            "value": 1311,
+            "label": "Housekeeper - 11/09 11:00am - 11:00pm / 12 hour shift  Pay: $12 "
+        },
+        {
+            "value": 1312,
+            "label": "Housekeeper - 11/09 11:00pm - 7:00am  Pay: $11.50 "
+        },
+        {
+            "value": 1315,
+            "label": "Housekeeper - 11/10 10:30pm - 6:00am  Pay: $11.50"
+        },
+        {
+            "value": 1314,
+            "label": "Housekeeper - 11/10 3:30pm - 11:30pm   Pay: $10.50"
+        },
+        {
+            "value": 1313,
+            "label": "Housekeeper - 11/10 7:30am - 3:30pm  Pay: $10.50"
+        },
+        {
+            "value": 1319,
+            "label": "Housekeeper - 11/11 11:30pm - 6:00am  Pay: $11.50"
+        },
+        {
+            "value": 1318,
+            "label": "Housekeeper - 11/11 4:00pm - 12:00am  Pay: $11"
+        },
+        {
+            "value": 1317,
+            "label": "Housekeeper - 11/11 7:30am - 4:00pm  Pay: $10.50"
+        },
+        {
+            "value": 1321,
+            "label": "Housekeeper - 11/12 7:00pm - 3:00am  Pay: $11.50"
+        },
+        {
+            "value": 1320,
+            "label": "Housekeeper - 11/12 8:00am - 8:00pm / 12 hour shift  Pay: $12"
+        },
+        {
+            "value": 1793,
+            "label": "Housekeeper/Utilities Technician"
+        },
+        {
+            "value": 1829,
+            "label": "Housekeeper/Utilities Technician"
+        },
+        {
+            "value": 1062,
+            "label": "Housekeeping"
+        },
+        {
+            "value": 1310,
+            "label": "Housekeeping - 11/09 6:00am - 11:30am  Pay: $10 "
+        },
+        {
+            "value": 1344,
+            "label": "Housekeeping Leads - 11/08/17 4:30pm - 12:00am "
+        },
+        {
+            "value": 1345,
+            "label": "Housekeeping Leads - 11/09/17 11:00am - 11:30pm"
+        },
+        {
+            "value": 1346,
+            "label": "Housekeeping Leads - 11/09/17 11:00pm - 7:00am"
+        },
+        {
+            "value": 1347,
+            "label": "Housekeeping Leads - 11/10/17 10:30pm - 6:00am"
+        },
+        {
+            "value": 1385,
+            "label": "Housekeeping Leads - 11/10/17 3:30pm - 11:00pm"
+        },
+        {
+            "value": 1348,
+            "label": "Housekeeping Leads - 11/11/17 11:30pm - 6:00am"
+        }
+    ]
+}

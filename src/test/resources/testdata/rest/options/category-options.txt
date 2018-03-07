@@ -1,0 +1,208 @@
+{
+    "data": [
+        {
+            "value": 2008398,
+            "label": "Allscripts"
+        },
+        {
+            "value": 2008399,
+            "label": "Analyst123"
+        },
+        {
+            "value": 2008400,
+            "label": "API"
+        },
+        {
+            "value": 2008401,
+            "label": "Application Developer"
+        },
+        {
+            "value": 2008402,
+            "label": "ASP"
+        },
+        {
+            "value": 2008403,
+            "label": "Business Analyst"
+        },
+        {
+            "value": 2008404,
+            "label": "Business Intelligence"
+        },
+        {
+            "value": 2008405,
+            "label": "Cerner"
+        },
+        {
+            "value": 2008406,
+            "label": "Clinical Healthcare"
+        },
+        {
+            "value": 2008407,
+            "label": "Cloverleaf"
+        },
+        {
+            "value": 2008408,
+            "label": "Customer Service"
+        },
+        {
+            "value": 2008409,
+            "label": "DBA"
+        },
+        {
+            "value": 2008410,
+            "label": "Desktop Support"
+        },
+        {
+            "value": 2008411,
+            "label": "Developer"
+        },
+        {
+            "value": 2008412,
+            "label": "Eclipsys"
+        },
+        {
+            "value": 2008413,
+            "label": "Epic"
+        },
+        {
+            "value": 2008414,
+            "label": "feb3"
+        },
+        {
+            "value": 2008415,
+            "label": "GE/IDX"
+        },
+        {
+            "value": 2008416,
+            "label": "Helpdesk/Desktop Support"
+        },
+        {
+            "value": 2008417,
+            "label": "InterSystems"
+        },
+        {
+            "value": 2008418,
+            "label": "Java developer"
+        },
+        {
+            "value": 2008419,
+            "label": "Kronos"
+        },
+        {
+            "value": 2008420,
+            "label": "Lawson"
+        },
+        {
+            "value": 2008421,
+            "label": "Lorem Ipsum"
+        },
+        {
+            "value": 2008422,
+            "label": "Management"
+        },
+        {
+            "value": 2008423,
+            "label": "Management Consulting incl interim"
+        },
+        {
+            "value": 2008424,
+            "label": "McKesson"
+        },
+        {
+            "value": 2008425,
+            "label": "Meditech"
+        },
+        {
+            "value": 2008426,
+            "label": "Network Administrator"
+        },
+        {
+            "value": 2008427,
+            "label": "Network engineer"
+        },
+        {
+            "value": 2008428,
+            "label": "Network Services"
+        },
+        {
+            "value": 2008429,
+            "label": "NextGen"
+        },
+        {
+            "value": 2008430,
+            "label": "Orion"
+        },
+        {
+            "value": 2008431,
+            "label": "Other Area(s)"
+        },
+        {
+            "value": 2008432,
+            "label": "Patient Care Device Integration"
+        },
+        {
+            "value": 2008433,
+            "label": "PeopleSoft"
+        },
+        {
+            "value": 2008434,
+            "label": "Picis"
+        },
+        {
+            "value": 2008435,
+            "label": "Programming/Development"
+        },
+        {
+            "value": 2008436,
+            "label": "Project Management"
+        },
+        {
+            "value": 2008437,
+            "label": "Project Manager"
+        },
+        {
+            "value": 2008438,
+            "label": "Quality Analyst"
+        },
+        {
+            "value": 2008439,
+            "label": "Rev Cycle Management"
+        },
+        {
+            "value": 2008440,
+            "label": "SAP"
+        },
+        {
+            "value": 2008441,
+            "label": "SeeBeyond eGate ICAN JCAPS"
+        },
+        {
+            "value": 2008442,
+            "label": "Siemens"
+        },
+        {
+            "value": 2008443,
+            "label": "Support"
+        },
+        {
+            "value": 2008444,
+            "label": "Test"
+        },
+        {
+            "value": 2008445,
+            "label": "Test2"
+        },
+        {
+            "value": 2025235,
+            "label": "Test32818A"
+        },
+        {
+            "value": 2008446,
+            "label": "Test45321"
+        },
+        {
+            "value": 2008447,
+            "label": "test54321"
+        }
+    ]
+}
