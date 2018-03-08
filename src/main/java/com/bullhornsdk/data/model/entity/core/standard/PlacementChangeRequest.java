@@ -26,6 +26,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
         "correlatedCustomTextBlock1", "correlatedCustomTextBlock2", "correlatedCustomTextBlock3", "costCenter",
         "customBillRate1", "customBillRate10", "customBillRate2", "customBillRate3", "customBillRate4", "customBillRate5",
         "customBillRate6", "customBillRate7", "customBillRate8", "customBillRate9", "customDate1", "customDate2", "customDate3",
+        "customEncryptedText1", "customEncryptedText2", "customEncryptedText3", "customEncryptedText4", "customEncryptedText5",
+        "customEncryptedText6", "customEncryptedText7", "customEncryptedText8", "customEncryptedText9",  "customEncryptedText10",
         "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customPayRate1",
         "customPayRate10", "customPayRate2", "customPayRate3", "customPayRate4", "customPayRate5", "customPayRate6",
         "customPayRate7", "customPayRate8", "customPayRate9", "customText1", "customText10", "customText11", "customText12",

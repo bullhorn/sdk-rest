@@ -48,7 +48,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"customText7", "customText8", "customText9", "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4",
 		"customTextBlock5", "dateAdded", "dateAvailable", "dateAvailableEnd", "dateI9Expiration", "dateLastComment", "dateLastModified", "dateNextCall",
 		"dateOfBirth", "dayRate", "dayRateLow", "degreeList", "description", "desiredLocations", "disability", "educationDegree",
-		"educations", "email", "email2", "email3", "employeeType", "employmentPreference", "ethnicity", "experience", "externalID", "fax",
+		"educations", "email", "email2", "email3", "employeeType", "employmentPreference", "customEncryptedText1", "customEncryptedText2",
+        "customEncryptedText3", "customEncryptedText4", "customEncryptedText5", "customEncryptedText6", "customEncryptedText7", "customEncryptedText8",
+        "customEncryptedText9",  "customEncryptedText10", "ethnicity", "experience", "externalID", "fax",
 		"fax2", "fax3", "federalAddtionalWitholdingsAmount", "federalExemptions", "federalFilingStatus", "fileAttachments", "firstName",
 		"gender", "hourlyRate", "hourlyRateLow", "i9OnFile", "isAnonymized", "isDayLightSavings", "isDeleted", "isEditable", "isLockedOut", "interviews",
 		"lastName", "linkedPerson", "leads", "localAddtionalWitholdingsAmount", "localExemptions", "localFilingStatus", "localTaxCode",
@@ -2154,6 +2156,26 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
             return false;
         if (customObject10s != null ? !customObject10s.equals(candidate.customObject10s) : candidate.customObject10s != null)
             return false;
+        if (customEncryptedText1 != null ? !customEncryptedText1.equals(candidate.customEncryptedText1) : candidate.customEncryptedText1 != null)
+            return false;
+        if (customEncryptedText2 != null ? !customEncryptedText2.equals(candidate.customEncryptedText2) : candidate.customEncryptedText2 != null)
+            return false;
+        if (customEncryptedText3 != null ? !customEncryptedText3.equals(candidate.customEncryptedText3) : candidate.customEncryptedText3 != null)
+            return false;
+        if (customEncryptedText4 != null ? !customEncryptedText4.equals(candidate.customEncryptedText4) : candidate.customEncryptedText4 != null)
+            return false;
+        if (customEncryptedText5 != null ? !customEncryptedText5.equals(candidate.customEncryptedText5) : candidate.customEncryptedText5 != null)
+            return false;
+        if (customEncryptedText6 != null ? !customEncryptedText6.equals(candidate.customEncryptedText6) : candidate.customEncryptedText6 != null)
+            return false;
+        if (customEncryptedText7 != null ? !customEncryptedText7.equals(candidate.customEncryptedText7) : candidate.customEncryptedText7 != null)
+            return false;
+        if (customEncryptedText8 != null ? !customEncryptedText8.equals(candidate.customEncryptedText8) : candidate.customEncryptedText8 != null)
+            return false;
+        if (customEncryptedText9 != null ? !customEncryptedText9.equals(candidate.customEncryptedText9) : candidate.customEncryptedText9 != null)
+            return false;
+        if (customEncryptedText10 != null ? !customEncryptedText10.equals(candidate.customEncryptedText10) : candidate.customEncryptedText10 != null)
+            return false;
         return workPhone != null ? workPhone.equals(candidate.workPhone) : candidate.workPhone == null;
     }
 
@@ -2289,6 +2311,16 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
         result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
         result = 31 * result + (workPhone != null ? workPhone.hashCode() : 0);
+        result = 31 * result + ((customEncryptedText1 == null) ? 0 : customEncryptedText1.hashCode());
+        result = 31 * result + ((customEncryptedText2 == null) ? 0 : customEncryptedText2.hashCode());
+        result = 31 * result + ((customEncryptedText3 == null) ? 0 : customEncryptedText3.hashCode());
+        result = 31 * result + ((customEncryptedText4 == null) ? 0 : customEncryptedText4.hashCode());
+        result = 31 * result + ((customEncryptedText5 == null) ? 0 : customEncryptedText5.hashCode());
+        result = 31 * result + ((customEncryptedText6 == null) ? 0 : customEncryptedText6.hashCode());
+        result = 31 * result + ((customEncryptedText7 == null) ? 0 : customEncryptedText7.hashCode());
+        result = 31 * result + ((customEncryptedText8 == null) ? 0 : customEncryptedText8.hashCode());
+        result = 31 * result + ((customEncryptedText9 == null) ? 0 : customEncryptedText9.hashCode());
+        result = 31 * result + ((customEncryptedText10 == null) ? 0 : customEncryptedText10.hashCode());
         return result;
     }
 
@@ -2423,6 +2455,16 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         sb.append(", customObject8s=").append(customObject8s);
         sb.append(", customObject9s=").append(customObject9s);
         sb.append(", customObject10s=").append(customObject10s);
+        sb.append(", \ncustomEncryptedText1=").append(customEncryptedText1);
+        sb.append(", \ncustomEncryptedText2=").append(customEncryptedText2);
+        sb.append(", \ncustomEncryptedText3=").append(customEncryptedText3);
+        sb.append(", \ncustomEncryptedText4=").append(customEncryptedText4);
+        sb.append(", \ncustomEncryptedText5=").append(customEncryptedText5);
+        sb.append(", \ncustomEncryptedText6=").append(customEncryptedText6);
+        sb.append(", \ncustomEncryptedText7=").append(customEncryptedText7);
+        sb.append(", \ncustomEncryptedText8=").append(customEncryptedText8);
+        sb.append(", \ncustomEncryptedText9=").append(customEncryptedText9);
+        sb.append(", \ncustomEncryptedText10=").append(customEncryptedText10);
         sb.append(", workPhone='").append(workPhone).append('\'');
         sb.append('}');
         return sb.toString();

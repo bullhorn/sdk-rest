@@ -79,6 +79,36 @@ public class CustomFieldsD extends CustomFieldsC {
 
 	private BigDecimal customPayRate9;
 
+    @JsonIgnore
+    private String customEncryptedText1;
+
+    @JsonIgnore
+    private String customEncryptedText2;
+
+    @JsonIgnore
+    private String customEncryptedText3;
+
+    @JsonIgnore
+    private String customEncryptedText4;
+
+    @JsonIgnore
+    private String customEncryptedText5;
+
+    @JsonIgnore
+    private String customEncryptedText6;
+
+    @JsonIgnore
+    private String customEncryptedText7;
+
+    @JsonIgnore
+    private String customEncryptedText8;
+
+    @JsonIgnore
+    private String customEncryptedText9;
+
+    @JsonIgnore
+    private String customEncryptedText10;
+
 	@JsonIgnore
 	@Size(max = 100)
 	private String customText21;
@@ -559,6 +589,116 @@ public class CustomFieldsD extends CustomFieldsC {
 		this.customText40 = customText40;
 	}
 
+    @JsonProperty("customEncryptedText1")
+    public String getCustomEncryptedText1() {
+        return customEncryptedText1;
+    }
+
+    @JsonProperty("customEncryptedText1")
+    @JsonIgnore
+    public void setCustomEncryptedText1(String customEncryptedText1) {
+        this.customEncryptedText1 = customEncryptedText1;
+    }
+
+    @JsonProperty("customEncryptedText2")
+    public String getCustomEncryptedText2() {
+        return customEncryptedText2;
+    }
+
+    @JsonProperty("customEncryptedText2")
+    @JsonIgnore
+    public void setCustomEncryptedText2(String customEncryptedText2) {
+        this.customEncryptedText2 = customEncryptedText2;
+    }
+
+    @JsonProperty("customEncryptedText3")
+    public String getCustomEncryptedText3() {
+        return customEncryptedText3;
+    }
+
+    @JsonProperty("customEncryptedText3")
+    @JsonIgnore
+    public void setCustomEncryptedText3(String customEncryptedText3) {
+        this.customEncryptedText3 = customEncryptedText3;
+    }
+
+    @JsonProperty("customEncryptedText4")
+    public String getCustomEncryptedText4() {
+        return customEncryptedText4;
+    }
+
+    @JsonProperty("customEncryptedText4")
+    @JsonIgnore
+    public void setCustomEncryptedText4(String customEncryptedText4) {
+        this.customEncryptedText4 = customEncryptedText4;
+    }
+
+    @JsonProperty("customEncryptedText5")
+    public String getCustomEncryptedText5() {
+        return customEncryptedText5;
+    }
+
+    @JsonProperty("customEncryptedText5")
+    @JsonIgnore
+    public void setCustomEncryptedText5(String customEncryptedText5) {
+        this.customEncryptedText5 = customEncryptedText5;
+    }
+
+    @JsonProperty("customEncryptedText6")
+    public String getCustomEncryptedText6() {
+        return customEncryptedText6;
+    }
+
+    @JsonProperty("customEncryptedText6")
+    @JsonIgnore
+    public void setCustomEncryptedText6(String customEncryptedText6) {
+        this.customEncryptedText6 = customEncryptedText6;
+    }
+
+    @JsonProperty("customEncryptedText7")
+    public String getCustomEncryptedText7() {
+        return customEncryptedText7;
+    }
+
+    @JsonProperty("customEncryptedText7")
+    @JsonIgnore
+    public void setCustomEncryptedText7(String customEncryptedText7) {
+        this.customEncryptedText7 = customEncryptedText7;
+    }
+
+    @JsonProperty("customEncryptedText8")
+    public String getCustomEncryptedText8() {
+        return customEncryptedText8;
+    }
+
+    @JsonProperty("customEncryptedText8")
+    @JsonIgnore
+    public void setCustomEncryptedText8(String customEncryptedText8) {
+        this.customEncryptedText8 = customEncryptedText8;
+    }
+
+    @JsonProperty("customEncryptedText9")
+    public String getCustomEncryptedText9() {
+        return customEncryptedText9;
+    }
+
+    @JsonProperty("customEncryptedText9")
+    @JsonIgnore
+    public void setCustomEncryptedText9(String customEncryptedText9) {
+        this.customEncryptedText9 = customEncryptedText9;
+    }
+
+    @JsonProperty("customEncryptedText10")
+    public String getCustomEncryptedText10() {
+        return customEncryptedText10;
+    }
+
+    @JsonProperty("customEncryptedText10")
+    @JsonIgnore
+    public void setCustomEncryptedText10(String customEncryptedText10) {
+        this.customEncryptedText10 = customEncryptedText10;
+    }
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -603,6 +743,16 @@ public class CustomFieldsD extends CustomFieldsC {
 		result = prime * result + ((customText38 == null) ? 0 : customText38.hashCode());
 		result = prime * result + ((customText39 == null) ? 0 : customText39.hashCode());
 		result = prime * result + ((customText40 == null) ? 0 : customText40.hashCode());
+		result = prime * result + ((customEncryptedText1 == null) ? 0 : customEncryptedText1.hashCode());
+		result = prime * result + ((customEncryptedText2 == null) ? 0 : customEncryptedText2.hashCode());
+        result = prime * result + ((customEncryptedText3 == null) ? 0 : customEncryptedText3.hashCode());
+        result = prime * result + ((customEncryptedText4 == null) ? 0 : customEncryptedText4.hashCode());
+        result = prime * result + ((customEncryptedText5 == null) ? 0 : customEncryptedText5.hashCode());
+        result = prime * result + ((customEncryptedText6 == null) ? 0 : customEncryptedText6.hashCode());
+        result = prime * result + ((customEncryptedText7 == null) ? 0 : customEncryptedText7.hashCode());
+        result = prime * result + ((customEncryptedText8 == null) ? 0 : customEncryptedText8.hashCode());
+        result = prime * result + ((customEncryptedText9 == null) ? 0 : customEncryptedText9.hashCode());
+        result = prime * result + ((customEncryptedText10 == null) ? 0 : customEncryptedText10.hashCode());
 		return result;
 	}
 
@@ -815,6 +965,57 @@ public class CustomFieldsD extends CustomFieldsC {
 				return false;
 		} else if (!customText40.equals(other.customText40))
 			return false;
+        if (customEncryptedText1 == null) {
+            if (other.customEncryptedText1 != null)
+                return false;
+        } else if (!customEncryptedText1.equals(other.customText24))
+            return false;
+        if (customEncryptedText2 == null) {
+            if (other.customEncryptedText2 != null)
+                return false;
+        } else if (!customEncryptedText2.equals(other.customText24))
+            return false;
+        if (customEncryptedText3 == null) {
+            if (other.customEncryptedText3 != null)
+                return false;
+        } else if (!customEncryptedText3.equals(other.customText24))
+            return false;
+        if (customEncryptedText4 == null) {
+            if (other.customEncryptedText4 != null)
+                return false;
+        } else if (!customEncryptedText4.equals(other.customText24))
+            return false;
+        if (customEncryptedText5 == null) {
+            if (other.customEncryptedText5 != null)
+                return false;
+        } else if (!customEncryptedText5.equals(other.customText24))
+            return false;
+        if (customEncryptedText6 == null) {
+            if (other.customEncryptedText6 != null)
+                return false;
+        } else if (!customEncryptedText6.equals(other.customText24))
+            return false;
+        if (customEncryptedText7 == null) {
+            if (other.customEncryptedText7 != null)
+                return false;
+        } else if (!customEncryptedText7.equals(other.customText24))
+            return false;
+        if (customEncryptedText8 == null) {
+            if (other.customEncryptedText8 != null)
+                return false;
+        } else if (!customEncryptedText8.equals(other.customText24))
+            return false;
+        if (customEncryptedText9 == null) {
+            if (other.customEncryptedText9 != null)
+                return false;
+        } else if (!customEncryptedText9.equals(other.customText24))
+            return false;
+        if (customEncryptedText10 == null) {
+            if (other.customEncryptedText10 != null)
+                return false;
+        } else if (!customEncryptedText10.equals(other.customText24))
+            return false;
+
 		return true;
 	}
 
@@ -861,6 +1062,26 @@ public class CustomFieldsD extends CustomFieldsC {
 		builder.append(customText39);
 		builder.append(", \ncustomText40=");
 		builder.append(customText40);
+        builder.append(", \ncustomEncryptedText1=");
+        builder.append(customEncryptedText1);
+        builder.append(", \ncustomEncryptedText2=");
+        builder.append(customEncryptedText2);
+        builder.append(", \ncustomEncryptedText3=");
+        builder.append(customEncryptedText3);
+        builder.append(", \ncustomEncryptedText4=");
+        builder.append(customEncryptedText4);
+        builder.append(", \ncustomEncryptedText5=");
+        builder.append(customEncryptedText5);
+        builder.append(", \ncustomEncryptedText6=");
+        builder.append(customEncryptedText6);
+        builder.append(", \ncustomEncryptedText7=");
+        builder.append(customEncryptedText7);
+        builder.append(", \ncustomEncryptedText8=");
+        builder.append(customEncryptedText8);
+        builder.append(", \ncustomEncryptedText9=");
+        builder.append(customEncryptedText9);
+        builder.append(", \ncustomEncryptedText10=");
+        builder.append(customEncryptedText10);
 		return builder.toString();
 	}
 
