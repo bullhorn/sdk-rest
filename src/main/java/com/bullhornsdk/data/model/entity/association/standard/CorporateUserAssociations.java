@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
+import com.bullhornsdk.data.model.entity.core.standard.Branch;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.standard.PrivateLabel;
@@ -20,6 +21,7 @@ public final class CorporateUserAssociations implements EntityAssociations<Corpo
 
     private final AssociationField<CorporateUser, CorporationDepartment> corporationDepartments = instantiateAssociationField("departments",CorporationDepartment.class);
     private final AssociationField<CorporateUser, PrivateLabel> privateLabels = instantiateAssociationField("privateLabels",PrivateLabel.class);
+    private final AssociationField<CorporateUser, Branch> branches = instantiateAssociationField("branches",Branch.class);
 
 
     private List<AssociationField<CorporateUser, ? extends BullhornEntity>> allAssociations;
@@ -41,6 +43,10 @@ public final class CorporateUserAssociations implements EntityAssociations<Corpo
         return privateLabels;
     }
 
+    public AssociationField<CorporateUser, Branch> branches() {
+        return branches;
+    }
+
     private <E extends BullhornEntity> AssociationField<CorporateUser, E> instantiateAssociationField(String associationName,
                                                                                                           Class<E> associationType) {
         return new StandardAssociationField<CorporateUser, E>(associationName, associationType);
@@ -52,6 +58,7 @@ public final class CorporateUserAssociations implements EntityAssociations<Corpo
             allAssociations = new ArrayList<AssociationField<CorporateUser, ? extends BullhornEntity>>();
             allAssociations.add(corporationDepartments());
             allAssociations.add(privateLabels());
+            allAssociations.add(branches());
         }
         return allAssociations;
 
