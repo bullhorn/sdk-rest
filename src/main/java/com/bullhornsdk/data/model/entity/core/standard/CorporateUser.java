@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "address", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
+@JsonPropertyOrder({ "id", "address", "branches", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
 		"customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
 		"customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText2", "customText20",
 		"customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "dateLastComment",
@@ -42,6 +42,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	private OneToMany<CorporationDepartment> departments;
 
 	private OneToMany<PrivateLabel> privateLabels;
+
+    private OneToMany<Branch> branches;
 
 	@JsonIgnore
 	@Email
@@ -221,6 +223,16 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	public void setPrivateLabels(OneToMany<PrivateLabel> privateLabels) {
 		this.privateLabels = privateLabels;
 	}
+
+    @JsonProperty("branches")
+    public OneToMany<Branch> getBranches() {
+        return branches;
+    }
+
+    @JsonProperty("branches")
+    public void setBranches(OneToMany<Branch> branches) {
+        this.branches = branches;
+    }
 
 	@JsonProperty("email")
 	public String getEmail() {
@@ -627,6 +639,7 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
+        result = prime * result + ((branches == null) ? 0 : branches.hashCode());
 		result = prime * result + ((dateLastComment == null) ? 0 : dateLastComment.hashCode());
 		result = prime * result + ((departments == null) ? 0 : departments.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
@@ -687,6 +700,11 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 				return false;
 		} else if (!address.equals(other.address))
 			return false;
+        if (branches == null) {
+            if (other.branches != null)
+                return false;
+        } else if (!branches.equals(other.branches))
+            return false;
 		if (dateLastComment == null) {
 			if (other.dateLastComment != null)
 				return false;
@@ -913,6 +931,8 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		builder.append(id);
 		builder.append("\n\taddress: ");
 		builder.append(address);
+        builder.append("\n\tbranches: ");
+        builder.append(branches);
 		builder.append("\n\tdateLastComment: ");
 		builder.append(dateLastComment);
 		builder.append("\n\tdepartments: ");
