@@ -14,6 +14,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.exception.RestMappingException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -837,17 +838,17 @@ public class StandardBullhornData implements BullhornData {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
         String url = restUrlFactory.assembleEntityUrl(params);
         try {
-            return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
-        } catch(Exception oneOrLessReturned) {
+            String response = this.performGetRequest(url, String.class, uriVariables);
             try {
+                return restJsonConverter.jsonToEntityDoNotUnwrapRoot(response, BullhornEntityInfo.getTypesListWrapperType(type));
+            } catch(RestMappingException onlyOneEntityWasReturned) {
                 List<T> list = new ArrayList<T>();
-                String jsonString = this.performGetRequest(url, String.class, uriVariables);
-                list.add(restJsonConverter.jsonToEntityUnwrapRoot(jsonString, type));
-                return (L) new StandardListWrapper<T>(list);
-            } catch(RestApiException noneReturned) {
-                List<T> list = new ArrayList<T>();
+                list.add(restJsonConverter.jsonToEntityUnwrapRoot(response, type));
                 return (L) new StandardListWrapper<T>(list);
             }
+        } catch(RestApiException noneReturned) {
+            List<T> list = new ArrayList<T>();
+            return (L) new StandardListWrapper<T>(list);
         }
     }
 
