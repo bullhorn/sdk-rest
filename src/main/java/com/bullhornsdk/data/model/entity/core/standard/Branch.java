@@ -16,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+import java.math.BigDecimal;
+
 /**
  * Created by john.sullivan on 10/7/2017.
  */
@@ -78,17 +80,17 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
 
     private DateTime customDate6;
 
-    private Double customFloat1;
+    private BigDecimal customFloat1;
 
-    private Double customFloat2;
+    private BigDecimal customFloat2;
 
-    private Double customFloat3;
+    private BigDecimal customFloat3;
 
-    private Double customFloat4;
+    private BigDecimal customFloat4;
 
-    private Double customFloat5;
+    private BigDecimal customFloat5;
 
-    private Double customFloat6;
+    private BigDecimal customFloat6;
 
     private Integer customInt1;
 
@@ -370,62 +372,62 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
     }
 
     @JsonProperty("customFloat1")
-    public Double getCustomFloat1() {
+    public BigDecimal getCustomFloat1() {
         return customFloat1;
     }
 
     @JsonProperty("customFloat1")
-    public void setCustomFloat1(Double customFloat1) {
+    public void setCustomFloat1(BigDecimal customFloat1) {
         this.customFloat1 = customFloat1;
     }
 
     @JsonProperty("customFloat2")
-    public Double getCustomFloat2() {
+    public BigDecimal getCustomFloat2() {
         return customFloat2;
     }
 
     @JsonProperty("customFloat2")
-    public void setCustomFloat2(Double customFloat2) {
+    public void setCustomFloat2(BigDecimal customFloat2) {
         this.customFloat2 = customFloat2;
     }
 
     @JsonProperty("customFloat3")
-    public Double getCustomFloat3() {
+    public BigDecimal getCustomFloat3() {
         return customFloat3;
     }
 
     @JsonProperty("customFloat3")
-    public void setCustomFloat3(Double customFloat3) {
+    public void setCustomFloat3(BigDecimal customFloat3) {
         this.customFloat3 = customFloat3;
     }
 
     @JsonProperty("customFloat4")
-    public Double getCustomFloat4() {
+    public BigDecimal getCustomFloat4() {
         return customFloat4;
     }
 
     @JsonProperty("customFloat4")
-    public void setCustomFloat4(Double customFloat4) {
+    public void setCustomFloat4(BigDecimal customFloat4) {
         this.customFloat4 = customFloat4;
     }
 
     @JsonProperty("customFloat5")
-    public Double getCustomFloat5() {
+    public BigDecimal getCustomFloat5() {
         return customFloat5;
     }
 
     @JsonProperty("customFloat5")
-    public void setCustomFloat5(Double customFloat5) {
+    public void setCustomFloat5(BigDecimal customFloat5) {
         this.customFloat5 = customFloat5;
     }
 
     @JsonProperty("customFloat6")
-    public Double getCustomFloat6() {
+    public BigDecimal getCustomFloat6() {
         return customFloat6;
     }
 
     @JsonProperty("customFloat6")
-    public void setCustomFloat6(Double customFloat6) {
+    public void setCustomFloat6(BigDecimal customFloat6) {
         this.customFloat6 = customFloat6;
     }
 
