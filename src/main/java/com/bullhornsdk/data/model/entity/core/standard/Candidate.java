@@ -636,7 +636,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return comments;
 	}
 
-	@JsonProperty("comments")
+    @JsonIgnore
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
@@ -646,7 +646,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return companyName;
 	}
 
-	@JsonProperty("companyName")
+    @JsonIgnore
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
@@ -780,7 +780,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return description;
 	}
 
-	@JsonProperty("description")
+    @JsonIgnore
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -831,7 +831,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return email;
 	}
 
-	@JsonProperty("email")
+    @JsonIgnore
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -841,7 +841,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return email2;
 	}
 
-	@JsonProperty("email2")
+    @JsonIgnore
 	public void setEmail2(String email2) {
 		this.email2 = email2;
 	}
@@ -851,7 +851,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return email3;
 	}
 
-	@JsonProperty("email3")
+    @JsonIgnore
 	public void setEmail3(String email3) {
 		this.email3 = email3;
 	}
@@ -901,7 +901,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return externalID;
 	}
 
-	@JsonProperty("externalID")
+    @JsonIgnore
 	public void setExternalID(String externalID) {
 		this.externalID = externalID;
 	}
@@ -911,7 +911,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return fax;
 	}
 
-	@JsonProperty("fax")
+    @JsonIgnore
 	public void setFax(String fax) {
 		this.fax = fax;
 	}
@@ -921,7 +921,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return fax2;
 	}
 
-	@JsonProperty("fax2")
+    @JsonIgnore
 	public void setFax2(String fax2) {
 		this.fax2 = fax2;
 	}
@@ -931,7 +931,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return fax3;
 	}
 
-	@JsonProperty("fax3")
+    @JsonIgnore
 	public void setFax3(String fax3) {
 		this.fax3 = fax3;
 	}
@@ -982,7 +982,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return firstName;
 	}
 
-	@JsonProperty("firstName")
+    @JsonIgnore
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -992,7 +992,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return gender;
 	}
 
-	@JsonProperty("gender")
+    @JsonIgnore
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
@@ -1093,7 +1093,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return lastName;
 	}
 
-	@JsonProperty("lastName")
+    @JsonIgnore
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
@@ -1173,7 +1173,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return middleName;
 	}
 
-	@JsonProperty("middleName")
+    @JsonIgnore
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
@@ -1193,7 +1193,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return mobile;
 	}
 
-	@JsonProperty("mobile")
+    @JsonIgnore
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
@@ -1203,7 +1203,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return name;
 	}
 
-	@JsonProperty("name")
+    @JsonIgnore
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -1294,7 +1294,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return pager;
 	}
 
-	@JsonProperty("pager")
+    @JsonIgnore
 	public void setPager(String pager) {
 		this.pager = pager;
 	}
@@ -1324,7 +1324,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return phone;
 	}
 
-	@JsonProperty("phone")
+    @JsonIgnore
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -1334,7 +1334,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return phone2;
 	}
 
-	@JsonProperty("phone2")
+    @JsonIgnore
 	public void setPhone2(String phone2) {
 		this.phone2 = phone2;
 	}
@@ -1344,7 +1344,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return phone3;
 	}
 
-	@JsonProperty("phone3")
+    @JsonIgnore
 	public void setPhone3(String phone3) {
 		this.phone3 = phone3;
 	}
@@ -1609,7 +1609,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return taxState;
 	}
 
-	@JsonProperty("taxState")
+    @JsonIgnore
 	public void setTaxState(String taxState) {
 		this.taxState = taxState;
 	}
@@ -1659,7 +1659,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return username;
 	}
 
-	@JsonProperty("username")
+    @JsonIgnore
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -1669,7 +1669,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return veteran;
 	}
 
-	@JsonProperty("veteran")
+    @JsonIgnore
 	public void setVeteran(String veteran) {
 		this.veteran = veteran;
 	}
@@ -1721,7 +1721,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 		return workPhone;
 	}
 
-	@JsonProperty("workPhone")
+    @JsonIgnore
 	public void setWorkPhone(String workPhone) {
 		this.workPhone = workPhone;
 	}
