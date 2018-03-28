@@ -14,11 +14,12 @@ import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "candidate", "clientContact", "clientCorporation", "dateAdded", "email", "isRead", "jobOrder",
-        "migrateGUID", "user" })
+@JsonPropertyOrder({ "id", "candidate", "clientContact", "clientCorporation", "dateAdded", "email", "isRead", "jobOrder", "jobSubmission",
+    "migrateGUID", "user" })
 public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity {
 
     private Integer id;
@@ -39,6 +40,8 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
 
     private JobOrder jobOrder;
 
+    private JobSubmission jobSubmission;
+
     private String migrateGUID;
 
     private CorporateUser user;
@@ -46,10 +49,10 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     public Sendout() {
         super();
     }
-    
+
     /**
      * Returns the entity with the required fields for an insert set.
-     * 
+     *
      * @return
      */
     public Sendout instantiateForInsert() {
@@ -143,6 +146,16 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
         this.jobOrder = jobOrder;
     }
 
+    @JsonProperty("jobSubmission")
+    public JobSubmission getJobSubmission() {
+        return jobSubmission;
+    }
+
+    @JsonProperty("jobSubmission")
+    public void setJobSubmission(JobSubmission jobSubmission) {
+        this.jobSubmission = jobSubmission;
+    }
+
     @JsonProperty("migrateGUID")
     public String getMigrateGUID() {
         return migrateGUID;
@@ -163,114 +176,44 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
         this.user = user;
     }
 
-    
-    
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((candidate == null) ? 0 : candidate.hashCode());
-        result = prime * result + ((clientContact == null) ? 0 : clientContact.hashCode());
-        result = prime * result + ((clientCorporation == null) ? 0 : clientCorporation.hashCode());
-        result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-        result = prime * result + ((email == null) ? 0 : email.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((isRead == null) ? 0 : isRead.hashCode());
-        result = prime * result + ((jobOrder == null) ? 0 : jobOrder.hashCode());
-        result = prime * result + ((migrateGUID == null) ? 0 : migrateGUID.hashCode());
-        result = prime * result + ((user == null) ? 0 : user.hashCode());
-        return result;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sendout sendout = (Sendout) o;
+        return Objects.equals(id, sendout.id) &&
+            Objects.equals(candidate, sendout.candidate) &&
+            Objects.equals(clientContact, sendout.clientContact) &&
+            Objects.equals(clientCorporation, sendout.clientCorporation) &&
+            Objects.equals(dateAdded, sendout.dateAdded) &&
+            Objects.equals(email, sendout.email) &&
+            Objects.equals(isRead, sendout.isRead) &&
+            Objects.equals(jobOrder, sendout.jobOrder) &&
+            Objects.equals(jobSubmission, sendout.jobSubmission) &&
+            Objects.equals(migrateGUID, sendout.migrateGUID) &&
+            Objects.equals(user, sendout.user);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Sendout other = (Sendout) obj;
-        if (candidate == null) {
-            if (other.candidate != null)
-                return false;
-        } else if (!candidate.equals(other.candidate))
-            return false;
-        if (clientContact == null) {
-            if (other.clientContact != null)
-                return false;
-        } else if (!clientContact.equals(other.clientContact))
-            return false;
-        if (clientCorporation == null) {
-            if (other.clientCorporation != null)
-                return false;
-        } else if (!clientCorporation.equals(other.clientCorporation))
-            return false;
-        if (dateAdded == null) {
-            if (other.dateAdded != null)
-                return false;
-        } else if (!dateAdded.isEqual(other.dateAdded))
-            return false;
-        if (email == null) {
-            if (other.email != null)
-                return false;
-        } else if (!email.equals(other.email))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (isRead == null) {
-            if (other.isRead != null)
-                return false;
-        } else if (!isRead.equals(other.isRead))
-            return false;
-        if (jobOrder == null) {
-            if (other.jobOrder != null)
-                return false;
-        } else if (!jobOrder.equals(other.jobOrder))
-            return false;
-        if (migrateGUID == null) {
-            if (other.migrateGUID != null)
-                return false;
-        } else if (!migrateGUID.equals(other.migrateGUID))
-            return false;
-        if (user == null) {
-            if (other.user != null)
-                return false;
-        } else if (!user.equals(other.user))
-            return false;
-        return true;
+    public int hashCode() {
+
+        return Objects.hash(id, candidate, clientContact, clientCorporation, dateAdded, email, isRead, jobOrder, jobSubmission, migrateGUID, user);
     }
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Sendout {\nid=");
-        builder.append(id);
-        builder.append(", \ncandidate=");
-        builder.append(candidate);
-        builder.append(", \nclientContact=");
-        builder.append(clientContact);
-        builder.append(", \nclientCorporation=");
-        builder.append(clientCorporation);
-        builder.append(", \ndateAdded=");
-        builder.append(dateAdded);
-        builder.append(", \nemail=");
-        builder.append(email);
-        builder.append(", \nisRead=");
-        builder.append(isRead);
-        builder.append(", \njobOrder=");
-        builder.append(jobOrder);
-        builder.append(", \nmigrateGUID=");
-        builder.append(migrateGUID);
-        builder.append(", \nuser=");
-        builder.append(user);
-        builder.append(", \nadditionalProperties=");
-        builder.append(this.getAdditionalProperties());
-        builder.append("\n}");
-        return builder.toString();
+        return "Sendout{" +
+            "id=" + id +
+            ", candidate=" + candidate +
+            ", clientContact=" + clientContact +
+            ", clientCorporation=" + clientCorporation +
+            ", dateAdded=" + dateAdded +
+            ", email='" + email + '\'' +
+            ", isRead=" + isRead +
+            ", jobOrder=" + jobOrder +
+            ", jobSubmission=" + jobSubmission +
+            ", migrateGUID='" + migrateGUID + '\'' +
+            ", user=" + user +
+            '}';
     }
-
 }
