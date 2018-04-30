@@ -214,6 +214,8 @@ public enum BullhornEntityInfo {
         ClientCorporation4ListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
     CLIENT_CORPORATION5("ClientCorporation5", ClientCorporation5.class, ClientCorporation5Wrapper.class,
         ClientCorporation5ListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CERTIFICATION("ClientCorporationCertification", ClientCorporationCertification.class, ClientCorporationCertificationWrapper.class,
+        ClientCorporationCertificationListWrapper.class, null, null),
     CORPORATE_USER("CorporateUser", CorporateUser.class, CorporateUserWrapper.class, CorporateUserListWrapper.class, "UserEditHistory",
         "UserEditHistoryFieldChange"),
     CORPORATION_DEPARTMENT("CorporationDepartment", CorporationDepartment.class, CorporationDepartmentWrapper.class,
