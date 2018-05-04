@@ -1,10 +1,9 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -16,8 +15,8 @@ import org.joda.time.DateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "certification", "clientCorporation", "comments", "dateLastModified", "modifyingUser", "offsetDays", "quantity" })
-public class ClientCorporationCertification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DeleteEntity {
+@JsonPropertyOrder({ "id", "certification", "clientCorporation", "comments", "dateLastModified", "modifyingUser", "offsetDays", "quantity", "isDeleted" })
+public class ClientCorporationCertification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
 
     private Integer id;
 
@@ -38,6 +37,8 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
     private DateTime dateLastModified;
 
     private CorporateUser modifyingUser;
+
+    private Boolean isDeleted;
 
     @Override
     @JsonProperty("id")
@@ -121,6 +122,16 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
     @JsonProperty("modifyingUser")
     public void setModifyingUser(CorporateUser modifyingUser) { this.modifyingUser = modifyingUser; }
 
+    @JsonProperty("isDeleted")
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    @JsonProperty("isDeleted")
+    public void setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -133,6 +144,7 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
         result = prime * result + ((location == null) ? 0 : location.hashCode());
         result = prime * result + ((dateLastModified == null) ? 0 : dateLastModified.hashCode());
         result = prime * result + ((modifyingUser == null) ? 0 : modifyingUser.hashCode());
+        result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
         return result;
     }
 
@@ -151,6 +163,7 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
         if (location != null ? !location.equals(that.location) : that.location != null) return false;
         if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null) return false;
         if (modifyingUser != null ? !modifyingUser.equals(that.modifyingUser) : that.modifyingUser != null) return false;
+        if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
         return true;
     }
 
@@ -165,6 +178,7 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
             ", location='" + location + '\'' +
             ", dateLastModified=" + dateLastModified +
             ", modifyingUser=" + modifyingUser +
+            ", isDeleted=" + isDeleted +
             super.toString() +
             '}';
     }
