@@ -1,10 +1,13 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,12 +18,15 @@ import org.joda.time.DateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "certification", "clientCorporation", "comments", "dateLastModified", "modifyingUser", "offsetDays", "quantity", "isDeleted" })
-public class ClientCorporationCertification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
+@JsonPropertyOrder({ "id", "certification", "alternateCertifications", "clientCorporation", "comments", "dateLastModified", "modifyingUser",
+    "offsetDays", "quantity", "isDeleted" })
+public class ClientCorporationCertification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity {
 
     private Integer id;
 
     private Certification certification;
+
+    private OneToMany<Certification> alternateCertifications;
 
     private ClientCorporation clientCorporation;
 
@@ -60,6 +66,17 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
     @JsonProperty("certification")
     public void setCertification(Certification certification) {
         this.certification = certification;
+    }
+
+    @JsonProperty("alternateCertifications")
+    public OneToMany<Certification> getAlternateCertifications() {
+        return alternateCertifications;
+    }
+
+    @ReadOnly
+    @JsonProperty("alternateCertifications")
+    public void setAlternateCertifications(OneToMany<Certification> alternateCertifications) {
+        this.alternateCertifications = alternateCertifications;
     }
 
     @JsonProperty("clientCorporation")
@@ -138,6 +155,7 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((certification == null) ? 0 : certification.hashCode());
+        result = prime * result + ((alternateCertifications == null) ? 0 : alternateCertifications.hashCode());
         result = prime * result + ((comments == null) ? 0 : comments.hashCode());
         result = prime * result + ((offsetDays == null) ? 0 : offsetDays.hashCode());
         result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
@@ -157,6 +175,7 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (certification != null ? !certification.equals(that.certification) : that.certification != null) return false;
+        if (alternateCertifications != null ? !alternateCertifications.equals(that.alternateCertifications) : that.alternateCertifications != null) return false;
         if (comments != null ? !comments.equals(that.comments) : that.comments != null) return false;
         if (offsetDays != null ? !offsetDays.equals(that.offsetDays) : that.offsetDays != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
@@ -172,6 +191,7 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
         return "ClientCorporationCertification{" +
             "id=" + id +
             ", certification='" + certification + '\'' +
+            ", alternateCertifications=" + alternateCertifications + '\'' +
             ", comments=" + comments +
             ", offsetDays=" + offsetDays +
             ", quantity='" + quantity + '\'' +
