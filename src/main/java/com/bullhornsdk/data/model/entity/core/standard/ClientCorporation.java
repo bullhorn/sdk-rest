@@ -38,9 +38,9 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "address", "annualRevenue", "billingAddress", "billingContact", "billingFrequency", "billingPhone",
-        "branch", "businessSectorList", "requirements", "certificationGroups", "childClientCorporations", "clientContacts", "companyDescription",
-        "companyURL", "competitors", "culture", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
-		"customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
+        "branch", "businessSectorList", "certifications", "requirements", "certificationGroups", "childClientCorporations", "clientContacts",
+        "companyDescription", "companyURL", "competitors", "culture", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2",
+        "customFloat3", "customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
 		"customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText2", "customText20",
 		"customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
 		"customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateFounded", "dateLastModified", "department",
@@ -170,6 +170,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     private OneToMany<Certification> requirements;
 
     private OneToMany<CertificationGroup> certificationGroups;
+
+    private OneToMany<ClientCorporationCertification> certifications; // legacy certifications
 
     private OneToMany<ClientCorporationCustomObjectInstance1> customObject1s;
 
@@ -638,6 +640,17 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @JsonProperty("certificationGroups")
     public void setCertificationGroups(OneToMany<CertificationGroup> certificationGroups) {
         this.certificationGroups = certificationGroups;
+    }
+
+    @JsonProperty("certifications")
+    public OneToMany<ClientCorporationCertification> getCertifications() {
+        return certifications;
+    }
+
+    @ReadOnly
+    @JsonProperty("certifications")
+    public void setCertifications(OneToMany<ClientCorporationCertification> certifications) {
+        this.certifications = certifications;
     }
 
     @JsonProperty("customObject1s")
