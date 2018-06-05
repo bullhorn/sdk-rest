@@ -383,6 +383,10 @@ public class MockDataLoader {
         entityFiles.put(DistributionList.class, "distributionlist-data.txt");
         entityFiles.put(File.class, "file-data.txt");
         entityFiles.put(HousingComplex.class, "housingcomplex-data.txt");
+        entityFiles.put(HousingComplexUnit.class, "housingcomplexunit-data.txt");
+        entityFiles.put(HousingComplexFurnitureDelivery.class, "housingcomplexfurnituredelivery-data.txt");
+        entityFiles.put(HousingComplexUtilityAccount.class, "housingcomplexutilityaccount-data.txt");
+        entityFiles.put(UserHousingComplexUnit.class, "userhousingcomplexunit-data.txt");
         entityFiles.put(JobBoardPost.class, "jobboardpost-data.txt");
         entityFiles.put(JobOrder.class, "joborder-data.txt");
         entityFiles.put(JobSubmission.class, "jobsubmission-data.txt");
@@ -495,6 +499,10 @@ public class MockDataLoader {
         entityMetaFiles.put(DistributionList.class, "meta/distributionlist-meta-data.txt");
         entityMetaFiles.put(File.class, "meta/file-meta-data.txt");
         entityMetaFiles.put(HousingComplex.class, "meta/housingcomplex-meta-data.txt");
+        entityMetaFiles.put(HousingComplexUnit.class, "housingcomplexunit-data.txt");
+        entityMetaFiles.put(HousingComplexFurnitureDelivery.class, "housingcomplexfurnituredelivery-data.txt");
+        entityMetaFiles.put(HousingComplexUtilityAccount.class, "housingcomplexutilityaccount-data.txt");
+        entityMetaFiles.put(UserHousingComplexUnit.class, "userhousingcomplexunit-data.txt");
         entityMetaFiles.put(JobBoardPost.class, "meta/jobboardpost-meta-data.txt");
         entityMetaFiles.put(JobOrder.class, "meta/joborder-meta-data.txt");
         entityMetaFiles.put(JobSubmission.class, "meta/jobsubmission-meta-data.txt");
