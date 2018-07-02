@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance2;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance3;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance4;
@@ -16,6 +15,17 @@ import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCust
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance11;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance12;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance13;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance14;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance15;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance16;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance17;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance18;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance19;
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance20;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
@@ -61,7 +71,6 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
 import com.bullhornsdk.data.model.entity.file.*;
 import com.bullhornsdk.data.model.response.list.*;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance10ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance1ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance2ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance3ListWrapper;
@@ -71,6 +80,17 @@ import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCu
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance7ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance8ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance10ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance11ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance12ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance13ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance14ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance15ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance16ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance17ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance18ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance19ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance20ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance10ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance1ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance2ListWrapper;
@@ -112,7 +132,6 @@ import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObje
 import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance8ListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance9ListWrapper;
 import com.bullhornsdk.data.model.response.single.*;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance10Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance1Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance2Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance3Wrapper;
@@ -122,6 +141,17 @@ import com.bullhornsdk.data.model.response.single.customobject.ClientCorporation
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance7Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance8Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance10Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance11Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance12Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance13Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance14Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance15Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance16Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance17Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance18Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance19Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance20Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance10Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance1Wrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance2Wrapper;
@@ -305,6 +335,16 @@ public enum BullhornEntityInfo {
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_8("ClientCorporationCustomObjectInstance8", ClientCorporationCustomObjectInstance8.class, ClientCorporationCustomObjectInstance8Wrapper.class, ClientCorporationCustomObjectInstance8ListWrapper.class, null, null),
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_9("ClientCorporationCustomObjectInstance9", ClientCorporationCustomObjectInstance9.class, ClientCorporationCustomObjectInstance9Wrapper.class, ClientCorporationCustomObjectInstance9ListWrapper.class, null, null),
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_10("ClientCorporationCustomObjectInstance10", ClientCorporationCustomObjectInstance10.class, ClientCorporationCustomObjectInstance10Wrapper.class, ClientCorporationCustomObjectInstance10ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_11("ClientCorporationCustomObjectInstance11", ClientCorporationCustomObjectInstance11.class, ClientCorporationCustomObjectInstance11Wrapper.class, ClientCorporationCustomObjectInstance11ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_12("ClientCorporationCustomObjectInstance12", ClientCorporationCustomObjectInstance12.class, ClientCorporationCustomObjectInstance12Wrapper.class, ClientCorporationCustomObjectInstance12ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_13("ClientCorporationCustomObjectInstance13", ClientCorporationCustomObjectInstance13.class, ClientCorporationCustomObjectInstance13Wrapper.class, ClientCorporationCustomObjectInstance13ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_14("ClientCorporationCustomObjectInstance14", ClientCorporationCustomObjectInstance14.class, ClientCorporationCustomObjectInstance14Wrapper.class, ClientCorporationCustomObjectInstance14ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_15("ClientCorporationCustomObjectInstance15", ClientCorporationCustomObjectInstance15.class, ClientCorporationCustomObjectInstance15Wrapper.class, ClientCorporationCustomObjectInstance15ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_16("ClientCorporationCustomObjectInstance16", ClientCorporationCustomObjectInstance16.class, ClientCorporationCustomObjectInstance16Wrapper.class, ClientCorporationCustomObjectInstance16ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_17("ClientCorporationCustomObjectInstance17", ClientCorporationCustomObjectInstance17.class, ClientCorporationCustomObjectInstance17Wrapper.class, ClientCorporationCustomObjectInstance17ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_18("ClientCorporationCustomObjectInstance18", ClientCorporationCustomObjectInstance18.class, ClientCorporationCustomObjectInstance18Wrapper.class, ClientCorporationCustomObjectInstance18ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_19("ClientCorporationCustomObjectInstance19", ClientCorporationCustomObjectInstance19.class, ClientCorporationCustomObjectInstance19Wrapper.class, ClientCorporationCustomObjectInstance19ListWrapper.class, null, null),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_20("ClientCorporationCustomObjectInstance20", ClientCorporationCustomObjectInstance20.class, ClientCorporationCustomObjectInstance20Wrapper.class, ClientCorporationCustomObjectInstance20ListWrapper.class, null, null),
     PERSON_CUSTOM_OBJECT_INSTANCE_1("PersonCustomObjectInstance1", PersonCustomObjectInstance1.class, PersonCustomObjectInstance1Wrapper.class, PersonCustomObjectInstance1ListWrapper.class, null, null),
     PERSON_CUSTOM_OBJECT_INSTANCE_2("PersonCustomObjectInstance2", PersonCustomObjectInstance2.class, PersonCustomObjectInstance2Wrapper.class, PersonCustomObjectInstance2ListWrapper.class, null, null),
     PERSON_CUSTOM_OBJECT_INSTANCE_3("PersonCustomObjectInstance3", PersonCustomObjectInstance3.class, PersonCustomObjectInstance3Wrapper.class, PersonCustomObjectInstance3ListWrapper.class, null, null),

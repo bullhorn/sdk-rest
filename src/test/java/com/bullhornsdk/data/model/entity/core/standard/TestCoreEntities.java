@@ -21,6 +21,9 @@ public class TestCoreEntities extends BaseTest {
 	
 	public void load() {
 		for (BullhornEntityInfo bullhornEntityInfo : BullhornEntityInfo.values()) {
+            if (bullhornEntityInfo.getName().equals("ClientCorporationCustomObjectInstance10")) {
+                String s = "";
+            }
 			if(bullhornEntityInfo.getType() != null){
 				one.put(bullhornEntityInfo.getType(), bullhornData.findEntity(bullhornEntityInfo.getType(), id));
 			}

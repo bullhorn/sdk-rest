@@ -38,6 +38,16 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", ClientCorporationCustomObjectInstance8.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", ClientCorporationCustomObjectInstance9.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", ClientCorporationCustomObjectInstance10.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance11> customObject11s = instantiateAssociationField("customObject11s", ClientCorporationCustomObjectInstance11.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance12> customObject12s = instantiateAssociationField("customObject12s", ClientCorporationCustomObjectInstance12.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance13> customObject13s = instantiateAssociationField("customObject13s", ClientCorporationCustomObjectInstance13.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance14> customObject14s = instantiateAssociationField("customObject14s", ClientCorporationCustomObjectInstance14.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance15> customObject15s = instantiateAssociationField("customObject15s", ClientCorporationCustomObjectInstance15.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance16> customObject16s = instantiateAssociationField("customObject16s", ClientCorporationCustomObjectInstance16.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance17> customObject17s = instantiateAssociationField("customObject17s", ClientCorporationCustomObjectInstance17.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance18> customObject18s = instantiateAssociationField("customObject18s", ClientCorporationCustomObjectInstance18.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance19> customObject19s = instantiateAssociationField("customObject19s", ClientCorporationCustomObjectInstance19.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance20> customObject20s = instantiateAssociationField("customObject20s", ClientCorporationCustomObjectInstance20.class);
 
     private ClientCorporationAssociations() {
         super();
@@ -102,6 +112,46 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
         return customObject10s;
     }
 
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance11> customObject11s() {
+        return customObject11s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance12> customObject12s() {
+        return customObject12s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance13> customObject13s() {
+        return customObject13s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance14> customObject14s() {
+        return customObject14s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance15> customObject15s() {
+        return customObject15s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance16> customObject16s() {
+        return customObject16s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance17> customObject17s() {
+        return customObject17s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance18> customObject18s() {
+        return customObject18s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance19> customObject19s() {
+        return customObject19s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance20> customObject20s() {
+        return customObject20s;
+    }
+
 
     private <E extends BullhornEntity> AssociationField<ClientCorporation, E> instantiateAssociationField(String associationName,
                                                                                                       Class<E> associationType) {
@@ -126,6 +176,16 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
+            allAssociations.add(customObject11s());
+            allAssociations.add(customObject12s());
+            allAssociations.add(customObject13s());
+            allAssociations.add(customObject14s());
+            allAssociations.add(customObject15s());
+            allAssociations.add(customObject16s());
+            allAssociations.add(customObject17s());
+            allAssociations.add(customObject18s());
+            allAssociations.add(customObject19s());
+            allAssociations.add(customObject20s());
         }
         return allAssociations;
 
