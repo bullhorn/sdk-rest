@@ -135,11 +135,13 @@ import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscrib
 public class StandardBullhornData implements BullhornData {
     protected static Logger log = Logger.getLogger(StandardBullhornData.class);
 
-    protected final RestApiSession restSession;
+    //protected final RestApiSession restSession;
 
     protected final RestTemplate restTemplate;
 
     protected final String restUrl;
+
+    protected final String bhRestToken;
 
     protected final RestJsonConverter restJsonConverter;
 
@@ -162,21 +164,9 @@ public class StandardBullhornData implements BullhornData {
     protected final static int MAX_RECORDS_TO_RETURN_TOTAL = 20000;
 
     public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials) {
-        this.restSession = new RestApiSession(bullhornRestCredentials);
+        this.bhRestToken = bullhornRestCredentials.getBhRestToken();
         this.restTemplate = RestTemplateFactory.getInstance();
-        this.restUrl = restSession.getRestUrl();
-        this.restJsonConverter = new RestJsonConverter();
-        this.restUrlFactory = new RestUrlFactory(restUrl);
-        this.restFileManager = new RestFileManager();
-        this.restUriVariablesFactory = new RestUriVariablesFactory(this, this.restFileManager);
-        this.restErrorHandler = new RestErrorHandler();
-        this.concurrencyService = new RestConcurrencyService();
-    }
-
-    public StandardBullhornData(RestApiSession restApiSession) {
-        this.restSession = restApiSession;
-        this.restTemplate = RestTemplateFactory.getInstance();
-        this.restUrl = restSession.getRestUrl();
+        this.restUrl = bullhornRestCredentials.getRestUrl();
         this.restJsonConverter = new RestJsonConverter();
         this.restUrlFactory = new RestUrlFactory(restUrl);
         this.restFileManager = new RestFileManager();
@@ -199,6 +189,14 @@ public class StandardBullhornData implements BullhornData {
     @Override
     public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
         return this.handleGetEntity(type, id, fieldSet, ParamFactory.entityParams());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+   public RestApiSession getRestApiSession() {
+        return null;
     }
 
     /**
@@ -599,14 +597,6 @@ public class StandardBullhornData implements BullhornData {
         return this.handleRegetEvents(subscriptionId, requestId);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public RestApiSession getRestApiSession() {
-        return restSession;
-    }
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -757,25 +747,16 @@ public class StandardBullhornData implements BullhornData {
     public String getBhRestToken() {
         String bhRestToken = null;
         try {
-            bhRestToken = restSession.getBhRestToken();
+            bhRestToken = this.bhRestToken;
         } catch (RestApiException e) {
             log.error("Error getting bhRestToken! ", e);
         }
         return bhRestToken;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String refreshBhRestToken() {
-        String bhRestToken = null;
-        try {
-            bhRestToken = restSession.refreshBhRestToken();
-        } catch (RestApiException e) {
-            log.error("Error getting bhRestToken! ", e);
-        }
-        return bhRestToken;
+        return null;
     }
 
     /**
@@ -1899,9 +1880,7 @@ public class StandardBullhornData implements BullhornData {
      * @throws RestApiException if tryNumber >= API_RETRY.
      */
     protected void handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
-        if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-            resetBhRestToken(uriVariables);
-        }
+
         log.error(
                 "HttpStatusCodeError making api call. Try number:" + tryNumber + " out of " + API_RETRY + ". Http status code: "
                         + error.getStatusCode() + ". Response body: " + error.getResponseBodyAsString(), error);
@@ -1914,11 +1893,6 @@ public class StandardBullhornData implements BullhornData {
 
     protected void handleApiError(int tryNumber, Exception e) {
         log.error("Error making api call. Try number:" + tryNumber + " out of " + API_RETRY, e);
-    }
-
-    protected void resetBhRestToken(Map<String, String> uriVariables) {
-        String bhRestToken = this.refreshBhRestToken();
-        uriVariables.put("bhRestToken", bhRestToken);
     }
 
     protected ParsedResume performPostResumeRequest(String url, Object requestPayLoad, Map<String, String> uriVariables) {

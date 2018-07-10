@@ -85,7 +85,7 @@ public class RestApiSession {
 		this.restCredentials = bullhornRestCredentials;
 		this.restTemplate = RestTemplateFactory.getInstance();
 		this.dateTimeBhRestTokenWillExpire = getNow();
-		createSession();
+		//createSession();
 	}
 
 	/**
