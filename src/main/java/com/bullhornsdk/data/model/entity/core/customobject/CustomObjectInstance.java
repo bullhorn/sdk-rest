@@ -3,6 +3,7 @@
  import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
  import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
  import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+ import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
  import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
  import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
  import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
@@ -11,7 +12,7 @@
 
  import java.math.BigDecimal;
 
-public abstract class CustomObjectInstance extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, UpdateEntity, CreateEntity, HardDeleteEntity {
+public abstract class CustomObjectInstance extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, UpdateEntity, CreateEntity, HardDeleteEntity, EditHistoryEntity {
 
 	private Integer id;
     private String text1;
