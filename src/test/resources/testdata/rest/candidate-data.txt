@@ -24,6 +24,7 @@
 		      } ]
 		    },
             "candidateID": 3,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -288,6 +289,7 @@
 		      } ]
 		    },
             "candidateID": 4,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -548,6 +550,7 @@
                 "data": []
             },
             "candidateID": 7,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -806,6 +809,7 @@
                 "data": []
             },
             "candidateID": 8,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -1065,6 +1069,7 @@
                 "data": []
             },
             "candidateID": 9,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -1320,6 +1325,7 @@
                 "data": []
             },
             "candidateID": 10,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -1578,6 +1584,7 @@
                 "data": []
             },
             "candidateID": 84,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -1886,6 +1893,7 @@
                 "data": []
             },
             "candidateID": 85,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -2245,6 +2253,7 @@
                 "data": []
             },
             "candidateID": 86,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -2545,6 +2554,7 @@
                 "data": []
             },
             "candidateID": 87,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -2845,6 +2855,7 @@
                 "data": []
             },
             "candidateID": 88,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -3165,6 +3176,7 @@
                 "data": []
             },
             "candidateID": 89,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -3471,6 +3483,7 @@
                 "data": []
             },
             "candidateID": 90,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -3773,6 +3786,7 @@
                 "data": []
             },
             "candidateID": 91,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -4229,6 +4243,7 @@
                 "data": []
             },
             "candidateID": 92,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -4565,6 +4580,7 @@
                 "data": []
             },
             "candidateID": 93,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -4888,6 +4904,7 @@
                 "data": []
             },
             "candidateID": 94,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -5254,6 +5271,7 @@
                 "data": []
             },
             "candidateID": 95,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -5557,6 +5575,7 @@
                 "data": []
             },
             "candidateID": 96,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []
@@ -5890,6 +5909,7 @@
                 "data": []
             },
             "candidateID": 97,
+            "canEnterTime": true,
             "categories": {
                 "total": 1,
                 "data": []

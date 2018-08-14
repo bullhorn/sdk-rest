@@ -6,162 +6,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.OpportunityCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobject.*;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
 import com.bullhornsdk.data.model.entity.file.*;
 import com.bullhornsdk.data.model.response.list.*;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.OpportunityCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PersonCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobject.*;
 import com.bullhornsdk.data.model.response.single.*;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.OpportunityCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PersonCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobject.*;
 
 /**
  * Enum that contains the following information about the RestEntities:
@@ -274,57 +127,83 @@ public enum BullhornEntityInfo {
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
 
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_1("JobOrderCustomObjectInstance1", JobOrderCustomObjectInstance1.class, JobOrderCustomObjectInstance1Wrapper.class, JobOrderCustomObjectInstance1ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_2("JobOrderCustomObjectInstance2", JobOrderCustomObjectInstance2.class, JobOrderCustomObjectInstance2Wrapper.class, JobOrderCustomObjectInstance2ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_3("JobOrderCustomObjectInstance3", JobOrderCustomObjectInstance3.class, JobOrderCustomObjectInstance3Wrapper.class, JobOrderCustomObjectInstance3ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_4("JobOrderCustomObjectInstance4", JobOrderCustomObjectInstance4.class, JobOrderCustomObjectInstance4Wrapper.class, JobOrderCustomObjectInstance4ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_5("JobOrderCustomObjectInstance5", JobOrderCustomObjectInstance5.class, JobOrderCustomObjectInstance5Wrapper.class, JobOrderCustomObjectInstance5ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_6("JobOrderCustomObjectInstance6", JobOrderCustomObjectInstance6.class, JobOrderCustomObjectInstance6Wrapper.class, JobOrderCustomObjectInstance6ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_7("JobOrderCustomObjectInstance7", JobOrderCustomObjectInstance7.class, JobOrderCustomObjectInstance7Wrapper.class, JobOrderCustomObjectInstance7ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_8("JobOrderCustomObjectInstance8", JobOrderCustomObjectInstance8.class, JobOrderCustomObjectInstance8Wrapper.class, JobOrderCustomObjectInstance8ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_9("JobOrderCustomObjectInstance9", JobOrderCustomObjectInstance9.class, JobOrderCustomObjectInstance9Wrapper.class, JobOrderCustomObjectInstance9ListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_10("JobOrderCustomObjectInstance10", JobOrderCustomObjectInstance10.class, JobOrderCustomObjectInstance10Wrapper.class, JobOrderCustomObjectInstance10ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_1("OpportunityCustomObjectInstance1", OpportunityCustomObjectInstance1.class, OpportunityCustomObjectInstance1Wrapper.class, OpportunityCustomObjectInstance1ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_2("OpportunityCustomObjectInstance2", OpportunityCustomObjectInstance2.class, OpportunityCustomObjectInstance2Wrapper.class, OpportunityCustomObjectInstance2ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_3("OpportunityCustomObjectInstance3", OpportunityCustomObjectInstance3.class, OpportunityCustomObjectInstance3Wrapper.class, OpportunityCustomObjectInstance3ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_4("OpportunityCustomObjectInstance4", OpportunityCustomObjectInstance4.class, OpportunityCustomObjectInstance4Wrapper.class, OpportunityCustomObjectInstance4ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_5("OpportunityCustomObjectInstance5", OpportunityCustomObjectInstance5.class, OpportunityCustomObjectInstance5Wrapper.class, OpportunityCustomObjectInstance5ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_6("OpportunityCustomObjectInstance6", OpportunityCustomObjectInstance6.class, OpportunityCustomObjectInstance6Wrapper.class, OpportunityCustomObjectInstance6ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_7("OpportunityCustomObjectInstance7", OpportunityCustomObjectInstance7.class, OpportunityCustomObjectInstance7Wrapper.class, OpportunityCustomObjectInstance7ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_8("OpportunityCustomObjectInstance8", OpportunityCustomObjectInstance8.class, OpportunityCustomObjectInstance8Wrapper.class, OpportunityCustomObjectInstance8ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_9("OpportunityCustomObjectInstance9", OpportunityCustomObjectInstance9.class, OpportunityCustomObjectInstance9Wrapper.class, OpportunityCustomObjectInstance9ListWrapper.class, null, null),
-    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_10("OpportunityCustomObjectInstance10", OpportunityCustomObjectInstance10.class, OpportunityCustomObjectInstance10Wrapper.class, OpportunityCustomObjectInstance10ListWrapper.class, null, null),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_1("JobOrderCustomObjectInstance1", JobOrderCustomObjectInstance1.class, JobOrderCustomObjectInstance1Wrapper.class, JobOrderCustomObjectInstance1ListWrapper.class, "JobOrderCustomObject1EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_2("JobOrderCustomObjectInstance2", JobOrderCustomObjectInstance2.class, JobOrderCustomObjectInstance2Wrapper.class, JobOrderCustomObjectInstance2ListWrapper.class, "JobOrderCustomObject2EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_3("JobOrderCustomObjectInstance3", JobOrderCustomObjectInstance3.class, JobOrderCustomObjectInstance3Wrapper.class, JobOrderCustomObjectInstance3ListWrapper.class, "JobOrderCustomObject3EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_4("JobOrderCustomObjectInstance4", JobOrderCustomObjectInstance4.class, JobOrderCustomObjectInstance4Wrapper.class, JobOrderCustomObjectInstance4ListWrapper.class, "JobOrderCustomObject4EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_5("JobOrderCustomObjectInstance5", JobOrderCustomObjectInstance5.class, JobOrderCustomObjectInstance5Wrapper.class, JobOrderCustomObjectInstance5ListWrapper.class, "JobOrderCustomObject5EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_6("JobOrderCustomObjectInstance6", JobOrderCustomObjectInstance6.class, JobOrderCustomObjectInstance6Wrapper.class, JobOrderCustomObjectInstance6ListWrapper.class, "JobOrderCustomObject6EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_7("JobOrderCustomObjectInstance7", JobOrderCustomObjectInstance7.class, JobOrderCustomObjectInstance7Wrapper.class, JobOrderCustomObjectInstance7ListWrapper.class, "JobOrderCustomObject7EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_8("JobOrderCustomObjectInstance8", JobOrderCustomObjectInstance8.class, JobOrderCustomObjectInstance8Wrapper.class, JobOrderCustomObjectInstance8ListWrapper.class, "JobOrderCustomObject8EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_9("JobOrderCustomObjectInstance9", JobOrderCustomObjectInstance9.class, JobOrderCustomObjectInstance9Wrapper.class, JobOrderCustomObjectInstance9ListWrapper.class, "JobOrderCustomObject9EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    JOB_ORDER_CUSTOM_OBJECT_INSTANCE_10("JobOrderCustomObjectInstance10", JobOrderCustomObjectInstance10.class, JobOrderCustomObjectInstance10Wrapper.class, JobOrderCustomObjectInstance10ListWrapper.class, "JobOrderCustomObject10EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_1("OpportunityCustomObjectInstance1", OpportunityCustomObjectInstance1.class, OpportunityCustomObjectInstance1Wrapper.class, OpportunityCustomObjectInstance1ListWrapper.class, "OpportunityCustomObject1EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_2("OpportunityCustomObjectInstance2", OpportunityCustomObjectInstance2.class, OpportunityCustomObjectInstance2Wrapper.class, OpportunityCustomObjectInstance2ListWrapper.class, "OpportunityCustomObject2EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_3("OpportunityCustomObjectInstance3", OpportunityCustomObjectInstance3.class, OpportunityCustomObjectInstance3Wrapper.class, OpportunityCustomObjectInstance3ListWrapper.class, "OpportunityCustomObject3EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_4("OpportunityCustomObjectInstance4", OpportunityCustomObjectInstance4.class, OpportunityCustomObjectInstance4Wrapper.class, OpportunityCustomObjectInstance4ListWrapper.class, "OpportunityCustomObject4EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_5("OpportunityCustomObjectInstance5", OpportunityCustomObjectInstance5.class, OpportunityCustomObjectInstance5Wrapper.class, OpportunityCustomObjectInstance5ListWrapper.class, "OpportunityCustomObject5EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_6("OpportunityCustomObjectInstance6", OpportunityCustomObjectInstance6.class, OpportunityCustomObjectInstance6Wrapper.class, OpportunityCustomObjectInstance6ListWrapper.class, "OpportunityCustomObject6EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_7("OpportunityCustomObjectInstance7", OpportunityCustomObjectInstance7.class, OpportunityCustomObjectInstance7Wrapper.class, OpportunityCustomObjectInstance7ListWrapper.class, "OpportunityCustomObject7EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_8("OpportunityCustomObjectInstance8", OpportunityCustomObjectInstance8.class, OpportunityCustomObjectInstance8Wrapper.class, OpportunityCustomObjectInstance8ListWrapper.class, "OpportunityCustomObject8EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_9("OpportunityCustomObjectInstance9", OpportunityCustomObjectInstance9.class, OpportunityCustomObjectInstance9Wrapper.class, OpportunityCustomObjectInstance9ListWrapper.class, "OpportunityCustomObject9EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    OPPORTUNITY_CUSTOM_OBJECT_INSTANCE_10("OpportunityCustomObjectInstance10", OpportunityCustomObjectInstance10.class, OpportunityCustomObjectInstance10Wrapper.class, OpportunityCustomObjectInstance10ListWrapper.class, "OpportunityCustomObject10EditHistory", "OpportunityCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_1("PlacementCustomObjectInstance1", PlacementCustomObjectInstance1.class, PlacementCustomObjectInstance1Wrapper.class, PlacementCustomObjectInstance1ListWrapper.class, "PlacementCustomObject1EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_2("PlacementCustomObjectInstance2", PlacementCustomObjectInstance2.class, PlacementCustomObjectInstance2Wrapper.class, PlacementCustomObjectInstance2ListWrapper.class, "PlacementCustomObject2EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_3("PlacementCustomObjectInstance3", PlacementCustomObjectInstance3.class, PlacementCustomObjectInstance3Wrapper.class, PlacementCustomObjectInstance3ListWrapper.class, "PlacementCustomObject3EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_4("PlacementCustomObjectInstance4", PlacementCustomObjectInstance4.class, PlacementCustomObjectInstance4Wrapper.class, PlacementCustomObjectInstance4ListWrapper.class, "PlacementCustomObject4EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_5("PlacementCustomObjectInstance5", PlacementCustomObjectInstance5.class, PlacementCustomObjectInstance5Wrapper.class, PlacementCustomObjectInstance5ListWrapper.class, "PlacementCustomObject5EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_6("PlacementCustomObjectInstance6", PlacementCustomObjectInstance6.class, PlacementCustomObjectInstance6Wrapper.class, PlacementCustomObjectInstance6ListWrapper.class, "PlacementCustomObject6EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_7("PlacementCustomObjectInstance7", PlacementCustomObjectInstance7.class, PlacementCustomObjectInstance7Wrapper.class, PlacementCustomObjectInstance7ListWrapper.class, "PlacementCustomObject7EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_8("PlacementCustomObjectInstance8", PlacementCustomObjectInstance8.class, PlacementCustomObjectInstance8Wrapper.class, PlacementCustomObjectInstance8ListWrapper.class, "PlacementCustomObject8EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_9("PlacementCustomObjectInstance9", PlacementCustomObjectInstance9.class, PlacementCustomObjectInstance9Wrapper.class, PlacementCustomObjectInstance9ListWrapper.class, "PlacementCustomObject9EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    PLACEMENT_CUSTOM_OBJECT_INSTANCE_10("PlacementCustomObjectInstance10", PlacementCustomObjectInstance10.class, PlacementCustomObjectInstance10Wrapper.class, PlacementCustomObjectInstance10ListWrapper.class, "PlacementCustomObject10EditHistory", "PlacementCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_1("ClientCorporationCustomObjectInstance1", ClientCorporationCustomObjectInstance1.class, ClientCorporationCustomObjectInstance1Wrapper.class, ClientCorporationCustomObjectInstance1ListWrapper.class, "ClientCorporationCustomObject1EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_2("ClientCorporationCustomObjectInstance2", ClientCorporationCustomObjectInstance2.class, ClientCorporationCustomObjectInstance2Wrapper.class, ClientCorporationCustomObjectInstance2ListWrapper.class, "ClientCorporationCustomObject2EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_3("ClientCorporationCustomObjectInstance3", ClientCorporationCustomObjectInstance3.class, ClientCorporationCustomObjectInstance3Wrapper.class, ClientCorporationCustomObjectInstance3ListWrapper.class, "ClientCorporationCustomObject3EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_4("ClientCorporationCustomObjectInstance4", ClientCorporationCustomObjectInstance4.class, ClientCorporationCustomObjectInstance4Wrapper.class, ClientCorporationCustomObjectInstance4ListWrapper.class, "ClientCorporationCustomObject4EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_5("ClientCorporationCustomObjectInstance5", ClientCorporationCustomObjectInstance5.class, ClientCorporationCustomObjectInstance5Wrapper.class, ClientCorporationCustomObjectInstance5ListWrapper.class, "ClientCorporationCustomObject5EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_6("ClientCorporationCustomObjectInstance6", ClientCorporationCustomObjectInstance6.class, ClientCorporationCustomObjectInstance6Wrapper.class, ClientCorporationCustomObjectInstance6ListWrapper.class, "ClientCorporationCustomObject6EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_7("ClientCorporationCustomObjectInstance7", ClientCorporationCustomObjectInstance7.class, ClientCorporationCustomObjectInstance7Wrapper.class, ClientCorporationCustomObjectInstance7ListWrapper.class, "ClientCorporationCustomObject7EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_8("ClientCorporationCustomObjectInstance8", ClientCorporationCustomObjectInstance8.class, ClientCorporationCustomObjectInstance8Wrapper.class, ClientCorporationCustomObjectInstance8ListWrapper.class, "ClientCorporationCustomObject8EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_9("ClientCorporationCustomObjectInstance9", ClientCorporationCustomObjectInstance9.class, ClientCorporationCustomObjectInstance9Wrapper.class, ClientCorporationCustomObjectInstance9ListWrapper.class, "ClientCorporationCustomObject9EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_10("ClientCorporationCustomObjectInstance10", ClientCorporationCustomObjectInstance10.class, ClientCorporationCustomObjectInstance10Wrapper.class, ClientCorporationCustomObjectInstance10ListWrapper.class, "ClientCorporationCustomObject10EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_11("ClientCorporationCustomObjectInstance11", ClientCorporationCustomObjectInstance11.class, ClientCorporationCustomObjectInstance11Wrapper.class, ClientCorporationCustomObjectInstance11ListWrapper.class, "ClientCorporationCustomObject11EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_12("ClientCorporationCustomObjectInstance12", ClientCorporationCustomObjectInstance12.class, ClientCorporationCustomObjectInstance12Wrapper.class, ClientCorporationCustomObjectInstance12ListWrapper.class, "ClientCorporationCustomObject12EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_13("ClientCorporationCustomObjectInstance13", ClientCorporationCustomObjectInstance13.class, ClientCorporationCustomObjectInstance13Wrapper.class, ClientCorporationCustomObjectInstance13ListWrapper.class, "ClientCorporationCustomObject13EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_14("ClientCorporationCustomObjectInstance14", ClientCorporationCustomObjectInstance14.class, ClientCorporationCustomObjectInstance14Wrapper.class, ClientCorporationCustomObjectInstance14ListWrapper.class, "ClientCorporationCustomObject14EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_15("ClientCorporationCustomObjectInstance15", ClientCorporationCustomObjectInstance15.class, ClientCorporationCustomObjectInstance15Wrapper.class, ClientCorporationCustomObjectInstance15ListWrapper.class, "ClientCorporationCustomObject15EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_16("ClientCorporationCustomObjectInstance16", ClientCorporationCustomObjectInstance16.class, ClientCorporationCustomObjectInstance16Wrapper.class, ClientCorporationCustomObjectInstance16ListWrapper.class, "ClientCorporationCustomObject16EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_17("ClientCorporationCustomObjectInstance17", ClientCorporationCustomObjectInstance17.class, ClientCorporationCustomObjectInstance17Wrapper.class, ClientCorporationCustomObjectInstance17ListWrapper.class, "ClientCorporationCustomObject17EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_18("ClientCorporationCustomObjectInstance18", ClientCorporationCustomObjectInstance18.class, ClientCorporationCustomObjectInstance18Wrapper.class, ClientCorporationCustomObjectInstance18ListWrapper.class, "ClientCorporationCustomObject18EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_19("ClientCorporationCustomObjectInstance19", ClientCorporationCustomObjectInstance19.class, ClientCorporationCustomObjectInstance19Wrapper.class, ClientCorporationCustomObjectInstance19ListWrapper.class, "ClientCorporationCustomObject19EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_20("ClientCorporationCustomObjectInstance20", ClientCorporationCustomObjectInstance20.class, ClientCorporationCustomObjectInstance20Wrapper.class, ClientCorporationCustomObjectInstance20ListWrapper.class, "ClientCorporationCustomObject20EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_21("ClientCorporationCustomObjectInstance21", ClientCorporationCustomObjectInstance21.class, ClientCorporationCustomObjectInstance21Wrapper.class, ClientCorporationCustomObjectInstance21ListWrapper.class, "ClientCorporationCustomObject21EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_22("ClientCorporationCustomObjectInstance22", ClientCorporationCustomObjectInstance22.class, ClientCorporationCustomObjectInstance22Wrapper.class, ClientCorporationCustomObjectInstance22ListWrapper.class, "ClientCorporationCustomObject22EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_23("ClientCorporationCustomObjectInstance23", ClientCorporationCustomObjectInstance23.class, ClientCorporationCustomObjectInstance23Wrapper.class, ClientCorporationCustomObjectInstance23ListWrapper.class, "ClientCorporationCustomObject23EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_24("ClientCorporationCustomObjectInstance24", ClientCorporationCustomObjectInstance24.class, ClientCorporationCustomObjectInstance24Wrapper.class, ClientCorporationCustomObjectInstance24ListWrapper.class, "ClientCorporationCustomObject24EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_25("ClientCorporationCustomObjectInstance25", ClientCorporationCustomObjectInstance25.class, ClientCorporationCustomObjectInstance25Wrapper.class, ClientCorporationCustomObjectInstance25ListWrapper.class, "ClientCorporationCustomObject25EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_26("ClientCorporationCustomObjectInstance26", ClientCorporationCustomObjectInstance26.class, ClientCorporationCustomObjectInstance26Wrapper.class, ClientCorporationCustomObjectInstance26ListWrapper.class, "ClientCorporationCustomObject26EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_27("ClientCorporationCustomObjectInstance27", ClientCorporationCustomObjectInstance27.class, ClientCorporationCustomObjectInstance27Wrapper.class, ClientCorporationCustomObjectInstance27ListWrapper.class, "ClientCorporationCustomObject27EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_28("ClientCorporationCustomObjectInstance28", ClientCorporationCustomObjectInstance28.class, ClientCorporationCustomObjectInstance28Wrapper.class, ClientCorporationCustomObjectInstance28ListWrapper.class, "ClientCorporationCustomObject28EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_29("ClientCorporationCustomObjectInstance29", ClientCorporationCustomObjectInstance29.class, ClientCorporationCustomObjectInstance29Wrapper.class, ClientCorporationCustomObjectInstance29ListWrapper.class, "ClientCorporationCustomObject29EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_30("ClientCorporationCustomObjectInstance30", ClientCorporationCustomObjectInstance30.class, ClientCorporationCustomObjectInstance30Wrapper.class, ClientCorporationCustomObjectInstance30ListWrapper.class, "ClientCorporationCustomObject30EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_31("ClientCorporationCustomObjectInstance31", ClientCorporationCustomObjectInstance31.class, ClientCorporationCustomObjectInstance31Wrapper.class, ClientCorporationCustomObjectInstance31ListWrapper.class, "ClientCorporationCustomObject31EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_32("ClientCorporationCustomObjectInstance32", ClientCorporationCustomObjectInstance32.class, ClientCorporationCustomObjectInstance32Wrapper.class, ClientCorporationCustomObjectInstance32ListWrapper.class, "ClientCorporationCustomObject32EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_33("ClientCorporationCustomObjectInstance33", ClientCorporationCustomObjectInstance33.class, ClientCorporationCustomObjectInstance33Wrapper.class, ClientCorporationCustomObjectInstance33ListWrapper.class, "ClientCorporationCustomObject33EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_34("ClientCorporationCustomObjectInstance34", ClientCorporationCustomObjectInstance34.class, ClientCorporationCustomObjectInstance34Wrapper.class, ClientCorporationCustomObjectInstance34ListWrapper.class, "ClientCorporationCustomObject34EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
+    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_35("ClientCorporationCustomObjectInstance35", ClientCorporationCustomObjectInstance35.class, ClientCorporationCustomObjectInstance35Wrapper.class, ClientCorporationCustomObjectInstance35ListWrapper.class, "ClientCorporationCustomObject35EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
 
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_1("PlacementCustomObjectInstance1", PlacementCustomObjectInstance1.class, PlacementCustomObjectInstance1Wrapper.class, PlacementCustomObjectInstance1ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_2("PlacementCustomObjectInstance2", PlacementCustomObjectInstance2.class, PlacementCustomObjectInstance2Wrapper.class, PlacementCustomObjectInstance2ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_3("PlacementCustomObjectInstance3", PlacementCustomObjectInstance3.class, PlacementCustomObjectInstance3Wrapper.class, PlacementCustomObjectInstance3ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_4("PlacementCustomObjectInstance4", PlacementCustomObjectInstance4.class, PlacementCustomObjectInstance4Wrapper.class, PlacementCustomObjectInstance4ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_5("PlacementCustomObjectInstance5", PlacementCustomObjectInstance5.class, PlacementCustomObjectInstance5Wrapper.class, PlacementCustomObjectInstance5ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_6("PlacementCustomObjectInstance6", PlacementCustomObjectInstance6.class, PlacementCustomObjectInstance6Wrapper.class, PlacementCustomObjectInstance6ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_7("PlacementCustomObjectInstance7", PlacementCustomObjectInstance7.class, PlacementCustomObjectInstance7Wrapper.class, PlacementCustomObjectInstance7ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_8("PlacementCustomObjectInstance8", PlacementCustomObjectInstance8.class, PlacementCustomObjectInstance8Wrapper.class, PlacementCustomObjectInstance8ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_9("PlacementCustomObjectInstance9", PlacementCustomObjectInstance9.class, PlacementCustomObjectInstance9Wrapper.class, PlacementCustomObjectInstance9ListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT_INSTANCE_10("PlacementCustomObjectInstance10", PlacementCustomObjectInstance10.class, PlacementCustomObjectInstance10Wrapper.class, PlacementCustomObjectInstance10ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_1("ClientCorporationCustomObjectInstance1", ClientCorporationCustomObjectInstance1.class, ClientCorporationCustomObjectInstance1Wrapper.class, ClientCorporationCustomObjectInstance1ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_2("ClientCorporationCustomObjectInstance2", ClientCorporationCustomObjectInstance2.class, ClientCorporationCustomObjectInstance2Wrapper.class, ClientCorporationCustomObjectInstance2ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_3("ClientCorporationCustomObjectInstance3", ClientCorporationCustomObjectInstance3.class, ClientCorporationCustomObjectInstance3Wrapper.class, ClientCorporationCustomObjectInstance3ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_4("ClientCorporationCustomObjectInstance4", ClientCorporationCustomObjectInstance4.class, ClientCorporationCustomObjectInstance4Wrapper.class, ClientCorporationCustomObjectInstance4ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_5("ClientCorporationCustomObjectInstance5", ClientCorporationCustomObjectInstance5.class, ClientCorporationCustomObjectInstance5Wrapper.class, ClientCorporationCustomObjectInstance5ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_6("ClientCorporationCustomObjectInstance6", ClientCorporationCustomObjectInstance6.class, ClientCorporationCustomObjectInstance6Wrapper.class, ClientCorporationCustomObjectInstance6ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_7("ClientCorporationCustomObjectInstance7", ClientCorporationCustomObjectInstance7.class, ClientCorporationCustomObjectInstance7Wrapper.class, ClientCorporationCustomObjectInstance7ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_8("ClientCorporationCustomObjectInstance8", ClientCorporationCustomObjectInstance8.class, ClientCorporationCustomObjectInstance8Wrapper.class, ClientCorporationCustomObjectInstance8ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_9("ClientCorporationCustomObjectInstance9", ClientCorporationCustomObjectInstance9.class, ClientCorporationCustomObjectInstance9Wrapper.class, ClientCorporationCustomObjectInstance9ListWrapper.class, null, null),
-    CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_10("ClientCorporationCustomObjectInstance10", ClientCorporationCustomObjectInstance10.class, ClientCorporationCustomObjectInstance10Wrapper.class, ClientCorporationCustomObjectInstance10ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_1("PersonCustomObjectInstance1", PersonCustomObjectInstance1.class, PersonCustomObjectInstance1Wrapper.class, PersonCustomObjectInstance1ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_2("PersonCustomObjectInstance2", PersonCustomObjectInstance2.class, PersonCustomObjectInstance2Wrapper.class, PersonCustomObjectInstance2ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_3("PersonCustomObjectInstance3", PersonCustomObjectInstance3.class, PersonCustomObjectInstance3Wrapper.class, PersonCustomObjectInstance3ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_4("PersonCustomObjectInstance4", PersonCustomObjectInstance4.class, PersonCustomObjectInstance4Wrapper.class, PersonCustomObjectInstance4ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_5("PersonCustomObjectInstance5", PersonCustomObjectInstance5.class, PersonCustomObjectInstance5Wrapper.class, PersonCustomObjectInstance5ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_6("PersonCustomObjectInstance6", PersonCustomObjectInstance6.class, PersonCustomObjectInstance6Wrapper.class, PersonCustomObjectInstance6ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_7("PersonCustomObjectInstance7", PersonCustomObjectInstance7.class, PersonCustomObjectInstance7Wrapper.class, PersonCustomObjectInstance7ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_8("PersonCustomObjectInstance8", PersonCustomObjectInstance8.class, PersonCustomObjectInstance8Wrapper.class, PersonCustomObjectInstance8ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_9("PersonCustomObjectInstance9", PersonCustomObjectInstance9.class, PersonCustomObjectInstance9Wrapper.class, PersonCustomObjectInstance9ListWrapper.class, null, null),
-    PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, null, null),
+
+    PERSON_CUSTOM_OBJECT_INSTANCE_1("PersonCustomObjectInstance1", PersonCustomObjectInstance1.class, PersonCustomObjectInstance1Wrapper.class, PersonCustomObjectInstance1ListWrapper.class, "PersonCustomObject1EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_2("PersonCustomObjectInstance2", PersonCustomObjectInstance2.class, PersonCustomObjectInstance2Wrapper.class, PersonCustomObjectInstance2ListWrapper.class, "PersonCustomObject2EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_3("PersonCustomObjectInstance3", PersonCustomObjectInstance3.class, PersonCustomObjectInstance3Wrapper.class, PersonCustomObjectInstance3ListWrapper.class, "PersonCustomObject3EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_4("PersonCustomObjectInstance4", PersonCustomObjectInstance4.class, PersonCustomObjectInstance4Wrapper.class, PersonCustomObjectInstance4ListWrapper.class, "PersonCustomObject4EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_5("PersonCustomObjectInstance5", PersonCustomObjectInstance5.class, PersonCustomObjectInstance5Wrapper.class, PersonCustomObjectInstance5ListWrapper.class, "PersonCustomObject5EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_6("PersonCustomObjectInstance6", PersonCustomObjectInstance6.class, PersonCustomObjectInstance6Wrapper.class, PersonCustomObjectInstance6ListWrapper.class, "PersonCustomObject6EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_7("PersonCustomObjectInstance7", PersonCustomObjectInstance7.class, PersonCustomObjectInstance7Wrapper.class, PersonCustomObjectInstance7ListWrapper.class, "PersonCustomObject7EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_8("PersonCustomObjectInstance8", PersonCustomObjectInstance8.class, PersonCustomObjectInstance8Wrapper.class, PersonCustomObjectInstance8ListWrapper.class, "PersonCustomObject8EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_9("PersonCustomObjectInstance9", PersonCustomObjectInstance9.class, PersonCustomObjectInstance9Wrapper.class, PersonCustomObjectInstance9ListWrapper.class, "PersonCustomObject9EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, "PersonCustomObject10EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
 
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),
     CLIENT_CONTACT_FILE_ATTACHMENT("ClientContactFileAttachment", ClientContactFileAttachment.class, ClientContactFileAttachmentWrapper.class, ClientContactFileAttachmentListWrapper.class, null, null),
