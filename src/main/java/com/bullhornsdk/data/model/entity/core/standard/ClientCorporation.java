@@ -1038,7 +1038,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.customObject29s = customObject29s;
     }
 
-    @JsonProperty("customObject230s")
+    @JsonProperty("customObject30s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<ClientCorporationCustomObjectInstance30> getCustomObject30s() {
