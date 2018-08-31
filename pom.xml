@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.2.40-SNAPSHOT</version>
+    <version>1.2.40</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
