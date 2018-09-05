@@ -42,7 +42,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     private List<AssociationField<Candidate, ? extends BullhornEntity>> allAssociations;
     private static final CandidateAssociations INSTANCE = new CandidateAssociations();
 
-    private CandidateAssociations() {
+    public CandidateAssociations() {
         super();
     }
 

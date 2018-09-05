@@ -16,7 +16,7 @@ public final class ClientCorporationCertificationAssociations implements EntityA
     private List<AssociationField<ClientCorporationCertification, ? extends BullhornEntity>> allAssociations;
     private static final ClientCorporationCertificationAssociations INSTANCE = new ClientCorporationCertificationAssociations();
 
-    private ClientCorporationCertificationAssociations() {
+    public ClientCorporationCertificationAssociations() {
         super();
     }
 

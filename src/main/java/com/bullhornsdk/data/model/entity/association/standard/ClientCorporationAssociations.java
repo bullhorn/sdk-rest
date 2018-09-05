@@ -64,7 +64,7 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance34> customObject34s = instantiateAssociationField("customObject34s", ClientCorporationCustomObjectInstance34.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance35> customObject35s = instantiateAssociationField("customObject35s", ClientCorporationCustomObjectInstance35.class);
 
-    private ClientCorporationAssociations() {
+    public ClientCorporationAssociations() {
         super();
     }
 

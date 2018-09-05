@@ -36,7 +36,7 @@ public final class PlacementAssociations implements EntityAssociations<Placement
     private static final PlacementAssociations INSTANCE = new PlacementAssociations();
     private List<AssociationField<Placement,? extends BullhornEntity>> allAssociations;
 
-    private PlacementAssociations() {
+    public PlacementAssociations() {
         super();
     }
 

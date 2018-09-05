@@ -42,7 +42,7 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
 
     private static final OpportunityAssociations INSTANCE = new OpportunityAssociations();
 
-    private OpportunityAssociations() {
+    public OpportunityAssociations() {
         super();
     }
 

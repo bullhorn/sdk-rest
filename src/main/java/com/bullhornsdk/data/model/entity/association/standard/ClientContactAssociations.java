@@ -41,7 +41,7 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
 
     private static final ClientContactAssociations INSTANCE = new ClientContactAssociations();
 
-    private ClientContactAssociations() {
+    public ClientContactAssociations() {
         super();
     }
 
