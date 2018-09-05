@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "address1", "address2", "city", "state", "zip", "countryID" })
 public class Address extends AbstractEntity {
 
     private String address1;
@@ -27,6 +26,8 @@ public class Address extends AbstractEntity {
     private String zip;
 
     private Integer countryID;
+    
+    private String countryName;
 
     @JsonProperty("address1")
     public String getAddress1() {
@@ -88,6 +89,25 @@ public class Address extends AbstractEntity {
         this.countryID = countryID;
     }
 
+    @JsonProperty("countryName")
+    public String getCountryName() {
+        return countryName;
+    }
+
+    @JsonProperty("countryName")
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public Address instantiateForInsert() {
+        Address address = new Address();
+        address.setAddress1("123 Main St");
+        address.setCity("St Louis");
+        address.setState("MO");
+        address.setZip("1234563");
+        return address;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -102,73 +122,31 @@ public class Address extends AbstractEntity {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Address other = (Address) obj;
-        if (address1 == null) {
-            if (other.address1 != null)
-                return false;
-        } else if (!address1.equals(other.address1))
-            return false;
-        if (address2 == null) {
-            if (other.address2 != null)
-                return false;
-        } else if (!address2.equals(other.address2))
-            return false;
-        if (city == null) {
-            if (other.city != null)
-                return false;
-        } else if (!city.equals(other.city))
-            return false;
-        if (countryID == null) {
-            if (other.countryID != null)
-                return false;
-        } else if (!countryID.equals(other.countryID))
-            return false;
-        if (state == null) {
-            if (other.state != null)
-                return false;
-        } else if (!state.equals(other.state))
-            return false;
-        if (zip == null) {
-            if (other.zip != null)
-                return false;
-        } else if (!zip.equals(other.zip))
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Address address = (Address) o;
+
+        if (address1 != null ? !address1.equals(address.address1) : address.address1 != null) return false;
+        if (address2 != null ? !address2.equals(address.address2) : address.address2 != null) return false;
+        if (city != null ? !city.equals(address.city) : address.city != null) return false;
+        if (state != null ? !state.equals(address.state) : address.state != null) return false;
+        if (zip != null ? !zip.equals(address.zip) : address.zip != null) return false;
+        if (countryID != null ? !countryID.equals(address.countryID) : address.countryID != null) return false;
+        return countryName != null ? countryName.equals(address.countryName) : address.countryName == null;
     }
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(" {\naddress1=");
-        builder.append(address1);
-        builder.append(", \naddress2=");
-        builder.append(address2);
-        builder.append(", \ncity=");
-        builder.append(city);
-        builder.append(", \nstate=");
-        builder.append(state);
-        builder.append(", \nzip=");
-        builder.append(zip);
-        builder.append(", \ncountryID=");
-        builder.append(countryID);
-        builder.append("\n}");
-        return builder.toString();
+        return "Address{" +
+            "address1='" + address1 + '\'' +
+            ", address2='" + address2 + '\'' +
+            ", city='" + city + '\'' +
+            ", state='" + state + '\'' +
+            ", zip='" + zip + '\'' +
+            ", countryID=" + countryID +
+            ", countryName='" + countryName + '\'' +
+            '}';
     }
-
-    public Address instantiateForInsert() {
-        Address address = new Address();
-        address.setAddress1("123 Main St");
-        address.setCity("St Louis");
-        address.setState("MO");
-        address.setZip("1234563");
-        return address;
-    }
-
 }
