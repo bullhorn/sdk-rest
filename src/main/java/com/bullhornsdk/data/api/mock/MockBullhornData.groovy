@@ -24,6 +24,7 @@ import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
 import com.bullhornsdk.data.model.response.file.FileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
+import com.bullhornsdk.data.model.response.list.IdListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse
@@ -95,6 +96,17 @@ public class MockBullhornData implements BullhornData {
      */
     @Override
     public <T extends SearchEntity> List<T> searchForList(Class<T> type, String query, Set<String> fieldSet, SearchParams params) {
+        return mockDataHandler.searchForList(type, query, fieldSet, params);
+    }
+
+    /**
+     * Will return all values of type T. The search functionality has not been implemented in the {@link MockBullhornData}
+     *
+     * @throws IllegalArgumentException
+     *             when a non-valid search field is used.
+     */
+    @Override
+    public <T extends SearchEntity> IdListWrapper searchForIdList(Class<T> type, String query, SearchParams params) {
         return mockDataHandler.searchForList(type, query, fieldSet, params);
     }
 

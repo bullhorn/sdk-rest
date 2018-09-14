@@ -88,6 +88,18 @@ public class RestUrlFactory {
     }
 
     /**
+     * Assemble url for id search request.
+     *
+     * @param params
+     *            SearchParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public static String assembleIdSearchUrl(String restUrl,
+                                             SearchParams params) {
+        return restUrl + "search/{entityType}?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
      * Assemble the url for a meta request
      * 
      * @return

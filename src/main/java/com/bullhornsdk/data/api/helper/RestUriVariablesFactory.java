@@ -233,6 +233,22 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
+    /**
+     * Returns the uri variables needed for a id "search" request
+     */
+    public Map<String, String> getUriVariablesForIdSearch(BullhornEntityInfo entityInfo,
+                                                                 String query,
+                                                                 SearchParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        uriVariables.put(QUERY, query);
+
+        return uriVariables;
+    }
+
 	/**
 	 * Returns the uri variables needed for a resume file request
 	 * 
