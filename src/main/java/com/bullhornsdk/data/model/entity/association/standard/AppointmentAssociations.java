@@ -22,7 +22,7 @@ public class AppointmentAssociations implements EntityAssociations<Appointment> 
 
     private static final AppointmentAssociations INSTANCE = new AppointmentAssociations();
 
-    private AppointmentAssociations() {
+    public AppointmentAssociations() {
         super();
     }
 

@@ -60,7 +60,7 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
 
     private static final JobOrderAssociations INSTANCE = new JobOrderAssociations();
 
-    private JobOrderAssociations() {
+    public JobOrderAssociations() {
         super();
     }
 
