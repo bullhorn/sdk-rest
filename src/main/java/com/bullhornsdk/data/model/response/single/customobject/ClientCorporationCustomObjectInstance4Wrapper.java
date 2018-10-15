@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.response.single.customobject;
 
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance4;
 import com.bullhornsdk.data.model.response.single.StandardWrapper;
 
 /**

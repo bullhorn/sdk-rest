@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.response.list.customobject;
 
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
 import com.bullhornsdk.data.model.response.list.StandardListWrapper;
 
 /**
