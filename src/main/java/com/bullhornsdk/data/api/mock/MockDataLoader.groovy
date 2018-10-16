@@ -3,6 +3,10 @@ package com.bullhornsdk.data.api.mock
 import com.bullhornsdk.data.api.helper.RestJsonConverter
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
+import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject
+import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject
+import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject
+import com.bullhornsdk.data.model.entity.core.customobject.UserCustomObject
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance1
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance10
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance11
@@ -575,6 +579,11 @@ public class MockDataLoader {
         entityFiles.put(OpportunityFileAttachment.class, "file/opportunityfileattachment-data.txt");
         entityFiles.put(PlacementFileAttachment.class, "file/placementfileattachment-data.txt");
 
+        entityFiles.put(ClientCorporationCustomObject.class, "customobject/clientcorporationcustomobject-data.txt");
+        entityFiles.put(JobOrderCustomObject.class, "customobject/jobordercustomobject-data.txt");
+        entityFiles.put(PlacementCustomObject.class, "customobject/placementcustomobject-data.txt");
+        entityFiles.put(UserCustomObject.class, "customobject/usercustomobject-data.txt");
+
         return entityFiles;
     }
 
@@ -706,6 +715,11 @@ public class MockDataLoader {
         entityMetaFiles.put(PersonCustomObjectInstance8.class, "meta/customobjectinstances/personcustomobjectinstance8-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance9.class, "meta/customobjectinstances/personcustomobjectinstance9-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance10.class, "meta/customobjectinstances/personcustomobjectinstance10-meta-data.txt");
+
+        entityMetaFiles.put(ClientCorporationCustomObject.class, "meta/customobject/clientcorporationcustomobject-meta-data.txt");
+        entityMetaFiles.put(JobOrderCustomObject.class, "meta/customobject/jobordercustomobject-meta-data.txt");
+        entityMetaFiles.put(PlacementCustomObject.class, "meta/customobject/placementcustomobject-meta-data.txt");
+        entityMetaFiles.put(UserCustomObject.class, "meta/customobject/usercustomobject-meta-data.txt");
 
         return entityMetaFiles;
     }
