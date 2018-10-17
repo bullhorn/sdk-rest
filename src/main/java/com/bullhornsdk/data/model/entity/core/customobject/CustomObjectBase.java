@@ -1,11 +1,12 @@
 package com.bullhornsdk.data.model.entity.core.customobject;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.joda.time.DateTime;
 
-public abstract class CustomObjectBase extends AbstractEntity {
+public abstract class CustomObjectBase extends AbstractEntity implements QueryEntity {
 
     protected String name;
 
