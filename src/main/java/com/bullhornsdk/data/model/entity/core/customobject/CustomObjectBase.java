@@ -1,10 +1,12 @@
 package com.bullhornsdk.data.model.entity.core.customobject;
 
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.sql.Timestamp;
 
-public abstract class CustomObjectBase {
+public abstract class CustomObjectBase extends AbstractEntity implements QueryEntity {
 
     protected String name;
 
