@@ -1,12 +1,11 @@
 package com.bullhornsdk.data.model.entity.core.customobject;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.joda.time.DateTime;
 
-import java.sql.Timestamp;
-
-public abstract class CustomObjectBase extends AbstractEntity implements QueryEntity {
+public abstract class CustomObjectBase extends AbstractEntity {
 
     protected String name;
 
@@ -18,7 +17,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
 
     protected String description;
 
-    protected Timestamp dateAdded;
+    protected DateTime dateAdded;
 
     protected Integer reportID;
 
@@ -34,6 +33,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
 
     protected String staticTemplateName;
 
+    @JsonProperty("name")
     public String getName() {
         return name;
     }
@@ -43,6 +43,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.name = name;
     }
 
+    @JsonProperty("tabName")
     public String getTabName() {
         return tabName;
     }
@@ -52,6 +53,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.tabName = tabName;
     }
 
+    @JsonProperty("displayType")
     public String getDisplayType() {
         return displayType;
     }
@@ -61,6 +63,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.displayType = displayType;
     }
 
+    @JsonProperty("enabled")
     public Boolean getEnabled() {
         return enabled;
     }
@@ -70,6 +73,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.enabled = enabled;
     }
 
+    @JsonProperty("description")
     public String getDescription() {
         return description;
     }
@@ -79,14 +83,16 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.description = description;
     }
 
-    public Timestamp getDateAdded() {
+    @JsonProperty("dateAdded")
+    public DateTime getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(Timestamp dateAdded) {
+    public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
     }
 
+    @JsonProperty("reportID")
     public Integer getReportID() {
         return reportID;
     }
@@ -96,6 +102,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.reportID = reportID;
     }
 
+    @JsonProperty("corporationID")
     public Integer getCorporationID() {
         return corporationID;
     }
@@ -105,6 +112,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.corporationID = corporationID;
     }
 
+    @JsonProperty("objectNumber")
     public Integer getObjectNumber() { return objectNumber; }
 
     @JsonIgnore
@@ -112,6 +120,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.objectNumber = objectNumber;
     }
 
+    @JsonProperty("useClientDefinedName")
     public Boolean getUseClientDefinedName() {
         return useClientDefinedName;
     }
@@ -119,6 +128,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
     @JsonIgnore
     public void setUseClientDefinedName(Boolean useClientDefinedName) { this.useClientDefinedName = useClientDefinedName; }
 
+    @JsonProperty("isHidden")
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -128,6 +138,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.isHidden = isHidden;
     }
 
+    @JsonProperty("icon")
     public String getIcon() {
         return icon;
     }
@@ -137,6 +148,7 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
         this.icon = icon;
     }
 
+    @JsonProperty("staticTemplateName")
     public String getStaticTemplateName() {
         return staticTemplateName;
     }
@@ -148,10 +160,21 @@ public abstract class CustomObjectBase extends AbstractEntity implements QueryEn
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("CustomObjectBase{");
-
-        sb.append('}');
-        return sb.toString();
+        return "CustomObjectBase{" +
+            "name='" + name + '\'' +
+            ", tabName='" + tabName + '\'' +
+            ", displayType='" + displayType + '\'' +
+            ", enabled=" + enabled +
+            ", description='" + description + '\'' +
+            ", dateAdded=" + dateAdded +
+            ", reportID=" + reportID +
+            ", corporationID=" + corporationID +
+            ", objectNumber=" + objectNumber +
+            ", useClientDefinedName=" + useClientDefinedName +
+            ", isHidden=" + isHidden +
+            ", icon='" + icon + '\'' +
+            ", staticTemplateName='" + staticTemplateName + '\'' +
+            '}';
     }
 
     @Override

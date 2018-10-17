@@ -3,6 +3,7 @@ package com.bullhornsdk.data.model.entity.core.customobject;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,6 +30,7 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
     @Override
     public void setId(Integer id) { this.id = id; }
 
+    @JsonProperty("type")
     public String getType() {
         return type;
     }
@@ -38,6 +40,7 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
         this.type = type;
     }
 
+    @JsonProperty("isPublic")
     public Integer getIsPublic() {
         return isPublic;
     }

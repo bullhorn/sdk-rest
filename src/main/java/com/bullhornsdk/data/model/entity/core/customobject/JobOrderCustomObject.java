@@ -52,7 +52,7 @@ public class JobOrderCustomObject extends CustomObjectBase implements QueryEntit
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("UserCustomObject{");
+        final StringBuffer sb = new StringBuffer("JobOrderCustomObject{");
         sb.append("id=").append(id);
         sb.append(", type='").append(type).append('\'');
         sb.append(", entityList='").append(entityList).append('\'');

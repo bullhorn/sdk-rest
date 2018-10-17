@@ -26,7 +26,7 @@ public class ClientCorporationCustomObject extends CustomObjectBase implements Q
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("UserCustomObject{");
+        final StringBuffer sb = new StringBuffer("ClientCorporationCustomObject{");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", tabName='").append(tabName).append('\'');
