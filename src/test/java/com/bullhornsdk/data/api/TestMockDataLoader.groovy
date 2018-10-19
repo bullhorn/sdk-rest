@@ -2,6 +2,7 @@ package com.bullhornsdk.data.api
 
 import com.bullhornsdk.data.api.mock.MockDataLoader
 import com.bullhornsdk.data.api.mock.MockSearchField
+import com.bullhornsdk.data.model.entity.core.customobject.CustomObjectBase
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
@@ -31,7 +32,12 @@ public class TestMockDataLoader {
 		Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> entityData = mockDataLoader.getEntityTestData();
 
 		entityData.each { key,value ->
-			assert value.size() >= 20;
+            if (CustomObjectBase.class.isAssignableFrom(key)) {
+                assert value.size() == 1;
+            } else {
+                assert value.size() >= 20;
+            }
+			
 		}
 		
 		

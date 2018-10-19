@@ -1,16 +1,16 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;

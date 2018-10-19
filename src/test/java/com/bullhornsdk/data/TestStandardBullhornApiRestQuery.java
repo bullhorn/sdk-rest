@@ -129,6 +129,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 		runAssertions("ListWrapper<ClientContact>", wrapper);
 
 	}
+	
+	@Test
+	public void testQueryClientContact1() {
+
+		ListWrapper<ClientContact1> wrapper = bullhornData.query(ClientContact1.class, where, null, queryParams);
+
+		runAssertions("ListWrapper<ClientContact1>", wrapper);
+
+	}
 
 	@Test
 	public void testQueryClientCorporation() {

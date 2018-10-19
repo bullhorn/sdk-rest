@@ -23,7 +23,7 @@ public final class CategoryAssociations implements EntityAssociations<Category> 
     private List<AssociationField<Category, ? extends BullhornEntity>> allAssociations;
     private final static CategoryAssociations INSTANCE = new CategoryAssociations();
 
-    private CategoryAssociations() {
+    public CategoryAssociations() {
         super();
     }
 

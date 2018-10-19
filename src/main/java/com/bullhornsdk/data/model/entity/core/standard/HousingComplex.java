@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
 @JsonPropertyOrder({ "id", "address", "billingContactID", "comments", "complexManagerID", "complexOwnerID", "contactName", "customDate1",
 	"customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customText1",
 	"customText2", "customText3", "customText4", "customText5", "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4",
-	"customTextBlock5", "dateAdded", "fax", "isDeleted", "name", "owner", "phone", "whiteListClientCorporations"})
+	"customTextBlock5", "dateAdded", "fax", "isDeleted", "name", "owner", "phone", "units", "whiteListClientCorporations"})
 public class HousingComplex extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
 
     private Integer id;
@@ -60,6 +60,8 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
 
     @Size(max = 20)
     private String phone;
+
+    private OneToMany<HousingComplexUnit> units;
 
     private OneToMany<ClientCorporation> whitelistClientCorporations;
 
@@ -242,138 +244,152 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
 	this.phone = phone;
     }
 
+    @JsonProperty("units")
+    public OneToMany<HousingComplexUnit> getUnits() {
+        return units;
+    }
+
+    @JsonProperty("units")
+    public void setUnits(OneToMany<HousingComplexUnit> units) {
+        this.units = units;
+    }
+
     @JsonProperty("whitelistClientCorporations")
     public OneToMany<ClientCorporation> getWhitelistClientCorporations() {
-	return whitelistClientCorporations;
+        return whitelistClientCorporations;
     }
 
     @JsonProperty("whitelistClientCorporations")
     public void setWhitelistClientCorporations(OneToMany<ClientCorporation> whitelistClientCorporations) {
-	this.whitelistClientCorporations = whitelistClientCorporations;
+        this.whitelistClientCorporations = whitelistClientCorporations;
     }
 
     @Override
     public int hashCode() {
-	final int prime = 31;
-	int result = super.hashCode();
-	result = prime * result + ((address == null) ? 0 : address.hashCode());
-	result = prime * result + ((billingContactID == null) ? 0 : billingContactID.hashCode());
-	result = prime * result + ((comments == null) ? 0 : comments.hashCode());
-	result = prime * result + ((complexManagerID == null) ? 0 : complexManagerID.hashCode());
-	result = prime * result + ((complexOwnerID == null) ? 0 : complexOwnerID.hashCode());
-	result = prime * result + ((contactName == null) ? 0 : contactName.hashCode());
-	result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
-	result = prime * result + ((fax == null) ? 0 : fax.hashCode());
-	result = prime * result + ((id == null) ? 0 : id.hashCode());
-	result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
-	result = prime * result + ((name == null) ? 0 : name.hashCode());
-	result = prime * result + ((owner == null) ? 0 : owner.hashCode());
-	result = prime * result + ((phone == null) ? 0 : phone.hashCode());
-	result = prime * result + ((whitelistClientCorporations == null) ? 0 : whitelistClientCorporations.hashCode());
-	return result;
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((address == null) ? 0 : address.hashCode());
+        result = prime * result + ((billingContactID == null) ? 0 : billingContactID.hashCode());
+        result = prime * result + ((comments == null) ? 0 : comments.hashCode());
+        result = prime * result + ((complexManagerID == null) ? 0 : complexManagerID.hashCode());
+        result = prime * result + ((complexOwnerID == null) ? 0 : complexOwnerID.hashCode());
+        result = prime * result + ((contactName == null) ? 0 : contactName.hashCode());
+        result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
+        result = prime * result + ((fax == null) ? 0 : fax.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((isDeleted == null) ? 0 : isDeleted.hashCode());
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((owner == null) ? 0 : owner.hashCode());
+        result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+        result = prime * result + ((units == null) ? 0 : units.hashCode());
+        result = prime * result + ((whitelistClientCorporations == null) ? 0 : whitelistClientCorporations.hashCode());
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-	if (this == obj)
-	    return true;
-	if (!super.equals(obj))
-	    return false;
-	if (getClass() != obj.getClass())
-	    return false;
-	HousingComplex other = (HousingComplex) obj;
-	if (address == null) {
-	    if (other.address != null)
-		return false;
-	} else if (!address.equals(other.address))
-	    return false;
-	if (billingContactID == null) {
-	    if (other.billingContactID != null)
-		return false;
-	} else if (!billingContactID.equals(other.billingContactID))
-	    return false;
-	if (comments == null) {
-	    if (other.comments != null)
-		return false;
-	} else if (!comments.equals(other.comments))
-	    return false;
-	if (complexManagerID == null) {
-	    if (other.complexManagerID != null)
-		return false;
-	} else if (!complexManagerID.equals(other.complexManagerID))
-	    return false;
-	if (complexOwnerID == null) {
-	    if (other.complexOwnerID != null)
-		return false;
-	} else if (!complexOwnerID.equals(other.complexOwnerID))
-	    return false;
-	if (contactName == null) {
-	    if (other.contactName != null)
-		return false;
-	} else if (!contactName.equals(other.contactName))
-	    return false;
-	if (dateAdded == null) {
-	    if (other.dateAdded != null)
-		return false;
-	} else if (!dateAdded.equals(other.dateAdded))
-	    return false;
-	if (fax == null) {
-	    if (other.fax != null)
-		return false;
-	} else if (!fax.equals(other.fax))
-	    return false;
-	if (id == null) {
-	    if (other.id != null)
-		return false;
-	} else if (!id.equals(other.id))
-	    return false;
-	if (isDeleted == null) {
-	    if (other.isDeleted != null)
-		return false;
-	} else if (!isDeleted.equals(other.isDeleted))
-	    return false;
-	if (name == null) {
-	    if (other.name != null)
-		return false;
-	} else if (!name.equals(other.name))
-	    return false;
-	if (owner == null) {
-	    if (other.owner != null)
-		return false;
-	} else if (!owner.equals(other.owner))
-	    return false;
-	if (phone == null) {
-	    if (other.phone != null)
-		return false;
-	} else if (!phone.equals(other.phone))
-	    return false;
-	if (whitelistClientCorporations == null) {
-	    if (other.whitelistClientCorporations != null)
-		return false;
-	} else if (!whitelistClientCorporations.equals(other.whitelistClientCorporations))
-	    return false;
-	return true;
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        HousingComplex other = (HousingComplex) obj;
+        if (address == null) {
+            if (other.address != null)
+            return false;
+        } else if (!address.equals(other.address))
+            return false;
+        if (billingContactID == null) {
+            if (other.billingContactID != null)
+            return false;
+        } else if (!billingContactID.equals(other.billingContactID))
+            return false;
+        if (comments == null) {
+            if (other.comments != null)
+            return false;
+        } else if (!comments.equals(other.comments))
+            return false;
+        if (complexManagerID == null) {
+            if (other.complexManagerID != null)
+            return false;
+        } else if (!complexManagerID.equals(other.complexManagerID))
+            return false;
+        if (complexOwnerID == null) {
+            if (other.complexOwnerID != null)
+            return false;
+        } else if (!complexOwnerID.equals(other.complexOwnerID))
+            return false;
+        if (contactName == null) {
+            if (other.contactName != null)
+            return false;
+        } else if (!contactName.equals(other.contactName))
+            return false;
+        if (dateAdded == null) {
+            if (other.dateAdded != null)
+            return false;
+        } else if (!dateAdded.equals(other.dateAdded))
+            return false;
+        if (fax == null) {
+            if (other.fax != null)
+            return false;
+        } else if (!fax.equals(other.fax))
+            return false;
+        if (id == null) {
+            if (other.id != null)
+            return false;
+        } else if (!id.equals(other.id))
+            return false;
+        if (isDeleted == null) {
+            if (other.isDeleted != null)
+            return false;
+        } else if (!isDeleted.equals(other.isDeleted))
+            return false;
+        if (name == null) {
+            if (other.name != null)
+            return false;
+        } else if (!name.equals(other.name))
+            return false;
+        if (owner == null) {
+            if (other.owner != null)
+            return false;
+        } else if (!owner.equals(other.owner))
+            return false;
+        if (phone == null) {
+            if (other.phone != null)
+            return false;
+        } else if (!phone.equals(other.phone))
+            return false;
+        if (units != null ? !units.equals(other.units) : other.units != null)
+            return false;
+        if (whitelistClientCorporations == null) {
+            if (other.whitelistClientCorporations != null)
+            return false;
+        } else if (!whitelistClientCorporations.equals(other.whitelistClientCorporations))
+            return false;
+        return true;
     }
 
     @Override
     public String toString() {
-	return "HousingComplex [id=" + id + ", address=" + address + ", billingContactID=" + billingContactID + ", comments=" + comments
-		+ ", complexManagerID=" + complexManagerID + ", complexOwnerID=" + complexOwnerID + ", contactName=" + contactName + ", dateAdded="
-		+ dateAdded + ", fax=" + fax + ", isDeleted=" + isDeleted + ", name=" + name + ", owner=" + owner + ", phone=" + phone
-		+ ", whitelistClientCorporations=" + whitelistClientCorporations + ", getCustomTextBlock1()=" + getCustomTextBlock1()
-		+ ", getCustomTextBlock2()=" + getCustomTextBlock2() + ", getCustomTextBlock3()=" + getCustomTextBlock3()
-		+ ", getCustomTextBlock4()=" + getCustomTextBlock4() + ", getCustomTextBlock5()=" + getCustomTextBlock5() + ", toString()="
-		+ super.toString() + ", getCustomDate1()=" + getCustomDate1() + ", getCustomDate2()=" + getCustomDate2() + ", getCustomDate3()="
-		+ getCustomDate3() + ", getCustomFloat1()=" + getCustomFloat1() + ", getCustomFloat2()=" + getCustomFloat2() + ", getCustomFloat3()="
-		+ getCustomFloat3() + ", getCustomInt1()=" + getCustomInt1() + ", getCustomInt2()=" + getCustomInt2() + ", getCustomInt3()="
-		+ getCustomInt3() + ", getCustomText1()=" + getCustomText1() + ", getCustomText2()=" + getCustomText2() + ", getCustomText3()="
-		+ getCustomText3() + ", getCustomText4()=" + getCustomText4() + ", getCustomText5()=" + getCustomText5() + ", getCustomText6()="
-		+ getCustomText6() + ", getCustomText7()=" + getCustomText7() + ", getCustomText8()=" + getCustomText8() + ", getCustomText9()="
-		+ getCustomText9() + ", getCustomText10()=" + getCustomText10() + ", getCustomText11()=" + getCustomText11() + ", getCustomText12()="
-		+ getCustomText12() + ", getCustomText13()=" + getCustomText13() + ", getCustomText14()=" + getCustomText14()
-		+ ", getCustomText15()=" + getCustomText15() + ", getCustomText16()=" + getCustomText16() + ", getCustomText17()="
-		+ getCustomText17() + ", getCustomText18()=" + getCustomText18() + ", getCustomText19()=" + getCustomText19()
-		+ ", getCustomText20()=" + getCustomText20() + ", getAdditionalProperties()=" + getAdditionalProperties() + ", getClass()="
-		+ getClass() + "]";
+        return "HousingComplex [id=" + id + ", address=" + address + ", billingContactID=" + billingContactID + ", comments=" + comments
+            + ", complexManagerID=" + complexManagerID + ", complexOwnerID=" + complexOwnerID + ", contactName=" + contactName + ", dateAdded="
+            + dateAdded + ", fax=" + fax + ", isDeleted=" + isDeleted + ", name=" + name + ", owner=" + owner + ", phone=" + phone
+            + ", whitelistClientCorporations=" + whitelistClientCorporations + ", getCustomTextBlock1()=" + getCustomTextBlock1()
+            + ", getCustomTextBlock2()=" + getCustomTextBlock2() + ", getCustomTextBlock3()=" + getCustomTextBlock3()
+            + ", getCustomTextBlock4()=" + getCustomTextBlock4() + ", getCustomTextBlock5()=" + getCustomTextBlock5() + ", toString()="
+            + super.toString() + ", getCustomDate1()=" + getCustomDate1() + ", getCustomDate2()=" + getCustomDate2() + ", getCustomDate3()="
+            + getCustomDate3() + ", getCustomFloat1()=" + getCustomFloat1() + ", getCustomFloat2()=" + getCustomFloat2() + ", getCustomFloat3()="
+            + getCustomFloat3() + ", getCustomInt1()=" + getCustomInt1() + ", getCustomInt2()=" + getCustomInt2() + ", getCustomInt3()="
+            + getCustomInt3() + ", getCustomText1()=" + getCustomText1() + ", getCustomText2()=" + getCustomText2() + ", getCustomText3()="
+            + getCustomText3() + ", getCustomText4()=" + getCustomText4() + ", getCustomText5()=" + getCustomText5() + ", getCustomText6()="
+            + getCustomText6() + ", getCustomText7()=" + getCustomText7() + ", getCustomText8()=" + getCustomText8() + ", getCustomText9()="
+            + getCustomText9() + ", getCustomText10()=" + getCustomText10() + ", getCustomText11()=" + getCustomText11() + ", getCustomText12()="
+            + getCustomText12() + ", getCustomText13()=" + getCustomText13() + ", getCustomText14()=" + getCustomText14()
+            + ", getCustomText15()=" + getCustomText15() + ", getCustomText16()=" + getCustomText16() + ", getCustomText17()="
+            + getCustomText17() + ", getCustomText18()=" + getCustomText18() + ", getCustomText19()=" + getCustomText19()
+            + ", getCustomText20()=" + getCustomText20() + ", getAdditionalProperties()=" + getAdditionalProperties()
+            + ", units=" + units
+            + ", getClass()=" + getClass() + "]";
     }
 }

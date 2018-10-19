@@ -1,16 +1,16 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;

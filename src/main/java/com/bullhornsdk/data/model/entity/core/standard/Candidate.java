@@ -9,16 +9,16 @@ import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -41,7 +41,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "address", "branch", "businessSectors", "categories", "category", "certificationList", "certifications",
+@JsonPropertyOrder({ "id", "address", "branch", "businessSectors", "canEnterTime", "categories", "category", "certificationList", "certifications",
 		"clientCorporationBlackList", "clientCorporationWhiteList", "comments", "companyName", "companyURL", "customDate1", "customDate2",
 		"customDate3", "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customText1",
 		"customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16", "customText17",
@@ -78,6 +78,8 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 	private Branch branch;
 
 	private OneToMany<BusinessSector> businessSectors;
+
+	private Boolean canEnterTime;
 
 	private OneToMany<Category> categories;
 
@@ -571,6 +573,16 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 	public void setBusinessSectors(OneToMany<BusinessSector> businessSectors) {
 		this.businessSectors = businessSectors;
 	}
+
+    @JsonProperty("canEnterTime")
+    public Boolean getCanEnterTime() {
+        return canEnterTime;
+    }
+
+    @JsonProperty("canEnterTime")
+    public void setCanEnterTime(Boolean canEnterTime) {
+        this.canEnterTime = canEnterTime;
+    }
 
 	@JsonIgnore
 	public OneToMany<Category> getCategories() {
@@ -1975,6 +1987,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         if (branch != null ? !branch.equals(candidate.branch) : candidate.branch != null) return false;
         if (businessSectors != null ? !businessSectors.equals(candidate.businessSectors) : candidate.businessSectors != null)
             return false;
+        if (canEnterTime != null ? !canEnterTime.equals(candidate.canEnterTime) : candidate.canEnterTime != null) return false;
         if (categories != null ? !categories.equals(candidate.categories) : candidate.categories != null) return false;
         if (category != null ? !category.equals(candidate.category) : candidate.category != null) return false;
         if (certificationList != null ? !certificationList.equals(candidate.certificationList) : candidate.certificationList != null)
@@ -2190,6 +2203,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         result = 31 * result + (id != null ? id.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (branch != null ? branch.hashCode() : 0);
+        result = 31 * result + (canEnterTime != null ? canEnterTime.hashCode() : 0);
         result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
         result = 31 * result + (categories != null ? categories.hashCode() : 0);
         result = 31 * result + (category != null ? category.hashCode() : 0);
@@ -2336,6 +2350,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         sb.append(", address=").append(address);
         sb.append(", branch=").append(branch);
         sb.append(", businessSectors=").append(businessSectors);
+        sb.append(", canEnterTime=").append(canEnterTime);
         sb.append(", categories=").append(categories);
         sb.append(", category=").append(category);
         sb.append(", certificationList=").append(certificationList);

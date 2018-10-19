@@ -1,16 +1,16 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;

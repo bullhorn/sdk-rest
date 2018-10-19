@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
@@ -122,6 +123,23 @@ public interface BullhornData {
 	 */
 	public <T extends SearchEntity> List<T> searchForList(Class<T> type, String query, Set<String> fieldSet, SearchParams params);
 
+    /**
+     * Searches for SearchEntity of type T and returns an id List <T>.
+     *
+     * @param type type of SearchEntity to query for
+     * @param query Lucene query string
+     * @param params optional SearchParams parameters to use in the api request, pass in null for default.
+     *
+     * @see SearchParams
+     * @see ParamFactory
+     * @see <a href="http://www.lucenetutorial.com/lucene-query-syntax.html">lucenetutorial</a>
+     *
+     * @return a List<T>
+     */
+    <T extends SearchEntity> IdListWrapper searchForIdList(Class<T> type,
+                                                           String query,
+                                                           SearchParams params);
+    
 	/**
 	 * Fast-finds and returns a List of FastFindResult.
 	 *

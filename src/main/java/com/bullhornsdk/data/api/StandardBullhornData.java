@@ -15,6 +15,7 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 import com.bullhornsdk.data.exception.RestMappingException;
+import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -231,6 +232,30 @@ public class StandardBullhornData implements BullhornData {
             return Collections.emptyList();
         }
         return wrapper.getData();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public <T extends SearchEntity> IdListWrapper searchForIdList(Class<T> type,
+                                                                  String query,
+                                                                  SearchParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForIdSearch(
+            BullhornEntityInfo.getTypesRestEntityName(type),
+            query,
+            params);
+
+        String url = restUrlFactory.assembleIdSearchUrl(getRestUrl(), params);
+        if (Candidate.class == type) {
+            url = url + "&useV2=true";
+        }
+
+        IdListWrapper wrapper = performGetRequest(url, IdListWrapper.class, uriVariables);
+        if (wrapper == null) {
+            return new IdListWrapper<>();
+        }
+        return wrapper;
     }
 
     /**
