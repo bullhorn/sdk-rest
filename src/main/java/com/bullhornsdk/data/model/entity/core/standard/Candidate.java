@@ -65,7 +65,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
         "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
-public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
+public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
