@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
@@ -44,7 +45,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"clientCorporationBlackList", "clientCorporationWhiteList", "comments", "companyName", "companyURL", "customDate1", "customDate2",
 		"customDate3", "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customText1",
 		"customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16", "customText17",
-		"customText18", "customText19", "customText2", "customText20", "customText3", "customText4", "customText5", "customText6",
+		"customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
+        "customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
+        "customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
+        "customText39", "customText4", "customText40", "customText5", "customText6",
 		"customText7", "customText8", "customText9", "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4",
 		"customTextBlock5", "dateAdded", "dateAvailable", "dateAvailableEnd", "dateI9Expiration", "dateLastComment", "dateLastModified", "dateNextCall",
 		"dateOfBirth", "dayRate", "dayRateLow", "degreeList", "description", "desiredLocations", "disability", "educationDegree",
@@ -62,7 +66,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
         "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
-public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
+public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
@@ -454,7 +458,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 
 	/**
 	 * Returns the entity with the required fields for an insert set.
-	 * 
+	 *
 	 * @return
 	 */
 	public Candidate instantiateForInsert() {
