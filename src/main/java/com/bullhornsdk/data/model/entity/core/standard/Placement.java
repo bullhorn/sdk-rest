@@ -56,7 +56,7 @@ import java.math.BigDecimal;
 		"customText39", "customText4", "customText40", "customText5", "customText6", "customText7", "customText8", "customText9",
 		"customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateBegin",
 		"dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
-		"employmentType", "fee", "flatFee", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
+		"employmentType", "fee", "flatFee", "fileAttachments", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
 		"jobOrder", "jobSubmission", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
 		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
@@ -132,6 +132,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private BigDecimal fee;
 
 	private BigDecimal flatFee;
+
+    private OneToMany<StandardFileAttachment> fileAttachments;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -934,6 +936,17 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	    this.workersCompensationRate = workersCompensationRate;
 	}
 
+    @JsonProperty("fileAttachments")
+    public OneToMany<StandardFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
+
+    @ReadOnly
+    @JsonProperty("fileAttachments")
+    public void setFileAttachments(OneToMany<StandardFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
+    }
+
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1054,6 +1067,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.customObject10s = customObject10s;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -1110,6 +1124,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             return false;
         if (fee != null ? !fee.equals(placement.fee) : placement.fee != null) return false;
         if (flatFee != null ? !flatFee.equals(placement.flatFee) : placement.flatFee != null) return false;
+        if (fileAttachments != null ? !fileAttachments.equals(candidate.fileAttachments) : candidate.fileAttachments != null)
+            return false;
         if (hoursOfOperation != null ? !hoursOfOperation.equals(placement.hoursOfOperation) : placement.hoursOfOperation != null)
             return false;
         if (hoursPerDay != null ? !hoursPerDay.equals(placement.hoursPerDay) : placement.hoursPerDay != null)
@@ -1224,6 +1240,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         result = 31 * result + (employmentType != null ? employmentType.hashCode() : 0);
         result = 31 * result + (fee != null ? fee.hashCode() : 0);
         result = 31 * result + (flatFee != null ? flatFee.hashCode() : 0);
+        result = 31 * result + (fileAttachments != null ? fileAttachments.hashCode() : 0);
         result = 31 * result + (hoursOfOperation != null ? hoursOfOperation.hashCode() : 0);
         result = 31 * result + (hoursPerDay != null ? hoursPerDay.hashCode() : 0);
         result = 31 * result + (housingManagerID != null ? housingManagerID.hashCode() : 0);
@@ -1305,6 +1322,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         sb.append(", employmentType='").append(employmentType).append('\'');
         sb.append(", fee=").append(fee);
         sb.append(", flatFee=").append(flatFee);
+        sb.append(", fileAttachments=").append(fileAttachments);
         sb.append(", hoursOfOperation='").append(hoursOfOperation).append('\'');
         sb.append(", hoursPerDay=").append(hoursPerDay);
         sb.append(", housingManagerID=").append(housingManagerID);
