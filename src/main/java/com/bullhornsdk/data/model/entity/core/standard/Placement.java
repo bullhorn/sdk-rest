@@ -1125,7 +1125,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             return false;
         if (fee != null ? !fee.equals(placement.fee) : placement.fee != null) return false;
         if (flatFee != null ? !flatFee.equals(placement.flatFee) : placement.flatFee != null) return false;
-        if (fileAttachments != null ? !fileAttachments.equals(candidate.fileAttachments) : candidate.fileAttachments != null)
+        if (fileAttachments != null ? !fileAttachments.equals(placement.fileAttachments) : placement.fileAttachments != null)
             return false;
         if (hoursOfOperation != null ? !hoursOfOperation.equals(placement.hoursOfOperation) : placement.hoursOfOperation != null)
             return false;
