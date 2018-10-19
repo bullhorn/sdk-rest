@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
