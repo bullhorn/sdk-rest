@@ -7,6 +7,7 @@
  import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
  import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
  import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+ import com.fasterxml.jackson.annotation.JsonIgnore;
  import com.fasterxml.jackson.annotation.JsonProperty;
  import org.joda.time.DateTime;
 
@@ -14,26 +15,46 @@
 
 public abstract class CustomObjectInstance extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, UpdateEntity, CreateEntity, HardDeleteEntity, EditHistoryEntity {
 
-	private Integer id;
+    private Integer id;
+    @JsonIgnore
     private String text1;
+    @JsonIgnore
     private String text2;
+    @JsonIgnore
     private String text3;
+    @JsonIgnore
     private String text4;
+    @JsonIgnore
     private String text5;
+    @JsonIgnore
     private String text6;
+    @JsonIgnore
     private String text7;
+    @JsonIgnore
     private String text8;
+    @JsonIgnore
     private String text9;
+    @JsonIgnore
     private String text10;
+    @JsonIgnore
     private String text11;
+    @JsonIgnore
     private String text12;
+    @JsonIgnore
     private String text13;
+    @JsonIgnore
     private String text14;
+    @JsonIgnore
     private String text15;
+    @JsonIgnore
     private String text16;
+    @JsonIgnore
     private String text17;
+    @JsonIgnore
     private String text18;
+    @JsonIgnore
     private String text19;
+    @JsonIgnore
     private String text20;
     private Integer int1;
     private Integer int2;
@@ -92,6 +113,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text1;
     }
 
+    @JsonIgnore
     @JsonProperty("text1")
     public void setText1(String text1) {
         this.text1 = text1;
@@ -102,6 +124,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text2;
     }
 
+    @JsonIgnore
     @JsonProperty("text2")
     public void setText2(String text2) {
         this.text2 = text2;
@@ -112,6 +135,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text3;
     }
 
+    @JsonIgnore
     @JsonProperty("text3")
     public void setText3(String text3) {
         this.text3 = text3;
@@ -122,6 +146,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text4;
     }
 
+    @JsonIgnore
     @JsonProperty("text4")
     public void setText4(String text4) {
         this.text4 = text4;
@@ -132,6 +157,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text5;
     }
 
+    @JsonIgnore
     @JsonProperty("text5")
     public void setText5(String text5) {
         this.text5 = text5;
@@ -142,6 +168,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text6;
     }
 
+    @JsonIgnore
     @JsonProperty("text6")
     public void setText6(String text6) {
         this.text6 = text6;
@@ -152,6 +179,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text7;
     }
 
+    @JsonIgnore
     @JsonProperty("text7")
     public void setText7(String text7) {
         this.text7 = text7;
@@ -162,6 +190,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text8;
     }
 
+    @JsonIgnore
     @JsonProperty("text8")
     public void setText8(String text8) {
         this.text8 = text8;
@@ -172,6 +201,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text9;
     }
 
+    @JsonIgnore
     @JsonProperty("text9")
     public void setText9(String text9) {
         this.text9 = text9;
@@ -182,6 +212,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text10;
     }
 
+    @JsonIgnore
     @JsonProperty("text10")
     public void setText10(String text10) {
         this.text10 = text10;
@@ -192,6 +223,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text11;
     }
 
+    @JsonIgnore
     @JsonProperty("text11")
     public void setText11(String text11) {
         this.text11 = text11;
@@ -202,6 +234,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text12;
     }
 
+    @JsonIgnore
     @JsonProperty("text12")
     public void setText12(String text12) {
         this.text12 = text12;
@@ -212,6 +245,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text13;
     }
 
+    @JsonIgnore
     @JsonProperty("text13")
     public void setText13(String text13) {
         this.text13 = text13;
@@ -222,6 +256,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text14;
     }
 
+    @JsonIgnore
     @JsonProperty("text14")
     public void setText14(String text14) {
         this.text14 = text14;
@@ -232,6 +267,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text15;
     }
 
+    @JsonIgnore
     @JsonProperty("text15")
     public void setText15(String text15) {
         this.text15 = text15;
@@ -242,6 +278,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text16;
     }
 
+    @JsonIgnore
     @JsonProperty("text16")
     public void setText16(String text16) {
         this.text16 = text16;
@@ -252,6 +289,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text17;
     }
 
+    @JsonIgnore
     @JsonProperty("text17")
     public void setText17(String text17) {
         this.text17 = text17;
@@ -262,6 +300,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text18;
     }
 
+    @JsonIgnore
     @JsonProperty("text18")
     public void setText18(String text18) {
         this.text18 = text18;
@@ -272,6 +311,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text19;
     }
 
+    @JsonIgnore
     @JsonProperty("text19")
     public void setText19(String text19) {
         this.text19 = text19;
@@ -282,6 +322,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return text20;
     }
 
+    @JsonIgnore
     @JsonProperty("text20")
     public void setText20(String text20) {
         this.text20 = text20;
