@@ -55,7 +55,7 @@ import javax.validation.constraints.Size;
 		"externalID", "fax", "fax2", "fax3", "firstName", "isDayLightSavings",
 		"isDeleted", "isLockedOut", "lastName", "linkedPerson", "leads",
 		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name",
-		"namePrefix", "nameSuffix", "nickName", "numEmployees", "occupation",
+		"namePrefix", "nameSuffix", "nickName", "notes", "numEmployees", "occupation",
 		"office", "owner", "pager", "password", "phone", "phone2", "phone3",
 		"preferredContact", "referredByPerson", "reportToPerson",
 		"secondaryAddress", "secondaryOwners", "skills", "smsOptIn", "source",
@@ -189,6 +189,8 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
 	@JsonIgnore
 	private String nickName;
+
+    private OneToMany<Note> notes;
 
 	private Integer numEmployees;
 
@@ -738,6 +740,17 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		this.nickName = nickName;
 	}
 
+    @JsonProperty("notes")
+    public OneToMany<Note> getNotes() {
+        return notes;
+    }
+
+    @ReadOnly
+    @JsonProperty("notes")
+    public void setNotes(OneToMany<Note> notes) {
+        this.notes = notes;
+    }
+
 	@JsonProperty("numEmployees")
 	public Integer getNumEmployees() {
 		return numEmployees;
@@ -1161,6 +1174,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         if (namePrefix != null ? !namePrefix.equals(that.namePrefix) : that.namePrefix != null) return false;
         if (nameSuffix != null ? !nameSuffix.equals(that.nameSuffix) : that.nameSuffix != null) return false;
         if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
+        if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
         if (numEmployees != null ? !numEmployees.equals(that.numEmployees) : that.numEmployees != null) return false;
         if (occupation != null ? !occupation.equals(that.occupation) : that.occupation != null) return false;
         if (office != null ? !office.equals(that.office) : that.office != null) return false;
@@ -1257,6 +1271,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         result = 31 * result + (namePrefix != null ? namePrefix.hashCode() : 0);
         result = 31 * result + (nameSuffix != null ? nameSuffix.hashCode() : 0);
         result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
         result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
         result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
         result = 31 * result + (office != null ? office.hashCode() : 0);
@@ -1339,6 +1354,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         sb.append(", namePrefix='").append(namePrefix).append('\'');
         sb.append(", nameSuffix='").append(nameSuffix).append('\'');
         sb.append(", nickName='").append(nickName).append('\'');
+        sb.append(", notes=").append(notes);
         sb.append(", numEmployees=").append(numEmployees);
         sb.append(", occupation='").append(occupation).append('\'');
         sb.append(", office='").append(office).append('\'');
