@@ -1,33 +1,12 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
-import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
-import com.bullhornsdk.data.model.entity.core.type.FileEntity;
-import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
+import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
 
@@ -63,7 +42,7 @@ import java.math.BigDecimal;
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
         "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
-public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
+public class Placement extends CustomFieldsF implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
