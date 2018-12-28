@@ -3,9 +3,12 @@ package com.bullhornsdk.data.model.entity.customfields;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class CustomFieldsF extends CustomFieldsB {
+import javax.validation.constraints.Size;
+
+public class CustomFieldsG extends CustomFieldsB {
 
     @JsonIgnore
+    @Size(max = 100)
     private String customText21;
 
     @JsonProperty("customText21")
@@ -34,7 +37,7 @@ public class CustomFieldsF extends CustomFieldsB {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        CustomFieldsF other = (CustomFieldsF) obj;
+        CustomFieldsG other = (CustomFieldsG) obj;
         if (customText21 == null) {
             if (other.customText21 != null)
                 return false;
