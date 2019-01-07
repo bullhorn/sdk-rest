@@ -899,8 +899,8 @@ public class StandardBullhornData implements BullhornData {
      */
     protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntitiesWithPost(Class<T> type, String where, Set<String> fieldSet,
                                                                                        QueryParams params) {
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(type),
-                "", fieldSet, params);
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQueryWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
+                fieldSet, params);
 
         String url = restUrlFactory.assembleQueryUrl(params);
 
