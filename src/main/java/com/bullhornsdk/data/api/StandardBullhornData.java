@@ -282,6 +282,14 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
+    public <T extends QueryEntity, L extends ListWrapper<T>> L queryWithPost(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
+        return this.handleQueryForEntitiesWithPost(type, where, fieldSet, params);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public <T extends EditHistoryEntity> EditHistoryListWrapper queryEntityForEditHistory(Class<T> entityType, String where, Set<String> fieldSet, QueryParams params) {
         return this.handleQueryForEntityEditHistory(entityType, where, fieldSet, params);
     }
@@ -875,6 +883,31 @@ public class StandardBullhornData implements BullhornData {
             List<T> list = new ArrayList<T>();
             return (L) new StandardListWrapper<T>(list);
         }
+    }
+
+        /**
+     * Makes the "query" api call but with POST instead of GET
+     * <p>
+     * <p>
+     * HTTP Method: POST
+     *
+     * @param type     the BullhornEntity type
+     * @param where    a SQL type where clause
+     * @param fieldSet the fields to return, if null or emtpy will default to "*" all
+     * @param params   optional QueryParams.
+     * @return a LinsWrapper containing the records plus some additional information
+     */
+    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntitiesWithPost(Class<T> type, String where, Set<String> fieldSet,
+                                                                                       QueryParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(type),
+                "", fieldSet, params);
+
+        String url = restUrlFactory.assembleQueryUrl(params);
+
+        String jsonString = "{\"where\":\"" + where + "\"}";
+
+        return (L) this.performPostRequest(url, jsonString, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+
     }
 
     /**
