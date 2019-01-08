@@ -315,6 +315,15 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
+    public <T extends SearchEntity, L extends ListWrapper<T>> L searchWithPost(Class<T> type, String query, Set<String> fieldSet,
+                                                                       SearchParams params) {
+        return this.handleSearchForEntitiesWithPost(type, query, fieldSet, params);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public FastFindListWrapper fastFind(String query, FastFindParams params) {
         return this.handleFastFindForEntities(query, params);
     }
@@ -902,7 +911,7 @@ public class StandardBullhornData implements BullhornData {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQueryWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
                 fieldSet, params);
 
-        String url = restUrlFactory.assembleQueryUrl(params);
+        String url = restUrlFactory.assembleQueryUrlWithPost(params);
 
         String jsonString = "{\"where\":\"" + where + "\"}";
 
@@ -1046,6 +1055,33 @@ public class StandardBullhornData implements BullhornData {
         // String jsonString = this.performGetRequest(url, String.class, uriVariables);
 
         return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+
+    }
+
+    /**
+     * Makes the "search" api call with POST instead of GET
+     * <p>
+     * HTTP Method: POST
+     *
+     * @param type     the BullhornEntity type
+     * @param query    Lucene query string
+     * @param fieldSet the fields to return, if null or empty will default to "*" all
+     * @param params   optional SearchParams .
+     * @return a LinsWrapper containing the records plus some additional information
+     */
+    protected <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForEntitiesWithPost(Class<T> type, String query, Set<String> fieldSet,
+                                                                                           SearchParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearchWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
+            fieldSet, params);
+
+        String url = restUrlFactory.assembleSearchUrlWithPost(params);
+        // temporary fix
+        if (Candidate.class == type) {
+            url = url + "&useV2=true";
+        }
+        String jsonString = "{\"query\":\"" + query + "\"}";
+
+        return (L) this.performPostRequest(url,jsonString, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 
     }
 

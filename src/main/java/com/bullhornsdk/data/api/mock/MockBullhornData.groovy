@@ -148,6 +148,12 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
+    public <T extends SearchEntity, L extends ListWrapper<T>> L searchWithPost(Class<T> type, String query, Set<String> fieldSet,
+                                                                       SearchParams params) {
+        return mockDataHandler.search(type, query, fieldSet, params);
+    }
+
+    @Override
     public FastFindListWrapper fastFind(String query, FastFindParams params) {
         return mockDataHandler.fastFind(query, params);
     }
