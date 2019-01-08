@@ -77,6 +77,17 @@ public class RestUrlFactory {
     }
 
     /**
+     * Assemble url for query request without where.
+     *
+     * @param params
+     *            QueryParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public String assembleQueryUrlWithPost(QueryParams params) {
+        return restUrl + "query/{entityType}?fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
      * Assemble url for search request.
      * 
      * @param params
@@ -85,6 +96,17 @@ public class RestUrlFactory {
      */
     public String assembleSearchUrl(SearchParams params) {
         return restUrl + "search/{entityType}?query={query}&fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
+     * Assemble url for search request without query parameter
+     *
+     * @param params
+     *            SearchParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public String assembleSearchUrlWithPost(SearchParams params) {
+        return restUrl + "search/{entityType}?fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
     }
 
     /**

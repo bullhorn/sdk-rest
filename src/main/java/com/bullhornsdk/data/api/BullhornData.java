@@ -153,7 +153,7 @@ public interface BullhornData {
 	 */
 	public List<FastFindResult> fastFindForList(String query, FastFindParams params);
 
-	/**
+    /**
 	 * Queries for QueryEntity of type T and returns a ListWrapper<T>.
 	 * 
 	 * @param type type of QueryEntity to query for

@@ -195,9 +195,26 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
+    /**
+     * Returns the uri variables needed for a "query" request minus where since that will be in the body
+     *
+     * @param entityInfo
+     * @param fieldSet
+     * @param params
+     * @return all uriVariables needed for the api call
+     */
+    public Map<String, String> getUriVariablesForQueryWithPost(BullhornEntityInfo entityInfo, Set<String> fieldSet, QueryParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+
+        return uriVariables;
+    }
+
 	/**
 	 * Returns the uri variables needed for a "query" request
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param where
 	 * @param fieldSet
@@ -213,6 +230,23 @@ public class RestUriVariablesFactory {
 
 		return uriVariables;
 	}
+
+    /**
+     * Returns the uri variables needed for a "search" request minus query
+     *
+     * @param entityInfo
+     * @param fieldSet
+     * @param params
+     * @return all uriVariables needed for the api call
+     */
+    public Map<String, String> getUriVariablesForSearchWithPost(BullhornEntityInfo entityInfo, Set<String> fieldSet, SearchParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+
+        return uriVariables;
+    }
 
 	/**
 	 * Returns the uri variables needed for a "search" request
