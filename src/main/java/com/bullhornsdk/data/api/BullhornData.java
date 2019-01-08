@@ -154,22 +154,6 @@ public interface BullhornData {
 	public List<FastFindResult> fastFindForList(String query, FastFindParams params);
 
     /**
-     * Queries via POST for QueryEntity of type T and returns a ListWrapper<T>. Avoids URL length limits by putting where clause in body.
-     *
-     * @param type type of QueryEntity to query for
-     * @param where SQL-style filter clause
-     * @param fieldSet fields to query for
-     *
-     * @param params optional QueryParams parameters to use in the api request, pass in null for default.
-     *
-     * @see QueryParams
-     * @see ParamFactory
-     *
-     * @return a ListWrapper<T> that wraps a List<T> plus some additional info about the data
-     */
-    public <T extends QueryEntity, L extends ListWrapper<T>> L queryWithPost(Class<T> type, String where, Set<String> fieldSet, QueryParams params);
-
-    /**
 	 * Queries for QueryEntity of type T and returns a ListWrapper<T>.
 	 * 
 	 * @param type type of QueryEntity to query for
@@ -233,23 +217,6 @@ public interface BullhornData {
 	 */
 	public <T extends SearchEntity, L extends ListWrapper<T>> L search(Class<T> type, String query, Set<String> fieldSet,
 			SearchParams params);
-
-    /**
-     * Searches via POST for SearchEntity of type T and returns a ListWrapper<T>.
-     *
-     * @param type type of SearchEntity to query for
-     * @param query Lucene query string
-     * @param fieldSet fields to query for
-     * @param params optional SearchParams parameters to use in the api request, pass in null for default.
-     *
-     * @see SearchParams
-     * @see ParamFactory
-     * @see <a href="http://www.lucenetutorial.com/lucene-query-syntax.html">lucenetutorial</a>
-     *
-     * @return a ListWrapper<T> that wraps a List<T> plus some additional info about the data
-     */
-    public <T extends SearchEntity, L extends ListWrapper<T>> L searchWithPost(Class<T> type, String query, Set<String> fieldSet,
-                                                                       SearchParams params);
 
 	/**
 	 * Fast-finds and returns a FastFindListWrapper.

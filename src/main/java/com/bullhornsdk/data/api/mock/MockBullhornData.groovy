@@ -116,11 +116,6 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public <T extends QueryEntity, L extends ListWrapper<T>> L queryWithPost(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
-        return mockDataHandler.query(type, where, fieldSet, params);
-    }
-
-    @Override
     public <T extends QueryEntity, L extends ListWrapper<T>> L query(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
         return mockDataHandler.query(type, where, fieldSet, params);
     }
@@ -143,12 +138,6 @@ public class MockBullhornData implements BullhornData {
      */
     @Override
     public <T extends SearchEntity, L extends ListWrapper<T>> L search(Class<T> type, String query, Set<String> fieldSet,
-                                                                       SearchParams params) {
-        return mockDataHandler.search(type, query, fieldSet, params);
-    }
-
-    @Override
-    public <T extends SearchEntity, L extends ListWrapper<T>> L searchWithPost(Class<T> type, String query, Set<String> fieldSet,
                                                                        SearchParams params) {
         return mockDataHandler.search(type, query, fieldSet, params);
     }
