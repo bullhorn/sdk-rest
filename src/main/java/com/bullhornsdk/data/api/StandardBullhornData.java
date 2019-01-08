@@ -898,9 +898,10 @@ public class StandardBullhornData implements BullhornData {
 
         String url = restUrlFactory.assembleQueryUrlWithPost(params);
 
-        String jsonString = "{\"where\":\"" + where + "\"}";
+        JSONObject body = new JSONObject();
+        body.put("where", where);
 
-        return (L) this.performPostRequest(url, jsonString, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        return (L) this.performPostRequest(url, body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 
     }
 
@@ -1067,9 +1068,10 @@ public class StandardBullhornData implements BullhornData {
         if (Candidate.class == type) {
             url = url + "&useV2=true";
         }
-        String jsonString = "{\"query\":\"" + query + "\"}";
+        JSONObject body = new JSONObject();
+        body.put("query", query);
 
-        return (L) this.performPostRequest(url,jsonString, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        return (L) this.performPostRequest(url,body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 
     }
 
