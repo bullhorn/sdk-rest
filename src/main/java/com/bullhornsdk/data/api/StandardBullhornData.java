@@ -240,24 +240,45 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public <T extends SearchEntity> IdListWrapper searchForIdList(Class<T> type,
-                                                                  String query,
-                                                                  SearchParams params) {
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForIdSearch(
-            BullhornEntityInfo.getTypesRestEntityName(type),
-            query,
-            params);
+    public <T extends SearchEntity> IdListWrapper searchForIdList(Class<T> type, String query, SearchParams params) {
+        if(MAX_URL_LENGTH > query.length()) {
+            Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForIdSearch(
+                BullhornEntityInfo.getTypesRestEntityName(type), query, params);
 
-        String url = restUrlFactory.assembleIdSearchUrl(getRestUrl(), params);
+            String url = restUrlFactory.assembleIdSearchUrl(getRestUrl(), params);
+            if (Candidate.class == type) {
+                url = url + "&useV2=true";
+            }
+
+            IdListWrapper wrapper = performGetRequest(url, IdListWrapper.class, uriVariables);
+            if (wrapper == null) {
+                return new IdListWrapper<>();
+            }
+            return wrapper;
+        }
+        return searchForIdListPost(type,query,params);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected  <T extends SearchEntity> IdListWrapper searchForIdListPost(Class<T> type, String query, SearchParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForIdSearchPost(
+            BullhornEntityInfo.getTypesRestEntityName(type), params);
+
+        String url = restUrlFactory.assembleIdSearchUrlPost(getRestUrl(), params);
         if (Candidate.class == type) {
             url = url + "&useV2=true";
         }
+        JSONObject body = new JSONObject();
+        body.put("query", query);
 
-        IdListWrapper wrapper = performGetRequest(url, IdListWrapper.class, uriVariables);
+        IdListWrapper wrapper = performPostRequest(url, body.toString(), IdListWrapper.class, uriVariables);
         if (wrapper == null) {
             return new IdListWrapper<>();
         }
         return wrapper;
+
     }
 
     /**
@@ -310,7 +331,10 @@ public class StandardBullhornData implements BullhornData {
      */
     @Override
     public FastFindListWrapper fastFind(String query, FastFindParams params) {
-        return this.handleFastFindForEntities(query, params);
+        if(MAX_URL_LENGTH > query.length()){
+            return this.handleFastFindForEntities(query, params);
+        }
+        return this.handleFastFindForEntitiesPost(query, params);
     }
 
 
@@ -843,14 +867,14 @@ public class StandardBullhornData implements BullhornData {
         String jsonString = this.performGetRequest(url, String.class, uriVariables);
 
         return restJsonConverter.jsonToEntityUnwrapRoot(jsonString, type);
-
     }
 
     /**
      * Makes the "entity" api call for getting multiple entities.
+     * It actually does a search for candidates and a query for other entities when ids total > 7500 characters
      * <p>
      * <p>
-     * HTTP Method: GET
+     * HTTP Method: GET (POST)
      *
      * @param type
      * @param idList
@@ -862,20 +886,55 @@ public class StandardBullhornData implements BullhornData {
      */
     protected <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
         String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
-        String url = restUrlFactory.assembleEntityUrl(params);
-        try {
-            String response = this.performGetRequest(url, String.class, uriVariables);
+        if(MAX_URL_LENGTH > ids.length()) {
+            Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
+            String url = restUrlFactory.assembleEntityUrl(params);
             try {
-                return restJsonConverter.jsonToEntityDoNotUnwrapRoot(response, BullhornEntityInfo.getTypesListWrapperType(type));
-            } catch(RestMappingException onlyOneEntityWasReturned) {
+                String response = this.performGetRequest(url, String.class, uriVariables);
+                try {
+                    return restJsonConverter.jsonToEntityDoNotUnwrapRoot(response, BullhornEntityInfo.getTypesListWrapperType(type));
+                } catch (RestMappingException onlyOneEntityWasReturned) {
+                    List<T> list = new ArrayList<T>();
+                    list.add(restJsonConverter.jsonToEntityUnwrapRoot(response, type));
+                    return (L) new StandardListWrapper<T>(list);
+                }
+            } catch (RestApiException noneReturned) {
                 List<T> list = new ArrayList<T>();
-                list.add(restJsonConverter.jsonToEntityUnwrapRoot(response, type));
                 return (L) new StandardListWrapper<T>(list);
             }
-        } catch(RestApiException noneReturned) {
-            List<T> list = new ArrayList<T>();
-            return (L) new StandardListWrapper<T>(list);
+        }
+        return (L) handleGetMultipleEntitiesPost(type,idList,fieldSet);
+    }
+
+    /**
+     * Makes the "entity" api call for getting multiple entities over 7500 characters.
+     * It actually does a search for candidates and a query for all other entities.
+     * <p>
+     * <p>
+     * HTTP Method: POST
+     *
+     * @param <L>
+     * @param <T>
+     * @param type
+     * @param idList
+     * @param fieldSet
+     * @return
+     */
+    protected <L extends ListWrapper<T>, T extends BullhornEntity> ListWrapper handleGetMultipleEntitiesPost(Class<T> type, Set<Integer> idList, Set<String> fieldSet) {
+        if(type != Candidate.class) {
+            String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
+            String where = "id in (" + ids + ")";
+            JSONObject body = new JSONObject();
+            body.put("where", where);
+            return handleQueryForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
+                body.toString(), fieldSet, ParamFactory.queryParams());
+        }else{
+            String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(" "));
+            String query = "id:" + ids ;
+            JSONObject body = new JSONObject();
+            body.put("query", query);
+            return handleSearchForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
+                body.toString(), fieldSet,ParamFactory.searchParams());
         }
     }
 
@@ -928,7 +987,6 @@ public class StandardBullhornData implements BullhornData {
             return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
         }
         return handleQueryForEntitiesWithPost(type,where,fieldSet,params);
-
     }
 
     /**
@@ -1005,7 +1063,6 @@ public class StandardBullhornData implements BullhornData {
             return true;
         }
         return false;
-
     }
 
     protected boolean moreRecordsExist(ListWrapper<?> onePull) {
@@ -1016,7 +1073,6 @@ public class StandardBullhornData implements BullhornData {
         if ((start + count >= total) || count == 0) {
             return false;
         }
-
         return true;
     }
 
@@ -1045,7 +1101,6 @@ public class StandardBullhornData implements BullhornData {
             return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
         }
         return handleSearchForEntitiesWithPost(type,query,fieldSet,params);
-
     }
 
     /**
@@ -1072,7 +1127,6 @@ public class StandardBullhornData implements BullhornData {
         body.put("query", query);
 
         return (L) this.performPostRequest(url,body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
-
     }
 
     /**
@@ -1090,6 +1144,28 @@ public class StandardBullhornData implements BullhornData {
         String url = restUrlFactory.assembleFastFindUrl(params);
 
         String jsonString = this.performGetRequest(url, String.class, uriVariables);
+
+        return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString, FastFindListWrapper.class);
+    }
+
+    /**
+     * Makes the "fast find" api call
+     * <p>
+     * HTTP Method: GET
+     *
+     * @param query  fast find query string
+     * @param params optional FastFindParams .
+     * @return a ListWrapper containing the records plus some additional information
+     */
+    protected FastFindListWrapper handleFastFindForEntitiesPost(String query, FastFindParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForFastFindPost(params);
+
+        String url = restUrlFactory.assembleFastFindUrlPost(params);
+
+        JSONObject body = new JSONObject();
+        body.put("query", query);
+
+        String jsonString = this.performPostRequest(url, body.toString(), String.class, uriVariables);
 
         return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString, FastFindListWrapper.class);
     }
