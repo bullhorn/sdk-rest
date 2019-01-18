@@ -903,38 +903,19 @@ public class StandardBullhornData implements BullhornData {
                 return (L) new StandardListWrapper<T>(list);
             }
         }
-        return (L) handleGetMultipleEntitiesPost(type,idList,fieldSet);
-    }
-
-    /**
-     * Makes the "entity" api call for getting multiple entities over 7500 characters.
-     * It actually does a search for candidates and a query for all other entities.
-     * <p>
-     * <p>
-     * HTTP Method: POST
-     *
-     * @param <L>
-     * @param <T>
-     * @param type
-     * @param idList
-     * @param fieldSet
-     * @return
-     */
-    protected <L extends ListWrapper<T>, T extends BullhornEntity> ListWrapper handleGetMultipleEntitiesPost(Class<T> type, Set<Integer> idList, Set<String> fieldSet) {
         if(type != Candidate.class) {
-            String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
             String where = "id in (" + ids + ")";
             JSONObject body = new JSONObject();
             body.put("where", where);
-            return handleQueryForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
-                body.toString(), fieldSet, ParamFactory.queryParams());
+            return (L) handleQueryForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
+                body.toString(), fieldSet, ParamFactory.queryParams()).getData();
         }else{
-            String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(" "));
-            String query = "id:" + ids ;
+            String idsSpaced = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(" "));
+            String query = "id:" + idsSpaced ;
             JSONObject body = new JSONObject();
             body.put("query", query);
-            return handleSearchForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
-                body.toString(), fieldSet,ParamFactory.searchParams());
+            return (L) handleSearchForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
+                body.toString(), fieldSet,ParamFactory.searchParams()).getData();
         }
     }
 
@@ -960,7 +941,7 @@ public class StandardBullhornData implements BullhornData {
         JSONObject body = new JSONObject();
         body.put("where", where);
 
-        return (L) this.performPostRequest(url, body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        return this.performPostRequest(url, body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 
     }
 
