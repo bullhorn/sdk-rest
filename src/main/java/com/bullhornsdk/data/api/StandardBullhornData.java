@@ -884,7 +884,7 @@ public class StandardBullhornData implements BullhornData {
      * @param <T>
      * @return
      */
-    protected <L extends ListWrapper<T>, T extends BullhornEntity> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
+    protected < T extends BullhornEntity,L extends ListWrapper<T>> L handleGetMultipleEntities(Class<T> type, Set<Integer> idList, Set<String> fieldSet, EntityParams params) {
         String ids = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(","));
         if(MAX_URL_LENGTH > ids.length()) {
             Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetMultiple(BullhornEntityInfo.getTypesRestEntityName(type), ids, fieldSet, params);
@@ -907,14 +907,14 @@ public class StandardBullhornData implements BullhornData {
             String where = "id in (" + ids + ")";
             JSONObject body = new JSONObject();
             body.put("where", where);
-            return (L) handleQueryForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
+            return (L) handleQueryForEntitiesWithPostGeneral(type,
                 body.toString(), fieldSet, ParamFactory.queryParams()).getData();
         }else{
             String idsSpaced = idList.stream().map(id -> String.valueOf(id)).collect(Collectors.joining(" "));
             String query = "id:" + idsSpaced ;
             JSONObject body = new JSONObject();
             body.put("query", query);
-            return (L) handleSearchForEntitiesWithPost(BullhornEntityInfo.getTypesListWrapperType(type),
+            return (L) handleSearchForEntitiesWithPostGeneral(type,
                 body.toString(), fieldSet,ParamFactory.searchParams()).getData();
         }
     }
@@ -945,6 +945,19 @@ public class StandardBullhornData implements BullhornData {
 
     }
 
+    protected <L extends ListWrapper<T>, T extends BullhornEntity> L handleQueryForEntitiesWithPostGeneral(Class<T> type, String where, Set<String> fieldSet,
+                                                                                                 QueryParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQueryWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
+            fieldSet, params);
+
+        String url = restUrlFactory.assembleQueryUrlWithPost(params);
+
+        JSONObject body = new JSONObject();
+        body.put("where", where);
+
+        return this.performPostRequest(url, body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+
+    }
     /**
      * Makes the "query" api call
      * <p>
@@ -1097,6 +1110,21 @@ public class StandardBullhornData implements BullhornData {
      */
     protected <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForEntitiesWithPost(Class<T> type, String query, Set<String> fieldSet,
                                                                                            SearchParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearchWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
+            fieldSet, params);
+
+        String url = restUrlFactory.assembleSearchUrlWithPost(params);
+        if (Candidate.class == type) {
+            url = url + "&useV2=true";
+        }
+        JSONObject body = new JSONObject();
+        body.put("query", query);
+
+        return (L) this.performPostRequest(url,body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+    }
+
+    protected <L extends ListWrapper<T>, T extends BullhornEntity> L handleSearchForEntitiesWithPostGeneral(Class<T> type, String query, Set<String> fieldSet,
+                                                                                                   SearchParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearchWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
             fieldSet, params);
 
