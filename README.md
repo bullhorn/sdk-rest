@@ -1,6 +1,10 @@
 # sdk-rest
 A Java client library for working with the Bullhorn REST API. Handles authentication and objectifies API operations.
 
+## Requirements
+- Java 10
+- Maven > 3.6.0
+
 ## Available as a Maven dependency
 
 ### Add dependency to your pom file
@@ -10,7 +14,7 @@ A Java client library for working with the Bullhorn REST API. Handles authentica
 	<dependency>
 		<groupId>com.bullhorn</groupId>
 		<artifactId>sdk-rest</artifactId>
-		<version>1.0</version>
+		<version>2.0.0</version>
 	</dependency>
 ```
 
