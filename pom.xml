@@ -245,8 +245,8 @@
                     <version>3.8.0</version>
                     <configuration>
                         <compilerId>groovy-eclipse-compiler</compilerId>
-                        <source>10</source>
-                        <target>10</target>
+                        <source>11</source>
+                        <target>11</target>
                     </configuration>
                     <dependencies>
                         <dependency>
