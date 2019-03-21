@@ -96,6 +96,7 @@ import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment
 import com.bullhornsdk.data.model.entity.file.PlacementFileAttachment
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
+import com.bullhornsdk.data.model.entity.report.Report
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
 import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
@@ -484,6 +485,7 @@ public class MockDataLoader {
         entityFiles.put(PlacementChangeRequest.class, "placementchangerequest-data.txt");
         entityFiles.put(PlacementCommission.class, "placementcommission-data.txt");
         entityFiles.put(PrivateLabel.class, "privatelabel-data.txt");
+        entityFiles.put(Report.class, "report-data.txt");
         entityFiles.put(Sendout.class, "sendout-data.txt");
         entityFiles.put(Skill.class, "skill-data.txt");
         entityFiles.put(Specialty.class, "specialty-data.txt");
@@ -630,6 +632,7 @@ public class MockDataLoader {
         entityMetaFiles.put(PlacementChangeRequest.class, "meta/placementchangerequest-meta-data.txt");
         entityMetaFiles.put(PlacementCommission.class, "meta/placementcommission-meta-data.txt");
         entityMetaFiles.put(PrivateLabel.class, "meta/privatelabel-meta-data.txt");
+        entityMetaFiles.put(Report.class, "meta/report-meta-data.txt")
         entityMetaFiles.put(Sendout.class, "meta/sendout-meta-data.txt");
         entityMetaFiles.put(Skill.class, "meta/skill-meta-data.txt");
         entityMetaFiles.put(Specialty.class, "meta/specialty-meta-data.txt");
