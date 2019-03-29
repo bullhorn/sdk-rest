@@ -1905,13 +1905,24 @@ public class StandardBullhornData implements BullhornData {
 
     public <T> T performGetRequest(String url, Class<T> returnType, Map<String, String> uriVariables) {
 
-        for (int tryNumber = 1; tryNumber <= API_RETRY; tryNumber++) {
+        int tryNumber = 1;
+        while(tryNumber <= API_RETRY) {
             try {
                 return restTemplate.getForObject(url, returnType, uriVariables);
             } catch (HttpStatusCodeException error) {
-                handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                if (isTooManyRequestsError) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log.error("Error in performGetRequest", e);
+                    }
+                } else {
+                    tryNumber++;
+                }
             } catch (Exception e) {
                 handleApiError(tryNumber, e);
+                tryNumber++;
             }
         }
 
@@ -1929,13 +1940,24 @@ public class StandardBullhornData implements BullhornData {
      * @return
      */
     protected <T> T performPostRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables) {
-        for (int tryNumber = 1; tryNumber <= API_RETRY; tryNumber++) {
+        int tryNumber = 1;
+        while(tryNumber <= API_RETRY) {
             try {
                 return restTemplate.postForObject(url, requestPayLoad, returnType, uriVariables);
             } catch (HttpStatusCodeException error) {
-                handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                if (isTooManyRequestsError) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log.error("Error in performPostRequest", e);
+                    }
+                } else {
+                    tryNumber++;
+                }
             } catch (Exception e) {
                 handleApiError(tryNumber, e);
+                tryNumber++;
             }
         }
 
@@ -1962,14 +1984,25 @@ public class StandardBullhornData implements BullhornData {
 
         HttpEntity<Object> requestEntity = new HttpEntity<Object>(requestPayLoad, headers);
 
-        for (int tryNumber = 1; tryNumber <= API_RETRY; tryNumber++) {
+        int tryNumber = 1;
+        while(tryNumber <= API_RETRY) {
             try {
                 ResponseEntity<T> responseEntity = restTemplate.exchange(url, httpMethod, requestEntity, returnType, uriVariables);
                 return responseEntity.getBody();
             } catch (HttpStatusCodeException error) {
-                handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                if (isTooManyRequestsError) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log.error("Error in performCustomRequest", e);
+                    }
+                } else {
+                    tryNumber++;
+                }
             } catch (RuntimeException e) {
                 handleApiError(tryNumber, e);
+                tryNumber++;
             }
         }
 
@@ -1982,18 +2015,22 @@ public class StandardBullhornData implements BullhornData {
      * @param error
      * @throws RestApiException if tryNumber >= API_RETRY.
      */
-    protected void handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
+    protected boolean handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
+        boolean isTooManyRequestsError = false;
         if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
             resetBhRestToken(uriVariables);
+        } else if (error.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
+            isTooManyRequestsError = true;
         }
         log.error(
                 "HttpStatusCodeError making api call. Try number:" + tryNumber + " out of " + API_RETRY + ". Http status code: "
                         + error.getStatusCode() + ". Response body: " + error.getResponseBodyAsString(), error);
-        if (tryNumber >= API_RETRY) {
+        if (tryNumber >= API_RETRY && !isTooManyRequestsError) {
             throw new RestApiException("HttpStatusCodeError making api call with url variables " + uriVariables.toString()
                     + ". Http status code: " + error.getStatusCode().toString() + ". Response body: " + error == null ? ""
                     : error.getResponseBodyAsString());
         }
+        return isTooManyRequestsError;
     }
 
     protected void handleApiError(int tryNumber, Exception e) {
