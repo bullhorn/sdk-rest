@@ -85,7 +85,12 @@ public class RestApiSession {
 		this.restCredentials = bullhornRestCredentials;
 		this.restTemplate = RestTemplateFactory.getInstance();
 		this.dateTimeBhRestTokenWillExpire = getNow();
-		createSession();
+		if(bullhornRestCredentials.credentialCheck()) {
+            createSession();
+        } else {
+		    this.restUrl = restCredentials.getRestUrl();
+		    this.bhRestToken = restCredentials.getBhRestToken();
+        }
 	}
 
 	/**
@@ -98,7 +103,7 @@ public class RestApiSession {
 	 */
 	public String getBhRestToken() throws RestApiException {
 
-		if (isSessionExpired()) {
+		if (isSessionExpired() && restCredentials.credentialCheck()) {
 			createSession();
 		}
 
@@ -289,7 +294,9 @@ public class RestApiSession {
 	private synchronized void setBhRestToken(String bhRestToken) {
 		this.bhRestToken = bhRestToken;
 
-		updateDateTimeBhRestTokenWillExpire();
+		if(restCredentials.credentialCheck()) {
+            updateDateTimeBhRestTokenWillExpire();
+        }
 
 	}
 

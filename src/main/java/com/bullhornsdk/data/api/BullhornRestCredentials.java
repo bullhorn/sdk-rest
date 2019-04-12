@@ -2,7 +2,12 @@ package com.bullhornsdk.data.api;
 
 public class BullhornRestCredentials {
 
-	private String username;
+    //set restUrl and bhRestToken to "default" for validation of credential-less login
+    private String restUrl = "default";
+
+    private String bhRestToken = "default";
+
+    private String username;
 
 	private String password;
 
@@ -17,6 +22,22 @@ public class BullhornRestCredentials {
 	private String restSessionMinutesToLive;
 
 	private String restAuthorizeUrl;
+
+	public String getBhRestToken() {
+	    return bhRestToken;
+    }
+
+    public void setBhRestToken(String bhRestToken) {
+	    this.bhRestToken = bhRestToken;
+    }
+
+    public String getRestUrl() {
+	    return restUrl;
+    }
+
+    public void setRestUrl(String restUrl) {
+	    this.restUrl = restUrl;
+    }
 
 	public String getUsername() {
 		return username;
@@ -82,10 +103,16 @@ public class BullhornRestCredentials {
 		this.restAuthorizeUrl = restAuthorizeUrl;
 	}
 
+	public boolean credentialCheck() {
+	    return restUrl == "default" && bhRestToken == "default";
+    }
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+        result = prime * result + ((bhRestToken == null) ? 0 : bhRestToken.hashCode());
+        result = prime * result + ((restUrl == null) ? 0 : restUrl.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((restAuthorizeUrl == null) ? 0 : restAuthorizeUrl.hashCode());
 		result = prime * result + ((restClientId == null) ? 0 : restClientId.hashCode());
@@ -106,6 +133,16 @@ public class BullhornRestCredentials {
 		if (getClass() != obj.getClass())
 			return false;
 		BullhornRestCredentials other = (BullhornRestCredentials) obj;
+        if (bhRestToken == null) {
+            if (other.bhRestToken != null)
+                return false;
+        } else if (!bhRestToken.equals(other.bhRestToken))
+            return false;
+        if (restUrl == null) {
+            if (other.restUrl != null)
+                return false;
+        } else if (!restUrl.equals(other.restUrl))
+            return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
@@ -157,6 +194,10 @@ public class BullhornRestCredentials {
 		builder.append(username);
 		builder.append("\n\tpassword: ");
 		builder.append(password);
+        builder.append("\n\tbhRestToken: ");
+        builder.append(bhRestToken);
+        builder.append("\n\trestUrl: ");
+        builder.append(restUrl);
 		builder.append("\n\trestTokenUrl: ");
 		builder.append(restTokenUrl);
 		builder.append("\n\trestClientId: ");
