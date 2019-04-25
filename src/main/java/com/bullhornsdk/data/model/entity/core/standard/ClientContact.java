@@ -53,7 +53,7 @@ import javax.validation.constraints.Size;
 		"description", "desiredCategories", "desiredSkills",
 		"desiredSpecialties", "division", "email", "email2", "email3",
 		"externalID", "fax", "fax2", "fax3", "firstName", "isDayLightSavings",
-		"isDeleted", "isLockedOut", "lastName", "linkedPerson", "leads",
+        "isDefaultContact", "isDeleted", "isLockedOut", "lastName", "linkedPerson", "leads",
 		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name",
 		"namePrefix", "nameSuffix", "nickName", "notes", "numEmployees", "occupation",
 		"office", "owner", "pager", "password", "phone", "phone2", "phone3",
@@ -152,9 +152,11 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
 	private Boolean isDayLightSavings;
 
-	private Boolean isDeleted;
+    private Boolean isDefaultContact;
 
-	private Boolean isLockedOut;
+    private Boolean isDeleted;
+
+    private Boolean isLockedOut;
 
 	@JsonIgnore
 	@Size(max = 50)
@@ -609,6 +611,16 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	public void setIsDayLightSavings(Boolean isDayLightSavings) {
 		this.isDayLightSavings = isDayLightSavings;
 	}
+
+    @JsonProperty("isDefaultContact")
+    public Boolean getIsDefaultContact() {
+        return isDefaultContact;
+    }
+
+    @JsonProperty("isDefaultContact")
+    public void setIsDefaultContact(Boolean isDefaultContact) {
+        this.isDefaultContact = isDefaultContact;
+    }
 
 	@JsonProperty("isDeleted")
 	public Boolean getIsDeleted() {
@@ -1160,6 +1172,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
         if (isDayLightSavings != null ? !isDayLightSavings.equals(that.isDayLightSavings) : that.isDayLightSavings != null)
             return false;
+        if (isDefaultContact != null ? !isDefaultContact.equals(that.isDefaultContact) : that.isDefaultContact != null) return false;
         if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
         if (isLockedOut != null ? !isLockedOut.equals(that.isLockedOut) : that.isLockedOut != null) return false;
         if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
@@ -1258,6 +1271,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (isDayLightSavings != null ? isDayLightSavings.hashCode() : 0);
+        result = 31 * result + (isDefaultContact != null ? isDefaultContact.hashCode() : 0);
         result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
         result = 31 * result + (isLockedOut != null ? isLockedOut.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
@@ -1341,6 +1355,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         sb.append(", fax3='").append(fax3).append('\'');
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", isDayLightSavings=").append(isDayLightSavings);
+        sb.append(", isDefaultContact=").append(isDefaultContact);
         sb.append(", isDeleted=").append(isDeleted);
         sb.append(", isLockedOut=").append(isLockedOut);
         sb.append(", lastName='").append(lastName).append('\'');
