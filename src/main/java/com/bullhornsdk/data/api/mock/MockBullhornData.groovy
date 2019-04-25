@@ -48,6 +48,7 @@ public class MockBullhornData implements BullhornData {
     private final RestErrorHandler restErrorHandler;
     private final RestApiSession restSession;
     private final Logger log = Logger.getLogger(MockBullhornData.class);
+    protected Boolean executeFormTriggers = false;
 
 
     public MockBullhornData() {
@@ -91,8 +92,7 @@ public class MockBullhornData implements BullhornData {
     /**
      * Will return all values of type T. The search functionality has not been implemented in the {@link MockBullhornData}
      *
-     * @throws IllegalArgumentException
-     *             when a non-valid search field is used.
+     * @throws IllegalArgumentException when a non-valid search field is used.
      */
     @Override
     public <T extends SearchEntity> List<T> searchForList(Class<T> type, String query, Set<String> fieldSet, SearchParams params) {
@@ -102,8 +102,7 @@ public class MockBullhornData implements BullhornData {
     /**
      * Will return all values of type T. The search functionality has not been implemented in the {@link MockBullhornData}
      *
-     * @throws IllegalArgumentException
-     *             when a non-valid search field is used.
+     * @throws IllegalArgumentException when a non-valid search field is used.
      */
     @Override
     public <T extends SearchEntity> IdListWrapper searchForIdList(Class<T> type, String query, SearchParams params) {
@@ -133,8 +132,7 @@ public class MockBullhornData implements BullhornData {
     /**
      * Will return all values of type T. The search functionality has not been implemented in the {@link MockBullhornData}
      *
-     * @throws IllegalArgumentException
-     *             when a non-valid search field is used.
+     * @throws IllegalArgumentException when a non-valid search field is used.
      */
     @Override
     public <T extends SearchEntity, L extends ListWrapper<T>> L search(Class<T> type, String query, Set<String> fieldSet,
@@ -148,8 +146,7 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public <T extends QueryEntity & AllRecordsEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet,
-                                                                                  QueryParams params) {
+    public <T extends QueryEntity & AllRecordsEntity, L extends ListWrapper<T>> L queryForAllRecords(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
         params.setCount(500);
         return query(type, where, fieldSet, params);
     }
@@ -348,7 +345,7 @@ public class MockBullhornData implements BullhornData {
 
     @Override
     public <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> getAllAssociations(Class<T> type, Set<Integer> entityIds,
-                                                                                          AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
+                                                                                                     AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
         return mockDataHandler.getAllAssociations(type, entityIds, associationName, fieldSet, params);
     }
 
@@ -386,25 +383,25 @@ public class MockBullhornData implements BullhornData {
     SubscribeToEventsResponse subscribeToEvents(String subscriptionId, EventType eventType, List<Class> entityClasses,
                                                 List<EntityEventType> entityEventTypes) {
         StringBuilder jmsSelectorBuilder = new StringBuilder("JMSType='")
-                .append(eventType.value()).append("' AND BhCorpId=1")
+            .append(eventType.value()).append("' AND BhCorpId=1")
         if (eventType == EventType.ENTITY && !entityClasses?.isEmpty()) {
             jmsSelectorBuilder.append(" AND BhEntityName")
             if (entityClasses.size() == 1) {
                 jmsSelectorBuilder.append("='").append(entityClasses.first().simpleName).append("'")
             } else {
                 jmsSelectorBuilder.append(" IN (")
-                        .append(entityClasses.collect { "'" + it.simpleName + "'" }.join(","))
-                        .append(")")
+                    .append(entityClasses.collect { "'" + it.simpleName + "'" }.join(","))
+                    .append(")")
             }
         }
         jmsSelectorBuilder.append(" AND BhEntityEventType IN (")
-                .append(entityEventTypes.collect { "'" + it.name() + "'" }.join(","))
-                .append(")")
+            .append(entityEventTypes.collect { "'" + it.name() + "'" }.join(","))
+            .append(")")
         new StandardSubscribeToEventsResponse(
-                subscriptionId: subscriptionId,
-                lastRequestId: 0,
-                createdOn: DateTime.now(),
-                jmsSelector: jmsSelectorBuilder.toString()
+            subscriptionId: subscriptionId,
+            lastRequestId: 0,
+            createdOn: DateTime.now(),
+            jmsSelector: jmsSelectorBuilder.toString()
         )
     }
 
@@ -414,21 +411,30 @@ public class MockBullhornData implements BullhornData {
     }
 
 
-	def <T extends QueryEntity> EntityIdBoundaries queryForIdBoundaries(Class<T> entityClass) {
-		List<T> entities = mockDataHandler.queryForList(entityClass, "id>0", ["id"].toSet(), StandardQueryParams.instance)
+    def <T extends QueryEntity> EntityIdBoundaries queryForIdBoundaries(Class<T> entityClass) {
+        List<T> entities = mockDataHandler.queryForList(entityClass, "id>0", ["id"].toSet(), StandardQueryParams.instance)
 
-		List<Integer> ids = entities.collect { it.id }
+        List<Integer> ids = entities.collect { it.id }
 
-		new EntityIdBoundaries(ids.min(), ids.max(), entityClass)
-	}
+        new EntityIdBoundaries(ids.min(), ids.max(), entityClass)
+    }
 
-	@Override
-	def <T extends SearchEntity> EntityIdBoundaries searchForIdBoundaries(Class<T> entityClass) {
-		List<T> entities = mockDataHandler.searchForList(entityClass, "id>0", ["id"].toSet(), StandardSearchParams.instance)
+    @Override
+    def <T extends SearchEntity> EntityIdBoundaries searchForIdBoundaries(Class<T> entityClass) {
+        List<T> entities = mockDataHandler.searchForList(entityClass, "id>0", ["id"].toSet(), StandardSearchParams.instance)
 
-		List<Integer> ids = entities.collect { it.id }
+        List<Integer> ids = entities.collect { it.id }
 
-		new EntityIdBoundaries(ids.min(), ids.max(), entityClass)
-	}
+        new EntityIdBoundaries(ids.min(), ids.max(), entityClass)
+    }
 
+    @Override
+    public Boolean getExecuteFormTriggers() {
+        return executeFormTriggers;
+    }
+
+    @Override
+    public void setExecuteFormTriggers(Boolean executeFormTriggers) {
+        this.executeFormTriggers = executeFormTriggers;
+    }
 }

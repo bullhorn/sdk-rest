@@ -788,9 +788,19 @@ public interface BullhornData {
 	/**
 	 * Get the settings object
 	 *
-	 * @param fieldsSet the set of feilds on the settings object you need back. Size of this set has be to greater than 0
+	 * @param fieldsSet the set of fields on the settings object you need back. Size of this set has be to greater than 0
 	 * @return Settings object
 	 */
 	public Settings getSettingsObject(Set<SettingsFields> fieldsSet);
 
+    /**
+     * Gets the current state of the Execute Form Triggers boolean that will execute any applicable existing rest form triggers
+     * (Add or Edit) when an entity is inserted or updated.
+     */
+    public Boolean getExecuteFormTriggers();
+
+    /**
+     * If true, any applicable existing rest form triggers (Add or Edit) will be executed when an entity is inserted or updated.
+     */
+    public void setExecuteFormTriggers(Boolean executeFormTriggers);
 }

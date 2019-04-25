@@ -164,6 +164,8 @@ public class StandardBullhornData implements BullhornData {
 
     protected final static int MAX_RECORDS_TO_RETURN_TOTAL = 20000;
 
+    protected Boolean executeFormTriggers = false;
+
     public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials) {
         this.restSession = new RestApiSession(bullhornRestCredentials);
         this.restTemplate = RestTemplateFactory.getInstance();
@@ -818,6 +820,22 @@ public class StandardBullhornData implements BullhornData {
         return handleGetSettingsObjectData(fieldsSet);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getExecuteFormTriggers() {
+        return executeFormTriggers;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setExecuteFormTriggers(Boolean executeFormTriggers){
+        this.executeFormTriggers = executeFormTriggers;
+    }
+
 	/*
      * ***********************************************************************************************************
 	 * Helper methods that handle the api calls.
@@ -917,8 +935,7 @@ public class StandardBullhornData implements BullhornData {
      * @param params   optional QueryParams.
      * @return a LinsWrapper containing the records plus some additional information
      */
-    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntities(Class<T> type, String where, Set<String> fieldSet,
-                                                                                       QueryParams params) {
+    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntities(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
         if(where.length() < MAX_URL_LENGTH) {
             Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(type),
                 where, fieldSet, params);
