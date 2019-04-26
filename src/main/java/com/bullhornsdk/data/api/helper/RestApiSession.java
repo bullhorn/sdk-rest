@@ -11,6 +11,7 @@ import java.util.Map;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -59,6 +60,8 @@ public class RestApiSession {
 
     private static int SESSION_RETRY = 3;
 
+    private boolean hasNoSessionProvided;
+
     public final static int MAX_TTL = 2880;
 
     /**
@@ -81,10 +84,11 @@ public class RestApiSession {
     }
 
     public RestApiSession(BullhornRestCredentials bullhornRestCredentials) {
+        this.hasNoSessionProvided = hasNoSessionProvided(bullhornRestCredentials);
         this.restCredentials = bullhornRestCredentials;
         this.restTemplate = RestTemplateFactory.getInstance();
         this.dateTimeBhRestTokenWillExpire = getNow();
-        if (bullhornRestCredentials.hasNoSessionProvided()) {
+        if (this.hasNoSessionProvided) {
             createSession();
         } else {
             this.restUrl = restCredentials.getRestUrl();
@@ -102,7 +106,7 @@ public class RestApiSession {
      */
     public String getBhRestToken() throws RestApiException {
 
-        if (isSessionExpired() && restCredentials.hasNoSessionProvided()) {
+        if (isSessionExpired() && this.hasNoSessionProvided) {
             createSession();
         }
 
@@ -293,7 +297,7 @@ public class RestApiSession {
     private synchronized void setBhRestToken(String bhRestToken) {
         this.bhRestToken = bhRestToken;
 
-        if (restCredentials.hasNoSessionProvided()) {
+        if (this.hasNoSessionProvided) {
             updateDateTimeBhRestTokenWillExpire();
         }
 
@@ -320,6 +324,10 @@ public class RestApiSession {
 
     public void setDateTimeBhRestTokenWillExpire(DateTime dateTimeBhRestTokenWillExpire) {
         this.dateTimeBhRestTokenWillExpire = dateTimeBhRestTokenWillExpire;
+    }
+
+    public boolean hasNoSessionProvided(BullhornRestCredentials restCredentials) {
+        return !(StringUtils.isNotBlank(restCredentials.getRestUrl()) && StringUtils.isNotBlank(restCredentials.getBhRestToken()));
     }
 
     /**

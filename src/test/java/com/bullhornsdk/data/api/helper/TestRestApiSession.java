@@ -140,47 +140,11 @@ public class TestRestApiSession extends BaseTest {
     }
 
     @Test
-    public void testRestApiCredentiallessSession() {
+    public void testHasNoSessionProvided() {
 
-        setupCredentiallessTests();
+        boolean hasNoSession = restApiSession.hasNoSessionProvided(bullhornRestCredentials);
+        assertTrue(hasNoSession);
 
-        RestApiSession restApiSessionManual = new RestApiSession(bullhornRestCredentials);
-        assertNotNull("RestApiSession is null", restApiSessionManual);
-        assertNull("", bullhornRestCredentials.getUsername());
-        assertNull("", bullhornRestCredentials.getUsername());
-        assertNull("", bullhornRestCredentials.getRestTokenUrl());
-        assertNull("", bullhornRestCredentials.getRestSessionMinutesToLive());
-        assertNull("", bullhornRestCredentials.getRestLoginUrl());
-        assertNull("", bullhornRestCredentials.getRestClientSecret());
-        assertNull("", bullhornRestCredentials.getRestClientId());
-        assertNull("", bullhornRestCredentials.getRestAuthorizeUrl());
-    }
-
-    @Test
-    public void testGetCredentiallessBhRestToken() {
-        setupCredentiallessTests();
-
-        RestApiSession restApiSession = new RestApiSession(bullhornRestCredentials);
-
-        String restToken = restApiSession.getBhRestToken();
-        assertNotNull("BhRestToken is null", restToken);
-        assertNull("", bullhornRestCredentials.getUsername());
-        assertNull("", bullhornRestCredentials.getUsername());
-        assertNull("", bullhornRestCredentials.getRestTokenUrl());
-        assertNull("", bullhornRestCredentials.getRestSessionMinutesToLive());
-        assertNull("", bullhornRestCredentials.getRestLoginUrl());
-        assertNull("", bullhornRestCredentials.getRestClientSecret());
-        assertNull("", bullhornRestCredentials.getRestClientId());
-        assertNull("", bullhornRestCredentials.getRestAuthorizeUrl());
-    }
-
-    public void setupCredentiallessTests() {
-        BullhornRestCredentials creds = new BullhornRestCredentials();
-
-        creds.setRestUrl("MY-RESTURL");
-        creds.setBhRestToken("MY-BHRESTTOKEN");
-        this.bullhornRestCredentials = creds;
-        this.restApiSession = new RestApiSession(bullhornRestCredentials);
     }
 
     private DateTime getNow() {

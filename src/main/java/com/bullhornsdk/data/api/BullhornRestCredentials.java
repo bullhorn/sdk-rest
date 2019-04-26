@@ -105,10 +105,6 @@ public class BullhornRestCredentials {
         this.restAuthorizeUrl = restAuthorizeUrl;
     }
 
-    public boolean hasNoSessionProvided() {
-        return !(StringUtils.isNotBlank(restUrl) && StringUtils.isNotBlank(bhRestToken));
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
