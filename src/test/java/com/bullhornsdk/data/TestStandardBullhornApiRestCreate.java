@@ -249,7 +249,7 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 
         bullhornData.setExecuteFormTriggers(true);
         CreateResponse response = bullhornData.insertEntity(entity);
-        bullhornData.setExecuteFormTriggers(true);
+        bullhornData.setExecuteFormTriggers(!bullhornData.getExecuteFormTriggers());
 
         ClientContact newEntity = bullhornData.findEntity(ClientContact.class, response.getChangedEntityId());
 
