@@ -44,7 +44,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityDeleteUrl() {
-        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}";
+        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
     }
 
     /**
@@ -53,7 +53,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForUpdate() {
-        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}";
+        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
     }
 
     /**
@@ -62,7 +62,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForInsert() {
-        return restUrl + "entity/{entityType}?BhRestToken={bhRestToken}";
+        return restUrl + "entity/{entityType}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
     }
 
     /**
