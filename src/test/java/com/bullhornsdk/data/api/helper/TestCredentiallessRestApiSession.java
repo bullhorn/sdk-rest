@@ -74,8 +74,8 @@ public class TestCredentiallessRestApiSession extends BaseTest {
     @Test
     public void testHasNoSessionProvided() {
 
-        boolean hasNoSession = restApiSession.hasNoSessionProvided(bullhornRestCredentials);
-        assertFalse(hasNoSession);
+        boolean hasNoSession = restApiSession.isSessionProvided(bullhornRestCredentials);
+        assertTrue(hasNoSession);
 
     }
 

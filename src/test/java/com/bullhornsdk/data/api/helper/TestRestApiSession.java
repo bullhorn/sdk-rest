@@ -2,8 +2,10 @@ package com.bullhornsdk.data.api.helper;
 
 import java.io.IOException;
 
+import com.bullhornsdk.data.exception.RestApiException;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,6 +16,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 
 import static org.junit.Assert.*;
+
+import mockit.Expectations;
+import mockit.Injectable;
+import mockit.Mocked;
+import mockit.Verifications;
 
 @Ignore
 public class TestRestApiSession extends BaseTest {
@@ -142,9 +149,39 @@ public class TestRestApiSession extends BaseTest {
     @Test
     public void testHasNoSessionProvided() {
 
-        boolean hasNoSession = restApiSession.hasNoSessionProvided(bullhornRestCredentials);
-        assertTrue(hasNoSession);
+        boolean hasNoSession = restApiSession.isSessionProvided(bullhornRestCredentials);
+        assertFalse(hasNoSession);
 
+    }
+
+    @Test
+    public void testSetDateTimeBhRestTokenWillExpire() {
+        DateTime testDate = getNow();
+
+        restApiSession.setDateTimeBhRestTokenWillExpire(testDate);
+
+        assertTrue(restApiSession.getDateTimeBhRestTokenWillExpire().equals(testDate));
+    }
+
+    @Test
+    public void testCreateSessionWithBadCreds_shouldThrowRestException() throws RestApiException {
+        BullhornRestCredentials creds = new BullhornRestCredentials();
+
+        creds.setRestAuthorizeUrl("NO_VALUE");
+        creds.setRestClientId("NO_VALUE");
+        creds.setRestClientSecret("NO_VALUE");
+        creds.setRestLoginUrl("NO_VALUE");
+        creds.setRestSessionMinutesToLive("NO_VALUE");
+        creds.setRestTokenUrl("NO_VALUE");
+        creds.setUsername("NO_VALUE");
+        creds.setPassword("NO_VALUE");
+
+        try {
+            new RestApiSession(creds);
+            Assert.fail("Should have thrown an exception");
+        } catch (RestApiException e) {
+            assertTrue(e.getMessage().equals("Failed to create rest session"));
+        }
     }
 
     private DateTime getNow() {

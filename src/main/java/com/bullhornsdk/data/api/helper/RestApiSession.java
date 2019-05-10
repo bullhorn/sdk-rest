@@ -60,7 +60,7 @@ public class RestApiSession {
 
     private static int SESSION_RETRY = 3;
 
-    private boolean hasNoSessionProvided;
+    private boolean isSessionProvided;
 
     public final static int MAX_TTL = 2880;
 
@@ -84,11 +84,11 @@ public class RestApiSession {
     }
 
     public RestApiSession(BullhornRestCredentials bullhornRestCredentials) {
-        this.hasNoSessionProvided = hasNoSessionProvided(bullhornRestCredentials);
+        this.isSessionProvided = isSessionProvided(bullhornRestCredentials);
         this.restCredentials = bullhornRestCredentials;
         this.restTemplate = RestTemplateFactory.getInstance();
         this.dateTimeBhRestTokenWillExpire = getNow();
-        if (this.hasNoSessionProvided) {
+        if (!this.isSessionProvided) {
             createSession();
         } else {
             this.restUrl = restCredentials.getRestUrl();
@@ -106,7 +106,7 @@ public class RestApiSession {
      */
     public String getBhRestToken() throws RestApiException {
 
-        if (isSessionExpired() && this.hasNoSessionProvided) {
+        if (isSessionExpired() && !this.isSessionProvided) {
             createSession();
         }
 
@@ -246,7 +246,6 @@ public class RestApiSession {
         } catch (Exception e) {
             log.error("Failed to login. " + responseJson, e);
             throw new RestApiException("Failed to login and get BhRestToken: " + responseJson);
-
         }
     }
 
@@ -297,7 +296,7 @@ public class RestApiSession {
     private synchronized void setBhRestToken(String bhRestToken) {
         this.bhRestToken = bhRestToken;
 
-        if (this.hasNoSessionProvided) {
+        if (!this.isSessionProvided) {
             updateDateTimeBhRestTokenWillExpire();
         }
 
@@ -326,8 +325,8 @@ public class RestApiSession {
         this.dateTimeBhRestTokenWillExpire = dateTimeBhRestTokenWillExpire;
     }
 
-    public boolean hasNoSessionProvided(BullhornRestCredentials restCredentials) {
-        return !(StringUtils.isNotBlank(restCredentials.getRestUrl()) && StringUtils.isNotBlank(restCredentials.getBhRestToken()));
+    public boolean isSessionProvided(BullhornRestCredentials restCredentials) {
+        return StringUtils.isNotBlank(restCredentials.getRestUrl()) && StringUtils.isNotBlank(restCredentials.getBhRestToken());
     }
 
     /**
