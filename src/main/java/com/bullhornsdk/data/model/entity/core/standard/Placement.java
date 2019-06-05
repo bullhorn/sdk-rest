@@ -1303,7 +1303,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     public String toStringNonNull(boolean includeLineBreaks) {
         String lbc = ", ";
         if(includeLineBreaks)
-            lbc = ", \n";
+            lbc = ",\n ";
         final StringBuilder sb = new StringBuilder("Placement { ");
         if(id != null){
             sb.append("id=").append(id);
