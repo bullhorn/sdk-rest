@@ -610,10 +610,10 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @Override
-        public String toStringNonNull(boolean includeLineBreaks) {
-            String lbc = ", ";
-            if(includeLineBreaks)
-                lbc = ",\n ";
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
         StringBuilder builder = new StringBuilder().append("Appointment { ");
         if(id != null){
             builder.append("id=");
