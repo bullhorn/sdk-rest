@@ -758,12 +758,9 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
 
     @Override
     public String toStringNonNull() {
-        String lbc = ", \n";
+        String lbc = ", ";
         StringBuilder builder = new StringBuilder();
-        if(id != null){
-            builder.append("Appointment { id=");
-            builder.append(id);
-        }
+        builder.append("Appointment { id=").append(id);
         if(appointmentUUID != null){
             builder.append(lbc + "appointmentUUID=");
             builder.append(appointmentUUID);
