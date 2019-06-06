@@ -388,57 +388,247 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(id != null){
+            sb.append(lbc + "id=");
+            sb.append(id);
+        }
+        if(action != null){
+            sb.append(lbc + "action=");
+            sb.append(action);
+        }
+        if(bhTimeStamp != null){
+            sb.append(lbc + "bhTimeStamp=");
+            sb.append(bhTimeStamp);
+        }
+        if(candidates != null){
+            sb.append(lbc + "candidates=");
+            sb.append(candidates.toStringNonNull(includeLineBreaks));
+        }
+        if(clientContacts != null){
+            sb.append(lbc + "clientContacts=");
+            sb.append(clientContacts.toStringNonNull(includeLineBreaks));
+        }
+        if(commentingPerson != null){
+            sb.append(lbc + "commentingPerson=");
+            sb.append(commentingPerson.toStringNonNull(includeLineBreaks));
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=");
+            sb.append(comments);
+        }
+        if(corporateUsers != null){
+            sb.append(lbc + "corporateUsers=");
+            sb.append(corporateUsers.toStringNonNull(includeLineBreaks));
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=");
+            sb.append(dateAdded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=");
+            sb.append(dateLastModified);
+        }
+        if(entities != null){
+            sb.append(lbc + "entities=");
+            sb.append(entities.toStringNonNull(includeLineBreaks));
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=");
+            sb.append(externalID);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=");
+            sb.append(isDeleted);
+        }
+        if(jobOrder != null){
+            sb.append(lbc + "jobOrder=");
+            sb.append(jobOrder.toStringNonNull(includeLineBreaks));
+        }
+        if(jobOrders != null){
+            sb.append(lbc + "jobOrders=");
+            sb.append(jobOrders.toStringNonNull(includeLineBreaks));
+        }
+        if(leads != null){
+            sb.append(lbc + "leads=");
+            sb.append(leads.toStringNonNull(includeLineBreaks));
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=");
+            sb.append(migrateGUID);
+        }
+        if(luceneScore != null){
+            sb.append(lbc + "luceneScore=");
+            sb.append(luceneScore);
+        }
+        if(minutesSpent != null){
+            sb.append(lbc + "minutesSpent=");
+            sb.append(minutesSpent);
+        }
+        if(opportunities != null){
+            sb.append(lbc + "opportunities=");
+            sb.append(opportunities.toStringNonNull(includeLineBreaks));
+        }
+        if(personReference != null){
+            sb.append(lbc + "personReference=");
+            sb.append(personReference.toStringNonNull(includeLineBreaks));
+        }
+        if(placements != null){
+            sb.append(lbc + "placements=");
+            sb.append(placements.toStringNonNull(includeLineBreaks));
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(id != null){
+            sb.append("id=");
+            sb.append(id);
+        }
+        if(action != null){
+            sb.append(lbc + "action=");
+            sb.append(action);
+        }
+        if(bhTimeStamp != null){
+            sb.append(lbc + "bhTimeStamp=");
+            sb.append(bhTimeStamp);
+        }
+        if(candidates != null){
+            sb.append(lbc + "candidates=");
+            sb.append(candidates.toStringNonNull());
+        }
+        if(clientContacts != null){
+            sb.append(lbc + "clientContacts=");
+            sb.append(clientContacts.toStringNonNull());
+        }
+        if(commentingPerson != null){
+            sb.append(lbc + "commentingPerson=");
+            sb.append(commentingPerson.toStringNonNull());
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=");
+            sb.append(comments);
+        }
+        if(corporateUsers != null){
+            sb.append(lbc + "corporateUsers=");
+            sb.append(corporateUsers.toStringNonNull());
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=");
+            sb.append(dateAdded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=");
+            sb.append(dateLastModified);
+        }
+        if(entities != null){
+            sb.append(lbc + "entities=");
+            sb.append(entities.toStringNonNull());
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=");
+            sb.append(externalID);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=");
+            sb.append(isDeleted);
+        }
+        if(jobOrder != null){
+            sb.append(lbc + "jobOrder=");
+            sb.append(jobOrder.toStringNonNull());
+        }
+        if(jobOrders != null){
+            sb.append(lbc + "jobOrders=");
+            sb.append(jobOrders.toStringNonNull());
+        }
+        if(leads != null){
+            sb.append(lbc + "leads=");
+            sb.append(leads.toStringNonNull());
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=");
+            sb.append(migrateGUID);
+        }
+        if(luceneScore != null){
+            sb.append(lbc + "luceneScore=");
+            sb.append(luceneScore);
+        }
+        if(minutesSpent != null){
+            sb.append(lbc + "minutesSpent=");
+            sb.append(minutesSpent);
+        }
+        if(opportunities != null){
+            sb.append(lbc + "opportunities=");
+            sb.append(opportunities.toStringNonNull());
+        }
+        if(personReference != null){
+            sb.append(lbc + "personReference=");
+            sb.append(personReference.toStringNonNull());
+        }
+        if(placements != null){
+            sb.append(lbc + "placements=");
+            sb.append(placements.toStringNonNull());
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        return new StringBuilder("Note {")
-                .append("\n\t\"luceneScore\": ")
-                .append(luceneScore)
-                .append(",\n\t\"id\": ")
-                .append(id)
-                .append(",\n\t\"action\": ")
-                .append("'")
-                .append(action).append('\'')
-                .append(",\n\t\"bhTimeStamp\": ")
-                .append("'")
-                .append(bhTimeStamp).append('\'')
-                .append(",\n\t\"candidates\": ")
-                .append(candidates)
-                .append(",\n\t\"clientContacts\": ")
-                .append(clientContacts)
-                .append(",\n\t\"commentingPerson\": ")
-                .append(commentingPerson)
-                .append(",\n\t\"comments\": ")
-                .append("'")
-                .append(comments).append('\'')
-                .append(",\n\t\"corporateUsers\": ")
-                .append(corporateUsers)
-                .append(",\n\t\"dateAdded\": ")
-                .append(dateAdded)
-                .append(",\n\t\"dateLastModified\": ")
-                .append(dateLastModified)
-                .append(",\n\t\"entities\": ")
-                .append(entities)
-                .append(",\n\t\"externalID\": ")
-                .append(externalID)
-                .append(",\n\t\"isDeleted\": ")
-                .append(isDeleted)
-                .append(",\n\t\"jobOrder\": ")
-                .append(jobOrder)
-                .append(",\n\t\"jobOrders\": ")
-                .append(jobOrders)
-                .append(",\n\t\"leads\": ")
-                .append(leads)
-                .append(",\n\t\"migrateGUID\": ")
-                .append("'")
-                .append(migrateGUID).append('\'')
-                .append(",\n\t\"minutesSpent\": ")
-                .append(minutesSpent)
-                .append(",\n\t\"opportunities\": ")
-                .append(opportunities)
-                .append(",\n\t\"personReference\": ")
-                .append(personReference)
-                .append(",\n\t\"placements\": ")
-                .append(placements)
-                .append('}')
-                .toString();
+        final StringBuilder sb = new StringBuilder(getClass() + " { ")
+            .append(",\n id=")
+            .append(id)
+            .append(",\n action=")
+            .append(action)
+            .append(",\n bhTimeStamp=")
+            .append(bhTimeStamp)
+            .append(",\n candidates=")
+            .append(candidates)
+            .append(",\n clientContacts=")
+            .append(clientContacts)
+            .append(",\n commentingPerson=")
+            .append(commentingPerson)
+            .append(",\n comments=")
+            .append(comments)
+            .append(",\n corporateUsers=")
+            .append(corporateUsers)
+            .append(",\n dateAdded=")
+            .append(dateAdded)
+            .append(",\n dateLastModified=")
+            .append(dateLastModified)
+            .append(",\n entities=")
+            .append(entities)
+            .append(",\n externalID=")
+            .append(externalID)
+            .append(",\n isDeleted=")
+            .append(isDeleted)
+            .append(",\n jobOrder=")
+            .append(jobOrder)
+            .append(",\n jobOrders=")
+            .append(jobOrders)
+            .append(",\n leads=")
+            .append(leads)
+            .append(",\n migrateGUID=")
+            .append(migrateGUID)
+            .append("\n luceneScore=")
+            .append(luceneScore)
+            .append(",\n minutesSpent=")
+            .append(minutesSpent)
+            .append(",\n opportunities=")
+            .append(opportunities)
+            .append(",\n personReference=")
+            .append(personReference)
+            .append(",\n placements=")
+            .append(placements)
+            .append("}");
+        return sb.toString();
     }
 }

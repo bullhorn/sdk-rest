@@ -1348,7 +1348,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "comments=").append(comments);
         }
         if(commissions != null){
-            sb.append(lbc + "commissions=").append(commissions);
+            sb.append(lbc + "commissions=").append(commissions.toStringNonNull(includeLineBreaks));
         }
         if(costCenter != null){
             sb.append(lbc + "costCenter=").append(costCenter);
@@ -1393,7 +1393,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "flatFee=").append(flatFee);
         }
         if(fileAttachments != null){
-            sb.append(lbc + "fileAttachments=").append(fileAttachments);
+            sb.append(lbc + "fileAttachments=").append(fileAttachments.toStringNonNull(includeLineBreaks));
         }
         if(hoursOfOperation != null){
             sb.append(lbc + "hoursOfOperation=").append(hoursOfOperation);
@@ -1432,7 +1432,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "markUpPercentage=").append(markUpPercentage);
         }
         if(notes != null){
-            sb.append(lbc + "notes=").append(notes);
+            sb.append(lbc + "notes=").append(notes.toStringNonNull(includeLineBreaks));
         }
         if(otherHourlyFeeComments != null){
             sb.append(lbc + "otherHourlyFeeComments=").append(otherHourlyFeeComments);
@@ -1480,7 +1480,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "status=").append(status);
         }
         if(tasks != null){
-            sb.append(lbc + "tasks=").append(tasks);
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull(includeLineBreaks));
         }
         if(taxRate != null){
             sb.append(lbc + "taxRate=").append(taxRate);
@@ -1501,7 +1501,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "workWeekStart=").append(workWeekStart);
         }
         if(workersCompensationRate != null){
-            sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate);
+            sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate.toStringNonNull(includeLineBreaks));
         }
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
@@ -1572,7 +1572,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "placementCertifications=").append(placementCertifications);
         }
         if(changeRequests != null){
-            sb.append(lbc + "changeRequests=").append(changeRequests);
+            sb.append(lbc + "changeRequests=").append(changeRequests.toStringNonNull());
         }
         if(clientBillRate != null){
             sb.append(lbc + "clientBillRate=").append(clientBillRate);
@@ -1584,7 +1584,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "comments=").append(comments);
         }
         if(commissions != null){
-            sb.append(lbc + "commissions=").append(commissions);
+            sb.append(lbc + "commissions=").append(commissions.toStringNonNull());
         }
         if(costCenter != null){
             sb.append(lbc + "costCenter=").append(costCenter);
@@ -1629,7 +1629,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "flatFee=").append(flatFee);
         }
         if(fileAttachments != null){
-            sb.append(lbc + "fileAttachments=").append(fileAttachments);
+            sb.append(lbc + "fileAttachments=").append(fileAttachments.toStringNonNull());
         }
         if(hoursOfOperation != null){
             sb.append(lbc + "hoursOfOperation=").append(hoursOfOperation);
@@ -1668,7 +1668,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "markUpPercentage=").append(markUpPercentage);
         }
         if(notes != null){
-            sb.append(lbc + "notes=").append(notes);
+            sb.append(lbc + "notes=").append(notes.toStringNonNull());
         }
         if(otherHourlyFeeComments != null){
             sb.append(lbc + "otherHourlyFeeComments=").append(otherHourlyFeeComments);
@@ -1716,7 +1716,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "status=").append(status);
         }
         if(tasks != null){
-            sb.append(lbc + "tasks=").append(tasks);
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull());
         }
         if(taxRate != null){
             sb.append(lbc + "taxRate=").append(taxRate);
@@ -1737,7 +1737,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             sb.append(lbc + "workWeekStart=").append(workWeekStart);
         }
         if(workersCompensationRate != null){
-            sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate);
+            sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate.toStringNonNull());
         }
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());

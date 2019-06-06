@@ -109,15 +109,65 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
     }
 
     @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(getClass() + " { ");
+        if(id != null){
+            builder.append(lbc + "id=");
+            builder.append(id);
+        }
+        if(note != null){
+            builder.append(lbc + "note=");
+            builder.append(note);
+        }
+        if(targetEntityID != null){
+            builder.append(lbc + "targetEntityID=");
+            builder.append(targetEntityID);
+        }
+        if(targetEntityName != null){
+            builder.append(lbc + "targetEntityName=");
+            builder.append(targetEntityName);
+        }
+        builder.append(lbc + "}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(getClass() + " { ");
+        if(id != null){
+            builder.append(lbc + "id=");
+            builder.append(id);
+        }
+        if(note != null){
+            builder.append(lbc + "note=");
+            builder.append(note);
+        }
+        if(targetEntityID != null){
+            builder.append(lbc + "targetEntityID=");
+            builder.append(targetEntityID);
+        }
+        if(targetEntityName != null){
+            builder.append(lbc + "targetEntityName=");
+            builder.append(targetEntityName);
+        }
+        builder.append(lbc + "}");
+        return builder.toString();
+    }
+
+    @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("NoteEntity {\nid=");
+        StringBuilder builder = new StringBuilder(getClass() + " {");
+        builder.append("\nid=");
         builder.append(id);
-        builder.append(", \nnote=");
+        builder.append(",\n note=");
         builder.append(note);
-        builder.append(", \ntargetEntityID=");
+        builder.append(",\n targetEntityID=");
         builder.append(targetEntityID);
-        builder.append(", \ntargetEntityName=");
+        builder.append(",\n targetEntityName=");
         builder.append(targetEntityName);
         builder.append("\n}");
         return builder.toString();

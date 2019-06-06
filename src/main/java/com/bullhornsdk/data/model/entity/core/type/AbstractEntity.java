@@ -111,13 +111,13 @@ public class AbstractEntity {
 	}
 
     public String toStringNonNull(){
-        String lbc = " \n";
-        StringBuilder builder = new StringBuilder();
+        String lbc = "";
+        StringBuilder builder = new StringBuilder(getClass() + " { ");
         if(additionalProperties != null) {
             builder.append(lbc + "additionalProperties=");
             builder.append(additionalProperties);
         }
-
+        builder.append("}");
         return builder.toString();
     }
 
@@ -125,12 +125,12 @@ public class AbstractEntity {
 	    String lbc = "";
 	    if(includeLineBreaks)
             lbc = " \n";
-        StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder(getClass() + " { ");
         if(additionalProperties != null) {
             builder.append(lbc + "additionalProperties=");
             builder.append(additionalProperties);
         }
-
+        builder.append("}");
         return builder.toString();
     }
 
