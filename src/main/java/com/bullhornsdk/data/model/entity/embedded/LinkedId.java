@@ -55,6 +55,31 @@ public class LinkedId extends AbstractEntity {
 		return true;
 	}
 
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = "";
+        if(includeLineBreaks)
+            lbc = "\n";
+        StringBuilder builder = new StringBuilder("{ ");
+        if(id != null){
+            builder.append("id=");
+            builder.append(id);
+        }
+        builder.append(lbc +"}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        StringBuilder builder = new StringBuilder("{ ");
+        if(id != null){
+            builder.append("id=");
+            builder.append(id);
+        }
+        builder.append("}");
+        return builder.toString();
+    }
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

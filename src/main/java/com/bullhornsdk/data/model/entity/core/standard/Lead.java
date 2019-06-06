@@ -1227,7 +1227,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
         sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
         sb.append(", type='").append(type).append('\'');
         sb.append(", willRelocate=").append(willRelocate);
-        sb.append('}');
+        sb.append("}");
         return sb.toString();
     }
 

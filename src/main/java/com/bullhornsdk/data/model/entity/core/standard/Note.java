@@ -481,6 +481,8 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
             sb.append(lbc + "placements=");
             sb.append(placements.toStringNonNull(includeLineBreaks));
         }
+        if(includeLineBreaks)
+            sb.append("\n");
         sb.append("}");
         return sb.toString();
     }

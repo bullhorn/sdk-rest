@@ -144,7 +144,7 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
         }
         if(note != null){
             builder.append(lbc + "note=");
-            builder.append(note);
+            builder.append(note.toStringNonNull(includeLineBreaks));
         }
         if(targetEntityID != null){
             builder.append(lbc + "targetEntityID=");
@@ -164,7 +164,7 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
         builder.append("\nid=");
         builder.append(id);
         builder.append(",\n note=");
-        builder.append(note);
+        builder.append(note.toStringNonNull());
         builder.append(",\n targetEntityID=");
         builder.append(targetEntityID);
         builder.append(",\n targetEntityName=");

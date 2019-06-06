@@ -489,6 +489,8 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
         if(comments != null){
             sb.append(lbc + "comments=").append(comments);
         }
+        if(includeLineBreaks)
+            sb.append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -501,16 +503,16 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
             sb.append("id=").append(id);
         }
         if(appointments != null){
-            sb.append(lbc + "appointments=").append(appointments);
+            sb.append(lbc + "appointments=").append(appointments.toStringNonNull());
         }
         if(billRate != null){
             sb.append(lbc + "billRate=").append(billRate);
         }
         if(branch != null){
-            sb.append(lbc + "branch=").append(branch);
+            sb.append(lbc + "branch=").append(branch.toStringNonNull());
         }
         if(candidate != null){
-            sb.append(lbc + "candidate=").append(candidate);
+            sb.append(lbc + "candidate=").append(candidate.toStringNonNull());
         }
         if(customText1 != null){
             sb.append(lbc + "customText1=").append(customText1);
@@ -543,7 +545,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
             sb.append(lbc + "isHidden=").append(isHidden);
         }
         if(jobOrder != null){
-            sb.append(lbc + "jobOrder=").append(jobOrder);
+            sb.append(lbc + "jobOrder=").append(jobOrder.toStringNonNull());
         }
         if(migrateGUID != null){
             sb.append(lbc + "migrateGUID=").append(migrateGUID);
@@ -555,7 +557,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
             sb.append(lbc + "salary=").append(salary);
         }
         if(sendingUser != null){
-            sb.append(lbc + "sendingUser=").append(sendingUser);
+            sb.append(lbc + "sendingUser=").append(sendingUser.toStringNonNull());
         }
         if(source != null){
             sb.append(lbc + "source=").append(source);
@@ -564,7 +566,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
             sb.append(lbc + "status=").append(status);
         }
         if(tasks != null){
-            sb.append(lbc + "tasks=").append(tasks);
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull());
         }
         if(comments != null){
             sb.append(lbc + "comments=").append(comments);

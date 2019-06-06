@@ -3203,6 +3203,8 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         if(workPhone != null){
             sb.append(lbc + "workPhone=").append(workPhone);
         }
+        if(includeLineBreaks)
+            sb.append("\n");
         sb.append("}");
         return sb.toString();
     }

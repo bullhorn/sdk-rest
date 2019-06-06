@@ -2011,6 +2011,8 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         if(customObject10s != null){
             sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull(includeLineBreaks));
         }
+        if(includeLineBreaks)
+            sb.append("\n");
         sb.append("}");
         return sb.toString();
     }

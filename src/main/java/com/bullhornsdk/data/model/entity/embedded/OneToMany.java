@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.embedded;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -77,12 +78,47 @@ public class OneToMany<T> extends AbstractEntity {
 		return true;
 	}
 
+    @Override
+    public String toStringNonNull() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(" {\n data=[");
+        builder.append(data.stream().map(T ->{
+            if (T instanceof AbstractEntity)
+                return ((AbstractEntity)T).toStringNonNull();
+            return T.toString();
+        }).collect(Collectors.joining(",")));
+        builder.append("], total=");
+        builder.append(total);
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder();
+        builder.append(" { data=[");
+        builder.append(data.stream().map(T ->{
+            if (T instanceof AbstractEntity)
+                return ((AbstractEntity)T).toStringNonNull(includeLineBreaks);
+            return T.toString();
+        }).collect(Collectors.joining(lbc)));
+        builder.append("]" + lbc + " total=");
+        builder.append(total);
+        if(includeLineBreaks)
+            builder.append("\n");
+        builder.append("}");
+        return builder.toString();
+    }
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(" {\ndata=");
+		builder.append(" {\n data=");
 		builder.append(data);
-		builder.append(", \ntotal=");
+		builder.append(",\n total=");
 		builder.append(total);
 		builder.append("\n}");
 		return builder.toString();

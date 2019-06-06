@@ -130,7 +130,7 @@ public class AbstractEntity {
             builder.append(lbc + "additionalProperties=");
             builder.append(additionalProperties);
         }
-        builder.append("}");
+        builder.append(lbc + "}");
         return builder.toString();
     }
 

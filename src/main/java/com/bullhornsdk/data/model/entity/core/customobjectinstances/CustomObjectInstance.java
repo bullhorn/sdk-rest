@@ -830,66 +830,607 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
     }
 
     @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(id != null){
+            sb.append("id=");
+            sb.append(id);
+        }
+        if(text1 != null){
+            sb.append(lbc + "text1=");
+            sb.append(text1);
+        }
+        if(text2 != null){
+            sb.append(lbc + "text2=");
+            sb.append(text2);
+        }
+        if(text3 != null){
+            sb.append(lbc + "text3=");
+            sb.append(text3);
+        }
+        if(text4 != null){
+            sb.append(lbc + "text4=");
+            sb.append(text4);
+        }
+        if(text5 != null){
+            sb.append(lbc + "text5=");
+            sb.append(text5);
+        }
+        if(text6 != null){
+            sb.append(lbc + "text6=");
+            sb.append(text6);
+        }
+        if(text7 != null){
+            sb.append(lbc + "text7=");
+            sb.append(text7);
+        }
+        if(text8 != null){
+            sb.append(lbc + "text8=");
+            sb.append(text8);
+        }
+        if(text9 != null){
+            sb.append(lbc + "text9=");
+            sb.append(text9);
+        }
+        if(text10 != null){
+            sb.append(lbc + "text10=");
+            sb.append(text10);
+        }
+        if(text11 != null){
+            sb.append(lbc + "text11=");
+            sb.append(text11);
+        }
+        if(text12 != null){
+            sb.append(lbc + "text12=");
+            sb.append(text12);
+        }
+        if(text13 != null){
+            sb.append(lbc + "text13=");
+            sb.append(text13);
+        }
+        if(text14 != null){
+            sb.append(lbc + "text14=");
+            sb.append(text14);
+        }
+        if(text15 != null){
+            sb.append(lbc + "text15=");
+            sb.append(text15);
+        }
+        if(text16 != null){
+            sb.append(lbc + "text16=");
+            sb.append(text16);
+        }
+        if(text17 != null){
+            sb.append(lbc + "text17=");
+            sb.append(text17);
+        }
+        if(text18 != null){
+            sb.append(lbc + "text18=");
+            sb.append(text18);
+        }
+        if(text19 != null){
+            sb.append(lbc + "text19=");
+            sb.append(text19);
+        }
+        if(text20 != null){
+            sb.append(lbc + "text20=");
+            sb.append(text20);
+        }
+        if(int1 != null){
+            sb.append(lbc + "int1=");
+            sb.append(int1);
+        }
+        if(int2 != null){
+            sb.append(lbc + "int2=");
+            sb.append(int2);
+        }
+        if(int3 != null){
+            sb.append(lbc + "int3=");
+            sb.append(int3);
+        }
+        if(int4 != null){
+            sb.append(lbc + "int4=");
+            sb.append(int4);
+        }
+        if(int5 != null){
+            sb.append(lbc + "int5=");
+            sb.append(int5);
+        }
+        if(int6 != null){
+            sb.append(lbc + "int6=");
+            sb.append(int6);
+        }
+        if(int7 != null){
+            sb.append(lbc + "int7=");
+            sb.append(int7);
+        }
+        if(int8 != null){
+            sb.append(lbc + "int8=");
+            sb.append(int8);
+        }
+        if(int9 != null){
+            sb.append(lbc + "int9=");
+            sb.append(int9);
+        }
+        if(int10 != null){
+            sb.append(lbc + "int10=");
+            sb.append(int10);
+        }
+        if(float1 != null){
+            sb.append(lbc + "float1=");
+            sb.append(float1);
+        }
+        if(float2 != null){
+            sb.append(lbc + "float2=");
+            sb.append(float2);
+        }
+        if(float3 != null){
+            sb.append(lbc + "float3=");
+            sb.append(float3);
+        }
+        if(float4 != null){
+            sb.append(lbc + "float4=");
+            sb.append(float4);
+        }
+        if(float5 != null){
+            sb.append(lbc + "float5=");
+            sb.append(float5);
+        }
+        if(float6 != null){
+            sb.append(lbc + "float6=");
+            sb.append(float6);
+        }
+        if(float7 != null){
+            sb.append(lbc + "float7=");
+            sb.append(float7);
+        }
+        if(float8 != null){
+            sb.append(lbc + "float8=");
+            sb.append(float8);
+        }
+        if(float9 != null){
+            sb.append(lbc + "float9=");
+            sb.append(float9);
+        }
+        if(float10 != null){
+            sb.append(lbc + "float10=");
+            sb.append(float10);
+        }
+        if(textBlock1 != null){
+            sb.append(lbc + "textBlock1=");
+            sb.append(textBlock1);
+        }
+        if(textBlock2 != null){
+            sb.append(lbc + "textBlock2=");
+            sb.append(textBlock2);
+        }
+        if(textBlock3 != null){
+            sb.append(lbc + "textBlock3=");
+            sb.append(textBlock3);
+        }
+        if(textBlock4 != null){
+            sb.append(lbc + "textBlock4=");
+            sb.append(textBlock4);
+        }
+        if(textBlock5 != null){
+            sb.append(lbc + "textBlock5=");
+            sb.append(textBlock5);
+        }
+        if(date1 != null){
+            sb.append(lbc + "date1=");
+            sb.append(date1);
+        }
+        if(date2 != null){
+            sb.append(lbc + "date2=");
+            sb.append(date2);
+        }
+        if(date3 != null){
+            sb.append(lbc + "date3=");
+            sb.append(date3);
+        }
+        if(date4 != null){
+            sb.append(lbc + "date4=");
+            sb.append(date4);
+        }
+        if(date5 != null){
+            sb.append(lbc + "date5=");
+            sb.append(date5);
+        }
+        if(date6 != null){
+            sb.append(lbc + "date6=");
+            sb.append(date6);
+        }
+        if(date7 != null){
+            sb.append(lbc + "date7=");
+            sb.append(date7);
+        }
+        if(date8 != null){
+            sb.append(lbc + "date8=");
+            sb.append(date8);
+        }
+        if(date9 != null){
+            sb.append(lbc + "date9=");
+            sb.append(date9);
+        }
+        if(date10 != null){
+            sb.append(lbc + "date10=");
+            sb.append(date10);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=");
+            sb.append(dateAdded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=");
+            sb.append(dateLastModified);
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(id != null){
+            sb.append("id=");
+            sb.append(id);
+        }
+        if(text1 != null){
+            sb.append(lbc + "text1=");
+            sb.append(text1);
+        }
+        if(text2 != null){
+            sb.append(lbc + "text2=");
+            sb.append(text2);
+        }
+        if(text3 != null){
+            sb.append(lbc + "text3=");
+            sb.append(text3);
+        }
+        if(text4 != null){
+            sb.append(lbc + "text4=");
+            sb.append(text4);
+        }
+        if(text5 != null){
+            sb.append(lbc + "text5=");
+            sb.append(text5);
+        }
+        if(text6 != null){
+            sb.append(lbc + "text6=");
+            sb.append(text6);
+        }
+        if(text7 != null){
+            sb.append(lbc + "text7=");
+            sb.append(text7);
+        }
+        if(text8 != null){
+            sb.append(lbc + "text8=");
+            sb.append(text8);
+        }
+        if(text9 != null){
+            sb.append(lbc + "text9=");
+            sb.append(text9);
+        }
+        if(text10 != null){
+            sb.append(lbc + "text10=");
+            sb.append(text10);
+        }
+        if(text11 != null){
+            sb.append(lbc + "text11=");
+            sb.append(text11);
+        }
+        if(text12 != null){
+            sb.append(lbc + "text12=");
+            sb.append(text12);
+        }
+        if(text13 != null){
+            sb.append(lbc + "text13=");
+            sb.append(text13);
+        }
+        if(text14 != null){
+            sb.append(lbc + "text14=");
+            sb.append(text14);
+        }
+        if(text15 != null){
+            sb.append(lbc + "text15=");
+            sb.append(text15);
+        }
+        if(text16 != null){
+            sb.append(lbc + "text16=");
+            sb.append(text16);
+        }
+        if(text17 != null){
+            sb.append(lbc + "text17=");
+            sb.append(text17);
+        }
+        if(text18 != null){
+            sb.append(lbc + "text18=");
+            sb.append(text18);
+        }
+        if(text19 != null){
+            sb.append(lbc + "text19=");
+            sb.append(text19);
+        }
+        if(text20 != null){
+            sb.append(lbc + "text20=");
+            sb.append(text20);
+        }
+        if(int1 != null){
+            sb.append(lbc + "int1=");
+            sb.append(int1);
+        }
+        if(int2 != null){
+            sb.append(lbc + "int2=");
+            sb.append(int2);
+        }
+        if(int3 != null){
+            sb.append(lbc + "int3=");
+            sb.append(int3);
+        }
+        if(int4 != null){
+            sb.append(lbc + "int4=");
+            sb.append(int4);
+        }
+        if(int5 != null){
+            sb.append(lbc + "int5=");
+            sb.append(int5);
+        }
+        if(int6 != null){
+            sb.append(lbc + "int6=");
+            sb.append(int6);
+        }
+        if(int7 != null){
+            sb.append(lbc + "int7=");
+            sb.append(int7);
+        }
+        if(int8 != null){
+            sb.append(lbc + "int8=");
+            sb.append(int8);
+        }
+        if(int9 != null){
+            sb.append(lbc + "int9=");
+            sb.append(int9);
+        }
+        if(int10 != null){
+            sb.append(lbc + "int10=");
+            sb.append(int10);
+        }
+        if(float1 != null){
+            sb.append(lbc + "float1=");
+            sb.append(float1);
+        }
+        if(float2 != null){
+            sb.append(lbc + "float2=");
+            sb.append(float2);
+        }
+        if(float3 != null){
+            sb.append(lbc + "float3=");
+            sb.append(float3);
+        }
+        if(float4 != null){
+            sb.append(lbc + "float4=");
+            sb.append(float4);
+        }
+        if(float5 != null){
+            sb.append(lbc + "float5=");
+            sb.append(float5);
+        }
+        if(float6 != null){
+            sb.append(lbc + "float6=");
+            sb.append(float6);
+        }
+        if(float7 != null){
+            sb.append(lbc + "float7=");
+            sb.append(float7);
+        }
+        if(float8 != null){
+            sb.append(lbc + "float8=");
+            sb.append(float8);
+        }
+        if(float9 != null){
+            sb.append(lbc + "float9=");
+            sb.append(float9);
+        }
+        if(float10 != null){
+            sb.append(lbc + "float10=");
+            sb.append(float10);
+        }
+        if(textBlock1 != null){
+            sb.append(lbc + "textBlock1=");
+            sb.append(textBlock1);
+        }
+        if(textBlock2 != null){
+            sb.append(lbc + "textBlock2=");
+            sb.append(textBlock2);
+        }
+        if(textBlock3 != null){
+            sb.append(lbc + "textBlock3=");
+            sb.append(textBlock3);
+        }
+        if(textBlock4 != null){
+            sb.append(lbc + "textBlock4=");
+            sb.append(textBlock4);
+        }
+        if(textBlock5 != null){
+            sb.append(lbc + "textBlock5=");
+            sb.append(textBlock5);
+        }
+        if(date1 != null){
+            sb.append(lbc + "date1=");
+            sb.append(date1);
+        }
+        if(date2 != null){
+            sb.append(lbc + "date2=");
+            sb.append(date2);
+        }
+        if(date3 != null){
+            sb.append(lbc + "date3=");
+            sb.append(date3);
+        }
+        if(date4 != null){
+            sb.append(lbc + "date4=");
+            sb.append(date4);
+        }
+        if(date5 != null){
+            sb.append(lbc + "date5=");
+            sb.append(date5);
+        }
+        if(date6 != null){
+            sb.append(lbc + "date6=");
+            sb.append(date6);
+        }
+        if(date7 != null){
+            sb.append(lbc + "date7=");
+            sb.append(date7);
+        }
+        if(date8 != null){
+            sb.append(lbc + "date8=");
+            sb.append(date8);
+        }
+        if(date9 != null){
+            sb.append(lbc + "date9=");
+            sb.append(date9);
+        }
+        if(date10 != null){
+            sb.append(lbc + "date10=");
+            sb.append(date10);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=");
+            sb.append(dateAdded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=");
+            sb.append(dateLastModified);
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        return "CustomObjectInstance{" +
-                "id=" + id +
-                ", text1='" + text1 + '\'' +
-                ", text2='" + text2 + '\'' +
-                ", text3='" + text3 + '\'' +
-                ", text4='" + text4 + '\'' +
-                ", text5='" + text5 + '\'' +
-                ", text6='" + text6 + '\'' +
-                ", text7='" + text7 + '\'' +
-                ", text8='" + text8 + '\'' +
-                ", text9='" + text9 + '\'' +
-                ", text10='" + text10 + '\'' +
-                ", text11='" + text11 + '\'' +
-                ", text12='" + text12 + '\'' +
-                ", text13='" + text13 + '\'' +
-                ", text14='" + text14 + '\'' +
-                ", text15='" + text15 + '\'' +
-                ", text16='" + text16 + '\'' +
-                ", text17='" + text17 + '\'' +
-                ", text18='" + text18 + '\'' +
-                ", text19='" + text19 + '\'' +
-                ", text20='" + text20 + '\'' +
-                ", int1=" + int1 +
-                ", int2=" + int2 +
-                ", int3=" + int3 +
-                ", int4=" + int4 +
-                ", int5=" + int5 +
-                ", int6=" + int6 +
-                ", int7=" + int7 +
-                ", int8=" + int8 +
-                ", int9=" + int9 +
-                ", int10=" + int10 +
-                ", float1=" + float1 +
-                ", float2=" + float2 +
-                ", float3=" + float3 +
-                ", float4=" + float4 +
-                ", float5=" + float5 +
-                ", float6=" + float6 +
-                ", float7=" + float7 +
-                ", float8=" + float8 +
-                ", float9=" + float9 +
-                ", float10=" + float10 +
-                ", textBlock1='" + textBlock1 + '\'' +
-                ", textBlock2='" + textBlock2 + '\'' +
-                ", textBlock3='" + textBlock3 + '\'' +
-                ", textBlock4='" + textBlock4 + '\'' +
-                ", textBlock5='" + textBlock5 + '\'' +
-                ", date1=" + date1 +
-                ", date2=" + date2 +
-                ", date3=" + date3 +
-                ", date4=" + date4 +
-                ", date5=" + date5 +
-                ", date6=" + date6 +
-                ", date7=" + date7 +
-                ", date8=" + date8 +
-                ", date9=" + date9 +
-                ", date10=" + date10 +
-                ", dateAdded=" + dateAdded +
-                ", dateLastModified=" + dateLastModified +
-                '}';
+        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        sb.append("id=");
+        sb.append(id);
+        sb.append(", text1=");
+        sb.append(text1);
+        sb.append(", text2=");
+        sb.append(text2);
+        sb.append(", text3=");
+        sb.append(text3);
+        sb.append(", text4=");
+        sb.append(text4);
+        sb.append(", text5=");
+        sb.append(text5);
+        sb.append(", text6=");
+        sb.append(text6);
+        sb.append(", text7=");
+        sb.append(text7);
+        sb.append(", text8=");
+        sb.append(text8);
+        sb.append(", text9=");
+        sb.append(text9);
+        sb.append(", text10=");
+        sb.append(text10);
+        sb.append(", text11=");
+        sb.append(text11);
+        sb.append(", text12=");
+        sb.append(text12);
+        sb.append(", text13=");
+        sb.append(text13);
+        sb.append(", text14=");
+        sb.append(text14);
+        sb.append(", text15=");
+        sb.append(text15);
+        sb.append(", text16=");
+        sb.append(text16);
+        sb.append(", text17=");
+        sb.append(text17);
+        sb.append(", text18=");
+        sb.append(text18);
+        sb.append(", text19=");
+        sb.append(text19);
+        sb.append(", text20=");
+        sb.append(text20);
+        sb.append(", int1=");
+        sb.append(int1);
+        sb.append(", int2=");
+        sb.append(int2);
+        sb.append(", int3=");
+        sb.append(int3);
+        sb.append(", int4=");
+        sb.append(int4);
+        sb.append(", int5=");
+        sb.append(int5);
+        sb.append(", int6=");
+        sb.append(int6);
+        sb.append(", int7=");
+        sb.append(int7);
+        sb.append(", int8=");
+        sb.append(int8);
+        sb.append(", int9=");
+        sb.append(int9);
+        sb.append(", int10=");
+        sb.append(int10);
+        sb.append(", float1=");
+        sb.append(float1);
+        sb.append(", float2=");
+        sb.append(float2);
+        sb.append(", float3=");
+        sb.append(float3);
+        sb.append(", float4=");
+        sb.append(float4);
+        sb.append(", float5=");
+        sb.append(float5);
+        sb.append(", float6=");
+        sb.append(float6);
+        sb.append(", float7=");
+        sb.append(float7);
+        sb.append(", float8=");
+        sb.append(float8);
+        sb.append(", float9=");
+        sb.append(float9);
+        sb.append(", float10=");
+        sb.append(float10);
+        sb.append(", textBlock1=");
+        sb.append(textBlock1);
+        sb.append(", textBlock2=");
+        sb.append(textBlock2);
+        sb.append(", textBlock3=");
+        sb.append(textBlock3);
+        sb.append(", textBlock4=");
+        sb.append(textBlock4);
+        sb.append(", textBlock5=");
+        sb.append(textBlock5);
+        sb.append(", date1=");
+        sb.append(date1);
+        sb.append(", date2=");
+        sb.append(date2);
+        sb.append(", date3=");
+        sb.append(date3);
+        sb.append(", date4=");
+        sb.append(date4);
+        sb.append(", date5=");
+        sb.append(date5);
+        sb.append(", date6=");
+        sb.append(date6);
+        sb.append(", date7=");
+        sb.append(date7);
+        sb.append(", date8=");
+        sb.append(date8);
+        sb.append(", date9=");
+        sb.append(date9);
+        sb.append(", date10=");
+        sb.append(date10);
+        sb.append(", dateAdded=");
+        sb.append(dateAdded);
+        sb.append(", dateLastModified=");
+        sb.append(dateLastModified);
+        sb.append("}");
+        return sb.toString();
     }
 }
