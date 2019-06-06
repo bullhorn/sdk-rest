@@ -615,6 +615,8 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         if(includeLineBreaks)
             lbc = ",\n ";
         StringBuilder builder = new StringBuilder().append("Appointment { ");
+        if(includeLineBreaks)
+            builder.append(" { ");
         if(id != null){
             builder.append("id=");
             builder.append(id);
@@ -756,7 +758,6 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         builder.append("}");
         return builder.toString();
     }
-
 
     @Override
     public String toStringNonNull() {

@@ -137,15 +137,15 @@ public class CustomFieldsB extends CustomFieldsA {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(super.toString());
-		builder.append(", \ncustomTextBlock1=");
+		builder.append(",\n customTextBlock1=");
 		builder.append(customTextBlock1);
-		builder.append(", \ncustomTextBlock2=");
+		builder.append(",\n customTextBlock2=");
 		builder.append(customTextBlock2);
-		builder.append(", \ncustomTextBlock3=");
+		builder.append(",\n customTextBlock3=");
 		builder.append(customTextBlock3);
-		builder.append(", \ncustomTextBlock4=");
+		builder.append(",\n customTextBlock4=");
 		builder.append(customTextBlock4);
-		builder.append(", \ncustomTextBlock5=");
+		builder.append(",\n customTextBlock5=");
 		builder.append(customTextBlock5);
 
 		return builder.toString();

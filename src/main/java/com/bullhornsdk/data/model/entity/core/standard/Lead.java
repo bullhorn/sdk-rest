@@ -1154,6 +1154,453 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(includeLineBreaks)
+            sb.append("\n");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address.toStringNonNull(includeLineBreaks));
+        }
+        if(assignedTo != null){
+            sb.append(lbc + "assignedTo=").append(assignedTo);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull(includeLineBreaks));
+        }
+        if(businessSectors != null){
+            sb.append(lbc + "businessSectors=").append(businessSectors.toStringNonNull(includeLineBreaks));
+        }
+        if(campaignSource != null){
+            sb.append(lbc + "campaignSource=").append(campaignSource);
+        }
+        if(candidates != null){
+            sb.append(lbc + "candidates=").append(candidates.toStringNonNull(includeLineBreaks));
+        }
+        if(category != null){
+            sb.append(lbc + "category=").append(category.toStringNonNull(includeLineBreaks));
+        }
+        if(categories != null){
+            sb.append(lbc + "categories=").append(categories.toStringNonNull(includeLineBreaks));
+        }
+        if(clientContacts != null){
+            sb.append(lbc + "clientContacts=").append(clientContacts.toStringNonNull(includeLineBreaks));
+        }
+        if(clientCorporation != null){
+            sb.append(lbc + "clientCorporation=").append(clientCorporation.toStringNonNull(includeLineBreaks));
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        if(companyName != null){
+            sb.append(lbc + "companyName=").append(companyName);
+        }
+        if(companyURL != null){
+            sb.append(lbc + "companyURL=").append(companyURL);
+        }
+        if(conversionSource != null){
+            sb.append(lbc + "conversionSource=").append(conversionSource);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateLastComment != null){
+            sb.append(lbc + "dateLastComment=").append(dateLastComment);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(dateLastVisited != null){
+            sb.append(lbc + "dateLastVisited=").append(dateLastVisited);
+        }
+        if(description != null){
+            sb.append(lbc + "description=").append(description);
+        }
+        if(distributionLists != null){
+            sb.append(lbc + "distributionLists=").append(distributionLists.toStringNonNull(includeLineBreaks));
+        }
+        if(division != null){
+            sb.append(lbc + "division=").append(division);
+        }
+        if(educationDegree != null){
+            sb.append(lbc + "educationDegree=").append(educationDegree);
+        }
+        if(email != null){
+            sb.append(lbc + "email=").append(email);
+        }
+        if(email2 != null){
+            sb.append(lbc + "email2=").append(email2);
+        }
+        if(email3 != null){
+            sb.append(lbc + "email3=").append(email3);
+        }
+        if(fax != null){
+            sb.append(lbc + "fax=").append(fax);
+        }
+        if(fax2 != null){
+            sb.append(lbc + "fax2=").append(fax2);
+        }
+        if(fax3 != null){
+            sb.append(lbc + "fax3=").append(fax3);
+        }
+        if(firstName != null){
+            sb.append(lbc + "firstName=").append(firstName);
+        }
+        if(history != null){
+            sb.append(lbc + "history=").append(history);
+        }
+        if(isDayLightSavingsTime != null){
+            sb.append(lbc + "isDayLightSavingsTime=").append(isDayLightSavingsTime);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(lastName != null){
+            sb.append(lbc + "lastName=").append(lastName);
+        }
+        if(leadSource != null){
+            sb.append(lbc + "leadSource=").append(leadSource);
+        }
+        if(massMailOptOut != null){
+            sb.append(lbc + "massMailOptOut=").append(massMailOptOut);
+        }
+        if(middleName != null){
+            sb.append(lbc + "middleName=").append(middleName);
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(mobile != null){
+            sb.append(lbc + "mobile=").append(mobile);
+        }
+        if(name != null){
+            sb.append(lbc + "name=").append(name);
+        }
+        if(namePrefix != null){
+            sb.append(lbc + "namePrefix=").append(namePrefix);
+        }
+        if(nameSuffix != null){
+            sb.append(lbc + "nameSuffix=").append(nameSuffix);
+        }
+        if(nickName != null){
+            sb.append(lbc + "nickName=").append(nickName);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes);
+        }
+        if(numEmployees != null){
+            sb.append(lbc + "numEmployees=").append(numEmployees);
+        }
+        if(occupation != null){
+            sb.append(lbc + "occupation=").append(occupation);
+        }
+        if(owner != null){
+            sb.append(lbc + "owner=").append(owner.toStringNonNull(includeLineBreaks));
+        }
+        if(ownerCorporation != null){
+            sb.append(lbc + "ownerCorporation=").append(ownerCorporation.toStringNonNull(includeLineBreaks));
+        }
+        if(pager != null){
+            sb.append(lbc + "pager=").append(pager);
+        }
+        if(phone != null){
+            sb.append(lbc + "phone=").append(phone);
+        }
+        if(phone2 != null){
+            sb.append(lbc + "phone2=").append(phone2);
+        }
+        if(phone3 != null){
+            sb.append(lbc + "phone3=").append(phone3);
+        }
+        if(preferredContact != null){
+            sb.append(lbc + "preferredContact=").append(preferredContact);
+        }
+        if(primarySkills != null){
+            sb.append(lbc + "primarySkills=").append(primarySkills.toStringNonNull(includeLineBreaks));
+        }
+        if(priority != null){
+            sb.append(lbc + "priority=").append(priority);
+        }
+        if(referredByPerson != null){
+            sb.append(lbc + "referredByPerson=").append(referredByPerson.toStringNonNull(includeLineBreaks));
+        }
+        if(reportToPerson != null){
+            sb.append(lbc + "reportToPerson=").append(reportToPerson.toStringNonNull(includeLineBreaks));
+        }
+        if(role != null){
+            sb.append(lbc + "role=").append(role);
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryLow != null){
+            sb.append(lbc + "salaryLow=").append(salaryLow);
+        }
+        if(secondaryAddress != null){
+            sb.append(lbc + "secondaryAddress=").append(secondaryAddress.toStringNonNull(includeLineBreaks));
+        }
+        if(secondarySkills != null){
+            sb.append(lbc + "secondarySkills=").append(secondarySkills.toStringNonNull(includeLineBreaks));
+        }
+        if(skillSet != null){
+            sb.append(lbc + "skillSet=").append(skillSet);
+        }
+        if(smsOptIn != null){
+            sb.append(lbc + "smsOptIn=").append(smsOptIn);
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(lbc + "specialties=").append(specialties.toStringNonNull(includeLineBreaks));
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(tearsheets != null){
+            sb.append(lbc + "tearsheets=").append(tearsheets.toStringNonNull(includeLineBreaks));
+        }
+        if(timeZoneOffsetEST != null){
+            sb.append(lbc + "timeZoneOffsetEST=").append(timeZoneOffsetEST);
+        }
+        if(type != null){
+            sb.append(lbc + "type=").append(type);
+        }
+        if(willRelocate != null){
+            sb.append(lbc + "willRelocate=").append(willRelocate);
+        }
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(", address=").append(address.toStringNonNull());
+        }
+        if(assignedTo != null){
+            sb.append(", assignedTo=").append(assignedTo.toStringNonNull());
+        }
+        if(branch != null){
+            sb.append(", branch=").append(branch.toStringNonNull());
+        }
+        if(businessSectors != null){
+            sb.append(", businessSectors=").append(businessSectors.toStringNonNull());
+        }
+        if(campaignSource != null){
+            sb.append(", campaignSource=").append(campaignSource);
+        }
+        if(candidates != null){
+            sb.append(", candidates=").append(candidates.toStringNonNull());
+        }
+        if(category != null){
+            sb.append(", category=").append(category.toStringNonNull());
+        }
+        if(categories != null){
+            sb.append(", categories=").append(categories.toStringNonNull());
+        }
+        if(clientContacts != null){
+            sb.append(", clientContacts=").append(clientContacts.toStringNonNull());
+        }
+        if(clientCorporation != null){
+            sb.append(", clientCorporation=").append(clientCorporation.toStringNonNull());
+        }
+        if(comments != null){
+            sb.append(", comments=").append(comments);
+        }
+        if(companyName != null){
+            sb.append(", companyName=").append(companyName);
+        }
+        if(companyURL != null){
+            sb.append(", companyURL=").append(companyURL);
+        }
+        if(conversionSource != null){
+            sb.append(", conversionSource=").append(conversionSource);
+        }
+        if(dateAdded != null){
+            sb.append(", dateAdded=").append(dateAdded);
+        }
+        if(dateLastComment != null){
+            sb.append(", dateLastComment=").append(dateLastComment);
+        }
+        if(dateLastModified != null){
+            sb.append(", dateLastModified=").append(dateLastModified);
+        }
+        if(dateLastVisited != null){
+            sb.append(", dateLastVisited=").append(dateLastVisited);
+        }
+        if(description != null){
+            sb.append(", description=").append(description);
+        }
+        if(distributionLists != null){
+            sb.append(", distributionLists=").append(distributionLists);
+        }
+        if(division != null){
+            sb.append(", division=").append(division);
+        }
+        if(educationDegree != null){
+            sb.append(", educationDegree=").append(educationDegree);
+        }
+        if(email != null){
+            sb.append(", email=").append(email);
+        }
+        if(email2 != null){
+            sb.append(", email2=").append(email2);
+        }
+        if(email3 != null){
+            sb.append(", email3=").append(email3);
+        }
+        if(fax != null){
+            sb.append(", fax=").append(fax);
+        }
+        if(fax2 != null){
+            sb.append(", fax2=").append(fax2);
+        }
+        if(fax3 != null){
+            sb.append(", fax3=").append(fax3);
+        }
+        if(firstName != null){
+            sb.append(", firstName=").append(firstName);
+        }
+        if(history != null){
+            sb.append(", history=").append(history);
+        }
+        if(isDayLightSavingsTime != null){
+            sb.append(", isDayLightSavingsTime=").append(isDayLightSavingsTime);
+        }
+        if(isDeleted != null){
+            sb.append(", isDeleted=").append(isDeleted);
+        }
+        if(lastName != null){
+            sb.append(", lastName=").append(lastName);
+        }
+        if(leadSource != null){
+            sb.append(", leadSource=").append(leadSource);
+        }
+        if(massMailOptOut != null){
+            sb.append(", massMailOptOut=").append(massMailOptOut);
+        }
+        if(middleName != null){
+            sb.append(", middleName=").append(middleName);
+        }
+        if(migrateGUID != null){
+            sb.append(", migrateGUID=").append(migrateGUID);
+        }
+        if(mobile != null){
+            sb.append(", mobile=").append(mobile);
+        }
+        if(name != null){
+            sb.append(", name=").append(name);
+        }
+        if(namePrefix != null){
+            sb.append(", namePrefix=").append(namePrefix);
+        }
+        if(nameSuffix != null){
+            sb.append(", nameSuffix=").append(nameSuffix);
+        }
+        if(nickName != null){
+            sb.append(", nickName=").append(nickName);
+        }
+        if(notes != null){
+            sb.append(", notes=").append(notes.toStringNonNull());
+        }
+        if(numEmployees != null){
+            sb.append(", numEmployees=").append(numEmployees);
+        }
+        if(occupation != null){
+            sb.append(", occupation=").append(occupation);
+        }
+        if(owner != null){
+            sb.append(", owner=").append(owner.toStringNonNull());
+        }
+        if(ownerCorporation != null){
+            sb.append(", ownerCorporation=").append(ownerCorporation.toStringNonNull());
+        }
+        if(pager != null){
+            sb.append(", pager=").append(pager);
+        }
+        if(phone != null){
+            sb.append(", phone=").append(phone);
+        }
+        if(phone2 != null){
+            sb.append(", phone2=").append(phone2);
+        }
+        if(phone3 != null){
+            sb.append(", phone3=").append(phone3);
+        }
+        if(preferredContact != null){
+            sb.append(", preferredContact=").append(preferredContact);
+        }
+        if(primarySkills != null){
+            sb.append(", primarySkills=").append(primarySkills.toStringNonNull());
+        }
+        if(priority != null){
+            sb.append(", priority=").append(priority);
+        }
+        if(referredByPerson != null){
+            sb.append(", referredByPerson=").append(referredByPerson.toStringNonNull());
+        }
+        if(reportToPerson != null){
+            sb.append(", reportToPerson=").append(reportToPerson.toStringNonNull());
+        }
+        if(role != null){
+            sb.append(", role=").append(role);
+        }
+        if(salary != null){
+            sb.append(", salary=").append(salary);
+        }
+        if(salaryLow != null){
+            sb.append(", salaryLow=").append(salaryLow);
+        }
+        if(secondaryAddress != null){
+            sb.append(", secondaryAddress=").append(secondaryAddress.toStringNonNull());
+        }
+        if(secondarySkills != null){
+            sb.append(", secondarySkills=").append(secondarySkills.toStringNonNull());
+        }
+        if(skillSet != null){
+            sb.append(", skillSet=").append(skillSet);
+        }
+        if(smsOptIn != null){
+            sb.append(", smsOptIn=").append(smsOptIn);
+        }
+        if(source != null){
+            sb.append(", source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(", specialties=").append(specialties.toStringNonNull());
+        }
+        if(status != null){
+            sb.append(", status=").append(status);
+        }
+        if(tearsheets != null){
+            sb.append(", tearsheets=").append(tearsheets.toStringNonNull());
+        }
+        if(timeZoneOffsetEST != null){
+            sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
+        }
+        if(type != null){
+            sb.append(", type=").append(type);
+        }
+        if(willRelocate != null){
+            sb.append(", willRelocate=").append(willRelocate);
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Lead{");
         sb.append("id=").append(id);

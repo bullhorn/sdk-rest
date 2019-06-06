@@ -681,112 +681,475 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
     }
 
     @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder sb = new StringBuilder(getClass().getName());
+        sb.append(" { ");
+        if(id != null){
+            sb.append(lbc + " id=");
+            sb.append(id);
+        }
+        if(name != null){
+            sb.append(lbc + " name=");
+            sb.append(name);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + " isDeleted=");
+            sb.append(isDeleted);
+        }
+        if(parentBranch != null){
+            sb.append(lbc + " parentBranch=");
+            sb.append(parentBranch.toStringNonNull());
+        }
+        if(externalID != null){
+            sb.append(lbc + " externalID=");
+            sb.append(externalID);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + " dateAdded=");
+            sb.append(dateAdded);
+        }
+        if(customText1 != null){
+            sb.append(lbc + " customText1=");
+            sb.append(customText1);
+        }
+        if(customText2 != null){
+            sb.append(lbc + " customText2=");
+            sb.append(customText2);
+        }
+        if(customText3 != null){
+            sb.append(lbc + " customText3=");
+            sb.append(customText3);
+        }
+        if(customText4 != null){
+            sb.append(lbc + " customText4=");
+            sb.append(customText4);
+        }
+        if(customText5 != null){
+            sb.append(lbc + " customText5=");
+            sb.append(customText5);
+        }
+        if(customText6 != null){
+            sb.append(lbc + " customText6=");
+            sb.append(customText6);
+        }
+        if(customText7 != null){
+            sb.append(lbc + " customText7=");
+            sb.append(customText7);
+        }
+        if(customText8 != null){
+            sb.append(lbc + " customText8=");
+            sb.append(customText8);
+        }
+        if(customText9 != null){
+            sb.append(lbc + " customText9=");
+            sb.append(customText9);
+        }
+        if(customText10 != null){
+            sb.append(lbc + " customText10=");
+            sb.append(customText10);
+        }
+        if(customTextBlock1 != null){
+            sb.append(lbc + " customTextBlock1=");
+            sb.append(customTextBlock1);
+        }
+        if(customTextBlock2 != null){
+            sb.append(lbc + " customTextBlock2=");
+            sb.append(customTextBlock2);
+        }
+        if(customTextBlock3 != null){
+            sb.append(lbc + " customTextBlock3=");
+            sb.append(customTextBlock3);
+        }
+        if(customDate1 != null){
+            sb.append(lbc + " customDate1=");
+            sb.append(customDate1);
+        }
+        if(customDate2 != null){
+            sb.append(lbc + " customDate2=");
+            sb.append(customDate2);
+        }
+        if(customDate3 != null){
+            sb.append(lbc + " customDate3=");
+            sb.append(customDate3);
+        }
+        if(customDate4 != null){
+            sb.append(lbc + " customDate4=");
+            sb.append(customDate4);
+        }
+        if(customDate5 != null){
+            sb.append(lbc + " customDate5=");
+            sb.append(customDate5);
+        }
+        if(customDate6 != null){
+            sb.append(lbc + " customDate6=");
+            sb.append(customDate6);
+        }
+        if(customFloat1 != null){
+            sb.append(lbc + " customFloat1=");
+            sb.append(customFloat1);
+        }
+        if(customFloat2 != null){
+            sb.append(lbc + " customFloat2=");
+            sb.append(customFloat2);
+        }
+        if(customFloat3 != null){
+            sb.append(lbc + " customFloat3=");
+            sb.append(customFloat3);
+        }
+        if(customFloat4 != null){
+            sb.append(lbc + " customFloat4=");
+            sb.append(customFloat4);
+        }
+        if(customFloat5 != null){
+            sb.append(lbc + " customFloat5=");
+            sb.append(customFloat5);
+        }
+        if(customFloat6 != null){
+            sb.append(lbc + " customFloat6=");
+            sb.append(customFloat6);
+        }
+        if(customInt1 != null){
+            sb.append(lbc + " customInt1=");
+            sb.append(customInt1);
+        }
+        if(customInt2 != null){
+            sb.append(lbc + " customInt2=");
+            sb.append(customInt2);
+        }
+        if(customInt3 != null){
+            sb.append(lbc + " customInt3=");
+            sb.append(customInt3);
+        }
+        if(customInt4 != null){
+            sb.append(lbc + " customInt4=");
+            sb.append(customInt4);
+        }
+        if(customInt5 != null){
+            sb.append(lbc + " customInt5=");
+            sb.append(customInt5);
+        }
+        if(customInt6 != null){
+            sb.append(lbc + " customInt6=");
+            sb.append(customInt6);
+        }
+        if(customInt7 != null){
+            sb.append(lbc + " customInt7=");
+            sb.append(customInt7);
+        }
+        if(customInt8 != null){
+            sb.append(lbc + " customInt8=");
+            sb.append(customInt8);
+        }
+        if(customInt9 != null){
+            sb.append(lbc + " customInt9=");
+            sb.append(customInt9);
+        }
+        if(customInt10 != null){
+            sb.append(lbc + " customInt10=");
+            sb.append(customInt10);
+        }
+        if(ancestors != null){
+            sb.append(lbc + " ancestors=");
+            sb.append(ancestors.toStringNonNull());
+        }
+        if(descendants != null){
+            sb.append(lbc + " descendants=");
+            sb.append(descendants.toStringNonNull());
+        }
+        if(corporateUsers != null){
+            sb.append(lbc + " corporateUsers=");
+            sb.append(corporateUsers.toStringNonNull());
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = lbc + " ";
+        StringBuilder sb =new StringBuilder(getClass().getName());
+        sb.append(" { ");
+        if(includeLineBreaks)
+            sb.append("\n");
+        if(id != null){
+            sb.append(lbc + " id=");
+            sb.append(id);
+        }
+        if(name != null){
+            sb.append(lbc + " name=");
+            sb.append(name);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + " isDeleted=");
+            sb.append(isDeleted);
+        }
+        if(parentBranch != null){
+            sb.append(lbc + " parentBranch=");
+            sb.append(parentBranch.toStringNonNull(includeLineBreaks));
+        }
+        if(externalID != null){
+            sb.append(lbc + " externalID=");
+            sb.append(externalID);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + " dateAdded=");
+            sb.append(dateAdded);
+        }
+        if(customText1 != null){
+            sb.append(lbc + " customText1=");
+            sb.append(customText1);
+        }
+        if(customText2 != null){
+            sb.append(lbc + " customText2=");
+            sb.append(customText2);
+        }
+        if(customText3 != null){
+            sb.append(lbc + " customText3=");
+            sb.append(customText3);
+        }
+        if(customText4 != null){
+            sb.append(lbc + " customText4=");
+            sb.append(customText4);
+        }
+        if(customText5 != null){
+            sb.append(lbc + " customText5=");
+            sb.append(customText5);
+        }
+        if(customText6 != null){
+            sb.append(lbc + " customText6=");
+            sb.append(customText6);
+        }
+        if(customText7 != null){
+            sb.append(lbc + " customText7=");
+            sb.append(customText7);
+        }
+        if(customText8 != null){
+            sb.append(lbc + " customText8=");
+            sb.append(customText8);
+        }
+        if(customText9 != null){
+            sb.append(lbc + " customText9=");
+            sb.append(customText9);
+        }
+        if(customText10 != null){
+            sb.append(lbc + " customText10=");
+            sb.append(customText10);
+        }
+        if(customTextBlock1 != null){
+            sb.append(lbc + " customTextBlock1=");
+            sb.append(customTextBlock1);
+        }
+        if(customTextBlock2 != null){
+            sb.append(lbc + " customTextBlock2=");
+            sb.append(customTextBlock2);
+        }
+        if(customTextBlock3 != null){
+            sb.append(lbc + " customTextBlock3=");
+            sb.append(customTextBlock3);
+        }
+        if(customDate1 != null){
+            sb.append(lbc + " customDate1=");
+            sb.append(customDate1);
+        }
+        if(customDate2 != null){
+            sb.append(lbc + " customDate2=");
+            sb.append(customDate2);
+        }
+        if(customDate3 != null){
+            sb.append(lbc + " customDate3=");
+            sb.append(customDate3);
+        }
+        if(customDate4 != null){
+            sb.append(lbc + " customDate4=");
+            sb.append(customDate4);
+        }
+        if(customDate5 != null){
+            sb.append(lbc + " customDate5=");
+            sb.append(customDate5);
+        }
+        if(customDate6 != null){
+            sb.append(lbc + " customDate6=");
+            sb.append(customDate6);
+        }
+        if(customFloat1 != null){
+            sb.append(lbc + " customFloat1=");
+            sb.append(customFloat1);
+        }
+        if(customFloat2 != null){
+            sb.append(lbc + " customFloat2=");
+            sb.append(customFloat2);
+        }
+        if(customFloat3 != null){
+            sb.append(lbc + " customFloat3=");
+            sb.append(customFloat3);
+        }
+        if(customFloat4 != null){
+            sb.append(lbc + " customFloat4=");
+            sb.append(customFloat4);
+        }
+        if(customFloat5 != null){
+            sb.append(lbc + " customFloat5=");
+            sb.append(customFloat5);
+        }
+        if(customFloat6 != null){
+            sb.append(lbc + " customFloat6=");
+            sb.append(customFloat6);
+        }
+        if(customInt1 != null){
+            sb.append(lbc + " customInt1=");
+            sb.append(customInt1);
+        }
+        if(customInt2 != null){
+            sb.append(lbc + " customInt2=");
+            sb.append(customInt2);
+        }
+        if(customInt3 != null){
+            sb.append(lbc + " customInt3=");
+            sb.append(customInt3);
+        }
+        if(customInt4 != null){
+            sb.append(lbc + " customInt4=");
+            sb.append(customInt4);
+        }
+        if(customInt5 != null){
+            sb.append(lbc + " customInt5=");
+            sb.append(customInt5);
+        }
+        if(customInt6 != null){
+            sb.append(lbc + " customInt6=");
+            sb.append(customInt6);
+        }
+        if(customInt7 != null){
+            sb.append(lbc + " customInt7=");
+            sb.append(customInt7);
+        }
+        if(customInt8 != null){
+            sb.append(lbc + " customInt8=");
+            sb.append(customInt8);
+        }
+        if(customInt9 != null){
+            sb.append(lbc + " customInt9=");
+            sb.append(customInt9);
+        }
+        if(customInt10 != null){
+            sb.append(lbc + " customInt10=");
+            sb.append(customInt10);
+        }
+        if(ancestors != null){
+            sb.append(lbc + " ancestors=");
+            sb.append(ancestors.toStringNonNull(includeLineBreaks));
+        }
+        if(descendants != null){
+            sb.append(lbc + " descendants=");
+            sb.append(descendants.toStringNonNull(includeLineBreaks));
+        }
+        if(corporateUsers != null){
+            sb.append(lbc + " corporateUsers=");
+            sb.append(corporateUsers.toStringNonNull(includeLineBreaks));
+        }
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        return new StringBuilder("Branch {")
-            .append("\n\t\"id\": ")
-            .append(id)
-            .append(",\n\t\"name\": ")
-            .append("'")
-            .append(name).append('\'')
-            .append(",\n\t\"isDeleted\": ")
-            .append(isDeleted)
-            .append(",\n\t\"parentBranch\": ")
-            .append(parentBranch)
-            .append(",\n\t\"externalID\": ")
-            .append("'")
-            .append(externalID).append('\'')
-            .append(",\n\t\"dateAdded\": ")
-            .append(dateAdded)
-            .append(",\n\t\"customText1\": ")
-            .append("'")
-            .append(customText1).append('\'')
-            .append(",\n\t\"customText2\": ")
-            .append("'")
-            .append(customText2).append('\'')
-            .append(",\n\t\"customText3\": ")
-            .append("'")
-            .append(customText3).append('\'')
-            .append(",\n\t\"customText4\": ")
-            .append("'")
-            .append(customText4).append('\'')
-            .append(",\n\t\"customText5\": ")
-            .append("'")
-            .append(customText5).append('\'')
-            .append(",\n\t\"customText6\": ")
-            .append("'")
-            .append(customText6).append('\'')
-            .append(",\n\t\"customText7\": ")
-            .append("'")
-            .append(customText7).append('\'')
-            .append(",\n\t\"customText8\": ")
-            .append("'")
-            .append(customText8).append('\'')
-            .append(",\n\t\"customText9\": ")
-            .append("'")
-            .append(customText9).append('\'')
-            .append(",\n\t\"customText10\": ")
-            .append("'")
-            .append(customText10).append('\'')
-            .append(",\n\t\"customTextBlock1\": ")
-            .append("'")
-            .append(customTextBlock1).append('\'')
-            .append(",\n\t\"customTextBlock2\": ")
-            .append("'")
-            .append(customTextBlock2).append('\'')
-            .append(",\n\t\"customTextBlock3\": ")
-            .append("'")
-            .append(customTextBlock3).append('\'')
-            .append(",\n\t\"customDate1\": ")
-            .append(customDate1)
-            .append(",\n\t\"customDate2\": ")
-            .append(customDate2)
-            .append(",\n\t\"customDate3\": ")
-            .append(customDate3)
-            .append(",\n\t\"customDate4\": ")
-            .append(customDate4)
-            .append(",\n\t\"customDate5\": ")
-            .append(customDate5)
-            .append(",\n\t\"customDate6\": ")
-            .append(customDate6)
-            .append(",\n\t\"customFloat1\": ")
-            .append(customFloat1)
-            .append(",\n\t\"customFloat2\": ")
-            .append(customFloat2)
-            .append(",\n\t\"customFloat3\": ")
-            .append(customFloat3)
-            .append(",\n\t\"customFloat4\": ")
-            .append(customFloat4)
-            .append(",\n\t\"customFloat5\": ")
-            .append(customFloat5)
-            .append(",\n\t\"customFloat6\": ")
-            .append(customFloat6)
-            .append(",\n\t\"customInt1\": ")
-            .append(customInt1)
-            .append(",\n\t\"customInt2\": ")
-            .append(customInt2)
-            .append(",\n\t\"customInt3\": ")
-            .append(customInt3)
-            .append(",\n\t\"customInt4\": ")
-            .append(customInt4)
-            .append(",\n\t\"customInt5\": ")
-            .append(customInt5)
-            .append(",\n\t\"customInt6\": ")
-            .append(customInt6)
-            .append(",\n\t\"customInt7\": ")
-            .append(customInt7)
-            .append(",\n\t\"customInt8\": ")
-            .append(customInt8)
-            .append(",\n\t\"customInt9\": ")
-            .append(customInt9)
-            .append(",\n\t\"customInt10\": ")
-            .append(customInt10)
-            .append(",\n\t\"ancestors\": ")
-            .append(ancestors)
-            .append(",\n\t\"descendants\": ")
-            .append(descendants)
-            .append(",\n\t\"corporateUsers\": ")
-            .append(corporateUsers)
-            .append('}')
-            .toString();
+        StringBuilder sb =new StringBuilder(getClass().getName());
+        sb.append(" { ");
+        sb.append("\n id=");
+        sb.append(id);
+        sb.append(",\n name=");
+        sb.append(name);
+        sb.append(",\n isDeleted=");
+        sb.append(isDeleted);
+        sb.append(",\n parentBranch=");
+        sb.append(parentBranch);
+        sb.append(",\n externalID=");
+        sb.append(externalID);
+        sb.append(",\n dateAdded=");
+        sb.append(dateAdded);
+        sb.append(",\n customText1=");
+        sb.append(customText1);
+        sb.append(",\n customText2=");
+        sb.append(customText2);
+        sb.append(",\n customText3=");
+        sb.append(customText3);
+        sb.append(",\n customText4=");
+        sb.append(customText4);
+        sb.append(",\n customText5=");
+        sb.append(customText5);
+        sb.append(",\n customText6=");
+        sb.append(customText6);
+        sb.append(",\n customText7=");
+        sb.append(customText7);
+        sb.append(",\n customText8=");
+        sb.append(customText8);
+        sb.append(",\n customText9=");
+        sb.append(customText9);
+        sb.append(",\n customText10=");
+        sb.append(customText10);
+        sb.append(",\n customTextBlock1=");
+        sb.append(customTextBlock1);
+        sb.append(",\n customTextBlock2=");
+        sb.append(customTextBlock2);
+        sb.append(",\n customTextBlock3=");
+        sb.append(customTextBlock3);
+        sb.append(",\n customDate1=");
+        sb.append(customDate1);
+        sb.append(",\n customDate2=");
+        sb.append(customDate2);
+        sb.append(",\n customDate3=");
+        sb.append(customDate3);
+        sb.append(",\n customDate4=");
+        sb.append(customDate4);
+        sb.append(",\n customDate5=");
+        sb.append(customDate5);
+        sb.append(",\n customDate6=");
+        sb.append(customDate6);
+        sb.append(",\n customFloat1=");
+        sb.append(customFloat1);
+        sb.append(",\n customFloat2=");
+        sb.append(customFloat2);
+        sb.append(",\n customFloat3=");
+        sb.append(customFloat3);
+        sb.append(",\n customFloat4=");
+        sb.append(customFloat4);
+        sb.append(",\n customFloat5=");
+        sb.append(customFloat5);
+        sb.append(",\n customFloat6=");
+        sb.append(customFloat6);
+        sb.append(",\n customInt1=");
+        sb.append(customInt1);
+        sb.append(",\n customInt2=");
+        sb.append(customInt2);
+        sb.append(",\n customInt3=");
+        sb.append(customInt3);
+        sb.append(",\n customInt4=");
+        sb.append(customInt4);
+        sb.append(",\n customInt5=");
+        sb.append(customInt5);
+        sb.append(",\n customInt6=");
+        sb.append(customInt6);
+        sb.append(",\n customInt7=");
+        sb.append(customInt7);
+        sb.append(",\n customInt8=");
+        sb.append(customInt8);
+        sb.append(",\n customInt9=");
+        sb.append(customInt9);
+        sb.append(",\n customInt10=");
+        sb.append(customInt10);
+        sb.append(",\n ancestors=");
+        sb.append(ancestors);
+        sb.append(",\n descendants=");
+        sb.append(descendants);
+        sb.append(",\n corporateUsers=");
+        sb.append(corporateUsers);
+        sb.append("}");
+        return sb.toString();
     }
 }

@@ -417,6 +417,8 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
         if(includeLineBreaks)
             lbc = ",\n ";
         final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(includeLineBreaks)
+            sb.append("\n");
         if(id != null){
             sb.append("id=").append(id);
         }

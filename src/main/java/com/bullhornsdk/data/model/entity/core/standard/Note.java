@@ -393,6 +393,8 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
         if(includeLineBreaks)
             lbc = ",\n ";
         final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        if(includeLineBreaks)
+            sb.append("\n");
         if(id != null){
             sb.append(lbc + "id=");
             sb.append(id);

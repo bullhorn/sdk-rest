@@ -372,24 +372,27 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
 
     @Override
     public String toString() {
-        return "HousingComplex [id=" + id + ", address=" + address + ", billingContactID=" + billingContactID + ", comments=" + comments
-            + ", complexManagerID=" + complexManagerID + ", complexOwnerID=" + complexOwnerID + ", contactName=" + contactName + ", dateAdded="
-            + dateAdded + ", fax=" + fax + ", isDeleted=" + isDeleted + ", name=" + name + ", owner=" + owner + ", phone=" + phone
-            + ", whitelistClientCorporations=" + whitelistClientCorporations + ", getCustomTextBlock1()=" + getCustomTextBlock1()
-            + ", getCustomTextBlock2()=" + getCustomTextBlock2() + ", getCustomTextBlock3()=" + getCustomTextBlock3()
-            + ", getCustomTextBlock4()=" + getCustomTextBlock4() + ", getCustomTextBlock5()=" + getCustomTextBlock5() + ", toString()="
-            + super.toString() + ", getCustomDate1()=" + getCustomDate1() + ", getCustomDate2()=" + getCustomDate2() + ", getCustomDate3()="
-            + getCustomDate3() + ", getCustomFloat1()=" + getCustomFloat1() + ", getCustomFloat2()=" + getCustomFloat2() + ", getCustomFloat3()="
-            + getCustomFloat3() + ", getCustomInt1()=" + getCustomInt1() + ", getCustomInt2()=" + getCustomInt2() + ", getCustomInt3()="
-            + getCustomInt3() + ", getCustomText1()=" + getCustomText1() + ", getCustomText2()=" + getCustomText2() + ", getCustomText3()="
-            + getCustomText3() + ", getCustomText4()=" + getCustomText4() + ", getCustomText5()=" + getCustomText5() + ", getCustomText6()="
-            + getCustomText6() + ", getCustomText7()=" + getCustomText7() + ", getCustomText8()=" + getCustomText8() + ", getCustomText9()="
-            + getCustomText9() + ", getCustomText10()=" + getCustomText10() + ", getCustomText11()=" + getCustomText11() + ", getCustomText12()="
-            + getCustomText12() + ", getCustomText13()=" + getCustomText13() + ", getCustomText14()=" + getCustomText14()
-            + ", getCustomText15()=" + getCustomText15() + ", getCustomText16()=" + getCustomText16() + ", getCustomText17()="
-            + getCustomText17() + ", getCustomText18()=" + getCustomText18() + ", getCustomText19()=" + getCustomText19()
-            + ", getCustomText20()=" + getCustomText20() + ", getAdditionalProperties()=" + getAdditionalProperties()
-            + ", units=" + units
-            + ", getClass()=" + getClass() + "]";
+        final StringBuilder sb = new StringBuilder(getClass().getName())
+            .append(" { ");
+        sb.append("id=").append(id);
+        sb.append(", address=").append(address);
+        sb.append(", billingContactID=").append(billingContactID);
+        sb.append(", comments=").append(comments);
+        sb.append(", complexManagerID=").append(complexManagerID);
+        sb.append(", complexOwnerID=").append(complexOwnerID);
+        sb.append(", contactName=").append(contactName);
+        sb.append(", dateAdded="+ dateAdded);
+        sb.append(", fax=").append(fax);
+        sb.append(", isDeleted=").append(isDeleted);
+        sb.append(", name=").append(name);
+        sb.append(", owner=").append(owner);
+        sb.append(", phone=").append(phone);
+        sb.append(", whitelistClientCorporations=").append(whitelistClientCorporations);
+        sb.append(", getAdditionalProperties()=").append(getAdditionalProperties());
+        sb.append(", units=").append(units);
+        sb.append(super.toString());
+        sb.append("}");
+        return sb.toString();
     }
+
 }
