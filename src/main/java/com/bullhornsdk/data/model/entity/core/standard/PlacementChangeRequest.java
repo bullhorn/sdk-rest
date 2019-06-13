@@ -8,7 +8,6 @@ import com.bullhornsdk.data.model.entity.core.type.*;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

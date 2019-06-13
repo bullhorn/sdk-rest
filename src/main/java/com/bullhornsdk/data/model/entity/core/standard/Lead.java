@@ -1252,7 +1252,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
             sb.append(lbc + "firstName=").append(firstName);
         }
         if(history != null){
-            sb.append(lbc + "history=").append(history);
+            sb.append(lbc + "history=").append(history.toStringNonNull());
         }
         if(isDayLightSavingsTime != null){
             sb.append(lbc + "isDayLightSavingsTime=").append(isDayLightSavingsTime);
@@ -1291,7 +1291,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
             sb.append(lbc + "nickName=").append(nickName);
         }
         if(notes != null){
-            sb.append(lbc + "notes=").append(notes);
+            sb.append(lbc + "notes=").append(notes.toStringNonNull(includeLineBreaks));
         }
         if(numEmployees != null){
             sb.append(lbc + "numEmployees=").append(numEmployees);
@@ -1444,7 +1444,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
             sb.append(", description=").append(description);
         }
         if(distributionLists != null){
-            sb.append(", distributionLists=").append(distributionLists);
+            sb.append(", distributionLists=").append(distributionLists.toStringNonNull());
         }
         if(division != null){
             sb.append(", division=").append(division);
@@ -1474,7 +1474,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
             sb.append(", firstName=").append(firstName);
         }
         if(history != null){
-            sb.append(", history=").append(history);
+            sb.append(", history=").append(history.toStringNonNull());
         }
         if(isDayLightSavingsTime != null){
             sb.append(", isDayLightSavingsTime=").append(isDayLightSavingsTime);
@@ -1608,71 +1608,71 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
         sb.append(", assignedTo=").append(assignedTo);
         sb.append(", branch=").append(branch);
         sb.append(", businessSectors=").append(businessSectors);
-        sb.append(", campaignSource='").append(campaignSource).append('\'');
+        sb.append(", campaignSource=").append(campaignSource);
         sb.append(", candidates=").append(candidates);
         sb.append(", category=").append(category);
         sb.append(", categories=").append(categories);
         sb.append(", clientContacts=").append(clientContacts);
         sb.append(", clientCorporation=").append(clientCorporation);
-        sb.append(", comments='").append(comments).append('\'');
-        sb.append(", companyName='").append(companyName).append('\'');
-        sb.append(", companyURL='").append(companyURL).append('\'');
-        sb.append(", conversionSource='").append(conversionSource).append('\'');
+        sb.append(", comments=").append(comments);
+        sb.append(", companyName=").append(companyName);
+        sb.append(", companyURL=").append(companyURL);
+        sb.append(", conversionSource=").append(conversionSource);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateLastComment=").append(dateLastComment);
         sb.append(", dateLastModified=").append(dateLastModified);
         sb.append(", dateLastVisited=").append(dateLastVisited);
-        sb.append(", description='").append(description).append('\'');
+        sb.append(", description=").append(description);
         sb.append(", distributionLists=").append(distributionLists);
-        sb.append(", division='").append(division).append('\'');
-        sb.append(", educationDegree='").append(educationDegree).append('\'');
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", email2='").append(email2).append('\'');
-        sb.append(", email3='").append(email3).append('\'');
-        sb.append(", fax='").append(fax).append('\'');
-        sb.append(", fax2='").append(fax2).append('\'');
-        sb.append(", fax3='").append(fax3).append('\'');
-        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", division=").append(division);
+        sb.append(", educationDegree=").append(educationDegree);
+        sb.append(", email=").append(email);
+        sb.append(", email2=").append(email2);
+        sb.append(", email3=").append(email3);
+        sb.append(", fax=").append(fax);
+        sb.append(", fax2=").append(fax2);
+        sb.append(", fax3=").append(fax3);
+        sb.append(", firstName=").append(firstName);
         sb.append(", history=").append(history);
         sb.append(", isDayLightSavingsTime=").append(isDayLightSavingsTime);
         sb.append(", isDeleted=").append(isDeleted);
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", leadSource='").append(leadSource).append('\'');
+        sb.append(", lastName=").append(lastName);
+        sb.append(", leadSource=").append(leadSource);
         sb.append(", massMailOptOut=").append(massMailOptOut);
-        sb.append(", middleName='").append(middleName).append('\'');
+        sb.append(", middleName=").append(middleName);
         sb.append(", migrateGUID=").append(migrateGUID);
-        sb.append(", mobile='").append(mobile).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", namePrefix='").append(namePrefix).append('\'');
-        sb.append(", nameSuffix='").append(nameSuffix).append('\'');
-        sb.append(", nickName='").append(nickName).append('\'');
+        sb.append(", mobile=").append(mobile);
+        sb.append(", name=").append(name);
+        sb.append(", namePrefix=").append(namePrefix);
+        sb.append(", nameSuffix=").append(nameSuffix);
+        sb.append(", nickName=").append(nickName);
         sb.append(", notes=").append(notes);
         sb.append(", numEmployees=").append(numEmployees);
-        sb.append(", occupation='").append(occupation).append('\'');
+        sb.append(", occupation=").append(occupation);
         sb.append(", owner=").append(owner);
         sb.append(", ownerCorporation=").append(ownerCorporation);
-        sb.append(", pager='").append(pager).append('\'');
-        sb.append(", phone='").append(phone).append('\'');
-        sb.append(", phone2='").append(phone2).append('\'');
-        sb.append(", phone3='").append(phone3).append('\'');
-        sb.append(", preferredContact='").append(preferredContact).append('\'');
+        sb.append(", pager=").append(pager);
+        sb.append(", phone=").append(phone);
+        sb.append(", phone2=").append(phone2);
+        sb.append(", phone3=").append(phone3);
+        sb.append(", preferredContact=").append(preferredContact);
         sb.append(", primarySkills=").append(primarySkills);
-        sb.append(", priority='").append(priority).append('\'');
+        sb.append(", priority=").append(priority);
         sb.append(", referredByPerson=").append(referredByPerson);
         sb.append(", reportToPerson=").append(reportToPerson);
-        sb.append(", role='").append(role).append('\'');
+        sb.append(", role=").append(role);
         sb.append(", salary=").append(salary);
         sb.append(", salaryLow=").append(salaryLow);
         sb.append(", secondaryAddress=").append(secondaryAddress);
         sb.append(", secondarySkills=").append(secondarySkills);
-        sb.append(", skillSet='").append(skillSet).append('\'');
+        sb.append(", skillSet=").append(skillSet);
         sb.append(", smsOptIn=").append(smsOptIn);
-        sb.append(", source='").append(source).append('\'');
+        sb.append(", source=").append(source);
         sb.append(", specialties=").append(specialties);
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", status=").append(status);
         sb.append(", tearsheets=").append(tearsheets);
         sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
-        sb.append(", type='").append(type).append('\'');
+        sb.append(", type=").append(type);
         sb.append(", willRelocate=").append(willRelocate);
         sb.append("}");
         return sb.toString();

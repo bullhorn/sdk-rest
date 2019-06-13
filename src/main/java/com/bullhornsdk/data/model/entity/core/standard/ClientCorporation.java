@@ -1720,47 +1720,47 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ClientCorporation{");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + "{");
         sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", annualRevenue=").append(annualRevenue);
         sb.append(", billingAddress=").append(billingAddress);
-        sb.append(", billingContact='").append(billingContact).append('\'');
-        sb.append(", billingFrequency='").append(billingFrequency).append('\'');
-        sb.append(", billingPhone='").append(billingPhone).append('\'');
+        sb.append(", billingContact=").append(billingContact);
+        sb.append(", billingFrequency=").append(billingFrequency);
+        sb.append(", billingPhone=").append(billingPhone);
         sb.append(", branch=").append(branch);
-        sb.append(", businessSectorList='").append(businessSectorList).append('\'');
+        sb.append(", businessSectorList=").append(businessSectorList);
         sb.append(", childClientCorporations=").append(childClientCorporations);
         sb.append(", clientContacts=").append(clientContacts);
-        sb.append(", companyDescription='").append(companyDescription).append('\'');
-        sb.append(", companyURL='").append(companyURL).append('\'');
-        sb.append(", competitors='").append(competitors).append('\'');
-        sb.append(", culture='").append(culture).append('\'');
+        sb.append(", companyDescription=").append(companyDescription);
+        sb.append(", companyURL=").append(companyURL);
+        sb.append(", competitors=").append(competitors);
+        sb.append(", culture=").append(culture);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateFounded=").append(dateFounded);
         sb.append(", dateLastModified=").append(dateLastModified);
         sb.append(", department=").append(department);
-        sb.append(", externalID='").append(externalID).append('\'');
-        sb.append(", fax='").append(fax).append('\'');
+        sb.append(", externalID=").append(externalID);
+        sb.append(", fax=").append(fax);
         sb.append(", feeArrangement=").append(feeArrangement);
-        sb.append(", funding='").append(funding).append('\'');
-        sb.append(", industryList='").append(industryList).append('\'');
-        sb.append(", invoiceFormat='").append(invoiceFormat).append('\'');
+        sb.append(", funding=").append(funding);
+        sb.append(", industryList=").append(industryList);
+        sb.append(", invoiceFormat=").append(invoiceFormat);
         sb.append(", leads=").append(leads);
-        sb.append(", linkedinProfileName='").append(linkedinProfileName).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", notes='").append(notes).append('\'');
+        sb.append(", linkedinProfileName=").append(linkedinProfileName);
+        sb.append(", name=").append(name);
+        sb.append(", notes=").append(notes);
         sb.append(", numEmployees=").append(numEmployees);
         sb.append(", numOffices=").append(numOffices);
-        sb.append(", ownership='").append(ownership).append('\'');
+        sb.append(", ownership=").append(ownership);
         sb.append(", owners=").append(owners);
         sb.append(", parentClientCorporation=").append(parentClientCorporation);
-        sb.append(", phone='").append(phone).append('\'');
-        sb.append(", revenue='").append(revenue).append('\'');
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", phone=").append(phone);
+        sb.append(", revenue=").append(revenue);
+        sb.append(", status=").append(status);
         sb.append(", taxRate=").append(taxRate);
-        sb.append(", tickerSymbol='").append(tickerSymbol).append('\'');
-        sb.append(", trackTitle='").append(trackTitle).append('\'');
+        sb.append(", tickerSymbol=").append(tickerSymbol);
+        sb.append(", trackTitle=").append(trackTitle);
         sb.append(", workWeekStart=").append(workWeekStart);
         sb.append(", requirements=").append(requirements);
         sb.append(", certificationGroups=").append(certificationGroups);
@@ -1784,9 +1784,9 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", customObject18s=").append(customObject18s);
         sb.append(", customObject19s=").append(customObject19s);
         sb.append(", customObject20s=").append(customObject20s);
-        sb.append('}');
+        sb.append("}");
         return sb.toString();
-    }
+}
 
     public ClientCorporation instantiateForInsert() {
 		ClientCorporation entity = new ClientCorporation();

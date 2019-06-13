@@ -880,7 +880,7 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
         }
         if(address != null){
             builder.append(lbc + "address=");
-            builder.append(address);
+            builder.append(address.toStringNonNull());
         }
         if(companyName != null){
             builder.append(lbc + "companyName=");
