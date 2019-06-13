@@ -491,6 +491,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
         if(comments != null){
             sb.append(lbc + "comments=").append(comments);
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(includeLineBreaks)
             sb.append("\n");
         sb.append("}");
@@ -573,6 +574,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
         if(comments != null){
             sb.append(lbc + "comments=").append(comments);
         }
+        sb.append(super.toStringNonNull());
         sb.append("}");
         return sb.toString();
     }
@@ -604,6 +606,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
         sb.append(", status=").append(status);
         sb.append(", tasks=").append(tasks);
         sb.append(", comments=").append(comments);
+        sb.append(super.toString());
         sb.append("}");
         return sb.toString();
     }

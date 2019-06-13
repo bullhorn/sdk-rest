@@ -3333,6 +3333,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         sb.append(", willRelocate=").append(willRelocate);
         sb.append(", workAuthorized=").append(workAuthorized);
         sb.append(", workHistories=").append(workHistories);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);

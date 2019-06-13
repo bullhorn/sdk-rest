@@ -864,6 +864,7 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
             builder.append(lbc + "userType=");
             builder.append(userType);
         }
+        builder.append(super.toStringNonNull(includeLineBreaks));
         if(includeLineBreaks)
             builder.append("\n");
         builder.append("}");
@@ -1010,6 +1011,7 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
             builder.append(lbc + "userType=");
             builder.append(userType);
         }
+        builder.append(super.toStringNonNull());
         builder.append("}");
         return builder.toString();
     }
@@ -1085,7 +1087,8 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
 		builder.append(username);
 		builder.append(", userType=");
 		builder.append(userType);
-		builder.append("]");
+        builder.append(super.toString());
+		builder.append("}");
 		return builder.toString();
 	}
 

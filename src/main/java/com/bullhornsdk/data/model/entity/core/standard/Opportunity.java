@@ -1817,6 +1817,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
         if(luceneScore != null){
             sb.append(lbc + "luceneScore=").append(luceneScore);
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
         }
@@ -2118,6 +2119,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
         if(luceneScore != null){
             sb.append(lbc + "luceneScore=").append(luceneScore);
         }
+        sb.append(super.toStringNonNull());
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
         }
@@ -2242,6 +2244,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
         sb.append(", dateLastModified=").append(dateLastModified);
         sb.append(", tearsheets=").append(tearsheets);
         sb.append(", luceneScore=").append(luceneScore);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);

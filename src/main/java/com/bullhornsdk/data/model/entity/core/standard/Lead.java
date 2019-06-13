@@ -1374,6 +1374,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
         if(willRelocate != null){
             sb.append(lbc + "willRelocate=").append(willRelocate);
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(includeLineBreaks)
             sb.append("\n");
         sb.append("}");
@@ -1596,6 +1597,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
         if(willRelocate != null){
             sb.append(", willRelocate=").append(willRelocate);
         }
+        sb.append(super.toStringNonNull());
         sb.append("}");
         return sb.toString();
     }
@@ -1674,6 +1676,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
         sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
         sb.append(", type=").append(type);
         sb.append(", willRelocate=").append(willRelocate);
+        sb.append(super.toString());
         sb.append("}");
         return sb.toString();
     }

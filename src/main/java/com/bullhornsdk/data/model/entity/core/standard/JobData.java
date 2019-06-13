@@ -1698,6 +1698,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         if(yearsRequired != null){
             sb.append(lbc + "yearsRequired=").append(yearsRequired);
         }
+        sb.append(super.toStringNonNull());
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
         }
@@ -1981,6 +1982,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         if(yearsRequired != null){
             sb.append(lbc + "yearsRequired=").append(yearsRequired);
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
         }
@@ -2020,8 +2022,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
-        sb.append("luceneScore=").append(luceneScore);
-        sb.append(", id=").append(id);
+        sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", appointments=").append(appointments);
         sb.append(", approvedPlacements=").append(approvedPlacements);
@@ -2063,6 +2064,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         sb.append(", isOpen=").append(isOpen);
         sb.append(", isPublic=").append(isPublic);
         sb.append(", jobBoardList=").append(jobBoardList);
+        sb.append(", luceneScore=").append(luceneScore);
         sb.append(", notes=").append(notes);
         sb.append(", numOpenings=").append(numOpenings);
         sb.append(", onSite=").append(onSite);
@@ -2101,6 +2103,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         sb.append(", willSponsor=").append(willSponsor);
         sb.append(", workersCompRate=").append(workersCompRate);
         sb.append(", yearsRequired=").append(yearsRequired);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);

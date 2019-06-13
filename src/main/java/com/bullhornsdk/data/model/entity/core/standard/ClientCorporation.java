@@ -1453,6 +1453,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         if(certificationGroups != null){
             sb.append(lbc + "certificationGroups=").append(certificationGroups.toStringNonNull());
         }
+        sb.append(super.toStringNonNull());
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
         }
@@ -1652,6 +1653,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         if(certificationGroups != null){
             sb.append(lbc + "certificationGroups=").append(certificationGroups.toStringNonNull(includeLineBreaks));
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
         }
@@ -1764,6 +1766,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", workWeekStart=").append(workWeekStart);
         sb.append(", requirements=").append(requirements);
         sb.append(", certificationGroups=").append(certificationGroups);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);

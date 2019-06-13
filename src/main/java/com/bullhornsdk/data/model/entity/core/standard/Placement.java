@@ -1846,6 +1846,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         sb.append(", vendorClientCorporation=").append(vendorClientCorporation);
         sb.append(", workWeekStart=").append(workWeekStart);
         sb.append(", workersCompensationRate=").append(workersCompensationRate);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);
