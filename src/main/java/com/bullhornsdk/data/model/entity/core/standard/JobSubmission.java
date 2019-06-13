@@ -416,7 +416,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
         if(includeLineBreaks)
             sb.append("\n");
         if(id != null){
@@ -500,7 +500,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -579,7 +579,7 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
         sb.append("id=").append(id);
         sb.append(", appointments=").append(appointments);
         sb.append(", billRate=").append(billRate);

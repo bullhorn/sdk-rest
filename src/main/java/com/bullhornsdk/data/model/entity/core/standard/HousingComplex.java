@@ -372,7 +372,7 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(getClass().getName())
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName())
             .append(" { ");
         sb.append("id=").append(id);
         sb.append(", address=").append(address);

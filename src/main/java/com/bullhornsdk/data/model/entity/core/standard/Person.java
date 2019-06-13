@@ -725,7 +725,7 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        StringBuilder builder = new StringBuilder(getClass()+" { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName()+" { ");
         if(includeLineBreaks)
             builder.append("\n");
         if(id != null){
@@ -873,7 +873,7 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        StringBuilder builder = new StringBuilder(getClass()+" { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName()+" { ");
         if(id != null){
             builder.append("id=");
             builder.append(id);
@@ -1016,7 +1016,7 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder(getClass()+" { ");
+		StringBuilder builder = new StringBuilder(getClass().getSimpleName()+" { ");
 		builder.append("id=");
 		builder.append(id);
 		builder.append(", address=");

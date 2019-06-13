@@ -1158,7 +1158,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(includeLineBreaks)
             sb.append("\n");
         if(id != null){
@@ -1382,7 +1382,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 
     @Override
     public String toStringNonNull() {
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -1602,7 +1602,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Lead{");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", assignedTo=").append(assignedTo);

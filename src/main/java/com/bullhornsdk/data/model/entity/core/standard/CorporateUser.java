@@ -928,7 +928,7 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        StringBuilder builder = new StringBuilder(getClass().getName());
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
         builder.append(" { ");
         if(includeLineBreaks)
             builder.append("\n");
@@ -1121,7 +1121,7 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        StringBuilder builder = new StringBuilder(getClass().getName());
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
         builder.append(" { ");
         if(id != null){
             builder.append(lbc + "id=");
@@ -1309,7 +1309,7 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(getClass().getName());
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
         builder.append(" {\n\tid=");
         builder.append(id);
         builder.append("\n\taddress=");

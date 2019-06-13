@@ -111,7 +111,7 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        StringBuilder builder = new StringBuilder(getClass() + " { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             builder.append(lbc + "id=");
             builder.append(id);
@@ -137,7 +137,7 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        StringBuilder builder = new StringBuilder(getClass() + " { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             builder.append(lbc + "id=");
             builder.append(id);
@@ -160,7 +160,7 @@ public class NoteEntity extends AbstractEntity implements QueryEntity, UpdateEnt
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(getClass() + " {");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " {");
         builder.append("\nid=");
         builder.append(id);
         builder.append(",\n note=");

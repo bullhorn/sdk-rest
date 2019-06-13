@@ -392,7 +392,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(includeLineBreaks)
             sb.append("\n");
         if(id != null){
@@ -492,7 +492,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=");
             sb.append(id);
@@ -587,7 +587,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(getClass() + " { ")
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ")
             .append(",\n id=")
             .append(id)
             .append(",\n action=")

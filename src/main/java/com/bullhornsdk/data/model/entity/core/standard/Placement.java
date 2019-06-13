@@ -1542,7 +1542,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder("Placement { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }

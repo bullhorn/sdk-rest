@@ -1454,7 +1454,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -1737,7 +1737,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() +  " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -2019,7 +2019,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("JobData{");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("luceneScore=").append(luceneScore);
         sb.append(", id=").append(id);
         sb.append(", address=").append(address);

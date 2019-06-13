@@ -112,7 +112,7 @@ public class AbstractEntity {
 
     public String toStringNonNull(){
         String lbc = "";
-        StringBuilder builder = new StringBuilder(getClass() + " { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
         if(additionalProperties != null) {
             builder.append(lbc + "additionalProperties=");
             builder.append(additionalProperties);
@@ -125,7 +125,7 @@ public class AbstractEntity {
 	    String lbc = "";
 	    if(includeLineBreaks)
             lbc = " \n";
-        StringBuilder builder = new StringBuilder(getClass() + " { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
         if(additionalProperties != null) {
             builder.append(lbc + "additionalProperties=");
             builder.append(additionalProperties);
