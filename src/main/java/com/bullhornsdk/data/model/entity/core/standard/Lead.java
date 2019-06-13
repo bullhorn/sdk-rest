@@ -1154,80 +1154,530 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(includeLineBreaks)
+            sb.append("\n");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address.toStringNonNull(includeLineBreaks));
+        }
+        if(assignedTo != null){
+            sb.append(lbc + "assignedTo=").append(assignedTo);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull(includeLineBreaks));
+        }
+        if(businessSectors != null){
+            sb.append(lbc + "businessSectors=").append(businessSectors.toStringNonNull(includeLineBreaks));
+        }
+        if(campaignSource != null){
+            sb.append(lbc + "campaignSource=").append(campaignSource);
+        }
+        if(candidates != null){
+            sb.append(lbc + "candidates=").append(candidates.toStringNonNull(includeLineBreaks));
+        }
+        if(category != null){
+            sb.append(lbc + "category=").append(category.toStringNonNull(includeLineBreaks));
+        }
+        if(categories != null){
+            sb.append(lbc + "categories=").append(categories.toStringNonNull(includeLineBreaks));
+        }
+        if(clientContacts != null){
+            sb.append(lbc + "clientContacts=").append(clientContacts.toStringNonNull(includeLineBreaks));
+        }
+        if(clientCorporation != null){
+            sb.append(lbc + "clientCorporation=").append(clientCorporation.toStringNonNull(includeLineBreaks));
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        if(companyName != null){
+            sb.append(lbc + "companyName=").append(companyName);
+        }
+        if(companyURL != null){
+            sb.append(lbc + "companyURL=").append(companyURL);
+        }
+        if(conversionSource != null){
+            sb.append(lbc + "conversionSource=").append(conversionSource);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateLastComment != null){
+            sb.append(lbc + "dateLastComment=").append(dateLastComment);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(dateLastVisited != null){
+            sb.append(lbc + "dateLastVisited=").append(dateLastVisited);
+        }
+        if(description != null){
+            sb.append(lbc + "description=").append(description);
+        }
+        if(distributionLists != null){
+            sb.append(lbc + "distributionLists=").append(distributionLists.toStringNonNull(includeLineBreaks));
+        }
+        if(division != null){
+            sb.append(lbc + "division=").append(division);
+        }
+        if(educationDegree != null){
+            sb.append(lbc + "educationDegree=").append(educationDegree);
+        }
+        if(email != null){
+            sb.append(lbc + "email=").append(email);
+        }
+        if(email2 != null){
+            sb.append(lbc + "email2=").append(email2);
+        }
+        if(email3 != null){
+            sb.append(lbc + "email3=").append(email3);
+        }
+        if(fax != null){
+            sb.append(lbc + "fax=").append(fax);
+        }
+        if(fax2 != null){
+            sb.append(lbc + "fax2=").append(fax2);
+        }
+        if(fax3 != null){
+            sb.append(lbc + "fax3=").append(fax3);
+        }
+        if(firstName != null){
+            sb.append(lbc + "firstName=").append(firstName);
+        }
+        if(history != null){
+            sb.append(lbc + "history=").append(history.toStringNonNull());
+        }
+        if(isDayLightSavingsTime != null){
+            sb.append(lbc + "isDayLightSavingsTime=").append(isDayLightSavingsTime);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(lastName != null){
+            sb.append(lbc + "lastName=").append(lastName);
+        }
+        if(leadSource != null){
+            sb.append(lbc + "leadSource=").append(leadSource);
+        }
+        if(massMailOptOut != null){
+            sb.append(lbc + "massMailOptOut=").append(massMailOptOut);
+        }
+        if(middleName != null){
+            sb.append(lbc + "middleName=").append(middleName);
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(mobile != null){
+            sb.append(lbc + "mobile=").append(mobile);
+        }
+        if(name != null){
+            sb.append(lbc + "name=").append(name);
+        }
+        if(namePrefix != null){
+            sb.append(lbc + "namePrefix=").append(namePrefix);
+        }
+        if(nameSuffix != null){
+            sb.append(lbc + "nameSuffix=").append(nameSuffix);
+        }
+        if(nickName != null){
+            sb.append(lbc + "nickName=").append(nickName);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes.toStringNonNull(includeLineBreaks));
+        }
+        if(numEmployees != null){
+            sb.append(lbc + "numEmployees=").append(numEmployees);
+        }
+        if(occupation != null){
+            sb.append(lbc + "occupation=").append(occupation);
+        }
+        if(owner != null){
+            sb.append(lbc + "owner=").append(owner.toStringNonNull(includeLineBreaks));
+        }
+        if(ownerCorporation != null){
+            sb.append(lbc + "ownerCorporation=").append(ownerCorporation.toStringNonNull(includeLineBreaks));
+        }
+        if(pager != null){
+            sb.append(lbc + "pager=").append(pager);
+        }
+        if(phone != null){
+            sb.append(lbc + "phone=").append(phone);
+        }
+        if(phone2 != null){
+            sb.append(lbc + "phone2=").append(phone2);
+        }
+        if(phone3 != null){
+            sb.append(lbc + "phone3=").append(phone3);
+        }
+        if(preferredContact != null){
+            sb.append(lbc + "preferredContact=").append(preferredContact);
+        }
+        if(primarySkills != null){
+            sb.append(lbc + "primarySkills=").append(primarySkills.toStringNonNull(includeLineBreaks));
+        }
+        if(priority != null){
+            sb.append(lbc + "priority=").append(priority);
+        }
+        if(referredByPerson != null){
+            sb.append(lbc + "referredByPerson=").append(referredByPerson.toStringNonNull(includeLineBreaks));
+        }
+        if(reportToPerson != null){
+            sb.append(lbc + "reportToPerson=").append(reportToPerson.toStringNonNull(includeLineBreaks));
+        }
+        if(role != null){
+            sb.append(lbc + "role=").append(role);
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryLow != null){
+            sb.append(lbc + "salaryLow=").append(salaryLow);
+        }
+        if(secondaryAddress != null){
+            sb.append(lbc + "secondaryAddress=").append(secondaryAddress.toStringNonNull(includeLineBreaks));
+        }
+        if(secondarySkills != null){
+            sb.append(lbc + "secondarySkills=").append(secondarySkills.toStringNonNull(includeLineBreaks));
+        }
+        if(skillSet != null){
+            sb.append(lbc + "skillSet=").append(skillSet);
+        }
+        if(smsOptIn != null){
+            sb.append(lbc + "smsOptIn=").append(smsOptIn);
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(lbc + "specialties=").append(specialties.toStringNonNull(includeLineBreaks));
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(tearsheets != null){
+            sb.append(lbc + "tearsheets=").append(tearsheets.toStringNonNull(includeLineBreaks));
+        }
+        if(timeZoneOffsetEST != null){
+            sb.append(lbc + "timeZoneOffsetEST=").append(timeZoneOffsetEST);
+        }
+        if(type != null){
+            sb.append(lbc + "type=").append(type);
+        }
+        if(willRelocate != null){
+            sb.append(lbc + "willRelocate=").append(willRelocate);
+        }
+        sb.append(super.toStringNonNull(includeLineBreaks));
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(", address=").append(address.toStringNonNull());
+        }
+        if(assignedTo != null){
+            sb.append(", assignedTo=").append(assignedTo.toStringNonNull());
+        }
+        if(branch != null){
+            sb.append(", branch=").append(branch.toStringNonNull());
+        }
+        if(businessSectors != null){
+            sb.append(", businessSectors=").append(businessSectors.toStringNonNull());
+        }
+        if(campaignSource != null){
+            sb.append(", campaignSource=").append(campaignSource);
+        }
+        if(candidates != null){
+            sb.append(", candidates=").append(candidates.toStringNonNull());
+        }
+        if(category != null){
+            sb.append(", category=").append(category.toStringNonNull());
+        }
+        if(categories != null){
+            sb.append(", categories=").append(categories.toStringNonNull());
+        }
+        if(clientContacts != null){
+            sb.append(", clientContacts=").append(clientContacts.toStringNonNull());
+        }
+        if(clientCorporation != null){
+            sb.append(", clientCorporation=").append(clientCorporation.toStringNonNull());
+        }
+        if(comments != null){
+            sb.append(", comments=").append(comments);
+        }
+        if(companyName != null){
+            sb.append(", companyName=").append(companyName);
+        }
+        if(companyURL != null){
+            sb.append(", companyURL=").append(companyURL);
+        }
+        if(conversionSource != null){
+            sb.append(", conversionSource=").append(conversionSource);
+        }
+        if(dateAdded != null){
+            sb.append(", dateAdded=").append(dateAdded);
+        }
+        if(dateLastComment != null){
+            sb.append(", dateLastComment=").append(dateLastComment);
+        }
+        if(dateLastModified != null){
+            sb.append(", dateLastModified=").append(dateLastModified);
+        }
+        if(dateLastVisited != null){
+            sb.append(", dateLastVisited=").append(dateLastVisited);
+        }
+        if(description != null){
+            sb.append(", description=").append(description);
+        }
+        if(distributionLists != null){
+            sb.append(", distributionLists=").append(distributionLists.toStringNonNull());
+        }
+        if(division != null){
+            sb.append(", division=").append(division);
+        }
+        if(educationDegree != null){
+            sb.append(", educationDegree=").append(educationDegree);
+        }
+        if(email != null){
+            sb.append(", email=").append(email);
+        }
+        if(email2 != null){
+            sb.append(", email2=").append(email2);
+        }
+        if(email3 != null){
+            sb.append(", email3=").append(email3);
+        }
+        if(fax != null){
+            sb.append(", fax=").append(fax);
+        }
+        if(fax2 != null){
+            sb.append(", fax2=").append(fax2);
+        }
+        if(fax3 != null){
+            sb.append(", fax3=").append(fax3);
+        }
+        if(firstName != null){
+            sb.append(", firstName=").append(firstName);
+        }
+        if(history != null){
+            sb.append(", history=").append(history.toStringNonNull());
+        }
+        if(isDayLightSavingsTime != null){
+            sb.append(", isDayLightSavingsTime=").append(isDayLightSavingsTime);
+        }
+        if(isDeleted != null){
+            sb.append(", isDeleted=").append(isDeleted);
+        }
+        if(lastName != null){
+            sb.append(", lastName=").append(lastName);
+        }
+        if(leadSource != null){
+            sb.append(", leadSource=").append(leadSource);
+        }
+        if(massMailOptOut != null){
+            sb.append(", massMailOptOut=").append(massMailOptOut);
+        }
+        if(middleName != null){
+            sb.append(", middleName=").append(middleName);
+        }
+        if(migrateGUID != null){
+            sb.append(", migrateGUID=").append(migrateGUID);
+        }
+        if(mobile != null){
+            sb.append(", mobile=").append(mobile);
+        }
+        if(name != null){
+            sb.append(", name=").append(name);
+        }
+        if(namePrefix != null){
+            sb.append(", namePrefix=").append(namePrefix);
+        }
+        if(nameSuffix != null){
+            sb.append(", nameSuffix=").append(nameSuffix);
+        }
+        if(nickName != null){
+            sb.append(", nickName=").append(nickName);
+        }
+        if(notes != null){
+            sb.append(", notes=").append(notes.toStringNonNull());
+        }
+        if(numEmployees != null){
+            sb.append(", numEmployees=").append(numEmployees);
+        }
+        if(occupation != null){
+            sb.append(", occupation=").append(occupation);
+        }
+        if(owner != null){
+            sb.append(", owner=").append(owner.toStringNonNull());
+        }
+        if(ownerCorporation != null){
+            sb.append(", ownerCorporation=").append(ownerCorporation.toStringNonNull());
+        }
+        if(pager != null){
+            sb.append(", pager=").append(pager);
+        }
+        if(phone != null){
+            sb.append(", phone=").append(phone);
+        }
+        if(phone2 != null){
+            sb.append(", phone2=").append(phone2);
+        }
+        if(phone3 != null){
+            sb.append(", phone3=").append(phone3);
+        }
+        if(preferredContact != null){
+            sb.append(", preferredContact=").append(preferredContact);
+        }
+        if(primarySkills != null){
+            sb.append(", primarySkills=").append(primarySkills.toStringNonNull());
+        }
+        if(priority != null){
+            sb.append(", priority=").append(priority);
+        }
+        if(referredByPerson != null){
+            sb.append(", referredByPerson=").append(referredByPerson.toStringNonNull());
+        }
+        if(reportToPerson != null){
+            sb.append(", reportToPerson=").append(reportToPerson.toStringNonNull());
+        }
+        if(role != null){
+            sb.append(", role=").append(role);
+        }
+        if(salary != null){
+            sb.append(", salary=").append(salary);
+        }
+        if(salaryLow != null){
+            sb.append(", salaryLow=").append(salaryLow);
+        }
+        if(secondaryAddress != null){
+            sb.append(", secondaryAddress=").append(secondaryAddress.toStringNonNull());
+        }
+        if(secondarySkills != null){
+            sb.append(", secondarySkills=").append(secondarySkills.toStringNonNull());
+        }
+        if(skillSet != null){
+            sb.append(", skillSet=").append(skillSet);
+        }
+        if(smsOptIn != null){
+            sb.append(", smsOptIn=").append(smsOptIn);
+        }
+        if(source != null){
+            sb.append(", source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(", specialties=").append(specialties.toStringNonNull());
+        }
+        if(status != null){
+            sb.append(", status=").append(status);
+        }
+        if(tearsheets != null){
+            sb.append(", tearsheets=").append(tearsheets.toStringNonNull());
+        }
+        if(timeZoneOffsetEST != null){
+            sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
+        }
+        if(type != null){
+            sb.append(", type=").append(type);
+        }
+        if(willRelocate != null){
+            sb.append(", willRelocate=").append(willRelocate);
+        }
+        sb.append(super.toStringNonNull());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Lead{");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", assignedTo=").append(assignedTo);
         sb.append(", branch=").append(branch);
         sb.append(", businessSectors=").append(businessSectors);
-        sb.append(", campaignSource='").append(campaignSource).append('\'');
+        sb.append(", campaignSource=").append(campaignSource);
         sb.append(", candidates=").append(candidates);
         sb.append(", category=").append(category);
         sb.append(", categories=").append(categories);
         sb.append(", clientContacts=").append(clientContacts);
         sb.append(", clientCorporation=").append(clientCorporation);
-        sb.append(", comments='").append(comments).append('\'');
-        sb.append(", companyName='").append(companyName).append('\'');
-        sb.append(", companyURL='").append(companyURL).append('\'');
-        sb.append(", conversionSource='").append(conversionSource).append('\'');
+        sb.append(", comments=").append(comments);
+        sb.append(", companyName=").append(companyName);
+        sb.append(", companyURL=").append(companyURL);
+        sb.append(", conversionSource=").append(conversionSource);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateLastComment=").append(dateLastComment);
         sb.append(", dateLastModified=").append(dateLastModified);
         sb.append(", dateLastVisited=").append(dateLastVisited);
-        sb.append(", description='").append(description).append('\'');
+        sb.append(", description=").append(description);
         sb.append(", distributionLists=").append(distributionLists);
-        sb.append(", division='").append(division).append('\'');
-        sb.append(", educationDegree='").append(educationDegree).append('\'');
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", email2='").append(email2).append('\'');
-        sb.append(", email3='").append(email3).append('\'');
-        sb.append(", fax='").append(fax).append('\'');
-        sb.append(", fax2='").append(fax2).append('\'');
-        sb.append(", fax3='").append(fax3).append('\'');
-        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", division=").append(division);
+        sb.append(", educationDegree=").append(educationDegree);
+        sb.append(", email=").append(email);
+        sb.append(", email2=").append(email2);
+        sb.append(", email3=").append(email3);
+        sb.append(", fax=").append(fax);
+        sb.append(", fax2=").append(fax2);
+        sb.append(", fax3=").append(fax3);
+        sb.append(", firstName=").append(firstName);
         sb.append(", history=").append(history);
         sb.append(", isDayLightSavingsTime=").append(isDayLightSavingsTime);
         sb.append(", isDeleted=").append(isDeleted);
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", leadSource='").append(leadSource).append('\'');
+        sb.append(", lastName=").append(lastName);
+        sb.append(", leadSource=").append(leadSource);
         sb.append(", massMailOptOut=").append(massMailOptOut);
-        sb.append(", middleName='").append(middleName).append('\'');
+        sb.append(", middleName=").append(middleName);
         sb.append(", migrateGUID=").append(migrateGUID);
-        sb.append(", mobile='").append(mobile).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", namePrefix='").append(namePrefix).append('\'');
-        sb.append(", nameSuffix='").append(nameSuffix).append('\'');
-        sb.append(", nickName='").append(nickName).append('\'');
+        sb.append(", mobile=").append(mobile);
+        sb.append(", name=").append(name);
+        sb.append(", namePrefix=").append(namePrefix);
+        sb.append(", nameSuffix=").append(nameSuffix);
+        sb.append(", nickName=").append(nickName);
         sb.append(", notes=").append(notes);
         sb.append(", numEmployees=").append(numEmployees);
-        sb.append(", occupation='").append(occupation).append('\'');
+        sb.append(", occupation=").append(occupation);
         sb.append(", owner=").append(owner);
         sb.append(", ownerCorporation=").append(ownerCorporation);
-        sb.append(", pager='").append(pager).append('\'');
-        sb.append(", phone='").append(phone).append('\'');
-        sb.append(", phone2='").append(phone2).append('\'');
-        sb.append(", phone3='").append(phone3).append('\'');
-        sb.append(", preferredContact='").append(preferredContact).append('\'');
+        sb.append(", pager=").append(pager);
+        sb.append(", phone=").append(phone);
+        sb.append(", phone2=").append(phone2);
+        sb.append(", phone3=").append(phone3);
+        sb.append(", preferredContact=").append(preferredContact);
         sb.append(", primarySkills=").append(primarySkills);
-        sb.append(", priority='").append(priority).append('\'');
+        sb.append(", priority=").append(priority);
         sb.append(", referredByPerson=").append(referredByPerson);
         sb.append(", reportToPerson=").append(reportToPerson);
-        sb.append(", role='").append(role).append('\'');
+        sb.append(", role=").append(role);
         sb.append(", salary=").append(salary);
         sb.append(", salaryLow=").append(salaryLow);
         sb.append(", secondaryAddress=").append(secondaryAddress);
         sb.append(", secondarySkills=").append(secondarySkills);
-        sb.append(", skillSet='").append(skillSet).append('\'');
+        sb.append(", skillSet=").append(skillSet);
         sb.append(", smsOptIn=").append(smsOptIn);
-        sb.append(", source='").append(source).append('\'');
+        sb.append(", source=").append(source);
         sb.append(", specialties=").append(specialties);
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", status=").append(status);
         sb.append(", tearsheets=").append(tearsheets);
         sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
-        sb.append(", type='").append(type).append('\'');
+        sb.append(", type=").append(type);
         sb.append(", willRelocate=").append(willRelocate);
-        sb.append('}');
+        sb.append(super.toString());
+        sb.append("}");
         return sb.toString();
     }
 

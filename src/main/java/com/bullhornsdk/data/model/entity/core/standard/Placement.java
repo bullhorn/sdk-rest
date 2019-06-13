@@ -1300,6 +1300,484 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder("Placement { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(appointments != null){
+            sb.append(lbc + "appointments=").append(appointments.toStringNonNull(includeLineBreaks));
+        }
+        if(approvingClientContact != null){
+            sb.append(lbc + "approvingClientContact=").append(approvingClientContact.toStringNonNull(includeLineBreaks));
+        }
+        if(backupApprovingClientContact != null){
+            sb.append(lbc + "backupApprovingClientContact=").append(backupApprovingClientContact.toStringNonNull(includeLineBreaks));
+        }
+        if(billingClientContact != null){
+            sb.append(lbc + "billingClientContact=").append(billingClientContact.toStringNonNull(includeLineBreaks));
+        }
+        if(billingFrequency != null){
+            sb.append(lbc + "billingFrequency=").append(billingFrequency);
+        }
+        if(bonusPackage != null){
+            sb.append(lbc + "bonusPackage=").append(bonusPackage);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull(includeLineBreaks));
+        }
+        if(candidate != null){
+            sb.append(lbc + "candidate=").append(candidate.toStringNonNull(includeLineBreaks));
+        }
+        if(placementCertifications != null){
+            sb.append(lbc + "placementCertifications=").append(placementCertifications);
+        }
+        if(changeRequests != null){
+            sb.append(lbc + "changeRequests=").append(changeRequests.toStringNonNull(includeLineBreaks));
+        }
+        if(clientBillRate != null){
+            sb.append(lbc + "clientBillRate=").append(clientBillRate);
+        }
+        if(clientOvertimeRate != null){
+            sb.append(lbc + "clientOvertimeRate=").append(clientOvertimeRate);
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        if(commissions != null){
+            sb.append(lbc + "commissions=").append(commissions.toStringNonNull(includeLineBreaks));
+        }
+        if(costCenter != null){
+            sb.append(lbc + "costCenter=").append(costCenter);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateBegin != null){
+            sb.append(lbc + "dateBegin=").append(dateBegin);
+        }
+        if(dateClientEffective != null){
+            sb.append(lbc + "dateClientEffective=").append(dateClientEffective);
+        }
+        if(dateEffective != null){
+            sb.append(lbc + "dateEffective=").append(dateEffective);
+        }
+        if(dateEnd != null){
+            sb.append(lbc + "dateEnd=").append(dateEnd);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(daysGuaranteed != null){
+            sb.append(lbc + "daysGuaranteed=").append(daysGuaranteed);
+        }
+        if(daysProRated != null){
+            sb.append(lbc + "daysProRated=").append(daysProRated);
+        }
+        if(durationWeeks != null){
+            sb.append(lbc + "durationWeeks=").append(durationWeeks);
+        }
+        if(employeeType != null){
+            sb.append(lbc + "employeeType=").append(employeeType);
+        }
+        if(employmentType != null){
+            sb.append(lbc + "employmentType=").append(employmentType);
+        }
+        if(fee != null){
+            sb.append(lbc + "fee=").append(fee);
+        }
+        if(flatFee != null){
+            sb.append(lbc + "flatFee=").append(flatFee);
+        }
+        if(fileAttachments != null){
+            sb.append(lbc + "fileAttachments=").append(fileAttachments.toStringNonNull(includeLineBreaks));
+        }
+        if(hoursOfOperation != null){
+            sb.append(lbc + "hoursOfOperation=").append(hoursOfOperation);
+        }
+        if(hoursPerDay != null){
+            sb.append(lbc + "hoursPerDay=").append(hoursPerDay);
+        }
+        if(housingManagerID != null){
+            sb.append(lbc + "housingManagerID=").append(housingManagerID);
+        }
+        if(housingStatus != null){
+            sb.append(lbc + "housingStatus=").append(housingStatus);
+        }
+        if(invoiceGroupName != null){
+            sb.append(lbc + "invoiceGroupName=").append(invoiceGroupName);
+        }
+        if(jobOrder != null){
+            sb.append(lbc + "jobOrder=").append(jobOrder.toStringNonNull(includeLineBreaks));
+        }
+        if(jobSubmission != null){
+            sb.append(lbc + "jobSubmission=").append(jobSubmission.toStringNonNull(includeLineBreaks));
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(optionsPackage != null){
+            sb.append(lbc + "optionsPackage=").append(optionsPackage);
+        }
+        if(otExemption != null){
+            sb.append(lbc + "otExemption=").append(otExemption);
+        }
+        if(otherHourlyFee != null){
+            sb.append(lbc + "otherHourlyFee=").append(otherHourlyFee);
+        }
+        if(markUpPercentage != null){
+            sb.append(lbc + "markUpPercentage=").append(markUpPercentage);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes.toStringNonNull(includeLineBreaks));
+        }
+        if(otherHourlyFeeComments != null){
+            sb.append(lbc + "otherHourlyFeeComments=").append(otherHourlyFeeComments);
+        }
+        if(overtimeMarkUpPercentage != null){
+            sb.append(lbc + "overtimeMarkUpPercentage=").append(overtimeMarkUpPercentage);
+        }
+        if(overtimeRate != null){
+            sb.append(lbc + "overtimeRate=").append(overtimeRate);
+        }
+        if(payRate != null){
+            sb.append(lbc + "payRate=").append(payRate);
+        }
+        if(projectCodeList != null){
+            sb.append(lbc + "projectCodeList=").append(projectCodeList);
+        }
+        if(recruitingManagerPercentGrossMargin != null){
+            sb.append(lbc + "recruitingManagerPercentGrossMargin=").append(recruitingManagerPercentGrossMargin);
+        }
+        if(referralFee != null){
+            sb.append(lbc + "referralFee=").append(referralFee);
+        }
+        if(referralFeeType != null){
+            sb.append(lbc + "referralFeeType=").append(referralFeeType);
+        }
+        if(reportTo != null){
+            sb.append(lbc + "reportTo=").append(reportTo);
+        }
+        if(reportedMargin != null){
+            sb.append(lbc + "reportedMargin=").append(reportedMargin);
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryUnit != null){
+            sb.append(lbc + "salaryUnit=").append(salaryUnit);
+        }
+        if(salesManagerPercentGrossMargin != null){
+            sb.append(lbc + "salesManagerPercentGrossMargin=").append(salesManagerPercentGrossMargin);
+        }
+        if(statementClientContact != null){
+            sb.append(lbc + "statementClientContact=").append(statementClientContact.toStringNonNull(includeLineBreaks));
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull(includeLineBreaks));
+        }
+        if(taxRate != null){
+            sb.append(lbc + "taxRate=").append(taxRate);
+        }
+        if(taxState != null){
+            sb.append(lbc + "taxState=").append(taxState);
+        }
+        if(terminationReason != null){
+            sb.append(lbc + "terminationReason=").append(terminationReason);
+        }
+        if(timeUnits != null){
+            sb.append(lbc + "timeUnits=").append(timeUnits);
+        }
+        if(vendorClientCorporation != null){
+            sb.append(lbc + "vendorClientCorporation=").append(vendorClientCorporation.toStringNonNull(includeLineBreaks));
+        }
+        if(workWeekStart != null){
+            sb.append(lbc + "workWeekStart=").append(workWeekStart);
+        }
+        if(workersCompensationRate != null){
+            sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate.toStringNonNull(includeLineBreaks));
+        }
+        sb.append(super.toStringNonNull(includeLineBreaks));
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull(includeLineBreaks));
+        }
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(appointments != null){
+            sb.append(lbc + "appointments=").append(appointments.toStringNonNull());
+        }
+        if(approvingClientContact != null){
+            sb.append(lbc + "approvingClientContact=").append(approvingClientContact.toStringNonNull());
+        }
+        if(backupApprovingClientContact != null){
+            sb.append(lbc + "backupApprovingClientContact=").append(backupApprovingClientContact.toStringNonNull());
+        }
+        if(billingClientContact != null){
+            sb.append(lbc + "billingClientContact=").append(billingClientContact.toStringNonNull());
+        }
+        if(billingFrequency != null){
+            sb.append(lbc + "billingFrequency=").append(billingFrequency);
+        }
+        if(bonusPackage != null){
+            sb.append(lbc + "bonusPackage=").append(bonusPackage);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull());
+        }
+        if(candidate != null){
+            sb.append(lbc + "candidate=").append(candidate.toStringNonNull());
+        }
+        if(placementCertifications != null){
+            sb.append(lbc + "placementCertifications=").append(placementCertifications);
+        }
+        if(changeRequests != null){
+            sb.append(lbc + "changeRequests=").append(changeRequests.toStringNonNull());
+        }
+        if(clientBillRate != null){
+            sb.append(lbc + "clientBillRate=").append(clientBillRate);
+        }
+        if(clientOvertimeRate != null){
+            sb.append(lbc + "clientOvertimeRate=").append(clientOvertimeRate);
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        if(commissions != null){
+            sb.append(lbc + "commissions=").append(commissions.toStringNonNull());
+        }
+        if(costCenter != null){
+            sb.append(lbc + "costCenter=").append(costCenter);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateBegin != null){
+            sb.append(lbc + "dateBegin=").append(dateBegin);
+        }
+        if(dateClientEffective != null){
+            sb.append(lbc + "dateClientEffective=").append(dateClientEffective);
+        }
+        if(dateEffective != null){
+            sb.append(lbc + "dateEffective=").append(dateEffective);
+        }
+        if(dateEnd != null){
+            sb.append(lbc + "dateEnd=").append(dateEnd);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(daysGuaranteed != null){
+            sb.append(lbc + "daysGuaranteed=").append(daysGuaranteed);
+        }
+        if(daysProRated != null){
+            sb.append(lbc + "daysProRated=").append(daysProRated);
+        }
+        if(durationWeeks != null){
+            sb.append(lbc + "durationWeeks=").append(durationWeeks);
+        }
+        if(employeeType != null){
+            sb.append(lbc + "employeeType=").append(employeeType);
+        }
+        if(employmentType != null){
+            sb.append(lbc + "employmentType=").append(employmentType);
+        }
+        if(fee != null){
+            sb.append(lbc + "fee=").append(fee);
+        }
+        if(flatFee != null){
+            sb.append(lbc + "flatFee=").append(flatFee);
+        }
+        if(fileAttachments != null){
+            sb.append(lbc + "fileAttachments=").append(fileAttachments.toStringNonNull());
+        }
+        if(hoursOfOperation != null){
+            sb.append(lbc + "hoursOfOperation=").append(hoursOfOperation);
+        }
+        if(hoursPerDay != null){
+            sb.append(lbc + "hoursPerDay=").append(hoursPerDay);
+        }
+        if(housingManagerID != null){
+            sb.append(lbc + "housingManagerID=").append(housingManagerID);
+        }
+        if(housingStatus != null){
+            sb.append(lbc + "housingStatus=").append(housingStatus);
+        }
+        if(invoiceGroupName != null){
+            sb.append(lbc + "invoiceGroupName=").append(invoiceGroupName);
+        }
+        if(jobOrder != null){
+            sb.append(lbc + "jobOrder=").append(jobOrder.toStringNonNull());
+        }
+        if(jobSubmission != null){
+            sb.append(lbc + "jobSubmission=").append(jobSubmission.toStringNonNull());
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(optionsPackage != null){
+            sb.append(lbc + "optionsPackage=").append(optionsPackage);
+        }
+        if(otExemption != null){
+            sb.append(lbc + "otExemption=").append(otExemption);
+        }
+        if(otherHourlyFee != null){
+            sb.append(lbc + "otherHourlyFee=").append(otherHourlyFee);
+        }
+        if(markUpPercentage != null){
+            sb.append(lbc + "markUpPercentage=").append(markUpPercentage);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes.toStringNonNull());
+        }
+        if(otherHourlyFeeComments != null){
+            sb.append(lbc + "otherHourlyFeeComments=").append(otherHourlyFeeComments);
+        }
+        if(overtimeMarkUpPercentage != null){
+            sb.append(lbc + "overtimeMarkUpPercentage=").append(overtimeMarkUpPercentage);
+        }
+        if(overtimeRate != null){
+            sb.append(lbc + "overtimeRate=").append(overtimeRate);
+        }
+        if(payRate != null){
+            sb.append(lbc + "payRate=").append(payRate);
+        }
+        if(projectCodeList != null){
+            sb.append(lbc + "projectCodeList=").append(projectCodeList);
+        }
+        if(recruitingManagerPercentGrossMargin != null){
+            sb.append(lbc + "recruitingManagerPercentGrossMargin=").append(recruitingManagerPercentGrossMargin);
+        }
+        if(referralFee != null){
+            sb.append(lbc + "referralFee=").append(referralFee);
+        }
+        if(referralFeeType != null){
+            sb.append(lbc + "referralFeeType=").append(referralFeeType);
+        }
+        if(reportTo != null){
+            sb.append(lbc + "reportTo=").append(reportTo);
+        }
+        if(reportedMargin != null){
+            sb.append(lbc + "reportedMargin=").append(reportedMargin);
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryUnit != null){
+            sb.append(lbc + "salaryUnit=").append(salaryUnit);
+        }
+        if(salesManagerPercentGrossMargin != null){
+            sb.append(lbc + "salesManagerPercentGrossMargin=").append(salesManagerPercentGrossMargin);
+        }
+        if(statementClientContact != null){
+            sb.append(lbc + "statementClientContact=").append(statementClientContact.toStringNonNull());
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull());
+        }
+        if(taxRate != null){
+            sb.append(lbc + "taxRate=").append(taxRate);
+        }
+        if(taxState != null){
+            sb.append(lbc + "taxState=").append(taxState);
+        }
+        if(terminationReason != null){
+            sb.append(lbc + "terminationReason=").append(terminationReason);
+        }
+        if(timeUnits != null){
+            sb.append(lbc + "timeUnits=").append(timeUnits);
+        }
+        if(vendorClientCorporation != null){
+            sb.append(lbc + "vendorClientCorporation=").append(vendorClientCorporation.toStringNonNull());
+        }
+        if(workWeekStart != null){
+            sb.append(lbc + "workWeekStart=").append(workWeekStart);
+        }
+        if(workersCompensationRate != null){
+            sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate.toStringNonNull());
+        }
+        sb.append(super.toStringNonNull());
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull());
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull());
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull());
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull());
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull());
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull());
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull());
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull());
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull());
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Placement{");
         sb.append("id=").append(id);
@@ -1307,17 +1785,17 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         sb.append(", approvingClientContact=").append(approvingClientContact);
         sb.append(", backupApprovingClientContact=").append(backupApprovingClientContact);
         sb.append(", billingClientContact=").append(billingClientContact);
-        sb.append(", billingFrequency='").append(billingFrequency).append('\'');
-        sb.append(", bonusPackage='").append(bonusPackage).append('\'');
+        sb.append(", billingFrequency=").append(billingFrequency);
+        sb.append(", bonusPackage=").append(bonusPackage);
         sb.append(", branch=").append(branch);
         sb.append(", candidate=").append(candidate);
         sb.append(", placementCertifications=").append(placementCertifications);
         sb.append(", changeRequests=").append(changeRequests);
         sb.append(", clientBillRate=").append(clientBillRate);
         sb.append(", clientOvertimeRate=").append(clientOvertimeRate);
-        sb.append(", comments='").append(comments).append('\'');
+        sb.append(", comments=").append(comments);
         sb.append(", commissions=").append(commissions);
-        sb.append(", costCenter='").append(costCenter).append('\'');
+        sb.append(", costCenter=").append(costCenter);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateBegin=").append(dateBegin);
         sb.append(", dateClientEffective=").append(dateClientEffective);
@@ -1327,47 +1805,48 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         sb.append(", daysGuaranteed=").append(daysGuaranteed);
         sb.append(", daysProRated=").append(daysProRated);
         sb.append(", durationWeeks=").append(durationWeeks);
-        sb.append(", employeeType='").append(employeeType).append('\'');
-        sb.append(", employmentType='").append(employmentType).append('\'');
+        sb.append(", employeeType=").append(employeeType);
+        sb.append(", employmentType=").append(employmentType);
         sb.append(", fee=").append(fee);
         sb.append(", flatFee=").append(flatFee);
         sb.append(", fileAttachments=").append(fileAttachments);
-        sb.append(", hoursOfOperation='").append(hoursOfOperation).append('\'');
+        sb.append(", hoursOfOperation=").append(hoursOfOperation);
         sb.append(", hoursPerDay=").append(hoursPerDay);
         sb.append(", housingManagerID=").append(housingManagerID);
-        sb.append(", housingStatus='").append(housingStatus).append('\'');
-        sb.append(", invoiceGroupName='").append(invoiceGroupName).append('\'');
+        sb.append(", housingStatus=").append(housingStatus);
+        sb.append(", invoiceGroupName=").append(invoiceGroupName);
         sb.append(", jobOrder=").append(jobOrder);
         sb.append(", jobSubmission=").append(jobSubmission);
         sb.append(", migrateGUID=").append(migrateGUID);
-        sb.append(", optionsPackage='").append(optionsPackage).append('\'');
+        sb.append(", optionsPackage=").append(optionsPackage);
         sb.append(", otExemption=").append(otExemption);
         sb.append(", otherHourlyFee=").append(otherHourlyFee);
         sb.append(", markUpPercentage=").append(markUpPercentage);
         sb.append(", notes=").append(notes);
-        sb.append(", otherHourlyFeeComments='").append(otherHourlyFeeComments).append('\'');
+        sb.append(", otherHourlyFeeComments=").append(otherHourlyFeeComments);
         sb.append(", overtimeMarkUpPercentage=").append(overtimeMarkUpPercentage);
         sb.append(", overtimeRate=").append(overtimeRate);
         sb.append(", payRate=").append(payRate);
-        sb.append(", projectCodeList='").append(projectCodeList).append('\'');
+        sb.append(", projectCodeList=").append(projectCodeList);
         sb.append(", recruitingManagerPercentGrossMargin=").append(recruitingManagerPercentGrossMargin);
         sb.append(", referralFee=").append(referralFee);
-        sb.append(", referralFeeType='").append(referralFeeType).append('\'');
-        sb.append(", reportTo='").append(reportTo).append('\'');
+        sb.append(", referralFeeType=").append(referralFeeType);
+        sb.append(", reportTo=").append(reportTo);
         sb.append(", reportedMargin=").append(reportedMargin);
         sb.append(", salary=").append(salary);
-        sb.append(", salaryUnit='").append(salaryUnit).append('\'');
+        sb.append(", salaryUnit=").append(salaryUnit);
         sb.append(", salesManagerPercentGrossMargin=").append(salesManagerPercentGrossMargin);
         sb.append(", statementClientContact=").append(statementClientContact);
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", status=").append(status);
         sb.append(", tasks=").append(tasks);
         sb.append(", taxRate=").append(taxRate);
-        sb.append(", taxState='").append(taxState).append('\'');
-        sb.append(", terminationReason='").append(terminationReason).append('\'');
+        sb.append(", taxState=").append(taxState);
+        sb.append(", terminationReason=").append(terminationReason);
         sb.append(", timeUnits=").append(timeUnits);
         sb.append(", vendorClientCorporation=").append(vendorClientCorporation);
         sb.append(", workWeekStart=").append(workWeekStart);
         sb.append(", workersCompensationRate=").append(workersCompensationRate);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);
@@ -1378,7 +1857,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         sb.append(", customObject8s=").append(customObject8s);
         sb.append(", customObject9s=").append(customObject9s);
         sb.append(", customObject10s=").append(customObject10s);
-        sb.append('}');
+        sb.append("}");
         return sb.toString();
     }
 }

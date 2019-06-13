@@ -1321,51 +1321,452 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     }
 
     @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address.toStringNonNull());
+        }
+        if(annualRevenue != null){
+            sb.append(lbc + "annualRevenue=").append(annualRevenue);
+        }
+        if(billingAddress != null){
+            sb.append(lbc + "billingAddress=").append(billingAddress.toStringNonNull());
+        }
+        if(billingContact != null){
+            sb.append(lbc + "billingContact=").append(billingContact);
+        }
+        if(billingFrequency != null){
+            sb.append(lbc + "billingFrequency=").append(billingFrequency);
+        }
+        if(billingPhone != null){
+            sb.append(lbc + "billingPhone=").append(billingPhone);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull());
+        }
+        if(businessSectorList != null){
+            sb.append(lbc + "businessSectorList=").append(businessSectorList);
+        }
+        if(childClientCorporations != null){
+            sb.append(lbc + "childClientCorporations=").append(childClientCorporations.toStringNonNull());
+        }
+        if(clientContacts != null){
+            sb.append(lbc + "clientContacts=").append(clientContacts.toStringNonNull());
+        }
+        if(companyDescription != null){
+            sb.append(lbc + "companyDescription=").append(companyDescription);
+        }
+        if(companyURL != null){
+            sb.append(lbc + "companyURL=").append(companyURL);
+        }
+        if(competitors != null){
+            sb.append(lbc + "competitors=").append(competitors);
+        }
+        if(culture != null){
+            sb.append(lbc + "culture=").append(culture);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateFounded != null){
+            sb.append(lbc + "dateFounded=").append(dateFounded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(department != null){
+            sb.append(lbc + "department=").append(department.toStringNonNull());
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=").append(externalID);
+        }
+        if(fax != null){
+            sb.append(lbc + "fax=").append(fax);
+        }
+        if(feeArrangement != null){
+            sb.append(lbc + "feeArrangement=").append(feeArrangement);
+        }
+        if(funding != null){
+            sb.append(lbc + "funding=").append(funding);
+        }
+        if(industryList != null){
+            sb.append(lbc + "industryList=").append(industryList);
+        }
+        if(invoiceFormat != null){
+            sb.append(lbc + "invoiceFormat=").append(invoiceFormat);
+        }
+        if(leads != null){
+            sb.append(lbc + "leads=").append(leads.toStringNonNull());
+        }
+        if(linkedinProfileName != null){
+            sb.append(lbc + "linkedinProfileName=").append(linkedinProfileName);
+        }
+        if(name != null){
+            sb.append(lbc + "name=").append(name);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes);
+        }
+        if(numEmployees != null){
+            sb.append(lbc + "numEmployees=").append(numEmployees);
+        }
+        if(numOffices != null){
+            sb.append(lbc + "numOffices=").append(numOffices);
+        }
+        if(ownership != null){
+            sb.append(lbc + "ownership=").append(ownership);
+        }
+        if(owners != null){
+            sb.append(lbc + "owners=").append(owners.toStringNonNull());
+        }
+        if(parentClientCorporation != null){
+            sb.append(lbc + "parentClientCorporation=").append(parentClientCorporation.toStringNonNull());
+        }
+        if(phone != null){
+            sb.append(lbc + "phone=").append(phone);
+        }
+        if(revenue != null){
+            sb.append(lbc + "revenue=").append(revenue);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(taxRate != null){
+            sb.append(lbc + "taxRate=").append(taxRate);
+        }
+        if(tickerSymbol != null){
+            sb.append(lbc + "tickerSymbol=").append(tickerSymbol);
+        }
+        if(trackTitle != null){
+            sb.append(lbc + "trackTitle=").append(trackTitle);
+        }
+        if(workWeekStart != null){
+            sb.append(lbc + "workWeekStart=").append(workWeekStart);
+        }
+        if(requirements != null){
+            sb.append(lbc + "requirements=").append(requirements);
+        }
+        if(certificationGroups != null){
+            sb.append(lbc + "certificationGroups=").append(certificationGroups.toStringNonNull());
+        }
+        sb.append(super.toStringNonNull());
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull());
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull());
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull());
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull());
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull());
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull());
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull());
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull());
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull());
+        }
+        if(customObject11s != null){
+            sb.append(lbc + "customObject11s=").append(customObject11s.toStringNonNull());
+        }
+        if(customObject12s != null){
+            sb.append(lbc + "customObject12s=").append(customObject12s.toStringNonNull());
+        }
+        if(customObject13s != null){
+            sb.append(lbc + "customObject13s=").append(customObject13s.toStringNonNull());
+        }
+        if(customObject14s != null){
+            sb.append(lbc + "customObject14s=").append(customObject14s.toStringNonNull());
+        }
+        if(customObject15s != null){
+            sb.append(lbc + "customObject15s=").append(customObject15s.toStringNonNull());
+        }
+        if(customObject16s != null){
+            sb.append(lbc + "customObject16s=").append(customObject16s.toStringNonNull());
+        }
+        if(customObject17s != null){
+            sb.append(lbc + "customObject17s=").append(customObject17s.toStringNonNull());
+        }
+        if(customObject18s != null){
+            sb.append(lbc + "customObject18s=").append(customObject18s.toStringNonNull());
+        }
+        if(customObject19s != null){
+            sb.append(lbc + "customObject19s=").append(customObject19s.toStringNonNull());
+        }
+        if(customObject20s != null){
+            sb.append(lbc + "customObject20s=").append(customObject20s.toStringNonNull());
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(includeLineBreaks)
+            sb.append("\n");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address.toStringNonNull(includeLineBreaks));
+        }
+        if(annualRevenue != null){
+            sb.append(lbc + "annualRevenue=").append(annualRevenue);
+        }
+        if(billingAddress != null){
+            sb.append(lbc + "billingAddress=").append(billingAddress.toStringNonNull(includeLineBreaks));
+        }
+        if(billingContact != null){
+            sb.append(lbc + "billingContact=").append(billingContact);
+        }
+        if(billingFrequency != null){
+            sb.append(lbc + "billingFrequency=").append(billingFrequency);
+        }
+        if(billingPhone != null){
+            sb.append(lbc + "billingPhone=").append(billingPhone);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull(includeLineBreaks));
+        }
+        if(businessSectorList != null){
+            sb.append(lbc + "businessSectorList=").append(businessSectorList);
+        }
+        if(childClientCorporations != null){
+            sb.append(lbc + "childClientCorporations=").append(childClientCorporations.toStringNonNull(includeLineBreaks));
+        }
+        if(clientContacts != null){
+            sb.append(lbc + "clientContacts=").append(clientContacts.toStringNonNull(includeLineBreaks));
+        }
+        if(companyDescription != null){
+            sb.append(lbc + "companyDescription=").append(companyDescription);
+        }
+        if(companyURL != null){
+            sb.append(lbc + "companyURL=").append(companyURL);
+        }
+        if(competitors != null){
+            sb.append(lbc + "competitors=").append(competitors);
+        }
+        if(culture != null){
+            sb.append(lbc + "culture=").append(culture);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateFounded != null){
+            sb.append(lbc + "dateFounded=").append(dateFounded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(department != null){
+            sb.append(lbc + "department=").append(department.toStringNonNull(includeLineBreaks));
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=").append(externalID);
+        }
+        if(fax != null){
+            sb.append(lbc + "fax=").append(fax);
+        }
+        if(feeArrangement != null){
+            sb.append(lbc + "feeArrangement=").append(feeArrangement);
+        }
+        if(funding != null){
+            sb.append(lbc + "funding=").append(funding);
+        }
+        if(industryList != null){
+            sb.append(lbc + "industryList=").append(industryList);
+        }
+        if(invoiceFormat != null){
+            sb.append(lbc + "invoiceFormat=").append(invoiceFormat);
+        }
+        if(leads != null){
+            sb.append(lbc + "leads=").append(leads);
+        }
+        if(linkedinProfileName != null){
+            sb.append(lbc + "linkedinProfileName=").append(linkedinProfileName);
+        }
+        if(name != null){
+            sb.append(lbc + "name=").append(name);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes);
+        }
+        if(numEmployees != null){
+            sb.append(lbc + "numEmployees=").append(numEmployees);
+        }
+        if(numOffices != null){
+            sb.append(lbc + "numOffices=").append(numOffices);
+        }
+        if(ownership != null){
+            sb.append(lbc + "ownership=").append(ownership);
+        }
+        if(owners != null){
+            sb.append(lbc + "owners=").append(owners.toStringNonNull(includeLineBreaks));
+        }
+        if(parentClientCorporation != null){
+            sb.append(lbc + "parentClientCorporation=").append(parentClientCorporation.toStringNonNull(includeLineBreaks));
+        }
+        if(phone != null){
+            sb.append(lbc + "phone=").append(phone);
+        }
+        if(revenue != null){
+            sb.append(lbc + "revenue=").append(revenue);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(taxRate != null){
+            sb.append(lbc + "taxRate=").append(taxRate);
+        }
+        if(tickerSymbol != null){
+            sb.append(lbc + "tickerSymbol=").append(tickerSymbol);
+        }
+        if(trackTitle != null){
+            sb.append(lbc + "trackTitle=").append(trackTitle);
+        }
+        if(workWeekStart != null){
+            sb.append(lbc + "workWeekStart=").append(workWeekStart);
+        }
+        if(requirements != null){
+            sb.append(lbc + "requirements=").append(requirements);
+        }
+        if(certificationGroups != null){
+            sb.append(lbc + "certificationGroups=").append(certificationGroups.toStringNonNull(includeLineBreaks));
+        }
+        sb.append(super.toStringNonNull(includeLineBreaks));
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject11s != null){
+            sb.append(lbc + "customObject11s=").append(customObject11s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject12s != null){
+            sb.append(lbc + "customObject12s=").append(customObject12s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject13s != null){
+            sb.append(lbc + "customObject13s=").append(customObject13s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject14s != null){
+            sb.append(lbc + "customObject14s=").append(customObject14s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject15s != null){
+            sb.append(lbc + "customObject15s=").append(customObject15s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject16s != null){
+            sb.append(lbc + "customObject16s=").append(customObject16s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject17s != null){
+            sb.append(lbc + "customObject17s=").append(customObject17s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject18s != null){
+            sb.append(lbc + "customObject18s=").append(customObject18s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject19s != null){
+            sb.append(lbc + "customObject19s=").append(customObject19s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject20s != null){
+            sb.append(lbc + "customObject20s=").append(customObject20s.toStringNonNull(includeLineBreaks));
+        }
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ClientCorporation{");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + "{");
         sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", annualRevenue=").append(annualRevenue);
         sb.append(", billingAddress=").append(billingAddress);
-        sb.append(", billingContact='").append(billingContact).append('\'');
-        sb.append(", billingFrequency='").append(billingFrequency).append('\'');
-        sb.append(", billingPhone='").append(billingPhone).append('\'');
+        sb.append(", billingContact=").append(billingContact);
+        sb.append(", billingFrequency=").append(billingFrequency);
+        sb.append(", billingPhone=").append(billingPhone);
         sb.append(", branch=").append(branch);
-        sb.append(", businessSectorList='").append(businessSectorList).append('\'');
+        sb.append(", businessSectorList=").append(businessSectorList);
         sb.append(", childClientCorporations=").append(childClientCorporations);
         sb.append(", clientContacts=").append(clientContacts);
-        sb.append(", companyDescription='").append(companyDescription).append('\'');
-        sb.append(", companyURL='").append(companyURL).append('\'');
-        sb.append(", competitors='").append(competitors).append('\'');
-        sb.append(", culture='").append(culture).append('\'');
+        sb.append(", companyDescription=").append(companyDescription);
+        sb.append(", companyURL=").append(companyURL);
+        sb.append(", competitors=").append(competitors);
+        sb.append(", culture=").append(culture);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateFounded=").append(dateFounded);
         sb.append(", dateLastModified=").append(dateLastModified);
         sb.append(", department=").append(department);
-        sb.append(", externalID='").append(externalID).append('\'');
-        sb.append(", fax='").append(fax).append('\'');
+        sb.append(", externalID=").append(externalID);
+        sb.append(", fax=").append(fax);
         sb.append(", feeArrangement=").append(feeArrangement);
-        sb.append(", funding='").append(funding).append('\'');
-        sb.append(", industryList='").append(industryList).append('\'');
-        sb.append(", invoiceFormat='").append(invoiceFormat).append('\'');
+        sb.append(", funding=").append(funding);
+        sb.append(", industryList=").append(industryList);
+        sb.append(", invoiceFormat=").append(invoiceFormat);
         sb.append(", leads=").append(leads);
-        sb.append(", linkedinProfileName='").append(linkedinProfileName).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", notes='").append(notes).append('\'');
+        sb.append(", linkedinProfileName=").append(linkedinProfileName);
+        sb.append(", name=").append(name);
+        sb.append(", notes=").append(notes);
         sb.append(", numEmployees=").append(numEmployees);
         sb.append(", numOffices=").append(numOffices);
-        sb.append(", ownership='").append(ownership).append('\'');
+        sb.append(", ownership=").append(ownership);
         sb.append(", owners=").append(owners);
         sb.append(", parentClientCorporation=").append(parentClientCorporation);
-        sb.append(", phone='").append(phone).append('\'');
-        sb.append(", revenue='").append(revenue).append('\'');
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", phone=").append(phone);
+        sb.append(", revenue=").append(revenue);
+        sb.append(", status=").append(status);
         sb.append(", taxRate=").append(taxRate);
-        sb.append(", tickerSymbol='").append(tickerSymbol).append('\'');
-        sb.append(", trackTitle='").append(trackTitle).append('\'');
+        sb.append(", tickerSymbol=").append(tickerSymbol);
+        sb.append(", trackTitle=").append(trackTitle);
         sb.append(", workWeekStart=").append(workWeekStart);
         sb.append(", requirements=").append(requirements);
         sb.append(", certificationGroups=").append(certificationGroups);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);
@@ -1386,9 +1787,9 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", customObject18s=").append(customObject18s);
         sb.append(", customObject19s=").append(customObject19s);
         sb.append(", customObject20s=").append(customObject20s);
-        sb.append('}');
+        sb.append("}");
         return sb.toString();
-    }
+}
 
     public ClientCorporation instantiateForInsert() {
 		ClientCorporation entity = new ClientCorporation();

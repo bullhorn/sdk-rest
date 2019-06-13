@@ -94,9 +94,66 @@ public class BusinessSector extends AbstractEntity implements QueryEntity, AllRe
     }
 
     @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
+        builder.append(" {");
+        if(id != null){
+            builder.append(lbc + "id=");
+            builder.append(id);
+        }
+        if(dateAdded != null){
+            builder.append(lbc + "dateAdded=");
+            builder.append(dateAdded);
+        }
+        if(name != null){
+            builder.append(lbc + "name=");
+            builder.append(name);
+        }
+        if(this.getAdditionalProperties() != null){
+            builder.append(lbc + "additionalProperties=");
+            builder.append(this.getAdditionalProperties());
+        }
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
+        builder.append(" {");
+        if(includeLineBreaks)
+            builder.append("\n");
+        if(id != null){
+            builder.append(lbc + "id=");
+            builder.append(id);
+        }
+        if(dateAdded != null){
+            builder.append(lbc + "dateAdded=");
+            builder.append(dateAdded);
+        }
+        if(name != null){
+            builder.append(lbc + "name=");
+            builder.append(name);
+        }
+        if(this.getAdditionalProperties() != null){
+            builder.append(lbc + "additionalProperties=");
+            builder.append(this.getAdditionalProperties());
+        }
+        if(includeLineBreaks)
+            builder.append("\n");
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("BusinessSector {\nid=");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
+        builder.append(" {");
+        builder.append("\nid=");
         builder.append(id);
         builder.append(", \ndateAdded=");
         builder.append(dateAdded);

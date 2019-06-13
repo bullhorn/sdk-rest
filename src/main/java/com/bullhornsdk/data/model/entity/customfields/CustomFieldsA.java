@@ -509,60 +509,266 @@ public class CustomFieldsA extends BaseCustomFields {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(super.toString());
-		builder.append(", \ncustomDate1=");
-		builder.append(customDate1);
-		builder.append(", \ncustomDate2=");
-		builder.append(customDate2);
-		builder.append(", \ncustomDate3=");
-		builder.append(customDate3);
-		builder.append(", \ncustomFloat1=");
-		builder.append(customFloat1);
-		builder.append(", \ncustomFloat2=");
-		builder.append(customFloat2);
-		builder.append(", \ncustomFloat3=");
-		builder.append(customFloat3);
-		builder.append(", \ncustomInt1=");
-		builder.append(customInt1);
-		builder.append(", \ncustomInt2=");
-		builder.append(customInt2);
-		builder.append(", \ncustomInt3=");
-		builder.append(customInt3);
-		builder.append(", \ncustomText6=");
-		builder.append(customText6);
-		builder.append(", \ncustomText7=");
-		builder.append(customText7);
-		builder.append(", \ncustomText8=");
-		builder.append(customText8);
-		builder.append(", \ncustomText9=");
-		builder.append(customText9);
-		builder.append(", \ncustomText10=");
-		builder.append(customText10);
-		builder.append(", \ncustomText11=");
-		builder.append(customText11);
-		builder.append(", \ncustomText12=");
-		builder.append(customText12);
-		builder.append(", \ncustomText13=");
-		builder.append(customText13);
-		builder.append(", \ncustomText14=");
-		builder.append(customText14);
-		builder.append(", \ncustomText15=");
-		builder.append(customText15);
-		builder.append(", \ncustomText16=");
-		builder.append(customText16);
-		builder.append(", \ncustomText17=");
-		builder.append(customText17);
-		builder.append(", \ncustomText18=");
-		builder.append(customText18);
-		builder.append(", \ncustomText19=");
-		builder.append(customText19);
-		builder.append(", \ncustomText20=");
-		builder.append(customText20);
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(super.toStringNonNull());
+        if(customDate1 != null){
+            builder.append(lbc + "customDate1=");
+            builder.append(customDate1);
+        }
+        if(customDate2 != null){
+            builder.append(lbc + "customDate2=");
+            builder.append(customDate2);
+        }
+        if(customDate3 != null){
+            builder.append(lbc + "customDate3=");
+            builder.append(customDate3);
+        }
+        if(customFloat1 != null){
+            builder.append(lbc + "customFloat1=");
+            builder.append(customFloat1);
+        }
+        if(customFloat2 != null){
+            builder.append(lbc + "customFloat2=");
+            builder.append(customFloat2);
+        }
+        if(customFloat3 != null){
+            builder.append(lbc + "customFloat3=");
+            builder.append(customFloat3);
+        }
+        if(customInt1 != null){
+            builder.append(lbc + "customInt1=");
+            builder.append(customInt1);
+        }
+        if(customInt2 != null){
+            builder.append(lbc + "customInt2=");
+            builder.append(customInt2);
+        }
+        if(customInt3 != null){
+            builder.append(lbc + "customInt3=");
+            builder.append(customInt3);
+        }
+        if(customText6 != null){
+            builder.append(lbc + "customText6=");
+            builder.append(customText6);
+        }
+        if(customText7 != null){
+            builder.append(lbc + "customText7=");
+            builder.append(customText7);
+        }
+        if(customText8 != null){
+            builder.append(lbc + "customText8=");
+            builder.append(customText8);
+        }
+        if(customText9 != null){
+            builder.append(lbc + "customText9=");
+            builder.append(customText9);
+        }
+        if(customText10 != null){
+            builder.append(lbc + "customText10=");
+            builder.append(customText10);
+        }
+        if(customText11 != null){
+            builder.append(lbc + "customText11=");
+            builder.append(customText11);
+        }
+        if(customText12 != null){
+            builder.append(lbc + "customText12=");
+            builder.append(customText12);
+        }
+        if(customText13 != null){
+            builder.append(lbc + "customText13=");
+            builder.append(customText13);
+        }
+        if(customText14 != null){
+            builder.append(lbc + "customText14=");
+            builder.append(customText14);
+        }
+        if(customText15 != null){
+            builder.append(lbc + "customText15=");
+            builder.append(customText15);
+        }
+        if(customText16 != null){
+            builder.append(lbc + "customText16=");
+            builder.append(customText16);
+        }
+        if(customText17 != null){
+            builder.append(lbc + "customText17=");
+            builder.append(customText17);
+        }
+        if(customText18 != null){
+            builder.append(lbc + "customText18=");
+            builder.append(customText18);
+        }
+        if(customText19 != null){
+            builder.append(lbc + "customText19=");
+            builder.append(customText19);
+        }
+        if(customText20 != null){
+            builder.append(lbc + "customText20=");
+            builder.append(customText20);
+        }
+        return builder.toString();
+    }
 
-		return builder.toString();
-	}
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(super.toStringNonNull(includeLineBreaks));
+        if(customDate1 != null){
+            builder.append(lbc + "customDate1=");
+            builder.append(customDate1);
+        }
+        if(customDate2 != null){
+            builder.append(lbc + "customDate2=");
+            builder.append(customDate2);
+        }
+        if(customDate3 != null){
+            builder.append(lbc + "customDate3=");
+            builder.append(customDate3);
+        }
+        if(customFloat1 != null){
+            builder.append(lbc + "customFloat1=");
+            builder.append(customFloat1);
+        }
+        if(customFloat2 != null){
+            builder.append(lbc + "customFloat2=");
+            builder.append(customFloat2);
+        }
+        if(customFloat3 != null){
+            builder.append(lbc + "customFloat3=");
+            builder.append(customFloat3);
+        }
+        if(customInt1 != null){
+            builder.append(lbc + "customInt1=");
+            builder.append(customInt1);
+        }
+        if(customInt2 != null){
+            builder.append(lbc + "customInt2=");
+            builder.append(customInt2);
+        }
+        if(customInt3 != null){
+            builder.append(lbc + "customInt3=");
+            builder.append(customInt3);
+        }
+        if(customText6 != null){
+            builder.append(lbc + "customText6=");
+            builder.append(customText6);
+        }
+        if(customText7 != null){
+            builder.append(lbc + "customText7=");
+            builder.append(customText7);
+        }
+        if(customText8 != null){
+            builder.append(lbc + "customText8=");
+            builder.append(customText8);
+        }
+        if(customText9 != null){
+            builder.append(lbc + "customText9=");
+            builder.append(customText9);
+        }
+        if(customText10 != null){
+            builder.append(lbc + "customText10=");
+            builder.append(customText10);
+        }
+        if(customText11 != null){
+            builder.append(lbc + "customText11=");
+            builder.append(customText11);
+        }
+        if(customText12 != null){
+            builder.append(lbc + "customText12=");
+            builder.append(customText12);
+        }
+        if(customText13 != null){
+            builder.append(lbc + "customText13=");
+            builder.append(customText13);
+        }
+        if(customText14 != null){
+            builder.append(lbc + "customText14=");
+            builder.append(customText14);
+        }
+        if(customText15 != null){
+            builder.append(lbc + "customText15=");
+            builder.append(customText15);
+        }
+        if(customText16 != null){
+            builder.append(lbc + "customText16=");
+            builder.append(customText16);
+        }
+        if(customText17 != null){
+            builder.append(lbc + "customText17=");
+            builder.append(customText17);
+        }
+        if(customText18 != null){
+            builder.append(lbc + "customText18=");
+            builder.append(customText18);
+        }
+        if(customText19 != null){
+            builder.append(lbc + "customText19=");
+            builder.append(customText19);
+        }
+        if(customText20 != null){
+            builder.append(lbc + "customText20=");
+            builder.append(customText20);
+        }
+        return builder.toString();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder(super.toString());
+        builder.append(", customDate1=");
+        builder.append(customDate1);
+        builder.append(", customDate2=");
+        builder.append(customDate2);
+        builder.append(", customDate3=");
+        builder.append(customDate3);
+        builder.append(", customFloat1=");
+        builder.append(customFloat1);
+        builder.append(", customFloat2=");
+        builder.append(customFloat2);
+        builder.append(", customFloat3=");
+        builder.append(customFloat3);
+        builder.append(", customInt1=");
+        builder.append(customInt1);
+        builder.append(", customInt2=");
+        builder.append(customInt2);
+        builder.append(", customInt3=");
+        builder.append(customInt3);
+        builder.append(", customText6=");
+        builder.append(customText6);
+        builder.append(", customText7=");
+        builder.append(customText7);
+        builder.append(", customText8=");
+        builder.append(customText8);
+        builder.append(", customText9=");
+        builder.append(customText9);
+        builder.append(", customText10=");
+        builder.append(customText10);
+        builder.append(", customText11=");
+        builder.append(customText11);
+        builder.append(", customText12=");
+        builder.append(customText12);
+        builder.append(", customText13=");
+        builder.append(customText13);
+        builder.append(", customText14=");
+        builder.append(customText14);
+        builder.append(", customText15=");
+        builder.append(customText15);
+        builder.append(", customText16=");
+        builder.append(customText16);
+        builder.append(", customText17=");
+        builder.append(customText17);
+        builder.append(", customText18=");
+        builder.append(customText18);
+        builder.append(", customText19=");
+        builder.append(customText19);
+        builder.append(", customText20=");
+        builder.append(customText20);
+        return builder.toString();
+    }
 
 }

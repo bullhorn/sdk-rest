@@ -135,20 +135,76 @@ public class BaseCustomFields extends AbstractEntity {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(customText1);
-		builder.append(", \ncustomText2=");
-		builder.append(customText2);
-		builder.append(", \ncustomText3=");
-		builder.append(customText3);
-		builder.append(", \ncustomText4=");
-		builder.append(customText4);
-		builder.append(", \ncustomText5=");
-		builder.append(customText5);
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder();
+        if(customText1 != null){
+            builder.append(lbc + "customText1=");
+            builder.append(customText1);
+        }
+        if(customText2 != null){
+            builder.append(lbc + "customText2=");
+            builder.append(customText2);
+        }
+        if(customText3 != null){
+            builder.append(lbc + "customText3=");
+            builder.append(customText3);
+        }
+        if(customText4 != null){
+            builder.append(lbc + "customText4=");
+            builder.append(customText4);
+        }
+        if(customText5 != null){
+            builder.append(lbc + "customText5=");
+            builder.append(customText5);
+        }
+        return builder.toString();
+    }
 
-		return builder.toString();
-	}
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder();
+        if(customText1 != null){
+            builder.append(lbc + "customText1=");
+            builder.append(customText1);
+        }
+        if(customText2 != null){
+            builder.append(lbc + "customText2=");
+            builder.append(customText2);
+        }
+        if(customText3 != null){
+            builder.append(lbc + "customText3=");
+            builder.append(customText3);
+        }
+        if(customText4 != null){
+            builder.append(lbc + "customText4=");
+            builder.append(customText4);
+        }
+        if(customText5 != null){
+            builder.append(lbc + "customText5=");
+            builder.append(customText5);
+        }
+        return builder.toString();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(", customText1=");
+        builder.append(customText1);
+        builder.append(", customText2=");
+        builder.append(customText2);
+        builder.append(", customText3=");
+        builder.append(customText3);
+        builder.append(", customText4=");
+        builder.append(customText4);
+        builder.append(", customText5=");
+        builder.append(customText5);
+        return builder.toString();
+    }
 
 }

@@ -2350,10 +2350,871 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     }
 
     @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address.toStringNonNull());
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull());
+        }
+        if(businessSectors != null){
+            sb.append(lbc + "businessSectors=").append(businessSectors.toStringNonNull());
+        }
+        if(canEnterTime != null){
+            sb.append(lbc + "canEnterTime=").append(canEnterTime);
+        }
+        if(categories != null){
+            sb.append(lbc + "categories=").append(categories.toStringNonNull());
+        }
+        if(category != null){
+            sb.append(lbc + "category=").append(category.toStringNonNull());
+        }
+        if(certificationList != null){
+            sb.append(lbc + "certificationList=").append(certificationList.toStringNonNull());
+        }
+        if(certifications != null){
+            sb.append(lbc + "certifications=").append(certifications);
+        }
+        if(clientCorporationBlackList != null){
+            sb.append(lbc + "clientCorporationBlackList=").append(clientCorporationBlackList.toStringNonNull());
+        }
+        if(clientCorporationWhiteList != null){
+            sb.append(lbc + "clientCorporationWhiteList=").append(clientCorporationWhiteList.toStringNonNull());
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        if(companyName != null){
+            sb.append(lbc + "companyName=").append(companyName);
+        }
+        if(companyURL != null){
+            sb.append(lbc + "companyURL=").append(companyURL);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateAvailable != null){
+            sb.append(lbc + "dateAvailable=").append(dateAvailable);
+        }
+        if(dateAvailableEnd != null){
+            sb.append(lbc + "dateAvailableEnd=").append(dateAvailableEnd);
+        }
+        if(dateI9Expiration != null){
+            sb.append(lbc + "dateI9Expiration=").append(dateI9Expiration);
+        }
+        if(dateLastComment != null){
+            sb.append(lbc + "dateLastComment=").append(dateLastComment);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(dateNextCall != null){
+            sb.append(lbc + "dateNextCall=").append(dateNextCall);
+        }
+        if(dateOfBirth != null){
+            sb.append(lbc + "dateOfBirth=").append(dateOfBirth);
+        }
+        if(dayRate != null){
+            sb.append(lbc + "dayRate=").append(dayRate);
+        }
+        if(dayRateLow != null){
+            sb.append(lbc + "dayRateLow=").append(dayRateLow);
+        }
+        if(degreeList != null){
+            sb.append(lbc + "degreeList=").append(degreeList);
+        }
+        if(description != null){
+            sb.append(lbc + "description=").append(description);
+        }
+        if(desiredLocations != null){
+            sb.append(lbc + "desiredLocations=").append(desiredLocations);
+        }
+        if(disability != null){
+            sb.append(lbc + "disability=").append(disability);
+        }
+        if(educationDegree != null){
+            sb.append(lbc + "educationDegree=").append(educationDegree);
+        }
+        if(educations != null){
+            sb.append(lbc + "educations=").append(educations.toStringNonNull());
+        }
+        if(email != null){
+            sb.append(lbc + "email=").append(email);
+        }
+        if(email2 != null){
+            sb.append(lbc + "email2=").append(email2);
+        }
+        if(email3 != null){
+            sb.append(lbc + "email3=").append(email3);
+        }
+        if(employeeType != null){
+            sb.append(lbc + "employeeType=").append(employeeType);
+        }
+        if(employmentPreference != null){
+            sb.append(lbc + "employmentPreference=").append(employmentPreference);
+        }
+        if(ethnicity != null){
+            sb.append(lbc + "ethnicity=").append(ethnicity);
+        }
+        if(experience != null){
+            sb.append(lbc + "experience=").append(experience);
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=").append(externalID);
+        }
+        if(fax != null){
+            sb.append(lbc + "fax=").append(fax);
+        }
+        if(fax2 != null){
+            sb.append(lbc + "fax2=").append(fax2);
+        }
+        if(fax3 != null){
+            sb.append(lbc + "fax3=").append(fax3);
+        }
+        if(federalAddtionalWitholdingsAmount != null){
+            sb.append(lbc + "federalAddtionalWitholdingsAmount=").append(federalAddtionalWitholdingsAmount);
+        }
+        if(federalExemptions != null){
+            sb.append(lbc + "federalExemptions=").append(federalExemptions);
+        }
+        if(federalFilingStatus != null){
+            sb.append(lbc + "federalFilingStatus=").append(federalFilingStatus);
+        }
+        if(fileAttachments != null){
+            sb.append(lbc + "fileAttachments=").append(fileAttachments.toStringNonNull());
+        }
+        if(firstName != null){
+            sb.append(lbc + "firstName=").append(firstName);
+        }
+        if(gender != null){
+            sb.append(lbc + "gender=").append(gender);
+        }
+        if(hourlyRate != null){
+            sb.append(lbc + "hourlyRate=").append(hourlyRate);
+        }
+        if(hourlyRateLow != null){
+            sb.append(lbc + "hourlyRateLow=").append(hourlyRateLow);
+        }
+        if(interviews != null){
+            sb.append(lbc + "interviews=").append(interviews.toStringNonNull());
+        }
+        if(i9OnFile != null){
+            sb.append(lbc + "i9OnFile=").append(i9OnFile);
+        }
+        if(isDayLightSavings != null){
+            sb.append(lbc + "isDayLightSavings=").append(isDayLightSavings);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(isEditable != null){
+            sb.append(lbc + "isEditable=").append(isEditable);
+        }
+        if(isLockedOut != null){
+            sb.append(lbc + "isLockedOut=").append(isLockedOut);
+        }
+        if(isAnonymized != null){
+            sb.append(lbc + "isAnonymized=").append(isAnonymized);
+        }
+        if(lastName != null){
+            sb.append(lbc + "lastName=").append(lastName);
+        }
+        if(linkedPerson != null){
+            sb.append(lbc + "linkedPerson=").append(linkedPerson.toStringNonNull());
+        }
+        if(leads != null){
+            sb.append(lbc + "leads=").append(leads.toStringNonNull());
+        }
+        if(localAddtionalWitholdingsAmount != null){
+            sb.append(lbc + "localAddtionalWitholdingsAmount=").append(localAddtionalWitholdingsAmount);
+        }
+        if(localExemptions != null){
+            sb.append(lbc + "localExemptions=").append(localExemptions);
+        }
+        if(localFilingStatus != null){
+            sb.append(lbc + "localFilingStatus=").append(localFilingStatus);
+        }
+        if(localTaxCode != null){
+            sb.append(lbc + "localTaxCode=").append(localTaxCode);
+        }
+        if(luceneScore != null){
+            sb.append(lbc + "luceneScore=").append(luceneScore);
+        }
+        if(massMailOptOut != null){
+            sb.append(lbc + "massMailOptOut=").append(massMailOptOut);
+        }
+        if(middleName != null){
+            sb.append(lbc + "middleName=").append(middleName);
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(mobile != null){
+            sb.append(lbc + "mobile=").append(mobile);
+        }
+        if(name != null){
+            sb.append(lbc + "name=").append(name);
+        }
+        if(namePrefix != null){
+            sb.append(lbc + "namePrefix=").append(namePrefix);
+        }
+        if(nameSuffix != null){
+            sb.append(lbc + "nameSuffix=").append(nameSuffix);
+        }
+        if(nickName != null){
+            sb.append(lbc + "nickName=").append(nickName);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes.toStringNonNull());
+        }
+        if(numCategories != null){
+            sb.append(lbc + "numCategories=").append(numCategories);
+        }
+        if(numOwners != null){
+            sb.append(lbc + "numOwners=").append(numOwners);
+        }
+        if(occupation != null){
+            sb.append(lbc + "occupation=").append(occupation);
+        }
+        if(owner != null){
+            sb.append(lbc + "owner=").append(owner.toStringNonNull());
+        }
+        if(pager != null){
+            sb.append(lbc + "pager=").append(pager);
+        }
+        if(paperWorkOnFile != null){
+            sb.append(lbc + "paperWorkOnFile=").append(paperWorkOnFile);
+        }
+        if(password != null){
+            sb.append(lbc + "password=").append(password);
+        }
+        if(phone != null){
+            sb.append(lbc + "phone=").append(phone);
+        }
+        if(phone2 != null){
+            sb.append(lbc + "phone2=").append(phone2);
+        }
+        if(phone3 != null){
+            sb.append(lbc + "phone3=").append(phone3);
+        }
+        if(placements != null){
+            sb.append(lbc + "placements=").append(placements.toStringNonNull());
+        }
+        if(preferredContact != null){
+            sb.append(lbc + "preferredContact=").append(preferredContact);
+        }
+        if(primarySkills != null){
+            sb.append(lbc + "primarySkills=").append(primarySkills.toStringNonNull());
+        }
+        if(recentClientList != null){
+            sb.append(lbc + "recentClientList=").append(recentClientList);
+        }
+        if(referredBy != null){
+            sb.append(lbc + "referredBy=").append(referredBy);
+        }
+        if(referredByPerson != null){
+            sb.append(lbc + "referredByPerson=").append(referredByPerson.toStringNonNull());
+        }
+        if(references != null){
+            sb.append(lbc + "references=").append(references.toStringNonNull());
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryLow != null){
+            sb.append(lbc + "salaryLow=").append(salaryLow);
+        }
+        if(secondaryAddress != null){
+            sb.append(lbc + "secondaryAddress=").append(secondaryAddress.toStringNonNull());
+        }
+        if(secondaryOwners != null){
+            sb.append(lbc + "secondaryOwners=").append(secondaryOwners.toStringNonNull());
+        }
+        if(secondarySkills != null){
+            sb.append(lbc + "secondarySkills=").append(secondarySkills.toStringNonNull());
+        }
+        if(sendouts != null){
+            sb.append(lbc + "sendouts=").append(sendouts.toStringNonNull());
+        }
+        if(skillSet != null){
+            sb.append(lbc + "skillSet=").append(skillSet);
+        }
+        if(smsOptIn != null){
+            sb.append(lbc + "smsOptIn=").append(smsOptIn);
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(lbc + "specialties=").append(specialties.toStringNonNull());
+        }
+        if(ssn != null){
+            sb.append(lbc + "ssn=").append(ssn);
+        }
+        if(stateAddtionalWitholdingsAmount != null){
+            sb.append(lbc + "stateAddtionalWitholdingsAmount=").append(stateAddtionalWitholdingsAmount);
+        }
+        if(stateExemptions != null){
+            sb.append(lbc + "stateExemptions=").append(stateExemptions);
+        }
+        if(stateFilingStatus != null){
+            sb.append(lbc + "stateFilingStatus=").append(stateFilingStatus);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(submissions != null){
+            sb.append(lbc + "submissions=").append(submissions.toStringNonNull());
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull());
+        }
+        if(taxID != null){
+            sb.append(lbc + "taxID=").append(taxID);
+        }
+        if(taxState != null){
+            sb.append(lbc + "taxState=").append(taxState);
+        }
+        if(tearsheets != null){
+            sb.append(lbc + "tearsheets=").append(tearsheets.toStringNonNull());
+        }
+        if(timeZoneOffsetEST != null){
+            sb.append(lbc + "timeZoneOffsetEST=").append(timeZoneOffsetEST);
+        }
+        if(travelLimit != null){
+            sb.append(lbc + "travelLimit=").append(travelLimit);
+        }
+        if(type != null){
+            sb.append(lbc + "type=").append(type);
+        }
+        if(username != null){
+            sb.append(lbc + "username=").append(username);
+        }
+        if(veteran != null){
+            sb.append(lbc + "veteran=").append(veteran);
+        }
+        if(webResponses != null){
+            sb.append(lbc + "webResponses=").append(webResponses);
+        }
+        if(willRelocate != null){
+            sb.append(lbc + "willRelocate=").append(willRelocate);
+        }
+        if(workAuthorized != null){
+            sb.append(lbc + "workAuthorized=").append(workAuthorized);
+        }
+        if(workHistories != null){
+            sb.append(lbc + "workHistories=").append(workHistories.toStringNonNull());
+        }
+        sb.append(super.toStringNonNull());
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull());
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull());
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull());
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull());
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull());
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull());
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull());
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull());
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull());
+        }
+        if(customEncryptedText1 != null){
+            sb.append(lbc + "customEncryptedText1=").append(customEncryptedText1);
+        }
+        if(customEncryptedText2 != null){
+            sb.append(lbc + "customEncryptedText2=").append(customEncryptedText2);
+        }
+        if(customEncryptedText3 != null){
+            sb.append(lbc + "customEncryptedText3=").append(customEncryptedText3);
+        }
+        if(customEncryptedText4 != null){
+            sb.append(lbc + "customEncryptedText4=").append(customEncryptedText4);
+        }
+        if(customEncryptedText5 != null){
+            sb.append(lbc + "customEncryptedText5=").append(customEncryptedText5);
+        }
+        if(customEncryptedText6 != null){
+            sb.append(lbc + "customEncryptedText6=").append(customEncryptedText6);
+        }
+        if(customEncryptedText7 != null){
+            sb.append(lbc + "customEncryptedText7=").append(customEncryptedText7);
+        }
+        if(customEncryptedText8 != null){
+            sb.append(lbc + "customEncryptedText8=").append(customEncryptedText8);
+        }
+        if(customEncryptedText9 != null){
+            sb.append(lbc + "customEncryptedText9=").append(customEncryptedText9);
+        }
+        if(customEncryptedText10 != null){
+            sb.append(lbc + "customEncryptedText10=").append(customEncryptedText10);
+        }
+        if(workPhone != null){
+            sb.append(lbc + "workPhone=").append(workPhone);
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address.toStringNonNull(includeLineBreaks));
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull(includeLineBreaks));
+        }
+        if(businessSectors != null){
+            sb.append(lbc + "businessSectors=").append(businessSectors.toStringNonNull(includeLineBreaks));
+        }
+        if(canEnterTime != null){
+            sb.append(lbc + "canEnterTime=").append(canEnterTime);
+        }
+        if(categories != null){
+            sb.append(lbc + "categories=").append(categories.toStringNonNull(includeLineBreaks));
+        }
+        if(category != null){
+            sb.append(lbc + "category=").append(category.toStringNonNull(includeLineBreaks));
+        }
+        if(certificationList != null){
+            sb.append(lbc + "certificationList=").append(certificationList.toStringNonNull(includeLineBreaks));
+        }
+        if(certifications != null){
+            sb.append(lbc + "certifications=").append(certifications);
+        }
+        if(clientCorporationBlackList != null){
+            sb.append(lbc + "clientCorporationBlackList=").append(clientCorporationBlackList.toStringNonNull(includeLineBreaks));
+        }
+        if(clientCorporationWhiteList != null){
+            sb.append(lbc + "clientCorporationWhiteList=").append(clientCorporationWhiteList.toStringNonNull(includeLineBreaks));
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        if(companyName != null){
+            sb.append(lbc + "companyName=").append(companyName);
+        }
+        if(companyURL != null){
+            sb.append(lbc + "companyURL=").append(companyURL);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateAvailable != null){
+            sb.append(lbc + "dateAvailable=").append(dateAvailable);
+        }
+        if(dateAvailableEnd != null){
+            sb.append(lbc + "dateAvailableEnd=").append(dateAvailableEnd);
+        }
+        if(dateI9Expiration != null){
+            sb.append(lbc + "dateI9Expiration=").append(dateI9Expiration);
+        }
+        if(dateLastComment != null){
+            sb.append(lbc + "dateLastComment=").append(dateLastComment);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(dateNextCall != null){
+            sb.append(lbc + "dateNextCall=").append(dateNextCall);
+        }
+        if(dateOfBirth != null){
+            sb.append(lbc + "dateOfBirth=").append(dateOfBirth);
+        }
+        if(dayRate != null){
+            sb.append(lbc + "dayRate=").append(dayRate);
+        }
+        if(dayRateLow != null){
+            sb.append(lbc + "dayRateLow=").append(dayRateLow);
+        }
+        if(degreeList != null){
+            sb.append(lbc + "degreeList=").append(degreeList);
+        }
+        if(description != null){
+            sb.append(lbc + "description=").append(description);
+        }
+        if(desiredLocations != null){
+            sb.append(lbc + "desiredLocations=").append(desiredLocations);
+        }
+        if(disability != null){
+            sb.append(lbc + "disability=").append(disability);
+        }
+        if(educationDegree != null){
+            sb.append(lbc + "educationDegree=").append(educationDegree);
+        }
+        if(educations != null){
+            sb.append(lbc + "educations=").append(educations.toStringNonNull(includeLineBreaks));
+        }
+        if(email != null){
+            sb.append(lbc + "email=").append(email);
+        }
+        if(email2 != null){
+            sb.append(lbc + "email2=").append(email2);
+        }
+        if(email3 != null){
+            sb.append(lbc + "email3=").append(email3);
+        }
+        if(employeeType != null){
+            sb.append(lbc + "employeeType=").append(employeeType);
+        }
+        if(employmentPreference != null){
+            sb.append(lbc + "employmentPreference=").append(employmentPreference);
+        }
+        if(ethnicity != null){
+            sb.append(lbc + "ethnicity=").append(ethnicity);
+        }
+        if(experience != null){
+            sb.append(lbc + "experience=").append(experience);
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=").append(externalID);
+        }
+        if(fax != null){
+            sb.append(lbc + "fax=").append(fax);
+        }
+        if(fax2 != null){
+            sb.append(lbc + "fax2=").append(fax2);
+        }
+        if(fax3 != null){
+            sb.append(lbc + "fax3=").append(fax3);
+        }
+        if(federalAddtionalWitholdingsAmount != null){
+            sb.append(lbc + "federalAddtionalWitholdingsAmount=").append(federalAddtionalWitholdingsAmount);
+        }
+        if(federalExemptions != null){
+            sb.append(lbc + "federalExemptions=").append(federalExemptions);
+        }
+        if(federalFilingStatus != null){
+            sb.append(lbc + "federalFilingStatus=").append(federalFilingStatus);
+        }
+        if(fileAttachments != null){
+            sb.append(lbc + "fileAttachments=").append(fileAttachments.toStringNonNull(includeLineBreaks));
+        }
+        if(firstName != null){
+            sb.append(lbc + "firstName=").append(firstName);
+        }
+        if(gender != null){
+            sb.append(lbc + "gender=").append(gender);
+        }
+        if(hourlyRate != null){
+            sb.append(lbc + "hourlyRate=").append(hourlyRate);
+        }
+        if(hourlyRateLow != null){
+            sb.append(lbc + "hourlyRateLow=").append(hourlyRateLow);
+        }
+        if(interviews != null){
+            sb.append(lbc + "interviews=").append(interviews.toStringNonNull(includeLineBreaks));
+        }
+        if(i9OnFile != null){
+            sb.append(lbc + "i9OnFile=").append(i9OnFile);
+        }
+        if(isDayLightSavings != null){
+            sb.append(lbc + "isDayLightSavings=").append(isDayLightSavings);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(isEditable != null){
+            sb.append(lbc + "isEditable=").append(isEditable);
+        }
+        if(isLockedOut != null){
+            sb.append(lbc + "isLockedOut=").append(isLockedOut);
+        }
+        if(isAnonymized != null){
+            sb.append(lbc + "isAnonymized=").append(isAnonymized);
+        }
+        if(lastName != null){
+            sb.append(lbc + "lastName=").append(lastName);
+        }
+        if(linkedPerson != null){
+            sb.append(lbc + "linkedPerson=").append(linkedPerson.toStringNonNull(includeLineBreaks));
+        }
+        if(leads != null){
+            sb.append(lbc + "leads=").append(leads.toStringNonNull(includeLineBreaks));
+        }
+        if(localAddtionalWitholdingsAmount != null){
+            sb.append(lbc + "localAddtionalWitholdingsAmount=").append(localAddtionalWitholdingsAmount);
+        }
+        if(localExemptions != null){
+            sb.append(lbc + "localExemptions=").append(localExemptions);
+        }
+        if(localFilingStatus != null){
+            sb.append(lbc + "localFilingStatus=").append(localFilingStatus);
+        }
+        if(localTaxCode != null){
+            sb.append(lbc + "localTaxCode=").append(localTaxCode);
+        }
+        if(luceneScore != null){
+            sb.append(lbc + "luceneScore=").append(luceneScore);
+        }
+        if(massMailOptOut != null){
+            sb.append(lbc + "massMailOptOut=").append(massMailOptOut);
+        }
+        if(middleName != null){
+            sb.append(lbc + "middleName=").append(middleName);
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(mobile != null){
+            sb.append(lbc + "mobile=").append(mobile);
+        }
+        if(name != null){
+            sb.append(lbc + "name=").append(name);
+        }
+        if(namePrefix != null){
+            sb.append(lbc + "namePrefix=").append(namePrefix);
+        }
+        if(nameSuffix != null){
+            sb.append(lbc + "nameSuffix=").append(nameSuffix);
+        }
+        if(nickName != null){
+            sb.append(lbc + "nickName=").append(nickName);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes.toStringNonNull(includeLineBreaks));
+        }
+        if(numCategories != null){
+            sb.append(lbc + "numCategories=").append(numCategories);
+        }
+        if(numOwners != null){
+            sb.append(lbc + "numOwners=").append(numOwners);
+        }
+        if(occupation != null){
+            sb.append(lbc + "occupation=").append(occupation);
+        }
+        if(owner != null){
+            sb.append(lbc + "owner=").append(owner.toStringNonNull(includeLineBreaks));
+        }
+        if(pager != null){
+            sb.append(lbc + "pager=").append(pager);
+        }
+        if(paperWorkOnFile != null){
+            sb.append(lbc + "paperWorkOnFile=").append(paperWorkOnFile);
+        }
+        if(password != null){
+            sb.append(lbc + "password=").append(password);
+        }
+        if(phone != null){
+            sb.append(lbc + "phone=").append(phone);
+        }
+        if(phone2 != null){
+            sb.append(lbc + "phone2=").append(phone2);
+        }
+        if(phone3 != null){
+            sb.append(lbc + "phone3=").append(phone3);
+        }
+        if(placements != null){
+            sb.append(lbc + "placements=").append(placements.toStringNonNull(includeLineBreaks));
+        }
+        if(preferredContact != null){
+            sb.append(lbc + "preferredContact=").append(preferredContact);
+        }
+        if(primarySkills != null){
+            sb.append(lbc + "primarySkills=").append(primarySkills.toStringNonNull(includeLineBreaks));
+        }
+        if(recentClientList != null){
+            sb.append(lbc + "recentClientList=").append(recentClientList);
+        }
+        if(referredBy != null){
+            sb.append(lbc + "referredBy=").append(referredBy);
+        }
+        if(referredByPerson != null){
+            sb.append(lbc + "referredByPerson=").append(referredByPerson.toStringNonNull(includeLineBreaks));
+        }
+        if(references != null){
+            sb.append(lbc + "references=").append(references.toStringNonNull(includeLineBreaks));
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryLow != null){
+            sb.append(lbc + "salaryLow=").append(salaryLow);
+        }
+        if(secondaryAddress != null){
+            sb.append(lbc + "secondaryAddress=").append(secondaryAddress.toStringNonNull(includeLineBreaks));
+        }
+        if(secondaryOwners != null){
+            sb.append(lbc + "secondaryOwners=").append(secondaryOwners.toStringNonNull(includeLineBreaks));
+        }
+        if(secondarySkills != null){
+            sb.append(lbc + "secondarySkills=").append(secondarySkills.toStringNonNull(includeLineBreaks));
+        }
+        if(sendouts != null){
+            sb.append(lbc + "sendouts=").append(sendouts.toStringNonNull(includeLineBreaks));
+        }
+        if(skillSet != null){
+            sb.append(lbc + "skillSet=").append(skillSet);
+        }
+        if(smsOptIn != null){
+            sb.append(lbc + "smsOptIn=").append(smsOptIn);
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(lbc + "specialties=").append(specialties.toStringNonNull(includeLineBreaks));
+        }
+        if(ssn != null){
+            sb.append(lbc + "ssn=").append(ssn);
+        }
+        if(stateAddtionalWitholdingsAmount != null){
+            sb.append(lbc + "stateAddtionalWitholdingsAmount=").append(stateAddtionalWitholdingsAmount);
+        }
+        if(stateExemptions != null){
+            sb.append(lbc + "stateExemptions=").append(stateExemptions);
+        }
+        if(stateFilingStatus != null){
+            sb.append(lbc + "stateFilingStatus=").append(stateFilingStatus);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(submissions != null){
+            sb.append(lbc + "submissions=").append(submissions.toStringNonNull(includeLineBreaks));
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull(includeLineBreaks));
+        }
+        if(taxID != null){
+            sb.append(lbc + "taxID=").append(taxID);
+        }
+        if(taxState != null){
+            sb.append(lbc + "taxState=").append(taxState);
+        }
+        if(tearsheets != null){
+            sb.append(lbc + "tearsheets=").append(tearsheets.toStringNonNull(includeLineBreaks));
+        }
+        if(timeZoneOffsetEST != null){
+            sb.append(lbc + "timeZoneOffsetEST=").append(timeZoneOffsetEST);
+        }
+        if(travelLimit != null){
+            sb.append(lbc + "travelLimit=").append(travelLimit);
+        }
+        if(type != null){
+            sb.append(lbc + "type=").append(type);
+        }
+        if(username != null){
+            sb.append(lbc + "username=").append(username);
+        }
+        if(veteran != null){
+            sb.append(lbc + "veteran=").append(veteran);
+        }
+        if(webResponses != null){
+            sb.append(lbc + "webResponses=").append(webResponses);
+        }
+        if(willRelocate != null){
+            sb.append(lbc + "willRelocate=").append(willRelocate);
+        }
+        if(workAuthorized != null){
+            sb.append(lbc + "workAuthorized=").append(workAuthorized);
+        }
+        if(workHistories != null){
+            sb.append(lbc + "workHistories=").append(workHistories.toStringNonNull(includeLineBreaks));
+        }
+        sb.append(super.toStringNonNull(includeLineBreaks));
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull(includeLineBreaks));
+        }
+        if(customEncryptedText1 != null){
+            sb.append(lbc + "customEncryptedText1=").append(customEncryptedText1);
+        }
+        if(customEncryptedText2 != null){
+            sb.append(lbc + "customEncryptedText2=").append(customEncryptedText2);
+        }
+        if(customEncryptedText3 != null){
+            sb.append(lbc + "customEncryptedText3=").append(customEncryptedText3);
+        }
+        if(customEncryptedText4 != null){
+            sb.append(lbc + "customEncryptedText4=").append(customEncryptedText4);
+        }
+        if(customEncryptedText5 != null){
+            sb.append(lbc + "customEncryptedText5=").append(customEncryptedText5);
+        }
+        if(customEncryptedText6 != null){
+            sb.append(lbc + "customEncryptedText6=").append(customEncryptedText6);
+        }
+        if(customEncryptedText7 != null){
+            sb.append(lbc + "customEncryptedText7=").append(customEncryptedText7);
+        }
+        if(customEncryptedText8 != null){
+            sb.append(lbc + "customEncryptedText8=").append(customEncryptedText8);
+        }
+        if(customEncryptedText9 != null){
+            sb.append(lbc + "customEncryptedText9=").append(customEncryptedText9);
+        }
+        if(customEncryptedText10 != null){
+            sb.append(lbc + "customEncryptedText10=").append(customEncryptedText10);
+        }
+        if(workPhone != null){
+            sb.append(lbc + "workPhone=").append(workPhone);
+        }
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Candidate{");
-        sb.append("luceneScore=").append(luceneScore);
-        sb.append(", id=").append(id);
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", branch=").append(branch);
         sb.append(", businessSectors=").append(businessSectors);
@@ -2361,12 +3222,12 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         sb.append(", categories=").append(categories);
         sb.append(", category=").append(category);
         sb.append(", certificationList=").append(certificationList);
-        sb.append(", certifications='").append(certifications).append('\'');
+        sb.append(", certifications=").append(certifications);
         sb.append(", clientCorporationBlackList=").append(clientCorporationBlackList);
         sb.append(", clientCorporationWhiteList=").append(clientCorporationWhiteList);
-        sb.append(", comments='").append(comments).append('\'');
-        sb.append(", companyName='").append(companyName).append('\'');
-        sb.append(", companyURL='").append(companyURL).append('\'');
+        sb.append(", comments=").append(comments);
+        sb.append(", companyName=").append(companyName);
+        sb.append(", companyURL=").append(companyURL);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateAvailable=").append(dateAvailable);
         sb.append(", dateAvailableEnd=").append(dateAvailableEnd);
@@ -2377,29 +3238,29 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         sb.append(", dateOfBirth=").append(dateOfBirth);
         sb.append(", dayRate=").append(dayRate);
         sb.append(", dayRateLow=").append(dayRateLow);
-        sb.append(", degreeList='").append(degreeList).append('\'');
-        sb.append(", description='").append(description).append('\'');
-        sb.append(", desiredLocations='").append(desiredLocations).append('\'');
-        sb.append(", disability='").append(disability).append('\'');
-        sb.append(", educationDegree='").append(educationDegree).append('\'');
+        sb.append(", degreeList=").append(degreeList);
+        sb.append(", description=").append(description);
+        sb.append(", desiredLocations=").append(desiredLocations);
+        sb.append(", disability=").append(disability);
+        sb.append(", educationDegree=").append(educationDegree);
         sb.append(", educations=").append(educations);
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", email2='").append(email2).append('\'');
-        sb.append(", email3='").append(email3).append('\'');
-        sb.append(", employeeType='").append(employeeType).append('\'');
-        sb.append(", employmentPreference='").append(employmentPreference).append('\'');
-        sb.append(", ethnicity='").append(ethnicity).append('\'');
+        sb.append(", email=").append(email);
+        sb.append(", email2=").append(email2);
+        sb.append(", email3=").append(email3);
+        sb.append(", employeeType=").append(employeeType);
+        sb.append(", employmentPreference=").append(employmentPreference);
+        sb.append(", ethnicity=").append(ethnicity);
         sb.append(", experience=").append(experience);
-        sb.append(", externalID='").append(externalID).append('\'');
-        sb.append(", fax='").append(fax).append('\'');
-        sb.append(", fax2='").append(fax2).append('\'');
-        sb.append(", fax3='").append(fax3).append('\'');
+        sb.append(", externalID=").append(externalID);
+        sb.append(", fax=").append(fax);
+        sb.append(", fax2=").append(fax2);
+        sb.append(", fax3=").append(fax3);
         sb.append(", federalAddtionalWitholdingsAmount=").append(federalAddtionalWitholdingsAmount);
         sb.append(", federalExemptions=").append(federalExemptions);
-        sb.append(", federalFilingStatus='").append(federalFilingStatus).append('\'');
+        sb.append(", federalFilingStatus=").append(federalFilingStatus);
         sb.append(", fileAttachments=").append(fileAttachments);
-        sb.append(", firstName='").append(firstName).append('\'');
-        sb.append(", gender='").append(gender).append('\'');
+        sb.append(", firstName=").append(firstName);
+        sb.append(", gender=").append(gender);
         sb.append(", hourlyRate=").append(hourlyRate);
         sb.append(", hourlyRateLow=").append(hourlyRateLow);
         sb.append(", interviews=").append(interviews);
@@ -2409,37 +3270,38 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         sb.append(", isEditable=").append(isEditable);
         sb.append(", isLockedOut=").append(isLockedOut);
         sb.append(", isAnonymized=").append(isAnonymized);
-        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", lastName=").append(lastName);
         sb.append(", linkedPerson=").append(linkedPerson);
         sb.append(", leads=").append(leads);
         sb.append(", localAddtionalWitholdingsAmount=").append(localAddtionalWitholdingsAmount);
         sb.append(", localExemptions=").append(localExemptions);
-        sb.append(", localFilingStatus='").append(localFilingStatus).append('\'');
-        sb.append(", localTaxCode='").append(localTaxCode).append('\'');
+        sb.append(", localFilingStatus=").append(localFilingStatus);
+        sb.append(", localTaxCode=").append(localTaxCode);
+        sb.append(", luceneScore=").append(luceneScore);
         sb.append(", massMailOptOut=").append(massMailOptOut);
-        sb.append(", middleName='").append(middleName).append('\'');
+        sb.append(", middleName=").append(middleName);
         sb.append(", migrateGUID=").append(migrateGUID);
-        sb.append(", mobile='").append(mobile).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", namePrefix='").append(namePrefix).append('\'');
-        sb.append(", nameSuffix='").append(nameSuffix).append('\'');
-        sb.append(", nickName='").append(nickName).append('\'');
+        sb.append(", mobile=").append(mobile);
+        sb.append(", name=").append(name);
+        sb.append(", namePrefix=").append(namePrefix);
+        sb.append(", nameSuffix=").append(nameSuffix);
+        sb.append(", nickName=").append(nickName);
         sb.append(", notes=").append(notes);
         sb.append(", numCategories=").append(numCategories);
         sb.append(", numOwners=").append(numOwners);
-        sb.append(", occupation='").append(occupation).append('\'');
+        sb.append(", occupation=").append(occupation);
         sb.append(", owner=").append(owner);
-        sb.append(", pager='").append(pager).append('\'');
-        sb.append(", paperWorkOnFile='").append(paperWorkOnFile).append('\'');
-        sb.append(", password='").append(password).append('\'');
-        sb.append(", phone='").append(phone).append('\'');
-        sb.append(", phone2='").append(phone2).append('\'');
-        sb.append(", phone3='").append(phone3).append('\'');
+        sb.append(", pager=").append(pager);
+        sb.append(", paperWorkOnFile=").append(paperWorkOnFile);
+        sb.append(", password=").append(password);
+        sb.append(", phone=").append(phone);
+        sb.append(", phone2=").append(phone2);
+        sb.append(", phone3=").append(phone3);
         sb.append(", placements=").append(placements);
-        sb.append(", preferredContact='").append(preferredContact).append('\'');
+        sb.append(", preferredContact=").append(preferredContact);
         sb.append(", primarySkills=").append(primarySkills);
-        sb.append(", recentClientList='").append(recentClientList).append('\'');
-        sb.append(", referredBy='").append(referredBy).append('\'');
+        sb.append(", recentClientList=").append(recentClientList);
+        sb.append(", referredBy=").append(referredBy);
         sb.append(", referredByPerson=").append(referredByPerson);
         sb.append(", references=").append(references);
         sb.append(", salary=").append(salary);
@@ -2448,29 +3310,30 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         sb.append(", secondaryOwners=").append(secondaryOwners);
         sb.append(", secondarySkills=").append(secondarySkills);
         sb.append(", sendouts=").append(sendouts);
-        sb.append(", skillSet='").append(skillSet).append('\'');
+        sb.append(", skillSet=").append(skillSet);
         sb.append(", smsOptIn=").append(smsOptIn);
-        sb.append(", source='").append(source).append('\'');
+        sb.append(", source=").append(source);
         sb.append(", specialties=").append(specialties);
-        sb.append(", ssn='").append(ssn).append('\'');
+        sb.append(", ssn=").append(ssn);
         sb.append(", stateAddtionalWitholdingsAmount=").append(stateAddtionalWitholdingsAmount);
         sb.append(", stateExemptions=").append(stateExemptions);
-        sb.append(", stateFilingStatus='").append(stateFilingStatus).append('\'');
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", stateFilingStatus=").append(stateFilingStatus);
+        sb.append(", status=").append(status);
         sb.append(", submissions=").append(submissions);
         sb.append(", tasks=").append(tasks);
-        sb.append(", taxID='").append(taxID).append('\'');
-        sb.append(", taxState='").append(taxState).append('\'');
+        sb.append(", taxID=").append(taxID);
+        sb.append(", taxState=").append(taxState);
         sb.append(", tearsheets=").append(tearsheets);
         sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
         sb.append(", travelLimit=").append(travelLimit);
-        sb.append(", type='").append(type).append('\'');
-        sb.append(", username='").append(username).append('\'');
-        sb.append(", veteran='").append(veteran).append('\'');
+        sb.append(", type=").append(type);
+        sb.append(", username=").append(username);
+        sb.append(", veteran=").append(veteran);
         sb.append(", webResponses=").append(webResponses);
         sb.append(", willRelocate=").append(willRelocate);
         sb.append(", workAuthorized=").append(workAuthorized);
         sb.append(", workHistories=").append(workHistories);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);
@@ -2481,18 +3344,18 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         sb.append(", customObject8s=").append(customObject8s);
         sb.append(", customObject9s=").append(customObject9s);
         sb.append(", customObject10s=").append(customObject10s);
-        sb.append(", \ncustomEncryptedText1=").append(customEncryptedText1);
-        sb.append(", \ncustomEncryptedText2=").append(customEncryptedText2);
-        sb.append(", \ncustomEncryptedText3=").append(customEncryptedText3);
-        sb.append(", \ncustomEncryptedText4=").append(customEncryptedText4);
-        sb.append(", \ncustomEncryptedText5=").append(customEncryptedText5);
-        sb.append(", \ncustomEncryptedText6=").append(customEncryptedText6);
-        sb.append(", \ncustomEncryptedText7=").append(customEncryptedText7);
-        sb.append(", \ncustomEncryptedText8=").append(customEncryptedText8);
-        sb.append(", \ncustomEncryptedText9=").append(customEncryptedText9);
-        sb.append(", \ncustomEncryptedText10=").append(customEncryptedText10);
-        sb.append(", workPhone='").append(workPhone).append('\'');
-        sb.append('}');
+        sb.append(", customEncryptedText1=").append(customEncryptedText1);
+        sb.append(", customEncryptedText2=").append(customEncryptedText2);
+        sb.append(", customEncryptedText3=").append(customEncryptedText3);
+        sb.append(", customEncryptedText4=").append(customEncryptedText4);
+        sb.append(", customEncryptedText5=").append(customEncryptedText5);
+        sb.append(", customEncryptedText6=").append(customEncryptedText6);
+        sb.append(", customEncryptedText7=").append(customEncryptedText7);
+        sb.append(", customEncryptedText8=").append(customEncryptedText8);
+        sb.append(", customEncryptedText9=").append(customEncryptedText9);
+        sb.append(", customEncryptedText10=").append(customEncryptedText10);
+        sb.append(", workPhone=").append(workPhone);
+        sb.append("}");
         return sb.toString();
     }
 }

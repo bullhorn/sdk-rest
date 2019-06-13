@@ -923,102 +923,488 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(getClass().getName());
-		builder.append(" {\n\tid: ");
-		builder.append(id);
-		builder.append("\n\taddress: ");
-		builder.append(address);
-        builder.append("\n\tbranches: ");
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
+        builder.append(" { ");
+        if(includeLineBreaks)
+            builder.append("\n");
+        if(id != null){
+            builder.append(lbc + "id=");
+            builder.append(id);
+        }
+        if(address != null){
+            builder.append(lbc + "address=");
+            builder.append(address.toStringNonNull(includeLineBreaks));
+        }
+        if(branches != null){
+            builder.append(lbc + "branches=");
+            builder.append(branches.toStringNonNull(includeLineBreaks));
+        }
+        if(dateLastComment != null){
+            builder.append(lbc + "dateLastComment=");
+            builder.append(dateLastComment);
+        }
+        if(departments != null){
+            builder.append(lbc + "departments=");
+            builder.append(departments.toStringNonNull(includeLineBreaks));
+        }
+        if(email != null){
+            builder.append(lbc + "email=");
+            builder.append(email);
+        }
+        if(email2 != null){
+            builder.append(lbc + "email2=");
+            builder.append(email2);
+        }
+        if(email3 != null){
+            builder.append(lbc + "email3=");
+            builder.append(email3);
+        }
+        if(emailNotify != null){
+            builder.append(lbc + "emailNotify=");
+            builder.append(emailNotify);
+        }
+        if(emailSignature != null){
+            builder.append(lbc + "emailSignature=");
+            builder.append(emailSignature);
+        }
+        if(enabled != null){
+            builder.append(lbc + "enabled=");
+            builder.append(enabled);
+        }
+        if(externalEmail != null){
+            builder.append(lbc + "externalEmail=");
+            builder.append(externalEmail);
+        }
+        if(fax != null){
+            builder.append(lbc + "fax=");
+            builder.append(fax);
+        }
+        if(fax2 != null){
+            builder.append(lbc + "fax2=");
+            builder.append(fax2);
+        }
+        if(fax3 != null){
+            builder.append(lbc + "fax3=");
+            builder.append(fax3);
+        }
+        if(firstName != null){
+            builder.append(lbc + "firstName=");
+            builder.append(firstName);
+        }
+        if(inboundEmailEnabled != null){
+            builder.append(lbc + "inboundEmailEnabled=");
+            builder.append(inboundEmailEnabled);
+        }
+        if(isDayLightSavings != null){
+            builder.append(lbc + "isDayLightSavings=");
+            builder.append(isDayLightSavings);
+        }
+        if(isDeleted != null){
+            builder.append(lbc + "isDeleted=");
+            builder.append(isDeleted);
+        }
+        if(isLockedOut != null){
+            builder.append(lbc + "isLockedOut=");
+            builder.append(isLockedOut);
+        }
+        if(isOutboundFaxEnabled != null){
+            builder.append(lbc + "isOutboundFaxEnabled=");
+            builder.append(isOutboundFaxEnabled);
+        }
+        if(jobAssignments != null){
+            builder.append(lbc + "jobAssignments=");
+            builder.append(jobAssignments.toStringNonNull(includeLineBreaks));
+        }
+        if(lastName != null){
+            builder.append(lbc + "lastName=");
+            builder.append(lastName);
+        }
+        if(loginRestrictions != null){
+            builder.append(lbc + "loginRestrictions=");
+            builder.append(loginRestrictions);
+        }
+        if(massMailOptOut != null){
+            builder.append(lbc + "massMailOptOut=");
+            builder.append(massMailOptOut);
+        }
+        if(middleName != null){
+            builder.append(lbc + "middleName=");
+            builder.append(middleName);
+        }
+        if(mobile != null){
+            builder.append(lbc + "mobile=");
+            builder.append(mobile);
+        }
+        if(name != null){
+            builder.append(lbc + "name=");
+            builder.append(name);
+        }
+        if(namePrefix != null){
+            builder.append(lbc + "namePrefix=");
+            builder.append(namePrefix);
+        }
+        if(nameSuffix != null){
+            builder.append(lbc + "nameSuffix=");
+            builder.append(nameSuffix);
+        }
+        if(nickName != null){
+            builder.append(lbc + "nickName=");
+            builder.append(nickName);
+        }
+        if(occupation != null){
+            builder.append(lbc + "occupation=");
+            builder.append(occupation);
+        }
+        if(pager != null){
+            builder.append(lbc + "pager=");
+            builder.append(pager);
+        }
+        if(phone != null){
+            builder.append(lbc + "phone=");
+            builder.append(phone);
+        }
+        if(phone2 != null){
+            builder.append(lbc + "phone2=");
+            builder.append(phone2);
+        }
+        if(phone3 != null){
+            builder.append(lbc + "phone3=");
+            builder.append(phone3);
+        }
+        if(primaryDepartment != null){
+            builder.append(lbc + "primaryDepartment=");
+            builder.append(primaryDepartment.toStringNonNull(includeLineBreaks));
+        }
+        if(privateLabel != null){
+            builder.append(lbc + "privateLabel=");
+            builder.append(privateLabel.toStringNonNull(includeLineBreaks));
+        }
+        if(reportToPerson != null){
+            builder.append(lbc + "reportToPerson=");
+            builder.append(reportToPerson);
+        }
+        if(smsOptIn != null){
+            builder.append(lbc + "smsOptIn=");
+            builder.append(smsOptIn);
+        }
+        if(taskAssignments != null){
+            builder.append(lbc + "taskAssignments=");
+            builder.append(taskAssignments.toStringNonNull(includeLineBreaks));
+        }
+        if(timeZoneOffsetEST != null){
+            builder.append(lbc + "timeZoneOffsetEST=");
+            builder.append(timeZoneOffsetEST);
+        }
+        if(userDateAdded != null){
+            builder.append(lbc + "userDateAdded=");
+            builder.append(userDateAdded);
+        }
+        if(username != null){
+            builder.append(lbc + "username=");
+            builder.append(username);
+        }
+        if(userType != null){
+            builder.append(lbc + "userType=");
+            builder.append(userType);
+        }
+        builder.append(super.toStringNonNull(includeLineBreaks));
+        if(includeLineBreaks)
+            builder.append("\n");
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
+        builder.append(" { ");
+        if(id != null){
+            builder.append(lbc + "id=");
+            builder.append(id);
+        }
+        if(address != null){
+            builder.append(lbc + "address=");
+            builder.append(address.toStringNonNull());
+        }
+        if(branches != null){
+            builder.append(lbc + "branches=");
+            builder.append(branches.toStringNonNull());
+        }
+        if(dateLastComment != null){
+            builder.append(lbc + "dateLastComment=");
+            builder.append(dateLastComment);
+        }
+        if(departments != null){
+            builder.append(lbc + "departments=");
+            builder.append(departments.toStringNonNull());
+        }
+        if(email != null){
+            builder.append(lbc + "email=");
+            builder.append(email);
+        }
+        if(email2 != null){
+            builder.append(lbc + "email2=");
+            builder.append(email2);
+        }
+        if(email3 != null){
+            builder.append(lbc + "email3=");
+            builder.append(email3);
+        }
+        if(emailNotify != null){
+            builder.append(lbc + "emailNotify=");
+            builder.append(emailNotify);
+        }
+        if(emailSignature != null){
+            builder.append(lbc + "emailSignature=");
+            builder.append(emailSignature);
+        }
+        if(enabled != null){
+            builder.append(lbc + "enabled=");
+            builder.append(enabled);
+        }
+        if(externalEmail != null){
+            builder.append(lbc + "externalEmail=");
+            builder.append(externalEmail);
+        }
+        if(fax != null){
+            builder.append(lbc + "fax=");
+            builder.append(fax);
+        }
+        if(fax2 != null){
+            builder.append(lbc + "fax2=");
+            builder.append(fax2);
+        }
+        if(fax3 != null){
+            builder.append(lbc + "fax3=");
+            builder.append(fax3);
+        }
+        if(firstName != null){
+            builder.append(lbc + "firstName=");
+            builder.append(firstName);
+        }
+        if(inboundEmailEnabled != null){
+            builder.append(lbc + "inboundEmailEnabled=");
+            builder.append(inboundEmailEnabled);
+        }
+        if(isDayLightSavings != null){
+            builder.append(lbc + "isDayLightSavings=");
+            builder.append(isDayLightSavings);
+        }
+        if(isDeleted != null){
+            builder.append(lbc + "isDeleted=");
+            builder.append(isDeleted);
+        }
+        if(isLockedOut != null){
+            builder.append(lbc + "isLockedOut=");
+            builder.append(isLockedOut);
+        }
+        if(isOutboundFaxEnabled != null){
+            builder.append(lbc + "isOutboundFaxEnabled=");
+            builder.append(isOutboundFaxEnabled);
+        }
+        if(jobAssignments != null){
+            builder.append(lbc + "jobAssignments=");
+            builder.append(jobAssignments.toStringNonNull());
+        }
+        if(lastName != null){
+            builder.append(lbc + "lastName=");
+            builder.append(lastName);
+        }
+        if(loginRestrictions != null){
+            builder.append(lbc + "loginRestrictions=");
+            builder.append(loginRestrictions);
+        }
+        if(massMailOptOut != null){
+            builder.append(lbc + "massMailOptOut=");
+            builder.append(massMailOptOut);
+        }
+        if(middleName != null){
+            builder.append(lbc + "middleName=");
+            builder.append(middleName);
+        }
+        if(mobile != null){
+            builder.append(lbc + "mobile=");
+            builder.append(mobile);
+        }
+        if(name != null){
+            builder.append(lbc + "name=");
+            builder.append(name);
+        }
+        if(namePrefix != null){
+            builder.append(lbc + "namePrefix=");
+            builder.append(namePrefix);
+        }
+        if(nameSuffix != null){
+            builder.append(lbc + "nameSuffix=");
+            builder.append(nameSuffix);
+        }
+        if(nickName != null){
+            builder.append(lbc + "nickName=");
+            builder.append(nickName);
+        }
+        if(occupation != null){
+            builder.append(lbc + "occupation=");
+            builder.append(occupation);
+        }
+        if(pager != null){
+            builder.append(lbc + "pager=");
+            builder.append(pager);
+        }
+        if(phone != null){
+            builder.append(lbc + "phone=");
+            builder.append(phone);
+        }
+        if(phone2 != null){
+            builder.append(lbc + "phone2=");
+            builder.append(phone2);
+        }
+        if(phone3 != null){
+            builder.append(lbc + "phone3=");
+            builder.append(phone3);
+        }
+        if(primaryDepartment != null){
+            builder.append(lbc + "primaryDepartment=");
+            builder.append(primaryDepartment.toStringNonNull());
+        }
+        if(privateLabel != null){
+            builder.append(lbc + "privateLabel=");
+            builder.append(privateLabel.toStringNonNull());
+        }
+        if(reportToPerson != null){
+            builder.append(lbc + "reportToPerson=");
+            builder.append(reportToPerson);
+        }
+        if(smsOptIn != null){
+            builder.append(lbc + "smsOptIn=");
+            builder.append(smsOptIn);
+        }
+        if(taskAssignments != null){
+            builder.append(lbc + "taskAssignments=");
+            builder.append(taskAssignments.toStringNonNull());
+        }
+        if(timeZoneOffsetEST != null){
+            builder.append(lbc + "timeZoneOffsetEST=");
+            builder.append(timeZoneOffsetEST);
+        }
+        if(userDateAdded != null){
+            builder.append(lbc + "userDateAdded=");
+            builder.append(userDateAdded);
+        }
+        if(username != null){
+            builder.append(lbc + "username=");
+            builder.append(username);
+        }
+        if(userType != null){
+            builder.append(lbc + "userType=");
+            builder.append(userType);
+        }
+        builder.append(super.toStringNonNull());
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
+        builder.append(" { id=");
+        builder.append(id);
+        builder.append(", address=");
+        builder.append(address);
+        builder.append(", branches=");
         builder.append(branches);
-		builder.append("\n\tdateLastComment: ");
-		builder.append(dateLastComment);
-		builder.append("\n\tdepartments: ");
-		builder.append(departments);
-		builder.append("\n\temail: ");
-		builder.append(email);
-		builder.append("\n\temail2: ");
-		builder.append(email2);
-		builder.append("\n\temail3: ");
-		builder.append(email3);
-		builder.append("\n\temailNotify: ");
-		builder.append(emailNotify);
-		builder.append("\n\temailSignature: ");
-		builder.append(emailSignature);
-		builder.append("\n\tenabled: ");
-		builder.append(enabled);
-		builder.append("\n\texternalEmail: ");
-		builder.append(externalEmail);
-		builder.append("\n\tfax: ");
-		builder.append(fax);
-		builder.append("\n\tfax2: ");
-		builder.append(fax2);
-		builder.append("\n\tfax3: ");
-		builder.append(fax3);
-		builder.append("\n\tfirstName: ");
-		builder.append(firstName);
-		builder.append("\n\tinboundEmailEnabled: ");
-		builder.append(inboundEmailEnabled);
-		builder.append("\n\tisDayLightSavings: ");
-		builder.append(isDayLightSavings);
-		builder.append("\n\tisDeleted: ");
-		builder.append(isDeleted);
-		builder.append("\n\tisLockedOut: ");
-		builder.append(isLockedOut);
-		builder.append("\n\tisOutboundFaxEnabled: ");
-		builder.append(isOutboundFaxEnabled);
-		builder.append("\n\tjobAssignments: ");
-		builder.append(jobAssignments);
-		builder.append("\n\tlastName: ");
-		builder.append(lastName);
-		builder.append("\n\tloginRestrictions: ");
-		builder.append(loginRestrictions);
-		builder.append("\n\tmassMailOptOut: ");
-		builder.append(massMailOptOut);
-		builder.append("\n\tmiddleName: ");
-		builder.append(middleName);
-		builder.append("\n\tmobile: ");
-		builder.append(mobile);
-		builder.append("\n\tname: ");
-		builder.append(name);
-		builder.append("\n\tnamePrefix: ");
-		builder.append(namePrefix);
-		builder.append("\n\tnameSuffix: ");
-		builder.append(nameSuffix);
-		builder.append("\n\tnickName: ");
-		builder.append(nickName);
-		builder.append("\n\toccupation: ");
-		builder.append(occupation);
-		builder.append("\n\tpager: ");
-		builder.append(pager);
-		builder.append("\n\tphone: ");
-		builder.append(phone);
-		builder.append("\n\tphone2: ");
-		builder.append(phone2);
-		builder.append("\n\tphone3: ");
-		builder.append(phone3);
-		builder.append("\n\tprimaryDepartment: ");
-		builder.append(primaryDepartment);
-		builder.append("\n\tprivateLabel: ");
-		builder.append(privateLabel);
-		builder.append("\n\treportToPerson: ");
-		builder.append(reportToPerson);
-		builder.append("\n\tsmsOptIn: ");
-		builder.append(smsOptIn);
-		builder.append("\n\ttaskAssignments: ");
-		builder.append(taskAssignments);
-		builder.append("\n\ttimeZoneOffsetEST: ");
-		builder.append(timeZoneOffsetEST);
-        builder.append("\n\tuserDateAdded: ");
+        builder.append(", dateLastComment=");
+        builder.append(dateLastComment);
+        builder.append(", departments=");
+        builder.append(departments);
+        builder.append(", email=");
+        builder.append(email);
+        builder.append(", email2=");
+        builder.append(email2);
+        builder.append(", email3=");
+        builder.append(email3);
+        builder.append(", emailNotify=");
+        builder.append(emailNotify);
+        builder.append(", emailSignature=");
+        builder.append(emailSignature);
+        builder.append(", enabled=");
+        builder.append(enabled);
+        builder.append(", externalEmail=");
+        builder.append(externalEmail);
+        builder.append(", fax=");
+        builder.append(fax);
+        builder.append(", fax2=");
+        builder.append(fax2);
+        builder.append(", fax3=");
+        builder.append(fax3);
+        builder.append(", firstName=");
+        builder.append(firstName);
+        builder.append(", inboundEmailEnabled=");
+        builder.append(inboundEmailEnabled);
+        builder.append(", isDayLightSavings=");
+        builder.append(isDayLightSavings);
+        builder.append(", isDeleted=");
+        builder.append(isDeleted);
+        builder.append(", isLockedOut=");
+        builder.append(isLockedOut);
+        builder.append(", isOutboundFaxEnabled=");
+        builder.append(isOutboundFaxEnabled);
+        builder.append(", jobAssignments=");
+        builder.append(jobAssignments);
+        builder.append(", lastName=");
+        builder.append(lastName);
+        builder.append(", loginRestrictions=");
+        builder.append(loginRestrictions);
+        builder.append(", massMailOptOut=");
+        builder.append(massMailOptOut);
+        builder.append(", middleName=");
+        builder.append(middleName);
+        builder.append(", mobile=");
+        builder.append(mobile);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", namePrefix=");
+        builder.append(namePrefix);
+        builder.append(", nameSuffix=");
+        builder.append(nameSuffix);
+        builder.append(", nickName=");
+        builder.append(nickName);
+        builder.append(", occupation=");
+        builder.append(occupation);
+        builder.append(", pager=");
+        builder.append(pager);
+        builder.append(", phone=");
+        builder.append(phone);
+        builder.append(", phone2=");
+        builder.append(phone2);
+        builder.append(", phone3=");
+        builder.append(phone3);
+        builder.append(", primaryDepartment=");
+        builder.append(primaryDepartment);
+        builder.append(", privateLabel=");
+        builder.append(privateLabel);
+        builder.append(", reportToPerson=");
+        builder.append(reportToPerson);
+        builder.append(", smsOptIn=");
+        builder.append(smsOptIn);
+        builder.append(", taskAssignments=");
+        builder.append(taskAssignments);
+        builder.append(", timeZoneOffsetEST=");
+        builder.append(timeZoneOffsetEST);
+        builder.append(", userDateAdded=");
         builder.append(userDateAdded);
-		builder.append("\n\tusername: ");
-		builder.append(username);
-		builder.append("\n\tuserType: ");
-		builder.append(userType);
-		builder.append("\n}");
-		return builder.toString();
-	}
+        builder.append(", username=");
+        builder.append(username);
+        builder.append(", userType=");
+        builder.append(userType);
+        builder.append(super.toString());
+        builder.append("}");
+        return builder.toString();
+    }
 
 }

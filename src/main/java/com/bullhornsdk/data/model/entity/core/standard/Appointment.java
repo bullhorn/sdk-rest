@@ -610,6 +610,302 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(includeLineBreaks)
+            builder.append("\n");
+        if(id != null){
+            builder.append("id=");
+            builder.append(id);
+        }
+        if(appointmentUUID != null){
+            builder.append(lbc + "appointmentUUID=");
+            builder.append(appointmentUUID);
+        }
+        if(guests != null){
+            builder.append(lbc + "guests=");
+            builder.append(guests.toStringNonNull(includeLineBreaks));
+        }
+        if(candidateReference != null){
+            builder.append(lbc + "candidateReference=");
+            builder.append(candidateReference.toStringNonNull(includeLineBreaks));
+        }
+        if(childAppointments != null){
+            builder.append(lbc + "childAppointments=");
+            builder.append(childAppointments.toStringNonNull(includeLineBreaks));
+        }
+        if(clientContactReference != null){
+            builder.append(lbc + "clientContactReference=");
+            builder.append(clientContactReference.toStringNonNull(includeLineBreaks));
+        }
+        if(communicationMethod != null){
+            builder.append(lbc + "communicationMethod=");
+            builder.append(communicationMethod);
+        }
+        if(dateAdded != null){
+            builder.append(lbc + "dateAdded=");
+            builder.append(dateAdded);
+        }
+        if(dateBegin != null){
+            builder.append(lbc + "dateBegin=");
+            builder.append(dateBegin);
+        }
+        if(dateEnd != null){
+            builder.append(lbc + "dateEnd=");
+            builder.append(dateEnd);
+        }
+        if(dateLastModified != null){
+            builder.append(lbc + "dateLastModified=");
+            builder.append(dateLastModified);
+        }
+        if(description != null){
+            builder.append(lbc + "description=");
+            builder.append(description);
+        }
+        if(isAllDay != null){
+            builder.append(lbc + "isAllDay=");
+            builder.append(isAllDay);
+        }
+        if(isDeleted != null){
+            builder.append(lbc + "isDeleted=");
+            builder.append(isDeleted);
+        }
+        if(isPrivate != null){
+            builder.append(lbc + "isPrivate=");
+            builder.append(isPrivate);
+        }
+        if(jobOrder != null){
+            builder.append(lbc + "jobOrder=");
+            builder.append(jobOrder.toStringNonNull(includeLineBreaks));
+        }
+        if(location != null){
+            builder.append(lbc + "location=");
+            builder.append(location);
+        }
+        if(migrateGUID != null){
+            builder.append(lbc + "migrateGUID=");
+            builder.append(migrateGUID);
+        }
+        if(notificationMinutes != null){
+            builder.append(lbc + "notificationMinutes=");
+            builder.append(notificationMinutes);
+        }
+        if(owner != null){
+            builder.append(lbc + "owner=");
+            builder.append(owner.toStringNonNull(includeLineBreaks));
+        }
+        if(parentAppointment != null){
+            builder.append(lbc + "parentAppointment=");
+            builder.append(parentAppointment.toStringNonNull(includeLineBreaks));
+        }
+        if(placement != null){
+            builder.append(lbc + "placement=");
+            builder.append(placement.toStringNonNull(includeLineBreaks));
+        }
+        if(recurrenceDayBits != null){
+            builder.append(lbc + "recurrenceDayBits=");
+            builder.append(recurrenceDayBits);
+        }
+        if(recurrenceFrequency != null){
+            builder.append(lbc + "recurrenceFrequency=");
+            builder.append(recurrenceFrequency);
+        }
+        if(recurrenceMax != null){
+            builder.append(lbc + "recurrenceMax=");
+            builder.append(recurrenceMax);
+        }
+        if(recurrenceMonthBits != null){
+            builder.append(lbc + "recurrenceMonthBits=");
+            builder.append(recurrenceMonthBits);
+        }
+        if(recurrenceStyle != null){
+            builder.append(lbc + "recurrenceStyle=");
+            builder.append(recurrenceStyle);
+        }
+        if(recurrenceType != null){
+            builder.append(lbc + "recurrenceType=");
+            builder.append(recurrenceType);
+        }
+        if(showTimeAs != null){
+            builder.append(lbc + "showTimeAs=");
+            builder.append(showTimeAs);
+        }
+        if(subject != null){
+            builder.append(lbc + "subject=");
+            builder.append(subject);
+        }
+        if(timeZoneID != null){
+            builder.append(lbc + "timeZoneID=");
+            builder.append(timeZoneID);
+        }
+        if(type != null){
+            builder.append(lbc + "type=");
+            builder.append(type);
+        }
+        if(opportunity != null){
+            builder.append(lbc + "opportunity=");
+            builder.append(opportunity.toStringNonNull(includeLineBreaks));
+        }
+        builder.append(super.toStringNonNull(includeLineBreaks));
+        if(this.getAdditionalProperties() != null){
+            builder.append(lbc + "additionalProperties=");
+            builder.append(this.getAdditionalProperties());
+        }
+        if(includeLineBreaks)
+            builder.append("\n");
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(id != null){
+            builder.append("id=").append(id);
+        }
+        if(appointmentUUID != null){
+            builder.append(lbc + "appointmentUUID=");
+            builder.append(appointmentUUID);
+        }
+        if(guests != null){
+            builder.append(lbc + "guests=");
+            builder.append(guests.toStringNonNull());
+        }
+        if(candidateReference != null){
+            builder.append(lbc + "candidateReference=");
+            builder.append(candidateReference.toStringNonNull());
+        }
+        if(childAppointments != null){
+            builder.append(lbc + "childAppointments=");
+            builder.append(childAppointments.toStringNonNull());
+        }
+        if(clientContactReference != null){
+            builder.append(lbc + "clientContactReference=");
+            builder.append(clientContactReference.toStringNonNull());
+        }
+        if(communicationMethod != null){
+            builder.append(lbc + "communicationMethod=");
+            builder.append(communicationMethod);
+        }
+        if(dateAdded != null){
+            builder.append(lbc + "dateAdded=");
+            builder.append(dateAdded);
+        }
+        if(dateBegin != null){
+            builder.append(lbc + "dateBegin=");
+            builder.append(dateBegin);
+        }
+        if(dateEnd != null){
+            builder.append(lbc + "dateEnd=");
+            builder.append(dateEnd);
+        }
+        if(dateLastModified != null){
+            builder.append(lbc + "dateLastModified=");
+            builder.append(dateLastModified);
+        }
+        if(description != null){
+            builder.append(lbc + "description=");
+            builder.append(description);
+        }
+        if(isAllDay != null){
+            builder.append(lbc + "isAllDay=");
+            builder.append(isAllDay);
+        }
+        if(isDeleted != null){
+            builder.append(lbc + "isDeleted=");
+            builder.append(isDeleted);
+        }
+        if(isPrivate != null){
+            builder.append(lbc + "isPrivate=");
+            builder.append(isPrivate);
+        }
+        if(jobOrder != null){
+            builder.append(lbc + "jobOrder=");
+            builder.append(jobOrder.toStringNonNull());
+        }
+        if(location != null){
+            builder.append(lbc + "location=");
+            builder.append(location);
+        }
+        if(migrateGUID != null){
+            builder.append(lbc + "migrateGUID=");
+            builder.append(migrateGUID);
+        }
+        if(notificationMinutes != null){
+            builder.append(lbc + "notificationMinutes=");
+            builder.append(notificationMinutes);
+        }
+        if(owner != null){
+            builder.append(lbc + "owner=");
+            builder.append(owner.toStringNonNull());
+        }
+        if(parentAppointment != null){
+            builder.append(lbc + "parentAppointment=");
+            builder.append(parentAppointment.toStringNonNull());
+        }
+        if(placement != null){
+            builder.append(lbc + "placement=");
+            builder.append(placement.toStringNonNull());
+        }
+        if(recurrenceDayBits != null){
+            builder.append(lbc + "recurrenceDayBits=");
+            builder.append(recurrenceDayBits);
+        }
+        if(recurrenceFrequency != null){
+            builder.append(lbc + "recurrenceFrequency=");
+            builder.append(recurrenceFrequency);
+        }
+        if(recurrenceMax != null){
+            builder.append(lbc + "recurrenceMax=");
+            builder.append(recurrenceMax);
+        }
+        if(recurrenceMonthBits != null){
+            builder.append(lbc + "recurrenceMonthBits=");
+            builder.append(recurrenceMonthBits);
+        }
+        if(recurrenceStyle != null){
+            builder.append(lbc + "recurrenceStyle=");
+            builder.append(recurrenceStyle);
+        }
+        if(recurrenceType != null){
+            builder.append(lbc + "recurrenceType=");
+            builder.append(recurrenceType);
+        }
+        if(showTimeAs != null){
+            builder.append(lbc + "showTimeAs=");
+            builder.append(showTimeAs);
+        }
+        if(subject != null){
+            builder.append(lbc + "subject=");
+            builder.append(subject);
+        }
+        if(timeZoneID != null){
+            builder.append(lbc + "timeZoneID=");
+            builder.append(timeZoneID);
+        }
+        if(type != null){
+            builder.append(lbc + "type=");
+            builder.append(type);
+        }
+        if(opportunity != null){
+            builder.append(lbc + "opportunity=");
+            builder.append(opportunity.toStringNonNull());
+        }
+        builder.append(super.toStringNonNull());
+        if(this.getAdditionalProperties() != null){
+            builder.append(lbc + "additionalProperties=");
+            builder.append(this.getAdditionalProperties());
+        }
+
+        builder.append(lbc + "}");
+        return builder.toString();
+    }
+
+    @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (appointmentUUID != null ? appointmentUUID.hashCode() : 0);

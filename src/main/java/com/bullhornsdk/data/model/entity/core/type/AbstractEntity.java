@@ -110,4 +110,28 @@ public class AbstractEntity {
 		return builder.toString();
 	}
 
+    public String toStringNonNull(){
+        String lbc = "";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(additionalProperties != null) {
+            builder.append(lbc + "additionalProperties=");
+            builder.append(additionalProperties);
+        }
+        builder.append("}");
+        return builder.toString();
+    }
+
+    public String toStringNonNull(boolean includeLineBreaks) {
+	    String lbc = "";
+	    if(includeLineBreaks)
+            lbc = " \n";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(additionalProperties != null) {
+            builder.append(lbc + "additionalProperties=");
+            builder.append(additionalProperties);
+        }
+        builder.append(lbc + "}");
+        return builder.toString();
+    }
+
 }

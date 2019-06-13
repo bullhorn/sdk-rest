@@ -138,15 +138,50 @@ public class Address extends AbstractEntity {
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        sb.append("address1=" + address1);
+        sb.append(lbc + "address2=" + address2);
+        sb.append(lbc + "city=" + city);
+        sb.append(lbc + "state=" + state);
+        sb.append(lbc + "zip=" + zip);
+        sb.append(lbc + "countryID=" + countryID);
+        sb.append(lbc + "countryName=" + countryName);
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        sb.append("address1=" + address1);
+        sb.append(lbc + "address2=" + address2);
+        sb.append(lbc + "city=" + city);
+        sb.append(lbc + "state=" + state);
+        sb.append(lbc + "zip=" + zip);
+        sb.append(lbc + "countryID=" + countryID);
+        sb.append(lbc + "countryName=" + countryName);
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        return "Address{" +
-            "address1='" + address1 + '\'' +
-            ", address2='" + address2 + '\'' +
-            ", city='" + city + '\'' +
-            ", state='" + state + '\'' +
-            ", zip='" + zip + '\'' +
-            ", countryID=" + countryID +
-            ", countryName='" + countryName + '\'' +
-            '}';
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        sb.append("address1=" + address1);
+        sb.append(", address2=" + address2);
+        sb.append(", city=" + city);
+        sb.append(", state=" + state);
+        sb.append(", zip=" + zip);
+        sb.append(", countryID=" + countryID);
+        sb.append(", countryName=" + countryName);
+        sb.append("}");
+        return sb.toString();
     }
 }

@@ -412,33 +412,202 @@ public class JobSubmission extends BaseCustomFields implements QueryEntity, Upda
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
+        if(includeLineBreaks)
+            sb.append("\n");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(appointments != null){
+            sb.append(lbc + "appointments=").append(appointments.toStringNonNull(includeLineBreaks));
+        }
+        if(billRate != null){
+            sb.append(lbc + "billRate=").append(billRate);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull(includeLineBreaks));
+        }
+        if(candidate != null){
+            sb.append(lbc + "candidate=").append(candidate.toStringNonNull(includeLineBreaks));
+        }
+        if(customText1 != null){
+            sb.append(lbc + "customText1=").append(customText1);
+        }
+        if(customText2 != null){
+            sb.append(lbc + "customText2=").append(customText2);
+        }
+        if(customText3 != null){
+            sb.append(lbc + "customText3=").append(customText3);
+        }
+        if(customText4 != null){
+            sb.append(lbc + "customText4=").append(customText4);
+        }
+        if(customText5 != null){
+            sb.append(lbc + "customText5=").append(customText5);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(dateWebResponse != null){
+            sb.append(lbc + "dateWebResponse=").append(dateWebResponse);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(isHidden != null){
+            sb.append(lbc + "isHidden=").append(isHidden);
+        }
+        if(jobOrder != null){
+            sb.append(lbc + "jobOrder=").append(jobOrder.toStringNonNull(includeLineBreaks));
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(payRate != null){
+            sb.append(lbc + "payRate=").append(payRate);
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(sendingUser != null){
+            sb.append(lbc + "sendingUser=").append(sendingUser.toStringNonNull(includeLineBreaks));
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull(includeLineBreaks));
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        sb.append(super.toStringNonNull(includeLineBreaks));
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(appointments != null){
+            sb.append(lbc + "appointments=").append(appointments.toStringNonNull());
+        }
+        if(billRate != null){
+            sb.append(lbc + "billRate=").append(billRate);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull());
+        }
+        if(candidate != null){
+            sb.append(lbc + "candidate=").append(candidate.toStringNonNull());
+        }
+        if(customText1 != null){
+            sb.append(lbc + "customText1=").append(customText1);
+        }
+        if(customText2 != null){
+            sb.append(lbc + "customText2=").append(customText2);
+        }
+        if(customText3 != null){
+            sb.append(lbc + "customText3=").append(customText3);
+        }
+        if(customText4 != null){
+            sb.append(lbc + "customText4=").append(customText4);
+        }
+        if(customText5 != null){
+            sb.append(lbc + "customText5=").append(customText5);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(dateWebResponse != null){
+            sb.append(lbc + "dateWebResponse=").append(dateWebResponse);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(isHidden != null){
+            sb.append(lbc + "isHidden=").append(isHidden);
+        }
+        if(jobOrder != null){
+            sb.append(lbc + "jobOrder=").append(jobOrder.toStringNonNull());
+        }
+        if(migrateGUID != null){
+            sb.append(lbc + "migrateGUID=").append(migrateGUID);
+        }
+        if(payRate != null){
+            sb.append(lbc + "payRate=").append(payRate);
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(sendingUser != null){
+            sb.append(lbc + "sendingUser=").append(sendingUser.toStringNonNull());
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull());
+        }
+        if(comments != null){
+            sb.append(lbc + "comments=").append(comments);
+        }
+        sb.append(super.toStringNonNull());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("JobSubmission{");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
         sb.append("id=").append(id);
         sb.append(", appointments=").append(appointments);
         sb.append(", billRate=").append(billRate);
         sb.append(", branch=").append(branch);
         sb.append(", candidate=").append(candidate);
-        sb.append(", customText1='").append(customText1).append('\'');
-        sb.append(", customText2='").append(customText2).append('\'');
-        sb.append(", customText3='").append(customText3).append('\'');
-        sb.append(", customText4='").append(customText4).append('\'');
-        sb.append(", customText5='").append(customText5).append('\'');
+        sb.append(", customText1=").append(customText1);
+        sb.append(", customText2=").append(customText2);
+        sb.append(", customText3=").append(customText3);
+        sb.append(", customText4=").append(customText4);
+        sb.append(", customText5=").append(customText5);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateLastModified=").append(dateLastModified);
         sb.append(", dateWebResponse=").append(dateWebResponse);
         sb.append(", isDeleted=").append(isDeleted);
         sb.append(", isHidden=").append(isHidden);
         sb.append(", jobOrder=").append(jobOrder);
-        sb.append(", migrateGUID='").append(migrateGUID).append('\'');
+        sb.append(", migrateGUID=").append(migrateGUID);
         sb.append(", payRate=").append(payRate);
         sb.append(", salary=").append(salary);
         sb.append(", sendingUser=").append(sendingUser);
-        sb.append(", source='").append(source).append('\'');
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", source=").append(source);
+        sb.append(", status=").append(status);
         sb.append(", tasks=").append(tasks);
-        sb.append(", comments='").append(comments).append('\'');
-        sb.append('}');
+        sb.append(", comments=").append(comments);
+        sb.append(super.toString());
+        sb.append("}");
         return sb.toString();
     }
 }

@@ -133,21 +133,75 @@ public class CustomFieldsB extends CustomFieldsA {
 		return true;
 	}
 
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(super.toStringNonNull());
+        if(customTextBlock1 != null){
+            builder.append(lbc + "customTextBlock1=");
+            builder.append(customTextBlock1);
+        }
+        if(customTextBlock2 != null){
+            builder.append(lbc + "customTextBlock2=");
+            builder.append(customTextBlock2);
+        }
+        if(customTextBlock3 != null){
+            builder.append(lbc + "customTextBlock3=");
+            builder.append(customTextBlock3);
+        }
+        if(customTextBlock4 != null){
+            builder.append(lbc + "customTextBlock4=");
+            builder.append(customTextBlock4);
+        }
+        if(customTextBlock5 != null){
+            builder.append(lbc + "customTextBlock5=");
+            builder.append(customTextBlock5);
+        }
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(super.toStringNonNull(includeLineBreaks));
+        if(customTextBlock1 != null){
+            builder.append(lbc + "customTextBlock1=");
+            builder.append(customTextBlock1);
+        }
+        if(customTextBlock2 != null){
+            builder.append(lbc + "customTextBlock2=");
+            builder.append(customTextBlock2);
+        }
+        if(customTextBlock3 != null){
+            builder.append(lbc + "customTextBlock3=");
+            builder.append(customTextBlock3);
+        }
+        if(customTextBlock4 != null){
+            builder.append(lbc + "customTextBlock4=");
+            builder.append(customTextBlock4);
+        }
+        if(customTextBlock5 != null){
+            builder.append(lbc + "customTextBlock5=");
+            builder.append(customTextBlock5);
+        }
+        return builder.toString();
+    }
+
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(super.toString());
-		builder.append(", \ncustomTextBlock1=");
+		StringBuilder builder = new StringBuilder(super.toString());
+		builder.append(", customTextBlock1=");
 		builder.append(customTextBlock1);
-		builder.append(", \ncustomTextBlock2=");
+		builder.append(", customTextBlock2=");
 		builder.append(customTextBlock2);
-		builder.append(", \ncustomTextBlock3=");
+		builder.append(", customTextBlock3=");
 		builder.append(customTextBlock3);
-		builder.append(", \ncustomTextBlock4=");
+		builder.append(", customTextBlock4=");
 		builder.append(customTextBlock4);
-		builder.append(", \ncustomTextBlock5=");
+		builder.append(", customTextBlock5=");
 		builder.append(customTextBlock5);
-
 		return builder.toString();
 	}
 

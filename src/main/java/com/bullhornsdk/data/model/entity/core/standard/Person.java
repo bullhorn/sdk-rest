@@ -720,17 +720,312 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
 		return true;
 	}
 
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName()+" { ");
+        if(includeLineBreaks)
+            builder.append("\n");
+        if(id != null){
+            builder.append("id=");
+            builder.append(id);
+        }
+        if(address != null){
+            builder.append(lbc + "address=");
+            builder.append(address.toStringNonNull(includeLineBreaks));
+        }
+        if(companyName != null){
+            builder.append(lbc + "companyName=");
+            builder.append(companyName);
+        }
+        if(dateLastComment != null){
+            builder.append(lbc + "dateLastComment=");
+            builder.append(dateLastComment);
+        }
+        if(email != null){
+            builder.append(lbc + "email=");
+            builder.append(email);
+        }
+        if(email2 != null){
+            builder.append(lbc + "email2=");
+            builder.append(email2);
+        }
+        if(email3 != null){
+            builder.append(lbc + "email3=");
+            builder.append(email3);
+        }
+        if(fax != null){
+            builder.append(lbc + "fax=");
+            builder.append(fax);
+        }
+        if(fax2 != null){
+            builder.append(lbc + "fax2=");
+            builder.append(fax2);
+        }
+        if(fax3 != null){
+            builder.append(lbc + "fax3=");
+            builder.append(fax3);
+        }
+        if(firstName != null){
+            builder.append(lbc + "firstName=");
+            builder.append(firstName);
+        }
+        if(isDayLightSavingsTime != null){
+            builder.append(lbc + "isDayLightSavingsTime=");
+            builder.append(isDayLightSavingsTime);
+        }
+        if(isDeleted != null){
+            builder.append(lbc + "isDeleted=");
+            builder.append(isDeleted);
+        }
+        if(isLockedOut != null){
+            builder.append(lbc + "isLockedOut=");
+            builder.append(isLockedOut);
+        }
+        if(lastName != null){
+            builder.append(lbc + "lastName=");
+            builder.append(lastName);
+        }
+        if(massMailOptOut != null){
+            builder.append(lbc + "massMailOptOut=");
+            builder.append(massMailOptOut);
+        }
+        if(masterUserID != null){
+            builder.append(lbc + "masterUserID=");
+            builder.append(masterUserID);
+        }
+        if(middleName != null){
+            builder.append(lbc + "middleName=");
+            builder.append(middleName);
+        }
+        if(mobile != null){
+            builder.append(lbc + "mobile=");
+            builder.append(mobile);
+        }
+        if(name != null){
+            builder.append(lbc + "name=");
+            builder.append(name);
+        }
+        if(namePrefix != null){
+            builder.append(lbc + "namePrefix=");
+            builder.append(namePrefix);
+        }
+        if(nameSuffix != null){
+            builder.append(lbc + "nameSuffix=");
+            builder.append(nameSuffix);
+        }
+        if(nickName != null){
+            builder.append(lbc + "nickName=");
+            builder.append(nickName);
+        }
+        if(occupation != null){
+            builder.append(lbc + "occupation=");
+            builder.append(occupation);
+        }
+        if(pager != null){
+            builder.append(lbc + "pager=");
+            builder.append(pager);
+        }
+        if(personSubtype != null){
+            builder.append(lbc + "personSubtype=");
+            builder.append(personSubtype);
+        }
+        if(phone != null){
+            builder.append(lbc + "phone=");
+            builder.append(phone);
+        }
+        if(phone2 != null){
+            builder.append(lbc + "phone2=");
+            builder.append(phone2);
+        }
+        if(phone3 != null){
+            builder.append(lbc + "phone3=");
+            builder.append(phone3);
+        }
+        if(smsOptIn != null){
+            builder.append(lbc + "smsOptIn=");
+            builder.append(smsOptIn);
+        }
+        if(status != null){
+            builder.append(lbc + "status=");
+            builder.append(status);
+        }
+        if(timeZoneOffsetEST != null){
+            builder.append(lbc + "timeZoneOffsetEST=");
+            builder.append(timeZoneOffsetEST);
+        }
+        if(username != null){
+            builder.append(lbc + "username=");
+            builder.append(username);
+        }
+        if(userType != null){
+            builder.append(lbc + "userType=");
+            builder.append(userType);
+        }
+        builder.append(super.toStringNonNull(includeLineBreaks));
+        if(includeLineBreaks)
+            builder.append("\n");
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName()+" { ");
+        if(id != null){
+            builder.append("id=");
+            builder.append(id);
+        }
+        if(address != null){
+            builder.append(lbc + "address=");
+            builder.append(address.toStringNonNull());
+        }
+        if(companyName != null){
+            builder.append(lbc + "companyName=");
+            builder.append(companyName);
+        }
+        if(dateLastComment != null){
+            builder.append(lbc + "dateLastComment=");
+            builder.append(dateLastComment);
+        }
+        if(email != null){
+            builder.append(lbc + "email=");
+            builder.append(email);
+        }
+        if(email2 != null){
+            builder.append(lbc + "email2=");
+            builder.append(email2);
+        }
+        if(email3 != null){
+            builder.append(lbc + "email3=");
+            builder.append(email3);
+        }
+        if(fax != null){
+            builder.append(lbc + "fax=");
+            builder.append(fax);
+        }
+        if(fax2 != null){
+            builder.append(lbc + "fax2=");
+            builder.append(fax2);
+        }
+        if(fax3 != null){
+            builder.append(lbc + "fax3=");
+            builder.append(fax3);
+        }
+        if(firstName != null){
+            builder.append(lbc + "firstName=");
+            builder.append(firstName);
+        }
+        if(isDayLightSavingsTime != null){
+            builder.append(lbc + "isDayLightSavingsTime=");
+            builder.append(isDayLightSavingsTime);
+        }
+        if(isDeleted != null){
+            builder.append(lbc + "isDeleted=");
+            builder.append(isDeleted);
+        }
+        if(isLockedOut != null){
+            builder.append(lbc + "isLockedOut=");
+            builder.append(isLockedOut);
+        }
+        if(lastName != null){
+            builder.append(lbc + "lastName=");
+            builder.append(lastName);
+        }
+        if(massMailOptOut != null){
+            builder.append(lbc + "massMailOptOut=");
+            builder.append(massMailOptOut);
+        }
+        if(masterUserID != null){
+            builder.append(lbc + "masterUserID=");
+            builder.append(masterUserID);
+        }
+        if(middleName != null){
+            builder.append(lbc + "middleName=");
+            builder.append(middleName);
+        }
+        if(mobile != null){
+            builder.append(lbc + "mobile=");
+            builder.append(mobile);
+        }
+        if(name != null){
+            builder.append(lbc + "name=");
+            builder.append(name);
+        }
+        if(namePrefix != null){
+            builder.append(lbc + "namePrefix=");
+            builder.append(namePrefix);
+        }
+        if(nameSuffix != null){
+            builder.append(lbc + "nameSuffix=");
+            builder.append(nameSuffix);
+        }
+        if(nickName != null){
+            builder.append(lbc + "nickName=");
+            builder.append(nickName);
+        }
+        if(occupation != null){
+            builder.append(lbc + "occupation=");
+            builder.append(occupation);
+        }
+        if(pager != null){
+            builder.append(lbc + "pager=");
+            builder.append(pager);
+        }
+        if(personSubtype != null){
+            builder.append(lbc + "personSubtype=");
+            builder.append(personSubtype);
+        }
+        if(phone != null){
+            builder.append(lbc + "phone=");
+            builder.append(phone);
+        }
+        if(phone2 != null){
+            builder.append(lbc + "phone2=");
+            builder.append(phone2);
+        }
+        if(phone3 != null){
+            builder.append(lbc + "phone3=");
+            builder.append(phone3);
+        }
+        if(smsOptIn != null){
+            builder.append(lbc + "smsOptIn=");
+            builder.append(smsOptIn);
+        }
+        if(status != null){
+            builder.append(lbc + "status=");
+            builder.append(status);
+        }
+        if(timeZoneOffsetEST != null){
+            builder.append(lbc + "timeZoneOffsetEST=");
+            builder.append(timeZoneOffsetEST);
+        }
+        if(username != null){
+            builder.append(lbc + "username=");
+            builder.append(username);
+        }
+        if(userType != null){
+            builder.append(lbc + "userType=");
+            builder.append(userType);
+        }
+        builder.append(super.toStringNonNull());
+        builder.append("}");
+        return builder.toString();
+    }
+
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Person [id=");
+		StringBuilder builder = new StringBuilder(getClass().getSimpleName()+" { ");
+		builder.append("id=");
 		builder.append(id);
 		builder.append(", address=");
 		builder.append(address);
 		builder.append(", companyName=");
 		builder.append(companyName);
-		builder.append(", companyURL=");
-		builder.append(", dateAdded=");
+		builder.append(", dateLastComment=");
 		builder.append(dateLastComment);
 		builder.append(", email=");
 		builder.append(email);
@@ -792,7 +1087,8 @@ public class Person extends CustomFieldsB implements QueryEntity, UpdateEntity, 
 		builder.append(username);
 		builder.append(", userType=");
 		builder.append(userType);
-		builder.append("]");
+        builder.append(super.toString());
+		builder.append("}");
 		return builder.toString();
 	}
 

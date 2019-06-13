@@ -1452,42 +1452,609 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
     }
 
     @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName()  + " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address);
+        }
+        if(appointments != null){
+            sb.append(lbc + "appointments=").append(appointments.toStringNonNull());
+        }
+        if(approvedPlacements != null){
+            sb.append(lbc + "approvedPlacements=").append(approvedPlacements.toStringNonNull());
+        }
+        if(assignedUsers != null){
+            sb.append(lbc + "assignedUsers=").append(assignedUsers.toStringNonNull());
+        }
+        if(benefits != null){
+            sb.append(lbc + "benefits=").append(benefits);
+        }
+        if(billRateCategoryID != null){
+            sb.append(lbc + "billRateCategoryID=").append(billRateCategoryID);
+        }
+        if(bonusPackage != null){
+            sb.append(lbc + "bonusPackage=").append(bonusPackage);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull());
+        }
+        if(branchCode != null){
+            sb.append(lbc + "branchCode=").append(branchCode);
+        }
+        if(businessSectors != null){
+            sb.append(lbc + "businessSectors=").append(businessSectors.toStringNonNull());
+        }
+        if(categories != null){
+            sb.append(lbc + "categories=").append(categories.toStringNonNull());
+        }
+        if(certificationList != null){
+            sb.append(lbc + "certificationList=").append(certificationList);
+        }
+        if(certifications != null){
+            sb.append(lbc + "certifications=").append(certifications.toStringNonNull());
+        }
+        if(certificationGroups != null){
+            sb.append(lbc + "certificationGroups=").append(certificationGroups.toStringNonNull());
+        }
+        if(clientBillRate != null){
+            sb.append(lbc + "clientBillRate=").append(clientBillRate);
+        }
+        if(clientContact != null){
+            sb.append(lbc + "clientContact=").append(clientContact.toStringNonNull());
+        }
+        if(clientCorporation != null){
+            sb.append(lbc + "clientCorporation=").append(clientCorporation.toStringNonNull());
+        }
+        if(costCenter != null){
+            sb.append(lbc + "costCenter=").append(costCenter);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateClosed != null){
+            sb.append(lbc + "dateClosed=").append(dateClosed);
+        }
+        if(dateEnd != null){
+            sb.append(lbc + "dateEnd=").append(dateEnd);
+        }
+        if(dateLastExported != null){
+            sb.append(lbc + "dateLastExported=").append(dateLastExported);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(degreeList != null){
+            sb.append(lbc + "degreeList=").append(degreeList);
+        }
+        if(description != null){
+            sb.append(lbc + "description=").append(description);
+        }
+        if(durationWeeks != null){
+            sb.append(lbc + "durationWeeks=").append(durationWeeks);
+        }
+        if(educationDegree != null){
+            sb.append(lbc + "educationDegree=").append(educationDegree);
+        }
+        if(employmentType != null){
+            sb.append(lbc + "employmentType=").append(employmentType);
+        }
+        if(externalCategoryID != null){
+            sb.append(lbc + "externalCategoryID=").append(externalCategoryID);
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=").append(externalID);
+        }
+        if(feeArrangement != null){
+            sb.append(lbc + "feeArrangement=").append(feeArrangement);
+        }
+        if(hoursOfOperation != null){
+            sb.append(lbc + "hoursOfOperation=").append(hoursOfOperation);
+        }
+        if(hoursPerWeek != null){
+            sb.append(lbc + "hoursPerWeek=").append(hoursPerWeek);
+        }
+        if(interviews != null){
+            sb.append(lbc + "interviews=").append(interviews.toStringNonNull());
+        }
+        if(isClientEditable != null){
+            sb.append(lbc + "isClientEditable=").append(isClientEditable);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(isInterviewRequired != null){
+            sb.append(lbc + "isInterviewRequired=").append(isInterviewRequired);
+        }
+        if(isJobcastPublished != null){
+            sb.append(lbc + "isJobcastPublished=").append(isJobcastPublished);
+        }
+        if(isOpen != null){
+            sb.append(lbc + "isOpen=").append(isOpen);
+        }
+        if(isPublic != null){
+            sb.append(lbc + "isPublic=").append(isPublic);
+        }
+        if(jobBoardList != null){
+            sb.append(lbc + "jobBoardList=").append(jobBoardList);
+        }
+        if(luceneScore != null){
+            sb.append(lbc + "luceneScore=").append(luceneScore);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes);
+        }
+        if(numOpenings != null){
+            sb.append(lbc + "numOpenings=").append(numOpenings);
+        }
+        if(onSite != null){
+            sb.append(lbc + "onSite=").append(onSite);
+        }
+        if(optionsPackage != null){
+            sb.append(lbc + "optionsPackage=").append(optionsPackage);
+        }
+        if(opportunity != null){
+            sb.append(lbc + "opportunity=").append(opportunity.toStringNonNull());
+        }
+        if(owner != null){
+            sb.append(lbc + "owner=").append(owner.toStringNonNull());
+        }
+        if(payRate != null){
+            sb.append(lbc + "payRate=").append(payRate);
+        }
+        if(placements != null){
+            sb.append(lbc + "placements=").append(placements.toStringNonNull());
+        }
+        if(publicDescription != null){
+            sb.append(lbc + "publicDescription=").append(publicDescription);
+        }
+        if(publishedZip != null){
+            sb.append(lbc + "publishedZip=").append(publishedZip);
+        }
+        if(reasonClosed != null){
+            sb.append(lbc + "reasonClosed=").append(reasonClosed);
+        }
+        if(reportTo != null){
+            sb.append(lbc + "reportTo=").append(reportTo);
+        }
+        if(reportToClientContact != null){
+            sb.append(lbc + "reportToClientContact=").append(reportToClientContact.toStringNonNull());
+        }
+        if(responseUser != null){
+            sb.append(lbc + "responseUser=").append(responseUser.toStringNonNull());
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryUnit != null){
+            sb.append(lbc + "salaryUnit=").append(salaryUnit);
+        }
+        if(sendouts != null){
+            sb.append(lbc + "sendouts=").append(sendouts.toStringNonNull());
+        }
+        if(skillList != null){
+            sb.append(lbc + "skillList=").append(skillList);
+        }
+        if(skills != null){
+            sb.append(lbc + "skills=").append(skills.toStringNonNull());
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(lbc + "specialties=").append(specialties.toStringNonNull());
+        }
+        if(startDate != null){
+            sb.append(lbc + "startDate=").append(startDate);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(submissions != null){
+            sb.append(lbc + "submissions=").append(submissions.toStringNonNull());
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull());
+        }
+        if(taxRate != null){
+            sb.append(lbc + "taxRate=").append(taxRate);
+        }
+        if(taxStatus != null){
+            sb.append(lbc + "taxStatus=").append(taxStatus);
+        }
+        if(tearsheets != null){
+            sb.append(lbc + "tearsheets=").append(tearsheets.toStringNonNull());
+        }
+        if(timeUnits != null){
+            sb.append(lbc + "timeUnits=").append(timeUnits);
+        }
+        if(title != null){
+            sb.append(lbc + "title=").append(title);
+        }
+        if(travelRequirements != null){
+            sb.append(lbc + "travelRequirements=").append(travelRequirements);
+        }
+        if(type != null){
+            sb.append(lbc + "type=").append(type);
+        }
+        if(webResponses != null){
+            sb.append(lbc + "webResponses=").append(webResponses);
+        }
+        if(willRelocate != null){
+            sb.append(lbc + "willRelocate=").append(willRelocate);
+        }
+        if(willRelocateInt != null){
+            sb.append(lbc + "willRelocateInt=").append(willRelocateInt);
+        }
+        if(willSponsor != null){
+            sb.append(lbc + "willSponsor=").append(willSponsor);
+        }
+        if(workersCompRate != null){
+            sb.append(lbc + "workersCompRate=").append(workersCompRate.toStringNonNull());
+        }
+        if(yearsRequired != null){
+            sb.append(lbc + "yearsRequired=").append(yearsRequired);
+        }
+        sb.append(super.toStringNonNull());
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull());
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull());
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull());
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull());
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull());
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull());
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull());
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull());
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull());
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() +  " { ");
+        if(id != null){
+            sb.append("id=").append(id);
+        }
+        if(address != null){
+            sb.append(lbc + "address=").append(address);
+        }
+        if(appointments != null){
+            sb.append(lbc + "appointments=").append(appointments.toStringNonNull(includeLineBreaks));
+        }
+        if(approvedPlacements != null){
+            sb.append(lbc + "approvedPlacements=").append(approvedPlacements.toStringNonNull(includeLineBreaks));
+        }
+        if(assignedUsers != null){
+            sb.append(lbc + "assignedUsers=").append(assignedUsers);
+        }
+        if(benefits != null){
+            sb.append(lbc + "benefits=").append(benefits);
+        }
+        if(billRateCategoryID != null){
+            sb.append(lbc + "billRateCategoryID=").append(billRateCategoryID);
+        }
+        if(bonusPackage != null){
+            sb.append(lbc + "bonusPackage=").append(bonusPackage);
+        }
+        if(branch != null){
+            sb.append(lbc + "branch=").append(branch.toStringNonNull(includeLineBreaks));
+        }
+        if(branchCode != null){
+            sb.append(lbc + "branchCode=").append(branchCode);
+        }
+        if(businessSectors != null){
+            sb.append(lbc + "businessSectors=").append(businessSectors.toStringNonNull(includeLineBreaks));
+        }
+        if(categories != null){
+            sb.append(lbc + "categories=").append(categories.toStringNonNull(includeLineBreaks));
+        }
+        if(certificationList != null){
+            sb.append(lbc + "certificationList=").append(certificationList);
+        }
+        if(certifications != null){
+            sb.append(lbc + "certifications=").append(certifications.toStringNonNull(includeLineBreaks));
+        }
+        if(certificationGroups != null){
+            sb.append(lbc + "certificationGroups=").append(certificationGroups.toStringNonNull(includeLineBreaks));
+        }
+        if(clientBillRate != null){
+            sb.append(lbc + "clientBillRate=").append(clientBillRate);
+        }
+        if(clientContact != null){
+            sb.append(lbc + "clientContact=").append(clientContact.toStringNonNull(includeLineBreaks));
+        }
+        if(clientCorporation != null){
+            sb.append(lbc + "clientCorporation=").append(clientCorporation.toStringNonNull(includeLineBreaks));
+        }
+        if(costCenter != null){
+            sb.append(lbc + "costCenter=").append(costCenter);
+        }
+        if(dateAdded != null){
+            sb.append(lbc + "dateAdded=").append(dateAdded);
+        }
+        if(dateClosed != null){
+            sb.append(lbc + "dateClosed=").append(dateClosed);
+        }
+        if(dateEnd != null){
+            sb.append(lbc + "dateEnd=").append(dateEnd);
+        }
+        if(dateLastExported != null){
+            sb.append(lbc + "dateLastExported=").append(dateLastExported);
+        }
+        if(dateLastModified != null){
+            sb.append(lbc + "dateLastModified=").append(dateLastModified);
+        }
+        if(degreeList != null){
+            sb.append(lbc + "degreeList=").append(degreeList);
+        }
+        if(description != null){
+            sb.append(lbc + "description=").append(description);
+        }
+        if(durationWeeks != null){
+            sb.append(lbc + "durationWeeks=").append(durationWeeks);
+        }
+        if(educationDegree != null){
+            sb.append(lbc + "educationDegree=").append(educationDegree);
+        }
+        if(employmentType != null){
+            sb.append(lbc + "employmentType=").append(employmentType);
+        }
+        if(externalCategoryID != null){
+            sb.append(lbc + "externalCategoryID=").append(externalCategoryID);
+        }
+        if(externalID != null){
+            sb.append(lbc + "externalID=").append(externalID);
+        }
+        if(feeArrangement != null){
+            sb.append(lbc + "feeArrangement=").append(feeArrangement);
+        }
+        if(hoursOfOperation != null){
+            sb.append(lbc + "hoursOfOperation=").append(hoursOfOperation);
+        }
+        if(hoursPerWeek != null){
+            sb.append(lbc + "hoursPerWeek=").append(hoursPerWeek);
+        }
+        if(interviews != null){
+            sb.append(lbc + "interviews=").append(interviews.toStringNonNull(includeLineBreaks));
+        }
+        if(isClientEditable != null){
+            sb.append(lbc + "isClientEditable=").append(isClientEditable);
+        }
+        if(isDeleted != null){
+            sb.append(lbc + "isDeleted=").append(isDeleted);
+        }
+        if(isInterviewRequired != null){
+            sb.append(lbc + "isInterviewRequired=").append(isInterviewRequired);
+        }
+        if(isJobcastPublished != null){
+            sb.append(lbc + "isJobcastPublished=").append(isJobcastPublished);
+        }
+        if(isOpen != null){
+            sb.append(lbc + "isOpen=").append(isOpen);
+        }
+        if(isPublic != null){
+            sb.append(lbc + "isPublic=").append(isPublic);
+        }
+        if(jobBoardList != null){
+            sb.append(lbc + "jobBoardList=").append(jobBoardList);
+        }
+        if(luceneScore != null){
+            sb.append(lbc + "luceneScore=").append(luceneScore);
+        }
+        if(notes != null){
+            sb.append(lbc + "notes=").append(notes);
+        }
+        if(numOpenings != null){
+            sb.append(lbc + "numOpenings=").append(numOpenings);
+        }
+        if(onSite != null){
+            sb.append(lbc + "onSite=").append(onSite);
+        }
+        if(optionsPackage != null){
+            sb.append(lbc + "optionsPackage=").append(optionsPackage);
+        }
+        if(opportunity != null){
+            sb.append(lbc + "opportunity=").append(opportunity.toStringNonNull(includeLineBreaks));
+        }
+        if(owner != null){
+            sb.append(lbc + "owner=").append(owner.toStringNonNull(includeLineBreaks));
+        }
+        if(payRate != null){
+            sb.append(lbc + "payRate=").append(payRate);
+        }
+        if(placements != null){
+            sb.append(lbc + "placements=").append(placements.toStringNonNull(includeLineBreaks));
+        }
+        if(publicDescription != null){
+            sb.append(lbc + "publicDescription=").append(publicDescription);
+        }
+        if(publishedZip != null){
+            sb.append(lbc + "publishedZip=").append(publishedZip);
+        }
+        if(reasonClosed != null){
+            sb.append(lbc + "reasonClosed=").append(reasonClosed);
+        }
+        if(reportTo != null){
+            sb.append(lbc + "reportTo=").append(reportTo);
+        }
+        if(reportToClientContact != null){
+            sb.append(lbc + "reportToClientContact=").append(reportToClientContact);
+        }
+        if(responseUser != null){
+            sb.append(lbc + "responseUser=").append(responseUser);
+        }
+        if(salary != null){
+            sb.append(lbc + "salary=").append(salary);
+        }
+        if(salaryUnit != null){
+            sb.append(lbc + "salaryUnit=").append(salaryUnit);
+        }
+        if(sendouts != null){
+            sb.append(lbc + "sendouts=").append(sendouts.toStringNonNull(includeLineBreaks));
+        }
+        if(skillList != null){
+            sb.append(lbc + "skillList=").append(skillList);
+        }
+        if(skills != null){
+            sb.append(lbc + "skills=").append(skills.toStringNonNull(includeLineBreaks));
+        }
+        if(source != null){
+            sb.append(lbc + "source=").append(source);
+        }
+        if(specialties != null){
+            sb.append(lbc + "specialties=").append(specialties.toStringNonNull(includeLineBreaks));
+        }
+        if(startDate != null){
+            sb.append(lbc + "startDate=").append(startDate);
+        }
+        if(status != null){
+            sb.append(lbc + "status=").append(status);
+        }
+        if(submissions != null){
+            sb.append(lbc + "submissions=").append(submissions.toStringNonNull(includeLineBreaks));
+        }
+        if(tasks != null){
+            sb.append(lbc + "tasks=").append(tasks.toStringNonNull(includeLineBreaks));
+        }
+        if(taxRate != null){
+            sb.append(lbc + "taxRate=").append(taxRate);
+        }
+        if(taxStatus != null){
+            sb.append(lbc + "taxStatus=").append(taxStatus);
+        }
+        if(tearsheets != null){
+            sb.append(lbc + "tearsheets=").append(tearsheets.toStringNonNull(includeLineBreaks));
+        }
+        if(timeUnits != null){
+            sb.append(lbc + "timeUnits=").append(timeUnits);
+        }
+        if(title != null){
+            sb.append(lbc + "title=").append(title);
+        }
+        if(travelRequirements != null){
+            sb.append(lbc + "travelRequirements=").append(travelRequirements);
+        }
+        if(type != null){
+            sb.append(lbc + "type=").append(type);
+        }
+        if(webResponses != null){
+            sb.append(lbc + "webResponses=").append(webResponses);
+        }
+        if(willRelocate != null){
+            sb.append(lbc + "willRelocate=").append(willRelocate);
+        }
+        if(willRelocateInt != null){
+            sb.append(lbc + "willRelocateInt=").append(willRelocateInt);
+        }
+        if(willSponsor != null){
+            sb.append(lbc + "willSponsor=").append(willSponsor);
+        }
+        if(workersCompRate != null){
+            sb.append(lbc + "workersCompRate=").append(workersCompRate);
+        }
+        if(yearsRequired != null){
+            sb.append(lbc + "yearsRequired=").append(yearsRequired);
+        }
+        sb.append(super.toStringNonNull(includeLineBreaks));
+        if(customObject1s != null){
+            sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject2s != null){
+            sb.append(lbc + "customObject2s=").append(customObject2s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject3s != null){
+            sb.append(lbc + "customObject3s=").append(customObject3s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject4s != null){
+            sb.append(lbc + "customObject4s=").append(customObject4s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject5s != null){
+            sb.append(lbc + "customObject5s=").append(customObject5s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject6s != null){
+            sb.append(lbc + "customObject6s=").append(customObject6s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject7s != null){
+            sb.append(lbc + "customObject7s=").append(customObject7s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject8s != null){
+            sb.append(lbc + "customObject8s=").append(customObject8s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject9s != null){
+            sb.append(lbc + "customObject9s=").append(customObject9s.toStringNonNull(includeLineBreaks));
+        }
+        if(customObject10s != null){
+            sb.append(lbc + "customObject10s=").append(customObject10s.toStringNonNull(includeLineBreaks));
+        }
+        if(includeLineBreaks)
+            sb.append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("JobData{");
-        sb.append("luceneScore=").append(luceneScore);
-        sb.append(", id=").append(id);
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
+        sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", appointments=").append(appointments);
         sb.append(", approvedPlacements=").append(approvedPlacements);
         sb.append(", assignedUsers=").append(assignedUsers);
-        sb.append(", benefits='").append(benefits).append('\'');
+        sb.append(", benefits=").append(benefits);
         sb.append(", billRateCategoryID=").append(billRateCategoryID);
-        sb.append(", bonusPackage='").append(bonusPackage).append('\'');
+        sb.append(", bonusPackage=").append(bonusPackage);
         sb.append(", branch=").append(branch);
-        sb.append(", branchCode='").append(branchCode).append('\'');
+        sb.append(", branchCode=").append(branchCode);
         sb.append(", businessSectors=").append(businessSectors);
         sb.append(", categories=").append(categories);
-        sb.append(", certificationList='").append(certificationList).append('\'');
+        sb.append(", certificationList=").append(certificationList);
         sb.append(", certifications=").append(certifications);
         sb.append(", certificationGroups=").append(certificationGroups);
         sb.append(", clientBillRate=").append(clientBillRate);
         sb.append(", clientContact=").append(clientContact);
         sb.append(", clientCorporation=").append(clientCorporation);
-        sb.append(", costCenter='").append(costCenter).append('\'');
+        sb.append(", costCenter=").append(costCenter);
         sb.append(", dateAdded=").append(dateAdded);
         sb.append(", dateClosed=").append(dateClosed);
         sb.append(", dateEnd=").append(dateEnd);
         sb.append(", dateLastExported=").append(dateLastExported);
         sb.append(", dateLastModified=").append(dateLastModified);
-        sb.append(", degreeList='").append(degreeList).append('\'');
-        sb.append(", description='").append(description).append('\'');
+        sb.append(", degreeList=").append(degreeList);
+        sb.append(", description=").append(description);
         sb.append(", durationWeeks=").append(durationWeeks);
-        sb.append(", educationDegree='").append(educationDegree).append('\'');
-        sb.append(", employmentType='").append(employmentType).append('\'');
+        sb.append(", educationDegree=").append(educationDegree);
+        sb.append(", employmentType=").append(employmentType);
         sb.append(", externalCategoryID=").append(externalCategoryID);
-        sb.append(", externalID='").append(externalID).append('\'');
+        sb.append(", externalID=").append(externalID);
         sb.append(", feeArrangement=").append(feeArrangement);
-        sb.append(", hoursOfOperation='").append(hoursOfOperation).append('\'');
+        sb.append(", hoursOfOperation=").append(hoursOfOperation);
         sb.append(", hoursPerWeek=").append(hoursPerWeek);
         sb.append(", interviews=").append(interviews);
         sb.append(", isClientEditable=").append(isClientEditable);
@@ -1496,38 +2063,39 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         sb.append(", isJobcastPublished=").append(isJobcastPublished);
         sb.append(", isOpen=").append(isOpen);
         sb.append(", isPublic=").append(isPublic);
-        sb.append(", jobBoardList='").append(jobBoardList).append('\'');
+        sb.append(", jobBoardList=").append(jobBoardList);
+        sb.append(", luceneScore=").append(luceneScore);
         sb.append(", notes=").append(notes);
         sb.append(", numOpenings=").append(numOpenings);
-        sb.append(", onSite='").append(onSite).append('\'');
-        sb.append(", optionsPackage='").append(optionsPackage).append('\'');
+        sb.append(", onSite=").append(onSite);
+        sb.append(", optionsPackage=").append(optionsPackage);
         sb.append(", opportunity=").append(opportunity);
         sb.append(", owner=").append(owner);
         sb.append(", payRate=").append(payRate);
         sb.append(", placements=").append(placements);
-        sb.append(", publicDescription='").append(publicDescription).append('\'');
-        sb.append(", publishedZip='").append(publishedZip).append('\'');
-        sb.append(", reasonClosed='").append(reasonClosed).append('\'');
-        sb.append(", reportTo='").append(reportTo).append('\'');
+        sb.append(", publicDescription=").append(publicDescription);
+        sb.append(", publishedZip=").append(publishedZip);
+        sb.append(", reasonClosed=").append(reasonClosed);
+        sb.append(", reportTo=").append(reportTo);
         sb.append(", reportToClientContact=").append(reportToClientContact);
         sb.append(", responseUser=").append(responseUser);
         sb.append(", salary=").append(salary);
-        sb.append(", salaryUnit='").append(salaryUnit).append('\'');
+        sb.append(", salaryUnit=").append(salaryUnit);
         sb.append(", sendouts=").append(sendouts);
-        sb.append(", skillList='").append(skillList).append('\'');
+        sb.append(", skillList=").append(skillList);
         sb.append(", skills=").append(skills);
-        sb.append(", source='").append(source).append('\'');
+        sb.append(", source=").append(source);
         sb.append(", specialties=").append(specialties);
         sb.append(", startDate=").append(startDate);
-        sb.append(", status='").append(status).append('\'');
+        sb.append(", status=").append(status);
         sb.append(", submissions=").append(submissions);
         sb.append(", tasks=").append(tasks);
         sb.append(", taxRate=").append(taxRate);
-        sb.append(", taxStatus='").append(taxStatus).append('\'');
+        sb.append(", taxStatus=").append(taxStatus);
         sb.append(", tearsheets=").append(tearsheets);
         sb.append(", timeUnits=").append(timeUnits);
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", travelRequirements='").append(travelRequirements).append('\'');
+        sb.append(", title=").append(title);
+        sb.append(", travelRequirements=").append(travelRequirements);
         sb.append(", type=").append(type);
         sb.append(", webResponses=").append(webResponses);
         sb.append(", willRelocate=").append(willRelocate);
@@ -1535,6 +2103,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         sb.append(", willSponsor=").append(willSponsor);
         sb.append(", workersCompRate=").append(workersCompRate);
         sb.append(", yearsRequired=").append(yearsRequired);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);
@@ -1545,7 +2114,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         sb.append(", customObject8s=").append(customObject8s);
         sb.append(", customObject9s=").append(customObject9s);
         sb.append(", customObject10s=").append(customObject10s);
-        sb.append('}');
+        sb.append("}");
         return sb.toString();
     }
 }

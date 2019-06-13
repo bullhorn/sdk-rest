@@ -8,7 +8,6 @@ import com.bullhornsdk.data.model.entity.core.type.*;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -1638,175 +1637,864 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     }
 
     @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\r\n ";
+        final StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
+        if(includeLineBreaks)
+            builder.append("\n");
+        if(id != null){
+            builder.append("id=");
+            builder.append(id);
+        }
+        if(approvingUser != null){
+            builder.append(lbc + "approvingUser=");
+            builder.append(approvingUser);
+        }
+        if(billingClientContact != null){
+            builder.append(lbc + "billingClientContact=");
+            builder.append(billingClientContact);
+        }
+        if(billingFrequency != null){
+            builder.append(lbc + "billingFrequency=");
+            builder.append(billingFrequency);
+        }
+        if(bonusPackage != null){
+            builder.append(lbc + "bonusPackage=");
+            builder.append(bonusPackage);
+        }
+        if(clientBillRate != null){
+            builder.append(lbc + "clientBillRate=");
+            builder.append(clientBillRate);
+        }
+        if(clientOvertimeRate != null){
+            builder.append(lbc + "clientOvertimeRate=");
+            builder.append(clientOvertimeRate);
+        }
+        if(comments != null){
+            builder.append(lbc + "comments=");
+            builder.append(comments);
+        }
+        if(costCenter != null){
+            builder.append(lbc + "costCenter=");
+            builder.append(costCenter);
+        }
+        if(dateAdded != null){
+            builder.append(lbc + "dateAdded=");
+            builder.append(dateAdded);
+        }
+        if(dateApproved != null){
+            builder.append(lbc + "dateApproved=");
+            builder.append(dateApproved);
+        }
+        if(dateBegin != null){
+            builder.append(lbc + "dateBegin=");
+            builder.append(dateBegin);
+        }
+        if(dateClientEffective != null){
+            builder.append(lbc + "dateClientEffective=");
+            builder.append(dateClientEffective);
+        }
+        if(dateEffective != null){
+            builder.append(lbc + "dateEffective=");
+            builder.append(dateEffective);
+        }
+        if(dateEnd != null){
+            builder.append(lbc + "dateEnd=");
+            builder.append(dateEnd);
+        }
+        if(dateLastModified != null){
+            builder.append(lbc + "dateLastModified=");
+            builder.append(dateLastModified);
+        }
+        if(daysGuaranteed != null){
+            builder.append(lbc + "daysGuaranteed=");
+            builder.append(daysGuaranteed);
+        }
+        if(daysProRated != null){
+            builder.append(lbc + "daysProRated=");
+            builder.append(daysProRated);
+        }
+        if(durationWeeks != null){
+            builder.append(lbc + "durationWeeks=");
+            builder.append(durationWeeks);
+        }
+        if(employeeType != null){
+            builder.append(lbc + "employeeType=");
+            builder.append(employeeType);
+        }
+        if(employmentType != null){
+            builder.append(lbc + "employmentType=");
+            builder.append(employmentType);
+        }
+        if(fee != null){
+            builder.append(lbc + "fee=");
+            builder.append(fee);
+        }
+        if(hoursOfOperation != null){
+            builder.append(lbc + "hoursOfOperation=");
+            builder.append(hoursOfOperation);
+        }
+        if(hoursPerDay != null){
+            builder.append(lbc + "hoursPerDay=");
+            builder.append(hoursPerDay);
+        }
+        if(housingManagerID != null){
+            builder.append(lbc + "housingManagerID=");
+            builder.append(housingManagerID);
+        }
+        if(housingStatus != null){
+            builder.append(lbc + "housingStatus=");
+            builder.append(housingStatus);
+        }
+        if(migrateGUID != null){
+            builder.append(lbc + "migrateGUID=");
+            builder.append(migrateGUID);
+        }
+        if(optionsPackage != null){
+            builder.append(lbc + "optionsPackage=");
+            builder.append(optionsPackage);
+        }
+        if(otExemption != null){
+            builder.append(lbc + "otExemption=");
+            builder.append(otExemption);
+        }
+        if(otherHourlyFee != null){
+            builder.append(lbc + "otherHourlyFee=");
+            builder.append(otherHourlyFee);
+        }
+        if(otherHourlyFeeComments != null){
+            builder.append(lbc + "otherHourlyFeeComments=");
+            builder.append(otherHourlyFeeComments);
+        }
+        if(overtimeRate != null){
+            builder.append(lbc + "overtimeRate=");
+            builder.append(overtimeRate);
+        }
+        if(payRate != null){
+            builder.append(lbc + "payRate=");
+            builder.append(payRate);
+        }
+        if(placement != null){
+            builder.append(lbc + "placement=");
+            builder.append(placement);
+        }
+        if(recruitingManagerPercentGrossMargin != null){
+            builder.append(lbc + "recruitingManagerPercentGrossMargin=");
+            builder.append(recruitingManagerPercentGrossMargin);
+        }
+        if(referralFee != null){
+            builder.append(lbc + "referralFee=");
+            builder.append(referralFee);
+        }
+        if(referralFeeType != null){
+            builder.append(lbc + "referralFeeType=");
+            builder.append(referralFeeType);
+        }
+        if(reportTo != null){
+            builder.append(lbc + "reportTo=");
+            builder.append(reportTo);
+        }
+        if(requestCustomDate1 != null){
+            builder.append(lbc + "requestCustomDate1=");
+            builder.append(requestCustomDate1);
+        }
+        if(requestCustomDate2 != null){
+            builder.append(lbc + "requestCustomDate2=");
+            builder.append(requestCustomDate2);
+        }
+        if(requestCustomDate3 != null){
+            builder.append(lbc + "requestCustomDate3=");
+            builder.append(requestCustomDate3);
+        }
+        if(requestCustomFloat1 != null){
+            builder.append(lbc + "requestCustomFloat1=");
+            builder.append(requestCustomFloat1);
+        }
+        if(requestCustomFloat2 != null){
+            builder.append(lbc + "requestCustomFloat2=");
+            builder.append(requestCustomFloat2);
+        }
+        if(requestCustomFloat3 != null){
+            builder.append(lbc + "requestCustomFloat3=");
+            builder.append(requestCustomFloat3);
+        }
+        if(requestCustomInt1 != null){
+            builder.append(lbc + "requestCustomInt1=");
+            builder.append(requestCustomInt1);
+        }
+        if(requestCustomInt2 != null){
+            builder.append(lbc + "requestCustomInt2=");
+            builder.append(requestCustomInt2);
+        }
+        if(requestCustomInt3 != null){
+            builder.append(lbc + "requestCustomInt3=");
+            builder.append(requestCustomInt3);
+        }
+        if(requestCustomText1 != null){
+            builder.append(lbc + "requestCustomText1=");
+            builder.append(requestCustomText1);
+        }
+        if(requestCustomText10 != null){
+            builder.append(lbc + "requestCustomText10=");
+            builder.append(requestCustomText10);
+        }
+        if(requestCustomText11 != null){
+            builder.append(lbc + "requestCustomText11=");
+            builder.append(requestCustomText11);
+        }
+        if(requestCustomText12 != null){
+            builder.append(lbc + "requestCustomText12=");
+            builder.append(requestCustomText12);
+        }
+        if(requestCustomText13 != null){
+            builder.append(lbc + "requestCustomText13=");
+            builder.append(requestCustomText13);
+        }
+        if(requestCustomText14 != null){
+            builder.append(lbc + "requestCustomText14=");
+            builder.append(requestCustomText14);
+        }
+        if(requestCustomText15 != null){
+            builder.append(lbc + "requestCustomText15=");
+            builder.append(requestCustomText15);
+        }
+        if(requestCustomText16 != null){
+            builder.append(lbc + "requestCustomText16=");
+            builder.append(requestCustomText16);
+        }
+        if(requestCustomText17 != null){
+            builder.append(lbc + "requestCustomText17=");
+            builder.append(requestCustomText17);
+        }
+        if(requestCustomText18 != null){
+            builder.append(lbc + "requestCustomText18=");
+            builder.append(requestCustomText18);
+        }
+        if(requestCustomText19 != null){
+            builder.append(lbc + "requestCustomText19=");
+            builder.append(requestCustomText19);
+        }
+        if(requestCustomText2 != null){
+            builder.append(lbc + "requestCustomText2=");
+            builder.append(requestCustomText2);
+        }
+        if(requestCustomText20 != null){
+            builder.append(lbc + "requestCustomText20=");
+            builder.append(requestCustomText20);
+        }
+        if(requestCustomText3 != null){
+            builder.append(lbc + "requestCustomText3=");
+            builder.append(requestCustomText3);
+        }
+        if(requestCustomText4 != null){
+            builder.append(lbc + "requestCustomText4=");
+            builder.append(requestCustomText4);
+        }
+        if(requestCustomText5 != null){
+            builder.append(lbc + "requestCustomText5=");
+            builder.append(requestCustomText5);
+        }
+        if(requestCustomText6 != null){
+            builder.append(lbc + "requestCustomText6=");
+            builder.append(requestCustomText6);
+        }
+        if(requestCustomText7 != null){
+            builder.append(lbc + "requestCustomText7=");
+            builder.append(requestCustomText7);
+        }
+        if(requestCustomText8 != null){
+            builder.append(lbc + "requestCustomText8=");
+            builder.append(requestCustomText8);
+        }
+        if(requestCustomText9 != null){
+            builder.append(lbc + "requestCustomText9=");
+            builder.append(requestCustomText9);
+        }
+        if(requestCustomTextBlock1 != null){
+            builder.append(lbc + "requestCustomTextBlock1=");
+            builder.append(requestCustomTextBlock1);
+        }
+        if(requestCustomTextBlock2 != null){
+            builder.append(lbc + "requestCustomTextBlock2=");
+            builder.append(requestCustomTextBlock2);
+        }
+        if(requestCustomTextBlock3 != null){
+            builder.append(lbc + "requestCustomTextBlock3=");
+            builder.append(requestCustomTextBlock3);
+        }
+        if(requestCustomTextBlock4 != null){
+            builder.append(lbc + "requestCustomTextBlock4=");
+            builder.append(requestCustomTextBlock4);
+        }
+        if(requestCustomTextBlock5 != null){
+            builder.append(lbc + "requestCustomTextBlock5=");
+            builder.append(requestCustomTextBlock5);
+        }
+        if(requestStatus != null){
+            builder.append(lbc + "requestStatus=");
+            builder.append(requestStatus);
+        }
+        if(requestType != null){
+            builder.append(lbc + "requestType=");
+            builder.append(requestType);
+        }
+        if(requestingUser != null){
+            builder.append(lbc + "requestingUser=");
+            builder.append(requestingUser);
+        }
+        if(salary != null){
+            builder.append(lbc + "salary=");
+            builder.append(salary);
+        }
+        if(salaryUnit != null){
+            builder.append(lbc + "salaryUnit=");
+            builder.append(salaryUnit);
+        }
+        if(salesManagerPercentGrossMargin != null){
+            builder.append(lbc + "salesManagerPercentGrossMargin=");
+            builder.append(salesManagerPercentGrossMargin);
+        }
+        if(statementClientContact != null){
+            builder.append(lbc + "statementClientContact=");
+            builder.append(statementClientContact);
+        }
+        if(status != null){
+            builder.append(lbc + "status=");
+            builder.append(status);
+        }
+        if(terminationReason != null){
+            builder.append(lbc + "terminationReason=");
+            builder.append(terminationReason);
+        }
+        if(vendorClientCorporation != null){
+            builder.append(lbc + "vendorClientCorporation=");
+            builder.append(vendorClientCorporation);
+        }
+        if(workWeekStart != null){
+            builder.append(lbc + "workWeekStart=").append(workWeekStart);
+        }
+        builder.append(super.toStringNonNull(includeLineBreaks));
+        if(includeLineBreaks)
+            builder.append("\n");
+        builder.append("}");
+        return builder.toString();
+    }
+
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " {");
+        if(id != null){
+            builder.append("id=");
+            builder.append(id);
+        }
+        if(approvingUser != null){
+            builder.append(lbc + "approvingUser=");
+            builder.append(approvingUser);
+        }
+        if(billingClientContact != null){
+            builder.append(lbc + "billingClientContact=");
+            builder.append(billingClientContact);
+        }
+        if(billingFrequency != null){
+            builder.append(lbc + "billingFrequency=");
+            builder.append(billingFrequency);
+        }
+        if(bonusPackage != null){
+            builder.append(lbc + "bonusPackage=");
+            builder.append(bonusPackage);
+        }
+        if(clientBillRate != null){
+            builder.append(lbc + "clientBillRate=");
+            builder.append(clientBillRate);
+        }
+        if(clientOvertimeRate != null){
+            builder.append(lbc + "clientOvertimeRate=");
+            builder.append(clientOvertimeRate);
+        }
+        if(comments != null){
+            builder.append(lbc + "comments=");
+            builder.append(comments);
+        }
+        if(costCenter != null){
+            builder.append(lbc + "costCenter=");
+            builder.append(costCenter);
+        }
+        if(dateAdded != null){
+            builder.append(lbc + "dateAdded=");
+            builder.append(dateAdded);
+        }
+        if(dateApproved != null){
+            builder.append(lbc + "dateApproved=");
+            builder.append(dateApproved);
+        }
+        if(dateBegin != null){
+            builder.append(lbc + "dateBegin=");
+            builder.append(dateBegin);
+        }
+        if(dateClientEffective != null){
+            builder.append(lbc + "dateClientEffective=");
+            builder.append(dateClientEffective);
+        }
+        if(dateEffective != null){
+            builder.append(lbc + "dateEffective=");
+            builder.append(dateEffective);
+        }
+        if(dateEnd != null){
+            builder.append(lbc + "dateEnd=");
+            builder.append(dateEnd);
+        }
+        if(dateLastModified != null){
+            builder.append(lbc + "dateLastModified=");
+            builder.append(dateLastModified);
+        }
+        if(daysGuaranteed != null){
+            builder.append(lbc + "daysGuaranteed=");
+            builder.append(daysGuaranteed);
+        }
+        if(daysProRated != null){
+            builder.append(lbc + "daysProRated=");
+            builder.append(daysProRated);
+        }
+        if(durationWeeks != null){
+            builder.append(lbc + "durationWeeks=");
+            builder.append(durationWeeks);
+        }
+        if(employeeType != null){
+            builder.append(lbc + "employeeType=");
+            builder.append(employeeType);
+        }
+        if(employmentType != null){
+            builder.append(lbc + "employmentType=");
+            builder.append(employmentType);
+        }
+        if(fee != null){
+            builder.append(lbc + "fee=");
+            builder.append(fee);
+        }
+        if(hoursOfOperation != null){
+            builder.append(lbc + "hoursOfOperation=");
+            builder.append(hoursOfOperation);
+        }
+        if(hoursPerDay != null){
+            builder.append(lbc + "hoursPerDay=");
+            builder.append(hoursPerDay);
+        }
+        if(housingManagerID != null){
+            builder.append(lbc + "housingManagerID=");
+            builder.append(housingManagerID);
+        }
+        if(housingStatus != null){
+            builder.append(lbc + "housingStatus=");
+            builder.append(housingStatus);
+        }
+        if(migrateGUID != null){
+            builder.append(lbc + "migrateGUID=");
+            builder.append(migrateGUID);
+        }
+        if(optionsPackage != null){
+            builder.append(lbc + "optionsPackage=");
+            builder.append(optionsPackage);
+        }
+        if(otExemption != null){
+            builder.append(lbc + "otExemption=");
+            builder.append(otExemption);
+        }
+        if(otherHourlyFee != null){
+            builder.append(lbc + "otherHourlyFee=");
+            builder.append(otherHourlyFee);
+        }
+        if(otherHourlyFeeComments != null){
+            builder.append(lbc + "otherHourlyFeeComments=");
+            builder.append(otherHourlyFeeComments);
+        }
+        if(overtimeRate != null){
+            builder.append(lbc + "overtimeRate=");
+            builder.append(overtimeRate);
+        }
+        if(payRate != null){
+            builder.append(lbc + "payRate=");
+            builder.append(payRate);
+        }
+        if(placement != null){
+            builder.append(lbc + "placement=");
+            builder.append(placement);
+        }
+        if(recruitingManagerPercentGrossMargin != null){
+            builder.append(lbc + "recruitingManagerPercentGrossMargin=");
+            builder.append(recruitingManagerPercentGrossMargin);
+        }
+        if(referralFee != null){
+            builder.append(lbc + "referralFee=");
+            builder.append(referralFee);
+        }
+        if(referralFeeType != null){
+            builder.append(lbc + "referralFeeType=");
+            builder.append(referralFeeType);
+        }
+        if(reportTo != null){
+            builder.append(lbc + "reportTo=");
+            builder.append(reportTo);
+        }
+        if(requestCustomDate1 != null){
+            builder.append(lbc + "requestCustomDate1=");
+            builder.append(requestCustomDate1);
+        }
+        if(requestCustomDate2 != null){
+            builder.append(lbc + "requestCustomDate2=");
+            builder.append(requestCustomDate2);
+        }
+        if(requestCustomDate3 != null){
+            builder.append(lbc + "requestCustomDate3=");
+            builder.append(requestCustomDate3);
+        }
+        if(requestCustomFloat1 != null){
+            builder.append(lbc + "requestCustomFloat1=");
+            builder.append(requestCustomFloat1);
+        }
+        if(requestCustomFloat2 != null){
+            builder.append(lbc + "requestCustomFloat2=");
+            builder.append(requestCustomFloat2);
+        }
+        if(requestCustomFloat3 != null){
+            builder.append(lbc + "requestCustomFloat3=");
+            builder.append(requestCustomFloat3);
+        }
+        if(requestCustomInt1 != null){
+            builder.append(lbc + "requestCustomInt1=");
+            builder.append(requestCustomInt1);
+        }
+        if(requestCustomInt2 != null){
+            builder.append(lbc + "requestCustomInt2=");
+            builder.append(requestCustomInt2);
+        }
+        if(requestCustomInt3 != null){
+            builder.append(lbc + "requestCustomInt3=");
+            builder.append(requestCustomInt3);
+        }
+        if(requestCustomText1 != null){
+            builder.append(lbc + "requestCustomText1=");
+            builder.append(requestCustomText1);
+        }
+        if(requestCustomText10 != null){
+            builder.append(lbc + "requestCustomText10=");
+            builder.append(requestCustomText10);
+        }
+        if(requestCustomText11 != null){
+            builder.append(lbc + "requestCustomText11=");
+            builder.append(requestCustomText11);
+        }
+        if(requestCustomText12 != null){
+            builder.append(lbc + "requestCustomText12=");
+            builder.append(requestCustomText12);
+        }
+        if(requestCustomText13 != null){
+            builder.append(lbc + "requestCustomText13=");
+            builder.append(requestCustomText13);
+        }
+        if(requestCustomText14 != null){
+            builder.append(lbc + "requestCustomText14=");
+            builder.append(requestCustomText14);
+        }
+        if(requestCustomText15 != null){
+            builder.append(lbc + "requestCustomText15=");
+            builder.append(requestCustomText15);
+        }
+        if(requestCustomText16 != null){
+            builder.append(lbc + "requestCustomText16=");
+            builder.append(requestCustomText16);
+        }
+        if(requestCustomText17 != null){
+            builder.append(lbc + "requestCustomText17=");
+            builder.append(requestCustomText17);
+        }
+        if(requestCustomText18 != null){
+            builder.append(lbc + "requestCustomText18=");
+            builder.append(requestCustomText18);
+        }
+        if(requestCustomText19 != null){
+            builder.append(lbc + "requestCustomText19=");
+            builder.append(requestCustomText19);
+        }
+        if(requestCustomText2 != null){
+            builder.append(lbc + "requestCustomText2=");
+            builder.append(requestCustomText2);
+        }
+        if(requestCustomText20 != null){
+            builder.append(lbc + "requestCustomText20=");
+            builder.append(requestCustomText20);
+        }
+        if(requestCustomText3 != null){
+            builder.append(lbc + "requestCustomText3=");
+            builder.append(requestCustomText3);
+        }
+        if(requestCustomText4 != null){
+            builder.append(lbc + "requestCustomText4=");
+            builder.append(requestCustomText4);
+        }
+        if(requestCustomText5 != null){
+            builder.append(lbc + "requestCustomText5=");
+            builder.append(requestCustomText5);
+        }
+        if(requestCustomText6 != null){
+            builder.append(lbc + "requestCustomText6=");
+            builder.append(requestCustomText6);
+        }
+        if(requestCustomText7 != null){
+            builder.append(lbc + "requestCustomText7=");
+            builder.append(requestCustomText7);
+        }
+        if(requestCustomText8 != null){
+            builder.append(lbc + "requestCustomText8=");
+            builder.append(requestCustomText8);
+        }
+        if(requestCustomText9 != null){
+            builder.append(lbc + "requestCustomText9=");
+            builder.append(requestCustomText9);
+        }
+        if(requestCustomTextBlock1 != null){
+            builder.append(lbc + "requestCustomTextBlock1=");
+            builder.append(requestCustomTextBlock1);
+        }
+        if(requestCustomTextBlock2 != null){
+            builder.append(lbc + "requestCustomTextBlock2=");
+            builder.append(requestCustomTextBlock2);
+        }
+        if(requestCustomTextBlock3 != null){
+            builder.append(lbc + "requestCustomTextBlock3=");
+            builder.append(requestCustomTextBlock3);
+        }
+        if(requestCustomTextBlock4 != null){
+            builder.append(lbc + "requestCustomTextBlock4=");
+            builder.append(requestCustomTextBlock4);
+        }
+        if(requestCustomTextBlock5 != null){
+            builder.append(lbc + "requestCustomTextBlock5=");
+            builder.append(requestCustomTextBlock5);
+        }
+        if(requestStatus != null){
+            builder.append(lbc + "requestStatus=");
+            builder.append(requestStatus);
+        }
+        if(requestType != null){
+            builder.append(lbc + "requestType=");
+            builder.append(requestType);
+        }
+        if(requestingUser != null){
+            builder.append(lbc + "requestingUser=");
+            builder.append(requestingUser);
+        }
+        if(salary != null){
+            builder.append(lbc + "salary=");
+            builder.append(salary);
+        }
+        if(salaryUnit != null){
+            builder.append(lbc + "salaryUnit=");
+            builder.append(salaryUnit);
+        }
+        if(salesManagerPercentGrossMargin != null){
+            builder.append(lbc + "salesManagerPercentGrossMargin=");
+            builder.append(salesManagerPercentGrossMargin);
+        }
+        if(statementClientContact != null){
+            builder.append(lbc + "statementClientContact=");
+            builder.append(statementClientContact);
+        }
+        if(status != null){
+            builder.append(lbc + "status=");
+            builder.append(status);
+        }
+        if(terminationReason != null){
+            builder.append(lbc + "terminationReason=");
+            builder.append(terminationReason);
+        }
+        if(vendorClientCorporation != null){
+            builder.append(lbc + "vendorClientCorporation=");
+            builder.append(vendorClientCorporation);
+        }
+        if(workWeekStart != null){
+            builder.append(lbc + "workWeekStart=");
+            builder.append(workWeekStart);
+        }
+        builder.append(super.toStringNonNull());
+        builder.append("}");
+        return builder.toString();
+    }
+
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("PlacementChangeRequest {\nid=");
+        builder.append("PlacementChangeRequest { id=");
         builder.append(id);
-        builder.append(", \napprovingUser=");
+        builder.append(", approvingUser=");
         builder.append(approvingUser);
-        builder.append(", \nbillingClientContact=");
+        builder.append(", billingClientContact=");
         builder.append(billingClientContact);
-        builder.append(", \nbillingFrequency=");
+        builder.append(", billingFrequency=");
         builder.append(billingFrequency);
-        builder.append(", \nbonusPackage=");
+        builder.append(", bonusPackage=");
         builder.append(bonusPackage);
-        builder.append(", \nclientBillRate=");
+        builder.append(", clientBillRate=");
         builder.append(clientBillRate);
-        builder.append(", \nclientOvertimeRate=");
+        builder.append(", clientOvertimeRate=");
         builder.append(clientOvertimeRate);
-        builder.append(", \ncomments=");
+        builder.append(", comments=");
         builder.append(comments);
-        builder.append(", \ncostCenter=");
+        builder.append(", costCenter=");
         builder.append(costCenter);
-        builder.append(", \ndateAdded=");
+        builder.append(", dateAdded=");
         builder.append(dateAdded);
-        builder.append(", \ndateApproved=");
+        builder.append(", dateApproved=");
         builder.append(dateApproved);
-        builder.append(", \ndateBegin=");
+        builder.append(", dateBegin=");
         builder.append(dateBegin);
-        builder.append(", \ndateClientEffective=");
+        builder.append(", dateClientEffective=");
         builder.append(dateClientEffective);
-        builder.append(", \ndateEffective=");
+        builder.append(", dateEffective=");
         builder.append(dateEffective);
-        builder.append(", \ndateEnd=");
+        builder.append(", dateEnd=");
         builder.append(dateEnd);
-        builder.append(", \ndateLastModified=");
+        builder.append(", dateLastModified=");
         builder.append(dateLastModified);
-        builder.append(", \ndaysGuaranteed=");
+        builder.append(", daysGuaranteed=");
         builder.append(daysGuaranteed);
-        builder.append(", \ndaysProRated=");
+        builder.append(", daysProRated=");
         builder.append(daysProRated);
-        builder.append(", \ndurationWeeks=");
+        builder.append(", durationWeeks=");
         builder.append(durationWeeks);
-        builder.append(", \nemployeeType=");
+        builder.append(", employeeType=");
         builder.append(employeeType);
-        builder.append(", \nemploymentType=");
+        builder.append(", employmentType=");
         builder.append(employmentType);
-        builder.append(", \nfee=");
+        builder.append(", fee=");
         builder.append(fee);
-        builder.append(", \nhoursOfOperation=");
+        builder.append(", hoursOfOperation=");
         builder.append(hoursOfOperation);
-        builder.append(", \nhoursPerDay=");
+        builder.append(", hoursPerDay=");
         builder.append(hoursPerDay);
-        builder.append(", \nhousingManagerID=");
+        builder.append(", housingManagerID=");
         builder.append(housingManagerID);
-        builder.append(", \nhousingStatus=");
+        builder.append(", housingStatus=");
         builder.append(housingStatus);
-        builder.append(", \nmigrateGUID=");
+        builder.append(", migrateGUID=");
         builder.append(migrateGUID);
-        builder.append(", \noptionsPackage=");
+        builder.append(", optionsPackage=");
         builder.append(optionsPackage);
-        builder.append(", \notExemption=");
+        builder.append(", otExemption=");
         builder.append(otExemption);
-        builder.append(", \notherHourlyFee=");
+        builder.append(", otherHourlyFee=");
         builder.append(otherHourlyFee);
-        builder.append(", \notherHourlyFeeComments=");
+        builder.append(", otherHourlyFeeComments=");
         builder.append(otherHourlyFeeComments);
-        builder.append(", \novertimeRate=");
+        builder.append(", overtimeRate=");
         builder.append(overtimeRate);
-        builder.append(", \npayRate=");
+        builder.append(", payRate=");
         builder.append(payRate);
-        builder.append(", \nplacement=");
+        builder.append(", placement=");
         builder.append(placement);
-        builder.append(", \nrecruitingManagerPercentGrossMargin=");
+        builder.append(", recruitingManagerPercentGrossMargin=");
         builder.append(recruitingManagerPercentGrossMargin);
-        builder.append(", \nreferralFee=");
+        builder.append(", referralFee=");
         builder.append(referralFee);
-        builder.append(", \nreferralFeeType=");
+        builder.append(", referralFeeType=");
         builder.append(referralFeeType);
-        builder.append(", \nreportTo=");
+        builder.append(", reportTo=");
         builder.append(reportTo);
-        builder.append(", \nrequestCustomDate1=");
+        builder.append(", requestCustomDate1=");
         builder.append(requestCustomDate1);
-        builder.append(", \nrequestCustomDate2=");
+        builder.append(", requestCustomDate2=");
         builder.append(requestCustomDate2);
-        builder.append(", \nrequestCustomDate3=");
+        builder.append(", requestCustomDate3=");
         builder.append(requestCustomDate3);
-        builder.append(", \nrequestCustomFloat1=");
+        builder.append(", requestCustomFloat1=");
         builder.append(requestCustomFloat1);
-        builder.append(", \nrequestCustomFloat2=");
+        builder.append(", requestCustomFloat2=");
         builder.append(requestCustomFloat2);
-        builder.append(", \nrequestCustomFloat3=");
+        builder.append(", requestCustomFloat3=");
         builder.append(requestCustomFloat3);
-        builder.append(", \nrequestCustomInt1=");
+        builder.append(", requestCustomInt1=");
         builder.append(requestCustomInt1);
-        builder.append(", \nrequestCustomInt2=");
+        builder.append(", requestCustomInt2=");
         builder.append(requestCustomInt2);
-        builder.append(", \nrequestCustomInt3=");
+        builder.append(", requestCustomInt3=");
         builder.append(requestCustomInt3);
-        builder.append(", \nrequestCustomText1=");
+        builder.append(", requestCustomText1=");
         builder.append(requestCustomText1);
-        builder.append(", \nrequestCustomText10=");
+        builder.append(", requestCustomText10=");
         builder.append(requestCustomText10);
-        builder.append(", \nrequestCustomText11=");
+        builder.append(", requestCustomText11=");
         builder.append(requestCustomText11);
-        builder.append(", \nrequestCustomText12=");
+        builder.append(", requestCustomText12=");
         builder.append(requestCustomText12);
-        builder.append(", \nrequestCustomText13=");
+        builder.append(", requestCustomText13=");
         builder.append(requestCustomText13);
-        builder.append(", \nrequestCustomText14=");
+        builder.append(", requestCustomText14=");
         builder.append(requestCustomText14);
-        builder.append(", \nrequestCustomText15=");
+        builder.append(", requestCustomText15=");
         builder.append(requestCustomText15);
-        builder.append(", \nrequestCustomText16=");
+        builder.append(", requestCustomText16=");
         builder.append(requestCustomText16);
-        builder.append(", \nrequestCustomText17=");
+        builder.append(", requestCustomText17=");
         builder.append(requestCustomText17);
-        builder.append(", \nrequestCustomText18=");
+        builder.append(", requestCustomText18=");
         builder.append(requestCustomText18);
-        builder.append(", \nrequestCustomText19=");
+        builder.append(", requestCustomText19=");
         builder.append(requestCustomText19);
-        builder.append(", \nrequestCustomText2=");
+        builder.append(", requestCustomText2=");
         builder.append(requestCustomText2);
-        builder.append(", \nrequestCustomText20=");
+        builder.append(", requestCustomText20=");
         builder.append(requestCustomText20);
-        builder.append(", \nrequestCustomText3=");
+        builder.append(", requestCustomText3=");
         builder.append(requestCustomText3);
-        builder.append(", \nrequestCustomText4=");
+        builder.append(", requestCustomText4=");
         builder.append(requestCustomText4);
-        builder.append(", \nrequestCustomText5=");
+        builder.append(", requestCustomText5=");
         builder.append(requestCustomText5);
-        builder.append(", \nrequestCustomText6=");
+        builder.append(", requestCustomText6=");
         builder.append(requestCustomText6);
-        builder.append(", \nrequestCustomText7=");
+        builder.append(", requestCustomText7=");
         builder.append(requestCustomText7);
-        builder.append(", \nrequestCustomText8=");
+        builder.append(", requestCustomText8=");
         builder.append(requestCustomText8);
-        builder.append(", \nrequestCustomText9=");
+        builder.append(", requestCustomText9=");
         builder.append(requestCustomText9);
-        builder.append(", \nrequestCustomTextBlock1=");
+        builder.append(", requestCustomTextBlock1=");
         builder.append(requestCustomTextBlock1);
-        builder.append(", \nrequestCustomTextBlock2=");
+        builder.append(", requestCustomTextBlock2=");
         builder.append(requestCustomTextBlock2);
-        builder.append(", \nrequestCustomTextBlock3=");
+        builder.append(", requestCustomTextBlock3=");
         builder.append(requestCustomTextBlock3);
-        builder.append(", \nrequestCustomTextBlock4=");
+        builder.append(", requestCustomTextBlock4=");
         builder.append(requestCustomTextBlock4);
-        builder.append(", \nrequestCustomTextBlock5=");
+        builder.append(", requestCustomTextBlock5=");
         builder.append(requestCustomTextBlock5);
-        builder.append(", \nrequestStatus=");
+        builder.append(", requestStatus=");
         builder.append(requestStatus);
-        builder.append(", \nrequestType=");
+        builder.append(", requestType=");
         builder.append(requestType);
-        builder.append(", \nrequestingUser=");
+        builder.append(", requestingUser=");
         builder.append(requestingUser);
-        builder.append(", \nsalary=");
+        builder.append(", salary=");
         builder.append(salary);
-        builder.append(", \nsalaryUnit=");
+        builder.append(", salaryUnit=");
         builder.append(salaryUnit);
-        builder.append(", \nsalesManagerPercentGrossMargin=");
+        builder.append(", salesManagerPercentGrossMargin=");
         builder.append(salesManagerPercentGrossMargin);
-        builder.append(", \nstatementClientContact=");
+        builder.append(", statementClientContact=");
         builder.append(statementClientContact);
-        builder.append(", \nstatus=");
+        builder.append(", status=");
         builder.append(status);
-        builder.append(", \nterminationReason=");
+        builder.append(", terminationReason=");
         builder.append(terminationReason);
-        builder.append(", \nvendorClientCorporation=");
+        builder.append(", vendorClientCorporation=");
         builder.append(vendorClientCorporation);
-        builder.append(", \nworkWeekStart=");
+        builder.append(", workWeekStart=");
         builder.append(workWeekStart);
-        builder.append("\n}");
+        builder.append(super.toString());
+        builder.append("}");
         return builder.toString();
     }
 
