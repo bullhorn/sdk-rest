@@ -1503,6 +1503,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         if(workersCompensationRate != null){
             sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate.toStringNonNull(includeLineBreaks));
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
         }
@@ -1741,6 +1742,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         if(workersCompensationRate != null){
             sb.append(lbc + "workersCompensationRate=").append(workersCompensationRate.toStringNonNull());
         }
+        sb.append(super.toStringNonNull());
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
         }

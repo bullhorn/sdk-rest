@@ -42,15 +42,6 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
 
     private DateTime dateAdded;
 
-    private String customText1;
-
-    private String customText2;
-
-    private String customText3;
-
-    private String customText4;
-
-    private String customText5;
 
     private String customText6;
 
@@ -179,56 +170,6 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
     @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
-    }
-
-    @JsonProperty("customText1")
-    public String getCustomText1() {
-        return customText1;
-    }
-
-    @JsonProperty("customText1")
-    public void setCustomText1(String customText1) {
-        this.customText1 = customText1;
-    }
-
-    @JsonProperty("customText2")
-    public String getCustomText2() {
-        return customText2;
-    }
-
-    @JsonProperty("customText2")
-    public void setCustomText2(String customText2) {
-        this.customText2 = customText2;
-    }
-
-    @JsonProperty("customText3")
-    public String getCustomText3() {
-        return customText3;
-    }
-
-    @JsonProperty("customText3")
-    public void setCustomText3(String customText3) {
-        this.customText3 = customText3;
-    }
-
-    @JsonProperty("customText4")
-    public String getCustomText4() {
-        return customText4;
-    }
-
-    @JsonProperty("customText4")
-    public void setCustomText4(String customText4) {
-        this.customText4 = customText4;
-    }
-
-    @JsonProperty("customText5")
-    public String getCustomText5() {
-        return customText5;
-    }
-
-    @JsonProperty("customText5")
-    public void setCustomText5(String customText5) {
-        this.customText5 = customText5;
     }
 
     @JsonProperty("customText6")
@@ -580,11 +521,6 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
             return false;
         if (externalID != null ? !externalID.equals(branch.externalID) : branch.externalID != null) return false;
         if (dateAdded != null ? !dateAdded.equals(branch.dateAdded) : branch.dateAdded != null) return false;
-        if (customText1 != null ? !customText1.equals(branch.customText1) : branch.customText1 != null) return false;
-        if (customText2 != null ? !customText2.equals(branch.customText2) : branch.customText2 != null) return false;
-        if (customText3 != null ? !customText3.equals(branch.customText3) : branch.customText3 != null) return false;
-        if (customText4 != null ? !customText4.equals(branch.customText4) : branch.customText4 != null) return false;
-        if (customText5 != null ? !customText5.equals(branch.customText5) : branch.customText5 != null) return false;
         if (customText6 != null ? !customText6.equals(branch.customText6) : branch.customText6 != null) return false;
         if (customText7 != null ? !customText7.equals(branch.customText7) : branch.customText7 != null) return false;
         if (customText8 != null ? !customText8.equals(branch.customText8) : branch.customText8 != null) return false;
@@ -639,11 +575,6 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
         result = 31 * result + (parentBranch != null ? parentBranch.hashCode() : 0);
         result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
         result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-        result = 31 * result + (customText1 != null ? customText1.hashCode() : 0);
-        result = 31 * result + (customText2 != null ? customText2.hashCode() : 0);
-        result = 31 * result + (customText3 != null ? customText3.hashCode() : 0);
-        result = 31 * result + (customText4 != null ? customText4.hashCode() : 0);
-        result = 31 * result + (customText5 != null ? customText5.hashCode() : 0);
         result = 31 * result + (customText6 != null ? customText6.hashCode() : 0);
         result = 31 * result + (customText7 != null ? customText7.hashCode() : 0);
         result = 31 * result + (customText8 != null ? customText8.hashCode() : 0);
@@ -683,7 +614,7 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        StringBuilder sb = new StringBuilder(getClass().getName());
+        StringBuilder sb = new StringBuilder(getClass().getSimpleName());
         sb.append(" { ");
         if(id != null){
             sb.append(lbc + " id=");
@@ -709,26 +640,7 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
             sb.append(lbc + " dateAdded=");
             sb.append(dateAdded);
         }
-        if(customText1 != null){
-            sb.append(lbc + " customText1=");
-            sb.append(customText1);
-        }
-        if(customText2 != null){
-            sb.append(lbc + " customText2=");
-            sb.append(customText2);
-        }
-        if(customText3 != null){
-            sb.append(lbc + " customText3=");
-            sb.append(customText3);
-        }
-        if(customText4 != null){
-            sb.append(lbc + " customText4=");
-            sb.append(customText4);
-        }
-        if(customText5 != null){
-            sb.append(lbc + " customText5=");
-            sb.append(customText5);
-        }
+        sb.append(super.toStringNonNull());
         if(customText6 != null){
             sb.append(lbc + " customText6=");
             sb.append(customText6);
@@ -870,8 +782,8 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
     public String toStringNonNull(boolean includeLineBreaks) {
         String lbc = ", ";
         if(includeLineBreaks)
-            lbc = lbc + " ";
-        StringBuilder sb =new StringBuilder(getClass().getName());
+            lbc = ",\n ";
+        StringBuilder sb =new StringBuilder(getClass().getSimpleName());
         sb.append(" { ");
         if(includeLineBreaks)
             sb.append("\n");
@@ -899,26 +811,7 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
             sb.append(lbc + " dateAdded=");
             sb.append(dateAdded);
         }
-        if(customText1 != null){
-            sb.append(lbc + " customText1=");
-            sb.append(customText1);
-        }
-        if(customText2 != null){
-            sb.append(lbc + " customText2=");
-            sb.append(customText2);
-        }
-        if(customText3 != null){
-            sb.append(lbc + " customText3=");
-            sb.append(customText3);
-        }
-        if(customText4 != null){
-            sb.append(lbc + " customText4=");
-            sb.append(customText4);
-        }
-        if(customText5 != null){
-            sb.append(lbc + " customText5=");
-            sb.append(customText5);
-        }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(customText6 != null){
             sb.append(lbc + " customText6=");
             sb.append(customText6);
@@ -1059,7 +952,7 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
 
     @Override
     public String toString() {
-        StringBuilder sb =new StringBuilder(getClass().getName());
+        StringBuilder sb =new StringBuilder(getClass().getSimpleName());
         sb.append(" { ");
         sb.append("\n id=");
         sb.append(id);
@@ -1074,15 +967,7 @@ public class Branch extends BaseCustomFields implements AllRecordsEntity, Create
         sb.append(",\n dateAdded=");
         sb.append(dateAdded);
         sb.append(",\n customText1=");
-        sb.append(customText1);
-        sb.append(",\n customText2=");
-        sb.append(customText2);
-        sb.append(",\n customText3=");
-        sb.append(customText3);
-        sb.append(",\n customText4=");
-        sb.append(customText4);
-        sb.append(",\n customText5=");
-        sb.append(customText5);
+        sb.append(super.toString());
         sb.append(",\n customText6=");
         sb.append(customText6);
         sb.append(",\n customText7=");

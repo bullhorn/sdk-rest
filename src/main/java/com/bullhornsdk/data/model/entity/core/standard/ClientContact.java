@@ -1313,7 +1313,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -1515,6 +1515,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         if(username != null){
             sb.append(lbc + "username=").append(username);
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
         }
@@ -1555,7 +1556,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -1757,6 +1758,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         if(username != null){
             sb.append(lbc + "username=").append(username);
         }
+        sb.append(super.toStringNonNull());
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
         }
@@ -1793,7 +1795,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", branch=").append(branch);
@@ -1861,6 +1863,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         sb.append(", trackTitle=").append(trackTitle);
         sb.append(", type=").append(type);
         sb.append(", username=").append(username);
+        sb.append(super.toString());
         sb.append(", customObject1s=").append(customObject1s);
         sb.append(", customObject2s=").append(customObject2s);
         sb.append(", customObject3s=").append(customObject3s);

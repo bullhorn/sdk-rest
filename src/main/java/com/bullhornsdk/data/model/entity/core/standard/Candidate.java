@@ -2352,7 +2352,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -2710,6 +2710,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         if(workHistories != null){
             sb.append(lbc + "workHistories=").append(workHistories.toStringNonNull());
         }
+        sb.append(super.toStringNonNull());
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull());
         }
@@ -2782,7 +2783,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -3140,6 +3141,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         if(workHistories != null){
             sb.append(lbc + "workHistories=").append(workHistories.toStringNonNull(includeLineBreaks));
         }
+        sb.append(super.toStringNonNull(includeLineBreaks));
         if(customObject1s != null){
             sb.append(lbc + "customObject1s=").append(customObject1s.toStringNonNull(includeLineBreaks));
         }
@@ -3211,7 +3213,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("id=").append(id);
         sb.append(", address=").append(address);
         sb.append(", branch=").append(branch);

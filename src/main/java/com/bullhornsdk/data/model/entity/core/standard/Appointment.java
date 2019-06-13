@@ -614,9 +614,9 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        StringBuilder builder = new StringBuilder().append("Appointment { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
         if(includeLineBreaks)
-            builder.append(" { ");
+            builder.append("\n");
         if(id != null){
             builder.append("id=");
             builder.append(id);
@@ -749,6 +749,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
             builder.append(lbc + "opportunity=");
             builder.append(opportunity.toStringNonNull(includeLineBreaks));
         }
+        builder.append(super.toStringNonNull(includeLineBreaks));
         if(this.getAdditionalProperties() != null){
             builder.append(lbc + "additionalProperties=");
             builder.append(this.getAdditionalProperties());
@@ -762,8 +763,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        StringBuilder builder = new StringBuilder();
-        builder.append(getClass() + " { ");
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             builder.append("id=").append(id);
         }
@@ -895,6 +895,7 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
             builder.append(lbc + "opportunity=");
             builder.append(opportunity.toStringNonNull());
         }
+        builder.append(super.toStringNonNull());
         if(this.getAdditionalProperties() != null){
             builder.append(lbc + "additionalProperties=");
             builder.append(this.getAdditionalProperties());

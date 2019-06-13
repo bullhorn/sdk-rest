@@ -96,7 +96,7 @@ public class BusinessSector extends AbstractEntity implements QueryEntity, AllRe
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        StringBuilder builder = new StringBuilder(getClass().getName());
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
         builder.append(" {");
         if(id != null){
             builder.append(lbc + "id=");
@@ -123,7 +123,7 @@ public class BusinessSector extends AbstractEntity implements QueryEntity, AllRe
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        StringBuilder builder = new StringBuilder(getClass().getName());
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
         builder.append(" {");
         if(includeLineBreaks)
             builder.append("\n");
@@ -151,7 +151,7 @@ public class BusinessSector extends AbstractEntity implements QueryEntity, AllRe
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(getClass().getName());
+        StringBuilder builder = new StringBuilder(getClass().getSimpleName());
         builder.append(" {");
         builder.append("\nid=");
         builder.append(id);

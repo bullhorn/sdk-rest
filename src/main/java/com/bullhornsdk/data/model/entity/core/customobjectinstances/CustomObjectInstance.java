@@ -832,7 +832,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=");
             sb.append(id);
@@ -1074,7 +1074,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=");
             sb.append(id);
@@ -1313,7 +1313,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("id=");
         sb.append(id);
         sb.append(", text1=");

@@ -1914,135 +1914,900 @@ public class CustomFieldsD extends CustomFieldsC {
     }
 
     @Override
-    public String toString() {
-        return "CustomFieldsD{" +
-            "customBillRate1=" + customBillRate1 +
-            ", customBillRate10=" + customBillRate10 +
-            ", customBillRate2=" + customBillRate2 +
-            ", customBillRate3=" + customBillRate3 +
-            ", customBillRate4=" + customBillRate4 +
-            ", customBillRate5=" + customBillRate5 +
-            ", customBillRate6=" + customBillRate6 +
-            ", customBillRate7=" + customBillRate7 +
-            ", customBillRate8=" + customBillRate8 +
-            ", customBillRate9=" + customBillRate9 +
-            ", customPayRate1=" + customPayRate1 +
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder sb = new StringBuilder(super.toStringNonNull(includeLineBreaks));
+        if(customBillRate1 != null){
+            sb.append(lbc + "customBillRate1=").append(customBillRate1);
+        }
+        if(customBillRate2 != null){
+            sb.append(lbc + "customBillRate2=").append(customBillRate2);
+        }
+        if(customBillRate3 != null){
+            sb.append(lbc + "customBillRate3=").append(customBillRate3);
+        }
+        if(customBillRate4 != null){
+            sb.append(lbc + "customBillRate4=").append(customBillRate4);
+        }
+        if(customBillRate5 != null){
+            sb.append(lbc + "customBillRate5=").append(customBillRate5);
+        }
+        if(customBillRate6 != null){
+            sb.append(lbc + "customBillRate6=").append(customBillRate6);
+        }
+        if(customBillRate7 != null){
+            sb.append(lbc + "customBillRate7=").append(customBillRate7);
+        }
+        if(customBillRate8 != null){
+            sb.append(lbc + "customBillRate8=").append(customBillRate8);
+        }
+        if(customBillRate9 != null){
+            sb.append(lbc + "customBillRate9=").append(customBillRate9);
+        }
+        if(customBillRate10 != null){
+            sb.append(lbc + "customBillRate10=").append(customBillRate10);
+        }
+        if(customPayRate1 != null){
+            sb.append(lbc + "customPayRate1=").append(customPayRate1);
+        }
+        if(customPayRate2 != null){
+            sb.append(lbc + "customPayRate2=").append(customPayRate2);
+        }
+        if(customPayRate3 != null){
+            sb.append(lbc + "customPayRate3=").append(customPayRate3);
+        }
+        if(customPayRate4 != null){
+            sb.append(lbc + "customPayRate4=").append(customPayRate4);
+        }
+        if(customPayRate5 != null){
+            sb.append(lbc + "customPayRate5=").append(customPayRate5);
+        }
+        if(customPayRate6 != null){
+            sb.append(lbc + "customPayRate6=").append(customPayRate6);
+        }
+        if(customPayRate7 != null){
+            sb.append(lbc + "customPayRate7=").append(customPayRate7);
+        }
+        if(customPayRate8 != null){
+            sb.append(lbc + "customPayRate8=").append(customPayRate8);
+        }
+        if(customPayRate9 != null){
+            sb.append(lbc + "customPayRate9=").append(customPayRate9);
+        }
+        if(customPayRate10 != null){
+            sb.append(lbc + "customPayRate10=").append(customPayRate10);
+        }
+        if(customEncryptedText1 != null){
+            sb.append(lbc + "customEncryptedText1=").append(customEncryptedText1);
+        }
+        if(customEncryptedText2 != null){
+            sb.append(lbc + "customEncryptedText2=").append(customEncryptedText2);
+        }
+        if(customEncryptedText3 != null){
+            sb.append(lbc + "customEncryptedText3=").append(customEncryptedText3);
+        }
+        if(customEncryptedText4 != null){
+            sb.append(lbc + "customEncryptedText4=").append(customEncryptedText4);
+        }
+        if(customEncryptedText5 != null){
+            sb.append(lbc + "customEncryptedText5=").append(customEncryptedText5);
+        }
+        if(customEncryptedText6 != null){
+            sb.append(lbc + "customEncryptedText6=").append(customEncryptedText6);
+        }
+        if(customEncryptedText7 != null){
+            sb.append(lbc + "customEncryptedText7=").append(customEncryptedText7);
+        }
+        if(customEncryptedText8 != null){
+            sb.append(lbc + "customEncryptedText8=").append(customEncryptedText8);
+        }
+        if(customEncryptedText9 != null){
+            sb.append(lbc + "customEncryptedText9=").append(customEncryptedText9);
+        }
+        if(customEncryptedText10 != null){
+            sb.append(lbc + "customEncryptedText10=").append(customEncryptedText10);
+        }
+        if(customText21 != null){
+            sb.append(lbc + "customText21=").append(customText21);
+        }
+        if(customText22 != null){
+            sb.append(lbc + "customText22=").append(customText22);
+        }
+        if(customText23 != null){
+            sb.append(lbc + "customText23=").append(customText23);
+        }
+        if(customText24 != null){
+            sb.append(lbc + "customText24=").append(customText24);
+        }
+        if(customText25 != null){
+            sb.append(lbc + "customText25=").append(customText25);
+        }
+        if(customText26 != null){
+            sb.append(lbc + "customText26=").append(customText26);
+        }
+        if(customText27 != null){
+            sb.append(lbc + "customText27=").append(customText27);
+        }
+        if(customText28 != null){
+            sb.append(lbc + "customText28=").append(customText28);
+        }
+        if(customText29 != null){
+            sb.append(lbc + "customText29=").append(customText29);
+        }
+        if(customText30 != null){
+            sb.append(lbc + "customText30=").append(customText30);
+        }
+        if(customText31 != null){
+            sb.append(lbc + "customText31=").append(customText31);
+        }
+        if(customText32 != null){
+            sb.append(lbc + "customText32=").append(customText32);
+        }
+        if(customText33 != null){
+            sb.append(lbc + "customText33=").append(customText33);
+        }
+        if(customText34 != null){
+            sb.append(lbc + "customText34=").append(customText34);
+        }
+        if(customText35 != null){
+            sb.append(lbc + "customText35=").append(customText35);
+        }
+        if(customText36 != null){
+            sb.append(lbc + "customText36=").append(customText36);
+        }
+        if(customText37 != null){
+            sb.append(lbc + "customText37=").append(customText37);
+        }
+        if(customText38 != null){
+            sb.append(lbc + "customText38=").append(customText38);
+        }
+        if(customText39 != null){
+            sb.append(lbc + "customText39=").append(customText39);
+        }
+        if(customText40 != null){
+            sb.append(lbc + "customText40=").append(customText40);
+        }
+        if(customText41 != null){
+            sb.append(lbc + "customText41=").append(customText41);
+        }
+        if(customText42 != null){
+            sb.append(lbc + "customText42=").append(customText42);
+        }
+        if(customText43 != null){
+            sb.append(lbc + "customText43=").append(customText43);
+        }
+        if(customText44 != null){
+            sb.append(lbc + "customText44=").append(customText44);
+        }
+        if(customText45 != null){
+            sb.append(lbc + "customText45=").append(customText45);
+        }
+        if(customText46 != null){
+            sb.append(lbc + "customText46=").append(customText46);
+        }
+        if(customText47 != null){
+            sb.append(lbc + "customText47=").append(customText47);
+        }
+        if(customText48 != null){
+            sb.append(lbc + "customText48=").append(customText48);
+        }
+        if(customText49 != null){
+            sb.append(lbc + "customText49=").append(customText49);
+        }
+        if(customText50 != null){
+            sb.append(lbc + "customText50=").append(customText50);
+        }
+        if(customText51 != null){
+            sb.append(lbc + "customText51=").append(customText51);
+        }
+        if(customText52 != null){
+            sb.append(lbc + "customText52=").append(customText52);
+        }
+        if(customText53 != null){
+            sb.append(lbc + "customText53=").append(customText53);
+        }
+        if(customText54 != null){
+            sb.append(lbc + "customText54=").append(customText54);
+        }
+        if(customText55 != null){
+            sb.append(lbc + "customText55=").append(customText55);
+        }
+        if(customText56 != null){
+            sb.append(lbc + "customText56=").append(customText56);
+        }
+        if(customText57 != null){
+            sb.append(lbc + "customText57=").append(customText57);
+        }
+        if(customText58 != null){
+            sb.append(lbc + "customText58=").append(customText58);
+        }
+        if(customText59 != null){
+            sb.append(lbc + "customText59=").append(customText59);
+        }
+        if(customText60 != null){
+            sb.append(lbc + "customText60=").append(customText60);
+        }
+        if(customTextBlock6 != null){
+            sb.append(lbc + "customTextBlock6=").append(customTextBlock6);
+        }
+        if(customTextBlock7 != null){
+            sb.append(lbc + "customTextBlock7=").append(customTextBlock7);
+        }
+        if(customTextBlock8 != null){
+            sb.append(lbc + "customTextBlock8=").append(customTextBlock8);
+        }
+        if(customTextBlock9 != null){
+            sb.append(lbc + "customTextBlock9=").append(customTextBlock9);
+        }
+        if(customTextBlock10 != null){
+            sb.append(lbc + "customTextBlock10=").append(customTextBlock10);
+        }
+        if(customDate4 != null){
+            sb.append(lbc + "customDate4=").append(customDate4);
+        }
+        if(customDate5 != null){
+            sb.append(lbc + "customDate5=").append(customDate5);
+        }
+        if(customDate6 != null){
+            sb.append(lbc + "customDate6=").append(customDate6);
+        }
+        if(customDate7 != null){
+            sb.append(lbc + "customDate7=").append(customDate7);
+        }
+        if(customDate8 != null){
+            sb.append(lbc + "customDate8=").append(customDate8);
+        }
+        if(customDate9 != null){
+            sb.append(lbc + "customDate9=").append(customDate9);
+        }
+        if(customDate10 != null){
+            sb.append(lbc + "customDate10=").append(customDate10);
+        }
+        if(customDate11 != null){
+            sb.append(lbc + "customDate11=").append(customDate11);
+        }
+        if(customDate12 != null){
+            sb.append(lbc + "customDate12=").append(customDate12);
+        }
+        if(customDate13 != null){
+            sb.append(lbc + "customDate13=").append(customDate13);
+        }
+        if(customInt4 != null){
+            sb.append(lbc + "customInt4=").append(customInt4);
+        }
+        if(customInt5 != null){
+            sb.append(lbc + "customInt5=").append(customInt5);
+        }
+        if(customInt6 != null){
+            sb.append(lbc + "customInt6=").append(customInt6);
+        }
+        if(customInt7 != null){
+            sb.append(lbc + "customInt7=").append(customInt7);
+        }
+        if(customInt8 != null){
+            sb.append(lbc + "customInt8=").append(customInt8);
+        }
+        if(customInt9 != null){
+            sb.append(lbc + "customInt9=").append(customInt9);
+        }
+        if(customInt10 != null){
+            sb.append(lbc + "customInt10=").append(customInt10);
+        }
+        if(customInt11 != null){
+            sb.append(lbc + "customInt11=").append(customInt11);
+        }
+        if(customInt12 != null){
+            sb.append(lbc + "customInt12=").append(customInt12);
+        }
+        if(customInt13 != null){
+            sb.append(lbc + "customInt13=").append(customInt13);
+        }
+        if(customInt14 != null){
+            sb.append(lbc + "customInt14=").append(customInt14);
+        }
+        if(customInt15 != null){
+            sb.append(lbc + "customInt15=").append(customInt15);
+        }
+        if(customInt16 != null){
+            sb.append(lbc + "customInt16=").append(customInt16);
+        }
+        if(customInt17 != null){
+            sb.append(lbc + "customInt17=").append(customInt17);
+        }
+        if(customInt18 != null){
+            sb.append(lbc + "customInt18=").append(customInt18);
+        }
+        if(customInt19 != null){
+            sb.append(lbc + "customInt19=").append(customInt19);
+        }
+        if(customInt20 != null){
+            sb.append(lbc + "customInt20=").append(customInt20);
+        }
+        if(customInt21 != null){
+            sb.append(lbc + "customInt21=").append(customInt21);
+        }
+        if(customInt22 != null){
+            sb.append(lbc + "customInt22=").append(customInt22);
+        }
+        if(customInt23 != null){
+            sb.append(lbc + "customInt23=").append(customInt23);
+        }
+        if(customFloat4 != null){
+            sb.append(lbc + "customFloat4=").append(customFloat4);
+        }
+        if(customFloat5 != null){
+            sb.append(lbc + "customFloat5=").append(customFloat5);
+        }
+        if(customFloat6 != null){
+            sb.append(lbc + "customFloat6=").append(customFloat6);
+        }
+        if(customFloat7 != null){
+            sb.append(lbc + "customFloat7=").append(customFloat7);
+        }
+        if(customFloat8 != null){
+            sb.append(lbc + "customFloat8=").append(customFloat8);
+        }
+        if(customFloat9 != null){
+            sb.append(lbc + "customFloat9=").append(customFloat9);
+        }
+        if(customFloat10 != null){
+            sb.append(lbc + "customFloat10=").append(customFloat10);
+        }
+        if(customFloat11 != null){
+            sb.append(lbc + "customFloat11=").append(customFloat11);
+        }
+        if(customFloat12 != null){
+            sb.append(lbc + "customFloat12=").append(customFloat12);
+        }
+        if(customFloat13 != null){
+            sb.append(lbc + "customFloat13=").append(customFloat13);
+        }
+        if(customFloat14 != null){
+            sb.append(lbc + "customFloat14=").append(customFloat14);
+        }
+        if(customFloat15 != null){
+            sb.append(lbc + "customFloat15=").append(customFloat15);
+        }
+        if(customFloat16 != null){
+            sb.append(lbc + "customFloat16=").append(customFloat16);
+        }
+        if(customFloat17 != null){
+            sb.append(lbc + "customFloat17=").append(customFloat17);
+        }
+        if(customFloat18 != null){
+            sb.append(lbc + "customFloat18=").append(customFloat18);
+        }
+        if(customFloat19 != null){
+            sb.append(lbc + "customFloat19=").append(customFloat19);
+        }
+        if(customFloat20 != null){
+            sb.append(lbc + "customFloat20=").append(customFloat20);
+        }
+        if(customFloat21 != null){
+            sb.append(lbc + "customFloat21=").append(customFloat21);
+        }
+        if(customFloat22 != null){
+            sb.append(lbc + "customFloat22=").append(customFloat22);
+        }
+        if(customFloat23 != null){
+            sb.append(lbc + "customFloat23=").append(customFloat23);
+        }
+        return sb.toString();
+    }
 
-            ", customPayRate10=" + customPayRate10 +
-            ", customPayRate2=" + customPayRate2 +
-            ", customPayRate3=" + customPayRate3 +
-            ", customPayRate4=" + customPayRate4 +
-            ", customPayRate5=" + customPayRate5 +
-            ", customPayRate6=" + customPayRate6 +
-            ", customPayRate7=" + customPayRate7 +
-            ", customPayRate8=" + customPayRate8 +
-            ", customPayRate9=" + customPayRate9 +
-            ", customEncryptedText1='" + customEncryptedText1 + '\'' +
-            ", customEncryptedText2='" + customEncryptedText2 + '\'' +
-            ", customEncryptedText3='" + customEncryptedText3 + '\'' +
-            ", customEncryptedText4='" + customEncryptedText4 + '\'' +
-            ", customEncryptedText5='" + customEncryptedText5 + '\'' +
-            ", customEncryptedText6='" + customEncryptedText6 + '\'' +
-            ", customEncryptedText7='" + customEncryptedText7 + '\'' +
-            ", customEncryptedText8='" + customEncryptedText8 + '\'' +
-            ", customEncryptedText9='" + customEncryptedText9 + '\'' +
-            ", customEncryptedText10='" + customEncryptedText10 + '\'' +
-            ", customText21='" + customText21 + '\'' +
-            ", customText22='" + customText22 + '\'' +
-            ", customText23='" + customText23 + '\'' +
-            ", customText24='" + customText24 + '\'' +
-            ", customText25='" + customText25 + '\'' +
-            ", customText26='" + customText26 + '\'' +
-            ", customText27='" + customText27 + '\'' +
-            ", customText28='" + customText28 + '\'' +
-            ", customText29='" + customText29 + '\'' +
-            ", customText30='" + customText30 + '\'' +
-            ", customText31='" + customText31 + '\'' +
-            ", customText32='" + customText32 + '\'' +
-            ", customText33='" + customText33 + '\'' +
-            ", customText34='" + customText34 + '\'' +
-            ", customText35='" + customText35 + '\'' +
-            ", customText36='" + customText36 + '\'' +
-            ", customText37='" + customText37 + '\'' +
-            ", customText38='" + customText38 + '\'' +
-            ", customText39='" + customText39 + '\'' +
-            ", customText40='" + customText40 + '\'' +
-            ", customText41='" + customText41 + '\'' +
-            ", customText42='" + customText42 + '\'' +
-            ", customText43='" + customText43 + '\'' +
-            ", customText44='" + customText44 + '\'' +
-            ", customText45='" + customText45 + '\'' +
-            ", customText46='" + customText46 + '\'' +
-            ", customText47='" + customText47 + '\'' +
-            ", customText48='" + customText48 + '\'' +
-            ", customText49='" + customText49 + '\'' +
-            ", customText50='" + customText50 + '\'' +
-            ", customText51='" + customText51 + '\'' +
-            ", customText52='" + customText52 + '\'' +
-            ", customText53='" + customText53 + '\'' +
-            ", customText54='" + customText54 + '\'' +
-            ", customText55='" + customText55 + '\'' +
-            ", customText56='" + customText56 + '\'' +
-            ", customText57='" + customText57 + '\'' +
-            ", customText58='" + customText58 + '\'' +
-            ", customText59='" + customText59 + '\'' +
-            ", customText60='" + customText60 + '\'' +
-            ", customTextBlock6='" + customTextBlock6 + '\'' +
-            ", customTextBlock7='" + customTextBlock7 + '\'' +
-            ", customTextBlock8='" + customTextBlock8 + '\'' +
-            ", customTextBlock9='" + customTextBlock9 + '\'' +
-            ", customTextBlock10='" + customTextBlock10 + '\'' +
-            ", customDate4=" + customDate4 +
-            ", customDate5=" + customDate5 +
-            ", customDate6=" + customDate6 +
-            ", customDate7=" + customDate7 +
-            ", customDate8=" + customDate8 +
-            ", customDate9=" + customDate9 +
-            ", customDate10=" + customDate10 +
-            ", customDate11=" + customDate11 +
-            ", customDate12=" + customDate12 +
-            ", customDate13=" + customDate13 +
-            ", customInt4=" + customInt4 +
-            ", customInt5=" + customInt5 +
-            ", customInt6=" + customInt6 +
-            ", customInt7=" + customInt7 +
-            ", customInt8=" + customInt8 +
-            ", customInt9=" + customInt9 +
-            ", customInt10=" + customInt10 +
-            ", customInt11=" + customInt11 +
-            ", customInt12=" + customInt12 +
-            ", customInt13=" + customInt13 +
-            ", customInt14=" + customInt14 +
-            ", customInt15=" + customInt15 +
-            ", customInt16=" + customInt16 +
-            ", customInt17=" + customInt17 +
-            ", customInt18=" + customInt18 +
-            ", customInt19=" + customInt19 +
-            ", customInt20=" + customInt20 +
-            ", customInt21=" + customInt21 +
-            ", customInt22=" + customInt22 +
-            ", customInt23=" + customInt23 +
-            ", customFloat4=" + customFloat4 +
-            ", customFloat5=" + customFloat5 +
-            ", customFloat6=" + customFloat6 +
-            ", customFloat7=" + customFloat7 +
-            ", customFloat8=" + customFloat8 +
-            ", customFloat9=" + customFloat9 +
-            ", customFloat10=" + customFloat10 +
-            ", customFloat11=" + customFloat11 +
-            ", customFloat12=" + customFloat12 +
-            ", customFloat13=" + customFloat13 +
-            ", customFloat14=" + customFloat14 +
-            ", customFloat15=" + customFloat15 +
-            ", customFloat16=" + customFloat16 +
-            ", customFloat17=" + customFloat17 +
-            ", customFloat18=" + customFloat18 +
-            ", customFloat19=" + customFloat19 +
-            ", customFloat20=" + customFloat20 +
-            ", customFloat21=" + customFloat21 +
-            ", customFloat22=" + customFloat22 +
-            ", customFloat23=" + customFloat23 +
-            '}';
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder sb = new StringBuilder(super.toStringNonNull());
+        if(customBillRate1 != null){
+            sb.append(lbc + "customBillRate1=").append(customBillRate1);
+        }
+        if(customBillRate2 != null){
+            sb.append(lbc + "customBillRate2=").append(customBillRate2);
+        }
+        if(customBillRate3 != null){
+            sb.append(lbc + "customBillRate3=").append(customBillRate3);
+        }
+        if(customBillRate4 != null){
+            sb.append(lbc + "customBillRate4=").append(customBillRate4);
+        }
+        if(customBillRate5 != null){
+            sb.append(lbc + "customBillRate5=").append(customBillRate5);
+        }
+        if(customBillRate6 != null){
+            sb.append(lbc + "customBillRate6=").append(customBillRate6);
+        }
+        if(customBillRate7 != null){
+            sb.append(lbc + "customBillRate7=").append(customBillRate7);
+        }
+        if(customBillRate8 != null){
+            sb.append(lbc + "customBillRate8=").append(customBillRate8);
+        }
+        if(customBillRate9 != null){
+            sb.append(lbc + "customBillRate9=").append(customBillRate9);
+        }
+        if(customBillRate10 != null){
+            sb.append(lbc + "customBillRate10=").append(customBillRate10);
+        }
+        if(customPayRate1 != null){
+            sb.append(lbc + "customPayRate1=").append(customPayRate1);
+        }
+        if(customPayRate2 != null){
+            sb.append(lbc + "customPayRate2=").append(customPayRate2);
+        }
+        if(customPayRate3 != null){
+            sb.append(lbc + "customPayRate3=").append(customPayRate3);
+        }
+        if(customPayRate4 != null){
+            sb.append(lbc + "customPayRate4=").append(customPayRate4);
+        }
+        if(customPayRate5 != null){
+            sb.append(lbc + "customPayRate5=").append(customPayRate5);
+        }
+        if(customPayRate6 != null){
+            sb.append(lbc + "customPayRate6=").append(customPayRate6);
+        }
+        if(customPayRate7 != null){
+            sb.append(lbc + "customPayRate7=").append(customPayRate7);
+        }
+        if(customPayRate8 != null){
+            sb.append(lbc + "customPayRate8=").append(customPayRate8);
+        }
+        if(customPayRate9 != null){
+            sb.append(lbc + "customPayRate9=").append(customPayRate9);
+        }
+        if(customPayRate10 != null){
+            sb.append(lbc + "customPayRate10=").append(customPayRate10);
+        }
+        if(customEncryptedText1 != null){
+            sb.append(lbc + "customEncryptedText1=").append(customEncryptedText1);
+        }
+        if(customEncryptedText2 != null){
+            sb.append(lbc + "customEncryptedText2=").append(customEncryptedText2);
+        }
+        if(customEncryptedText3 != null){
+            sb.append(lbc + "customEncryptedText3=").append(customEncryptedText3);
+        }
+        if(customEncryptedText4 != null){
+            sb.append(lbc + "customEncryptedText4=").append(customEncryptedText4);
+        }
+        if(customEncryptedText5 != null){
+            sb.append(lbc + "customEncryptedText5=").append(customEncryptedText5);
+        }
+        if(customEncryptedText6 != null){
+            sb.append(lbc + "customEncryptedText6=").append(customEncryptedText6);
+        }
+        if(customEncryptedText7 != null){
+            sb.append(lbc + "customEncryptedText7=").append(customEncryptedText7);
+        }
+        if(customEncryptedText8 != null){
+            sb.append(lbc + "customEncryptedText8=").append(customEncryptedText8);
+        }
+        if(customEncryptedText9 != null){
+            sb.append(lbc + "customEncryptedText9=").append(customEncryptedText9);
+        }
+        if(customEncryptedText10 != null){
+            sb.append(lbc + "customEncryptedText10=").append(customEncryptedText10);
+        }
+        if(customText21 != null){
+            sb.append(lbc + "customText21=").append(customText21);
+        }
+        if(customText22 != null){
+            sb.append(lbc + "customText22=").append(customText22);
+        }
+        if(customText23 != null){
+            sb.append(lbc + "customText23=").append(customText23);
+        }
+        if(customText24 != null){
+            sb.append(lbc + "customText24=").append(customText24);
+        }
+        if(customText25 != null){
+            sb.append(lbc + "customText25=").append(customText25);
+        }
+        if(customText26 != null){
+            sb.append(lbc + "customText26=").append(customText26);
+        }
+        if(customText27 != null){
+            sb.append(lbc + "customText27=").append(customText27);
+        }
+        if(customText28 != null){
+            sb.append(lbc + "customText28=").append(customText28);
+        }
+        if(customText29 != null){
+            sb.append(lbc + "customText29=").append(customText29);
+        }
+        if(customText30 != null){
+            sb.append(lbc + "customText30=").append(customText30);
+        }
+        if(customText31 != null){
+            sb.append(lbc + "customText31=").append(customText31);
+        }
+        if(customText32 != null){
+            sb.append(lbc + "customText32=").append(customText32);
+        }
+        if(customText33 != null){
+            sb.append(lbc + "customText33=").append(customText33);
+        }
+        if(customText34 != null){
+            sb.append(lbc + "customText34=").append(customText34);
+        }
+        if(customText35 != null){
+            sb.append(lbc + "customText35=").append(customText35);
+        }
+        if(customText36 != null){
+            sb.append(lbc + "customText36=").append(customText36);
+        }
+        if(customText37 != null){
+            sb.append(lbc + "customText37=").append(customText37);
+        }
+        if(customText38 != null){
+            sb.append(lbc + "customText38=").append(customText38);
+        }
+        if(customText39 != null){
+            sb.append(lbc + "customText39=").append(customText39);
+        }
+        if(customText40 != null){
+            sb.append(lbc + "customText40=").append(customText40);
+        }
+        if(customText41 != null){
+            sb.append(lbc + "customText41=").append(customText41);
+        }
+        if(customText42 != null){
+            sb.append(lbc + "customText42=").append(customText42);
+        }
+        if(customText43 != null){
+            sb.append(lbc + "customText43=").append(customText43);
+        }
+        if(customText44 != null){
+            sb.append(lbc + "customText44=").append(customText44);
+        }
+        if(customText45 != null){
+            sb.append(lbc + "customText45=").append(customText45);
+        }
+        if(customText46 != null){
+            sb.append(lbc + "customText46=").append(customText46);
+        }
+        if(customText47 != null){
+            sb.append(lbc + "customText47=").append(customText47);
+        }
+        if(customText48 != null){
+            sb.append(lbc + "customText48=").append(customText48);
+        }
+        if(customText49 != null){
+            sb.append(lbc + "customText49=").append(customText49);
+        }
+        if(customText50 != null){
+            sb.append(lbc + "customText50=").append(customText50);
+        }
+        if(customText51 != null){
+            sb.append(lbc + "customText51=").append(customText51);
+        }
+        if(customText52 != null){
+            sb.append(lbc + "customText52=").append(customText52);
+        }
+        if(customText53 != null){
+            sb.append(lbc + "customText53=").append(customText53);
+        }
+        if(customText54 != null){
+            sb.append(lbc + "customText54=").append(customText54);
+        }
+        if(customText55 != null){
+            sb.append(lbc + "customText55=").append(customText55);
+        }
+        if(customText56 != null){
+            sb.append(lbc + "customText56=").append(customText56);
+        }
+        if(customText57 != null){
+            sb.append(lbc + "customText57=").append(customText57);
+        }
+        if(customText58 != null){
+            sb.append(lbc + "customText58=").append(customText58);
+        }
+        if(customText59 != null){
+            sb.append(lbc + "customText59=").append(customText59);
+        }
+        if(customText60 != null){
+            sb.append(lbc + "customText60=").append(customText60);
+        }
+        if(customTextBlock6 != null){
+            sb.append(lbc + "customTextBlock6=").append(customTextBlock6);
+        }
+        if(customTextBlock7 != null){
+            sb.append(lbc + "customTextBlock7=").append(customTextBlock7);
+        }
+        if(customTextBlock8 != null){
+            sb.append(lbc + "customTextBlock8=").append(customTextBlock8);
+        }
+        if(customTextBlock9 != null){
+            sb.append(lbc + "customTextBlock9=").append(customTextBlock9);
+        }
+        if(customTextBlock10 != null){
+            sb.append(lbc + "customTextBlock10=").append(customTextBlock10);
+        }
+        if(customDate4 != null){
+            sb.append(lbc + "customDate4=").append(customDate4);
+        }
+        if(customDate5 != null){
+            sb.append(lbc + "customDate5=").append(customDate5);
+        }
+        if(customDate6 != null){
+            sb.append(lbc + "customDate6=").append(customDate6);
+        }
+        if(customDate7 != null){
+            sb.append(lbc + "customDate7=").append(customDate7);
+        }
+        if(customDate8 != null){
+            sb.append(lbc + "customDate8=").append(customDate8);
+        }
+        if(customDate9 != null){
+            sb.append(lbc + "customDate9=").append(customDate9);
+        }
+        if(customDate10 != null){
+            sb.append(lbc + "customDate10=").append(customDate10);
+        }
+        if(customDate11 != null){
+            sb.append(lbc + "customDate11=").append(customDate11);
+        }
+        if(customDate12 != null){
+            sb.append(lbc + "customDate12=").append(customDate12);
+        }
+        if(customDate13 != null){
+            sb.append(lbc + "customDate13=").append(customDate13);
+        }
+        if(customInt4 != null){
+            sb.append(lbc + "customInt4=").append(customInt4);
+        }
+        if(customInt5 != null){
+            sb.append(lbc + "customInt5=").append(customInt5);
+        }
+        if(customInt6 != null){
+            sb.append(lbc + "customInt6=").append(customInt6);
+        }
+        if(customInt7 != null){
+            sb.append(lbc + "customInt7=").append(customInt7);
+        }
+        if(customInt8 != null){
+            sb.append(lbc + "customInt8=").append(customInt8);
+        }
+        if(customInt9 != null){
+            sb.append(lbc + "customInt9=").append(customInt9);
+        }
+        if(customInt10 != null){
+            sb.append(lbc + "customInt10=").append(customInt10);
+        }
+        if(customInt11 != null){
+            sb.append(lbc + "customInt11=").append(customInt11);
+        }
+        if(customInt12 != null){
+            sb.append(lbc + "customInt12=").append(customInt12);
+        }
+        if(customInt13 != null){
+            sb.append(lbc + "customInt13=").append(customInt13);
+        }
+        if(customInt14 != null){
+            sb.append(lbc + "customInt14=").append(customInt14);
+        }
+        if(customInt15 != null){
+            sb.append(lbc + "customInt15=").append(customInt15);
+        }
+        if(customInt16 != null){
+            sb.append(lbc + "customInt16=").append(customInt16);
+        }
+        if(customInt17 != null){
+            sb.append(lbc + "customInt17=").append(customInt17);
+        }
+        if(customInt18 != null){
+            sb.append(lbc + "customInt18=").append(customInt18);
+        }
+        if(customInt19 != null){
+            sb.append(lbc + "customInt19=").append(customInt19);
+        }
+        if(customInt20 != null){
+            sb.append(lbc + "customInt20=").append(customInt20);
+        }
+        if(customInt21 != null){
+            sb.append(lbc + "customInt21=").append(customInt21);
+        }
+        if(customInt22 != null){
+            sb.append(lbc + "customInt22=").append(customInt22);
+        }
+        if(customInt23 != null){
+            sb.append(lbc + "customInt23=").append(customInt23);
+        }
+        if(customFloat4 != null){
+            sb.append(lbc + "customFloat4=").append(customFloat4);
+        }
+        if(customFloat5 != null){
+            sb.append(lbc + "customFloat5=").append(customFloat5);
+        }
+        if(customFloat6 != null){
+            sb.append(lbc + "customFloat6=").append(customFloat6);
+        }
+        if(customFloat7 != null){
+            sb.append(lbc + "customFloat7=").append(customFloat7);
+        }
+        if(customFloat8 != null){
+            sb.append(lbc + "customFloat8=").append(customFloat8);
+        }
+        if(customFloat9 != null){
+            sb.append(lbc + "customFloat9=").append(customFloat9);
+        }
+        if(customFloat10 != null){
+            sb.append(lbc + "customFloat10=").append(customFloat10);
+        }
+        if(customFloat11 != null){
+            sb.append(lbc + "customFloat11=").append(customFloat11);
+        }
+        if(customFloat12 != null){
+            sb.append(lbc + "customFloat12=").append(customFloat12);
+        }
+        if(customFloat13 != null){
+            sb.append(lbc + "customFloat13=").append(customFloat13);
+        }
+        if(customFloat14 != null){
+            sb.append(lbc + "customFloat14=").append(customFloat14);
+        }
+        if(customFloat15 != null){
+            sb.append(lbc + "customFloat15=").append(customFloat15);
+        }
+        if(customFloat16 != null){
+            sb.append(lbc + "customFloat16=").append(customFloat16);
+        }
+        if(customFloat17 != null){
+            sb.append(lbc + "customFloat17=").append(customFloat17);
+        }
+        if(customFloat18 != null){
+            sb.append(lbc + "customFloat18=").append(customFloat18);
+        }
+        if(customFloat19 != null){
+            sb.append(lbc + "customFloat19=").append(customFloat19);
+        }
+        if(customFloat20 != null){
+            sb.append(lbc + "customFloat20=").append(customFloat20);
+        }
+        if(customFloat21 != null){
+            sb.append(lbc + "customFloat21=").append(customFloat21);
+        }
+        if(customFloat22 != null){
+            sb.append(lbc + "customFloat22=").append(customFloat22);
+        }
+        if(customFloat23 != null){
+            sb.append(lbc + "customFloat23=").append(customFloat23);
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append(", customBillRate1=").append(customBillRate1);
+        sb.append(", customBillRate2=").append(customBillRate2);
+        sb.append(", customBillRate3=").append(customBillRate3);
+        sb.append(", customBillRate4=").append(customBillRate4);
+        sb.append(", customBillRate5=").append(customBillRate5);
+        sb.append(", customBillRate6=").append(customBillRate6);
+        sb.append(", customBillRate7=").append(customBillRate7);
+        sb.append(", customBillRate8=").append(customBillRate8);
+        sb.append(", customBillRate9=").append(customBillRate9);
+        sb.append(", customBillRate10=").append(customBillRate10);
+        sb.append(", customPayRate1=").append(customPayRate1);
+        sb.append(", customPayRate2=").append(customPayRate2);
+        sb.append(", customPayRate3=").append(customPayRate3);
+        sb.append(", customPayRate4=").append(customPayRate4);
+        sb.append(", customPayRate5=").append(customPayRate5);
+        sb.append(", customPayRate6=").append(customPayRate6);
+        sb.append(", customPayRate7=").append(customPayRate7);
+        sb.append(", customPayRate8=").append(customPayRate8);
+        sb.append(", customPayRate9=").append(customPayRate9);
+        sb.append(", customPayRate10=").append(customPayRate10);
+        sb.append(", customEncryptedText1=").append(customEncryptedText1);
+        sb.append(", customEncryptedText2=").append(customEncryptedText2);
+        sb.append(", customEncryptedText3=").append(customEncryptedText3);
+        sb.append(", customEncryptedText4=").append(customEncryptedText4);
+        sb.append(", customEncryptedText5=").append(customEncryptedText5);
+        sb.append(", customEncryptedText6=").append(customEncryptedText6);
+        sb.append(", customEncryptedText7=").append(customEncryptedText7);
+        sb.append(", customEncryptedText8=").append(customEncryptedText8);
+        sb.append(", customEncryptedText9=").append(customEncryptedText9);
+        sb.append(", customEncryptedText10=").append(customEncryptedText10);
+        sb.append(", customText21=").append(customText21);
+        sb.append(", customText22=").append(customText22);
+        sb.append(", customText23=").append(customText23);
+        sb.append(", customText24=").append(customText24);
+        sb.append(", customText25=").append(customText25);
+        sb.append(", customText26=").append(customText26);
+        sb.append(", customText27=").append(customText27);
+        sb.append(", customText28=").append(customText28);
+        sb.append(", customText29=").append(customText29);
+        sb.append(", customText30=").append(customText30);
+        sb.append(", customText31=").append(customText31);
+        sb.append(", customText32=").append(customText32);
+        sb.append(", customText33=").append(customText33);
+        sb.append(", customText34=").append(customText34);
+        sb.append(", customText35=").append(customText35);
+        sb.append(", customText36=").append(customText36);
+        sb.append(", customText37=").append(customText37);
+        sb.append(", customText38=").append(customText38);
+        sb.append(", customText39=").append(customText39);
+        sb.append(", customText40=").append(customText40);
+        sb.append(", customText41=").append(customText41);
+        sb.append(", customText42=").append(customText42);
+        sb.append(", customText43=").append(customText43);
+        sb.append(", customText44=").append(customText44);
+        sb.append(", customText45=").append(customText45);
+        sb.append(", customText46=").append(customText46);
+        sb.append(", customText47=").append(customText47);
+        sb.append(", customText48=").append(customText48);
+        sb.append(", customText49=").append(customText49);
+        sb.append(", customText50=").append(customText50);
+        sb.append(", customText51=").append(customText51);
+        sb.append(", customText52=").append(customText52);
+        sb.append(", customText53=").append(customText53);
+        sb.append(", customText54=").append(customText54);
+        sb.append(", customText55=").append(customText55);
+        sb.append(", customText56=").append(customText56);
+        sb.append(", customText57=").append(customText57);
+        sb.append(", customText58=").append(customText58);
+        sb.append(", customText59=").append(customText59);
+        sb.append(", customText60=").append(customText60);
+        sb.append(", customTextBlock6=").append(customTextBlock6);
+        sb.append(", customTextBlock7=").append(customTextBlock7);
+        sb.append(", customTextBlock8=").append(customTextBlock8);
+        sb.append(", customTextBlock9=").append(customTextBlock9);
+        sb.append(", customTextBlock10=").append(customTextBlock10);
+        sb.append(", customDate4=").append(customDate4);
+        sb.append(", customDate5=").append(customDate5);
+        sb.append(", customDate6=").append(customDate6);
+        sb.append(", customDate7=").append(customDate7);
+        sb.append(", customDate8=").append(customDate8);
+        sb.append(", customDate9=").append(customDate9);
+        sb.append(", customDate10=").append(customDate10);
+        sb.append(", customDate11=").append(customDate11);
+        sb.append(", customDate12=").append(customDate12);
+        sb.append(", customDate13=").append(customDate13);
+        sb.append(", customInt4=").append(customInt4);
+        sb.append(", customInt5=").append(customInt5);
+        sb.append(", customInt6=").append(customInt6);
+        sb.append(", customInt7=").append(customInt7);
+        sb.append(", customInt8=").append(customInt8);
+        sb.append(", customInt9=").append(customInt9);
+        sb.append(", customInt10=").append(customInt10);
+        sb.append(", customInt11=").append(customInt11);
+        sb.append(", customInt12=").append(customInt12);
+        sb.append(", customInt13=").append(customInt13);
+        sb.append(", customInt14=").append(customInt14);
+        sb.append(", customInt15=").append(customInt15);
+        sb.append(", customInt16=").append(customInt16);
+        sb.append(", customInt17=").append(customInt17);
+        sb.append(", customInt18=").append(customInt18);
+        sb.append(", customInt19=").append(customInt19);
+        sb.append(", customInt20=").append(customInt20);
+        sb.append(", customInt21=").append(customInt21);
+        sb.append(", customInt22=").append(customInt22);
+        sb.append(", customInt23=").append(customInt23);
+        sb.append(", customFloat4=").append(customFloat4);
+        sb.append(", customFloat5=").append(customFloat5);
+        sb.append(", customFloat6=").append(customFloat6);
+        sb.append(", customFloat7=").append(customFloat7);
+        sb.append(", customFloat8=").append(customFloat8);
+        sb.append(", customFloat9=").append(customFloat9);
+        sb.append(", customFloat10=").append(customFloat10);
+        sb.append(", customFloat11=").append(customFloat11);
+        sb.append(", customFloat12=").append(customFloat12);
+        sb.append(", customFloat13=").append(customFloat13);
+        sb.append(", customFloat14=").append(customFloat14);
+        sb.append(", customFloat15=").append(customFloat15);
+        sb.append(", customFloat16=").append(customFloat16);
+        sb.append(", customFloat17=").append(customFloat17);
+        sb.append(", customFloat18=").append(customFloat18);
+        sb.append(", customFloat19=").append(customFloat19);
+        sb.append(", customFloat20=").append(customFloat20);
+        sb.append(", customFloat21=").append(customFloat21);
+        sb.append(", customFloat22=").append(customFloat22);
+        sb.append(", customFloat23=").append(customFloat23);
+        return sb.toString();
     }
 
 }

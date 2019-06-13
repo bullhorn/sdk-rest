@@ -517,62 +517,276 @@ public class CustomFieldsE extends BaseCustomFields {
 
         return true;
     }
+    @Override
+    public String toStringNonNull(boolean includeLineBreaks) {
+        String lbc = ", ";
+        if(includeLineBreaks)
+            lbc = ",\n ";
+        StringBuilder builder = new StringBuilder(super.toStringNonNull(includeLineBreaks));
+        if(customDate1 != null){
+            builder.append(lbc + "customDate1=");
+            builder.append(customDate1);
+        }
+        if(customDate2 != null){
+            builder.append(lbc + "customDate2=");
+            builder.append(customDate2);
+        }
+        if(customDate3 != null){
+            builder.append(lbc + "customDate3=");
+            builder.append(customDate3);
+        }
+        if(customDate4 != null){
+            builder.append(lbc + "customDate4=");
+            builder.append(customDate4);
+        }
+        if(customDate5 != null){
+            builder.append(lbc + "customDate5=");
+            builder.append(customDate5);
+        }
+        if(customDate6 != null){
+            builder.append(lbc + "customDate6=");
+            builder.append(customDate6);
+        }
+        if(customDate7 != null){
+            builder.append(lbc + "customDate7=");
+            builder.append(customDate7);
+        }
+        if(customDate8 != null){
+            builder.append(lbc + "customDate8=");
+            builder.append(customDate8);
+        }
+        if(customDate9 != null){
+            builder.append(lbc + "customDate9=");
+            builder.append(customDate9);
+        }
+        if(customDate10 != null){
+            builder.append(lbc + "customDate10=");
+            builder.append(customDate10);
+        }
+        if(customText6 != null){
+            builder.append(lbc + "customText6=");
+            builder.append(customText6);
+        }
+        if(customText7 != null){
+            builder.append(lbc + "customText7=");
+            builder.append(customText7);
+        }
+        if(customText8 != null){
+            builder.append(lbc + "customText8=");
+            builder.append(customText8);
+        }
+        if(customText9 != null){
+            builder.append(lbc + "customText9=");
+            builder.append(customText9);
+        }
+        if(customText10 != null){
+            builder.append(lbc + "customText10=");
+            builder.append(customText10);
+        }
+        if(customTextBlock1 != null){
+            builder.append(lbc + "customTextBlock1=");
+            builder.append(customTextBlock1);
+        }
+        if(customTextBlock2 != null){
+            builder.append(lbc + "customTextBlock2=");
+            builder.append(customTextBlock2);
+        }
+        if(customTextBlock3 != null){
+            builder.append(lbc + "customTextBlock3=");
+            builder.append(customTextBlock3);
+        }
+        if(customTextBlock4 != null){
+            builder.append(lbc + "customTextBlock4=");
+            builder.append(customTextBlock4);
+        }
+        if(customTextBlock5 != null){
+            builder.append(lbc + "customTextBlock5=");
+            builder.append(customTextBlock5);
+        }
+        if(customTextBlock6 != null){
+            builder.append(lbc + "customTextBlock6=");
+            builder.append(customTextBlock6);
+        }
+        if(customTextBlock7 != null){
+            builder.append(lbc + "customTextBlock7=");
+            builder.append(customTextBlock7);
+        }
+        if(customTextBlock8 != null){
+            builder.append(lbc + "customTextBlock8=");
+            builder.append(customTextBlock8);
+        }
+        if(customTextBlock9 != null){
+            builder.append(lbc + "customTextBlock9=");
+            builder.append(customTextBlock9);
+        }
+        if(customTextBlock10 != null){
+            builder.append(lbc + "customTextBlock10=");
+            builder.append(customTextBlock10);
+        }
+        return builder.toString();
+    }
+
+
+    @Override
+    public String toStringNonNull() {
+        String lbc = ", ";
+        StringBuilder builder = new StringBuilder(super.toStringNonNull());
+        if(customDate1 != null){
+            builder.append(lbc + "customDate1=");
+            builder.append(customDate1);
+        }
+        if(customDate2 != null){
+            builder.append(lbc + "customDate2=");
+            builder.append(customDate2);
+        }
+        if(customDate3 != null){
+            builder.append(lbc + "customDate3=");
+            builder.append(customDate3);
+        }
+        if(customDate4 != null){
+            builder.append(lbc + "customDate4=");
+            builder.append(customDate4);
+        }
+        if(customDate5 != null){
+            builder.append(lbc + "customDate5=");
+            builder.append(customDate5);
+        }
+        if(customDate6 != null){
+            builder.append(lbc + "customDate6=");
+            builder.append(customDate6);
+        }
+        if(customDate7 != null){
+            builder.append(lbc + "customDate7=");
+            builder.append(customDate7);
+        }
+        if(customDate8 != null){
+            builder.append(lbc + "customDate8=");
+            builder.append(customDate8);
+        }
+        if(customDate9 != null){
+            builder.append(lbc + "customDate9=");
+            builder.append(customDate9);
+        }
+        if(customDate10 != null){
+            builder.append(lbc + "customDate10=");
+            builder.append(customDate10);
+        }
+        if(customText6 != null){
+            builder.append(lbc + "customText6=");
+            builder.append(customText6);
+        }
+        if(customText7 != null){
+            builder.append(lbc + "customText7=");
+            builder.append(customText7);
+        }
+        if(customText8 != null){
+            builder.append(lbc + "customText8=");
+            builder.append(customText8);
+        }
+        if(customText9 != null){
+            builder.append(lbc + "customText9=");
+            builder.append(customText9);
+        }
+        if(customText10 != null){
+            builder.append(lbc + "customText10=");
+            builder.append(customText10);
+        }
+        if(customTextBlock1 != null){
+            builder.append(lbc + "customTextBlock1=");
+            builder.append(customTextBlock1);
+        }
+        if(customTextBlock2 != null){
+            builder.append(lbc + "customTextBlock2=");
+            builder.append(customTextBlock2);
+        }
+        if(customTextBlock3 != null){
+            builder.append(lbc + "customTextBlock3=");
+            builder.append(customTextBlock3);
+        }
+        if(customTextBlock4 != null){
+            builder.append(lbc + "customTextBlock4=");
+            builder.append(customTextBlock4);
+        }
+        if(customTextBlock5 != null){
+            builder.append(lbc + "customTextBlock5=");
+            builder.append(customTextBlock5);
+        }
+        if(customTextBlock6 != null){
+            builder.append(lbc + "customTextBlock6=");
+            builder.append(customTextBlock6);
+        }
+        if(customTextBlock7 != null){
+            builder.append(lbc + "customTextBlock7=");
+            builder.append(customTextBlock7);
+        }
+        if(customTextBlock8 != null){
+            builder.append(lbc + "customTextBlock8=");
+            builder.append(customTextBlock8);
+        }
+        if(customTextBlock9 != null){
+            builder.append(lbc + "customTextBlock9=");
+            builder.append(customTextBlock9);
+        }
+        if(customTextBlock10 != null){
+            builder.append(lbc + "customTextBlock10=");
+            builder.append(customTextBlock10);
+        }
+        return builder.toString();
+    }
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(super.toString());
-        builder.append(", \ncustomDate1=");
+        StringBuilder builder = new StringBuilder(super.toString());
+        builder.append(", customDate1=");
         builder.append(customDate1);
-        builder.append(", \ncustomDate2=");
+        builder.append(", customDate2=");
         builder.append(customDate2);
-        builder.append(", \ncustomDate3=");
+        builder.append(", customDate3=");
         builder.append(customDate3);
-        builder.append(", \ncustomDate4=");
+        builder.append(", customDate4=");
         builder.append(customDate4);
-        builder.append(", \ncustomDate5=");
+        builder.append(", customDate5=");
         builder.append(customDate5);
-        builder.append(", \ncustomDate6=");
+        builder.append(", customDate6=");
         builder.append(customDate6);
-        builder.append(", \ncustomDate7=");
+        builder.append(", customDate7=");
         builder.append(customDate7);
-        builder.append(", \ncustomDate8=");
+        builder.append(", customDate8=");
         builder.append(customDate8);
-        builder.append(", \ncustomDate9=");
+        builder.append(", customDate9=");
         builder.append(customDate9);
-        builder.append(", \ncustomDate10=");
+        builder.append(", customDate10=");
         builder.append(customDate10);
-        builder.append(", \ncustomText6=");
+        builder.append(", customText6=");
         builder.append(customText6);
-        builder.append(", \ncustomText7=");
+        builder.append(", customText7=");
         builder.append(customText7);
-        builder.append(", \ncustomText8=");
+        builder.append(", customText8=");
         builder.append(customText8);
-        builder.append(", \ncustomText9=");
+        builder.append(", customText9=");
         builder.append(customText9);
-        builder.append(", \ncustomText10=");
+        builder.append(", customText10=");
         builder.append(customText10);
-        builder.append(", \ncustomTextBlock1=");
+        builder.append(", customTextBlock1=");
         builder.append(customTextBlock1);
-        builder.append(", \ncustomTextBlock2=");
+        builder.append(", customTextBlock2=");
         builder.append(customTextBlock2);
-        builder.append(", \ncustomTextBlock3=");
+        builder.append(", customTextBlock3=");
         builder.append(customTextBlock3);
-        builder.append(", \ncustomTextBlock4=");
+        builder.append(", customTextBlock4=");
         builder.append(customTextBlock4);
-        builder.append(", \ncustomTextBlock5=");
+        builder.append(", customTextBlock5=");
         builder.append(customTextBlock5);
-        builder.append(", \ncustomTextBlock6=");
+        builder.append(", customTextBlock6=");
         builder.append(customTextBlock6);
-        builder.append(", \ncustomTextBlock7=");
+        builder.append(", customTextBlock7=");
         builder.append(customTextBlock7);
-        builder.append(", \ncustomTextBlock8=");
+        builder.append(", customTextBlock8=");
         builder.append(customTextBlock8);
-        builder.append(", \ncustomTextBlock9=");
+        builder.append(", customTextBlock9=");
         builder.append(customTextBlock9);
-        builder.append(", \ncustomTextBlock10=");
+        builder.append(", customTextBlock10=");
         builder.append(customTextBlock10);
-
         return builder.toString();
     }
 

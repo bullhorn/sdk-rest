@@ -142,7 +142,7 @@ public class Address extends AbstractEntity {
         String lbc = ", ";
         if(includeLineBreaks)
             lbc = ",\n ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("address1=" + address1);
         sb.append(lbc + "address2=" + address2);
         sb.append(lbc + "city=" + city);
@@ -159,7 +159,7 @@ public class Address extends AbstractEntity {
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("address1=" + address1);
         sb.append(lbc + "address2=" + address2);
         sb.append(lbc + "city=" + city);
@@ -173,7 +173,7 @@ public class Address extends AbstractEntity {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         sb.append("address1=" + address1);
         sb.append(", address2=" + address2);
         sb.append(", city=" + city);

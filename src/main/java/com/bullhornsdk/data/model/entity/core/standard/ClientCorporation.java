@@ -1323,7 +1323,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @Override
     public String toStringNonNull() {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(id != null){
             sb.append("id=").append(id);
         }
@@ -1520,7 +1520,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @Override
     public String toStringNonNull(boolean includeLineBreaks) {
         String lbc = ", ";
-        final StringBuilder sb = new StringBuilder(getClass() + " { ");
+        final StringBuilder sb = new StringBuilder(getClass().getSimpleName() + " { ");
         if(includeLineBreaks)
             sb.append("\n");
         if(id != null){
