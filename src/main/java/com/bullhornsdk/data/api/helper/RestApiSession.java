@@ -41,6 +41,8 @@ public class RestApiSession {
 	private static final String ACCESS_TOKEN_GRANT_TYPE = "authorization_code";
 
 	private static final String REFRESH_TOKEN_GRANT_TYPE = "refresh_token";
+    private static final String REST_SERVICES_LOGIN_URL = "https://rest.bullhornstaffing.com/rest-services/login";
+    private static final String AUTH_URL = "https://auth.bullhornstaffing.com/oauth/";
 
 	private static Logger log = Logger.getLogger(RestApiSession.class);
 
@@ -123,6 +125,7 @@ public class RestApiSession {
 	private void createSession() {
 		for (int tryNumber = 1; tryNumber <= SESSION_RETRY; tryNumber++) {
 			try {
+			    setCredentialUrls();
 				String authCode = getAuthorizationCode();
 				getAccessToken(authCode);
 				login();
@@ -138,6 +141,12 @@ public class RestApiSession {
 			}
 		}
 	}
+
+	private void setCredentialUrls() {
+        restCredentials.setRestAuthorizeUrl(AUTH_URL + "authorize");
+        restCredentials.setRestTokenUrl(AUTH_URL + "token");
+        restCredentials.setRestLoginUrl(REST_SERVICES_LOGIN_URL);
+    }
 
 	private String getAuthorizationCode() throws RestApiException {
 		String authorizeUrl = restCredentials.getRestAuthorizeUrl();

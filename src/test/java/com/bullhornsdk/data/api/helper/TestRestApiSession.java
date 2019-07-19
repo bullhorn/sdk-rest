@@ -31,12 +31,9 @@ public class TestRestApiSession extends BaseTest {
 	public void setupTheCredentials() {
 		BullhornRestCredentials creds = new BullhornRestCredentials();
 
-		creds.setRestAuthorizeUrl("https://auth9.bullhornstaffing.com/oauth/authorize");
 		creds.setRestClientId("MY-CLIENT-ID");
 		creds.setRestClientSecret("MY-CLIENT-SECRET");
-		creds.setRestLoginUrl("https://rest9.bullhornstaffing.com/rest-services/login");
 		creds.setRestSessionMinutesToLive("1400");
-		creds.setRestTokenUrl("https://auth9.bullhornstaffing.com/oauth/token");
 		creds.setUsername("MY-USERNAME");
 		creds.setPassword("MY-PASSWORD");
 		this.bullhornRestCredentials = creds;

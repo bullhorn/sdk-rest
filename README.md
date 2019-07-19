@@ -21,12 +21,9 @@ Provide your credentials and instantiate StandardBullhornApiRest:
 ```java
         BullhornRestCredentials creds = new BullhornRestCredentials();
 		creds.setPassword("apipassword");
-		creds.setRestAuthorizeUrl("rest.authorizeUrl");
 		creds.setRestClientId("rest.clientId");
 		creds.setRestClientSecret("rest.clientSecret");
-		creds.setRestLoginUrl(env.getProperty("rest.loginUrl");
 		creds.setRestSessionMinutesToLive("rest.sessionMinutesToLive");
-		creds.setRestTokenUrl("rest.tokenUrl");
 		creds.setUsername("apiusername");
 		BullhornData bullhornData = new StandardBullhornData(creds);
 ```
@@ -62,12 +59,9 @@ public class AppConfig {
 
 		RestCredentials creds = new BullhornRestCredentials();
         creds.setPassword("apipassword");
-        creds.setRestAuthorizeUrl("rest.authorizeUrl");
         creds.setRestClientId("rest.clientId");
         creds.setRestClientSecret("rest.clientSecret");
-        creds.setRestLoginUrl(env.getProperty("rest.loginUrl");
         creds.setRestSessionMinutesToLive("rest.sessionMinutesToLive");
-        creds.setRestTokenUrl("rest.tokenUrl");
         creds.setUsername("apiusername");
 		return new StandardBullhornData(creds);
 
