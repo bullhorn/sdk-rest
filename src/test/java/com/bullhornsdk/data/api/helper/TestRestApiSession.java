@@ -1,9 +1,5 @@
 package com.bullhornsdk.data.api.helper;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.io.IOException;
 
 import org.joda.time.DateTime;
@@ -16,6 +12,11 @@ import com.bullhornsdk.data.BaseTest;
 import com.bullhornsdk.data.api.BullhornRestCredentials;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.Matchers.emptyString;
+import static org.junit.Assert.*;
 
 @Ignore
 public class TestRestApiSession extends BaseTest {
@@ -42,6 +43,24 @@ public class TestRestApiSession extends BaseTest {
 		this.bullhornRestCredentials = creds;
 		this.restApiSession = new RestApiSession(bullhornRestCredentials);
 	}
+    /**
+     * Add your own rest credentials here to test the connection.
+     */
+    @Test
+    public void testDynamicRestUrls() {
+        BullhornRestCredentials bullhornRestCredentials = new BullhornRestCredentials();
+
+        bullhornRestCredentials.setRestClientId("MY-CLIENT-ID");
+        bullhornRestCredentials.setRestClientSecret("MY-CLIENT-SECRET");
+        bullhornRestCredentials.setRestSessionMinutesToLive("1400");
+        bullhornRestCredentials.setUsername("MY-USERNAME");
+        bullhornRestCredentials.setPassword("MY-PASSWORD");
+
+        RestApiSession restApiSession = new RestApiSession(bullhornRestCredentials);
+
+        assertNotNull("Session is null", restApiSession);
+        assertThat("BhRestToken was empty", restApiSession.getBhRestToken(), is(not(emptyString())));
+    }
 
 	@Test
 	public void testRestApiSession() {
