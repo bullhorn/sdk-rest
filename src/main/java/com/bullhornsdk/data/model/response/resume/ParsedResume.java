@@ -5,6 +5,7 @@ import java.util.List;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
+import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 
 /**
@@ -33,6 +34,10 @@ public interface ParsedResume {
 	public List<String> getSkillList();
 
 	public void setSkillList(List<String> skillList);
+
+    public List<Skill> getPrimarySkillsList();
+
+    public void setPrimarySkillsList(List<Skill> primarySkillsList);
 
 	public String getErrorCode();
 
