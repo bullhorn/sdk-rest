@@ -27,7 +27,6 @@ public class StandardParsedResume implements ParsedResume {
 	private List<CandidateEducation> candidateEducation;
 	private List<CandidateWorkHistory> candidateWorkHistory;
 	private List<String> skillList;
-	private List<Skill> primarySkillsList;
     private List<Skill> primarySkills;
 	private FileWrapper fileWrapper;
 
@@ -83,18 +82,6 @@ public class StandardParsedResume implements ParsedResume {
 	public void setSkillList(List<String> skillList) {
 		this.skillList = skillList;
 	}
-
-    @Override
-    @JsonProperty("primarySkillsList")
-    public List<Skill> getPrimarySkillsList() {
-        return primarySkillsList;
-    }
-
-    @Override
-    @JsonProperty("primarySkillsList")
-    public void setPrimarySkillsList(List<Skill> primarySkillsList) {
-        this.primarySkillsList = primarySkillsList;
-    }
 
     @Override
     @JsonProperty("primarySkills")
@@ -169,7 +156,6 @@ public class StandardParsedResume implements ParsedResume {
             ", candidateEducation=" + candidateEducation +
             ", candidateWorkHistory=" + candidateWorkHistory +
             ", skillList=" + skillList +
-            ", primarySkillsList=" + primarySkillsList +
             ", primarySkills=" + primarySkills +
             ", fileWrapper=" + fileWrapper +
             ", errorCode='" + errorCode + '\'' +

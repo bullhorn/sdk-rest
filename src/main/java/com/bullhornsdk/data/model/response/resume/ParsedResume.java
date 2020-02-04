@@ -35,10 +35,6 @@ public interface ParsedResume {
 
 	public void setSkillList(List<String> skillList);
 
-    public List<Skill> getPrimarySkillsList();
-
-    public void setPrimarySkillsList(List<Skill> primarySkillsList);
-
     public List<Skill> getPrimarySkills();
 
     public void setPrimarySkills(List<Skill> primarySkills);
