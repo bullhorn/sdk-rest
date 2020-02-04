@@ -39,6 +39,10 @@ public interface ParsedResume {
 
     public void setPrimarySkillsList(List<Skill> primarySkillsList);
 
+    public List<Skill> getPrimarySkills();
+
+    public void setPrimarySkills(List<Skill> primarySkills);
+
 	public String getErrorCode();
 
 	public void setErrorCode(String errorCode);
