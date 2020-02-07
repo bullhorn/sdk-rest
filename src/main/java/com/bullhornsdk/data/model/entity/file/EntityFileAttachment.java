@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.file;
 
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
@@ -16,7 +17,7 @@ import javax.validation.constraints.Size;
  * @author Murray
  * @since 11/08/2017
  */
-public abstract class EntityFileAttachment implements QueryEntity, UpdateEntity {
+public abstract class EntityFileAttachment extends AbstractEntity implements QueryEntity, UpdateEntity {
 
     private Integer id;
 
@@ -54,6 +55,8 @@ public abstract class EntityFileAttachment implements QueryEntity, UpdateEntity 
     private Boolean isCopied;
 
     private Boolean isDeleted;
+
+    private Boolean isEncrypted;
 
     private Boolean isExternal;
 
@@ -226,6 +229,16 @@ public abstract class EntityFileAttachment implements QueryEntity, UpdateEntity 
     @JsonProperty("isDeleted")
     public void setDeleted(Boolean isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    @JsonProperty("isEncrypted")
+    public Boolean getEncrypted() {
+        return isEncrypted;
+    }
+
+    @JsonProperty("isEncrypted")
+    public void setEncrypted(Boolean isEncrypted) {
+        this.isEncrypted = isEncrypted;
     }
 
     @JsonProperty("isExternal")
