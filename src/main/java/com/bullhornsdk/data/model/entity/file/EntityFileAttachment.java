@@ -56,6 +56,8 @@ public abstract class EntityFileAttachment extends AbstractEntity implements Que
 
     private Boolean isDeleted;
 
+    private Boolean isEncrypted;
+
     private Boolean isExternal;
 
     private Boolean isOpen;
@@ -227,6 +229,16 @@ public abstract class EntityFileAttachment extends AbstractEntity implements Que
     @JsonProperty("isDeleted")
     public void setDeleted(Boolean isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    @JsonProperty("isEncrypted")
+    public Boolean getEncrypted() {
+        return isEncrypted;
+    }
+
+    @JsonProperty("isEncrypted")
+    public void setEncrypted(Boolean isEncrypted) {
+        this.isEncrypted = isEncrypted;
     }
 
     @JsonProperty("isExternal")
