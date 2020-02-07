@@ -68,6 +68,7 @@ public class MockDataHandler {
 	private List<EditHistory> editHistoryList;
 	private List<FieldChange> editHistoryFieldChangeList;
 	private Map<String, Object> settingsResults;
+    private Map<String, Object> optionsResults;
 	private Settings settingsObjectResults;
     private StandardGetEventsResponse getEventsResponse;
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
@@ -81,6 +82,7 @@ public class MockDataHandler {
 		this.editHistoryList = mockDataLoader.getEditHistoryList();
 		this.editHistoryFieldChangeList = mockDataLoader.getEditHistoryFieldChangeList()
 		this.settingsResults = mockDataLoader.getSettingsResults();
+        this.optionsResults = mockDataLoader.getOptionsResults();
 		this.settingsObjectResults = mockDataLoader.getSettingsObjectResults();
         this.getEventsResponse = mockDataLoader.getEventsResponse();
         this.getLastRequestIdResponse = mockDataLoader.getLastRequestIdResponse();
@@ -443,6 +445,15 @@ public class MockDataHandler {
 	public Settings getSettingsObjectData(Set<SettingsFields> settingSet){
 		return this.settingsResults;
 	}
+
+    /**
+     * Returns the options data.
+     * @param optionType
+     * @return
+     */
+    public Map<String,Object> getOptionsData(String optionType, OptionParams params){
+        return this.optionsResults;
+    }
 
     public GetEventsResponse getEventsData(Integer maxResults) {
         if(this.getEventsResponse.events.size() > maxResults) {

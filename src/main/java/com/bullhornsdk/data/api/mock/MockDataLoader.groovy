@@ -123,6 +123,7 @@ public class MockDataLoader {
     private StandardGetLastRequestIdResponse getLastRequestIdResponseCache;
     private Map<String, Object> settingsResultMapCache;
     private Settings settingsObjectResultCache;
+    private Map<String, Object> optionsResultMapCache;
     private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
     private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
 
@@ -134,6 +135,7 @@ public class MockDataLoader {
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
     private Map<String, Object> settingsResultMap;
     private Settings settingsObjectResult;
+    private Map<String, Object> optionsResultMap;
     private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
 
     private Map<Class<? extends BullhornEntity>, String> entityFileNames;
@@ -235,6 +237,14 @@ public class MockDataLoader {
         return settingsObjectResult;
     }
 
+    public Map<String, Object> getOptionsResults() {
+        if (optionsResultMap == null) {
+            reloadOptionsResults();
+            this.optionsResultMapCache = KryoObjectCopyHelper.copy(optionsResultMap);
+        }
+        return optionsResultMap;
+    }
+
     /**
      * Returns a map with entities loaded fresh from the test data.
      *
@@ -296,6 +306,13 @@ public class MockDataLoader {
         String jsonData = getFileData("settings-data.txt");
         Settings resultData = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, Settings.class);
         this.settingsObjectResult = resultData;
+    }
+
+    public void reloadOptionsResults() {
+
+        String jsonData = getFileData("options-data.txt");
+        Map<String, Object> resultData = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, Map.class);
+        this.optionsResultMap = resultData;
     }
 
     /**

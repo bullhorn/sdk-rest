@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.model.parameter.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,15 +19,6 @@ import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 
 public class RestUriVariablesFactory {
@@ -54,6 +46,7 @@ public class RestUriVariablesFactory {
 	private static final String QUERY = "query";
     private static final String REQUEST_ID = "requestId";
     private static final String SETTINGS = "settings";
+    private static final String OPTION_TYPE = "optionType";
     private static final String SUBSCRIPTION_ID = "subscriptionId";
     private static final String WHERE = "where";
 
@@ -540,6 +533,20 @@ public class RestUriVariablesFactory {
 
 		return uriVariables;
 	}
+
+    public Map<String, String> getUriVariablesForOptions(String optionType, OptionParams params) {
+
+        if (params == null) {
+            params = ParamFactory.optionsParams();
+        }
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(OPTION_TYPE, optionType);
+
+        return uriVariables;
+    }
 
     public Map<String, String> getUriVariablesForGetLastRequestId(String subscriptionId) {
 

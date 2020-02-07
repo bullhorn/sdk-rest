@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,14 +32,6 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper;
@@ -803,4 +796,17 @@ public interface BullhornData {
      * If true, any applicable existing rest form triggers (Add or Edit) will be executed when an entity is inserted or updated.
      */
     public void setExecuteFormTriggers(Boolean executeFormTriggers);
+
+
+    /**
+     *
+     * Returns the Options for passed in type.
+     *
+     * @param optionType  option type to be returned
+     * @param params optional parameters to use in the api request.
+     *
+     * @return a Map of option name to option value
+     */
+
+    public Map<String, Object> getOptions(String optionType, OptionParams params);
 }

@@ -437,4 +437,9 @@ public class MockBullhornData implements BullhornData {
     public void setExecuteFormTriggers(Boolean executeFormTriggers) {
         this.executeFormTriggers = executeFormTriggers;
     }
+
+    @Override
+    Map<String, Object> getOptions(String optionType, OptionParams params) {
+        return mockDataHandler.getOptionsData(optionType, params);
+    }
 }

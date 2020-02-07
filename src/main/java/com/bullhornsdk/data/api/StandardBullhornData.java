@@ -15,6 +15,7 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 import com.bullhornsdk.data.exception.RestMappingException;
+import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -74,15 +75,6 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
@@ -404,6 +396,14 @@ public class StandardBullhornData implements BullhornData {
     @Override
     public Map<String, Object> getSettings(Set<String> settingSet) {
         return this.handleGetSettingsData(settingSet);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Map<String, Object> getOptions(String optionType, OptionParams params) {
+        return this.handleGetOptionsData(optionType, params);
     }
 
     /**
@@ -1301,6 +1301,32 @@ public class StandardBullhornData implements BullhornData {
         return response;
 
     }
+
+
+
+    /**
+     * Makes the "options" api call
+     * <p>
+     * HttpMethod: GET
+     *
+     * @param optionType option to return information about.
+     * @return the options
+     */
+    @SuppressWarnings("unchecked")
+    protected Map<String, Object> handleGetOptionsData(String optionType, OptionParams params) {
+
+        if(optionType == null || optionType.length() == 0){
+            throw new NotEnoughFieldsSpecifiedException("At least one option type needs to passed in as an argument.");
+        }
+
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForOptions(optionType, params);
+        String url = restUrlFactory.assembleUrlForOptions(params);
+
+        Map<String, Object> response = this.performGetRequest(url, Map.class, uriVariables);
+
+        return response;
+    }
+
 
     /**
      * Handles the parsing of a resume text. Contains retry logic.

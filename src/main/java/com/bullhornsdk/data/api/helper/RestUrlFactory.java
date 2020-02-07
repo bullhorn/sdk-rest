@@ -1,15 +1,7 @@
 package com.bullhornsdk.data.api.helper;
 
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
+import com.bullhornsdk.data.model.parameter.*;
 
 public class RestUrlFactory {
 
@@ -260,6 +252,10 @@ public class RestUrlFactory {
 	public String assembleUrlForSettings() {
         return restUrl + "settings/{settings}?BhRestToken={bhRestToken}";
 	}
+
+    public String assembleUrlForOptions(OptionParams params) {
+        return restUrl + "options/{optionType}?BhRestToken={bhRestToken}"+ params.getUrlString();
+    }
 
     public String assembleSubscribeToEventsUrl(boolean withNames) {
         return restUrl + "event/subscription/{subscriptionId}?type={type}&eventTypes={eventTypes}&BhRestToken={bhRestToken}"
