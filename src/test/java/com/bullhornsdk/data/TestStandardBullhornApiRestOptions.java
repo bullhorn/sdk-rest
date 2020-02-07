@@ -1,7 +1,8 @@
 package com.bullhornsdk.data;
 
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.parameter.standard.StandardOptionParams;
+import com.bullhornsdk.data.model.parameter.OptionParams;
+import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import org.junit.Test;
 
 import java.util.Map;
@@ -23,7 +24,8 @@ public class TestStandardBullhornApiRestOptions extends BaseTest {
 
     @Test
     public void testOptions() {
-        Map<String,Object> options = bullhornData.getOptions(this.getOptionType(), StandardOptionParams.getInstance());
+        OptionParams params = ParamFactory.optionsParams();
+        Map<String,Object> options = bullhornData.getOptions(this.getOptionType(), params);
         System.out.println("options: " + options);
         runAssertions(options);
     }
