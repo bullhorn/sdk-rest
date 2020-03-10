@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.2.53</version>
+    <version>1.2.54-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
@@ -38,7 +38,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jackson.version>2.7.1</jackson.version>
+        <jackson.version>2.10.0</jackson.version>
         <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
         <additionalparam>-Xdoclint:none</additionalparam>
         <coveralls-version>4.2.0</coveralls-version>
