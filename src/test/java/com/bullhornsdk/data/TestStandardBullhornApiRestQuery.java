@@ -471,6 +471,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
     }
 
     @Test
+    public void testQueryCertificationFileAttachment() {
+
+        ListWrapper<CertificationFileAttachment> wrapper = bullhornData.query(CertificationFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<CertificationFileAttachment>", wrapper);
+
+    }
+
+    @Test
     public void testQueryClientContactFileAttachment() {
 
         ListWrapper<ClientContactFileAttachment> wrapper = bullhornData.query(ClientContactFileAttachment.class, where, null, queryParams);
