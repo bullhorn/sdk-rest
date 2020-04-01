@@ -89,6 +89,7 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.embedded.UserType
 import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment
+import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment
 import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment
 import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment
 import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment
@@ -573,6 +574,7 @@ public class MockDataLoader {
         entityFiles.put(PersonCustomObjectInstance10.class, "customobjectinstances/personcustomobjectinstance10-data.txt");
 
         entityFiles.put(CandidateFileAttachment.class, "file/candidatefileattachment-data.txt");
+        entityFiles.put(CertificationFileAttachment.class, "file/certificationfileattachment-data.txt");
         entityFiles.put(ClientContactFileAttachment.class, "file/clientcontactfileattachment-data.txt");
         entityFiles.put(ClientCorporationFileAttachment.class, "file/clientcorporationfileattachment-data.txt");
         entityFiles.put(JobOrderFileAttachment.class, "file/joborderfileattachment-data.txt");

@@ -292,6 +292,7 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, "PersonCustomObject10EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
 
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),
+    CERTIFICATION_FILE_ATTACHMENT("CertificationFileAttachment", CertificationFileAttachment.class, CertificationFileAttachmentWrapper.class, CertificationFileAttachmentListWrapper.class, null, null),
     CLIENT_CONTACT_FILE_ATTACHMENT("ClientContactFileAttachment", ClientContactFileAttachment.class, ClientContactFileAttachmentWrapper.class, ClientContactFileAttachmentListWrapper.class, null, null),
     CLIENT_CORPORATION_FILE_ATTACHMENT("ClientCorporationFileAttachment", ClientCorporationFileAttachment.class, ClientCorporationFileAttachmentWrapper.class, ClientCorporationFileAttachmentListWrapper.class, null, null),
     JOB_ORDER_FILE_ATTACHMENT("JobOrderFileAttachment", JobOrderFileAttachment.class, JobOrderFileAttachmentWrapper.class, JobOrderFileAttachmentListWrapper.class, null, null),

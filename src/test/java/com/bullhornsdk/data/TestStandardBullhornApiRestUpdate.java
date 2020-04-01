@@ -605,6 +605,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
     }
 
     @Test
+    public void testUpdateCertificationFileAttachment() {
+
+        CertificationFileAttachment entity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId());
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getDescription();
+
+        newValue = previousValue + "toad";
+
+        entity.setDescription(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        CertificationFileAttachment updatedEntity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId());
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
+
+    @Test
     public void testUpdateClientContactFileAttachment() {
 
         ClientContactFileAttachment entity = bullhornData.findEntity(ClientContactFileAttachment.class, testEntities.getClientContactFileAttachmentId());
