@@ -1,6 +1,12 @@
 package com.bullhornsdk.data.model.entity.association;
 
+import com.bullhornsdk.data.model.entity.association.paybill.BillingProfileAssociations;
+import com.bullhornsdk.data.model.entity.association.paybill.InvoiceTermAssociations;
+import com.bullhornsdk.data.model.entity.association.paybill.LocationAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.*;
+import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -28,6 +34,9 @@ public class AssociationFactory {
     private static final LeadAssociations leadAssociations = LeadAssociations.getInstance();
     private static final TearsheetAssociations tearsheetAssociations = TearsheetAssociations.getInstance();
     private static final WorkersCompensationAssociations workersCompensationAssociations = WorkersCompensationAssociations.getInstance();
+    private static final BillingProfileAssociations billingProfileAssociations = BillingProfileAssociations.getInstance();
+    private static final LocationAssociations locationAssociations = LocationAssociations.getInstance();
+    private static final InvoiceTermAssociations invoiceTermAssociations = InvoiceTermAssociations.getInstance();
 
     /**
      * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
@@ -110,6 +119,18 @@ public class AssociationFactory {
 
         if (type == WorkersCompensation.class) {
             return (EntityAssociations<T>) workersCompensationAssociations;
+        }
+
+        if (type == BillingProfile.class) {
+            return (EntityAssociations<T>) billingProfileAssociations;
+        }
+
+        if (type == InvoiceTerm.class) {
+            return (EntityAssociations<T>) invoiceTermAssociations;
+        }
+
+        if (type == Location.class) {
+            return (EntityAssociations<T>) locationAssociations;
         }
 
         return null;
@@ -240,6 +261,33 @@ public class AssociationFactory {
      */
     public static TearsheetAssociations tearsheetAssociations() {
         return tearsheetAssociations;
+    }
+
+    /**
+     * Returns the associations for BillingProfileAssociations
+     *
+     * @return
+     */
+    public static BillingProfileAssociations billingProfileAssociations() {
+        return billingProfileAssociations;
+    }
+
+    /**
+     * Returns the associations for LocationAssociations
+     *
+     * @return
+     */
+    public static LocationAssociations locationAssociations() {
+        return locationAssociations;
+    }
+
+    /**
+     * Returns the associations for InvoiceTermAssociations
+     *
+     * @return
+     */
+    public static InvoiceTermAssociations invoiceTermAssociations() {
+        return invoiceTermAssociations;
     }
 
     /**

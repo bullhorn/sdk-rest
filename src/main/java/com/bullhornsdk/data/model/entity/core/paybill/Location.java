@@ -34,7 +34,7 @@ import java.util.Objects;
     "effectiveEndDate", "externalID", "isBillTo", "isDeleted", "isSoldTo",
     "isWorkSite", "declineToApplyTaxes", "owner", "status", "title", "versionID", "versions" })
 public class Location extends CustomFieldsB implements QueryEntity,
-    UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity {
+    UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity, AssociationEntity {
 
     private Integer id;
 

@@ -1,9 +1,9 @@
 package com.bullhornsdk.data.model.entity.core.paybill.unit;
 
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
-import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.util.Objects;
@@ -14,7 +14,7 @@ import java.util.Objects;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "name", "alphabeticCode", "numericCode", "minorUnits" })
-public class CurrencyUnit implements QueryEntity {
+public class CurrencyUnit implements QueryEntity, EditHistoryEntity {
 
     private Integer id;
 

@@ -3,8 +3,7 @@ package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
@@ -13,6 +12,9 @@ import java.util.Objects;
 /**
  * Created by fayranne.lipton 4/6/2020
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonRootName(value = "data")
+@JsonPropertyOrder({ "id", "dateAdded", "messageText", "name", "owner", "subject" })
 public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntity, CreateEntity {
 
     private Integer id;

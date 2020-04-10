@@ -35,7 +35,7 @@ import java.util.Objects;
     "invoiceStatementTemplate", "invoiceSummarizeBy", "isDeleted", "isFirst", "paymentTerms",
     "purchaseOrderRequired", "remitInstructions", "status", "title", "versionID", "versions", "waitForTimecards" })
 public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity,
-    DateLastModifiedEntity, SoftDeleteEntity{
+    DateLastModifiedEntity, SoftDeleteEntity, AssociationEntity{
 
     private Integer id;
 

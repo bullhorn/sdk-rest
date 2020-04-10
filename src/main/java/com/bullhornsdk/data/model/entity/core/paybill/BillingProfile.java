@@ -36,7 +36,7 @@ import java.util.Objects;
     "effectiveEndDate", "externalID", "invoiceStatementMessageTemplate", "invoiceTerm",
     "isDeleted", "owner", "toRecipients", "status", "title", "versionID", "versions" })
 public class BillingProfile extends CustomFieldsB implements QueryEntity,
-    UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity {
+    UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity, AssociationEntity {
 
     private Integer id;
 
