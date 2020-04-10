@@ -11,6 +11,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by fayranne.lipton 4/3/2020
@@ -241,4 +242,51 @@ public class LocationVersion implements QueryEntity, UpdateEntity, CreateEntity,
         this.isDeleted = isDeleted;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LocationVersion that = (LocationVersion) o;
+        return isBillTo == that.isBillTo &&
+            isFirst == that.isFirst &&
+            isSoldTo == that.isSoldTo &&
+            isWorkSite == that.isWorkSite &&
+            Objects.equals(id, that.id) &&
+            Objects.equals(address, that.address) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(description, that.description) &&
+            Objects.equals(effectiveDate, that.effectiveDate) &&
+            Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
+            Objects.equals(externalID, that.externalID) &&
+            Objects.equals(status, that.status) &&
+            Objects.equals(title, that.title) &&
+            Objects.equals(isDeleted, that.isDeleted);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, address, dateAdded, dateLastModified, description, effectiveDate, effectiveEndDate, externalID, isBillTo, isFirst, isSoldTo, isWorkSite, status, title, isDeleted);
+    }
+
+    @Override
+    public String toString() {
+        return "LocationVersion{" +
+            "id=" + id +
+            ", address=" + address +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", description='" + description + '\'' +
+            ", effectiveDate=" + effectiveDate +
+            ", effectiveEndDate=" + effectiveEndDate +
+            ", externalID='" + externalID + '\'' +
+            ", isBillTo=" + isBillTo +
+            ", isFirst=" + isFirst +
+            ", isSoldTo=" + isSoldTo +
+            ", isWorkSite=" + isWorkSite +
+            ", status='" + status + '\'' +
+            ", title='" + title + '\'' +
+            ", isDeleted=" + isDeleted +
+            '}';
+    }
 }

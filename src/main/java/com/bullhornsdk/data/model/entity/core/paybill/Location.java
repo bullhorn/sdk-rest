@@ -6,13 +6,13 @@ import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -79,7 +79,7 @@ public class Location extends CustomFieldsB implements QueryEntity,
 
     private Integer versionID;
 
-    private List<LocationVersion> versions;
+    private OneToMany<LocationVersion> versions;
 
     private Boolean isDeleted;
 
@@ -289,12 +289,12 @@ public class Location extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("versions")
-    public List<LocationVersion> getVersions() {
+    public OneToMany<LocationVersion> getVersions() {
         return versions;
     }
 
     @JsonProperty("versions")
-    public void setVersions(List<LocationVersion> versions) {
+    public void setVersions(OneToMany<LocationVersion> versions) {
         this.versions = versions;
     }
 

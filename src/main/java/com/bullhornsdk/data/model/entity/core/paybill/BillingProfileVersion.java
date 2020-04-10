@@ -1,7 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill;
 
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate;
-import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -17,12 +16,12 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * Created by fayranne.lipton 4/3/2020
+ * Created by fayranne.lipton 4/7/2020
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "bccRecipients", "billingAttention", "billingClientCorporation",
-    "billingContact", "billingCorporateUser", "billingLocation", "ccRecipients", "clientCorporation",
+    "billingContact", "billingCorporateUser", "ccRecipients",
     "customDate1", "customDate2", "customDate3",
     "customFloat1", "customFloat2", "customFloat3", "customInt1",
     "customInt2", "customInt3", "customText1", "customText10",
@@ -33,10 +32,10 @@ import java.util.Objects;
     "customText8", "customText9", "customTextBlock1", "customTextBlock2",
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "deliveryMethod", "description", "effectiveDate",
-    "effectiveEndDate", "externalID", "invoiceStatementMessageTemplate", "invoiceTerm",
-    "isDeleted", "owner", "toRecipients", "status", "title", "versionID", "versions" })
-public class BillingProfile extends CustomFieldsB implements QueryEntity,
-    UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity {
+    "effectiveEndDate", "externalID", "invoiceStatementMessageTemplate", "isFirst", "status",
+    "title", "toRecipients" })
+public class BillingProfileVersion extends CustomFieldsB implements QueryEntity,
+    UpdateEntity, CreateEntity, DateLastModifiedEntity, EffectiveDateEntity {
 
     private Integer id;
 
@@ -51,11 +50,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     private CorporateUser billingCorporateUser;
 
-    private Location billingLocation;
-
     private OneToMany<Person> ccRecipients;
-
-    private ClientCorporation clientCorporation;
 
     private DateTime dateAdded;
 
@@ -76,11 +71,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     private InvoiceStatementMessageTemplate invoiceStatementMessageTemplate;
 
-    private InvoiceTerm invoiceTerm;
-
-    private boolean isDeleted;
-
-    private CorporateUser owner;
+    private boolean isFirst;
 
     private OneToMany<Person> toRecipients;
 
@@ -90,14 +81,10 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     @JsonIgnore
     private String title;
 
-    private Integer versionID;
-
-    private OneToMany<BillingProfileVersion> versions;
-
-    public BillingProfile() {
+    public BillingProfileVersion() {
     }
 
-    public BillingProfile(Integer id) {
+    public BillingProfileVersion(Integer id) {
         this.id = id;
     }
 
@@ -164,16 +151,6 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.billingCorporateUser = billingCorporateUser;
     }
 
-    @JsonProperty("billingLocation")
-    public Location getBillingLocation() {
-        return billingLocation;
-    }
-
-    @JsonProperty("billingLocation")
-    public void setBillingLocation(Location billingLocation) {
-        this.billingLocation = billingLocation;
-    }
-
     @JsonIgnore
     public OneToMany<Person> getCcRecipients() {
         return ccRecipients;
@@ -182,16 +159,6 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     @JsonProperty("ccRecipients")
     public void setCcRecipients(OneToMany<Person> ccRecipients) {
         this.ccRecipients = ccRecipients;
-    }
-
-    @JsonProperty("clientCorporation")
-    public ClientCorporation getClientCorporation() {
-        return clientCorporation;
-    }
-
-    @JsonProperty("clientCorporation")
-    public void setClientCorporation(ClientCorporation clientCorporation) {
-        this.clientCorporation = clientCorporation;
     }
 
     @JsonProperty("dateAdded")
@@ -276,34 +243,14 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.invoiceStatementMessageTemplate = invoiceStatementMessageTemplate;
     }
 
-    @JsonProperty("invoiceTerm")
-    public InvoiceTerm getInvoiceTerm() {
-        return invoiceTerm;
+    @JsonProperty("isFirst")
+    public Boolean getIsFirst() {
+        return isFirst;
     }
 
-    @JsonProperty("invoiceTerm")
-    public void setInvoiceTerm(InvoiceTerm invoiceTerm) {
-        this.invoiceTerm = invoiceTerm;
-    }
-
-    @JsonProperty("isDeleted")
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    @JsonProperty("isDeleted")
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    @JsonProperty("owner")
-    public CorporateUser getOwner() {
-        return owner;
-    }
-
-    @JsonProperty("owner")
-    public void setOwner(CorporateUser owner) {
-        this.owner = owner;
+    @JsonProperty("isFirst")
+    public void setIsFirst(Boolean isFirst) {
+        this.isFirst = isFirst;
     }
 
     @JsonIgnore
@@ -336,42 +283,20 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.title = title;
     }
 
-    @JsonProperty("versionID")
-    public Integer getVersionID() {
-        return versionID;
-    }
-
-    @JsonIgnore
-    public void setVersionID(Integer versionID) {
-        this.versionID = versionID;
-    }
-
-    @JsonIgnore
-    public OneToMany<BillingProfileVersion> getVersions() {
-        return versions;
-    }
-
-    @JsonProperty("versions")
-    public void setVersions(OneToMany<BillingProfileVersion> versions) {
-        this.versions = versions;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        BillingProfile that = (BillingProfile) o;
-        return isDeleted == that.isDeleted &&
+        BillingProfileVersion that = (BillingProfileVersion) o;
+        return isFirst == that.isFirst &&
             Objects.equals(id, that.id) &&
             Objects.equals(bccRecipients, that.bccRecipients) &&
             Objects.equals(billingAttention, that.billingAttention) &&
             Objects.equals(billingClientCorporation, that.billingClientCorporation) &&
             Objects.equals(billingContact, that.billingContact) &&
             Objects.equals(billingCorporateUser, that.billingCorporateUser) &&
-            Objects.equals(billingLocation, that.billingLocation) &&
             Objects.equals(ccRecipients, that.ccRecipients) &&
-            Objects.equals(clientCorporation, that.clientCorporation) &&
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
             Objects.equals(deliveryMethod, that.deliveryMethod) &&
@@ -380,32 +305,26 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
             Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
             Objects.equals(externalID, that.externalID) &&
             Objects.equals(invoiceStatementMessageTemplate, that.invoiceStatementMessageTemplate) &&
-            Objects.equals(invoiceTerm, that.invoiceTerm) &&
-            Objects.equals(owner, that.owner) &&
             Objects.equals(toRecipients, that.toRecipients) &&
             Objects.equals(status, that.status) &&
-            Objects.equals(title, that.title) &&
-            Objects.equals(versionID, that.versionID) &&
-            Objects.equals(versions, that.versions);
+            Objects.equals(title, that.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, bccRecipients, billingAttention, billingClientCorporation, billingContact, billingCorporateUser, billingLocation, ccRecipients, clientCorporation, dateAdded, dateLastModified, deliveryMethod, description, effectiveDate, effectiveEndDate, externalID, invoiceStatementMessageTemplate, invoiceTerm, isDeleted, owner, toRecipients, status, title, versionID, versions);
+        return Objects.hash(super.hashCode(), id, bccRecipients, billingAttention, billingClientCorporation, billingContact, billingCorporateUser, ccRecipients, dateAdded, dateLastModified, deliveryMethod, description, effectiveDate, effectiveEndDate, externalID, invoiceStatementMessageTemplate, isFirst, toRecipients, status, title);
     }
 
     @Override
     public String toString() {
-        return "BillingProfile{" +
+        return "BillingProfileVersion{" +
             "id=" + id +
             ", bccRecipients=" + bccRecipients +
             ", billingAttention='" + billingAttention + '\'' +
             ", billingClientCorporation=" + billingClientCorporation +
             ", billingContact=" + billingContact +
             ", billingCorporateUser=" + billingCorporateUser +
-            ", billingLocation=" + billingLocation +
             ", ccRecipients=" + ccRecipients +
-            ", clientCorporation=" + clientCorporation +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
             ", deliveryMethod='" + deliveryMethod + '\'' +
@@ -414,14 +333,10 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
             ", effectiveEndDate=" + effectiveEndDate +
             ", externalID='" + externalID + '\'' +
             ", invoiceStatementMessageTemplate=" + invoiceStatementMessageTemplate +
-            ", invoiceTerm=" + invoiceTerm +
-            ", isDeleted=" + isDeleted +
-            ", owner=" + owner +
+            ", isFirst=" + isFirst +
             ", toRecipients=" + toRecipients +
             ", status='" + status + '\'' +
             ", title='" + title + '\'' +
-            ", versionID=" + versionID +
-            ", versions=" + versions +
             '}';
     }
 }
