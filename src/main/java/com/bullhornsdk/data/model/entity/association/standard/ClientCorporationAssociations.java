@@ -2,7 +2,41 @@ package com.bullhornsdk.data.model.entity.association.standard;
 
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance11;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance12;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance13;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance14;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance15;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance16;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance17;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance18;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance19;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance20;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance21;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance22;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance23;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance24;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance25;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance26;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance27;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance28;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance29;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance30;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance31;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance32;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance33;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance34;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance35;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.standard.Certification;
 import com.bullhornsdk.data.model.entity.core.standard.CertificationGroup;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
@@ -38,8 +72,33 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", ClientCorporationCustomObjectInstance8.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", ClientCorporationCustomObjectInstance9.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", ClientCorporationCustomObjectInstance10.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance11> customObject11s = instantiateAssociationField("customObject11s", ClientCorporationCustomObjectInstance11.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance12> customObject12s = instantiateAssociationField("customObject12s", ClientCorporationCustomObjectInstance12.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance13> customObject13s = instantiateAssociationField("customObject13s", ClientCorporationCustomObjectInstance13.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance14> customObject14s = instantiateAssociationField("customObject14s", ClientCorporationCustomObjectInstance14.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance15> customObject15s = instantiateAssociationField("customObject15s", ClientCorporationCustomObjectInstance15.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance16> customObject16s = instantiateAssociationField("customObject16s", ClientCorporationCustomObjectInstance16.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance17> customObject17s = instantiateAssociationField("customObject17s", ClientCorporationCustomObjectInstance17.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance18> customObject18s = instantiateAssociationField("customObject18s", ClientCorporationCustomObjectInstance18.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance19> customObject19s = instantiateAssociationField("customObject19s", ClientCorporationCustomObjectInstance19.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance20> customObject20s = instantiateAssociationField("customObject20s", ClientCorporationCustomObjectInstance20.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance21> customObject21s = instantiateAssociationField("customObject21s", ClientCorporationCustomObjectInstance21.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance22> customObject22s = instantiateAssociationField("customObject22s", ClientCorporationCustomObjectInstance22.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance23> customObject23s = instantiateAssociationField("customObject23s", ClientCorporationCustomObjectInstance23.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance24> customObject24s = instantiateAssociationField("customObject24s", ClientCorporationCustomObjectInstance24.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance25> customObject25s = instantiateAssociationField("customObject25s", ClientCorporationCustomObjectInstance25.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance26> customObject26s = instantiateAssociationField("customObject26s", ClientCorporationCustomObjectInstance26.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance27> customObject27s = instantiateAssociationField("customObject27s", ClientCorporationCustomObjectInstance27.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance28> customObject28s = instantiateAssociationField("customObject28s", ClientCorporationCustomObjectInstance28.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance29> customObject29s = instantiateAssociationField("customObject29s", ClientCorporationCustomObjectInstance29.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance30> customObject30s = instantiateAssociationField("customObject30s", ClientCorporationCustomObjectInstance30.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance31> customObject31s = instantiateAssociationField("customObject31s", ClientCorporationCustomObjectInstance31.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance32> customObject32s = instantiateAssociationField("customObject32s", ClientCorporationCustomObjectInstance32.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance33> customObject33s = instantiateAssociationField("customObject33s", ClientCorporationCustomObjectInstance33.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance34> customObject34s = instantiateAssociationField("customObject34s", ClientCorporationCustomObjectInstance34.class);
+    private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance35> customObject35s = instantiateAssociationField("customObject35s", ClientCorporationCustomObjectInstance35.class);
 
-    private ClientCorporationAssociations() {
+    public ClientCorporationAssociations() {
         super();
     }
 
@@ -102,6 +161,106 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
         return customObject10s;
     }
 
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance11> customObject11s() {
+        return customObject11s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance12> customObject12s() {
+        return customObject12s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance13> customObject13s() {
+        return customObject13s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance14> customObject14s() {
+        return customObject14s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance15> customObject15s() {
+        return customObject15s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance16> customObject16s() {
+        return customObject16s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance17> customObject17s() {
+        return customObject17s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance18> customObject18s() {
+        return customObject18s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance19> customObject19s() {
+        return customObject19s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance20> customObject20s() {
+        return customObject20s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance21> customObject21s() {
+        return customObject21s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance22> customObject22s() {
+        return customObject22s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance23> customObject23s() {
+        return customObject23s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance24> customObject24s() {
+        return customObject24s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance25> customObject25s() {
+        return customObject25s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance26> customObject26s() {
+        return customObject26s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance27> customObject27s() {
+        return customObject27s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance28> customObject28s() {
+        return customObject28s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance29> customObject29s() {
+        return customObject29s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance30> customObject30s() {
+        return customObject30s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance31> customObject31s() {
+        return customObject31s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance32> customObject32s() {
+        return customObject32s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance33> customObject33s() {
+        return customObject33s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance34> customObject34s() {
+        return customObject34s;
+    }
+
+    public AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance35> customObject35s() {
+        return customObject35s;
+    }
+
 
     private <E extends BullhornEntity> AssociationField<ClientCorporation, E> instantiateAssociationField(String associationName,
                                                                                                       Class<E> associationType) {
@@ -126,6 +285,31 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
+            allAssociations.add(customObject11s());
+            allAssociations.add(customObject12s());
+            allAssociations.add(customObject13s());
+            allAssociations.add(customObject14s());
+            allAssociations.add(customObject15s());
+            allAssociations.add(customObject16s());
+            allAssociations.add(customObject17s());
+            allAssociations.add(customObject18s());
+            allAssociations.add(customObject19s());
+            allAssociations.add(customObject20s());
+            allAssociations.add(customObject21s());
+            allAssociations.add(customObject22s());
+            allAssociations.add(customObject23s());
+            allAssociations.add(customObject24s());
+            allAssociations.add(customObject25s());
+            allAssociations.add(customObject26s());
+            allAssociations.add(customObject27s());
+            allAssociations.add(customObject28s());
+            allAssociations.add(customObject29s());
+            allAssociations.add(customObject30s());
+            allAssociations.add(customObject31s());
+            allAssociations.add(customObject32s());
+            allAssociations.add(customObject33s());
+            allAssociations.add(customObject34s());
+            allAssociations.add(customObject35s());
         }
         return allAssociations;
 

@@ -1,16 +1,16 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -53,9 +53,9 @@ import javax.validation.constraints.Size;
 		"description", "desiredCategories", "desiredSkills",
 		"desiredSpecialties", "division", "email", "email2", "email3",
 		"externalID", "fax", "fax2", "fax3", "firstName", "isDayLightSavings",
-		"isDeleted", "isLockedOut", "lastName", "linkedPerson", "leads",
+        "isDefaultContact", "isDeleted", "isLockedOut", "lastName", "linkedPerson", "leads",
 		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name",
-		"namePrefix", "nameSuffix", "nickName", "numEmployees", "occupation",
+		"namePrefix", "nameSuffix", "nickName", "notes", "numEmployees", "occupation",
 		"office", "owner", "pager", "password", "phone", "phone2", "phone3",
 		"preferredContact", "referredByPerson", "reportToPerson",
 		"secondaryAddress", "secondaryOwners", "skills", "smsOptIn", "source",
@@ -152,9 +152,11 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
 	private Boolean isDayLightSavings;
 
-	private Boolean isDeleted;
+    private Boolean isDefaultContact;
 
-	private Boolean isLockedOut;
+    private Boolean isDeleted;
+
+    private Boolean isLockedOut;
 
 	@JsonIgnore
 	@Size(max = 50)
@@ -189,6 +191,8 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
 	@JsonIgnore
 	private String nickName;
+
+    private OneToMany<Note> notes;
 
 	private Integer numEmployees;
 
@@ -608,6 +612,16 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 		this.isDayLightSavings = isDayLightSavings;
 	}
 
+    @JsonProperty("isDefaultContact")
+    public Boolean getIsDefaultContact() {
+        return isDefaultContact;
+    }
+
+    @JsonProperty("isDefaultContact")
+    public void setIsDefaultContact(Boolean isDefaultContact) {
+        this.isDefaultContact = isDefaultContact;
+    }
+
 	@JsonProperty("isDeleted")
 	public Boolean getIsDeleted() {
 		return isDeleted;
@@ -737,6 +751,17 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+
+    @JsonProperty("notes")
+    public OneToMany<Note> getNotes() {
+        return notes;
+    }
+
+    @ReadOnly
+    @JsonProperty("notes")
+    public void setNotes(OneToMany<Note> notes) {
+        this.notes = notes;
+    }
 
 	@JsonProperty("numEmployees")
 	public Integer getNumEmployees() {
@@ -1147,6 +1172,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         if (firstName != null ? !firstName.equals(that.firstName) : that.firstName != null) return false;
         if (isDayLightSavings != null ? !isDayLightSavings.equals(that.isDayLightSavings) : that.isDayLightSavings != null)
             return false;
+        if (isDefaultContact != null ? !isDefaultContact.equals(that.isDefaultContact) : that.isDefaultContact != null) return false;
         if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
         if (isLockedOut != null ? !isLockedOut.equals(that.isLockedOut) : that.isLockedOut != null) return false;
         if (lastName != null ? !lastName.equals(that.lastName) : that.lastName != null) return false;
@@ -1161,6 +1187,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         if (namePrefix != null ? !namePrefix.equals(that.namePrefix) : that.namePrefix != null) return false;
         if (nameSuffix != null ? !nameSuffix.equals(that.nameSuffix) : that.nameSuffix != null) return false;
         if (nickName != null ? !nickName.equals(that.nickName) : that.nickName != null) return false;
+        if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
         if (numEmployees != null ? !numEmployees.equals(that.numEmployees) : that.numEmployees != null) return false;
         if (occupation != null ? !occupation.equals(that.occupation) : that.occupation != null) return false;
         if (office != null ? !office.equals(that.office) : that.office != null) return false;
@@ -1244,6 +1271,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (isDayLightSavings != null ? isDayLightSavings.hashCode() : 0);
+        result = 31 * result + (isDefaultContact != null ? isDefaultContact.hashCode() : 0);
         result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
         result = 31 * result + (isLockedOut != null ? isLockedOut.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
@@ -1257,6 +1285,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         result = 31 * result + (namePrefix != null ? namePrefix.hashCode() : 0);
         result = 31 * result + (nameSuffix != null ? nameSuffix.hashCode() : 0);
         result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
         result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
         result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
         result = 31 * result + (office != null ? office.hashCode() : 0);
@@ -1326,6 +1355,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         sb.append(", fax3='").append(fax3).append('\'');
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", isDayLightSavings=").append(isDayLightSavings);
+        sb.append(", isDefaultContact=").append(isDefaultContact);
         sb.append(", isDeleted=").append(isDeleted);
         sb.append(", isLockedOut=").append(isLockedOut);
         sb.append(", lastName='").append(lastName).append('\'');
@@ -1339,6 +1369,7 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
         sb.append(", namePrefix='").append(namePrefix).append('\'');
         sb.append(", nameSuffix='").append(nameSuffix).append('\'');
         sb.append(", nickName='").append(nickName).append('\'');
+        sb.append(", notes=").append(notes);
         sb.append(", numEmployees=").append(numEmployees);
         sb.append(", occupation='").append(occupation).append('\'');
         sb.append(", office='").append(office).append('\'');

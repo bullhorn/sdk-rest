@@ -238,6 +238,28 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 
     }
 
+    @Test
+    public void testCreateClientContactWithExecuteFormTriggers() {
+
+        ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        bullhornData.setExecuteFormTriggers(true);
+        CreateResponse response = bullhornData.insertEntity(entity);
+        bullhornData.setExecuteFormTriggers(!bullhornData.getExecuteFormTriggers());
+
+        ClientContact newEntity = bullhornData.findEntity(ClientContact.class, response.getChangedEntityId());
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) ClientContact.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+
+    }
+
     // @Test
     public void testCreateClientCorporation() {
 

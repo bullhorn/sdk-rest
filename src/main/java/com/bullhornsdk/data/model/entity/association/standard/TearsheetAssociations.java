@@ -25,7 +25,7 @@ public final class TearsheetAssociations implements EntityAssociations<Tearsheet
 	private List<AssociationField<Tearsheet, ? extends BullhornEntity>> allAssociations;
 	private static final TearsheetAssociations INSTANCE = new TearsheetAssociations();
 
-	private TearsheetAssociations() {
+    public TearsheetAssociations() {
 		super();
 	}
 

@@ -6,19 +6,20 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.joda.time.DateTime;
 
 /**
  * Common custom fields for Placement and PlacementChangeRequest:
  * 
- * customDate 1-3
+ * customDate 1-13
  * 
- * customFloat 1-3
+ * customFloat 1-23
  * 
- * customInt 1-3
+ * customInt 1-23
  * 
- * customText 1-40
+ * customText 1-60
  * 
- * customTextBlock 1-5
+ * customTextBlock 1-10
  * 
  * correlatedCustomDate 1-3
  * 
@@ -188,6 +189,705 @@ public class CustomFieldsD extends CustomFieldsC {
 	@JsonIgnore
 	@Size(max = 100)
 	private String customText40;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText41;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText42;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText43;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText44;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText45;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText46;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText47;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText48;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText49;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText50;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText51;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText52;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText53;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText54;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText55;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText56;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText57;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText58;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText59;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String customText60;
+
+    @JsonIgnore
+    private String customTextBlock6;
+
+    @JsonIgnore
+    private String customTextBlock7;
+
+    @JsonIgnore
+    private String customTextBlock8;
+
+    @JsonIgnore
+    private String customTextBlock9;
+
+    @JsonIgnore
+    private String customTextBlock10;
+
+    private DateTime customDate4;
+    private DateTime customDate5;
+    private DateTime customDate6;
+    private DateTime customDate7;
+    private DateTime customDate8;
+    private DateTime customDate9;
+    private DateTime customDate10;
+    private DateTime customDate11;
+    private DateTime customDate12;
+    private DateTime customDate13;
+
+    private Integer customInt4;
+    private Integer customInt5;
+    private Integer customInt6;
+    private Integer customInt7;
+    private Integer customInt8;
+    private Integer customInt9;
+    private Integer customInt10;
+    private Integer customInt11;
+    private Integer customInt12;
+    private Integer customInt13;
+    private Integer customInt14;
+    private Integer customInt15;
+    private Integer customInt16;
+    private Integer customInt17;
+    private Integer customInt18;
+    private Integer customInt19;
+    private Integer customInt20;
+    private Integer customInt21;
+    private Integer customInt22;
+    private Integer customInt23;
+
+    private BigDecimal customFloat4;
+    private BigDecimal customFloat5;
+    private BigDecimal customFloat6;
+    private BigDecimal customFloat7;
+    private BigDecimal customFloat8;
+    private BigDecimal customFloat9;
+    private BigDecimal customFloat10;
+    private BigDecimal customFloat11;
+    private BigDecimal customFloat12;
+    private BigDecimal customFloat13;
+    private BigDecimal customFloat14;
+    private BigDecimal customFloat15;
+    private BigDecimal customFloat16;
+    private BigDecimal customFloat17;
+    private BigDecimal customFloat18;
+    private BigDecimal customFloat19;
+    private BigDecimal customFloat20;
+    private BigDecimal customFloat21;
+    private BigDecimal customFloat22;
+    private BigDecimal customFloat23;
+
+    @JsonProperty("customFloat4")
+    public BigDecimal getCustomFloat4() {
+        return customFloat4;
+    }
+
+    @JsonProperty("customFloat4")
+    public void setCustomFloat4(BigDecimal customFloat4) {
+        this.customFloat4 = customFloat4;
+    }
+
+    @JsonProperty("customFloat5")
+    public BigDecimal getCustomFloat5() {
+        return customFloat5;
+    }
+
+    @JsonProperty("customFloat5")
+    public void setCustomFloat5(BigDecimal customFloat5) {
+        this.customFloat5 = customFloat5;
+    }
+
+    @JsonProperty("customFloat6")
+    public BigDecimal getCustomFloat6() {
+        return customFloat6;
+    }
+
+    @JsonProperty("customFloat6")
+    public void setCustomFloat6(BigDecimal customFloat6) {
+        this.customFloat6 = customFloat6;
+    }
+
+    @JsonProperty("customFloat7")
+    public BigDecimal getCustomFloat7() {
+        return customFloat7;
+    }
+
+    @JsonProperty("customFloat7")
+    public void setCustomFloat7(BigDecimal customFloat7) {
+        this.customFloat7 = customFloat7;
+    }
+
+    @JsonProperty("customFloat8")
+    public BigDecimal getCustomFloat8() {
+        return customFloat8;
+    }
+
+    @JsonProperty("customFloat8")
+    public void setCustomFloat8(BigDecimal customFloat8) {
+        this.customFloat8 = customFloat8;
+    }
+
+    @JsonProperty("customFloat9")
+    public BigDecimal getCustomFloat9() {
+        return customFloat9;
+    }
+
+    @JsonProperty("customFloat9")
+    public void setCustomFloat9(BigDecimal customFloat9) {
+        this.customFloat9 = customFloat9;
+    }
+
+    @JsonProperty("customFloat10")
+    public BigDecimal getCustomFloat10() {
+        return customFloat10;
+    }
+
+    @JsonProperty("customFloat10")
+    public void setCustomFloat10(BigDecimal customFloat10) {
+        this.customFloat10 = customFloat10;
+    }
+
+    @JsonProperty("customFloat11")
+    public BigDecimal getCustomFloat11() {
+        return customFloat11;
+    }
+
+    @JsonProperty("customFloat11")
+    public void setCustomFloat11(BigDecimal customFloat11) {
+        this.customFloat11 = customFloat11;
+    }
+
+    @JsonProperty("customFloat12")
+    public BigDecimal getCustomFloat12() {
+        return customFloat12;
+    }
+
+    @JsonProperty("customFloat12")
+    public void setCustomFloat12(BigDecimal customFloat12) {
+        this.customFloat12 = customFloat12;
+    }
+
+    @JsonProperty("customFloat13")
+    public BigDecimal getCustomFloat13() {
+        return customFloat13;
+    }
+
+    @JsonProperty("customFloat13")
+    public void setCustomFloat13(BigDecimal customFloat13) {
+        this.customFloat13 = customFloat13;
+    }
+
+    @JsonProperty("customFloat14")
+    public BigDecimal getCustomFloat14() {
+        return customFloat14;
+    }
+
+    @JsonProperty("customFloat14")
+    public void setCustomFloat14(BigDecimal customFloat14) {
+        this.customFloat14 = customFloat14;
+    }
+
+    @JsonProperty("customFloat15")
+    public BigDecimal getCustomFloat15() {
+        return customFloat15;
+    }
+
+    @JsonProperty("customFloat15")
+    public void setCustomFloat15(BigDecimal customFloat15) {
+        this.customFloat15 = customFloat15;
+    }
+
+    @JsonProperty("customFloat16")
+    public BigDecimal getCustomFloat16() {
+        return customFloat16;
+    }
+
+    @JsonProperty("customFloat16")
+    public void setCustomFloat16(BigDecimal customFloat16) {
+        this.customFloat16 = customFloat16;
+    }
+
+    @JsonProperty("customFloat17")
+    public BigDecimal getCustomFloat17() {
+        return customFloat17;
+    }
+
+    @JsonProperty("customFloat17")
+    public void setCustomFloat17(BigDecimal customFloat17) {
+        this.customFloat17 = customFloat17;
+    }
+
+    @JsonProperty("customFloat18")
+    public BigDecimal getCustomFloat18() {
+        return customFloat18;
+    }
+
+    @JsonProperty("customFloat18")
+    public void setCustomFloat18(BigDecimal customFloat18) {
+        this.customFloat18 = customFloat18;
+    }
+
+    @JsonProperty("customFloat19")
+    public BigDecimal getCustomFloat19() {
+        return customFloat19;
+    }
+
+    @JsonProperty("customFloat19")
+    public void setCustomFloat19(BigDecimal customFloat19) {
+        this.customFloat19 = customFloat19;
+    }
+
+    @JsonProperty("customFloat20")
+    public BigDecimal getCustomFloat20() {
+        return customFloat20;
+    }
+
+    @JsonProperty("customFloat20")
+    public void setCustomFloat20(BigDecimal customFloat20) {
+        this.customFloat20 = customFloat20;
+    }
+
+    @JsonProperty("customFloat21")
+    public BigDecimal getCustomFloat21() {
+        return customFloat21;
+    }
+
+    @JsonProperty("customFloat21")
+    public void setCustomFloat21(BigDecimal customFloat21) {
+        this.customFloat21 = customFloat21;
+    }
+
+    @JsonProperty("customFloat22")
+    public BigDecimal getCustomFloat22() {
+        return customFloat22;
+    }
+
+    @JsonProperty("customFloat22")
+    public void setCustomFloat22(BigDecimal customFloat22) {
+        this.customFloat22 = customFloat22;
+    }
+
+    @JsonProperty("customFloat23")
+    public BigDecimal getCustomFloat23() {
+        return customFloat23;
+    }
+
+    @JsonProperty("customFloat23")
+    public void setCustomFloat23(BigDecimal customFloat23) {
+        this.customFloat23 = customFloat23;
+    }
+
+    @JsonProperty("customInt4")
+    public Integer getCustomInt4() {
+        return customInt4;
+    }
+
+    @JsonProperty("customInt4")
+    public void setCustomInt4(Integer customInt4) {
+        this.customInt4 = customInt4;
+    }
+
+    @JsonProperty("customInt5")
+    public Integer getCustomInt5() {
+        return customInt5;
+    }
+
+    @JsonProperty("customInt5")
+    public void setCustomInt5(Integer customInt5) {
+        this.customInt5 = customInt5;
+    }
+
+    @JsonProperty("customInt6")
+    public Integer getCustomInt6() {
+        return customInt6;
+    }
+
+    @JsonProperty("customInt6")
+    public void setCustomInt6(Integer customInt6) {
+        this.customInt6 = customInt6;
+    }
+
+    @JsonProperty("customInt7")
+    public Integer getCustomInt7() {
+        return customInt7;
+    }
+
+    @JsonProperty("customInt7")
+    public void setCustomInt7(Integer customInt7) {
+        this.customInt7 = customInt7;
+    }
+
+    @JsonProperty("customInt8")
+    public Integer getCustomInt8() {
+        return customInt8;
+    }
+
+    @JsonProperty("customInt8")
+    public void setCustomInt8(Integer customInt8) {
+        this.customInt8 = customInt8;
+    }
+
+    @JsonProperty("customInt9")
+    public Integer getCustomInt9() {
+        return customInt9;
+    }
+
+    @JsonProperty("customInt9")
+    public void setCustomInt9(Integer customInt9) {
+        this.customInt9 = customInt9;
+    }
+
+    @JsonProperty("customInt10")
+    public Integer getCustomInt10() {
+        return customInt10;
+    }
+
+    @JsonProperty("customInt10")
+    public void setCustomInt10(Integer customInt10) {
+        this.customInt10 = customInt10;
+    }
+
+    @JsonProperty("customInt11")
+    public Integer getCustomInt11() {
+        return customInt11;
+    }
+
+    @JsonProperty("customInt11")
+    public void setCustomInt11(Integer customInt11) {
+        this.customInt11 = customInt11;
+    }
+
+    @JsonProperty("customInt12")
+    public Integer getCustomInt12() {
+        return customInt12;
+    }
+
+    @JsonProperty("customInt12")
+    public void setCustomInt12(Integer customInt12) {
+        this.customInt12 = customInt12;
+    }
+
+    @JsonProperty("customInt13")
+    public Integer getCustomInt13() {
+        return customInt13;
+    }
+
+    @JsonProperty("customInt13")
+    public void setCustomInt13(Integer customInt13) {
+        this.customInt13 = customInt13;
+    }
+
+    @JsonProperty("customInt14")
+    public Integer getCustomInt14() {
+        return customInt14;
+    }
+
+    @JsonProperty("customInt14")
+    public void setCustomInt14(Integer customInt14) {
+        this.customInt14 = customInt14;
+    }
+
+    @JsonProperty("customInt15")
+    public Integer getCustomInt15() {
+        return customInt15;
+    }
+
+    @JsonProperty("customInt15")
+    public void setCustomInt15(Integer customInt15) {
+        this.customInt15 = customInt15;
+    }
+
+    @JsonProperty("customInt16")
+    public Integer getCustomInt16() {
+        return customInt16;
+    }
+
+    @JsonProperty("customInt16")
+    public void setCustomInt16(Integer customInt16) {
+        this.customInt16 = customInt16;
+    }
+
+    @JsonProperty("customInt17")
+    public Integer getCustomInt17() {
+        return customInt17;
+    }
+
+    @JsonProperty("customInt17")
+    public void setCustomInt17(Integer customInt17) {
+        this.customInt17 = customInt17;
+    }
+
+    @JsonProperty("customInt18")
+    public Integer getCustomInt18() {
+        return customInt18;
+    }
+
+    @JsonProperty("customInt18")
+    public void setCustomInt18(Integer customInt18) {
+        this.customInt18 = customInt18;
+    }
+
+    @JsonProperty("customInt19")
+    public Integer getCustomInt19() {
+        return customInt19;
+    }
+
+    @JsonProperty("customInt19")
+    public void setCustomInt19(Integer customInt19) {
+        this.customInt19 = customInt19;
+    }
+
+    @JsonProperty("customInt20")
+    public Integer getCustomInt20() {
+        return customInt20;
+    }
+
+    @JsonProperty("customInt20")
+    public void setCustomInt20(Integer customInt20) {
+        this.customInt20 = customInt20;
+    }
+
+    @JsonProperty("customInt21")
+    public Integer getCustomInt21() {
+        return customInt21;
+    }
+
+    @JsonProperty("customInt21")
+    public void setCustomInt21(Integer customInt21) {
+        this.customInt21 = customInt21;
+    }
+
+    @JsonProperty("customInt22")
+    public Integer getCustomInt22() {
+        return customInt22;
+    }
+
+    @JsonProperty("customInt22")
+    public void setCustomInt22(Integer customInt22) {
+        this.customInt22 = customInt22;
+    }
+
+    @JsonProperty("customInt23")
+    public Integer getCustomInt23() {
+        return customInt23;
+    }
+
+    @JsonProperty("customInt23")
+    public void setCustomInt23(Integer customInt23) {
+        this.customInt23 = customInt23;
+    }
+
+    @JsonProperty("customDate4")
+    public DateTime getCustomDate4() {
+        return customDate4;
+    }
+
+    @JsonProperty("customDate4")
+    public void setCustomDate4(DateTime customDate4) {
+        this.customDate4 = customDate4;
+    }
+
+    @JsonProperty("customDate5")
+    public DateTime getCustomDate5() {
+        return customDate5;
+    }
+
+    @JsonProperty("customDate5")
+    public void setCustomDate5(DateTime customDate5) {
+        this.customDate5 = customDate5;
+    }
+
+    @JsonProperty("customDate6")
+    public DateTime getCustomDate6() {
+        return customDate6;
+    }
+
+    @JsonProperty("customDate6")
+    public void setCustomDate6(DateTime customDate6) {
+        this.customDate6 = customDate6;
+    }
+
+    @JsonProperty("customDate7")
+    public DateTime getCustomDate7() {
+        return customDate7;
+    }
+
+    @JsonProperty("customDate7")
+    public void setCustomDate7(DateTime customDate7) {
+        this.customDate7 = customDate7;
+    }
+
+    @JsonProperty("customDate8")
+    public DateTime getCustomDate8() {
+        return customDate8;
+    }
+
+    @JsonProperty("customDate8")
+    public void setCustomDate8(DateTime customDate8) {
+        this.customDate8 = customDate8;
+    }
+
+    @JsonProperty("customDate9")
+    public DateTime getCustomDate9() {
+        return customDate9;
+    }
+
+    @JsonProperty("customDate9")
+    public void setCustomDate9(DateTime customDate9) {
+        this.customDate9 = customDate9;
+    }
+
+    @JsonProperty("customDate10")
+    public DateTime getCustomDate10() {
+        return customDate10;
+    }
+
+    @JsonProperty("customDate10")
+    public void setCustomDate10(DateTime customDate10) {
+        this.customDate10 = customDate10;
+    }
+
+    @JsonProperty("customDate11")
+    public DateTime getCustomDate11() {
+        return customDate11;
+    }
+
+    @JsonProperty("customDate11")
+    public void setCustomDate11(DateTime customDate11) {
+        this.customDate11 = customDate11;
+    }
+
+    @JsonProperty("customDate12")
+    public DateTime getCustomDate12() {
+        return customDate12;
+    }
+
+    @JsonProperty("customDate12")
+    public void setCustomDate12(DateTime customDate12) {
+        this.customDate12 = customDate12;
+    }
+
+    @JsonProperty("customDate13")
+    public DateTime getCustomDate13() {
+        return customDate13;
+    }
+
+    @JsonProperty("customDate13")
+    public void setCustomDate13(DateTime customDate13) {
+        this.customDate13 = customDate13;
+    }
+
+
+    @JsonProperty("customTextBlock6")
+    public String getCustomTextBlock6() {
+        return customTextBlock6;
+    }
+
+    @JsonIgnore
+    public void setCustomTextBlock6(String customTextBlock6) {
+        this.customTextBlock6 = customTextBlock6;
+    }
+
+    @JsonProperty("customTextBlock7")
+    public String getCustomTextBlock7() {
+        return customTextBlock7;
+    }
+
+    @JsonIgnore
+    public void setCustomTextBlock7(String customTextBlock7) {
+        this.customTextBlock7 = customTextBlock7;
+    }
+
+    @JsonProperty("customTextBlock8")
+    public String getCustomTextBlock8() {
+        return customTextBlock8;
+    }
+
+    @JsonIgnore
+    public void setCustomTextBlock8(String customTextBlock8) {
+        this.customTextBlock8 = customTextBlock8;
+    }
+
+    @JsonProperty("customTextBlock9")
+    public String getCustomTextBlock9() {
+        return customTextBlock9;
+    }
+
+    @JsonIgnore
+    public void setCustomTextBlock9(String customTextBlock9) {
+        this.customTextBlock9 = customTextBlock9;
+    }
+
+    @JsonProperty("customTextBlock10")
+    public String getCustomTextBlock10() {
+        return customTextBlock10;
+    }
+
+    @JsonIgnore
+    public void setCustomTextBlock10(String customTextBlock10) {
+        this.customTextBlock10 = customTextBlock10;
+    }
 
 	@JsonProperty("customBillRate1")
 	public BigDecimal getCustomBillRate1() {
@@ -589,6 +1289,206 @@ public class CustomFieldsD extends CustomFieldsC {
 		this.customText40 = customText40;
 	}
 
+    @JsonProperty("customText41")
+    public String getCustomText41() {
+        return customText41;
+    }
+
+    @JsonIgnore
+    public void setCustomText41(String customText41) {
+        this.customText41 = customText41;
+    }
+
+    @JsonProperty("customText42")
+    public String getCustomText42() {
+        return customText42;
+    }
+
+    @JsonIgnore
+    public void setCustomText42(String customText42) {
+        this.customText42 = customText42;
+    }
+
+    @JsonProperty("customText43")
+    public String getCustomText43() {
+        return customText43;
+    }
+
+    @JsonIgnore
+    public void setCustomText43(String customText43) {
+        this.customText43 = customText43;
+    }
+
+    @JsonProperty("customText44")
+    public String getCustomText44() {
+        return customText44;
+    }
+
+    @JsonIgnore
+    public void setCustomText44(String customText44) {
+        this.customText44 = customText44;
+    }
+
+    @JsonProperty("customText45")
+    public String getCustomText45() {
+        return customText45;
+    }
+
+    @JsonIgnore
+    public void setCustomText45(String customText45) {
+        this.customText45 = customText45;
+    }
+
+    @JsonProperty("customText46")
+    public String getCustomText46() {
+        return customText46;
+    }
+
+    @JsonIgnore
+    public void setCustomText46(String customText46) {
+        this.customText46 = customText46;
+    }
+
+    @JsonProperty("customText47")
+    public String getCustomText47() {
+        return customText47;
+    }
+
+    @JsonIgnore
+    public void setCustomText47(String customText47) {
+        this.customText47 = customText47;
+    }
+
+    @JsonProperty("customText48")
+    public String getCustomText48() {
+        return customText48;
+    }
+
+    @JsonIgnore
+    public void setCustomText48(String customText48) {
+        this.customText48 = customText48;
+    }
+
+    @JsonProperty("customText49")
+    public String getCustomText49() {
+        return customText49;
+    }
+
+    @JsonIgnore
+    public void setCustomText49(String customText49) {
+        this.customText49 = customText49;
+    }
+
+    @JsonProperty("customText50")
+    public String getCustomText50() {
+        return customText50;
+    }
+
+    @JsonIgnore
+    public void setCustomText50(String customText50) {
+        this.customText50 = customText50;
+    }
+
+    @JsonProperty("customText51")
+    public String getCustomText51() {
+        return customText51;
+    }
+
+    @JsonIgnore
+    public void setCustomText51(String customText51) {
+        this.customText51 = customText51;
+    }
+
+    @JsonProperty("customText52")
+    public String getCustomText52() {
+        return customText52;
+    }
+
+    @JsonIgnore
+    public void setCustomText52(String customText52) {
+        this.customText52 = customText52;
+    }
+
+    @JsonProperty("customText53")
+    public String getCustomText53() {
+        return customText53;
+    }
+
+    @JsonIgnore
+    public void setCustomText53(String customText53) {
+        this.customText53 = customText53;
+    }
+
+    @JsonProperty("customText54")
+    public String getCustomText54() {
+        return customText54;
+    }
+
+    @JsonIgnore
+    public void setCustomText54(String customText54) {
+        this.customText54 = customText54;
+    }
+
+    @JsonProperty("customText55")
+    public String getCustomText55() {
+        return customText55;
+    }
+
+    @JsonIgnore
+    public void setCustomText55(String customText55) {
+        this.customText55 = customText55;
+    }
+
+    @JsonProperty("customText56")
+    public String getCustomText56() {
+        return customText56;
+    }
+
+    @JsonIgnore
+    public void setCustomText56(String customText56) {
+        this.customText56 = customText56;
+    }
+
+    @JsonProperty("customText57")
+    public String getCustomText57() {
+        return customText57;
+    }
+
+    @JsonIgnore
+    public void setCustomText57(String customText57) {
+        this.customText57 = customText57;
+    }
+
+    @JsonProperty("customText58")
+    public String getCustomText58() {
+        return customText58;
+    }
+
+    @JsonIgnore
+    public void setCustomText58(String customText58) {
+        this.customText58 = customText58;
+    }
+
+    @JsonProperty("customText59")
+    public String getCustomText59() {
+        return customText59;
+    }
+
+    @JsonIgnore
+    public void setCustomText59(String customText59) {
+        this.customText59 = customText59;
+    }
+
+    @JsonProperty("customText60")
+    public String getCustomText60() {
+        return customText60;
+    }
+
+    @JsonIgnore
+    public void setCustomText60(String customText60) {
+        this.customText60 = customText60;
+    }
+
     @JsonProperty("customEncryptedText1")
     public String getCustomEncryptedText1() {
         return customEncryptedText1;
@@ -699,390 +1599,450 @@ public class CustomFieldsD extends CustomFieldsC {
         this.customEncryptedText10 = customEncryptedText10;
     }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((customBillRate1 == null) ? 0 : customBillRate1.hashCode());
-		result = prime * result + ((customBillRate10 == null) ? 0 : customBillRate10.hashCode());
-		result = prime * result + ((customBillRate2 == null) ? 0 : customBillRate2.hashCode());
-		result = prime * result + ((customBillRate3 == null) ? 0 : customBillRate3.hashCode());
-		result = prime * result + ((customBillRate4 == null) ? 0 : customBillRate4.hashCode());
-		result = prime * result + ((customBillRate5 == null) ? 0 : customBillRate5.hashCode());
-		result = prime * result + ((customBillRate6 == null) ? 0 : customBillRate6.hashCode());
-		result = prime * result + ((customBillRate7 == null) ? 0 : customBillRate7.hashCode());
-		result = prime * result + ((customBillRate8 == null) ? 0 : customBillRate8.hashCode());
-		result = prime * result + ((customBillRate9 == null) ? 0 : customBillRate9.hashCode());
-		result = prime * result + ((customPayRate1 == null) ? 0 : customPayRate1.hashCode());
-		result = prime * result + ((customPayRate10 == null) ? 0 : customPayRate10.hashCode());
-		result = prime * result + ((customPayRate2 == null) ? 0 : customPayRate2.hashCode());
-		result = prime * result + ((customPayRate3 == null) ? 0 : customPayRate3.hashCode());
-		result = prime * result + ((customPayRate4 == null) ? 0 : customPayRate4.hashCode());
-		result = prime * result + ((customPayRate5 == null) ? 0 : customPayRate5.hashCode());
-		result = prime * result + ((customPayRate6 == null) ? 0 : customPayRate6.hashCode());
-		result = prime * result + ((customPayRate7 == null) ? 0 : customPayRate7.hashCode());
-		result = prime * result + ((customPayRate8 == null) ? 0 : customPayRate8.hashCode());
-		result = prime * result + ((customPayRate9 == null) ? 0 : customPayRate9.hashCode());
-		result = prime * result + ((customText21 == null) ? 0 : customText21.hashCode());
-		result = prime * result + ((customText22 == null) ? 0 : customText22.hashCode());
-		result = prime * result + ((customText23 == null) ? 0 : customText23.hashCode());
-		result = prime * result + ((customText24 == null) ? 0 : customText24.hashCode());
-		result = prime * result + ((customText25 == null) ? 0 : customText25.hashCode());
-		result = prime * result + ((customText26 == null) ? 0 : customText26.hashCode());
-		result = prime * result + ((customText27 == null) ? 0 : customText27.hashCode());
-		result = prime * result + ((customText28 == null) ? 0 : customText28.hashCode());
-		result = prime * result + ((customText29 == null) ? 0 : customText29.hashCode());
-		result = prime * result + ((customText30 == null) ? 0 : customText30.hashCode());
-		result = prime * result + ((customText31 == null) ? 0 : customText31.hashCode());
-		result = prime * result + ((customText32 == null) ? 0 : customText32.hashCode());
-		result = prime * result + ((customText33 == null) ? 0 : customText33.hashCode());
-		result = prime * result + ((customText34 == null) ? 0 : customText34.hashCode());
-		result = prime * result + ((customText35 == null) ? 0 : customText35.hashCode());
-		result = prime * result + ((customText36 == null) ? 0 : customText36.hashCode());
-		result = prime * result + ((customText37 == null) ? 0 : customText37.hashCode());
-		result = prime * result + ((customText38 == null) ? 0 : customText38.hashCode());
-		result = prime * result + ((customText39 == null) ? 0 : customText39.hashCode());
-		result = prime * result + ((customText40 == null) ? 0 : customText40.hashCode());
-		result = prime * result + ((customEncryptedText1 == null) ? 0 : customEncryptedText1.hashCode());
-		result = prime * result + ((customEncryptedText2 == null) ? 0 : customEncryptedText2.hashCode());
-        result = prime * result + ((customEncryptedText3 == null) ? 0 : customEncryptedText3.hashCode());
-        result = prime * result + ((customEncryptedText4 == null) ? 0 : customEncryptedText4.hashCode());
-        result = prime * result + ((customEncryptedText5 == null) ? 0 : customEncryptedText5.hashCode());
-        result = prime * result + ((customEncryptedText6 == null) ? 0 : customEncryptedText6.hashCode());
-        result = prime * result + ((customEncryptedText7 == null) ? 0 : customEncryptedText7.hashCode());
-        result = prime * result + ((customEncryptedText8 == null) ? 0 : customEncryptedText8.hashCode());
-        result = prime * result + ((customEncryptedText9 == null) ? 0 : customEncryptedText9.hashCode());
-        result = prime * result + ((customEncryptedText10 == null) ? 0 : customEncryptedText10.hashCode());
-		return result;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		CustomFieldsD other = (CustomFieldsD) obj;
-		if (customBillRate1 == null) {
-			if (other.customBillRate1 != null)
-				return false;
-		} else if (!customBillRate1.equals(other.customBillRate1))
-			return false;
-		if (customBillRate10 == null) {
-			if (other.customBillRate10 != null)
-				return false;
-		} else if (!customBillRate10.equals(other.customBillRate10))
-			return false;
-		if (customBillRate2 == null) {
-			if (other.customBillRate2 != null)
-				return false;
-		} else if (!customBillRate2.equals(other.customBillRate2))
-			return false;
-		if (customBillRate3 == null) {
-			if (other.customBillRate3 != null)
-				return false;
-		} else if (!customBillRate3.equals(other.customBillRate3))
-			return false;
-		if (customBillRate4 == null) {
-			if (other.customBillRate4 != null)
-				return false;
-		} else if (!customBillRate4.equals(other.customBillRate4))
-			return false;
-		if (customBillRate5 == null) {
-			if (other.customBillRate5 != null)
-				return false;
-		} else if (!customBillRate5.equals(other.customBillRate5))
-			return false;
-		if (customBillRate6 == null) {
-			if (other.customBillRate6 != null)
-				return false;
-		} else if (!customBillRate6.equals(other.customBillRate6))
-			return false;
-		if (customBillRate7 == null) {
-			if (other.customBillRate7 != null)
-				return false;
-		} else if (!customBillRate7.equals(other.customBillRate7))
-			return false;
-		if (customBillRate8 == null) {
-			if (other.customBillRate8 != null)
-				return false;
-		} else if (!customBillRate8.equals(other.customBillRate8))
-			return false;
-		if (customBillRate9 == null) {
-			if (other.customBillRate9 != null)
-				return false;
-		} else if (!customBillRate9.equals(other.customBillRate9))
-			return false;
-		if (customPayRate1 == null) {
-			if (other.customPayRate1 != null)
-				return false;
-		} else if (!customPayRate1.equals(other.customPayRate1))
-			return false;
-		if (customPayRate10 == null) {
-			if (other.customPayRate10 != null)
-				return false;
-		} else if (!customPayRate10.equals(other.customPayRate10))
-			return false;
-		if (customPayRate2 == null) {
-			if (other.customPayRate2 != null)
-				return false;
-		} else if (!customPayRate2.equals(other.customPayRate2))
-			return false;
-		if (customPayRate3 == null) {
-			if (other.customPayRate3 != null)
-				return false;
-		} else if (!customPayRate3.equals(other.customPayRate3))
-			return false;
-		if (customPayRate4 == null) {
-			if (other.customPayRate4 != null)
-				return false;
-		} else if (!customPayRate4.equals(other.customPayRate4))
-			return false;
-		if (customPayRate5 == null) {
-			if (other.customPayRate5 != null)
-				return false;
-		} else if (!customPayRate5.equals(other.customPayRate5))
-			return false;
-		if (customPayRate6 == null) {
-			if (other.customPayRate6 != null)
-				return false;
-		} else if (!customPayRate6.equals(other.customPayRate6))
-			return false;
-		if (customPayRate7 == null) {
-			if (other.customPayRate7 != null)
-				return false;
-		} else if (!customPayRate7.equals(other.customPayRate7))
-			return false;
-		if (customPayRate8 == null) {
-			if (other.customPayRate8 != null)
-				return false;
-		} else if (!customPayRate8.equals(other.customPayRate8))
-			return false;
-		if (customPayRate9 == null) {
-			if (other.customPayRate9 != null)
-				return false;
-		} else if (!customPayRate9.equals(other.customPayRate9))
-			return false;
-		if (customText21 == null) {
-			if (other.customText21 != null)
-				return false;
-		} else if (!customText21.equals(other.customText21))
-			return false;
-		if (customText22 == null) {
-			if (other.customText22 != null)
-				return false;
-		} else if (!customText22.equals(other.customText22))
-			return false;
-		if (customText23 == null) {
-			if (other.customText23 != null)
-				return false;
-		} else if (!customText23.equals(other.customText23))
-			return false;
-		if (customText24 == null) {
-			if (other.customText24 != null)
-				return false;
-		} else if (!customText24.equals(other.customText24))
-			return false;
-		if (customText25 == null) {
-			if (other.customText25 != null)
-				return false;
-		} else if (!customText25.equals(other.customText25))
-			return false;
-		if (customText26 == null) {
-			if (other.customText26 != null)
-				return false;
-		} else if (!customText26.equals(other.customText26))
-			return false;
-		if (customText27 == null) {
-			if (other.customText27 != null)
-				return false;
-		} else if (!customText27.equals(other.customText27))
-			return false;
-		if (customText28 == null) {
-			if (other.customText28 != null)
-				return false;
-		} else if (!customText28.equals(other.customText28))
-			return false;
-		if (customText29 == null) {
-			if (other.customText29 != null)
-				return false;
-		} else if (!customText29.equals(other.customText29))
-			return false;
-		if (customText30 == null) {
-			if (other.customText30 != null)
-				return false;
-		} else if (!customText30.equals(other.customText30))
-			return false;
-		if (customText31 == null) {
-			if (other.customText31 != null)
-				return false;
-		} else if (!customText31.equals(other.customText31))
-			return false;
-		if (customText32 == null) {
-			if (other.customText32 != null)
-				return false;
-		} else if (!customText32.equals(other.customText32))
-			return false;
-		if (customText33 == null) {
-			if (other.customText33 != null)
-				return false;
-		} else if (!customText33.equals(other.customText33))
-			return false;
-		if (customText34 == null) {
-			if (other.customText34 != null)
-				return false;
-		} else if (!customText34.equals(other.customText34))
-			return false;
-		if (customText35 == null) {
-			if (other.customText35 != null)
-				return false;
-		} else if (!customText35.equals(other.customText35))
-			return false;
-		if (customText36 == null) {
-			if (other.customText36 != null)
-				return false;
-		} else if (!customText36.equals(other.customText36))
-			return false;
-		if (customText37 == null) {
-			if (other.customText37 != null)
-				return false;
-		} else if (!customText37.equals(other.customText37))
-			return false;
-		if (customText38 == null) {
-			if (other.customText38 != null)
-				return false;
-		} else if (!customText38.equals(other.customText38))
-			return false;
-		if (customText39 == null) {
-			if (other.customText39 != null)
-				return false;
-		} else if (!customText39.equals(other.customText39))
-			return false;
-		if (customText40 == null) {
-			if (other.customText40 != null)
-				return false;
-		} else if (!customText40.equals(other.customText40))
-			return false;
-        if (customEncryptedText1 == null) {
-            if (other.customEncryptedText1 != null)
-                return false;
-        } else if (!customEncryptedText1.equals(other.customText24))
-            return false;
-        if (customEncryptedText2 == null) {
-            if (other.customEncryptedText2 != null)
-                return false;
-        } else if (!customEncryptedText2.equals(other.customText24))
-            return false;
-        if (customEncryptedText3 == null) {
-            if (other.customEncryptedText3 != null)
-                return false;
-        } else if (!customEncryptedText3.equals(other.customText24))
-            return false;
-        if (customEncryptedText4 == null) {
-            if (other.customEncryptedText4 != null)
-                return false;
-        } else if (!customEncryptedText4.equals(other.customText24))
-            return false;
-        if (customEncryptedText5 == null) {
-            if (other.customEncryptedText5 != null)
-                return false;
-        } else if (!customEncryptedText5.equals(other.customText24))
-            return false;
-        if (customEncryptedText6 == null) {
-            if (other.customEncryptedText6 != null)
-                return false;
-        } else if (!customEncryptedText6.equals(other.customText24))
-            return false;
-        if (customEncryptedText7 == null) {
-            if (other.customEncryptedText7 != null)
-                return false;
-        } else if (!customEncryptedText7.equals(other.customText24))
-            return false;
-        if (customEncryptedText8 == null) {
-            if (other.customEncryptedText8 != null)
-                return false;
-        } else if (!customEncryptedText8.equals(other.customText24))
-            return false;
-        if (customEncryptedText9 == null) {
-            if (other.customEncryptedText9 != null)
-                return false;
-        } else if (!customEncryptedText9.equals(other.customText24))
-            return false;
-        if (customEncryptedText10 == null) {
-            if (other.customEncryptedText10 != null)
-                return false;
-        } else if (!customEncryptedText10.equals(other.customText24))
-            return false;
+        CustomFieldsD that = (CustomFieldsD) o;
 
-		return true;
-	}
+        if (customBillRate1 != null ? !customBillRate1.equals(that.customBillRate1) : that.customBillRate1 != null)
+            return false;
+        if (customBillRate10 != null ? !customBillRate10.equals(that.customBillRate10) : that.customBillRate10 != null)
+            return false;
+        if (customBillRate2 != null ? !customBillRate2.equals(that.customBillRate2) : that.customBillRate2 != null)
+            return false;
+        if (customBillRate3 != null ? !customBillRate3.equals(that.customBillRate3) : that.customBillRate3 != null)
+            return false;
+        if (customBillRate4 != null ? !customBillRate4.equals(that.customBillRate4) : that.customBillRate4 != null)
+            return false;
+        if (customBillRate5 != null ? !customBillRate5.equals(that.customBillRate5) : that.customBillRate5 != null)
+            return false;
+        if (customBillRate6 != null ? !customBillRate6.equals(that.customBillRate6) : that.customBillRate6 != null)
+            return false;
+        if (customBillRate7 != null ? !customBillRate7.equals(that.customBillRate7) : that.customBillRate7 != null)
+            return false;
+        if (customBillRate8 != null ? !customBillRate8.equals(that.customBillRate8) : that.customBillRate8 != null)
+            return false;
+        if (customBillRate9 != null ? !customBillRate9.equals(that.customBillRate9) : that.customBillRate9 != null)
+            return false;
+        if (customPayRate1 != null ? !customPayRate1.equals(that.customPayRate1) : that.customPayRate1 != null)
+            return false;
+        if (customPayRate10 != null ? !customPayRate10.equals(that.customPayRate10) : that.customPayRate10 != null)
+            return false;
+        if (customPayRate2 != null ? !customPayRate2.equals(that.customPayRate2) : that.customPayRate2 != null)
+            return false;
+        if (customPayRate3 != null ? !customPayRate3.equals(that.customPayRate3) : that.customPayRate3 != null)
+            return false;
+        if (customPayRate4 != null ? !customPayRate4.equals(that.customPayRate4) : that.customPayRate4 != null)
+            return false;
+        if (customPayRate5 != null ? !customPayRate5.equals(that.customPayRate5) : that.customPayRate5 != null)
+            return false;
+        if (customPayRate6 != null ? !customPayRate6.equals(that.customPayRate6) : that.customPayRate6 != null)
+            return false;
+        if (customPayRate7 != null ? !customPayRate7.equals(that.customPayRate7) : that.customPayRate7 != null)
+            return false;
+        if (customPayRate8 != null ? !customPayRate8.equals(that.customPayRate8) : that.customPayRate8 != null)
+            return false;
+        if (customPayRate9 != null ? !customPayRate9.equals(that.customPayRate9) : that.customPayRate9 != null)
+            return false;
+        if (customEncryptedText1 != null ? !customEncryptedText1.equals(that.customEncryptedText1) : that.customEncryptedText1 != null)
+            return false;
+        if (customEncryptedText2 != null ? !customEncryptedText2.equals(that.customEncryptedText2) : that.customEncryptedText2 != null)
+            return false;
+        if (customEncryptedText3 != null ? !customEncryptedText3.equals(that.customEncryptedText3) : that.customEncryptedText3 != null)
+            return false;
+        if (customEncryptedText4 != null ? !customEncryptedText4.equals(that.customEncryptedText4) : that.customEncryptedText4 != null)
+            return false;
+        if (customEncryptedText5 != null ? !customEncryptedText5.equals(that.customEncryptedText5) : that.customEncryptedText5 != null)
+            return false;
+        if (customEncryptedText6 != null ? !customEncryptedText6.equals(that.customEncryptedText6) : that.customEncryptedText6 != null)
+            return false;
+        if (customEncryptedText7 != null ? !customEncryptedText7.equals(that.customEncryptedText7) : that.customEncryptedText7 != null)
+            return false;
+        if (customEncryptedText8 != null ? !customEncryptedText8.equals(that.customEncryptedText8) : that.customEncryptedText8 != null)
+            return false;
+        if (customEncryptedText9 != null ? !customEncryptedText9.equals(that.customEncryptedText9) : that.customEncryptedText9 != null)
+            return false;
+        if (customEncryptedText10 != null ? !customEncryptedText10.equals(that.customEncryptedText10) : that.customEncryptedText10 != null)
+            return false;
+        if (customText21 != null ? !customText21.equals(that.customText21) : that.customText21 != null) return false;
+        if (customText22 != null ? !customText22.equals(that.customText22) : that.customText22 != null) return false;
+        if (customText23 != null ? !customText23.equals(that.customText23) : that.customText23 != null) return false;
+        if (customText24 != null ? !customText24.equals(that.customText24) : that.customText24 != null) return false;
+        if (customText25 != null ? !customText25.equals(that.customText25) : that.customText25 != null) return false;
+        if (customText26 != null ? !customText26.equals(that.customText26) : that.customText26 != null) return false;
+        if (customText27 != null ? !customText27.equals(that.customText27) : that.customText27 != null) return false;
+        if (customText28 != null ? !customText28.equals(that.customText28) : that.customText28 != null) return false;
+        if (customText29 != null ? !customText29.equals(that.customText29) : that.customText29 != null) return false;
+        if (customText30 != null ? !customText30.equals(that.customText30) : that.customText30 != null) return false;
+        if (customText31 != null ? !customText31.equals(that.customText31) : that.customText31 != null) return false;
+        if (customText32 != null ? !customText32.equals(that.customText32) : that.customText32 != null) return false;
+        if (customText33 != null ? !customText33.equals(that.customText33) : that.customText33 != null) return false;
+        if (customText34 != null ? !customText34.equals(that.customText34) : that.customText34 != null) return false;
+        if (customText35 != null ? !customText35.equals(that.customText35) : that.customText35 != null) return false;
+        if (customText36 != null ? !customText36.equals(that.customText36) : that.customText36 != null) return false;
+        if (customText37 != null ? !customText37.equals(that.customText37) : that.customText37 != null) return false;
+        if (customText38 != null ? !customText38.equals(that.customText38) : that.customText38 != null) return false;
+        if (customText39 != null ? !customText39.equals(that.customText39) : that.customText39 != null) return false;
+        if (customText40 != null ? !customText40.equals(that.customText40) : that.customText40 != null) return false;
+        if (customText41 != null ? !customText41.equals(that.customText41) : that.customText41 != null) return false;
+        if (customText42 != null ? !customText42.equals(that.customText42) : that.customText42 != null) return false;
+        if (customText43 != null ? !customText43.equals(that.customText43) : that.customText43 != null) return false;
+        if (customText44 != null ? !customText44.equals(that.customText44) : that.customText44 != null) return false;
+        if (customText45 != null ? !customText45.equals(that.customText45) : that.customText45 != null) return false;
+        if (customText46 != null ? !customText46.equals(that.customText46) : that.customText46 != null) return false;
+        if (customText47 != null ? !customText47.equals(that.customText47) : that.customText47 != null) return false;
+        if (customText48 != null ? !customText48.equals(that.customText48) : that.customText48 != null) return false;
+        if (customText49 != null ? !customText49.equals(that.customText49) : that.customText49 != null) return false;
+        if (customText50 != null ? !customText50.equals(that.customText50) : that.customText50 != null) return false;
+        if (customText51 != null ? !customText51.equals(that.customText51) : that.customText51 != null) return false;
+        if (customText52 != null ? !customText52.equals(that.customText52) : that.customText52 != null) return false;
+        if (customText53 != null ? !customText53.equals(that.customText53) : that.customText53 != null) return false;
+        if (customText54 != null ? !customText54.equals(that.customText54) : that.customText54 != null) return false;
+        if (customText55 != null ? !customText55.equals(that.customText55) : that.customText55 != null) return false;
+        if (customText56 != null ? !customText56.equals(that.customText56) : that.customText56 != null) return false;
+        if (customText57 != null ? !customText57.equals(that.customText57) : that.customText57 != null) return false;
+        if (customText58 != null ? !customText58.equals(that.customText58) : that.customText58 != null) return false;
+        if (customText59 != null ? !customText59.equals(that.customText59) : that.customText59 != null) return false;
+        if (customText60 != null ? !customText60.equals(that.customText60) : that.customText60 != null) return false;
+        if (customTextBlock6 != null ? !customTextBlock6.equals(that.customTextBlock6) : that.customTextBlock6 != null)
+            return false;
+        if (customTextBlock7 != null ? !customTextBlock7.equals(that.customTextBlock7) : that.customTextBlock7 != null)
+            return false;
+        if (customTextBlock8 != null ? !customTextBlock8.equals(that.customTextBlock8) : that.customTextBlock8 != null)
+            return false;
+        if (customTextBlock9 != null ? !customTextBlock9.equals(that.customTextBlock9) : that.customTextBlock9 != null)
+            return false;
+        if (customTextBlock10 != null ? !customTextBlock10.equals(that.customTextBlock10) : that.customTextBlock10 != null)
+            return false;
+        if (customDate4 != null ? !customDate4.equals(that.customDate4) : that.customDate4 != null) return false;
+        if (customDate5 != null ? !customDate5.equals(that.customDate5) : that.customDate5 != null) return false;
+        if (customDate6 != null ? !customDate6.equals(that.customDate6) : that.customDate6 != null) return false;
+        if (customDate7 != null ? !customDate7.equals(that.customDate7) : that.customDate7 != null) return false;
+        if (customDate8 != null ? !customDate8.equals(that.customDate8) : that.customDate8 != null) return false;
+        if (customDate9 != null ? !customDate9.equals(that.customDate9) : that.customDate9 != null) return false;
+        if (customDate10 != null ? !customDate10.equals(that.customDate10) : that.customDate10 != null) return false;
+        if (customDate11 != null ? !customDate11.equals(that.customDate11) : that.customDate11 != null) return false;
+        if (customDate12 != null ? !customDate12.equals(that.customDate12) : that.customDate12 != null) return false;
+        if (customDate13 != null ? !customDate13.equals(that.customDate13) : that.customDate13 != null) return false;
+        if (customInt4 != null ? !customInt4.equals(that.customInt4) : that.customInt4 != null) return false;
+        if (customInt5 != null ? !customInt5.equals(that.customInt5) : that.customInt5 != null) return false;
+        if (customInt6 != null ? !customInt6.equals(that.customInt6) : that.customInt6 != null) return false;
+        if (customInt7 != null ? !customInt7.equals(that.customInt7) : that.customInt7 != null) return false;
+        if (customInt8 != null ? !customInt8.equals(that.customInt8) : that.customInt8 != null) return false;
+        if (customInt9 != null ? !customInt9.equals(that.customInt9) : that.customInt9 != null) return false;
+        if (customInt10 != null ? !customInt10.equals(that.customInt10) : that.customInt10 != null) return false;
+        if (customInt11 != null ? !customInt11.equals(that.customInt11) : that.customInt11 != null) return false;
+        if (customInt12 != null ? !customInt12.equals(that.customInt12) : that.customInt12 != null) return false;
+        if (customInt13 != null ? !customInt13.equals(that.customInt13) : that.customInt13 != null) return false;
+        if (customInt14 != null ? !customInt14.equals(that.customInt14) : that.customInt14 != null) return false;
+        if (customInt15 != null ? !customInt15.equals(that.customInt15) : that.customInt15 != null) return false;
+        if (customInt16 != null ? !customInt16.equals(that.customInt16) : that.customInt16 != null) return false;
+        if (customInt17 != null ? !customInt17.equals(that.customInt17) : that.customInt17 != null) return false;
+        if (customInt18 != null ? !customInt18.equals(that.customInt18) : that.customInt18 != null) return false;
+        if (customInt19 != null ? !customInt19.equals(that.customInt19) : that.customInt19 != null) return false;
+        if (customInt20 != null ? !customInt20.equals(that.customInt20) : that.customInt20 != null) return false;
+        if (customInt21 != null ? !customInt21.equals(that.customInt21) : that.customInt21 != null) return false;
+        if (customInt22 != null ? !customInt22.equals(that.customInt22) : that.customInt22 != null) return false;
+        if (customInt23 != null ? !customInt23.equals(that.customInt23) : that.customInt23 != null) return false;
+        if (customFloat4 != null ? !customFloat4.equals(that.customFloat4) : that.customFloat4 != null) return false;
+        if (customFloat5 != null ? !customFloat5.equals(that.customFloat5) : that.customFloat5 != null) return false;
+        if (customFloat6 != null ? !customFloat6.equals(that.customFloat6) : that.customFloat6 != null) return false;
+        if (customFloat7 != null ? !customFloat7.equals(that.customFloat7) : that.customFloat7 != null) return false;
+        if (customFloat8 != null ? !customFloat8.equals(that.customFloat8) : that.customFloat8 != null) return false;
+        if (customFloat9 != null ? !customFloat9.equals(that.customFloat9) : that.customFloat9 != null) return false;
+        if (customFloat10 != null ? !customFloat10.equals(that.customFloat10) : that.customFloat10 != null)
+            return false;
+        if (customFloat11 != null ? !customFloat11.equals(that.customFloat11) : that.customFloat11 != null)
+            return false;
+        if (customFloat12 != null ? !customFloat12.equals(that.customFloat12) : that.customFloat12 != null)
+            return false;
+        if (customFloat13 != null ? !customFloat13.equals(that.customFloat13) : that.customFloat13 != null)
+            return false;
+        if (customFloat14 != null ? !customFloat14.equals(that.customFloat14) : that.customFloat14 != null)
+            return false;
+        if (customFloat15 != null ? !customFloat15.equals(that.customFloat15) : that.customFloat15 != null)
+            return false;
+        if (customFloat16 != null ? !customFloat16.equals(that.customFloat16) : that.customFloat16 != null)
+            return false;
+        if (customFloat17 != null ? !customFloat17.equals(that.customFloat17) : that.customFloat17 != null)
+            return false;
+        if (customFloat18 != null ? !customFloat18.equals(that.customFloat18) : that.customFloat18 != null)
+            return false;
+        if (customFloat19 != null ? !customFloat19.equals(that.customFloat19) : that.customFloat19 != null)
+            return false;
+        if (customFloat20 != null ? !customFloat20.equals(that.customFloat20) : that.customFloat20 != null)
+            return false;
+        if (customFloat21 != null ? !customFloat21.equals(that.customFloat21) : that.customFloat21 != null)
+            return false;
+        if (customFloat22 != null ? !customFloat22.equals(that.customFloat22) : that.customFloat22 != null)
+            return false;
+        return customFloat23 != null ? customFloat23.equals(that.customFloat23) : that.customFloat23 == null;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append(", \ncustomText21=");
-		builder.append(customText21);
-		builder.append(", \ncustomText22=");
-		builder.append(customText22);
-		builder.append(", \ncustomText23=");
-		builder.append(customText23);
-		builder.append(", \ncustomText24=");
-		builder.append(customText24);
-		builder.append(", \ncustomText25=");
-		builder.append(customText25);
-		builder.append(", \ncustomText26=");
-		builder.append(customText26);
-		builder.append(", \ncustomText27=");
-		builder.append(customText27);
-		builder.append(", \ncustomText28=");
-		builder.append(customText28);
-		builder.append(", \ncustomText29=");
-		builder.append(customText29);
-		builder.append(", \ncustomText30=");
-		builder.append(customText30);
-		builder.append(", \ncustomText31=");
-		builder.append(customText31);
-		builder.append(", \ncustomText32=");
-		builder.append(customText32);
-		builder.append(", \ncustomText33=");
-		builder.append(customText33);
-		builder.append(", \ncustomText34=");
-		builder.append(customText34);
-		builder.append(", \ncustomText35=");
-		builder.append(customText35);
-		builder.append(", \ncustomText36=");
-		builder.append(customText36);
-		builder.append(", \ncustomText37=");
-		builder.append(customText37);
-		builder.append(", \ncustomText38=");
-		builder.append(customText38);
-		builder.append(", \ncustomText39=");
-		builder.append(customText39);
-		builder.append(", \ncustomText40=");
-		builder.append(customText40);
-        builder.append(", \ncustomEncryptedText1=");
-        builder.append(customEncryptedText1);
-        builder.append(", \ncustomEncryptedText2=");
-        builder.append(customEncryptedText2);
-        builder.append(", \ncustomEncryptedText3=");
-        builder.append(customEncryptedText3);
-        builder.append(", \ncustomEncryptedText4=");
-        builder.append(customEncryptedText4);
-        builder.append(", \ncustomEncryptedText5=");
-        builder.append(customEncryptedText5);
-        builder.append(", \ncustomEncryptedText6=");
-        builder.append(customEncryptedText6);
-        builder.append(", \ncustomEncryptedText7=");
-        builder.append(customEncryptedText7);
-        builder.append(", \ncustomEncryptedText8=");
-        builder.append(customEncryptedText8);
-        builder.append(", \ncustomEncryptedText9=");
-        builder.append(customEncryptedText9);
-        builder.append(", \ncustomEncryptedText10=");
-        builder.append(customEncryptedText10);
-		return builder.toString();
-	}
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (customBillRate1 != null ? customBillRate1.hashCode() : 0);
+        result = 31 * result + (customBillRate10 != null ? customBillRate10.hashCode() : 0);
+        result = 31 * result + (customBillRate2 != null ? customBillRate2.hashCode() : 0);
+        result = 31 * result + (customBillRate3 != null ? customBillRate3.hashCode() : 0);
+        result = 31 * result + (customBillRate4 != null ? customBillRate4.hashCode() : 0);
+        result = 31 * result + (customBillRate5 != null ? customBillRate5.hashCode() : 0);
+        result = 31 * result + (customBillRate6 != null ? customBillRate6.hashCode() : 0);
+        result = 31 * result + (customBillRate7 != null ? customBillRate7.hashCode() : 0);
+        result = 31 * result + (customBillRate8 != null ? customBillRate8.hashCode() : 0);
+        result = 31 * result + (customBillRate9 != null ? customBillRate9.hashCode() : 0);
+        result = 31 * result + (customPayRate1 != null ? customPayRate1.hashCode() : 0);
+        result = 31 * result + (customPayRate10 != null ? customPayRate10.hashCode() : 0);
+        result = 31 * result + (customPayRate2 != null ? customPayRate2.hashCode() : 0);
+        result = 31 * result + (customPayRate3 != null ? customPayRate3.hashCode() : 0);
+        result = 31 * result + (customPayRate4 != null ? customPayRate4.hashCode() : 0);
+        result = 31 * result + (customPayRate5 != null ? customPayRate5.hashCode() : 0);
+        result = 31 * result + (customPayRate6 != null ? customPayRate6.hashCode() : 0);
+        result = 31 * result + (customPayRate7 != null ? customPayRate7.hashCode() : 0);
+        result = 31 * result + (customPayRate8 != null ? customPayRate8.hashCode() : 0);
+        result = 31 * result + (customPayRate9 != null ? customPayRate9.hashCode() : 0);
+        result = 31 * result + (customEncryptedText1 != null ? customEncryptedText1.hashCode() : 0);
+        result = 31 * result + (customEncryptedText2 != null ? customEncryptedText2.hashCode() : 0);
+        result = 31 * result + (customEncryptedText3 != null ? customEncryptedText3.hashCode() : 0);
+        result = 31 * result + (customEncryptedText4 != null ? customEncryptedText4.hashCode() : 0);
+        result = 31 * result + (customEncryptedText5 != null ? customEncryptedText5.hashCode() : 0);
+        result = 31 * result + (customEncryptedText6 != null ? customEncryptedText6.hashCode() : 0);
+        result = 31 * result + (customEncryptedText7 != null ? customEncryptedText7.hashCode() : 0);
+        result = 31 * result + (customEncryptedText8 != null ? customEncryptedText8.hashCode() : 0);
+        result = 31 * result + (customEncryptedText9 != null ? customEncryptedText9.hashCode() : 0);
+        result = 31 * result + (customEncryptedText10 != null ? customEncryptedText10.hashCode() : 0);
+        result = 31 * result + (customText21 != null ? customText21.hashCode() : 0);
+        result = 31 * result + (customText22 != null ? customText22.hashCode() : 0);
+        result = 31 * result + (customText23 != null ? customText23.hashCode() : 0);
+        result = 31 * result + (customText24 != null ? customText24.hashCode() : 0);
+        result = 31 * result + (customText25 != null ? customText25.hashCode() : 0);
+        result = 31 * result + (customText26 != null ? customText26.hashCode() : 0);
+        result = 31 * result + (customText27 != null ? customText27.hashCode() : 0);
+        result = 31 * result + (customText28 != null ? customText28.hashCode() : 0);
+        result = 31 * result + (customText29 != null ? customText29.hashCode() : 0);
+        result = 31 * result + (customText30 != null ? customText30.hashCode() : 0);
+        result = 31 * result + (customText31 != null ? customText31.hashCode() : 0);
+        result = 31 * result + (customText32 != null ? customText32.hashCode() : 0);
+        result = 31 * result + (customText33 != null ? customText33.hashCode() : 0);
+        result = 31 * result + (customText34 != null ? customText34.hashCode() : 0);
+        result = 31 * result + (customText35 != null ? customText35.hashCode() : 0);
+        result = 31 * result + (customText36 != null ? customText36.hashCode() : 0);
+        result = 31 * result + (customText37 != null ? customText37.hashCode() : 0);
+        result = 31 * result + (customText38 != null ? customText38.hashCode() : 0);
+        result = 31 * result + (customText39 != null ? customText39.hashCode() : 0);
+        result = 31 * result + (customText40 != null ? customText40.hashCode() : 0);
+        result = 31 * result + (customText41 != null ? customText41.hashCode() : 0);
+        result = 31 * result + (customText42 != null ? customText42.hashCode() : 0);
+        result = 31 * result + (customText43 != null ? customText43.hashCode() : 0);
+        result = 31 * result + (customText44 != null ? customText44.hashCode() : 0);
+        result = 31 * result + (customText45 != null ? customText45.hashCode() : 0);
+        result = 31 * result + (customText46 != null ? customText46.hashCode() : 0);
+        result = 31 * result + (customText47 != null ? customText47.hashCode() : 0);
+        result = 31 * result + (customText48 != null ? customText48.hashCode() : 0);
+        result = 31 * result + (customText49 != null ? customText49.hashCode() : 0);
+        result = 31 * result + (customText50 != null ? customText50.hashCode() : 0);
+        result = 31 * result + (customText51 != null ? customText51.hashCode() : 0);
+        result = 31 * result + (customText52 != null ? customText52.hashCode() : 0);
+        result = 31 * result + (customText53 != null ? customText53.hashCode() : 0);
+        result = 31 * result + (customText54 != null ? customText54.hashCode() : 0);
+        result = 31 * result + (customText55 != null ? customText55.hashCode() : 0);
+        result = 31 * result + (customText56 != null ? customText56.hashCode() : 0);
+        result = 31 * result + (customText57 != null ? customText57.hashCode() : 0);
+        result = 31 * result + (customText58 != null ? customText58.hashCode() : 0);
+        result = 31 * result + (customText59 != null ? customText59.hashCode() : 0);
+        result = 31 * result + (customText60 != null ? customText60.hashCode() : 0);
+        result = 31 * result + (customTextBlock6 != null ? customTextBlock6.hashCode() : 0);
+        result = 31 * result + (customTextBlock7 != null ? customTextBlock7.hashCode() : 0);
+        result = 31 * result + (customTextBlock8 != null ? customTextBlock8.hashCode() : 0);
+        result = 31 * result + (customTextBlock9 != null ? customTextBlock9.hashCode() : 0);
+        result = 31 * result + (customTextBlock10 != null ? customTextBlock10.hashCode() : 0);
+        result = 31 * result + (customDate4 != null ? customDate4.hashCode() : 0);
+        result = 31 * result + (customDate5 != null ? customDate5.hashCode() : 0);
+        result = 31 * result + (customDate6 != null ? customDate6.hashCode() : 0);
+        result = 31 * result + (customDate7 != null ? customDate7.hashCode() : 0);
+        result = 31 * result + (customDate8 != null ? customDate8.hashCode() : 0);
+        result = 31 * result + (customDate9 != null ? customDate9.hashCode() : 0);
+        result = 31 * result + (customDate10 != null ? customDate10.hashCode() : 0);
+        result = 31 * result + (customDate11 != null ? customDate11.hashCode() : 0);
+        result = 31 * result + (customDate12 != null ? customDate12.hashCode() : 0);
+        result = 31 * result + (customDate13 != null ? customDate13.hashCode() : 0);
+        result = 31 * result + (customInt4 != null ? customInt4.hashCode() : 0);
+        result = 31 * result + (customInt5 != null ? customInt5.hashCode() : 0);
+        result = 31 * result + (customInt6 != null ? customInt6.hashCode() : 0);
+        result = 31 * result + (customInt7 != null ? customInt7.hashCode() : 0);
+        result = 31 * result + (customInt8 != null ? customInt8.hashCode() : 0);
+        result = 31 * result + (customInt9 != null ? customInt9.hashCode() : 0);
+        result = 31 * result + (customInt10 != null ? customInt10.hashCode() : 0);
+        result = 31 * result + (customInt11 != null ? customInt11.hashCode() : 0);
+        result = 31 * result + (customInt12 != null ? customInt12.hashCode() : 0);
+        result = 31 * result + (customInt13 != null ? customInt13.hashCode() : 0);
+        result = 31 * result + (customInt14 != null ? customInt14.hashCode() : 0);
+        result = 31 * result + (customInt15 != null ? customInt15.hashCode() : 0);
+        result = 31 * result + (customInt16 != null ? customInt16.hashCode() : 0);
+        result = 31 * result + (customInt17 != null ? customInt17.hashCode() : 0);
+        result = 31 * result + (customInt18 != null ? customInt18.hashCode() : 0);
+        result = 31 * result + (customInt19 != null ? customInt19.hashCode() : 0);
+        result = 31 * result + (customInt20 != null ? customInt20.hashCode() : 0);
+        result = 31 * result + (customInt21 != null ? customInt21.hashCode() : 0);
+        result = 31 * result + (customInt22 != null ? customInt22.hashCode() : 0);
+        result = 31 * result + (customInt23 != null ? customInt23.hashCode() : 0);
+        result = 31 * result + (customFloat4 != null ? customFloat4.hashCode() : 0);
+        result = 31 * result + (customFloat5 != null ? customFloat5.hashCode() : 0);
+        result = 31 * result + (customFloat6 != null ? customFloat6.hashCode() : 0);
+        result = 31 * result + (customFloat7 != null ? customFloat7.hashCode() : 0);
+        result = 31 * result + (customFloat8 != null ? customFloat8.hashCode() : 0);
+        result = 31 * result + (customFloat9 != null ? customFloat9.hashCode() : 0);
+        result = 31 * result + (customFloat10 != null ? customFloat10.hashCode() : 0);
+        result = 31 * result + (customFloat11 != null ? customFloat11.hashCode() : 0);
+        result = 31 * result + (customFloat12 != null ? customFloat12.hashCode() : 0);
+        result = 31 * result + (customFloat13 != null ? customFloat13.hashCode() : 0);
+        result = 31 * result + (customFloat14 != null ? customFloat14.hashCode() : 0);
+        result = 31 * result + (customFloat15 != null ? customFloat15.hashCode() : 0);
+        result = 31 * result + (customFloat16 != null ? customFloat16.hashCode() : 0);
+        result = 31 * result + (customFloat17 != null ? customFloat17.hashCode() : 0);
+        result = 31 * result + (customFloat18 != null ? customFloat18.hashCode() : 0);
+        result = 31 * result + (customFloat19 != null ? customFloat19.hashCode() : 0);
+        result = 31 * result + (customFloat20 != null ? customFloat20.hashCode() : 0);
+        result = 31 * result + (customFloat21 != null ? customFloat21.hashCode() : 0);
+        result = 31 * result + (customFloat22 != null ? customFloat22.hashCode() : 0);
+        result = 31 * result + (customFloat23 != null ? customFloat23.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomFieldsD{" +
+            "customBillRate1=" + customBillRate1 +
+            ", customBillRate10=" + customBillRate10 +
+            ", customBillRate2=" + customBillRate2 +
+            ", customBillRate3=" + customBillRate3 +
+            ", customBillRate4=" + customBillRate4 +
+            ", customBillRate5=" + customBillRate5 +
+            ", customBillRate6=" + customBillRate6 +
+            ", customBillRate7=" + customBillRate7 +
+            ", customBillRate8=" + customBillRate8 +
+            ", customBillRate9=" + customBillRate9 +
+            ", customPayRate1=" + customPayRate1 +
+
+            ", customPayRate10=" + customPayRate10 +
+            ", customPayRate2=" + customPayRate2 +
+            ", customPayRate3=" + customPayRate3 +
+            ", customPayRate4=" + customPayRate4 +
+            ", customPayRate5=" + customPayRate5 +
+            ", customPayRate6=" + customPayRate6 +
+            ", customPayRate7=" + customPayRate7 +
+            ", customPayRate8=" + customPayRate8 +
+            ", customPayRate9=" + customPayRate9 +
+            ", customEncryptedText1='" + customEncryptedText1 + '\'' +
+            ", customEncryptedText2='" + customEncryptedText2 + '\'' +
+            ", customEncryptedText3='" + customEncryptedText3 + '\'' +
+            ", customEncryptedText4='" + customEncryptedText4 + '\'' +
+            ", customEncryptedText5='" + customEncryptedText5 + '\'' +
+            ", customEncryptedText6='" + customEncryptedText6 + '\'' +
+            ", customEncryptedText7='" + customEncryptedText7 + '\'' +
+            ", customEncryptedText8='" + customEncryptedText8 + '\'' +
+            ", customEncryptedText9='" + customEncryptedText9 + '\'' +
+            ", customEncryptedText10='" + customEncryptedText10 + '\'' +
+            ", customText21='" + customText21 + '\'' +
+            ", customText22='" + customText22 + '\'' +
+            ", customText23='" + customText23 + '\'' +
+            ", customText24='" + customText24 + '\'' +
+            ", customText25='" + customText25 + '\'' +
+            ", customText26='" + customText26 + '\'' +
+            ", customText27='" + customText27 + '\'' +
+            ", customText28='" + customText28 + '\'' +
+            ", customText29='" + customText29 + '\'' +
+            ", customText30='" + customText30 + '\'' +
+            ", customText31='" + customText31 + '\'' +
+            ", customText32='" + customText32 + '\'' +
+            ", customText33='" + customText33 + '\'' +
+            ", customText34='" + customText34 + '\'' +
+            ", customText35='" + customText35 + '\'' +
+            ", customText36='" + customText36 + '\'' +
+            ", customText37='" + customText37 + '\'' +
+            ", customText38='" + customText38 + '\'' +
+            ", customText39='" + customText39 + '\'' +
+            ", customText40='" + customText40 + '\'' +
+            ", customText41='" + customText41 + '\'' +
+            ", customText42='" + customText42 + '\'' +
+            ", customText43='" + customText43 + '\'' +
+            ", customText44='" + customText44 + '\'' +
+            ", customText45='" + customText45 + '\'' +
+            ", customText46='" + customText46 + '\'' +
+            ", customText47='" + customText47 + '\'' +
+            ", customText48='" + customText48 + '\'' +
+            ", customText49='" + customText49 + '\'' +
+            ", customText50='" + customText50 + '\'' +
+            ", customText51='" + customText51 + '\'' +
+            ", customText52='" + customText52 + '\'' +
+            ", customText53='" + customText53 + '\'' +
+            ", customText54='" + customText54 + '\'' +
+            ", customText55='" + customText55 + '\'' +
+            ", customText56='" + customText56 + '\'' +
+            ", customText57='" + customText57 + '\'' +
+            ", customText58='" + customText58 + '\'' +
+            ", customText59='" + customText59 + '\'' +
+            ", customText60='" + customText60 + '\'' +
+            ", customTextBlock6='" + customTextBlock6 + '\'' +
+            ", customTextBlock7='" + customTextBlock7 + '\'' +
+            ", customTextBlock8='" + customTextBlock8 + '\'' +
+            ", customTextBlock9='" + customTextBlock9 + '\'' +
+            ", customTextBlock10='" + customTextBlock10 + '\'' +
+            ", customDate4=" + customDate4 +
+            ", customDate5=" + customDate5 +
+            ", customDate6=" + customDate6 +
+            ", customDate7=" + customDate7 +
+            ", customDate8=" + customDate8 +
+            ", customDate9=" + customDate9 +
+            ", customDate10=" + customDate10 +
+            ", customDate11=" + customDate11 +
+            ", customDate12=" + customDate12 +
+            ", customDate13=" + customDate13 +
+            ", customInt4=" + customInt4 +
+            ", customInt5=" + customInt5 +
+            ", customInt6=" + customInt6 +
+            ", customInt7=" + customInt7 +
+            ", customInt8=" + customInt8 +
+            ", customInt9=" + customInt9 +
+            ", customInt10=" + customInt10 +
+            ", customInt11=" + customInt11 +
+            ", customInt12=" + customInt12 +
+            ", customInt13=" + customInt13 +
+            ", customInt14=" + customInt14 +
+            ", customInt15=" + customInt15 +
+            ", customInt16=" + customInt16 +
+            ", customInt17=" + customInt17 +
+            ", customInt18=" + customInt18 +
+            ", customInt19=" + customInt19 +
+            ", customInt20=" + customInt20 +
+            ", customInt21=" + customInt21 +
+            ", customInt22=" + customInt22 +
+            ", customInt23=" + customInt23 +
+            ", customFloat4=" + customFloat4 +
+            ", customFloat5=" + customFloat5 +
+            ", customFloat6=" + customFloat6 +
+            ", customFloat7=" + customFloat7 +
+            ", customFloat8=" + customFloat8 +
+            ", customFloat9=" + customFloat9 +
+            ", customFloat10=" + customFloat10 +
+            ", customFloat11=" + customFloat11 +
+            ", customFloat12=" + customFloat12 +
+            ", customFloat13=" + customFloat13 +
+            ", customFloat14=" + customFloat14 +
+            ", customFloat15=" + customFloat15 +
+            ", customFloat16=" + customFloat16 +
+            ", customFloat17=" + customFloat17 +
+            ", customFloat18=" + customFloat18 +
+            ", customFloat19=" + customFloat19 +
+            ", customFloat20=" + customFloat20 +
+            ", customFloat21=" + customFloat21 +
+            ", customFloat22=" + customFloat22 +
+            ", customFloat23=" + customFloat23 +
+            '}';
+    }
 
 }

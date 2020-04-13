@@ -36,7 +36,7 @@ public final class NoteAssociations implements EntityAssociations<Note> {
 
     private static final NoteAssociations INSTANCE = new NoteAssociations();
 
-    private NoteAssociations() {
+    public NoteAssociations() {
         super();
     }
 
