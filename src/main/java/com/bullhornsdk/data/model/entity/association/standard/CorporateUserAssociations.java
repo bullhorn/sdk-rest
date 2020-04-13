@@ -27,7 +27,7 @@ public final class CorporateUserAssociations implements EntityAssociations<Corpo
     private List<AssociationField<CorporateUser, ? extends BullhornEntity>> allAssociations;
     private static final CorporateUserAssociations INSTANCE = new CorporateUserAssociations();
 
-    private CorporateUserAssociations() {
+    public CorporateUserAssociations() {
         super();
     }
 

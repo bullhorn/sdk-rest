@@ -8,13 +8,20 @@ import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.google.common.collect.Maps;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import com.bullhornsdk.data.api.BullhornRestCredentials;
@@ -34,6 +41,9 @@ import com.google.common.base.Splitter;
 
 @JsonIgnoreProperties({"sessionExpired"})
 public class RestApiSession {
+
+    private static final String LOGIN_INFO_URL = "https://rest.bullhornstaffing.com/rest-services/loginInfo?username={username}";
+
 	private static final String AUTH_CODE_ACTION = "Login";
 
 	private static final String AUTH_CODE_RESPONSE_TYPE = "code";
@@ -97,7 +107,6 @@ public class RestApiSession {
 	 * @throws RestApiException
 	 */
 	public String getBhRestToken() throws RestApiException {
-
 		if (isSessionExpired()) {
 			createSession();
 		}
@@ -114,7 +123,6 @@ public class RestApiSession {
 	 * @throws RestApiException
 	 */
 	public String refreshBhRestToken() throws RestApiException {
-
 		createSession();
 
 		return bhRestToken;
@@ -128,11 +136,11 @@ public class RestApiSession {
 				login();
 				break;
 			} catch (Exception e) {
-
 				if (tryNumber < SESSION_RETRY) {
 					log.error("Error creating REST session. Try number: " + tryNumber + " out of " + SESSION_RETRY + " trying again.", e);
 				} else {
 					log.error("Final error creating REST session. Shutting down.", e);
+
 					throw new RestApiException("Failed to create rest session", e);
 				}
 			}
@@ -140,7 +148,7 @@ public class RestApiSession {
 	}
 
 	private String getAuthorizationCode() throws RestApiException {
-		String authorizeUrl = restCredentials.getRestAuthorizeUrl();
+		String authorizeUrl = getRestAuthorizeUrl();
 		String clientId = restCredentials.getRestClientId();
 		String username = getUserName();
 		String password = getPassword();
@@ -194,7 +202,7 @@ public class RestApiSession {
 	}
 
 	private void getAccessToken(String authCode) throws RestApiException {
-		String tokenUrl = restCredentials.getRestTokenUrl();
+		String tokenUrl = getRestTokenUrl();
 		String clientId = restCredentials.getRestClientId();
 		String clientSecret = restCredentials.getRestClientSecret();
 
@@ -207,20 +215,20 @@ public class RestApiSession {
 		vars.put("clientSecret", clientSecret);
 
 		try {
-			// String test = restTemplate.postForObject(url, null, String.class, vars);
 			accessTokenInfo = restTemplate.postForObject(url, null, AccessTokenInfo.class, vars);
 		} catch (Exception e) {
 			log.error("Failed to get access token.", e);
+
 			throw new RestApiException("Failed to get access token.", e);
 		}
 	}
 
 	private void login() {
-
 		JSONObject responseJson = null;
+
 		try {
 			String accessTokenString = URLEncoder.encode(accessTokenInfo.getAccessToken(), "UTF-8");
-			String loginUrl = restCredentials.getRestLoginUrl();
+			String loginUrl = getRestLoginUrl();
 			String sessionMinutesToLive = restCredentials.getRestSessionMinutesToLive();
 			String url = loginUrl + "?version=" + version + "&access_token=" + accessTokenString + "&ttl=" + sessionMinutesToLive;
 			GetMethod get = new GetMethod(url);
@@ -235,10 +243,10 @@ public class RestApiSession {
 			this.setBhRestToken(localBhRestToken);
 
 			restUrl = (String) responseJson.get("restUrl");
-		} catch (Exception e) {
+		} catch (RestClientException | IOException e) {
 			log.error("Failed to login. " + responseJson, e);
-			throw new RestApiException("Failed to login and get BhRestToken: " + responseJson);
 
+			throw new RestApiException("Failed to login and get BhRestToken: " + responseJson, e);
 		}
 	}
 
@@ -324,4 +332,104 @@ public class RestApiSession {
 	public BullhornRestCredentials getRestCredentials() {
 		return restCredentials;
 	}
+
+	private String getRestAuthorizeUrl() {
+	    if (StringUtils.isNotBlank(restCredentials.getRestAuthorizeUrl())) {
+	        return restCredentials.getRestAuthorizeUrl();
+        }
+
+	    String restAuthorizeUrl = getBaseOauthUrlFromApi() + "/authorize";
+
+	    restCredentials.setRestAuthorizeUrl(restAuthorizeUrl);
+
+	    return restCredentials.getRestAuthorizeUrl();
+    }
+
+    private String getRestTokenUrl() {
+        if (StringUtils.isNotBlank(restCredentials.getRestTokenUrl())) {
+            return restCredentials.getRestTokenUrl();
+        }
+
+        String restTokenUrl = getBaseOauthUrlFromApi() + "/token";
+
+        restCredentials.setRestTokenUrl(restTokenUrl);
+
+        return restCredentials.getRestTokenUrl();
+    }
+
+    private String getRestLoginUrl() {
+        if (StringUtils.isNotBlank(restCredentials.getRestLoginUrl())) {
+            return restCredentials.getRestLoginUrl();
+        }
+
+        String restLoginUrl = getBaseRestUrlFromApi() + "/login";
+
+        restCredentials.setRestLoginUrl(restLoginUrl);
+
+        return restCredentials.getRestLoginUrl();
+    }
+
+    private String baseRestUrl;
+
+    private synchronized String getBaseRestUrlFromApi() {
+	    if (StringUtils.isBlank(this.baseRestUrl)) {
+	        JSONObject loginInfo = getLoginInfoFromApi();
+
+            String baseRestUrl = loginInfo.getString("restUrl");
+
+            if (StringUtils.isBlank(baseRestUrl)) {
+                throw new RestApiException("Failed to dynamically determine REST url with username " + restCredentials.getUsername());
+            }
+
+            this.baseRestUrl = baseRestUrl;
+        }
+
+	    return this.baseRestUrl;
+    }
+
+    private String baseOauthUrl;
+
+    private synchronized String getBaseOauthUrlFromApi() {
+        if (StringUtils.isBlank(this.baseOauthUrl)) {
+            JSONObject loginInfo = getLoginInfoFromApi();
+
+            String baseOauthUrl = loginInfo.getString("oauthUrl");
+
+            if (StringUtils.isBlank(baseOauthUrl)) {
+                throw new RestApiException("Failed to dynamically determine oAuth url with username " + restCredentials.getUsername());
+            }
+
+            this.baseOauthUrl = baseOauthUrl;
+        }
+
+        return this.baseOauthUrl;
+    }
+
+    private JSONObject loginInfo;
+
+    private synchronized JSONObject getLoginInfoFromApi() {
+        if (loginInfo != null) {
+            return loginInfo;
+        }
+
+        Map<String, Object> parameters = Maps.newLinkedHashMap();
+        parameters.put("username", restCredentials.getUsername());
+
+        try {
+            ResponseEntity<String> response = restTemplate.exchange(LOGIN_INFO_URL, HttpMethod.GET, HttpEntity.EMPTY, String.class, parameters);
+
+            if (StringUtils.isBlank(response.getBody())) {
+                throw new RestApiException("Failed to dynamically determine REST urls with username " + restCredentials.getUsername());
+            }
+
+            this.loginInfo = new JSONObject(response.getBody());
+
+            return this.loginInfo;
+        } catch(RestClientException | JSONException e) {
+            log.error("Error occurred dynamically determining REST urls with username " + restCredentials.getUsername(), e);
+
+            throw new RestApiException("Failed to dynamically determine REST urls with username " + restCredentials.getUsername());
+        }
+    }
+
 }

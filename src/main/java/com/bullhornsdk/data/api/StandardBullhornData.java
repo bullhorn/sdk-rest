@@ -15,6 +15,7 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 import com.bullhornsdk.data.exception.RestMappingException;
+import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -157,9 +158,13 @@ public class StandardBullhornData implements BullhornData {
 
     protected final static int API_RETRY = 3;
 
+    protected final static int MAX_URL_LENGTH = 7500;
+
     protected final static int MAX_RECORDS_TO_RETURN_IN_ONE_PULL = 500;
 
     protected final static int MAX_RECORDS_TO_RETURN_TOTAL = 20000;
+
+    protected Boolean executeFormTriggers = false;
 
     public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials) {
         this.restSession = new RestApiSession(bullhornRestCredentials);
@@ -231,6 +236,30 @@ public class StandardBullhornData implements BullhornData {
             return Collections.emptyList();
         }
         return wrapper.getData();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public <T extends SearchEntity> IdListWrapper searchForIdList(Class<T> type,
+                                                                  String query,
+                                                                  SearchParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForIdSearch(
+            BullhornEntityInfo.getTypesRestEntityName(type),
+            query,
+            params);
+
+        String url = restUrlFactory.assembleIdSearchUrl(getRestUrl(), params);
+        if (Candidate.class == type) {
+            url = url + "&useV2=true";
+        }
+
+        IdListWrapper wrapper = performGetRequest(url, IdListWrapper.class, uriVariables);
+        if (wrapper == null) {
+            return new IdListWrapper<>();
+        }
+        return wrapper;
     }
 
     /**
@@ -791,6 +820,22 @@ public class StandardBullhornData implements BullhornData {
         return handleGetSettingsObjectData(fieldsSet);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Boolean getExecuteFormTriggers() {
+        return executeFormTriggers;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setExecuteFormTriggers(Boolean executeFormTriggers){
+        this.executeFormTriggers = executeFormTriggers;
+    }
+
 	/*
      * ***********************************************************************************************************
 	 * Helper methods that handle the api calls.
@@ -852,6 +897,32 @@ public class StandardBullhornData implements BullhornData {
         }
     }
 
+        /**
+     * Makes the "query" api call but with POST instead of GET
+     * <p>
+     * <p>
+     * HTTP Method: POST
+     *
+     * @param type     the BullhornEntity type
+     * @param where    a SQL type where clause
+     * @param fieldSet the fields to return, if null or emtpy will default to "*" all
+     * @param params   optional QueryParams.
+     * @return a LinsWrapper containing the records plus some additional information
+     */
+    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntitiesWithPost(Class<T> type, String where, Set<String> fieldSet,
+                                                                                       QueryParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQueryWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
+                fieldSet, params);
+
+        String url = restUrlFactory.assembleQueryUrlWithPost(params);
+
+        JSONObject body = new JSONObject();
+        body.put("where", where);
+
+        return (L) this.performPostRequest(url, body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+
+    }
+
     /**
      * Makes the "query" api call
      * <p>
@@ -864,14 +935,16 @@ public class StandardBullhornData implements BullhornData {
      * @param params   optional QueryParams.
      * @return a LinsWrapper containing the records plus some additional information
      */
-    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntities(Class<T> type, String where, Set<String> fieldSet,
-                                                                                       QueryParams params) {
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(type),
+    protected <L extends ListWrapper<T>, T extends QueryEntity> L handleQueryForEntities(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
+        if(where.length() < MAX_URL_LENGTH) {
+            Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForQuery(BullhornEntityInfo.getTypesRestEntityName(type),
                 where, fieldSet, params);
 
-        String url = restUrlFactory.assembleQueryUrl(params);
+            String url = restUrlFactory.assembleQueryUrl(params);
 
-        return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+            return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        }
+        return handleQueryForEntitiesWithPost(type,where,fieldSet,params);
 
     }
 
@@ -977,17 +1050,45 @@ public class StandardBullhornData implements BullhornData {
      */
     protected <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForEntities(Class<T> type, String query, Set<String> fieldSet,
                                                                                          SearchParams params) {
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearch(BullhornEntityInfo.getTypesRestEntityName(type),
+        if(query.length() < MAX_URL_LENGTH ){
+            Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearch(BullhornEntityInfo.getTypesRestEntityName(type),
                 query, fieldSet, params);
 
-        String url = restUrlFactory.assembleSearchUrl(params);
-        // temporary fix
+            String url = restUrlFactory.assembleSearchUrl(params);
+            if (Candidate.class == type) {
+                url = url + "&useV2=true";
+            }
+
+            return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        }
+        return handleSearchForEntitiesWithPost(type,query,fieldSet,params);
+
+    }
+
+    /**
+     * Makes the "search" api call with POST instead of GET
+     * <p>
+     * HTTP Method: POST
+     *
+     * @param type     the BullhornEntity type
+     * @param query    Lucene query string
+     * @param fieldSet the fields to return, if null or empty will default to "*" all
+     * @param params   optional SearchParams .
+     * @return a LinsWrapper containing the records plus some additional information
+     */
+    protected <L extends ListWrapper<T>, T extends SearchEntity> L handleSearchForEntitiesWithPost(Class<T> type, String query, Set<String> fieldSet,
+                                                                                           SearchParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSearchWithPost(BullhornEntityInfo.getTypesRestEntityName(type),
+            fieldSet, params);
+
+        String url = restUrlFactory.assembleSearchUrlWithPost(params);
         if (Candidate.class == type) {
             url = url + "&useV2=true";
         }
-        // String jsonString = this.performGetRequest(url, String.class, uriVariables);
+        JSONObject body = new JSONObject();
+        body.put("query", query);
 
-        return (L) this.performGetRequest(url, BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        return (L) this.performPostRequest(url,body.toString(), BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
 
     }
 
@@ -1821,13 +1922,24 @@ public class StandardBullhornData implements BullhornData {
 
     public <T> T performGetRequest(String url, Class<T> returnType, Map<String, String> uriVariables) {
 
-        for (int tryNumber = 1; tryNumber <= API_RETRY; tryNumber++) {
+        int tryNumber = 1;
+        while(tryNumber <= API_RETRY) {
             try {
                 return restTemplate.getForObject(url, returnType, uriVariables);
             } catch (HttpStatusCodeException error) {
-                handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                if (isTooManyRequestsError) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log.error("Error in performGetRequest", e);
+                    }
+                } else {
+                    tryNumber++;
+                }
             } catch (Exception e) {
                 handleApiError(tryNumber, e);
+                tryNumber++;
             }
         }
 
@@ -1845,13 +1957,24 @@ public class StandardBullhornData implements BullhornData {
      * @return
      */
     protected <T> T performPostRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables) {
-        for (int tryNumber = 1; tryNumber <= API_RETRY; tryNumber++) {
+        int tryNumber = 1;
+        while(tryNumber <= API_RETRY) {
             try {
                 return restTemplate.postForObject(url, requestPayLoad, returnType, uriVariables);
             } catch (HttpStatusCodeException error) {
-                handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                if (isTooManyRequestsError) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log.error("Error in performPostRequest", e);
+                    }
+                } else {
+                    tryNumber++;
+                }
             } catch (Exception e) {
                 handleApiError(tryNumber, e);
+                tryNumber++;
             }
         }
 
@@ -1878,14 +2001,25 @@ public class StandardBullhornData implements BullhornData {
 
         HttpEntity<Object> requestEntity = new HttpEntity<Object>(requestPayLoad, headers);
 
-        for (int tryNumber = 1; tryNumber <= API_RETRY; tryNumber++) {
+        int tryNumber = 1;
+        while(tryNumber <= API_RETRY) {
             try {
                 ResponseEntity<T> responseEntity = restTemplate.exchange(url, httpMethod, requestEntity, returnType, uriVariables);
                 return responseEntity.getBody();
             } catch (HttpStatusCodeException error) {
-                handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
+                if (isTooManyRequestsError) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        log.error("Error in performCustomRequest", e);
+                    }
+                } else {
+                    tryNumber++;
+                }
             } catch (RuntimeException e) {
                 handleApiError(tryNumber, e);
+                tryNumber++;
             }
         }
 
@@ -1898,18 +2032,22 @@ public class StandardBullhornData implements BullhornData {
      * @param error
      * @throws RestApiException if tryNumber >= API_RETRY.
      */
-    protected void handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
+    protected boolean handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
+        boolean isTooManyRequestsError = false;
         if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
             resetBhRestToken(uriVariables);
+        } else if (error.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
+            isTooManyRequestsError = true;
         }
         log.error(
                 "HttpStatusCodeError making api call. Try number:" + tryNumber + " out of " + API_RETRY + ". Http status code: "
                         + error.getStatusCode() + ". Response body: " + error.getResponseBodyAsString(), error);
-        if (tryNumber >= API_RETRY) {
+        if (tryNumber >= API_RETRY && !isTooManyRequestsError) {
             throw new RestApiException("HttpStatusCodeError making api call with url variables " + uriVariables.toString()
                     + ". Http status code: " + error.getStatusCode().toString() + ". Response body: " + error == null ? ""
                     : error.getResponseBodyAsString());
         }
+        return isTooManyRequestsError;
     }
 
     protected void handleApiError(int tryNumber, Exception e) {

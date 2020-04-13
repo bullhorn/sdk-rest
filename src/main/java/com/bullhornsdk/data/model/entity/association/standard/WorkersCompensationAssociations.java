@@ -22,7 +22,7 @@ public final class WorkersCompensationAssociations implements EntityAssociations
 	private List<AssociationField<WorkersCompensation, ? extends BullhornEntity>> allAssociations;
 	private static final WorkersCompensationAssociations INSTANCE = new WorkersCompensationAssociations();
 
-	private WorkersCompensationAssociations() {
+    public WorkersCompensationAssociations() {
 		super();
 	}
 

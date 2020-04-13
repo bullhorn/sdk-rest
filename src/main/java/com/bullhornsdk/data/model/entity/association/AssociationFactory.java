@@ -25,6 +25,7 @@ public class AssociationFactory {
     private static final CategoryAssociations categoryAssociations = CategoryAssociations.getInstance();
     private static final ClientContactAssociations clientContactAssociations = ClientContactAssociations.getInstance();
     private static final ClientCorporationAssociations clientCorporationAssociations = ClientCorporationAssociations.getInstance();
+    private static final ClientCorporationCertificationAssociations clientCorporationCertificationAssociations = ClientCorporationCertificationAssociations.getInstance();
     private static final CorporateUserAssociations corporateUserAssociations = CorporateUserAssociations.getInstance();
     private static final DistributionListAssociations distributionListAssociations = DistributionListAssociations.getInstance();
     private static final JobOrderAssociations jobOrderAssociations = JobOrderAssociations.getInstance();
@@ -83,6 +84,10 @@ public class AssociationFactory {
 
         if (type == ClientCorporation.class) {
             return (EntityAssociations<T>) clientCorporationAssociations;
+        }
+
+        if (type == ClientCorporationCertification.class) {
+            return (EntityAssociations<T>) clientCorporationCertificationAssociations;
         }
 
         if (type == CorporateUser.class) {
@@ -187,9 +192,14 @@ public class AssociationFactory {
      *
      * @return
      */
-    public static ClientCorporationAssociations clientCorporationAssociations() {
-        return clientCorporationAssociations;
-    }
+    public static ClientCorporationAssociations clientCorporationAssociations() { return clientCorporationAssociations; }
+
+    /**
+     * Returns the associations for ClientCorporationCertification
+     *
+     * @return
+     */
+    public static ClientCorporationCertificationAssociations clientCorporationCertificationAssociations() { return clientCorporationCertificationAssociations; }
 
     /**
      * Returns the associations for CorporateUser

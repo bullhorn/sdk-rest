@@ -29,7 +29,7 @@ public final class LeadAssociations implements EntityAssociations<Lead> {
 
     private static final LeadAssociations INSTANCE = new LeadAssociations();
 
-    private LeadAssociations() {
+    public LeadAssociations() {
         super();
     }
 

@@ -1,0 +1,141 @@
+{
+    "entity": "JobOrderCustomObject",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/JobOrderCustomObject?fields=*",
+    "label": "Job Order Custom Object",
+    "dateLastModified": "1539697168408",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "corporationID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Corporation ID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "displayType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "Display Type",
+            "hideFromSearch": false
+        },
+        {
+            "name": "enabled",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Enabled",
+            "hideFromSearch": false
+        },
+        {
+            "name": "entityList",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Entity List",
+            "hideFromSearch": false
+        },
+        {
+            "name": "icon",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Icon",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isHidden",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Hidden",
+            "hideFromSearch": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "objectNumber",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Object Number",
+            "hideFromSearch": false
+        },
+        {
+            "name": "reportID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Report ID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "staticTemplateName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Static Template Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "tabName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 20,
+            "confidential": false,
+            "label": "Tab Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "type",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "Type",
+            "hideFromSearch": false
+        },
+        {
+            "name": "useClientDefinedName",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Use Client Defined Name",
+            "hideFromSearch": false
+        }
+    ]
+}

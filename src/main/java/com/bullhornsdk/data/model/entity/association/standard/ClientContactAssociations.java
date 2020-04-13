@@ -3,7 +3,16 @@ package com.bullhornsdk.data.model.entity.association.standard;
 
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobject.*;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
@@ -41,7 +50,7 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
 
     private static final ClientContactAssociations INSTANCE = new ClientContactAssociations();
 
-    private ClientContactAssociations() {
+    public ClientContactAssociations() {
         super();
     }
 

@@ -1,16 +1,16 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -23,6 +23,7 @@ import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
+import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -44,19 +45,27 @@ import java.math.BigDecimal;
 		"correlatedCustomText5", "correlatedCustomText6", "correlatedCustomText7", "correlatedCustomText8", "correlatedCustomText9",
 		"correlatedCustomTextBlock1", "correlatedCustomTextBlock2", "correlatedCustomTextBlock3", "costCenter", "customBillRate1",
 		"customBillRate10", "customBillRate2", "customBillRate3", "customBillRate4", "customBillRate5", "customBillRate6",
-		"customBillRate7", "customBillRate8", "customBillRate9", "customDate1", "customDate2", "customDate3",  "customEncryptedText1",
+		"customBillRate7", "customBillRate8", "customBillRate9", "customDate1", "customDate10","customDate11", "customDate12", "customDate13",
+        "customDate2", "customDate3", "customDate4", "customDate5", "customDate6", "customDate7", "customDate8", "customDate9", "customEncryptedText1",
         "customEncryptedText2", "customEncryptedText3", "customEncryptedText4", "customEncryptedText5", "customEncryptedText6", "customEncryptedText7",
-        "customEncryptedText8", "customEncryptedText9",  "customEncryptedText10", "customFloat1",
-		"customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customPayRate1", "customPayRate10", "customPayRate2",
+        "customEncryptedText8", "customEncryptedText9",  "customEncryptedText10", "customFloat1", "customFloat10", "customFloat11","customFloat12",
+        "customFloat13", "customFloat14", "customFloat15", "customFloat16", "customFloat17", "customFloat18", "customFloat19", "customFloat2",
+        "customFloat20", "customFloat21", "customFloat22", "customFloat23", "customFloat3", "customFloat4", "customFloat5", "customFloat6",
+        "customFloat7", "customFloat8", "customFloat9","customInt1", "customInt10", "customInt11", "customInt12", "customInt13", "customInt14",
+        "customInt15", "customInt16", "customInt17", "customInt18", "customInt19", "customInt2", "customInt20", "customInt21", "customInt22", "customInt23",
+        "customInt3", "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customPayRate1", "customPayRate10", "customPayRate2",
 		"customPayRate3", "customPayRate4", "customPayRate5", "customPayRate6", "customPayRate7", "customPayRate8", "customPayRate9",
 		"customText1", "customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16",
 		"customText17", "customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
 		"customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
 		"customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
-		"customText39", "customText4", "customText40", "customText5", "customText6", "customText7", "customText8", "customText9",
-		"customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateBegin",
+		"customText39", "customText4", "customText40", "customText41", "customText42", "customText43", "customText44", "customText45", "customText46",
+        "customText47", "customText48", "customText49", "customText5", "customText51", "customText52", "customText53", "customText54", "customText55",
+        "customText56", "customText57", "customText58", "customText59", "customText6", "customText60", "customText7", "customText8", "customText9",
+        "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5",
+        "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateAdded", "dateBegin",
 		"dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
-		"employmentType", "fee", "flatFee", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
+		"employmentType", "fee", "flatFee", "fileAttachments", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
 		"jobOrder", "jobSubmission", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
 		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
@@ -132,6 +141,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private BigDecimal fee;
 
 	private BigDecimal flatFee;
+
+    private OneToMany<StandardFileAttachment> fileAttachments;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -934,6 +945,17 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	    this.workersCompensationRate = workersCompensationRate;
 	}
 
+    @JsonProperty("fileAttachments")
+    public OneToMany<StandardFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
+
+    @ReadOnly
+    @JsonProperty("fileAttachments")
+    public void setFileAttachments(OneToMany<StandardFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
+    }
+
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -1054,6 +1076,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.customObject10s = customObject10s;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -1110,6 +1133,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             return false;
         if (fee != null ? !fee.equals(placement.fee) : placement.fee != null) return false;
         if (flatFee != null ? !flatFee.equals(placement.flatFee) : placement.flatFee != null) return false;
+        if (fileAttachments != null ? !fileAttachments.equals(placement.fileAttachments) : placement.fileAttachments != null)
+            return false;
         if (hoursOfOperation != null ? !hoursOfOperation.equals(placement.hoursOfOperation) : placement.hoursOfOperation != null)
             return false;
         if (hoursPerDay != null ? !hoursPerDay.equals(placement.hoursPerDay) : placement.hoursPerDay != null)
@@ -1224,6 +1249,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         result = 31 * result + (employmentType != null ? employmentType.hashCode() : 0);
         result = 31 * result + (fee != null ? fee.hashCode() : 0);
         result = 31 * result + (flatFee != null ? flatFee.hashCode() : 0);
+        result = 31 * result + (fileAttachments != null ? fileAttachments.hashCode() : 0);
         result = 31 * result + (hoursOfOperation != null ? hoursOfOperation.hashCode() : 0);
         result = 31 * result + (hoursPerDay != null ? hoursPerDay.hashCode() : 0);
         result = 31 * result + (housingManagerID != null ? housingManagerID.hashCode() : 0);
@@ -1305,6 +1331,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         sb.append(", employmentType='").append(employmentType).append('\'');
         sb.append(", fee=").append(fee);
         sb.append(", flatFee=").append(flatFee);
+        sb.append(", fileAttachments=").append(fileAttachments);
         sb.append(", hoursOfOperation='").append(hoursOfOperation).append('\'');
         sb.append(", hoursPerDay=").append(hoursPerDay);
         sb.append(", housingManagerID=").append(housingManagerID);
