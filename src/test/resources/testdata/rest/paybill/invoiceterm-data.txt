@@ -358,5 +358,6 @@
                "data": []
            },
            "waitForTimecards": false
+        }
     ]
 }

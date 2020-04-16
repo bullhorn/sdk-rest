@@ -5,7 +5,7 @@
     "data": [
         {
             "id": 1,
-"address": {
+            "address": {
                 "address1": null,
                 "address2": null,
                 "city": null,
@@ -79,7 +79,7 @@
         },
         {
             "id": 2,
-"address": {
+             "address": {
                 "address1": null,
                 "address2": null,
                 "city": null,
@@ -153,7 +153,7 @@
         },
         {
             "id": 3,
-"address": {
+            "address": {
                 "address1": null,
                 "address2": null,
                 "city": null,
@@ -227,7 +227,7 @@
         },
         {
             "id": 4,
-"address": {
+               "address": {
                 "address1": null,
                 "address2": null,
                 "city": null,
@@ -301,7 +301,7 @@
         },
         {
             "id": 5,
-"address": {
+            "address": {
                 "address1": null,
                 "address2": null,
                 "city": null,
@@ -372,5 +372,6 @@
                 "total": 2,
                 "data": []
             }
+         }
      ]
 }
