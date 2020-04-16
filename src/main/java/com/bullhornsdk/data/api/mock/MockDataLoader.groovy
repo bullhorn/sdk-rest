@@ -500,9 +500,9 @@ public class MockDataLoader {
         entityFiles.put(WorkersCompensation.class, "workerscompensation-data.txt");
         entityFiles.put(WorkersCompensationRate.class, "workerscompensationrate-data.txt");
 
-        entityFiles.put(BillingProfile.class, "billingprofile-data.txt");
-        entityFiles.put(InvoiceTerm.class, "invoiceterm-data.txt");
-        entityFiles.put(Location.class, "location-data.txt");
+        entityFiles.put(BillingProfile.class, "paybill/billingprofile-data.txt");
+        entityFiles.put(InvoiceTerm.class, "paybill/invoiceterm-data.txt");
+        entityFiles.put(Location.class, "paybill/location-data.txt");
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobjectinstances/jobordercustomobjectinstance2-data.txt");
