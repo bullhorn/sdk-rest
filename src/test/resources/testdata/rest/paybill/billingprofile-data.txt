@@ -81,8 +81,7 @@
             "effectiveEndDate": "2999-12-31",
             "externalID": null,
             "invoiceStatementMessageTemplate": {
-                "id": 1,
-                "name": "VACO"
+                "id": 1
             },
             "invoiceTerm": {
                 "id": 26644,
@@ -191,8 +190,7 @@
             "effectiveEndDate": "2999-12-31",
             "externalID": null,
             "invoiceStatementMessageTemplate": {
-                "id": 1,
-                "name": "VACO"
+                "id": 1
             },
             "invoiceTerm": {
                 "id": 26644,
@@ -301,8 +299,7 @@
             "effectiveEndDate": "2999-12-31",
             "externalID": null,
             "invoiceStatementMessageTemplate": {
-                "id": 1,
-                "name": "VACO"
+                "id": 1
             },
             "invoiceTerm": {
                 "id": 26644,
@@ -411,8 +408,7 @@
             "effectiveEndDate": "2999-12-31",
             "externalID": null,
             "invoiceStatementMessageTemplate": {
-                "id": 1,
-                "name": "VACO"
+                "id": 1
             },
             "invoiceTerm": {
                 "id": 26644,
@@ -521,8 +517,7 @@
            "effectiveEndDate": "2999-12-31",
            "externalID": null,
            "invoiceStatementMessageTemplate": {
-               "id": 1,
-               "name": "VACO"
+               "id": 1
            },
            "invoiceTerm": {
                "id": 26644,
