@@ -76,24 +76,6 @@
                         "name": "id",
                         "type": "ID",
                         "dataType": "Integer"
-                    },
-                    {
-                        "name": "alphabeticCode",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 3,
-                        "confidential": false,
-                        "label": "Alphabetic Code",
-                        "hideFromSearch": false
-                    },
-                    {
-                        "name": "name",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 100,
-                        "confidential": false,
-                        "label": "Name",
-                        "hideFromSearch": false
                     }
                 ]
             }
@@ -483,24 +465,6 @@
                         "name": "id",
                         "type": "ID",
                         "dataType": "Integer"
-                    },
-                    {
-                        "name": "externalAccountNumber",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 100,
-                        "confidential": false,
-                        "label": "External Account Number",
-                        "hideFromSearch": false
-                    },
-                    {
-                        "name": "externalAccountName",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 100,
-                        "confidential": false,
-                        "label": "External Account Name",
-                        "hideFromSearch": false
                     }
                 ]
             }
@@ -764,15 +728,6 @@
                         "dataType": "Date",
                         "confidential": false,
                         "label": "effectiveEndDate",
-                        "hideFromSearch": false
-                    },
-                    {
-                        "name": "title",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 100,
-                        "confidential": false,
-                        "label": "Title",
                         "hideFromSearch": false
                     }
                 ]

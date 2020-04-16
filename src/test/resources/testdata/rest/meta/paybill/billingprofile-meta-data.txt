@@ -745,15 +745,6 @@
                         "name": "id",
                         "type": "ID",
                         "dataType": "Integer"
-                    },
-                    {
-                        "name": "name",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 100,
-                        "confidential": false,
-                        "label": "Template Name",
-                        "hideFromSearch": false
                     }
                 ]
             }
