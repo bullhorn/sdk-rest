@@ -1,0 +1,522 @@
+{
+    "entity": "LocationVersion",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/LocationVersion?fields=*",
+    "label": "Location Version",
+    "dateLastModified": "1587073976071",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "address",
+            "type": "COMPOSITE",
+            "dataType": "AddressWithStateID",
+            "confidential": false,
+            "label": "Address",
+            "hideFromSearch": false,
+            "fields": [
+                {
+                    "name": "address1",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 100,
+                    "confidential": false,
+                    "label": "Address 1",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "address2",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 100,
+                    "confidential": false,
+                    "label": "Address 2",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "city",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 100,
+                    "confidential": false,
+                    "label": "City",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "state",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 100,
+                    "confidential": false,
+                    "label": "State",
+                    "optionsType": "NorthAmericaState",
+                    "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/NorthAmericaState",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "zip",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 100,
+                    "confidential": false,
+                    "label": "Zip",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "countryID",
+                    "type": "SCALAR",
+                    "dataType": "Integer",
+                    "confidential": false,
+                    "label": "Country",
+                    "optionsType": "Country",
+                    "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/Country",
+                    "hideFromSearch": false
+                },
+                {
+                    "name": "countryCode",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 0
+                },
+                {
+                    "name": "countryName",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 0
+                },
+                {
+                    "name": "stateID",
+                    "type": "SCALAR",
+                    "dataType": "Integer"
+                },
+                {
+                    "name": "stateName",
+                    "type": "SCALAR",
+                    "dataType": "String",
+                    "maxLength": 0
+                }
+            ]
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText10",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText11",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText11",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText12",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText12",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText13",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText13",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText14",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText14",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText15",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText15",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText16",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText16",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText17",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText17",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText18",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText18",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText19",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText19",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText20",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText20",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText8",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "dateAdded",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "dateLastModified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "effectiveDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Effective Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "effectiveEndDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "effectiveEndDate",
+            "hideFromSearch": false
+        },
+        {
+            "name": "externalID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Location Code",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isBillTo",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Bill To",
+            "options": [
+                {
+                    "value": true,
+                    "label": "Yes"
+                },
+                {
+                    "value": false,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "isFirst",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is First Version",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isSoldTo",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Sold To",
+            "options": [
+                {
+                    "value": true,
+                    "label": "Yes"
+                },
+                {
+                    "value": false,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "isWorkSite",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Worksite",
+            "options": [
+                {
+                    "value": true,
+                    "label": "Yes"
+                },
+                {
+                    "value": false,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "status",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Status",
+            "options": [
+                {
+                    "value": "Active",
+                    "label": "Active"
+                },
+                {
+                    "value": "Inactive",
+                    "label": "Inactive"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "title",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Title",
+            "hideFromSearch": false
+        }
+    ]
+}

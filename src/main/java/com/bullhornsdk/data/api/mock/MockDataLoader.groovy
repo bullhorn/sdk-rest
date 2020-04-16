@@ -84,6 +84,9 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
+import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
+import com.bullhornsdk.data.model.entity.core.paybill.Location
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
@@ -497,6 +500,10 @@ public class MockDataLoader {
         entityFiles.put(WorkersCompensation.class, "workerscompensation-data.txt");
         entityFiles.put(WorkersCompensationRate.class, "workerscompensationrate-data.txt");
 
+        entityFiles.put(BillingProfile.class, "billingprofile-data.txt");
+        entityFiles.put(InvoiceTerm.class, "invoiceterm-data.txt");
+        entityFiles.put(Location.class, "location-data.txt");
+
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobjectinstances/jobordercustomobjectinstance2-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance3.class, "customobjectinstances/jobordercustomobjectinstance3-data.txt");
@@ -641,6 +648,10 @@ public class MockDataLoader {
         entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
         entityMetaFiles.put(WorkersCompensation.class, "meta/workerscompensation-meta-data.txt");
         entityMetaFiles.put(WorkersCompensationRate.class, "meta/workerscompensationrate-meta-data.txt");
+
+        entityMetaFiles.put(BillingProfile.class, "meta/paybill/billingprofile-meta-data.txt");
+        entityMetaFiles.put(Location.class, "meta/paybill/location-meta-data.txt");
+        entityMetaFiles.put(InvoiceTerm.class, "meta/paybill/invoiceterm-meta-data.txt");
 
         entityMetaFiles.put(JobOrderCustomObjectInstance1.class, "meta/customobjectinstances/jobordercustomobjectinstance1-meta-data.txt");
         entityMetaFiles.put(JobOrderCustomObjectInstance2.class, "meta/customobjectinstances/jobordercustomobjectinstance2-meta-data.txt");
