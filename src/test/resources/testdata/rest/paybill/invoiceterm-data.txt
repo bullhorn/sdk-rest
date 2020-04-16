@@ -11,9 +11,7 @@
                "name": "Wolters Kluwer"
            },
            "currencyUnit": {
-               "id": 166,
-               "alphabeticCode": "USD",
-               "name": "US Dollar"
+               "id": 166
            },
            "customDate1": null,
            "customDate2": null,
@@ -84,9 +82,7 @@
                "name": "Wolters Kluwer"
            },
            "currencyUnit": {
-               "id": 166,
-               "alphabeticCode": "USD",
-               "name": "US Dollar"
+               "id": 166
            },
            "customDate1": null,
            "customDate2": null,
@@ -157,9 +153,7 @@
                "name": "Wolters Kluwer"
            },
            "currencyUnit": {
-               "id": 166,
-               "alphabeticCode": "USD",
-               "name": "US Dollar"
+               "id": 166
            },
            "customDate1": null,
            "customDate2": null,
@@ -230,9 +224,7 @@
                "name": "Wolters Kluwer"
            },
            "currencyUnit": {
-               "id": 166,
-               "alphabeticCode": "USD",
-               "name": "US Dollar"
+               "id": 166
            },
            "customDate1": null,
            "customDate2": null,
@@ -303,9 +295,7 @@
                "name": "Wolters Kluwer"
            },
            "currencyUnit": {
-               "id": 166,
-               "alphabeticCode": "USD",
-               "name": "US Dollar"
+               "id": 166
            },
            "customDate1": null,
            "customDate2": null,
