@@ -1,7 +1,7 @@
 {
-    "total": 5,
+    "total": 25,
     "start": 0,
-    "count": 5,
+    "count": 20,
     "data": [
         {
             "id": 1,
@@ -440,7 +440,1642 @@
             }
         },
         {
+            "id": 19,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 18,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 17,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 16,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 15,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 14,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 13,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 12,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 11,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 10,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 9,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 8,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 7,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
+            "id": 6,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		        {
             "id": 5,
+           "bccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "billingAttention": null,
+           "billingClientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "billingContact": {
+               "id": 2984265,
+               "firstName": "Marie ",
+               "lastName": "Croteau"
+           },
+           "billingCorporateUser": null,
+           "billingLocation": {
+               "id": 22632,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "candidate": null,
+               "title": "Wolters Kluwer Billing Location",
+               "effectiveDate": "2020-01-10",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 22632,
+               "externalID": "3020186"
+           },
+           "ccRecipients": {
+               "total": 0,
+               "data": []
+           },
+           "clientCorporation": {
+               "id": 391265,
+               "name": "Wolters Kluwer"
+           },
+           "customDate1": null,
+           "customDate2": null,
+           "customDate3": null,
+           "customFloat1": null,
+           "customFloat2": null,
+           "customFloat3": null,
+           "customInt1": null,
+           "customInt2": null,
+           "customInt3": null,
+           "customText1": null,
+           "customText10": null,
+           "customText11": null,
+           "customText12": null,
+           "customText13": null,
+           "customText14": null,
+           "customText15": null,
+           "customText16": null,
+           "customText17": null,
+           "customText18": null,
+           "customText19": null,
+           "customText2": null,
+           "customText20": null,
+           "customText3": null,
+           "customText4": null,
+           "customText5": null,
+           "customText6": null,
+           "customText7": null,
+           "customText8": null,
+           "customText9": null,
+           "customTextBlock1": null,
+           "customTextBlock2": null,
+           "customTextBlock3": null,
+           "dateAdded": 1587044327147,
+           "dateLastModified": 1587044327710,
+           "deliveryMethod": "Email",
+           "description": "Test Billing Profile 1",
+           "effectiveDate": "2020-04-16",
+           "effectiveEndDate": "2999-12-31",
+           "externalID": null,
+           "invoiceStatementMessageTemplate": {
+               "id": 1
+           },
+           "invoiceTerm": {
+               "id": 26644,
+               "clientCorporation": {
+                   "id": 391265,
+                   "name": "Wolters Kluwer"
+               },
+               "title": "TEST Terms 1",
+               "effectiveDate": "2020-04-16",
+               "effectiveEndDate": "2999-12-31",
+               "versionID": 61370
+           },
+           "isDeleted": false,
+           "owner": {
+               "id": 3121287,
+               "firstName": "Bullhorn",
+               "lastName": "PS"
+           },
+           "status": "Active",
+           "title": "TEST BP 1",
+           "toRecipients": {
+               "total": 1,
+               "data": []
+           },
+           "versionID": 27789,
+           "versions": {
+               "total": 1,
+               "data": []
+           }
+        },
+		    {
+            "id": 20,
            "bccRecipients": {
                "total": 0,
                "data": []
