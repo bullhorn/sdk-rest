@@ -1,0 +1,140 @@
+{
+    "entity": "InvoiceStatementTemplate",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementTemplate?fields=*",
+    "label": "Invoice Statement Template",
+    "dateLastModified": "1587073655264",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "contentSubType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 64,
+            "confidential": false,
+            "label": "Content Sub Type",
+            "hideFromSearch": false
+        },
+        {
+            "name": "contentType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 64,
+            "confidential": false,
+            "label": "Content Type",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "directory",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Directory",
+            "hideFromSearch": false
+        },
+        {
+            "name": "fileExtension",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 10,
+            "confidential": false,
+            "label": "File Extension",
+            "hideFromSearch": false
+        },
+        {
+            "name": "fileOwner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "File Owner",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1587073655311",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "fileSize",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "File Size",
+            "hideFromSearch": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "label": "Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "type",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Type",
+            "hideFromSearch": false
+        }
+    ]
+}

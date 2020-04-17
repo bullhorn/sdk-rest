@@ -85,6 +85,9 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
@@ -212,6 +215,10 @@ public enum BullhornEntityInfo {
     USER_TYPE("UserType", UserType.class, UserTypeWrapper.class, UserTypeListWrapper.class, null, null),
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
+
+    LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),
+    BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
+    INVOICE_TERM("InvoiceTerm", InvoiceTerm.class, InvoiceTermWrapper.class, InvoiceTermListWrapper.class, null, null),
 
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_1("JobOrderCustomObjectInstance1", JobOrderCustomObjectInstance1.class, JobOrderCustomObjectInstance1Wrapper.class, JobOrderCustomObjectInstance1ListWrapper.class, "JobOrderCustomObject1EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_2("JobOrderCustomObjectInstance2", JobOrderCustomObjectInstance2.class, JobOrderCustomObjectInstance2Wrapper.class, JobOrderCustomObjectInstance2ListWrapper.class, "JobOrderCustomObject2EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
