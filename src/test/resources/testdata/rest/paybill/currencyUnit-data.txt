@@ -1,0 +1,76 @@
+{
+    "start": 0,
+    "count": 10,
+    "data": [
+        {
+            "id": 178,
+            "alphabeticCode": "PLN",
+            "minorUnits": 2,
+            "name": "Zloty",
+            "numericCode": 985
+        },
+        {
+            "id": 177,
+            "alphabeticCode": "ZWL",
+            "minorUnits": 2,
+            "name": "Zimbabwe Dollar",
+            "numericCode": 932
+        },
+        {
+            "id": 176,
+            "alphabeticCode": "ZMW",
+            "minorUnits": 2,
+            "name": "Zambian Kwacha",
+            "numericCode": 967
+        },
+        {
+            "id": 175,
+            "alphabeticCode": "CNY",
+            "minorUnits": 2,
+            "name": "Yuan Renminbi",
+            "numericCode": 156
+        },
+        {
+            "id": 174,
+            "alphabeticCode": "JPY",
+            "minorUnits": 0,
+            "name": "Yen",
+            "numericCode": 392
+        },
+        {
+            "id": 173,
+            "alphabeticCode": "YER",
+            "minorUnits": 2,
+            "name": "Yemeni Rial",
+            "numericCode": 886
+        },
+        {
+            "id": 172,
+            "alphabeticCode": "KRW",
+            "minorUnits": 0,
+            "name": "Won",
+            "numericCode": 410
+        },
+        {
+            "id": 171,
+            "alphabeticCode": "CHW",
+            "minorUnits": 2,
+            "name": "WIR Franc",
+            "numericCode": 948
+        },
+        {
+            "id": 170,
+            "alphabeticCode": "CHE",
+            "minorUnits": 2,
+            "name": "WIR Euro",
+            "numericCode": 947
+        },
+        {
+            "id": 169,
+            "alphabeticCode": "VUV",
+            "minorUnits": 0,
+            "name": "Vatu",
+            "numericCode": 548
+        }
+    ]
+}

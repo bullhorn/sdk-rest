@@ -1,0 +1,20 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "contentSubType": null,
+            "contentType": null,
+            "dateAdded": 1550680761000,
+            "dateLastModified": 1550680761000,
+            "description": "",
+            "directory": "4680\\2019.01\\",
+            "fileExtension": ".docx",
+            "fileOwner": null,
+            "fileSize": 0,
+            "name": "test1.docx",
+            "type": "default"
+        }
+    ]
+}

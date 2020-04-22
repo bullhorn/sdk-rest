@@ -10,9 +10,9 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
+
 import org.joda.time.DateTime;
 
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -20,7 +20,7 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "bccRecipients", "billingAttention", "billingClientCorporation",
+@JsonPropertyOrder({"id", "bccRecipients", "billingAttention", "billingClientCorporation",
     "billingContact", "billingCorporateUser", "ccRecipients",
     "customDate1", "customDate2", "customDate3",
     "customFloat1", "customFloat2", "customFloat3", "customInt1",
@@ -33,7 +33,7 @@ import java.util.Objects;
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "deliveryMethod", "description", "effectiveDate",
     "effectiveEndDate", "externalID", "invoiceStatementMessageTemplate", "isFirst", "status",
-    "title", "toRecipients" })
+    "title", "toRecipients"})
 public class BillingProfileVersion extends CustomFieldsB implements QueryEntity,
     UpdateEntity, CreateEntity, DateLastModifiedEntity, EffectiveDateEntity {
 
@@ -62,16 +62,16 @@ public class BillingProfileVersion extends CustomFieldsB implements QueryEntity,
     @JsonIgnore
     private String description;
 
-    private Date effectiveDate;
+    private String effectiveDate;
 
-    private Date effectiveEndDate;
+    private String effectiveEndDate;
 
     @JsonIgnore
     private String externalID;
 
     private InvoiceStatementMessageTemplate invoiceStatementMessageTemplate;
 
-    private boolean isFirst;
+    private Boolean isFirst;
 
     private OneToMany<Person> toRecipients;
 
@@ -204,22 +204,22 @@ public class BillingProfileVersion extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("effectiveDate")
-    public Date getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(Date effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public Date getEffectiveEndDate() {
+    public String getEffectiveEndDate() {
         return effectiveEndDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public void setEffectiveEndDate(Date effectiveEndDate) {
+    public void setEffectiveEndDate(String effectiveEndDate) {
         this.effectiveEndDate = effectiveEndDate;
     }
 
