@@ -52,13 +52,13 @@ public class LocationVersion implements QueryEntity, UpdateEntity, CreateEntity,
     @Size(max = 100)
     private String externalID;
 
-    private boolean isBillTo;
+    private Boolean isBillTo;
 
-    private boolean isFirst;
+    private Boolean isFirst;
 
-    private boolean isSoldTo;
+    private Boolean isSoldTo;
 
-    private boolean isWorkSite;
+    private Boolean isWorkSite;
 
     @JsonIgnore
     @Size(max = 100)
@@ -72,18 +72,10 @@ public class LocationVersion implements QueryEntity, UpdateEntity, CreateEntity,
 
     /**
      * Returns the entity with the required fields for an insert set.
-     *
-     * @return
      */
     public LocationVersion instantiateForInsert() {
         LocationVersion entity = new LocationVersion();
         entity.setIsDeleted(Boolean.FALSE);
-        entity.setStatus("New Location");
-        entity.setIsWorkSite(Boolean.FALSE);
-        entity.setIsBillTo(Boolean.FALSE);
-        entity.setIsSoldTo(Boolean.FALSE);
-        entity.setTitle("title");
-
         return entity;
     }
 
@@ -173,42 +165,42 @@ public class LocationVersion implements QueryEntity, UpdateEntity, CreateEntity,
     }
 
     @JsonProperty("isBillTo")
-    public boolean getIsBillTo() {
+    public Boolean getIsBillTo() {
         return isBillTo;
     }
 
     @JsonProperty("isBillTo")
-    public void setIsBillTo(boolean billTo) {
+    public void setIsBillTo(Boolean billTo) {
         isBillTo = billTo;
     }
 
     @JsonProperty("isFirst")
-    public boolean setIsFirst() {
+    public Boolean setIsFirst() {
         return isFirst;
     }
 
     @JsonProperty("isFirst")
-    public void getIsFirst(boolean first) {
+    public void getIsFirst(Boolean first) {
         isFirst = first;
     }
 
     @JsonProperty("isSoldTo")
-    public boolean getIsSoldTo() {
+    public Boolean getIsSoldTo() {
         return isSoldTo;
     }
 
     @JsonProperty("isSoldTo")
-    public void setIsSoldTo(boolean soldTo) {
+    public void setIsSoldTo(Boolean soldTo) {
         isSoldTo = soldTo;
     }
 
     @JsonProperty("isWorkSite")
-    public boolean getIsWorkSite() {
+    public Boolean getIsWorkSite() {
         return isWorkSite;
     }
 
     @JsonProperty("isWorkSite")
-    public void setIsWorkSite(boolean workSite) {
+    public void setIsWorkSite(Boolean workSite) {
         isWorkSite = workSite;
     }
 

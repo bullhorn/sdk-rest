@@ -1,0 +1,102 @@
+{
+    "start": 0,
+    "count": 8,
+    "data": [
+        {
+            "id": 8,
+            "dateAdded": 1587661588760,
+            "messageText": "To whom it may concern: Here is your Payment In Advance Invoice Statement. Please pay appropriately",
+            "name": "invoiceTemplate-ext-1",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": "Payment In Advance Invoice Statement"
+        },
+        {
+            "id": 7,
+            "dateAdded": 1587661588760,
+            "messageText": "To whom it may concern: Here is your Net 30 Invoice Statement. Please pay appropriately",
+            "name": "invoiceTemplate-ext-5",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": "Net 30 Invoice Statement"
+        },
+        {
+            "id": 6,
+            "dateAdded": 1587661588760,
+            "messageText": "To whom it may concern: Here is your Net 21 Invoice Statement. Please pay appropriately",
+            "name": "invoiceTemplate-ext-4",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": "Net 21 Invoice Statement"
+        },
+        {
+            "id": 5,
+            "dateAdded": 1587661588760,
+            "messageText": "To whom it may concern: Here is your End Of Month Invoice Statement. Please pay appropriately",
+            "name": "invoiceTemplate-ext-6",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": "End Of Month Invoice Statement"
+        },
+        {
+            "id": 4,
+            "dateAdded": 1587661588753,
+            "messageText": "To whom it may concern: Here is your Net 7 Invoice Statement. Please pay appropriately",
+            "name": "invoiceTemplate-ext-3",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": "Net 7 Invoice Statement"
+        },
+        {
+            "id": 3,
+            "dateAdded": 1587661588683,
+            "messageText": "To whom it may concern: Here is your Cash In Advance Invoice Statement. Please pay appropriately",
+            "name": "invoiceTemplate-ext-2",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": "Cash In Advance Invoice Statement"
+        },
+        {
+            "id": 2,
+            "dateAdded": 1587661261140,
+            "messageText": "To whom it may concern: Here is your invoice. Please pay appropriately",
+            "name": "ismt-ext-1",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": "Invoice Statement"
+        },
+        {
+            "id": 1,
+            "dateAdded": 1587660593993,
+            "messageText": null,
+            "name": "TemplateFile.docx",
+            "owner": {
+                "id": 2,
+                "firstName": "Prism",
+                "lastName": "User01"
+            },
+            "subject": null
+        }
+    ]
+}

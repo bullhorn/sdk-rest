@@ -4,6 +4,7 @@ import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
+
 import org.joda.time.DateTime;
 
 import java.util.Objects;

@@ -85,8 +85,12 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
+import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount
 import com.bullhornsdk.data.model.entity.core.paybill.Location
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementTemplate
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm
+import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
@@ -504,6 +508,10 @@ public class MockDataLoader {
         entityFiles.put(BillingProfile.class, "paybill/billingprofile-data.txt");
         entityFiles.put(InvoiceTerm.class, "paybill/invoiceterm-data.txt");
         entityFiles.put(Location.class, "paybill/location-data.txt");
+        entityFiles.put(GeneralLedgerAccount.class, "paybill/generalLedgerAccount-data.txt");
+        entityFiles.put(InvoiceStatementTemplate.class, "paybill/invoiceStatementTemplate-data.txt");
+        entityFiles.put(InvoiceStatementMessageTemplate.class, "paybill/invoiceStatementMessageTemplate-data.txt");
+        entityFiles.put(CurrencyUnit.class, "paybill/currencyUnit-data.txt");
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobjectinstances/jobordercustomobjectinstance2-data.txt");

@@ -11,8 +11,12 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
+import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementTemplate;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
+import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
@@ -52,6 +56,7 @@ import java.util.Map;
  */
 public enum BullhornEntityInfo {
 
+    // Standard Entities
     ADDRESS("Address", null, null, null, null, null),
     APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class,
         "AppointmentEditHistory", "AppointmentEditHistoryFieldChange"),
@@ -146,10 +151,20 @@ public enum BullhornEntityInfo {
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
 
+    // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),
     BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
+    GENERAL_LEDGER_ACCOUNT("GeneralLedgerAccount", GeneralLedgerAccount.class, GeneralLedgerAccountWrapper.class, GeneralLedgerAccountListWrapper.class, null, null),
+    INVOICE_STATEMENT_TEMPLATE("InvoiceStatementTemplate", InvoiceStatementTemplate.class, InvoiceStatementTemplateWrapper.class, InvoiceStatementTemplateListWrapper.class, null, null),
+    INVOICE_STATEMENT_MESSAGE_TEMPLATE("InvoiceStatementMessageTemplate", InvoiceStatementMessageTemplate.class, InvoiceStatementMessageTemplateWrapper.class, InvoiceStatementMessageTemplateListWrapper.class, null, null),
+    CURRENCY_UNIT("CurrencyUnit", CurrencyUnit.class, CurrencyUnityWrapper.class, CurrencyUnitListWrapper.class, null, null),
     INVOICE_TERM("InvoiceTerm", InvoiceTerm.class, InvoiceTermWrapper.class, InvoiceTermListWrapper.class, null, null),
 
+    // Custom Objects
+    CLIENT_CORPORATION_CUSTOM_OBJECT("ClientCorporationCustomObject", ClientCorporationCustomObject.class, ClientCorporationCustomObjectWrapper.class, ClientCorporationCustomObjectListWrapper.class, null, null),
+    JOB_ORDER_CUSTOM_OBJECT("JobOrderCustomObject", JobOrderCustomObject.class, JobOrderCustomObjectWrapper.class, JobOrderCustomObjectListWrapper.class, null, null),
+    PLACEMENT_CUSTOM_OBJECT("PlacementCustomObject", PlacementCustomObject.class, PlacementCustomObjectWrapper.class, PlacementCustomObjectListWrapper.class, null, null),
+    USER_CUSTOM_OBJECT("UserCustomObject", UserCustomObject.class, UserCustomObjectWrapper.class, UserCustomObjectListWrapper.class, null, null),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_1("JobOrderCustomObjectInstance1", JobOrderCustomObjectInstance1.class, JobOrderCustomObjectInstance1Wrapper.class, JobOrderCustomObjectInstance1ListWrapper.class, "JobOrderCustomObject1EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_2("JobOrderCustomObjectInstance2", JobOrderCustomObjectInstance2.class, JobOrderCustomObjectInstance2Wrapper.class, JobOrderCustomObjectInstance2ListWrapper.class, "JobOrderCustomObject2EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_3("JobOrderCustomObjectInstance3", JobOrderCustomObjectInstance3.class, JobOrderCustomObjectInstance3Wrapper.class, JobOrderCustomObjectInstance3ListWrapper.class, "JobOrderCustomObject3EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
@@ -215,8 +230,6 @@ public enum BullhornEntityInfo {
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_33("ClientCorporationCustomObjectInstance33", ClientCorporationCustomObjectInstance33.class, ClientCorporationCustomObjectInstance33Wrapper.class, ClientCorporationCustomObjectInstance33ListWrapper.class, "ClientCorporationCustomObject33EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_34("ClientCorporationCustomObjectInstance34", ClientCorporationCustomObjectInstance34.class, ClientCorporationCustomObjectInstance34Wrapper.class, ClientCorporationCustomObjectInstance34ListWrapper.class, "ClientCorporationCustomObject34EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_35("ClientCorporationCustomObjectInstance35", ClientCorporationCustomObjectInstance35.class, ClientCorporationCustomObjectInstance35Wrapper.class, ClientCorporationCustomObjectInstance35ListWrapper.class, "ClientCorporationCustomObject35EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
-
-
     PERSON_CUSTOM_OBJECT_INSTANCE_1("PersonCustomObjectInstance1", PersonCustomObjectInstance1.class, PersonCustomObjectInstance1Wrapper.class, PersonCustomObjectInstance1ListWrapper.class, "PersonCustomObject1EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_2("PersonCustomObjectInstance2", PersonCustomObjectInstance2.class, PersonCustomObjectInstance2Wrapper.class, PersonCustomObjectInstance2ListWrapper.class, "PersonCustomObject2EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_3("PersonCustomObjectInstance3", PersonCustomObjectInstance3.class, PersonCustomObjectInstance3Wrapper.class, PersonCustomObjectInstance3ListWrapper.class, "PersonCustomObject3EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
@@ -228,6 +241,7 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_9("PersonCustomObjectInstance9", PersonCustomObjectInstance9.class, PersonCustomObjectInstance9Wrapper.class, PersonCustomObjectInstance9ListWrapper.class, "PersonCustomObject9EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, "PersonCustomObject10EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
 
+    // File Attachment Entities
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),
     CERTIFICATION_FILE_ATTACHMENT("CertificationFileAttachment", CertificationFileAttachment.class, CertificationFileAttachmentWrapper.class, CertificationFileAttachmentListWrapper.class, null, null),
     CLIENT_CONTACT_FILE_ATTACHMENT("ClientContactFileAttachment", ClientContactFileAttachment.class, ClientContactFileAttachmentWrapper.class, ClientContactFileAttachmentListWrapper.class, null, null),
@@ -235,12 +249,7 @@ public enum BullhornEntityInfo {
     JOB_ORDER_FILE_ATTACHMENT("JobOrderFileAttachment", JobOrderFileAttachment.class, JobOrderFileAttachmentWrapper.class, JobOrderFileAttachmentListWrapper.class, null, null),
     OPPORTUNITY_FILE_ATTACHMENT("OpportunityFileAttachment", OpportunityFileAttachment.class, OpportunityFileAttachmentWrapper.class, OpportunityFileAttachmentListWrapper.class, null, null),
     PLACEMENT_FILE_ATTACHMENT("PlacementFileAttachment", PlacementFileAttachment.class, PlacementFileAttachmentWrapper.class, PlacementFileAttachmentListWrapper.class, null, null),
-    BILLABLE_CHARGE_FILE_ATTACHMENT("BillableChargeFileAttachment", BillableChargeFileAttachment.class, BillableChargeFileAttachmentWrapper.class, BillableChargeFileAttachmentListWrapper.class, null, null),
-
-    CLIENT_CORPORATION_CUSTOM_OBJECT("ClientCorporationCustomObject", ClientCorporationCustomObject.class, ClientCorporationCustomObjectWrapper.class, ClientCorporationCustomObjectListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT("JobOrderCustomObject", JobOrderCustomObject.class, JobOrderCustomObjectWrapper.class, JobOrderCustomObjectListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT("PlacementCustomObject", PlacementCustomObject.class, PlacementCustomObjectWrapper.class, PlacementCustomObjectListWrapper.class, null, null),
-    USER_CUSTOM_OBJECT("UserCustomObject", UserCustomObject.class, UserCustomObjectWrapper.class, UserCustomObjectListWrapper.class, null, null);
+    BILLABLE_CHARGE_FILE_ATTACHMENT("BillableChargeFileAttachment", BillableChargeFileAttachment.class, BillableChargeFileAttachmentWrapper.class, BillableChargeFileAttachmentListWrapper.class, null, null);
 
     private final String name;
 
