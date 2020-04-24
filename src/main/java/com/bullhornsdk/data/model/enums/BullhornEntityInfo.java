@@ -13,9 +13,16 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
-import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate;
-import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementTemplate;
-import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
+import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount;
+import com.bullhornsdk.data.model.entity.core.paybill.discount.DiscountType;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
+import com.bullhornsdk.data.model.entity.core.paybill.master.*;
+import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge;
+import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -159,6 +166,36 @@ public enum BullhornEntityInfo {
     INVOICE_STATEMENT_MESSAGE_TEMPLATE("InvoiceStatementMessageTemplate", InvoiceStatementMessageTemplate.class, InvoiceStatementMessageTemplateWrapper.class, InvoiceStatementMessageTemplateListWrapper.class, null, null),
     CURRENCY_UNIT("CurrencyUnit", CurrencyUnit.class, CurrencyUnityWrapper.class, CurrencyUnitListWrapper.class, null, null),
     INVOICE_TERM("InvoiceTerm", InvoiceTerm.class, InvoiceTermWrapper.class, InvoiceTermListWrapper.class, null, null),
+
+    // PayBill Entities v2
+    BILLABLE_CHARGE("BillableCharge", BillableCharge.class, BillableChargeWrapper.class, BillableChargeListWrapper.class, null, null),
+    PAYABLE_CHARGE("PayableCharge", PayableCharge.class, PayableChargeWrapper.class, PayableChargeListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT("GeneralLedgerSegment", GeneralLedgerSegment.class, GeneralLedgerSegmentWrapper.class, GeneralLedgerSegmentListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_1("GeneralLedgerSegment1", GeneralLedgerSegment1.class, GeneralLedgerSegment1Wrapper.class, GeneralLedgerSegment1ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_2("GeneralLedgerSegment2", GeneralLedgerSegment2.class, GeneralLedgerSegment2Wrapper.class, GeneralLedgerSegment2ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_3("GeneralLedgerSegment3", GeneralLedgerSegment3.class, GeneralLedgerSegment3Wrapper.class, GeneralLedgerSegment3ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_4("GeneralLedgerSegment4", GeneralLedgerSegment4.class, GeneralLedgerSegment4Wrapper.class, GeneralLedgerSegment4ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_5("GeneralLedgerSegment5", GeneralLedgerSegment5.class, GeneralLedgerSegment5Wrapper.class, GeneralLedgerSegment5ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_TYPE("GeneralLedgerSegmentType", GeneralLedgerSegmentType.class, GeneralLedgerSegmentTypeWrapper.class, GeneralLedgerSegmentTypeListWrapper.class, null, null),
+    GENERAL_LEDGER_SERVICE_CODE("GeneralLedgerServiceCode", GeneralLedgerServiceCode.class, GeneralLedgerServiceCodeWrapper.class, GeneralLedgerServiceCodeListWrapper.class, null, null),
+    DISCOUNT("Discount", Discount.class, DiscountWrapper.class, DiscountListWrapper.class, null, null),
+    DISCOUNT_TYPE("DiscountType", DiscountType.class, DiscountTypeWrapper.class, DiscountTypeListWrapper.class, null, null),
+    EARN_CODE("EarnCode", EarnCode.class, EarnCodeWrapper.class, EarnCodeListWrapper.class, null, null),
+    INVOICE_STATEMENT("InvoiceStatement", InvoiceStatement.class, InvoiceStatementWrapper.class, InvoiceStatementListWrapper.class, null, null),
+    INVOICE_STATEMENT_BATCH("InvoiceStatementBatch", InvoiceStatementBatch.class, InvoiceStatementBatchWrapper.class, InvoiceStatementBatchListWrapper.class, null, null),
+    INVOICE_STATEMENT_DISCOUNT("InvoiceStatementDiscount", InvoiceStatementDiscount.class, InvoiceStatementDiscountWrapper.class, InvoiceStatementDiscountListWrapper.class, null, null),
+    INVOICE_STATEMENT_EXPORT_BATCH("InvoiceStatementExportBatch", InvoiceStatementExportBatch.class, InvoiceStatementExportBatchWrapper.class, InvoiceStatementExportBatchListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_ITEM("InvoiceStatementLineItem", InvoiceStatementLineItem.class, InvoiceStatementLineItemWrapper.class, InvoiceStatementLineItemListWrapper.class, null, null),
+    INVOICE_STATEMENT_SURCHARGE("InvoiceStatementSurcharge", InvoiceStatementSurcharge.class, InvoiceStatementSurchargeWrapper.class, InvoiceStatementSurchargeListWrapper.class, null, null),
+    INVOICE_STATEMENT_TAX("InvoiceStatementTax", InvoiceStatementTax.class, InvoiceStatementTaxWrapper.class, InvoiceStatementTaxListWrapper.class, null, null),
+    BATCH_GROUP("BatchGroup", BatchGroup.class, BatchGroupWrapper.class, BatchGroupListWrapper.class, null, null),
+    BILLING_SYNC_BATCH("BillingSyncBatch", BillingSyncBatch.class, BillingSyncBatchWrapper.class, BillingSyncBatchListWrapper.class, null, null),
+    BILL_MASTER("BillMaster", BillMaster.class, BillMasterWrapper.class, BillMasterListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION("BillMasterTransaction", BillMasterTransaction.class, BillMasterTransactionWrapper.class, BillMasterTransactionListWrapper.class, null, null),
+    PAY_MASTER("PayMaster", PayMaster.class, PayMasterWrapper.class, PayMasterListWrapper.class, null, null),
+    SURCHARGE("Surcharge", Surcharge.class, SurchargeWrapper.class, SurchargeListWrapper.class, null, null),
+    TAX("Tax", Tax.class, TaxWrapper.class, TaxListWrapper.class, null, null),
+
 
     // Custom Objects
     CLIENT_CORPORATION_CUSTOM_OBJECT("ClientCorporationCustomObject", ClientCorporationCustomObject.class, ClientCorporationCustomObjectWrapper.class, ClientCorporationCustomObjectListWrapper.class, null, null),

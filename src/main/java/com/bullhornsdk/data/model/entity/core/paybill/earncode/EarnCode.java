@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.contractmanagement.earncode;
+package com.bullhornsdk.data.model.entity.core.paybill.earncode;
 
 import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;

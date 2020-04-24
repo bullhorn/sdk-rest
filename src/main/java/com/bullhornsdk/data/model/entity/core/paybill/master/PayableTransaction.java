@@ -1,7 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.paybill.master;
 
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
-import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.UnitOfMeasure;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
@@ -19,23 +19,23 @@ import java.util.Date;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "amount", "billMaster", "billableCharge", "billingSyncBatch",
-    "currencyUnit", "earnCode", "quantity", "rate", "transactionDate", "unitOfMeasure"})
-public class BillableTransaction implements QueryEntity {
+@JsonPropertyOrder({"id", "amount", "billingSyncBatch", "currencyUnit", "earnCode", "payMaster", "payableCharge",
+    "quantity", "rate", "transactionDate", "unitOfMeasure"})
+public class PayableTransaction implements QueryEntity {
 
     private Integer id;
 
     private BigDecimal amount;
-
-    private BillMaster billMasters;
-
-    private BillableCharge billableCharge;
 
     private BillingSyncBatch billingSyncBatch;
 
     private CurrencyUnit currencyUnit;
 
     private EarnCode earnCode;
+
+    private PayMaster payMaster;
+
+    private PayableCharge payableCharge;
 
     private BigDecimal quantity;
 
@@ -45,10 +45,10 @@ public class BillableTransaction implements QueryEntity {
 
     private UnitOfMeasure unitOfMeasure;
 
-    public BillableTransaction() {
+    public PayableTransaction() {
     }
 
-    public BillableTransaction(Integer id) {
+    public PayableTransaction(Integer id) {
         this.id = id;
     }
 
@@ -73,16 +73,6 @@ public class BillableTransaction implements QueryEntity {
     @JsonProperty("amount")
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
-    }
-
-    @JsonProperty("billMasters")
-    public BillMaster getBillMasters() {
-        return billMasters;
-    }
-
-    @JsonProperty("billMasters")
-    public void setBillMasters(BillMaster billMasters) {
-        this.billMasters = billMasters;
     }
 
     @JsonProperty("currencyUnit")
@@ -125,16 +115,6 @@ public class BillableTransaction implements QueryEntity {
         this.transactionDate = transactionDate;
     }
 
-    @JsonProperty("billableCharge")
-    public BillableCharge getBillableCharge() {
-        return billableCharge;
-    }
-
-    @JsonProperty("billableCharge")
-    public void setBillableCharge(BillableCharge billableCharge) {
-        this.billableCharge = billableCharge;
-    }
-
     @JsonProperty("billingSyncBatch")
     public BillingSyncBatch getBillingSyncBatch() {
         return billingSyncBatch;
@@ -153,6 +133,26 @@ public class BillableTransaction implements QueryEntity {
     @JsonProperty("earnCode")
     public void setEarnCode(EarnCode earnCode) {
         this.earnCode = earnCode;
+    }
+
+    @JsonProperty("payMaster")
+    public PayMaster getPayMaster() {
+        return payMaster;
+    }
+
+    @JsonProperty("payMaster")
+    public void setPayMaster(PayMaster payMaster) {
+        this.payMaster = payMaster;
+    }
+
+    @JsonProperty("payableCharge")
+    public PayableCharge getPayableCharge() {
+        return payableCharge;
+    }
+
+    @JsonProperty("payableCharge")
+    public void setPayableCharge(PayableCharge payableCharge) {
+        this.payableCharge = payableCharge;
     }
 
     @JsonProperty("unitOfMeasure")

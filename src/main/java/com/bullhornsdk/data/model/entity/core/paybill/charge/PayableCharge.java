@@ -1,6 +1,8 @@
 package com.bullhornsdk.data.model.entity.core.paybill.charge;
 
 import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
+import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
+import com.bullhornsdk.data.model.entity.core.paybill.master.PayableTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionStatus;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionType;
@@ -24,7 +26,7 @@ import java.math.BigDecimal;
 @JsonPropertyOrder({"id", "addedByUser", "canExport", "candidate", "clientCorporation",
     "currencyUnit", "dateAdded", "dateLastModified", "description", "employeeType", "generalLedgerSegment1",
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
-    "generalLedgerServiceCode", "jobOrder", "payMasters", "periodEndDate", "placement",
+    "generalLedgerServiceCode", "jobOrder", "payMasters", "payableTransactions", "periodEndDate", "placement",
     "readyToBillOverride", "status", "subTotal", "transactionStatus", "transactionType"
 })
 public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
@@ -34,11 +36,8 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
     private Boolean canExport;
     private Candidate candidate;
     private ClientCorporation clientCorporation;
-
     private CurrencyUnit currencyUnit;
-
     private DateTime dateAdded;
-
     private DateTime dateLastModified;
 
     @JsonIgnore
@@ -57,25 +56,27 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
 
     private GeneralLedgerSegment5 generalLedgerSegment5;
 
-    private GeneralLedgerServiceCode generalLedgerServiceCode; //TODO
+    private GeneralLedgerServiceCode generalLedgerServiceCode;
 
     private JobOrder jobOrder;
 
-    private OneToMany<PayMaster> payMasters; // TODO OneToMany
+    private OneToMany<PayMaster> payMasters;
 
-    private DateTime periodEndDate;
+    private OneToMany<PayableTransaction> payableTransactions;
+
+    private String periodEndDate;
 
     private Placement placement;
 
-    private Boolean readyToBillOverride; //TODO
+    private Boolean readyToBillOverride;
 
-    private SpecializedOptionsLookup status; //TODO //nullable = false, insertable = false, updatable = false
+    private SpecializedOptionsLookup status;
 
     private BigDecimal subTotal;
 
-    private TransactionStatus transactionStatus; //TODO
+    private TransactionStatus transactionStatus;
 
-    private TransactionType transactionType; //TODO
+    private TransactionType transactionType;
 
 
     public PayableCharge() {
@@ -139,6 +140,36 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
     @JsonProperty("currencyUnit")
     public void setCurrencyUnit(CurrencyUnit currencyUnit) {
         this.currencyUnit = currencyUnit;
+    }
+
+    @JsonProperty("canExport")
+    public Boolean getCanExport() {
+        return canExport;
+    }
+
+    @JsonProperty("canExport")
+    public void setCanExport(Boolean canExport) {
+        this.canExport = canExport;
+    }
+
+    @JsonProperty("employeeType")
+    public String getEmployeeType() {
+        return employeeType;
+    }
+
+    @JsonProperty("employeeType")
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
+    }
+
+    @JsonProperty("payableTransactions")
+    public OneToMany<PayableTransaction> getPayableTransactions() {
+        return payableTransactions;
+    }
+
+    @JsonProperty("payableTransactions")
+    public void setPayableTransactions(OneToMany<PayableTransaction> payableTransactions) {
+        this.payableTransactions = payableTransactions;
     }
 
     @JsonProperty("dateAdded")
@@ -243,22 +274,22 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
     }
 
     @JsonProperty("payMasters")
-    public PayMaster getPayMasters() {
+    public OneToMany<PayMaster> getPayMasters() {
         return payMasters;
     }
 
     @JsonProperty("payMasters")
-    public void setBillMasters(PayMaster payMasters) {
+    public void setPayMasters(OneToMany<PayMaster> payMasters) {
         this.payMasters = payMasters;
     }
 
     @JsonProperty("periodEndDate")
-    public DateTime getPeriodEndDate() {
+    public String getPeriodEndDate() {
         return periodEndDate;
     }
 
     @JsonProperty("periodEndDate")
-    public void setPeriodEndDate(DateTime periodEndDate) {
+    public void setPeriodEndDate(String periodEndDate) {
         this.periodEndDate = periodEndDate;
     }
 
@@ -283,12 +314,12 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
     }
 
     @JsonProperty("status")
-    public PayableChargeStatusLookup getStatus() {
+    public SpecializedOptionsLookup getStatus() {
         return status;
     }
 
     @JsonProperty("status")
-    public void setStatus(PayableChargeStatusLookup status) {
+    public void setStatus(SpecializedOptionsLookup status) {
         this.status = status;
     }
 

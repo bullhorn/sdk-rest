@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.WorkflowOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
@@ -9,6 +10,7 @@ import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.model.entity.file.InvoiceStatementExport;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
@@ -24,13 +26,12 @@ import java.util.Date;
 @JsonPropertyOrder({"id", "billingAddress", "billingAttention", "billingClientContact", "billingCorporateUser",
     "billingPeriodEndDate", "billingProfile", "billingScheduleID", "clientCorporation", "creditedByInvoiceStatement",
     "creditOfInvoiceStatement", "currencyUnit", "dateAdded", "dateLastModified", "deliveryMethod", "deliveryStatus",
-    "discounts", "discountTotal", "dueDate", "effectiveDate", "emailErrorReason", "finalizedSubtotal", "finalizedTotal",
+    "discounts", "discountTotal", "discountAmount", "dueDate", "effectiveDate", "emailErrorReason", "finalizedSubtotal", "finalizedTotal",
     "generalLedgerExportStatusLookup", "invoiceStatementDate", "invoiceStatementExports", "invoiceStatementExportsBatches",
-    "invoiceStatementNumber", "invoiceStatementOrigin", "invoiceStatementTemplate", "invoiceStatementType", "invoiceTerm",
-    "isDeleted", "isCredited", "isFinalized", "isReinstated", "lineItems", "lineItemTotal", "owner",
+    "invoiceStatementNumber", "invoiceStatementFinalizedDate", "invoiceStatementOrigin", "invoiceStatementTemplate", "invoiceStatementType", "invoiceTerm",
+    "isDeleted", "isCredited", "isFinalized", "isReinstated", "lineItems", "lineItemTotal", "owner", "paymentTerms",
     "previousBalance", "purchaseOrderNumber", "rawInvoiceStatementNumber", "remitInstructions", "splitBys",
-    "status", "subtotal", "surcharges", "surchargeTotal",
-    "taxes", "taxTotal", "total"
+    "status", "subtotal", "surcharges", "surchargeTotal", "taxAmount", "taxes", "taxTotal", "total"
 })
 public class InvoiceStatement extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, SoftDeleteEntity {
 
@@ -40,7 +41,7 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     private String billingAttention;
     private ClientContact billingClientContact;
     private CorporateUser billingCorporateUser;
-    private Date billingPeriodEndDate;
+    private String billingPeriodEndDate;
     private BillingProfile billingProfile;
     private Integer billingScheduleID;
     private ClientCorporation clientCorporation;
@@ -54,6 +55,7 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     private SpecializedOptionsLookup deliveryStatus;
     private OneToMany<InvoiceStatementDiscount> discounts;
     private BigDecimal discountTotal;
+    private BigDecimal discountAmount;
     private String effectiveDate;
     private Date dueDate;
     @JsonIgnore
@@ -63,13 +65,14 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     private SpecializedOptionsLookup generalLedgerExportStatusLookup;
     private Date invoiceStatementDate;
     private OneToMany<InvoiceStatementExport> invoiceStatementExports;
-    private OneToMany<InvoiceStatementExportBatches> invoiceStatementExportsBatches;
+    private OneToMany<InvoiceStatementExportBatch> invoiceStatementExportsBatches;
     @JsonIgnore
     private String invoiceStatementNumber;
+    private Date invoiceStatementFinalizedDate;
     @JsonIgnore
     private String invoiceStatementOrigin;
     private InvoiceStatementTemplate invoiceStatementTemplate;
-    private InvoiceStatementTypeLookup invoiceStatementType;
+    private SpecializedOptionsLookup invoiceStatementType;
     private InvoiceTerm invoiceTerm;
     private Boolean isDeleted;
     private Boolean isCredited;
@@ -78,18 +81,21 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     private OneToMany<InvoiceStatementLineItem> lineItems;
     private BigDecimal lineItemTotal;
     private CorporateUser owner;
+    @JsonIgnore
+    private String paymentTerms;
     private BigDecimal previousBalance;
     @JsonIgnore
     private String purchaseOrderNumber;
     private Long rawInvoiceStatementNumber;
     private String remitInstructions;
     private OneToMany<InvoiceStatementSplitBy> splitBys;
-    private InvoiceStatementStatusLookup status;
+    private WorkflowOptionsLookup status;
     private BigDecimal subtotal;
-    private OneToMany<InvoiceStatementSurcharge> surcharges;
     private BigDecimal surchargeTotal;
-    private OneToMany<InvoiceStatementTax> taxes;
+    private OneToMany<InvoiceStatementSurcharge> surcharges;
+    private BigDecimal taxAmount;
     private BigDecimal taxTotal;
+    private OneToMany<InvoiceStatementTax> taxes;
     private BigDecimal total;
 
     public InvoiceStatement() {
@@ -114,12 +120,12 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
 
 
     @JsonProperty("billingAddress")
-    public BillingAddress getBillingAddress() {
+    public Address getBillingAddress() {
         return billingAddress;
     }
 
     @JsonProperty("billingAddress")
-    public void setBillingAddress(BillingAddress billingAddress) {
+    public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
     }
 
@@ -154,12 +160,12 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     }
 
     @JsonProperty("billingPeriodEndDate")
-    public Date getBillingPeriodEndDate() {
+    public String getBillingPeriodEndDate() {
         return billingPeriodEndDate;
     }
 
     @JsonProperty("billingPeriodEndDate")
-    public void setBillingPeriodEndDate(Date billingPeriodEndDate) {
+    public void setBillingPeriodEndDate(String billingPeriodEndDate) {
         this.billingPeriodEndDate = billingPeriodEndDate;
     }
 
@@ -385,12 +391,12 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     }
 
     @JsonProperty("invoiceStatementType")
-    public InvoiceStatementTypeLookup getInvoiceStatementType() {
+    public SpecializedOptionsLookup getInvoiceStatementType() {
         return invoiceStatementType;
     }
 
     @JsonProperty("invoiceStatementType")
-    public void setInvoiceStatementType(InvoiceStatementTypeLookup invoiceStatementType) {
+    public void setInvoiceStatementType(SpecializedOptionsLookup invoiceStatementType) {
         this.invoiceStatementType = invoiceStatementType;
     }
 
@@ -525,12 +531,12 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     }
 
     @JsonProperty("status")
-    public InvoiceStatementStatusLookup getStatus() {
+    public WorkflowOptionsLookup getStatus() {
         return status;
     }
 
     @JsonProperty("status")
-    public void setStatus(InvoiceStatementStatusLookup status) {
+    public void setStatus(WorkflowOptionsLookup status) {
         this.status = status;
     }
 
@@ -592,5 +598,66 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     @JsonProperty("total")
     public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+
+    @JsonProperty("discountAmount")
+    public BigDecimal getDiscountAmount() {
+        return discountAmount;
+    }
+
+    @JsonProperty("discountAmount")
+    public void setDiscountAmount(BigDecimal discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
+    @JsonProperty("effectiveDate")
+    public String getEffectiveDate() {
+        return effectiveDate;
+    }
+
+    @JsonProperty("effectiveDate")
+    public void setEffectiveDate(String effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
+
+    @JsonProperty("invoiceStatementExportsBatches")
+    public OneToMany<InvoiceStatementExportBatch> getInvoiceStatementExportsBatches() {
+        return invoiceStatementExportsBatches;
+    }
+
+    @JsonProperty("invoiceStatementExportsBatches")
+    public void setInvoiceStatementExportsBatches(OneToMany<InvoiceStatementExportBatch> invoiceStatementExportsBatches) {
+        this.invoiceStatementExportsBatches = invoiceStatementExportsBatches;
+    }
+
+    @JsonProperty("invoiceStatementFinalizedDate")
+    public Date getInvoiceStatementFinalizedDate() {
+        return invoiceStatementFinalizedDate;
+    }
+
+    @JsonProperty("invoiceStatementFinalizedDate")
+    public void setInvoiceStatementFinalizedDate(Date invoiceStatementFinalizedDate) {
+        this.invoiceStatementFinalizedDate = invoiceStatementFinalizedDate;
+    }
+
+    @JsonProperty("paymentTerms")
+    public String getPaymentTerms() {
+        return paymentTerms;
+    }
+
+    @JsonProperty("paymentTerms")
+    public void setPaymentTerms(String paymentTerms) {
+        this.paymentTerms = paymentTerms;
+    }
+
+    @JsonProperty("taxAmount")
+    public BigDecimal getTaxAmount() {
+        return taxAmount;
+    }
+
+    @JsonProperty("taxAmount")
+    public void setTaxAmount(BigDecimal taxAmount) {
+        this.taxAmount = taxAmount;
     }
 }

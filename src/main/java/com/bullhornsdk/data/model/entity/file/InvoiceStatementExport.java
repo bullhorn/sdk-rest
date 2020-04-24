@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.entity.file;
 
-import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatement;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,13 +12,13 @@ import org.joda.time.DateTime;
 import java.util.Objects;
 
 /**
- * Created by mkesmetzis 22-Apr-20
+ * Created by mkesmetzis 24-Apr-20
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({
     "id",
-    "billableCharge",
+    "invoiceStatement",
     "contentSubType",
     "contentType",
     "dateAdded",
@@ -42,19 +42,19 @@ import java.util.Objects;
     "type",
     "usersSharedWith"
 })
-public class BillableChargeFileAttachment extends EntityFileAttachment implements DateLastModifiedEntity {
+public class InvoiceStatementExport extends EntityFileAttachment implements DateLastModifiedEntity {
 
-    private BillableCharge billableCharge;
+    private InvoiceStatement invoiceStatement;
     private DateTime dateLastModified;
 
-    @JsonProperty("billableCharge")
-    public BillableCharge getBillableCharge() {
-        return billableCharge;
+    @JsonProperty("invoiceStatement")
+    public InvoiceStatement getInvoiceStatement() {
+        return invoiceStatement;
     }
 
-    @JsonProperty("billableCharge")
-    public void setBillableCharge(BillableCharge billableCharge) {
-        this.billableCharge = billableCharge;
+    @JsonProperty("invoiceStatement")
+    public void setInvoiceStatement(InvoiceStatement invoiceStatement) {
+        this.invoiceStatement = invoiceStatement;
     }
 
     @JsonProperty("dateLastModified")
@@ -68,17 +68,19 @@ public class BillableChargeFileAttachment extends EntityFileAttachment implement
         this.dateLastModified = dateLastModified;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        BillableChargeFileAttachment that = (BillableChargeFileAttachment) o;
-        return Objects.equals(billableCharge, that.billableCharge);
+        InvoiceStatementExport that = (InvoiceStatementExport) o;
+        return invoiceStatement.equals(that.invoiceStatement) &&
+            dateLastModified.equals(that.dateLastModified);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), billableCharge);
+        return Objects.hash(super.hashCode(), invoiceStatement, dateLastModified);
     }
 }

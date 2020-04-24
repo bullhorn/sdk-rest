@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.discount;
 
-import com.bullhornsdk.data.model.entity.core.contractmanagement.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.util.ReadOnly;

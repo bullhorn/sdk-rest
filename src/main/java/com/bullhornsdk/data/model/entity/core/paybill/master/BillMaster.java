@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.master;
 
-import com.bullhornsdk.data.model.entity.core.contractmanagement.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
