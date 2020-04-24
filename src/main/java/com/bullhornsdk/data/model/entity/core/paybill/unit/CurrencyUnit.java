@@ -18,13 +18,11 @@ public class CurrencyUnit implements QueryEntity, EditHistoryEntity {
 
     private Integer id;
 
-    @JsonIgnore
-    @Size(max = 100)
-    private String name;
-
-    @JsonIgnore
     @Size(max = 3)
     private String alphabeticCode;
+
+    @Size(max = 100)
+    private String name;
 
     private Integer numericCode;
 
@@ -57,7 +55,7 @@ public class CurrencyUnit implements QueryEntity, EditHistoryEntity {
         return name;
     }
 
-    @JsonIgnore
+    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
@@ -67,7 +65,7 @@ public class CurrencyUnit implements QueryEntity, EditHistoryEntity {
         return alphabeticCode;
     }
 
-    @JsonIgnore
+    @JsonProperty("alphabeticCode")
     public void setAlphabeticCode(String alphabeticCode) {
         this.alphabeticCode = alphabeticCode;
     }

@@ -11,9 +11,9 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
+
 import org.joda.time.DateTime;
 
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -21,7 +21,7 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "bccRecipients", "billingAttention", "billingClientCorporation",
+@JsonPropertyOrder({"id", "bccRecipients", "billingAttention", "billingClientCorporation",
     "billingContact", "billingCorporateUser", "billingLocation", "ccRecipients", "clientCorporation",
     "customDate1", "customDate2", "customDate3",
     "customFloat1", "customFloat2", "customFloat3", "customInt1",
@@ -34,7 +34,7 @@ import java.util.Objects;
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "deliveryMethod", "description", "effectiveDate",
     "effectiveEndDate", "externalID", "invoiceStatementMessageTemplate", "invoiceTerm",
-    "isDeleted", "owner", "toRecipients", "status", "title", "versionID", "versions" })
+    "isDeleted", "owner", "toRecipients", "status", "title", "versionID", "versions"})
 public class BillingProfile extends CustomFieldsB implements QueryEntity,
     UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity, AssociationEntity {
 
@@ -67,9 +67,9 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     @JsonIgnore
     private String description;
 
-    private Date effectiveDate;
+    private String effectiveDate;
 
-    private Date effectiveEndDate;
+    private String effectiveEndDate;
 
     @JsonIgnore
     private String externalID;
@@ -78,7 +78,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     private InvoiceTerm invoiceTerm;
 
-    private boolean isDeleted;
+    private Boolean isDeleted;
 
     private CorporateUser owner;
 
@@ -237,22 +237,22 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("effectiveDate")
-    public Date getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(Date effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public Date getEffectiveEndDate() {
+    public String getEffectiveEndDate() {
         return effectiveEndDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public void setEffectiveEndDate(Date effectiveEndDate) {
+    public void setEffectiveEndDate(String effectiveEndDate) {
         this.effectiveEndDate = effectiveEndDate;
     }
 

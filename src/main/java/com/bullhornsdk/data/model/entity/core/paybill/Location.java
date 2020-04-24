@@ -9,10 +9,11 @@ import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
+
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
-import java.util.Date;
+
 import java.util.Objects;
 
 /**
@@ -20,7 +21,7 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "address", "candidate", "clientCorporation",
+@JsonPropertyOrder({"id", "address", "candidate", "clientCorporation",
     "customDate1", "customDate2", "customDate3",
     "customFloat1", "customFloat2", "customFloat3", "customInt1",
     "customInt2", "customInt3", "customText1", "customText10",
@@ -32,7 +33,7 @@ import java.util.Objects;
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "description", "effectiveDate",
     "effectiveEndDate", "externalID", "isBillTo", "isDeleted", "isSoldTo",
-    "isWorkSite", "declineToApplyTaxes", "owner", "status", "title", "versionID", "versions" })
+    "isWorkSite", "declineToApplyTaxes", "owner", "status", "title", "versionID", "versions"})
 public class Location extends CustomFieldsB implements QueryEntity,
     UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity, AssociationEntity {
 
@@ -51,21 +52,21 @@ public class Location extends CustomFieldsB implements QueryEntity,
     @JsonIgnore
     private String description;
 
-    private Date effectiveDate;
+    private String effectiveDate;
 
-    private Date effectiveEndDate;
+    private String effectiveEndDate;
 
     @JsonIgnore
     @Size(max = 100)
     private String externalID;
 
-    private boolean isBillTo;
+    private Boolean isBillTo;
 
-    private boolean isSoldTo;
+    private Boolean isSoldTo;
 
-    private boolean isWorkSite;
+    private Boolean isWorkSite;
 
-    private boolean declineToApplyTaxes;
+    private Boolean declineToApplyTaxes;
 
     private CorporateUser owner;
 
@@ -91,17 +92,8 @@ public class Location extends CustomFieldsB implements QueryEntity,
     public Location instantiateForInsert() {
         Location entity = new Location();
         entity.setIsDeleted(Boolean.FALSE);
-        entity.setVersionID(-1);
-        entity.setStatus("New Location");
-        entity.setIsWorkSite(Boolean.FALSE);
-        entity.setIsBillTo(Boolean.FALSE);
-        entity.setIsSoldTo(Boolean.FALSE);
-        entity.setDeclineToApplyTaxes(Boolean.FALSE);
-        entity.setTitle("title");
-
         return entity;
     }
-
 
     @Override
     @JsonProperty("id")
@@ -179,22 +171,22 @@ public class Location extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("effectiveDate")
-    public Date getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(Date effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public Date getEffectiveEndDate() {
+    public String getEffectiveEndDate() {
         return effectiveEndDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public void setEffectiveEndDate(Date effectiveEndDate) {
+    public void setEffectiveEndDate(String effectiveEndDate) {
         this.effectiveEndDate = effectiveEndDate;
     }
 
@@ -209,42 +201,42 @@ public class Location extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("isBillTo")
-    public boolean getIsBillTo() {
+    public Boolean getIsBillTo() {
         return isBillTo;
     }
 
     @JsonProperty("isBillTo")
-    public void setIsBillTo(boolean billTo) {
+    public void setIsBillTo(Boolean billTo) {
         isBillTo = billTo;
     }
 
     @JsonProperty("isSoldTo")
-    public boolean getIsSoldTo() {
+    public Boolean getIsSoldTo() {
         return isSoldTo;
     }
 
     @JsonProperty("isSoldTo")
-    public void setIsSoldTo(boolean soldTo) {
+    public void setIsSoldTo(Boolean soldTo) {
         isSoldTo = soldTo;
     }
 
     @JsonProperty("isWorkSite")
-    public boolean getIsWorkSite() {
+    public Boolean getIsWorkSite() {
         return isWorkSite;
     }
 
     @JsonProperty("isWorkSite")
-    public void setIsWorkSite(boolean workSite) {
+    public void setIsWorkSite(Boolean workSite) {
         isWorkSite = workSite;
     }
 
     @JsonProperty("declineToApplyTaxes")
-    public boolean isDeclineToApplyTaxes() {
+    public Boolean getDeclineToApplyTaxes() {
         return declineToApplyTaxes;
     }
 
     @JsonProperty("declineToApplyTaxes")
-    public void setDeclineToApplyTaxes(boolean declineToApplyTaxes) {
+    public void setDeclineToApplyTaxes(Boolean declineToApplyTaxes) {
         this.declineToApplyTaxes = declineToApplyTaxes;
     }
 
