@@ -130,6 +130,7 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
         return entity;
     }
 
+
     @Override
     @JsonProperty("id")
     public Integer getId() {

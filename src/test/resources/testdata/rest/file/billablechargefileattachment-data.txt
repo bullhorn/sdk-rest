@@ -1,0 +1,765 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 2,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 3,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 4,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 5,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 6,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 7,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 8,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 9,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 10,
+            "billableCharge": {
+                "id": 1966
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 11,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 12,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 13,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 14,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 15,
+            "billableCharge": {
+                "id": 1966"
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 16,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 17,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 18,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 19,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        },
+        {
+            "id": 20,
+            "billableCharge": {
+                "id": 1966
+            },
+            "contentSubType": "plain",
+            "contentType": "text",
+            "dateAdded": 1516798433010,
+            "departmentsSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "description": null,
+            "directory": "16863/2018.01/",
+            "distribution": "internal",
+            "externalID": "portfolio",
+            "fileExtension": ".txt",
+            "fileOwner": {
+                "id": 1909,
+                "firstName": "Tim",
+                "lastName": "Kennedy"
+            },
+            "fileSize": 12,
+            "fileType": "SAMPLE         ",
+            "isCopied": false,
+            "isDeleted": false,
+            "isExternal": false,
+            "isOpen": true,
+            "isPrivate": false,
+            "isSendOut": false,
+            "name": "TextCV2.txt",
+            "type": null,
+            "usersSharedWith": {
+                "total": 0,
+                "data": []
+            },
+            "uuid": "D1347896-D29E-4C12-A499-8453779299AD"
+        }
+    ]
+}
