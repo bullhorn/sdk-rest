@@ -11,7 +11,7 @@
     <name>Bullhorn REST SDK</name>
     <description>The Bullhorn REST SDK provides simple authentication to the Bullhorn REST APIs as well as wrapper
         objects for the API itself and all domain objects. It is typically used for integrating or customizing the
-        BULLHORN CRM platform.
+        Bullhorn ATS platform.
     </description>
     <url>https://github.com/bullhorn/sdk-rest</url>
     <licenses>
