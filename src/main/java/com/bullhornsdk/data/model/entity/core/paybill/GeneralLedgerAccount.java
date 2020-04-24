@@ -21,18 +21,14 @@ public class GeneralLedgerAccount implements QueryEntity, UpdateEntity, CreateEn
 
     private Integer id;
 
-    @JsonIgnore
     private String externalAccountNumber;
 
-    @JsonIgnore
     @Size(max = 100)
     private String externalAccountName;
 
-    @JsonIgnore
     @Size(max = 100)
     private String externalAccountType;
 
-    @JsonIgnore
     @Size(max = 100)
     private String externalAccountDetailType;
 

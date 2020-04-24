@@ -21,16 +21,13 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
 
     private DateTime dateAdded;
 
-    @JsonIgnore
     private String messageText;
 
-    @JsonIgnore
     @Size(max = 100)
     private String name;
 
     private CorporateUser owner;
 
-    @JsonIgnore
     @Size(max = 100)
     private String subject;
 
@@ -70,7 +67,7 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
         return messageText;
     }
 
-    @JsonIgnore
+    @JsonProperty("messageText")
     public void setMessageText(String messageText) {
         this.messageText = messageText;
     }
@@ -80,7 +77,7 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
         return name;
     }
 
-    @JsonIgnore
+    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
@@ -100,7 +97,7 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
         return subject;
     }
 
-    @JsonIgnore
+    @JsonProperty("subject")
     public void setSubject(String subject) {
         this.subject = subject;
     }

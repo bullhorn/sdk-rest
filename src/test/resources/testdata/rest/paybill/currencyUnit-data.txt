@@ -1,6 +1,6 @@
 {
     "start": 0,
-    "count": 10,
+    "count": 20,
     "data": [
         {
             "id": 178,
@@ -71,6 +71,76 @@
             "minorUnits": 0,
             "name": "Vatu",
             "numericCode": 548
+        },
+        {
+            "id": 168,
+            "alphabeticCode": "UZS",
+            "minorUnits": 2,
+            "name": "Uzbekistan Sum",
+            "numericCode": 860
+        },
+        {
+            "id": 167,
+            "alphabeticCode": "USN",
+            "minorUnits": 2,
+            "name": "US Dollar (Next day)",
+            "numericCode": 997
+        },
+        {
+            "id": 166,
+            "alphabeticCode": "USD",
+            "minorUnits": 2,
+            "name": "US Dollar",
+            "numericCode": 840
+        },
+        {
+            "id": 165,
+            "alphabeticCode": "UYI",
+            "minorUnits": 0,
+            "name": "Uruguay Peso en Unidades Indexadas (UI)",
+            "numericCode": 940
+        },
+        {
+            "id": 164,
+            "alphabeticCode": "COU",
+            "minorUnits": 2,
+            "name": "Unidad de Valor Real",
+            "numericCode": 970
+        },
+        {
+            "id": 163,
+            "alphabeticCode": "CLF",
+            "minorUnits": 4,
+            "name": "Unidad de Fomento",
+            "numericCode": 990
+        },
+        {
+            "id": 162,
+            "alphabeticCode": "UGX",
+            "minorUnits": 0,
+            "name": "Uganda Shilling",
+            "numericCode": 800
+        },
+        {
+            "id": 161,
+            "alphabeticCode": "AED",
+            "minorUnits": 2,
+            "name": "UAE Dirham",
+            "numericCode": 784
+        },
+        {
+            "id": 160,
+            "alphabeticCode": "TMT",
+            "minorUnits": 2,
+            "name": "Turkmenistan New Manat",
+            "numericCode": 934
+        },
+        {
+            "id": 159,
+            "alphabeticCode": "TRY",
+            "minorUnits": 2,
+            "name": "Turkish Lira",
+            "numericCode": 949
         }
     ]
 }
