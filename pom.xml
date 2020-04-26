@@ -5,13 +5,13 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.3.2</version>
+    <version>1.3.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
     <description>The Bullhorn REST SDK provides simple authentication to the Bullhorn REST APIs as well as wrapper
         objects for the API itself and all domain objects. It is typically used for integrating or customizing the
-        BULLHORN CRM platform.
+        Bullhorn ATS platform.
     </description>
     <url>https://github.com/bullhorn/sdk-rest</url>
     <licenses>
