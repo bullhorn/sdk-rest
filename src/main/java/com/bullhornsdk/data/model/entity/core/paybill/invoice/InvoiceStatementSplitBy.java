@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+import java.util.Objects;
+
 /**
  * Created by mkesmetzis 23-Apr-20
  */
@@ -91,5 +93,35 @@ public class InvoiceStatementSplitBy extends AbstractEntity implements QueryEnti
     @JsonProperty("sortOrder")
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementSplitBy{" +
+            "id=" + id +
+            ", invoiceStatement=" + invoiceStatement +
+            ", field='" + field + '\'' +
+            ", value='" + value + '\'' +
+            ", displayValue='" + displayValue + '\'' +
+            ", sortOrder=" + sortOrder +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatementSplitBy that = (InvoiceStatementSplitBy) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(field, that.field) &&
+            Objects.equals(value, that.value) &&
+            Objects.equals(displayValue, that.displayValue) &&
+            Objects.equals(sortOrder, that.sortOrder);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, invoiceStatement, field, value, displayValue, sortOrder);
     }
 }

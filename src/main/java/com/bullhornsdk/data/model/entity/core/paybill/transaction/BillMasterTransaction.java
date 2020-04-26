@@ -1,13 +1,16 @@
-package com.bullhornsdk.data.model.entity.core.paybill.master;
+package com.bullhornsdk.data.model.entity.core.paybill.transaction;
 
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatement;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementLineItem;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 22-Apr-20 //TODO check if needed
@@ -99,5 +102,36 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
     @JsonProperty("reversalOfTransaction")
     public void setReversalOfTransaction(BillMasterTransaction reversalOfTransaction) {
         this.reversalOfTransaction = reversalOfTransaction;
+    }
+
+    @Override
+    public String toString() {
+        return "BillMasterTransaction{" +
+            "billMasters=" + billMasters +
+            ", invoiceStatement=" + invoiceStatement +
+            ", invoiceStatementBatch=" + invoiceStatementBatch +
+            ", invoiceStatementLineItem=" + invoiceStatementLineItem +
+            ", needsReview=" + needsReview +
+            ", reversalOfTransaction=" + reversalOfTransaction +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        BillMasterTransaction that = (BillMasterTransaction) o;
+        return Objects.equals(billMasters, that.billMasters) &&
+            Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(invoiceStatementBatch, that.invoiceStatementBatch) &&
+            Objects.equals(invoiceStatementLineItem, that.invoiceStatementLineItem) &&
+            Objects.equals(needsReview, that.needsReview) &&
+            Objects.equals(reversalOfTransaction, that.reversalOfTransaction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), billMasters, invoiceStatement, invoiceStatementBatch, invoiceStatementLineItem, needsReview, reversalOfTransaction);
     }
 }

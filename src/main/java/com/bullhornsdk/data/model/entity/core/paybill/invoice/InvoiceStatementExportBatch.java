@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
+import java.util.Objects;
+
 /**
  * Created by mkesmetzis 23-Apr-20
  */
@@ -96,5 +98,35 @@ public class InvoiceStatementExportBatch extends AbstractEntity implements Query
     @JsonProperty("dateLastModified")
     public void setDateLastModified(DateTime dateLastModified) {
         this.dateLastModified = dateLastModified;
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementExportBatch{" +
+            "id=" + id +
+            ", batchStatus=" + batchStatus +
+            ", invoiceStatement=" + invoiceStatement +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", owner=" + owner +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatementExportBatch that = (InvoiceStatementExportBatch) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(batchStatus, that.batchStatus) &&
+            Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(owner, that.owner);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, batchStatus, invoiceStatement, dateAdded, dateLastModified, owner);
     }
 }

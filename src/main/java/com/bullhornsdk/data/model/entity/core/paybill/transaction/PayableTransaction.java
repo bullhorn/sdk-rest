@@ -1,7 +1,9 @@
-package com.bullhornsdk.data.model.entity.core.paybill.master;
+package com.bullhornsdk.data.model.entity.core.paybill.transaction;
 
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch;
+import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.UnitOfMeasure;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
@@ -12,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 22-Apr-20
@@ -41,7 +43,7 @@ public class PayableTransaction implements QueryEntity {
 
     private BigDecimal rate;
 
-    private Date transactionDate;
+    private String transactionDate;
 
     private UnitOfMeasure unitOfMeasure;
 
@@ -106,12 +108,12 @@ public class PayableTransaction implements QueryEntity {
     }
 
     @JsonProperty("transactionDate")
-    public Date getTransactionDate() {
+    public String getTransactionDate() {
         return transactionDate;
     }
 
     @JsonProperty("recordingDate")
-    public void setTransactionDate(Date transactionDate) {
+    public void setTransactionDate(String transactionDate) {
         this.transactionDate = transactionDate;
     }
 
@@ -163,5 +165,45 @@ public class PayableTransaction implements QueryEntity {
     @JsonProperty("unitOfMeasure")
     public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
         this.unitOfMeasure = unitOfMeasure;
+    }
+
+    @Override
+    public String toString() {
+        return "PayableTransaction{" +
+            "id=" + id +
+            ", amount=" + amount +
+            ", billingSyncBatch=" + billingSyncBatch +
+            ", currencyUnit=" + currencyUnit +
+            ", earnCode=" + earnCode +
+            ", payMaster=" + payMaster +
+            ", payableCharge=" + payableCharge +
+            ", quantity=" + quantity +
+            ", rate=" + rate +
+            ", transactionDate=" + transactionDate +
+            ", unitOfMeasure=" + unitOfMeasure +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PayableTransaction that = (PayableTransaction) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(amount, that.amount) &&
+            Objects.equals(billingSyncBatch, that.billingSyncBatch) &&
+            Objects.equals(currencyUnit, that.currencyUnit) &&
+            Objects.equals(earnCode, that.earnCode) &&
+            Objects.equals(payMaster, that.payMaster) &&
+            Objects.equals(payableCharge, that.payableCharge) &&
+            Objects.equals(quantity, that.quantity) &&
+            Objects.equals(rate, that.rate) &&
+            Objects.equals(transactionDate, that.transactionDate) &&
+            Objects.equals(unitOfMeasure, that.unitOfMeasure);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, amount, billingSyncBatch, currencyUnit, earnCode, payMaster, payableCharge, quantity, rate, transactionDate, unitOfMeasure);
     }
 }

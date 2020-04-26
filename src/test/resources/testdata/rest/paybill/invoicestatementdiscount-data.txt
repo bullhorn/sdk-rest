@@ -1,0 +1,16 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "discount": {
+                "id": 1
+            },
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 1
+            }
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "start": 0,
+    "count": 3,
+    "data": [
+        {
+            "id": 3,
+            "batchGroup": {
+                "id": 3
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "dateAdded": 1587727668310,
+            "dateLastModified": 1587727668310,
+            "defaultBillableCharge": null,
+            "defaultPayableCharge": {
+                "id": 1
+            },
+            "externalID": null,
+            "payMasters": {
+                "total": 1,
+                "data": []
+            },
+            "periodEndDate": "2019-02-10",
+            "timeOfExternalEvent": 1587727668110,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            }
+        },
+        {
+            "id": 2,
+            "batchGroup": {
+                "id": 2
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "dateAdded": 1587666456750,
+            "dateLastModified": 1587666456750,
+            "defaultBillableCharge": {
+                "id": 3
+            },
+            "defaultPayableCharge": null,
+            "externalID": null,
+            "payMasters": {
+                "total": 0,
+                "data": []
+            },
+            "periodEndDate": "2020-04-23",
+            "timeOfExternalEvent": 1587666456667,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            }
+        },
+        {
+            "id": 1,
+            "batchGroup": {
+                "id": 1
+            },
+            "billMasters": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587645173633,
+            "dateLastModified": 1587645173633,
+            "defaultBillableCharge": {
+                "id": 1
+            },
+            "defaultPayableCharge": null,
+            "externalID": null,
+            "payMasters": {
+                "total": 0,
+                "data": []
+            },
+            "periodEndDate": "2020-05-31",
+            "timeOfExternalEvent": 1587645173387,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            }
+        }
+    ]
+}

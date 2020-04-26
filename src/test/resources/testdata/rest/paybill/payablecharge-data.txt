@@ -1,0 +1,73 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "canExport": true,
+            "candidate": {
+                "id": 22408,
+                "firstName": "Johanna",
+                "lastName": "Camelo"
+            },
+            "clientCorporation": {
+                "id": 1176,
+                "name": "Ensco PLC"
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587727668043,
+            "dateLastModified": 1587727668043,
+            "description": "TestPayableCharge",
+            "employeeType": null,
+            "exportedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "jobOrder": {
+                "id": 876,
+                "title": "Internal Auditor"
+            },
+            "payMasters": {
+                "total": 1,
+                "data": []
+            },
+            "payableTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "periodEndDate": "2019-02-10",
+            "placement": {
+                "id": 2
+            },
+            "readyToPayOverride": false,
+            "status": {
+                "id": 2,
+                "label": "Ready to Pay"
+            },
+            "subtotal": 150.0000,
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            }
+        }
+    ]
+}

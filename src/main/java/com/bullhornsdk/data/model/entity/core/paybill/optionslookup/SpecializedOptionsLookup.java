@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
+import java.util.Objects;
+
 /**
  * Created by mkesmetzis 22-Apr-20
  */
@@ -96,5 +98,38 @@ public class SpecializedOptionsLookup extends SimplifiedOptionsLookup {
     @JsonProperty("modifiedByUser")
     public void setModifiedByUser(CorporateUser modifiedByUser) {
         this.modifiedByUser = modifiedByUser;
+    }
+
+    @Override
+    public String toString() {
+        return "SpecializedOptionsLookup{" +
+            "description='" + description + '\'' +
+            ", isSystem=" + isSystem +
+            ", isHidden=" + isHidden +
+            ", shouldShowInPicker=" + shouldShowInPicker +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", modifiedByUser=" + modifiedByUser +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SpecializedOptionsLookup that = (SpecializedOptionsLookup) o;
+        return Objects.equals(description, that.description) &&
+            Objects.equals(isSystem, that.isSystem) &&
+            Objects.equals(isHidden, that.isHidden) &&
+            Objects.equals(shouldShowInPicker, that.shouldShowInPicker) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(modifiedByUser, that.modifiedByUser);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), description, isSystem, isHidden, shouldShowInPicker, dateAdded, dateLastModified, modifiedByUser);
     }
 }

@@ -1,0 +1,224 @@
+{
+    "entity": "InvoiceStatementLineItem",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementLineItem?fields=*",
+    "label": "Line Item",
+    "dateLastModified": "1587691105710",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "billMasterTransactions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Bill Master Transactions",
+            "optionsType": "BillMasterTransaction",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/BillMasterTransaction",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransaction",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillMasterTransaction?fields=*",
+                "label": "Bill Transaction Entry",
+                "dateLastModified": "1587723579988",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "comment",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Comment",
+            "hideFromSearch": false
+        },
+        {
+            "name": "currencyUnit",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Currency",
+            "optionsType": "CurrencyUnit",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/CurrencyUnit",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CurrencyUnit",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/CurrencyUnit?fields=*",
+                "label": "Currency Unit",
+                "dateLastModified": "1587691101823",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "alphabeticCode",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 3,
+                        "confidential": false,
+                        "label": "Alphabetic Code",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "groupByDisplay",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Group By Display",
+            "hideFromSearch": false
+        },
+        {
+            "name": "groupBys",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Group by",
+            "optionsType": "InvoiceStatementLineItemGroupBy",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatementLineItemGroupBy",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementLineItemGroupBy",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementLineItemGroupBy?fields=*",
+                "label": "Invoice Statement Line Item Group By",
+                "dateLastModified": "1587913150202",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "invoiceStatement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement",
+            "optionsType": "InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatement?fields=*",
+                "label": "Invoice",
+                "dateLastModified": "1587691104113",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "quantity",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Quantity",
+            "hideFromSearch": false
+        },
+        {
+            "name": "rate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Rate",
+            "hideFromSearch": false
+        },
+        {
+            "name": "subtotal",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Pre-tax Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "summarizeBys",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Summarize Bys",
+            "optionsType": "InvoiceStatementLineItemSummarizeBy",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatementLineItemSummarizeBy",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementLineItemSummarizeBy",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementLineItemSummarizeBy?fields=*",
+                "label": "Invoice Statement Line Item Summarize By",
+                "dateLastModified": "1587913150392",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "taxAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Tax Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "total",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Total Amount",
+            "hideFromSearch": false
+        }
+    ]
+}

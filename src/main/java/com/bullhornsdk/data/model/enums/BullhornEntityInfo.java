@@ -11,6 +11,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
+import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
 import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
@@ -23,6 +24,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
 import com.bullhornsdk.data.model.entity.core.paybill.master.*;
 import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge;
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -195,6 +197,7 @@ public enum BullhornEntityInfo {
     PAY_MASTER("PayMaster", PayMaster.class, PayMasterWrapper.class, PayMasterListWrapper.class, null, null),
     SURCHARGE("Surcharge", Surcharge.class, SurchargeWrapper.class, SurchargeListWrapper.class, null, null),
     TAX("Tax", Tax.class, TaxWrapper.class, TaxListWrapper.class, null, null),
+    CANVAS_REPORT("CanvasReport", CanvasReport.class, CanvasReportWrapper.class, CanvasReportListWrapper.class, null, null),
 
 
     // Custom Objects
@@ -286,7 +289,8 @@ public enum BullhornEntityInfo {
     JOB_ORDER_FILE_ATTACHMENT("JobOrderFileAttachment", JobOrderFileAttachment.class, JobOrderFileAttachmentWrapper.class, JobOrderFileAttachmentListWrapper.class, null, null),
     OPPORTUNITY_FILE_ATTACHMENT("OpportunityFileAttachment", OpportunityFileAttachment.class, OpportunityFileAttachmentWrapper.class, OpportunityFileAttachmentListWrapper.class, null, null),
     PLACEMENT_FILE_ATTACHMENT("PlacementFileAttachment", PlacementFileAttachment.class, PlacementFileAttachmentWrapper.class, PlacementFileAttachmentListWrapper.class, null, null),
-    BILLABLE_CHARGE_FILE_ATTACHMENT("BillableChargeFileAttachment", BillableChargeFileAttachment.class, BillableChargeFileAttachmentWrapper.class, BillableChargeFileAttachmentListWrapper.class, null, null);
+    BILLABLE_CHARGE_FILE_ATTACHMENT("BillableChargeFileAttachment", BillableChargeFileAttachment.class, BillableChargeFileAttachmentWrapper.class, BillableChargeFileAttachmentListWrapper.class, null, null),
+    INVOICE_STATEMENT_EXPORT("InvoiceStatementExport", InvoiceStatementExport.class, InvoiceStatementExportWrapper.class, InvoiceStatementExportListWrapper.class, null, null);
 
     private final String name;
 

@@ -2,16 +2,19 @@ package com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 21-Apr-20
  */
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonRootName(value = "data")
+@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "externalSegmentName", "externalSegmentNumber", "generalLedgerSegmentType", "isActive", "isDeleted"})
 public class GeneralLedgerSegment implements QueryEntity, UpdateEntity, SoftDeleteEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity {
 
     private Integer id;
@@ -22,7 +25,7 @@ public class GeneralLedgerSegment implements QueryEntity, UpdateEntity, SoftDele
     @Size(max = 100)
     private String externalSegmentNumber;
 
-    private GeneralLedgerSegmentType generalLedgerSegmentType; //TODO
+    private GeneralLedgerSegmentType generalLedgerSegmentType;
 
     private Boolean isActive;
 
@@ -123,4 +126,37 @@ public class GeneralLedgerSegment implements QueryEntity, UpdateEntity, SoftDele
         this.dateLastModified = dateLastModified;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GeneralLedgerSegment that = (GeneralLedgerSegment) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(externalSegmentName, that.externalSegmentName) &&
+            Objects.equals(externalSegmentNumber, that.externalSegmentNumber) &&
+            Objects.equals(generalLedgerSegmentType, that.generalLedgerSegmentType) &&
+            Objects.equals(isActive, that.isActive) &&
+            Objects.equals(isDeleted, that.isDeleted) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, externalSegmentName, externalSegmentNumber, generalLedgerSegmentType, isActive, isDeleted, dateAdded, dateLastModified);
+    }
+
+    @Override
+    public String toString() {
+        return "GeneralLedgerSegment{" +
+            "id=" + id +
+            ", externalSegmentName='" + externalSegmentName + '\'' +
+            ", externalSegmentNumber='" + externalSegmentNumber + '\'' +
+            ", generalLedgerSegmentType=" + generalLedgerSegmentType +
+            ", isActive=" + isActive +
+            ", isDeleted=" + isDeleted +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            '}';
+    }
 }

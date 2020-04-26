@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 21-Apr-20
@@ -36,7 +37,7 @@ public class BillingSyncBatch extends AbstractEntity implements QueryEntity, Dat
     private PayableCharge defaultPayableCharge;
     @Size(max = 50)
     private String externalID;
-    private OneToMany<PayMaster> payMasters; //TODO @OneToMany
+    private OneToMany<PayMaster> payMasters;
     private String periodEndDate;
     private DateTime timeOfExternalEvent;
     private TransactionOrigin transactionOrigin;
@@ -171,5 +172,47 @@ public class BillingSyncBatch extends AbstractEntity implements QueryEntity, Dat
     @JsonProperty("dateLastModified")
     public void setDateLastModified(DateTime dateLastModified) {
         this.dateLastModified = dateLastModified;
+    }
+
+    @Override
+    public String toString() {
+        return "BillingSyncBatch{" +
+            "id=" + id +
+            ", batchGroup=" + batchGroup +
+            ", billMasters=" + billMasters +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", defaultBillableCharge=" + defaultBillableCharge +
+            ", defaultPayableCharge=" + defaultPayableCharge +
+            ", externalID='" + externalID + '\'' +
+            ", payMasters=" + payMasters +
+            ", periodEndDate='" + periodEndDate + '\'' +
+            ", timeOfExternalEvent=" + timeOfExternalEvent +
+            ", transactionOrigin=" + transactionOrigin +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BillingSyncBatch that = (BillingSyncBatch) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(batchGroup, that.batchGroup) &&
+            Objects.equals(billMasters, that.billMasters) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(defaultBillableCharge, that.defaultBillableCharge) &&
+            Objects.equals(defaultPayableCharge, that.defaultPayableCharge) &&
+            Objects.equals(externalID, that.externalID) &&
+            Objects.equals(payMasters, that.payMasters) &&
+            Objects.equals(periodEndDate, that.periodEndDate) &&
+            Objects.equals(timeOfExternalEvent, that.timeOfExternalEvent) &&
+            Objects.equals(transactionOrigin, that.transactionOrigin);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, batchGroup, billMasters, dateAdded, dateLastModified, defaultBillableCharge, defaultPayableCharge, externalID, payMasters, periodEndDate, timeOfExternalEvent, transactionOrigin);
     }
 }

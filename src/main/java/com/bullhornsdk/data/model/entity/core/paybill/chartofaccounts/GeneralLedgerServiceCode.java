@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 22-Apr-20
@@ -111,5 +112,37 @@ public class GeneralLedgerServiceCode implements QueryEntity, UpdateEntity, Soft
     @JsonProperty("dateLastModified")
     public void setDateLastModified(DateTime dateLastModified) {
         this.dateLastModified = dateLastModified;
+    }
+
+    @Override
+    public String toString() {
+        return "GeneralLedgerServiceCode{" +
+            "id=" + id +
+            ", externalServiceCodeNumber=" + externalServiceCodeNumber +
+            ", externalServiceCodeName='" + externalServiceCodeName + '\'' +
+            ", isActive=" + isActive +
+            ", isDeleted=" + isDeleted +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GeneralLedgerServiceCode that = (GeneralLedgerServiceCode) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(externalServiceCodeNumber, that.externalServiceCodeNumber) &&
+            Objects.equals(externalServiceCodeName, that.externalServiceCodeName) &&
+            Objects.equals(isActive, that.isActive) &&
+            Objects.equals(isDeleted, that.isDeleted) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, externalServiceCodeNumber, externalServiceCodeName, isActive, isDeleted, dateAdded, dateLastModified);
     }
 }

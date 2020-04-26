@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
-import com.bullhornsdk.data.model.entity.core.paybill.master.BillMasterTransaction;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 23-Apr-20
@@ -210,5 +211,55 @@ public class InvoiceStatementLineItem extends AbstractEntity implements QueryEnt
     @JsonProperty("total")
     public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementLineItem{" +
+            "id=" + id +
+            ", billMasterTransactions=" + billMasterTransactions +
+            ", comment='" + comment + '\'' +
+            ", currencyUnit=" + currencyUnit +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", description='" + description + '\'' +
+            ", groupByDisplay='" + groupByDisplay + '\'' +
+            ", groupBys=" + groupBys +
+            ", invoiceStatement=" + invoiceStatement +
+            ", quantity=" + quantity +
+            ", rate=" + rate +
+            ", subtotal=" + subtotal +
+            ", summarizeBys=" + summarizeBys +
+            ", taxAmount=" + taxAmount +
+            ", total=" + total +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatementLineItem that = (InvoiceStatementLineItem) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(billMasterTransactions, that.billMasterTransactions) &&
+            Objects.equals(comment, that.comment) &&
+            Objects.equals(currencyUnit, that.currencyUnit) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(description, that.description) &&
+            Objects.equals(groupByDisplay, that.groupByDisplay) &&
+            Objects.equals(groupBys, that.groupBys) &&
+            Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(quantity, that.quantity) &&
+            Objects.equals(rate, that.rate) &&
+            Objects.equals(subtotal, that.subtotal) &&
+            Objects.equals(summarizeBys, that.summarizeBys) &&
+            Objects.equals(taxAmount, that.taxAmount) &&
+            Objects.equals(total, that.total);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, billMasterTransactions, comment, currencyUnit, dateAdded, dateLastModified, description, groupByDisplay, groupBys, invoiceStatement, quantity, rate, subtotal, summarizeBys, taxAmount, total);
     }
 }

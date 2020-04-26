@@ -12,6 +12,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 23-Apr-20
@@ -108,5 +109,37 @@ public class Discount implements QueryEntity {
     @JsonProperty("addedByUser")
     public void setAddedByUser(CorporateUser addedByUser) {
         this.addedByUser = addedByUser;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Discount discount = (Discount) o;
+        return Objects.equals(id, discount.id) &&
+            Objects.equals(discountType, discount.discountType) &&
+            Objects.equals(earnCode, discount.earnCode) &&
+            Objects.equals(label, discount.label) &&
+            Objects.equals(value, discount.value) &&
+            Objects.equals(dateAdded, discount.dateAdded) &&
+            Objects.equals(addedByUser, discount.addedByUser);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, discountType, earnCode, label, value, dateAdded, addedByUser);
+    }
+
+    @Override
+    public String toString() {
+        return "Discount{" +
+            "id=" + id +
+            ", discountType=" + discountType +
+            ", earnCode=" + earnCode +
+            ", label='" + label + '\'' +
+            ", value=" + value +
+            ", dateAdded=" + dateAdded +
+            ", addedByUser=" + addedByUser +
+            '}';
     }
 }

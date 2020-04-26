@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+import java.util.Objects;
+
 /**
  * Created by mkesmetzis 22-Apr-20
  */
@@ -53,5 +55,30 @@ public class WorkflowOptionsLookup extends SpecializedOptionsLookup {
     @JsonProperty("canBypass")
     public void setCanBypass(Boolean canBypass) {
         this.canBypass = canBypass;
+    }
+
+    @Override
+    public String toString() {
+        return "WorkflowOptionsLookup{" +
+            "workflowOrder=" + workflowOrder +
+            ", isDownstreamOnly=" + isDownstreamOnly +
+            ", canBypass=" + canBypass +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        WorkflowOptionsLookup that = (WorkflowOptionsLookup) o;
+        return Objects.equals(workflowOrder, that.workflowOrder) &&
+            Objects.equals(isDownstreamOnly, that.isDownstreamOnly) &&
+            Objects.equals(canBypass, that.canBypass);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), workflowOrder, isDownstreamOnly, canBypass);
     }
 }

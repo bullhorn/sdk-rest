@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
+import java.util.Objects;
+
 /**
  * Created by mkesmetzis 22-Apr-20
  */
@@ -53,4 +55,25 @@ public class BatchGroup extends AbstractEntity implements QueryEntity {
         this.dateAdded = dateAdded;
     }
 
+    @Override
+    public String toString() {
+        return "BatchGroup{" +
+            "id=" + id +
+            ", dateAdded=" + dateAdded +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BatchGroup that = (BatchGroup) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(dateAdded, that.dateAdded);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dateAdded);
+    }
 }

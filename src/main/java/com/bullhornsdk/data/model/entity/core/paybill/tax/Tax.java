@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 24-Apr-20
@@ -129,5 +130,41 @@ public class Tax extends AbstractEntity implements QueryEntity {
     @JsonProperty("value")
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Tax{" +
+            "id=" + id +
+            ", addedByUser=" + addedByUser +
+            ", dateAdded=" + dateAdded +
+            ", earnCode=" + earnCode +
+            ", label='" + label + '\'' +
+            ", jurisdictionName='" + jurisdictionName + '\'' +
+            ", jurisdictionType=" + jurisdictionType +
+            ", taxType=" + taxType +
+            ", value=" + value +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tax tax = (Tax) o;
+        return Objects.equals(id, tax.id) &&
+            Objects.equals(addedByUser, tax.addedByUser) &&
+            Objects.equals(dateAdded, tax.dateAdded) &&
+            Objects.equals(earnCode, tax.earnCode) &&
+            Objects.equals(label, tax.label) &&
+            Objects.equals(jurisdictionName, tax.jurisdictionName) &&
+            Objects.equals(jurisdictionType, tax.jurisdictionType) &&
+            Objects.equals(taxType, tax.taxType) &&
+            Objects.equals(value, tax.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, addedByUser, dateAdded, earnCode, label, jurisdictionName, jurisdictionType, taxType, value);
     }
 }

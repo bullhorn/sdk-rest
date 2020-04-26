@@ -1,7 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
-import com.bullhornsdk.data.model.entity.core.paybill.master.BillMasterTransaction;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.*;
@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
+
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 23-Apr-20
@@ -103,5 +105,37 @@ public class InvoiceStatementBatch extends AbstractEntity implements QueryEntity
     @JsonProperty("dateLastModified")
     public void setDateLastModified(DateTime dateLastModified) {
         this.dateLastModified = dateLastModified;
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementBatch{" +
+            "id=" + id +
+            ", batchStatus=" + batchStatus +
+            ", billMasterTransactions=" + billMasterTransactions +
+            ", billableCharges=" + billableCharges +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", owner=" + owner +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatementBatch that = (InvoiceStatementBatch) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(batchStatus, that.batchStatus) &&
+            Objects.equals(billMasterTransactions, that.billMasterTransactions) &&
+            Objects.equals(billableCharges, that.billableCharges) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(owner, that.owner);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, batchStatus, billMasterTransactions, billableCharges, dateAdded, dateLastModified, owner);
     }
 }

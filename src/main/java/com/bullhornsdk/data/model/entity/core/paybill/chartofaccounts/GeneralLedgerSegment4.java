@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "externalSegmentName", "externalSegmentNumber", "generalLedgerSegmentType", "isActive", "isDeleted", "dateAdded", "dateLastModified"})
+@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "externalSegmentName", "externalSegmentNumber", "generalLedgerSegmentType", "isActive", "isDeleted"})
 public class GeneralLedgerSegment4 extends GeneralLedgerSegment {
     public GeneralLedgerSegment4() {
         super();

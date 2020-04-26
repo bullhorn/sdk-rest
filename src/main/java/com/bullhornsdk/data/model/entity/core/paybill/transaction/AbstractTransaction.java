@@ -1,9 +1,10 @@
-package com.bullhornsdk.data.model.entity.core.paybill.master;
+package com.bullhornsdk.data.model.entity.core.paybill.transaction;
 
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
-import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.UnitOfMeasure;
+import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,24 +13,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 22-Apr-20
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "amount", "billMaster", "billableCharge", "billingSyncBatch",
-    "currencyUnit", "earnCode", "quantity", "rate", "transactionDate", "unitOfMeasure"})
-public class BillableTransaction implements QueryEntity {
+@JsonPropertyOrder({"id", "amount", "billingSyncBatch", "currencyUnit", "earnCode", "quantity",
+    "rate", "transactionDate", "unitOfMeasure"})
+public class AbstractTransaction extends AbstractEntity implements QueryEntity {
 
     private Integer id;
 
     private BigDecimal amount;
-
-    private BillMaster billMasters;
-
-    private BillableCharge billableCharge;
 
     private BillingSyncBatch billingSyncBatch;
 
@@ -41,14 +38,14 @@ public class BillableTransaction implements QueryEntity {
 
     private BigDecimal rate;
 
-    private Date transactionDate;
+    private String transactionDate;
 
     private UnitOfMeasure unitOfMeasure;
 
-    public BillableTransaction() {
+    public AbstractTransaction() {
     }
 
-    public BillableTransaction(Integer id) {
+    public AbstractTransaction(Integer id) {
         this.id = id;
     }
 
@@ -75,15 +72,6 @@ public class BillableTransaction implements QueryEntity {
         this.amount = amount;
     }
 
-    @JsonProperty("billMasters")
-    public BillMaster getBillMasters() {
-        return billMasters;
-    }
-
-    @JsonProperty("billMasters")
-    public void setBillMasters(BillMaster billMasters) {
-        this.billMasters = billMasters;
-    }
 
     @JsonProperty("currencyUnit")
     public CurrencyUnit getCurrencyUnit() {
@@ -116,23 +104,13 @@ public class BillableTransaction implements QueryEntity {
     }
 
     @JsonProperty("transactionDate")
-    public Date getTransactionDate() {
+    public String getTransactionDate() {
         return transactionDate;
     }
 
     @JsonProperty("recordingDate")
-    public void setTransactionDate(Date transactionDate) {
+    public void setTransactionDate(String transactionDate) {
         this.transactionDate = transactionDate;
-    }
-
-    @JsonProperty("billableCharge")
-    public BillableCharge getBillableCharge() {
-        return billableCharge;
-    }
-
-    @JsonProperty("billableCharge")
-    public void setBillableCharge(BillableCharge billableCharge) {
-        this.billableCharge = billableCharge;
     }
 
     @JsonProperty("billingSyncBatch")
@@ -164,4 +142,41 @@ public class BillableTransaction implements QueryEntity {
     public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
         this.unitOfMeasure = unitOfMeasure;
     }
+
+    @Override
+    public String toString() {
+        return "AbstractTransaction{" +
+            "id=" + id +
+            ", amount=" + amount +
+            ", billingSyncBatch=" + billingSyncBatch +
+            ", currencyUnit=" + currencyUnit +
+            ", earnCode=" + earnCode +
+            ", quantity=" + quantity +
+            ", rate=" + rate +
+            ", transactionDate='" + transactionDate + '\'' +
+            ", unitOfMeasure=" + unitOfMeasure +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractTransaction that = (AbstractTransaction) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(amount, that.amount) &&
+            Objects.equals(billingSyncBatch, that.billingSyncBatch) &&
+            Objects.equals(currencyUnit, that.currencyUnit) &&
+            Objects.equals(earnCode, that.earnCode) &&
+            Objects.equals(quantity, that.quantity) &&
+            Objects.equals(rate, that.rate) &&
+            Objects.equals(transactionDate, that.transactionDate) &&
+            Objects.equals(unitOfMeasure, that.unitOfMeasure);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, amount, billingSyncBatch, currencyUnit, earnCode, quantity, rate, transactionDate, unitOfMeasure);
+    }
+
 }

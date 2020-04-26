@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 23-Apr-20
@@ -253,5 +254,64 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
     @JsonProperty("generalLedgerPayAccount")
     public void setGeneralLedgerPayAccount(GeneralLedgerAccount generalLedgerPayAccount) {
         this.generalLedgerPayAccount = generalLedgerPayAccount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        EarnCode earnCode = (EarnCode) o;
+        return Objects.equals(id, earnCode.id) &&
+            Objects.equals(dateAdded, earnCode.dateAdded) &&
+            Objects.equals(dateLastModified, earnCode.dateLastModified) &&
+            Objects.equals(description, earnCode.description) &&
+            Objects.equals(earnCodeGroup, earnCode.earnCodeGroup) &&
+            Objects.equals(earnCodeTypeLookup, earnCode.earnCodeTypeLookup) &&
+            Objects.equals(code, earnCode.code) &&
+            Objects.equals(externalID, earnCode.externalID) &&
+            Objects.equals(isDeleted, earnCode.isDeleted) &&
+            Objects.equals(owner, earnCode.owner) &&
+            Objects.equals(status, earnCode.status) &&
+            Objects.equals(title, earnCode.title) &&
+            Objects.equals(generalLedgerServiceCode, earnCode.generalLedgerServiceCode) &&
+            Objects.equals(generalLedgerBillAccount, earnCode.generalLedgerBillAccount) &&
+            Objects.equals(generalLedgerPayAccount, earnCode.generalLedgerPayAccount) &&
+            Objects.equals(generalLedgerSegment1, earnCode.generalLedgerSegment1) &&
+            Objects.equals(generalLedgerSegment2, earnCode.generalLedgerSegment2) &&
+            Objects.equals(generalLedgerSegment3, earnCode.generalLedgerSegment3) &&
+            Objects.equals(generalLedgerSegment4, earnCode.generalLedgerSegment4) &&
+            Objects.equals(generalLedgerSegment5, earnCode.generalLedgerSegment5);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id, dateAdded, dateLastModified, description, earnCodeGroup, earnCodeTypeLookup, code, externalID, isDeleted, owner, status, title, generalLedgerServiceCode, generalLedgerBillAccount, generalLedgerPayAccount, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5);
+    }
+
+    @Override
+    public String toString() {
+        return "EarnCode{" +
+            "id=" + id +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", description='" + description + '\'' +
+            ", earnCodeGroup=" + earnCodeGroup +
+            ", earnCodeTypeLookup=" + earnCodeTypeLookup +
+            ", code='" + code + '\'' +
+            ", externalID='" + externalID + '\'' +
+            ", isDeleted=" + isDeleted +
+            ", owner=" + owner +
+            ", status='" + status + '\'' +
+            ", title='" + title + '\'' +
+            ", generalLedgerServiceCode=" + generalLedgerServiceCode +
+            ", generalLedgerBillAccount=" + generalLedgerBillAccount +
+            ", generalLedgerPayAccount=" + generalLedgerPayAccount +
+            ", generalLedgerSegment1=" + generalLedgerSegment1 +
+            ", generalLedgerSegment2=" + generalLedgerSegment2 +
+            ", generalLedgerSegment3=" + generalLedgerSegment3 +
+            ", generalLedgerSegment4=" + generalLedgerSegment4 +
+            ", generalLedgerSegment5=" + generalLedgerSegment5 +
+            '}';
     }
 }

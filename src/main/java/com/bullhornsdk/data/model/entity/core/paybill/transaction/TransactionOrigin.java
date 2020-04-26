@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
+import java.util.Objects;
+
 /**
  * Created by mkesmetzis 21-Apr-20
  */
@@ -50,4 +52,25 @@ public class TransactionOrigin extends AbstractEntity implements QueryEntity {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "TransactionOrigin{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TransactionOrigin that = (TransactionOrigin) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
 }

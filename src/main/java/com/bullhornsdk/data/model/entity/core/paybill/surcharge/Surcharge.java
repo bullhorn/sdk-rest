@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 24-Apr-20
@@ -105,5 +106,37 @@ public class Surcharge extends AbstractEntity implements QueryEntity {
     @JsonProperty("value")
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Surcharge{" +
+            "id=" + id +
+            ", addedByUser=" + addedByUser +
+            ", dateAdded=" + dateAdded +
+            ", earnCode=" + earnCode +
+            ", label='" + label + '\'' +
+            ", surchargeType=" + surchargeType +
+            ", value=" + value +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Surcharge surcharge = (Surcharge) o;
+        return Objects.equals(id, surcharge.id) &&
+            Objects.equals(addedByUser, surcharge.addedByUser) &&
+            Objects.equals(dateAdded, surcharge.dateAdded) &&
+            Objects.equals(earnCode, surcharge.earnCode) &&
+            Objects.equals(label, surcharge.label) &&
+            Objects.equals(surchargeType, surcharge.surchargeType) &&
+            Objects.equals(value, surcharge.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, addedByUser, dateAdded, earnCode, label, surchargeType, value);
     }
 }

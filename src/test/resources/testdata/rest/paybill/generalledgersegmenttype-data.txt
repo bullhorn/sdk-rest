@@ -1,0 +1,36 @@
+{
+    "start": 0,
+    "count": 5,
+    "data": [
+        {
+            "id": 5,
+            "description": "Specific locations of a department",
+            "isEnabled": true,
+            "segmentType": "Location"
+        },
+        {
+            "id": 4,
+            "description": "Countries of the world",
+            "isEnabled": true,
+            "segmentType": "Country"
+        },
+        {
+            "id": 3,
+            "description": "Our internal departments",
+            "isEnabled": true,
+            "segmentType": "Department"
+        },
+        {
+            "id": 2,
+            "description": "Regions of a country",
+            "isEnabled": true,
+            "segmentType": "Division"
+        },
+        {
+            "id": 1,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        }
+    ]
+}

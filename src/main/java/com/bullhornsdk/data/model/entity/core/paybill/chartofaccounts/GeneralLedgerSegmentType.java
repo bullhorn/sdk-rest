@@ -6,6 +6,7 @@ import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 21-Apr-20
@@ -29,6 +30,9 @@ public class GeneralLedgerSegmentType implements QueryEntity, UpdateEntity {
 
     public GeneralLedgerSegmentType(Integer id) {
         this.id = id;
+    }
+
+    public GeneralLedgerSegmentType() {
     }
 
     @Override
@@ -72,5 +76,31 @@ public class GeneralLedgerSegmentType implements QueryEntity, UpdateEntity {
     @JsonProperty("segmentType")
     public void setSegmentType(String segmentType) {
         this.segmentType = segmentType;
+    }
+
+    @Override
+    public String toString() {
+        return "GeneralLedgerSegmentType{" +
+            "id=" + id +
+            ", description='" + description + '\'' +
+            ", isEnabled=" + isEnabled +
+            ", segmentType='" + segmentType + '\'' +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GeneralLedgerSegmentType that = (GeneralLedgerSegmentType) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(description, that.description) &&
+            Objects.equals(isEnabled, that.isEnabled) &&
+            Objects.equals(segmentType, that.segmentType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, description, isEnabled, segmentType);
     }
 }

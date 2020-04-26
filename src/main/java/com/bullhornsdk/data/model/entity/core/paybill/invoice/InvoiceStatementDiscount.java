@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 23-Apr-20
@@ -67,4 +68,31 @@ public class InvoiceStatementDiscount extends AbstractEntity implements QueryEnt
     public void setFinalizedValue(BigDecimal finalizedValue) {
         this.finalizedValue = finalizedValue;
     }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementDiscount{" +
+            "id=" + id +
+            ", discount=" + discount +
+            ", invoiceStatement=" + invoiceStatement +
+            ", finalizedValue=" + finalizedValue +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatementDiscount that = (InvoiceStatementDiscount) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(discount, that.discount) &&
+            Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(finalizedValue, that.finalizedValue);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, discount, invoiceStatement, finalizedValue);
+    }
 }
+

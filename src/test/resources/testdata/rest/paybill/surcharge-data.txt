@@ -1,0 +1,79 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "dateAdded": 1587726305760,
+            "earnCode": {
+                "id": 3,
+                "code": "DT",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1584066246267,
+                "dateLastModified": 1584066246267,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 1
+                },
+                "earnCodeTypeLookup": {
+                    "id": 3
+                },
+                "externalID": "DT",
+                "generalLedgerBillAccount": null,
+                "generalLedgerPayAccount": null,
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": null,
+                "title": "Double Time"
+            },
+            "label": "Percent Test",
+            "surchargeType": {
+                "id": 2,
+                "label": "Percent"
+            },
+            "value": 0.100000
+        }
+    ]
+}

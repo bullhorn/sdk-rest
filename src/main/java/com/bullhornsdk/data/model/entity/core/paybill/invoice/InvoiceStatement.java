@@ -17,6 +17,7 @@ import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 23-Apr-20
@@ -659,5 +660,134 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     @JsonProperty("taxAmount")
     public void setTaxAmount(BigDecimal taxAmount) {
         this.taxAmount = taxAmount;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatement that = (InvoiceStatement) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(billingAddress, that.billingAddress) &&
+            Objects.equals(billingAttention, that.billingAttention) &&
+            Objects.equals(billingClientContact, that.billingClientContact) &&
+            Objects.equals(billingCorporateUser, that.billingCorporateUser) &&
+            Objects.equals(billingPeriodEndDate, that.billingPeriodEndDate) &&
+            Objects.equals(billingProfile, that.billingProfile) &&
+            Objects.equals(billingScheduleID, that.billingScheduleID) &&
+            Objects.equals(clientCorporation, that.clientCorporation) &&
+            Objects.equals(creditedByInvoiceStatement, that.creditedByInvoiceStatement) &&
+            Objects.equals(creditOfInvoiceStatement, that.creditOfInvoiceStatement) &&
+            Objects.equals(currencyUnit, that.currencyUnit) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(deliveryMethod, that.deliveryMethod) &&
+            Objects.equals(deliveryStatus, that.deliveryStatus) &&
+            Objects.equals(discounts, that.discounts) &&
+            Objects.equals(discountTotal, that.discountTotal) &&
+            Objects.equals(discountAmount, that.discountAmount) &&
+            Objects.equals(effectiveDate, that.effectiveDate) &&
+            Objects.equals(dueDate, that.dueDate) &&
+            Objects.equals(emailErrorReason, that.emailErrorReason) &&
+            Objects.equals(finalizedSubtotal, that.finalizedSubtotal) &&
+            Objects.equals(finalizedTotal, that.finalizedTotal) &&
+            Objects.equals(generalLedgerExportStatusLookup, that.generalLedgerExportStatusLookup) &&
+            Objects.equals(invoiceStatementDate, that.invoiceStatementDate) &&
+            Objects.equals(invoiceStatementExports, that.invoiceStatementExports) &&
+            Objects.equals(invoiceStatementExportsBatches, that.invoiceStatementExportsBatches) &&
+            Objects.equals(invoiceStatementNumber, that.invoiceStatementNumber) &&
+            Objects.equals(invoiceStatementFinalizedDate, that.invoiceStatementFinalizedDate) &&
+            Objects.equals(invoiceStatementOrigin, that.invoiceStatementOrigin) &&
+            Objects.equals(invoiceStatementTemplate, that.invoiceStatementTemplate) &&
+            Objects.equals(invoiceStatementType, that.invoiceStatementType) &&
+            Objects.equals(invoiceTerm, that.invoiceTerm) &&
+            Objects.equals(isDeleted, that.isDeleted) &&
+            Objects.equals(isCredited, that.isCredited) &&
+            Objects.equals(isFinalized, that.isFinalized) &&
+            Objects.equals(isReinstated, that.isReinstated) &&
+            Objects.equals(lineItems, that.lineItems) &&
+            Objects.equals(lineItemTotal, that.lineItemTotal) &&
+            Objects.equals(owner, that.owner) &&
+            Objects.equals(paymentTerms, that.paymentTerms) &&
+            Objects.equals(previousBalance, that.previousBalance) &&
+            Objects.equals(purchaseOrderNumber, that.purchaseOrderNumber) &&
+            Objects.equals(rawInvoiceStatementNumber, that.rawInvoiceStatementNumber) &&
+            Objects.equals(remitInstructions, that.remitInstructions) &&
+            Objects.equals(splitBys, that.splitBys) &&
+            Objects.equals(status, that.status) &&
+            Objects.equals(subtotal, that.subtotal) &&
+            Objects.equals(surchargeTotal, that.surchargeTotal) &&
+            Objects.equals(surcharges, that.surcharges) &&
+            Objects.equals(taxAmount, that.taxAmount) &&
+            Objects.equals(taxTotal, that.taxTotal) &&
+            Objects.equals(taxes, that.taxes) &&
+            Objects.equals(total, that.total);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, billingAddress, billingAttention, billingClientContact, billingCorporateUser, billingPeriodEndDate, billingProfile, billingScheduleID, clientCorporation, creditedByInvoiceStatement, creditOfInvoiceStatement, currencyUnit, dateAdded, dateLastModified, deliveryMethod, deliveryStatus, discounts, discountTotal, discountAmount, effectiveDate, dueDate, emailErrorReason, finalizedSubtotal, finalizedTotal, generalLedgerExportStatusLookup, invoiceStatementDate, invoiceStatementExports, invoiceStatementExportsBatches, invoiceStatementNumber, invoiceStatementFinalizedDate, invoiceStatementOrigin, invoiceStatementTemplate, invoiceStatementType, invoiceTerm, isDeleted, isCredited, isFinalized, isReinstated, lineItems, lineItemTotal, owner, paymentTerms, previousBalance, purchaseOrderNumber, rawInvoiceStatementNumber, remitInstructions, splitBys, status, subtotal, surchargeTotal, surcharges, taxAmount, taxTotal, taxes, total);
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatement{" +
+            "id=" + id +
+            ", billingAddress=" + billingAddress +
+            ", billingAttention='" + billingAttention + '\'' +
+            ", billingClientContact=" + billingClientContact +
+            ", billingCorporateUser=" + billingCorporateUser +
+            ", billingPeriodEndDate='" + billingPeriodEndDate + '\'' +
+            ", billingProfile=" + billingProfile +
+            ", billingScheduleID=" + billingScheduleID +
+            ", clientCorporation=" + clientCorporation +
+            ", creditedByInvoiceStatement=" + creditedByInvoiceStatement +
+            ", creditOfInvoiceStatement=" + creditOfInvoiceStatement +
+            ", currencyUnit=" + currencyUnit +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", deliveryMethod='" + deliveryMethod + '\'' +
+            ", deliveryStatus=" + deliveryStatus +
+            ", discounts=" + discounts +
+            ", discountTotal=" + discountTotal +
+            ", discountAmount=" + discountAmount +
+            ", effectiveDate='" + effectiveDate + '\'' +
+            ", dueDate=" + dueDate +
+            ", emailErrorReason='" + emailErrorReason + '\'' +
+            ", finalizedSubtotal=" + finalizedSubtotal +
+            ", finalizedTotal=" + finalizedTotal +
+            ", generalLedgerExportStatusLookup=" + generalLedgerExportStatusLookup +
+            ", invoiceStatementDate=" + invoiceStatementDate +
+            ", invoiceStatementExports=" + invoiceStatementExports +
+            ", invoiceStatementExportsBatches=" + invoiceStatementExportsBatches +
+            ", invoiceStatementNumber='" + invoiceStatementNumber + '\'' +
+            ", invoiceStatementFinalizedDate=" + invoiceStatementFinalizedDate +
+            ", invoiceStatementOrigin='" + invoiceStatementOrigin + '\'' +
+            ", invoiceStatementTemplate=" + invoiceStatementTemplate +
+            ", invoiceStatementType=" + invoiceStatementType +
+            ", invoiceTerm=" + invoiceTerm +
+            ", isDeleted=" + isDeleted +
+            ", isCredited=" + isCredited +
+            ", isFinalized=" + isFinalized +
+            ", isReinstated=" + isReinstated +
+            ", lineItems=" + lineItems +
+            ", lineItemTotal=" + lineItemTotal +
+            ", owner=" + owner +
+            ", paymentTerms='" + paymentTerms + '\'' +
+            ", previousBalance=" + previousBalance +
+            ", purchaseOrderNumber='" + purchaseOrderNumber + '\'' +
+            ", rawInvoiceStatementNumber=" + rawInvoiceStatementNumber +
+            ", remitInstructions='" + remitInstructions + '\'' +
+            ", splitBys=" + splitBys +
+            ", status=" + status +
+            ", subtotal=" + subtotal +
+            ", surchargeTotal=" + surchargeTotal +
+            ", surcharges=" + surcharges +
+            ", taxAmount=" + taxAmount +
+            ", taxTotal=" + taxTotal +
+            ", taxes=" + taxes +
+            ", total=" + total +
+            '}';
     }
 }

@@ -3,6 +3,7 @@ package com.bullhornsdk.data.model.entity.core.paybill.master;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -14,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
+
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 21-Apr-20
@@ -157,4 +160,43 @@ public class BillMaster implements QueryEntity, DateLastModifiedEntity, Associat
         this.dateLastModified = dateLastModified;
     }
 
+    @Override
+    public String toString() {
+        return "BillMaster{" +
+            "id=" + id +
+            ", billMasterTransactions=" + billMasterTransactions +
+            ", billableCharge=" + billableCharge +
+            ", billingSyncBatch=" + billingSyncBatch +
+            ", canInvoice=" + canInvoice +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", earnCode=" + earnCode +
+            ", location=" + location +
+            ", owner=" + owner +
+            ", transactionDate=" + transactionDate +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BillMaster that = (BillMaster) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(billMasterTransactions, that.billMasterTransactions) &&
+            Objects.equals(billableCharge, that.billableCharge) &&
+            Objects.equals(billingSyncBatch, that.billingSyncBatch) &&
+            Objects.equals(canInvoice, that.canInvoice) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(earnCode, that.earnCode) &&
+            Objects.equals(location, that.location) &&
+            Objects.equals(owner, that.owner) &&
+            Objects.equals(transactionDate, that.transactionDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, billMasterTransactions, billableCharge, billingSyncBatch, canInvoice, dateAdded, dateLastModified, earnCode, location, owner, transactionDate);
+    }
 }

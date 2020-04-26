@@ -4,10 +4,8 @@ import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
-import com.bullhornsdk.data.model.entity.core.paybill.master.BillMasterTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
-import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionStatus;
-import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionType;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.*;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.*;
@@ -18,20 +16,20 @@ import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 21-Apr-20
  */
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "addedByUser", "billMasters", "billableTransactions", "billingClientContact", "billingClientCorporation",
     "billingCorporateUser", "billingFrequency", "billingProfile", "billingSchedule", "candidate", "clientCorporation",
     "currencyUnit", "dateAdded", "dateLastModified", "description", "fileAttachments", "generalLedgerSegment1",
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
-    "generalLedgerServiceCode", "invoiceTerm", "isInvoiced", "jobOrder", "periodEndDate", "placement",
-    "readyToBillOverride", "status", "subTotal", "transactionStatus", "transactionType"})
-public class BillableCharge  implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
+    "generalLedgerServiceCode", "invoiceTerm", "isInvoiced", "invoicedTransactions", "jobOrder", "periodEndDate", "placement",
+    "readyToBillOverride", "status", "subtotal", "summaryTransactions", "transactionStatus", "transactionType", "unbillableTransactions"})
+public class BillableCharge implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
 
@@ -82,7 +80,9 @@ public class BillableCharge  implements QueryEntity, UpdateEntity, CreateEntity,
 
     private InvoiceTerm invoiceTerm;
 
-    private Boolean isInvoiced; //TODO nullable = false, insertable = false, updatable = false
+    private Boolean isInvoiced;
+
+    private BillableChargeInvoicedTransaction invoicedTransactions;
 
     private JobOrder jobOrder;
 
@@ -94,12 +94,16 @@ public class BillableCharge  implements QueryEntity, UpdateEntity, CreateEntity,
 
     private SpecializedOptionsLookup status; // BillableChargeStatusLookup
 
+    @JsonIgnore
     private BigDecimal subTotal;
 
-    private TransactionStatus transactionStatus; //TODO
+    private BillableChargeSummaryTransaction summaryTransactions;
 
-    private TransactionType transactionType; //TODO
+    private TransactionStatus transactionStatus;
 
+    private TransactionType transactionType;
+
+    private BillableChargeUnbillableTransaction unbillableTransactions;
 
     public BillableCharge() {
     }
@@ -363,6 +367,16 @@ public class BillableCharge  implements QueryEntity, UpdateEntity, CreateEntity,
         isInvoiced = invoiced;
     }
 
+    @JsonProperty("invoicedTransactions")
+    public BillableChargeInvoicedTransaction getInvoicedTransactions() {
+        return invoicedTransactions;
+    }
+
+    @JsonProperty("invoicedTransactions")
+    public void setInvoicedTransactions(BillableChargeInvoicedTransaction invoicedTransactions) {
+        this.invoicedTransactions = invoicedTransactions;
+    }
+
     @JsonProperty("jobOrder")
     public JobOrder getJobOrder() {
         return jobOrder;
@@ -413,14 +427,24 @@ public class BillableCharge  implements QueryEntity, UpdateEntity, CreateEntity,
         this.status = status;
     }
 
-    @JsonProperty("subTotal")
+    @JsonProperty("subtotal")
     public BigDecimal getSubTotal() {
         return subTotal;
     }
 
-    @JsonProperty("subTotal")
+    @JsonProperty("subtotal")
     public void setSubTotal(BigDecimal subTotal) {
         this.subTotal = subTotal;
+    }
+
+    @JsonProperty("summaryTransactions")
+    public BillableChargeSummaryTransaction getSummaryTransactions() {
+        return summaryTransactions;
+    }
+
+    @JsonProperty("summaryTransactions")
+    public void setSummaryTransactions(BillableChargeSummaryTransaction summaryTransactions) {
+        this.summaryTransactions = summaryTransactions;
     }
 
     @JsonProperty("transactionStatus")
@@ -441,6 +465,106 @@ public class BillableCharge  implements QueryEntity, UpdateEntity, CreateEntity,
     @JsonProperty("transactionType")
     public void setTransactionType(TransactionType transactionType) {
         this.transactionType = transactionType;
+    }
+
+    @JsonProperty("unbillableTransactions")
+    public BillableChargeUnbillableTransaction getUnbillableTransactions() {
+        return unbillableTransactions;
+    }
+
+    @JsonProperty("unbillableTransactions")
+    public void setUnbillableTransactions(BillableChargeUnbillableTransaction unbillableTransactions) {
+        this.unbillableTransactions = unbillableTransactions;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BillableCharge that = (BillableCharge) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(addedByUser, that.addedByUser) &&
+            Objects.equals(billMasters, that.billMasters) &&
+            Objects.equals(billableTransactions, that.billableTransactions) &&
+            Objects.equals(billingClientContact, that.billingClientContact) &&
+            Objects.equals(billingClientCorporation, that.billingClientCorporation) &&
+            Objects.equals(billingCorporateUser, that.billingCorporateUser) &&
+            Objects.equals(billingFrequency, that.billingFrequency) &&
+            Objects.equals(billingProfile, that.billingProfile) &&
+            Objects.equals(billingSchedule, that.billingSchedule) &&
+            Objects.equals(candidate, that.candidate) &&
+            Objects.equals(clientCorporation, that.clientCorporation) &&
+            Objects.equals(currencyUnit, that.currencyUnit) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(description, that.description) &&
+            Objects.equals(fileAttachments, that.fileAttachments) &&
+            Objects.equals(generalLedgerSegment1, that.generalLedgerSegment1) &&
+            Objects.equals(generalLedgerSegment2, that.generalLedgerSegment2) &&
+            Objects.equals(generalLedgerSegment3, that.generalLedgerSegment3) &&
+            Objects.equals(generalLedgerSegment4, that.generalLedgerSegment4) &&
+            Objects.equals(generalLedgerSegment5, that.generalLedgerSegment5) &&
+            Objects.equals(generalLedgerServiceCode, that.generalLedgerServiceCode) &&
+            Objects.equals(invoiceTerm, that.invoiceTerm) &&
+            Objects.equals(isInvoiced, that.isInvoiced) &&
+            Objects.equals(invoicedTransactions, that.invoicedTransactions) &&
+            Objects.equals(jobOrder, that.jobOrder) &&
+            Objects.equals(periodEndDate, that.periodEndDate) &&
+            Objects.equals(placement, that.placement) &&
+            Objects.equals(readyToBillOverride, that.readyToBillOverride) &&
+            Objects.equals(status, that.status) &&
+            Objects.equals(subTotal, that.subTotal) &&
+            Objects.equals(summaryTransactions, that.summaryTransactions) &&
+            Objects.equals(transactionStatus, that.transactionStatus) &&
+            Objects.equals(transactionType, that.transactionType) &&
+            Objects.equals(unbillableTransactions, that.unbillableTransactions);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, addedByUser, billMasters, billableTransactions, billingClientContact, billingClientCorporation, billingCorporateUser, billingFrequency, billingProfile, billingSchedule, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, invoiceTerm, isInvoiced, invoicedTransactions, jobOrder, periodEndDate, placement, readyToBillOverride, status, subTotal, summaryTransactions, transactionStatus, transactionType, unbillableTransactions);
+    }
+
+    @Override
+    public String toString() {
+        return "BillableCharge{" +
+            "id=" + id +
+            ", addedByUser=" + addedByUser +
+            ", billMasters=" + billMasters +
+            ", billableTransactions=" + billableTransactions +
+            ", billingClientContact=" + billingClientContact +
+            ", billingClientCorporation=" + billingClientCorporation +
+            ", billingCorporateUser=" + billingCorporateUser +
+            ", billingFrequency='" + billingFrequency + '\'' +
+            ", billingProfile=" + billingProfile +
+            ", billingSchedule=" + billingSchedule +
+            ", candidate=" + candidate +
+            ", clientCorporation=" + clientCorporation +
+            ", currencyUnit=" + currencyUnit +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", description='" + description + '\'' +
+            ", fileAttachments=" + fileAttachments +
+            ", generalLedgerSegment1=" + generalLedgerSegment1 +
+            ", generalLedgerSegment2=" + generalLedgerSegment2 +
+            ", generalLedgerSegment3=" + generalLedgerSegment3 +
+            ", generalLedgerSegment4=" + generalLedgerSegment4 +
+            ", generalLedgerSegment5=" + generalLedgerSegment5 +
+            ", generalLedgerServiceCode=" + generalLedgerServiceCode +
+            ", invoiceTerm=" + invoiceTerm +
+            ", isInvoiced=" + isInvoiced +
+            ", invoicedTransactions=" + invoicedTransactions +
+            ", jobOrder=" + jobOrder +
+            ", periodEndDate=" + periodEndDate +
+            ", placement=" + placement +
+            ", readyToBillOverride=" + readyToBillOverride +
+            ", status=" + status +
+            ", subTotal=" + subTotal +
+            ", summaryTransactions=" + summaryTransactions +
+            ", transactionStatus=" + transactionStatus +
+            ", transactionType=" + transactionType +
+            ", unbillableTransactions=" + unbillableTransactions +
+            '}';
     }
 
 }

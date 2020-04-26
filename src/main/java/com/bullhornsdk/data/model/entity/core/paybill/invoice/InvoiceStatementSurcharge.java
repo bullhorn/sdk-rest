@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 24-Apr-20
@@ -75,4 +76,29 @@ public class InvoiceStatementSurcharge extends AbstractEntity implements QueryEn
         this.surcharge = surcharge;
     }
 
+    @Override
+    public String toString() {
+        return "InvoiceStatementSurcharge{" +
+            "id=" + id +
+            ", finalizedValue=" + finalizedValue +
+            ", invoiceStatement=" + invoiceStatement +
+            ", surcharge=" + surcharge +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatementSurcharge that = (InvoiceStatementSurcharge) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(finalizedValue, that.finalizedValue) &&
+            Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(surcharge, that.surcharge);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, finalizedValue, invoiceStatement, surcharge);
+    }
 }

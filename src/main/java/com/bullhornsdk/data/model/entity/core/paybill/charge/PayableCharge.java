@@ -2,7 +2,7 @@ package com.bullhornsdk.data.model.entity.core.paybill.charge;
 
 import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
 import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
-import com.bullhornsdk.data.model.entity.core.paybill.master.PayableTransaction;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayableTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionStatus;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionType;
@@ -16,6 +16,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 21-Apr-20
@@ -353,4 +354,74 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
         this.transactionType = transactionType;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PayableCharge that = (PayableCharge) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(addedByUser, that.addedByUser) &&
+            Objects.equals(canExport, that.canExport) &&
+            Objects.equals(candidate, that.candidate) &&
+            Objects.equals(clientCorporation, that.clientCorporation) &&
+            Objects.equals(currencyUnit, that.currencyUnit) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(description, that.description) &&
+            Objects.equals(employeeType, that.employeeType) &&
+            Objects.equals(generalLedgerSegment1, that.generalLedgerSegment1) &&
+            Objects.equals(generalLedgerSegment2, that.generalLedgerSegment2) &&
+            Objects.equals(generalLedgerSegment3, that.generalLedgerSegment3) &&
+            Objects.equals(generalLedgerSegment4, that.generalLedgerSegment4) &&
+            Objects.equals(generalLedgerSegment5, that.generalLedgerSegment5) &&
+            Objects.equals(generalLedgerServiceCode, that.generalLedgerServiceCode) &&
+            Objects.equals(jobOrder, that.jobOrder) &&
+            Objects.equals(payMasters, that.payMasters) &&
+            Objects.equals(payableTransactions, that.payableTransactions) &&
+            Objects.equals(periodEndDate, that.periodEndDate) &&
+            Objects.equals(placement, that.placement) &&
+            Objects.equals(readyToBillOverride, that.readyToBillOverride) &&
+            Objects.equals(status, that.status) &&
+            Objects.equals(subTotal, that.subTotal) &&
+            Objects.equals(transactionStatus, that.transactionStatus) &&
+            Objects.equals(transactionType, that.transactionType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subTotal, transactionStatus, transactionType);
+    }
+
+    @Override
+    public String toString() {
+        return "PayableCharge{" +
+            "id=" + id +
+            ", addedByUser=" + addedByUser +
+            ", canExport=" + canExport +
+            ", candidate=" + candidate +
+            ", clientCorporation=" + clientCorporation +
+            ", currencyUnit=" + currencyUnit +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", description='" + description + '\'' +
+            ", employeeType='" + employeeType + '\'' +
+            ", generalLedgerSegment1=" + generalLedgerSegment1 +
+            ", generalLedgerSegment2=" + generalLedgerSegment2 +
+            ", generalLedgerSegment3=" + generalLedgerSegment3 +
+            ", generalLedgerSegment4=" + generalLedgerSegment4 +
+            ", generalLedgerSegment5=" + generalLedgerSegment5 +
+            ", generalLedgerServiceCode=" + generalLedgerServiceCode +
+            ", jobOrder=" + jobOrder +
+            ", payMasters=" + payMasters +
+            ", payableTransactions=" + payableTransactions +
+            ", periodEndDate='" + periodEndDate + '\'' +
+            ", placement=" + placement +
+            ", readyToBillOverride=" + readyToBillOverride +
+            ", status=" + status +
+            ", subTotal=" + subTotal +
+            ", transactionStatus=" + transactionStatus +
+            ", transactionType=" + transactionType +
+            '}';
+    }
 }

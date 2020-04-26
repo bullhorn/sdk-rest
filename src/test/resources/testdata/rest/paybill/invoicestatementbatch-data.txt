@@ -1,0 +1,27 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        }
+    ]
+}

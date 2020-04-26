@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * Created by mkesmetzis 24-Apr-20
@@ -79,5 +80,31 @@ public class InvoiceStatementTax extends AbstractEntity implements QueryEntity, 
     @JsonProperty("tax")
     public void setTax(Tax tax) {
         this.tax = tax;
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementTax{" +
+            "id=" + id +
+            ", finalizedValue=" + finalizedValue +
+            ", invoiceStatement=" + invoiceStatement +
+            ", tax=" + tax +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InvoiceStatementTax that = (InvoiceStatementTax) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(finalizedValue, that.finalizedValue) &&
+            Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(tax, that.tax);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, finalizedValue, invoiceStatement, tax);
     }
 }
