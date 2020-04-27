@@ -1,0 +1,206 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 2,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 3,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 4,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 5,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 6,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 7,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 8,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 9,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 10,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 11,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 12,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 13,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 14,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 15,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 16,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 17,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 18,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 19,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        },
+		{
+            "id": 20,
+            "finalizedValue": null,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "surcharge": {
+                "id": 1
+            }
+        }
+    ]
+}

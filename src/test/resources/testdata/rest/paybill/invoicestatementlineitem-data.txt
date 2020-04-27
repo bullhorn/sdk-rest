@@ -1,0 +1,566 @@
+{
+	"start": 0,
+	"count": 20,
+	"data": [{
+			"id": 3,
+			"billMasterTransactions": {
+				"total": 1,
+				"data": []
+			},
+			"comment": null,
+			"currencyUnit": null,
+			"dateAdded": 1587667482520,
+			"dateLastModified": 1587667482520,
+			"description": "",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 2
+			},
+			"quantity": 5.000000,
+			"rate": 3.0000,
+			"subtotal": 15.0000,
+			"summarizeBys": {
+				"total": 1,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 15.0000
+		}, {
+			"id": 2,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666456337,
+			"dateLastModified": 1587666456337,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 1,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 4,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 5,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 6,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 7,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 8,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 9,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 10,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 11,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 12,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 13,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 14,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 15,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 16,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 17,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 18,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 19,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}, {
+			"id": 20,
+			"billMasterTransactions": {
+				"total": 0,
+				"data": []
+			},
+			"comment": "Creating a line item",
+			"currencyUnit": null,
+			"dateAdded": 1587666411780,
+			"dateLastModified": 1587666411780,
+			"description": "CreateInvoiceStatementLine",
+			"groupByDisplay": null,
+			"groupBys": {
+				"total": 0,
+				"data": []
+			},
+			"invoiceStatement": {
+				"id": 1
+			},
+			"quantity": null,
+			"rate": null,
+			"subtotal": 0.0000,
+			"summarizeBys": {
+				"total": 0,
+				"data": []
+			},
+			"taxAmount": 0.0000,
+			"total": 0.0000
+		}
+	]
+}

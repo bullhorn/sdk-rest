@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
-import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.type.*;
@@ -125,6 +125,7 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
         entity.setWaitForTimecards(Boolean.FALSE);
         return entity;
     }
+
 
     @Override
     @JsonProperty("id")

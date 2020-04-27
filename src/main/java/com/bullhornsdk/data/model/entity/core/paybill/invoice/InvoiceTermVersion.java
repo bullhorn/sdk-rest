@@ -1,7 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
-import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.util.ReadOnly;

@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.paybill;
+package com.bullhornsdk.data.model.entity.core.paybill.generalledger;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.util.ReadOnly;
