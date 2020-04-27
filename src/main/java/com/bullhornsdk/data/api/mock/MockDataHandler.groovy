@@ -158,7 +158,6 @@ public class MockDataHandler {
 	private <T extends BullhornEntity> T getEntityFromMap(Class<T> type, Integer id){
 		T entity = null;
 		if(id != null){
-            System.out.println(type.toString());
 			 entity = (T) restEntityMap.get(type).get(id);
 		}
 		return entity;
