@@ -19,11 +19,10 @@ import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
-import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount
 import com.bullhornsdk.data.model.entity.core.paybill.Location
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge
-import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.*
@@ -452,7 +451,7 @@ public class MockDataLoader {
 
         // TODO add v2 of PAY and Bill Entities data
         entityFiles.put(BillableCharge.class, "paybill/billablecharge-data.txt");
-        // entityFiles.put(PayableCharge.class, "paybill/payablecharge-data.txt");
+        entityFiles.put(PayableCharge.class, "paybill/payablecharge-data.txt");
         entityFiles.put(GeneralLedgerSegment.class, "paybill/generalledgersegment-data.txt");
         entityFiles.put(GeneralLedgerSegment1.class, "paybill/generalledgersegment1-data.txt");
         entityFiles.put(GeneralLedgerSegment2.class, "paybill/generalledgersegment2-data.txt");

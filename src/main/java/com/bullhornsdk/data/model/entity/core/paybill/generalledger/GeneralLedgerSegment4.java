@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts;
+package com.bullhornsdk.data.model.entity.core.paybill.generalledger;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -11,11 +11,10 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "externalSegmentName", "externalSegmentNumber", "generalLedgerSegmentType", "isActive", "isDeleted"})
-public class GeneralLedgerSegment1 extends GeneralLedgerSegment {
-
-    public GeneralLedgerSegment1() {
+public class GeneralLedgerSegment4 extends GeneralLedgerSegment {
+    public GeneralLedgerSegment4() {
         super();
-        this.setGeneralLedgerSegmentType(new GeneralLedgerSegmentType(1));
+        this.setGeneralLedgerSegmentType(new GeneralLedgerSegmentType(4));
     }
 
 }

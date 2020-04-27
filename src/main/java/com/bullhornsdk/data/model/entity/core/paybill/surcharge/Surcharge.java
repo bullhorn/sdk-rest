@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.surcharge;
 
+import com.bullhornsdk.data.model.entity.core.paybill.AbstractType;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
@@ -25,7 +26,7 @@ public class Surcharge extends AbstractEntity implements QueryEntity {
     private EarnCode earnCode;
     @JsonIgnore
     private String label;
-    private SurchargeType surchargeType;
+    private AbstractType surchargeType;
     private BigDecimal value;
 
     public Surcharge() {
@@ -89,12 +90,12 @@ public class Surcharge extends AbstractEntity implements QueryEntity {
     }
 
     @JsonProperty("surchargeType")
-    public SurchargeType getSurchargeType() {
+    public AbstractType getSurchargeType() {
         return surchargeType;
     }
 
     @JsonProperty("surchargeType")
-    public void setSurchargeType(SurchargeType surchargeType) {
+    public void setSurchargeType(AbstractType surchargeType) {
         this.surchargeType = surchargeType;
     }
 

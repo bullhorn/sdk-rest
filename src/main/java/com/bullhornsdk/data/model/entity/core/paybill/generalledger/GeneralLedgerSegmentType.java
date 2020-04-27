@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts;
+package com.bullhornsdk.data.model.entity.core.paybill.generalledger;
 
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;

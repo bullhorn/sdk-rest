@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.paybill.discount;
+package com.bullhornsdk.data.model.entity.core.paybill;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
@@ -16,15 +16,15 @@ import java.util.Objects;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "label"})
-public class DiscountType extends AbstractEntity implements QueryEntity {
+public class AbstractType extends AbstractEntity implements QueryEntity {
 
     private Integer id;
     private String label;
 
-    public DiscountType() {
+    public AbstractType() {
     }
 
-    public DiscountType(Integer id) {
+    public AbstractType(Integer id) {
         this.id = id;
     }
 
@@ -51,12 +51,19 @@ public class DiscountType extends AbstractEntity implements QueryEntity {
         this.label = label;
     }
 
+    @Override
+    public String toString() {
+        return "AbstractType{" +
+            "id=" + id +
+            ", label='" + label + '\'' +
+            '}';
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DiscountType that = (DiscountType) o;
+        AbstractType that = (AbstractType) o;
         return Objects.equals(id, that.id) &&
             Objects.equals(label, that.label);
     }
@@ -64,13 +71,5 @@ public class DiscountType extends AbstractEntity implements QueryEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, label);
-    }
-
-    @Override
-    public String toString() {
-        return "DiscountType{" +
-            "id=" + id +
-            ", label='" + label + '\'' +
-            '}';
     }
 }

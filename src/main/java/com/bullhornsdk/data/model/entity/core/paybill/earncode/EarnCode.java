@@ -1,7 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.paybill.earncode;
 
-import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
-import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.*;

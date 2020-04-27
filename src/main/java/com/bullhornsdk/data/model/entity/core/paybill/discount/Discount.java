@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.discount;
 
+import com.bullhornsdk.data.model.entity.core.paybill.AbstractType;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
@@ -23,7 +24,7 @@ import java.util.Objects;
 public class Discount implements QueryEntity {
 
     private Integer id;
-    private DiscountType discountType;
+    private AbstractType discountType;
     private EarnCode earnCode;
     @Size(max = 100)
     private String label;
@@ -52,12 +53,12 @@ public class Discount implements QueryEntity {
     }
 
     @JsonProperty("discountType")
-    public DiscountType getDiscountType() {
+    public AbstractType getDiscountType() {
         return discountType;
     }
 
     @JsonProperty("discountType")
-    public void setDiscountType(DiscountType discountType) {
+    public void setDiscountType(AbstractType discountType) {
         this.discountType = discountType;
     }
 

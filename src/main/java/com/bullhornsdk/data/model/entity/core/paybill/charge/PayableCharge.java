@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.charge;
 
-import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayableTransaction;

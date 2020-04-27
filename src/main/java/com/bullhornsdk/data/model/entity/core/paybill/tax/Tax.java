@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.tax;
 
+import com.bullhornsdk.data.model.entity.core.paybill.AbstractType;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -29,7 +30,7 @@ public class Tax extends AbstractEntity implements QueryEntity {
     @JsonIgnore
     private String jurisdictionName;
     private SimplifiedOptionsLookup jurisdictionType;
-    private TaxType taxType;
+    private AbstractType taxType;
     private BigDecimal value;
 
     public Tax() {
@@ -113,12 +114,12 @@ public class Tax extends AbstractEntity implements QueryEntity {
     }
 
     @JsonProperty("taxType")
-    public TaxType getTaxType() {
+    public AbstractType getTaxType() {
         return taxType;
     }
 
     @JsonProperty("taxType")
-    public void setTaxType(TaxType taxType) {
+    public void setTaxType(AbstractType taxType) {
         this.taxType = taxType;
     }
 

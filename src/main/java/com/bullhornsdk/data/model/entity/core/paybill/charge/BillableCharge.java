@@ -1,7 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.paybill.charge;
 
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
-import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
@@ -29,7 +29,7 @@ import java.util.Objects;
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
     "generalLedgerServiceCode", "invoiceTerm", "isInvoiced", "invoicedTransactions", "jobOrder", "periodEndDate", "placement",
     "readyToBillOverride", "status", "subtotal", "summaryTransactions", "transactionStatus", "transactionType", "unbillableTransactions"})
-public class BillableCharge implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
+public class BillableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
 
