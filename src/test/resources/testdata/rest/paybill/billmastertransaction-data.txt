@@ -1,9 +1,883 @@
 {
     "start": 0,
-    "count": 1,
+    "count": 20,
     "data": [
         {
             "id": 1,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 2,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 3,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 4,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 5,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 6,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 7,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 8,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 9,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 10,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 11,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 12,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 13,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 14,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 15,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 16,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 17,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 18,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 19,
+            "adjustmentSequenceNumber": 0,
+            "amount": 15.0000,
+            "billMaster": {
+                "id": 1
+            },
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587645174253,
+            "dateLastModified": 1587645174253,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementBatch": {
+                "id": 1
+            },
+            "invoiceStatementLineItem": {
+                "id": 3
+            },
+            "needsReview": false,
+            "quantity": 5.000000,
+            "rate": 3.0000,
+            "recordingDate": "2020-04-23",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 1,
+                "name": "Manual Entry"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+		{
+            "id": 20,
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {

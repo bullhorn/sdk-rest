@@ -2,8 +2,8 @@ package com.bullhornsdk.data.model.entity.core.paybill.charge;
 
 import com.bullhornsdk.data.model.entity.core.paybill.chartofaccounts.*;
 import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
-import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayableTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayableTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionStatus;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.TransactionType;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
@@ -11,7 +11,10 @@ import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
@@ -30,7 +33,7 @@ import java.util.Objects;
     "generalLedgerServiceCode", "jobOrder", "payMasters", "payableTransactions", "periodEndDate", "placement",
     "readyToBillOverride", "status", "subTotal", "transactionStatus", "transactionType"
 })
-public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
+public class PayableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
 
     private Integer id;
     private CorporateUser addedByUser;
@@ -40,45 +43,25 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
     private CurrencyUnit currencyUnit;
     private DateTime dateAdded;
     private DateTime dateLastModified;
-
-    @JsonIgnore
     private String description;
-
     @Size(max = 30)
     private String employeeType;
-
     private GeneralLedgerSegment1 generalLedgerSegment1;
-
     private GeneralLedgerSegment2 generalLedgerSegment2;
-
     private GeneralLedgerSegment3 generalLedgerSegment3;
-
     private GeneralLedgerSegment4 generalLedgerSegment4;
-
     private GeneralLedgerSegment5 generalLedgerSegment5;
-
     private GeneralLedgerServiceCode generalLedgerServiceCode;
-
     private JobOrder jobOrder;
-
     private OneToMany<PayMaster> payMasters;
-
     private OneToMany<PayableTransaction> payableTransactions;
-
     private String periodEndDate;
-
     private Placement placement;
-
     private Boolean readyToBillOverride;
-
     private SpecializedOptionsLookup status;
-
     private BigDecimal subTotal;
-
     private TransactionStatus transactionStatus;
-
     private TransactionType transactionType;
-
 
     public PayableCharge() {
     }
@@ -356,6 +339,38 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
 
 
     @Override
+    public String toString() {
+        return "PayableCharge{" +
+            "id=" + id +
+            ", addedByUser=" + addedByUser +
+            ", canExport=" + canExport +
+            ", candidate=" + candidate +
+            ", clientCorporation=" + clientCorporation +
+            ", currencyUnit=" + currencyUnit +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            ", description='" + description + '\'' +
+            ", employeeType='" + employeeType + '\'' +
+            ", generalLedgerSegment1=" + generalLedgerSegment1 +
+            ", generalLedgerSegment2=" + generalLedgerSegment2 +
+            ", generalLedgerSegment3=" + generalLedgerSegment3 +
+            ", generalLedgerSegment4=" + generalLedgerSegment4 +
+            ", generalLedgerSegment5=" + generalLedgerSegment5 +
+            ", generalLedgerServiceCode=" + generalLedgerServiceCode +
+            ", jobOrder=" + jobOrder +
+            ", payMasters=" + payMasters +
+            ", payableTransactions=" + payableTransactions +
+            ", periodEndDate='" + periodEndDate + '\'' +
+            ", placement=" + placement +
+            ", readyToBillOverride=" + readyToBillOverride +
+            ", status=" + status +
+            ", subTotal=" + subTotal +
+            ", transactionStatus=" + transactionStatus +
+            ", transactionType=" + transactionType +
+            '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -393,35 +408,4 @@ public class PayableCharge implements QueryEntity, UpdateEntity, DateLastModifie
         return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subTotal, transactionStatus, transactionType);
     }
 
-    @Override
-    public String toString() {
-        return "PayableCharge{" +
-            "id=" + id +
-            ", addedByUser=" + addedByUser +
-            ", canExport=" + canExport +
-            ", candidate=" + candidate +
-            ", clientCorporation=" + clientCorporation +
-            ", currencyUnit=" + currencyUnit +
-            ", dateAdded=" + dateAdded +
-            ", dateLastModified=" + dateLastModified +
-            ", description='" + description + '\'' +
-            ", employeeType='" + employeeType + '\'' +
-            ", generalLedgerSegment1=" + generalLedgerSegment1 +
-            ", generalLedgerSegment2=" + generalLedgerSegment2 +
-            ", generalLedgerSegment3=" + generalLedgerSegment3 +
-            ", generalLedgerSegment4=" + generalLedgerSegment4 +
-            ", generalLedgerSegment5=" + generalLedgerSegment5 +
-            ", generalLedgerServiceCode=" + generalLedgerServiceCode +
-            ", jobOrder=" + jobOrder +
-            ", payMasters=" + payMasters +
-            ", payableTransactions=" + payableTransactions +
-            ", periodEndDate='" + periodEndDate + '\'' +
-            ", placement=" + placement +
-            ", readyToBillOverride=" + readyToBillOverride +
-            ", status=" + status +
-            ", subTotal=" + subTotal +
-            ", transactionStatus=" + transactionStatus +
-            ", transactionType=" + transactionType +
-            '}';
-    }
 }

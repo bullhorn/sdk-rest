@@ -1,9 +1,408 @@
 {
     "start": 0,
-    "count": 1,
+    "count": 20,
     "data": [
         {
             "id": 1,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 2,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 3,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 4,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 5,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 6,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 7,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 8,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 9,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 10,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 11,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 12,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 13,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 14,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 15,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 16,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 17,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 18,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 19,
+            "batchStatus": {
+                "id": 3
+            },
+            "billMasterTransactions": {
+                "total": 1,
+                "data": []
+            },
+            "billableCharges": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1587667457527,
+            "dateLastModified": 1587667468757,
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            }
+        },
+		{
+            "id": 20,
             "batchStatus": {
                 "id": 3
             },

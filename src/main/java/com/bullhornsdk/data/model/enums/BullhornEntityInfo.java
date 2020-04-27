@@ -1,6 +1,9 @@
 package com.bullhornsdk.data.model.enums;
 
 
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement;
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement;
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject;
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject;
@@ -21,7 +24,10 @@ import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount;
 import com.bullhornsdk.data.model.entity.core.paybill.discount.DiscountType;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
-import com.bullhornsdk.data.model.entity.core.paybill.master.*;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BatchGroup;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch;
+import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
 import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge;
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
@@ -198,6 +204,11 @@ public enum BullhornEntityInfo {
     SURCHARGE("Surcharge", Surcharge.class, SurchargeWrapper.class, SurchargeListWrapper.class, null, null),
     TAX("Tax", Tax.class, TaxWrapper.class, TaxListWrapper.class, null, null),
     CANVAS_REPORT("CanvasReport", CanvasReport.class, CanvasReportWrapper.class, CanvasReportListWrapper.class, null, null),
+
+    // Certification Requirements
+    CANDIDATE_CERTIFICATION_REQUIREMENT("CandidateCertificationRequirement", CandidateCertificationRequirement.class, CandidateCertificationRequirementWrapper.class, CandidateCertificationRequirementListWrapper.class, null, null),
+    CERTIFICATION_REQUIREMENT("CertificationRequirement", CertificationRequirement.class, CertificationRequirementWrapper.class, CertificationRequirementListWrapper.class, null, null),
+    JOB_SUBMISSION_CERTIFICATION_REQUIREMENT("JobSubmissionCertificationRequirement", JobSubmissionCertificationRequirement.class, JobSubmissionCertificationRequirementWrapper.class, JobSubmissionCertificationRequirementListWrapper.class, null, null),
 
 
     // Custom Objects

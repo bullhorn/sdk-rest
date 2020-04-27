@@ -28,7 +28,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 2,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -53,7 +53,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 3,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -78,7 +78,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 4,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -103,7 +103,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 5,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -128,7 +128,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 6,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -153,7 +153,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 7,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -178,7 +178,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 8,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -203,7 +203,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 9,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -228,7 +228,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 10,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -253,7 +253,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 11,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -278,7 +278,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 12,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -303,7 +303,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 13,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -328,7 +328,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 14,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -353,7 +353,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 15,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -378,7 +378,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 16,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -403,7 +403,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 17,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -428,7 +428,7 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 18,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,
@@ -453,7 +453,32 @@
             "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
         },
 		{
-            "id": 1,
+            "id": 19,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 20,
             "contentSubType": "pdf",
             "contentType": "application",
             "dateAdded": 1587724980667,

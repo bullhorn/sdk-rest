@@ -3,6 +3,9 @@ package com.bullhornsdk.data.api.mock
 import com.bullhornsdk.data.api.helper.RestJsonConverter
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject
@@ -476,6 +479,10 @@ public class MockDataLoader {
         entityFiles.put(Tax.class, "paybill/tax-data.txt");
         entityFiles.put(CanvasReport.class, "paybill/canvasreport-data.txt");
 
+        entityFiles.put(CandidateCertificationRequirement.class, "candidatecertificationrequirement-data.txt");
+        entityFiles.put(CertificationRequirement.class, "certificationrequirement-data.txt");
+        entityFiles.put(JobSubmissionCertificationRequirement.class, "jobsubmissioncertificationrequirement-data.txt");
+
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobjectinstances/jobordercustomobjectinstance2-data.txt");
@@ -659,6 +666,11 @@ public class MockDataLoader {
         entityMetaFiles.put(Tax.class, "meta/paybill/tax-meta-data.txt");
         entityMetaFiles.put(CanvasReport.class, "meta/paybill/canvasreport-meta-data.txt");
 
+
+        // Certification Requirements
+        entityMetaFiles.put(CandidateCertificationRequirement.class, "meta/candidatecertificationrequirement-meta-data.txt");
+        entityMetaFiles.put(CertificationRequirement.class, "meta/certificationrequirement-meta-data.txt");
+        entityMetaFiles.put(JobSubmissionCertificationRequirement.class, "meta/jobsubmissioncertificationrequirement-meta-data.txt");
 
 
         entityMetaFiles.put(JobOrderCustomObjectInstance1.class, "meta/customobjectinstances/jobordercustomobjectinstance1-meta-data.txt");
