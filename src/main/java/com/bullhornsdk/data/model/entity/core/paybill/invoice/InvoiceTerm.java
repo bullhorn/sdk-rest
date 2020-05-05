@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
-import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.type.*;
@@ -8,10 +8,11 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
+
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
-import java.util.Date;
+
 import java.util.Objects;
 
 /**
@@ -19,7 +20,7 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "approvalRequired", "clientCorporation", "currencyUnit",
+@JsonPropertyOrder({"id", "approvalRequired", "clientCorporation", "currencyUnit",
     "customDate1", "customDate2", "customDate3",
     "customFloat1", "customFloat2", "customFloat3", "customInt1",
     "customInt2", "customInt3", "customText1", "customText10",
@@ -33,9 +34,9 @@ import java.util.Objects;
     "effectiveEndDate", "externalID", "generalLedgerAccountsReceivable", "includeAttachments",
     "invoiceApprovedTimecardsRequired", "invoiceGroupBy", "invoiceOn", "invoiceSplitBy",
     "invoiceStatementTemplate", "invoiceSummarizeBy", "isDeleted", "isFirst", "paymentTerms",
-    "purchaseOrderRequired", "remitInstructions", "status", "title", "versionID", "versions", "waitForTimecards" })
-public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity,
-    DateLastModifiedEntity, SoftDeleteEntity, AssociationEntity{
+    "purchaseOrderRequired", "remitInstructions", "status", "title", "versionID", "versions", "waitForTimecards"})
+public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, EffectiveDateEntity,
+    DateLastModifiedEntity, SoftDeleteEntity, AssociationEntity {
 
     private Integer id;
 
@@ -52,9 +53,9 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
     @JsonIgnore
     private String description;
 
-    private Date effectiveDate;
+    private String effectiveDate;
 
-    private Date effectiveEndDate;
+    private String effectiveEndDate;
 
     @JsonIgnore
     @Size(max = 100)
@@ -113,22 +114,18 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
 
     /**
      * Returns the entity with the required fields for an insert set.
-     *
-     * @return
      */
     public InvoiceTerm instantiateForInsert() {
-
         InvoiceTerm entity = new InvoiceTerm();
-
         entity.setApprovalRequired(Boolean.FALSE);
-        entity.setCurrencyUnit(new CurrencyUnit(166));
+        entity.setCurrencyUnit(new CurrencyUnit(166)); // 166 = US Dollars
         entity.setIncludeAttachments(Boolean.FALSE);
         entity.setInvoiceApprovedTimecardsRequired(Boolean.FALSE);
         entity.setPurchaseOrderRequired(Boolean.FALSE);
         entity.setWaitForTimecards(Boolean.FALSE);
-
         return entity;
     }
+
 
     @Override
     @JsonProperty("id")
@@ -206,22 +203,22 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
     }
 
     @JsonProperty("effectiveDate")
-    public Date getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(Date effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public Date getEffectiveEndDate() {
+    public String getEffectiveEndDate() {
         return effectiveEndDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public void setEffectiveEndDate(Date effectiveEndDate) {
+    public void setEffectiveEndDate(String effectiveEndDate) {
         this.effectiveEndDate = effectiveEndDate;
     }
 
@@ -316,12 +313,12 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
     }
 
     @JsonProperty("isFirst")
-    public boolean isFirst() {
+    public Boolean isFirst() {
         return isFirst;
     }
 
     @JsonProperty("isFirst")
-    public void setFirst(boolean first) {
+    public void setFirst(Boolean first) {
         isFirst = first;
     }
 

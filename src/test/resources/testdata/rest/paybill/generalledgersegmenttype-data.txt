@@ -1,0 +1,126 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 5,
+            "description": "Specific locations of a department",
+            "isEnabled": true,
+            "segmentType": "Location"
+        },
+        {
+            "id": 4,
+            "description": "Countries of the world",
+            "isEnabled": true,
+            "segmentType": "Country"
+        },
+        {
+            "id": 3,
+            "description": "Our internal departments",
+            "isEnabled": true,
+            "segmentType": "Department"
+        },
+        {
+            "id": 2,
+            "description": "Regions of a country",
+            "isEnabled": true,
+            "segmentType": "Division"
+        },
+        {
+            "id": 1,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 6,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 7,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 8,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 9,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 10,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 11,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 12,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 13,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 14,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 15,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 16,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 17,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 18,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 19,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        },
+        {
+            "id": 20,
+            "description": "GL class segment",
+            "isEnabled": true,
+            "segmentType": "Class"
+        }
+    ]
+}

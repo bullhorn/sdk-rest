@@ -3,98 +3,42 @@ package com.bullhornsdk.data.api.mock
 import com.bullhornsdk.data.api.helper.RestJsonConverter
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.UserCustomObject
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance1
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance10
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance11
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance12
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance13
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance14
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance15
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance16
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance17
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance18
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance19
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance2
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance20
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance21
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance22
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance23
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance24
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance25
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance26
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance27
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance28
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance29
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance3
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance30
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance31
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance32
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance33
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance34
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance35
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance4
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance5
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance6
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance7
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance8
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance9
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance1
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance10
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance2
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance3
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance4
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance5
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance6
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance7
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance8
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance9
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance1
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance10
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance2
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance3
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance4
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance5
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance6
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance7
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance8
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance9
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance1
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance10
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance2
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance3
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance4
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance5
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance6
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.*
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.*
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.*
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
+import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
+import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
+import com.bullhornsdk.data.model.entity.core.paybill.Location
+import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
+import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.*
+import com.bullhornsdk.data.model.entity.core.paybill.master.BatchGroup
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch
+import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster
+import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge
+import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction
+import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.embedded.UserType
-import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment
-import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment
-import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment
-import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment
-import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment
-import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment
-import com.bullhornsdk.data.model.entity.file.PlacementFileAttachment
+import com.bullhornsdk.data.model.entity.file.*
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo
@@ -497,6 +441,48 @@ public class MockDataLoader {
         entityFiles.put(WorkersCompensation.class, "workerscompensation-data.txt");
         entityFiles.put(WorkersCompensationRate.class, "workerscompensationrate-data.txt");
 
+        entityFiles.put(BillingProfile.class, "paybill/billingprofile-data.txt");
+        entityFiles.put(InvoiceTerm.class, "paybill/invoiceterm-data.txt");
+        entityFiles.put(Location.class, "paybill/location-data.txt");
+        entityFiles.put(GeneralLedgerAccount.class, "paybill/generalLedgerAccount-data.txt");
+        entityFiles.put(InvoiceStatementTemplate.class, "paybill/invoiceStatementTemplate-data.txt");
+        entityFiles.put(InvoiceStatementMessageTemplate.class, "paybill/invoiceStatementMessageTemplate-data.txt");
+        entityFiles.put(CurrencyUnit.class, "paybill/currencyUnit-data.txt");
+
+        // TODO add v2 of PAY and Bill Entities data
+        entityFiles.put(BillableCharge.class, "paybill/billablecharge-data.txt");
+        entityFiles.put(PayableCharge.class, "paybill/payablecharge-data.txt");
+        entityFiles.put(GeneralLedgerSegment.class, "paybill/generalledgersegment-data.txt");
+        entityFiles.put(GeneralLedgerSegment1.class, "paybill/generalledgersegment1-data.txt");
+        entityFiles.put(GeneralLedgerSegment2.class, "paybill/generalledgersegment2-data.txt");
+        entityFiles.put(GeneralLedgerSegment3.class, "paybill/generalledgersegment3-data.txt");
+        entityFiles.put(GeneralLedgerSegment4.class, "paybill/generalledgersegment4-data.txt");
+        entityFiles.put(GeneralLedgerSegment5.class, "paybill/generalledgersegment5-data.txt");
+        entityFiles.put(GeneralLedgerSegmentType.class, "paybill/generalledgersegmenttype-data.txt");
+        entityFiles.put(GeneralLedgerServiceCode.class, "paybill/generalledgerservicecode-data.txt");
+        entityFiles.put(Discount.class, "paybill/discount-data.txt");
+        entityFiles.put(EarnCode.class, "paybill/earncode-data.txt");
+        entityFiles.put(InvoiceStatement.class, "paybill/invoicestatement-data.txt");
+        entityFiles.put(InvoiceStatementBatch.class, "paybill/invoicestatementbatch-data.txt");
+        entityFiles.put(InvoiceStatementDiscount.class, "paybill/invoicestatementdiscount-data.txt");
+        entityFiles.put(InvoiceStatementExportBatch.class, "paybill/invoicestatementexportbatch-data.txt");
+        entityFiles.put(InvoiceStatementLineItem.class, "paybill/invoicestatementlineitem-data.txt");
+        entityFiles.put(InvoiceStatementSurcharge.class, "paybill/invoicestatementsurcharge-data.txt");
+        entityFiles.put(InvoiceStatementTax.class, "paybill/invoicestatementtax-data.txt");
+        entityFiles.put(BatchGroup.class, "paybill/batchgroup-data.txt");
+        entityFiles.put(BillingSyncBatch.class, "paybill/billingsyncbatch-data.txt");
+        entityFiles.put(BillMaster.class, "paybill/billmaster-data.txt");
+        entityFiles.put(BillMasterTransaction.class, "paybill/billmastertransaction-data.txt");
+        entityFiles.put(PayMaster.class, "paybill/paymaster-data.txt");
+        entityFiles.put(Surcharge.class, "paybill/surcharge-data.txt");
+        entityFiles.put(Tax.class, "paybill/tax-data.txt");
+        entityFiles.put(CanvasReport.class, "paybill/canvasreport-data.txt");
+
+        entityFiles.put(CandidateCertificationRequirement.class, "candidatecertificationrequirement-data.txt");
+        entityFiles.put(CertificationRequirement.class, "certificationrequirement-data.txt");
+        entityFiles.put(JobSubmissionCertificationRequirement.class, "jobsubmissioncertificationrequirement-data.txt");
+
+
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobjectinstances/jobordercustomobjectinstance2-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance3.class, "customobjectinstances/jobordercustomobjectinstance3-data.txt");
@@ -580,6 +566,9 @@ public class MockDataLoader {
         entityFiles.put(JobOrderFileAttachment.class, "file/joborderfileattachment-data.txt");
         entityFiles.put(OpportunityFileAttachment.class, "file/opportunityfileattachment-data.txt");
         entityFiles.put(PlacementFileAttachment.class, "file/placementfileattachment-data.txt");
+        entityFiles.put(BillableChargeFileAttachment.class, "file/billablechargefileattachment-data.txt");
+        entityFiles.put(InvoiceStatementExport.class, "file/invoicestatementexport-data.txt");
+
 
         entityFiles.put(ClientCorporationCustomObject.class, "customobject/clientcorporationcustomobject-data.txt");
         entityFiles.put(JobOrderCustomObject.class, "customobject/jobordercustomobject-data.txt");
@@ -641,6 +630,47 @@ public class MockDataLoader {
         entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
         entityMetaFiles.put(WorkersCompensation.class, "meta/workerscompensation-meta-data.txt");
         entityMetaFiles.put(WorkersCompensationRate.class, "meta/workerscompensationrate-meta-data.txt");
+
+        entityMetaFiles.put(BillingProfile.class, "meta/paybill/billingprofile-meta-data.txt");
+        entityMetaFiles.put(Location.class, "meta/paybill/location-meta-data.txt");
+        entityMetaFiles.put(InvoiceTerm.class, "meta/paybill/invoiceterm-meta-data.txt");
+
+
+        // TODO v2 meta entities
+        entityMetaFiles.put(BillableCharge.class, "meta/paybill/billablecharge-meta-data.txt");
+        entityMetaFiles.put(PayableCharge.class, "meta/paybill/payablecharge-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerSegment.class, "meta/paybill/generalledgersegment-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerSegment1.class, "meta/paybill/generalledgersegment1-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerSegment2.class, "meta/paybill/generalledgersegment2-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerSegment3.class, "meta/paybill/generalledgersegment3-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerSegment4.class, "meta/paybill/generalledgersegment4-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerSegment5.class, "meta/paybill/generalledgersegment5-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerSegmentType.class, "meta/paybill/generalledgersegmenttype-meta-data.txt");
+        entityMetaFiles.put(GeneralLedgerServiceCode.class, "meta/paybill/generalledgerservicecode-meta-data.txt");
+        entityMetaFiles.put(Discount.class, "meta/paybill/discount-meta-data.txt");
+        entityMetaFiles.put(EarnCode.class, "meta/paybill/earncode-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatement.class, "meta/paybill/invoicestatement-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementBatch.class, "meta/paybill/invoicestatementbatch-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementDiscount.class, "meta/paybill/invoicestatementdiscount-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementExportBatch.class, "meta/paybill/invoicestatementexportbatch-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItem.class, "meta/paybill/invoicestatementlineitem-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementSurcharge.class, "meta/paybill/invoicestatementsurcharge-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementTax.class, "meta/paybill/invoicestatementtax-meta-data.txt");
+        entityMetaFiles.put(BatchGroup.class, "meta/paybill/batchgroup-meta-data.txt");
+        entityMetaFiles.put(BillingSyncBatch.class, "meta/paybill/billingsyncbatch-meta-data.txt");
+        entityMetaFiles.put(BillMaster.class, "meta/paybill/billmaster-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransaction.class, "meta/paybill/billmastertransaction-meta-data.txt");
+        entityMetaFiles.put(PayMaster.class, "meta/paybill/paymaster-meta-data.txt");
+        entityMetaFiles.put(Surcharge.class, "meta/paybill/surcharge-meta-data.txt");
+        entityMetaFiles.put(Tax.class, "meta/paybill/tax-meta-data.txt");
+        entityMetaFiles.put(CanvasReport.class, "meta/paybill/canvasreport-meta-data.txt");
+
+
+        // Certification Requirements
+        entityMetaFiles.put(CandidateCertificationRequirement.class, "meta/candidatecertificationrequirement-meta-data.txt");
+        entityMetaFiles.put(CertificationRequirement.class, "meta/certificationrequirement-meta-data.txt");
+        entityMetaFiles.put(JobSubmissionCertificationRequirement.class, "meta/jobsubmissioncertificationrequirement-meta-data.txt");
+
 
         entityMetaFiles.put(JobOrderCustomObjectInstance1.class, "meta/customobjectinstances/jobordercustomobjectinstance1-meta-data.txt");
         entityMetaFiles.put(JobOrderCustomObjectInstance2.class, "meta/customobjectinstances/jobordercustomobjectinstance2-meta-data.txt");

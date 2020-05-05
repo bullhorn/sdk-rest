@@ -1,0 +1,85 @@
+{
+    "entity": "GeneralLedgerSegment3",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/GeneralLedgerSegment3?fields=*",
+    "label": "General Ledger Segment3",
+    "dateLastModified": "1587691088981",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "externalSegmentName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "External Segment Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "externalSegmentNumber",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "External Segment Number",
+            "hideFromSearch": false
+        },
+        {
+            "name": "generalLedgerSegmentType",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "General Ledger Segment Type",
+            "optionsType": "GeneralLedgerSegmentType",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/GeneralLedgerSegmentType",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "GeneralLedgerSegmentType",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/GeneralLedgerSegmentType?fields=*",
+                "label": "General Ledger Segment Type",
+                "dateLastModified": "1587912246260",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isActive",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Active",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "hideFromSearch": false
+        }
+    ]
+}

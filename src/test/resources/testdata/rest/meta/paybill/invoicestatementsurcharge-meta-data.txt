@@ -1,0 +1,65 @@
+{
+    "entity": "InvoiceStatementSurcharge",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementSurcharge?fields=*",
+    "label": "Invoice Statement Surcharge",
+    "dateLastModified": "1587691106123",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "finalizedValue",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Finalized Value",
+            "hideFromSearch": false
+        },
+        {
+            "name": "invoiceStatement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement",
+            "optionsType": "InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatement?fields=*",
+                "label": "Invoice",
+                "dateLastModified": "1587691104113",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "surcharge",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Surcharge",
+            "optionsType": "Surcharge",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/Surcharge",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Surcharge",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/Surcharge?fields=*",
+                "label": "Surcharge",
+                "dateLastModified": "1587726059332",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        }
+    ]
+}

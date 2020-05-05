@@ -1,14 +1,14 @@
 package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
-import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
+
 import org.joda.time.DateTime;
 
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "approvalRequired", "currencyUnit",
+@JsonPropertyOrder({"id", "approvalRequired", "currencyUnit",
     "customDate1", "customDate2", "customDate3",
     "customFloat1", "customFloat2", "customFloat3", "customInt1",
     "customInt2", "customInt3", "customText1", "customText10",
@@ -30,7 +30,7 @@ import java.util.Objects;
     "effectiveEndDate", "externalID", "generalLedgerAccountsReceivable", "includeAttachments",
     "invoiceApprovedTimecardsRequired", "invoiceGroupBy", "invoiceOn", "invoiceSplitBy",
     "invoiceStatementTemplate", "invoiceSummarizeBy", "isFirst", "paymentTerms",
-    "purchaseOrderRequired", "remitInstructions", "status", "title", "waitForTimecards" })
+    "purchaseOrderRequired", "remitInstructions", "status", "title", "waitForTimecards"})
 public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
     UpdateEntity, CreateEntity, DateLastModifiedEntity, EffectiveDateEntity {
 
@@ -65,16 +65,16 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
     @JsonIgnore
     private String invoiceSplitBy;
 
-    private Date effectiveDate;
+    private String effectiveDate;
 
-    private Date effectiveEndDate;
+    private String effectiveEndDate;
 
     private InvoiceStatementTemplate invoiceStatementTemplate;
 
     @JsonIgnore
     private String invoiceSummarizeBy;
 
-    private boolean isFirst;
+    private Boolean isFirst;
 
     @JsonIgnore
     private String paymentTerms;
@@ -101,17 +101,14 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
 
     /**
      * Returns the entity with the required fields for an insert set.
-     *
-     * @return
      */
     public InvoiceTermVersion instantiateForInsert() {
         InvoiceTermVersion entity = new InvoiceTermVersion();
         entity.setApprovalRequired(Boolean.FALSE);
-        entity.setCurrencyUnit(new CurrencyUnit(166));
+        entity.setCurrencyUnit(new CurrencyUnit(166)); // 166 = US Dollars
         entity.setIncludeAttachments(Boolean.FALSE);
         entity.setPurchaseOrderRequired(Boolean.FALSE);
         entity.setWaitForTimecards(Boolean.FALSE);
-
         return entity;
     }
 
@@ -181,22 +178,22 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("effectiveDate")
-    public Date getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(Date effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public Date getEffectiveEndDate() {
+    public String getEffectiveEndDate() {
         return effectiveEndDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public void setEffectiveEndDate(Date effectiveEndDate) {
+    public void setEffectiveEndDate(String effectiveEndDate) {
         this.effectiveEndDate = effectiveEndDate;
     }
 
@@ -291,12 +288,12 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("isFirst")
-    public boolean isFirst() {
+    public Boolean isFirst() {
         return isFirst;
     }
 
     @JsonProperty("isFirst")
-    public void setFirst(boolean first) {
+    public void setFirst(Boolean first) {
         isFirst = first;
     }
 

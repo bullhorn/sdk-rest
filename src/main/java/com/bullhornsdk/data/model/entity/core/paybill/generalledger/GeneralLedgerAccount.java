@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.paybill;
+package com.bullhornsdk.data.model.entity.core.paybill.generalledger;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.util.ReadOnly;
@@ -21,18 +21,14 @@ public class GeneralLedgerAccount implements QueryEntity, UpdateEntity, CreateEn
 
     private Integer id;
 
-    @JsonIgnore
     private String externalAccountNumber;
 
-    @JsonIgnore
     @Size(max = 100)
     private String externalAccountName;
 
-    @JsonIgnore
     @Size(max = 100)
     private String externalAccountType;
 
-    @JsonIgnore
     @Size(max = 100)
     private String externalAccountDetailType;
 
@@ -104,42 +100,42 @@ public class GeneralLedgerAccount implements QueryEntity, UpdateEntity, CreateEn
     }
 
     @JsonProperty("isPay")
-    public Boolean getPay() {
+    public Boolean getIsPay() {
         return isPay;
     }
 
     @JsonProperty("isPay")
-    public void setPay(Boolean pay) {
+    public void setIsPay(Boolean pay) {
         isPay = pay;
     }
 
     @JsonProperty("isBill")
-    public Boolean getBill() {
+    public Boolean getIsBill() {
         return isBill;
     }
 
     @JsonProperty("isBill")
-    public void setBill(Boolean bill) {
+    public void setIsBill(Boolean bill) {
         isBill = bill;
     }
 
     @JsonProperty("isAccountsReceivable")
-    public Boolean getAccountsReceivable() {
+    public Boolean getIsAccountsReceivable() {
         return isAccountsReceivable;
     }
 
     @JsonProperty("isAccountsReceivable")
-    public void setAccountsReceivable(Boolean accountsReceivable) {
+    public void setIsAccountsReceivable(Boolean accountsReceivable) {
         isAccountsReceivable = accountsReceivable;
     }
 
     @JsonProperty("isActive")
-    public Boolean getActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
     @JsonProperty("isActive")
-    public void setActive(Boolean active) {
+    public void setIsActive(Boolean active) {
         isActive = active;
     }
 

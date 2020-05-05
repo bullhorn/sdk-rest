@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.response.list;
 
-import com.bullhornsdk.data.model.entity.core.paybill.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
