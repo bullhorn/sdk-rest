@@ -3,6 +3,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsE;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
@@ -12,15 +13,16 @@ import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "boardCertification", "candidate", "certification", "comments", "compact", "copyOnFile",
-    "customDate1", "customDate10", "customDate2", "customDate3", "customDate4", "customDate5", "customDate6",
-    "customDate7", "customDate8", "customDate9",  "customText1", "customText10", "customText2", "customText3",
+@JsonPropertyOrder({"id", "boardCertification", "candidate", "certification", "certificationFileAttachments", "comments",
+    "compact", "copyOnFile", "customDate1", "customDate10", "customDate2", "customDate3", "customDate4", "customDate5",
+    "customDate6", "customDate7", "customDate8", "customDate9", "customText1", "customText10", "customText2", "customText3",
     "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
-    "customTextBlock10","customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "customTextBlock6",
+    "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "customTextBlock6",
     "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateCertified", "dateExpiration", "dateLastModified",
-    "issuedBy", "licenseNumber", "licenseType", "location", "modifyingUser", "name",  "results", "status"})
+    "displayStatus", "fileAttachments", "isComplete", "isDeleted", "issuedBy", "licenseNumber", "licenseType",
+    "location", "modifyingUser", "name", "results", "status"})
 public class CandidateCertification extends CustomFieldsE implements UpdateEntity, CreateEntity, QueryEntity, SoftDeleteEntity,
-        AssociationEntity, EditHistoryEntity {
+    AssociationEntity, EditHistoryEntity {
 
     private Integer id;
 
@@ -30,6 +32,8 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
     private Candidate candidate;
 
     private Certification certification;
+
+    private OneToMany<CertificationFileAttachment> certificationFileAttachments;
 
     @JsonIgnore
     private String comments;
@@ -43,6 +47,11 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
     private DateTime dateExpiration;
 
     private DateTime dateLastModified;
+
+    @Size(max = 30)
+    private String displayStatus;
+
+    private Boolean isComplete;
 
     private OneToMany<StandardFileAttachment> fileAttachments;
 
@@ -114,13 +123,25 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
         this.certification = certification;
     }
 
+    @JsonProperty("certificationFileAttachments")
+    public OneToMany<CertificationFileAttachment> getCertificationFileAttachments() {
+        return certificationFileAttachments;
+    }
+
+    @JsonProperty("certificationFileAttachments")
+    public void setCertificationFileAttachments(OneToMany<CertificationFileAttachment> certificationFileAttachments) {
+        this.certificationFileAttachments = certificationFileAttachments;
+    }
+
     @JsonProperty("comments")
     public String getComments() {
         return comments;
     }
 
     @JsonIgnore
-    public void setComments(String comments) { this.comments = comments; }
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 
     @JsonProperty("copyOnFile")
     public Integer getCopyOnFile() {
@@ -160,6 +181,26 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
     @JsonProperty("dateLastModified")
     public void setDateLastModified(DateTime dateLastModified) {
         this.dateLastModified = dateLastModified;
+    }
+
+    @JsonProperty("displayStatus")
+    public String getDisplayStatus() {
+        return displayStatus;
+    }
+
+    @JsonProperty("displayStatus")
+    public void setDisplayStatus(String displayStatus) {
+        this.displayStatus = displayStatus;
+    }
+
+    @JsonProperty("isComplete")
+    public Boolean getIsComplete() {
+        return isComplete;
+    }
+
+    @JsonProperty("isComplete")
+    public void setIsComplete(Boolean complete) {
+        isComplete = complete;
     }
 
     @JsonProperty("fileAttachments")
@@ -303,7 +344,8 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
         if (modifyingUser != null ? !modifyingUser.equals(that.modifyingUser) : that.modifyingUser != null)
             return false;
         if (results != null ? !results.equals(that.results) : that.results != null) return false;
-        if (fileAttachments != null ? !fileAttachments.equals(that.fileAttachments) : that.fileAttachments != null) return false;
+        if (fileAttachments != null ? !fileAttachments.equals(that.fileAttachments) : that.fileAttachments != null)
+            return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (isDeleted != null ? !isDeleted.equals(that.isDeleted) : that.isDeleted != null) return false;
         if (status != null ? !status.equals(that.status) : that.status != null) return false;
@@ -363,4 +405,6 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
             super.toString() +
             '}';
     }
+
+
 }
