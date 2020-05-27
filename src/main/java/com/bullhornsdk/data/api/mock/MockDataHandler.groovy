@@ -122,7 +122,7 @@ public class MockDataHandler {
 		if(entity == null){
 			throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
 		}
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+		Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 
 		T newEntity = createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields);
 
@@ -143,7 +143,7 @@ public class MockDataHandler {
 			if(entity == null){
 				throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
 			}
-			Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+			Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 
 			T newEntity = createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields);
 			entityList.add(newEntity);
@@ -265,7 +265,7 @@ public class MockDataHandler {
 		if(params == null){
 			params = ParamFactory.queryParams();
 		}
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+		Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 		List<T> filteredValues = queryForData(type, where);
 
 		List<T> filteredValuesWithFieldsSet = filteredValues.collect(){
@@ -318,7 +318,7 @@ public class MockDataHandler {
 			if(params == null){
 				params = ParamFactory.searchParams();
 			}
-			Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+			Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 			verifySearchFields(query,type);
 			List<T> allEntities  = getAllEntitiesOfType(type);
 			List<T> entitiesOverCountRemoved = handleCount(allEntities, params.getCount());
@@ -427,7 +427,6 @@ public class MockDataHandler {
 	 * @return
 	 */
 	public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet){
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
 		return restMetaDataMap.get(type);
 	}
 
@@ -649,7 +648,7 @@ public class MockDataHandler {
 	
 	public List<Note> getAllCorpNotes(Integer clientCorporationID, Set<String> fieldSet, CorpNotesParams params) {
 
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,Note.class);
+		Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,Note.class);
 
 		List<Note> allValues = getAllEntitiesOfType(Note.class);
 
@@ -908,9 +907,9 @@ public class MockDataHandler {
 	 */
 
 
-	private <T extends BullhornEntity> Set<String> checkAndMofifyFields(Set<String> fields,Class<T> type){
+	private <T extends BullhornEntity> Set<String> checkAndModifyFields(Set<String> fields, Class<T> type){
 		if(fields == null){
-			fields = ["*"] as Set;
+			fields = ["id"] as Set;
 		}
 		verifyFields(fields, type)
 		return modifyFieldsForNestedPropertyAccess(fields);

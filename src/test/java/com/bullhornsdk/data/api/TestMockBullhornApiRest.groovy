@@ -547,7 +547,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 	@Test
 	public void testGetAllCorpNotes() {
 		CorpNotesParams params = ParamFactory.corpNotesParams();
-		List<Note> notes = mockBullhornApiRest.getAllCorpNotes(1, ["*"] as Set, params);
+		List<Note> notes = mockBullhornApiRest.getAllCorpNotes(1, ["id"] as Set, params);
 
 		assert notes != null;
 	}

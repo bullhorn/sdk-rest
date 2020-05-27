@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.exception.NoAllFieldsException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -100,8 +101,14 @@ public class RestUriVariablesFactory {
         String bhRestToken = bullhornApiRest.getBhRestToken();
         uriVariables.put(BH_REST_TOKEN, bhRestToken);
         uriVariables.put(ENTITY_TYPE, entityType);
-        String fields = this.convertFieldSetToString(fieldSet);
-        uriVariables.put(FIELDS, fields);
+
+        try {
+            String fields = this.convertFieldSetToString(fieldSet);
+
+            uriVariables.put(FIELDS, fields);
+        } catch(NoAllFieldsException e) {
+            uriVariables.put(FIELDS, "*");
+        }
 
         if (metaParameter == null) {
             uriVariables.put(META, MetaParameter.BASIC.getName());
@@ -495,16 +502,17 @@ public class RestUriVariablesFactory {
     }
 
 	/**
-	 * Converts the Set to a string. Adds the id field if only blank fields present. If fieldset is null returns "*"
+	 * Converts the Set to a string. Adds the id field if only blank fields present. If fieldset is null returns "id"
 	 *
 	 * @param fieldSet
 	 * @return
 	 */
 	public String convertFieldSetToString(Set<String> fieldSet) {
-
-		if (fieldSet == null || fieldSet.isEmpty() || fieldSet.contains("*")) {
-			return "*";
-		}
+		if (fieldSet == null || fieldSet.isEmpty()) {
+			return ID;
+		} else if (fieldSet.contains("*")) {
+            throw new NoAllFieldsException();
+        }
 
 		Set<String> interim = fieldSet.stream().filter(s -> !StringUtils.isBlank(s)).collect(Collectors.toSet());
 		if (interim.isEmpty()) {
@@ -536,7 +544,12 @@ public class RestUriVariablesFactory {
 		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
 
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
-		uriVariables.put(SETTINGS, convertFieldSetToString(settingSet));
+
+		try {
+		    uriVariables.put(SETTINGS, convertFieldSetToString(settingSet));
+        } catch(NoAllFieldsException e) {
+            uriVariables.put(SETTINGS, "*");
+        }
 
 		return uriVariables;
 	}
