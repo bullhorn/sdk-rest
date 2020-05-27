@@ -37,7 +37,7 @@ public class TestStandardBullhornApiRestSettings extends BaseTest {
 	@Test
 	public void testSettings() {
 	    Map<String,Object> settings = bullhornData.getSettings(this.getFieldSet());
-	    System.out.println("settings: " + settings);
+
 		runAssertions(settings);
 
 	}
@@ -45,7 +45,7 @@ public class TestStandardBullhornApiRestSettings extends BaseTest {
 	@Test
 	public void testSettingsObject() {
 		Settings settings = bullhornData.getSettingsObject(this.getFieldSetObject());
-		System.out.println("settings: " + settings);
+
 		runObjectAssertions(settings);
 
 	}

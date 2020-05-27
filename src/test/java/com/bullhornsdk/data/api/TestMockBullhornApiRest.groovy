@@ -75,13 +75,13 @@ public class TestMockBullhornApiRest extends BaseTest {
 
 	@Test
 	public void testFindEntityClassOfTInteger() {
-		JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
+		JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id" ] as Set);
 		assert job.getId() == JOB_ORDER_ID;
 	}
 
 	@Test(expected=RestApiException)
 	public void testFindEntityFail() {
-		JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB);
+		JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB, [ "id" ] as Set);
 		
 	}
 
@@ -339,13 +339,13 @@ public class TestMockBullhornApiRest extends BaseTest {
 	@Test
 	public void testGenericUpdate() {
 		String newStatus = "STABLE";
-		JobOrder preUpdateEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
+		JobOrder preUpdateEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
 
 		JobOrder update = new JobOrder(JOB_ORDER_ID);
 
 		update.setStatus(newStatus);
 		UpdateResponse response = mockBullhornApiRest.updateEntity(update);
-		JobOrder updatedEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
+		JobOrder updatedEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
 
 		updatedEntity.setStatus(preUpdateEntity.getStatus());
 
@@ -355,13 +355,13 @@ public class TestMockBullhornApiRest extends BaseTest {
 	@Test(expected=RestApiException)
 	public void testGenericUpdateFail() {
 		String newStatus = "STABLE";
-		JobOrder preUpdateEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
+		JobOrder preUpdateEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
 
 		JobOrder update = new JobOrder(NON_EXISTING_JOB);
 
 		update.setStatus(newStatus);
 		UpdateResponse response = mockBullhornApiRest.updateEntity(update);
-		JobOrder updatedEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
+		JobOrder updatedEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
 
 		updatedEntity.setStatus(preUpdateEntity.getStatus());
 
@@ -374,13 +374,13 @@ public class TestMockBullhornApiRest extends BaseTest {
 	@Test
 	public void testInsertEntity() {
 
-		JobOrder entity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID);
+		JobOrder entity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id" ] as Set);
 
 		entity.setId(null)
 
 		CrudResponse response = mockBullhornApiRest.insertEntity(entity);
 
-		JobOrder justInsertedEntity = mockBullhornApiRest.findEntity(JobOrder.class, response.getChangedEntityId());
+		JobOrder justInsertedEntity = mockBullhornApiRest.findEntity(JobOrder.class, response.getChangedEntityId(), [ "id" ] as Set);
 
 		QueryParams params = ParamFactory.queryParams();
 		params.setCount(50);
@@ -568,7 +568,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		assertFalse("Insert failed", response.isError());
 		assertTrue("Note note added properly", response.getChangedEntityId() != null);
 
-		Note addedNote = mockBullhornApiRest.findEntity(Note.class, response.getChangedEntityId());
+		Note addedNote = mockBullhornApiRest.findEntity(Note.class, response.getChangedEntityId(), [ "id", "jobOrder(id)", "personReference(id)" ] as Set);
 		assertTrue(addedNote.getJobOrder().getId().equals(testEntities.getJobOrderId()));
 		assertTrue(addedNote.getPersonReference().getId().equals(testEntities.getCandidateId()));
 	}

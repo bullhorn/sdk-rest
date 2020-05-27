@@ -38,7 +38,7 @@ public class TestStandardBullhornApiRestNoteAdd extends BaseTest {
 		assertFalse("Insert failed", response.isError());
 		assertTrue("Note note added properly", response.getChangedEntityId() != null);
 
-		Note addedNote = bullhornData.findEntity(Note.class, response.getChangedEntityId(), Sets.newHashSet("jobOrder", "personReference", "id"));
+		Note addedNote = bullhornData.findEntity(Note.class, response.getChangedEntityId(), Sets.newHashSet("jobOrder(id)", "personReference(id)", "id"));
 		assertTrue(addedNote.getJobOrder().getId().equals(testEntities.getJobOrderId()));
 		assertTrue(addedNote.getPersonReference().getId().equals(testEntities.getCandidateId()));
 	}
