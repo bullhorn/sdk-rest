@@ -99,23 +99,6 @@ public class MockDataHandler {
 	 * @param id
 	 * @return
 	 */
-	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id) {
-		T entity = getEntityFromMap(type,id);
-		
-		if(entity == null){
-			throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
-		}
-
-		return KryoObjectCopyHelper.copy(entity);
-	}
-
-	/**
-	 * Returns a copy of the entity stored in restEntityMap.
-	 * 
-	 * @param type
-	 * @param id
-	 * @return
-	 */
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
 		T entity = getEntityFromMap(type,id);
 		
