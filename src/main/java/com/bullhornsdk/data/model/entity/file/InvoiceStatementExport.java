@@ -68,19 +68,26 @@ public class InvoiceStatementExport extends EntityFileAttachment implements Date
         this.dateLastModified = dateLastModified;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         InvoiceStatementExport that = (InvoiceStatementExport) o;
-        return invoiceStatement.equals(that.invoiceStatement) &&
-            dateLastModified.equals(that.dateLastModified);
+        return Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(dateLastModified, that.dateLastModified);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), invoiceStatement, dateLastModified);
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementExport{" +
+            "invoiceStatement=" + invoiceStatement +
+            ", dateLastModified=" + dateLastModified +
+            "} " + super.toString();
     }
 }

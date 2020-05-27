@@ -99,23 +99,6 @@ public class MockDataHandler {
 	 * @param id
 	 * @return
 	 */
-	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id) {
-		T entity = getEntityFromMap(type,id);
-		
-		if(entity == null){
-			throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
-		}
-
-		return KryoObjectCopyHelper.copy(entity);
-	}
-
-	/**
-	 * Returns a copy of the entity stored in restEntityMap.
-	 * 
-	 * @param type
-	 * @param id
-	 * @return
-	 */
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
 		T entity = getEntityFromMap(type,id);
 		
@@ -597,7 +580,7 @@ public class MockDataHandler {
 	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, JavaFile file, String candidateDescription,
 	String externalId, FileParams params) {
 	     
-		 Candidate candidate = findEntity(Candidate.class, candidateId);
+		 Candidate candidate = findEntity(Candidate.class, candidateId, [ "id" ] as Set);
 		 candidate.setDescription(candidateDescription);
 		 updateEntity(candidate);
 		 
@@ -909,7 +892,7 @@ public class MockDataHandler {
 
 	private <T extends BullhornEntity> Set<String> checkAndModifyFields(Set<String> fields, Class<T> type){
 		if(fields == null){
-			fields = ["id"] as Set;
+			fields = ["*"] as Set;
 		}
 		verifyFields(fields, type)
 		return modifyFieldsForNestedPropertyAccess(fields);
@@ -1121,7 +1104,7 @@ public class MockDataHandler {
 		}else if(propertyIsNullNestedRestEntity(fromProperty,toProperty,path)){
 			//Set nested RestEntities using the actual entity and not just the nested json. Example: placement.candidate will be set using the id
 			//of the nested json in placement-data.txt to get the corresponding entity in candidate-data.txt
-			fromProperty?."${path}" = findEntity(fromProperty?."${path}".getClass(),fromProperty?."${path}".getId());
+			fromProperty?."${path}" = findEntity(fromProperty?."${path}".getClass(),fromProperty?."${path}".getId(), [ "*" ] as Set);
 			toProperty?."${path}" = fromProperty?."${path}".getClass().newInstance();
 		}else if(propertyIsSimpleType(fromProperty,toProperty,path)){
 			toProperty?."${path}" = fromProperty?."${path}";
@@ -1176,14 +1159,14 @@ public class MockDataHandler {
 
 	private ParsedResume createParsedResume(Integer candidateId, List<Integer> educationIds,List<Integer> workHistoryIds,List<Integer> skillIds,boolean nullOutIds){
 		ParsedResume parsedResume = new StandardParsedResume();
-		Candidate candidate = this.findEntity(Candidate.class, candidateId);
+		Candidate candidate = this.findEntity(Candidate.class, candidateId, [ "*" ] as Set);
 		if(nullOutIds){
 			candidate.setId(null);
 		}
 		List<CandidateEducation> education = new ArrayList<CandidateEducation>();
 
 		for(Integer id: educationIds){
-			CandidateEducation candidateEducation = this.findEntity(CandidateEducation.class, 1);
+			CandidateEducation candidateEducation = this.findEntity(CandidateEducation.class, 1, [ "*" ] as Set);
 			if(nullOutIds){
 				candidateEducation.setId(null);
 				candidateEducation.setCandidate(null);
@@ -1193,7 +1176,7 @@ public class MockDataHandler {
 
 		List<CandidateEducation> workHistory = new ArrayList<CandidateEducation>();
 		for(Integer id: workHistoryIds){
-			CandidateWorkHistory candiateWorkHistory = this.findEntity(CandidateWorkHistory.class, id);
+			CandidateWorkHistory candiateWorkHistory = this.findEntity(CandidateWorkHistory.class, id, [ "*" ] as Set);
 			if(nullOutIds){
 				candiateWorkHistory.setId(null);
 				candiateWorkHistory.setCandidate(null);
@@ -1203,7 +1186,7 @@ public class MockDataHandler {
 
 		List<Skill> skills = new ArrayList<Skill>();
 		for(Integer id: skillIds){
-			Skill skill = this.findEntity(Skill.class, id);
+			Skill skill = this.findEntity(Skill.class, id, [ "*" ] as Set);
 			if(nullOutIds){
 				skill.setId(null);
 

@@ -20,7 +20,7 @@ public class TestNestedEntities extends BaseTest {
 	@Test
 	public void testFindCandidate() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
+		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id"));
 
 		assertNotNull("Candidate is null", entity);
 
