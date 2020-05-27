@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -38,7 +39,7 @@ public class TestStandardBullhornApiRestDateHandling<T extends UpdateEntity> ext
 	@Test
 	public void testDateHandlingJobOrder() {
 
-		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "startDate"));
 
 		this.entity = (T) entity;
 
@@ -52,7 +53,7 @@ public class TestStandardBullhornApiRestDateHandling<T extends UpdateEntity> ext
 
 		UpdateResponse response = bullhornData.updateEntity(entity);
 
-		JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
+		JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "startDate"));
 		entity.setStartDate(previousValue);
 		this.runAssertions(response, newValue, updatedEntity.getStartDate());
 
