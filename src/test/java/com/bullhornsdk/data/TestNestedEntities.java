@@ -72,7 +72,7 @@ public class TestNestedEntities extends BaseTest {
 	public void testFindCandidate_fileAttachments() {
 
 		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "fileAttachments(*)"));
+				Sets.newHashSet("id", "fileAttachments(id,name)"));
 
 		assertNotNull(entity.getFileAttachments().getTotal());
 		assertNotNull(entity.getFileAttachments().getData());
