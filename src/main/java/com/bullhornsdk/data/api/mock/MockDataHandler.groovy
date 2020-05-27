@@ -580,7 +580,7 @@ public class MockDataHandler {
 	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, JavaFile file, String candidateDescription,
 	String externalId, FileParams params) {
 	     
-		 Candidate candidate = findEntity(Candidate.class, candidateId);
+		 Candidate candidate = findEntity(Candidate.class, candidateId, [ "id" ] as Set);
 		 candidate.setDescription(candidateDescription);
 		 updateEntity(candidate);
 		 
