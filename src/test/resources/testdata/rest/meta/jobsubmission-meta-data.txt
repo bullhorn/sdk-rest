@@ -1,35 +1,32 @@
 {
     "entity": "JobSubmission",
-    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/JobSubmission?fields=*",
-    "label": "Internal Submission",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/JobSubmission?fields=*",
+    "label": "Submission",
+    "dateLastModified": "1589789627399",
     "fields": [
         {
             "name": "id",
             "type": "ID",
-            "dataType": "Integer",
-            "optional": false
+            "dataType": "Integer"
         },
         {
             "name": "appointments",
             "type": "TO_MANY",
             "confidential": false,
-            "optional": true,
             "label": "Appointments",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
             "optionsType": "Appointment",
-            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Appointment",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Appointment",
+            "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "Appointment",
-                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Appointment?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Appointment?fields=*",
                 "label": "Appointment",
+                "dateLastModified": "1589516496479",
                 "fields": [
                     {
                         "name": "id",
                         "type": "ID",
-                        "dataType": "Integer",
-                        "optional": false
+                        "dataType": "Integer"
                     }
                 ]
             }
@@ -39,33 +36,49 @@
             "type": "SCALAR",
             "dataType": "BigDecimal",
             "confidential": false,
-            "optional": true,
             "label": "Bill Rate",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
+        },
+        {
+            "name": "branch",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Branch ID",
+            "optionsType": "Branch",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Branch",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Branch",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Branch?fields=*",
+                "label": "Branch",
+                "dateLastModified": "1589516496598",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
         },
         {
             "name": "candidate",
             "type": "TO_ONE",
             "confidential": false,
-            "optional": false,
-            "label": "Candidate",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
+            "label": "Professional",
             "optionsType": "Candidate",
-            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Candidate",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Candidate",
+            "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "Candidate",
-                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Candidate?fields=*",
-                "label": "Candidate",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Candidate?fields=*",
+                "label": "Professional",
+                "dateLastModified": "1590175500280",
                 "fields": [
                     {
                         "name": "id",
                         "type": "ID",
-                        "dataType": "Integer",
-                        "optional": false
+                        "dataType": "Integer"
                     },
                     {
                         "name": "firstName",
@@ -73,11 +86,8 @@
                         "dataType": "String",
                         "maxLength": 50,
                         "confidential": false,
-                        "optional": true,
                         "label": "First Name",
-                        "required": true,
-                        "readOnly": false,
-                        "multiValue": false
+                        "hideFromSearch": false
                     },
                     {
                         "name": "lastName",
@@ -85,14 +95,150 @@
                         "dataType": "String",
                         "maxLength": 50,
                         "confidential": false,
-                        "optional": true,
                         "label": "Last Name",
-                        "required": true,
-                        "readOnly": false,
-                        "multiValue": false
+                        "hideFromSearch": false
                     }
                 ]
             }
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Comments",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Start Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "End Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Position Posted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate4",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Offer Extended Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate5",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Offer Accepted Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Apartment Upgrade Fee",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Target GP%",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat4",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat5",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "# of Weeks",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Packet Created",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Yes"
+                },
+                {
+                    "value": 0,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Time Off",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "# of Bedrooms Requested",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Parent Assignment",
+            "hideFromSearch": false
         },
         {
             "name": "customText1",
@@ -100,11 +246,1052 @@
             "dataType": "String",
             "maxLength": 100,
             "confidential": false,
-            "optional": true,
-            "label": "Custom Text1",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "label": "customText1",
+            "options": [
+                {
+                    "value": "Renewal",
+                    "label": "Renewal"
+                },
+                {
+                    "value": "New Business",
+                    "label": "New Business"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Profession (Professional)",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText11",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Travel Partners",
+            "optionsType": "CandidateText",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/CandidateText",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText12",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Shift Hours",
+            "options": [
+                {
+                    "value": "12",
+                    "label": "12"
+                },
+                {
+                    "value": "12.5",
+                    "label": "12.5"
+                },
+                {
+                    "value": "8",
+                    "label": "8"
+                },
+                {
+                    "value": "8.5",
+                    "label": "8.5"
+                },
+                {
+                    "value": "10",
+                    "label": "10"
+                },
+                {
+                    "value": "11.5",
+                    "label": "11.5"
+                },
+                {
+                    "value": "11",
+                    "label": "11"
+                },
+                {
+                    "value": "9.75",
+                    "label": "9.75"
+                },
+                {
+                    "value": "9.5",
+                    "label": "9.5"
+                },
+                {
+                    "value": "9",
+                    "label": "9"
+                },
+                {
+                    "value": "7.5",
+                    "label": "7.5"
+                },
+                {
+                    "value": "7",
+                    "label": "7"
+                },
+                {
+                    "value": "8/10",
+                    "label": "8/10"
+                },
+                {
+                    "value": "8/12",
+                    "label": "8/12"
+                },
+                {
+                    "value": "10/12",
+                    "label": "10/12"
+                },
+                {
+                    "value": "8/10/12",
+                    "label": "8/10/12"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText13",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Shift Time",
+            "options": [
+                {
+                    "value": "Days",
+                    "label": "Days"
+                },
+                {
+                    "value": "Nights",
+                    "label": "Nights"
+                },
+                {
+                    "value": "Evenings",
+                    "label": "Evenings"
+                },
+                {
+                    "value": "Rotating",
+                    "label": "Rotating"
+                },
+                {
+                    "value": "Rotating D/N",
+                    "label": "Rotating D/N"
+                },
+                {
+                    "value": "Rotating D/E",
+                    "label": "Rotating D/E"
+                },
+                {
+                    "value": "Rotating E/N",
+                    "label": "Rotating E/N"
+                },
+                {
+                    "value": "Open",
+                    "label": "Open"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText14",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Min Hours",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText15",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Digital Interview",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText16",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Account Type",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText17",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Hospital Contact",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText18",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Accommodation Comments",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText19",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Supplier Partner",
+            "options": [
+                {
+                    "value": "A & Associates",
+                    "label": "A & Associates"
+                },
+                {
+                    "value": "AB Staffing Solutions (Locums)",
+                    "label": "AB Staffing Solutions (Locums)"
+                },
+                {
+                    "value": "Accountable Healthcare",
+                    "label": "Accountable Healthcare"
+                },
+                {
+                    "value": "Acumen Medical Staffing",
+                    "label": "Acumen Medical Staffing"
+                },
+                {
+                    "value": "Admiral Healthcare LLC",
+                    "label": "Admiral Healthcare LLC"
+                },
+                {
+                    "value": "Advanced Care Services",
+                    "label": "Advanced Care Services"
+                },
+                {
+                    "value": "Advanced Medical Personnel Services Inc.",
+                    "label": "Advanced Medical Personnel Services Inc."
+                },
+                {
+                    "value": "Advantis Medical Staffing",
+                    "label": "Advantis Medical Staffing"
+                },
+                {
+                    "value": "Aequor Healthcare Services LLC",
+                    "label": "Aequor Healthcare Services LLC"
+                },
+                {
+                    "value": "AHS Staffing",
+                    "label": "AHS Staffing"
+                },
+                {
+                    "value": "Alegiant Services LLC",
+                    "label": "Alegiant Services LLC"
+                },
+                {
+                    "value": "All Star Recuiting Locums S-Corp",
+                    "label": "All Star Recuiting Locums S-Corp"
+                },
+                {
+                    "value": "AllCare Nursing Services",
+                    "label": "AllCare Nursing Services"
+                },
+                {
+                    "value": "Alliance Recruiting Resource Inc",
+                    "label": "Alliance Recruiting Resource Inc"
+                },
+                {
+                    "value": "Allied Resources Medical Staff",
+                    "label": "Allied Resources Medical Staff"
+                },
+                {
+                    "value": "Alternate Nurse Staffing Solutions LLC",
+                    "label": "Alternate Nurse Staffing Solutions LLC"
+                },
+                {
+                    "value": "Alto Health Care Staffing Inc",
+                    "label": "Alto Health Care Staffing Inc"
+                },
+                {
+                    "value": "American Medical Staffing (Formerly CMS)",
+                    "label": "American Medical Staffing (Formerly CMS)"
+                },
+                {
+                    "value": "American Traveler",
+                    "label": "American Traveler"
+                },
+                {
+                    "value": "Amidon Nurse Staffing",
+                    "label": "Amidon Nurse Staffing"
+                },
+                {
+                    "value": "AMN Healthcare",
+                    "label": "AMN Healthcare"
+                },
+                {
+                    "value": "Ampian Medical Staffing LLC",
+                    "label": "Ampian Medical Staffing LLC"
+                },
+                {
+                    "value": "Approved Nursing Solutions",
+                    "label": "Approved Nursing Solutions"
+                },
+                {
+                    "value": "Ardor Health Solutions",
+                    "label": "Ardor Health Solutions"
+                },
+                {
+                    "value": "Asa Healthcare Solutions",
+                    "label": "Asa Healthcare Solutions"
+                },
+                {
+                    "value": "Ascend Medical Staffing LLC",
+                    "label": "Ascend Medical Staffing LLC"
+                },
+                {
+                    "value": "Associated Health Professional",
+                    "label": "Associated Health Professional"
+                },
+                {
+                    "value": "Atlas Medstaff",
+                    "label": "Atlas Medstaff"
+                },
+                {
+                    "value": "Atrium Staffing LLC",
+                    "label": "Atrium Staffing LLC"
+                },
+                {
+                    "value": "Aureus Healthcare One (Locums)",
+                    "label": "Aureus Healthcare One (Locums)"
+                },
+                {
+                    "value": "Aureus Nursing",
+                    "label": "Aureus Nursing"
+                },
+                {
+                    "value": "Aureus Radiology",
+                    "label": "Aureus Radiology"
+                },
+                {
+                    "value": "Axis Medical Staffing",
+                    "label": "Axis Medical Staffing"
+                },
+                {
+                    "value": "Aya Locums LLC",
+                    "label": "Aya Locums LLC"
+                },
+                {
+                    "value": "Barton Healthcare Staffing",
+                    "label": "Barton Healthcare Staffing"
+                },
+                {
+                    "value": "Be Well Nursing LLC",
+                    "label": "Be Well Nursing LLC"
+                },
+                {
+                    "value": "Caban Resources LLC",
+                    "label": "Caban Resources LLC"
+                },
+                {
+                    "value": "CareerStaff Unlimited",
+                    "label": "CareerStaff Unlimited"
+                },
+                {
+                    "value": "Cariant Health Partners Inc",
+                    "label": "Cariant Health Partners Inc"
+                },
+                {
+                    "value": "Centra Healthcare Solutions",
+                    "label": "Centra Healthcare Solutions"
+                },
+                {
+                    "value": "Century Health Services",
+                    "label": "Century Health Services"
+                },
+                {
+                    "value": "Certified Nursing Reigistry INC.",
+                    "label": "Certified Nursing Reigistry INC."
+                },
+                {
+                    "value": "Coast Medical Service",
+                    "label": "Coast Medical Service"
+                },
+                {
+                    "value": "Coastal Healthcare Resources",
+                    "label": "Coastal Healthcare Resources"
+                },
+                {
+                    "value": "CompHealth",
+                    "label": "CompHealth"
+                },
+                {
+                    "value": "Consilium Staffing LLC",
+                    "label": "Consilium Staffing LLC"
+                },
+                {
+                    "value": "ConTemporary Nursing Solutions",
+                    "label": "ConTemporary Nursing Solutions"
+                },
+                {
+                    "value": "Convergence Services Group LLC",
+                    "label": "Convergence Services Group LLC"
+                },
+                {
+                    "value": "Core Medical Group",
+                    "label": "Core Medical Group"
+                },
+                {
+                    "value": "Covelo Group Inc",
+                    "label": "Covelo Group Inc"
+                },
+                {
+                    "value": "Critical Access Vital Connections LLC",
+                    "label": "Critical Access Vital Connections LLC"
+                },
+                {
+                    "value": "CT Assist Nursing and Allied Health",
+                    "label": "CT Assist Nursing and Allied Health"
+                },
+                {
+                    "value": "Cunningham Elite Staffing LLC",
+                    "label": "Cunningham Elite Staffing LLC"
+                },
+                {
+                    "value": "Daily Care LLC",
+                    "label": "Daily Care LLC"
+                },
+                {
+                    "value": "Elite Medical Staffing",
+                    "label": "Elite Medical Staffing"
+                },
+                {
+                    "value": "Elite Nursing Services Inc",
+                    "label": "Elite Nursing Services Inc"
+                },
+                {
+                    "value": "Elitecare Medical Staffing",
+                    "label": "Elitecare Medical Staffing"
+                },
+                {
+                    "value": "Emerald City Medical Staffing",
+                    "label": "Emerald City Medical Staffing"
+                },
+                {
+                    "value": "Emerald Health Services",
+                    "label": "Emerald Health Services"
+                },
+                {
+                    "value": "EmPower Nursing and Allied Solutions Inc",
+                    "label": "EmPower Nursing and Allied Solutions Inc"
+                },
+                {
+                    "value": "ERO Workforce Solutions Inc",
+                    "label": "ERO Workforce Solutions Inc"
+                },
+                {
+                    "value": "Express Healthcare Professionals",
+                    "label": "Express Healthcare Professionals"
+                },
+                {
+                    "value": "Fastaff",
+                    "label": "Fastaff"
+                },
+                {
+                    "value": "First Class Nurses INC",
+                    "label": "First Class Nurses INC"
+                },
+                {
+                    "value": "FlexCare Medical Staffing Inc.",
+                    "label": "FlexCare Medical Staffing Inc."
+                },
+                {
+                    "value": "FlexRN",
+                    "label": "FlexRN"
+                },
+                {
+                    "value": "Floyd Lee Locums Inc",
+                    "label": "Floyd Lee Locums Inc"
+                },
+                {
+                    "value": "Fusion Healthcare Staffing",
+                    "label": "Fusion Healthcare Staffing"
+                },
+                {
+                    "value": "Fusion Medical Staffing",
+                    "label": "Fusion Medical Staffing"
+                },
+                {
+                    "value": "GetMed Staffing",
+                    "label": "GetMed Staffing"
+                },
+                {
+                    "value": "Gifted Nurses",
+                    "label": "Gifted Nurses"
+                },
+                {
+                    "value": "Go Healthcare Staffing",
+                    "label": "Go Healthcare Staffing"
+                },
+                {
+                    "value": "Gotham Companies",
+                    "label": "Gotham Companies"
+                },
+                {
+                    "value": "Health Carousel Travel Network LLC.",
+                    "label": "Health Carousel Travel Network LLC."
+                },
+                {
+                    "value": "Health Hybrid Inc.",
+                    "label": "Health Hybrid Inc."
+                },
+                {
+                    "value": "Healthcare Staffing Professionals",
+                    "label": "Healthcare Staffing Professionals"
+                },
+                {
+                    "value": "Honor Medical Staffing",
+                    "label": "Honor Medical Staffing"
+                },
+                {
+                    "value": "Host Healthcare",
+                    "label": "Host Healthcare"
+                },
+                {
+                    "value": "Human Potential Healthcare Workforce Solutions LLC",
+                    "label": "Human Potential Healthcare Workforce Solutions LLC"
+                },
+                {
+                    "value": "HumanEdge Inc.",
+                    "label": "HumanEdge Inc."
+                },
+                {
+                    "value": "ICG Medical dba Greenstaff Medical StaffingLLC",
+                    "label": "ICG Medical dba Greenstaff Medical StaffingLLC"
+                },
+                {
+                    "value": "Icon Medical Network",
+                    "label": "Icon Medical Network"
+                },
+                {
+                    "value": "Integrity Healthcare Locums LLC",
+                    "label": "Integrity Healthcare Locums LLC"
+                },
+                {
+                    "value": "Integrity Medical Staffing LLC.",
+                    "label": "Integrity Medical Staffing LLC."
+                },
+                {
+                    "value": "Jackson & Coker Locum Tenens LLC",
+                    "label": "Jackson & Coker Locum Tenens LLC"
+                },
+                {
+                    "value": "Jackson Nurse Professionals",
+                    "label": "Jackson Nurse Professionals"
+                },
+                {
+                    "value": "Jackson Therapy Partners LLC",
+                    "label": "Jackson Therapy Partners LLC"
+                },
+                {
+                    "value": "Lexx Healthcare LLC",
+                    "label": "Lexx Healthcare LLC"
+                },
+                {
+                    "value": "LiquidAgents Healthcare",
+                    "label": "LiquidAgents Healthcare"
+                },
+                {
+                    "value": "Locum Connections",
+                    "label": "Locum Connections"
+                },
+                {
+                    "value": "Locum Life LTD",
+                    "label": "Locum Life LTD"
+                },
+                {
+                    "value": "Locum Physicians United",
+                    "label": "Locum Physicians United"
+                },
+                {
+                    "value": "Locum Recruiters LLC",
+                    "label": "Locum Recruiters LLC"
+                },
+                {
+                    "value": "Locum Tenens Partners LLC",
+                    "label": "Locum Tenens Partners LLC"
+                },
+                {
+                    "value": "LocumMD LLC",
+                    "label": "LocumMD LLC"
+                },
+                {
+                    "value": "Locums Choice LLC",
+                    "label": "Locums Choice LLC"
+                },
+                {
+                    "value": "Loyal Source Government Services LLC",
+                    "label": "Loyal Source Government Services LLC"
+                },
+                {
+                    "value": "LRS Healthcare",
+                    "label": "LRS Healthcare"
+                },
+                {
+                    "value": "M.S.S. Nurses Registry Inc",
+                    "label": "M.S.S. Nurses Registry Inc"
+                },
+                {
+                    "value": "Management Registry_Malone Healthcare",
+                    "label": "Management Registry_Malone Healthcare"
+                },
+                {
+                    "value": "Marshall Healthcare Staffing",
+                    "label": "Marshall Healthcare Staffing"
+                },
+                {
+                    "value": "MAS Medical Staffing",
+                    "label": "MAS Medical Staffing"
+                },
+                {
+                    "value": "Master Staffing Inc",
+                    "label": "Master Staffing Inc"
+                },
+                {
+                    "value": "Maxim Healthcare Services",
+                    "label": "Maxim Healthcare Services"
+                },
+                {
+                    "value": "Maxim Physician Resources",
+                    "label": "Maxim Physician Resources"
+                },
+                {
+                    "value": "MD Staff LLC",
+                    "label": "MD Staff LLC"
+                },
+                {
+                    "value": "MedCadre Inc.",
+                    "label": "MedCadre Inc."
+                },
+                {
+                    "value": "Med-Call Healthcare Inc.",
+                    "label": "Med-Call Healthcare Inc."
+                },
+                {
+                    "value": "Medestar LLC",
+                    "label": "Medestar LLC"
+                },
+                {
+                    "value": "Medical Search International",
+                    "label": "Medical Search International"
+                },
+                {
+                    "value": "Medical Staffing Solutions LLC",
+                    "label": "Medical Staffing Solutions LLC"
+                },
+                {
+                    "value": "MedPro Staffing",
+                    "label": "MedPro Staffing"
+                },
+                {
+                    "value": "MedSource Travelers",
+                    "label": "MedSource Travelers"
+                },
+                {
+                    "value": "MedStaff Alternatives Inc.",
+                    "label": "MedStaff Alternatives Inc."
+                },
+                {
+                    "value": "MedUS Travelers",
+                    "label": "MedUS Travelers"
+                },
+                {
+                    "value": "Mitchell/Martin Inc",
+                    "label": "Mitchell/Martin Inc"
+                },
+                {
+                    "value": "Moab Sterilization Staffing Inc.",
+                    "label": "Moab Sterilization Staffing Inc."
+                },
+                {
+                    "value": "Momentum Healthcare Staffing",
+                    "label": "Momentum Healthcare Staffing"
+                },
+                {
+                    "value": "MPLT Healthcare LLC (FKA Med Partners LT)",
+                    "label": "MPLT Healthcare LLC (FKA Med Partners LT)"
+                },
+                {
+                    "value": "National Staffing Solutions LT",
+                    "label": "National Staffing Solutions LT"
+                },
+                {
+                    "value": "Nationwide Nurses",
+                    "label": "Nationwide Nurses"
+                },
+                {
+                    "value": "NCVA Medical Staffing Inc",
+                    "label": "NCVA Medical Staffing Inc"
+                },
+                {
+                    "value": "NEHCR Staffing LLC",
+                    "label": "NEHCR Staffing LLC"
+                },
+                {
+                    "value": "Nomad Nurses Inc.",
+                    "label": "Nomad Nurses Inc."
+                },
+                {
+                    "value": "NorTek Medical Staffing. Inc.",
+                    "label": "NorTek Medical Staffing. Inc."
+                },
+                {
+                    "value": "Nurse Exchange",
+                    "label": "Nurse Exchange"
+                },
+                {
+                    "value": "Nurses First Solutions LLC",
+                    "label": "Nurses First Solutions LLC"
+                },
+                {
+                    "value": "Nurses PRN",
+                    "label": "Nurses PRN"
+                },
+                {
+                    "value": "NuWest Group",
+                    "label": "NuWest Group"
+                },
+                {
+                    "value": "O.R. Staffing Solutions Inc.",
+                    "label": "O.R. Staffing Solutions Inc."
+                },
+                {
+                    "value": "Omnicare Home Health Inc",
+                    "label": "Omnicare Home Health Inc"
+                },
+                {
+                    "value": "OneStaff Medical LLC",
+                    "label": "OneStaff Medical LLC"
+                },
+                {
+                    "value": "Opportunity Health Care LLC",
+                    "label": "Opportunity Health Care LLC"
+                },
+                {
+                    "value": "Origin Travel Nurses",
+                    "label": "Origin Travel Nurses"
+                },
+                {
+                    "value": "Pacific Companies",
+                    "label": "Pacific Companies"
+                },
+                {
+                    "value": "Pacifica Health Care",
+                    "label": "Pacifica Health Care"
+                },
+                {
+                    "value": "Pharmstaff (CCS Company)",
+                    "label": "Pharmstaff (CCS Company)"
+                },
+                {
+                    "value": "Phoenix Medical Group LLC",
+                    "label": "Phoenix Medical Group LLC"
+                },
+                {
+                    "value": "Physician Assistant Surgical Associates LLC (LT)",
+                    "label": "Physician Assistant Surgical Associates LLC (LT)"
+                },
+                {
+                    "value": "Physicians PRN LLC",
+                    "label": "Physicians PRN LLC"
+                },
+                {
+                    "value": "Plexsum Staffing Solutions",
+                    "label": "Plexsum Staffing Solutions"
+                },
+                {
+                    "value": "Premier Healthcare Professionals",
+                    "label": "Premier Healthcare Professionals"
+                },
+                {
+                    "value": "Premier Medical Staffing",
+                    "label": "Premier Medical Staffing"
+                },
+                {
+                    "value": "Premier Nursing Service",
+                    "label": "Premier Nursing Service"
+                },
+                {
+                    "value": "Prestige Healthcare Resources Inc.",
+                    "label": "Prestige Healthcare Resources Inc."
+                },
+                {
+                    "value": "Prime Staffing LLC",
+                    "label": "Prime Staffing LLC"
+                },
+                {
+                    "value": "Prime Time Healthcare",
+                    "label": "Prime Time Healthcare"
+                },
+                {
+                    "value": "ProCare USA",
+                    "label": "ProCare USA"
+                },
+                {
+                    "value": "Procel Temporary Services Inc.",
+                    "label": "Procel Temporary Services Inc."
+                },
+                {
+                    "value": "ProCenture LLC",
+                    "label": "ProCenture LLC"
+                },
+                {
+                    "value": "Professional Placement Resources LLC",
+                    "label": "Professional Placement Resources LLC"
+                },
+                {
+                    "value": "ProMed Personnell LLC bda Destination Travelcare",
+                    "label": "ProMed Personnell LLC bda Destination Travelcare"
+                },
+                {
+                    "value": "Protocol Agency Inc",
+                    "label": "Protocol Agency Inc"
+                },
+                {
+                    "value": "Provide HCS LLC",
+                    "label": "Provide HCS LLC"
+                },
+                {
+                    "value": "Provider Healthcare",
+                    "label": "Provider Healthcare"
+                },
+                {
+                    "value": "PT Solutions",
+                    "label": "PT Solutions"
+                },
+                {
+                    "value": "Pulmonary Exchange Ltd.",
+                    "label": "Pulmonary Exchange Ltd."
+                },
+                {
+                    "value": "Quest Healthcare Solutions LLC",
+                    "label": "Quest Healthcare Solutions LLC"
+                },
+                {
+                    "value": "Randstad Healthcare",
+                    "label": "Randstad Healthcare"
+                },
+                {
+                    "value": "Rao Radiologist dba Pulse Healthcare",
+                    "label": "Rao Radiologist dba Pulse Healthcare"
+                },
+                {
+                    "value": "RCM Healthcare Services (LT)",
+                    "label": "RCM Healthcare Services (LT)"
+                },
+                {
+                    "value": "Republic Health Resources",
+                    "label": "Republic Health Resources"
+                },
+                {
+                    "value": "Rhino Medical Services",
+                    "label": "Rhino Medical Services"
+                },
+                {
+                    "value": "RN Network",
+                    "label": "RN Network"
+                },
+                {
+                    "value": "RTG Medical",
+                    "label": "RTG Medical"
+                },
+                {
+                    "value": "SBG Healthcare LLC",
+                    "label": "SBG Healthcare LLC"
+                },
+                {
+                    "value": "Skyline Medical Staffing",
+                    "label": "Skyline Medical Staffing"
+                },
+                {
+                    "value": "Smith Healthcare Registry Inc",
+                    "label": "Smith Healthcare Registry Inc"
+                },
+                {
+                    "value": "Smith Medical Staffing Llc dba CornerStone Medical",
+                    "label": "Smith Medical Staffing Llc dba CornerStone Medical"
+                },
+                {
+                    "value": "SnapNurse",
+                    "label": "SnapNurse"
+                },
+                {
+                    "value": "Soliant Health",
+                    "label": "Soliant Health"
+                },
+                {
+                    "value": "Source Medical (LT perm only)",
+                    "label": "Source Medical (LT perm only)"
+                },
+                {
+                    "value": "Source Medical Staffing LLC",
+                    "label": "Source Medical Staffing LLC"
+                },
+                {
+                    "value": "Specialty Staffing Solutions",
+                    "label": "Specialty Staffing Solutions"
+                },
+                {
+                    "value": "Stability Healthcare Inc.",
+                    "label": "Stability Healthcare Inc."
+                },
+                {
+                    "value": "Staff Care Inc.",
+                    "label": "Staff Care Inc."
+                },
+                {
+                    "value": "Staffco Healthcare Services",
+                    "label": "Staffco Healthcare Services"
+                },
+                {
+                    "value": "Star Nursing Inc",
+                    "label": "Star Nursing Inc"
+                },
+                {
+                    "value": "Star One Staffing Inc.",
+                    "label": "Star One Staffing Inc."
+                },
+                {
+                    "value": "Sumo Medical",
+                    "label": "Sumo Medical"
+                },
+                {
+                    "value": "Sunbelt Staffing Solutions",
+                    "label": "Sunbelt Staffing Solutions"
+                },
+                {
+                    "value": "Surgical Staff Inc",
+                    "label": "Surgical Staff Inc"
+                },
+                {
+                    "value": "Surgi-Staff inc",
+                    "label": "Surgi-Staff inc"
+                },
+                {
+                    "value": "Tact Medical Staffing",
+                    "label": "Tact Medical Staffing"
+                },
+                {
+                    "value": "TaleMed",
+                    "label": "TaleMed"
+                },
+                {
+                    "value": "Team Locums LP",
+                    "label": "Team Locums LP"
+                },
+                {
+                    "value": "The Right Solutions",
+                    "label": "The Right Solutions"
+                },
+                {
+                    "value": "The Talent Society",
+                    "label": "The Talent Society"
+                },
+                {
+                    "value": "Therapeutic Resources Inc.",
+                    "label": "Therapeutic Resources Inc."
+                },
+                {
+                    "value": "Therapy Staff",
+                    "label": "Therapy Staff"
+                },
+                {
+                    "value": "Thornbury Nursing Services",
+                    "label": "Thornbury Nursing Services"
+                },
+                {
+                    "value": "Titan Medical Group",
+                    "label": "Titan Medical Group"
+                },
+                {
+                    "value": "Titan Nurse Staffing LLC",
+                    "label": "Titan Nurse Staffing LLC"
+                },
+                {
+                    "value": "TLC Travel Staff",
+                    "label": "TLC Travel Staff"
+                },
+                {
+                    "value": "TPF Nursing Registry",
+                    "label": "TPF Nursing Registry"
+                },
+                {
+                    "value": "Travel Nurses Inc (FKA OR Nurses)",
+                    "label": "Travel Nurses Inc (FKA OR Nurses)"
+                },
+                {
+                    "value": "Triage LLC",
+                    "label": "Triage LLC"
+                },
+                {
+                    "value": "Trusted Health Inc",
+                    "label": "Trusted Health Inc"
+                },
+                {
+                    "value": "Trusted Nurse Staffing LLC",
+                    "label": "Trusted Nurse Staffing LLC"
+                },
+                {
+                    "value": "United Anesthesia Associates",
+                    "label": "United Anesthesia Associates"
+                },
+                {
+                    "value": "Valley Medical Staffing Inc.",
+                    "label": "Valley Medical Staffing Inc."
+                },
+                {
+                    "value": "Ventura MedStaff",
+                    "label": "Ventura MedStaff"
+                },
+                {
+                    "value": "Vero RN",
+                    "label": "Vero RN"
+                },
+                {
+                    "value": "Vista Staffing Solutions Inc.",
+                    "label": "Vista Staffing Solutions Inc."
+                },
+                {
+                    "value": "Vital Contingent Planning d/b/a VCP Staff",
+                    "label": "Vital Contingent Planning d/b/a VCP Staff"
+                },
+                {
+                    "value": "Voyage Healthcare LLC",
+                    "label": "Voyage Healthcare LLC"
+                },
+                {
+                    "value": "WCS Healthcare Partners",
+                    "label": "WCS Healthcare Partners"
+                },
+                {
+                    "value": "Wellhart LLC",
+                    "label": "Wellhart LLC"
+                },
+                {
+                    "value": "White Glove Placement",
+                    "label": "White Glove Placement"
+                },
+                {
+                    "value": "WorkSquare LLC",
+                    "label": "WorkSquare LLC"
+                }
+            ],
+            "hideFromSearch": false
         },
         {
             "name": "customText2",
@@ -112,11 +1299,272 @@
             "dataType": "String",
             "maxLength": 100,
             "confidential": false,
-            "optional": true,
-            "label": "Custom Text2",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "label": "customText2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText20",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Position Skills",
+            "optionsType": "SkillText",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/SkillText",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText21",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Submission Status Reason",
+            "options": [
+                {
+                    "value": "Budget",
+                    "label": "Budget"
+                },
+                {
+                    "value": "Low Census",
+                    "label": "Low Census"
+                },
+                {
+                    "value": "Position Closed by Facility Unable to Fill",
+                    "label": "Position Closed by Facility Unable to Fill"
+                },
+                {
+                    "value": "Position Closed by Facility Filled with Competitor/Supplier Partner",
+                    "label": "Position Closed by Facility Filled with Competitor/Supplier Partner"
+                },
+                {
+                    "value": "Position Closed by Facility Filled with Supplier Partner",
+                    "label": "Position Closed by Facility Filled with Supplier Partner"
+                },
+                {
+                    "value": "Position Closed by Facility Budget",
+                    "label": "Position Closed by Facility Budget"
+                },
+                {
+                    "value": "Position Closed by Facility Low Census",
+                    "label": "Position Closed by Facility Low Census"
+                },
+                {
+                    "value": "Lack of Interview",
+                    "label": "Lack of Interview"
+                },
+                {
+                    "value": "Delay in Start Date",
+                    "label": "Delay in Start Date"
+                },
+                {
+                    "value": "Schedule Request Not Approved",
+                    "label": "Schedule Request Not Approved"
+                },
+                {
+                    "value": "Buddy Drop",
+                    "label": "Buddy Drop"
+                },
+                {
+                    "value": "Doesn't Meet Pre Employment Criteria",
+                    "label": "Doesn't Meet Pre Employment Criteria"
+                },
+                {
+                    "value": "Accepted Assignment at another CCH Facility",
+                    "label": "Accepted Assignment at another CCH Facility"
+                },
+                {
+                    "value": "Took Position with Competitor",
+                    "label": "Took Position with Competitor"
+                },
+                {
+                    "value": "Took a Staff Position",
+                    "label": "Took a Staff Position"
+                },
+                {
+                    "value": "Based on Interview",
+                    "label": "Based on Interview"
+                },
+                {
+                    "value": "Currently or Previously On Staff or Per Diem",
+                    "label": "Currently or Previously On Staff or Per Diem"
+                },
+                {
+                    "value": "Lack of Response Post Interview",
+                    "label": "Lack of Response Post Interview"
+                },
+                {
+                    "value": "Licensure Issues",
+                    "label": "Licensure Issues"
+                },
+                {
+                    "value": "Missing",
+                    "label": "Missing"
+                },
+                {
+                    "value": "Not Interested",
+                    "label": "Not Interested"
+                },
+                {
+                    "value": "Personal Issues",
+                    "label": "Personal Issues"
+                },
+                {
+                    "value": "Previously Employed Here",
+                    "label": "Previously Employed Here"
+                },
+                {
+                    "value": "Package",
+                    "label": "Package"
+                },
+                {
+                    "value": "Violation of Radius Rule",
+                    "label": "Violation of Radius Rule"
+                },
+                {
+                    "value": "Changed Mind",
+                    "label": "Changed Mind"
+                },
+                {
+                    "value": "Clinical Issues Pre Employment Document Issue",
+                    "label": "Clinical Issues Pre Employment Document Issue"
+                },
+                {
+                    "value": "Clinical Issues Performance",
+                    "label": "Clinical Issues Performance"
+                },
+                {
+                    "value": "Clinical Issues Patient Safety",
+                    "label": "Clinical Issues Patient Safety"
+                },
+                {
+                    "value": "Clinical Issues Error",
+                    "label": "Clinical Issues Error"
+                },
+                {
+                    "value": "Clinical Issues Testing",
+                    "label": "Clinical Issues Testing"
+                },
+                {
+                    "value": "Clinical Issues Documentation",
+                    "label": "Clinical Issues Documentation"
+                },
+                {
+                    "value": "Non Clinical Issues Attitude",
+                    "label": "Non Clinical Issues Attitude"
+                },
+                {
+                    "value": "Non Clinical Issues Call Offs",
+                    "label": "Non Clinical Issues Call Offs"
+                },
+                {
+                    "value": "Non Clinical Issues Illness",
+                    "label": "Non Clinical Issues Illness"
+                },
+                {
+                    "value": "Missing Submission Requirements",
+                    "label": "Missing Submission Requirements"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText22",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Assignment Type",
+            "options": [
+                {
+                    "value": "Assignment",
+                    "label": "Assignment"
+                },
+                {
+                    "value": "Extension",
+                    "label": "Extension"
+                },
+                {
+                    "value": "Renewal",
+                    "label": "Renewal"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText23",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Employer Type",
+            "options": [
+                {
+                    "value": "Travel",
+                    "label": "Travel"
+                },
+                {
+                    "value": "Local",
+                    "label": "Local"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText24",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Package Type",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText25",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Bill Rate Type",
+            "options": [
+                {
+                    "value": "Standard Travel",
+                    "label": "Standard Travel"
+                },
+                {
+                    "value": "Standard Local",
+                    "label": "Standard Local"
+                },
+                {
+                    "value": "Standard Radius Rule",
+                    "label": "Standard Radius Rule"
+                },
+                {
+                    "value": "Crisis Travel",
+                    "label": "Crisis Travel"
+                },
+                {
+                    "value": "Crisis Local",
+                    "label": "Crisis Local"
+                },
+                {
+                    "value": "Crisis Radius Rule",
+                    "label": "Crisis Radius Rule"
+                },
+                {
+                    "value": "Seasonal Travel",
+                    "label": "Seasonal Travel"
+                },
+                {
+                    "value": "Seasonal Local",
+                    "label": "Seasonal Local"
+                },
+                {
+                    "value": "Seasonal Radius Rule",
+                    "label": "Seasonal Radius Rule"
+                }
+            ],
+            "hideFromSearch": false
         },
         {
             "name": "customText3",
@@ -124,11 +1572,8 @@
             "dataType": "String",
             "maxLength": 100,
             "confidential": false,
-            "optional": true,
-            "label": "Custom Text3",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "label": "customText3",
+            "hideFromSearch": false
         },
         {
             "name": "customText4",
@@ -136,11 +1581,8 @@
             "dataType": "String",
             "maxLength": 100,
             "confidential": false,
-            "optional": true,
-            "label": "Custom Text4",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "label": "customText4",
+            "hideFromSearch": false
         },
         {
             "name": "customText5",
@@ -148,77 +1590,156 @@
             "dataType": "String",
             "maxLength": 100,
             "confidential": false,
-            "optional": true,
-            "label": "Custom Text5",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "label": "customText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Facility Work City",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Facility Work State",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Account Manager",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Recruiter",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Schedule Request 1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Schedule Request 2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Schedule Request 3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Assignment Comments",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock5",
+            "hideFromSearch": false
         },
         {
             "name": "dateAdded",
             "type": "SCALAR",
             "dataType": "Timestamp",
             "confidential": false,
-            "optional": false,
-            "label": "Date Added",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "label": "Date of Submission",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
         },
         {
             "name": "dateWebResponse",
             "type": "SCALAR",
             "dataType": "Timestamp",
             "confidential": false,
-            "optional": true,
             "label": "Date Web Response",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
+        },
+        {
+            "name": "endDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "End Date",
+            "hideFromSearch": false
         },
         {
             "name": "isDeleted",
             "type": "SCALAR",
             "dataType": "Boolean",
             "confidential": false,
-            "optional": false,
             "label": "Is Deleted",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
         },
         {
             "name": "isHidden",
             "type": "SCALAR",
             "dataType": "Boolean",
             "confidential": false,
-            "optional": false,
             "label": "Is Hidden",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
         },
         {
             "name": "jobOrder",
             "type": "TO_ONE",
             "confidential": false,
-            "optional": false,
-            "label": "Job Order",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
+            "label": "Position",
             "optionsType": "JobOrder",
-            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/JobOrder",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/JobOrder",
+            "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "JobOrder",
-                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/JobOrder?fields=*",
-                "label": "Job Order",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/JobOrder?fields=*",
+                "label": "Position",
+                "dateLastModified": "1589800166644",
                 "fields": [
                     {
                         "name": "id",
                         "type": "ID",
-                        "dataType": "Integer",
-                        "optional": false
+                        "dataType": "Integer"
                     },
                     {
                         "name": "title",
@@ -226,11 +1747,54 @@
                         "dataType": "String",
                         "maxLength": 100,
                         "confidential": false,
-                        "optional": true,
-                        "label": "Job Title",
-                        "required": true,
-                        "readOnly": false,
-                        "multiValue": false
+                        "label": "Specialty",
+                        "optionsType": "SpecialtyText",
+                        "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/SpecialtyText",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "jobSubmissionCertificationRequirements",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Job Submission Certification Requirements",
+            "optionsType": "JobSubmissionCertificationRequirement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/JobSubmissionCertificationRequirement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "JobSubmissionCertificationRequirement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/JobSubmissionCertificationRequirement?fields=*",
+                "label": "Job Submission Certification Requirement",
+                "dateLastModified": "1589789650047",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "latestAppointment",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Latest Appointment",
+            "optionsType": "Appointment",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Appointment",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Appointment",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Appointment?fields=*",
+                "label": "Appointment",
+                "dateLastModified": "1589516496479",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
                     }
                 ]
             }
@@ -241,33 +1805,45 @@
             "dataType": "String",
             "maxLength": 36,
             "confidential": false,
-            "optional": true,
             "label": "Migrate GUID",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
         },
         {
             "name": "owners",
             "type": "TO_MANY",
             "confidential": false,
-            "optional": true,
             "label": "Owners",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
             "optionsType": "CorporateUser",
-            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/CorporateUser",
+            "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "CorporateUser",
-                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/CorporateUser?fields=*",
                 "label": "Corporate User",
+                "dateLastModified": "1589516489503",
                 "fields": [
                     {
                         "name": "id",
                         "type": "ID",
-                        "dataType": "Integer",
-                        "optional": false
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
                     }
                 ]
             }
@@ -277,44 +1853,53 @@
             "type": "SCALAR",
             "dataType": "BigDecimal",
             "confidential": false,
-            "optional": true,
             "label": "Pay Rate",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
         },
         {
             "name": "salary",
             "type": "SCALAR",
             "dataType": "BigDecimal",
             "confidential": false,
-            "optional": true,
             "label": "Salary",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
         },
         {
             "name": "sendingUser",
             "type": "TO_ONE",
             "confidential": false,
-            "optional": false,
-            "label": "Added By",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
+            "label": "Created By",
             "optionsType": "CorporateUser",
-            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/CorporateUser",
+            "hideFromSearch": false,
             "associatedEntity": {
-                "entity": "CorporateUser",
-                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
-                "label": "Corporate User",
+                "entity": "Person",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Person?fields=*",
+                "label": "Person",
+                "dateLastModified": "1589516497900",
                 "fields": [
                     {
                         "name": "id",
                         "type": "ID",
-                        "dataType": "Integer",
-                        "optional": false
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
                     }
                 ]
             }
@@ -325,33 +1910,30 @@
             "dataType": "String",
             "maxLength": 100,
             "confidential": false,
-            "optional": true,
-            "label": "Source",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
+            "label": "Priority",
             "options": [
                 {
-                    "value": "Candidate Search",
-                    "label": "Candidate Search"
+                    "value": "0",
+                    "label": "Gold"
                 },
                 {
-                    "value": "Job Match",
-                    "label": "Job Match"
+                    "value": "1",
+                    "label": "Silver"
                 },
                 {
-                    "value": "External Web Site",
-                    "label": "External Web Site"
-                },
-                {
-                    "value": "Inbound Call",
-                    "label": "Inbound Call"
-                },
-                {
-                    "value": "Other",
-                    "label": "Other"
+                    "value": "2",
+                    "label": "Bronze"
                 }
-            ]
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "startDate",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Start Date",
+            "hideFromSearch": false
         },
         {
             "name": "status",
@@ -359,59 +1941,15 @@
             "dataType": "String",
             "maxLength": 30,
             "confidential": false,
-            "optional": false,
-            "label": "Status",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
+            "label": "Submission Status",
             "options": [
                 {
-                    "value": "New Lead",
-                    "label": "Web Response"
+                    "value": "Submission",
+                    "label": "Submission"
                 },
                 {
-                    "value": "LM Emailed re position",
-                    "label": "LM Emailed re position"
-                },
-                {
-                    "value": "Synergy Referral",
-                    "label": "Synergy Referral"
-                },
-                {
-                    "value": "Will Call Back",
-                    "label": "Will Call Back"
-                },
-                {
-                    "value": "Screened",
-                    "label": "Screened"
-                },
-                {
-                    "value": "Qualified Interested",
-                    "label": "Qualified Interested"
-                },
-                {
-                    "value": "Candidate Not Interested",
-                    "label": "Candidate Not Interested"
-                },
-                {
-                    "value": "Candidate Not Available",
-                    "label": "Candidate Not Available"
-                },
-                {
-                    "value": "Candidate Applied on Own",
-                    "label": "Candidate Applied on Own"
-                },
-                {
-                    "value": "Submitted by Other Agency",
-                    "label": "Submitted by Other Agency"
-                },
-                {
-                    "value": "Internally Rejected",
-                    "label": "Internally Rejected"
-                },
-                {
-                    "value": "Client Rejected",
-                    "label": "Client Rejected"
+                    "value": "Not Submitted",
+                    "label": "Not Submitted"
                 },
                 {
                     "value": "Offer Extended",
@@ -422,48 +1960,38 @@
                     "label": "Offer Accepted"
                 },
                 {
-                    "value": "Offer Rejected",
-                    "label": "Offer Rejected"
+                    "value": "Drop Facility",
+                    "label": "Drop Facility"
                 },
                 {
-                    "value": "Submitted",
-                    "label": "Submitted"
+                    "value": "Drop Professional",
+                    "label": "Drop Professional"
                 },
                 {
-                    "value": "Sendout",
-                    "label": "Sendout"
-                },
-                {
-                    "value": "Interview Scheduled",
-                    "label": "Interview Scheduled"
-                },
-                {
-                    "value": "Placement",
-                    "label": "Placement"
+                    "value": "Approved",
+                    "label": "Approved"
                 }
-            ]
+            ],
+            "hideFromSearch": false
         },
         {
             "name": "tasks",
             "type": "TO_MANY",
             "confidential": false,
-            "optional": true,
-            "label": "Tasks",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false,
+            "label": "Task",
             "optionsType": "Task",
-            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Task",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Task",
+            "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "Task",
-                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Task?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Task?fields=*",
                 "label": "Task",
+                "dateLastModified": "1589516501797",
                 "fields": [
                     {
                         "name": "id",
                         "type": "ID",
-                        "dataType": "Integer",
-                        "optional": false
+                        "dataType": "Integer"
                     }
                 ]
             }

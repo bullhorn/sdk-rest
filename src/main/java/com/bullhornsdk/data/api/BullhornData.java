@@ -61,15 +61,6 @@ import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 public interface BullhornData {
 
 	/**
-	 * Returns all fields for passed in entity type with the passed in id
-	 * 
-	 * @param type type of BullhornEntity
-	 * @param id id of BullhornEntity
-	 * @return an entity of type T, or null if an error occurred
-	 */
-	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id);
-
-	/**
 	 * Returns all fields for passed in entity type with the passed in id or ids
 	 *
 	 * @param type type of BullhornEntity

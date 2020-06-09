@@ -194,14 +194,6 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id) {
-        return this.handleGetEntity(type, id, null, ParamFactory.entityParams());
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
     public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
         return this.handleGetEntity(type, id, fieldSet, ParamFactory.entityParams());
     }
@@ -905,7 +897,7 @@ public class StandardBullhornData implements BullhornData {
      *
      * @param type     the BullhornEntity type
      * @param where    a SQL type where clause
-     * @param fieldSet the fields to return, if null or emtpy will default to "*" all
+     * @param fieldSet the fields to return, if null or emtpy will default to "id" all
      * @param params   optional QueryParams.
      * @return a LinsWrapper containing the records plus some additional information
      */
@@ -931,7 +923,7 @@ public class StandardBullhornData implements BullhornData {
      *
      * @param type     the BullhornEntity type
      * @param where    a SQL type where clause
-     * @param fieldSet the fields to return, if null or emtpy will default to "*" all
+     * @param fieldSet the fields to return, if null or emtpy will default to "id" all
      * @param params   optional QueryParams.
      * @return a LinsWrapper containing the records plus some additional information
      */
@@ -956,7 +948,7 @@ public class StandardBullhornData implements BullhornData {
      *
      * @param entityType the EditHistoryEntity type
      * @param where      a SQL type where clause
-     * @param fieldSet   the fields to return, if null or emtpy will default to "*" all
+     * @param fieldSet   the fields to return, if null or emtpy will default to "id" all
      * @param params     optional QueryParams.
      * @return a EditHistoryListWrapper containing the records plus some additional information
      */
@@ -976,7 +968,7 @@ public class StandardBullhornData implements BullhornData {
      *
      * @param entityType the EditHistoryEntity type
      * @param where      a SQL type where clause
-     * @param fieldSet   the fields to return, if null or emtpy will default to "*" all
+     * @param fieldSet   the fields to return, if null or emtpy will default to "id" all
      * @param params     optional QueryParams.
      * @return a FieldChangeWrapper containing the records plus some additional information
      */
@@ -1044,7 +1036,7 @@ public class StandardBullhornData implements BullhornData {
      *
      * @param type     the BullhornEntity type
      * @param query    Lucene query string
-     * @param fieldSet the fields to return, if null or emtpy will default to "*" all
+     * @param fieldSet the fields to return, if null or emtpy will default to "id" all
      * @param params   optional SearchParams .
      * @return a LinsWrapper containing the records plus some additional information
      */
@@ -1072,7 +1064,7 @@ public class StandardBullhornData implements BullhornData {
      *
      * @param type     the BullhornEntity type
      * @param query    Lucene query string
-     * @param fieldSet the fields to return, if null or empty will default to "*" all
+     * @param fieldSet the fields to return, if null or empty will default to "id" all
      * @param params   optional SearchParams .
      * @return a LinsWrapper containing the records plus some additional information
      */

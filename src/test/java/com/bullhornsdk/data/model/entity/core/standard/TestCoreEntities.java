@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.google.common.collect.Sets;
 import org.junit.Test;
 
 import com.bullhornsdk.data.BaseTest;
@@ -22,14 +23,14 @@ public class TestCoreEntities extends BaseTest {
 	public void load() {
 		for (BullhornEntityInfo bullhornEntityInfo : BullhornEntityInfo.values()) {
 			if(bullhornEntityInfo.getType() != null){
-				one.put(bullhornEntityInfo.getType(), bullhornData.findEntity(bullhornEntityInfo.getType(), id));
+				one.put(bullhornEntityInfo.getType(), bullhornData.findEntity(bullhornEntityInfo.getType(), id, Sets.newHashSet("id")));
 			}
 			
 		}
 
 		for (BullhornEntityInfo bullhornEntityInfo : BullhornEntityInfo.values()) {
 			if(bullhornEntityInfo.getType() != null){
-				two.put(bullhornEntityInfo.getType(), bullhornData.findEntity(bullhornEntityInfo.getType(), id));
+				two.put(bullhornEntityInfo.getType(), bullhornData.findEntity(bullhornEntityInfo.getType(), id, Sets.newHashSet("id")));
 			}
 		}
 	}

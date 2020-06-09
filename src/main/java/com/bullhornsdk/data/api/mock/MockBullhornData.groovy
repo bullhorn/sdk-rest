@@ -66,14 +66,6 @@ public class MockBullhornData implements BullhornData {
         this.mockDataHandler.refreshTestData();
     }
 
-    /**
-     * Caches the data in restEntityMap after the first time an entity is fetched.
-     */
-    @Override
-    public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id) {
-        return mockDataHandler.findEntity(type, id);
-    }
-
     @Override
     public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
         return mockDataHandler.findEntity(type, id, fieldSet);
