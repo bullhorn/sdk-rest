@@ -15,13 +15,12 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
-import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
-import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
 import com.bullhornsdk.data.model.entity.core.paybill.master.BatchGroup;
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
@@ -204,9 +203,9 @@ public enum BullhornEntityInfo {
     CANVAS_REPORT("CanvasReport", CanvasReport.class, CanvasReportWrapper.class, CanvasReportListWrapper.class, null, null),
 
     // Certification Requirements
-    CANDIDATE_CERTIFICATION_REQUIREMENT("CandidateCertificationRequirement", CandidateCertificationRequirement.class, CandidateCertificationRequirementWrapper.class, CandidateCertificationRequirementListWrapper.class, null, null),
-    CERTIFICATION_REQUIREMENT("CertificationRequirement", CertificationRequirement.class, CertificationRequirementWrapper.class, CertificationRequirementListWrapper.class, null, null),
-    JOB_SUBMISSION_CERTIFICATION_REQUIREMENT("JobSubmissionCertificationRequirement", JobSubmissionCertificationRequirement.class, JobSubmissionCertificationRequirementWrapper.class, JobSubmissionCertificationRequirementListWrapper.class, null, null),
+    CANDIDATE_CERTIFICATION_REQUIREMENT("CandidateCertificationRequirement", CandidateCertificationRequirement.class, CandidateCertificationRequirementWrapper.class, CandidateCertificationRequirementListWrapper.class, "CandidateCertificationRequirementEditHistory", "CandidateCertificationRequirementEditHistoryFieldChange"),
+    CERTIFICATION_REQUIREMENT("CertificationRequirement", CertificationRequirement.class, CertificationRequirementWrapper.class, CertificationRequirementListWrapper.class, "CertificationRequirementListWrapperEditHistory", "CertificationRequirementListWrapperEditHistoryFieldChange"),
+    JOB_SUBMISSION_CERTIFICATION_REQUIREMENT("JobSubmissionCertificationRequirement", JobSubmissionCertificationRequirement.class, JobSubmissionCertificationRequirementWrapper.class, JobSubmissionCertificationRequirementListWrapper.class, "JobSubmissionCertificationRequirementEditHistory", "JobSubmissionCertificationRequirementEditHistoryFieldChange"),
 
 
     // Custom Objects
