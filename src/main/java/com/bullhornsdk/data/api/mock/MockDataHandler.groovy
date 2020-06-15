@@ -1056,7 +1056,12 @@ public class MockDataHandler {
 		for(String fullPath: fields){
 			// Removes spaces in order to find properties
 			fullPath = fullPath.replaceAll(" ", "");
-			setValueFromPath(copyOfFromEntity,toEntity,fullPath);
+
+            try {
+                setValueFromPath(copyOfFromEntity,toEntity,fullPath)
+            } catch(MissingPropertyException e) {
+                log.error("Missing property " + e.getProperty() + " on entity " + fromEntity.getClass().getSimpleName());
+            }
 		}
 
 		return toEntity;
@@ -1086,8 +1091,13 @@ public class MockDataHandler {
 
 		if(nestedPath(fullPropertyPath)){
 			for(partialPath in fullPropertyPath){
-				setValueFromPath(fromProperty,toProperty, partialPath);
-				if(!parentPropertyIsOneToMany(fromProperty,toProperty,path)){
+				try {
+                    setValueFromPath(fromProperty,toProperty, partialPath)
+                } catch(MissingPropertyException e) {
+                    log.error("Missing property " + e.getProperty() + " on entity " + to.getClass().getSimpleName());
+                }
+
+                if(!parentPropertyIsOneToMany(fromProperty,toProperty,path)){
 					fromProperty = fromProperty?."${partialPath}";
 					toProperty = toProperty?."${partialPath}";
 				}
