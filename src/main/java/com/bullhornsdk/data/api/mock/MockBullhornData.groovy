@@ -429,4 +429,10 @@ public class MockBullhornData implements BullhornData {
     public void setExecuteFormTriggers(Boolean executeFormTriggers) {
         this.executeFormTriggers = executeFormTriggers;
     }
+
+    @Override
+    public <T extends BullhornEntity, L extends ListWrapper<T>> L getOptions(Class<T> type, OptionsParams params) { return null }
+
+    @Override
+    public <T extends BullhornEntity, L extends ListWrapper<T>> L getOptions(Class<T> type, Set<Integer> optionsIds, OptionsParams params){ return null }
 }
