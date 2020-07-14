@@ -109,6 +109,7 @@ import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.list.NoteListWrapper;
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper;
 import com.bullhornsdk.data.model.response.list.StandardListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume;
@@ -833,7 +834,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public <T extends BullhornEntity, L extends ListWrapper<T>> L getOptions(Class<T> type, OptionsParams params) {
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
         return handleGetOptions(type, params);
     }
 
@@ -841,7 +842,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public <T extends BullhornEntity, L extends ListWrapper<T>> L getOptions(Class<T> type, Set<Integer> optionsIds, OptionsParams params) {
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
         return handleGetOptions(type, optionsIds, params);
     }
 
@@ -1928,11 +1929,13 @@ public class StandardBullhornData implements BullhornData {
      * @param params
      * @return
      */
-    protected <T extends BullhornEntity, L extends ListWrapper<T>> L handleGetOptions(Class<T> type, OptionsParams params) {
+    protected PropertyOptionsListWrapper handleGetOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForOptions(BullhornEntityInfo.getTypesRestEntityName(type), params);
         String url = restUrlFactory.assembleOptionsUrl(params);
 
-        return (L) this.performGetRequest(url,  BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        String jsonString = this.performGetRequest(url, String.class, uriVariables);
+
+        return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString, PropertyOptionsListWrapper.class);
     }
 
     /**
@@ -1943,11 +1946,13 @@ public class StandardBullhornData implements BullhornData {
      * @param params
      * @return
      */
-    protected <T extends BullhornEntity, L extends ListWrapper<T>> L handleGetOptions(Class<T> type, Set<Integer> optionsIds, OptionsParams params) {
+    protected PropertyOptionsListWrapper handleGetOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForOptionsWithIds(BullhornEntityInfo.getTypesRestEntityName(type), params, optionsIds);
         String url = restUrlFactory.assembleOptionsUrl(params);
 
-        return (L) this.performGetRequest(url,  BullhornEntityInfo.getTypesListWrapperType(type), uriVariables);
+        String jsonString = this.performGetRequest(url, String.class, uriVariables);
+
+        return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString, PropertyOptionsListWrapper.class);
     }
 
 	/*

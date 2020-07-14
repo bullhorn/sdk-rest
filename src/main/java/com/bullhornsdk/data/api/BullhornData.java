@@ -50,6 +50,7 @@ import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 
@@ -806,7 +807,7 @@ public interface BullhornData {
      * @see ParamFactory
      * @return a ListWrapper of type T
      */
-    public <T extends BullhornEntity, L extends ListWrapper<T>> L getOptions(Class<T> type, OptionsParams params);
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, OptionsParams params);
 
     /**
      * Gets property options for provided entity type
@@ -819,5 +820,5 @@ public interface BullhornData {
      * @see ParamFactory
      * @return a ListWrapper of type T
      */
-    public <T extends BullhornEntity, L extends ListWrapper<T>> L getOptions(Class<T> type, Set<Integer> optionsIds, OptionsParams params);
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params);
 }
