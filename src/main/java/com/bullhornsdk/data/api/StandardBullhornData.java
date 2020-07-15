@@ -52,6 +52,7 @@ import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.PropertyOptionsResult;
 import com.bullhornsdk.data.model.entity.core.standard.Settings;
 import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -834,16 +835,24 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
-        return handleGetOptions(type, params);
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
+        PropertyOptionsListWrapper wrapper = handleGetOptions(type, params);
+        if (wrapper == null) {
+            return Collections.emptyList();
+        }
+        return wrapper.getData();
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
-        return handleGetOptions(type, optionsIds, params);
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
+        PropertyOptionsListWrapper wrapper = handleGetOptions(type, params);
+        if (wrapper == null) {
+            return Collections.emptyList();
+        }
+        return wrapper.getData();
     }
 
 	/*

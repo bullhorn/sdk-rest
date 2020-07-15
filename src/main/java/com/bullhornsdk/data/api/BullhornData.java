@@ -13,6 +13,7 @@ import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.PropertyOptionsResult;
 import com.bullhornsdk.data.model.entity.core.standard.Settings;
 import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -50,7 +51,6 @@ import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
-import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 
@@ -805,9 +805,9 @@ public interface BullhornData {
      *
      * @see SearchParams
      * @see ParamFactory
-     * @return a ListWrapper of type T
+     * @return a List of PropertyOptionsResult
      */
-    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, OptionsParams params);
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, OptionsParams params);
 
     /**
      * Gets property options for provided entity type
@@ -818,7 +818,7 @@ public interface BullhornData {
      *
      * @see SearchParams
      * @see ParamFactory
-     * @return a ListWrapper of type T
+     * @return a List of PropertyOptionsResult
      */
-    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params);
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params);
 }
