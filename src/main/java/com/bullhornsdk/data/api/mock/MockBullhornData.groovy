@@ -430,8 +430,12 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, OptionsParams params) { return null }
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
+        return mockDataHandler.getOptions(type, params);
+    }
 
     @Override
-    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params){ return null }
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params){
+        return mockDataHandler.getOptions(type, optionsIds, params);
+    }
 }

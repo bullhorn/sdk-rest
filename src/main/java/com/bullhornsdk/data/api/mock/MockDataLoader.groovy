@@ -49,6 +49,7 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsRespo
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils
 import org.apache.log4j.Logger
@@ -71,6 +72,7 @@ public class MockDataLoader {
     private Settings settingsObjectResultCache;
     private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
     private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
+    private List<PropertyOptionsResult> propertyOptionsResultListCache;
 
     private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
     private List<FastFindResult> fastFindResultList;
@@ -80,7 +82,8 @@ public class MockDataLoader {
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
     private Map<String, Object> settingsResultMap;
     private Settings settingsObjectResult;
-    private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
+    private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap
+    private List<PropertyOptionsResult> propertyOptionsResultList;
 
     private Map<Class<? extends BullhornEntity>, String> entityFileNames;
     private Map<Class<? extends BullhornEntity>, String> metaDataFileNames;
@@ -179,6 +182,14 @@ public class MockDataLoader {
             this.settingsObjectResultCache = KryoObjectCopyHelper.copy(settingsObjectResult);
         }
         return settingsObjectResult;
+    }
+
+    public List<PropertyOptionsResult> getPropertyOptionsResults() {
+        if (propertyOptionsResultList == null) {
+            reloadPropertyOptionsResults();
+            this.propertyOptionsResultListCache = KryoObjectCopyHelper.copy(propertyOptionsResultList);
+        }
+        return propertyOptionsResultList;
     }
 
     /**
@@ -293,6 +304,12 @@ public class MockDataLoader {
         this.restMetaDataMap = KryoObjectCopyHelper.copy(restMetaDataMapCache);
         return restMetaDataMap;
 
+    }
+
+    public void reloadPropertyOptionsResults() {
+        String jsonData = getFileData("propertyoptions-data.txt");
+        PropertyOptionsListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, PropertyOptionsListWrapper.class);
+        this.propertyOptionsResultList = listWrapper.getData();
     }
 
     /**
