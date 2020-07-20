@@ -26,33 +26,33 @@ public class StandardOptionsParams implements OptionsParams {
 
 
     @Override
-    public void getFilter() {
-
+    public String getFilter() {
+        return filter;
     }
 
     @Override
     public void setFilter(String filter) {
-
+        this.filter = filter;
     }
 
     @Override
     public Integer getCount() {
-        return null;
+        return this.count;
     }
 
     @Override
     public void setCount(Integer count) {
-
+        this.count = count;
     }
 
     @Override
     public Integer getStart() {
-        return null;
+        return start;
     }
 
     @Override
     public void setStart(Integer start) {
-
+        this.start = start;
     }
 
     @Override

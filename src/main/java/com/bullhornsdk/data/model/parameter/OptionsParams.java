@@ -13,7 +13,7 @@ public interface OptionsParams extends RequestParameters {
      *
      * @param filter
      */
-    public void getFilter();
+    public String getFilter();
 
     /**
      * Filter string to limit data returned.
