@@ -410,6 +410,7 @@ public class MockDataLoader {
         entityFiles.put(Department.class, "department-data.txt");
         entityFiles.put(DistributionList.class, "distributionlist-data.txt");
         entityFiles.put(File.class, "file-data.txt");
+        entityFiles.put(GoalTarget.class, "goaltarget-data.txt");
         entityFiles.put(HousingComplex.class, "housingcomplex-data.txt");
         entityFiles.put(HousingComplexUnit.class, "housingcomplexunit-data.txt");
         entityFiles.put(HousingComplexFurnitureDelivery.class, "housingcomplexfurnituredelivery-data.txt");
@@ -602,6 +603,7 @@ public class MockDataLoader {
         entityMetaFiles.put(Department.class, "meta/department-meta-data.txt");
         entityMetaFiles.put(DistributionList.class, "meta/distributionlist-meta-data.txt");
         entityMetaFiles.put(File.class, "meta/file-meta-data.txt");
+        entityMetaFiles.put(GoalTarget.class, "meta/goaltarget-meta-data.txt");
         entityMetaFiles.put(HousingComplex.class, "meta/housingcomplex-meta-data.txt");
         entityMetaFiles.put(HousingComplexUnit.class, "meta/housingcomplexunit-meta-data.txt");
         entityMetaFiles.put(HousingComplexFurnitureDelivery.class, "meta/housingcomplexfurnituredelivery-meta-data.txt");

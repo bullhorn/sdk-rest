@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "userID", "goalID", "goalPeriodID", "periodname", "startDate", "endDate", "target"})
+@JsonPropertyOrder({"id", "userId", "goalId", "goalPeriodId", "periodname", "startDate", "endDate", "target"})
 public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity, QueryEntity, AssociationEntity, HardDeleteEntity {
 
     private Integer id;
@@ -47,32 +47,32 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
         this.id = id;
     }
 
-    @JsonProperty("userID")
+    @JsonProperty("userId")
      public Integer getUserId() {
         return userID;
     }
 
-    @JsonProperty("userID")
+    @JsonProperty("userId")
     public void setUserId(Integer userID) {
         this.userID = userID;
     }
 
-    @JsonProperty("goalID")
+    @JsonProperty("goalId")
     public Integer getGoalId() {
         return goalID;
     }
 
-    @JsonProperty("goalID")
+    @JsonProperty("goalId")
     public void setGoalId(Integer goalID) {
         this.goalID = goalID;
     }
 
-    @JsonProperty("goalPeriodID")
+    @JsonProperty("goalPeriodId")
     public Integer getGoalPeriodId() {
         return goalPeriodID;
     }
 
-    @JsonProperty("goalPeriodID")
+    @JsonProperty("goalPeriodId")
     public void setGoalPeriodId(Integer goalPeriodID) {
         this.goalPeriodID = goalPeriodID;
     }
@@ -82,7 +82,7 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
         return periodname;
     }
 
-    @JsonProperty("periodName")
+    @JsonProperty("periodname")
     public void setPeriodName(String periodName) {
         this.periodname = periodName;
     }
@@ -121,7 +121,6 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof GoalTarget)) return false;
-        if (!super.equals(o)) return false;
 
         GoalTarget goalTarget = (GoalTarget) o;
 
@@ -138,7 +137,7 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
+        int result = 0;
         result = 31 * result + (id != null ? id.hashCode() : 0);
         result = 31 * result + (userID != null ? userID.hashCode() : 0);
         result = 31 * result + (goalID != null ? goalID.hashCode() : 0);
