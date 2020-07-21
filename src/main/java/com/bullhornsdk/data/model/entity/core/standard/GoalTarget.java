@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "userID", "goalID", "goalPeriodID", "periodName", "startDate", "endDate", "target"})
+@JsonPropertyOrder({"id", "userID", "goalID", "goalPeriodID", "periodname", "startDate", "endDate", "target"})
 public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity, QueryEntity, AssociationEntity, HardDeleteEntity {
 
     private Integer id;
@@ -26,7 +26,7 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
 
     private Integer goalPeriodID;
 
-    private String periodName;
+    private String periodname;
 
     private DateTime startDate;
 
@@ -63,7 +63,7 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
     }
 
     @JsonProperty("goalID")
-    public void setGoalIdId(Integer goalID) {
+    public void setGoalId(Integer goalID) {
         this.goalID = goalID;
     }
 
@@ -77,14 +77,14 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
         this.goalPeriodID = goalPeriodID;
     }
 
-    @JsonProperty("periodName")
+    @JsonProperty("periodname")
     public String getPeriodName() {
-        return periodName;
+        return periodname;
     }
 
     @JsonProperty("periodName")
     public void setPeriodName(String periodName) {
-        this.periodName = periodName;
+        this.periodname = periodName;
     }
 
     @JsonProperty("startDate")
@@ -130,7 +130,7 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
         if (goalID != null ? !goalID.equals(goalTarget.goalID) : goalTarget.goalID != null) return false;
         if (goalPeriodID != null ? !goalPeriodID.equals(goalTarget.goalPeriodID) : goalTarget.goalPeriodID != null)
             return false;
-        if (periodName != null ? !periodName.equals(goalTarget.periodName) : goalTarget.periodName != null) return false;
+        if (periodname != null ? !periodname.equals(goalTarget.periodname) : goalTarget.periodname != null) return false;
         if (startDate != null ? !startDate.equals(goalTarget.startDate) : goalTarget.startDate != null) return false;
         if (endDate != null ? !endDate.equals(goalTarget.endDate) : goalTarget.endDate != null) return false;
         return target != null ? target.equals(goalTarget.target) : goalTarget.target == null;
@@ -143,7 +143,7 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
         result = 31 * result + (userID != null ? userID.hashCode() : 0);
         result = 31 * result + (goalID != null ? goalID.hashCode() : 0);
         result = 31 * result + (goalPeriodID != null ? goalPeriodID.hashCode() : 0);
-        result = 31 * result + (periodName != null ? periodName.hashCode() : 0);
+        result = 31 * result + (periodname != null ? periodname.hashCode() : 0);
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + (target != null ? target.hashCode() : 0);
@@ -164,7 +164,7 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
             .append(goalPeriodID).append('\'')
             .append(",\n\t\"periodName\": ")
             .append("'")
-            .append(periodName).append('\'')
+            .append(periodname).append('\'')
             .append(",\n\t\"startDate\": ")
             .append(startDate).append('\'')
             .append(",\n\t\"endDate\": ")
