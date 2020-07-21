@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "userID", "goalID", "goalPeriodID", "periodName", "startDate", "endDate", "target"})
-public class GoalTarget extends BaseCustomFields implements AllRecordsEntity, CreateEntity, UpdateEntity, QueryEntity, AssociationEntity {
+public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity, QueryEntity, AssociationEntity, HardDeleteEntity {
 
     private Integer id;
 
