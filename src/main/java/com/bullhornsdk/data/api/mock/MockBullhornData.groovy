@@ -34,7 +34,6 @@ import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
 
 import java.io.File
-
 /**
  * Testing implementation populated with local in memory test data.
  *
@@ -428,5 +427,15 @@ public class MockBullhornData implements BullhornData {
     @Override
     public void setExecuteFormTriggers(Boolean executeFormTriggers) {
         this.executeFormTriggers = executeFormTriggers;
+    }
+
+    @Override
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
+        return mockDataHandler.getOptions(type, params);
+    }
+
+    @Override
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params){
+        return mockDataHandler.getOptions(type, optionsIds, params);
     }
 }

@@ -1,25 +1,30 @@
 package com.bullhornsdk.data.model.entity.core.certificationrequirement;
 
-import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
+import java.util.Objects;
+
+import org.joda.time.DateTime;
+
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.optionslookup.CertificationRequirementStatusLookup;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
 import com.bullhornsdk.data.model.entity.core.standard.Certification;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsG;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
 import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.joda.time.DateTime;
-
-import javax.validation.constraints.Size;
-import java.util.Objects;
 
 /**
  * Created by mkesmetzis 27-Apr-20
  */
 public class AbstractRequirement extends CustomFieldsG implements UpdateEntity, CreateEntity, QueryEntity,
-    AssociationEntity, EditHistoryEntity {
+    SoftDeleteEntity, AssociationEntity, EditHistoryEntity {
 
     private Integer id;
     private CandidateCertification candidateCertification;
@@ -32,11 +37,9 @@ public class AbstractRequirement extends CustomFieldsG implements UpdateEntity, 
     private Integer matchingCredentialCount;
     private CorporateUser modifyingUser;
     private CorporateUser owner;
-    private SpecializedOptionsLookup status;
-    @Size(max = 100)
-    private String userCertificationName;
-    @Size(max = 30)
-    private String userCertificationStatus;
+    private CertificationRequirementStatusLookup status;
+
+    private Boolean isDeleted;
 
     public AbstractRequirement() {
     }
@@ -158,33 +161,23 @@ public class AbstractRequirement extends CustomFieldsG implements UpdateEntity, 
     }
 
     @JsonProperty("status")
-    public SpecializedOptionsLookup getStatus() {
+    public CertificationRequirementStatusLookup getStatus() {
         return status;
     }
 
     @JsonProperty("status")
-    public void setStatus(SpecializedOptionsLookup status) {
+    public void setStatus(CertificationRequirementStatusLookup status) {
         this.status = status;
     }
 
-    @JsonProperty("userCertificationName")
-    public String getUserCertificationName() {
-        return userCertificationName;
+    @JsonProperty("isDeleted")
+    public Boolean getIsDeleted() {
+        return isDeleted;
     }
 
-    @JsonProperty("userCertificationName")
-    public void setUserCertificationName(String userCertificationName) {
-        this.userCertificationName = userCertificationName;
-    }
-
-    @JsonProperty("userCertificationStatus")
-    public String getUserCertificationStatus() {
-        return userCertificationStatus;
-    }
-
-    @JsonProperty("userCertificationStatus")
-    public void setUserCertificationStatus(String userCertificationStatus) {
-        this.userCertificationStatus = userCertificationStatus;
+    @JsonProperty("isDeleted")
+    public void setIsDeleted(Boolean deleted) {
+        isDeleted = deleted;
     }
 
     @Override
@@ -202,8 +195,6 @@ public class AbstractRequirement extends CustomFieldsG implements UpdateEntity, 
             ", modifyingUser=" + modifyingUser +
             ", owner=" + owner +
             ", status=" + status +
-            ", userCertificationName='" + userCertificationName + '\'' +
-            ", userCertificationStatus='" + userCertificationStatus + '\'' +
             '}';
     }
 
@@ -224,13 +215,11 @@ public class AbstractRequirement extends CustomFieldsG implements UpdateEntity, 
             Objects.equals(matchingCredentialCount, that.matchingCredentialCount) &&
             Objects.equals(modifyingUser, that.modifyingUser) &&
             Objects.equals(owner, that.owner) &&
-            Objects.equals(status, that.status) &&
-            Objects.equals(userCertificationName, that.userCertificationName) &&
-            Objects.equals(userCertificationStatus, that.userCertificationStatus);
+            Objects.equals(status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, candidateCertification, certification, certificationFileAttachments, dateAdded, dateExpiration, documentDeadline, fileAttachments, matchingCredentialCount, modifyingUser, owner, status, userCertificationName, userCertificationStatus);
+        return Objects.hash(super.hashCode(), id, candidateCertification, certification, certificationFileAttachments, dateAdded, dateExpiration, documentDeadline, fileAttachments, matchingCredentialCount, modifyingUser, owner, status);
     }
 }
