@@ -124,6 +124,8 @@ public enum BullhornEntityInfo {
     DEPARTMENT("Department", Department.class, DepartmentWrapper.class, DepartmentListWrapper.class, null, null),
     DISTRIBUTION_LIST("DistributionList", DistributionList.class, DistributionListWrapper.class, DistributionListListWrapper.class, null, null),
     FILE("File", File.class, FileEntityWrapper.class, FileEntityListWrapper.class, null, null),
+    GOAL_TARGET("GoalTarget", GoalTarget.class, GoalTargetWrapper.class,
+        GoalTargetListWrapper.class, null, null),
     HOUSING_COMPLEX("HousingComplex", HousingComplex.class, HousingComplexWrapper.class, HousingComplexListWrapper.class, null, null),
     HOUSING_COMPLEX_UNIT("HousingComplexUnit", HousingComplexUnit.class, HousingComplexUnitWrapper.class, HousingComplexUnitListWrapper.class, null, null),
     HOUSING_COMPLEX_FURNITURE_DELIVERY("HousingComplexFurnitureDelivery", HousingComplexFurnitureDelivery.class, HousingComplexFurnitureDeliveryWrapper.class, HousingComplexFurnitureDeliveryListWrapper.class, null, null),
