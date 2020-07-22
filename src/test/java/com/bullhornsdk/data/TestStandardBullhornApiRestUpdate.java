@@ -14,7 +14,15 @@ import org.junit.After;
 import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
+import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment;
+import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment;
+import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment;
+import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment;
+import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment;
+import com.bullhornsdk.data.model.entity.file.PlacementFileAttachment;
 import com.bullhornsdk.data.model.response.crud.UpdateResponse;
+import com.google.common.collect.Sets;
 
 public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends BaseTest {
 	private final Logger log = Logger.getLogger(TestStandardBullhornApiRestUpdate.class);
@@ -607,21 +615,21 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
     @Test
     public void testUpdateCertificationFileAttachment() {
 
-        CertificationFileAttachment entity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "description"));
+        CertificationFileAttachment entity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "name"));
 
         this.entity = (T) entity;
 
-        previousValue = entity.getDescription();
+        previousValue = entity.getName();
 
         newValue = previousValue + "toad";
 
-        entity.setDescription(newValue);
+        entity.setName(newValue);
 
         UpdateResponse response = bullhornData.updateEntity(entity);
 
-        CertificationFileAttachment updatedEntity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "description"));
-        entity.setDescription(previousValue);
-        this.runAssertions(response, newValue, updatedEntity.getDescription());
+        CertificationFileAttachment updatedEntity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "name"));
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
 
     }
 

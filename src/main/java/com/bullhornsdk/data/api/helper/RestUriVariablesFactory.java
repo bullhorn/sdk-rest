@@ -6,11 +6,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.bullhornsdk.data.exception.NoAllFieldsException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.BullhornData;
+import com.bullhornsdk.data.exception.NoAllFieldsException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -24,6 +24,7 @@ import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -51,6 +52,7 @@ public class RestUriVariablesFactory {
 	private static final String ID = "id";
 	private static final String MAX_EVENTS = "maxEvents";
 	private static final String META = "meta";
+    private static final String OPTIONS_IDS = "optionsIds";
 	private static final String PRIVATE_LABEL_ID = "privateLabelId";
 	private static final String QUERY = "query";
     private static final String REQUEST_ID = "requestId";
@@ -627,4 +629,25 @@ public class RestUriVariablesFactory {
 		uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
 		return uriVariables;
 	}
+
+    public Map<String, String> getUriVariablesForOptions(BullhornEntityInfo entityInfo, OptionsParams params) {
+        if (params == null) {
+            params = ParamFactory.optionsParams();
+        }
+        Map<String, String> uriVariables = params.getParameterMap();
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        return uriVariables;
+    }
+
+    public Map<String, String> getUriVariablesForOptionsWithIds(BullhornEntityInfo entityInfo, OptionsParams params, Set<Integer> optionsIds) {
+        if (params == null) {
+            params = ParamFactory.optionsParams();
+        }
+        Map<String, String> uriVariables = params.getParameterMap();
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        uriVariables.put(OPTIONS_IDS, StringUtils.join(optionsIds, ","));
+        return uriVariables;
+    }
 }
