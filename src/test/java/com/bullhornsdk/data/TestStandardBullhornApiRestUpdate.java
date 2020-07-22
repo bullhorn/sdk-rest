@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.bullhornsdk.data.model.entity.core.standard.*;
-import com.bullhornsdk.data.model.entity.file.*;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
