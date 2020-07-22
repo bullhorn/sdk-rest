@@ -29,9 +29,9 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
 
     private String periodname;
 
-    private Date startDate;
+    private String startDate;
 
-    private Date endDate;
+    private String endDate;
 
     private Integer target;
 
@@ -89,22 +89,22 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
     }
 
     @JsonProperty("startDate")
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
     @JsonProperty("startDate")
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
     @JsonProperty("endDate")
-    public Date getEndDate() {
+    public String getEndDate() {
         return startDate;
     }
 
     @JsonProperty("endDate")
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
