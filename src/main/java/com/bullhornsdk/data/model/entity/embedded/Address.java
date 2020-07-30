@@ -4,7 +4,6 @@ import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
  * 
@@ -22,6 +21,8 @@ public class Address extends AbstractEntity {
 
     @JsonIgnore
     private String state;
+
+    private Integer stateID;
 
     private String zip;
 
@@ -67,6 +68,15 @@ public class Address extends AbstractEntity {
     @JsonIgnore
     public void setState(String state) {
         this.state = state;
+    }
+
+    @JsonProperty("stateID")
+    public Integer getStateID() {
+        return stateID;
+    }
+
+    public void setStateID(Integer stateID) {
+        this.stateID = stateID;
     }
 
     @JsonProperty("zip")
@@ -117,6 +127,7 @@ public class Address extends AbstractEntity {
         result = prime * result + ((city == null) ? 0 : city.hashCode());
         result = prime * result + ((countryID == null) ? 0 : countryID.hashCode());
         result = prime * result + ((state == null) ? 0 : state.hashCode());
+        result = prime * result + ((stateID == null) ? 0 : stateID.hashCode());
         result = prime * result + ((zip == null) ? 0 : zip.hashCode());
         return result;
     }
@@ -132,6 +143,7 @@ public class Address extends AbstractEntity {
         if (address2 != null ? !address2.equals(address.address2) : address.address2 != null) return false;
         if (city != null ? !city.equals(address.city) : address.city != null) return false;
         if (state != null ? !state.equals(address.state) : address.state != null) return false;
+        if (stateID != null ? !stateID.equals(address.stateID) : address.stateID != null) return false;
         if (zip != null ? !zip.equals(address.zip) : address.zip != null) return false;
         if (countryID != null ? !countryID.equals(address.countryID) : address.countryID != null) return false;
         return countryName != null ? countryName.equals(address.countryName) : address.countryName == null;
@@ -144,8 +156,9 @@ public class Address extends AbstractEntity {
             ", address2='" + address2 + '\'' +
             ", city='" + city + '\'' +
             ", state='" + state + '\'' +
+            ", stateID='" + stateID + '\'' +
             ", zip='" + zip + '\'' +
-            ", countryID=" + countryID +
+            ", countryID=" + countryID + '\'' +
             ", countryName='" + countryName + '\'' +
             '}';
     }
