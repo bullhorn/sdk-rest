@@ -1,0 +1,826 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1052,
+            "adjustmentSequenceNumber": 0,
+            "amount": 400.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596823112357,
+            "dateLastModified": 1596823168433,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1051
+            },
+            "quantity": 10.000000,
+            "rate": 40.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 1051,
+            "adjustmentSequenceNumber": 0,
+            "amount": 240.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596823112357,
+            "dateLastModified": 1596823168433,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1050
+            },
+            "quantity": 6.000000,
+            "rate": 40.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 1050,
+            "adjustmentSequenceNumber": 0,
+            "amount": 240.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596823112357,
+            "dateLastModified": 1596823168433,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1052
+            },
+            "quantity": 4.000000,
+            "rate": 60.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 1049,
+            "adjustmentSequenceNumber": 0,
+            "amount": 320.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596823112357,
+            "dateLastModified": 1596823168433,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1049
+            },
+            "quantity": 8.000000,
+            "rate": 40.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 1048,
+            "adjustmentSequenceNumber": 0,
+            "amount": 320.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596823112353,
+            "dateLastModified": 1596823168430,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1048
+            },
+            "quantity": 8.000000,
+            "rate": 40.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 1047,
+            "adjustmentSequenceNumber": 0,
+            "amount": 320.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596823112353,
+            "dateLastModified": 1596823168430,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1047
+            },
+            "quantity": 8.000000,
+            "rate": 40.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 1046,
+            "adjustmentSequenceNumber": 0,
+            "amount": 250.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596820389223,
+            "dateLastModified": 1596820389223,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1046
+            },
+            "quantity": null,
+            "rate": null,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 1045,
+            "adjustmentSequenceNumber": 0,
+            "amount": 0.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596819056543,
+            "dateLastModified": 1596819056543,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1042
+            },
+            "quantity": 0.000000,
+            "rate": 0.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 5,
+                "label": "Units"
+            }
+        },
+        {
+            "id": 1044,
+            "adjustmentSequenceNumber": 0,
+            "amount": 55.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596819056540,
+            "dateLastModified": 1596819056540,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1041
+            },
+            "quantity": null,
+            "rate": null,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 1043,
+            "adjustmentSequenceNumber": 0,
+            "amount": 65.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596819056540,
+            "dateLastModified": 1596819056540,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1045
+            },
+            "quantity": null,
+            "rate": null,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 1042,
+            "adjustmentSequenceNumber": 0,
+            "amount": 554.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596819056540,
+            "dateLastModified": 1596819056540,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1039
+            },
+            "quantity": null,
+            "rate": null,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 1041,
+            "adjustmentSequenceNumber": 0,
+            "amount": 175.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596819056537,
+            "dateLastModified": 1596819056537,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1043
+            },
+            "quantity": null,
+            "rate": null,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 1040,
+            "adjustmentSequenceNumber": 0,
+            "amount": 125.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596819056537,
+            "dateLastModified": 1596819056537,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1040
+            },
+            "quantity": null,
+            "rate": null,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 1039,
+            "adjustmentSequenceNumber": 0,
+            "amount": 550.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596819056530,
+            "dateLastModified": 1596819056530,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1044
+            },
+            "quantity": null,
+            "rate": null,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 1038,
+            "adjustmentSequenceNumber": 0,
+            "amount": 800.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596749782807,
+            "dateLastModified": 1596819056540,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1038
+            },
+            "quantity": 8.000000,
+            "rate": 100.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 2,
+                "name": "Submitted"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 1060,
+            "adjustmentSequenceNumber": 0,
+            "amount": 400.000000,
+            "comment": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1596823112357,
+            "dateLastModified": 1596823168433,
+            "payExportBatch": null,
+            "payExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "payMaster": {
+                "id": 1051
+            },
+            "quantity": 10.000000,
+            "rate": 40.000000,
+            "recordingDate": "2020-08-07",
+            "reversalOfTransaction": null,
+            "transactionOrigin": {
+                "id": 3,
+                "name": "PeopleNet"
+            },
+            "transactionStatus": {
+                "id": 4,
+                "name": "Approved"
+            },
+            "transactionType": {
+                "id": 1,
+                "name": "New"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+              "id": 1061,
+              "adjustmentSequenceNumber": 0,
+              "amount": 400.000000,
+              "comment": null,
+              "currencyUnit": {
+                  "id": 166,
+                  "alphabeticCode": "USD",
+                  "name": "US Dollar"
+              },
+              "dateAdded": 1596823112357,
+              "dateLastModified": 1596823168433,
+              "payExportBatch": null,
+              "payExportBatches": {
+                  "total": 0,
+                  "data": []
+              },
+              "payMaster": {
+                  "id": 1051
+              },
+              "quantity": 10.000000,
+              "rate": 40.000000,
+              "recordingDate": "2020-08-07",
+              "reversalOfTransaction": null,
+              "transactionOrigin": {
+                  "id": 3,
+                  "name": "PeopleNet"
+              },
+              "transactionStatus": {
+                  "id": 4,
+                  "name": "Approved"
+              },
+              "transactionType": {
+                  "id": 1,
+                  "name": "New"
+              },
+              "unitOfMeasure": {
+                  "id": 1,
+                  "label": "Hours"
+              }
+          },
+          {
+              "id": 1062,
+              "adjustmentSequenceNumber": 0,
+              "amount": 400.000000,
+              "comment": null,
+              "currencyUnit": {
+                  "id": 166,
+                  "alphabeticCode": "USD",
+                  "name": "US Dollar"
+              },
+              "dateAdded": 1596823112357,
+              "dateLastModified": 1596823168433,
+              "payExportBatch": null,
+              "payExportBatches": {
+                  "total": 0,
+                  "data": []
+              },
+              "payMaster": {
+                  "id": 1051
+              },
+              "quantity": 10.000000,
+              "rate": 40.000000,
+              "recordingDate": "2020-08-07",
+              "reversalOfTransaction": null,
+              "transactionOrigin": {
+                  "id": 3,
+                  "name": "PeopleNet"
+              },
+              "transactionStatus": {
+                  "id": 4,
+                  "name": "Approved"
+              },
+              "transactionType": {
+                  "id": 1,
+                  "name": "New"
+              },
+              "unitOfMeasure": {
+                  "id": 1,
+                  "label": "Hours"
+              }
+          },
+          {
+              "id": 1063,
+              "adjustmentSequenceNumber": 0,
+              "amount": 400.000000,
+              "comment": null,
+              "currencyUnit": {
+                  "id": 166,
+                  "alphabeticCode": "USD",
+                  "name": "US Dollar"
+              },
+              "dateAdded": 1596823112357,
+              "dateLastModified": 1596823168433,
+              "payExportBatch": null,
+              "payExportBatches": {
+                  "total": 0,
+                  "data": []
+              },
+              "payMaster": {
+                  "id": 1051
+              },
+              "quantity": 10.000000,
+              "rate": 40.000000,
+              "recordingDate": "2020-08-07",
+              "reversalOfTransaction": null,
+              "transactionOrigin": {
+                  "id": 3,
+                  "name": "PeopleNet"
+              },
+              "transactionStatus": {
+                  "id": 4,
+                  "name": "Approved"
+              },
+              "transactionType": {
+                  "id": 1,
+                  "name": "New"
+              },
+              "unitOfMeasure": {
+                  "id": 1,
+                  "label": "Hours"
+              }
+          },
+          {
+              "id": 1064,
+              "adjustmentSequenceNumber": 0,
+              "amount": 400.000000,
+              "comment": null,
+              "currencyUnit": {
+                  "id": 166,
+                  "alphabeticCode": "USD",
+                  "name": "US Dollar"
+              },
+              "dateAdded": 1596823112357,
+              "dateLastModified": 1596823168433,
+              "payExportBatch": null,
+              "payExportBatches": {
+                  "total": 0,
+                  "data": []
+              },
+              "payMaster": {
+                  "id": 1051
+              },
+              "quantity": 10.000000,
+              "rate": 40.000000,
+              "recordingDate": "2020-08-07",
+              "reversalOfTransaction": null,
+              "transactionOrigin": {
+                  "id": 3,
+                  "name": "PeopleNet"
+              },
+              "transactionStatus": {
+                  "id": 4,
+                  "name": "Approved"
+              },
+              "transactionType": {
+                  "id": 1,
+                  "name": "New"
+              },
+              "unitOfMeasure": {
+                  "id": 1,
+                  "label": "Hours"
+              }
+          }
+    ]
+}
