@@ -3,7 +3,7 @@
     "count": 20,
     "data": [
         {
-            "id": 1052,
+            "id": 1,
             "adjustmentSequenceNumber": 0,
             "amount": 400.000000,
             "comment": null,
