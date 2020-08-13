@@ -32,6 +32,7 @@ import com.bullhornsdk.data.model.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.model.response.list.StandardListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume
@@ -71,6 +72,7 @@ public class MockDataHandler {
 	private Settings settingsObjectResults;
     private StandardGetEventsResponse getEventsResponse;
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
+    private List<PropertyOptionsResult> propertyOptionsResults;
 
 	public MockDataHandler() {
 		this.mockDataLoader = new MockDataLoader();
@@ -85,6 +87,7 @@ public class MockDataHandler {
         this.getEventsResponse = mockDataLoader.getEventsResponse();
         this.getLastRequestIdResponse = mockDataLoader.getLastRequestIdResponse();
 		this.queryClosures = addQueryClosures();
+        this.propertyOptionsResults = mockDataLoader.getPropertyOptionsResults();
 	}
 
 	public void refreshTestData(){
@@ -320,6 +323,26 @@ public class MockDataHandler {
 		FastFindListWrapper wrapper = new FastFindListWrapper(result);
 		return wrapper;
 	}
+
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
+        if(params == null){
+            params = ParamFactory.optionsParams();
+        }
+
+        List<PropertyOptionsResult> result = getPropertyOptionsResults();
+        PropertyOptionsListWrapper wrapper = new PropertyOptionsListWrapper(result);
+        return wrapper;
+    }
+
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
+        if(params == null){
+            params = ParamFactory.optionsParams();
+        }
+
+        List<PropertyOptionsResult> result = getPropertyOptionsResults();
+        PropertyOptionsListWrapper wrapper = new PropertyOptionsListWrapper(result);
+        return wrapper;
+    }
 
 	private <T> List<T> handleCount(List<T> entities, Integer count){
 		if(count != null && count < entities.size()){
@@ -684,6 +707,10 @@ public class MockDataHandler {
 	private Map<String,Object> getSettingsResults() {
 		return this.settingsResults;
 	}
+
+    private List<PropertyOptionsResult> getPropertyOptionsResults() {
+        return this.propertyOptionsResults;
+    }
 
 		/**
 	 * Merges non-null values from an entity to another entity. This mimics the update function where Jackson does not serialize the null
@@ -1056,7 +1083,12 @@ public class MockDataHandler {
 		for(String fullPath: fields){
 			// Removes spaces in order to find properties
 			fullPath = fullPath.replaceAll(" ", "");
-			setValueFromPath(copyOfFromEntity,toEntity,fullPath);
+
+            try {
+                setValueFromPath(copyOfFromEntity,toEntity,fullPath)
+            } catch(MissingPropertyException e) {
+                log.error("Missing property " + e.getProperty() + " on entity " + fromEntity.getClass().getSimpleName());
+            }
 		}
 
 		return toEntity;
@@ -1086,8 +1118,13 @@ public class MockDataHandler {
 
 		if(nestedPath(fullPropertyPath)){
 			for(partialPath in fullPropertyPath){
-				setValueFromPath(fromProperty,toProperty, partialPath);
-				if(!parentPropertyIsOneToMany(fromProperty,toProperty,path)){
+				try {
+                    setValueFromPath(fromProperty,toProperty, partialPath)
+                } catch(MissingPropertyException e) {
+                    log.error("Missing property " + e.getProperty() + " on entity " + to.getClass().getSimpleName());
+                }
+
+                if(!parentPropertyIsOneToMany(fromProperty,toProperty,path)){
 					fromProperty = fromProperty?."${partialPath}";
 					toProperty = toProperty?."${partialPath}";
 				}

@@ -6,6 +6,7 @@ import com.bullhornsdk.data.model.parameter.EntityParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
 import com.bullhornsdk.data.model.parameter.MetaParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -57,6 +58,10 @@ public class ParamFactory {
     
     public static CorpNotesParams corpNotesParams() {
     	return StandardCorpNotesParams.getInstance();
+    }
+
+    public static OptionsParams optionsParams() {
+        return StandardOptionsParams.getInstance();
     }
 
 }

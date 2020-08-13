@@ -230,6 +230,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
+    @Test
+    public void testQueryGoalTarget() {
+
+        ListWrapper<GoalTarget> wrapper = bullhornData.query(GoalTarget.class, "id > 0", null, queryParams);
+
+        runAssertions("ListWrapper<GoalTarget>", wrapper);
+
+    }
+
 	@Test
 	public void testQueryHousingComplexGreaterThan() {
 

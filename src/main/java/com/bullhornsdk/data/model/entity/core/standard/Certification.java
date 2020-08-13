@@ -1,23 +1,24 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import javax.validation.constraints.Size;
+import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.util.ReadOnly;
+import com.fasterxml.jackson.annotation.*;
+import org.joda.time.DateTime;
 
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "description", "name" })
-public class Certification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DeleteEntity, AllRecordsEntity {
+@JsonPropertyOrder({"id", "category", "certificationGroups", "countryID",
+    "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
+    "customInt1", "customInt2", "customInt3", "customText1", "customText2", "customText3", "customText4", "customText5",
+    "customText6", "customText7", "customText8", "customText9", "customText10", "customTextBlock1",
+    "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateLastModified",
+    "description", "expirationDateOptional", "migrateGUID", "name", "privateLabels", "specialty", "state"})
+public class Certification extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, DeleteEntity, AllRecordsEntity, DateLastModifiedEntity {
 
     private Integer id;
 
@@ -27,6 +28,27 @@ public class Certification extends AbstractEntity implements QueryEntity, Update
     @JsonIgnore
     @Size(max = 100)
     private String name;
+
+    private Category category;
+    private OneToMany<CertificationGroup> certificationGroups;
+    private Country countryID;
+    private Boolean expirationDateOptional;
+
+    @JsonIgnore
+    @Size(max = 36)
+    private String migrateGUID;
+
+    private OneToMany<PrivateLabel> privateLabels;
+
+    private Specialty specialty;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private String state;
+
+    private DateTime dateAdded;
+    private DateTime dateLastModified;
+
 
     @Override
     @JsonProperty("id")
@@ -60,54 +82,151 @@ public class Certification extends AbstractEntity implements QueryEntity, Update
         this.name = name;
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((description == null) ? 0 : description.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        return result;
+    @JsonProperty("category")
+    public Category getCategory() {
+        return category;
+    }
+
+    @JsonProperty("category")
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    @JsonProperty("certificationGroups")
+    public OneToMany<CertificationGroup> getCertificationGroups() {
+        return certificationGroups;
+    }
+
+    @JsonProperty("certificationGroups")
+    public void setCertificationGroups(OneToMany<CertificationGroup> certificationGroups) {
+        this.certificationGroups = certificationGroups;
+    }
+
+    @JsonProperty("country")
+    public Country getCountry() {
+        return countryID;
+    }
+
+    @JsonProperty("country")
+    public void setCountry(Country country) {
+        this.countryID = country;
+    }
+
+    @JsonProperty("expirationDateOptional")
+    public Boolean getExpirationDateOptional() {
+        return expirationDateOptional;
+    }
+
+    @JsonProperty("expirationDateOptional")
+    public void setExpirationDateOptional(Boolean expirationDateOptional) {
+        this.expirationDateOptional = expirationDateOptional;
+    }
+
+    @JsonProperty("migrateGUID")
+    public String getMigrateGUID() {
+        return migrateGUID;
+    }
+
+    @JsonIgnore
+    public void setMigrateGUID(String migrateGUID) {
+        this.migrateGUID = migrateGUID;
+    }
+
+    @JsonProperty("privateLabels")
+    public OneToMany<PrivateLabel> getPrivateLabels() {
+        return privateLabels;
+    }
+
+    @JsonProperty("privateLabels")
+    public void setPrivateLabels(OneToMany<PrivateLabel> privateLabels) {
+        this.privateLabels = privateLabels;
+    }
+
+    @JsonProperty("specialty")
+    public Specialty getSpecialty() {
+        return specialty;
+    }
+
+    @JsonProperty("specialty")
+    public void setSpecialty(Specialty specialty) {
+        this.specialty = specialty;
+    }
+
+    @JsonProperty("state")
+    public String getState() {
+        return state;
+    }
+
+    @JsonIgnore
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    @JsonProperty("dateAdded")
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
+
+    @ReadOnly
+    @JsonProperty("dateAdded")
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    @ReadOnly
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Certification other = (Certification) obj;
-        if (description == null) {
-            if (other.description != null)
-                return false;
-        } else if (!description.equals(other.description))
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Certification that = (Certification) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(description, that.description) &&
+            Objects.equals(name, that.name) &&
+            Objects.equals(category, that.category) &&
+            Objects.equals(certificationGroups, that.certificationGroups) &&
+            Objects.equals(countryID, that.countryID) &&
+            Objects.equals(expirationDateOptional, that.expirationDateOptional) &&
+            Objects.equals(migrateGUID, that.migrateGUID) &&
+            Objects.equals(privateLabels, that.privateLabels) &&
+            Objects.equals(specialty, that.specialty) &&
+            Objects.equals(state, that.state) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateLastModified, that.dateLastModified);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id, description, name, category, certificationGroups, countryID, expirationDateOptional, migrateGUID, privateLabels, specialty, state, dateAdded, dateLastModified);
     }
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Certification {\nid=");
-        builder.append(id);
-        builder.append(", \ndescription=");
-        builder.append(description);
-        builder.append(", \nname=");
-        builder.append(name);
-        builder.append("\n}");
-        return builder.toString();
+        return "Certification{" +
+            "id=" + id +
+            ", description='" + description + '\'' +
+            ", name='" + name + '\'' +
+            ", category=" + category +
+            ", certificationGroups=" + certificationGroups +
+            ", countryID=" + countryID +
+            ", expirationDateOptional=" + expirationDateOptional +
+            ", migrateGUID='" + migrateGUID + '\'' +
+            ", privateLabels=" + privateLabels +
+            ", specialty=" + specialty +
+            ", state='" + state + '\'' +
+            ", dateAdded=" + dateAdded +
+            ", dateLastModified=" + dateLastModified +
+            '}';
     }
 
 }
