@@ -6,6 +6,7 @@ import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyServi
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.optionslookup.CertificationRequirementStatusLookup
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject
@@ -33,6 +34,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster
 import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.*
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
@@ -48,6 +50,7 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsRespo
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils
 import org.apache.log4j.Logger
@@ -70,6 +73,7 @@ public class MockDataLoader {
     private Settings settingsObjectResultCache;
     private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
     private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
+    private List<PropertyOptionsResult> propertyOptionsResultListCache;
 
     private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
     private List<FastFindResult> fastFindResultList;
@@ -79,7 +83,8 @@ public class MockDataLoader {
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
     private Map<String, Object> settingsResultMap;
     private Settings settingsObjectResult;
-    private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
+    private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap
+    private List<PropertyOptionsResult> propertyOptionsResultList;
 
     private Map<Class<? extends BullhornEntity>, String> entityFileNames;
     private Map<Class<? extends BullhornEntity>, String> metaDataFileNames;
@@ -178,6 +183,14 @@ public class MockDataLoader {
             this.settingsObjectResultCache = KryoObjectCopyHelper.copy(settingsObjectResult);
         }
         return settingsObjectResult;
+    }
+
+    public List<PropertyOptionsResult> getPropertyOptionsResults() {
+        if (propertyOptionsResultList == null) {
+            reloadPropertyOptionsResults();
+            this.propertyOptionsResultListCache = KryoObjectCopyHelper.copy(propertyOptionsResultList);
+        }
+        return propertyOptionsResultList;
     }
 
     /**
@@ -292,6 +305,12 @@ public class MockDataLoader {
         this.restMetaDataMap = KryoObjectCopyHelper.copy(restMetaDataMapCache);
         return restMetaDataMap;
 
+    }
+
+    public void reloadPropertyOptionsResults() {
+        String jsonData = getFileData("propertyoptions-data.txt");
+        PropertyOptionsListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, PropertyOptionsListWrapper.class);
+        this.propertyOptionsResultList = listWrapper.getData();
     }
 
     /**
@@ -410,6 +429,7 @@ public class MockDataLoader {
         entityFiles.put(Department.class, "department-data.txt");
         entityFiles.put(DistributionList.class, "distributionlist-data.txt");
         entityFiles.put(File.class, "file-data.txt");
+        entityFiles.put(GoalTarget.class, "goaltarget-data.txt");
         entityFiles.put(HousingComplex.class, "housingcomplex-data.txt");
         entityFiles.put(HousingComplexUnit.class, "housingcomplexunit-data.txt");
         entityFiles.put(HousingComplexFurnitureDelivery.class, "housingcomplexfurnituredelivery-data.txt");
@@ -474,6 +494,7 @@ public class MockDataLoader {
         entityFiles.put(BillMaster.class, "paybill/billmaster-data.txt");
         entityFiles.put(BillMasterTransaction.class, "paybill/billmastertransaction-data.txt");
         entityFiles.put(PayMaster.class, "paybill/paymaster-data.txt");
+        entityFiles.put(PayMasterTransaction.class, "paybill/paymastertransaction-data.txt");
         entityFiles.put(Surcharge.class, "paybill/surcharge-data.txt");
         entityFiles.put(Tax.class, "paybill/tax-data.txt");
         entityFiles.put(CanvasReport.class, "paybill/canvasreport-data.txt");
@@ -481,6 +502,7 @@ public class MockDataLoader {
         entityFiles.put(CandidateCertificationRequirement.class, "candidatecertificationrequirement-data.txt");
         entityFiles.put(CertificationRequirement.class, "certificationrequirement-data.txt");
         entityFiles.put(JobSubmissionCertificationRequirement.class, "jobsubmissioncertificationrequirement-data.txt");
+        entityFiles.put(CertificationRequirementStatusLookup.class, "certificationrequirementstatuslookup-data.txt");
 
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
@@ -602,6 +624,7 @@ public class MockDataLoader {
         entityMetaFiles.put(Department.class, "meta/department-meta-data.txt");
         entityMetaFiles.put(DistributionList.class, "meta/distributionlist-meta-data.txt");
         entityMetaFiles.put(File.class, "meta/file-meta-data.txt");
+        entityMetaFiles.put(GoalTarget.class, "meta/goaltarget-meta-data.txt");
         entityMetaFiles.put(HousingComplex.class, "meta/housingcomplex-meta-data.txt");
         entityMetaFiles.put(HousingComplexUnit.class, "meta/housingcomplexunit-meta-data.txt");
         entityMetaFiles.put(HousingComplexFurnitureDelivery.class, "meta/housingcomplexfurnituredelivery-meta-data.txt");
@@ -661,6 +684,7 @@ public class MockDataLoader {
         entityMetaFiles.put(BillMaster.class, "meta/paybill/billmaster-meta-data.txt");
         entityMetaFiles.put(BillMasterTransaction.class, "meta/paybill/billmastertransaction-meta-data.txt");
         entityMetaFiles.put(PayMaster.class, "meta/paybill/paymaster-meta-data.txt");
+        entityMetaFiles.put(PayMasterTransaction.class, "meta/paybill/paymastertransaction-meta-data.txt");
         entityMetaFiles.put(Surcharge.class, "meta/paybill/surcharge-meta-data.txt");
         entityMetaFiles.put(Tax.class, "meta/paybill/tax-meta-data.txt");
         entityMetaFiles.put(CanvasReport.class, "meta/paybill/canvasreport-meta-data.txt");

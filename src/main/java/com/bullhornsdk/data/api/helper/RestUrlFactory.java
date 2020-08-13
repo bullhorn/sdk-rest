@@ -6,6 +6,7 @@ import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -268,6 +269,10 @@ public class RestUrlFactory {
 
     public String assembleUnsubscribeToEventsUrl(){
         return restUrl + "event/subscription/{subscriptionId}?BhRestToken={bhRestToken}";
+    }
+
+    public String assembleOptionsUrl(OptionsParams params) {
+        return restUrl + "options/{entityType}/{optionsIds}?BhRestToken={bhRestToken}"+ params.getUrlString();
     }
 
 }

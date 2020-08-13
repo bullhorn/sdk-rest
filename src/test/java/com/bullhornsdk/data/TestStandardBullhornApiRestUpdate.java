@@ -5,38 +5,23 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.bullhornsdk.data.model.entity.file.*;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Test;
 
-import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.Branch;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.Department;
-import com.bullhornsdk.data.model.entity.core.standard.HousingComplex;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCertification;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
-import com.bullhornsdk.data.model.entity.core.standard.Sendout;
-import com.bullhornsdk.data.model.entity.core.standard.Task;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
+import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment;
+import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment;
+import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment;
+import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment;
+import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment;
+import com.bullhornsdk.data.model.entity.file.PlacementFileAttachment;
 import com.bullhornsdk.data.model.response.crud.UpdateResponse;
+import com.google.common.collect.Sets;
 
 public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends BaseTest {
 	private final Logger log = Logger.getLogger(TestStandardBullhornApiRestUpdate.class);
@@ -310,6 +295,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
         Department updatedEntity = bullhornData.findEntity(Department.class, testEntities.getDepartmentId(), Sets.newHashSet("id", "name"));
         entity.setName(previousValue);
         this.runAssertions(response, newValue, updatedEntity.getName());
+
+    }
+
+    @Test
+    public void testUpdateGoalTarget() {
+
+        GoalTarget entity = bullhornData.findEntity(GoalTarget.class, testEntities.getGoalTargetId(), Sets.newHashSet("id", "periodname"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getPeriodName();
+
+        newValue = previousValue + "toad";
+
+        entity.setPeriodName(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        GoalTarget updatedEntity = bullhornData.findEntity(GoalTarget.class, testEntities.getGoalTargetId(), Sets.newHashSet("id", "periodname"));
+        entity.setPeriodName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getPeriodName());
 
     }
 
@@ -608,21 +614,21 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
     @Test
     public void testUpdateCertificationFileAttachment() {
 
-        CertificationFileAttachment entity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "description"));
+        CertificationFileAttachment entity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "name"));
 
         this.entity = (T) entity;
 
-        previousValue = entity.getDescription();
+        previousValue = entity.getName();
 
         newValue = previousValue + "toad";
 
-        entity.setDescription(newValue);
+        entity.setName(newValue);
 
         UpdateResponse response = bullhornData.updateEntity(entity);
 
-        CertificationFileAttachment updatedEntity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "description"));
-        entity.setDescription(previousValue);
-        this.runAssertions(response, newValue, updatedEntity.getDescription());
+        CertificationFileAttachment updatedEntity = bullhornData.findEntity(CertificationFileAttachment.class, testEntities.getCertificationFileAttachmentId(), Sets.newHashSet("id", "name"));
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
 
     }
 
