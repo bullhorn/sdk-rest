@@ -28,42 +28,16 @@ public class PayMasterTransaction extends AbstractMasterTransaction implements Q
     private PayMasterTransaction reversalOfTransaction;
 
     public PayMasterTransaction() {
-        super();
+
     }
 
     public PayMasterTransaction(Integer id) {
         super(id);
     }
 
-
     @JsonProperty("payExportBatch")
     public PayExportBatch getPayExportBatch() {
         return payExportBatch;
-    }
-
-    @Override
-    public String toString() {
-        return "PayMasterTransaction{" +
-            "payMaster=" + payMaster +
-            ", payExportBatch=" + payExportBatch +
-            ", reversalOfTransaction=" + reversalOfTransaction +
-            '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        PayMasterTransaction that = (PayMasterTransaction) o;
-        return Objects.equals(payMaster, that.payMaster) &&
-            Objects.equals(payExportBatch, that.payExportBatch) &&
-            Objects.equals(reversalOfTransaction, that.reversalOfTransaction);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), payMaster, payExportBatch, reversalOfTransaction);
     }
 
     @JsonProperty("payExportBatch")
@@ -89,6 +63,31 @@ public class PayMasterTransaction extends AbstractMasterTransaction implements Q
     @JsonProperty("reversalOfTransaction")
     public void setReversalOfTransaction(PayMasterTransaction reversalOfTransaction) {
         this.reversalOfTransaction = reversalOfTransaction;
+    }
+
+    @Override
+    public String toString() {
+        return "PayMasterTransaction{" +
+            "payMaster=" + payMaster +
+            ", payExportBatch=" + payExportBatch +
+            ", reversalOfTransaction=" + reversalOfTransaction +
+            '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PayMasterTransaction that = (PayMasterTransaction) o;
+        return Objects.equals(payMaster, that.payMaster) &&
+            Objects.equals(payExportBatch, that.payExportBatch) &&
+            Objects.equals(reversalOfTransaction, that.reversalOfTransaction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), payMaster, payExportBatch, reversalOfTransaction);
     }
 
 }
