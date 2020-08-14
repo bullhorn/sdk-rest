@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
@@ -14,6 +13,7 @@ import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.PropertyOptionsResult;
 import com.bullhornsdk.data.model.entity.core.standard.Settings;
 import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -35,6 +35,7 @@ import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -48,6 +49,7 @@ import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
+import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
@@ -794,4 +796,29 @@ public interface BullhornData {
      * If true, any applicable existing rest form triggers (Add or Edit) will be executed when an entity is inserted or updated.
      */
     public void setExecuteFormTriggers(Boolean executeFormTriggers);
+
+    /**
+     * Gets property options for provided entity type
+     *
+     * @param type type of BullhornEntity
+     * @param params optional OptionsParams parameters to use in the api request, pass in null for default.
+     *
+     * @see SearchParams
+     * @see ParamFactory
+     * @return a List of PropertyOptionsResult
+     */
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, OptionsParams params);
+
+    /**
+     * Gets property options for provided entity type
+     *
+     * @param type type of BullhornEntity
+     * @param optionsIds idList of BullhornEntity
+     * @param params optional OptionsParams parameters to use in the api request, pass in null for default.
+     *
+     * @see SearchParams
+     * @see ParamFactory
+     * @return a List of PropertyOptionsResult
+     */
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params);
 }
