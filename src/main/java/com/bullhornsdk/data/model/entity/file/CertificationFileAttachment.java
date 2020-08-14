@@ -1,13 +1,15 @@
 package com.bullhornsdk.data.model.entity.file;
 
+import java.util.Objects;
+
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
-
-import java.util.Objects;
 
 /**
  * Created by mkesmetzis 01-Apr-20
@@ -22,15 +24,18 @@ import java.util.Objects;
     "contentSubType",
     "contentType",
     "dateAdded",
+    "dateLastModified",
     "directory",
     "fileExtension",
     "fileOwner",
     "fileSize",
+    "isEncrypted",
     "isExternal",
+    "migrateGUID",
     "name",
     "type"
 })
-public class CertificationFileAttachment extends EntityFileAttachment {
+public class CertificationFileAttachment extends CommonFileAttachment implements CreateEntity, AssociationEntity {
 
     private Candidate candidate;
     private CandidateCertification candidateCertification;

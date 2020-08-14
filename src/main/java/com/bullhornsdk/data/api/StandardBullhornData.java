@@ -14,8 +14,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
-import com.bullhornsdk.data.exception.RestMappingException;
-import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -45,6 +43,7 @@ import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService;
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService;
 import com.bullhornsdk.data.exception.NotEnoughFieldsSpecifiedException;
 import com.bullhornsdk.data.exception.RestApiException;
+import com.bullhornsdk.data.exception.RestMappingException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
@@ -53,6 +52,7 @@ import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
 import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
 import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.PropertyOptionsResult;
 import com.bullhornsdk.data.model.entity.core.standard.Settings;
 import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -79,6 +79,7 @@ import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -106,8 +107,10 @@ import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
+import com.bullhornsdk.data.model.response.list.IdListWrapper;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.list.NoteListWrapper;
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper;
 import com.bullhornsdk.data.model.response.list.StandardListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume;
@@ -826,6 +829,30 @@ public class StandardBullhornData implements BullhornData {
     @Override
     public void setExecuteFormTriggers(Boolean executeFormTriggers){
         this.executeFormTriggers = executeFormTriggers;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
+        PropertyOptionsListWrapper wrapper = handleGetOptions(type, params);
+        if (wrapper == null) {
+            return Collections.emptyList();
+        }
+        return wrapper.getData();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<PropertyOptionsResult> getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
+        PropertyOptionsListWrapper wrapper = handleGetOptions(type, params);
+        if (wrapper == null) {
+            return Collections.emptyList();
+        }
+        return wrapper.getData();
     }
 
 	/*
@@ -1903,6 +1930,39 @@ public class StandardBullhornData implements BullhornData {
 
 		return boundaries;
 	}
+
+    /**
+     * Makes the api call to get property options.
+     *
+     * @param type
+     * @param params
+     * @return
+     */
+    protected PropertyOptionsListWrapper handleGetOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForOptions(BullhornEntityInfo.getTypesRestEntityName(type), params);
+        String url = restUrlFactory.assembleOptionsUrl(params);
+
+        String jsonString = this.performGetRequest(url, String.class, uriVariables);
+
+        return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString, PropertyOptionsListWrapper.class);
+    }
+
+    /**
+     * Makes the api call to get property options.
+     *
+     * @param type
+     * @param optionsIds
+     * @param params
+     * @return
+     */
+    protected PropertyOptionsListWrapper handleGetOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForOptionsWithIds(BullhornEntityInfo.getTypesRestEntityName(type), params, optionsIds);
+        String url = restUrlFactory.assembleOptionsUrl(params);
+
+        String jsonString = this.performGetRequest(url, String.class, uriVariables);
+
+        return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonString, PropertyOptionsListWrapper.class);
+    }
 
 	/*
      * *************************************************************************
