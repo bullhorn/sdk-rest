@@ -121,7 +121,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
 import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge;
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax;
-import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.*;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -443,6 +443,7 @@ public enum BullhornEntityInfo {
     BILL_MASTER("BillMaster", BillMaster.class, BillMasterWrapper.class, BillMasterListWrapper.class, null, null),
     BILL_MASTER_TRANSACTION("BillMasterTransaction", BillMasterTransaction.class, BillMasterTransactionWrapper.class, BillMasterTransactionListWrapper.class, null, null),
     PAY_MASTER("PayMaster", PayMaster.class, PayMasterWrapper.class, PayMasterListWrapper.class, null, null),
+    PAY_MASTER_TRANSACTION("PayMasterTransaction", PayMasterTransaction.class, PayMasterTransactionWrapper.class, PayMasterTransactionListWrapper.class, null, null),
     SURCHARGE("Surcharge", Surcharge.class, SurchargeWrapper.class, SurchargeListWrapper.class, null, null),
     TAX("Tax", Tax.class, TaxWrapper.class, TaxListWrapper.class, null, null),
     CANVAS_REPORT("CanvasReport", CanvasReport.class, CanvasReportWrapper.class, CanvasReportListWrapper.class, null, null),
