@@ -23,7 +23,7 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "batchStatusLookup", "canvasReport", "dateAdded", "payExportTypeLookup", "payMasterTransactions",
+@JsonPropertyOrder({"id", "batchStatusLookup", "canvasReport", "dateAdded", "accountingDate", "payExportTypeLookup", "payMasterTransactions",
     "payableCharges", "payrollExportTargetLookup", "user"})
 public class PayExportBatch extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity {
 
@@ -31,6 +31,7 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
     private SimplifiedOptionsLookup batchStatusLookup;
     private OneToMany<CanvasReport> canvasReport;
     private DateTime dateAdded;
+    private DateTime accountingDate;
     private SimplifiedOptionsLookup payExportTypeLookup;
     private PayMasterTransaction payMasterTransactions;
     private PayableCharge payableCharges;
@@ -129,6 +130,7 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
             ", batchStatusLookup=" + batchStatusLookup +
             ", canvasReport=" + canvasReport +
             ", dateAdded=" + dateAdded +
+            ", accountingDate=" + accountingDate +
             ", payExportTypeLookup=" + payExportTypeLookup +
             ", payMasterTransactions=" + payMasterTransactions +
             ", payableCharges=" + payableCharges +
@@ -146,6 +148,7 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
             Objects.equals(batchStatusLookup, that.batchStatusLookup) &&
             Objects.equals(canvasReport, that.canvasReport) &&
             Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(accountingDate, that.accountingDate) &&
             Objects.equals(payExportTypeLookup, that.payExportTypeLookup) &&
             Objects.equals(payMasterTransactions, that.payMasterTransactions) &&
             Objects.equals(payableCharges, that.payableCharges) &&
@@ -155,7 +158,7 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, batchStatusLookup, canvasReport, dateAdded, payExportTypeLookup, payMasterTransactions, payableCharges, payrollExportTargetLookup, user);
+        return Objects.hash(id, batchStatusLookup, canvasReport, dateAdded, accountingDate, payExportTypeLookup, payMasterTransactions, payableCharges, payrollExportTargetLookup, user);
     }
 
     @JsonProperty("user")
@@ -171,6 +174,16 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
     @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+    @JsonProperty("accountingDate")
+    public DateTime getAccountingDate() {
+        return accountingDate;
+    }
+
+    @JsonProperty("accountingDate")
+    public void setAccountingDate(DateTime accountingDate) {
+        this.accountingDate = accountingDate;
     }
 
 
