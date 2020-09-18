@@ -22,6 +22,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
 import com.bullhornsdk.data.model.entity.core.paybill.Location
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
@@ -495,6 +496,7 @@ public class MockDataLoader {
         entityFiles.put(BillMasterTransaction.class, "paybill/billmastertransaction-data.txt");
         entityFiles.put(PayMaster.class, "paybill/paymaster-data.txt");
         entityFiles.put(PayMasterTransaction.class, "paybill/paymastertransaction-data.txt");
+        entityFiles.put(PayExportBatch.class, "paybill/payexportbatch-data.txt");
         entityFiles.put(Surcharge.class, "paybill/surcharge-data.txt");
         entityFiles.put(Tax.class, "paybill/tax-data.txt");
         entityFiles.put(CanvasReport.class, "paybill/canvasreport-data.txt");
@@ -685,6 +687,7 @@ public class MockDataLoader {
         entityMetaFiles.put(BillMasterTransaction.class, "meta/paybill/billmastertransaction-meta-data.txt");
         entityMetaFiles.put(PayMaster.class, "meta/paybill/paymaster-meta-data.txt");
         entityMetaFiles.put(PayMasterTransaction.class, "meta/paybill/paymastertransaction-meta-data.txt");
+        entityMetaFiles.put(PayExportBatch.class, "meta/paybill/payexportbatch-meta-data.txt");
         entityMetaFiles.put(Surcharge.class, "meta/paybill/surcharge-meta-data.txt");
         entityMetaFiles.put(Tax.class, "meta/paybill/tax-meta-data.txt");
         entityMetaFiles.put(CanvasReport.class, "meta/paybill/canvasreport-meta-data.txt");
