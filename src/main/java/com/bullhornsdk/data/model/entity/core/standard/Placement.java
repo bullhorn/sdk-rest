@@ -23,6 +23,7 @@ import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -73,7 +74,7 @@ import java.util.Objects;
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
-        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
+        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -112,6 +113,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private String comments;
 
 	private OneToMany<PlacementCommission> commissions;
+
+    private Location location;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -1090,99 +1093,107 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.customObject10s = customObject10s;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Placement placement = (Placement) o;
-        return Objects.equals(id, placement.id) &&
-            Objects.equals(appointments, placement.appointments) &&
-            Objects.equals(approvingClientContact, placement.approvingClientContact) &&
-            Objects.equals(backupApprovingClientContact, placement.backupApprovingClientContact) &&
-            Objects.equals(billingClientContact, placement.billingClientContact) &&
-            Objects.equals(billingProfile, placement.billingProfile) &&
-            Objects.equals(billingFrequency, placement.billingFrequency) &&
-            Objects.equals(bonusPackage, placement.bonusPackage) &&
-            Objects.equals(branch, placement.branch) &&
-            Objects.equals(candidate, placement.candidate) &&
-            Objects.equals(placementCertifications, placement.placementCertifications) &&
-            Objects.equals(changeRequests, placement.changeRequests) &&
-            Objects.equals(clientBillRate, placement.clientBillRate) &&
-            Objects.equals(clientOvertimeRate, placement.clientOvertimeRate) &&
-            Objects.equals(comments, placement.comments) &&
-            Objects.equals(commissions, placement.commissions) &&
-            Objects.equals(costCenter, placement.costCenter) &&
-            Objects.equals(dateAdded, placement.dateAdded) &&
-            Objects.equals(dateBegin, placement.dateBegin) &&
-            Objects.equals(dateClientEffective, placement.dateClientEffective) &&
-            Objects.equals(dateEffective, placement.dateEffective) &&
-            Objects.equals(dateEnd, placement.dateEnd) &&
-            Objects.equals(dateLastModified, placement.dateLastModified) &&
-            Objects.equals(daysGuaranteed, placement.daysGuaranteed) &&
-            Objects.equals(daysProRated, placement.daysProRated) &&
-            Objects.equals(durationWeeks, placement.durationWeeks) &&
-            Objects.equals(employeeType, placement.employeeType) &&
-            Objects.equals(employmentType, placement.employmentType) &&
-            Objects.equals(fee, placement.fee) &&
-            Objects.equals(flatFee, placement.flatFee) &&
-            Objects.equals(fileAttachments, placement.fileAttachments) &&
-            Objects.equals(hoursOfOperation, placement.hoursOfOperation) &&
-            Objects.equals(hoursPerDay, placement.hoursPerDay) &&
-            Objects.equals(housingManagerID, placement.housingManagerID) &&
-            Objects.equals(housingStatus, placement.housingStatus) &&
-            Objects.equals(invoiceGroupName, placement.invoiceGroupName) &&
-            Objects.equals(jobOrder, placement.jobOrder) &&
-            Objects.equals(jobSubmission, placement.jobSubmission) &&
-            Objects.equals(migrateGUID, placement.migrateGUID) &&
-            Objects.equals(optionsPackage, placement.optionsPackage) &&
-            Objects.equals(otExemption, placement.otExemption) &&
-            Objects.equals(otherHourlyFee, placement.otherHourlyFee) &&
-            Objects.equals(markUpPercentage, placement.markUpPercentage) &&
-            Objects.equals(notes, placement.notes) &&
-            Objects.equals(otherHourlyFeeComments, placement.otherHourlyFeeComments) &&
-            Objects.equals(overtimeMarkUpPercentage, placement.overtimeMarkUpPercentage) &&
-            Objects.equals(overtimeRate, placement.overtimeRate) &&
-            Objects.equals(payRate, placement.payRate) &&
-            Objects.equals(projectCodeList, placement.projectCodeList) &&
-            Objects.equals(recruitingManagerPercentGrossMargin, placement.recruitingManagerPercentGrossMargin) &&
-            Objects.equals(referralFee, placement.referralFee) &&
-            Objects.equals(referralFeeType, placement.referralFeeType) &&
-            Objects.equals(reportTo, placement.reportTo) &&
-            Objects.equals(reportedMargin, placement.reportedMargin) &&
-            Objects.equals(salary, placement.salary) &&
-            Objects.equals(salaryUnit, placement.salaryUnit) &&
-            Objects.equals(salesManagerPercentGrossMargin, placement.salesManagerPercentGrossMargin) &&
-            Objects.equals(statementClientContact, placement.statementClientContact) &&
-            Objects.equals(status, placement.status) &&
-            Objects.equals(tasks, placement.tasks) &&
-            Objects.equals(taxRate, placement.taxRate) &&
-            Objects.equals(taxState, placement.taxState) &&
-            Objects.equals(terminationReason, placement.terminationReason) &&
-            Objects.equals(timeUnits, placement.timeUnits) &&
-            Objects.equals(vendorClientCorporation, placement.vendorClientCorporation) &&
-            Objects.equals(workWeekStart, placement.workWeekStart) &&
-            Objects.equals(workersCompensationRate, placement.workersCompensationRate) &&
-            Objects.equals(customObject1s, placement.customObject1s) &&
-            Objects.equals(customObject2s, placement.customObject2s) &&
-            Objects.equals(customObject3s, placement.customObject3s) &&
-            Objects.equals(customObject4s, placement.customObject4s) &&
-            Objects.equals(customObject5s, placement.customObject5s) &&
-            Objects.equals(customObject6s, placement.customObject6s) &&
-            Objects.equals(customObject7s, placement.customObject7s) &&
-            Objects.equals(customObject8s, placement.customObject8s) &&
-            Objects.equals(customObject9s, placement.customObject9s) &&
-            Objects.equals(customObject10s, placement.customObject10s);
+    @JsonProperty("location")
+    public Location getLocation() {
+        return location;
     }
 
-    @Override
+    @JsonProperty("location")
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Placement placement = (Placement) object;
+        return java.util.Objects.equals(id, placement.id) &&
+            java.util.Objects.equals(appointments, placement.appointments) &&
+            java.util.Objects.equals(approvingClientContact, placement.approvingClientContact) &&
+            java.util.Objects.equals(backupApprovingClientContact, placement.backupApprovingClientContact) &&
+            java.util.Objects.equals(billingClientContact, placement.billingClientContact) &&
+            java.util.Objects.equals(billingProfile, placement.billingProfile) &&
+            java.util.Objects.equals(billingFrequency, placement.billingFrequency) &&
+            java.util.Objects.equals(bonusPackage, placement.bonusPackage) &&
+            java.util.Objects.equals(branch, placement.branch) &&
+            java.util.Objects.equals(candidate, placement.candidate) &&
+            java.util.Objects.equals(placementCertifications, placement.placementCertifications) &&
+            java.util.Objects.equals(changeRequests, placement.changeRequests) &&
+            java.util.Objects.equals(clientBillRate, placement.clientBillRate) &&
+            java.util.Objects.equals(clientOvertimeRate, placement.clientOvertimeRate) &&
+            java.util.Objects.equals(comments, placement.comments) &&
+            java.util.Objects.equals(commissions, placement.commissions) &&
+            java.util.Objects.equals(location, placement.location) &&
+            java.util.Objects.equals(costCenter, placement.costCenter) &&
+            java.util.Objects.equals(dateAdded, placement.dateAdded) &&
+            java.util.Objects.equals(dateBegin, placement.dateBegin) &&
+            java.util.Objects.equals(dateClientEffective, placement.dateClientEffective) &&
+            java.util.Objects.equals(dateEffective, placement.dateEffective) &&
+            java.util.Objects.equals(dateEnd, placement.dateEnd) &&
+            java.util.Objects.equals(dateLastModified, placement.dateLastModified) &&
+            java.util.Objects.equals(daysGuaranteed, placement.daysGuaranteed) &&
+            java.util.Objects.equals(daysProRated, placement.daysProRated) &&
+            java.util.Objects.equals(durationWeeks, placement.durationWeeks) &&
+            java.util.Objects.equals(employeeType, placement.employeeType) &&
+            java.util.Objects.equals(employmentType, placement.employmentType) &&
+            java.util.Objects.equals(fee, placement.fee) &&
+            java.util.Objects.equals(flatFee, placement.flatFee) &&
+            java.util.Objects.equals(fileAttachments, placement.fileAttachments) &&
+            java.util.Objects.equals(hoursOfOperation, placement.hoursOfOperation) &&
+            java.util.Objects.equals(hoursPerDay, placement.hoursPerDay) &&
+            java.util.Objects.equals(housingManagerID, placement.housingManagerID) &&
+            java.util.Objects.equals(housingStatus, placement.housingStatus) &&
+            java.util.Objects.equals(invoiceGroupName, placement.invoiceGroupName) &&
+            java.util.Objects.equals(jobOrder, placement.jobOrder) &&
+            java.util.Objects.equals(jobSubmission, placement.jobSubmission) &&
+            java.util.Objects.equals(migrateGUID, placement.migrateGUID) &&
+            java.util.Objects.equals(optionsPackage, placement.optionsPackage) &&
+            java.util.Objects.equals(otExemption, placement.otExemption) &&
+            java.util.Objects.equals(otherHourlyFee, placement.otherHourlyFee) &&
+            java.util.Objects.equals(markUpPercentage, placement.markUpPercentage) &&
+            java.util.Objects.equals(notes, placement.notes) &&
+            java.util.Objects.equals(otherHourlyFeeComments, placement.otherHourlyFeeComments) &&
+            java.util.Objects.equals(overtimeMarkUpPercentage, placement.overtimeMarkUpPercentage) &&
+            java.util.Objects.equals(overtimeRate, placement.overtimeRate) &&
+            java.util.Objects.equals(payRate, placement.payRate) &&
+            java.util.Objects.equals(projectCodeList, placement.projectCodeList) &&
+            java.util.Objects.equals(recruitingManagerPercentGrossMargin, placement.recruitingManagerPercentGrossMargin) &&
+            java.util.Objects.equals(referralFee, placement.referralFee) &&
+            java.util.Objects.equals(referralFeeType, placement.referralFeeType) &&
+            java.util.Objects.equals(reportTo, placement.reportTo) &&
+            java.util.Objects.equals(reportedMargin, placement.reportedMargin) &&
+            java.util.Objects.equals(salary, placement.salary) &&
+            java.util.Objects.equals(salaryUnit, placement.salaryUnit) &&
+            java.util.Objects.equals(salesManagerPercentGrossMargin, placement.salesManagerPercentGrossMargin) &&
+            java.util.Objects.equals(statementClientContact, placement.statementClientContact) &&
+            java.util.Objects.equals(status, placement.status) &&
+            java.util.Objects.equals(tasks, placement.tasks) &&
+            java.util.Objects.equals(taxRate, placement.taxRate) &&
+            java.util.Objects.equals(taxState, placement.taxState) &&
+            java.util.Objects.equals(terminationReason, placement.terminationReason) &&
+            java.util.Objects.equals(timeUnits, placement.timeUnits) &&
+            java.util.Objects.equals(vendorClientCorporation, placement.vendorClientCorporation) &&
+            java.util.Objects.equals(workWeekStart, placement.workWeekStart) &&
+            java.util.Objects.equals(workersCompensationRate, placement.workersCompensationRate) &&
+            java.util.Objects.equals(customObject1s, placement.customObject1s) &&
+            java.util.Objects.equals(customObject2s, placement.customObject2s) &&
+            java.util.Objects.equals(customObject3s, placement.customObject3s) &&
+            java.util.Objects.equals(customObject4s, placement.customObject4s) &&
+            java.util.Objects.equals(customObject5s, placement.customObject5s) &&
+            java.util.Objects.equals(customObject6s, placement.customObject6s) &&
+            java.util.Objects.equals(customObject7s, placement.customObject7s) &&
+            java.util.Objects.equals(customObject8s, placement.customObject8s) &&
+            java.util.Objects.equals(customObject9s, placement.customObject9s) &&
+            java.util.Objects.equals(customObject10s, placement.customObject10s);
+    }
+
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+        return java.util.Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
-    @Override
-    public String toString() {
+    @java.lang.Override
+    public java.lang.String toString() {
         return "Placement{" +
             "id=" + id +
             ", appointments=" + appointments +
@@ -1200,6 +1211,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", clientOvertimeRate=" + clientOvertimeRate +
             ", comments='" + comments + '\'' +
             ", commissions=" + commissions +
+            ", location=" + location +
             ", costCenter='" + costCenter + '\'' +
             ", dateAdded=" + dateAdded +
             ", dateBegin=" + dateBegin +
