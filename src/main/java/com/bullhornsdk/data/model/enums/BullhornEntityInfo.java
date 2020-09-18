@@ -93,6 +93,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
@@ -443,6 +444,7 @@ public enum BullhornEntityInfo {
     BILL_MASTER("BillMaster", BillMaster.class, BillMasterWrapper.class, BillMasterListWrapper.class, null, null),
     BILL_MASTER_TRANSACTION("BillMasterTransaction", BillMasterTransaction.class, BillMasterTransactionWrapper.class, BillMasterTransactionListWrapper.class, null, null),
     PAY_MASTER("PayMaster", PayMaster.class, PayMasterWrapper.class, PayMasterListWrapper.class, null, null),
+    PAY_EXPORT_BATCH("PayExportBatch", PayExportBatch.class, PayExportBatchWrapper.class, PayExportBatchListWrapper.class, null, null),
     PAY_MASTER_TRANSACTION("PayMasterTransaction", PayMasterTransaction.class, PayMasterTransactionWrapper.class, PayMasterTransactionListWrapper.class, null, null),
     SURCHARGE("Surcharge", Surcharge.class, SurchargeWrapper.class, SurchargeListWrapper.class, null, null),
     TAX("Tax", Tax.class, TaxWrapper.class, TaxListWrapper.class, null, null),
