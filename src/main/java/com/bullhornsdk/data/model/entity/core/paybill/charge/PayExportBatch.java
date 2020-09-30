@@ -33,8 +33,8 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
     private DateTime dateAdded;
     private DateTime accountingDate;
     private SimplifiedOptionsLookup payExportTypeLookup;
-    private PayMasterTransaction payMasterTransactions;
-    private PayableCharge payableCharges;
+    private OneToMany<PayMasterTransaction> payMasterTransactions;
+    private OneToMany<PayableCharge> payableCharges;
     private SimplifiedOptionsLookup payrollExportTargetLookup;
     private CorporateUser user;
 
@@ -89,22 +89,22 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
     }
 
     @JsonProperty("payMasterTransactions")
-    public PayMasterTransaction getPayMasterTransactions() {
+    public OneToMany<PayMasterTransaction> getPayMasterTransactions() {
         return payMasterTransactions;
     }
 
     @JsonProperty("payMasterTransactions")
-    public void setPayMasterTransactions(PayMasterTransaction payMasterTransactions) {
+    public void setPayMasterTransactions(OneToMany<PayMasterTransaction> payMasterTransactions) {
         this.payMasterTransactions = payMasterTransactions;
     }
 
     @JsonProperty("payableCharges")
-    public PayableCharge getPayableCharges() {
+    public OneToMany<PayableCharge> getPayableCharges() {
         return payableCharges;
     }
 
     @JsonProperty("payableCharges")
-    public void setPayableCharges(PayableCharge payableCharges) {
+    public void setPayableCharges(OneToMany<PayableCharge> payableCharges) {
         this.payableCharges = payableCharges;
     }
 
