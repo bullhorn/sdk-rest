@@ -10,10 +10,7 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import java.util.Objects;
@@ -88,7 +85,7 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
         this.payExportTypeLookup = payExportTypeLookup;
     }
 
-    @JsonProperty("payMasterTransactions")
+    @JsonIgnore
     public OneToMany<PayMasterTransaction> getPayMasterTransactions() {
         return payMasterTransactions;
     }
@@ -98,7 +95,7 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
         this.payMasterTransactions = payMasterTransactions;
     }
 
-    @JsonProperty("payableCharges")
+    @JsonIgnore
     public OneToMany<PayableCharge> getPayableCharges() {
         return payableCharges;
     }
