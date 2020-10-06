@@ -24,6 +24,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.Location
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode
@@ -483,6 +484,7 @@ public class MockDataLoader {
         entityFiles.put(GeneralLedgerServiceCode.class, "paybill/generalledgerservicecode-data.txt");
         entityFiles.put(Discount.class, "paybill/discount-data.txt");
         entityFiles.put(EarnCode.class, "paybill/earncode-data.txt");
+        entityFiles.put(EarnCodeGroup.class, "paybill/earncodegroup-data.txt");
         entityFiles.put(InvoiceStatement.class, "paybill/invoicestatement-data.txt");
         entityFiles.put(InvoiceStatementBatch.class, "paybill/invoicestatementbatch-data.txt");
         entityFiles.put(InvoiceStatementDiscount.class, "paybill/invoicestatementdiscount-data.txt");
@@ -674,6 +676,7 @@ public class MockDataLoader {
         entityMetaFiles.put(GeneralLedgerServiceCode.class, "meta/paybill/generalledgerservicecode-meta-data.txt");
         entityMetaFiles.put(Discount.class, "meta/paybill/discount-meta-data.txt");
         entityMetaFiles.put(EarnCode.class, "meta/paybill/earncode-meta-data.txt");
+        entityMetaFiles.put(EarnCodeGroup.class, "meta/paybill/earncodegroup-meta-data.txt");
         entityMetaFiles.put(InvoiceStatement.class, "meta/paybill/invoicestatement-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementBatch.class, "meta/paybill/invoicestatementbatch-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementDiscount.class, "meta/paybill/invoicestatementdiscount-meta-data.txt");

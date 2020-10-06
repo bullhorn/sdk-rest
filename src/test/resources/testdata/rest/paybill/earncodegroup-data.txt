@@ -3,7 +3,7 @@
     "count": 20,
     "data": [
         {
-            "id": 30,
+            "id": 1,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -91,7 +91,7 @@
             }
         },
         {
-            "id": 29,
+            "id": 2,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -187,7 +187,7 @@
             }
         },
         {
-            "id": 28,
+            "id": 3,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -283,7 +283,7 @@
             }
         },
         {
-            "id": 27,
+            "id": 4,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -375,7 +375,7 @@
             }
         },
         {
-            "id": 26,
+            "id": 5,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -467,7 +467,7 @@
             }
         },
         {
-            "id": 25,
+            "id": 6,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -559,7 +559,7 @@
             }
         },
         {
-            "id": 24,
+            "id": 7,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -651,7 +651,7 @@
             }
         },
         {
-            "id": 23,
+            "id": 8,
             "accruesOT": true,
             "allowForSelfService": true,
             "chargeTypeLookup": {
@@ -849,7 +849,7 @@
             }
         },
         {
-            "id": 22,
+            "id": 9,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -941,7 +941,7 @@
             }
         },
         {
-            "id": 21,
+            "id": 10,
             "accruesOT": false,
             "allowForSelfService": true,
             "chargeTypeLookup": {
@@ -1033,7 +1033,7 @@
             }
         },
         {
-            "id": 20,
+            "id": 11,
             "accruesOT": false,
             "allowForSelfService": true,
             "chargeTypeLookup": {
@@ -1125,7 +1125,7 @@
             }
         },
         {
-            "id": 19,
+            "id": 12,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -1209,7 +1209,7 @@
             }
         },
         {
-            "id": 18,
+            "id": 13,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -1293,7 +1293,7 @@
             }
         },
         {
-            "id": 17,
+            "id": 14,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -1385,7 +1385,7 @@
             }
         },
         {
-            "id": 16,
+            "id": 15,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -1481,7 +1481,7 @@
             }
         },
         {
-            "id": 15,
+            "id": 16,
             "accruesOT": true,
             "allowForSelfService": true,
             "chargeTypeLookup": {
@@ -1715,7 +1715,7 @@
             }
         },
         {
-            "id": 12,
+            "id": 17,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -1811,7 +1811,7 @@
             }
         },
         {
-            "id": 9,
+            "id": 18,
             "accruesOT": false,
             "allowForSelfService": true,
             "chargeTypeLookup": {
@@ -1907,7 +1907,7 @@
             }
         },
         {
-            "id": 8,
+            "id": 19,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
@@ -2003,7 +2003,7 @@
             }
         },
         {
-            "id": 7,
+            "id": 20,
             "accruesOT": false,
             "allowForSelfService": false,
             "chargeTypeLookup": {
