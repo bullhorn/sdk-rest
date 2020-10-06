@@ -1,0 +1,2102 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 30,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1601068986087,
+            "dateLastModified": 1601319359007,
+            "defaultEarnCode": {
+                "id": 42,
+                "code": "FUR",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": "REG",
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1601068986087,
+                "dateLastModified": 1601319359007,
+                "description": "REG",
+                "earnCodeGroup": {
+                    "id": 30
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": null,
+                "generalLedgerPayAccount": null,
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 2310020,
+                    "firstName": "MiddleOffice",
+                    "lastName": "User"
+                },
+                "status": "Active",
+                "title": "Furlough"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 2,
+                "label": "Pay Only"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 29,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1601065631540,
+            "dateLastModified": 1601322574543,
+            "defaultEarnCode": {
+                "id": 41,
+                "code": "HOL",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1601065631537,
+                "dateLastModified": 1601322574543,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 29
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "NONE",
+                "generalLedgerBillAccount": {
+                    "id": 2,
+                    "externalAccountNumber": "3003",
+                    "externalAccountName": "Holiday"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 2,
+                    "externalAccountNumber": "3003",
+                    "externalAccountName": "Holiday"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 2310020,
+                    "firstName": "MiddleOffice",
+                    "lastName": "User"
+                },
+                "status": "Active",
+                "title": "Holiday"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 2,
+                "label": "Pay Only"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 28,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1601065553950,
+            "dateLastModified": 1601322602137,
+            "defaultEarnCode": {
+                "id": 40,
+                "code": "PTO",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1601065553947,
+                "dateLastModified": 1601322602140,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 28
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "NONE",
+                "generalLedgerBillAccount": {
+                    "id": 5,
+                    "externalAccountNumber": "3006",
+                    "externalAccountName": "Vacation"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 5,
+                    "externalAccountNumber": "3006",
+                    "externalAccountName": "Vacation"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 2310020,
+                    "firstName": "MiddleOffice",
+                    "lastName": "User"
+                },
+                "status": "Active",
+                "title": "PTO"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 2,
+                "label": "Pay Only"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 27,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1599062641530,
+            "dateLastModified": 1601322673473,
+            "defaultEarnCode": {
+                "id": 39,
+                "code": "DAILY-P&B",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1599062641530,
+                "dateLastModified": 1601322673473,
+                "description": "Hours > 0 generate 8 hours of Pay and 1 unit of Bill",
+                "earnCodeGroup": {
+                    "id": 27
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Inactive",
+                "title": "Daily Pay & Bill"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 2,
+                "label": "Inactive"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 1,
+                "label": "Pay & Bill"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 26,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1599062428310,
+            "dateLastModified": 1601322656523,
+            "defaultEarnCode": {
+                "id": 38,
+                "code": "DAILY-BILL",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": "REG",
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1599062428310,
+                "dateLastModified": 1601322643480,
+                "description": "Hours > 0 generate 1 unit of Daily Bill",
+                "earnCodeGroup": {
+                    "id": 26
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Daily Bill "
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 3,
+                "label": "Bill Only"
+            },
+            "unitOfMeasure": {
+                "id": 5,
+                "label": "Units"
+            }
+        },
+        {
+            "id": 25,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1598897208747,
+            "dateLastModified": 1601322734857,
+            "defaultEarnCode": {
+                "id": 37,
+                "code": "PDMB",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598897208743,
+                "dateLastModified": 1601322734857,
+                "description": "One hour of per diem for every hour worked",
+                "earnCodeGroup": {
+                    "id": 25
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "PDM",
+                "generalLedgerBillAccount": {
+                    "id": 14,
+                    "externalAccountNumber": "E1",
+                    "externalAccountName": "Billable Expenses"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 14,
+                    "externalAccountNumber": "E1",
+                    "externalAccountName": "Billable Expenses"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Per Diem - Billable"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 1,
+                "label": "Pay & Bill"
+            },
+            "unitOfMeasure": {
+                "id": 5,
+                "label": "Units"
+            }
+        },
+        {
+            "id": 24,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 2,
+                "label": "Expense"
+            },
+            "dateAdded": 1598620905677,
+            "dateLastModified": 1601322759010,
+            "defaultEarnCode": {
+                "id": 36,
+                "code": "PDM",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598620905673,
+                "dateLastModified": 1601322759010,
+                "description": "Per Diem - Meals & Incidentals",
+                "earnCodeGroup": {
+                    "id": 24
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "PDM",
+                "generalLedgerBillAccount": {
+                    "id": 17,
+                    "externalAccountNumber": "PERDM",
+                    "externalAccountName": "Per Diem"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 17,
+                    "externalAccountNumber": "PERDM",
+                    "externalAccountName": "Per Diem"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Per Diem - M&I"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": false,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 2,
+                "label": "Pay Only"
+            },
+            "unitOfMeasure": {
+                "id": 5,
+                "label": "Units"
+            }
+        },
+        {
+            "id": 23,
+            "accruesOT": true,
+            "allowForSelfService": true,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1598614153207,
+            "dateLastModified": 1601320537567,
+            "defaultEarnCode": {
+                "id": 35,
+                "code": "REGB",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598614153207,
+                "dateLastModified": 1601320537567,
+                "description": "REG",
+                "earnCodeGroup": {
+                    "id": 23
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": null,
+                "generalLedgerPayAccount": null,
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Bill Only"
+            },
+            "doubleTimeEarnCode": {
+                "id": 33,
+                "code": "DTB",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598614153223,
+                "dateLastModified": 1600369096733,
+                "description": "DT",
+                "earnCodeGroup": {
+                    "id": 23
+                },
+                "earnCodeTypeLookup": {
+                    "id": 3
+                },
+                "externalID": "DTB",
+                "generalLedgerBillAccount": null,
+                "generalLedgerPayAccount": null,
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Bill Only - Double Time"
+            },
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": {
+                "id": 34,
+                "code": "OTB",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598614153270,
+                "dateLastModified": 1600369096713,
+                "description": "OT",
+                "earnCodeGroup": {
+                    "id": 23
+                },
+                "earnCodeTypeLookup": {
+                    "id": 2
+                },
+                "externalID": "OTB",
+                "generalLedgerBillAccount": null,
+                "generalLedgerPayAccount": null,
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Bill Only - Overtime"
+            },
+            "payBillOptionsLookup": {
+                "id": 3,
+                "label": "Bill Only"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 22,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1598573042180,
+            "dateLastModified": 1601322695633,
+            "defaultEarnCode": {
+                "id": 32,
+                "code": "DAILY-PAY-8",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598573042177,
+                "dateLastModified": 1601322695633,
+                "description": "Hours worked > 0 in a day will generate 8 hours ",
+                "earnCodeGroup": {
+                    "id": 22
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Daily Pay 8 Hours"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 2,
+                "label": "Pay Only"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 21,
+            "accruesOT": false,
+            "allowForSelfService": true,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1598388041130,
+            "dateLastModified": 1601322843720,
+            "defaultEarnCode": {
+                "id": 31,
+                "code": "OCWE",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598388041130,
+                "dateLastModified": 1601322843720,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 21
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "On-call Weekend"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 1,
+                "label": "Pay & Bill"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 20,
+            "accruesOT": false,
+            "allowForSelfService": true,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1598388003200,
+            "dateLastModified": 1601322883157,
+            "defaultEarnCode": {
+                "id": 30,
+                "code": "OCWD",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1598388003200,
+                "dateLastModified": 1601322883157,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 20
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "On-Call Weekday"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 1,
+                "label": "Pay & Bill"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 19,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1597334203637,
+            "dateLastModified": 1601320644417,
+            "defaultEarnCode": {
+                "id": 29,
+                "code": "CONV",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1597334203637,
+                "dateLastModified": 1601320644417,
+                "description": "",
+                "earnCodeGroup": {
+                    "id": 19
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": null,
+                "generalLedgerPayAccount": null,
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Conversion Fee"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 3,
+                "label": "Bill Only"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 18,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1597334054527,
+            "dateLastModified": 1597334054527,
+            "defaultEarnCode": {
+                "id": 28,
+                "code": "Perm",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1597334054523,
+                "dateLastModified": 1597334054523,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 18
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "Perm",
+                "generalLedgerBillAccount": null,
+                "generalLedgerPayAccount": null,
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Perm Placement Fee"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 3,
+                "label": "Bill Only"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 17,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1596661036190,
+            "dateLastModified": 1601322814030,
+            "defaultEarnCode": {
+                "id": 27,
+                "code": "FXB",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596661036187,
+                "dateLastModified": 1601322814030,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 17
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": null,
+                "status": "Active",
+                "title": "Fixed Price Billiing"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 3,
+                "label": "Bill Only"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 16,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1596633344643,
+            "dateLastModified": 1601322988900,
+            "defaultEarnCode": {
+                "id": 26,
+                "code": "CIR",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596633344643,
+                "dateLastModified": 1601322988900,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 16
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "NONE",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 467,
+                    "firstName": "Mark",
+                    "lastName": "Green"
+                },
+                "status": "Active",
+                "title": "Circuits Installed"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": false,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 3,
+                "label": "Bill Only"
+            },
+            "unitOfMeasure": {
+                "id": 5,
+                "label": "Units"
+            }
+        },
+        {
+            "id": 15,
+            "accruesOT": true,
+            "allowForSelfService": true,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1596633161163,
+            "dateLastModified": 1601323481647,
+            "defaultEarnCode": {
+                "id": 25,
+                "code": "REGP",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596633161160,
+                "dateLastModified": 1601323481647,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 15
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 8,
+                    "externalAccountNumber": "4901",
+                    "externalAccountName": "Regular Tiime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 467,
+                    "firstName": "Mark",
+                    "lastName": "Green"
+                },
+                "status": "Active",
+                "title": "Pay Only"
+            },
+            "doubleTimeEarnCode": {
+                "id": 23,
+                "code": "DTP",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596633161167,
+                "dateLastModified": 1601323481657,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 15
+                },
+                "earnCodeTypeLookup": {
+                    "id": 3
+                },
+                "externalID": "DT",
+                "generalLedgerBillAccount": {
+                    "id": 11,
+                    "externalAccountNumber": "5103",
+                    "externalAccountName": "Double Time"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 11,
+                    "externalAccountNumber": "5103",
+                    "externalAccountName": "Double Time"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 467,
+                    "firstName": "Mark",
+                    "lastName": "Green"
+                },
+                "status": "Active",
+                "title": "Pay Only - Double Time"
+            },
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": {
+                "id": 24,
+                "code": "OTP",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596633161167,
+                "dateLastModified": 1601323481657,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 15
+                },
+                "earnCodeTypeLookup": {
+                    "id": 2
+                },
+                "externalID": "OT",
+                "generalLedgerBillAccount": {
+                    "id": 10,
+                    "externalAccountNumber": "5100",
+                    "externalAccountName": "Overtime"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 10,
+                    "externalAccountNumber": "5100",
+                    "externalAccountName": "Overtime"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 467,
+                    "firstName": "Mark",
+                    "lastName": "Green"
+                },
+                "status": "Active",
+                "title": "Pay Only - Overtime"
+            },
+            "payBillOptionsLookup": {
+                "id": 2,
+                "label": "Pay Only"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 12,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1596632553793,
+            "dateLastModified": 1601323266197,
+            "defaultEarnCode": {
+                "id": 16,
+                "code": "SICK",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596632553790,
+                "dateLastModified": 1601323266197,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 12
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "NONE",
+                "generalLedgerBillAccount": {
+                    "id": 6,
+                    "externalAccountNumber": "3007",
+                    "externalAccountName": "Sick Pay"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 6,
+                    "externalAccountNumber": "3007",
+                    "externalAccountName": "Sick Pay"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 467,
+                    "firstName": "Mark",
+                    "lastName": "Green"
+                },
+                "status": "Active",
+                "title": "Sick Pay"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 1,
+                "label": "Pay & Bill"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        },
+        {
+            "id": 9,
+            "accruesOT": false,
+            "allowForSelfService": true,
+            "chargeTypeLookup": {
+                "id": 2,
+                "label": "Expense"
+            },
+            "dateAdded": 1596053995930,
+            "dateLastModified": 1601322780973,
+            "defaultEarnCode": {
+                "id": 11,
+                "code": "TAXI",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596053995923,
+                "dateLastModified": 1601322780973,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 9
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "NONE",
+                "generalLedgerBillAccount": {
+                    "id": 14,
+                    "externalAccountNumber": "E1",
+                    "externalAccountName": "Billable Expenses"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 14,
+                    "externalAccountNumber": "E1",
+                    "externalAccountName": "Billable Expenses"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 370,
+                    "firstName": "Karin",
+                    "lastName": "Edmondson"
+                },
+                "status": "Active",
+                "title": "Taxi/Ride-share"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 1,
+                "label": "Pay & Bill"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 8,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1596053878457,
+            "dateLastModified": 1601323244263,
+            "defaultEarnCode": {
+                "id": 10,
+                "code": "Bonus",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1596053878447,
+                "dateLastModified": 1601323244263,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 8
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 1,
+                    "externalAccountNumber": "3002",
+                    "externalAccountName": "Bonus"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 1,
+                    "externalAccountNumber": "3002",
+                    "externalAccountName": "Bonus"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 370,
+                    "firstName": "Karin",
+                    "lastName": "Edmondson"
+                },
+                "status": "Active",
+                "title": "Bonus"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 1,
+                "label": "Pay & Bill"
+            },
+            "unitOfMeasure": {
+                "id": 6,
+                "label": "Amount"
+            }
+        },
+        {
+            "id": 7,
+            "accruesOT": false,
+            "allowForSelfService": false,
+            "chargeTypeLookup": {
+                "id": 1,
+                "label": "Time"
+            },
+            "dateAdded": 1595971661890,
+            "dateLastModified": 1601323220987,
+            "defaultEarnCode": {
+                "id": 9,
+                "code": "5090",
+                "customDate1": null,
+                "customDate2": null,
+                "customDate3": null,
+                "customFloat1": null,
+                "customFloat2": null,
+                "customFloat3": null,
+                "customInt1": null,
+                "customInt2": null,
+                "customInt3": null,
+                "customText1": null,
+                "customText10": null,
+                "customText11": null,
+                "customText12": null,
+                "customText13": null,
+                "customText14": null,
+                "customText15": null,
+                "customText16": null,
+                "customText17": null,
+                "customText18": null,
+                "customText19": null,
+                "customText2": null,
+                "customText20": null,
+                "customText3": null,
+                "customText4": null,
+                "customText5": null,
+                "customText6": null,
+                "customText7": null,
+                "customText8": null,
+                "customText9": null,
+                "customTextBlock1": null,
+                "customTextBlock2": null,
+                "customTextBlock3": null,
+                "dateAdded": 1595971661873,
+                "dateLastModified": 1601323220987,
+                "description": null,
+                "earnCodeGroup": {
+                    "id": 7
+                },
+                "earnCodeTypeLookup": {
+                    "id": 1
+                },
+                "externalID": "REG",
+                "generalLedgerBillAccount": {
+                    "id": 4,
+                    "externalAccountNumber": "3005",
+                    "externalAccountName": "Misc Adj-rate chng, train, etc"
+                },
+                "generalLedgerPayAccount": {
+                    "id": 4,
+                    "externalAccountNumber": "3005",
+                    "externalAccountName": "Misc Adj-rate chng, train, etc"
+                },
+                "generalLedgerSegment1": null,
+                "generalLedgerSegment2": null,
+                "generalLedgerSegment3": null,
+                "generalLedgerSegment4": null,
+                "generalLedgerSegment5": null,
+                "generalLedgerServiceCode": null,
+                "isDeleted": false,
+                "owner": {
+                    "id": 370,
+                    "firstName": "Karin",
+                    "lastName": "Edmondson"
+                },
+                "status": "Active",
+                "title": "ACA Insurance"
+            },
+            "doubleTimeEarnCode": null,
+            "earnCodeGroupStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isTaxable": true,
+            "overtimeEarnCode": null,
+            "payBillOptionsLookup": {
+                "id": 3,
+                "label": "Bill Only"
+            },
+            "unitOfMeasure": {
+                "id": 1,
+                "label": "Hours"
+            }
+        }
+    ]
+}
