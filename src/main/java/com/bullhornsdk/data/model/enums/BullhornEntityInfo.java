@@ -97,6 +97,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment1;
@@ -432,6 +433,7 @@ public enum BullhornEntityInfo {
     GENERAL_LEDGER_SERVICE_CODE("GeneralLedgerServiceCode", GeneralLedgerServiceCode.class, GeneralLedgerServiceCodeWrapper.class, GeneralLedgerServiceCodeListWrapper.class, null, null),
     DISCOUNT("Discount", Discount.class, DiscountWrapper.class, DiscountListWrapper.class, null, null),
     EARN_CODE("EarnCode", EarnCode.class, EarnCodeWrapper.class, EarnCodeListWrapper.class, null, null),
+    EARN_CODE_GROUP("EarnCodeGroup", EarnCodeGroup.class, EarnCodeGroupWrapper.class, EarnCodeGroupListWrapper.class, null, null),
     INVOICE_STATEMENT("InvoiceStatement", InvoiceStatement.class, InvoiceStatementWrapper.class, InvoiceStatementListWrapper.class, null, null),
     INVOICE_STATEMENT_BATCH("InvoiceStatementBatch", InvoiceStatementBatch.class, InvoiceStatementBatchWrapper.class, InvoiceStatementBatchListWrapper.class, null, null),
     INVOICE_STATEMENT_DISCOUNT("InvoiceStatementDiscount", InvoiceStatementDiscount.class, InvoiceStatementDiscountWrapper.class, InvoiceStatementDiscountListWrapper.class, null, null),
