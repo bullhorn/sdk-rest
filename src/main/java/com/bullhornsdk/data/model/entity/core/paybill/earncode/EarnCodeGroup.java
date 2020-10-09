@@ -17,22 +17,22 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "accruesOT", "allowForSelfService", "chargeType", "dateAdded", "dateLastModified", "defaultEarnCode", "status",
-    "isTaxable", "overtimeEarnCode", "payBillOptions", "unitOfMeasure"})
+@JsonPropertyOrder({"id", "accruesOT", "allowForSelfService", "chargeTypeLookup", "dateAdded", "dateLastModified", "defaultEarnCode",
+    "earnCodeGroupStatusLookup", "isTaxable", "overtimeEarnCode", "payBillOptionsLookup", "unitOfMeasure"})
 public class EarnCodeGroup extends CustomFieldsA implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, EditHistoryEntity {
 
     private Integer id;
     private Boolean accruesOT;
     private Boolean allowForSelfService;
-    private SimplifiedOptionsLookup chargeType;
+    private SimplifiedOptionsLookup chargeTypeLookup;
     private DateTime dateAdded;
     private DateTime dateLastModified;
     private EarnCode defaultEarnCode;
     private EarnCode doubleTimeEarnCode;
-    private SimplifiedOptionsLookup status;
+    private SimplifiedOptionsLookup earnCodeGroupStatusLookup;
     private Boolean isTaxable;
     private EarnCode overtimeEarnCode;
-    private SimplifiedOptionsLookup payBillOptions;
+    private SimplifiedOptionsLookup payBillOptionsLookup;
     private SimplifiedOptionsLookup unitOfMeasure;
 
     @Override
@@ -68,14 +68,14 @@ public class EarnCodeGroup extends CustomFieldsA implements QueryEntity, UpdateE
         this.allowForSelfService = allowForSelfService;
     }
 
-    @JsonProperty("chargeType")
-    public SimplifiedOptionsLookup getChargeType() {
-        return chargeType;
+    @JsonProperty("chargeTypeLookup")
+    public SimplifiedOptionsLookup getChargeTypeLookup() {
+        return chargeTypeLookup;
     }
 
-    @JsonProperty("chargeType")
-    public void setChargeType(SimplifiedOptionsLookup chargeType) {
-        this.chargeType = chargeType;
+    @JsonProperty("chargeTypeLookup")
+    public void setChargeTypeLookup(SimplifiedOptionsLookup chargeTypeLookup) {
+        this.chargeTypeLookup = chargeTypeLookup;
     }
 
     @JsonProperty("dateAdded")
@@ -119,14 +119,14 @@ public class EarnCodeGroup extends CustomFieldsA implements QueryEntity, UpdateE
         this.doubleTimeEarnCode = doubleTimeEarnCode;
     }
 
-    @JsonProperty("status")
-    public SimplifiedOptionsLookup getStatus() {
-        return status;
+    @JsonProperty("earnCodeGroupStatusLookup")
+    public SimplifiedOptionsLookup getEarnCodeGroupStatusLookup() {
+        return earnCodeGroupStatusLookup;
     }
 
-    @JsonProperty("status")
-    public void setStatus(SimplifiedOptionsLookup status) {
-        this.status = status;
+    @JsonProperty("earnCodeGroupStatusLookup")
+    public void setEarnCodeGroupStatusLookup(SimplifiedOptionsLookup earnCodeGroupStatusLookup) {
+        this.earnCodeGroupStatusLookup = earnCodeGroupStatusLookup;
     }
 
     @JsonProperty("isTaxable")
@@ -149,14 +149,14 @@ public class EarnCodeGroup extends CustomFieldsA implements QueryEntity, UpdateE
         this.overtimeEarnCode = overtimeEarnCode;
     }
 
-    @JsonProperty("payBillOptions")
-    public SimplifiedOptionsLookup getPayBillOptions() {
-        return payBillOptions;
+    @JsonProperty("payBillOptionsLookup")
+    public SimplifiedOptionsLookup getPayBillOptionsLookup() {
+        return payBillOptionsLookup;
     }
 
-    @JsonProperty("payBillOptions")
-    public void setPayBillOptions(SimplifiedOptionsLookup payBillOptions) {
-        this.payBillOptions = payBillOptions;
+    @JsonProperty("payBillOptionsLookup")
+    public void setPayBillOptionsLookup(SimplifiedOptionsLookup payBillOptionsLookup) {
+        this.payBillOptionsLookup = payBillOptionsLookup;
     }
 
     @JsonProperty("unitOfMeasure")
@@ -178,21 +178,21 @@ public class EarnCodeGroup extends CustomFieldsA implements QueryEntity, UpdateE
         return Objects.equals(id, earnCodeGroup.id) &&
             Objects.equals(accruesOT, earnCodeGroup.accruesOT) &&
             Objects.equals(allowForSelfService, earnCodeGroup.allowForSelfService) &&
-            Objects.equals(chargeType, earnCodeGroup.chargeType) &&
+            Objects.equals(chargeTypeLookup, earnCodeGroup.chargeTypeLookup) &&
             Objects.equals(dateAdded, earnCodeGroup.dateAdded) &&
             Objects.equals(dateLastModified, earnCodeGroup.dateLastModified) &&
             Objects.equals(defaultEarnCode, earnCodeGroup.defaultEarnCode) &&
             Objects.equals(doubleTimeEarnCode, earnCodeGroup.doubleTimeEarnCode) &&
-            Objects.equals(status, earnCodeGroup.status) &&
+            Objects.equals(earnCodeGroupStatusLookup, earnCodeGroup.earnCodeGroupStatusLookup) &&
             Objects.equals(isTaxable, earnCodeGroup.isTaxable) &&
             Objects.equals(overtimeEarnCode, earnCodeGroup.overtimeEarnCode) &&
-            Objects.equals(payBillOptions, earnCodeGroup.payBillOptions) &&
+            Objects.equals(payBillOptionsLookup, earnCodeGroup.payBillOptionsLookup) &&
             Objects.equals(unitOfMeasure, earnCodeGroup.unitOfMeasure);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, accruesOT, allowForSelfService, chargeType, dateAdded, dateLastModified, defaultEarnCode, doubleTimeEarnCode, status, isTaxable, overtimeEarnCode, payBillOptions, unitOfMeasure);
+        return Objects.hash(super.hashCode(), id, accruesOT, allowForSelfService, chargeTypeLookup, dateAdded, dateLastModified, defaultEarnCode, doubleTimeEarnCode, earnCodeGroupStatusLookup, isTaxable, overtimeEarnCode, payBillOptionsLookup, unitOfMeasure);
     }
 
     @Override
@@ -201,15 +201,15 @@ public class EarnCodeGroup extends CustomFieldsA implements QueryEntity, UpdateE
             "id=" + id +
             ", accruesOT=" + accruesOT +
             ", allowForSelfService=" + allowForSelfService +
-            ", chargeType=" + chargeType +
+            ", chargeTypeLookup=" + chargeTypeLookup +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
             ", defaultEarnCode=" + defaultEarnCode +
             ", doubleTimeEarnCode=" + doubleTimeEarnCode +
-            ", status=" + status +
+            ", earnCodeGroupStatusLookup=" + earnCodeGroupStatusLookup +
             ", isTaxable=" + isTaxable +
             ", overtimeEarnCode=" + overtimeEarnCode +
-            ", payBillOptions=" + payBillOptions +
+            ", payBillOptionsLookup=" + payBillOptionsLookup +
             ", unitOfMeasure=" + unitOfMeasure +
             '}';
     }
