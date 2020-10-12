@@ -24,19 +24,23 @@ import com.bullhornsdk.data.model.entity.core.paybill.Location
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge
-import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup
-import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionDiscountDetail
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSalesTaxDetail
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSurchargeDetail
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.*
 import com.bullhornsdk.data.model.entity.core.paybill.master.BatchGroup
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch
 import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster
+import com.bullhornsdk.data.model.entity.core.paybill.rate.*
 import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction
-import com.bullhornsdk.data.model.entity.core.paybill.transaction.*
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayMasterTransaction
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
@@ -471,6 +475,22 @@ public class MockDataLoader {
         entityFiles.put(InvoiceStatementMessageTemplate.class, "paybill/invoiceStatementMessageTemplate-data.txt");
         entityFiles.put(CurrencyUnit.class, "paybill/currencyUnit-data.txt");
 
+        entityFiles.put(BillMasterTransactionDiscountDetail.class, "paybill/detail/billmastertransactiondiscountdetail-data.txt");
+        entityFiles.put(BillMasterTransactionSalesTaxDetail.class, "paybill/detail/billmastertransactionsalestaxdetail-data.txt");
+        entityFiles.put(BillMasterTransactionSurchargeDetail.class, "paybill/detail/billmastertransactionsurchargedetail-data.txt");
+
+        entityFiles.put(InvoiceStatementDistributionBatch.class, "paybill/invoice/invoicestatementdistributionbatch-data.txt");
+        entityFiles.put(InvoiceStatementLineDistribution.class, "paybill/invoice/invoicestatementlinedistribution-data.txt");
+
+        entityFiles.put(BillMasterTransactionDiscountRate.class, "paybill/rate/billmastertransactiondiscountrate-data.txt");
+        entityFiles.put(BillMasterTransactionSalesTaxRate.class, "paybill/rate/billmastertransactionsalestaxrate-data.txt");
+        entityFiles.put(BillMasterTransactionSurchargeRate.class, "paybill/rate/billmastertransactionsurchargerate-data.txt");
+        entityFiles.put(DiscountRate.class, "paybill/rate/discountrate-data.txt");
+        entityFiles.put(InvoiceStatementLineItemDiscountRate.class, "paybill/rate/invoicestatementlineitemdiscountrate-data.txt");
+        entityFiles.put(InvoiceStatementLineItemSurchargeRate.class, "paybill/rate/invoicestatementlineitemsurchargerate-data.txt");
+        entityFiles.put(InvoiceStatementSalesTaxRate.class, "paybill/rate/invoicestatementsalestaxrate-data.txt");
+        entityFiles.put(SurchargeRate.class, "paybill/rate/surchargerate-data.txt");
+
         // TODO add v2 of PAY and Bill Entities data
         entityFiles.put(BillableCharge.class, "paybill/billablecharge-data.txt");
         entityFiles.put(PayableCharge.class, "paybill/payablecharge-data.txt");
@@ -694,6 +714,22 @@ public class MockDataLoader {
         entityMetaFiles.put(Surcharge.class, "meta/paybill/surcharge-meta-data.txt");
         entityMetaFiles.put(Tax.class, "meta/paybill/tax-meta-data.txt");
         entityMetaFiles.put(CanvasReport.class, "meta/paybill/canvasreport-meta-data.txt");
+
+        entityMetaFiles.put(BillMasterTransactionDiscountDetail.class, "meta/paybill/detail/billmastertransactiondiscountdetail-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSalesTaxDetail.class, "meta/paybill/detail/billmastertransactionsalestaxdetail-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSurchargeDetail.class, "meta/paybill/detail/billmastertransactionsurchargedetail-meta-data.txt");
+
+        entityMetaFiles.put(InvoiceStatementDistributionBatch.class, "meta/paybill/invoice/invoicestatementdistributionbatch-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineDistribution.class, "meta/paybill/invoice/invoicestatementlinedistribution-meta-data.txt");
+
+        entityMetaFiles.put(BillMasterTransactionDiscountRate.class, "meta/paybill/rate/billmastertransactiondiscountrate-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSalesTaxRate.class, "meta/paybill/rate/billmastertransactionsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSurchargeRate.class, "meta/paybill/rate/billmastertransactionsurchargerate-meta-data.txt");
+        entityMetaFiles.put(DiscountRate.class, "meta/paybill/rate/discountrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItemDiscountRate.class, "meta/paybill/rate/invoicestatementlineitemdiscountrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItemSurchargeRate.class, "meta/paybill/rate/invoicestatementlineitemsurchargerate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementSalesTaxRate.class, "meta/paybill/rate/invoicestatementsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(SurchargeRate.class, "meta/paybill/rate/surchargerate-meta-data.txt");
 
 
         // Certification Requirements
