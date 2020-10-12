@@ -32,7 +32,7 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
     private DateTime dateLastModified;
     @JsonIgnore
     private String description;
-    private SimplifiedOptionsLookup earnCodeGroup;
+    private EarnCodeGroup earnCodeGroup;
     private SimplifiedOptionsLookup earnCodeTypeLookup;
     @Size(max = 100)
     private String code;
@@ -106,12 +106,12 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
     }
 
     @JsonProperty("earnCodeGroup")
-    public SimplifiedOptionsLookup getEarnCodeGroup() {
+    public EarnCodeGroup getEarnCodeGroup() {
         return earnCodeGroup;
     }
 
     @JsonProperty("earnCodeGroup")
-    public void setEarnCodeGroup(SimplifiedOptionsLookup earnCodeGroup) {
+    public void setEarnCodeGroup(EarnCodeGroup earnCodeGroup) {
         this.earnCodeGroup = earnCodeGroup;
     }
 

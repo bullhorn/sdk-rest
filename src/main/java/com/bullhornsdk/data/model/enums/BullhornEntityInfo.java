@@ -93,12 +93,14 @@ import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
 import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionDiscountDetail;
 import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSalesTaxDetail;
 import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSurchargeDetail;
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount;
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment1;
@@ -116,7 +118,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
 import com.bullhornsdk.data.model.entity.core.paybill.rate.*;
 import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge;
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax;
-import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.*;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -426,6 +428,7 @@ public enum BullhornEntityInfo {
     GENERAL_LEDGER_SERVICE_CODE("GeneralLedgerServiceCode", GeneralLedgerServiceCode.class, GeneralLedgerServiceCodeWrapper.class, GeneralLedgerServiceCodeListWrapper.class, null, null),
     DISCOUNT("Discount", Discount.class, DiscountWrapper.class, DiscountListWrapper.class, null, null),
     EARN_CODE("EarnCode", EarnCode.class, EarnCodeWrapper.class, EarnCodeListWrapper.class, null, null),
+    EARN_CODE_GROUP("EarnCodeGroup", EarnCodeGroup.class, EarnCodeGroupWrapper.class, EarnCodeGroupListWrapper.class, null, null),
     INVOICE_STATEMENT("InvoiceStatement", InvoiceStatement.class, InvoiceStatementWrapper.class, InvoiceStatementListWrapper.class, null, null),
     INVOICE_STATEMENT_BATCH("InvoiceStatementBatch", InvoiceStatementBatch.class, InvoiceStatementBatchWrapper.class, InvoiceStatementBatchListWrapper.class, null, null),
     INVOICE_STATEMENT_DISCOUNT("InvoiceStatementDiscount", InvoiceStatementDiscount.class, InvoiceStatementDiscountWrapper.class, InvoiceStatementDiscountListWrapper.class, null, null),
@@ -438,6 +441,8 @@ public enum BullhornEntityInfo {
     BILL_MASTER("BillMaster", BillMaster.class, BillMasterWrapper.class, BillMasterListWrapper.class, null, null),
     BILL_MASTER_TRANSACTION("BillMasterTransaction", BillMasterTransaction.class, BillMasterTransactionWrapper.class, BillMasterTransactionListWrapper.class, null, null),
     PAY_MASTER("PayMaster", PayMaster.class, PayMasterWrapper.class, PayMasterListWrapper.class, null, null),
+    PAY_EXPORT_BATCH("PayExportBatch", PayExportBatch.class, PayExportBatchWrapper.class, PayExportBatchListWrapper.class, null, null),
+    PAY_MASTER_TRANSACTION("PayMasterTransaction", PayMasterTransaction.class, PayMasterTransactionWrapper.class, PayMasterTransactionListWrapper.class, null, null),
     SURCHARGE("Surcharge", Surcharge.class, SurchargeWrapper.class, SurchargeListWrapper.class, null, null),
     TAX("Tax", Tax.class, TaxWrapper.class, TaxListWrapper.class, null, null),
     CANVAS_REPORT("CanvasReport", CanvasReport.class, CanvasReportWrapper.class, CanvasReportListWrapper.class, null, null),
