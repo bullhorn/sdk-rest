@@ -1,0 +1,366 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "baseAmount": 2370.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 2
+            },
+            "dateAdded": 1601490557063,
+            "invoiceStatement": {
+                "id": 8
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 150.500000
+        },
+        {
+            "id": 2,
+            "baseAmount": 807.910000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 4
+            },
+            "dateAdded": 1601493864530,
+            "invoiceStatement": {
+                "id": 10
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 51.300000
+        },
+        {
+            "id": 3,
+            "baseAmount": 652.510000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 5
+            },
+            "dateAdded": 1601651934470,
+            "invoiceStatement": {
+                "id": 11
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 41.430000
+        },
+        {
+            "id": 4,
+            "baseAmount": 2208.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 6
+            },
+            "dateAdded": 1602079558993,
+            "invoiceStatement": {
+                "id": 12
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 140.210000
+        },
+        {
+            "id": 5,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 6,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 7,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 8,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 9,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 10,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 11,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 12,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 13,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 14,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 15,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 16,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 17,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 18,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 19,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        },
+        {
+            "id": 20,
+            "baseAmount": 12000.000000,
+            "billMasterTransactionSalesTaxDetail": {
+                "id": 7
+            },
+            "dateAdded": 1602236316840,
+            "invoiceStatement": {
+                "id": 14
+            },
+            "jurisdictionName": "Connecticut",
+            "jurisdictionType": {
+                "id": 4,
+                "label": "State"
+            },
+            "rate": 0.063500,
+            "taxAmount": 762.000000
+        }
+    ]
+}
