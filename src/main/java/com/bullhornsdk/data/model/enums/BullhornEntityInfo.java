@@ -406,6 +406,16 @@ public enum BullhornEntityInfo {
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
 
+    // placementRateCard Entities
+    PLACEMENT_RATE_CARD("PlacementRateCard", PlacementRateCard.class, PlacementRateCardWrapper.class, PlacementRateCardListWrapper.class, "PlacementRateCardEditHistory",
+        "PlacementRateCardEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_LINE("PlacementRateCardLine", PlacementRateCardLine.class, PlacementRateCardLineWrapper.class, PlacementRateCardLineListWrapper.class, "PlacementRateCardLineEditHistory",
+        "PlacementRateCardLineEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_LINE_GROUP("PlacementRateCardLineGroup", PlacementRateCardLineGroup.class, PlacementRateCardLineGroupWrapper.class, PlacementRateCardLineGroupListWrapper.class, "PlacementRateCardLineGroupEditHistory",
+        "PlacementRateCardLineGroupEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_VERSION("PlacementRateCardVersion", PlacementRateCardVersion.class, PlacementRateCardVersionWrapper.class, PlacementRateCardVersionListWrapper.class, "PlacementRateCardVersionEditHistory",
+        "PlacementRateCardVersionEditHistoryFieldChange"),
+
     // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),
     BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
