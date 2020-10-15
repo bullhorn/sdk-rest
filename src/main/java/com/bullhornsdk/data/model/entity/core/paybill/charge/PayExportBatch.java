@@ -10,10 +10,7 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import java.util.Objects;
@@ -33,8 +30,8 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
     private DateTime dateAdded;
     private DateTime accountingDate;
     private SimplifiedOptionsLookup payExportTypeLookup;
-    private PayMasterTransaction payMasterTransactions;
-    private PayableCharge payableCharges;
+    private OneToMany<PayMasterTransaction> payMasterTransactions;
+    private OneToMany<PayableCharge> payableCharges;
     private SimplifiedOptionsLookup payrollExportTargetLookup;
     private CorporateUser user;
 
@@ -88,23 +85,23 @@ public class PayExportBatch extends AbstractEntity implements QueryEntity, Updat
         this.payExportTypeLookup = payExportTypeLookup;
     }
 
-    @JsonProperty("payMasterTransactions")
-    public PayMasterTransaction getPayMasterTransactions() {
+    @JsonIgnore
+    public OneToMany<PayMasterTransaction> getPayMasterTransactions() {
         return payMasterTransactions;
     }
 
     @JsonProperty("payMasterTransactions")
-    public void setPayMasterTransactions(PayMasterTransaction payMasterTransactions) {
+    public void setPayMasterTransactions(OneToMany<PayMasterTransaction> payMasterTransactions) {
         this.payMasterTransactions = payMasterTransactions;
     }
 
-    @JsonProperty("payableCharges")
-    public PayableCharge getPayableCharges() {
+    @JsonIgnore
+    public OneToMany<PayableCharge> getPayableCharges() {
         return payableCharges;
     }
 
     @JsonProperty("payableCharges")
-    public void setPayableCharges(PayableCharge payableCharges) {
+    public void setPayableCharges(OneToMany<PayableCharge> payableCharges) {
         this.payableCharges = payableCharges;
     }
 

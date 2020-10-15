@@ -1,0 +1,586 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 2,
+            "baseAmount": 350.370000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 7.010000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 20
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 3,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 4,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 5,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 6,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 7,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 8,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 9,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 10,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 11,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 12,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 13,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 14,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 15,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 16,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 17,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 18,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 19,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        },
+        {
+            "id": 20,
+            "baseAmount": 824.400000,
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "calculateAndDisplayOnInvoice": true,
+            "discountAmount": 16.490000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "ignoreForSalesTaxCalculations": false,
+            "invoiceStatementLineItem": {
+                "id": 19
+            },
+            "rate": 0.020000,
+            "sentToAccountsReceivable": true,
+            "title": "2%"
+        }
+    ]
+}
