@@ -24,6 +24,8 @@ public class PlacementRateCardLine extends AbstractEntity implements QueryEntity
 
     private CurrencyUnit billCurrencyUnit;
 
+    private BigDecimal billRate;
+
     private EarnCode earnCode;
 
     @Size(max = 100)
@@ -80,6 +82,16 @@ public class PlacementRateCardLine extends AbstractEntity implements QueryEntity
     @JsonProperty("earnCode")
     public void setEarnCode(EarnCode earnCode) {
         this.earnCode = earnCode;
+    }
+
+    @JsonProperty("billRate")
+    public BigDecimal getBillRate() {
+        return billRate;
+    }
+
+    @JsonProperty("billRate")
+    public void setBillRate(BigDecimal billRate) {
+        this.billRate = billRate;
     }
 
     @JsonProperty("externalID")
