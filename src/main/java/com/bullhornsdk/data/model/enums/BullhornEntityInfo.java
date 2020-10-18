@@ -466,8 +466,11 @@ public enum BullhornEntityInfo {
     INVOICE_STATEMENT_DISTRIBUTION_BATCH("InvoiceStatementDistributionBatch", InvoiceStatementDistributionBatch.class, InvoiceStatementDistributionBatchWrapper.class, InvoiceStatementDistributionBatchListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_DISTRIBUTION("InvoiceStatementLineDistribution", InvoiceStatementLineDistribution.class, InvoiceStatementLineDistributionWrapper.class, InvoiceStatementLineDistributionListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_ITEM_DISCOUNT_RATE("InvoiceStatementLineItemDiscountRate", InvoiceStatementLineItemDiscountRate.class, InvoiceStatementLineItemDiscountRateWrapper.class, InvoiceStatementLineItemDiscountRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_ITEM_SALES_TAX_RATE("InvoiceStatementLineItemSalesTaxRate", InvoiceStatementLineItemSalesTaxRate.class, InvoiceStatementLineItemSalesTaxRateWrapper.class, InvoiceStatementLineItemSalesTaxRateListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_ITEM_SURCHARGE_RATE("InvoiceStatementLineItemSurchargeRate", InvoiceStatementLineItemSurchargeRate.class, InvoiceStatementLineItemSurchargeRateWrapper.class, InvoiceStatementLineItemSurchargeRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_DISCOUNT_RATE("InvoiceStatementDiscountRate", InvoiceStatementDiscountRate.class, InvoiceStatementDiscountRateWrapper.class, InvoiceStatementDiscountRateListWrapper.class, null, null),
     INVOICE_STATEMENT_SALES_TAX_RATE("InvoiceStatementSalesTaxRate", InvoiceStatementSalesTaxRate.class, InvoiceStatementSalesTaxRateWrapper.class, InvoiceStatementSalesTaxRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_SURCHARGE_RATE("InvoiceStatementSurchargeRate", InvoiceStatementSurchargeRate.class, InvoiceStatementSurchargeRateWrapper.class, InvoiceStatementSurchargeRateListWrapper.class, null, null),
     SURCHARGE_RATE("SurchargeRate", SurchargeRate.class, SurchargeRateWrapper.class, SurchargeRateListWrapper.class, null, null),
 
     // Certification Requirements
