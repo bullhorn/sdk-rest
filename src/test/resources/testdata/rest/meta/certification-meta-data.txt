@@ -1,13 +1,1133 @@
 {
     "entity": "Certification",
-    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Certification?fields=*",
-    "label": "Certification",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Certification?fields=*",
+    "label": "Credential",
+    "dateLastModified": "1594184420275",
     "fields": [
         {
             "name": "id",
             "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "category",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "CategoryID",
+            "optionsType": "Category",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Category",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Category",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Category?fields=*",
+                "label": "Category",
+                "dateLastModified": "1594184411616",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "certificationGroups",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Credential Groups",
+            "optionsType": "CertificationGroup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/CertificationGroup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CertificationGroup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/CertificationGroup?fields=*",
+                "label": "Credential Group",
+                "dateLastModified": "1594184411122",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "countryID",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Country",
+            "optionsType": "Country",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Country",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Country",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Country?fields=*",
+                "label": "Country",
+                "dateLastModified": "1594644607607",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 64,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "customFloat3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
             "dataType": "Integer",
-            "optional": false
+            "confidential": false,
+            "label": "Expiration Date Calculation",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Completed Date",
+            "options": [
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Number of Attempts",
+            "options": [
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Auto-Validation",
+            "options": [
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Type",
+            "options": [
+                {
+                    "value": "",
+                    "label": ""
+                },
+                {
+                    "value": "1000",
+                    "label": "1000"
+                },
+                {
+                    "value": "1001",
+                    "label": "1050"
+                },
+                {
+                    "value": "1002",
+                    "label": "1100"
+                },
+                {
+                    "value": "1003",
+                    "label": "1150"
+                },
+                {
+                    "value": "1004",
+                    "label": "1200"
+                },
+                {
+                    "value": "1005",
+                    "label": "1250"
+                },
+                {
+                    "value": "1006",
+                    "label": "1300"
+                },
+                {
+                    "value": "1007",
+                    "label": "1350"
+                },
+                {
+                    "value": "1008",
+                    "label": "1400"
+                },
+                {
+                    "value": "1009",
+                    "label": "1450"
+                },
+                {
+                    "value": "1010",
+                    "label": "1500"
+                },
+                {
+                    "value": "1011",
+                    "label": "1550"
+                },
+                {
+                    "value": "1012",
+                    "label": "1600"
+                },
+                {
+                    "value": "1013",
+                    "label": "1650"
+                },
+                {
+                    "value": "1014",
+                    "label": "1700"
+                },
+                {
+                    "value": "1015",
+                    "label": "1750"
+                },
+                {
+                    "value": "1016",
+                    "label": "1800"
+                },
+                {
+                    "value": "1017",
+                    "label": "1850"
+                },
+                {
+                    "value": "1018",
+                    "label": "1900"
+                },
+                {
+                    "value": "1019",
+                    "label": "1950"
+                },
+                {
+                    "value": "1020",
+                    "label": "2000"
+                },
+                {
+                    "value": "1021",
+                    "label": "2050"
+                },
+                {
+                    "value": "1022",
+                    "label": "2100"
+                },
+                {
+                    "value": "1023",
+                    "label": "2150"
+                },
+                {
+                    "value": "1024",
+                    "label": "2200"
+                },
+                {
+                    "value": "1025",
+                    "label": "2250"
+                },
+                {
+                    "value": "1026",
+                    "label": "2300"
+                },
+                {
+                    "value": "1027",
+                    "label": "2350"
+                },
+                {
+                    "value": "1028",
+                    "label": "2400"
+                },
+                {
+                    "value": "1029",
+                    "label": "2450"
+                },
+                {
+                    "value": "1030",
+                    "label": "2500"
+                },
+                {
+                    "value": "1031",
+                    "label": "2550"
+                },
+                {
+                    "value": "1032",
+                    "label": "2600"
+                },
+                {
+                    "value": "1033",
+                    "label": "2650"
+                },
+                {
+                    "value": "1034",
+                    "label": "2700"
+                },
+                {
+                    "value": "1035",
+                    "label": "2750"
+                },
+                {
+                    "value": "1036",
+                    "label": "2800"
+                },
+                {
+                    "value": "1037",
+                    "label": "2850"
+                },
+                {
+                    "value": "1038",
+                    "label": "2900"
+                },
+                {
+                    "value": "1039",
+                    "label": "2950"
+                },
+                {
+                    "value": "1040",
+                    "label": "3000"
+                },
+                {
+                    "value": "1041",
+                    "label": "3050"
+                },
+                {
+                    "value": "1042",
+                    "label": "3100"
+                },
+                {
+                    "value": "1043",
+                    "label": "3150"
+                },
+                {
+                    "value": "1044",
+                    "label": "3200"
+                },
+                {
+                    "value": "1045",
+                    "label": "3250"
+                },
+                {
+                    "value": "1046",
+                    "label": "3300"
+                },
+                {
+                    "value": "1047",
+                    "label": "3350"
+                },
+                {
+                    "value": "1048",
+                    "label": "3400"
+                },
+                {
+                    "value": "1049",
+                    "label": "3450"
+                },
+                {
+                    "value": "1050",
+                    "label": "3500"
+                },
+                {
+                    "value": "1051",
+                    "label": "3550"
+                },
+                {
+                    "value": "1052",
+                    "label": "3600"
+                },
+                {
+                    "value": "1053",
+                    "label": "3650"
+                },
+                {
+                    "value": "1054",
+                    "label": "3700"
+                },
+                {
+                    "value": "1055",
+                    "label": "3750"
+                },
+                {
+                    "value": "1056",
+                    "label": "3800"
+                },
+                {
+                    "value": "1057",
+                    "label": "3850"
+                },
+                {
+                    "value": "1058",
+                    "label": "3900"
+                },
+                {
+                    "value": "1059",
+                    "label": "3950"
+                },
+                {
+                    "value": "1060",
+                    "label": "4000"
+                },
+                {
+                    "value": "1061",
+                    "label": "4050"
+                },
+                {
+                    "value": "1062",
+                    "label": "4100"
+                },
+                {
+                    "value": "1063",
+                    "label": "4150"
+                },
+                {
+                    "value": "1064",
+                    "label": "4200"
+                },
+                {
+                    "value": "1065",
+                    "label": "4250"
+                },
+                {
+                    "value": "1066",
+                    "label": "4300"
+                },
+                {
+                    "value": "1067",
+                    "label": "4350"
+                },
+                {
+                    "value": "1068",
+                    "label": "4400"
+                },
+                {
+                    "value": "1069",
+                    "label": "4450"
+                },
+                {
+                    "value": "1070",
+                    "label": "4500"
+                },
+                {
+                    "value": "1071",
+                    "label": "4550"
+                },
+                {
+                    "value": "1072",
+                    "label": "4600"
+                },
+                {
+                    "value": "1073",
+                    "label": "4650"
+                },
+                {
+                    "value": "1074",
+                    "label": "4700"
+                },
+                {
+                    "value": "1075",
+                    "label": "4750"
+                },
+                {
+                    "value": "1076",
+                    "label": "4800"
+                },
+                {
+                    "value": "1077",
+                    "label": "4850"
+                },
+                {
+                    "value": "1078",
+                    "label": "4900"
+                },
+                {
+                    "value": "1079",
+                    "label": "4950"
+                },
+                {
+                    "value": "1080",
+                    "label": "5000"
+                },
+                {
+                    "value": "1081",
+                    "label": "5050"
+                },
+                {
+                    "value": "1082",
+                    "label": "5100"
+                },
+                {
+                    "value": "1083",
+                    "label": "5150"
+                },
+                {
+                    "value": "1084",
+                    "label": "5200"
+                },
+                {
+                    "value": "1085",
+                    "label": "5250"
+                },
+                {
+                    "value": "1086",
+                    "label": "5300"
+                },
+                {
+                    "value": "1087",
+                    "label": "5350"
+                },
+                {
+                    "value": "1088",
+                    "label": "5550"
+                },
+                {
+                    "value": "1089",
+                    "label": "5600"
+                },
+                {
+                    "value": "1090",
+                    "label": "5650"
+                },
+                {
+                    "value": "1091",
+                    "label": "5700"
+                },
+                {
+                    "value": "1092",
+                    "label": "5750"
+                },
+                {
+                    "value": "1093",
+                    "label": "5800"
+                },
+                {
+                    "value": "1094",
+                    "label": "5850"
+                },
+                {
+                    "value": "1095",
+                    "label": "5900"
+                },
+                {
+                    "value": "1096",
+                    "label": "5950"
+                },
+                {
+                    "value": "1097",
+                    "label": "6000"
+                },
+                {
+                    "value": "1098",
+                    "label": "6050"
+                },
+                {
+                    "value": "1099",
+                    "label": "6100"
+                },
+                {
+                    "value": "1100",
+                    "label": "6150"
+                },
+                {
+                    "value": "1101",
+                    "label": "6200"
+                },
+                {
+                    "value": "1102",
+                    "label": "6250"
+                },
+                {
+                    "value": "1103",
+                    "label": "6300"
+                },
+                {
+                    "value": "1104",
+                    "label": "6350"
+                },
+                {
+                    "value": "1105",
+                    "label": "6400"
+                },
+                {
+                    "value": "1106",
+                    "label": "6450"
+                },
+                {
+                    "value": "1107",
+                    "label": "6500"
+                },
+                {
+                    "value": "1108",
+                    "label": "6550"
+                },
+                {
+                    "value": "1109",
+                    "label": "6600"
+                },
+                {
+                    "value": "1110",
+                    "label": "6650"
+                },
+                {
+                    "value": "1111",
+                    "label": "6700"
+                },
+                {
+                    "value": "1112",
+                    "label": "6750"
+                },
+                {
+                    "value": "1113",
+                    "label": "6800"
+                },
+                {
+                    "value": "1114",
+                    "label": "6850"
+                },
+                {
+                    "value": "1115",
+                    "label": "6900"
+                },
+                {
+                    "value": "1116",
+                    "label": "6950"
+                },
+                {
+                    "value": "1117",
+                    "label": "7000"
+                },
+                {
+                    "value": "1118",
+                    "label": "7050"
+                },
+                {
+                    "value": "1119",
+                    "label": "7100"
+                },
+                {
+                    "value": "1120",
+                    "label": "7150"
+                },
+                {
+                    "value": "1121",
+                    "label": "7200"
+                },
+                {
+                    "value": "1122",
+                    "label": "7250"
+                },
+                {
+                    "value": "1123",
+                    "label": "7300"
+                },
+                {
+                    "value": "1124",
+                    "label": "7350"
+                },
+                {
+                    "value": "1125",
+                    "label": "7400"
+                },
+                {
+                    "value": "1126",
+                    "label": "7450"
+                },
+                {
+                    "value": "1127",
+                    "label": "7500"
+                },
+                {
+                    "value": "1128",
+                    "label": "7550"
+                },
+                {
+                    "value": "1129",
+                    "label": "7600"
+                },
+                {
+                    "value": "1130",
+                    "label": "7650"
+                },
+                {
+                    "value": "1131",
+                    "label": "7700"
+                },
+                {
+                    "value": "1132",
+                    "label": "7750"
+                },
+                {
+                    "value": "1133",
+                    "label": "7800"
+                },
+                {
+                    "value": "1134",
+                    "label": "7850"
+                },
+                {
+                    "value": "1135",
+                    "label": "7900"
+                },
+                {
+                    "value": "6000",
+                    "label": "10 Year"
+                },
+                {
+                    "value": "2000",
+                    "label": "1st Vac"
+                },
+                {
+                    "value": "2001",
+                    "label": "2 Step"
+                },
+                {
+                    "value": "2002",
+                    "label": "2 Vaccines if Negative"
+                },
+                {
+                    "value": "2004",
+                    "label": "2nd Vac"
+                },
+                {
+                    "value": "6002",
+                    "label": "3 Year"
+                },
+                {
+                    "value": "2005",
+                    "label": "3rd Vac"
+                },
+                {
+                    "value": "6003",
+                    "label": "5 Year"
+                },
+                {
+                    "value": "6004",
+                    "label": "7 Year"
+                },
+                {
+                    "value": "100",
+                    "label": "AHA"
+                },
+                {
+                    "value": "5000",
+                    "label": "Complete w/in Calendar Year"
+                },
+                {
+                    "value": "2006",
+                    "label": "Dr Letter"
+                },
+                {
+                    "value": "2007",
+                    "label": "Lab Values"
+                },
+                {
+                    "value": "6005",
+                    "label": "Life"
+                },
+                {
+                    "value": "2009",
+                    "label": "No Update in Assignment"
+                },
+                {
+                    "value": "2010",
+                    "label": "Positive"
+                },
+                {
+                    "value": "2011",
+                    "label": "Positive Lab Values"
+                },
+                {
+                    "value": "2012",
+                    "label": "Positive or 2 Vaccines"
+                },
+                {
+                    "value": "2013",
+                    "label": "Red Yellow Green Blue"
+                },
+                {
+                    "value": "5001",
+                    "label": "Sign and Date"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Category",
+            "options": [
+                {
+                    "value": "Assignment Confirmation",
+                    "label": "Assignment Confirmation"
+                },
+                {
+                    "value": "Background Check",
+                    "label": "Background Check"
+                },
+                {
+                    "value": "Certifications",
+                    "label": "Certifications"
+                },
+                {
+                    "value": "CEU",
+                    "label": "CEU"
+                },
+                {
+                    "value": "Competency Test",
+                    "label": "Competency Test"
+                },
+                {
+                    "value": "Drug Screen",
+                    "label": "Drug Screen"
+                },
+                {
+                    "value": "Employment Documents",
+                    "label": "Employment Documents"
+                },
+                {
+                    "value": "Evaluations",
+                    "label": "Evaluations"
+                },
+                {
+                    "value": "Facility Documents",
+                    "label": "Facility Documents"
+                },
+                {
+                    "value": "Facility Information",
+                    "label": "Facility Information"
+                },
+                {
+                    "value": "Facility Testing",
+                    "label": "Facility Testing"
+                },
+                {
+                    "value": "Health Documents",
+                    "label": "Health Documents"
+                },
+                {
+                    "value": "Job Description",
+                    "label": "Job Description"
+                },
+                {
+                    "value": "Lic/Cert Verification",
+                    "label": "Lic/Cert Verification"
+                },
+                {
+                    "value": "Licensure",
+                    "label": "Licensure"
+                },
+                {
+                    "value": "Payroll Documents",
+                    "label": "Payroll Documents"
+                },
+                {
+                    "value": "Sanction Searches",
+                    "label": "Sanction Searches"
+                },
+                {
+                    "value": "Skills Checklist",
+                    "label": "Skills Checklist"
+                },
+                {
+                    "value": "State Specific",
+                    "label": "State Specific"
+                },
+                {
+                    "value": "Tax Documents",
+                    "label": "Tax Documents"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Results",
+            "options": [
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Upload Required?",
+            "options": [
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Within Start Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Lic/Cert Number",
+            "options": [
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Score",
+            "options": [
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                },
+                {
+                    "value": "No",
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Edit History",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Print Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "customTextBlock4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Third Party",
+            "options": [
+                {
+                    "value": "ES",
+                    "label": "ES"
+                },
+                {
+                    "value": "Kyloe",
+                    "label": "Kyloe"
+                },
+                {
+                    "value": "MLC",
+                    "label": "MLC"
+                },
+                {
+                    "value": "Sterling",
+                    "label": "Sterling"
+                },
+                {
+                    "value": "Sterling/ES",
+                    "label": "Sterling/ES"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
         },
         {
             "name": "description",
@@ -15,11 +1135,35 @@
             "dataType": "String",
             "maxLength": 2147483647,
             "confidential": false,
-            "optional": true,
             "label": "Description",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
+        },
+        {
+            "name": "expirationDateOptional",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Expiration Date Optional",
+            "options": [
+                {
+                    "value": true,
+                    "label": "Yes"
+                },
+                {
+                    "value": false,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "label": "Migrate GUID",
+            "hideFromSearch": false
         },
         {
             "name": "name",
@@ -27,11 +1171,81 @@
             "dataType": "String",
             "maxLength": 100,
             "confidential": false,
-            "optional": false,
             "label": "Name",
-            "required": false,
-            "readOnly": false,
-            "multiValue": false
+            "hideFromSearch": false
+        },
+        {
+            "name": "privateLabels",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Private Labels",
+            "optionsType": "PrivateLabel",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/PrivateLabel",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PrivateLabel",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/PrivateLabel?fields=*",
+                "label": "Private Label",
+                "dateLastModified": "1594184415892",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "specialty",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "SpecialtyID",
+            "optionsType": "Specialty",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Specialty",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Specialty",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Specialty?fields=*",
+                "label": "Specialty",
+                "dateLastModified": "1594184413740",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "state",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "State",
+            "optionsType": "NorthAmericaState",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/NorthAmericaState",
+            "hideFromSearch": false
         }
     ]
 }

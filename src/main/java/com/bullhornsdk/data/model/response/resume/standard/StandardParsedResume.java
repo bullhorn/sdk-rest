@@ -7,6 +7,7 @@ import java.util.Map;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
+import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -26,6 +27,7 @@ public class StandardParsedResume implements ParsedResume {
 	private List<CandidateEducation> candidateEducation;
 	private List<CandidateWorkHistory> candidateWorkHistory;
 	private List<String> skillList;
+    private List<Skill> primarySkills;
 	private FileWrapper fileWrapper;
 
 	private String errorCode;
@@ -81,7 +83,19 @@ public class StandardParsedResume implements ParsedResume {
 		this.skillList = skillList;
 	}
 
-	@Override
+    @Override
+    @JsonProperty("primarySkills")
+    public List<Skill> getPrimarySkills() {
+        return primarySkills;
+    }
+
+    @Override
+    @JsonProperty("primarySkills")
+    public void setPrimarySkills(List<Skill> primarySkills) {
+        this.primarySkills = primarySkills;
+    }
+
+    @Override
 	@JsonIgnore
 	public String getErrorCode() {
 		return errorCode;
@@ -135,25 +149,18 @@ public class StandardParsedResume implements ParsedResume {
 		this.additionalProperties.put(name, value);
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("StandardParsedResume {\ncandidate=");
-		builder.append(candidate);
-		builder.append(", \ncandidateEducation=");
-		builder.append(candidateEducation);
-		builder.append(", \ncandidateWorkHistory=");
-		builder.append(candidateWorkHistory);
-		builder.append(", \nskillList=");
-		builder.append(skillList);
-		builder.append(", \nerrorCode=");
-		builder.append(errorCode);
-		builder.append(", \nerrorMessage=");
-		builder.append(errorMessage);
-		builder.append(", \nadditionalProperties=");
-		builder.append(additionalProperties);
-		builder.append("}");
-		return builder.toString();
-	}
-
+    @Override
+    public String toString() {
+        return "StandardParsedResume{" +
+            "candidate=" + candidate +
+            ", candidateEducation=" + candidateEducation +
+            ", candidateWorkHistory=" + candidateWorkHistory +
+            ", skillList=" + skillList +
+            ", primarySkills=" + primarySkills +
+            ", fileWrapper=" + fileWrapper +
+            ", errorCode='" + errorCode + '\'' +
+            ", errorMessage='" + errorMessage + '\'' +
+            ", additionalProperties=" + additionalProperties +
+            '}';
+    }
 }

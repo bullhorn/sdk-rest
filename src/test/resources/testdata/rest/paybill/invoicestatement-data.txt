@@ -1,0 +1,2726 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "billingAddress": {
+                "address1": "",
+                "address2": "",
+                "city": "",
+                "state": "",
+                "zip": "",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "",
+            "billingClientContact": {
+                "id": 2120380,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-05-31",
+            "billingProfile": {
+                "id": 1489,
+                "clientCorporation": {
+                    "id": 11394,
+                    "name": "Wells Fargo"
+                },
+                "title": "",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 16208,
+                "billingClientCorporation": {
+                    "id": 11394,
+                    "name": "Wells Fargo"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 11394,
+                "name": "Wells Fargo"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587667482397,
+            "dateLastModified": 1587727084383,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 6,
+                "label": "Email Sending"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2019-04-08",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 1,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 1,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Generated",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1489,
+                "clientCorporation": {
+                    "id": 11394,
+                    "name": "Wells Fargo"
+                },
+                "title": "Wells Fargo - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 36208
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 15.0000,
+            "lineItems": {
+                "total": 1,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 0,
+                "data": []
+            },
+            "status": {
+                "id": 2,
+                "label": "Ready"
+            },
+            "subtotal": 16.5000000000,
+            "surchargeTotal": 1.5000000000,
+            "surcharges": {
+                "total": 1,
+                "data": []
+            },
+            "taxAmount": 0.0000,
+            "taxTotal": 1.650000,
+            "taxes": {
+                "total": 1,
+                "data": []
+            },
+            "total": 18.150000
+        },
+        {
+            "id": 2,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 3,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 4,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 5,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 6,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 7,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 8,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 9,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 10,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 11,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 12,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 13,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 14,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 15,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 16,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 17,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 18,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 19,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        },
+        {
+            "id": 20,
+            "billingAddress": {
+                "address1": "fake",
+                "address2": "",
+                "city": "houston",
+                "state": "TX",
+                "zip": "77027",
+                "countryID": 1,
+                "countryName": "United States",
+                "countryCode": "US"
+            },
+            "billingAttention": "fake",
+            "billingClientContact": {
+                "id": 2711268,
+                "firstName": "zz_Billing",
+                "lastName": "zzProfile"
+            },
+            "billingCorporateUser": null,
+            "billingPeriodEndDate": "2020-04-23",
+            "billingProfile": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "fake",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 3930,
+                "billingClientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                }
+            },
+            "billingScheduleID": null,
+            "clientCorporation": {
+                "id": 2,
+                "name": "Orphaned Contacts"
+            },
+            "creditOfInvoiceStatement": null,
+            "creditedByInvoiceStatement": null,
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1587666376617,
+            "dateLastModified": 1587666376617,
+            "deliveryMethod": "Email",
+            "deliveryStatus": {
+                "id": 1,
+                "label": "N/A"
+            },
+            "discountAmount": null,
+            "discountTotal": 0E-10,
+            "discounts": {
+                "total": 0,
+                "data": []
+            },
+            "dueDate": null,
+            "effectiveDate": "2020-04-23",
+            "emailErrorReason": null,
+            "generalLedgerExportStatusLookup": {
+                "id": 1,
+                "label": "Not Ready to Export"
+            },
+            "invoiceStatementDate": null,
+            "invoiceStatementExportBatches": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementExports": {
+                "total": 0,
+                "data": []
+            },
+            "invoiceStatementFinalizedDate": null,
+            "invoiceStatementNumber": null,
+            "invoiceStatementOrigin": "Manual",
+            "invoiceStatementTemplate": {
+                "id": 1
+            },
+            "invoiceStatementType": {
+                "id": 1,
+                "label": "Original"
+            },
+            "invoiceTerm": {
+                "id": 1,
+                "clientCorporation": {
+                    "id": 2,
+                    "name": "Orphaned Contacts"
+                },
+                "title": "Orphaned Contacts - Net 30",
+                "effectiveDate": "2020-01-11",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 34723
+            },
+            "isCredited": false,
+            "isFinalized": false,
+            "isReinstated": false,
+            "lineItemTotal": 0.0000,
+            "lineItems": {
+                "total": 2,
+                "data": []
+            },
+            "owner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "paymentTerms": "30",
+            "previousBalance": 0.0000,
+            "purchaseOrderNumber": null,
+            "remitInstructions": null,
+            "splitBys": {
+                "total": 2,
+                "data": []
+            },
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "subtotal": 0E-10,
+            "surchargeTotal": 0E-10,
+            "surcharges": {
+                "total": 0,
+                "data": []
+            },
+            "taxAmount": null,
+            "taxTotal": 0.000000,
+            "taxes": {
+                "total": 0,
+                "data": []
+            },
+            "total": 0.000000
+        }
+    ]
+}

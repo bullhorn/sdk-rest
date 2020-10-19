@@ -1,0 +1,166 @@
+{
+    "entity": "InvoiceStatementDistributionBatch",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementDistributionBatch?fields=*",
+    "label": "Invoice Statement Distribution Batch",
+    "dateLastModified": "1601627282011",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "accountingDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Accounting Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "batchStatus",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Batch Status",
+            "optionsType": "BatchStatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BatchStatusLookup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BatchStatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BatchStatusLookup?fields=*",
+                "label": "Batch Status Lookup",
+                "dateLastModified": "1601662003689",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "canvasReport",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Canvas Report",
+            "optionsType": "CanvasReport",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/CanvasReport",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CanvasReport",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/CanvasReport?fields=*",
+                "label": "Canvas Report",
+                "dateLastModified": "1601627284652",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "invoiceStatementLineDistributions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Invoice Statement Line Distributions",
+            "optionsType": "InvoiceStatementLineDistribution",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatementLineDistribution",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementLineDistribution",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementLineDistribution?fields=*",
+                "label": "Invoice Statement Line Distribution",
+                "dateLastModified": "1601627282514",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "invoiceStatements",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Invoice Statements",
+            "optionsType": "InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatement?fields=*",
+                "label": "Invoice",
+                "dateLastModified": "1601627281504",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "owner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Owner",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1601605829600",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        }
+    ]
+}

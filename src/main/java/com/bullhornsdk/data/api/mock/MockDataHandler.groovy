@@ -32,6 +32,7 @@ import com.bullhornsdk.data.model.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.model.response.list.StandardListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume
@@ -71,6 +72,7 @@ public class MockDataHandler {
 	private Settings settingsObjectResults;
     private StandardGetEventsResponse getEventsResponse;
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
+    private List<PropertyOptionsResult> propertyOptionsResults;
 
 	public MockDataHandler() {
 		this.mockDataLoader = new MockDataLoader();
@@ -85,6 +87,7 @@ public class MockDataHandler {
         this.getEventsResponse = mockDataLoader.getEventsResponse();
         this.getLastRequestIdResponse = mockDataLoader.getLastRequestIdResponse();
 		this.queryClosures = addQueryClosures();
+        this.propertyOptionsResults = mockDataLoader.getPropertyOptionsResults();
 	}
 
 	public void refreshTestData(){
@@ -99,30 +102,13 @@ public class MockDataHandler {
 	 * @param id
 	 * @return
 	 */
-	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id) {
-		T entity = getEntityFromMap(type,id);
-		
-		if(entity == null){
-			throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
-		}
-
-		return KryoObjectCopyHelper.copy(entity);
-	}
-
-	/**
-	 * Returns a copy of the entity stored in restEntityMap.
-	 * 
-	 * @param type
-	 * @param id
-	 * @return
-	 */
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
 		T entity = getEntityFromMap(type,id);
-		
+
 		if(entity == null){
 			throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
 		}
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+		Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 
 		T newEntity = createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields);
 
@@ -143,7 +129,7 @@ public class MockDataHandler {
 			if(entity == null){
 				throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
 			}
-			Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+			Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 
 			T newEntity = createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields);
 			entityList.add(newEntity);
@@ -265,7 +251,7 @@ public class MockDataHandler {
 		if(params == null){
 			params = ParamFactory.queryParams();
 		}
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+		Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 		List<T> filteredValues = queryForData(type, where);
 
 		List<T> filteredValuesWithFieldsSet = filteredValues.collect(){
@@ -318,7 +304,7 @@ public class MockDataHandler {
 			if(params == null){
 				params = ParamFactory.searchParams();
 			}
-			Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
+			Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,type);
 			verifySearchFields(query,type);
 			List<T> allEntities  = getAllEntitiesOfType(type);
 			List<T> entitiesOverCountRemoved = handleCount(allEntities, params.getCount());
@@ -337,6 +323,26 @@ public class MockDataHandler {
 		FastFindListWrapper wrapper = new FastFindListWrapper(result);
 		return wrapper;
 	}
+
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
+        if(params == null){
+            params = ParamFactory.optionsParams();
+        }
+
+        List<PropertyOptionsResult> result = getPropertyOptionsResults();
+        PropertyOptionsListWrapper wrapper = new PropertyOptionsListWrapper(result);
+        return wrapper;
+    }
+
+    public PropertyOptionsListWrapper getOptions(Class<? extends BullhornEntity> type, Set<Integer> optionsIds, OptionsParams params) {
+        if(params == null){
+            params = ParamFactory.optionsParams();
+        }
+
+        List<PropertyOptionsResult> result = getPropertyOptionsResults();
+        PropertyOptionsListWrapper wrapper = new PropertyOptionsListWrapper(result);
+        return wrapper;
+    }
 
 	private <T> List<T> handleCount(List<T> entities, Integer count){
 		if(count != null && count < entities.size()){
@@ -427,7 +433,6 @@ public class MockDataHandler {
 	 * @return
 	 */
 	public <T extends BullhornEntity> MetaData<T> getMetaData(Class<T> type, MetaParameter metaParameter, Set<String> fieldSet){
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,type);
 		return restMetaDataMap.get(type);
 	}
 
@@ -598,7 +603,7 @@ public class MockDataHandler {
 	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, JavaFile file, String candidateDescription,
 	String externalId, FileParams params) {
 	     
-		 Candidate candidate = findEntity(Candidate.class, candidateId);
+		 Candidate candidate = findEntity(Candidate.class, candidateId, [ "id" ] as Set);
 		 candidate.setDescription(candidateDescription);
 		 updateEntity(candidate);
 		 
@@ -649,7 +654,7 @@ public class MockDataHandler {
 	
 	public List<Note> getAllCorpNotes(Integer clientCorporationID, Set<String> fieldSet, CorpNotesParams params) {
 
-		Set<String> verifiedAndModifiedFields = checkAndMofifyFields(fieldSet,Note.class);
+		Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,Note.class);
 
 		List<Note> allValues = getAllEntitiesOfType(Note.class);
 
@@ -702,6 +707,10 @@ public class MockDataHandler {
 	private Map<String,Object> getSettingsResults() {
 		return this.settingsResults;
 	}
+
+    private List<PropertyOptionsResult> getPropertyOptionsResults() {
+        return this.propertyOptionsResults;
+    }
 
 		/**
 	 * Merges non-null values from an entity to another entity. This mimics the update function where Jackson does not serialize the null
@@ -908,7 +917,7 @@ public class MockDataHandler {
 	 */
 
 
-	private <T extends BullhornEntity> Set<String> checkAndMofifyFields(Set<String> fields,Class<T> type){
+	private <T extends BullhornEntity> Set<String> checkAndModifyFields(Set<String> fields, Class<T> type){
 		if(fields == null){
 			fields = ["*"] as Set;
 		}
@@ -1074,7 +1083,12 @@ public class MockDataHandler {
 		for(String fullPath: fields){
 			// Removes spaces in order to find properties
 			fullPath = fullPath.replaceAll(" ", "");
-			setValueFromPath(copyOfFromEntity,toEntity,fullPath);
+
+            try {
+                setValueFromPath(copyOfFromEntity,toEntity,fullPath)
+            } catch(MissingPropertyException e) {
+                log.error("Missing property " + e.getProperty() + " on entity " + fromEntity.getClass().getSimpleName());
+            }
 		}
 
 		return toEntity;
@@ -1104,8 +1118,13 @@ public class MockDataHandler {
 
 		if(nestedPath(fullPropertyPath)){
 			for(partialPath in fullPropertyPath){
-				setValueFromPath(fromProperty,toProperty, partialPath);
-				if(!parentPropertyIsOneToMany(fromProperty,toProperty,path)){
+				try {
+                    setValueFromPath(fromProperty,toProperty, partialPath)
+                } catch(MissingPropertyException e) {
+                    log.error("Missing property " + e.getProperty() + " on entity " + to.getClass().getSimpleName());
+                }
+
+                if(!parentPropertyIsOneToMany(fromProperty,toProperty,path)){
 					fromProperty = fromProperty?."${partialPath}";
 					toProperty = toProperty?."${partialPath}";
 				}
@@ -1122,7 +1141,7 @@ public class MockDataHandler {
 		}else if(propertyIsNullNestedRestEntity(fromProperty,toProperty,path)){
 			//Set nested RestEntities using the actual entity and not just the nested json. Example: placement.candidate will be set using the id
 			//of the nested json in placement-data.txt to get the corresponding entity in candidate-data.txt
-			fromProperty?."${path}" = findEntity(fromProperty?."${path}".getClass(),fromProperty?."${path}".getId());
+			fromProperty?."${path}" = findEntity(fromProperty?."${path}".getClass(),fromProperty?."${path}".getId(), [ "*" ] as Set);
 			toProperty?."${path}" = fromProperty?."${path}".getClass().newInstance();
 		}else if(propertyIsSimpleType(fromProperty,toProperty,path)){
 			toProperty?."${path}" = fromProperty?."${path}";
@@ -1177,14 +1196,14 @@ public class MockDataHandler {
 
 	private ParsedResume createParsedResume(Integer candidateId, List<Integer> educationIds,List<Integer> workHistoryIds,List<Integer> skillIds,boolean nullOutIds){
 		ParsedResume parsedResume = new StandardParsedResume();
-		Candidate candidate = this.findEntity(Candidate.class, candidateId);
+		Candidate candidate = this.findEntity(Candidate.class, candidateId, [ "*" ] as Set);
 		if(nullOutIds){
 			candidate.setId(null);
 		}
 		List<CandidateEducation> education = new ArrayList<CandidateEducation>();
 
 		for(Integer id: educationIds){
-			CandidateEducation candidateEducation = this.findEntity(CandidateEducation.class, 1);
+			CandidateEducation candidateEducation = this.findEntity(CandidateEducation.class, 1, [ "*" ] as Set);
 			if(nullOutIds){
 				candidateEducation.setId(null);
 				candidateEducation.setCandidate(null);
@@ -1194,7 +1213,7 @@ public class MockDataHandler {
 
 		List<CandidateEducation> workHistory = new ArrayList<CandidateEducation>();
 		for(Integer id: workHistoryIds){
-			CandidateWorkHistory candiateWorkHistory = this.findEntity(CandidateWorkHistory.class, id);
+			CandidateWorkHistory candiateWorkHistory = this.findEntity(CandidateWorkHistory.class, id, [ "*" ] as Set);
 			if(nullOutIds){
 				candiateWorkHistory.setId(null);
 				candiateWorkHistory.setCandidate(null);
@@ -1204,7 +1223,7 @@ public class MockDataHandler {
 
 		List<Skill> skills = new ArrayList<Skill>();
 		for(Integer id: skillIds){
-			Skill skill = this.findEntity(Skill.class, id);
+			Skill skill = this.findEntity(Skill.class, id, [ "*" ] as Set);
 			if(nullOutIds){
 				skill.setId(null);
 

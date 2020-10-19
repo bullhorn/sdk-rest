@@ -6,6 +6,7 @@ import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -44,7 +45,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityDeleteUrl() {
-        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}";
+        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
     }
 
     /**
@@ -53,7 +54,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForUpdate() {
-        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}";
+        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
     }
 
     /**
@@ -62,7 +63,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForInsert() {
-        return restUrl + "entity/{entityType}?BhRestToken={bhRestToken}";
+        return restUrl + "entity/{entityType}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
     }
 
     /**
@@ -77,6 +78,17 @@ public class RestUrlFactory {
     }
 
     /**
+     * Assemble url for query request without where.
+     *
+     * @param params
+     *            QueryParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public String assembleQueryUrlWithPost(QueryParams params) {
+        return restUrl + "query/{entityType}?fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
      * Assemble url for search request.
      * 
      * @param params
@@ -85,6 +97,29 @@ public class RestUrlFactory {
      */
     public String assembleSearchUrl(SearchParams params) {
         return restUrl + "search/{entityType}?query={query}&fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
+     * Assemble url for search request without query parameter
+     *
+     * @param params
+     *            SearchParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public String assembleSearchUrlWithPost(SearchParams params) {
+        return restUrl + "search/{entityType}?fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
+     * Assemble url for id search request.
+     *
+     * @param params
+     *            SearchParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public static String assembleIdSearchUrl(String restUrl,
+                                             SearchParams params) {
+        return restUrl + "search/{entityType}?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
     }
 
     /**
@@ -234,6 +269,10 @@ public class RestUrlFactory {
 
     public String assembleUnsubscribeToEventsUrl(){
         return restUrl + "event/subscription/{subscriptionId}?BhRestToken={bhRestToken}";
+    }
+
+    public String assembleOptionsUrl(OptionsParams params) {
+        return restUrl + "options/{entityType}/{optionsIds}?BhRestToken={bhRestToken}"+ params.getUrlString();
     }
 
 }

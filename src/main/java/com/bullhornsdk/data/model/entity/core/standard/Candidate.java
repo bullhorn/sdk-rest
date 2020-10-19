@@ -4,20 +4,21 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -40,13 +41,23 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "address", "branch", "businessSectors", "categories", "category", "certificationList", "certifications",
-		"clientCorporationBlackList", "clientCorporationWhiteList", "comments", "companyName", "companyURL", "customDate1", "customDate2",
-		"customDate3", "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customText1",
+@JsonPropertyOrder({ "id", "address", "branch", "businessSectors", "canEnterTime", "categories", "category", "certificationList", "certifications",
+		"clientCorporationBlackList", "clientCorporationWhiteList", "comments", "companyName", "companyURL", "customDate1", "customDate10",
+        "customDate11", "customDate12", "customDate13","customDate2", "customDate3", "customDate4", "customDate5", "customDate6", "customDate7",
+        "customDate8", "customDate9", "customFloat1", "customFloat10", "customFloat11","customFloat12", "customFloat13", "customFloat14", "customFloat15",
+        "customFloat16", "customFloat17", "customFloat18", "customFloat19", "customFloat2", "customFloat20", "customFloat21", "customFloat22",
+        "customFloat23", "customFloat3", "customFloat4", "customFloat5", "customFloat6", "customFloat7", "customFloat8", "customFloat9",
+        "customInt1", "customInt10", "customInt11", "customInt12", "customInt13", "customInt14", "customInt15", "customInt16",
+        "customInt17", "customInt18", "customInt19", "customInt2", "customInt20", "customInt21", "customInt22", "customInt23",
+        "customInt3", "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customText1",
 		"customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16", "customText17",
-		"customText18", "customText19", "customText2", "customText20", "customText3", "customText4", "customText5", "customText6",
-		"customText7", "customText8", "customText9", "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4",
-		"customTextBlock5", "dateAdded", "dateAvailable", "dateAvailableEnd", "dateI9Expiration", "dateLastComment", "dateLastModified", "dateNextCall",
+		"customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
+        "customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
+        "customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
+        "customText39", "customText4", "customText40", "customText5", "customText6",
+		"customText7", "customText8", "customText9", "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3",
+        "customTextBlock4", "customTextBlock5", "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9",
+        "dateAdded", "dateAvailable", "dateAvailableEnd", "dateI9Expiration", "dateLastComment", "dateLastModified", "dateNextCall",
 		"dateOfBirth", "dayRate", "dayRateLow", "degreeList", "description", "desiredLocations", "disability", "educationDegree",
 		"educations", "email", "email2", "email3", "employeeType", "employmentPreference", "customEncryptedText1", "customEncryptedText2",
         "customEncryptedText3", "customEncryptedText4", "customEncryptedText5", "customEncryptedText6", "customEncryptedText7", "customEncryptedText8",
@@ -62,7 +73,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
         "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
-public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
+public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
@@ -74,6 +85,8 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	private Branch branch;
 
 	private OneToMany<BusinessSector> businessSectors;
+
+	private Boolean canEnterTime;
 
 	private OneToMany<Category> categories;
 
@@ -452,7 +465,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 
 	/**
 	 * Returns the entity with the required fields for an insert set.
-	 * 
+	 *
 	 * @return
 	 */
 	public Candidate instantiateForInsert() {
@@ -567,6 +580,16 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
 	public void setBusinessSectors(OneToMany<BusinessSector> businessSectors) {
 		this.businessSectors = businessSectors;
 	}
+
+    @JsonProperty("canEnterTime")
+    public Boolean getCanEnterTime() {
+        return canEnterTime;
+    }
+
+    @JsonProperty("canEnterTime")
+    public void setCanEnterTime(Boolean canEnterTime) {
+        this.canEnterTime = canEnterTime;
+    }
 
 	@JsonIgnore
 	public OneToMany<Category> getCategories() {
@@ -1971,6 +1994,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         if (branch != null ? !branch.equals(candidate.branch) : candidate.branch != null) return false;
         if (businessSectors != null ? !businessSectors.equals(candidate.businessSectors) : candidate.businessSectors != null)
             return false;
+        if (canEnterTime != null ? !canEnterTime.equals(candidate.canEnterTime) : candidate.canEnterTime != null) return false;
         if (categories != null ? !categories.equals(candidate.categories) : candidate.categories != null) return false;
         if (category != null ? !category.equals(candidate.category) : candidate.category != null) return false;
         if (certificationList != null ? !certificationList.equals(candidate.certificationList) : candidate.certificationList != null)
@@ -2186,6 +2210,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         result = 31 * result + (id != null ? id.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (branch != null ? branch.hashCode() : 0);
+        result = 31 * result + (canEnterTime != null ? canEnterTime.hashCode() : 0);
         result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
         result = 31 * result + (categories != null ? categories.hashCode() : 0);
         result = 31 * result + (category != null ? category.hashCode() : 0);
@@ -2332,6 +2357,7 @@ public class Candidate extends CustomFieldsB implements SearchEntity, UpdateEnti
         sb.append(", address=").append(address);
         sb.append(", branch=").append(branch);
         sb.append(", businessSectors=").append(businessSectors);
+        sb.append(", canEnterTime=").append(canEnterTime);
         sb.append(", categories=").append(categories);
         sb.append(", category=").append(category);
         sb.append(", certificationList=").append(certificationList);

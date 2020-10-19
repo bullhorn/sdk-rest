@@ -1,0 +1,666 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 164.880000,
+            "billMasterTransaction": {
+                "id": 22
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601493864297,
+            "discountAmount": 3.297600,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 2,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 164.880000,
+            "billMasterTransaction": {
+                "id": 23
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601493864297,
+            "discountAmount": 3.297600,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 3,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 164.880000,
+            "billMasterTransaction": {
+                "id": 24
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601493864297,
+            "discountAmount": 3.297600,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 4,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 164.880000,
+            "billMasterTransaction": {
+                "id": 25
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601493864297,
+            "discountAmount": 3.297600,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 5,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 164.880000,
+            "billMasterTransaction": {
+                "id": 26
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 1
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601493864297,
+            "discountAmount": 3.297600,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 6,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 144.270000,
+            "billMasterTransaction": {
+                "id": 28
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 2.885400,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 7,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 8,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 9,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 10,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 11,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 12,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 13,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 14,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 15,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 16,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 17,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 18,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 19,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        },
+        {
+            "id": 20,
+            "adjustmentSequenceNumber": 1,
+            "baseAmount": 206.100000,
+            "billMasterTransaction": {
+                "id": 30
+            },
+            "billMasterTransactionDiscountDetail": {
+                "id": 2
+            },
+            "currencyUnit": {
+                "id": 166,
+                "alphabeticCode": "USD",
+                "name": "US Dollar"
+            },
+            "dateAdded": 1601651933523,
+            "discountAmount": 4.122000,
+            "discountRate": {
+                "id": 111,
+                "title": "2%",
+                "effectiveDate": "2020-09-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 111,
+                "rate": 0.020000,
+                "amount": 0.000000,
+                "discountTypeLookup": {
+                    "id": 1,
+                    "label": "Discount"
+                }
+            },
+            "discountRateVersionID": 111,
+            "reversalOfTransactionDiscountRate": null
+        }
+    ]
+}

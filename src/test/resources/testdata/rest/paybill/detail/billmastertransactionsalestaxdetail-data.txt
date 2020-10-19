@@ -1,0 +1,206 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 15,
+                "data": []
+            },
+            "dateAdded": 1601490557047,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 2,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 15,
+                "data": []
+            },
+            "dateAdded": 1601490557047,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 3,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 15,
+                "data": []
+            },
+            "dateAdded": 1601490557047,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 4,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 5,
+                "data": []
+            },
+            "dateAdded": 1601493864413,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 5,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 4,
+                "data": []
+            },
+            "dateAdded": 1601651933913,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 6,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 8,
+                "data": []
+            },
+            "dateAdded": 1602079558690,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 7,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 8,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 9,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 10,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 11,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 12,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 13,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 14,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 15,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 16,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 17,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 18,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 19,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        },
+        {
+            "id": 20,
+            "billMasterTransactionSalesTaxRates": {
+                "total": 1,
+                "data": []
+            },
+            "dateAdded": 1602236316187,
+            "jurisdictionName": "Connecticut",
+            "rate": 0.063500
+        }
+    ]
+}

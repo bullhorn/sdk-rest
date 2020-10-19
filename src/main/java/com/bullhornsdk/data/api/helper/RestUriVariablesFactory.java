@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.BullhornData;
+import com.bullhornsdk.data.exception.NoAllFieldsException;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -23,6 +24,7 @@ import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
 import com.bullhornsdk.data.model.parameter.QueryParams;
 import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
 import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
@@ -36,25 +38,27 @@ public class RestUriVariablesFactory {
 	private final RestFileManager restFileManager;
 
 	// url parameter names
-	private static final String BH_REST_TOKEN = "bhRestToken";
-	private static final String ENTITY_TYPE = "entityType";
-	private static final String FIELDS = "fields";
-	private static final String META = "meta";
-	private static final String WHERE = "where";
-	private static final String QUERY = "query";
-	private static final String FORMAT = "format";
-	private static final String ENTITY_ID = "entityId";
-	private static final String FILE_ID = "fileId";
-	private static final String EXTERNAL_ID = "externalID";
-	private static final String ID = "id";
+    private static final String ACCOCIATION_IDS = "associationIds";
 	private static final String ACCOCIATION_NAME = "associationName";
-	private static final String ACCOCIATION_IDS = "associationIds";
+	private static final String BH_REST_TOKEN = "bhRestToken";
 	private static final String CLIENT_CORP_ID = "clientCorpId";
-	private static final String SETTINGS = "settings";
-    private static final String SUBSCRIPTION_ID = "subscriptionId";
-    private static final String MAX_EVENTS = "maxEvents";
+	private static final String ENTITY_ID = "entityId";
+	private static final String ENTITY_TYPE = "entityType";
+	private static final String EXECUTE_FORM_TRIGGERS = "executeFormTriggers";
+	private static final String EXTERNAL_ID = "externalID";
+	private static final String FIELDS = "fields";
+	private static final String FILE_ID = "fileId";
+	private static final String FORMAT = "format";
+	private static final String ID = "id";
+	private static final String MAX_EVENTS = "maxEvents";
+	private static final String META = "meta";
+    private static final String OPTIONS_IDS = "optionsIds";
+	private static final String PRIVATE_LABEL_ID = "privateLabelId";
+	private static final String QUERY = "query";
     private static final String REQUEST_ID = "requestId";
-    private static final String PRIVATE_LABEL_ID = "privateLabelId";
+    private static final String SETTINGS = "settings";
+    private static final String SUBSCRIPTION_ID = "subscriptionId";
+    private static final String WHERE = "where";
 
 	public RestUriVariablesFactory(BullhornData bullhornApiRest, RestFileManager restFileManager) {
 		super();
@@ -99,8 +103,14 @@ public class RestUriVariablesFactory {
         String bhRestToken = bullhornApiRest.getBhRestToken();
         uriVariables.put(BH_REST_TOKEN, bhRestToken);
         uriVariables.put(ENTITY_TYPE, entityType);
-        String fields = this.convertFieldSetToString(fieldSet);
-        uriVariables.put(FIELDS, fields);
+
+        try {
+            String fields = this.convertFieldSetToString(fieldSet);
+
+            uriVariables.put(FIELDS, fields);
+        } catch(NoAllFieldsException e) {
+            uriVariables.put(FIELDS, "*");
+        }
 
         if (metaParameter == null) {
             uriVariables.put(META, MetaParameter.BASIC.getName());
@@ -156,10 +166,8 @@ public class RestUriVariablesFactory {
 	 */
 	public Map<String, String> getUriVariablesForEntityDelete(BullhornEntityInfo entityInfo, Integer id) {
 		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
-		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
-		uriVariables.put(ID, id.toString());
+        addModifyingUriVariables(uriVariables, entityInfo);
+        uriVariables.put(ID, id.toString());
 		return uriVariables;
 	}
 
@@ -171,12 +179,9 @@ public class RestUriVariablesFactory {
 	 * @return all uriVariables needed for the api call
 	 */
 	public Map<String, String> getUriVariablesForEntityUpdate(BullhornEntityInfo entityInfo, Integer id) {
-
 		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
-		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
-		uriVariables.put(ID, id.toString());
+        addModifyingUriVariables(uriVariables, entityInfo);
+        uriVariables.put(ID, id.toString());
 		return uriVariables;
 	}
 
@@ -187,17 +192,31 @@ public class RestUriVariablesFactory {
 	 * @return
 	 */
 	public Map<String, String> getUriVariablesForEntityInsert(BullhornEntityInfo entityInfo) {
-
 		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
-		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
-		return uriVariables;
+        addModifyingUriVariables(uriVariables, entityInfo);
+        return uriVariables;
 	}
+
+    /**
+     * Returns the uri variables needed for a "query" request minus where since that will be in the body
+     *
+     * @param entityInfo
+     * @param fieldSet
+     * @param params
+     * @return all uriVariables needed for the api call
+     */
+    public Map<String, String> getUriVariablesForQueryWithPost(BullhornEntityInfo entityInfo, Set<String> fieldSet, QueryParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+
+        return uriVariables;
+    }
 
 	/**
 	 * Returns the uri variables needed for a "query" request
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param where
 	 * @param fieldSet
@@ -214,9 +233,26 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
+    /**
+     * Returns the uri variables needed for a "search" request minus query
+     *
+     * @param entityInfo
+     * @param fieldSet
+     * @param params
+     * @return all uriVariables needed for the api call
+     */
+    public Map<String, String> getUriVariablesForSearchWithPost(BullhornEntityInfo entityInfo, Set<String> fieldSet, SearchParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+
+        return uriVariables;
+    }
+
 	/**
 	 * Returns the uri variables needed for a "search" request
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param query
 	 * @param fieldSet
@@ -233,9 +269,25 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
+    /**
+     * Returns the uri variables needed for a id "search" request
+     */
+    public Map<String, String> getUriVariablesForIdSearch(BullhornEntityInfo entityInfo,
+                                                                 String query,
+                                                                 SearchParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        uriVariables.put(QUERY, query);
+
+        return uriVariables;
+    }
+
 	/**
 	 * Returns the uri variables needed for a resume file request
-	 * 
+	 *
 	 * @param params
 	 * @param resume
 	 * @return
@@ -256,7 +308,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for a resume text request
-	 * 
+	 *
 	 * @param params
 	 * @return
 	 */
@@ -275,7 +327,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for a get file request
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param entityId
 	 * @param fileId
@@ -293,7 +345,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for a get entity meta files api call.
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param entityId
 	 * @return
@@ -310,7 +362,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for adding a file
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param entityId
 	 * @param externalId
@@ -357,7 +409,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for a file delete api call
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param entityId
 	 * @param fileId
@@ -400,7 +452,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for a get corp notes call
-	 * 
+	 *
 	 * @param clientCorporationID
 	 * @param fieldSet
 	 * @param params
@@ -424,7 +476,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Adds url variables common to all requests to the passed in map: bhRestToken,fields,entityType
-	 * 
+	 *
 	 * @param fieldSet
 	 * @param entityInfo
 	 */
@@ -434,20 +486,35 @@ public class RestUriVariablesFactory {
 		uriVariables.put(BH_REST_TOKEN, bhRestToken);
 		uriVariables.put(FIELDS, fields);
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
-
 	}
 
+    /**
+     * Adds common URI Variables for calls that are creating, updating, or deleting data.
+     *
+     * Adds the execute form triggers url parameter if it has been configured.
+     *
+     * @param uriVariables The variables map to add the flag to
+     * @param entityInfo The bullhorn entity that is being modified by this call
+     */
+    private void addModifyingUriVariables(Map<String, String> uriVariables, BullhornEntityInfo entityInfo) {
+        String bhRestToken = bullhornApiRest.getBhRestToken();
+        uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        uriVariables.put(EXECUTE_FORM_TRIGGERS, bullhornApiRest.getExecuteFormTriggers() ? "true" : "false");
+    }
+
 	/**
-	 * Converts the Set to a string. Adds the id field if only blank fields present. If fieldset is null returns "*"
-	 * 
+	 * Converts the Set to a string. Adds the id field if only blank fields present. If fieldset is null returns "id"
+	 *
 	 * @param fieldSet
 	 * @return
 	 */
 	public String convertFieldSetToString(Set<String> fieldSet) {
-
-		if (fieldSet == null || fieldSet.isEmpty() || fieldSet.contains("*")) {
-			return "*";
-		}
+		if (fieldSet == null || fieldSet.isEmpty()) {
+			return ID;
+		} else if (fieldSet.contains("*")) {
+            throw new NoAllFieldsException();
+        }
 
 		Set<String> interim = fieldSet.stream().filter(s -> !StringUtils.isBlank(s)).collect(Collectors.toSet());
 		if (interim.isEmpty()) {
@@ -479,7 +546,12 @@ public class RestUriVariablesFactory {
 		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
 
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
-		uriVariables.put(SETTINGS, convertFieldSetToString(settingSet));
+
+		try {
+		    uriVariables.put(SETTINGS, convertFieldSetToString(settingSet));
+        } catch(NoAllFieldsException e) {
+            uriVariables.put(SETTINGS, "*");
+        }
 
 		return uriVariables;
 	}
@@ -558,6 +630,24 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
+    public Map<String, String> getUriVariablesForOptions(BullhornEntityInfo entityInfo, OptionsParams params) {
+        if (params == null) {
+            params = ParamFactory.optionsParams();
+        }
+        Map<String, String> uriVariables = params.getParameterMap();
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        return uriVariables;
+    }
 
-
+    public Map<String, String> getUriVariablesForOptionsWithIds(BullhornEntityInfo entityInfo, OptionsParams params, Set<Integer> optionsIds) {
+        if (params == null) {
+            params = ParamFactory.optionsParams();
+        }
+        Map<String, String> uriVariables = params.getParameterMap();
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        uriVariables.put(OPTIONS_IDS, StringUtils.join(optionsIds, ","));
+        return uriVariables;
+    }
 }

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.Sets;
 import org.joda.time.DateTime;
 import org.joda.time.format.ISODateTimeFormat;
 import org.junit.Test;
@@ -37,7 +38,7 @@ public class TestStandardBullhornApiRestNoteAdd extends BaseTest {
 		assertFalse("Insert failed", response.isError());
 		assertTrue("Note note added properly", response.getChangedEntityId() != null);
 
-		Note addedNote = bullhornData.findEntity(Note.class, response.getChangedEntityId());
+		Note addedNote = bullhornData.findEntity(Note.class, response.getChangedEntityId(), Sets.newHashSet("jobOrder(id)", "personReference(id)", "id"));
 		assertTrue(addedNote.getJobOrder().getId().equals(testEntities.getJobOrderId()));
 		assertTrue(addedNote.getPersonReference().getId().equals(testEntities.getCandidateId()));
 	}

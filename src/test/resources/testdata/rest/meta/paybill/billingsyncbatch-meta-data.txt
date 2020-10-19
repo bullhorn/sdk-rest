@@ -1,0 +1,195 @@
+{
+    "entity": "BillingSyncBatch",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillingSyncBatch?fields=*",
+    "label": "Billing Sync Batch",
+    "dateLastModified": "1587723580204",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "batchGroup",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Batch Group",
+            "optionsType": "BatchGroup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/BatchGroup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BatchGroup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BatchGroup?fields=*",
+                "label": "Batch Group",
+                "dateLastModified": "1587913246402",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billMasters",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Bill Masters",
+            "optionsType": "BillMaster",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/BillMaster",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMaster",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillMaster?fields=*",
+                "label": "Bill Transaction",
+                "dateLastModified": "1587691101829",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "defaultBillableCharge",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Default Billable Charge",
+            "optionsType": "BillableCharge",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/BillableCharge",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillableCharge",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillableCharge?fields=*",
+                "label": "Billing Charge",
+                "dateLastModified": "1587691101685",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "defaultPayableCharge",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Default Payable Charge",
+            "optionsType": "PayableCharge",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/PayableCharge",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PayableCharge",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/PayableCharge?fields=*",
+                "label": "Payable Charge",
+                "dateLastModified": "1587749770991",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "externalID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "External ID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "payMasters",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Pay Masters",
+            "optionsType": "PayMaster",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/PayMaster",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PayMaster",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/PayMaster?fields=*",
+                "label": "Pay Transaction",
+                "dateLastModified": "1587691104444",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "periodEndDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Period End Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "timeOfExternalEvent",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Time Of External Event",
+            "hideFromSearch": false
+        },
+        {
+            "name": "transactionOrigin",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Transaction Origin",
+            "optionsType": "TransactionOrigin",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/TransactionOrigin",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "TransactionOrigin",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/TransactionOrigin?fields=*",
+                "label": "Transaction Origin",
+                "dateLastModified": "1587913286222",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        }
+    ]
+}

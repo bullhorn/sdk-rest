@@ -51,6 +51,8 @@ public class TestEntities {
 
     private Integer fileId;
 
+    private Integer goalTargetId;
+
     private Integer housingComplexId;
 
     private Integer jobOrderId;
@@ -105,6 +107,8 @@ public class TestEntities {
 
     private Integer candidateFileAttachmentId;
 
+    private Integer certificationFileAttachmentId;
+
     private Integer clientContactFileAttachmentId;
 
     private Integer clientCorporationFileAttachmentId;
@@ -156,6 +160,8 @@ public class TestEntities {
         this.distributionListId = 1;
 
         this.fileId = 1;
+
+        this.goalTargetId = 1;
 
         this.housingComplexId = 1;
 
@@ -210,6 +216,8 @@ public class TestEntities {
         this.subscriptionId = "bhps_test_subscription";
 
         this.candidateFileAttachmentId = 1;
+
+        this.certificationFileAttachmentId = 1;
 
         this.clientContactFileAttachmentId = 1;
 
@@ -373,6 +381,14 @@ public class TestEntities {
 
     public void setFileId(Integer fileId) {
         this.fileId = fileId;
+    }
+
+    public Integer getGoalTargetId() {
+        return goalTargetId;
+    }
+
+    public void setGoalTargetId(Integer goalTargetId) {
+        this.goalTargetId = goalTargetId;
     }
 
     public Integer getHousingComplexId() {
@@ -595,6 +611,14 @@ public class TestEntities {
         return candidateFileAttachmentId;
     }
 
+    public void setCertificationFileAttachmentId(Integer certificationFileAttachmentId) {
+        this.certificationFileAttachmentId = certificationFileAttachmentId;
+    }
+
+    public Integer getCertificationFileAttachmentId() {
+        return certificationFileAttachmentId;
+    }
+
     public void setCandidateFileAttachmentId(Integer candidateFileAttachmentId) {
         this.candidateFileAttachmentId = candidateFileAttachmentId;
     }
@@ -682,6 +706,8 @@ public class TestEntities {
             .append(distributionListId)
             .append(",\n\t\"fileId\": ")
             .append(fileId)
+            .append(",\n\t\"goalTargetId\": ")
+            .append(goalTargetId)
             .append(",\n\t\"housingComplexId\": ")
             .append(housingComplexId)
             .append(",\n\t\"jobOrderId\": ")
@@ -736,6 +762,8 @@ public class TestEntities {
             .append('\'').append(subscriptionId).append('\'')
             .append(",\n\t\"candidateFileAttachmentId\": ")
             .append(candidateFileAttachmentId)
+            .append(",\n\t\"certificationFileAttachmentId\": ")
+            .append(certificationFileAttachmentId)
             .append(",\n\t\"clientContactFileAttachmentId\": ")
             .append(clientContactFileAttachmentId)
             .append(",\n\t\"clientCorporationFileAttachmentId\": ")

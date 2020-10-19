@@ -1,0 +1,239 @@
+{
+    "entity": "InvoiceStatementLineItemDiscountRate",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementLineItemDiscountRate?fields=*",
+    "label": "Invoice Statement Line Item Discount Rate",
+    "dateLastModified": "1602084751741",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "baseAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Base Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "billMasterTransactionDiscountDetail",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Bill Master Transaction Discount Detail",
+            "optionsType": "BillMasterTransactionDiscountDetail",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionDiscountDetail",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransactionDiscountDetail",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionDiscountDetail?fields=*",
+                "label": "Bill Master Transaction Discount Detail",
+                "dateLastModified": "1602084751931",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "calculateAndDisplayOnInvoice",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Calculate And Display On Invoice",
+            "hideFromSearch": false
+        },
+        {
+            "name": "discountAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Discount Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "discountRate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Discount Rate",
+            "optionsType": "DiscountRate",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/DiscountRate",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "DiscountRate",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/DiscountRate?fields=*",
+                "label": "Discount",
+                "dateLastModified": "1601627278907",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 200,
+                        "confidential": false,
+                        "label": "Title",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective Date",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveEndDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective End Date",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "versionID",
+                        "type": "SCALAR",
+                        "dataType": "Integer",
+                        "confidential": false,
+                        "label": "Discount Rate Version",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "rate",
+                        "type": "SCALAR",
+                        "dataType": "BigDecimal",
+                        "confidential": false,
+                        "label": "Rate",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "amount",
+                        "type": "SCALAR",
+                        "dataType": "BigDecimal",
+                        "confidential": false,
+                        "label": "Amount",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "discountTypeLookup",
+                        "type": "TO_ONE",
+                        "dataType": "SimplifiedOptionsLookup",
+                        "confidential": false,
+                        "label": "Type",
+                        "optionsType": "DiscountTypeLookup",
+                        "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/DiscountTypeLookup",
+                        "options": [
+                            {
+                                "value": 1,
+                                "label": "Discount",
+                                "readOnly": false
+                            },
+                            {
+                                "value": 2,
+                                "label": "Rebate",
+                                "readOnly": false
+                            },
+                            {
+                                "value": 3,
+                                "label": "VMS Fee",
+                                "readOnly": false
+                            },
+                            {
+                                "value": 4,
+                                "label": "Other",
+                                "readOnly": false
+                            }
+                        ],
+                        "hideFromSearch": false,
+                        "associatedEntity": {
+                            "entity": "DiscountTypeLookup",
+                            "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/DiscountTypeLookup?fields=*",
+                            "label": "Discount Type Lookup",
+                            "dateLastModified": "1601627279165",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer"
+                                },
+                                {
+                                    "name": "label",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 100,
+                                    "confidential": false,
+                                    "label": "Label",
+                                    "hideFromSearch": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "ignoreForSalesTaxCalculations",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Ignore For Sales Tax Calculations",
+            "hideFromSearch": false
+        },
+        {
+            "name": "invoiceStatementLineItem",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement Line Item",
+            "optionsType": "InvoiceStatementLineItem",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatementLineItem",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementLineItem",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementLineItem?fields=*",
+                "label": "Line Item",
+                "dateLastModified": "1601627282798",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "rate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Rate",
+            "hideFromSearch": false
+        },
+        {
+            "name": "sentToAccountsReceivable",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Sent To Accounts Receivable",
+            "hideFromSearch": false
+        },
+        {
+            "name": "title",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 200,
+            "confidential": false,
+            "label": "Title",
+            "hideFromSearch": false
+        }
+    ]
+}

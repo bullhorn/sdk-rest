@@ -1,0 +1,255 @@
+{
+    "entity": "PayExportBatch",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/PayExportBatch?fields=*",
+    "label": "Pay Export Batch",
+    "dateLastModified": "1600248909332",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "accountingDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Accounting Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "batchStatusLookup",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Pay Export Status",
+            "optionsType": "BatchStatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BatchStatusLookup",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Initiated",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "Processing",
+                    "readOnly": false
+                },
+                {
+                    "value": 3,
+                    "label": "Completed",
+                    "readOnly": false
+                },
+                {
+                    "value": 4,
+                    "label": "Failed",
+                    "readOnly": false
+                }
+            ],
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BatchStatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BatchStatusLookup?fields=*",
+                "label": "Batch Status Lookup",
+                "dateLastModified": "1600248909488",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "canvasReport",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Canvas Report",
+            "optionsType": "CanvasReport",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CanvasReport",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CanvasReport",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CanvasReport?fields=*",
+                "label": "Canvas Report",
+                "dateLastModified": "1600248856941",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "payExportTypeLookup",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Pay Export Type",
+            "optionsType": "PayExportTypeLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/PayExportTypeLookup",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Payroll",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "Accounts Payable",
+                    "readOnly": false
+                }
+            ],
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PayExportTypeLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/PayExportTypeLookup?fields=*",
+                "label": "Pay Export Type Lookup",
+                "dateLastModified": "1600248909589",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "payMasterTransactions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Pay Master Transactions",
+            "optionsType": "PayMasterTransaction",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/PayMasterTransaction",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PayMasterTransaction",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/PayMasterTransaction?fields=*",
+                "label": "Pay Transaction Entry",
+                "dateLastModified": "1600248909772",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "payableCharges",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Payable Charges",
+            "optionsType": "PayableCharge",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/PayableCharge",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PayableCharge",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/PayableCharge?fields=*",
+                "label": "Payable Charge",
+                "dateLastModified": "1600248854350",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "payrollExportTargetLookup",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Payroll Export Target Lookup",
+            "optionsType": "PayrollExportTargetLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/PayrollExportTargetLookup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PayrollExportTargetLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/PayrollExportTargetLookup?fields=*",
+                "label": "Payroll Export Target Lookup",
+                "dateLastModified": "1600248909952",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Label",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "user",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Owner",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1600248580311",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        }
+    ]
+}
