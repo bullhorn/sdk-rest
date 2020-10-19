@@ -24,7 +24,7 @@ public class BranchAssociations implements EntityAssociations<Branch> {
 
     private static final BranchAssociations INSTANCE = new BranchAssociations();
 
-    private BranchAssociations() {
+    public BranchAssociations() {
         super();
     }
 

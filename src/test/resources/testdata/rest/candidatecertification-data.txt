@@ -1,587 +1,1452 @@
 {
-	"total" : 20,
-	"start" : 0,
-	"count" : 20,
-	"data" : [{
-			"id" : 1,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+	"start": 0,
+	"count": 20,
+	"data": [{
+			"id": 8,
+			"boardCertification": null,
+			"candidate": {
+				"id": 27,
+				"firstName": "Test My12",
+				"lastName": "Candidate"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100989,
+				"name": "Bullhorn Test 5"
 			},
-			"comments" : "",
-			"compact" : 1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": null,
+			"compact": null,
+			"copyOnFile": null,
+			"customDate1": 1587614400000,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "test",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": "TBD",
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": null,
+			"dateExpiration": null,
+			"dateLastModified": 1588280708257,
+			"displayStatus": "Needs Review",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": null,
+			"licenseNumber": "123",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "Bullhorn Test 5",
+			"results": "test",
+			"status": "Needs Review"
 		}, {
-			"id" : 2,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 7,
+			"boardCertification": null,
+			"candidate": {
+				"id": 27,
+				"firstName": "Test My12",
+				"lastName": "Candidate"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100988,
+				"name": "Test Credential 1"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": null,
+			"compact": null,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": null,
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": null,
+			"dateExpiration": null,
+			"dateLastModified": 1586797011017,
+			"displayStatus": "Automated",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": null,
+			"licenseNumber": null,
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "Test Credential 1",
+			"results": null,
+			"status": "Automated"
 		}, {
-			"id" : 3,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 6,
+			"boardCertification": null,
+			"candidate": {
+				"id": 21,
+				"firstName": "Jonah",
+				"lastName": "Jameson"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100495,
+				"name": "IABP CE"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": null,
+			"compact": null,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": null,
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": null,
+			"dateExpiration": 1586491200000,
+			"dateLastModified": 1585915345197,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": null,
+			"licenseNumber": null,
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "IABP CE",
+			"results": null,
+			"status": "Needs Review"
 		}, {
-			"id" : 4,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 5,
+			"boardCertification": null,
+			"candidate": {
+				"id": 21,
+				"firstName": "Jonah",
+				"lastName": "Jameson"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100497,
+				"name": "IDCARD"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": null,
+			"compact": null,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": null,
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": null,
+			"dateExpiration": 1586404800000,
+			"dateLastModified": 1585828756413,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": null,
+			"licenseNumber": null,
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "IDCARD",
+			"results": null,
+			"status": "Automated"
 		}, {
-			"id" : 5,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 4,
+			"boardCertification": null,
+			"candidate": {
+				"id": 3,
+				"firstName": "test",
+				"lastName": "test"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100134,
+				"name": "AAS TBSS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": null,
+			"compact": null,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": null,
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": null,
+			"dateExpiration": 1590915600000,
+			"dateLastModified": 1588672957623,
+			"displayStatus": "Automated",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": null,
+			"licenseNumber": null,
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "AAS TBSS",
+			"results": null,
+			"status": "Automated"
 		}, {
-			"id" : 6,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 3,
+			"boardCertification": null,
+			"candidate": {
+				"id": 21,
+				"firstName": "Jonah",
+				"lastName": "Jameson"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 1,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": null,
+			"compact": null,
+			"copyOnFile": null,
+			"customDate1": 1586404800000,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": null,
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": "TBD",
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": null,
+			"dateExpiration": 1585987200000,
+			"dateLastModified": 1585911523477,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": null,
+			"licenseNumber": "1234",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "1234",
+			"status": "Rejected"
 		}, {
-			"id" : 7,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 2,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100870,
+				"name": "DEPT-CORRECT"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": null,
+			"compact": 0,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "99",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1517461200000,
+			"dateExpiration": 1681272000000,
+			"dateLastModified": 1584456199260,
+			"displayStatus": "Current",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": null,
+			"licenseNumber": "99",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "DEPT-CORRECT",
+			"results": "99",
+			"status": "Current"
 		}, {
-			"id" : 8,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 1,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 9,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 9,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 10,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 10,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 11,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 11,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 12,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 12,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 13,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 13,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 14,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 14,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 15,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 15,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 16,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 16,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 17,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 17,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 18,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 18,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 19,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 19,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}, {
-			"id" : 20,
-			"boardCertification" : "NA",
-			"candidate" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"id": 20,
+			"boardCertification": null,
+			"candidate": {
+				"id": 14,
+				"firstName": "d",
+				"lastName": "d"
 			},
-			"certification" : {
-				"id" : 1,
-				"name" : "Test"
+			"certification": {
+				"id": 100943,
+				"name": "ACLS"
 			},
-			"comments" : "",
-			"compact" : -1,
-			"copyOnFile" : 0,
-			"dateCertified" : null,
-			"dateExpiration" : null,
-			"dateLastModified" : 1480961328293,
-			"issuedBy" : "",
-			"licenseNumber" : "",
-			"licenseType" : "Not Applicable",
-			"location" : "",
-			"modifyingUser" : {
-				"id" : 1,
-				"firstName" : "BH",
-				"lastName" : "Tester"
+			"certificationFileAttachments": {
+				"total": 0,
+				"data": []
 			},
-			"results" : "",
-			"status" : "Current"
+			"comments": [
+				"test"
+			],
+			"compact": -1,
+			"copyOnFile": null,
+			"customDate1": null,
+			"customDate10": null,
+			"customDate2": null,
+			"customDate3": null,
+			"customDate4": null,
+			"customDate5": null,
+			"customDate6": null,
+			"customDate7": null,
+			"customDate8": null,
+			"customDate9": null,
+			"customText1": "89",
+			"customText10": null,
+			"customText2": null,
+			"customText3": null,
+			"customText4": null,
+			"customText5": null,
+			"customText6": null,
+			"customText7": null,
+			"customText8": null,
+			"customText9": null,
+			"customTextBlock1": null,
+			"customTextBlock10": null,
+			"customTextBlock2": null,
+			"customTextBlock3": null,
+			"customTextBlock4": null,
+			"customTextBlock5": null,
+			"customTextBlock6": null,
+			"customTextBlock7": null,
+			"customTextBlock8": null,
+			"customTextBlock9": null,
+			"dateCertified": 1583726400000,
+			"dateExpiration": 1585627200000,
+			"dateLastModified": 1584455261637,
+			"displayStatus": "Expired",
+			"fileAttachments": {
+				"total": 0,
+				"data": []
+			},
+			"isComplete": false,
+			"isDeleted": false,
+			"issuedBy": "To Be Provided",
+			"licenseNumber": "X123112211",
+			"licenseType": null,
+			"location": null,
+			"modifyingUser": {
+				"id": 2,
+				"firstName": "Bullhorn",
+				"lastName": "Dev"
+			},
+			"name": "ACLS",
+			"results": "test",
+			"status": "Current"
 		}
 	]
 }

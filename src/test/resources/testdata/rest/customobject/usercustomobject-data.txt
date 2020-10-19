@@ -1,0 +1,25 @@
+{
+    "total": 1,
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "corporationID": 44,
+            "dateAdded": 1537283623600,
+            "description": "",
+            "displayType": "Vertical",
+            "enabled": false,
+            "icon": "",
+            "isHidden": false,
+            "isPublic": 0,
+            "name": "Lead test",
+            "objectNumber": 9,
+            "reportID": null,
+            "staticTemplateName": "Lead test",
+            "tabName": "Overview",
+            "type": "Lead",
+            "useClientDefinedName": false
+        }
+    ]
+}

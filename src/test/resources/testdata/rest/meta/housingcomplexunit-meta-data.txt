@@ -1,0 +1,494 @@
+{
+    "entity": "HousingComplexUnit",
+    "entityMetaUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/HousingComplexUnit?fields=*",
+    "label": "Housing Complex UnitTX",
+    "dateLastModified": "1527831333825",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "amenities",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Amenities",
+            "optionsType": "HousingComplexAmenity",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/HousingComplexAmenity",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "HousingComplexAmenity",
+                "entityMetaUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/HousingComplexAmenity?fields=*",
+                "label": "Housing Complex Amenity",
+                "dateLastModified": "1527831334104",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billingContactID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Billing Contact",
+            "optionsType": "Client",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Client",
+            "hideFromSearch": false
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Comments",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customContactID1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customContactID1",
+            "optionsType": "Client",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Client",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customContactID2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customContactID2",
+            "optionsType": "Client",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Client",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Custom Date 1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Custom Date 2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Custom Date 3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat1",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Custom Float 1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat2",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Custom Float 2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customFloat3",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Custom Float 3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Custom Int 1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Custom Int 2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Custom Int 3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Custom Text 1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Custom Text 2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Custom Test 3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Custom Text 4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Custom Text 5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Custom Text Block 1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Custom Text Block 2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Custom Text Block 3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Custom Text Block 4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Custom Text Block 5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLeaseBegin",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Lease Start",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLeaseEnd",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Lease End",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateOfDeposit",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date of Deposit",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateOfRefund",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date of Refund",
+            "hideFromSearch": false
+        },
+        {
+            "name": "firstMonthProRate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "First Month Pro Rate",
+            "hideFromSearch": false
+        },
+        {
+            "name": "furnitureDeliveries",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Furniture Deliveries",
+            "optionsType": "HousingComplexFurnitureDelivery",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/HousingComplexFurnitureDelivery",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "HousingComplexFurnitureDelivery",
+                "entityMetaUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/HousingComplexFurnitureDelivery?fields=*",
+                "label": "Housing Complex Furniture Delivery",
+                "dateLastModified": "1527831334634",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "housingComplex",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Housing Complex",
+            "optionsType": "HousingComplex",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/HousingComplex",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "HousingComplex",
+                "entityMetaUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/HousingComplex?fields=*",
+                "label": "Housing ComplexesTX",
+                "dateLastModified": "1527831335350",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDepositRefundable",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Deposit is Refundable",
+            "options": [
+                {
+                    "value": true,
+                    "label": "Yes"
+                },
+                {
+                    "value": false,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "isLeaseOnFile",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Lease On File",
+            "options": [
+                {
+                    "value": false,
+                    "label": "No"
+                },
+                {
+                    "value": true,
+                    "label": "Yes"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "maxOccupants",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Maximum # of Occupants",
+            "hideFromSearch": false
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "label": "Migrate GUID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "monthlyRent",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Monthly Rent",
+            "hideFromSearch": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "occupants",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Occupants",
+            "hideFromSearch": false
+        },
+        {
+            "name": "penalties",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Penalties",
+            "hideFromSearch": false
+        },
+        {
+            "name": "securityDeposit",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Securiy Deposit",
+            "hideFromSearch": false
+        },
+        {
+            "name": "unitManagerID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Unit Manager",
+            "optionsType": "Client",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/Client",
+            "hideFromSearch": false
+        },
+        {
+            "name": "userHousingComplexUnits",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "User Housing Complex Units",
+            "optionsType": "UserHousingComplexUnit",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/UserHousingComplexUnit",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "UserHousingComplexUnit",
+                "entityMetaUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/UserHousingComplexUnit?fields=*",
+                "label": "User Housing Complex Unit",
+                "dateLastModified": "1527831335799",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "utilityAccounts",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Utility Accounts",
+            "optionsType": "HousingComplexUtilityAccount",
+            "optionsUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/options/HousingComplexUtilityAccount",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "HousingComplexUtilityAccount",
+                "entityMetaUrl": "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/HousingComplexUtilityAccount?fields=*",
+                "label": "Housing Complex Utility Account",
+                "dateLastModified": "1527831336275",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        }
+    ]
+}

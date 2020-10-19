@@ -23,7 +23,7 @@ public final class DistributionListAssociations implements EntityAssociations<Di
 
     private static final DistributionListAssociations INSTANCE = new DistributionListAssociations();
 
-    private DistributionListAssociations() {
+    public DistributionListAssociations() {
         super();
     }
 

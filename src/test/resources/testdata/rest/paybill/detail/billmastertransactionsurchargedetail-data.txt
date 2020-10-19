@@ -1,0 +1,247 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 2,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+
+        },
+        {
+            "id": 3,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 4,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 5,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 6,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 7,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                "total": 0,
+                "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 8,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 9,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 10,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 11,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 12,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 13,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 14,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 15,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 16,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 17,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 18,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 19,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        },
+        {
+            "id": 20,
+            "amount": 1,
+            "billMasterTransactionSurchargeRates": {
+                            "total": 0,
+                            "data": []
+            },
+            "dateAdded": 1601988176713,
+            "rate": 10,
+            "surchargeRate": null,
+            "title": null
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "entity": "InvoiceStatementTax",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementTax?fields=*",
+    "label": "Invoice Statement Tax",
+    "dateLastModified": "1587691106196",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "finalizedValue",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Finalized Value",
+            "hideFromSearch": false
+        },
+        {
+            "name": "invoiceStatement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement",
+            "optionsType": "InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatement?fields=*",
+                "label": "Invoice",
+                "dateLastModified": "1587691104113",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "tax",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Tax",
+            "optionsType": "Tax",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/Tax",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Tax",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/Tax?fields=*",
+                "label": "Tax",
+                "dateLastModified": "1587726967568",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        }
+    ]
+}

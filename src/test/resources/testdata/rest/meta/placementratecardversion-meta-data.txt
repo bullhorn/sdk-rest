@@ -1,0 +1,76 @@
+{
+   "entity":"PlacementRateCardVersion",
+   "entityMetaUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/PlacementRateCardVersion?fields=*",
+   "label":"Placement Rate Card Version",
+   "dateLastModified":"1602157539342",
+   "fields":[
+      {
+         "name":"id",
+         "type":"ID",
+         "dataType":"Integer"
+      },
+      {
+         "name":"dateAdded",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Date Added",
+         "hideFromSearch":false
+      },
+      {
+         "name":"dateLastModified",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Date Last Modified",
+         "hideFromSearch":false
+      },
+      {
+         "name":"effectiveDate",
+         "type":"SCALAR",
+         "dataType":"Date",
+         "confidential":false,
+         "label":"Effective Date",
+         "hideFromSearch":false
+      },
+      {
+         "name":"effectiveEndDate",
+         "type":"SCALAR",
+         "dataType":"Date",
+         "confidential":false,
+         "label":"Effective End Date",
+         "hideFromSearch":false
+      },
+      {
+         "name":"isFirst",
+         "type":"SCALAR",
+         "dataType":"Boolean",
+         "confidential":false,
+         "label":"Is First",
+         "hideFromSearch":false
+      },
+      {
+         "name":"placementRateCardLineGroups",
+         "type":"TO_MANY",
+         "dataType":"AbstractEmbeddedToManyEntity",
+         "confidential":false,
+         "label":"Placement Rate Card Line Groups",
+         "optionsType":"PlacementRateCardLineGroup",
+         "optionsUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/PlacementRateCardLineGroup",
+         "hideFromSearch":false,
+         "associatedEntity":{
+            "entity":"PlacementRateCardLineGroup",
+            "entityMetaUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/PlacementRateCardLineGroup?fields=*",
+            "label":"Placement Rate Card Line Group",
+            "dateLastModified":"1602157539310",
+            "fields":[
+               {
+                  "name":"id",
+                  "type":"ID",
+                  "dataType":"Integer"
+               }
+            ]
+         }
+      }
+   ]
+}

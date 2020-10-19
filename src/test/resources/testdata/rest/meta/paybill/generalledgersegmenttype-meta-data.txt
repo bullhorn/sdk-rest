@@ -1,0 +1,39 @@
+{
+    "entity": "GeneralLedgerSegmentType",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/GeneralLedgerSegmentType?fields=*",
+    "label": "General Ledger Segment Type",
+    "dateLastModified": "1587912246260",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isEnabled",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Enabled",
+            "hideFromSearch": false
+        },
+        {
+            "name": "segmentType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Segment Type",
+            "hideFromSearch": false
+        }
+    ]
+}

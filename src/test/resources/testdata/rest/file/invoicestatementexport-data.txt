@@ -1,0 +1,506 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 2,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 3,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 4,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 5,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 6,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 7,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 8,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 9,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 10,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 11,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 12,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 13,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 14,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 15,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 16,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 17,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 18,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 19,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        },
+		{
+            "id": 20,
+            "contentSubType": "pdf",
+            "contentType": "application",
+            "dateAdded": 1587724980667,
+            "dateLastModified": 1587724980667,
+            "directory": "31625/2020.04/",
+            "fileExtension": ".pdf",
+            "fileOwner": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "fileSize": 36669,
+            "invoiceStatement": {
+                "id": 2
+            },
+            "invoiceStatementEmailBatches": {
+                "total": 20,
+                "data": []
+            },
+            "isCurrent": false,
+            "isFinalized": false,
+            "name": "Vaco NPE - Pro forma Invoice ID 2 - Wells Fargo.pdf"
+        }
+    ]
+}

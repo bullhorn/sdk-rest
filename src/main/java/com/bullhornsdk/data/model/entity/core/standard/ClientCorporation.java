@@ -1,16 +1,41 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance11;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance12;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance13;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance14;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance15;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance16;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance17;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance18;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance19;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance20;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance21;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance22;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance23;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance24;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance25;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance26;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance27;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance28;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance29;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance30;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance31;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance32;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance33;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance34;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance35;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -38,9 +63,9 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "address", "annualRevenue", "billingAddress", "billingContact", "billingFrequency", "billingPhone",
-        "branch", "businessSectorList", "requirements", "certificationGroups", "childClientCorporations", "clientContacts", "companyDescription",
-        "companyURL", "competitors", "culture", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3",
-		"customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
+        "branch", "businessSectorList", "certifications", "requirements", "certificationGroups", "childClientCorporations", "clientContacts",
+        "companyDescription", "companyURL", "competitors", "culture", "customDate1", "customDate2", "customDate3", "customFloat1", "customFloat2",
+        "customFloat3", "customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
 		"customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText2", "customText20",
 		"customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
 		"customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateFounded", "dateLastModified", "department",
@@ -171,6 +196,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 
     private OneToMany<CertificationGroup> certificationGroups;
 
+    private OneToMany<ClientCorporationCertification> certifications; // legacy certifications
+
     private OneToMany<ClientCorporationCustomObjectInstance1> customObject1s;
 
     private OneToMany<ClientCorporationCustomObjectInstance2> customObject2s;
@@ -190,6 +217,56 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     private OneToMany<ClientCorporationCustomObjectInstance9> customObject9s;
 
     private OneToMany<ClientCorporationCustomObjectInstance10> customObject10s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance11> customObject11s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance12> customObject12s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance13> customObject13s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance14> customObject14s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance15> customObject15s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance16> customObject16s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance17> customObject17s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance18> customObject18s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance19> customObject19s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance20> customObject20s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance21> customObject21s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance22> customObject22s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance23> customObject23s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance24> customObject24s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance25> customObject25s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance26> customObject26s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance27> customObject27s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance28> customObject28s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance29> customObject29s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance30> customObject30s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance31> customObject31s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance32> customObject32s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance33> customObject33s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance34> customObject34s;
+
+    private OneToMany<ClientCorporationCustomObjectInstance35> customObject35s;
 
 	public ClientCorporation() {
 		super();
@@ -640,6 +717,17 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.certificationGroups = certificationGroups;
     }
 
+    @JsonProperty("certifications")
+    public OneToMany<ClientCorporationCertification> getCertifications() {
+        return certifications;
+    }
+
+    @ReadOnly
+    @JsonProperty("certifications")
+    public void setCertifications(OneToMany<ClientCorporationCertification> certifications) {
+        this.certifications = certifications;
+    }
+
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -760,6 +848,302 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.customObject10s = customObject10s;
     }
 
+    @JsonProperty("customObject11s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance11> getCustomObject11s() {
+        return customObject11s;
+    }
+
+    @JsonProperty("customObject11s")
+    public void setCustomObject11s(OneToMany<ClientCorporationCustomObjectInstance11> customObject11s) {
+        this.customObject11s = customObject11s;
+    }
+
+    @JsonProperty("customObject12s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance12> getCustomObject12s() {
+        return customObject12s;
+    }
+
+    @JsonProperty("customObject12s")
+    public void setCustomObject12s(OneToMany<ClientCorporationCustomObjectInstance12> customObject12s) {
+        this.customObject12s = customObject12s;
+    }
+
+    @JsonProperty("customObject13s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance13> getCustomObject13s() {
+        return customObject13s;
+    }
+
+    @JsonProperty("customObject13s")
+    public void setCustomObject13s(OneToMany<ClientCorporationCustomObjectInstance13> customObject13s) {
+        this.customObject13s = customObject13s;
+    }
+
+    @JsonProperty("customObject14s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance14> getCustomObject14s() {
+        return customObject14s;
+    }
+
+    @JsonProperty("customObject14s")
+    public void setCustomObject14s(OneToMany<ClientCorporationCustomObjectInstance14> customObject14s) {
+        this.customObject14s = customObject14s;
+    }
+
+    @JsonProperty("customObject15s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance15> getCustomObject15s() {
+        return customObject15s;
+    }
+
+    @JsonProperty("customObject15s")
+    public void setCustomObject15s(OneToMany<ClientCorporationCustomObjectInstance15> customObject15s) {
+        this.customObject15s = customObject15s;
+    }
+
+    @JsonProperty("customObject16s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance16> getCustomObject16s() {
+        return customObject16s;
+    }
+
+    @JsonProperty("customObject16s")
+    public void setCustomObject16s(OneToMany<ClientCorporationCustomObjectInstance16> customObject16s) {
+        this.customObject16s = customObject16s;
+    }
+
+    @JsonProperty("customObject17s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance17> getCustomObject17s() {
+        return customObject17s;
+    }
+
+    @JsonProperty("customObject17s")
+    public void setCustomObject17s(OneToMany<ClientCorporationCustomObjectInstance17> customObject17s) {
+        this.customObject17s = customObject17s;
+    }
+
+    @JsonProperty("customObject18s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance18> getCustomObject18s() {
+        return customObject18s;
+    }
+
+    @JsonProperty("customObject18s")
+    public void setCustomObject18s(OneToMany<ClientCorporationCustomObjectInstance18> customObject18s) {
+        this.customObject18s = customObject18s;
+    }
+
+    @JsonProperty("customObject19s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance19> getCustomObject19s() { return customObject19s; }
+
+    @JsonProperty("customObject19s")
+    public void setCustomObject19s(OneToMany<ClientCorporationCustomObjectInstance19> customObject19s) { this.customObject19s = customObject19s; }
+
+    @JsonProperty("customObject20s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance20> getCustomObject20s() {
+        return customObject20s;
+    }
+
+    @JsonProperty("customObject20s")
+    public void setCustomObject20s(OneToMany<ClientCorporationCustomObjectInstance20> customObject20s) {
+        this.customObject20s = customObject20s;
+    }
+
+    @JsonProperty("customObject21s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance21> getCustomObject21s() {
+        return customObject21s;
+    }
+
+    @JsonProperty("customObject21s")
+    public void setCustomObject21s(OneToMany<ClientCorporationCustomObjectInstance21> customObject21s) {
+        this.customObject21s = customObject21s;
+    }
+
+    @JsonProperty("customObject22s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance22> getCustomObject22s() {
+        return customObject22s;
+    }
+
+    @JsonProperty("customObject22s")
+    public void setCustomObject22s(OneToMany<ClientCorporationCustomObjectInstance22> customObject22s) {
+        this.customObject22s = customObject22s;
+    }
+
+    @JsonProperty("customObject23s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance23> getCustomObject23s() {
+        return customObject23s;
+    }
+
+    @JsonProperty("customObject23s")
+    public void setCustomObject23s(OneToMany<ClientCorporationCustomObjectInstance23> customObject23s) {
+        this.customObject23s = customObject23s;
+    }
+
+    @JsonProperty("customObject24s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance24> getCustomObject24s() {
+        return customObject24s;
+    }
+
+    @JsonProperty("customObject24s")
+    public void setCustomObject24s(OneToMany<ClientCorporationCustomObjectInstance24> customObject24s) {
+        this.customObject24s = customObject24s;
+    }
+
+    @JsonProperty("customObject25s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance25> getCustomObject25s() {
+        return customObject25s;
+    }
+
+    @JsonProperty("customObject25s")
+    public void setCustomObject25s(OneToMany<ClientCorporationCustomObjectInstance25> customObject25s) {
+        this.customObject25s = customObject25s;
+    }
+
+    @JsonProperty("customObject26s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance26> getCustomObject26s() {
+        return customObject26s;
+    }
+
+    @JsonProperty("customObject26s")
+    public void setCustomObject26s(OneToMany<ClientCorporationCustomObjectInstance26> customObject26s) {
+        this.customObject26s = customObject26s;
+    }
+
+    @JsonProperty("customObject27s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance27> getCustomObject27s() {
+        return customObject27s;
+    }
+
+    @JsonProperty("customObject27s")
+    public void setCustomObject27s(OneToMany<ClientCorporationCustomObjectInstance27> customObject27s) {
+        this.customObject27s = customObject27s;
+    }
+
+    @JsonProperty("customObject28s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance28> getCustomObject28s() {
+        return customObject28s;
+    }
+
+    @JsonProperty("customObject28s")
+    public void setCustomObject28s(OneToMany<ClientCorporationCustomObjectInstance28> customObject28s) {
+        this.customObject28s = customObject28s;
+    }
+
+    @JsonProperty("customObject29s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance29> getCustomObject29s() {
+        return customObject29s;
+    }
+
+    @JsonProperty("customObject29s")
+    public void setCustomObject29s(OneToMany<ClientCorporationCustomObjectInstance29> customObject29s) {
+        this.customObject29s = customObject29s;
+    }
+
+    @JsonProperty("customObject30s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance30> getCustomObject30s() {
+        return customObject30s;
+    }
+
+    @JsonProperty("customObject30s")
+    public void setCustomObject30s(OneToMany<ClientCorporationCustomObjectInstance30> customObject30s) {
+        this.customObject30s = customObject30s;
+    }
+
+    @JsonProperty("customObject31s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance31> getCustomObject31s() {
+        return customObject31s;
+    }
+
+    @JsonProperty("customObject31s")
+    public void setCustomObject31s(OneToMany<ClientCorporationCustomObjectInstance31> customObject31s) {
+        this.customObject31s = customObject31s;
+    }
+
+    @JsonProperty("customObject32s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance32> getCustomObject32s() {
+        return customObject32s;
+    }
+
+    @JsonProperty("customObject32s")
+    public void setCustomObject32s(OneToMany<ClientCorporationCustomObjectInstance32> customObject32s) {
+        this.customObject32s = customObject32s;
+    }
+
+    @JsonProperty("customObject33s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance33> getCustomObject33s() {
+        return customObject33s;
+    }
+
+    @JsonProperty("customObject33s")
+    public void setCustomObject33s(OneToMany<ClientCorporationCustomObjectInstance33> customObject33s) {
+        this.customObject33s = customObject33s;
+    }
+
+    @JsonProperty("customObject34s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance34> getCustomObject34s() {
+        return customObject34s;
+    }
+
+    @JsonProperty("customObject34s")
+    public void setCustomObject34s(OneToMany<ClientCorporationCustomObjectInstance34> customObject34s) {
+        this.customObject34s = customObject34s;
+    }
+
+    @JsonProperty("customObject35s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<ClientCorporationCustomObjectInstance35> getCustomObject35s() {
+        return customObject35s;
+    }
+
+    @JsonProperty("customObject35s")
+    public void setCustomObject35s(OneToMany<ClientCorporationCustomObjectInstance35> customObject35s) {
+        this.customObject35s = customObject35s;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -844,7 +1228,27 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
             return false;
         if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
             return false;
-        return customObject10s != null ? customObject10s.equals(that.customObject10s) : that.customObject10s == null;
+        if (customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null)
+            return false;
+        if (customObject11s != null ? !customObject11s.equals(that.customObject11s) : that.customObject11s != null)
+            return false;
+        if (customObject12s != null ? !customObject12s.equals(that.customObject12s) : that.customObject12s != null)
+            return false;
+        if (customObject13s != null ? !customObject13s.equals(that.customObject13s) : that.customObject13s != null)
+            return false;
+        if (customObject14s != null ? !customObject14s.equals(that.customObject14s) : that.customObject14s != null)
+            return false;
+        if (customObject15s != null ? !customObject15s.equals(that.customObject15s) : that.customObject15s != null)
+            return false;
+        if (customObject16s != null ? !customObject16s.equals(that.customObject16s) : that.customObject16s != null)
+            return false;
+        if (customObject17s != null ? !customObject17s.equals(that.customObject17s) : that.customObject17s != null)
+            return false;
+        if (customObject18s != null ? !customObject18s.equals(that.customObject18s) : that.customObject18s != null)
+            return false;
+        if (customObject19s != null ? !customObject19s.equals(that.customObject19s) : that.customObject19s != null)
+            return false;
+        return customObject20s != null ? customObject20s.equals(that.customObject20s) : that.customObject20s == null;
     }
 
     @Override
@@ -903,6 +1307,16 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
         result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
         result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
+        result = 31 * result + (customObject11s != null ? customObject11s.hashCode() : 0);
+        result = 31 * result + (customObject12s != null ? customObject12s.hashCode() : 0);
+        result = 31 * result + (customObject13s != null ? customObject13s.hashCode() : 0);
+        result = 31 * result + (customObject14s != null ? customObject14s.hashCode() : 0);
+        result = 31 * result + (customObject15s != null ? customObject15s.hashCode() : 0);
+        result = 31 * result + (customObject16s != null ? customObject16s.hashCode() : 0);
+        result = 31 * result + (customObject17s != null ? customObject17s.hashCode() : 0);
+        result = 31 * result + (customObject18s != null ? customObject18s.hashCode() : 0);
+        result = 31 * result + (customObject19s != null ? customObject19s.hashCode() : 0);
+        result = 31 * result + (customObject20s != null ? customObject20s.hashCode() : 0);
         return result;
     }
 
@@ -962,6 +1376,16 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", customObject8s=").append(customObject8s);
         sb.append(", customObject9s=").append(customObject9s);
         sb.append(", customObject10s=").append(customObject10s);
+        sb.append(", customObject11s=").append(customObject11s);
+        sb.append(", customObject12s=").append(customObject12s);
+        sb.append(", customObject13s=").append(customObject13s);
+        sb.append(", customObject14s=").append(customObject14s);
+        sb.append(", customObject15s=").append(customObject15s);
+        sb.append(", customObject16s=").append(customObject16s);
+        sb.append(", customObject17s=").append(customObject17s);
+        sb.append(", customObject18s=").append(customObject18s);
+        sb.append(", customObject19s=").append(customObject19s);
+        sb.append(", customObject20s=").append(customObject20s);
         sb.append('}');
         return sb.toString();
     }
