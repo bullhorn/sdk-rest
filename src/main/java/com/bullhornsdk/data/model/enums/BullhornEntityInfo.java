@@ -123,6 +123,8 @@ import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
+import com.bullhornsdk.data.model.entity.file.*;
+import com.bullhornsdk.data.model.entity.report.Report;
 import com.bullhornsdk.data.model.entity.file.BillableChargeFileAttachment;
 import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
 import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment;
@@ -394,6 +396,7 @@ public enum BullhornEntityInfo {
         PlacementCommissionListWrapper.class, "PlacementCommissionEditHistory", "PlacementCommissionEditHistoryFieldChange"),
     PRIVATE_LABEL("PrivateLabel", PrivateLabel.class, PrivateLabelWrapper.class, PrivateLabelListWrapper.class, null, null),
     SENDOUT("Sendout", Sendout.class, SendoutWrapper.class, SendoutListWrapper.class, null, null),
+    REPORT("Report", Report.class, ReportWrapper.class, ReportListWrapper.class, null, null),
     SKILL("Skill", Skill.class, SkillWrapper.class, SkillListWrapper.class, null, null),
     SPECIALTY("Specialty", Specialty.class, SpecialtyWrapper.class, SpecialtyListWrapper.class, null, null),
     STATE("State", State.class, StateWrapper.class, StateListWrapper.class, null, null),

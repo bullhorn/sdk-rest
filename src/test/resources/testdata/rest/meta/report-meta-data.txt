@@ -1,0 +1,332 @@
+{
+    "entity": "Report",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/Report?fields=*",
+    "label": "Report",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "category",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Category",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "ReportCategory",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/ReportCategory",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "ReportCategory",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/ReportCategory?fields=*",
+                "label": "Report Category",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "cognosType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": true,
+            "label": "Cognos Type",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "dashboard",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "optional": true,
+            "label": "Dashboard",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Date Last Modified",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 4000,
+            "confidential": false,
+            "optional": true,
+            "label": "Description",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "entitlements",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Entitlements",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "UserType",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/UserType",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "UserType",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/UserType?fields=*",
+                "label": "User Type",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "oldReportID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Old Report ID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "owner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Owner",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "First Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Last Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "packageName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Package Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "path",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 400,
+            "confidential": false,
+            "optional": true,
+            "label": "Path",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "reportJar",
+            "type": "SCALAR",
+            "dataType": "byte[]",
+            "confidential": false,
+            "optional": true,
+            "label": "Report Jar",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "reportRTF",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Report RTF",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "reportXML",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Report XML",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "sqlData",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "optional": true,
+            "label": "Sql Data",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "type",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": true,
+            "label": "Type",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        },
+        {
+            "name": "version",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": true,
+            "label": "Version",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false
+        }
+    ]
+}
