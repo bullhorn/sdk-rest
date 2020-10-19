@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.4.13</version>
+    <version>1.4.17</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
@@ -133,7 +133,7 @@
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
-            <version>1.9.2</version>
+            <version>1.9.4</version>
         </dependency>
 
         <dependency>
@@ -157,7 +157,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>5.2.3.Final</version>
+            <version>5.3.6.Final</version>
         </dependency>
 
         <dependency>

@@ -123,6 +123,8 @@ import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
+import com.bullhornsdk.data.model.entity.file.*;
+import com.bullhornsdk.data.model.entity.report.Report;
 import com.bullhornsdk.data.model.entity.file.BillableChargeFileAttachment;
 import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
 import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment;
@@ -394,6 +396,7 @@ public enum BullhornEntityInfo {
         PlacementCommissionListWrapper.class, "PlacementCommissionEditHistory", "PlacementCommissionEditHistoryFieldChange"),
     PRIVATE_LABEL("PrivateLabel", PrivateLabel.class, PrivateLabelWrapper.class, PrivateLabelListWrapper.class, null, null),
     SENDOUT("Sendout", Sendout.class, SendoutWrapper.class, SendoutListWrapper.class, null, null),
+    REPORT("Report", Report.class, ReportWrapper.class, ReportListWrapper.class, null, null),
     SKILL("Skill", Skill.class, SkillWrapper.class, SkillListWrapper.class, null, null),
     SPECIALTY("Specialty", Specialty.class, SpecialtyWrapper.class, SpecialtyListWrapper.class, null, null),
     STATE("State", State.class, StateWrapper.class, StateListWrapper.class, null, null),
@@ -405,6 +408,16 @@ public enum BullhornEntityInfo {
     USER_TYPE("UserType", UserType.class, UserTypeWrapper.class, UserTypeListWrapper.class, null, null),
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
+
+    // placementRateCard Entities
+    PLACEMENT_RATE_CARD("PlacementRateCard", PlacementRateCard.class, PlacementRateCardWrapper.class, PlacementRateCardListWrapper.class, "PlacementRateCardEditHistory",
+        "PlacementRateCardEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_LINE("PlacementRateCardLine", PlacementRateCardLine.class, PlacementRateCardLineWrapper.class, PlacementRateCardLineListWrapper.class, "PlacementRateCardLineEditHistory",
+        "PlacementRateCardLineEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_LINE_GROUP("PlacementRateCardLineGroup", PlacementRateCardLineGroup.class, PlacementRateCardLineGroupWrapper.class, PlacementRateCardLineGroupListWrapper.class, "PlacementRateCardLineGroupEditHistory",
+        "PlacementRateCardLineGroupEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_VERSION("PlacementRateCardVersion", PlacementRateCardVersion.class, PlacementRateCardVersionWrapper.class, PlacementRateCardVersionListWrapper.class, "PlacementRateCardVersionEditHistory",
+        "PlacementRateCardVersionEditHistoryFieldChange"),
 
     // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),
@@ -456,8 +469,11 @@ public enum BullhornEntityInfo {
     INVOICE_STATEMENT_DISTRIBUTION_BATCH("InvoiceStatementDistributionBatch", InvoiceStatementDistributionBatch.class, InvoiceStatementDistributionBatchWrapper.class, InvoiceStatementDistributionBatchListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_DISTRIBUTION("InvoiceStatementLineDistribution", InvoiceStatementLineDistribution.class, InvoiceStatementLineDistributionWrapper.class, InvoiceStatementLineDistributionListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_ITEM_DISCOUNT_RATE("InvoiceStatementLineItemDiscountRate", InvoiceStatementLineItemDiscountRate.class, InvoiceStatementLineItemDiscountRateWrapper.class, InvoiceStatementLineItemDiscountRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_ITEM_SALES_TAX_RATE("InvoiceStatementLineItemSalesTaxRate", InvoiceStatementLineItemSalesTaxRate.class, InvoiceStatementLineItemSalesTaxRateWrapper.class, InvoiceStatementLineItemSalesTaxRateListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_ITEM_SURCHARGE_RATE("InvoiceStatementLineItemSurchargeRate", InvoiceStatementLineItemSurchargeRate.class, InvoiceStatementLineItemSurchargeRateWrapper.class, InvoiceStatementLineItemSurchargeRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_DISCOUNT_RATE("InvoiceStatementDiscountRate", InvoiceStatementDiscountRate.class, InvoiceStatementDiscountRateWrapper.class, InvoiceStatementDiscountRateListWrapper.class, null, null),
     INVOICE_STATEMENT_SALES_TAX_RATE("InvoiceStatementSalesTaxRate", InvoiceStatementSalesTaxRate.class, InvoiceStatementSalesTaxRateWrapper.class, InvoiceStatementSalesTaxRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_SURCHARGE_RATE("InvoiceStatementSurchargeRate", InvoiceStatementSurchargeRate.class, InvoiceStatementSurchargeRateWrapper.class, InvoiceStatementSurchargeRateListWrapper.class, null, null),
     SURCHARGE_RATE("SurchargeRate", SurchargeRate.class, SurchargeRateWrapper.class, SurchargeRateListWrapper.class, null, null),
 
     // Certification Requirements

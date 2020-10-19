@@ -104,7 +104,7 @@ public class MockDataHandler {
 	 */
 	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
 		T entity = getEntityFromMap(type,id);
-		
+
 		if(entity == null){
 			throw new RestApiException("No entity of type "+type.getSimpleName()+" with id "+id+" exists.");
 		}
