@@ -1,0 +1,327 @@
+{
+    "entity": "InvoiceStatementSurchargeRate",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementSurchargeRate?fields=*",
+    "label": "Invoice Statement Surcharge Rate",
+    "dateLastModified": "1602851601926",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "amount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": false,
+            "label": "Amount",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "baseAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": false,
+            "label": "Base Amount",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "billMasterTransactionSurchargeDetail",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Bill Master Transaction Surcharge Detail",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "BillMasterTransactionSurchargeDetail",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSurchargeDetail",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransactionSurchargeDetail",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSurchargeDetail?fields=*",
+                "label": "Bill Master Transaction Surcharge Detail",
+                "dateLastModified": "1602848128943",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "invoiceStatement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Invoice Statement",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatement",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatement?fields=*",
+                "label": "Invoice",
+                "dateLastModified": "1602835679443",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "rate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": false,
+            "label": "Rate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "surchargeAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "optional": false,
+            "label": "Surcharge Amount",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "surchargeRate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": true,
+            "label": "Surcharge Rate",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "SurchargeRate",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/SurchargeRate",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "associatedEntity": {
+                "entity": "SurchargeRate",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/SurchargeRate?fields=*",
+                "label": "Surcharge",
+                "dateLastModified": "1602835677955",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 200,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Title",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 80,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false
+                    },
+                    {
+                        "name": "effectiveDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "dataSpecialization": "DATE",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Effective Date",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 40,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "allowedDateRange": {
+                            "minOffset": 1
+                        }
+                    },
+                    {
+                        "name": "effectiveEndDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "dataSpecialization": "SYSTEM",
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Effective End Date",
+                        "required": false,
+                        "readOnly": true,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 50,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false
+                    },
+                    {
+                        "name": "versionID",
+                        "type": "SCALAR",
+                        "dataType": "Integer",
+                        "dataSpecialization": "SYSTEM",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "surchargeRateVersionID",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 20,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false
+                    },
+                    {
+                        "name": "rate",
+                        "type": "SCALAR",
+                        "dataType": "BigDecimal",
+                        "dataSpecialization": "PERCENTAGE",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Rate",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 100,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false
+                    },
+                    {
+                        "name": "amount",
+                        "type": "SCALAR",
+                        "dataType": "BigDecimal",
+                        "dataSpecialization": "MONEY",
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Amount",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 110,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false
+                    },
+                    {
+                        "name": "type",
+                        "type": "TO_ONE",
+                        "dataType": "SimplifiedOptionsLookup",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Rate Type",
+                        "required": true,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "optionsType": "SurchargeRateTypeLookup",
+                        "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/SurchargeRateTypeLookup",
+                        "options": [
+                            {
+                                "value": 1,
+                                "label": "$ / Unit of Measure",
+                                "readOnly": false
+                            },
+                            {
+                                "value": 2,
+                                "label": "Percentage",
+                                "readOnly": false
+                            }
+                        ],
+                        "hideFromSearch": false,
+                        "sortOrder": 90,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "associatedEntity": {
+                            "entity": "SurchargeRateTypeLookup",
+                            "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/SurchargeRateTypeLookup?fields=*",
+                            "label": "Surcharge Rate Type Lookup",
+                            "dateLastModified": "1602835678090",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer",
+                                    "optional": false
+                                },
+                                {
+                                    "name": "label",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 100,
+                                    "confidential": false,
+                                    "optional": true,
+                                    "label": "Label",
+                                    "required": false,
+                                    "readOnly": false,
+                                    "multiValue": false,
+                                    "hideFromSearch": false,
+                                    "systemRequired": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "title",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 200,
+            "confidential": false,
+            "optional": true,
+            "label": "Title",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        }
+    ]
+}

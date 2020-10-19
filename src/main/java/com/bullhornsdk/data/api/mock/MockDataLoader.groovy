@@ -492,8 +492,11 @@ public class MockDataLoader {
         entityFiles.put(BillMasterTransactionSurchargeRate.class, "paybill/rate/billmastertransactionsurchargerate-data.txt");
         entityFiles.put(DiscountRate.class, "paybill/rate/discountrate-data.txt");
         entityFiles.put(InvoiceStatementLineItemDiscountRate.class, "paybill/rate/invoicestatementlineitemdiscountrate-data.txt");
+        entityFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "paybill/rate/invoicestatementlineitemsalestaxrate-data.txt");
         entityFiles.put(InvoiceStatementLineItemSurchargeRate.class, "paybill/rate/invoicestatementlineitemsurchargerate-data.txt");
+        entityFiles.put(InvoiceStatementDiscountRate.class, "paybill/rate/invoicestatementdiscountrate-data.txt");
         entityFiles.put(InvoiceStatementSalesTaxRate.class, "paybill/rate/invoicestatementsalestaxrate-data.txt");
+        entityFiles.put(InvoiceStatementSurchargeRate.class, "paybill/rate/invoicestatementsurchargerate-data.txt");
         entityFiles.put(SurchargeRate.class, "paybill/rate/surchargerate-data.txt");
 
         // TODO add v2 of PAY and Bill Entities data
@@ -737,8 +740,11 @@ public class MockDataLoader {
         entityMetaFiles.put(BillMasterTransactionSurchargeRate.class, "meta/paybill/rate/billmastertransactionsurchargerate-meta-data.txt");
         entityMetaFiles.put(DiscountRate.class, "meta/paybill/rate/discountrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineItemDiscountRate.class, "meta/paybill/rate/invoicestatementlineitemdiscountrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "meta/paybill/rate/invoicestatementlineitemsalestaxrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineItemSurchargeRate.class, "meta/paybill/rate/invoicestatementlineitemsurchargerate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementDiscountRate.class, "meta/paybill/rate/invoicestatementdiscountrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementSalesTaxRate.class, "meta/paybill/rate/invoicestatementsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementSurchargeRate.class, "meta/paybill/rate/invoicestatementsurchargerate-meta-data.txt");
         entityMetaFiles.put(SurchargeRate.class, "meta/paybill/rate/surchargerate-meta-data.txt");
 
 

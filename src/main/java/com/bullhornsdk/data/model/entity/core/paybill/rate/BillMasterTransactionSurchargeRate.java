@@ -25,7 +25,7 @@ public class BillMasterTransactionSurchargeRate extends AbstractEntity implement
     private Integer id;
     private Integer adjustmentSequenceNumber;
     private BigDecimal baseAmount;
-    private OneToMany<BillMasterTransaction> billMasterTransaction;
+    private BillMasterTransaction billMasterTransaction;
     private BillMasterTransactionSurchargeDetail billMasterTransactionSurchargeDetail;
     private CurrencyUnit currencyUnit;
     private DateTime dateAdded;
@@ -68,12 +68,12 @@ public class BillMasterTransactionSurchargeRate extends AbstractEntity implement
     }
 
     @JsonProperty("billMasterTransaction")
-    public OneToMany<BillMasterTransaction> getBillMasterTransaction() {
+    public BillMasterTransaction getBillMasterTransaction() {
         return billMasterTransaction;
     }
 
     @JsonProperty("billMasterTransaction")
-    public void setBillMasterTransaction(OneToMany<BillMasterTransaction> billMasterTransaction) {
+    public void setBillMasterTransaction(BillMasterTransaction billMasterTransaction) {
         this.billMasterTransaction = billMasterTransaction;
     }
 

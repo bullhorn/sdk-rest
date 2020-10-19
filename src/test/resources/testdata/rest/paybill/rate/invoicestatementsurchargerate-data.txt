@@ -1,0 +1,546 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 2,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 3,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 4,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 5,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 6,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 7,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 8,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 9,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 10,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 11,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 12,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 13,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 14,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 15,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 16,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 17,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 18,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 19,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        },
+        {
+            "id": 20,
+            "amount": 1.350000,
+            "baseAmount": 1890.000000,
+            "billMasterTransactionSurchargeDetail": {
+                "id": 1
+            },
+            "invoiceStatement": {
+                "id": 33
+            },
+            "rate": 0.000000,
+            "surchargeAmount": 79.650000,
+            "surchargeRate": {
+                "id": 1,
+                "title": "ACA Surcharge",
+                "effectiveDate": "2020-09-01",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1,
+                "rate": 0.000000,
+                "amount": 1.350000,
+                "type": {
+                    "id": 1,
+                    "label": "$ / Unit of Measure"
+                }
+            },
+            "title": "ACA Surcharge"
+        }
+    ]
+}
