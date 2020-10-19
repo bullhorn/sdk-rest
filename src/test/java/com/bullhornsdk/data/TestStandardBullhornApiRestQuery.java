@@ -230,6 +230,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
+    @Test
+    public void testQueryGoalTarget() {
+
+        ListWrapper<GoalTarget> wrapper = bullhornData.query(GoalTarget.class, "id > 0", null, queryParams);
+
+        runAssertions("ListWrapper<GoalTarget>", wrapper);
+
+    }
+
 	@Test
 	public void testQueryHousingComplexGreaterThan() {
 
@@ -467,6 +476,15 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
         ListWrapper<CandidateFileAttachment> wrapper = bullhornData.query(CandidateFileAttachment.class, where, null, queryParams);
 
         runAssertions("ListWrapper<CandidateFileAttachment>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryCertificationFileAttachment() {
+
+        ListWrapper<CertificationFileAttachment> wrapper = bullhornData.query(CertificationFileAttachment.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<CertificationFileAttachment>", wrapper);
 
     }
 

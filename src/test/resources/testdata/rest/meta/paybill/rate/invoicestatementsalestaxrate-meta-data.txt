@@ -1,0 +1,130 @@
+{
+    "entity": "InvoiceStatementSalesTaxRate",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementSalesTaxRate?fields=*",
+    "label": "Invoice Statement Sales Tax Rate",
+    "dateLastModified": "1602085203549",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "baseAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Base Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "billMasterTransactionSalesTaxDetail",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Bill Master Transaction Sales Tax Detail",
+            "optionsType": "BillMasterTransactionSalesTaxDetail",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSalesTaxDetail",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransactionSalesTaxDetail",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSalesTaxDetail?fields=*",
+                "label": "Bill Master Transaction Sales Tax Detail",
+                "dateLastModified": "1602085163384",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "invoiceStatement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement",
+            "optionsType": "InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatement?fields=*",
+                "label": "Invoice",
+                "dateLastModified": "1601627281504",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "jurisdictionName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 200,
+            "confidential": false,
+            "label": "Jurisdiction Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "jurisdictionType",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Jurisdiction Type",
+            "optionsType": "TaxJurisdictionTypeLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/TaxJurisdictionTypeLookup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "TaxJurisdictionTypeLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/TaxJurisdictionTypeLookup?fields=*",
+                "label": "Tax Jurisdiction Type Lookup",
+                "dateLastModified": "1601627286543",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Label",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "rate",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Rate",
+            "hideFromSearch": false
+        },
+        {
+            "name": "taxAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Tax Amount",
+            "hideFromSearch": false
+        }
+    ]
+}

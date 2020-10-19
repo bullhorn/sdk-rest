@@ -88,7 +88,7 @@ public class TestStandardBullhornApiRestSearch extends BaseTest {
 	// @Test
 	public void getSearchMetaData() {
 		String url = bullhornData.getRestUrl();
-		url = url + "meta/{entityType}?BhRestToken={bhRestToken}&meta=full&fields=*";
+		url = url + "meta/{entityType}?BhRestToken={bhRestToken}&meta=full&fields=id";
 		Map<String, String> urlParams = new HashMap<String, String>();
 		urlParams.put("bhRestToken", bullhornData.getBhRestToken());
 		urlParams.put("entityType", "Note");

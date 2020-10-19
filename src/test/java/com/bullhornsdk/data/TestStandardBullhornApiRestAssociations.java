@@ -5,8 +5,12 @@ import static org.junit.Assert.assertNotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.model.entity.association.EntityAssociations;
+import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -38,7 +42,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateBranch() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        Branch entity = bullhornData.findEntity(Branch.class, testEntities.getBranchId());
+        Branch entity = bullhornData.findEntity(Branch.class, testEntities.getBranchId(), Sets.newHashSet("id", "corporateUsers"));
         Set<Integer> associationIds = new HashSet<Integer>();
 
         OneToMany<CorporateUser> linkedIds = entity.getCorporateUsers();
@@ -52,7 +56,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateCandidate() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId());
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), getAssociationFieldSet(AssociationFactory.candidateAssociations()));
         for (AssociationField<Candidate, ? extends BullhornEntity> association : AssociationFactory.candidateAssociations().allAssociations()) {
 
             Set<Integer> associationIds = new HashSet<Integer>();
@@ -70,7 +74,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateClientContact() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId());
+        ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId(), getAssociationFieldSet(AssociationFactory.clientContactAssociations()));
         for (AssociationField<ClientContact, ? extends BullhornEntity> association : AssociationFactory.clientContactAssociations()
             .allAssociations()) {
 
@@ -88,7 +92,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateClientCorporation() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId());
+        ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId(), getAssociationFieldSet(AssociationFactory.clientCorporationAssociations()));
         for (AssociationField<ClientCorporation, ? extends BullhornEntity> association : AssociationFactory.clientCorporationAssociations()
             .allAssociations()) {
 
@@ -107,7 +111,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
     @Test
     public void testAssociateJobOrder() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
-        JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId());
+        JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), getAssociationFieldSet(AssociationFactory.jobOrderAssociations()));
         for (AssociationField<JobOrder, ? extends BullhornEntity> association : AssociationFactory.jobOrderAssociations().allAssociations()) {
 
             Set<Integer> associationIds = new HashSet<Integer>();
@@ -125,7 +129,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateLead() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        Lead entity = bullhornData.findEntity(Lead.class, testEntities.getLeadId());
+        Lead entity = bullhornData.findEntity(Lead.class, testEntities.getLeadId(), getAssociationFieldSet(AssociationFactory.leadAssociations()));
         for (AssociationField<Lead, ? extends BullhornEntity> association : AssociationFactory.leadAssociations().allAssociations()) {
 
             Set<Integer> associationIds = new HashSet<Integer>();
@@ -142,7 +146,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateNote() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId());
+        Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId(), getAssociationFieldSet(AssociationFactory.noteAssociations()));
         for (AssociationField<Note, ? extends BullhornEntity> association : AssociationFactory.noteAssociations().allAssociations()) {
 
             Set<Integer> associationIds = new HashSet<Integer>();
@@ -159,7 +163,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateOpportunity() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        Opportunity entity = bullhornData.findEntity(Opportunity.class, testEntities.getOpportunityId());
+        Opportunity entity = bullhornData.findEntity(Opportunity.class, testEntities.getOpportunityId(), getAssociationFieldSet(AssociationFactory.opportunityAssociations()));
         for (AssociationField<Opportunity, ? extends BullhornEntity> association : AssociationFactory.opportunityAssociations().allAssociations()) {
 
             Set<Integer> associationIds = new HashSet<Integer>();
@@ -176,7 +180,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociatePlacement() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId());
+        Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId(), getAssociationFieldSet(AssociationFactory.placementAssociations()));
         for (AssociationField<Placement, ? extends BullhornEntity> association : AssociationFactory.placementAssociations().allAssociations()) {
 
             Set<Integer> associationIds = new HashSet<Integer>();
@@ -194,7 +198,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
     @Test
     public void testAssociateDistributionList() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-        DistributionList entity = bullhornData.findEntity(DistributionList.class, testEntities.getDistributionListId());
+        DistributionList entity = bullhornData.findEntity(DistributionList.class, testEntities.getDistributionListId(), getAssociationFieldSet(AssociationFactory.distributionListAssociations()));
 
         for (AssociationField<DistributionList, ? extends BullhornEntity> association : AssociationFactory.distributionListAssociations().allAssociations()) {
             Set<Integer> associationIds = new HashSet<Integer>();
@@ -202,12 +206,17 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
             OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity, association.getAssociationFieldName());
 
             if (linkedIds != null && !linkedIds.getData().isEmpty()) {
-
                 associationIds.add(linkedIds.getData().get(0).getId());
 
                 testAssociation(DistributionList.class, testEntities.getDistributionListId(), associationIds, association);
             }
         }
+    }
+
+    private <T extends AssociationEntity> Set<String> getAssociationFieldSet(EntityAssociations<T> associations) {
+        return Sets.union(associations.allAssociations().stream().map(association -> {
+            return association.getAssociationFieldName();
+        }).collect(Collectors.toSet()), Sets.newHashSet("id"));
     }
 
     private <T extends AssociationEntity> void testAssociation(Class<T> type, Integer entityId, Set<Integer> associationIds,

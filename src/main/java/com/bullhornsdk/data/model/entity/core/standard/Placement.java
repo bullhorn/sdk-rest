@@ -11,6 +11,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -22,6 +23,7 @@ import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -34,11 +36,12 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "appointments", "approvingClientContact", "backupApprovingClientContact", "billingClientContact",
-		"billingFrequency", "bonusPackage", "branch", "candidate", "placementCertifications", "changeRequests", "clientBillRate", "clientOvertimeRate",
+		"billingFrequency", "billingProfile", "bonusPackage", "branch", "candidate", "placementCertifications", "changeRequests", "clientBillRate", "clientOvertimeRate",
         "comments", "commissions", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3", "correlatedCustomFloat1",
 		"correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1", "correlatedCustomInt2", "correlatedCustomInt3",
 		"correlatedCustomText1", "correlatedCustomText10", "correlatedCustomText2", "correlatedCustomText3", "correlatedCustomText4",
@@ -71,7 +74,7 @@ import java.math.BigDecimal;
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
-        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
+        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -84,6 +87,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private ClientContact backupApprovingClientContact;
 
 	private ClientContact billingClientContact;
+
+	private BillingProfile billingProfile;
 
 	@JsonIgnore
 	@Size(max = 30)
@@ -108,6 +113,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private String comments;
 
 	private OneToMany<PlacementCommission> commissions;
+
+    private Location location;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -348,7 +355,17 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.billingFrequency = billingFrequency;
 	}
 
-	@JsonProperty("bonusPackage")
+    @JsonProperty("billingProfile")
+    public BillingProfile getBillingProfile() {
+        return billingProfile;
+    }
+
+    @JsonProperty("billingProfile")
+    public void setBillingProfile(BillingProfile billingProfile) {
+        this.billingProfile = billingProfile;
+    }
+
+    @JsonProperty("bonusPackage")
 	public String getBonusPackage() {
 		return bonusPackage;
 	}
@@ -1076,309 +1093,186 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.customObject10s = customObject10s;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-
-        Placement placement = (Placement) o;
-
-        if (id != null ? !id.equals(placement.id) : placement.id != null) return false;
-        if (appointments != null ? !appointments.equals(placement.appointments) : placement.appointments != null)
-            return false;
-        if (approvingClientContact != null ? !approvingClientContact.equals(placement.approvingClientContact) : placement.approvingClientContact != null)
-            return false;
-        if (backupApprovingClientContact != null ? !backupApprovingClientContact.equals(placement.backupApprovingClientContact) : placement.backupApprovingClientContact != null)
-            return false;
-        if (billingClientContact != null ? !billingClientContact.equals(placement.billingClientContact) : placement.billingClientContact != null)
-            return false;
-        if (billingFrequency != null ? !billingFrequency.equals(placement.billingFrequency) : placement.billingFrequency != null)
-            return false;
-        if (bonusPackage != null ? !bonusPackage.equals(placement.bonusPackage) : placement.bonusPackage != null)
-            return false;
-        if (branch != null ? !branch.equals(placement.branch) : placement.branch != null) return false;
-        if (candidate != null ? !candidate.equals(placement.candidate) : placement.candidate != null) return false;
-        if (placementCertifications != null ? !placementCertifications.equals(placement.placementCertifications) : placement.placementCertifications != null)
-            return false;
-        if (changeRequests != null ? !changeRequests.equals(placement.changeRequests) : placement.changeRequests != null)
-            return false;
-        if (clientBillRate != null ? !clientBillRate.equals(placement.clientBillRate) : placement.clientBillRate != null)
-            return false;
-        if (clientOvertimeRate != null ? !clientOvertimeRate.equals(placement.clientOvertimeRate) : placement.clientOvertimeRate != null)
-            return false;
-        if (comments != null ? !comments.equals(placement.comments) : placement.comments != null) return false;
-        if (commissions != null ? !commissions.equals(placement.commissions) : placement.commissions != null)
-            return false;
-        if (costCenter != null ? !costCenter.equals(placement.costCenter) : placement.costCenter != null) return false;
-        if (dateAdded != null ? !dateAdded.equals(placement.dateAdded) : placement.dateAdded != null) return false;
-        if (dateBegin != null ? !dateBegin.equals(placement.dateBegin) : placement.dateBegin != null) return false;
-        if (dateClientEffective != null ? !dateClientEffective.equals(placement.dateClientEffective) : placement.dateClientEffective != null)
-            return false;
-        if (dateEffective != null ? !dateEffective.equals(placement.dateEffective) : placement.dateEffective != null)
-            return false;
-        if (dateEnd != null ? !dateEnd.equals(placement.dateEnd) : placement.dateEnd != null) return false;
-        if (dateLastModified != null ? !dateLastModified.equals(placement.dateLastModified) : placement.dateLastModified != null)
-            return false;
-        if (daysGuaranteed != null ? !daysGuaranteed.equals(placement.daysGuaranteed) : placement.daysGuaranteed != null)
-            return false;
-        if (daysProRated != null ? !daysProRated.equals(placement.daysProRated) : placement.daysProRated != null)
-            return false;
-        if (durationWeeks != null ? !durationWeeks.equals(placement.durationWeeks) : placement.durationWeeks != null)
-            return false;
-        if (employeeType != null ? !employeeType.equals(placement.employeeType) : placement.employeeType != null)
-            return false;
-        if (employmentType != null ? !employmentType.equals(placement.employmentType) : placement.employmentType != null)
-            return false;
-        if (fee != null ? !fee.equals(placement.fee) : placement.fee != null) return false;
-        if (flatFee != null ? !flatFee.equals(placement.flatFee) : placement.flatFee != null) return false;
-        if (fileAttachments != null ? !fileAttachments.equals(placement.fileAttachments) : placement.fileAttachments != null)
-            return false;
-        if (hoursOfOperation != null ? !hoursOfOperation.equals(placement.hoursOfOperation) : placement.hoursOfOperation != null)
-            return false;
-        if (hoursPerDay != null ? !hoursPerDay.equals(placement.hoursPerDay) : placement.hoursPerDay != null)
-            return false;
-        if (housingManagerID != null ? !housingManagerID.equals(placement.housingManagerID) : placement.housingManagerID != null)
-            return false;
-        if (housingStatus != null ? !housingStatus.equals(placement.housingStatus) : placement.housingStatus != null)
-            return false;
-        if (invoiceGroupName != null ? !invoiceGroupName.equals(placement.invoiceGroupName) : placement.invoiceGroupName != null)
-            return false;
-        if (jobOrder != null ? !jobOrder.equals(placement.jobOrder) : placement.jobOrder != null) return false;
-        if (jobSubmission != null ? !jobSubmission.equals(placement.jobSubmission) : placement.jobSubmission != null)
-            return false;
-        if (migrateGUID != null ? !migrateGUID.equals(placement.migrateGUID) : placement.migrateGUID != null)
-            return false;
-        if (optionsPackage != null ? !optionsPackage.equals(placement.optionsPackage) : placement.optionsPackage != null)
-            return false;
-        if (otExemption != null ? !otExemption.equals(placement.otExemption) : placement.otExemption != null)
-            return false;
-        if (otherHourlyFee != null ? !otherHourlyFee.equals(placement.otherHourlyFee) : placement.otherHourlyFee != null)
-            return false;
-        if (markUpPercentage != null ? !markUpPercentage.equals(placement.markUpPercentage) : placement.markUpPercentage != null)
-            return false;
-        if (notes != null ? !notes.equals(placement.notes) : placement.notes != null) return false;
-        if (otherHourlyFeeComments != null ? !otherHourlyFeeComments.equals(placement.otherHourlyFeeComments) : placement.otherHourlyFeeComments != null)
-            return false;
-        if (overtimeMarkUpPercentage != null ? !overtimeMarkUpPercentage.equals(placement.overtimeMarkUpPercentage) : placement.overtimeMarkUpPercentage != null)
-            return false;
-        if (overtimeRate != null ? !overtimeRate.equals(placement.overtimeRate) : placement.overtimeRate != null)
-            return false;
-        if (payRate != null ? !payRate.equals(placement.payRate) : placement.payRate != null) return false;
-        if (projectCodeList != null ? !projectCodeList.equals(placement.projectCodeList) : placement.projectCodeList != null)
-            return false;
-        if (recruitingManagerPercentGrossMargin != null ? !recruitingManagerPercentGrossMargin.equals(placement.recruitingManagerPercentGrossMargin) : placement.recruitingManagerPercentGrossMargin != null)
-            return false;
-        if (referralFee != null ? !referralFee.equals(placement.referralFee) : placement.referralFee != null)
-            return false;
-        if (referralFeeType != null ? !referralFeeType.equals(placement.referralFeeType) : placement.referralFeeType != null)
-            return false;
-        if (reportTo != null ? !reportTo.equals(placement.reportTo) : placement.reportTo != null) return false;
-        if (reportedMargin != null ? !reportedMargin.equals(placement.reportedMargin) : placement.reportedMargin != null)
-            return false;
-        if (salary != null ? !salary.equals(placement.salary) : placement.salary != null) return false;
-        if (salaryUnit != null ? !salaryUnit.equals(placement.salaryUnit) : placement.salaryUnit != null) return false;
-        if (salesManagerPercentGrossMargin != null ? !salesManagerPercentGrossMargin.equals(placement.salesManagerPercentGrossMargin) : placement.salesManagerPercentGrossMargin != null)
-            return false;
-        if (statementClientContact != null ? !statementClientContact.equals(placement.statementClientContact) : placement.statementClientContact != null)
-            return false;
-        if (status != null ? !status.equals(placement.status) : placement.status != null) return false;
-        if (tasks != null ? !tasks.equals(placement.tasks) : placement.tasks != null) return false;
-        if (taxRate != null ? !taxRate.equals(placement.taxRate) : placement.taxRate != null) return false;
-        if (taxState != null ? !taxState.equals(placement.taxState) : placement.taxState != null) return false;
-        if (terminationReason != null ? !terminationReason.equals(placement.terminationReason) : placement.terminationReason != null)
-            return false;
-        if (timeUnits != null ? !timeUnits.equals(placement.timeUnits) : placement.timeUnits != null) return false;
-        if (vendorClientCorporation != null ? !vendorClientCorporation.equals(placement.vendorClientCorporation) : placement.vendorClientCorporation != null)
-            return false;
-        if (workWeekStart != null ? !workWeekStart.equals(placement.workWeekStart) : placement.workWeekStart != null)
-            return false;
-        if (workersCompensationRate != null ? !workersCompensationRate.equals(placement.workersCompensationRate) : placement.workersCompensationRate != null)
-            return false;
-        if (customObject1s != null ? !customObject1s.equals(placement.customObject1s) : placement.customObject1s != null)
-            return false;
-        if (customObject2s != null ? !customObject2s.equals(placement.customObject2s) : placement.customObject2s != null)
-            return false;
-        if (customObject3s != null ? !customObject3s.equals(placement.customObject3s) : placement.customObject3s != null)
-            return false;
-        if (customObject4s != null ? !customObject4s.equals(placement.customObject4s) : placement.customObject4s != null)
-            return false;
-        if (customObject5s != null ? !customObject5s.equals(placement.customObject5s) : placement.customObject5s != null)
-            return false;
-        if (customObject6s != null ? !customObject6s.equals(placement.customObject6s) : placement.customObject6s != null)
-            return false;
-        if (customObject7s != null ? !customObject7s.equals(placement.customObject7s) : placement.customObject7s != null)
-            return false;
-        if (customObject8s != null ? !customObject8s.equals(placement.customObject8s) : placement.customObject8s != null)
-            return false;
-        if (customObject9s != null ? !customObject9s.equals(placement.customObject9s) : placement.customObject9s != null)
-            return false;
-        return customObject10s != null ? customObject10s.equals(placement.customObject10s) : placement.customObject10s == null;
+    @JsonProperty("location")
+    public Location getLocation() {
+        return location;
     }
 
-    @Override
+    @JsonProperty("location")
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Placement placement = (Placement) object;
+        return java.util.Objects.equals(id, placement.id) &&
+            java.util.Objects.equals(appointments, placement.appointments) &&
+            java.util.Objects.equals(approvingClientContact, placement.approvingClientContact) &&
+            java.util.Objects.equals(backupApprovingClientContact, placement.backupApprovingClientContact) &&
+            java.util.Objects.equals(billingClientContact, placement.billingClientContact) &&
+            java.util.Objects.equals(billingProfile, placement.billingProfile) &&
+            java.util.Objects.equals(billingFrequency, placement.billingFrequency) &&
+            java.util.Objects.equals(bonusPackage, placement.bonusPackage) &&
+            java.util.Objects.equals(branch, placement.branch) &&
+            java.util.Objects.equals(candidate, placement.candidate) &&
+            java.util.Objects.equals(placementCertifications, placement.placementCertifications) &&
+            java.util.Objects.equals(changeRequests, placement.changeRequests) &&
+            java.util.Objects.equals(clientBillRate, placement.clientBillRate) &&
+            java.util.Objects.equals(clientOvertimeRate, placement.clientOvertimeRate) &&
+            java.util.Objects.equals(comments, placement.comments) &&
+            java.util.Objects.equals(commissions, placement.commissions) &&
+            java.util.Objects.equals(location, placement.location) &&
+            java.util.Objects.equals(costCenter, placement.costCenter) &&
+            java.util.Objects.equals(dateAdded, placement.dateAdded) &&
+            java.util.Objects.equals(dateBegin, placement.dateBegin) &&
+            java.util.Objects.equals(dateClientEffective, placement.dateClientEffective) &&
+            java.util.Objects.equals(dateEffective, placement.dateEffective) &&
+            java.util.Objects.equals(dateEnd, placement.dateEnd) &&
+            java.util.Objects.equals(dateLastModified, placement.dateLastModified) &&
+            java.util.Objects.equals(daysGuaranteed, placement.daysGuaranteed) &&
+            java.util.Objects.equals(daysProRated, placement.daysProRated) &&
+            java.util.Objects.equals(durationWeeks, placement.durationWeeks) &&
+            java.util.Objects.equals(employeeType, placement.employeeType) &&
+            java.util.Objects.equals(employmentType, placement.employmentType) &&
+            java.util.Objects.equals(fee, placement.fee) &&
+            java.util.Objects.equals(flatFee, placement.flatFee) &&
+            java.util.Objects.equals(fileAttachments, placement.fileAttachments) &&
+            java.util.Objects.equals(hoursOfOperation, placement.hoursOfOperation) &&
+            java.util.Objects.equals(hoursPerDay, placement.hoursPerDay) &&
+            java.util.Objects.equals(housingManagerID, placement.housingManagerID) &&
+            java.util.Objects.equals(housingStatus, placement.housingStatus) &&
+            java.util.Objects.equals(invoiceGroupName, placement.invoiceGroupName) &&
+            java.util.Objects.equals(jobOrder, placement.jobOrder) &&
+            java.util.Objects.equals(jobSubmission, placement.jobSubmission) &&
+            java.util.Objects.equals(migrateGUID, placement.migrateGUID) &&
+            java.util.Objects.equals(optionsPackage, placement.optionsPackage) &&
+            java.util.Objects.equals(otExemption, placement.otExemption) &&
+            java.util.Objects.equals(otherHourlyFee, placement.otherHourlyFee) &&
+            java.util.Objects.equals(markUpPercentage, placement.markUpPercentage) &&
+            java.util.Objects.equals(notes, placement.notes) &&
+            java.util.Objects.equals(otherHourlyFeeComments, placement.otherHourlyFeeComments) &&
+            java.util.Objects.equals(overtimeMarkUpPercentage, placement.overtimeMarkUpPercentage) &&
+            java.util.Objects.equals(overtimeRate, placement.overtimeRate) &&
+            java.util.Objects.equals(payRate, placement.payRate) &&
+            java.util.Objects.equals(projectCodeList, placement.projectCodeList) &&
+            java.util.Objects.equals(recruitingManagerPercentGrossMargin, placement.recruitingManagerPercentGrossMargin) &&
+            java.util.Objects.equals(referralFee, placement.referralFee) &&
+            java.util.Objects.equals(referralFeeType, placement.referralFeeType) &&
+            java.util.Objects.equals(reportTo, placement.reportTo) &&
+            java.util.Objects.equals(reportedMargin, placement.reportedMargin) &&
+            java.util.Objects.equals(salary, placement.salary) &&
+            java.util.Objects.equals(salaryUnit, placement.salaryUnit) &&
+            java.util.Objects.equals(salesManagerPercentGrossMargin, placement.salesManagerPercentGrossMargin) &&
+            java.util.Objects.equals(statementClientContact, placement.statementClientContact) &&
+            java.util.Objects.equals(status, placement.status) &&
+            java.util.Objects.equals(tasks, placement.tasks) &&
+            java.util.Objects.equals(taxRate, placement.taxRate) &&
+            java.util.Objects.equals(taxState, placement.taxState) &&
+            java.util.Objects.equals(terminationReason, placement.terminationReason) &&
+            java.util.Objects.equals(timeUnits, placement.timeUnits) &&
+            java.util.Objects.equals(vendorClientCorporation, placement.vendorClientCorporation) &&
+            java.util.Objects.equals(workWeekStart, placement.workWeekStart) &&
+            java.util.Objects.equals(workersCompensationRate, placement.workersCompensationRate) &&
+            java.util.Objects.equals(customObject1s, placement.customObject1s) &&
+            java.util.Objects.equals(customObject2s, placement.customObject2s) &&
+            java.util.Objects.equals(customObject3s, placement.customObject3s) &&
+            java.util.Objects.equals(customObject4s, placement.customObject4s) &&
+            java.util.Objects.equals(customObject5s, placement.customObject5s) &&
+            java.util.Objects.equals(customObject6s, placement.customObject6s) &&
+            java.util.Objects.equals(customObject7s, placement.customObject7s) &&
+            java.util.Objects.equals(customObject8s, placement.customObject8s) &&
+            java.util.Objects.equals(customObject9s, placement.customObject9s) &&
+            java.util.Objects.equals(customObject10s, placement.customObject10s);
+    }
+
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (id != null ? id.hashCode() : 0);
-        result = 31 * result + (appointments != null ? appointments.hashCode() : 0);
-        result = 31 * result + (approvingClientContact != null ? approvingClientContact.hashCode() : 0);
-        result = 31 * result + (backupApprovingClientContact != null ? backupApprovingClientContact.hashCode() : 0);
-        result = 31 * result + (billingClientContact != null ? billingClientContact.hashCode() : 0);
-        result = 31 * result + (billingFrequency != null ? billingFrequency.hashCode() : 0);
-        result = 31 * result + (bonusPackage != null ? bonusPackage.hashCode() : 0);
-        result = 31 * result + (branch != null ? branch.hashCode() : 0);
-        result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
-        result = 31 * result + (placementCertifications != null ? placementCertifications.hashCode() : 0);
-        result = 31 * result + (changeRequests != null ? changeRequests.hashCode() : 0);
-        result = 31 * result + (clientBillRate != null ? clientBillRate.hashCode() : 0);
-        result = 31 * result + (clientOvertimeRate != null ? clientOvertimeRate.hashCode() : 0);
-        result = 31 * result + (comments != null ? comments.hashCode() : 0);
-        result = 31 * result + (commissions != null ? commissions.hashCode() : 0);
-        result = 31 * result + (costCenter != null ? costCenter.hashCode() : 0);
-        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-        result = 31 * result + (dateBegin != null ? dateBegin.hashCode() : 0);
-        result = 31 * result + (dateClientEffective != null ? dateClientEffective.hashCode() : 0);
-        result = 31 * result + (dateEffective != null ? dateEffective.hashCode() : 0);
-        result = 31 * result + (dateEnd != null ? dateEnd.hashCode() : 0);
-        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
-        result = 31 * result + (daysGuaranteed != null ? daysGuaranteed.hashCode() : 0);
-        result = 31 * result + (daysProRated != null ? daysProRated.hashCode() : 0);
-        result = 31 * result + (durationWeeks != null ? durationWeeks.hashCode() : 0);
-        result = 31 * result + (employeeType != null ? employeeType.hashCode() : 0);
-        result = 31 * result + (employmentType != null ? employmentType.hashCode() : 0);
-        result = 31 * result + (fee != null ? fee.hashCode() : 0);
-        result = 31 * result + (flatFee != null ? flatFee.hashCode() : 0);
-        result = 31 * result + (fileAttachments != null ? fileAttachments.hashCode() : 0);
-        result = 31 * result + (hoursOfOperation != null ? hoursOfOperation.hashCode() : 0);
-        result = 31 * result + (hoursPerDay != null ? hoursPerDay.hashCode() : 0);
-        result = 31 * result + (housingManagerID != null ? housingManagerID.hashCode() : 0);
-        result = 31 * result + (housingStatus != null ? housingStatus.hashCode() : 0);
-        result = 31 * result + (invoiceGroupName != null ? invoiceGroupName.hashCode() : 0);
-        result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
-        result = 31 * result + (jobSubmission != null ? jobSubmission.hashCode() : 0);
-        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
-        result = 31 * result + (optionsPackage != null ? optionsPackage.hashCode() : 0);
-        result = 31 * result + (otExemption != null ? otExemption.hashCode() : 0);
-        result = 31 * result + (otherHourlyFee != null ? otherHourlyFee.hashCode() : 0);
-        result = 31 * result + (markUpPercentage != null ? markUpPercentage.hashCode() : 0);
-        result = 31 * result + (notes != null ? notes.hashCode() : 0);
-        result = 31 * result + (otherHourlyFeeComments != null ? otherHourlyFeeComments.hashCode() : 0);
-        result = 31 * result + (overtimeMarkUpPercentage != null ? overtimeMarkUpPercentage.hashCode() : 0);
-        result = 31 * result + (overtimeRate != null ? overtimeRate.hashCode() : 0);
-        result = 31 * result + (payRate != null ? payRate.hashCode() : 0);
-        result = 31 * result + (projectCodeList != null ? projectCodeList.hashCode() : 0);
-        result = 31 * result + (recruitingManagerPercentGrossMargin != null ? recruitingManagerPercentGrossMargin.hashCode() : 0);
-        result = 31 * result + (referralFee != null ? referralFee.hashCode() : 0);
-        result = 31 * result + (referralFeeType != null ? referralFeeType.hashCode() : 0);
-        result = 31 * result + (reportTo != null ? reportTo.hashCode() : 0);
-        result = 31 * result + (reportedMargin != null ? reportedMargin.hashCode() : 0);
-        result = 31 * result + (salary != null ? salary.hashCode() : 0);
-        result = 31 * result + (salaryUnit != null ? salaryUnit.hashCode() : 0);
-        result = 31 * result + (salesManagerPercentGrossMargin != null ? salesManagerPercentGrossMargin.hashCode() : 0);
-        result = 31 * result + (statementClientContact != null ? statementClientContact.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
-        result = 31 * result + (taxRate != null ? taxRate.hashCode() : 0);
-        result = 31 * result + (taxState != null ? taxState.hashCode() : 0);
-        result = 31 * result + (terminationReason != null ? terminationReason.hashCode() : 0);
-        result = 31 * result + (timeUnits != null ? timeUnits.hashCode() : 0);
-        result = 31 * result + (vendorClientCorporation != null ? vendorClientCorporation.hashCode() : 0);
-        result = 31 * result + (workWeekStart != null ? workWeekStart.hashCode() : 0);
-        result = 31 * result + (workersCompensationRate != null ? workersCompensationRate.hashCode() : 0);
-        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
-        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
-        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
-        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
-        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
-        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
-        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
-        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
-        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
-        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
-        return result;
+        return java.util.Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Placement{");
-        sb.append("id=").append(id);
-        sb.append(", appointments=").append(appointments);
-        sb.append(", approvingClientContact=").append(approvingClientContact);
-        sb.append(", backupApprovingClientContact=").append(backupApprovingClientContact);
-        sb.append(", billingClientContact=").append(billingClientContact);
-        sb.append(", billingFrequency='").append(billingFrequency).append('\'');
-        sb.append(", bonusPackage='").append(bonusPackage).append('\'');
-        sb.append(", branch=").append(branch);
-        sb.append(", candidate=").append(candidate);
-        sb.append(", placementCertifications=").append(placementCertifications);
-        sb.append(", changeRequests=").append(changeRequests);
-        sb.append(", clientBillRate=").append(clientBillRate);
-        sb.append(", clientOvertimeRate=").append(clientOvertimeRate);
-        sb.append(", comments='").append(comments).append('\'');
-        sb.append(", commissions=").append(commissions);
-        sb.append(", costCenter='").append(costCenter).append('\'');
-        sb.append(", dateAdded=").append(dateAdded);
-        sb.append(", dateBegin=").append(dateBegin);
-        sb.append(", dateClientEffective=").append(dateClientEffective);
-        sb.append(", dateEffective=").append(dateEffective);
-        sb.append(", dateEnd=").append(dateEnd);
-        sb.append(", dateLastModified=").append(dateLastModified);
-        sb.append(", daysGuaranteed=").append(daysGuaranteed);
-        sb.append(", daysProRated=").append(daysProRated);
-        sb.append(", durationWeeks=").append(durationWeeks);
-        sb.append(", employeeType='").append(employeeType).append('\'');
-        sb.append(", employmentType='").append(employmentType).append('\'');
-        sb.append(", fee=").append(fee);
-        sb.append(", flatFee=").append(flatFee);
-        sb.append(", fileAttachments=").append(fileAttachments);
-        sb.append(", hoursOfOperation='").append(hoursOfOperation).append('\'');
-        sb.append(", hoursPerDay=").append(hoursPerDay);
-        sb.append(", housingManagerID=").append(housingManagerID);
-        sb.append(", housingStatus='").append(housingStatus).append('\'');
-        sb.append(", invoiceGroupName='").append(invoiceGroupName).append('\'');
-        sb.append(", jobOrder=").append(jobOrder);
-        sb.append(", jobSubmission=").append(jobSubmission);
-        sb.append(", migrateGUID=").append(migrateGUID);
-        sb.append(", optionsPackage='").append(optionsPackage).append('\'');
-        sb.append(", otExemption=").append(otExemption);
-        sb.append(", otherHourlyFee=").append(otherHourlyFee);
-        sb.append(", markUpPercentage=").append(markUpPercentage);
-        sb.append(", notes=").append(notes);
-        sb.append(", otherHourlyFeeComments='").append(otherHourlyFeeComments).append('\'');
-        sb.append(", overtimeMarkUpPercentage=").append(overtimeMarkUpPercentage);
-        sb.append(", overtimeRate=").append(overtimeRate);
-        sb.append(", payRate=").append(payRate);
-        sb.append(", projectCodeList='").append(projectCodeList).append('\'');
-        sb.append(", recruitingManagerPercentGrossMargin=").append(recruitingManagerPercentGrossMargin);
-        sb.append(", referralFee=").append(referralFee);
-        sb.append(", referralFeeType='").append(referralFeeType).append('\'');
-        sb.append(", reportTo='").append(reportTo).append('\'');
-        sb.append(", reportedMargin=").append(reportedMargin);
-        sb.append(", salary=").append(salary);
-        sb.append(", salaryUnit='").append(salaryUnit).append('\'');
-        sb.append(", salesManagerPercentGrossMargin=").append(salesManagerPercentGrossMargin);
-        sb.append(", statementClientContact=").append(statementClientContact);
-        sb.append(", status='").append(status).append('\'');
-        sb.append(", tasks=").append(tasks);
-        sb.append(", taxRate=").append(taxRate);
-        sb.append(", taxState='").append(taxState).append('\'');
-        sb.append(", terminationReason='").append(terminationReason).append('\'');
-        sb.append(", timeUnits=").append(timeUnits);
-        sb.append(", vendorClientCorporation=").append(vendorClientCorporation);
-        sb.append(", workWeekStart=").append(workWeekStart);
-        sb.append(", workersCompensationRate=").append(workersCompensationRate);
-        sb.append(", customObject1s=").append(customObject1s);
-        sb.append(", customObject2s=").append(customObject2s);
-        sb.append(", customObject3s=").append(customObject3s);
-        sb.append(", customObject4s=").append(customObject4s);
-        sb.append(", customObject5s=").append(customObject5s);
-        sb.append(", customObject6s=").append(customObject6s);
-        sb.append(", customObject7s=").append(customObject7s);
-        sb.append(", customObject8s=").append(customObject8s);
-        sb.append(", customObject9s=").append(customObject9s);
-        sb.append(", customObject10s=").append(customObject10s);
-        sb.append('}');
-        return sb.toString();
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Placement{" +
+            "id=" + id +
+            ", appointments=" + appointments +
+            ", approvingClientContact=" + approvingClientContact +
+            ", backupApprovingClientContact=" + backupApprovingClientContact +
+            ", billingClientContact=" + billingClientContact +
+            ", billingProfile=" + billingProfile +
+            ", billingFrequency='" + billingFrequency + '\'' +
+            ", bonusPackage='" + bonusPackage + '\'' +
+            ", branch=" + branch +
+            ", candidate=" + candidate +
+            ", placementCertifications=" + placementCertifications +
+            ", changeRequests=" + changeRequests +
+            ", clientBillRate=" + clientBillRate +
+            ", clientOvertimeRate=" + clientOvertimeRate +
+            ", comments='" + comments + '\'' +
+            ", commissions=" + commissions +
+            ", location=" + location +
+            ", costCenter='" + costCenter + '\'' +
+            ", dateAdded=" + dateAdded +
+            ", dateBegin=" + dateBegin +
+            ", dateClientEffective=" + dateClientEffective +
+            ", dateEffective=" + dateEffective +
+            ", dateEnd=" + dateEnd +
+            ", dateLastModified=" + dateLastModified +
+            ", daysGuaranteed=" + daysGuaranteed +
+            ", daysProRated=" + daysProRated +
+            ", durationWeeks=" + durationWeeks +
+            ", employeeType='" + employeeType + '\'' +
+            ", employmentType='" + employmentType + '\'' +
+            ", fee=" + fee +
+            ", flatFee=" + flatFee +
+            ", fileAttachments=" + fileAttachments +
+            ", hoursOfOperation='" + hoursOfOperation + '\'' +
+            ", hoursPerDay=" + hoursPerDay +
+            ", housingManagerID=" + housingManagerID +
+            ", housingStatus='" + housingStatus + '\'' +
+            ", invoiceGroupName='" + invoiceGroupName + '\'' +
+            ", jobOrder=" + jobOrder +
+            ", jobSubmission=" + jobSubmission +
+            ", migrateGUID=" + migrateGUID +
+            ", optionsPackage='" + optionsPackage + '\'' +
+            ", otExemption=" + otExemption +
+            ", otherHourlyFee=" + otherHourlyFee +
+            ", markUpPercentage=" + markUpPercentage +
+            ", notes=" + notes +
+            ", otherHourlyFeeComments='" + otherHourlyFeeComments + '\'' +
+            ", overtimeMarkUpPercentage=" + overtimeMarkUpPercentage +
+            ", overtimeRate=" + overtimeRate +
+            ", payRate=" + payRate +
+            ", projectCodeList='" + projectCodeList + '\'' +
+            ", recruitingManagerPercentGrossMargin=" + recruitingManagerPercentGrossMargin +
+            ", referralFee=" + referralFee +
+            ", referralFeeType='" + referralFeeType + '\'' +
+            ", reportTo='" + reportTo + '\'' +
+            ", reportedMargin=" + reportedMargin +
+            ", salary=" + salary +
+            ", salaryUnit='" + salaryUnit + '\'' +
+            ", salesManagerPercentGrossMargin=" + salesManagerPercentGrossMargin +
+            ", statementClientContact=" + statementClientContact +
+            ", status='" + status + '\'' +
+            ", tasks=" + tasks +
+            ", taxRate=" + taxRate +
+            ", taxState='" + taxState + '\'' +
+            ", terminationReason='" + terminationReason + '\'' +
+            ", timeUnits=" + timeUnits +
+            ", vendorClientCorporation=" + vendorClientCorporation +
+            ", workWeekStart=" + workWeekStart +
+            ", workersCompensationRate=" + workersCompensationRate +
+            ", customObject1s=" + customObject1s +
+            ", customObject2s=" + customObject2s +
+            ", customObject3s=" + customObject3s +
+            ", customObject4s=" + customObject4s +
+            ", customObject5s=" + customObject5s +
+            ", customObject6s=" + customObject6s +
+            ", customObject7s=" + customObject7s +
+            ", customObject8s=" + customObject8s +
+            ", customObject9s=" + customObject9s +
+            ", customObject10s=" + customObject10s +
+            '}';
     }
 }

@@ -1,0 +1,1446 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 2,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 1,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 3,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 4,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 5,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 6,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 7,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 8,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 9,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 10,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 11,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 12,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 13,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 14,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 15,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 16,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 17,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 18,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 19,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        },
+		{
+            "id": 20,
+            "addedByUser": {
+                "id": 2034545,
+                "firstName": "Bullhorn",
+                "lastName": "Support"
+            },
+            "billMasters": {
+                "total": 0,
+                "data": []
+            },
+            "billableTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "billingClientContact": null,
+            "billingClientCorporation": null,
+            "billingCorporateUser": null,
+            "billingFrequency": "",
+            "billingProfile": null,
+            "billingSchedule": null,
+            "candidate": {
+                "id": 1372076,
+                "firstName": "Test",
+                "lastName": "1"
+            },
+            "clientCorporation": null,
+            "currencyUnit": null,
+            "dateAdded": 1587666411913,
+            "dateLastModified": 1587666411913,
+            "description": "CreateInvoiceStatementLine",
+            "fileAttachments": {
+                "total": 0,
+                "data": []
+            },
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "invoiceTerm": null,
+            "invoicedTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "isInvoiced": false,
+            "jobOrder": {
+                "id": 97147,
+                "title": "test"
+            },
+            "periodEndDate": "2020-04-23",
+            "placement": {
+                "id": 2336015
+            },
+            "readyToBillOverride": false,
+            "status": {
+                "id": 1,
+                "label": "Not Ready to Bill"
+            },
+            "subtotal": null,
+            "summaryTransactions": {
+                "total": 0,
+                "data": []
+            },
+            "transactionStatus": null,
+            "transactionType": null,
+            "unbillableTransactions": {
+                "total": 0,
+                "data": []
+            }
+        }
+    ]
+}

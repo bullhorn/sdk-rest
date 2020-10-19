@@ -1,138 +1,684 @@
 {
-  "entity" : "CandidateCertification",
-  "entityMetaUrl" : "http://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CandidateCertification?fields=*",
-  "label" : "CREDENTIAL",
-  "dateLastModified" : "1492023613590",
-  "fields" : [ {
-    "name" : "id",
-    "type" : "ID",
-    "dataType" : "Integer",
-    "optional" : false
-  }, {
-    "name" : "certification",
-    "type" : "TO_ONE",
-    "confidential" : false,
-    "optional" : false,
-    "label" : "Requirement Type",
-    "required" : true,
-    "readOnly" : false,
-    "multiValue" : false,
-    "inputType" : "SELECT",
-    "optionsType" : "Certification",
-    "optionsUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/Certification",
-    "hideFromSearch" : false,
-    "sortOrder" : 20,
-    "hint" : "",
-    "description" : "",
-    "associatedEntity" : {
-      "entity" : "Certification",
-      "entityMetaUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/Certification?fields=*",
-      "label" : "CREDENTIAL",
-      "dateLastModified" : "1492023613590",
-      "fields" : [ {
-        "name" : "id",
-        "type" : "ID",
-        "dataType" : "Integer",
-        "optional" : false
-      }, {
-        "name" : "name",
-        "type" : "SCALAR",
-        "dataType" : "String",
-        "maxLength" : 100,
-        "confidential" : false,
-        "optional" : false,
-        "label" : "Credential",
-        "required" : true,
-        "readOnly" : false,
-        "multiValue" : false,
-        "hideFromSearch" : false,
-        "sortOrder" : 10,
-        "hint" : "",
-        "description" : ""
-      } ]
-    }
-  }, {
-    "name" : "name",
-    "type" : "SCALAR",
-    "dataType" : "String",
-    "maxLength" : 100,
-    "confidential" : false,
-    "optional" : true,
-    "label" : "Credential",
-    "required" : true,
-    "readOnly" : false,
-    "multiValue" : false,
-    "hideFromSearch" : false,
-    "sortOrder" : 10,
-    "hint" : "",
-    "description" : ""
-  }, {
-    "name" : "dateExpiration",
-    "type" : "SCALAR",
-    "dataType" : "Timestamp",
-    "dataSpecialization" : "DATE",
-    "confidential" : false,
-    "optional" : true,
-    "label" : "Expiration Date",
-    "required" : true,
-    "readOnly" : false,
-    "multiValue" : false,
-    "hideFromSearch" : false,
-    "sortOrder" : 70,
-    "hint" : "",
-    "description" : ""
-  }, {
-    "name" : "status",
-    "type" : "SCALAR",
-    "dataType" : "String",
-    "maxLength" : 30,
-    "confidential" : false,
-    "optional" : true,
-    "label" : "Status",
-    "required" : true,
-    "readOnly" : false,
-    "multiValue" : false,
-    "inputType" : "SELECT",
-    "options" : [ {
-      "value" : "Current",
-      "label" : "Current"
-    }, {
-      "value" : "Expired",
-      "label" : "Expired"
-    }, {
-      "value" : "Unknown",
-      "label" : "Unknown"
-    }, {
-      "value" : "Pending",
-      "label" : "Pending"
-    } ],
-    "hideFromSearch" : false,
-    "sortOrder" : 100,
-    "hint" : "",
-    "description" : ""
-  }, {
-    "name" : "fileAttachments",
-    "type" : "TO_MANY",
-    "confidential" : false,
-    "optional" : true,
-    "label" : "File Attachments",
-    "required" : false,
-    "readOnly" : false,
-    "multiValue" : false,
-    "optionsType" : "CandidateFileAttachment",
-    "optionsUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/options/CandidateFileAttachment",
-    "hideFromSearch" : false,
-    "associatedEntity" : {
-      "entity" : "CandidateFileAttachment",
-      "entityMetaUrl" : "http://awu-backend.bh-bos2.bullhorn.com:8181/rest-services/1hs/meta/CandidateFileAttachment?fields=*",
-      "label" : "File Attachments",
-      "dateLastModified" : "1492023351911",
-      "fields" : [ {
-        "name" : "id",
-        "type" : "ID",
-        "dataType" : "Integer",
-        "optional" : false
-      } ]
-    }
-  } ]
+    "entity": "CandidateCertification",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/CandidateCertification?fields=*",
+    "label": "Candidate Certification",
+    "dateLastModified": "1588780776173",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "boardCertification",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Board Certification",
+            "options": [
+                {
+                    "value": "NA",
+                    "label": "NA"
+                },
+                {
+                    "value": "Board Certified",
+                    "label": "Board Certified"
+                },
+                {
+                    "value": "Board Elligible",
+                    "label": "Board Elligible"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "candidate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Candidate",
+            "optionsType": "Candidate",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Candidate",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Candidate",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Candidate?fields=*",
+                "label": "Professional",
+                "dateLastModified": "1588780775528",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "certification",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Requirement Type",
+            "optionsType": "Certification",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/Certification",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Certification",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/Certification?fields=*",
+                "label": "Credential",
+                "dateLastModified": "1588734455525",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "certificationFileAttachments",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Certification File Attachments",
+            "optionsType": "CertificationFileAttachment",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/CertificationFileAttachment",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CertificationFileAttachment",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/CertificationFileAttachment?fields=*",
+                "label": "Credential File Attachment",
+                "dateLastModified": "1588842965683",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "comments",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Comments",
+            "hideFromSearch": false
+        },
+        {
+            "name": "compact",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Compact",
+            "options": [
+                {
+                    "value": -1,
+                    "label": "Not Applicable"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                },
+                {
+                    "value": 0,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "copyOnFile",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "On File",
+            "options": [
+                {
+                    "value": -1,
+                    "label": "Not Applicable"
+                },
+                {
+                    "value": 1,
+                    "label": "Yes"
+                },
+                {
+                    "value": 0,
+                    "label": "No"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Completed Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate10",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate10",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate4",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate5",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate6",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate7",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate8",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate8",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate9",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "CustomDate9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Test Score",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Third Party Flag",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "Incomplete"
+                },
+                {
+                    "value": "2",
+                    "label": "Invalid"
+                },
+                {
+                    "value": "3",
+                    "label": "Expired"
+                },
+                {
+                    "value": "4",
+                    "label": "Expiring Soon"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "CustomText2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "CustomText3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "CustomText4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "CustomText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "CustomText6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "CustomText7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Reason Code",
+            "options": [
+                {
+                    "value": "TBD",
+                    "label": "TBD"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "CustomText9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomTextBlock1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText10",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText8",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customTextBlock9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "CustomBlockText9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateCertified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Certified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateExpiration",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Expiration Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "displayStatus",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "Display Status",
+            "hideFromSearch": false
+        },
+        {
+            "name": "fileAttachments",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "File Attachments",
+            "optionsType": "CandidateFileAttachment",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/CandidateFileAttachment",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CandidateFileAttachment",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/CandidateFileAttachment?fields=*",
+                "label": "File Attachments",
+                "dateLastModified": "1588780776501",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isComplete",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Complete",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "isDeleted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "issuedBy",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Issuing Authority",
+            "options": [
+                {
+                    "value": "To Be Provided",
+                    "label": "To Be Provided"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "licenseNumber",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Lic/Cert Number",
+            "hideFromSearch": false
+        },
+        {
+            "name": "licenseType",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "License Type",
+            "options": [
+                {
+                    "value": "Not Applicable",
+                    "label": "Not Applicable"
+                },
+                {
+                    "value": "Permanent",
+                    "label": "Permanent"
+                },
+                {
+                    "value": "Temporary",
+                    "label": "Temporary"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "location",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Locations",
+            "optionsType": "NorthAmericaState",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/NorthAmericaState",
+            "hideFromSearch": false
+        },
+        {
+            "name": "modifyingUser",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Modifying User",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/5vklop/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1588733336071",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Credential",
+            "hideFromSearch": false
+        },
+        {
+            "name": "results",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "label": "Results",
+            "hideFromSearch": false
+        },
+        {
+            "name": "status",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "label": "Status",
+            "options": [
+                {
+                    "value": "Needs Review",
+                    "label": "Needs Review"
+                },
+                {
+                    "value": "Rejected",
+                    "label": "Rejected"
+                },
+                {
+                    "value": "Automated",
+                    "label": "Automated"
+                },
+                {
+                    "value": "Reviewed",
+                    "label": "Reviewed"
+                },
+                {
+                    "value": "Expired",
+                    "label": "Expired"
+                }
+            ],
+            "hideFromSearch": false
+        }
+    ]
 }

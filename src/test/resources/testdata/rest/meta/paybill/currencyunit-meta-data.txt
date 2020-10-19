@@ -1,0 +1,47 @@
+{
+    "entity": "CurrencyUnit",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/CurrencyUnit?fields=*",
+    "label": "Currency Unit",
+    "dateLastModified": "1587073458588",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "alphabeticCode",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 3,
+            "confidential": false,
+            "label": "Alphabetic Code",
+            "hideFromSearch": false
+        },
+        {
+            "name": "minorUnits",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Minor Units",
+            "hideFromSearch": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "numericCode",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Numeric Code",
+            "hideFromSearch": false
+        }
+    ]
+}

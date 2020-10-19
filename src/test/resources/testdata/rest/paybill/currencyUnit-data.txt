@@ -1,0 +1,146 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 20,
+            "alphabeticCode": "PLN",
+            "minorUnits": 2,
+            "name": "Zloty",
+            "numericCode": 985
+        },
+        {
+            "id": 19,
+            "alphabeticCode": "ZWL",
+            "minorUnits": 2,
+            "name": "Zimbabwe Dollar",
+            "numericCode": 932
+        },
+        {
+            "id": 18,
+            "alphabeticCode": "ZMW",
+            "minorUnits": 2,
+            "name": "Zambian Kwacha",
+            "numericCode": 967
+        },
+        {
+            "id": 17,
+            "alphabeticCode": "CNY",
+            "minorUnits": 2,
+            "name": "Yuan Renminbi",
+            "numericCode": 156
+        },
+        {
+            "id": 16,
+            "alphabeticCode": "JPY",
+            "minorUnits": 0,
+            "name": "Yen",
+            "numericCode": 392
+        },
+        {
+            "id": 15,
+            "alphabeticCode": "YER",
+            "minorUnits": 2,
+            "name": "Yemeni Rial",
+            "numericCode": 886
+        },
+        {
+            "id": 14,
+            "alphabeticCode": "KRW",
+            "minorUnits": 0,
+            "name": "Won",
+            "numericCode": 410
+        },
+        {
+            "id": 13,
+            "alphabeticCode": "CHW",
+            "minorUnits": 2,
+            "name": "WIR Franc",
+            "numericCode": 948
+        },
+        {
+            "id": 12,
+            "alphabeticCode": "CHE",
+            "minorUnits": 2,
+            "name": "WIR Euro",
+            "numericCode": 947
+        },
+        {
+            "id": 11,
+            "alphabeticCode": "VUV",
+            "minorUnits": 0,
+            "name": "Vatu",
+            "numericCode": 548
+        },
+        {
+            "id": 10,
+            "alphabeticCode": "UZS",
+            "minorUnits": 2,
+            "name": "Uzbekistan Sum",
+            "numericCode": 860
+        },
+        {
+            "id": 9,
+            "alphabeticCode": "USN",
+            "minorUnits": 2,
+            "name": "US Dollar (Next day)",
+            "numericCode": 997
+        },
+        {
+            "id": 8,
+            "alphabeticCode": "USD",
+            "minorUnits": 2,
+            "name": "US Dollar",
+            "numericCode": 840
+        },
+        {
+            "id": 7,
+            "alphabeticCode": "UYI",
+            "minorUnits": 0,
+            "name": "Uruguay Peso en Unidades Indexadas (UI)",
+            "numericCode": 940
+        },
+        {
+            "id": 6,
+            "alphabeticCode": "COU",
+            "minorUnits": 2,
+            "name": "Unidad de Valor Real",
+            "numericCode": 970
+        },
+        {
+            "id": 5,
+            "alphabeticCode": "CLF",
+            "minorUnits": 4,
+            "name": "Unidad de Fomento",
+            "numericCode": 990
+        },
+        {
+            "id": 4,
+            "alphabeticCode": "UGX",
+            "minorUnits": 0,
+            "name": "Uganda Shilling",
+            "numericCode": 800
+        },
+        {
+            "id": 3,
+            "alphabeticCode": "AED",
+            "minorUnits": 2,
+            "name": "UAE Dirham",
+            "numericCode": 784
+        },
+        {
+            "id": 2,
+            "alphabeticCode": "TMT",
+            "minorUnits": 2,
+            "name": "Turkmenistan New Manat",
+            "numericCode": 934
+        },
+        {
+            "id": 1,
+            "alphabeticCode": "TRY",
+            "minorUnits": 2,
+            "name": "Turkish Lira",
+            "numericCode": 949
+        }
+    ]
+}

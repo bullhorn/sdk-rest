@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement;
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement;
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement;
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.optionslookup.CertificationRequirementStatusLookup;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject;
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject;
@@ -85,23 +89,211 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
+import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch;
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionDiscountDetail;
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSalesTaxDetail;
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSurchargeDetail;
+import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment1;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment2;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment3;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment4;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment5;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegmentType;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerServiceCode;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BatchGroup;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
+import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch;
+import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
+import com.bullhornsdk.data.model.entity.core.paybill.rate.*;
+import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge;
+import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax;
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.*;
+import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
 import com.bullhornsdk.data.model.entity.file.*;
 import com.bullhornsdk.data.model.entity.report.Report;
+import com.bullhornsdk.data.model.entity.file.BillableChargeFileAttachment;
+import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
+import com.bullhornsdk.data.model.entity.file.CertificationFileAttachment;
+import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment;
+import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment;
+import com.bullhornsdk.data.model.entity.file.InvoiceStatementExport;
+import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment;
+import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment;
+import com.bullhornsdk.data.model.entity.file.PlacementFileAttachment;
 import com.bullhornsdk.data.model.response.list.*;
 import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCustomObjectListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.UserCustomObjectListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.*;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance10ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance11ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance12ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance13ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance14ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance15ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance16ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance17ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance18ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance19ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance1ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance20ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance21ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance22ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance23ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance24ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance25ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance26ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance27ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance28ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance29ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance2ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance30ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance31ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance32ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance33ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance34ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance35ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance3ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance4ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance5ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance6ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance7ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance8ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance10ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance1ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance2ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance3ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance4ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance5ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance6ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance7ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance8ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance10ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance1ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance2ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance3ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance4ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance5ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance6ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance7ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance8ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance10ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance1ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance2ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance3ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance4ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance5ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance6ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance7ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance8ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance10ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance1ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance2ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance3ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance4ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance5ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance6ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance7ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance8ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance9ListWrapper;
 import com.bullhornsdk.data.model.response.single.*;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.UserCustomObjectWrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.*;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance10Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance11Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance12Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance13Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance14Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance15Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance16Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance17Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance18Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance19Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance1Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance20Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance21Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance22Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance23Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance24Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance25Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance26Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance27Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance28Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance29Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance2Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance30Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance31Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance32Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance33Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance34Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance35Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance3Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance4Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance5Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance6Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance7Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance8Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance10Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance1Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance2Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance3Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance4Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance5Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance6Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance7Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance8Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance10Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance1Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance2Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance3Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance4Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance5Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance6Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance7Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance8Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance10Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance1Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance2Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance3Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance4Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance5Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance6Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance7Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance8Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance10Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance1Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance2Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance3Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance4Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance5Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance6Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance7Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance8Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance9Wrapper;
 
 /**
  * Enum that contains the following information about the RestEntities:
@@ -120,6 +312,7 @@ import com.bullhornsdk.data.model.response.single.customobjectinstances.*;
  */
 public enum BullhornEntityInfo {
 
+    // Standard Entities
     ADDRESS("Address", null, null, null, null, null),
     APPOINTMENT("Appointment", Appointment.class, AppointmentWrapper.class, AppointmentListWrapper.class,
         "AppointmentEditHistory", "AppointmentEditHistoryFieldChange"),
@@ -143,15 +336,15 @@ public enum BullhornEntityInfo {
     CLIENT_CONTACT("ClientContact", ClientContact.class, ClientContactWrapper.class, ClientContactListWrapper.class, "UserEditHistory",
         "UserEditHistoryFieldChange"),
     CLIENT_CONTACT1("ClientContact1", ClientContact1.class, ClientContact1Wrapper.class, ClientContact1ListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CLIENT_CONTACT2("ClientContact2", ClientContact2.class, ClientContact2Wrapper.class, ClientContact2ListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CLIENT_CONTACT3("ClientContact3", ClientContact3.class, ClientContact3Wrapper.class, ClientContact3ListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CLIENT_CONTACT4("ClientContact4", ClientContact4.class, ClientContact4Wrapper.class, ClientContact4ListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CLIENT_CONTACT5("ClientContact5", ClientContact5.class, ClientContact5Wrapper.class, ClientContact5ListWrapper.class, "UserEditHistory",
-            "UserEditHistoryFieldChange"),
+        "UserEditHistoryFieldChange"),
     CLIENT_CORPORATION("ClientCorporation", ClientCorporation.class, ClientCorporationWrapper.class,
         ClientCorporationListWrapper.class, "ClientCorporationEditHistory", "ClientCorporationEditHistoryFieldChange"),
     CLIENT_CORPORATION1("ClientCorporation1", ClientCorporation1.class, ClientCorporation1Wrapper.class,
@@ -174,6 +367,7 @@ public enum BullhornEntityInfo {
     DEPARTMENT("Department", Department.class, DepartmentWrapper.class, DepartmentListWrapper.class, null, null),
     DISTRIBUTION_LIST("DistributionList", DistributionList.class, DistributionListWrapper.class, DistributionListListWrapper.class, null, null),
     FILE("File", File.class, FileEntityWrapper.class, FileEntityListWrapper.class, null, null),
+    GOAL_TARGET("GoalTarget", GoalTarget.class, GoalTargetWrapper.class, GoalTargetListWrapper.class, null, null),
     HOUSING_COMPLEX("HousingComplex", HousingComplex.class, HousingComplexWrapper.class, HousingComplexListWrapper.class, null, null),
     HOUSING_COMPLEX_UNIT("HousingComplexUnit", HousingComplexUnit.class, HousingComplexUnitWrapper.class, HousingComplexUnitListWrapper.class, null, null),
     HOUSING_COMPLEX_FURNITURE_DELIVERY("HousingComplexFurnitureDelivery", HousingComplexFurnitureDelivery.class, HousingComplexFurnitureDeliveryWrapper.class, HousingComplexFurnitureDeliveryListWrapper.class, null, null),
@@ -215,6 +409,84 @@ public enum BullhornEntityInfo {
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
 
+    // placementRateCard Entities
+    PLACEMENT_RATE_CARD("PlacementRateCard", PlacementRateCard.class, PlacementRateCardWrapper.class, PlacementRateCardListWrapper.class, "PlacementRateCardEditHistory",
+        "PlacementRateCardEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_LINE("PlacementRateCardLine", PlacementRateCardLine.class, PlacementRateCardLineWrapper.class, PlacementRateCardLineListWrapper.class, "PlacementRateCardLineEditHistory",
+        "PlacementRateCardLineEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_LINE_GROUP("PlacementRateCardLineGroup", PlacementRateCardLineGroup.class, PlacementRateCardLineGroupWrapper.class, PlacementRateCardLineGroupListWrapper.class, "PlacementRateCardLineGroupEditHistory",
+        "PlacementRateCardLineGroupEditHistoryFieldChange"),
+    PLACEMENT_RATE_CARD_VERSION("PlacementRateCardVersion", PlacementRateCardVersion.class, PlacementRateCardVersionWrapper.class, PlacementRateCardVersionListWrapper.class, "PlacementRateCardVersionEditHistory",
+        "PlacementRateCardVersionEditHistoryFieldChange"),
+
+    // PayBill Entities
+    LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),
+    BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
+    GENERAL_LEDGER_ACCOUNT("GeneralLedgerAccount", GeneralLedgerAccount.class, GeneralLedgerAccountWrapper.class, GeneralLedgerAccountListWrapper.class, null, null),
+    INVOICE_STATEMENT_TEMPLATE("InvoiceStatementTemplate", InvoiceStatementTemplate.class, InvoiceStatementTemplateWrapper.class, InvoiceStatementTemplateListWrapper.class, null, null),
+    INVOICE_STATEMENT_MESSAGE_TEMPLATE("InvoiceStatementMessageTemplate", InvoiceStatementMessageTemplate.class, InvoiceStatementMessageTemplateWrapper.class, InvoiceStatementMessageTemplateListWrapper.class, null, null),
+    CURRENCY_UNIT("CurrencyUnit", CurrencyUnit.class, CurrencyUnityWrapper.class, CurrencyUnitListWrapper.class, null, null),
+    INVOICE_TERM("InvoiceTerm", InvoiceTerm.class, InvoiceTermWrapper.class, InvoiceTermListWrapper.class, null, null),
+
+    // PayBill Entities v2
+    BILLABLE_CHARGE("BillableCharge", BillableCharge.class, BillableChargeWrapper.class, BillableChargeListWrapper.class, null, null),
+    PAYABLE_CHARGE("PayableCharge", PayableCharge.class, PayableChargeWrapper.class, PayableChargeListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT("GeneralLedgerSegment", GeneralLedgerSegment.class, GeneralLedgerSegmentWrapper.class, GeneralLedgerSegmentListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_1("GeneralLedgerSegment1", GeneralLedgerSegment1.class, GeneralLedgerSegment1Wrapper.class, GeneralLedgerSegment1ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_2("GeneralLedgerSegment2", GeneralLedgerSegment2.class, GeneralLedgerSegment2Wrapper.class, GeneralLedgerSegment2ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_3("GeneralLedgerSegment3", GeneralLedgerSegment3.class, GeneralLedgerSegment3Wrapper.class, GeneralLedgerSegment3ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_4("GeneralLedgerSegment4", GeneralLedgerSegment4.class, GeneralLedgerSegment4Wrapper.class, GeneralLedgerSegment4ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_5("GeneralLedgerSegment5", GeneralLedgerSegment5.class, GeneralLedgerSegment5Wrapper.class, GeneralLedgerSegment5ListWrapper.class, null, null),
+    GENERAL_LEDGER_SEGMENT_TYPE("GeneralLedgerSegmentType", GeneralLedgerSegmentType.class, GeneralLedgerSegmentTypeWrapper.class, GeneralLedgerSegmentTypeListWrapper.class, null, null),
+    GENERAL_LEDGER_SERVICE_CODE("GeneralLedgerServiceCode", GeneralLedgerServiceCode.class, GeneralLedgerServiceCodeWrapper.class, GeneralLedgerServiceCodeListWrapper.class, null, null),
+    DISCOUNT("Discount", Discount.class, DiscountWrapper.class, DiscountListWrapper.class, null, null),
+    EARN_CODE("EarnCode", EarnCode.class, EarnCodeWrapper.class, EarnCodeListWrapper.class, null, null),
+    EARN_CODE_GROUP("EarnCodeGroup", EarnCodeGroup.class, EarnCodeGroupWrapper.class, EarnCodeGroupListWrapper.class, null, null),
+    INVOICE_STATEMENT("InvoiceStatement", InvoiceStatement.class, InvoiceStatementWrapper.class, InvoiceStatementListWrapper.class, null, null),
+    INVOICE_STATEMENT_BATCH("InvoiceStatementBatch", InvoiceStatementBatch.class, InvoiceStatementBatchWrapper.class, InvoiceStatementBatchListWrapper.class, null, null),
+    INVOICE_STATEMENT_DISCOUNT("InvoiceStatementDiscount", InvoiceStatementDiscount.class, InvoiceStatementDiscountWrapper.class, InvoiceStatementDiscountListWrapper.class, null, null),
+    INVOICE_STATEMENT_EXPORT_BATCH("InvoiceStatementExportBatch", InvoiceStatementExportBatch.class, InvoiceStatementExportBatchWrapper.class, InvoiceStatementExportBatchListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_ITEM("InvoiceStatementLineItem", InvoiceStatementLineItem.class, InvoiceStatementLineItemWrapper.class, InvoiceStatementLineItemListWrapper.class, null, null),
+    INVOICE_STATEMENT_SURCHARGE("InvoiceStatementSurcharge", InvoiceStatementSurcharge.class, InvoiceStatementSurchargeWrapper.class, InvoiceStatementSurchargeListWrapper.class, null, null),
+    INVOICE_STATEMENT_TAX("InvoiceStatementTax", InvoiceStatementTax.class, InvoiceStatementTaxWrapper.class, InvoiceStatementTaxListWrapper.class, null, null),
+    BATCH_GROUP("BatchGroup", BatchGroup.class, BatchGroupWrapper.class, BatchGroupListWrapper.class, null, null),
+    BILLING_SYNC_BATCH("BillingSyncBatch", BillingSyncBatch.class, BillingSyncBatchWrapper.class, BillingSyncBatchListWrapper.class, null, null),
+    BILL_MASTER("BillMaster", BillMaster.class, BillMasterWrapper.class, BillMasterListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION("BillMasterTransaction", BillMasterTransaction.class, BillMasterTransactionWrapper.class, BillMasterTransactionListWrapper.class, null, null),
+    PAY_MASTER("PayMaster", PayMaster.class, PayMasterWrapper.class, PayMasterListWrapper.class, null, null),
+    PAY_EXPORT_BATCH("PayExportBatch", PayExportBatch.class, PayExportBatchWrapper.class, PayExportBatchListWrapper.class, null, null),
+    PAY_MASTER_TRANSACTION("PayMasterTransaction", PayMasterTransaction.class, PayMasterTransactionWrapper.class, PayMasterTransactionListWrapper.class, null, null),
+    SURCHARGE("Surcharge", Surcharge.class, SurchargeWrapper.class, SurchargeListWrapper.class, null, null),
+    TAX("Tax", Tax.class, TaxWrapper.class, TaxListWrapper.class, null, null),
+    CANVAS_REPORT("CanvasReport", CanvasReport.class, CanvasReportWrapper.class, CanvasReportListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION_DISCOUNT_DETAIL("BillMasterTransactionDiscountDetail", BillMasterTransactionDiscountDetail.class, BillMasterTransactionDiscountDetailWrapper.class, BillMasterTransactionDiscountDetailListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION_DISCOUNT_RATE("BillMasterTransactionDiscountRate", BillMasterTransactionDiscountRate.class, BillMasterTransactionDiscountRateWrapper.class, BillMasterTransactionDiscountRateListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION_SALES_TAX_DETAIL("BillMasterTransactionSalesTaxDetail", BillMasterTransactionSalesTaxDetail.class, BillMasterTransactionSalesTaxDetailWrapper.class, BillMasterTransactionSalesTaxDetailListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION_SALES_TAX_RATE("BillMasterTransactionSalesTaxRate", BillMasterTransactionSalesTaxRate.class, BillMasterTransactionSalesTaxRateWrapper.class, BillMasterTransactionSalesTaxRateListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION_SURCHARGE_DETAIL("BillMasterTransactionSurchargeDetail", BillMasterTransactionSurchargeDetail.class, BillMasterTransactionSurchargeDetailWrapper.class, BillMasterTransactionSurchargeDetailListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION_SURCHARGE_RATE("BillMasterTransactionSurchargeRate", BillMasterTransactionSurchargeRate.class, BillMasterTransactionSurchargeRateWrapper.class, BillMasterTransactionSurchargeRateListWrapper.class, null, null),
+    DISCOUNT_RATE("DiscountRate", DiscountRate.class, DiscountRateWrapper.class, DiscountRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_DISTRIBUTION_BATCH("InvoiceStatementDistributionBatch", InvoiceStatementDistributionBatch.class, InvoiceStatementDistributionBatchWrapper.class, InvoiceStatementDistributionBatchListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_DISTRIBUTION("InvoiceStatementLineDistribution", InvoiceStatementLineDistribution.class, InvoiceStatementLineDistributionWrapper.class, InvoiceStatementLineDistributionListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_ITEM_DISCOUNT_RATE("InvoiceStatementLineItemDiscountRate", InvoiceStatementLineItemDiscountRate.class, InvoiceStatementLineItemDiscountRateWrapper.class, InvoiceStatementLineItemDiscountRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_ITEM_SALES_TAX_RATE("InvoiceStatementLineItemSalesTaxRate", InvoiceStatementLineItemSalesTaxRate.class, InvoiceStatementLineItemSalesTaxRateWrapper.class, InvoiceStatementLineItemSalesTaxRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_LINE_ITEM_SURCHARGE_RATE("InvoiceStatementLineItemSurchargeRate", InvoiceStatementLineItemSurchargeRate.class, InvoiceStatementLineItemSurchargeRateWrapper.class, InvoiceStatementLineItemSurchargeRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_DISCOUNT_RATE("InvoiceStatementDiscountRate", InvoiceStatementDiscountRate.class, InvoiceStatementDiscountRateWrapper.class, InvoiceStatementDiscountRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_SALES_TAX_RATE("InvoiceStatementSalesTaxRate", InvoiceStatementSalesTaxRate.class, InvoiceStatementSalesTaxRateWrapper.class, InvoiceStatementSalesTaxRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_SURCHARGE_RATE("InvoiceStatementSurchargeRate", InvoiceStatementSurchargeRate.class, InvoiceStatementSurchargeRateWrapper.class, InvoiceStatementSurchargeRateListWrapper.class, null, null),
+    SURCHARGE_RATE("SurchargeRate", SurchargeRate.class, SurchargeRateWrapper.class, SurchargeRateListWrapper.class, null, null),
+
+    // Certification Requirements
+    CANDIDATE_CERTIFICATION_REQUIREMENT("CandidateCertificationRequirement", CandidateCertificationRequirement.class, CandidateCertificationRequirementWrapper.class, CandidateCertificationRequirementListWrapper.class, "CandidateCertificationRequirementEditHistory", "CandidateCertificationRequirementEditHistoryFieldChange"),
+    CERTIFICATION_REQUIREMENT("CertificationRequirement", CertificationRequirement.class, CertificationRequirementWrapper.class, CertificationRequirementListWrapper.class, "CertificationRequirementEditHistory", "CertificationRequirementEditHistoryFieldChange"),
+    JOB_SUBMISSION_CERTIFICATION_REQUIREMENT("JobSubmissionCertificationRequirement", JobSubmissionCertificationRequirement.class, JobSubmissionCertificationRequirementWrapper.class, JobSubmissionCertificationRequirementListWrapper.class, "JobSubmissionCertificationRequirementEditHistory", "JobSubmissionCertificationRequirementEditHistoryFieldChange"),
+
+
+    // Custom Objects
+    CLIENT_CORPORATION_CUSTOM_OBJECT("ClientCorporationCustomObject", ClientCorporationCustomObject.class, ClientCorporationCustomObjectWrapper.class, ClientCorporationCustomObjectListWrapper.class, null, null),
+    JOB_ORDER_CUSTOM_OBJECT("JobOrderCustomObject", JobOrderCustomObject.class, JobOrderCustomObjectWrapper.class, JobOrderCustomObjectListWrapper.class, null, null),
+    PLACEMENT_CUSTOM_OBJECT("PlacementCustomObject", PlacementCustomObject.class, PlacementCustomObjectWrapper.class, PlacementCustomObjectListWrapper.class, null, null),
+    USER_CUSTOM_OBJECT("UserCustomObject", UserCustomObject.class, UserCustomObjectWrapper.class, UserCustomObjectListWrapper.class, null, null),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_1("JobOrderCustomObjectInstance1", JobOrderCustomObjectInstance1.class, JobOrderCustomObjectInstance1Wrapper.class, JobOrderCustomObjectInstance1ListWrapper.class, "JobOrderCustomObject1EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_2("JobOrderCustomObjectInstance2", JobOrderCustomObjectInstance2.class, JobOrderCustomObjectInstance2Wrapper.class, JobOrderCustomObjectInstance2ListWrapper.class, "JobOrderCustomObject2EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
     JOB_ORDER_CUSTOM_OBJECT_INSTANCE_3("JobOrderCustomObjectInstance3", JobOrderCustomObjectInstance3.class, JobOrderCustomObjectInstance3Wrapper.class, JobOrderCustomObjectInstance3ListWrapper.class, "JobOrderCustomObject3EditHistory", "JobOrderCustomObjectEditHistoryFieldChange"),
@@ -280,8 +552,6 @@ public enum BullhornEntityInfo {
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_33("ClientCorporationCustomObjectInstance33", ClientCorporationCustomObjectInstance33.class, ClientCorporationCustomObjectInstance33Wrapper.class, ClientCorporationCustomObjectInstance33ListWrapper.class, "ClientCorporationCustomObject33EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_34("ClientCorporationCustomObjectInstance34", ClientCorporationCustomObjectInstance34.class, ClientCorporationCustomObjectInstance34Wrapper.class, ClientCorporationCustomObjectInstance34ListWrapper.class, "ClientCorporationCustomObject34EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
     CLIENT_CORPORATION_CUSTOM_OBJECT_INSTANCE_35("ClientCorporationCustomObjectInstance35", ClientCorporationCustomObjectInstance35.class, ClientCorporationCustomObjectInstance35Wrapper.class, ClientCorporationCustomObjectInstance35ListWrapper.class, "ClientCorporationCustomObject35EditHistory", "ClientCorporationCustomObjectEditHistoryFieldChange"),
-
-
     PERSON_CUSTOM_OBJECT_INSTANCE_1("PersonCustomObjectInstance1", PersonCustomObjectInstance1.class, PersonCustomObjectInstance1Wrapper.class, PersonCustomObjectInstance1ListWrapper.class, "PersonCustomObject1EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_2("PersonCustomObjectInstance2", PersonCustomObjectInstance2.class, PersonCustomObjectInstance2Wrapper.class, PersonCustomObjectInstance2ListWrapper.class, "PersonCustomObject2EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_3("PersonCustomObjectInstance3", PersonCustomObjectInstance3.class, PersonCustomObjectInstance3Wrapper.class, PersonCustomObjectInstance3ListWrapper.class, "PersonCustomObject3EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
@@ -293,17 +563,19 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_9("PersonCustomObjectInstance9", PersonCustomObjectInstance9.class, PersonCustomObjectInstance9Wrapper.class, PersonCustomObjectInstance9ListWrapper.class, "PersonCustomObject9EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, "PersonCustomObject10EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
 
+    // File Attachment Entities
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),
+    CERTIFICATION_FILE_ATTACHMENT("CertificationFileAttachment", CertificationFileAttachment.class, CertificationFileAttachmentWrapper.class, CertificationFileAttachmentListWrapper.class, null, null),
     CLIENT_CONTACT_FILE_ATTACHMENT("ClientContactFileAttachment", ClientContactFileAttachment.class, ClientContactFileAttachmentWrapper.class, ClientContactFileAttachmentListWrapper.class, null, null),
     CLIENT_CORPORATION_FILE_ATTACHMENT("ClientCorporationFileAttachment", ClientCorporationFileAttachment.class, ClientCorporationFileAttachmentWrapper.class, ClientCorporationFileAttachmentListWrapper.class, null, null),
     JOB_ORDER_FILE_ATTACHMENT("JobOrderFileAttachment", JobOrderFileAttachment.class, JobOrderFileAttachmentWrapper.class, JobOrderFileAttachmentListWrapper.class, null, null),
     OPPORTUNITY_FILE_ATTACHMENT("OpportunityFileAttachment", OpportunityFileAttachment.class, OpportunityFileAttachmentWrapper.class, OpportunityFileAttachmentListWrapper.class, null, null),
     PLACEMENT_FILE_ATTACHMENT("PlacementFileAttachment", PlacementFileAttachment.class, PlacementFileAttachmentWrapper.class, PlacementFileAttachmentListWrapper.class, null, null),
+    BILLABLE_CHARGE_FILE_ATTACHMENT("BillableChargeFileAttachment", BillableChargeFileAttachment.class, BillableChargeFileAttachmentWrapper.class, BillableChargeFileAttachmentListWrapper.class, null, null),
+    INVOICE_STATEMENT_EXPORT("InvoiceStatementExport", InvoiceStatementExport.class, InvoiceStatementExportWrapper.class, InvoiceStatementExportListWrapper.class, null, null),
 
-    CLIENT_CORPORATION_CUSTOM_OBJECT("ClientCorporationCustomObject", ClientCorporationCustomObject.class, ClientCorporationCustomObjectWrapper.class, ClientCorporationCustomObjectListWrapper.class, null, null),
-    JOB_ORDER_CUSTOM_OBJECT("JobOrderCustomObject", JobOrderCustomObject.class, JobOrderCustomObjectWrapper.class, JobOrderCustomObjectListWrapper.class, null, null),
-    PLACEMENT_CUSTOM_OBJECT("PlacementCustomObject", PlacementCustomObject.class, PlacementCustomObjectWrapper.class, PlacementCustomObjectListWrapper.class, null, null),
-    USER_CUSTOM_OBJECT("UserCustomObject", UserCustomObject.class, UserCustomObjectWrapper.class, UserCustomObjectListWrapper.class, null, null);
+    // Specialized Lookup Entities
+    CERTIFICATION_REQUIREMENT_STATUS_LOOKUP("CertificationRequirementStatusLookup", CertificationRequirementStatusLookup.class, CertificationRequirementStatusLookupWrapper.class, CertificationRequirementStatusLookupListWrapper.class, null, null);
 
     private final String name;
 

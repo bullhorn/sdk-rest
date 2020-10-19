@@ -1,0 +1,192 @@
+{
+    "entity": "InvoiceStatementLineDistribution",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementLineDistribution?fields=*",
+    "label": "Invoice Statement Line Distribution",
+    "dateLastModified": "1601627282514",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "accountingCode",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "label": "Accounting Code",
+            "hideFromSearch": false
+        },
+        {
+            "name": "creditAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Credit Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "currencyUnit",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Currency Unit",
+            "optionsType": "CurrencyUnit",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/CurrencyUnit",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CurrencyUnit",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/CurrencyUnit?fields=*",
+                "label": "Currency Unit",
+                "dateLastModified": "1601627278594",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "alphabeticCode",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 3,
+                        "confidential": false,
+                        "label": "Alphabetic Code",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "debitAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Debit Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "invoiceStatement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement",
+            "optionsType": "InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatement?fields=*",
+                "label": "Invoice",
+                "dateLastModified": "1601627281504",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "invoiceStatementDistributionBatch",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement Distribution Batch",
+            "optionsType": "InvoiceStatementDistributionBatch",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatementDistributionBatch",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementDistributionBatch",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementDistributionBatch?fields=*",
+                "label": "Invoice Statement Distribution Batch",
+                "dateLastModified": "1601627282011",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "invoiceStatementLineDistributionTypeLookup",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Invoice Statement Line Distribution Type Lookup",
+            "optionsType": "InvoiceStatementLineDistributionTypeLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatementLineDistributionTypeLookup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementLineDistributionTypeLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementLineDistributionTypeLookup?fields=*",
+                "label": "Invoice Statement Line Distribution Type Lookup",
+                "dateLastModified": "1602083098044",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "invoiceStatementLineItem",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Invoice Statement Line Item",
+            "optionsType": "InvoiceStatementLineItem",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/InvoiceStatementLineItem",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementLineItem",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/InvoiceStatementLineItem?fields=*",
+                "label": "Line Item",
+                "dateLastModified": "1601627282798",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        }
+    ]
+}

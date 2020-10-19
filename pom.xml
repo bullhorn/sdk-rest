@@ -5,13 +5,13 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.2.45-SNAPSHOT</version>
+    <version>1.4.17</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
     <description>The Bullhorn REST SDK provides simple authentication to the Bullhorn REST APIs as well as wrapper
         objects for the API itself and all domain objects. It is typically used for integrating or customizing the
-        BULLHORN CRM platform.
+        Bullhorn ATS platform.
     </description>
     <url>https://github.com/bullhorn/sdk-rest</url>
     <licenses>
@@ -38,7 +38,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jackson.version>2.7.1</jackson.version>
+        <jackson.version>2.10.0</jackson.version>
         <org.springframework.version>4.2.6.RELEASE</org.springframework.version>
         <additionalparam>-Xdoclint:none</additionalparam>
         <coveralls-version>4.2.0</coveralls-version>
@@ -200,14 +200,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.1.0.Final</version>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
         </dependency>
 
     </dependencies>
@@ -321,12 +316,13 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.6</version>
+                <version>1.6.7</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                    <skipStagingRepositoryClose>false</skipStagingRepositoryClose>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
             <plugin>

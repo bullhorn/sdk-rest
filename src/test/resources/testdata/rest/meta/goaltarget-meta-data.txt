@@ -1,0 +1,106 @@
+{
+    "entity": "GoalTarget",
+    "entityMetaUrl": "http://eir-backend.bh-bos2.bullhorn.com:8182/rest-services/1hs/meta/GoalTarget?fields=*",
+    "label": "Goal Target",
+    "dateLastModified": "1595349964306",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "endDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "optional": false,
+            "label": "End Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "goalId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Goal Id",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "goalPeriodId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Goal Period Id",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "periodname",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Periodname",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "startDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "optional": false,
+            "label": "Start Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "target",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Target",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        },
+        {
+            "name": "userId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "User Id",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+        }
+    ]
+}

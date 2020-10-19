@@ -1,0 +1,43 @@
+{
+    "entity": "BatchGroup",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BatchGroup?fields=*",
+    "label": "Batch Group",
+    "dateLastModified": "1587913246402",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "billingSyncBatches",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Billing Sync Batches",
+            "optionsType": "BillingSyncBatch",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/BillingSyncBatch",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillingSyncBatch",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillingSyncBatch?fields=*",
+                "label": "Billing Sync Batch",
+                "dateLastModified": "1587723580204",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        }
+    ]
+}

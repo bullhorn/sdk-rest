@@ -29,9 +29,9 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 		"isOpen", "isPublic", "jobBoardList", "notes", "numOpenings", "onSite", "opportunity", "optionsPackage", "owner", "payRate", "placements",
 		"publicDescription", "publishedZip", "reasonClosed", "reportTo", "reportToClientContact", "responseUser", "salary", "salaryUnit",
 		"sendouts", "skillList", "skills", "source", "specialties", "startDate", "status", "submissions", "tasks", "taxRate", "taxStatus",
-		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "webResponses", "willRelocate", "willRelocateInt", "willSponsor", "yearsRequired",
-		"customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s", "dateLastPublished"})
+		"tearsheets", "timeUnits", "title", "travelRequirements", "type", "usersAssigned", "webResponses", "willRelocate", "willRelocateInt",
+        "willSponsor", "yearsRequired", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
+        "customObject7s", "customObject8s", "customObject9s", "customObject10s", "dateLastPublished"})
 public class JobBoardPost extends JobData implements QueryEntity, DateLastModifiedEntity {
 
     private DateTime dateLastPublished;

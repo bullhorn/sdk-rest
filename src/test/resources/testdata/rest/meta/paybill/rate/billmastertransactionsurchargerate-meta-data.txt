@@ -1,0 +1,274 @@
+{
+    "entity": "BillMasterTransactionSurchargeRate",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSurchargeRate?fields=*",
+    "label": "Bill Master Transaction Surcharge Rate",
+    "dateLastModified": "1602085082272",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "adjustmentSequenceNumber",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Adjustment Sequence Number",
+            "hideFromSearch": false
+        },
+        {
+            "name": "baseAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Base Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "billMasterTransaction",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Bill Master Transaction",
+            "optionsType": "BillMasterTransaction",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransaction",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransaction",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransaction?fields=*",
+                "label": "Bill Transaction Entry",
+                "dateLastModified": "1601627283543",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billMasterTransactionSurchargeDetail",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Bill Master Transaction Surcharge Detail",
+            "optionsType": "BillMasterTransactionSurchargeDetail",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSurchargeDetail",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransactionSurchargeDetail",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSurchargeDetail?fields=*",
+                "label": "Bill Master Transaction Surcharge Detail",
+                "dateLastModified": "1602085049514",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "currencyUnit",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Currency Unit",
+            "optionsType": "CurrencyUnit",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/CurrencyUnit",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CurrencyUnit",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/CurrencyUnit?fields=*",
+                "label": "Currency Unit",
+                "dateLastModified": "1601627278594",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "alphabeticCode",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 3,
+                        "confidential": false,
+                        "label": "Alphabetic Code",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "reversalOfTransactionSurchargeRate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Reversal Of Transaction Surcharge Rate",
+            "optionsType": "BillMasterTransactionSurchargeRate",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSurchargeRate",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransactionSurchargeRate",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSurchargeRate?fields=*",
+                "label": "Bill Master Transaction Surcharge Rate",
+                "dateLastModified": "1602085082272",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "surchargeAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Surcharge Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "surchargeRate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Surcharge Rate",
+            "optionsType": "SurchargeRate",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/SurchargeRate",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "SurchargeRate",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/SurchargeRate?fields=*",
+                "label": "Surcharge",
+                "dateLastModified": "1601627279604",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 200,
+                        "confidential": false,
+                        "label": "Title",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective Date",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveEndDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective End Date",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "versionID",
+                        "type": "SCALAR",
+                        "dataType": "Integer",
+                        "confidential": false,
+                        "label": "surchargeRateVersionID",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "rate",
+                        "type": "SCALAR",
+                        "dataType": "BigDecimal",
+                        "confidential": false,
+                        "label": "Rate",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "amount",
+                        "type": "SCALAR",
+                        "dataType": "BigDecimal",
+                        "confidential": false,
+                        "label": "Amount",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "type",
+                        "type": "TO_ONE",
+                        "dataType": "SimplifiedOptionsLookup",
+                        "confidential": false,
+                        "label": "Rate Type",
+                        "optionsType": "SurchargeRateTypeLookup",
+                        "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/SurchargeRateTypeLookup",
+                        "options": [
+                            {
+                                "value": 1,
+                                "label": "$ / Unit of Measure",
+                                "readOnly": false
+                            },
+                            {
+                                "value": 2,
+                                "label": "Percentage",
+                                "readOnly": false
+                            }
+                        ],
+                        "hideFromSearch": false,
+                        "associatedEntity": {
+                            "entity": "SurchargeRateTypeLookup",
+                            "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/SurchargeRateTypeLookup?fields=*",
+                            "label": "Surcharge Rate Type Lookup",
+                            "dateLastModified": "1601627279718",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer"
+                                },
+                                {
+                                    "name": "label",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 100,
+                                    "confidential": false,
+                                    "label": "Label",
+                                    "hideFromSearch": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "surchargeRateVersionID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Surcharge Rate Version ID",
+            "hideFromSearch": false
+        }
+    ]
+}
