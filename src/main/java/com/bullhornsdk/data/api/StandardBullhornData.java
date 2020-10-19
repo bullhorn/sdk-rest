@@ -24,6 +24,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
@@ -191,6 +192,16 @@ public class StandardBullhornData implements BullhornData {
         this.restUriVariablesFactory = new RestUriVariablesFactory(this, this.restFileManager);
         this.restErrorHandler = new RestErrorHandler();
         this.concurrencyService = new RestConcurrencyService();
+    }
+
+    public void setHttpRequestConnectTimeout(int connectTimeout) {
+        SimpleClientHttpRequestFactory factory = (SimpleClientHttpRequestFactory) restTemplate.getRequestFactory();
+        factory.setConnectTimeout(connectTimeout);
+    }
+
+    public void setHttpRequestReadTimeout(int readTimeout) {
+        SimpleClientHttpRequestFactory factory = (SimpleClientHttpRequestFactory) restTemplate.getRequestFactory();
+        factory.setReadTimeout(readTimeout);
     }
 
     /**
