@@ -1,15 +1,19 @@
 package com.bullhornsdk.data.model.entity.core.certificationrequirement;
 
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
+import java.util.Objects;
+
+import javax.validation.constraints.Size;
+
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
-
-import java.util.Objects;
 
 /**
  * Created by mkesmetzis 27-Apr-20
@@ -29,6 +33,10 @@ public class JobSubmissionCertificationRequirement extends AbstractRequirement i
     AssociationEntity, EditHistoryEntity {
 
     private JobSubmission jobSubmission;
+    @Size(max = 100)
+    private String userCertificationName;
+    @Size(max = 30)
+    private String userCertificationStatus;
 
     public JobSubmissionCertificationRequirement() {
     }
@@ -49,10 +57,32 @@ public class JobSubmissionCertificationRequirement extends AbstractRequirement i
         this.jobSubmission = jobSubmission;
     }
 
+    @JsonProperty("userCertificationName")
+    public String getUserCertificationName() {
+        return userCertificationName;
+    }
+
+    @JsonProperty("userCertificationName")
+    public void setUserCertificationName(String userCertificationName) {
+        this.userCertificationName = userCertificationName;
+    }
+
+    @JsonProperty("userCertificationStatus")
+    public String getUserCertificationStatus() {
+        return userCertificationStatus;
+    }
+
+    @JsonProperty("userCertificationStatus")
+    public void setUserCertificationStatus(String userCertificationStatus) {
+        this.userCertificationStatus = userCertificationStatus;
+    }
+
     @Override
     public String toString() {
         return "JobSubmissionCertificationRequirement{" +
             "jobSubmission=" + jobSubmission +
+            ", userCertificationName='" + userCertificationName + '\'' +
+            ", userCertificationStatus='" + userCertificationStatus + '\'' +
             '}';
     }
 
@@ -62,12 +92,13 @@ public class JobSubmissionCertificationRequirement extends AbstractRequirement i
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         JobSubmissionCertificationRequirement that = (JobSubmissionCertificationRequirement) o;
-        return Objects.equals(jobSubmission, that.jobSubmission);
+        return Objects.equals(jobSubmission, that.jobSubmission) &&
+            Objects.equals(userCertificationName, that.userCertificationName) &&
+            Objects.equals(userCertificationStatus, that.userCertificationStatus);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), jobSubmission);
+        return Objects.hash(super.hashCode(), jobSubmission, userCertificationName, userCertificationStatus);
     }
-
 }

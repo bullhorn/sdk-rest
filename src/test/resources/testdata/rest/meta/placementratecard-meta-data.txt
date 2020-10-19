@@ -1,0 +1,202 @@
+{
+   "entity":"PlacementRateCard",
+   "entityMetaUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/PlacementRateCard?fields=*",
+   "label":"Rate Card",
+   "dateLastModified":"1602157539211",
+   "fields":[
+      {
+         "name":"id",
+         "type":"ID",
+         "dataType":"Integer"
+      },
+      {
+         "name":"dateAdded",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Date Added",
+         "hideFromSearch":false
+      },
+      {
+         "name":"dateLastModified",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Date Last Modified",
+         "hideFromSearch":false
+      },
+      {
+         "name":"effectiveDate",
+         "type":"SCALAR",
+         "dataType":"Date",
+         "confidential":false,
+         "label":"Effective Date",
+         "hideFromSearch":false
+      },
+      {
+         "name":"effectiveEndDate",
+         "type":"SCALAR",
+         "dataType":"Date",
+         "confidential":false,
+         "label":"Effective End Date",
+         "hideFromSearch":false
+      },
+      {
+         "name":"isDeleted",
+         "type":"SCALAR",
+         "dataType":"Boolean",
+         "confidential":false,
+         "label":"Is Deleted",
+         "hideFromSearch":false
+      },
+      {
+         "name":"owner",
+         "type":"TO_ONE",
+         "confidential":false,
+         "label":"Owner",
+         "optionsType":"CorporateUser",
+         "optionsUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/CorporateUser",
+         "hideFromSearch":false,
+         "associatedEntity":{
+            "entity":"CorporateUser",
+            "entityMetaUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/CorporateUser?fields=*",
+            "label":"Corporate User",
+            "dateLastModified":"1601605829600",
+            "fields":[
+               {
+                  "name":"id",
+                  "type":"ID",
+                  "dataType":"Integer"
+               },
+               {
+                  "name":"firstName",
+                  "type":"SCALAR",
+                  "dataType":"String",
+                  "maxLength":50,
+                  "confidential":false,
+                  "label":"First Name",
+                  "hideFromSearch":false
+               },
+               {
+                  "name":"lastName",
+                  "type":"SCALAR",
+                  "dataType":"String",
+                  "maxLength":50,
+                  "confidential":false,
+                  "label":"Last Name",
+                  "hideFromSearch":false
+               }
+            ]
+         }
+      },
+      {
+         "name":"placement",
+         "type":"TO_ONE",
+         "confidential":false,
+         "label":"Placement",
+         "optionsType":"Placement",
+         "optionsUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/Placement",
+         "hideFromSearch":false,
+         "associatedEntity":{
+            "entity":"Placement",
+            "entityMetaUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/Placement?fields=*",
+            "label":"Placement",
+            "dateLastModified":"1602150600220",
+            "fields":[
+               {
+                  "name":"id",
+                  "type":"ID",
+                  "dataType":"Integer"
+               }
+            ]
+         }
+      },
+      {
+         "name":"placementRateCardLineGroups",
+         "type":"TO_MANY",
+         "dataType":"AbstractEmbeddedToManyEntity",
+         "confidential":false,
+         "label":"Placement Rate Card Line Groups",
+         "optionsType":"PlacementRateCardLineGroup",
+         "optionsUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/PlacementRateCardLineGroup",
+         "hideFromSearch":false,
+         "associatedEntity":{
+            "entity":"PlacementRateCardLineGroup",
+            "entityMetaUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/PlacementRateCardLineGroup?fields=*",
+            "label":"Placement Rate Card Line Group",
+            "dateLastModified":"1602157539310",
+            "fields":[
+               {
+                  "name":"id",
+                  "type":"ID",
+                  "dataType":"Integer"
+               }
+            ]
+         }
+      },
+      {
+         "name":"rootExternalID",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":100,
+         "confidential":false,
+         "label":"Root External ID",
+         "hideFromSearch":false
+      },
+      {
+         "name":"rootMigrateGUID",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":36,
+         "confidential":false,
+         "label":"Root Migrate GUID",
+         "hideFromSearch":false
+      },
+      {
+         "name":"versionID",
+         "type":"SCALAR",
+         "dataType":"Integer",
+         "confidential":false,
+         "label":"Placement Rate Card Version",
+         "hideFromSearch":false
+      },
+      {
+         "name":"versions",
+         "type":"TO_MANY",
+         "confidential":false,
+         "label":"Versions",
+         "optionsType":"PlacementRateCardVersion",
+         "optionsUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/PlacementRateCardVersion",
+         "hideFromSearch":false,
+         "associatedEntity":{
+            "entity":"PlacementRateCardVersion",
+            "entityMetaUrl":"https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/PlacementRateCardVersion?fields=*",
+            "label":"Placement Rate Card Version",
+            "dateLastModified":"1602157539342",
+            "fields":[
+               {
+                  "name":"id",
+                  "type":"ID",
+                  "dataType":"Integer"
+               },
+               {
+                  "name":"effectiveDate",
+                  "type":"SCALAR",
+                  "dataType":"Date",
+                  "confidential":false,
+                  "label":"Effective Date",
+                  "hideFromSearch":false
+               },
+               {
+                  "name":"effectiveEndDate",
+                  "type":"SCALAR",
+                  "dataType":"Date",
+                  "confidential":false,
+                  "label":"Effective End Date",
+                  "hideFromSearch":false
+               }
+            ]
+         }
+      }
+   ]
+}

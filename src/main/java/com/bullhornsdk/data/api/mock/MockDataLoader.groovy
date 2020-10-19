@@ -6,6 +6,7 @@ import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyServi
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement
+import com.bullhornsdk.data.model.entity.core.certificationrequirement.optionslookup.CertificationRequirementStatusLookup
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject
@@ -21,18 +22,25 @@ import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
 import com.bullhornsdk.data.model.entity.core.paybill.Location
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
+import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge
-import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionDiscountDetail
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSalesTaxDetail
+import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSurchargeDetail
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.*
 import com.bullhornsdk.data.model.entity.core.paybill.master.BatchGroup
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillingSyncBatch
 import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster
+import com.bullhornsdk.data.model.entity.core.paybill.rate.*
 import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayMasterTransaction
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
@@ -48,6 +56,7 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsRespo
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils
 import org.apache.log4j.Logger
@@ -70,6 +79,7 @@ public class MockDataLoader {
     private Settings settingsObjectResultCache;
     private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMapCache;
     private Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFieldsMapCache;
+    private List<PropertyOptionsResult> propertyOptionsResultListCache;
 
     private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
     private List<FastFindResult> fastFindResultList;
@@ -79,7 +89,8 @@ public class MockDataLoader {
     private StandardGetLastRequestIdResponse getLastRequestIdResponse;
     private Map<String, Object> settingsResultMap;
     private Settings settingsObjectResult;
-    private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
+    private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap
+    private List<PropertyOptionsResult> propertyOptionsResultList;
 
     private Map<Class<? extends BullhornEntity>, String> entityFileNames;
     private Map<Class<? extends BullhornEntity>, String> metaDataFileNames;
@@ -178,6 +189,14 @@ public class MockDataLoader {
             this.settingsObjectResultCache = KryoObjectCopyHelper.copy(settingsObjectResult);
         }
         return settingsObjectResult;
+    }
+
+    public List<PropertyOptionsResult> getPropertyOptionsResults() {
+        if (propertyOptionsResultList == null) {
+            reloadPropertyOptionsResults();
+            this.propertyOptionsResultListCache = KryoObjectCopyHelper.copy(propertyOptionsResultList);
+        }
+        return propertyOptionsResultList;
     }
 
     /**
@@ -292,6 +311,12 @@ public class MockDataLoader {
         this.restMetaDataMap = KryoObjectCopyHelper.copy(restMetaDataMapCache);
         return restMetaDataMap;
 
+    }
+
+    public void reloadPropertyOptionsResults() {
+        String jsonData = getFileData("propertyoptions-data.txt");
+        PropertyOptionsListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, PropertyOptionsListWrapper.class);
+        this.propertyOptionsResultList = listWrapper.getData();
     }
 
     /**
@@ -410,6 +435,7 @@ public class MockDataLoader {
         entityFiles.put(Department.class, "department-data.txt");
         entityFiles.put(DistributionList.class, "distributionlist-data.txt");
         entityFiles.put(File.class, "file-data.txt");
+        entityFiles.put(GoalTarget.class, "goaltarget-data.txt");
         entityFiles.put(HousingComplex.class, "housingcomplex-data.txt");
         entityFiles.put(HousingComplexUnit.class, "housingcomplexunit-data.txt");
         entityFiles.put(HousingComplexFurnitureDelivery.class, "housingcomplexfurnituredelivery-data.txt");
@@ -449,6 +475,30 @@ public class MockDataLoader {
         entityFiles.put(InvoiceStatementMessageTemplate.class, "paybill/invoiceStatementMessageTemplate-data.txt");
         entityFiles.put(CurrencyUnit.class, "paybill/currencyUnit-data.txt");
 
+        entityFiles.put(PlacementRateCard.class, "placementratecard-data.txt");
+        entityFiles.put(PlacementRateCardLine.class, "placementratecardline-data.txt");
+        entityFiles.put(PlacementRateCardLineGroup.class, "placementratecardlinegroup-data.txt");
+        entityFiles.put(PlacementRateCardVersion.class, "placementratecardversion-data.txt");
+
+        entityFiles.put(BillMasterTransactionDiscountDetail.class, "paybill/detail/billmastertransactiondiscountdetail-data.txt");
+        entityFiles.put(BillMasterTransactionSalesTaxDetail.class, "paybill/detail/billmastertransactionsalestaxdetail-data.txt");
+        entityFiles.put(BillMasterTransactionSurchargeDetail.class, "paybill/detail/billmastertransactionsurchargedetail-data.txt");
+
+        entityFiles.put(InvoiceStatementDistributionBatch.class, "paybill/invoice/invoicestatementdistributionbatch-data.txt");
+        entityFiles.put(InvoiceStatementLineDistribution.class, "paybill/invoice/invoicestatementlinedistribution-data.txt");
+
+        entityFiles.put(BillMasterTransactionDiscountRate.class, "paybill/rate/billmastertransactiondiscountrate-data.txt");
+        entityFiles.put(BillMasterTransactionSalesTaxRate.class, "paybill/rate/billmastertransactionsalestaxrate-data.txt");
+        entityFiles.put(BillMasterTransactionSurchargeRate.class, "paybill/rate/billmastertransactionsurchargerate-data.txt");
+        entityFiles.put(DiscountRate.class, "paybill/rate/discountrate-data.txt");
+        entityFiles.put(InvoiceStatementLineItemDiscountRate.class, "paybill/rate/invoicestatementlineitemdiscountrate-data.txt");
+        entityFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "paybill/rate/invoicestatementlineitemsalestaxrate-data.txt");
+        entityFiles.put(InvoiceStatementLineItemSurchargeRate.class, "paybill/rate/invoicestatementlineitemsurchargerate-data.txt");
+        entityFiles.put(InvoiceStatementDiscountRate.class, "paybill/rate/invoicestatementdiscountrate-data.txt");
+        entityFiles.put(InvoiceStatementSalesTaxRate.class, "paybill/rate/invoicestatementsalestaxrate-data.txt");
+        entityFiles.put(InvoiceStatementSurchargeRate.class, "paybill/rate/invoicestatementsurchargerate-data.txt");
+        entityFiles.put(SurchargeRate.class, "paybill/rate/surchargerate-data.txt");
+
         // TODO add v2 of PAY and Bill Entities data
         entityFiles.put(BillableCharge.class, "paybill/billablecharge-data.txt");
         entityFiles.put(PayableCharge.class, "paybill/payablecharge-data.txt");
@@ -462,6 +512,7 @@ public class MockDataLoader {
         entityFiles.put(GeneralLedgerServiceCode.class, "paybill/generalledgerservicecode-data.txt");
         entityFiles.put(Discount.class, "paybill/discount-data.txt");
         entityFiles.put(EarnCode.class, "paybill/earncode-data.txt");
+        entityFiles.put(EarnCodeGroup.class, "paybill/earncodegroup-data.txt");
         entityFiles.put(InvoiceStatement.class, "paybill/invoicestatement-data.txt");
         entityFiles.put(InvoiceStatementBatch.class, "paybill/invoicestatementbatch-data.txt");
         entityFiles.put(InvoiceStatementDiscount.class, "paybill/invoicestatementdiscount-data.txt");
@@ -474,6 +525,8 @@ public class MockDataLoader {
         entityFiles.put(BillMaster.class, "paybill/billmaster-data.txt");
         entityFiles.put(BillMasterTransaction.class, "paybill/billmastertransaction-data.txt");
         entityFiles.put(PayMaster.class, "paybill/paymaster-data.txt");
+        entityFiles.put(PayMasterTransaction.class, "paybill/paymastertransaction-data.txt");
+        entityFiles.put(PayExportBatch.class, "paybill/payexportbatch-data.txt");
         entityFiles.put(Surcharge.class, "paybill/surcharge-data.txt");
         entityFiles.put(Tax.class, "paybill/tax-data.txt");
         entityFiles.put(CanvasReport.class, "paybill/canvasreport-data.txt");
@@ -481,6 +534,7 @@ public class MockDataLoader {
         entityFiles.put(CandidateCertificationRequirement.class, "candidatecertificationrequirement-data.txt");
         entityFiles.put(CertificationRequirement.class, "certificationrequirement-data.txt");
         entityFiles.put(JobSubmissionCertificationRequirement.class, "jobsubmissioncertificationrequirement-data.txt");
+        entityFiles.put(CertificationRequirementStatusLookup.class, "certificationrequirementstatuslookup-data.txt");
 
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
@@ -602,6 +656,7 @@ public class MockDataLoader {
         entityMetaFiles.put(Department.class, "meta/department-meta-data.txt");
         entityMetaFiles.put(DistributionList.class, "meta/distributionlist-meta-data.txt");
         entityMetaFiles.put(File.class, "meta/file-meta-data.txt");
+        entityMetaFiles.put(GoalTarget.class, "meta/goaltarget-meta-data.txt");
         entityMetaFiles.put(HousingComplex.class, "meta/housingcomplex-meta-data.txt");
         entityMetaFiles.put(HousingComplexUnit.class, "meta/housingcomplexunit-meta-data.txt");
         entityMetaFiles.put(HousingComplexFurnitureDelivery.class, "meta/housingcomplexfurnituredelivery-meta-data.txt");
@@ -635,6 +690,11 @@ public class MockDataLoader {
         entityMetaFiles.put(Location.class, "meta/paybill/location-meta-data.txt");
         entityMetaFiles.put(InvoiceTerm.class, "meta/paybill/invoiceterm-meta-data.txt");
 
+        entityMetaFiles.put(PlacementRateCard.class, "meta/placementratecard-meta-data.txt");
+        entityMetaFiles.put(PlacementRateCardLine.class, "meta/placementratecardline-meta-data.txt");
+        entityMetaFiles.put(PlacementRateCardLineGroup.class, "meta/placementratecardlinegroup-meta-data.txt");
+        entityMetaFiles.put(PlacementRateCardVersion.class, "meta/placementratecardversion-meta-data.txt");
+
 
         // TODO v2 meta entities
         entityMetaFiles.put(BillableCharge.class, "meta/paybill/billablecharge-meta-data.txt");
@@ -649,6 +709,7 @@ public class MockDataLoader {
         entityMetaFiles.put(GeneralLedgerServiceCode.class, "meta/paybill/generalledgerservicecode-meta-data.txt");
         entityMetaFiles.put(Discount.class, "meta/paybill/discount-meta-data.txt");
         entityMetaFiles.put(EarnCode.class, "meta/paybill/earncode-meta-data.txt");
+        entityMetaFiles.put(EarnCodeGroup.class, "meta/paybill/earncodegroup-meta-data.txt");
         entityMetaFiles.put(InvoiceStatement.class, "meta/paybill/invoicestatement-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementBatch.class, "meta/paybill/invoicestatementbatch-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementDiscount.class, "meta/paybill/invoicestatementdiscount-meta-data.txt");
@@ -661,9 +722,30 @@ public class MockDataLoader {
         entityMetaFiles.put(BillMaster.class, "meta/paybill/billmaster-meta-data.txt");
         entityMetaFiles.put(BillMasterTransaction.class, "meta/paybill/billmastertransaction-meta-data.txt");
         entityMetaFiles.put(PayMaster.class, "meta/paybill/paymaster-meta-data.txt");
+        entityMetaFiles.put(PayMasterTransaction.class, "meta/paybill/paymastertransaction-meta-data.txt");
+        entityMetaFiles.put(PayExportBatch.class, "meta/paybill/payexportbatch-meta-data.txt");
         entityMetaFiles.put(Surcharge.class, "meta/paybill/surcharge-meta-data.txt");
         entityMetaFiles.put(Tax.class, "meta/paybill/tax-meta-data.txt");
         entityMetaFiles.put(CanvasReport.class, "meta/paybill/canvasreport-meta-data.txt");
+
+        entityMetaFiles.put(BillMasterTransactionDiscountDetail.class, "meta/paybill/detail/billmastertransactiondiscountdetail-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSalesTaxDetail.class, "meta/paybill/detail/billmastertransactionsalestaxdetail-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSurchargeDetail.class, "meta/paybill/detail/billmastertransactionsurchargedetail-meta-data.txt");
+
+        entityMetaFiles.put(InvoiceStatementDistributionBatch.class, "meta/paybill/invoice/invoicestatementdistributionbatch-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineDistribution.class, "meta/paybill/invoice/invoicestatementlinedistribution-meta-data.txt");
+
+        entityMetaFiles.put(BillMasterTransactionDiscountRate.class, "meta/paybill/rate/billmastertransactiondiscountrate-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSalesTaxRate.class, "meta/paybill/rate/billmastertransactionsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionSurchargeRate.class, "meta/paybill/rate/billmastertransactionsurchargerate-meta-data.txt");
+        entityMetaFiles.put(DiscountRate.class, "meta/paybill/rate/discountrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItemDiscountRate.class, "meta/paybill/rate/invoicestatementlineitemdiscountrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "meta/paybill/rate/invoicestatementlineitemsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItemSurchargeRate.class, "meta/paybill/rate/invoicestatementlineitemsurchargerate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementDiscountRate.class, "meta/paybill/rate/invoicestatementdiscountrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementSalesTaxRate.class, "meta/paybill/rate/invoicestatementsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementSurchargeRate.class, "meta/paybill/rate/invoicestatementsurchargerate-meta-data.txt");
+        entityMetaFiles.put(SurchargeRate.class, "meta/paybill/rate/surchargerate-meta-data.txt");
 
 
         // Certification Requirements

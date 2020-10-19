@@ -51,6 +51,8 @@ public class TestEntities {
 
     private Integer fileId;
 
+    private Integer goalTargetId;
+
     private Integer housingComplexId;
 
     private Integer jobOrderId;
@@ -158,6 +160,8 @@ public class TestEntities {
         this.distributionListId = 1;
 
         this.fileId = 1;
+
+        this.goalTargetId = 1;
 
         this.housingComplexId = 1;
 
@@ -377,6 +381,14 @@ public class TestEntities {
 
     public void setFileId(Integer fileId) {
         this.fileId = fileId;
+    }
+
+    public Integer getGoalTargetId() {
+        return goalTargetId;
+    }
+
+    public void setGoalTargetId(Integer goalTargetId) {
+        this.goalTargetId = goalTargetId;
     }
 
     public Integer getHousingComplexId() {
@@ -694,6 +706,8 @@ public class TestEntities {
             .append(distributionListId)
             .append(",\n\t\"fileId\": ")
             .append(fileId)
+            .append(",\n\t\"goalTargetId\": ")
+            .append(goalTargetId)
             .append(",\n\t\"housingComplexId\": ")
             .append(housingComplexId)
             .append(",\n\t\"jobOrderId\": ")

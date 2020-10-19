@@ -3,33 +3,12 @@ package com.bullhornsdk.data;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Test;
 
-import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.Branch;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.Department;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCertification;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
-import com.bullhornsdk.data.model.entity.core.standard.Sendout;
-import com.bullhornsdk.data.model.entity.core.standard.Task;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
 import com.bullhornsdk.data.model.response.crud.CreateResponse;
@@ -292,6 +271,24 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
         CreateResponse response = bullhornData.insertEntity(entity);
 
         Department newEntity = bullhornData.findEntity(Department.class, response.getChangedEntityId(), Sets.newHashSet("id"));
+
+        this.entityId = response.getChangedEntityId();
+
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+    }
+
+    @Test
+    public void testCreateGoalTarget() {
+        GoalTarget entity = bullhornData.findEntity(GoalTarget.class, testEntities.getGoalTargetId(), Sets.newHashSet("id"));
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        GoalTarget newEntity = bullhornData.findEntity(GoalTarget.class, response.getChangedEntityId(), Sets.newHashSet("id"));
 
         this.entityId = response.getChangedEntityId();
 

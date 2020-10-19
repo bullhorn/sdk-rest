@@ -31,7 +31,7 @@ import java.util.Objects;
     "customText8", "customText9", "customTextBlock1", "customTextBlock2",
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "description", "effectiveDate",
-    "effectiveEndDate", "externalID", "generalLedgerAccountsReceivable", "includeAttachments",
+    "effectiveEndDate", "externalID", "fileTypesForInvoicing", "generalLedgerAccountsReceivable", "includeAttachments",
     "invoiceApprovedTimecardsRequired", "invoiceGroupBy", "invoiceOn", "invoiceSplitBy",
     "invoiceStatementTemplate", "invoiceSummarizeBy", "isDeleted", "isFirst", "paymentTerms",
     "purchaseOrderRequired", "remitInstructions", "status", "title", "versionID", "versions", "waitForTimecards"})
@@ -60,6 +60,8 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
     @JsonIgnore
     @Size(max = 100)
     private String externalID;
+
+    private OneToMany<InvoiceTermFileTypesForInvoicing> fileTypesForInvoicing;
 
     private GeneralLedgerAccount generalLedgerAccountsReceivable;
 
@@ -230,6 +232,16 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
     @JsonProperty("externalID")
     public void setExternalID(String externalID) {
         this.externalID = externalID;
+    }
+
+    @JsonProperty("fileTypesForInvoicing")
+    public OneToMany<InvoiceTermFileTypesForInvoicing> getFileTypesForInvoicing() {
+        return fileTypesForInvoicing;
+    }
+
+    @JsonProperty("fileTypesForInvoicing")
+    public void setFileTypesForInvoicing(OneToMany<InvoiceTermFileTypesForInvoicing> fileTypesForInvoicing) {
+        this.fileTypesForInvoicing = fileTypesForInvoicing;
     }
 
     @JsonProperty("generalLedgerAccountsReceivable")
@@ -428,6 +440,7 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
             Objects.equals(effectiveDate, that.effectiveDate) &&
             Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
             Objects.equals(externalID, that.externalID) &&
+            Objects.equals(fileTypesForInvoicing, that.fileTypesForInvoicing) &&
             Objects.equals(generalLedgerAccountsReceivable, that.generalLedgerAccountsReceivable) &&
             Objects.equals(includeAttachments, that.includeAttachments) &&
             Objects.equals(invoiceApprovedTimecardsRequired, that.invoiceApprovedTimecardsRequired) &&
@@ -450,7 +463,7 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, approvalRequired, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, effectiveDate, effectiveEndDate, externalID, generalLedgerAccountsReceivable, includeAttachments, invoiceApprovedTimecardsRequired, invoiceGroupBy, invoiceOn, invoiceSplitBy, invoiceStatementTemplate, invoiceSummarizeBy, isDeleted, isFirst, paymentTerms, purchaseOrderRequired, remitInstructions, status, title, versionID, versions, waitForTimecards);
+        return Objects.hash(super.hashCode(), id, approvalRequired, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, effectiveDate, effectiveEndDate, externalID, fileTypesForInvoicing, generalLedgerAccountsReceivable, includeAttachments, invoiceApprovedTimecardsRequired, invoiceGroupBy, invoiceOn, invoiceSplitBy, invoiceStatementTemplate, invoiceSummarizeBy, isDeleted, isFirst, paymentTerms, purchaseOrderRequired, remitInstructions, status, title, versionID, versions, waitForTimecards);
     }
 
     @Override
@@ -466,6 +479,7 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
             ", effectiveDate=" + effectiveDate +
             ", effectiveEndDate=" + effectiveEndDate +
             ", externalID='" + externalID + '\'' +
+            ", fileTypesForInvoicing=" + fileTypesForInvoicing +
             ", generalLedgerAccountsReceivable=" + generalLedgerAccountsReceivable +
             ", includeAttachments=" + includeAttachments +
             ", invoiceApprovedTimecardsRequired=" + invoiceApprovedTimecardsRequired +
