@@ -24,16 +24,11 @@ import java.util.Objects;
 })
 public class BillMasterTransaction extends AbstractMasterTransaction implements QueryEntity {
 
-    private BillMaster billMasters;
-
+    private BillMaster billMaster;
     private InvoiceStatement invoiceStatement;
-
     private InvoiceStatementBatch invoiceStatementBatch;
-
     private InvoiceStatementLineItem invoiceStatementLineItem;
-
     private Boolean needsReview;
-
     private BillMasterTransaction reversalOfTransaction;
 
     public BillMasterTransaction() {
@@ -44,14 +39,14 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
         super(id);
     }
 
-    @JsonProperty("billMasters")
-    public BillMaster getBillMasters() {
-        return billMasters;
+    @JsonProperty("billMaster")
+    public BillMaster getBillMaster() {
+        return billMaster;
     }
 
-    @JsonProperty("billMasters")
-    public void setBillMasters(BillMaster billMasters) {
-        this.billMasters = billMasters;
+    @JsonProperty("billMaster")
+    public void setBillMaster(BillMaster billMaster) {
+        this.billMaster = billMaster;
     }
 
     @JsonProperty("invoiceStatement")
@@ -107,7 +102,7 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
     @Override
     public String toString() {
         return "BillMasterTransaction{" +
-            "billMasters=" + billMasters +
+            "billMaster=" + billMaster +
             ", invoiceStatement=" + invoiceStatement +
             ", invoiceStatementBatch=" + invoiceStatementBatch +
             ", invoiceStatementLineItem=" + invoiceStatementLineItem +
@@ -122,7 +117,7 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         BillMasterTransaction that = (BillMasterTransaction) o;
-        return Objects.equals(billMasters, that.billMasters) &&
+        return Objects.equals(billMaster, that.billMaster) &&
             Objects.equals(invoiceStatement, that.invoiceStatement) &&
             Objects.equals(invoiceStatementBatch, that.invoiceStatementBatch) &&
             Objects.equals(invoiceStatementLineItem, that.invoiceStatementLineItem) &&
@@ -132,6 +127,6 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), billMasters, invoiceStatement, invoiceStatementBatch, invoiceStatementLineItem, needsReview, reversalOfTransaction);
+        return Objects.hash(super.hashCode(), billMaster, invoiceStatement, invoiceStatementBatch, invoiceStatementLineItem, needsReview, reversalOfTransaction);
     }
 }
