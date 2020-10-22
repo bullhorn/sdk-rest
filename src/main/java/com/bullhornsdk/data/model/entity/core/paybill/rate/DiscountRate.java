@@ -20,7 +20,8 @@ import java.util.Objects;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "generalLedgerBillAccount", "amount", "calculateAndDisplayOnInvoice", "calculatePriority", "clientCorporation",
     "dateAdded", "dateLastModified", "discountTypeLookup", "effectiveDate", "effectiveEndDate", "generalLedgerSegment1", "generalLedgerSegment2",
-    "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "generalLedgerServiceCode", "ignoreForSalesTaxCalculations", "isDeleted"
+    "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "generalLedgerServiceCode", "ignoreForSalesTaxCalculations", "isDeleted",
+    "isFirst", "rate", "sentToAccountsReceivable", "title", "versionID"
 
 })
 public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, SoftDeleteEntity {
@@ -44,6 +45,12 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
     private GeneralLedgerServiceCode generalLedgerServiceCode;
     private Boolean ignoreForSalesTaxCalculations;
     private Boolean isDeleted;
+    private Boolean isFirst;
+    private BigDecimal rate;
+    private Boolean sentToAccountsReceivable;
+    private String title;
+    private Integer versionID;
+
 
     @Override
     @JsonProperty("id")
@@ -238,6 +245,57 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
         this.isDeleted = isDeleted;
     }
 
+    @JsonProperty("isFirst")
+    public Boolean getIsFirst() {
+        return isFirst;
+    }
+
+    @JsonProperty("isFirst")
+    public void setIsFirst(Boolean isFirst) {
+        this.isFirst = isFirst;
+    }
+
+    @JsonProperty("rate")
+    public BigDecimal getRate() {
+        return rate;
+    }
+
+    @JsonProperty("rate")
+    public void setRate(BigDecimal rate) {
+        this.rate = rate;
+    }
+
+    @JsonProperty("sentToAccountsReceivable")
+    public Boolean getSentToAccountsReceivable() {
+        return sentToAccountsReceivable;
+    }
+
+    @JsonProperty("sentToAccountsReceivable")
+    public void setSentToAccountsReceivable(Boolean sentToAccountsReceivable) {
+        this.sentToAccountsReceivable = sentToAccountsReceivable;
+    }
+
+    @JsonProperty("title")
+    public String getTitle() {
+        return title;
+    }
+
+    @JsonProperty("title")
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @JsonProperty("versionID")
+    public Integer getVersionID() {
+        return versionID;
+    }
+
+    @JsonProperty("versionID")
+    public void setVersionID(Integer versionID) {
+        this.versionID = versionID;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -261,12 +319,17 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
             Objects.equals(generalLedgerSegment5, that.generalLedgerSegment5) &&
             Objects.equals(generalLedgerServiceCode, that.generalLedgerServiceCode) &&
             Objects.equals(ignoreForSalesTaxCalculations, that.ignoreForSalesTaxCalculations) &&
-            Objects.equals(isDeleted, that.isDeleted);
+            Objects.equals(isDeleted, that.isDeleted) &&
+            Objects.equals(isFirst, that.isFirst) &&
+            Objects.equals(rate, that.rate) &&
+            Objects.equals(sentToAccountsReceivable, that.sentToAccountsReceivable) &&
+            Objects.equals(title, that.title) &&
+            Objects.equals(versionID, that.versionID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, clientCorporation, dateAdded, dateLastModified, discountTypeLookup, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isDeleted);
+        return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, clientCorporation, dateAdded, dateLastModified, discountTypeLookup, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isDeleted, isFirst, rate, sentToAccountsReceivable, title, versionID);
     }
 
     @Override
@@ -291,6 +354,11 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
             ", generalLedgerServiceCode=" + generalLedgerServiceCode +
             ", ignoreForSalesTaxCalculations=" + ignoreForSalesTaxCalculations +
             ", isDeleted=" + isDeleted +
+            ", isFirst=" + isFirst +
+            ", rate=" + rate +
+            ", sentToAccountsReceivable=" + sentToAccountsReceivable +
+            ", title=" + title +
+            ", versionID=" + versionID +
             '}';
     }
 }
