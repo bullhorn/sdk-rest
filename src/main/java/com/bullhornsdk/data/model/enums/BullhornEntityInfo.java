@@ -406,6 +406,7 @@ public enum BullhornEntityInfo {
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
 
+
     // placementRateCard Entities
     PLACEMENT_RATE_CARD("PlacementRateCard", PlacementRateCard.class, PlacementRateCardWrapper.class, PlacementRateCardListWrapper.class, "PlacementRateCardEditHistory",
         "PlacementRateCardEditHistoryFieldChange"),
@@ -415,6 +416,8 @@ public enum BullhornEntityInfo {
         "PlacementRateCardLineGroupEditHistoryFieldChange"),
     PLACEMENT_RATE_CARD_VERSION("PlacementRateCardVersion", PlacementRateCardVersion.class, PlacementRateCardVersionWrapper.class, PlacementRateCardVersionListWrapper.class, "PlacementRateCardVersionEditHistory",
         "PlacementRateCardVersionEditHistoryFieldChange"),
+
+    BILL_MASTER_DISCOUNT_RATE("BillMasterDiscountRate", BillMasterDiscountRate.class, BillMasterDiscountRateWrapper.class, BillMasterDiscountRateListWrapper.class, null, null),
 
     // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),

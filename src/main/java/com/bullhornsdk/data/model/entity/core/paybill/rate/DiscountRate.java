@@ -1,11 +1,14 @@
 package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
+import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment1;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerServiceCode;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,7 +23,7 @@ import java.util.Objects;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "generalLedgerBillAccount", "amount", "calculateAndDisplayOnInvoice", "calculatePriority", "clientCorporation",
     "dateAdded", "dateLastModified", "discountTypeLookup", "effectiveDate", "effectiveEndDate", "generalLedgerSegment1", "generalLedgerSegment2",
-    "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "generalLedgerServiceCode", "ignoreForSalesTaxCalculations", "isDeleted"
+    "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "generalLedgerServiceCode", "ignoreForSalesTaxCalculations", "isDeleted", "earnCodes", "statusLookup"
 
 })
 public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, SoftDeleteEntity {
@@ -44,6 +47,8 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
     private GeneralLedgerServiceCode generalLedgerServiceCode;
     private Boolean ignoreForSalesTaxCalculations;
     private Boolean isDeleted;
+    private OneToMany<EarnCode> earnCodes;
+    private SimplifiedOptionsLookup statusLookup;
 
     @Override
     @JsonProperty("id")
@@ -238,6 +243,26 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
         this.isDeleted = isDeleted;
     }
 
+    @JsonProperty("earnCodes")
+    public OneToMany<EarnCode> getEarnCodes() {
+        return earnCodes;
+    }
+
+    @JsonProperty("earnCodes")
+    public void setEarnCodes(OneToMany<EarnCode> earnCodes) {
+        this.earnCodes = earnCodes;
+    }
+
+    @JsonProperty("statusLookup")
+    public SimplifiedOptionsLookup getStatusLookup() {
+        return statusLookup;
+    }
+
+    @JsonProperty("statusLookup")
+    public void setStatusLookup(SimplifiedOptionsLookup statusLookup) {
+        this.statusLookup = statusLookup;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -261,12 +286,14 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
             Objects.equals(generalLedgerSegment5, that.generalLedgerSegment5) &&
             Objects.equals(generalLedgerServiceCode, that.generalLedgerServiceCode) &&
             Objects.equals(ignoreForSalesTaxCalculations, that.ignoreForSalesTaxCalculations) &&
-            Objects.equals(isDeleted, that.isDeleted);
+            Objects.equals(isDeleted, that.isDeleted) &&
+            Objects.equals(earnCodes, that.earnCodes) &&
+            Objects.equals(statusLookup, that.statusLookup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, clientCorporation, dateAdded, dateLastModified, discountTypeLookup, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isDeleted);
+        return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, clientCorporation, dateAdded, dateLastModified, discountTypeLookup, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isDeleted, earnCodes, statusLookup);
     }
 
     @Override
@@ -291,6 +318,8 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
             ", generalLedgerServiceCode=" + generalLedgerServiceCode +
             ", ignoreForSalesTaxCalculations=" + ignoreForSalesTaxCalculations +
             ", isDeleted=" + isDeleted +
+            ", earnCodes=" + earnCodes +
+            ", statusLookup=" + statusLookup +
             '}';
     }
 }
