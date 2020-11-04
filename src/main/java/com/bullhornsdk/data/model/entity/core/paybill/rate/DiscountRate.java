@@ -346,7 +346,7 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
             Objects.equals(ignoreForSalesTaxCalculations, that.ignoreForSalesTaxCalculations) &&
             Objects.equals(isDeleted, that.isDeleted) &&
             Objects.equals(earnCodes, that.earnCodes) &&
-            Objects.equals(statusLookup, that.statusLookup);
+            Objects.equals(statusLookup, that.statusLookup) && 
             Objects.equals(isFirst, that.isFirst) &&
             Objects.equals(rate, that.rate) &&
             Objects.equals(sentToAccountsReceivable, that.sentToAccountsReceivable) &&
