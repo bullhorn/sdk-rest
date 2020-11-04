@@ -356,7 +356,6 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, clientCorporation, dateAdded, dateLastModified, discountTypeLookup, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isDeleted, earnCodes, statusLookup);
         return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, clientCorporation, dateAdded, dateLastModified, discountTypeLookup, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isDeleted, isFirst, rate, sentToAccountsReceivable, title, versionID);
     }
 
