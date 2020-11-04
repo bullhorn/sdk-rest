@@ -49,6 +49,7 @@ import com.bullhornsdk.data.model.entity.embedded.UserType
 import com.bullhornsdk.data.model.entity.file.*
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData
+import com.bullhornsdk.data.model.entity.report.Report
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
 import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
@@ -455,6 +456,7 @@ public class MockDataLoader {
         entityFiles.put(PlacementChangeRequest.class, "placementchangerequest-data.txt");
         entityFiles.put(PlacementCommission.class, "placementcommission-data.txt");
         entityFiles.put(PrivateLabel.class, "privatelabel-data.txt");
+        entityFiles.put(Report.class, "report-data.txt");
         entityFiles.put(Sendout.class, "sendout-data.txt");
         entityFiles.put(Skill.class, "skill-data.txt");
         entityFiles.put(Specialty.class, "specialty-data.txt");
@@ -493,8 +495,11 @@ public class MockDataLoader {
         entityFiles.put(BillMasterTransactionSurchargeRate.class, "paybill/rate/billmastertransactionsurchargerate-data.txt");
         entityFiles.put(DiscountRate.class, "paybill/rate/discountrate-data.txt");
         entityFiles.put(InvoiceStatementLineItemDiscountRate.class, "paybill/rate/invoicestatementlineitemdiscountrate-data.txt");
+        entityFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "paybill/rate/invoicestatementlineitemsalestaxrate-data.txt");
         entityFiles.put(InvoiceStatementLineItemSurchargeRate.class, "paybill/rate/invoicestatementlineitemsurchargerate-data.txt");
+        entityFiles.put(InvoiceStatementDiscountRate.class, "paybill/rate/invoicestatementdiscountrate-data.txt");
         entityFiles.put(InvoiceStatementSalesTaxRate.class, "paybill/rate/invoicestatementsalestaxrate-data.txt");
+        entityFiles.put(InvoiceStatementSurchargeRate.class, "paybill/rate/invoicestatementsurchargerate-data.txt");
         entityFiles.put(SurchargeRate.class, "paybill/rate/surchargerate-data.txt");
 
         // TODO add v2 of PAY and Bill Entities data
@@ -674,6 +679,7 @@ public class MockDataLoader {
         entityMetaFiles.put(PlacementChangeRequest.class, "meta/placementchangerequest-meta-data.txt");
         entityMetaFiles.put(PlacementCommission.class, "meta/placementcommission-meta-data.txt");
         entityMetaFiles.put(PrivateLabel.class, "meta/privatelabel-meta-data.txt");
+        entityMetaFiles.put(Report.class, "meta/report-meta-data.txt")
         entityMetaFiles.put(Sendout.class, "meta/sendout-meta-data.txt");
         entityMetaFiles.put(Skill.class, "meta/skill-meta-data.txt");
         entityMetaFiles.put(Specialty.class, "meta/specialty-meta-data.txt");
@@ -740,8 +746,11 @@ public class MockDataLoader {
         entityMetaFiles.put(BillMasterTransactionSurchargeRate.class, "meta/paybill/rate/billmastertransactionsurchargerate-meta-data.txt");
         entityMetaFiles.put(DiscountRate.class, "meta/paybill/rate/discountrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineItemDiscountRate.class, "meta/paybill/rate/invoicestatementlineitemdiscountrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "meta/paybill/rate/invoicestatementlineitemsalestaxrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineItemSurchargeRate.class, "meta/paybill/rate/invoicestatementlineitemsurchargerate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementDiscountRate.class, "meta/paybill/rate/invoicestatementdiscountrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementSalesTaxRate.class, "meta/paybill/rate/invoicestatementsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(InvoiceStatementSurchargeRate.class, "meta/paybill/rate/invoicestatementsurchargerate-meta-data.txt");
         entityMetaFiles.put(SurchargeRate.class, "meta/paybill/rate/surchargerate-meta-data.txt");
 
 
