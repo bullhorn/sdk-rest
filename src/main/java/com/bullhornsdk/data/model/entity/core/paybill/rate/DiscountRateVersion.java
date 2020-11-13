@@ -38,8 +38,8 @@ public class DiscountRateVersion extends AbstractEntity implements QueryEntity, 
     private Integer discountRateID;
     private SimplifiedOptionsLookup discountTypeLookup;
     private OneToMany<EarnCode> earnCodes;
-    private DateTime effectiveDate;
-    private DateTime effectiveEndDate;
+    private String effectiveDate;
+    private String effectiveEndDate;
     private GeneralLedgerAccount generalLedgerAccount;
     private GeneralLedgerSegment1 generalLedgerSegment1;
     private GeneralLedgerSegment1 generalLedgerSegment2;
@@ -139,22 +139,22 @@ public class DiscountRateVersion extends AbstractEntity implements QueryEntity, 
     }
 
     @JsonProperty("effectiveDate")
-    public DateTime getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(DateTime effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public DateTime getEffectiveEndDate() {
+    public String getEffectiveEndDate() {
         return effectiveEndDate;
     }
 
     @JsonProperty("effectiveEndDate")
-    public void setEffectiveEndDate(DateTime effectiveEndDate) {
+    public void setEffectiveEndDate(String effectiveEndDate) {
         this.effectiveEndDate = effectiveEndDate;
     }
 
