@@ -21,26 +21,26 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "generalLedgerBillAccount", "amount", "calculateAndDisplayOnInvoice", "calculatePriority", "clientCorporation",
-    "dateAdded", "dateLastModified", "discountTypeLookup", "effectiveDate", "effectiveEndDate", "generalLedgerSegment1", "generalLedgerSegment2",
-    "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "generalLedgerServiceCode", "ignoreForSalesTaxCalculations", "isDeleted",
-    "isFirst", "rate", "sentToAccountsReceivable", "title", "versionID", "versions", "earnCodes", "statusLookup"
-
-
+@JsonPropertyOrder({"id", "amount", "calculateAndDisplayOnInvoice", "calculatePriority", "dateAdded", "dateLastModified",
+    "discountRateID", "discountTypeLookup", "earnCodes", "effectiveDate", "effectiveEndDate", "generalLedgerAccount",
+    "generalLedgerSegment1", "generalLedgerSegment2","generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
+    "generalLedgerServiceCode", "ignoreForSalesTaxCalculations", "isFirst", "rate", "sentToAccountsReceivable", "title",
+    "statusLookup"
 })
-public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, SoftDeleteEntity, EffectiveDateEntity {
+public class DiscountRateVersion extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, EffectiveDateEntity {
 
     private Integer id;
-    private GeneralLedgerAccount generalLedgerAccount;
     private BigDecimal amount;
     private Boolean calculateAndDisplayOnInvoice;
     private Integer calculatePriority;
-    private ClientCorporation clientCorporation;
     private DateTime dateAdded;
     private DateTime dateLastModified;
+    private Integer discountRateID;
     private SimplifiedOptionsLookup discountTypeLookup;
+    private OneToMany<EarnCode> earnCodes;
     private DateTime effectiveDate;
     private DateTime effectiveEndDate;
+    private GeneralLedgerAccount generalLedgerAccount;
     private GeneralLedgerSegment1 generalLedgerSegment1;
     private GeneralLedgerSegment1 generalLedgerSegment2;
     private GeneralLedgerSegment1 generalLedgerSegment3;
@@ -48,15 +48,12 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
     private GeneralLedgerSegment1 generalLedgerSegment5;
     private GeneralLedgerServiceCode generalLedgerServiceCode;
     private Boolean ignoreForSalesTaxCalculations;
-    private Boolean isDeleted;
-    private OneToMany<EarnCode> earnCodes;
-    private SimplifiedOptionsLookup statusLookup;
     private Boolean isFirst;
     private BigDecimal rate;
     private Boolean sentToAccountsReceivable;
+    private SimplifiedOptionsLookup statusLookup;
     private String title;
-    private Integer versionID;
-    private OneToMany<DiscountRateVersion> versions;
+
 
     @Override
     @JsonProperty("id")
@@ -109,16 +106,6 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
     @JsonProperty("calculatePriority")
     public void setCalculatePriority(Integer calculatePriority) {
         this.calculatePriority = calculatePriority;
-    }
-
-    @JsonProperty("clientCorporation")
-    public ClientCorporation getClientCorporation() {
-        return clientCorporation;
-    }
-
-    @JsonProperty("clientCorporation")
-    public void setClientCorporation(ClientCorporation clientCorporation) {
-        this.clientCorporation = clientCorporation;
     }
 
     @JsonProperty("dateAdded")
@@ -241,16 +228,6 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
         this.ignoreForSalesTaxCalculations = ignoreForSalesTaxCalculations;
     }
 
-    @Override
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    @JsonProperty("isDeleted")
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
     @JsonProperty("earnCodes")
     public OneToMany<EarnCode> getEarnCodes() {
         return earnCodes;
@@ -311,39 +288,27 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
         this.title = title;
     }
 
-    @JsonProperty("versionID")
-    public Integer getVersionID() {
-        return versionID;
+    @JsonProperty("discountRateID")
+    public Integer getDiscountRateID() {
+        return discountRateID;
     }
 
-    @JsonProperty("versionID")
-    public void setVersionID(Integer versionID) {
-        this.versionID = versionID;
+    @JsonProperty("discountRateID")
+    public void setDiscountRateID(Integer discountRateID) {
+        this.discountRateID = discountRateID;
     }
-
-    @JsonProperty("versions")
-    public OneToMany<DiscountRateVersion> getVersions() {
-        return versions;
-    }
-
-    @JsonProperty("versions")
-    public void setVersions(OneToMany<DiscountRateVersion> versions) {
-        this.versions = versions;
-    }
-
 
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DiscountRate that = (DiscountRate) o;
+        DiscountRateVersion that = (DiscountRateVersion) o;
         return Objects.equals(id, that.id) &&
             Objects.equals(generalLedgerAccount, that.generalLedgerAccount) &&
             Objects.equals(amount, that.amount) &&
             Objects.equals(calculateAndDisplayOnInvoice, that.calculateAndDisplayOnInvoice) &&
             Objects.equals(calculatePriority, that.calculatePriority) &&
-            Objects.equals(clientCorporation, that.clientCorporation) &&
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
             Objects.equals(discountTypeLookup, that.discountTypeLookup) &&
@@ -356,31 +321,28 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
             Objects.equals(generalLedgerSegment5, that.generalLedgerSegment5) &&
             Objects.equals(generalLedgerServiceCode, that.generalLedgerServiceCode) &&
             Objects.equals(ignoreForSalesTaxCalculations, that.ignoreForSalesTaxCalculations) &&
-            Objects.equals(isDeleted, that.isDeleted) &&
             Objects.equals(earnCodes, that.earnCodes) &&
-            Objects.equals(statusLookup, that.statusLookup) && 
+            Objects.equals(statusLookup, that.statusLookup) &&
             Objects.equals(isFirst, that.isFirst) &&
             Objects.equals(rate, that.rate) &&
             Objects.equals(sentToAccountsReceivable, that.sentToAccountsReceivable) &&
             Objects.equals(title, that.title) &&
-            Objects.equals(versionID, that.versionID) &&
-            Objects.equals(versions, that.versions);
+            Objects.equals(discountRateID, that.discountRateID) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, clientCorporation, dateAdded, dateLastModified, discountTypeLookup, earnCodes, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isDeleted, isFirst, rate, statusLookup, sentToAccountsReceivable, title, versionID, versions);
+        return Objects.hash(id, generalLedgerAccount, amount, calculateAndDisplayOnInvoice, calculatePriority, dateAdded, dateLastModified, discountTypeLookup, earnCodes, effectiveDate, effectiveEndDate, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, ignoreForSalesTaxCalculations, isFirst, rate, sentToAccountsReceivable, statusLookup, title, discountRateID);
     }
 
     @Override
     public String toString() {
-        return "DiscountRate{" +
+        return "DiscountRateVersion{" +
             "id=" + id +
             ", generalLedgerAccount=" + generalLedgerAccount +
             ", amount=" + amount +
             ", calculateAndDisplayOnInvoice=" + calculateAndDisplayOnInvoice +
             ", calculatePriority=" + calculatePriority +
-            ", clientCorporation=" + clientCorporation +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
             ", discountTypeLookup=" + discountTypeLookup +
@@ -393,15 +355,13 @@ public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateE
             ", generalLedgerSegment5=" + generalLedgerSegment5 +
             ", generalLedgerServiceCode=" + generalLedgerServiceCode +
             ", ignoreForSalesTaxCalculations=" + ignoreForSalesTaxCalculations +
-            ", isDeleted=" + isDeleted +
             ", earnCodes=" + earnCodes +
             ", statusLookup=" + statusLookup +
             ", isFirst=" + isFirst +
             ", rate=" + rate +
             ", sentToAccountsReceivable=" + sentToAccountsReceivable +
             ", title=" + title +
-            ", versionID=" + versionID +
-            ", versions=" + versions +
+            ", discountRateID=" + discountRateID +
             '}';
     }
 }
