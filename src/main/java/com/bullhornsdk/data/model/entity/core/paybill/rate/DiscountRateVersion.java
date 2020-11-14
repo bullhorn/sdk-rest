@@ -27,7 +27,7 @@ import java.util.Objects;
     "generalLedgerServiceCode", "ignoreForSalesTaxCalculations", "isFirst", "rate", "sentToAccountsReceivable", "title",
     "statusLookup"
 })
-public class DiscountRateVersion extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, EffectiveDateEntity {
+public class DiscountRateVersion extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, EffectiveDateEntity {
 
     private Integer id;
     private BigDecimal amount;

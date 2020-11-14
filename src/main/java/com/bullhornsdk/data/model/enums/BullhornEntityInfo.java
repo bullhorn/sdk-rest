@@ -469,6 +469,7 @@ public enum BullhornEntityInfo {
     BILL_MASTER_TRANSACTION_SURCHARGE_DETAIL("BillMasterTransactionSurchargeDetail", BillMasterTransactionSurchargeDetail.class, BillMasterTransactionSurchargeDetailWrapper.class, BillMasterTransactionSurchargeDetailListWrapper.class, null, null),
     BILL_MASTER_TRANSACTION_SURCHARGE_RATE("BillMasterTransactionSurchargeRate", BillMasterTransactionSurchargeRate.class, BillMasterTransactionSurchargeRateWrapper.class, BillMasterTransactionSurchargeRateListWrapper.class, null, null),
     DISCOUNT_RATE("DiscountRate", DiscountRate.class, DiscountRateWrapper.class, DiscountRateListWrapper.class, null, null),
+    DISCOUNT_RATE_VERSION("DiscountRateVersion", DiscountRateVersion.class, DiscountRateVersionWrapper.class, DiscountRateVersionListWrapper.class, null, null),
     INVOICE_STATEMENT_DISTRIBUTION_BATCH("InvoiceStatementDistributionBatch", InvoiceStatementDistributionBatch.class, InvoiceStatementDistributionBatchWrapper.class, InvoiceStatementDistributionBatchListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_DISTRIBUTION("InvoiceStatementLineDistribution", InvoiceStatementLineDistribution.class, InvoiceStatementLineDistributionWrapper.class, InvoiceStatementLineDistributionListWrapper.class, null, null),
     INVOICE_STATEMENT_LINE_ITEM_DISCOUNT_RATE("InvoiceStatementLineItemDiscountRate", InvoiceStatementLineItemDiscountRate.class, InvoiceStatementLineItemDiscountRateWrapper.class, InvoiceStatementLineItemDiscountRateListWrapper.class, null, null),

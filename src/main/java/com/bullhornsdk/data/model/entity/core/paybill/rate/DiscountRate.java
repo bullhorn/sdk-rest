@@ -28,7 +28,8 @@ import java.util.Objects;
 
 
 })
-public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, SoftDeleteEntity, EffectiveDateEntity {
+public class DiscountRate extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity,
+    SoftDeleteEntity, EffectiveDateEntity, AssociationEntity {
 
     private Integer id;
     private GeneralLedgerAccount generalLedgerAccount;
