@@ -4,11 +4,10 @@
     "data": [
         {
             "id": 1,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -21,22 +20,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 1,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 1
         },
         {
             "id": 2,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -49,50 +41,36 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 2,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 2
         },
-         {
-             "id": 3,
-             "generalLedgerBillAccount": null,
-             "amount": 1,
-             "calculateAndDisplayOnInvoice": null,
-             "calculatePriority": 1,
-             "clientCorporation": null,
-             "dateAdded": 1601988176713,
-             "dateLastModified": 1601988176713,
-             "discountTypeLookup": null,
-             "effectiveDate": "2020-04-16",
-             "effectiveEndDate": "2021-12-31",
-             "generalLedgerSegment1": null,
-             "generalLedgerSegment2": null,
-             "generalLedgerSegment3": null,
-             "generalLedgerSegment4": null,
-             "generalLedgerSegment5": null,
-             "generalLedgerServiceCode": null,
-             "ignoreForSalesTaxCalculations": null,
-             "isDeleted": null,
-             "versionID": 3,
-              "versions":{
-                 "total":1,
-                 "data":[
-
-                 ]
-              }
-         },
+        {
+            "id": 3,
+            "generalLedgerAccount": null,
+            "amount": 1,
+            "calculateAndDisplayOnInvoice": null,
+            "calculatePriority": 1,
+            "dateAdded": 1601988176713,
+            "dateLastModified": 1601988176713,
+            "discountTypeLookup": null,
+            "effectiveDate": "2020-04-16",
+            "effectiveEndDate": "2021-12-31",
+            "generalLedgerSegment1": null,
+            "generalLedgerSegment2": null,
+            "generalLedgerSegment3": null,
+            "generalLedgerSegment4": null,
+            "generalLedgerSegment5": null,
+            "generalLedgerServiceCode": null,
+            "ignoreForSalesTaxCalculations": null,
+            "isFirst": true,
+            "discountRateID": 3
+        },
         {
             "id": 4,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -105,22 +83,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 4,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 4
         },
         {
             "id": 5,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -133,22 +104,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 5,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 5
         },
         {
             "id": 6,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -161,22 +125,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 6,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 6
         },
         {
             "id": 7,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -189,22 +146,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 7,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 7
         },
         {
             "id": 8,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -217,22 +167,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 8,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 8
         },
         {
             "id": 9,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -245,22 +188,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 9,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 9
         },
         {
             "id": 10,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -273,22 +209,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 10,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 10
         },
         {
             "id": 11,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -301,22 +230,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 11,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 11
         },
         {
             "id": 12,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -329,22 +251,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 12,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 12
         },
         {
             "id": 13,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -357,22 +272,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 13,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 13
         },
         {
             "id": 14,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -385,22 +293,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 14,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 14
         },
         {
             "id": 15,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -413,22 +314,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 15,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 15
         },
         {
             "id": 16,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -441,22 +335,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 16,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 16
         },
         {
             "id": 17,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -469,22 +356,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 17,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 17
         },
         {
             "id": 18,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -497,22 +377,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 18,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 18
         },
         {
             "id": 19,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -525,22 +398,15 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 19,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 19
         },
         {
             "id": 20,
-            "generalLedgerBillAccount": null,
+            "generalLedgerAccount": null,
             "amount": 1,
             "calculateAndDisplayOnInvoice": null,
             "calculatePriority": 1,
-            "clientCorporation": null,
             "dateAdded": 1601988176713,
             "dateLastModified": 1601988176713,
             "discountTypeLookup": null,
@@ -553,14 +419,8 @@
             "generalLedgerSegment5": null,
             "generalLedgerServiceCode": null,
             "ignoreForSalesTaxCalculations": null,
-            "isDeleted": null,
-            "versionID": 20,
-             "versions":{
-                "total":1,
-                "data":[
-
-                ]
-             }
+            "isFirst": true,
+            "discountRateID": 20
         }
     ]
 }
