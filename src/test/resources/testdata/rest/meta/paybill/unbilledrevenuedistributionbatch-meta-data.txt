@@ -1,0 +1,166 @@
+{
+    "entity": "UnbilledRevenueDistributionBatch",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/UnbilledRevenueDistributionBatch?fields=*",
+    "label": "Unbilled Revenue Distribution Batch",
+    "dateLastModified": "1606285688701",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "accountingDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Accounting Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "batchStatus",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Batch Status",
+            "optionsType": "BatchStatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BatchStatusLookup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BatchStatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BatchStatusLookup?fields=*",
+                "label": "Batch Status Lookup",
+                "dateLastModified": "1606288042021",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billableCharges",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Billable Charges",
+            "optionsType": "BillableCharge",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BillableCharge",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillableCharge",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillableCharge?fields=*",
+                "label": "Billing Charge",
+                "dateLastModified": "1606288042071",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "canvasReport",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Canvas Report",
+            "optionsType": "CanvasReport",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CanvasReport",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CanvasReport",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CanvasReport?fields=*",
+                "label": "Canvas Report",
+                "dateLastModified": "1606288042216",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "owner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Owner",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1606288042264",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "unbilledRevenueDistributions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Unbilled Revenue Distributions",
+            "optionsType": "UnbilledRevenueDistribution",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/UnbilledRevenueDistribution",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "UnbilledRevenueDistribution",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/UnbilledRevenueDistribution?fields=*",
+                "label": "Unbilled Revenue Distribution",
+                "dateLastModified": "1606285685345",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        }
+    ]
+}

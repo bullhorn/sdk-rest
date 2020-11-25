@@ -41,7 +41,9 @@ import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayMasterTransaction
+import com.bullhornsdk.data.model.entity.core.paybill.transaction.UnbilledRevenueGeneralLedgerExportStatusLookup
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.*
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
@@ -534,6 +536,12 @@ public class MockDataLoader {
         entityFiles.put(Surcharge.class, "paybill/surcharge-data.txt");
         entityFiles.put(Tax.class, "paybill/tax-data.txt");
         entityFiles.put(CanvasReport.class, "paybill/canvasreport-data.txt");
+        entityFiles.put(BillMasterTransactionDistributionBatch.class, "paybill/BillMasterTransactionDistributionBatch-data.txt");
+        entityFiles.put(UnbilledRevenueDistribution.class, "paybill/UnbilledRevenueDistribution-data.txt");
+        entityFiles.put(UnbilledRevenueDistributionBatch.class, "paybill/UnbilledRevenueDistributionBatch-data.txt");
+        entityFiles.put(UnbilledRevenueGeneralLedgerExportStatusLookup.class, "paybill/UnbilledRevenueGeneralLedgerExportStatusLookup-data.txt");
+
+
 
         entityFiles.put(CandidateCertificationRequirement.class, "candidatecertificationrequirement-data.txt");
         entityFiles.put(CertificationRequirement.class, "certificationrequirement-data.txt");
@@ -754,6 +762,11 @@ public class MockDataLoader {
         entityMetaFiles.put(InvoiceStatementSalesTaxRate.class, "meta/paybill/rate/invoicestatementsalestaxrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementSurchargeRate.class, "meta/paybill/rate/invoicestatementsurchargerate-meta-data.txt");
         entityMetaFiles.put(SurchargeRate.class, "meta/paybill/rate/surchargerate-meta-data.txt");
+
+        entityMetaFiles.put(BillMasterTransactionDistributionBatch.class, "meta/paybill/BillMasterTransactionDistributionBatch-meta-data.txt");
+        entityMetaFiles.put(UnbilledRevenueDistribution.class, "meta/paybill/UnbilledRevenueDistribution-meta-data.txt");
+        entityMetaFiles.put(UnbilledRevenueDistributionBatch.class, "meta/paybill/UnbilledRevenueDistributionBatch-meta-data.txt");
+        entityMetaFiles.put(UnbilledRevenueGeneralLedgerExportStatusLookup.class, "meta/paybill/UnbilledRevenueGeneralLedgerExportStatusLookup-meta-data.txt");
 
 
         // Certification Requirements

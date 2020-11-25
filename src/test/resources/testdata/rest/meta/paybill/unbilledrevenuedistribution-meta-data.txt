@@ -1,0 +1,170 @@
+{
+    "entity": "UnbilledRevenueDistribution",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/UnbilledRevenueDistribution?fields=*",
+    "label": "Unbilled Revenue Distribution",
+    "dateLastModified": "1606285685345",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "accountingCode",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 255,
+            "confidential": false,
+            "label": "Accounting Code",
+            "hideFromSearch": false
+        },
+        {
+            "name": "billMasterTransactions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Bill Master Transactions",
+            "optionsType": "BillMasterTransaction",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BillMasterTransaction",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransaction",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillMasterTransaction?fields=*",
+                "label": "Bill Transaction Entry",
+                "dateLastModified": "1606285686523",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "creditAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Credit Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "currencyUnit",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Currency Unit",
+            "optionsType": "CurrencyUnit",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CurrencyUnit",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CurrencyUnit",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CurrencyUnit?fields=*",
+                "label": "Currency Unit",
+                "dateLastModified": "1606285687642",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "alphabeticCode",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 3,
+                        "confidential": false,
+                        "label": "Alphabetic Code",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "debitAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Debit Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "invoiceStatementLineDistributionTypeLookup",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Invoice Statement Line Distribution Type Lookup",
+            "optionsType": "InvoiceStatementLineDistributionTypeLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/InvoiceStatementLineDistributionTypeLookup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "InvoiceStatementLineDistributionTypeLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/InvoiceStatementLineDistributionTypeLookup?fields=*",
+                "label": "Invoice Statement Line Distribution Type Lookup",
+                "dateLastModified": "1606285687746",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "unbilledRevenueDistributionBatch",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Unbilled Revenue Distribution Batch",
+            "optionsType": "UnbilledRevenueDistributionBatch",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/UnbilledRevenueDistributionBatch",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "UnbilledRevenueDistributionBatch",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/UnbilledRevenueDistributionBatch?fields=*",
+                "label": "Unbilled Revenue Distribution Batch",
+                "dateLastModified": "1606285688701",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        }
+    ]
+}

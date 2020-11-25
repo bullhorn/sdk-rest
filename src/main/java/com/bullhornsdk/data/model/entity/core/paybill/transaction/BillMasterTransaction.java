@@ -4,6 +4,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatement;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementLineItem;
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,7 +21,7 @@ import java.util.Objects;
 @JsonPropertyOrder({"id", "adjustmentSequenceNumber", "amount", "billMaster", "comment",
     "currencyUnit", "dateAdded", "dateLastModified", "invoiceStatement", "invoiceStatementBatch",
     "invoiceStatementLineItem", "needsReview", "quantity", "rate", "recordingDate", "reversalOfTransaction",
-    "transactionOrigin", "transactionStatus", "transactionType", "unitOfMeasure"
+    "transactionOrigin", "transactionStatus", "transactionType", "unitOfMeasure", "unbilledRevenueGeneralLedgerExportStatusLookup"
 })
 public class BillMasterTransaction extends AbstractMasterTransaction implements QueryEntity {
 
@@ -30,6 +31,7 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
     private InvoiceStatementLineItem invoiceStatementLineItem;
     private Boolean needsReview;
     private BillMasterTransaction reversalOfTransaction;
+    private SpecializedOptionsLookup unbilledRevenueGeneralLedgerExportStatusLookup;
 
     public BillMasterTransaction() {
         super();
@@ -99,6 +101,18 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
         this.reversalOfTransaction = reversalOfTransaction;
     }
 
+    @JsonProperty("unbilledRevenueGeneralLedgerExportStatusLookup")
+    public SpecializedOptionsLookup getUnbilledRevenueGeneralLedgerExportStatusLookup() {
+        return unbilledRevenueGeneralLedgerExportStatusLookup;
+    }
+
+    @JsonProperty("unbilledRevenueGeneralLedgerExportStatusLookup")
+    public void setUnbilledRevenueGeneralLedgerExportStatusLookup(SpecializedOptionsLookup unbilledRevenueGeneralLedgerExportStatusLookup) {
+        this.unbilledRevenueGeneralLedgerExportStatusLookup = unbilledRevenueGeneralLedgerExportStatusLookup;
+    }
+
+
+
     @Override
     public String toString() {
         return "BillMasterTransaction{" +
@@ -108,6 +122,7 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
             ", invoiceStatementLineItem=" + invoiceStatementLineItem +
             ", needsReview=" + needsReview +
             ", reversalOfTransaction=" + reversalOfTransaction +
+            ", unbilledRevenueGeneralLedgerExportStatusLookup=" + unbilledRevenueGeneralLedgerExportStatusLookup +
             '}';
     }
 
@@ -122,11 +137,12 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
             Objects.equals(invoiceStatementBatch, that.invoiceStatementBatch) &&
             Objects.equals(invoiceStatementLineItem, that.invoiceStatementLineItem) &&
             Objects.equals(needsReview, that.needsReview) &&
-            Objects.equals(reversalOfTransaction, that.reversalOfTransaction);
+            Objects.equals(reversalOfTransaction, that.reversalOfTransaction) &&
+            Objects.equals(unbilledRevenueGeneralLedgerExportStatusLookup, that.unbilledRevenueGeneralLedgerExportStatusLookup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), billMaster, invoiceStatement, invoiceStatementBatch, invoiceStatementLineItem, needsReview, reversalOfTransaction);
+        return Objects.hash(super.hashCode(), billMaster, invoiceStatement, invoiceStatementBatch, invoiceStatementLineItem, needsReview, reversalOfTransaction, unbilledRevenueGeneralLedgerExportStatusLookup);
     }
 }

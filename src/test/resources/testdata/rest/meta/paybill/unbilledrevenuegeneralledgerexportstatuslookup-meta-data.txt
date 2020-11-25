@@ -1,0 +1,119 @@
+{
+    "entity": "UnbilledRevenueGeneralLedgerExportStatusLookup",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/UnbilledRevenueGeneralLedgerExportStatusLookup?fields=*",
+    "label": "Unbilled Revenue General Ledger Export Status Lookup",
+    "dateLastModified": "1606288387380",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Description",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isHidden",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Hidden",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isSystem",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is System",
+            "hideFromSearch": false
+        },
+        {
+            "name": "label",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Label",
+            "hideFromSearch": false
+        },
+        {
+            "name": "modifiedByUser",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Modified By User",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1606288042264",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "shouldShowInPicker",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Should Show In Picker",
+            "hideFromSearch": false
+        }
+    ]
+}
