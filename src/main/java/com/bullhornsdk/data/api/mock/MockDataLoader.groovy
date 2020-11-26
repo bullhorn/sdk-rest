@@ -536,18 +536,15 @@ public class MockDataLoader {
         entityFiles.put(Surcharge.class, "paybill/surcharge-data.txt");
         entityFiles.put(Tax.class, "paybill/tax-data.txt");
         entityFiles.put(CanvasReport.class, "paybill/canvasreport-data.txt");
-        entityFiles.put(BillMasterTransactionDistributionBatch.class, "paybill/BillMasterTransactionDistributionBatch-data.txt");
-        entityFiles.put(UnbilledRevenueDistribution.class, "paybill/UnbilledRevenueDistribution-data.txt");
-        entityFiles.put(UnbilledRevenueDistributionBatch.class, "paybill/UnbilledRevenueDistributionBatch-data.txt");
-        entityFiles.put(UnbilledRevenueGeneralLedgerExportStatusLookup.class, "paybill/UnbilledRevenueGeneralLedgerExportStatusLookup-data.txt");
-
-
+        entityFiles.put(BillMasterTransactionDistributionBatch.class, "paybill/billmastertransactiondistributionbatch-data.txt");
+        entityFiles.put(UnbilledRevenueDistribution.class, "paybill/unbilledrevenuedistribution-data.txt");
+        entityFiles.put(UnbilledRevenueDistributionBatch.class, "paybill/unbilledrevenuedistributionbatch-data.txt");
+        entityFiles.put(UnbilledRevenueGeneralLedgerExportStatusLookup.class, "paybill/unbilledrevenuegeneralledgerexportstatuslookup-data.txt");
 
         entityFiles.put(CandidateCertificationRequirement.class, "candidatecertificationrequirement-data.txt");
         entityFiles.put(CertificationRequirement.class, "certificationrequirement-data.txt");
         entityFiles.put(JobSubmissionCertificationRequirement.class, "jobsubmissioncertificationrequirement-data.txt");
         entityFiles.put(CertificationRequirementStatusLookup.class, "certificationrequirementstatuslookup-data.txt");
-
 
         entityFiles.put(JobOrderCustomObjectInstance1.class, "customobjectinstances/jobordercustomobjectinstance1-data.txt");
         entityFiles.put(JobOrderCustomObjectInstance2.class, "customobjectinstances/jobordercustomobjectinstance2-data.txt");
@@ -763,10 +760,10 @@ public class MockDataLoader {
         entityMetaFiles.put(InvoiceStatementSurchargeRate.class, "meta/paybill/rate/invoicestatementsurchargerate-meta-data.txt");
         entityMetaFiles.put(SurchargeRate.class, "meta/paybill/rate/surchargerate-meta-data.txt");
 
-        entityMetaFiles.put(BillMasterTransactionDistributionBatch.class, "meta/paybill/BillMasterTransactionDistributionBatch-meta-data.txt");
-        entityMetaFiles.put(UnbilledRevenueDistribution.class, "meta/paybill/UnbilledRevenueDistribution-meta-data.txt");
-        entityMetaFiles.put(UnbilledRevenueDistributionBatch.class, "meta/paybill/UnbilledRevenueDistributionBatch-meta-data.txt");
-        entityMetaFiles.put(UnbilledRevenueGeneralLedgerExportStatusLookup.class, "meta/paybill/UnbilledRevenueGeneralLedgerExportStatusLookup-meta-data.txt");
+        entityMetaFiles.put(BillMasterTransactionDistributionBatch.class, "meta/paybill/billmastertransactiondistributionbatch-meta-data.txt");
+        entityMetaFiles.put(UnbilledRevenueDistribution.class, "meta/paybill/unbilledrevenuedistribution-meta-data.txt");
+        entityMetaFiles.put(UnbilledRevenueDistributionBatch.class, "meta/paybill/unbilledrevenuedistributionbatch-meta-data.txt");
+        entityMetaFiles.put(UnbilledRevenueGeneralLedgerExportStatusLookup.class, "meta/paybill/unbilledrevenuegeneralledgerexportstatuslookup-meta-data.txt");
 
 
         // Certification Requirements
