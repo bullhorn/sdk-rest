@@ -120,6 +120,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.surcharge.Surcharge;
 import com.bullhornsdk.data.model.entity.core.paybill.tax.Tax;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.*;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.*;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
@@ -419,7 +420,6 @@ public enum BullhornEntityInfo {
         "PlacementRateCardLineGroupEditHistoryFieldChange"),
     PLACEMENT_RATE_CARD_VERSION("PlacementRateCardVersion", PlacementRateCardVersion.class, PlacementRateCardVersionWrapper.class, PlacementRateCardVersionListWrapper.class, "PlacementRateCardVersionEditHistory",
         "PlacementRateCardVersionEditHistoryFieldChange"),
-
     BILL_MASTER_DISCOUNT_RATE("BillMasterDiscountRate", BillMasterDiscountRate.class, BillMasterDiscountRateWrapper.class, BillMasterDiscountRateListWrapper.class, null, null),
 
     // PayBill Entities
@@ -479,6 +479,10 @@ public enum BullhornEntityInfo {
     INVOICE_STATEMENT_SALES_TAX_RATE("InvoiceStatementSalesTaxRate", InvoiceStatementSalesTaxRate.class, InvoiceStatementSalesTaxRateWrapper.class, InvoiceStatementSalesTaxRateListWrapper.class, null, null),
     INVOICE_STATEMENT_SURCHARGE_RATE("InvoiceStatementSurchargeRate", InvoiceStatementSurchargeRate.class, InvoiceStatementSurchargeRateWrapper.class, InvoiceStatementSurchargeRateListWrapper.class, null, null),
     SURCHARGE_RATE("SurchargeRate", SurchargeRate.class, SurchargeRateWrapper.class, SurchargeRateListWrapper.class, null, null),
+    BILL_MASTER_TRANSACTION_DISTRIBUTION_BATCH("BillMasterTransactionDistributionBatch", BillMasterTransactionDistributionBatch.class, BillMasterTransactionDistributionBatchWrapper.class, BillMasterTransactionDistributionBatchListWrapper.class, null, null),
+    UNBILLED_REVENUE_DISTRIBUTION("UnbilledRevenueDistribution", UnbilledRevenueDistribution.class, UnbilledRevenueDistributionWrapper.class, UnbilledRevenueDistributionListWrapper.class, null, null),
+    UNBILLED_REVENUE_DISTRIBUTION_BATCH("UnbilledRevenueDistributionBatch", UnbilledRevenueDistributionBatch.class, UnbilledRevenueDistributionBatchWrapper.class, UnbilledRevenueDistributionBatchListWrapper.class, null, null),
+    UNBILLED_REVENUE_GENERAL_LEDGER_EXPORT_STATUS_LOOKUP("UnbilledRevenueGeneralLedgerExportStatusLookup", UnbilledRevenueGeneralLedgerExportStatusLookup.class, UnbilledRevenueGeneralLedgerExportStatusLookupWrapper.class, UnbilledRevenueGeneralLedgerExportStatusLookupListWrapper.class, null, null),
 
     // Certification Requirements
     CANDIDATE_CERTIFICATION_REQUIREMENT("CandidateCertificationRequirement", CandidateCertificationRequirement.class, CandidateCertificationRequirementWrapper.class, CandidateCertificationRequirementListWrapper.class, "CandidateCertificationRequirementEditHistory", "CandidateCertificationRequirementEditHistoryFieldChange"),
