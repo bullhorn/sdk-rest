@@ -422,7 +422,10 @@ public enum BullhornEntityInfo {
         "PlacementRateCardVersionEditHistoryFieldChange"),
     BILL_MASTER_DISCOUNT_RATE("BillMasterDiscountRate", BillMasterDiscountRate.class, BillMasterDiscountRateWrapper.class, BillMasterDiscountRateListWrapper.class, null, null),
 
-    // PayBill Entities
+    // placementTimeAndExpense Entities
+    PLACEMENT_TIME_AND_EXPENSE("PlacementTimeAndExpense", PlacementTimeAndExpense.class, PlacementTimeAndExpenseWrapper.class, PlacementTimeAndExpenseListWrapper.class, "PlacementTimeAndExpenseEditHistory", "PlacementTimeAndExpenseEditHistoryFieldChange"),
+
+        // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),
     BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
     GENERAL_LEDGER_ACCOUNT("GeneralLedgerAccount", GeneralLedgerAccount.class, GeneralLedgerAccountWrapper.class, GeneralLedgerAccountListWrapper.class, null, null),

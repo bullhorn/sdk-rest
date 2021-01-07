@@ -484,6 +484,8 @@ public class MockDataLoader {
         entityFiles.put(PlacementRateCardLineGroup.class, "placementratecardlinegroup-data.txt");
         entityFiles.put(PlacementRateCardVersion.class, "placementratecardversion-data.txt");
 
+        entityFiles.put(PlacementTimeAndExpense.class, "placementtimeandexpense-data.txt");
+
         entityFiles.put(BillMasterTransactionDiscountDetail.class, "paybill/detail/billmastertransactiondiscountdetail-data.txt");
         entityFiles.put(BillMasterTransactionSalesTaxDetail.class, "paybill/detail/billmastertransactionsalestaxdetail-data.txt");
         entityFiles.put(BillMasterTransactionSurchargeDetail.class, "paybill/detail/billmastertransactionsurchargedetail-data.txt");
@@ -704,6 +706,8 @@ public class MockDataLoader {
         entityMetaFiles.put(PlacementRateCardLine.class, "meta/placementratecardline-meta-data.txt");
         entityMetaFiles.put(PlacementRateCardLineGroup.class, "meta/placementratecardlinegroup-meta-data.txt");
         entityMetaFiles.put(PlacementRateCardVersion.class, "meta/placementratecardversion-meta-data.txt");
+
+        entityMetaFiles.put(PlacementTimeAndExpense.class, "meta/placementtimeandexpense-meta-data.txt");
 
         entityMetaFiles.put(BillMasterDiscountRate.class, "meta/billmasterdiscountrate-meta-data.txt");
 

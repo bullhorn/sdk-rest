@@ -74,7 +74,7 @@ import java.util.Objects;
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
-        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location" })
+        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -115,6 +115,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private OneToMany<PlacementCommission> commissions;
 
     private Location location;
+
+    private PlacementTimeAndExpense timeAndExpense;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -1103,6 +1105,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.location = location;
     }
 
+    @JsonProperty("timeAndExpense")
+    public PlacementTimeAndExpense getTimeAndExpense() {
+        return timeAndExpense;
+    }
+
+    @JsonProperty("timeAndExpense")
+    public void setTimeAndExpense(PlacementTimeAndExpense timeAndExpense) {
+        this.timeAndExpense = timeAndExpense;
+    }
+
     public boolean equals(Object object) {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
@@ -1112,6 +1124,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             java.util.Objects.equals(appointments, placement.appointments) &&
             java.util.Objects.equals(approvingClientContact, placement.approvingClientContact) &&
             java.util.Objects.equals(backupApprovingClientContact, placement.backupApprovingClientContact) &&
+            java.util.Objects.equals(timeAndExpense, placement.timeAndExpense) &&
             java.util.Objects.equals(billingClientContact, placement.billingClientContact) &&
             java.util.Objects.equals(billingProfile, placement.billingProfile) &&
             java.util.Objects.equals(billingFrequency, placement.billingFrequency) &&
@@ -1189,7 +1202,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     }
 
     public int hashCode() {
-        return java.util.Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+        return java.util.Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, timeAndExpense, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
     @java.lang.Override
@@ -1199,6 +1212,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", appointments=" + appointments +
             ", approvingClientContact=" + approvingClientContact +
             ", backupApprovingClientContact=" + backupApprovingClientContact +
+            ", timeAndExpense=" + timeAndExpense +
             ", billingClientContact=" + billingClientContact +
             ", billingProfile=" + billingProfile +
             ", billingFrequency='" + billingFrequency + '\'' +
