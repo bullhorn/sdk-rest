@@ -1,0 +1,946 @@
+{
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 1,
+      "amount": 0.000000,
+      "dateAdded": 1598533087250,
+      "dateLastModified": 1598535586630,
+      "effectiveDate": "2020-01-01",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "label": "Alabama Services Tax",
+      "owner": null,
+      "rate": 0.030000,
+      "reportingCodeName": "AL",
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 1,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 1,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 2,
+      "amount": 0.000000,
+      "dateAdded": 1600947903163,
+      "dateLastModified": 1600947903163,
+      "effectiveDate": "2020-09-24",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "California",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "label": "California",
+      "owner": null,
+      "rate": 0.000000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 5,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 2,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 3,
+      "amount": 0.000000,
+      "dateAdded": 1608226200850,
+      "dateLastModified": 1608226200850,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Connecticut",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "label": "Connecticut Sales Tax 6.35%",
+      "owner": null,
+      "rate": 0.063500,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 7,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 3,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 4,
+      "amount": 0.000000,
+      "dateAdded": 1608227780167,
+      "dateLastModified": 1608227780167,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "label": "Cuyahoga OH 8% Sales Tax",
+      "owner": null,
+      "rate": 0.080000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 39,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 4,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 5,
+      "amount": 0.000000,
+      "dateAdded": 1608227810577,
+      "dateLastModified": 1608227810577,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "label": "DC Sales Tax 6.00%",
+      "owner": null,
+      "rate": 0.060000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 9,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 5,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 6,
+      "amount": 0.000000,
+      "dateAdded": 1608228279447,
+      "dateLastModified": 1608228279447,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "FRANKLIN SALES TAX",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "label": "FRANKLIN SALES TAX",
+      "owner": null,
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 39,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 6,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 7,
+      "amount": 0.000000,
+      "dateAdded": 1608228313627,
+      "dateLastModified": 1608228313627,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "GST Federal & Provincial Taxes",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "GST Federal & Provincial Taxes",
+      "owner": null,
+      "rate": 0.100000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 7,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 8,
+      "amount": 0.000000,
+      "dateAdded": 1608228330640,
+      "dateLastModified": 1608228330640,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "GST Tax - AP",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "GST Tax - AP",
+      "owner": null,
+      "rate": 0.050000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 8,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 9,
+      "amount": 0.000000,
+      "dateAdded": 1608228344937,
+      "dateLastModified": 1608228344937,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "GST Tax - AR",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "GST Tax - AR",
+      "owner": null,
+      "rate": 0.050000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 9,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 10,
+      "amount": 0.000000,
+      "dateAdded": 1608228412790,
+      "dateLastModified": 1608228412790,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Hamilton",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "label": "Hamilton OH 7.0 % Sales Tax",
+      "owner": null,
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 39,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 10,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 11,
+      "amount": 0.000000,
+      "dateAdded": 1608228442573,
+      "dateLastModified": 1608228503773,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Hawaii",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "label": "HAWAII SALES TAX 4.5%",
+      "owner": null,
+      "rate": 0.045000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 13,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 11,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 12,
+      "amount": 0.000000,
+      "dateAdded": 1608228537660,
+      "dateLastModified": 1608228537660,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "HST Tax - AP",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "HST Tax - AP",
+      "owner": null,
+      "rate": 0.130000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 12,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 13,
+      "amount": 0.000000,
+      "dateAdded": 1608228573913,
+      "dateLastModified": 1608228573913,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "HST Purchase - British Columbi",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "HST Purchase - British Columbi",
+      "owner": null,
+      "rate": 0.120000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 13,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 14,
+      "amount": 0.000000,
+      "dateAdded": 1608228668797,
+      "dateLastModified": 1608228668797,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "HST Sales Tax",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "HST Sales Tax",
+      "owner": null,
+      "rate": 0.130000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 14,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 15,
+      "amount": 0.000000,
+      "dateAdded": 1608228684307,
+      "dateLastModified": 1608228684307,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "HST Sales Tax  - British Colum",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "HST Sales Tax  - British Colum",
+      "owner": null,
+      "rate": 0.120000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 15,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 16,
+      "amount": 0.000000,
+      "dateAdded": 1608228698823,
+      "dateLastModified": 1608228698823,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "HST Sales Taxes 10%",
+      "jurisdictionType": {
+        "id": 5,
+        "label": "Other"
+      },
+      "label": "HST Sales Taxes 10%",
+      "owner": null,
+      "rate": 0.100000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": null,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 16,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 17,
+      "amount": 0.000000,
+      "dateAdded": 1608228723897,
+      "dateLastModified": 1608228825707,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Iowa",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "label": "IOWA 7% SALES TAX",
+      "owner": null,
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 17,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 17,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 18,
+      "amount": 0.000000,
+      "dateAdded": 1608228794027,
+      "dateLastModified": 1608228794027,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Iowa",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "label": "IOWA SALES TAX - 6%",
+      "owner": null,
+      "rate": 0.060000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 17,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 18,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 19,
+      "amount": 0.000000,
+      "dateAdded": 1608228916650,
+      "dateLastModified": 1608228945070,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Philadelphia, PA",
+      "jurisdictionType": {
+        "id": 1,
+        "label": "City"
+      },
+      "label": "Philadelphia PA - Sales Taxes",
+      "owner": null,
+      "rate": 0.015552,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 43,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 19,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    },
+    {
+      "id": 20,
+      "amount": 0.000000,
+      "dateAdded": 1608229022590,
+      "dateLastModified": 1608229022590,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "generalLedgerAccount": null,
+      "generalLedgerSegment1": null,
+      "generalLedgerSegment2": null,
+      "generalLedgerSegment3": null,
+      "generalLedgerSegment4": null,
+      "generalLedgerSegment5": null,
+      "generalLedgerServiceCode": null,
+      "isDeleted": false,
+      "jurisdictionName": "Pittsburgh, PA",
+      "jurisdictionType": {
+        "id": 1,
+        "label": "City"
+      },
+      "label": "Pittsburgh PA - Sales Taxes",
+      "owner": null,
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "stateID": 43,
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      },
+      "type": {
+        "id": 1,
+        "label": "Location Based Tax"
+      },
+      "versionID": 20,
+      "versions": {
+        "total": 1,
+        "data": []
+      }
+    }
+  ]
+}
