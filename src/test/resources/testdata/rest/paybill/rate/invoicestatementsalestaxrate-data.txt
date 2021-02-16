@@ -1,366 +1,606 @@
 {
-    "start": 0,
-    "count": 20,
-    "data": [
-        {
-            "id": 1,
-            "baseAmount": 2370.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "dateAdded": 1601490557063,
-            "invoiceStatement": {
-                "id": 8
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 150.500000
-        },
-        {
-            "id": 2,
-            "baseAmount": 807.910000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 4
-            },
-            "dateAdded": 1601493864530,
-            "invoiceStatement": {
-                "id": 10
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 51.300000
-        },
-        {
-            "id": 3,
-            "baseAmount": 652.510000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 5
-            },
-            "dateAdded": 1601651934470,
-            "invoiceStatement": {
-                "id": 11
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 41.430000
-        },
-        {
-            "id": 4,
-            "baseAmount": 2208.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 6
-            },
-            "dateAdded": 1602079558993,
-            "invoiceStatement": {
-                "id": 12
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 140.210000
-        },
-        {
-            "id": 5,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 6,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 7,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 8,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 9,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 10,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 11,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 12,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 13,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 14,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 15,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 16,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 17,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 18,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 19,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        },
-        {
-            "id": 20,
-            "baseAmount": 12000.000000,
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 7
-            },
-            "dateAdded": 1602236316840,
-            "invoiceStatement": {
-                "id": 14
-            },
-            "jurisdictionName": "Connecticut",
-            "jurisdictionType": {
-                "id": 4,
-                "label": "State"
-            },
-            "rate": 0.063500,
-            "taxAmount": 762.000000
-        }
-    ]
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 1,
+      "allSalesTaxRate": {
+        "id": 27
+      },
+      "baseAmount": 3427.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "dateAdded": 1611756613837,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 63
+      },
+      "jurisdictionName": "Georgia",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.010000,
+      "salesTaxRate": {
+        "id": 27,
+        "label": "Georgia Test Rate",
+        "effectiveDate": "2020-12-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 26,
+        "jurisdictionName": "Georgia"
+      },
+      "taxAmount": 34.280000
+    },
+    {
+      "id": 2,
+      "allSalesTaxRate": {
+        "id": 20
+      },
+      "baseAmount": 3427.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 2
+      },
+      "dateAdded": 1611759998090,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 69
+      },
+      "jurisdictionName": "Philadelphia, PA",
+      "jurisdictionType": {
+        "id": 1,
+        "label": "City"
+      },
+      "rate": 0.015552,
+      "salesTaxRate": {
+        "id": 20,
+        "label": "Philadelphia PA - Sales Taxes",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 19,
+        "jurisdictionName": "Philadelphia, PA"
+      },
+      "taxAmount": 53.300000
+    },
+    {
+      "id": 3,
+      "allSalesTaxRate": {
+        "id": 22
+      },
+      "baseAmount": 3427.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "dateAdded": 1611759998090,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 69
+      },
+      "jurisdictionName": "Pennsylvania",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 22,
+        "label": "Pennsylvania",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 21,
+        "jurisdictionName": "Pennsylvania"
+      },
+      "taxAmount": 205.660000
+    },
+    {
+      "id": 4,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 4000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "dateAdded": 1611763814777,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 71
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 120.000000
+    },
+    {
+      "id": 5,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 6000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 5
+      },
+      "dateAdded": 1611763827577,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 72
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 180.000000
+    },
+    {
+      "id": 6,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 8000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 6
+      },
+      "dateAdded": 1611763838130,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 73
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 240.000000
+    },
+    {
+      "id": 7,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 10000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 7
+      },
+      "dateAdded": 1611763856823,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 74
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 300.000000
+    },
+    {
+      "id": 8,
+      "allSalesTaxRate": {
+        "id": 27
+      },
+      "baseAmount": 3383.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 8
+      },
+      "dateAdded": 1611767279657,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 75
+      },
+      "jurisdictionName": "Georgia",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.010000,
+      "salesTaxRate": {
+        "id": 27,
+        "label": "Georgia Test Rate",
+        "effectiveDate": "2020-12-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 26,
+        "jurisdictionName": "Georgia"
+      },
+      "taxAmount": 33.840000
+    },
+    {
+      "id": 9,
+      "allSalesTaxRate": {
+        "id": 5
+      },
+      "baseAmount": 2347.770000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 9
+      },
+      "dateAdded": 1611776606910,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 76
+      },
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "rate": 0.080000,
+      "salesTaxRate": {
+        "id": 5,
+        "label": "Cuyahoga OH 8% Sales Tax",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 4,
+        "jurisdictionName": "Cuyahoga"
+      },
+      "taxAmount": 187.820000
+    },
+    {
+      "id": 10,
+      "allSalesTaxRate": {
+        "id": 6
+      },
+      "baseAmount": 2684.410000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 10
+      },
+      "dateAdded": 1611779735187,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 77
+      },
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 6,
+        "label": "DC Sales Tax 6.00%",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 5,
+        "jurisdictionName": "DC"
+      },
+      "taxAmount": 161.060000
+    },
+    {
+      "id": 11,
+      "allSalesTaxRate": {
+        "id": 6
+      },
+      "baseAmount": -2684.410000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 10
+      },
+      "dateAdded": 1611779879360,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 78
+      },
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 6,
+        "label": "DC Sales Tax 6.00%",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 5,
+        "jurisdictionName": "DC"
+      },
+      "taxAmount": -161.060000
+    },
+    {
+      "id": 12,
+      "allSalesTaxRate": {
+        "id": 6
+      },
+      "baseAmount": 2684.410000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 11
+      },
+      "dateAdded": 1611780458290,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 79
+      },
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 6,
+        "label": "DC Sales Tax 6.00%",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 5,
+        "jurisdictionName": "DC"
+      },
+      "taxAmount": 161.060000
+    },
+    {
+      "id": 13,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 8000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 12
+      },
+      "dateAdded": 1611786915283,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 81
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 240.000000
+    },
+    {
+      "id": 14,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 12000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 13
+      },
+      "dateAdded": 1611786924677,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 82
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 360.000000
+    },
+    {
+      "id": 15,
+      "allSalesTaxRate": {
+        "id": 5
+      },
+      "baseAmount": 3831.800000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 14
+      },
+      "dateAdded": 1611862056430,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 83
+      },
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "rate": 0.080000,
+      "salesTaxRate": {
+        "id": 5,
+        "label": "Cuyahoga OH 8% Sales Tax",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 4,
+        "jurisdictionName": "Cuyahoga"
+      },
+      "taxAmount": 306.540000
+    },
+    {
+      "id": 16,
+      "allSalesTaxRate": {
+        "id": 5
+      },
+      "baseAmount": -3831.800000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 14
+      },
+      "dateAdded": 1611864276037,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 84
+      },
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "rate": 0.080000,
+      "salesTaxRate": {
+        "id": 5,
+        "label": "Cuyahoga OH 8% Sales Tax",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 4,
+        "jurisdictionName": "Cuyahoga"
+      },
+      "taxAmount": -306.540000
+    },
+    {
+      "id": 17,
+      "allSalesTaxRate": {
+        "id": 5
+      },
+      "baseAmount": 4998.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 15
+      },
+      "dateAdded": 1611864513320,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 85
+      },
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "rate": 0.080000,
+      "salesTaxRate": {
+        "id": 5,
+        "label": "Cuyahoga OH 8% Sales Tax",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 4,
+        "jurisdictionName": "Cuyahoga"
+      },
+      "taxAmount": 399.840000
+    },
+    {
+      "id": 18,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 4000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 16
+      },
+      "dateAdded": 1611870264723,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 88
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 120.000000
+    },
+    {
+      "id": 19,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 17220.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 17
+      },
+      "dateAdded": 1611870366730,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 90
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 516.600000
+    },
+    {
+      "id": 20,
+      "allSalesTaxRate": {
+        "id": 6
+      },
+      "baseAmount": 5471.400000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 18
+      },
+      "dateAdded": 1611870367873,
+      "externalSalesTaxRate": null,
+      "invoiceStatement": {
+        "id": 91
+      },
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 6,
+        "label": "DC Sales Tax 6.00%",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 5,
+        "jurisdictionName": "DC"
+      },
+      "taxAmount": 328.280000
+    }
+  ]
 }

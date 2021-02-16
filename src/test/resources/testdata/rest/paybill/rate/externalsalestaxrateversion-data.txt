@@ -1,0 +1,219 @@
+{
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 1,
+      "dateAdded": 1598533087250,
+      "dateLastModified": 1598535586630,
+      "effectiveDate": "2020-01-01",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Alabama",
+      "rate": 0.030000,
+      "reportingCodeName": "AL",
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 2,
+      "dateAdded": 1600947903163,
+      "dateLastModified": 1600947903163,
+      "effectiveDate": "2020-09-24",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "California",
+      "rate": 0.000000
+    },
+    {
+      "id": 3,
+      "dateAdded": 1608226200850,
+      "dateLastModified": 1608226200850,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Connecticut",
+      "rate": 0.063500
+    },
+    {
+      "id": 4,
+      "dateAdded": 1608227780167,
+      "dateLastModified": 1608227780167,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Cuyahoga",
+      "rate": 0.080000
+    },
+    {
+      "id": 5,
+      "dateAdded": 1608227810577,
+      "dateLastModified": 1608227810577,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "DC",
+      "rate": 0.060000
+    },
+    {
+      "id": 6,
+      "dateAdded": 1608228279447,
+      "dateLastModified": 1608228279447,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "FRANKLIN SALES TAX",
+      "rate": 0.070000
+    },
+    {
+      "id": 7,
+      "dateAdded": 1608228313627,
+      "dateLastModified": 1608228313627,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "GST Federal & Provincial Taxes",
+      "rate": 0.100000
+    },
+    {
+      "id": 8,
+      "dateAdded": 1608228330640,
+      "dateLastModified": 1608228330640,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "GST Tax - AP",
+      "rate": 0.050000
+    },
+    {
+      "id": 9,
+      "dateAdded": 1608228344937,
+      "dateLastModified": 1608228344937,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "GST Tax - AR",
+      "rate": 0.050000
+    },
+    {
+      "id": 10,
+      "dateAdded": 1608228412790,
+      "dateLastModified": 1608228412790,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Hamilton",
+      "rate": 0.070000
+    },
+    {
+      "id": 11,
+      "dateAdded": 1608228442573,
+      "dateLastModified": 1608228503773,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Hawaii",
+      "rate": 0.045000
+    },
+    {
+      "id": 12,
+      "dateAdded": 1608228537660,
+      "dateLastModified": 1608228537660,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Tax - AP",
+      "rate": 0.130000
+    },
+    {
+      "id": 13,
+      "dateAdded": 1608228573913,
+      "dateLastModified": 1608228573913,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Purchase - British Columbi",
+      "rate": 0.120000
+    },
+    {
+      "id": 14,
+      "dateAdded": 1608228668797,
+      "dateLastModified": 1608228668797,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Sales Tax",
+      "rate": 0.130000
+    },
+    {
+      "id": 15,
+      "dateAdded": 1608228684307,
+      "dateLastModified": 1608228684307,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Sales Tax  - British Colum",
+      "rate": 0.120000
+    },
+    {
+      "id": 16,
+      "dateAdded": 1608228698823,
+      "dateLastModified": 1608228698823,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Sales Taxes 10%",
+      "rate": 0.100000
+    },
+    {
+      "id": 17,
+      "dateAdded": 1608228723897,
+      "dateLastModified": 1608228825707,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Iowa",
+      "rate": 0.070000
+    },
+    {
+      "id": 18,
+      "dateAdded": 1608228794027,
+      "dateLastModified": 1608228794027,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Iowa",
+      "rate": 0.060000
+    },
+    {
+      "id": 19,
+      "dateAdded": 1608228916650,
+      "dateLastModified": 1608228945070,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Philadelphia, PA",
+      "rate": 0.015552
+    },
+    {
+      "id": 20,
+      "dateAdded": 1608229022590,
+      "dateLastModified": 1608229022590,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Pittsburgh, PA",
+      "rate": 0.070000
+    }
+  ]
+}

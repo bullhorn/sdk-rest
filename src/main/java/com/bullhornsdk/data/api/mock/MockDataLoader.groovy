@@ -494,17 +494,22 @@ public class MockDataLoader {
         entityFiles.put(InvoiceStatementDistributionBatch.class, "paybill/invoice/invoicestatementdistributionbatch-data.txt");
         entityFiles.put(InvoiceStatementLineDistribution.class, "paybill/invoice/invoicestatementlinedistribution-data.txt");
 
+        entityFiles.put(AllSalesTaxRate.class, "paybill/rate/allsalestaxrate-data.txt");
         entityFiles.put(BillMasterTransactionDiscountRate.class, "paybill/rate/billmastertransactiondiscountrate-data.txt");
         entityFiles.put(BillMasterTransactionSalesTaxRate.class, "paybill/rate/billmastertransactionsalestaxrate-data.txt");
         entityFiles.put(BillMasterTransactionSurchargeRate.class, "paybill/rate/billmastertransactionsurchargerate-data.txt");
         entityFiles.put(DiscountRate.class, "paybill/rate/discountrate-data.txt");
         entityFiles.put(DiscountRateVersion.class, "paybill/rate/discountrateversion-data.txt");
+        entityFiles.put(ExternalSalesTaxRate.class, "paybill/rate/externalsalestaxrate-data.txt");
+        entityFiles.put(ExternalSalesTaxRateVersion.class, "paybill/rate/externalsalestaxrateversion-data.txt");
         entityFiles.put(InvoiceStatementLineItemDiscountRate.class, "paybill/rate/invoicestatementlineitemdiscountrate-data.txt");
         entityFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "paybill/rate/invoicestatementlineitemsalestaxrate-data.txt");
         entityFiles.put(InvoiceStatementLineItemSurchargeRate.class, "paybill/rate/invoicestatementlineitemsurchargerate-data.txt");
         entityFiles.put(InvoiceStatementDiscountRate.class, "paybill/rate/invoicestatementdiscountrate-data.txt");
         entityFiles.put(InvoiceStatementSalesTaxRate.class, "paybill/rate/invoicestatementsalestaxrate-data.txt");
         entityFiles.put(InvoiceStatementSurchargeRate.class, "paybill/rate/invoicestatementsurchargerate-data.txt");
+        entityFiles.put(SalesTaxRate.class, "paybill/rate/salestaxrate-data.txt");
+        entityFiles.put(SalesTaxRateVersion.class, "paybill/rate/salestaxrateversion-data.txt");
         entityFiles.put(SurchargeRate.class, "paybill/rate/surchargerate-data.txt");
 
         // TODO add v2 of PAY and Bill Entities data
@@ -751,17 +756,22 @@ public class MockDataLoader {
         entityMetaFiles.put(InvoiceStatementDistributionBatch.class, "meta/paybill/invoice/invoicestatementdistributionbatch-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineDistribution.class, "meta/paybill/invoice/invoicestatementlinedistribution-meta-data.txt");
 
+        entityMetaFiles.put(AllSalesTaxRate.class, "meta/paybill/rate/allsalestaxrate-meta-data.txt");
         entityMetaFiles.put(BillMasterTransactionDiscountRate.class, "meta/paybill/rate/billmastertransactiondiscountrate-meta-data.txt");
         entityMetaFiles.put(BillMasterTransactionSalesTaxRate.class, "meta/paybill/rate/billmastertransactionsalestaxrate-meta-data.txt");
         entityMetaFiles.put(BillMasterTransactionSurchargeRate.class, "meta/paybill/rate/billmastertransactionsurchargerate-meta-data.txt");
         entityMetaFiles.put(DiscountRate.class, "meta/paybill/rate/discountrate-meta-data.txt");
         entityMetaFiles.put(DiscountRateVersion.class, "meta/paybill/rate/discountrateversion-meta-data.txt");
+        entityMetaFiles.put(ExternalSalesTaxRate.class, "meta/paybill/rate/externalsalestaxrate-meta-data.txt");
+        entityMetaFiles.put(ExternalSalesTaxRateVersion.class, "meta/paybill/rate/externalsalestaxrateversion-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineItemDiscountRate.class, "meta/paybill/rate/invoicestatementlineitemdiscountrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineItemSalesTaxRate.class, "meta/paybill/rate/invoicestatementlineitemsalestaxrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementLineItemSurchargeRate.class, "meta/paybill/rate/invoicestatementlineitemsurchargerate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementDiscountRate.class, "meta/paybill/rate/invoicestatementdiscountrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementSalesTaxRate.class, "meta/paybill/rate/invoicestatementsalestaxrate-meta-data.txt");
         entityMetaFiles.put(InvoiceStatementSurchargeRate.class, "meta/paybill/rate/invoicestatementsurchargerate-meta-data.txt");
+        entityMetaFiles.put(SalesTaxRate.class, "meta/paybill/rate/salestaxrate-meta-data.txt");
+        entityMetaFiles.put(SalesTaxRateVersion.class, "meta/paybill/rate/salestaxrateversion-meta-data.txt");
         entityMetaFiles.put(SurchargeRate.class, "meta/paybill/rate/surchargerate-meta-data.txt");
 
         entityMetaFiles.put(BillMasterTransactionDistributionBatch.class, "meta/paybill/billmastertransactiondistributionbatch-meta-data.txt");

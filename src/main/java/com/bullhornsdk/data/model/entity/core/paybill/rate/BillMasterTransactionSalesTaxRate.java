@@ -16,13 +16,14 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "adjustmentSequenceNumber", "baseAmount", "billMasterTransaction", "billMasterTransactionSalesTaxDetail", "currencyUnit",
+@JsonPropertyOrder({"id", "adjustmentSequenceNumber", "allSalesTaxRate", "baseAmount", "billMasterTransaction", "billMasterTransactionSalesTaxDetail", "currencyUnit",
     "dateAdded", "reversalOfTransactionSalesTaxRate", "salesTaxRateVersionID", "taxAmount"
 })
 public class BillMasterTransactionSalesTaxRate extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
 
     private Integer id;
     private Integer adjustmentSequenceNumber;
+    private AllSalesTaxRate allSalesTaxRate;
     private BigDecimal baseAmount;
     private BillMasterTransaction billMasterTransaction;
     private BillMasterTransactionSalesTaxDetail billMasterTransactionSalesTaxDetail;
@@ -53,6 +54,16 @@ public class BillMasterTransactionSalesTaxRate extends AbstractEntity implements
     @JsonProperty("adjustmentSequenceNumber")
     public void setAdjustmentSequenceNumber(Integer adjustmentSequenceNumber) {
         this.adjustmentSequenceNumber = adjustmentSequenceNumber;
+    }
+
+    @JsonProperty("allSalesTaxRate")
+    public AllSalesTaxRate getAllSalesTaxRate() {
+        return allSalesTaxRate;
+    }
+
+    @JsonProperty("allSalesTaxRate")
+    public void setAllSalesTaxRate(AllSalesTaxRate allSalesTaxRate) {
+        this.allSalesTaxRate = allSalesTaxRate;
     }
 
     @JsonProperty("baseAmount")
@@ -140,21 +151,12 @@ public class BillMasterTransactionSalesTaxRate extends AbstractEntity implements
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BillMasterTransactionSalesTaxRate that = (BillMasterTransactionSalesTaxRate) o;
-        return Objects.equals(id, that.id) &&
-            Objects.equals(adjustmentSequenceNumber, that.adjustmentSequenceNumber) &&
-            Objects.equals(baseAmount, that.baseAmount) &&
-            Objects.equals(billMasterTransaction, that.billMasterTransaction) &&
-            Objects.equals(billMasterTransactionSalesTaxDetail, that.billMasterTransactionSalesTaxDetail) &&
-            Objects.equals(currencyUnit, that.currencyUnit) &&
-            Objects.equals(dateAdded, that.dateAdded) &&
-            Objects.equals(reversalOfTransactionSalesTaxRate, that.reversalOfTransactionSalesTaxRate) &&
-            Objects.equals(salesTaxRateVersionID, that.salesTaxRateVersionID) &&
-            Objects.equals(taxAmount, that.taxAmount);
+        return Objects.equals(id, that.id) && Objects.equals(adjustmentSequenceNumber, that.adjustmentSequenceNumber) && Objects.equals(allSalesTaxRate, that.allSalesTaxRate) && Objects.equals(baseAmount, that.baseAmount) && Objects.equals(billMasterTransaction, that.billMasterTransaction) && Objects.equals(billMasterTransactionSalesTaxDetail, that.billMasterTransactionSalesTaxDetail) && Objects.equals(currencyUnit, that.currencyUnit) && Objects.equals(dateAdded, that.dateAdded) && Objects.equals(reversalOfTransactionSalesTaxRate, that.reversalOfTransactionSalesTaxRate) && Objects.equals(salesTaxRateVersionID, that.salesTaxRateVersionID) && Objects.equals(taxAmount, that.taxAmount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, adjustmentSequenceNumber, baseAmount, billMasterTransaction, billMasterTransactionSalesTaxDetail, currencyUnit, dateAdded, reversalOfTransactionSalesTaxRate, salesTaxRateVersionID, taxAmount);
+        return Objects.hash(id, adjustmentSequenceNumber, allSalesTaxRate, baseAmount, billMasterTransaction, billMasterTransactionSalesTaxDetail, currencyUnit, dateAdded, reversalOfTransactionSalesTaxRate, salesTaxRateVersionID, taxAmount);
     }
 
     @Override
@@ -162,6 +164,7 @@ public class BillMasterTransactionSalesTaxRate extends AbstractEntity implements
         return "BillMasterTransactionSalesTaxRate{" +
             "id=" + id +
             ", adjustmentSequenceNumber=" + adjustmentSequenceNumber +
+            ", allSalesTaxRate=" + allSalesTaxRate +
             ", baseAmount=" + baseAmount +
             ", billMasterTransaction=" + billMasterTransaction +
             ", billMasterTransactionSalesTaxDetail=" + billMasterTransactionSalesTaxDetail +

@@ -1,0 +1,106 @@
+{
+  "entity": "ExternalSalesTaxRateVersion",
+  "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/ExternalSalesTaxRateVersion?fields=*",
+  "label": "External Sales Tax Rate Version",
+  "dateLastModified": "1613475506384",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer",
+      "optional": false
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": false,
+      "label": "Date Added",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "dateLastModified",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": false,
+      "label": "Date Last Modified",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "effectiveDate",
+      "type": "SCALAR",
+      "dataType": "Date",
+      "confidential": false,
+      "optional": false,
+      "label": "Effective Date",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "effectiveEndDate",
+      "type": "SCALAR",
+      "dataType": "Date",
+      "confidential": false,
+      "optional": true,
+      "label": "Effective End Date",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "isFirst",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "optional": false,
+      "label": "Is First",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "jurisdictionName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 200,
+      "confidential": false,
+      "optional": false,
+      "label": "Jurisdiction Name",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "rate",
+      "type": "SCALAR",
+      "dataType": "BigDecimal",
+      "confidential": false,
+      "optional": false,
+      "label": "Rate",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    }
+  ]
+}
