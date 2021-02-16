@@ -117,9 +117,19 @@ public class RestUrlFactory {
      *            SearchParams
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
      */
-    public static String assembleIdSearchUrl(String restUrl,
-                                             SearchParams params) {
+    public static String assembleIdSearchUrl(String restUrl, SearchParams params) {
         return restUrl + "search/{entityType}?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
+     * Assemble url for id search request.
+     *
+     * @param params
+     *            SearchParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public static String assembleIdSearchUrlPost(String restUrl, SearchParams params) {
+        return restUrl + "search/{entityType}?BhRestToken={bhRestToken}" + params.getUrlString();
     }
 
     /**
@@ -256,6 +266,17 @@ public class RestUrlFactory {
      */
     public String assembleFastFindUrl(FastFindParams params) {
         return restUrl + "find?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
+     * Assemble url for fastFind request for POST.
+     *
+     * @param params
+     *            SearchParams
+     * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
+     */
+    public String assembleFastFindUrlPost(FastFindParams params) {
+        return restUrl + "find?BhRestToken={bhRestToken}" + params.getUrlString();
     }
 
 	public String assembleUrlForSettings() {

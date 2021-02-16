@@ -157,6 +157,15 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
+    public Map<String, String> getUriVariablesForGetMultiplePost(BullhornEntityInfo entityInfo, Set<String> fieldSet, EntityParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+
+        return uriVariables;
+    }
+
 	/**
 	 * Returns the uri variables needed for an "entity" DELETE
 	 * 
@@ -281,6 +290,20 @@ public class RestUriVariablesFactory {
         uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
         uriVariables.put(ENTITY_TYPE, entityInfo.getName());
         uriVariables.put(QUERY, query);
+
+        return uriVariables;
+    }
+
+    /**
+     * Returns the uri variables needed for a id "search" request
+     */
+    public Map<String, String> getUriVariablesForIdSearchPost(BullhornEntityInfo entityInfo,
+                                                          SearchParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 
         return uriVariables;
     }
@@ -525,21 +548,36 @@ public class RestUriVariablesFactory {
 	}
 
 	/**
-	 * Returns the uri variables needed for a "fastFind" request
-	 *
-	 * @param query
-	 * @param params
-	 * @return all uriVariables needed for the api call
-	 */
-	public Map<String, String> getUriVariablesForFastFind(String query, FastFindParams params) {
+     * Returns the uri variables needed for a "fastFind" request
+     *
+     * @param query
+     * @param params
+     * @return all uriVariables needed for the api call
+     */
+    public Map<String, String> getUriVariablesForFastFind(String query, FastFindParams params) {
 
-		Map<String, String> uriVariables = params.getParameterMap();
+        Map<String, String> uriVariables = params.getParameterMap();
 
-		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
-		uriVariables.put(QUERY, query);
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(QUERY, query);
 
-		return uriVariables;
-	}
+        return uriVariables;
+    }
+
+    /**
+     * Returns the uri variables needed for a "fastFind" request sans query
+     *
+     * @param params
+     * @return all uriVariables needed for the api call
+     */
+    public Map<String, String> getUriVariablesForFastFindPost(FastFindParams params) {
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+
+        return uriVariables;
+    }
 
 	public Map<String, String> getUriVariablesForSettings(Set<String> settingSet) {
 
