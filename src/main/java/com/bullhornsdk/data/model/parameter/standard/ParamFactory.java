@@ -1,16 +1,6 @@
 package com.bullhornsdk.data.model.parameter.standard;
 
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.MetaParams;
-import com.bullhornsdk.data.model.parameter.OptionsParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
+import com.bullhornsdk.data.model.parameter.*;
 
 /**
  * Factory that handles instantiations of RequestParameters for the different api calls.
@@ -62,6 +52,10 @@ public class ParamFactory {
 
     public static OptionsParams optionsParams() {
         return StandardOptionsParams.getInstance();
+    }
+
+    public static SettingsParams settingsParams() {
+        return StandardSettingsParams.getInstance();
     }
 
 }

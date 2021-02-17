@@ -14,6 +14,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.model.parameter.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -75,16 +76,6 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.OptionsParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
@@ -409,7 +400,15 @@ public class StandardBullhornData implements BullhornData {
      */
     @Override
     public Map<String, Object> getSettings(Set<String> settingSet) {
-        return this.handleGetSettingsData(settingSet);
+        return this.handleGetSettingsData(settingSet, ParamFactory.settingsParams());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Map<String, Object> getSettings(Set<String> settingSet, SettingsParams params) {
+        return this.handleGetSettingsData(settingSet, params);
     }
 
     /**
@@ -823,7 +822,12 @@ public class StandardBullhornData implements BullhornData {
 
     @Override
     public Settings getSettingsObject(Set<SettingsFields> fieldsSet){
-        return handleGetSettingsObjectData(fieldsSet);
+        return handleGetSettingsObjectData(fieldsSet, ParamFactory.settingsParams());
+    }
+
+    @Override
+    public Settings getSettingsObject(Set<SettingsFields> fieldsSet, SettingsParams params) {
+        return handleGetSettingsObjectData(fieldsSet, params);
     }
 
     /**
@@ -1302,14 +1306,14 @@ public class StandardBullhornData implements BullhornData {
      * @return the settings
      */
     @SuppressWarnings("unchecked")
-    protected Map<String, Object> handleGetSettingsData(Set<String> settingSet) {
+    protected Map<String, Object> handleGetSettingsData(Set<String> settingSet, SettingsParams params) {
 
         if(settingSet == null || settingSet.size() == 0){
             throw new NotEnoughFieldsSpecifiedException("At least one settings field needs to passed in as an argument.");
         }
 
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSettings(settingSet);
-        String url = restUrlFactory.assembleUrlForSettings();
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSettings(settingSet, params);
+        String url = restUrlFactory.assembleUrlForSettings(params);
 
         Map<String, Object> response = this.performGetRequest(url, Map.class, uriVariables);
 
@@ -1317,14 +1321,14 @@ public class StandardBullhornData implements BullhornData {
 
     }
 
-    protected Settings handleGetSettingsObjectData(Set<SettingsFields> settingSet) {
+    protected Settings handleGetSettingsObjectData(Set<SettingsFields> settingSet, SettingsParams params) {
 
         if(settingSet == null || settingSet.size() == 0){
             throw new NotEnoughFieldsSpecifiedException("At least one settings field needs to passed in as an argument.");
         }
         Set<String> settingStringSet = settingSet.stream().map(SettingsFields::getValue).collect(Collectors.toSet());
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSettings(settingStringSet);
-        String url = restUrlFactory.assembleUrlForSettings();
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForSettings(settingStringSet, params);
+        String url = restUrlFactory.assembleUrlForSettings(params);
 
         Settings response = this.performGetRequest(url, Settings.class, uriVariables);
 

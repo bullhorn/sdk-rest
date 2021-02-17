@@ -12,6 +12,7 @@ import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.EntityEventType
 import com.bullhornsdk.data.model.enums.EventType
 import com.bullhornsdk.data.model.enums.MetaParameter
+import com.bullhornsdk.data.model.enums.SettingsFields
 import com.bullhornsdk.data.model.file.FileMeta
 import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams
@@ -214,7 +215,17 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
+    Map<String, Object> getSettings(Set<String> settingSet, SettingsParams params) {
+        return mockDataHandler.getSettingsData(settingSet);
+    }
+
+    @Override
     public Settings getSettingsObject(java.util.Set settingSet) {
+        return mockDataHandler.getSettingsObjectData(settingSet);
+    }
+
+    @Override
+    Settings getSettingsObject(Set<SettingsFields> fieldsSet, SettingsParams params) {
         return mockDataHandler.getSettingsObjectData(settingSet);
     }
 

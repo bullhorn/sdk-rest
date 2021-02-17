@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.bullhornsdk.data.model.parameter.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,16 +20,6 @@ import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.EntityParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.OptionsParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 
 public class RestUriVariablesFactory {
@@ -541,9 +532,9 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
-	public Map<String, String> getUriVariablesForSettings(Set<String> settingSet) {
+	public Map<String, String> getUriVariablesForSettings(Set<String> settingSet, SettingsParams params) {
 
-		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
+		Map<String, String> uriVariables = params.getParameterMap();
 
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
 
