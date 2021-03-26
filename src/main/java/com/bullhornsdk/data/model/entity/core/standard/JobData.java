@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
@@ -30,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-public abstract class JobData extends CustomFieldsC implements BullhornEntity {
+public abstract class JobData extends CustomFieldsD implements BullhornEntity {
 
 	private BigDecimal luceneScore;
 
