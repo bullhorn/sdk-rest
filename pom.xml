@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.4.24</version>
+    <version>1.4.25</version>
 
     <packaging>jar</packaging>
 
