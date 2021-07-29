@@ -20,7 +20,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble url for entity request.
-     * 
+     *
      * @param params
      *            EntityParams
      * @return the full url to use in the api call with {fieldName}-type placeholders for the uriVariables
@@ -32,7 +32,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble url for entity request DELETE
-     * 
+     *
      * @return
      */
     public String assembleEntityDeleteUrl() {
@@ -41,7 +41,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble url for entity request POST/Update
-     * 
+     *
      * @return
      */
     public String assembleEntityUrlForUpdate() {
@@ -50,7 +50,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble url for entity PUT request. These are insert requests.
-     * 
+     *
      * @return
      */
     public String assembleEntityUrlForInsert() {
@@ -59,7 +59,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble url for query request.
-     * 
+     *
      * @param params
      *            QueryParams
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
@@ -81,7 +81,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble url for search request.
-     * 
+     *
      * @param params
      *            SearchParams
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
@@ -115,7 +115,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble the url for a meta request
-     * 
+     *
      * @return
      */
     public String assembleEntityUrlForMeta(Integer privateLabelId) {
@@ -128,7 +128,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble the url for a parseToCandidate request
-     * 
+     *
      * @param params
      * @return
      */
@@ -137,8 +137,18 @@ public class RestUrlFactory {
     }
 
     /**
+     * Assemble the url for a services/ParseAs/newEntity request
+     *
+     * @param params
+     * @return
+     */
+    public String assembleParseResumeAsNewEntityUrl(ResumeAsNewEntityParams params) {
+        return restUrl + "services/ParseAs/newEntity?format={format}&BhRestToken={bhRestToken}" + params.getUrlString();
+    }
+
+    /**
      * Assemble the url for a parseToCandidateViaJson request
-     * 
+     *
      * @param params
      * @return
      */
@@ -158,7 +168,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble the url for a get file request
-     * 
+     *
      * @return
      */
 
@@ -168,7 +178,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble the url for a get entityFiles request
-     * 
+     *
      * @return
      */
     public String assembleGetEntityMetaFilesUrl() {
@@ -199,7 +209,7 @@ public class RestUrlFactory {
 
     /**
      * Assemble the url for the delete file request
-     * 
+     *
      * @return
      */
     public String assembleDeleteFileUrl() {
@@ -229,7 +239,7 @@ public class RestUrlFactory {
 
     /**
      * Assembles the url for the get corp notes request
-     * 
+     *
      * @param params
      * @return
      */

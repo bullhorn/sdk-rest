@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.bullhornsdk.data.model.parameter.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,6 +19,18 @@ import com.bullhornsdk.data.model.enums.EntityEventType;
 import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.file.FileMeta;
+import com.bullhornsdk.data.model.parameter.AssociationParams;
+import com.bullhornsdk.data.model.parameter.CorpNotesParams;
+import com.bullhornsdk.data.model.parameter.EntityParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
+import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
+import com.bullhornsdk.data.model.parameter.QueryParams;
+import com.bullhornsdk.data.model.parameter.ResumeAsNewEntityParams;
+import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
+import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
+import com.bullhornsdk.data.model.parameter.SearchParams;
+import com.bullhornsdk.data.model.parameter.SettingsParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 
 public class RestUriVariablesFactory {
@@ -64,7 +75,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for a meta call.
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param metaParameter
 	 * @param fieldSet
@@ -118,7 +129,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for an "entity" GET
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param id
 	 * @param fieldSet
@@ -133,7 +144,7 @@ public class RestUriVariablesFactory {
 
 		Map<String, String> uriVariables = params.getParameterMap();
 		this.addCommonUriVariables(fieldSet, entityInfo, uriVariables);
-		
+
 		uriVariables.put(ID, id == null ? "" : id.toString());
 		return uriVariables;
 	}
@@ -150,7 +161,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for an "entity" DELETE
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param id
 	 * @return all uriVariables needed for the api call
@@ -164,7 +175,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for a "entity" POST request
-	 * 
+	 *
 	 * @param entityInfo
 	 * @param id
 	 * @return all uriVariables needed for the api call
@@ -178,7 +189,7 @@ public class RestUriVariablesFactory {
 
 	/**
 	 * Returns the uri variables needed for the "entity" PUT request.
-	 * 
+	 *
 	 * @param entityInfo
 	 * @return
 	 */
@@ -296,6 +307,27 @@ public class RestUriVariablesFactory {
 		uriVariables.put(FORMAT, restFileManager.getFileParam(resume));
 		return uriVariables;
 	}
+
+    /**
+     * Returns the uri variables needed for a resume file request
+     *
+     * @param params
+     * @param resume
+     * @return
+     */
+    public Map<String, String> getUriVariablesForResumeAsNewCandidate(ResumeAsNewEntityParams params, MultipartFile resume) {
+
+        if (params == null) {
+            params = ParamFactory.resumeAsNewEntityParams();
+        }
+
+        Map<String, String> uriVariables = params.getParameterMap();
+
+        String bhRestToken = bullhornApiRest.getBhRestToken();
+        uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(FORMAT, restFileManager.getFileParam(resume));
+        return uriVariables;
+    }
 
 	/**
 	 * Returns the uri variables needed for a resume text request
