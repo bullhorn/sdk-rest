@@ -74,7 +74,7 @@ import java.util.Objects;
 		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "linkedinProfileName", "name", "notes", "numEmployees", "numOffices",
 		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s", "locations" })
+        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName" })
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
 		SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -154,7 +154,15 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @Size(max = 200)
     private String linkedinProfileName;
 
-	@JsonIgnore
+    @JsonIgnore
+    @Size(max = 200)
+    private String twitterHandle;
+
+    @JsonIgnore
+    @Size(max = 200)
+    private String facebookProfileName;
+
+    @JsonIgnore
 	@Size(max = 100)
 	private String name;
 
@@ -275,12 +283,12 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	public ClientCorporation() {
 		super();
 	}
-	
+
 	public ClientCorporation(Integer id) {
 		super();
 		this.id = id;
 	}
-	
+
 	@JsonProperty("id")
 	public Integer getId() {
 		return id;
@@ -554,6 +562,26 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @JsonIgnore
     public void setLinkedinProfileName(String linkedinProfileName) {
         this.linkedinProfileName = linkedinProfileName;
+    }
+
+    @JsonProperty("twitterHandle")
+    public String getTwitterHandle() {
+        return twitterHandle;
+    }
+
+    @JsonIgnore
+    public void setTwitterHandle(String twitterHandle) {
+        this.twitterHandle = twitterHandle;
+    }
+
+    @JsonProperty("facebookProfileName")
+    public String getFacebookProfileName() {
+        return facebookProfileName;
+    }
+
+    @JsonIgnore
+    public void setFacebookProfileName(String facebookProfileName) {
+        this.facebookProfileName = facebookProfileName;
     }
 
 	@JsonProperty("name")
@@ -1192,6 +1220,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
             Objects.equals(locations, that.locations) &&
             Objects.equals(leads, that.leads) &&
             Objects.equals(linkedinProfileName, that.linkedinProfileName) &&
+            Objects.equals(twitterHandle, that.twitterHandle) &&
+            Objects.equals(facebookProfileName, that.facebookProfileName) &&
             Objects.equals(name, that.name) &&
             Objects.equals(notes, that.notes) &&
             Objects.equals(numEmployees, that.numEmployees) &&
@@ -1249,7 +1279,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, address, annualRevenue, billingAddress, billingContact, billingFrequency, billingPhone, branch, businessSectorList, childClientCorporations, clientContacts, companyDescription, companyURL, competitors, culture, dateAdded, dateFounded, dateLastModified, department, externalID, fax, feeArrangement, funding, industryList, invoiceFormat, locations, leads, linkedinProfileName, name, notes, numEmployees, numOffices, ownership, owners, parentClientCorporation, phone, revenue, status, taxRate, tickerSymbol, trackTitle, workWeekStart, requirements, certificationGroups, certifications, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject11s, customObject12s, customObject13s, customObject14s, customObject15s, customObject16s, customObject17s, customObject18s, customObject19s, customObject20s, customObject21s, customObject22s, customObject23s, customObject24s, customObject25s, customObject26s, customObject27s, customObject28s, customObject29s, customObject30s, customObject31s, customObject32s, customObject33s, customObject34s, customObject35s);
+        return Objects.hash(super.hashCode(), id, address, annualRevenue, billingAddress, billingContact, billingFrequency, billingPhone, branch, businessSectorList, childClientCorporations, clientContacts, companyDescription, companyURL, competitors, culture, dateAdded, dateFounded, dateLastModified, department, externalID, fax, feeArrangement, funding, industryList, invoiceFormat, locations, leads, linkedinProfileName, twitterHandle, facebookProfileName, name, notes, numEmployees, numOffices, ownership, owners, parentClientCorporation, phone, revenue, status, taxRate, tickerSymbol, trackTitle, workWeekStart, requirements, certificationGroups, certifications, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject11s, customObject12s, customObject13s, customObject14s, customObject15s, customObject16s, customObject17s, customObject18s, customObject19s, customObject20s, customObject21s, customObject22s, customObject23s, customObject24s, customObject25s, customObject26s, customObject27s, customObject28s, customObject29s, customObject30s, customObject31s, customObject32s, customObject33s, customObject34s, customObject35s);
     }
 
     @Override
@@ -1282,6 +1312,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", invoiceFormat='").append(invoiceFormat).append('\'');
         sb.append(", leads=").append(leads);
         sb.append(", linkedinProfileName='").append(linkedinProfileName).append('\'');
+        sb.append(", twitterHandle='").append(twitterHandle).append('\'');
+        sb.append(", facebookProfileName='").append(facebookProfileName).append('\'');
         sb.append(", name='").append(name).append('\'');
         sb.append(", notes='").append(notes).append('\'');
         sb.append(", numEmployees=").append(numEmployees);
