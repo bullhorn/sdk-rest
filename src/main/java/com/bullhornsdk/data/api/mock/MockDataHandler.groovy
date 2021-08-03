@@ -10,6 +10,8 @@ import com.bullhornsdk.data.model.entity.embedded.OneToMany
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.MetaParameter
 import com.bullhornsdk.data.model.enums.SettingsFields
+import com.bullhornsdk.data.model.file.FileMeta
+import com.bullhornsdk.data.model.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory
 import com.bullhornsdk.data.model.response.crud.CreateResponse
@@ -24,37 +26,38 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsRespo
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.file.FileApiResponse
 import com.bullhornsdk.data.model.response.file.FileContent
-import com.bullhornsdk.data.model.file.FileMeta
 import com.bullhornsdk.data.model.response.file.FileWrapper
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent
-import com.bullhornsdk.data.model.file.standard.StandardFileMeta
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.model.response.list.StandardListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
+import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume
+import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResumeAsEntity
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.lang3.StringUtils
 import org.apache.log4j.Logger
 import org.codehaus.groovy.runtime.NullObject
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
-import java.io.File as JavaFile
 
 import java.beans.BeanInfo
 import java.beans.Introspector
 import java.beans.PropertyDescriptor
+import java.io.File as JavaFile
+
 /**
  * This class is stand in for the actual BH Rest api. It tries to mimic the way the Rest apis work.
- * 
+ *
  * A map (restEntityMap) can be seen as the db containing all records. This map is populated from text files containing json, see
  * {@link MockDataLoader} for this.
- * 
+ *
  * @author Magnus Fiore Palm
- * 
+ *
  */
 
 public class MockDataHandler {
@@ -97,7 +100,7 @@ public class MockDataHandler {
 
 	/**
 	 * Returns a copy of the entity stored in restEntityMap.
-	 * 
+	 *
 	 * @param type
 	 * @param id
 	 * @return
@@ -140,7 +143,7 @@ public class MockDataHandler {
 		wrapper.setStart(0);
 		return wrapper;
 	}
-	
+
 	private <T extends BullhornEntity> T getEntityFromMap(Class<T> type, Integer id){
 		T entity = null;
 		if(id != null){
@@ -152,9 +155,9 @@ public class MockDataHandler {
 
 	/**
 	 * Mimics an insert by adding the passed in entity to the restEntityMap.
-	 * 
+	 *
 	 * The id for the new entity will be the previously highest id + 1.
-	 * 
+	 *
 	 * @param entity
 	 * @return
 	 */
@@ -172,19 +175,19 @@ public class MockDataHandler {
 		return (C) response;
 	}
 
-	
+
 	public <C extends CrudResponse, T extends DeleteEntity> C softDeleteEntity(Class<T> type, Integer id) {
 		return deleteEntity(type,id);
 	}
-	
+
 	public <C extends CrudResponse, T extends DeleteEntity> C hardDeleteEntity(Class<T> type, Integer id) {
 		return deleteEntity(type,id);
 	}
-	
-	
+
+
 	/**
 	 * Removes the entity with the id and type from the restEntityMap.
-	 * 
+	 *
 	 * @param type
 	 * @param id
 	 * @return
@@ -213,7 +216,7 @@ public class MockDataHandler {
 
 	/**
 	 * Updates the entity.
-	 * 
+	 *
 	 * @param entity
 	 * @return
 	 */
@@ -222,7 +225,7 @@ public class MockDataHandler {
 		CrudResponse response = new UpdateResponse();
 		response.setChangedEntityId(entity.getId());
 		response.setChangedEntityType(entity.getClass().getSimpleName().toUpperCase());
-		
+
 		T existingEntity = currentValues.get(entity.getId());
 		if(existingEntity == null){
 			throw new RestApiException("No entity of type "+entity.getClass().getSimpleName()+" with id "+entity.getId()+" exists.");
@@ -258,7 +261,7 @@ public class MockDataHandler {
 			entity ->
 			createNewInstanceWithOnlySpecifiedFieldsPopulated(entity,verifiedAndModifiedFields)
 		}
-		
+
 		List<T> entitiesOverCountRemoved = handleCount(filteredValuesWithFieldsSet, params.getCount());
 		ListWrapper<T> wrapper = new StandardListWrapper<T>(entitiesOverCountRemoved);
 		wrapper.setTotal(filteredValuesWithFieldsSet.size());
@@ -285,12 +288,12 @@ public class MockDataHandler {
 		FieldChangeListWrapper wrapper = new FieldChangeListWrapper(result);
 		return wrapper;
 	}
-	
+
 	public <T extends QueryEntity> List<T> queryForList(Class<T> type, String where, Set<String> fieldSet, QueryParams params) {
 
 		return query(type, where, fieldSet, params).getData();
 	}
-	
+
 	public <T extends SearchEntity> List<T> searchForList(Class<T> type, String query, Set<String> fieldSet, SearchParams params) {
 		return search(type,query,fieldSet,params).getData();
 	}
@@ -355,7 +358,7 @@ public class MockDataHandler {
 	/**
 	 * Verifies that every fieldName in the fieldSet are correct fields for the BH Search api call. The valid search fields can be found
 	 * in resources/testdata/rest/searchfields/*
-	 * 
+	 *
 	 * @param fieldSet the fields that sh
 	 * @param type
 	 */
@@ -366,7 +369,7 @@ public class MockDataHandler {
 		Set<String> splitByAndOr = splitStringOnAND_OR(noParentheses);
 		Set<String> fieldsFromQuery = splitEachStringOnColon(splitByAndOr);
 		Set<String> fieldsFromQueryWithoutMinusSigns = removeMinusSigns(fieldsFromQuery);
-		
+
 		List<MockSearchField> validSearchFields = searchFieldsMap.get(type);
 
 		fieldsFromQueryWithoutMinusSigns.each {
@@ -384,13 +387,13 @@ public class MockDataHandler {
 		}
 	}
 
-	
+
 	public Set<String> removeMinusSigns(Set<String> values){
 		return values.collect {
 			StringUtils.replace(it, "-", "");
 		}  as LinkedHashSet<String>;
 	}
-	
+
 	public String removeParentheses(String text){
 		return text.replace("(", "").replace(")", "");
 	}
@@ -437,7 +440,7 @@ public class MockDataHandler {
 	}
 
 	/**
-	 * Returns the settings data. 
+	 * Returns the settings data.
 	 * @param settingSet
 	 * @return
 	 */
@@ -494,6 +497,11 @@ public class MockDataHandler {
 		return parsedResume;
 	}
 
+
+    public ParsedResumeAsEntity parseResumeAsNewCandidate(MultipartFile resume, ResumeFileParseParams params) {
+        ParsedResumeAsEntity parsedResume = new StandardParsedResumeAsEntity();
+        return parsedResume;
+    }
 
 	public ParsedResume saveParsedResumeDataToBullhorn(ParsedResume parsedResume) {
 		CrudResponse candidateInsert = this.insertEntity(parsedResume.getCandidate());
@@ -602,11 +610,11 @@ public class MockDataHandler {
 
 	public FileWrapper addResumeFileAndPopulateCandidateDescription(Integer candidateId, JavaFile file, String candidateDescription,
 	String externalId, FileParams params) {
-	     
+
 		 Candidate candidate = findEntity(Candidate.class, candidateId, [ "id" ] as Set);
 		 candidate.setDescription(candidateDescription);
 		 updateEntity(candidate);
-		 
+
 		String fileName = file.getName();
 		return createMockFileWrapper(fileName);
 	}
@@ -623,25 +631,25 @@ public class MockDataHandler {
 
 
 
-	
+
 	public <C extends CrudResponse, T extends AssociationEntity> C associateWithEntity(Class<T> type, Integer entityId,
 	AssociationField<T, ? extends BullhornEntity> associationName, Set<Integer> associationIds) {
 
 		return new CreateResponse([changedEntityId:entityId,changedEntityType:type.getSimpleName(),changeType:"INSERT"]);
 	}
 
-	
+
 	public <C extends CrudResponse, T extends AssociationEntity> C disassociateWithEntity(Class<T> type, Integer entityId,
 	AssociationField<T, ? extends BullhornEntity> associationName, Set<Integer> associationIds) {
 		return new DeleteResponse([changedEntityId:entityId,changedEntityType:type.getSimpleName(),changeType:"DELETE"]);
 	}
 
-	
+
 	public <T extends AssociationEntity, E extends BullhornEntity> List<E> getAssociation(Class<T> type, Set<Integer> entityIds,
 	AssociationField<T, E> associationName, Set<String> fieldSet, AssociationParams params) {
-	
+
 		return getAllEntitiesOfType(associationName.getAssociationType());
-		
+
 	}
 
 	public <T extends AssociationEntity, E extends BullhornEntity> ListWrapper<E> getAllAssociations(Class<T> type, Set<Integer> entityIds,
@@ -651,7 +659,7 @@ public class MockDataHandler {
 
 
 
-	
+
 	public List<Note> getAllCorpNotes(Integer clientCorporationID, Set<String> fieldSet, CorpNotesParams params) {
 
 		Set<String> verifiedAndModifiedFields = checkAndModifyFields(fieldSet,Note.class);
@@ -666,27 +674,27 @@ public class MockDataHandler {
 		return filteredValuesWithFieldsSet;
 	}
 
-	
+
 	public <C extends CrudResponse> C addNoteAndAssociateWithEntity(Note note) {
 		return this.insertEntity(note);
 	}
-	
-	
-	
+
+
+
 
 
 	/**
 	 * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	 * 
-	 * HELPER METHODS STARTS HERE		
-	 * 
+	 *
+	 * HELPER METHODS STARTS HERE
+	 *
 	 * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
 	 */
-	
-	
+
+
 	private <T extends BullhornEntity> List<T> getAllEntitiesOfType(Class<T> type){
 		Map<Integer, T> currentValues = (Map<Integer, Note>) restEntityMap.get(type);
-		
+
 		return currentValues.values().findAll(){
 			it
 		};
@@ -752,7 +760,7 @@ public class MockDataHandler {
 				}else {
 					query(targetProperty,value)
 				}
-				
+
 			}
 		}
 
@@ -878,7 +886,7 @@ public class MockDataHandler {
 		def queryByIn = {
 			field1,value1 ->
 			boolean containsValue = false;
-			if(value1 instanceof String){  
+			if(value1 instanceof String){
 			 containsValue = value1.split("\\,").contains(field1);
 			}else {
 			   containsValue = (field1 == value1);
@@ -886,7 +894,7 @@ public class MockDataHandler {
 			//log.info("field1 = "+field1+" value1 = "+value1+" containsValue = "+containsValue);
 			return containsValue;
 		};
-	
+
 		def queryLike = {
 			field1,value1 ->
 			boolean containsValue = false;
@@ -913,7 +921,7 @@ public class MockDataHandler {
 	 * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
 	 * Helper methods for field handling
 	 * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
-	 * 
+	 *
 	 */
 
 
@@ -955,15 +963,15 @@ public class MockDataHandler {
 		Set<String> modifiedFields = new LinkedHashSet<String>();
 
 		squareBracketsFilter.each {
-			
+
 			it = setDefaultFieldsForNestedObjects(it);
 			handleNestedPath(it,modifiedFields);
 		}
 
 		return modifiedFields;
 	}
-	
-	
+
+
 	private String setDefaultFieldsForNestedObjects(String field){
 		if(['sendingUser','candidateReference','clientContactReference','clientContact','owner','candidate','approvingClientContact','backupApprovingClientContact','billingClientContact','statementClientContact'].contains(field)){
 			return field+'(id,firstName,lastName)';
@@ -1060,8 +1068,8 @@ public class MockDataHandler {
 	/**
 	 * Merges values from the fromEntity to a brand new entity of the same type. Only fields in the fieldsSet will be populated on the new entity.
 	 *
-	 * Nested RestEntities (such as placement.candidate are supported). 
-	 * 
+	 * Nested RestEntities (such as placement.candidate are supported).
+	 *
 	 * {@link OneToMany} nested objects are partially supported. The entire object will be set from the "from" entity
 	 * but will not take the fields into account on the OneToMany.data entities.
 	 *
@@ -1077,9 +1085,9 @@ public class MockDataHandler {
 		}
 
 		M toEntity = fromEntity.getClass().newInstance();
-		
+
 		M copyOfFromEntity = KryoObjectCopyHelper.copy(fromEntity);
-		
+
 		for(String fullPath: fields){
 			// Removes spaces in order to find properties
 			fullPath = fullPath.replaceAll(" ", "");
@@ -1133,7 +1141,7 @@ public class MockDataHandler {
 		}else if(fromProperty == null || fromProperty instanceof NullObject){
 			log.debug("fromProperty is null, no need to set the toProperty then. ");
 		}else if(parentPropertyIsOneToMany(fromProperty,toProperty,path)){
-			//All fields on the OneToMany are set under propertyIsOneToMany. 
+			//All fields on the OneToMany are set under propertyIsOneToMany.
 		    //Field selection for OneToMany is not currently supported.
 		    log.debug("parent is OneToMany: "+path);
 		}else if(propertyIsOneToMany(fromProperty,toProperty,path)){
@@ -1147,8 +1155,8 @@ public class MockDataHandler {
 			toProperty?."${path}" = fromProperty?."${path}";
 		}
 	}
-	
-	
+
+
 	private <M> boolean propertyIsSimpleType(M fromProperty,M toProperty,String path){
 		if(fromProperty?."${path}" instanceof BullhornEntity){
 			return false;
@@ -1162,23 +1170,23 @@ public class MockDataHandler {
 		}
 		return false;
 	}
-	
+
 	private <M> boolean propertyIsOneToMany(M fromProperty,M toProperty,String path){
-	
+
 		if(fromProperty?."${path}" instanceof OneToMany && toProperty?."${path}" == null){
 			return true;
 	     }
-		
+
 		return false;
 	}
-	
+
 	private <M> boolean parentPropertyIsOneToMany(M fromProperty,M toProperty,String path){
 		if(fromProperty instanceof OneToMany){
 			return true;
 		}
 		return false;
 	}
-	
+
 	private boolean nestedPath(Set fullPropertyPath){
 		if(fullPropertyPath.size() > 1){
 			return true;

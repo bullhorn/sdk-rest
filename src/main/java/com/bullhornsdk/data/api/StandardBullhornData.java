@@ -118,6 +118,7 @@ import com.bullhornsdk.data.model.response.list.StandardListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume;
+import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResumeAsEntity;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse;
@@ -578,7 +579,7 @@ public class StandardBullhornData implements BullhornData {
 
         MultiValueMap<String, Object> multiValueMap = addResumeToMultiValueMap(resume);
 
-        ParsedResumeAsEntity parsedResumeAsEntity = postResume(url, multiValueMap, ParsedResumeAsEntity.class, uriVariables, getMultipartHeadersForResumeParse());
+        ParsedResumeAsEntity parsedResumeAsEntity = putResume(url, multiValueMap, StandardParsedResumeAsEntity.class, uriVariables, getMultipartHeadersForResumeParse());
 
         restFileManager.deleteTempResume(multiValueMap);
 
@@ -2171,8 +2172,18 @@ public class StandardBullhornData implements BullhornData {
         }
     }
 
-    protected <T> T postResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
+    protected <T> T putResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
+        if (headers == null) {
+            headers = new HttpHeaders();
+        }
 
+        HttpEntity<Object> requestEntity = new HttpEntity<Object>(requestPayLoad, headers);
+
+        ResponseEntity<T> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, returnType, uriVariables);
+        return responseEntity.getBody();
+    }
+
+    protected <T> T postResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
         if (headers == null) {
             headers = new HttpHeaders();
         }
@@ -2181,7 +2192,6 @@ public class StandardBullhornData implements BullhornData {
 
         ResponseEntity<T> responseEntity = restTemplate.exchange(url, HttpMethod.POST, requestEntity, returnType, uriVariables);
         return responseEntity.getBody();
-
     }
 
     protected HttpHeaders getMultipartHeadersForFileAttachement(String fileName) {
