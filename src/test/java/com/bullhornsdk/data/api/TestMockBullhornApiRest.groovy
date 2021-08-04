@@ -1,8 +1,11 @@
-package com.bullhornsdk.data.api;
+package com.bullhornsdk.data.api
+
+import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity;
 
 import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertFalse
 import static org.junit.Assert.assertNotNull
+import static org.junit.Assert.assertNull
 import static org.junit.Assert.assertTrue
 
 import org.apache.commons.io.FileUtils
@@ -82,13 +85,13 @@ public class TestMockBullhornApiRest extends BaseTest {
 	@Test(expected=RestApiException)
 	public void testFindEntityFail() {
 		JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB, [ "id" ] as Set);
-		
+
 	}
 
 	@Test(expected=RestApiException)
 	public void testFindEntityFailWithFields() {
 		JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB,null);
-		
+
 	}
 
 	@Test
@@ -107,7 +110,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		assert job.getClientContact().getEmail() == 'testemail@test.com';
 		assert job.getClientContact().getLastName() == null;
 	}
-	
+
 	@Test
 	public void testFindEntityWithNestedEntity_noFieldsSpecifiedOnNestedEntity_job() {
 		JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID,[
@@ -123,7 +126,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		assert job.getClientContact().getLastName() == 'Manager';
 		assert job.getClientContact().getEmail() == null;
 	}
-	
+
 	@Test
 	public void testFindEntityWithNestedEntity_noFieldsSpecifiedOnNestedEntity_candidate() {
 		Candidate candidate = mockBullhornApiRest.findEntity(Candidate.class, CANDIDATE_ID,[
@@ -161,7 +164,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 
 		assert jobs.size() == 10;
 	}
-	
+
 	@Test
 	public void testQueryForList2() {
 
@@ -229,7 +232,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		assert jobs.getData().size() == 10;
 		assert jobs.getCount() == 10;
 	}
-	
+
 	@Test
 	public void testQuery2() {
 		QueryParams params = ParamFactory.queryParams();
@@ -252,7 +255,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 		assert jobs.getData().size() == 5;
 		assert jobs.getCount() == 5;
 	}
-	
+
 	@Test
 	public void testQueryForAllRecords1() {
 		QueryParams params = ParamFactory.queryParams();
@@ -288,7 +291,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 
 		assert jobs.size() == 20;
 	}
-	
+
 	@Test
 	public void testSearchForList2() {
 		SearchParams params = ParamFactory.searchParams();
@@ -317,9 +320,9 @@ public class TestMockBullhornApiRest extends BaseTest {
 		assert jobs.getData().size() == 20;
 		assert jobs.getCount() == 20;
 	}
-	
-	
-	
+
+
+
 	@Test
 	public void testSearchForAllRecords() {
 		SearchParams params = ParamFactory.searchParams();
@@ -351,7 +354,7 @@ public class TestMockBullhornApiRest extends BaseTest {
 
 		assertEquals(updatedEntity, preUpdateEntity);
 	}
-	
+
 	@Test(expected=RestApiException)
 	public void testGenericUpdateFail() {
 		String newStatus = "STABLE";
@@ -401,8 +404,8 @@ public class TestMockBullhornApiRest extends BaseTest {
 
 		assert jobs.isEmpty();
 	}
-	
-	
+
+
 	@Test(expected=RestApiException)
 	public void testDeleteEntityFail() {
 		mockBullhornApiRest.deleteEntity(JobOrder.class, NON_EXISTING_JOB);
@@ -452,6 +455,13 @@ public class TestMockBullhornApiRest extends BaseTest {
 		ParsedResume parsedResume = mockBullhornApiRest.parseResumeText(resumeText, ParamFactory.resumeTextParseParams());
 		assertParsedResume(parsedResume);
 	}
+
+    @Test
+    public void testParseResumeAsNewCandidateFile() {
+        MultipartFile resume = getResume();
+        ParsedResumeAsEntity parsedResumeAsEntity = mockBullhornApiRest.parseResumeAsNewCandidate(resume, ParamFactory.resumeAsNewEntityParams());
+        assertParsedResumeAsEntity(parsedResumeAsEntity);
+    }
 
 	@Test
 	public void testSaveParsedResumeDataToBullhorn() {
@@ -622,6 +632,16 @@ public class TestMockBullhornApiRest extends BaseTest {
 		assertNotNull("ParsedResume.candidateWorkHistory is null", parsedResume.getCandidateWorkHistory());
 		assertNotNull("ParsedResume.skillList is null", parsedResume.getSkillList());
 	}
+
+    private void assertParsedResumeAsEntity(ParsedResumeAsEntity parsedResumeAsEntity) {
+        assertNotNull("ParsedResumeAsEntity is null", parsedResumeAsEntity);
+        assertEquals("ParsedResumeAsEntity.entityName not equal to Candidate", "Candidate", parsedResumeAsEntity.getEntityName());
+        assertEquals("ParsedResumeAsEntity.entityId not equal to 1", 1, parsedResumeAsEntity.getEntityId());
+        assertTrue("ParsedResumeAsEntity.isSuccess is not true", parsedResumeAsEntity.getIsSuccess());
+        assertFalse("ParsedResumeAsEntity.isDuplicate is not false", parsedResumeAsEntity.getIsDuplicate());
+        assertNull("ParsedResumeAsEntity.errorMessage is not null ", parsedResumeAsEntity.getErrorMessage());
+        assertNull("ParsedResumeAsEntity.duplicateEntityIds is not null", parsedResumeAsEntity.getDuplicateEntityIds());
+    }
 
 	private void assertFileWrapperIncludingFileName(FileWrapper fileWrapper) {
 		assertNotNull("fileWrapper is null", fileWrapper);

@@ -49,7 +49,6 @@ import java.beans.BeanInfo
 import java.beans.Introspector
 import java.beans.PropertyDescriptor
 import java.io.File as JavaFile
-
 /**
  * This class is stand in for the actual BH Rest api. It tries to mimic the way the Rest apis work.
  *
@@ -498,8 +497,14 @@ public class MockDataHandler {
 	}
 
 
-    public ParsedResumeAsEntity parseResumeAsNewCandidate(MultipartFile resume, ResumeFileParseParams params) {
+    public ParsedResumeAsEntity parseResumeAsNewCandidate(MultipartFile resume, ResumeAsNewEntityParams params) {
         ParsedResumeAsEntity parsedResume = new StandardParsedResumeAsEntity();
+        parsedResume.setEntityName("Candidate");
+        parsedResume.setEntityId(1);
+        parsedResume.setIsSuccess(true);
+        parsedResume.setIsDuplicate(false);
+        parsedResume.setDuplicateEntityIds(null);
+        parsedResume.setErrorMessage(null);
         return parsedResume;
     }
 
