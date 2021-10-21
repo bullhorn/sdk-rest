@@ -1955,7 +1955,7 @@ public class StandardBullhornData implements BullhornData {
      */
     protected PropertyOptionsListWrapper handleGetOptions(Class<? extends BullhornEntity> type, OptionsParams params) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForOptions(BullhornEntityInfo.getTypesRestEntityName(type), params);
-        String url = restUrlFactory.assembleOptionsUrl(params);
+        String url = restUrlFactory.assembleOptionsUrlWithoutOptionIds(params);
 
         String jsonString = this.performGetRequest(url, String.class, uriVariables);
 
