@@ -266,4 +266,8 @@ public class RestUrlFactory {
         return restUrl + "options/{entityType}/{optionsIds}?BhRestToken={bhRestToken}"+ params.getUrlString();
     }
 
+    public String assembleOptionsUrlWithoutOptionIds(OptionsParams params) {
+        return restUrl + "options/{entityType}?BhRestToken={bhRestToken}"+ params.getUrlString();
+    }
+
 }
