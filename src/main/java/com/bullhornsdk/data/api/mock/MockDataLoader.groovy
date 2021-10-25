@@ -454,6 +454,7 @@ public class MockDataLoader {
         entityFiles.put(Opportunity.class, "opportunity-data.txt");
         entityFiles.put(Person.class, "person-data.txt");
         entityFiles.put(Placement.class, "placement-data.txt");
+        entityFiles.put(DocumentDataFlowback.class, "documentdataflowback-data.txt");
         entityFiles.put(PlacementCertification.class, "placementcertification-data.txt");
         entityFiles.put(PlacementChangeRequest.class, "placementchangerequest-data.txt");
         entityFiles.put(PlacementCommission.class, "placementcommission-data.txt");
@@ -688,6 +689,7 @@ public class MockDataLoader {
         entityMetaFiles.put(Opportunity.class, "meta/opportunity-meta-data.txt");
         entityMetaFiles.put(Person.class, "meta/person-meta-data.txt");
         entityMetaFiles.put(Placement.class, "meta/placement-meta-data.txt");
+        entityMetaFiles.put(DocumentDataFlowback.class, "meta/documentdataflowback-meta-data.txt");
         entityMetaFiles.put(PlacementCertification.class, "meta/placementcertification-meta-data.txt");
         entityMetaFiles.put(PlacementChangeRequest.class, "meta/placementchangerequest-meta-data.txt");
         entityMetaFiles.put(PlacementCommission.class, "meta/placementcommission-meta-data.txt");
