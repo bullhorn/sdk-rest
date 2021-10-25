@@ -1,0 +1,166 @@
+{
+    "entity": "BillMasterTransactionDistributionBatch",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillMasterTransactionDistributionBatch?fields=*",
+    "label": "Bill Master Transaction Distribution Batch",
+    "dateLastModified": "1606288386739",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "accountingDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Accounting Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "batchStatus",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "label": "Batch Status",
+            "optionsType": "BatchStatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BatchStatusLookup",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Initiated",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "Processing",
+                    "readOnly": false
+                },
+                {
+                    "value": 3,
+                    "label": "Completed",
+                    "readOnly": false
+                },
+                {
+                    "value": 4,
+                    "label": "Failed",
+                    "readOnly": false
+                }
+            ],
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BatchStatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BatchStatusLookup?fields=*",
+                "label": "Batch Status Lookup",
+                "dateLastModified": "1606288042021",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billMasterTransactions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Bill Master Transactions",
+            "optionsType": "BillMasterTransaction",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BillMasterTransaction",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransaction",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillMasterTransaction?fields=*",
+                "label": "Bill Transaction Entry",
+                "dateLastModified": "1606285686523",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billableCharges",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Billable Charges",
+            "optionsType": "BillableCharge",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BillableCharge",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillableCharge",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillableCharge?fields=*",
+                "label": "Billing Charge",
+                "dateLastModified": "1606288042071",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "owner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Owner",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1606288042264",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -4,6 +4,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatement;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementLineItem;
 import com.bullhornsdk.data.model.entity.core.paybill.master.BillMaster;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,21 +21,17 @@ import java.util.Objects;
 @JsonPropertyOrder({"id", "adjustmentSequenceNumber", "amount", "billMaster", "comment",
     "currencyUnit", "dateAdded", "dateLastModified", "invoiceStatement", "invoiceStatementBatch",
     "invoiceStatementLineItem", "needsReview", "quantity", "rate", "recordingDate", "reversalOfTransaction",
-    "transactionOrigin", "transactionStatus", "transactionType", "unitOfMeasure"
+    "transactionOrigin", "transactionStatus", "transactionType", "unitOfMeasure", "unbilledRevenueGeneralLedgerExportStatusLookup"
 })
 public class BillMasterTransaction extends AbstractMasterTransaction implements QueryEntity {
 
-    private BillMaster billMasters;
-
+    private BillMaster billMaster;
     private InvoiceStatement invoiceStatement;
-
     private InvoiceStatementBatch invoiceStatementBatch;
-
     private InvoiceStatementLineItem invoiceStatementLineItem;
-
     private Boolean needsReview;
-
     private BillMasterTransaction reversalOfTransaction;
+    private SpecializedOptionsLookup unbilledRevenueGeneralLedgerExportStatusLookup;
 
     public BillMasterTransaction() {
         super();
@@ -44,14 +41,14 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
         super(id);
     }
 
-    @JsonProperty("billMasters")
-    public BillMaster getBillMasters() {
-        return billMasters;
+    @JsonProperty("billMaster")
+    public BillMaster getBillMaster() {
+        return billMaster;
     }
 
-    @JsonProperty("billMasters")
-    public void setBillMasters(BillMaster billMasters) {
-        this.billMasters = billMasters;
+    @JsonProperty("billMaster")
+    public void setBillMaster(BillMaster billMaster) {
+        this.billMaster = billMaster;
     }
 
     @JsonProperty("invoiceStatement")
@@ -104,15 +101,28 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
         this.reversalOfTransaction = reversalOfTransaction;
     }
 
+    @JsonProperty("unbilledRevenueGeneralLedgerExportStatusLookup")
+    public SpecializedOptionsLookup getUnbilledRevenueGeneralLedgerExportStatusLookup() {
+        return unbilledRevenueGeneralLedgerExportStatusLookup;
+    }
+
+    @JsonProperty("unbilledRevenueGeneralLedgerExportStatusLookup")
+    public void setUnbilledRevenueGeneralLedgerExportStatusLookup(SpecializedOptionsLookup unbilledRevenueGeneralLedgerExportStatusLookup) {
+        this.unbilledRevenueGeneralLedgerExportStatusLookup = unbilledRevenueGeneralLedgerExportStatusLookup;
+    }
+
+
+
     @Override
     public String toString() {
         return "BillMasterTransaction{" +
-            "billMasters=" + billMasters +
+            "billMaster=" + billMaster +
             ", invoiceStatement=" + invoiceStatement +
             ", invoiceStatementBatch=" + invoiceStatementBatch +
             ", invoiceStatementLineItem=" + invoiceStatementLineItem +
             ", needsReview=" + needsReview +
             ", reversalOfTransaction=" + reversalOfTransaction +
+            ", unbilledRevenueGeneralLedgerExportStatusLookup=" + unbilledRevenueGeneralLedgerExportStatusLookup +
             '}';
     }
 
@@ -122,16 +132,17 @@ public class BillMasterTransaction extends AbstractMasterTransaction implements 
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         BillMasterTransaction that = (BillMasterTransaction) o;
-        return Objects.equals(billMasters, that.billMasters) &&
+        return Objects.equals(billMaster, that.billMaster) &&
             Objects.equals(invoiceStatement, that.invoiceStatement) &&
             Objects.equals(invoiceStatementBatch, that.invoiceStatementBatch) &&
             Objects.equals(invoiceStatementLineItem, that.invoiceStatementLineItem) &&
             Objects.equals(needsReview, that.needsReview) &&
-            Objects.equals(reversalOfTransaction, that.reversalOfTransaction);
+            Objects.equals(reversalOfTransaction, that.reversalOfTransaction) &&
+            Objects.equals(unbilledRevenueGeneralLedgerExportStatusLookup, that.unbilledRevenueGeneralLedgerExportStatusLookup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), billMasters, invoiceStatement, invoiceStatementBatch, invoiceStatementLineItem, needsReview, reversalOfTransaction);
+        return Objects.hash(super.hashCode(), billMaster, invoiceStatement, invoiceStatementBatch, invoiceStatementLineItem, needsReview, reversalOfTransaction, unbilledRevenueGeneralLedgerExportStatusLookup);
     }
 }

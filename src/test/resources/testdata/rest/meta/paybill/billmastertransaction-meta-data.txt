@@ -1,8 +1,8 @@
 {
     "entity": "BillMasterTransaction",
-    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillMasterTransaction?fields=*",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillMasterTransaction?fields=*",
     "label": "Bill Transaction Entry",
-    "dateLastModified": "1587723579988",
+    "dateLastModified": "1606285686523",
     "fields": [
         {
             "name": "id",
@@ -31,13 +31,35 @@
             "confidential": false,
             "label": "Bill Master ID",
             "optionsType": "BillMaster",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/BillMaster",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BillMaster",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "BillMaster",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillMaster?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillMaster?fields=*",
                 "label": "Bill Transaction",
-                "dateLastModified": "1587691101829",
+                "dateLastModified": "1606288381400",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "billMasterTransactionDistributionBatch",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Bill Master Transaction Distribution Batch",
+            "optionsType": "BillMasterTransactionDistributionBatch",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BillMasterTransactionDistributionBatch",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "BillMasterTransactionDistributionBatch",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillMasterTransactionDistributionBatch?fields=*",
+                "label": "Bill Master Transaction Distribution Batch",
+                "dateLastModified": "1606288386739",
                 "fields": [
                     {
                         "name": "id",
@@ -62,13 +84,13 @@
             "confidential": false,
             "label": "Currency",
             "optionsType": "CurrencyUnit",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/CurrencyUnit",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/CurrencyUnit",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "CurrencyUnit",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/CurrencyUnit?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/CurrencyUnit?fields=*",
                 "label": "Currency Unit",
-                "dateLastModified": "1587691101823",
+                "dateLastModified": "1606285687642",
                 "fields": [
                     {
                         "name": "id",
@@ -118,13 +140,13 @@
             "confidential": false,
             "label": "Invoice",
             "optionsType": "InvoiceStatement",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/InvoiceStatement",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "InvoiceStatement",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatement?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/InvoiceStatement?fields=*",
                 "label": "Invoice",
-                "dateLastModified": "1587691104113",
+                "dateLastModified": "1606288381311",
                 "fields": [
                     {
                         "name": "id",
@@ -140,13 +162,13 @@
             "confidential": false,
             "label": "Invoice Statement Batch",
             "optionsType": "InvoiceStatementBatch",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatementBatch",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/InvoiceStatementBatch",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "InvoiceStatementBatch",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementBatch?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/InvoiceStatementBatch?fields=*",
                 "label": "Invoice Statement Batch",
-                "dateLastModified": "1587831815821",
+                "dateLastModified": "1606292162870",
                 "fields": [
                     {
                         "name": "id",
@@ -162,13 +184,13 @@
             "confidential": false,
             "label": "Invoice Line Item",
             "optionsType": "InvoiceStatementLineItem",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/InvoiceStatementLineItem",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/InvoiceStatementLineItem",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "InvoiceStatementLineItem",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/InvoiceStatementLineItem?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/InvoiceStatementLineItem?fields=*",
                 "label": "Line Item",
-                "dateLastModified": "1587691105710",
+                "dateLastModified": "1606288388706",
                 "fields": [
                     {
                         "name": "id",
@@ -216,13 +238,13 @@
             "confidential": false,
             "label": "Reversal Of Transaction ID",
             "optionsType": "BillMasterTransaction",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/BillMasterTransaction",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/BillMasterTransaction",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "BillMasterTransaction",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/BillMasterTransaction?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/BillMasterTransaction?fields=*",
                 "label": "Bill Transaction Entry",
-                "dateLastModified": "1587723579988",
+                "dateLastModified": "1606285686523",
                 "fields": [
                     {
                         "name": "id",
@@ -238,44 +260,13 @@
             "confidential": false,
             "label": "Transaction Origin",
             "optionsType": "TransactionOrigin",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/TransactionOrigin",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/TransactionOrigin",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "TransactionOrigin",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/TransactionOrigin?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/TransactionOrigin?fields=*",
                 "label": "Transaction Origin",
-                "dateLastModified": "1587913286222",
-                "fields": [
-                    {
-                        "name": "id",
-                        "type": "ID",
-                        "dataType": "Integer"
-                    },
-                    {
-                        "name": "name",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 100,
-                        "confidential": false,
-                        "label": "Name",
-                        "hideFromSearch": false
-                    }
-                ]
-            }
-        },
-        {
-            "name": "transactionStatus",
-            "type": "TO_ONE",
-            "confidential": false,
-            "label": "Transaction Status",
-            "optionsType": "TransactionStatus",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/TransactionStatus",
-            "hideFromSearch": false,
-            "associatedEntity": {
-                "entity": "TransactionStatus",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/TransactionStatus?fields=*",
-                "label": "Transaction Status",
-                "dateLastModified": "1587691102017",
+                "dateLastModified": "1606288390447",
                 "fields": [
                     {
                         "name": "id",
@@ -300,13 +291,13 @@
             "confidential": false,
             "label": "Transaction Type",
             "optionsType": "TransactionType",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/TransactionType",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/TransactionType",
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "TransactionType",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/TransactionType?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/TransactionType?fields=*",
                 "label": "Transaction Type",
-                "dateLastModified": "1587691102988",
+                "dateLastModified": "1606288387642",
                 "fields": [
                     {
                         "name": "id",
@@ -326,13 +317,45 @@
             }
         },
         {
+            "name": "unbilledRevenueGeneralLedgerExportStatusLookup",
+            "type": "TO_ONE",
+            "dataType": "SpecializedOptionsLookup",
+            "confidential": false,
+            "label": "Unbilled Revenue General Ledger Export Status Lookup",
+            "optionsType": "UnbilledRevenueGeneralLedgerExportStatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/UnbilledRevenueGeneralLedgerExportStatusLookup",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "UnbilledRevenueGeneralLedgerExportStatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/UnbilledRevenueGeneralLedgerExportStatusLookup?fields=*",
+                "label": "Unbilled Revenue General Ledger Export Status Lookup",
+                "dateLastModified": "1606288387380",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Label",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
             "name": "unitOfMeasure",
             "type": "TO_ONE",
             "dataType": "SpecializedOptionsLookup",
             "confidential": false,
             "label": "Unit",
             "optionsType": "UnitOfMeasure",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/UnitOfMeasure",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/options/UnitOfMeasure",
             "options": [
                 {
                     "value": 1,
@@ -368,9 +391,9 @@
             "hideFromSearch": false,
             "associatedEntity": {
                 "entity": "UnitOfMeasure",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/UnitOfMeasure?fields=*",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/60c290/meta/UnitOfMeasure?fields=*",
                 "label": "Unit Of Measure",
-                "dateLastModified": "1587691097767",
+                "dateLastModified": "1606288385475",
                 "fields": [
                     {
                         "name": "id",

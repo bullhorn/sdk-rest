@@ -1,0 +1,3076 @@
+{
+    "start": 0,
+    "count": 100,
+    "data": [
+        {
+            "id": 124,
+            "category": {
+                "id": 9,
+                "name": "Data Export"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1198784535240,
+            "dateLastModified": 1304701970323,
+            "description": "",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "RX Relief /CAL Great Plain Export - Clients",
+            "oldReportID": 7664,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "<root>\r\n    <columnList>BH_ClientName,CREDITLIMIT,branchID,BH_ClientID,BH_ClientBillContact,BH_ClientBillAdd1,BH_ClientBillAdd2,BH_ClientBillCity,BH_ClientBillState,BH_ClientBillZipCode,BH_ClientPhone,BH_ClientFax,taxSchedule,BH_CommissionUser,BH_ClientEmail</columnList>\r\n    <excludedColumns>clientCorporationID</excludedColumns>\r\n    <delimiter>,</delimiter>\r\n    <rowdelimiter></rowdelimiter>\r\n    <textQualifier>\"</textQualifier>\r\n    <exportEntityList>Clients</exportEntityList>\r\n    <escapeCharacter>\\</escapeCharacter>\r\n</root>",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 123,
+            "category": {
+                "id": 9,
+                "name": "Data Export"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1198784482910,
+            "dateLastModified": 1444060643900,
+            "description": "",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Pridestaff/CAL Great Plain Export - Clients",
+            "oldReportID": 7663,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "<root>\r\n    <columnList>BH_ClientName,CREDITLIMIT,branchID,BH_ClientID,BH_ClientBillContact,BH_ClientBillAdd1,BH_ClientBillAdd2,BH_ClientBillCity,BH_ClientBillState,BH_ClientBillZipCode,BH_ClientPhone,BH_ClientFax,taxSchedule,BH_CommissionUser,BH_ClientEmail</columnList>\r\n    <excludedColumns>clientCorporationID</excludedColumns>\r\n    <delimiter>,</delimiter>\r\n    <rowdelimiter></rowdelimiter>\r\n    <textQualifier>\"</textQualifier>\r\n    <exportEntityList>Clients</exportEntityList>\r\n    <escapeCharacter>\\</escapeCharacter>\r\n</root>",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 122,
+            "category": {
+                "id": 9,
+                "name": "Data Export"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1198782142410,
+            "dateLastModified": 1304702673120,
+            "description": "",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "RX relief/CAL Great Plains Export - Employees",
+            "oldReportID": 7662,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "<root>\r\n    <columnList>BH_Employee ID,BH_Last Name,BH_First Name,BH_Middle Name,BH_Employee Home Add1,BH_Employee Home Add2,BH_Employee Home City,BH_Employee Home State,BH_Employee Home ZipCode,BH_Employee Home Country,BH_Employee Home Phone,BH_Employee Work Phone,BH_Employee Mobile Phone,BH_Employee Fax,BH_EmployeeBranch,BHTRX_Suta State,BH_Social Security Number,BH_Birth Date,BHPL_Workers Comp,Gender,Ethnic Origin,Exempt From Federal,Federal Filing Status,Federal Exemptions,Additional Federal Withholding,EICFillingStatus,stateExemptions,stateWithHoldings,stateTaxCode1,stateTaxCode2,stateTaxCode3,stateTaxCode4,stateTaxCode5,localExemptions,localWithHoldings,BH_Employee Email</columnList> \r\n    <excludedColumns>userID</excludedColumns>\r\n    <delimiter>,</delimiter>\r\n    <rowdelimiter></rowdelimiter>\r\n    <textQualifier>\"</textQualifier>\r\n    <exportEntityList>Candidates</exportEntityList>\r\n    <escapeCharacter>\\</escapeCharacter>\r\n</root>",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 121,
+            "category": {
+                "id": 9,
+                "name": "Data Export"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1198782097740,
+            "dateLastModified": 1444060675447,
+            "description": "",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Pridestaff/CAL Great Plain Export - Employees",
+            "oldReportID": 7661,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "<root>\r\n    <columnList>BH_Employee ID,BH_Last Name,BH_First Name,BH_Middle Name,BH_Employee Home Add1,BH_Employee Home Add2,BH_Employee Home City,BH_Employee Home State,BH_Employee Home ZipCode,BH_Employee Home Country,BH_Employee Home Phone,BH_Employee Work Phone,BH_Employee Mobile Phone,BH_Employee Fax,BH_EmployeeBranch,BHTRX_Suta State,BH_Social Security Number,BH_Birth Date,BHPL_Workers Comp,Gender,Ethnic Origin,Exempt From Federal,Federal Filing Status,Federal Exemptions,Additional Federal Withholding,EICFillingStatus,stateExemptions,stateWithHoldings,stateTaxCode1,stateTaxCode2,stateTaxCode3,stateTaxCode4,stateTaxCode5,localExemptions,localWithHoldings,BH_Employee Email</columnList> \r\n    <excludedColumns>userID</excludedColumns>\r\n    <delimiter>,</delimiter>\r\n    <rowdelimiter></rowdelimiter>\r\n    <textQualifier>\"</textQualifier>\r\n    <exportEntityList>Candidates</exportEntityList>\r\n    <escapeCharacter>\\</escapeCharacter>\r\n</root>",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 120,
+            "category": {
+                "id": 9,
+                "name": "Data Export"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1182475105880,
+            "dateLastModified": 1425325759853,
+            "description": "The Pridestaff, CAL Great Plain Export for Direct Hires",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "RX relief Great Plains Export - Direct Hires",
+            "oldReportID": 6529,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "<root>\r\n    <columnList>BH_Employee ID,BH_Last Name,BH_First Name,BH_Middle Name,BH_Employee Home Add1,BH_Employee Home Add2,BH_Employee Home City,BH_Employee Home State,BH_Employee Home ZipCode,BH_Employee Home Country,BH_Employee Home Phone,BH_Employee Work Phone,BH_Employee Mobile Phone,BH_Employee Fax,BH_EmployeeBranch,BH_ClientName,CREDIT LIMIT ,branchID,BH_Client ID,BILLING PROFILE DESCRIPTION,BH_ClientBillContact,BH_ClientBillAdd1,BH_ClientBillAdd2,BH_ClientBillCity,BH_ClientBillState,BH_ClientBillZipCode,BH_ClientPhone,BH_ClientFax,sortingA,sortingB,sortingC,invoiceType,seperatedByWeekEnding,breakOnPO,billingFreq,attachTimecard,poRequired,defaultPO,taxSchedule,BHTRX_Job Title,BHTRX_Suta State,BH_Category,BH_Commission User,BHTRX_State Code,BHTRX_Local Tax,Start Date,BHPL_Placement Number,BHTRX_Department,employmentType,Customer PO Number,Pay Code,TRX Hours/Units,Hourly Pay Rate,BHPL_Bill Rate,TRX Beginning Date,TRX Ending Date,BHPL_BillDocument Date,BHPL_TimeCardID,BH_Social Security Number,BH_Birth Date,BHPL_Workers Comp,Gender,Ethnic Origin,Exempt From Federal,Federal Filing Status,Federal Exemptions,Additional Federal Withholding,EICFillingStatus,stateExemptions,stateWithHoldings,stateTaxCode1,stateTaxCode2,stateTaxCode3,stateTaxCode4,stateTaxCode5,localExemptions,localWithHoldings,placementTimeID,BH_CandidateOwner,Job Order #,Job Order Job Location Address,Job Order Job Location City,Job Order Job Location State,Job Order Job Location Zip Code,ACA Status</columnList> \r\n    <columnHeaderList></columnHeaderList>\r\n    <excludedColumns></excludedColumns>\r\n    <delimiter>,</delimiter>\r\n    <rowdelimiter></rowdelimiter>\r\n    <textQualifier>\"</textQualifier>\r\n    <exportEntityList>Placements</exportEntityList>\r\n    <escapeCharacter>\\</escapeCharacter>\r\n</root>",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 0
+        },
+        {
+            "id": 119,
+            "category": {
+                "id": 9,
+                "name": "Data Export"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1174925837020,
+            "dateLastModified": 1499700484287,
+            "description": "",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Pridestaff Local Tax Code Export",
+            "oldReportID": 5954,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "<root>\r\n<columnList>BH_EmployeeID,BH_LastName,BH_FirstName,BH_MiddleName,localExemptions,localWithHoldings,localTaxCode1,localTaxCode2,localTaxCode3,localTaxCode4,localTaxCode5,localTaxCode6,localTaxCode7,localTaxCode8,localTaxCode9,localTaxCode10,localTaxCode11,localTaxCode12,localTaxCode13,localTaxCode14,localTaxCode15,localTaxAutoCalc1,localTaxAutoCalc2,localTaxAutoCalc3,localTaxAutoCalc4,localTaxAutoCalc5,localTaxAutoCalc6,localTaxAutoCalc7,localTaxAutoCalc8,localTaxAutoCalc9,localTaxAutoCalc10,localTaxAutoCalc11,localTaxAutoCalc12,localTaxAutoCalc13,localTaxAutoCalc14,localTaxAutoCalc15</columnList>\r\n<columnHeaderList>BH_EmployeeID,BH_LastName,BH_FirstName,BH_MiddleName,localExemptions,localWithHoldings,localTaxCode1,localTaxCode2,localTaxCode3,localTaxCode4,localTaxCode5,localTaxCode6,localTaxCode7,localTaxCode8,localTaxCode9,localTaxCode10,localTaxCode11,localTaxCode12,localTaxCode13,localTaxCode14,localTaxCode15,localTaxAutoCalc1,localTaxAutoCalc2,localTaxAutoCalc3,localTaxAutoCalc4,localTaxAutoCalc5,localTaxAutoCalc6,localTaxAutoCalc7,localTaxAutoCalc8,localTaxAutoCalc9,localTaxAutoCalc10,localTaxAutoCalc11,localTaxAutoCalc12,localTaxAutoCalc13,localTaxAutoCalc14,localTaxAutoCalc15</columnHeaderList>\r\n<excludedColumns></excludedColumns>\r\n<delimiter>,</delimiter>\r\n<rowdelimiter></rowdelimiter>\r\n<textQualifier>\"</textQualifier>\r\n<exportEntityList></exportEntityList>\r\n<escapeCharacter>\\</escapeCharacter>\r\n</root>",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 118,
+            "category": {
+                "id": 9,
+                "name": "Data Export"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1174924157827,
+            "dateLastModified": 1304701586887,
+            "description": "",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Pridestaff Workers Comp Codes",
+            "oldReportID": 5953,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "<root>\r\n    <columnList>WorkersCompCode,WorkersCompName,WorkersCompState,WorkersCompDescription,WorkersCompRate</columnList> <columnHeaderList></columnHeaderList>\r\n   <excludedColumns></excludedColumns>\r\n    <delimiter>,</delimiter>\r\n    <rowdelimiter></rowdelimiter>\r\n    <textQualifier>\"</textQualifier>\r\n    <exportEntityList></exportEntityList>\r\n    <escapeCharacter>\\</escapeCharacter>\r\n</root>",
+            "sqlData": "SELECT DISTINCT\r\n\t\r\np.workersCompCode 'WorkersCompCode',\r\np.name 'WorkersCompName',\r\np.state 'WorkersCompState',\r\np.description 'WorkersCompDescription',\r\nCONVERT(VARCHAR(50),f.rate) 'WorkersCompRate'\r\n\r\nFROM BH_Placement d\r\n   LEFT JOIN BH_WorkersCompRate f \r\n      ON d.WorkersCompRateID = f.WorkersCompRateID\r\n   LEFT JOIN BH_WorkersComp p\r\n      ON f.WorkersCompID = p.WorkersCompID\r\n\r\nWHERE p.workersCompCode IS NOT NULL AND f.endDate >= GetDate()",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 117,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1204049950633,
+            "dateLastModified": 1445286513883,
+            "description": "Returns total number of timecards entered and total number submitted by candidates in a given date range",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Number of Timecards",
+            "oldReportID": 7937,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "SELECT \r\n\r\n(SELECT COUNT(*)\r\nFROM BH_Timecard \r\nWHERE dateEnd >= ~fromDate~\r\n  AND dateEnd <= ~toDate~) 'Number of Timecards',\r\n(SELECT COUNT(*)\r\nFROM BH_Timecard\r\nWHERE timecardID IN (SELECT DISTINCT a1.timecardID\r\n                     FROM BH_TimecardAuditTrail a1\r\n                         INNER JOIN BH_Timecard b1\r\n                             ON a1.timecardID = b1.timecardID\r\n                     WHERE a1.status = 'Submitted'\r\n                       AND b1.dateEnd >= ~fromDate~\r\n                       AND b1.dateEnd <= ~toDate~)) 'Number of Candidate Submissions'",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 116,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1198969637453,
+            "dateLastModified": 1444060272403,
+            "description": "Returns audit history for specified timecard\r\n<a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/TimecardAudit.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>\r\n",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Timecard Audit Report",
+            "oldReportID": 7675,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "SELECT a.timecardID 'Timecard ID',\r\n       CONVERT(VARCHAR(50),a.dateAdded) 'Date Added',\r\n       a.status 'Status',\r\n       CASE WHEN a.userID = 5071633 THEN 'StaffLinx'\r\n            ELSE b.name\r\n       END 'Name',\r\n       c.placementID 'Placement ID'\r\nFROM BH_TimecardAuditTrail a\r\n    LEFT JOIN BH_UserContact b\r\n       ON a.userID = b.userID\r\n    INNER JOIN BH_Timecard c\r\n        ON a.timecardID = c.timecardID\r\nWHERE a.timecardID IN (~timecardID~)\r\nORDER BY a.timecardID,a.dateAdded,a.status",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 115,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1196458786400,
+            "dateLastModified": 1444060430207,
+            "description": "To pull the information required to upload eligible candidates into a 3rd party system.\r\n\r\n<a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/SRCEligibilityReport.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "SRC Eligibility Report",
+            "oldReportID": 7518,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 114,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1170435376763,
+            "dateLastModified": 1445962839143,
+            "description": "",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Timecard Client Approver Report",
+            "oldReportID": 5674,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "DECLARE @isInHomeDepartment INT,\r\n        @recruiterUserID INT,\r\n        @corporationID INT\r\n\r\n    SET @recruiterUserID = ~recruiterUserID~\r\n    SET @corporationID = ~corporationID~\r\n\r\nSELECT @isInHomeDepartment = COUNT(*)\r\nFROM BH_UserDepartmentGrouping udg\r\n        INNER JOIN BH_Department a\r\n            ON a.departmentID = udg.departmentiD\r\n        INNER JOIN BH_CostCenter b \r\n            ON a.costCenterID = b.costCenterID\r\n           AND b.corporationID = @corporationID\r\nWHERE a.name Like 'Home Office%'\r\n  AND udg.userID = @recruiterUserID\r\n  AND a.enabled > 0\r\n\r\n(SELECT\r\n\r\na.timecardID 'Timecard ID',\r\nd.placementID 'Placement Number',\r\ne.name 'Candidate Name',\r\ng.name 'Client Name',\r\nh.hours 'Hours',\r\nh.status 'Current Status',\r\nf.title 'Job Title',\r\nc.name 'Approver Name',\r\nb.dateClientApprovedMin 'Date Client Approved',\r\nCASE WHEN b.recordTypeBits IN ('2') THEN 'Client'\r\n     WHEN b.recordTypeBits IN ('4') THEN 'Internal'\r\n     ELSE 'Client'\r\nEND 'Approver Type',\r\nd.correlatedCustomText1 'BranchID'\r\n\r\nFROM BH_Timecard a\r\n   LEFT JOIN (SELECT  a1.timecardID,\r\n                      a1.userID, \r\n                      a1.status,\r\n                      b1.recordTypeBits,\r\n                      MIN (a1.dateAdded) dateclientApprovedMin\r\n               FROM BH_TimecardAuditTrail a1     \r\n                 INNER JOIN BH_UserContact b1\r\n                     ON a1.userID = b1.userID\r\n               WHERE a1.status IN ('Client Approved')\r\n               GROUP BY a1.timecardID,a1.userID,a1.status,b1.recordTypeBits) b\r\n       ON a.timecardID = b.timecardID\r\n   INNER JOIN BH_UserContact c\r\n       ON b.userID = c.userID\r\n   INNER JOIN BH_Placement d\r\n       ON a.placementID = d.placementID\r\n   INNER JOIN BH_UserContact e\r\n       ON d.userID = e.userID\r\n   INNER JOIN BH_JobPosting f\r\n       ON d.jobPostingID = f.jobPostingID\r\n   INNER JOIN BH_ClientCorporation g\r\n       ON f.clientCorporationID = g.clientCorporationID\r\n   INNER JOIN ( SELECT    a1.placementID,\r\n                          a1.timeCardID,\r\n                          b1.name,\r\n\t\t\t              sum(a1.hours) hours,\r\n                          a1.payRate,\r\n                          a1.clientBillRate,\r\n                          a1.status                         \r\n                 FROM BH_PlacementTime a1 \r\n                   INNER JOIN BULLHORN_MASTER..BH_AccountingClass b1\r\n                        ON a1.accountingClassID = b1.accountingClassID           \r\n\t\t\t     GROUP BY a1.placementID, a1.timeCardID,b1.name,a1.payRate,a1.clientBillRate,a1.status) h \r\n        ON h.timecardID = a.timecardID   \r\n\r\nWHERE a.dateEnd = ~fromDate~\r\n  :: AND ISNULL(d.correlatedCustomText1,'') IN ('~Branch~') ::\r\n  AND f.userID IN (SELECT udg.userID\r\n                   FROM BH_UserDepartmentGrouping udg\r\n                   WHERE udg.departmentID IN (~departmentID~)\r\n                      OR @isInHomeDepartment > 0 ))\r\n\r\n\r\nORDER BY b.recordTypeBits, d.correlatedCustomText1",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 113,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1121379200027,
+            "dateLastModified": 1444064530320,
+            "description": "Will return all contacts and their email address for anyone with an Innovation Type of \"Email\" and owned by someone in your department.  <a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/Haley- Client Newsletter.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Haley-Client Newsletter",
+            "oldReportID": 1944,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 112,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1121378942543,
+            "dateLastModified": 1503551532450,
+            "description": "Retired: 5.26.2016 Will return all candidates and their email address for anyone with an Innovation Type of \"Email\" and owned by someone in your department.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/HaleyEmployeeNewsletter.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description\r\n</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Haley-Employee Newsletter - Old",
+            "oldReportID": 1943,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 111,
+            "category": {
+                "id": 2,
+                "name": "Admin"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1222800423393,
+            "dateLastModified": null,
+            "description": "List of a client's Business Sectorid and value",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Client BusinessSector",
+            "oldReportID": 9106,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select  convert(varchar,a.businesssectorid) as BusinessSectorId,\r\n       a.name as Name\r\nfrom BULLHORN1.BH_BusinessSector a \r\n\tinner join BULLHORN1.BH_PrivateLabelBusinessSector b\r\n\t     on a.businessSectorID=b.businessSectorID\r\n\t     AND b.privateLabelID = ~privateLabelID~\r\n\r\n",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 110,
+            "category": {
+                "id": 2,
+                "name": "Admin"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1180978557750,
+            "dateLastModified": null,
+            "description": "Contact and Candidate duplicates by first and last name.",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Standard Contact and Candidate Duplicates",
+            "oldReportID": 6378,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select isnull(a.firstname,'') as 'First Name', isnull(a.lastname,'') as 'Last Name', count(*) as 'Duplicate Count'\r\nfrom bh_usercontact a\t\r\n\tinner join ~contact~ b on a.userid = b.userid\r\n\t\tand b.isdeleted = 0 \r\n\t\tand b.isprimaryowner > 0 \r\n\t\tand b.status not like 'archive'\r\n\tinner join bh_corporateuser d on b.recruiteruserid = d.userid\r\n\t\tand d.corporationid = ~corporationid~\r\nwhere a.firstname not like 'general' and a.lastname not like 'contact'\r\ngroup by a.firstname, a.lastname\r\nhaving count(*) > 1",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 92,
+            "category": {
+                "id": 18,
+                "name": "Sales"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1191380026730,
+            "dateLastModified": null,
+            "description": "Time to Submit,Sendout,Interview and Place for Jobs",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Standard Job Activity Metrics",
+            "oldReportID": 7159,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Custom\\BH_JobMetricsReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 91,
+            "category": {
+                "id": 17,
+                "name": "Placements"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1008861126023,
+            "dateLastModified": null,
+            "description": "Headcount report listing number of active placements at a client.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Headcount",
+            "oldReportID": 17,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "/general/headcount.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 90,
+            "category": {
+                "id": 15,
+                "name": "Merge Document"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1178910240990,
+            "dateLastModified": 1304698510180,
+            "description": "PrideStaff - FastTrack Labels (Home Office) <A onclick=\"window.open('http://central.pridestaff.com/BHReportDefinitions/FastTrackLabelsHomeOffice.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no')\" >Full Description</A>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "FastTrack Labels (Home Office)",
+            "oldReportID": 6223,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Labels\\PrideStaffFastTrackLabels.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 89,
+            "category": {
+                "id": 15,
+                "name": "Merge Document"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1117132137347,
+            "dateLastModified": 1445283696970,
+            "description": "PrideStaff - FastTrack Labels <A onclick=\"window.open('http://central.pridestaff.com/BHReportDefinitions/FastTrackLabels.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no')\" >Full Description</A>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "FastTrack Labels",
+            "oldReportID": 1620,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Labels\\PrideStaffFastTrackLabels.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 88,
+            "category": {
+                "id": 15,
+                "name": "Merge Document"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1117109546033,
+            "dateLastModified": 1445283785323,
+            "description": "PrideStaff - FastTrack Letter <A onclick=\"window.open('http://central.pridestaff.com/BHReportDefinitions/FastTrackLetter.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no')\" >Full Description</A",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "FastTrack Letter",
+            "oldReportID": 1617,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\MailMerge\\PrideStaff_FastTrack.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 87,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1178550291953,
+            "dateLastModified": 1445282299647,
+            "description": "1\" x 2 5/8\" - 3 Columns",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Avery #5160 - No Country",
+            "oldReportID": 6198,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Labels\\a5160.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 0
+        },
+        {
+            "id": 86,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1101753833633,
+            "dateLastModified": null,
+            "description": "Candidate- No Country- for Return Labels",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Avery #5160 Candidate Holiday Cards",
+            "oldReportID": 780,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Labels/a5160Christmas.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "SELECT LTRIM(RTRIM(isnull(a.firstName,'') + ' ' + isnull(a.lastName,'') + ' ' + isnull(a.nameSuffix,''))) as Line1,\r\n       a.address1 AS Line3, \r\n       a.address2 AS Line4,\r\n       a.city + ', ' + a.state + ' ' + a.zip + ' 'AS Line5\r\n  FROM BH_UserContact a\r\n       inner JOIN BH_Candidate d\r\n          ON d.userID = a.userID\r\n          AND d.isPrimaryOwner > 0\r\n          AND d.isDeleted = 0\r\n WHERE a.name IS NOT NULL \r\n   AND a.address1 IS NOT NULL \r\n   AND Len(a.name) > 0 \r\n   AND Len(a.address1) > 0 \r\n   AND a.userID IN ( SELECT a1.userID\r\n                       FROM BH_DistributionListMember a1\r\n                      WHERE a1.distributionListID in (~distributionList~))\r\n   AND a.isdeleted <> 1 AND a.status <> 'Archive'\r\norder by a.firstname",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 85,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1072194526040,
+            "dateLastModified": null,
+            "description": "View the performance reviews completed during a given time period",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Performance Review / Survey Results Details",
+            "oldReportID": 241,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "General\\Performance Review Details.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 0
+        },
+        {
+            "id": 84,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1037660380323,
+            "dateLastModified": 1445962907533,
+            "description": "1\" x 2 5/8\" - 3 Columns [Candidate Avery Labels without Country and Company] ",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Avery #5160 Candidates",
+            "oldReportID": 103,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Labels/a5160Cand.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 83,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1029416009710,
+            "dateLastModified": null,
+            "description": "list of new hires",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "New Hires",
+            "oldReportID": 54,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Lists\\newHires.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 82,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1024409369823,
+            "dateLastModified": 1445282387847,
+            "description": "Candidate Report From Distribution List",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Candidate List Report",
+            "oldReportID": 45,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "lists\\basicUserlist.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 81,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1024348762843,
+            "dateLastModified": 1445282563830,
+            "description": "Client Report From Distribution List ",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Client List Report",
+            "oldReportID": 44,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "lists\\basicUserlist2.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 80,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1023135486940,
+            "dateLastModified": 1304698426780,
+            "description": "Exportable file of client contact addresses filtered by status",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Client list by Status",
+            "oldReportID": 39,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "lists\\clientlist.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 79,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1021560070827,
+            "dateLastModified": null,
+            "description": "List of candidates",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Basic Candidate Listing",
+            "oldReportID": 36,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Lists\\REVBasicUserList.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 78,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1021558595293,
+            "dateLastModified": null,
+            "description": "List of clients",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Basic Client Listing",
+            "oldReportID": 35,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Lists\\REVBasicUserList.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 77,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1013107482897,
+            "dateLastModified": 1304698371423,
+            "description": "birthdays of placed candidate",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Candidate Birthdays",
+            "oldReportID": 25,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Lists/placedcandidatebirthdates.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 1,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1012414601080,
+            "dateLastModified": null,
+            "description": "placement statistics",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Placement Stats",
+            "oldReportID": 24,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Lists/stats.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 75,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1011204245393,
+            "dateLastModified": 1445282472520,
+            "description": "List of a client's categories, skills and specialties grouped by category",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Client Category / Skills / Specialties",
+            "oldReportID": 22,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Lists\\clientcategories.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 74,
+            "category": {
+                "id": 13,
+                "name": "General"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1009567001973,
+            "dateLastModified": 1445282252567,
+            "description": "1\" x 2 5/8\" - 3 Columns",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Avery #5160",
+            "oldReportID": 18,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Labels\\a5160.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 73,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1227736409800,
+            "dateLastModified": 1484959493667,
+            "description": "To track all notes entered on a specific date to a candidate, contact or job.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/NotesActivity.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>\r\n",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Notes Activity - Home Office (DNU)",
+            "oldReportID": 9388,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PridestaffNotesActivityReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 72,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1222271847877,
+            "dateLastModified": 1445283804760,
+            "description": "The number of requests vs. the number of placements",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Fill Ratio",
+            "oldReportID": 9082,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffFillRatio2.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 71,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1216147107137,
+            "dateLastModified": null,
+            "description": "The number of requests vs. the number of placements",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "zzzDNU_Fill Ratio (by Branch)",
+            "oldReportID": 8757,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffFillRatio2.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 70,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1211384991250,
+            "dateLastModified": 1484334469183,
+            "description": "Shows orders filled within a specific date range, their trigger event and profit generated <a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/TriggerEventDetailed.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Trigger Event Detailed Report",
+            "oldReportID": 8502,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\custom\\pridestaffJobEventDetailed.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "Shows orders filled within a specific date range, their trigger event and profit generated",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 69,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1211214136773,
+            "dateLastModified": 1453849966817,
+            "description": "Shows profit generated sorted by the trigger event of the job\r\n<a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/TriggerEventSummary.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Trigger Event Summary Report",
+            "oldReportID": 8487,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\custom\\pridestaffJobEvent.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 68,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1210098465373,
+            "dateLastModified": 1445286169870,
+            "description": "To Track and view the “Trigger Events” which generated orders which were lost.\r\n<a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/LostRevenueByTriggerEvent.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Lost Revenue by Trigger Event",
+            "oldReportID": 8390,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\LostRevenuebyTriggerEvent.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED\r\n\r\nDECLARE @from datetime,\r\n    @to datetime\r\n\r\nSET @from = ~from~\r\nSET @to =  ~to~\r\n\r\nSELECT DISTINCT jp.customText3 'Trigger Action',\r\n       CONVERT(varchar(100),jp.dateadded,101) 'Dateadded',\r\n       cc.name 'Company Name',\r\n       uc.name 'Contact Name',\r\n       jp.jobpostingiD 'JobID',\r\n       jp.title 'Position Title',\r\n       CASE WHEN datediff(ww,ISNULL(jp.StartDate,''),ISNULL(jp.DateEnd,'')) >0\r\n            THEN CONVERT(VARCHAR(20),(ISNULL(CONVERT(varchar(100),jp.clientBillRate),'')*ISNULL(jp.hoursPerWeek,'0')* datediff(ww,ISNULL(jp.StartDate,''),ISNULL(jp.DateEnd,'')))) \r\n            ELSE CONVERT(VARCHAR(20),CONVERT(VARCHAR(20),(ISNULL(CONVERT(varchar(100),jp.clientBillRate),'')*(ISNULL(NULLIF(jp.hoursPerWeek,'0'),'1')/40)*8 * datediff(d,ISNULL(jp.StartDate,''),ISNULL(jp.DateEnd,''))))) END 'Lost Revenue',\r\n       CONVERT(nvarchar(1000),jp.reasonclosed) 'Reason Closed',\r\n       CONVERT(varchar(100),@from,101) 'from',\r\n       CONVERT(varchar(100),@to,101) 'to',\r\n       jp.correlatedCustomText1 'Branch'\r\n\r\nFROM (SELECT jp.jobpostingID,MAX(jeh.dateadded) 'datelost'\r\n                from BH_jobposting jp\r\n                INNER JOIN BH_jobpostingEditHistory jeh\r\n                ON jp.jobpostingID = jeh.jobpostingID\r\n                INNER JOIN BH_jobpostingEditHistoryFieldChange jfc\r\n                ON jeh.jobpostingEditHistoryID = jfc.jobpostingEditHistoryID \r\n            WHERE columnname like 'Status'\r\n                 and jfc.newvalue LIKE 'Lost' \r\n                 and jeh.dateadded between @from and @to\r\n             GROUP BY jp.jobpostingID) jl\r\nLEFT JOIN BH_jobposting jp\r\nON jl.jobpostingID = jp.jobpostingID\r\nand jp.employmenttype IN ('Temporary','Temporary to Hire')\r\nLEFT JOIN BH_clientcorporation cc\r\nON jp.clientcorporationID = cc.clientcorporationID \r\nLEFT JOIN BH_usercontact uc\r\nON jp.clientuserID = uc.userID\r\nLEFT JOIN BH_usercontact uc1\r\nON jp.userID = uc1.userID\r\nWHERE uc1.ownercorporationID = ~corporationID~\r\n    :: and jp.correlatedCustomText1 IN ('~Branch~')::\r\nORDER BY jp.correlatedCustomText1\r\n \r\nSET TRANSACTION ISOLATION LEVEL READ COMMITTED",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 66,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1207935397843,
+            "dateLastModified": 1539878201250,
+            "description": "Retrieve 401K Offered/eligible dates for quarterly benefit reporting.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "401K Notification Report",
+            "oldReportID": 8208,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\custom\\Pridestaff-401K Notification Report.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 65,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1202741717837,
+            "dateLastModified": 1444060463260,
+            "description": "Any employee out working with less than 2 references completed - Totals by Branch",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Reference Check Summary Report",
+            "oldReportID": 7872,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\PridestaffReferenceCheckSummaryReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 64,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1194382527137,
+            "dateLastModified": 1445286146357,
+            "description": "PrideStaff - Local Tax Report \r\n\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/LocalTaxReport.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>\r\n",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Local Tax Proofing",
+            "oldReportID": 7387,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffLocalTaxProofing.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 63,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1187617254760,
+            "dateLastModified": 1453849760230,
+            "description": "Fast Track Summary",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Fast Track Summary",
+            "oldReportID": 6862,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffFastTrackSummary.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 62,
+            "category": null,
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1186694403537,
+            "dateLastModified": null,
+            "description": "<span style=\"color:red;font-weight:bold\">Retired</span> All open and active jobs within a specific date range.  View company, job title, job description, employee name, job  and WC Code.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/ActiveOrdersandAssignments.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "_OLD Active Assignments and Orders",
+            "oldReportID": 6781,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffActiveOrders.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 61,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1186676201540,
+            "dateLastModified": 1444065788820,
+            "description": "Any employee who is no longer working and has a benefits start date.  If the placement end date falls within that range, and the employee has a benefits start date on the payroll tab, then they will return to the report.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Conversion Cobra Report",
+            "oldReportID": 6780,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\PrideStaffConversionCobraReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 60,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1181075764813,
+            "dateLastModified": 1444065195433,
+            "description": "Fast Track Follow-up\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/FastTrackFollowUp.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Fast Track Follow-up",
+            "oldReportID": 6438,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffFastTrackFollowUp.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 59,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1179166788923,
+            "dateLastModified": 1519757381587,
+            "description": "To track all notes entered on a specific date to a candidate, contact or job.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/NotesActivity.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>\r\n",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Notes Activity (DNU)",
+            "oldReportID": 6230,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PridestaffNotesActivityReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 58,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1178204924210,
+            "dateLastModified": 1444065874953,
+            "description": "List of Employees to accompany mailing labels for candidates with a birthday in a given month.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/BirthdayLabelList.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description\r\n</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Birthday Labels List",
+            "oldReportID": 6183,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Custom\\PrideStaffBirthdayLabelList.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 57,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1176844333330,
+            "dateLastModified": 1445283316187,
+            "description": "Show all approved direct hire placements.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/DirectHirePlacementReport.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Direct Hire Placement Report",
+            "oldReportID": 6079,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffDirectHire.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 56,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1176826233353,
+            "dateLastModified": 1444062825683,
+            "description": "Shows all placements that have a pay/bill rate change with an effective date within the selected date range.",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Placement Pay/Bill Rate Changes",
+            "oldReportID": 6065,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffRateChange.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 55,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1176409313050,
+            "dateLastModified": 1445282121273,
+            "description": "All assignments that were active within a specific date range for a particular client(s).",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Active Assignments - Detail",
+            "oldReportID": 6039,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffVendorActiveAssign.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 54,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1176318130070,
+            "dateLastModified": 1444065905163,
+            "description": "Mailing labels for candidates with a birthday in a given month.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/BirhtdayLabels.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description\r\n</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Birthday Labels",
+            "oldReportID": 6033,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Labels\\PridestaffBirthdayLabels.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 53,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1176217739220,
+            "dateLastModified": 1452194239257,
+            "description": "Shows all online timecards for a particular client for a particular weekending. Shows approver and approved date as well as In Out Lunch Times by Day.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Online Timecard Detail Old",
+            "oldReportID": 6028,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffOnlineTimecard.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 52,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1176128614297,
+            "dateLastModified": 1510940182153,
+            "description": "Check distribution for Employees receiving a check for the selected pay period ending date.  \r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/EmployeeCheckDistribution.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Employee Check Distribution",
+            "oldReportID": 6024,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffCheckDistReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 51,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1166643121080,
+            "dateLastModified": 1450716133470,
+            "description": "All exceptions during a specific date range.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/PayrollException.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Payroll Exception Report Old",
+            "oldReportID": 5421,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffPayrollException_New.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 50,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1160503131830,
+            "dateLastModified": 1444065291883,
+            "description": "Employees who have earned paid holidays by working 1500 hours since we began payroll in Bullhorn.\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/EmployeesOver1500Hours.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Employees Over 1500 Hours",
+            "oldReportID": 4959,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffOver1500Hrs.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 49,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1156252724400,
+            "dateLastModified": 1477937401370,
+            "description": "Assignments that have come to an end within a specific date range and the reason for those ends.  \r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/AssignmentEnds.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description\r\n</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Assignment Ends",
+            "oldReportID": 4682,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffAssignmentEnds.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 48,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1155301495727,
+            "dateLastModified": 1475516668273,
+            "description": "All assignments that were active within a specific date range.  View company, order date, employee source, employee name, job title, start date, end date, bill rate and pay rate.\r\n\r\nNote: This report was replaced by a newer copy of the report on 10/3/2016 for ticket# 02319030.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Active Assignments Old",
+            "oldReportID": 4641,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffActiveAssignments.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 47,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1155222535240,
+            "dateLastModified": 1444060124217,
+            "description": "select * from bh_usercontact",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Unfilled Jobs",
+            "oldReportID": 4634,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\PrideStaffUnfilledJobs.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 46,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1155214583833,
+            "dateLastModified": 1453849742147,
+            "description": "Any employee currently on assignment who is missing or has expired I9 documentation\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/ExpiredOrMissingI9.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Expired/Missing I9 Report",
+            "oldReportID": 4632,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\PrideStaffExpiredI9Report.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 45,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1155152728580,
+            "dateLastModified": 1439787177357,
+            "description": "Any employee out working with less than 2 references completed",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Reference Check Report (OLD)",
+            "oldReportID": 4628,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\PridestaffReferenceCheckReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 44,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1155067480170,
+            "dateLastModified": 1480608770997,
+            "description": "All timecards entered for a date range by status.  ",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Timecard Proofing Report Old",
+            "oldReportID": 4625,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffTimeCardProofing.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 43,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1155047413243,
+            "dateLastModified": 1453849767810,
+            "description": "New placements generated during a specific date range",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "New Assignments",
+            "oldReportID": 4609,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffNewAssignments.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 42,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1154969661590,
+            "dateLastModified": 1445286259557,
+            "description": "Clients who have had their first invoice generated since we began payroll in Bullhorn\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/NewClients.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "New Clients",
+            "oldReportID": 4595,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffNewClients.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 40,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1150319629757,
+            "dateLastModified": 1445286685237,
+            "description": "Reason for the opening on each order and which orders were filled\r\n\r\n<a href=\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/OrderReason.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Order Reason",
+            "oldReportID": 4173,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffOrderReason.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercontact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 39,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1150318418760,
+            "dateLastModified": 1445286319537,
+            "description": "Employees starting their fist assignments with PrideStaff",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "New Employee Assigned",
+            "oldReportID": 4172,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffNewEmployeeLabels.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_candidate",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 38,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1150316948397,
+            "dateLastModified": 1444065843187,
+            "description": "Mix of business based on category ",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Business Mix",
+            "oldReportID": 4171,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffBusinessMixReport.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "Select * from bh_userContact",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 37,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1150308253153,
+            "dateLastModified": null,
+            "description": "The number of requests vs. the number of placements",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Fill Ratio - old not by branch",
+            "oldReportID": 4169,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Custom\\PrideStaffFillRatio.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "select * from bh_usercomment",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 36,
+            "category": {
+                "id": 7,
+                "name": "Contacts"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1207758569983,
+            "dateLastModified": 1502400614517,
+            "description": "To list clients and what they value most",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "What They Value Most",
+            "oldReportID": 8192,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\Pridestaff-Whattheyvaluemost.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "SELECT (ISNULL(uc.firstname,'')+','+ISNULL(uc.lastname,'')) 'contact',\r\n       ISNULL(uc.customtextblock1,'') 'Valuemost',\r\n       ISNULL(cc.name,'') 'Client',\r\n       uc.status status\r\nFROM BH_usercontact uc\r\nINNER JOIN BH_clientcorporation cc\r\nON uc.clientcorporationID = cc.clientcorporationID\r\nWHERE uc.recordtypebits = 2\r\nand uc.ownercorporationID = ~corporationID~\r\nand uc.customtext6 = convert(varchar(10),~branchID~) \r\nand uc.status in ('~Status~')\r\nand uc.customtextblock1 NOT LIKE ''\r\n",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 35,
+            "category": null,
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1192720921713,
+            "dateLastModified": null,
+            "description": "",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Test PSF-Client",
+            "oldReportID": 7229,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "custom\\PrideStaffClientLetter.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "SELECT * WHERE a.userID IN(~userID~)",
+            "type": "Bullhorn Viewer",
+            "version": 1
+        },
+        {
+            "id": 34,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1023386049790,
+            "dateLastModified": null,
+            "description": "Appointments by Type",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Appointments Report",
+            "oldReportID": 41,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "\\Lists\\appointmentsbyType.rpx",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "SELECT *           FROM BH_Schedule a2\r\n                            WHERE a2.parentScheduleID > 0)::\r\n ORDER BY dateBegin, schedCase, parentScheduleID",
+            "type": "Bullhorn Viewer",
+            "version": 0
+        },
+        {
+            "id": 33,
+            "category": {
+                "id": 20,
+                "name": "User Type"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1146836852330,
+            "dateLastModified": 1304702453113,
+            "description": "Compares various entitlements between user types",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "User Type Entitlement Report",
+            "oldReportID": 3915,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "/reporting/custom/BullhornUserTypeEntitlementReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 32,
+            "category": {
+                "id": 19,
+                "name": "System Administration"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1135264641787,
+            "dateLastModified": 1304702546953,
+            "description": "Provides key stats on system performance, such as average request times and long running pages.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "System Performance Report",
+            "oldReportID": 2918,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/SystemPerformanceReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 31,
+            "category": {
+                "id": 19,
+                "name": "System Administration"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1102979212410,
+            "dateLastModified": 1444055955367,
+            "description": "See all activity completed by users for a select period of time",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "User Activity Report",
+            "oldReportID": 844,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/UserActivityReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 30,
+            "category": {
+                "id": 18,
+                "name": "Sales"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 998539200000,
+            "dateLastModified": null,
+            "description": "Contractor start date and end date detail",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "S/E Detail",
+            "oldReportID": 5,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/startEndassignment.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 29,
+            "category": {
+                "id": 17,
+                "name": "Placements"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1005333988170,
+            "dateLastModified": null,
+            "description": "Placements that have a \"Submitted\" status ",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Placements Awaiting Approval",
+            "oldReportID": 9,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/placementsawaitingapproval.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 28,
+            "category": {
+                "id": 14,
+                "name": "Jobs"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 998539200000,
+            "dateLastModified": null,
+            "description": "Interactive Placements Report, including hours, gross margin, and commission.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Placements",
+            "oldReportID": 7,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/PlacementReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 27,
+            "category": {
+                "id": 8,
+                "name": "Custom"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1210807041910,
+            "dateLastModified": 1445285851210,
+            "description": "Return all data on a specific candidate.",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Full Employee Record",
+            "oldReportID": 8450,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/Custom/PrideStaffFullEmployeeRecordReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 26,
+            "category": {
+                "id": 2,
+                "name": "Admin"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1180978766237,
+            "dateLastModified": null,
+            "description": "Provides key stats on system performance, such as average request times and long running pages.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Standard System Performance Report",
+            "oldReportID": 6380,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/SystemPerformanceReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 0
+        },
+        {
+            "id": 25,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1225311534420,
+            "dateLastModified": 1445351315900,
+            "description": "Reports weekly placement activity by associate <a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/PlacementWAR.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Placement WAR Report",
+            "oldReportID": 9230,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/Custom/PridestaffWAR_Placement.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 24,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1225311463813,
+            "dateLastModified": 1340829657623,
+            "description": "Reports weekly sales activity by associate <a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/SalesWAR.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Sales WAR Report - In Maintenance",
+            "oldReportID": 9229,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/Custom/PridestaffWAR_Sales.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 23,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1224708040947,
+            "dateLastModified": 1445351338950,
+            "description": "Reports weekly recruiting activity by associate <a href =\"#\" onClick=\"window.open('http://descriptions.pridestaff.com/BHReportDefinitions/RecruitingWAR.html','ReportDef','left=50px,top=50px,width=700px,height=600px,resizable=no,scrollbars=yes,toolbar=no,location=no,directories=no,status=no,menubar=no');return false;\" >Full Description</a>",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Recruiting WAR Report",
+            "oldReportID": 9199,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/Custom/PridestaffWAR_Recruiting2.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 21,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1176321617923,
+            "dateLastModified": 1445351352167,
+            "description": "Reports back #submissions, sendouts, interviews and placements grouped by user",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Recruiter Activity Report",
+            "oldReportID": 6034,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/Custom/PridestaffRecruiterActivityReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 20,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1105732188653,
+            "dateLastModified": null,
+            "description": "Lists Clients and Candidates who have logged in on the client or candidate web site within a given time period",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Client/Candidate Login Activity Report",
+            "oldReportID": 982,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/LoginActivityReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 19,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1074193239517,
+            "dateLastModified": null,
+            "description": "Reports back #submissions, sendouts, interviews and placements grouped by user",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Recruiting Activity Report",
+            "oldReportID": 243,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/RecruiterActivityReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 18,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1048883242240,
+            "dateLastModified": null,
+            "description": "Account Executive Activity: This report shows job activity, grouped by job owner. Under each user, a detail view lists all the jobs that had activity during the report period.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "AE Activity",
+            "oldReportID": 147,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/AEActivityReport.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 17,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1040250268107,
+            "dateLastModified": null,
+            "description": "Sales and recruiting activity report by time period",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Sales/Recruiter Activity Report",
+            "oldReportID": 112,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/RepActivity_Full_UpdateLegal.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 0
+        },
+        {
+            "id": 16,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 1025288349197,
+            "dateLastModified": null,
+            "description": "Activity tracking report for sales representatives and recruiters- Note Activity entered in on Contacts and Candidates",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Sales Rep/Recruiter Activity",
+            "oldReportID": 49,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/RepActivity_Full.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 0
+        },
+        {
+            "id": 15,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": false,
+            "dateAdded": 1005335624470,
+            "dateLastModified": 1304697741450,
+            "description": "Activity tracking report for sales representatives- Note Activity entered in on Contacts",
+            "entitlements": {
+                "total": 2,
+                "data": []
+            },
+            "name": "Sales Rep Activity",
+            "oldReportID": 10,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/RepActivity.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 14,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 998539200000,
+            "dateLastModified": null,
+            "description": "Account Executive Activity: This report shows job activity, grouped by job owner. It always displays the user's current open jobs, regardless of report date. Under each user, a detail view lists all the jobs that either had activity during the report period, or that are currently open.",
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "AE Activity + Open Jobs",
+            "oldReportID": 3,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/AEActivityReport_AllOpen.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 13,
+            "category": {
+                "id": 1,
+                "name": "Activity"
+            },
+            "cognosType": null,
+            "dashboard": null,
+            "dateAdded": 998539200000,
+            "dateLastModified": null,
+            "description": "Recruiter Activity",
+            "entitlements": {
+                "total": 1,
+                "data": []
+            },
+            "name": "TR Activity",
+            "oldReportID": 2,
+            "owner": {
+                "id": 4,
+                "firstName": "Michele",
+                "lastName": "Boehmer"
+            },
+            "packageName": null,
+            "path": "Reporting/ContractReportMonthEnding.cfm",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": "",
+            "sqlData": "",
+            "type": "Interactive",
+            "version": 1
+        },
+        {
+            "id": 10,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231543155870,
+            "dateLastModified": 1231543140000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Active Placement Zips",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Placement Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='Active Placement Zips']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 1
+        },
+        {
+            "id": 9,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231375294923,
+            "dateLastModified": 1231376340000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Contacts at a Company",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Client Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='Contacts at a Company']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 6
+        },
+        {
+            "id": 8,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231374833203,
+            "dateLastModified": 1231376520000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Supervisors on Placements",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Placement Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='Supervisors on Placements']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 4
+        },
+        {
+            "id": 6,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231371136700,
+            "dateLastModified": 1231371120000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Job Supervisor ID",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Job Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='Job Supervisor ID']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 1
+        },
+        {
+            "id": 5,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231353041160,
+            "dateLastModified": 1231353000000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "contact email test",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Placement Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='contact email test']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 1
+        },
+        {
+            "id": 4,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231352905197,
+            "dateLastModified": 1231352880000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "1234",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Placement Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='1234']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 1
+        },
+        {
+            "id": 3,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231348980527,
+            "dateLastModified": 1231348980000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "123",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Placement Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='123']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 1
+        },
+        {
+            "id": 2,
+            "category": null,
+            "cognosType": "Query",
+            "dashboard": null,
+            "dateAdded": 1231348844407,
+            "dateLastModified": 1231348800000,
+            "description": null,
+            "entitlements": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Innovero",
+            "oldReportID": null,
+            "owner": {
+                "id": 37,
+                "firstName": "Dan",
+                "lastName": "Donathan"
+            },
+            "packageName": "Placement Analysis",
+            "path": "/content/folder[@name='PL858']/folder[@name='Queries']/query[@name='Innovero']",
+            "reportJar": null,
+            "reportRTF": null,
+            "reportXML": null,
+            "sqlData": null,
+            "type": "Bullhorn360",
+            "version": 1
+        }
+    ]
+}

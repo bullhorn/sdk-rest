@@ -1,9 +1,11 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
@@ -67,6 +69,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"lastName", "linkedPerson", "leads", "localAddtionalWitholdingsAmount", "localExemptions", "localFilingStatus", "localTaxCode",
 		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes", "numCategories",
 		"numOwners", "occupation", "owner", "pager", "paperWorkOnFile", "password", "phone", "phone2", "phone3", "placements",
+        "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
 		"preferredContact", "primarySkills", "recentClientList", "referredBy", "referredByPerson", "references", "salary", "salaryLow",
 		"secondaryAddress", "secondaryOwners", "secondarySkills", "sendouts", "skillSet", "smsOptIn", "source", "specialties",
 		"submissions", "ssn", "stateAddtionalWitholdingsAmount", "stateExemptions", "stateFilingStatus", "status", "tasks", "taxID",
@@ -283,6 +286,16 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 	@JsonIgnore
 	@Size(max = 50)
 	private String occupation;
+
+    private Integer onboardingDocumentReceivedCount;
+
+    private Integer onboardingDocumentSentCount;
+
+    private Integer onboardingPercentComplete;
+
+    private OnboardingReceivedSent onboardingReceivedSent;
+
+    private String onboardingStatus;
 
 	private CorporateUser owner;
 
@@ -1302,6 +1315,56 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 		this.occupation = occupation;
 	}
 
+    @JsonProperty("onboardingDocumentReceivedCount")
+    public Integer getOnboardingDocumentReceivedCount() {
+        return onboardingDocumentReceivedCount;
+    }
+
+    @JsonProperty("onboardingDocumentReceivedCount")
+    public void setOnboardingDocumentReceivedCount(Integer onboardingDocumentReceivedCount) {
+        this.onboardingDocumentReceivedCount = onboardingDocumentReceivedCount;
+    }
+
+    @JsonProperty("onboardingDocumentSentCount")
+    public Integer getOnboardingDocumentSentCount() {
+        return onboardingDocumentSentCount;
+    }
+
+    @JsonProperty("onboardingDocumentSentCount")
+    public void setOnboardingDocumentSentCount(Integer onboardingDocumentSentCount) {
+        this.onboardingDocumentSentCount = onboardingDocumentSentCount;
+    }
+
+    @JsonProperty("onboardingPercentComplete")
+    public Integer getOnboardingPercentComplete() {
+        return onboardingPercentComplete;
+    }
+
+    @JsonProperty("onboardingPercentComplete")
+    public void setOnboardingPercentComplete(Integer onboardingPercentComplete) {
+        this.onboardingPercentComplete = onboardingPercentComplete;
+    }
+
+    @JsonProperty("onboardingReceivedSent")
+    public OnboardingReceivedSent getOnboardingReceivedSent() {
+        return onboardingReceivedSent;
+    }
+
+    @JsonProperty("onboardingReceivedSent")
+    public void setOnboardingReceivedSent(OnboardingReceivedSent onboardingReceivedSent) {
+        this.onboardingReceivedSent = onboardingReceivedSent;
+    }
+
+    @JsonProperty("onboardingStatus")
+    public String getOnboardingStatus() {
+        return onboardingStatus;
+    }
+
+    @JsonProperty("onboardingStatus")
+    public void setOnboardingStatus(String onboardingStatus) {
+        this.onboardingStatus = onboardingStatus;
+    }
+
 	@JsonProperty("owner")
 	public CorporateUser getOwner() {
 		return owner;
@@ -1984,515 +2047,308 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-
         Candidate candidate = (Candidate) o;
-
-        if (luceneScore != null ? !luceneScore.equals(candidate.luceneScore) : candidate.luceneScore != null)
-            return false;
-        if (id != null ? !id.equals(candidate.id) : candidate.id != null) return false;
-        if (address != null ? !address.equals(candidate.address) : candidate.address != null) return false;
-        if (branch != null ? !branch.equals(candidate.branch) : candidate.branch != null) return false;
-        if (businessSectors != null ? !businessSectors.equals(candidate.businessSectors) : candidate.businessSectors != null)
-            return false;
-        if (canEnterTime != null ? !canEnterTime.equals(candidate.canEnterTime) : candidate.canEnterTime != null) return false;
-        if (categories != null ? !categories.equals(candidate.categories) : candidate.categories != null) return false;
-        if (category != null ? !category.equals(candidate.category) : candidate.category != null) return false;
-        if (certificationList != null ? !certificationList.equals(candidate.certificationList) : candidate.certificationList != null)
-            return false;
-        if (certifications != null ? !certifications.equals(candidate.certifications) : candidate.certifications != null)
-            return false;
-        if (clientCorporationBlackList != null ? !clientCorporationBlackList.equals(candidate.clientCorporationBlackList) : candidate.clientCorporationBlackList != null)
-            return false;
-        if (clientCorporationWhiteList != null ? !clientCorporationWhiteList.equals(candidate.clientCorporationWhiteList) : candidate.clientCorporationWhiteList != null)
-            return false;
-        if (comments != null ? !comments.equals(candidate.comments) : candidate.comments != null) return false;
-        if (companyName != null ? !companyName.equals(candidate.companyName) : candidate.companyName != null)
-            return false;
-        if (companyURL != null ? !companyURL.equals(candidate.companyURL) : candidate.companyURL != null) return false;
-        if (dateAdded != null ? !dateAdded.equals(candidate.dateAdded) : candidate.dateAdded != null) return false;
-        if (dateAvailable != null ? !dateAvailable.equals(candidate.dateAvailable) : candidate.dateAvailable != null)
-            return false;
-        if (dateAvailableEnd != null ? !dateAvailableEnd.equals(candidate.dateAvailableEnd) : candidate.dateAvailableEnd != null)
-            return false;
-        if (dateI9Expiration != null ? !dateI9Expiration.equals(candidate.dateI9Expiration) : candidate.dateI9Expiration != null)
-            return false;
-        if (dateLastComment != null ? !dateLastComment.equals(candidate.dateLastComment) : candidate.dateLastComment != null)
-            return false;
-        if (dateLastModified != null ? !dateLastModified.equals(candidate.dateLastModified) : candidate.dateLastModified != null)
-            return false;
-        if (dateNextCall != null ? !dateNextCall.equals(candidate.dateNextCall) : candidate.dateNextCall != null)
-            return false;
-        if (dateOfBirth != null ? !dateOfBirth.equals(candidate.dateOfBirth) : candidate.dateOfBirth != null)
-            return false;
-        if (dayRate != null ? !dayRate.equals(candidate.dayRate) : candidate.dayRate != null) return false;
-        if (dayRateLow != null ? !dayRateLow.equals(candidate.dayRateLow) : candidate.dayRateLow != null) return false;
-        if (degreeList != null ? !degreeList.equals(candidate.degreeList) : candidate.degreeList != null) return false;
-        if (description != null ? !description.equals(candidate.description) : candidate.description != null)
-            return false;
-        if (desiredLocations != null ? !desiredLocations.equals(candidate.desiredLocations) : candidate.desiredLocations != null)
-            return false;
-        if (disability != null ? !disability.equals(candidate.disability) : candidate.disability != null) return false;
-        if (educationDegree != null ? !educationDegree.equals(candidate.educationDegree) : candidate.educationDegree != null)
-            return false;
-        if (educations != null ? !educations.equals(candidate.educations) : candidate.educations != null) return false;
-        if (email != null ? !email.equals(candidate.email) : candidate.email != null) return false;
-        if (email2 != null ? !email2.equals(candidate.email2) : candidate.email2 != null) return false;
-        if (email3 != null ? !email3.equals(candidate.email3) : candidate.email3 != null) return false;
-        if (employeeType != null ? !employeeType.equals(candidate.employeeType) : candidate.employeeType != null)
-            return false;
-        if (employmentPreference != null ? !employmentPreference.equals(candidate.employmentPreference) : candidate.employmentPreference != null)
-            return false;
-        if (ethnicity != null ? !ethnicity.equals(candidate.ethnicity) : candidate.ethnicity != null) return false;
-        if (experience != null ? !experience.equals(candidate.experience) : candidate.experience != null) return false;
-        if (externalID != null ? !externalID.equals(candidate.externalID) : candidate.externalID != null) return false;
-        if (fax != null ? !fax.equals(candidate.fax) : candidate.fax != null) return false;
-        if (fax2 != null ? !fax2.equals(candidate.fax2) : candidate.fax2 != null) return false;
-        if (fax3 != null ? !fax3.equals(candidate.fax3) : candidate.fax3 != null) return false;
-        if (federalAddtionalWitholdingsAmount != null ? !federalAddtionalWitholdingsAmount.equals(candidate.federalAddtionalWitholdingsAmount) : candidate.federalAddtionalWitholdingsAmount != null)
-            return false;
-        if (federalExemptions != null ? !federalExemptions.equals(candidate.federalExemptions) : candidate.federalExemptions != null)
-            return false;
-        if (federalFilingStatus != null ? !federalFilingStatus.equals(candidate.federalFilingStatus) : candidate.federalFilingStatus != null)
-            return false;
-        if (fileAttachments != null ? !fileAttachments.equals(candidate.fileAttachments) : candidate.fileAttachments != null)
-            return false;
-        if (firstName != null ? !firstName.equals(candidate.firstName) : candidate.firstName != null) return false;
-        if (gender != null ? !gender.equals(candidate.gender) : candidate.gender != null) return false;
-        if (hourlyRate != null ? !hourlyRate.equals(candidate.hourlyRate) : candidate.hourlyRate != null) return false;
-        if (hourlyRateLow != null ? !hourlyRateLow.equals(candidate.hourlyRateLow) : candidate.hourlyRateLow != null)
-            return false;
-        if (interviews != null ? !interviews.equals(candidate.interviews) : candidate.interviews != null) return false;
-        if (i9OnFile != null ? !i9OnFile.equals(candidate.i9OnFile) : candidate.i9OnFile != null) return false;
-        if (isDayLightSavings != null ? !isDayLightSavings.equals(candidate.isDayLightSavings) : candidate.isDayLightSavings != null)
-            return false;
-        if (isDeleted != null ? !isDeleted.equals(candidate.isDeleted) : candidate.isDeleted != null) return false;
-        if (isEditable != null ? !isEditable.equals(candidate.isEditable) : candidate.isEditable != null) return false;
-        if (isLockedOut != null ? !isLockedOut.equals(candidate.isLockedOut) : candidate.isLockedOut != null)
-            return false;
-        if (isAnonymized != null ? !isAnonymized.equals(candidate.isAnonymized) : candidate.isAnonymized != null)
-            return false;
-        if (lastName != null ? !lastName.equals(candidate.lastName) : candidate.lastName != null) return false;
-        if (linkedPerson != null ? !linkedPerson.equals(candidate.linkedPerson) : candidate.linkedPerson != null)
-            return false;
-        if (leads != null ? !leads.equals(candidate.leads) : candidate.leads != null) return false;
-        if (localAddtionalWitholdingsAmount != null ? !localAddtionalWitholdingsAmount.equals(candidate.localAddtionalWitholdingsAmount) : candidate.localAddtionalWitholdingsAmount != null)
-            return false;
-        if (localExemptions != null ? !localExemptions.equals(candidate.localExemptions) : candidate.localExemptions != null)
-            return false;
-        if (localFilingStatus != null ? !localFilingStatus.equals(candidate.localFilingStatus) : candidate.localFilingStatus != null)
-            return false;
-        if (localTaxCode != null ? !localTaxCode.equals(candidate.localTaxCode) : candidate.localTaxCode != null)
-            return false;
-        if (massMailOptOut != null ? !massMailOptOut.equals(candidate.massMailOptOut) : candidate.massMailOptOut != null)
-            return false;
-        if (middleName != null ? !middleName.equals(candidate.middleName) : candidate.middleName != null) return false;
-        if (migrateGUID != null ? !migrateGUID.equals(candidate.migrateGUID) : candidate.migrateGUID != null)
-            return false;
-        if (mobile != null ? !mobile.equals(candidate.mobile) : candidate.mobile != null) return false;
-        if (name != null ? !name.equals(candidate.name) : candidate.name != null) return false;
-        if (namePrefix != null ? !namePrefix.equals(candidate.namePrefix) : candidate.namePrefix != null) return false;
-        if (nameSuffix != null ? !nameSuffix.equals(candidate.nameSuffix) : candidate.nameSuffix != null) return false;
-        if (nickName != null ? !nickName.equals(candidate.nickName) : candidate.nickName != null) return false;
-        if (notes != null ? !notes.equals(candidate.notes) : candidate.notes != null) return false;
-        if (numCategories != null ? !numCategories.equals(candidate.numCategories) : candidate.numCategories != null)
-            return false;
-        if (numOwners != null ? !numOwners.equals(candidate.numOwners) : candidate.numOwners != null) return false;
-        if (occupation != null ? !occupation.equals(candidate.occupation) : candidate.occupation != null) return false;
-        if (owner != null ? !owner.equals(candidate.owner) : candidate.owner != null) return false;
-        if (pager != null ? !pager.equals(candidate.pager) : candidate.pager != null) return false;
-        if (paperWorkOnFile != null ? !paperWorkOnFile.equals(candidate.paperWorkOnFile) : candidate.paperWorkOnFile != null)
-            return false;
-        if (password != null ? !password.equals(candidate.password) : candidate.password != null) return false;
-        if (phone != null ? !phone.equals(candidate.phone) : candidate.phone != null) return false;
-        if (phone2 != null ? !phone2.equals(candidate.phone2) : candidate.phone2 != null) return false;
-        if (phone3 != null ? !phone3.equals(candidate.phone3) : candidate.phone3 != null) return false;
-        if (placements != null ? !placements.equals(candidate.placements) : candidate.placements != null) return false;
-        if (preferredContact != null ? !preferredContact.equals(candidate.preferredContact) : candidate.preferredContact != null)
-            return false;
-        if (primarySkills != null ? !primarySkills.equals(candidate.primarySkills) : candidate.primarySkills != null)
-            return false;
-        if (recentClientList != null ? !recentClientList.equals(candidate.recentClientList) : candidate.recentClientList != null)
-            return false;
-        if (referredBy != null ? !referredBy.equals(candidate.referredBy) : candidate.referredBy != null) return false;
-        if (referredByPerson != null ? !referredByPerson.equals(candidate.referredByPerson) : candidate.referredByPerson != null)
-            return false;
-        if (references != null ? !references.equals(candidate.references) : candidate.references != null) return false;
-        if (salary != null ? !salary.equals(candidate.salary) : candidate.salary != null) return false;
-        if (salaryLow != null ? !salaryLow.equals(candidate.salaryLow) : candidate.salaryLow != null) return false;
-        if (secondaryAddress != null ? !secondaryAddress.equals(candidate.secondaryAddress) : candidate.secondaryAddress != null)
-            return false;
-        if (secondaryOwners != null ? !secondaryOwners.equals(candidate.secondaryOwners) : candidate.secondaryOwners != null)
-            return false;
-        if (secondarySkills != null ? !secondarySkills.equals(candidate.secondarySkills) : candidate.secondarySkills != null)
-            return false;
-        if (sendouts != null ? !sendouts.equals(candidate.sendouts) : candidate.sendouts != null) return false;
-        if (skillSet != null ? !skillSet.equals(candidate.skillSet) : candidate.skillSet != null) return false;
-        if (smsOptIn != null ? !smsOptIn.equals(candidate.smsOptIn) : candidate.smsOptIn != null) return false;
-        if (source != null ? !source.equals(candidate.source) : candidate.source != null) return false;
-        if (specialties != null ? !specialties.equals(candidate.specialties) : candidate.specialties != null)
-            return false;
-        if (ssn != null ? !ssn.equals(candidate.ssn) : candidate.ssn != null) return false;
-        if (stateAddtionalWitholdingsAmount != null ? !stateAddtionalWitholdingsAmount.equals(candidate.stateAddtionalWitholdingsAmount) : candidate.stateAddtionalWitholdingsAmount != null)
-            return false;
-        if (stateExemptions != null ? !stateExemptions.equals(candidate.stateExemptions) : candidate.stateExemptions != null)
-            return false;
-        if (stateFilingStatus != null ? !stateFilingStatus.equals(candidate.stateFilingStatus) : candidate.stateFilingStatus != null)
-            return false;
-        if (status != null ? !status.equals(candidate.status) : candidate.status != null) return false;
-        if (submissions != null ? !submissions.equals(candidate.submissions) : candidate.submissions != null)
-            return false;
-        if (tasks != null ? !tasks.equals(candidate.tasks) : candidate.tasks != null) return false;
-        if (taxID != null ? !taxID.equals(candidate.taxID) : candidate.taxID != null) return false;
-        if (taxState != null ? !taxState.equals(candidate.taxState) : candidate.taxState != null) return false;
-        if (tearsheets != null ? !tearsheets.equals(candidate.tearsheets) : candidate.tearsheets != null) return false;
-        if (timeZoneOffsetEST != null ? !timeZoneOffsetEST.equals(candidate.timeZoneOffsetEST) : candidate.timeZoneOffsetEST != null)
-            return false;
-        if (travelLimit != null ? !travelLimit.equals(candidate.travelLimit) : candidate.travelLimit != null)
-            return false;
-        if (type != null ? !type.equals(candidate.type) : candidate.type != null) return false;
-        if (username != null ? !username.equals(candidate.username) : candidate.username != null) return false;
-        if (veteran != null ? !veteran.equals(candidate.veteran) : candidate.veteran != null) return false;
-        if (webResponses != null ? !webResponses.equals(candidate.webResponses) : candidate.webResponses != null)
-            return false;
-        if (willRelocate != null ? !willRelocate.equals(candidate.willRelocate) : candidate.willRelocate != null)
-            return false;
-        if (workAuthorized != null ? !workAuthorized.equals(candidate.workAuthorized) : candidate.workAuthorized != null)
-            return false;
-        if (workHistories != null ? !workHistories.equals(candidate.workHistories) : candidate.workHistories != null)
-            return false;
-        if (customObject1s != null ? !customObject1s.equals(candidate.customObject1s) : candidate.customObject1s != null)
-            return false;
-        if (customObject2s != null ? !customObject2s.equals(candidate.customObject2s) : candidate.customObject2s != null)
-            return false;
-        if (customObject3s != null ? !customObject3s.equals(candidate.customObject3s) : candidate.customObject3s != null)
-            return false;
-        if (customObject4s != null ? !customObject4s.equals(candidate.customObject4s) : candidate.customObject4s != null)
-            return false;
-        if (customObject5s != null ? !customObject5s.equals(candidate.customObject5s) : candidate.customObject5s != null)
-            return false;
-        if (customObject6s != null ? !customObject6s.equals(candidate.customObject6s) : candidate.customObject6s != null)
-            return false;
-        if (customObject7s != null ? !customObject7s.equals(candidate.customObject7s) : candidate.customObject7s != null)
-            return false;
-        if (customObject8s != null ? !customObject8s.equals(candidate.customObject8s) : candidate.customObject8s != null)
-            return false;
-        if (customObject9s != null ? !customObject9s.equals(candidate.customObject9s) : candidate.customObject9s != null)
-            return false;
-        if (customObject10s != null ? !customObject10s.equals(candidate.customObject10s) : candidate.customObject10s != null)
-            return false;
-        if (customEncryptedText1 != null ? !customEncryptedText1.equals(candidate.customEncryptedText1) : candidate.customEncryptedText1 != null)
-            return false;
-        if (customEncryptedText2 != null ? !customEncryptedText2.equals(candidate.customEncryptedText2) : candidate.customEncryptedText2 != null)
-            return false;
-        if (customEncryptedText3 != null ? !customEncryptedText3.equals(candidate.customEncryptedText3) : candidate.customEncryptedText3 != null)
-            return false;
-        if (customEncryptedText4 != null ? !customEncryptedText4.equals(candidate.customEncryptedText4) : candidate.customEncryptedText4 != null)
-            return false;
-        if (customEncryptedText5 != null ? !customEncryptedText5.equals(candidate.customEncryptedText5) : candidate.customEncryptedText5 != null)
-            return false;
-        if (customEncryptedText6 != null ? !customEncryptedText6.equals(candidate.customEncryptedText6) : candidate.customEncryptedText6 != null)
-            return false;
-        if (customEncryptedText7 != null ? !customEncryptedText7.equals(candidate.customEncryptedText7) : candidate.customEncryptedText7 != null)
-            return false;
-        if (customEncryptedText8 != null ? !customEncryptedText8.equals(candidate.customEncryptedText8) : candidate.customEncryptedText8 != null)
-            return false;
-        if (customEncryptedText9 != null ? !customEncryptedText9.equals(candidate.customEncryptedText9) : candidate.customEncryptedText9 != null)
-            return false;
-        if (customEncryptedText10 != null ? !customEncryptedText10.equals(candidate.customEncryptedText10) : candidate.customEncryptedText10 != null)
-            return false;
-        return workPhone != null ? workPhone.equals(candidate.workPhone) : candidate.workPhone == null;
+        return Objects.equals(luceneScore, candidate.luceneScore) &&
+            Objects.equals(id, candidate.id) &&
+            Objects.equals(address, candidate.address) &&
+            Objects.equals(branch, candidate.branch) &&
+            Objects.equals(businessSectors, candidate.businessSectors) &&
+            Objects.equals(canEnterTime, candidate.canEnterTime) &&
+            Objects.equals(categories, candidate.categories) &&
+            Objects.equals(category, candidate.category) &&
+            Objects.equals(certificationList, candidate.certificationList) &&
+            Objects.equals(certifications, candidate.certifications) &&
+            Objects.equals(clientCorporationBlackList, candidate.clientCorporationBlackList) &&
+            Objects.equals(clientCorporationWhiteList, candidate.clientCorporationWhiteList) &&
+            Objects.equals(comments, candidate.comments) &&
+            Objects.equals(companyName, candidate.companyName) &&
+            Objects.equals(companyURL, candidate.companyURL) &&
+            Objects.equals(dateAdded, candidate.dateAdded) &&
+            Objects.equals(dateAvailable, candidate.dateAvailable) &&
+            Objects.equals(dateAvailableEnd, candidate.dateAvailableEnd) &&
+            Objects.equals(dateI9Expiration, candidate.dateI9Expiration) &&
+            Objects.equals(dateLastComment, candidate.dateLastComment) &&
+            Objects.equals(dateLastModified, candidate.dateLastModified) &&
+            Objects.equals(dateNextCall, candidate.dateNextCall) &&
+            Objects.equals(dateOfBirth, candidate.dateOfBirth) &&
+            Objects.equals(dayRate, candidate.dayRate) &&
+            Objects.equals(dayRateLow, candidate.dayRateLow) &&
+            Objects.equals(degreeList, candidate.degreeList) &&
+            Objects.equals(description, candidate.description) &&
+            Objects.equals(desiredLocations, candidate.desiredLocations) &&
+            Objects.equals(disability, candidate.disability) &&
+            Objects.equals(educationDegree, candidate.educationDegree) &&
+            Objects.equals(educations, candidate.educations) &&
+            Objects.equals(email, candidate.email) &&
+            Objects.equals(email2, candidate.email2) &&
+            Objects.equals(email3, candidate.email3) &&
+            Objects.equals(employeeType, candidate.employeeType) &&
+            Objects.equals(employmentPreference, candidate.employmentPreference) &&
+            Objects.equals(ethnicity, candidate.ethnicity) &&
+            Objects.equals(experience, candidate.experience) &&
+            Objects.equals(externalID, candidate.externalID) &&
+            Objects.equals(fax, candidate.fax) &&
+            Objects.equals(fax2, candidate.fax2) &&
+            Objects.equals(fax3, candidate.fax3) &&
+            Objects.equals(federalAddtionalWitholdingsAmount, candidate.federalAddtionalWitholdingsAmount) &&
+            Objects.equals(federalExemptions, candidate.federalExemptions) &&
+            Objects.equals(federalFilingStatus, candidate.federalFilingStatus) &&
+            Objects.equals(fileAttachments, candidate.fileAttachments) &&
+            Objects.equals(firstName, candidate.firstName) &&
+            Objects.equals(gender, candidate.gender) &&
+            Objects.equals(hourlyRate, candidate.hourlyRate) &&
+            Objects.equals(hourlyRateLow, candidate.hourlyRateLow) &&
+            Objects.equals(interviews, candidate.interviews) &&
+            Objects.equals(i9OnFile, candidate.i9OnFile) &&
+            Objects.equals(isDayLightSavings, candidate.isDayLightSavings) &&
+            Objects.equals(isDeleted, candidate.isDeleted) &&
+            Objects.equals(isEditable, candidate.isEditable) &&
+            Objects.equals(isLockedOut, candidate.isLockedOut) &&
+            Objects.equals(isAnonymized, candidate.isAnonymized) &&
+            Objects.equals(lastName, candidate.lastName) &&
+            Objects.equals(linkedPerson, candidate.linkedPerson) &&
+            Objects.equals(leads, candidate.leads) &&
+            Objects.equals(localAddtionalWitholdingsAmount, candidate.localAddtionalWitholdingsAmount) &&
+            Objects.equals(localExemptions, candidate.localExemptions) &&
+            Objects.equals(localFilingStatus, candidate.localFilingStatus) &&
+            Objects.equals(localTaxCode, candidate.localTaxCode) &&
+            Objects.equals(massMailOptOut, candidate.massMailOptOut) &&
+            Objects.equals(middleName, candidate.middleName) &&
+            Objects.equals(migrateGUID, candidate.migrateGUID) &&
+            Objects.equals(mobile, candidate.mobile) &&
+            Objects.equals(name, candidate.name) &&
+            Objects.equals(namePrefix, candidate.namePrefix) &&
+            Objects.equals(nameSuffix, candidate.nameSuffix) &&
+            Objects.equals(nickName, candidate.nickName) &&
+            Objects.equals(notes, candidate.notes) &&
+            Objects.equals(numCategories, candidate.numCategories) &&
+            Objects.equals(numOwners, candidate.numOwners) &&
+            Objects.equals(occupation, candidate.occupation) &&
+            Objects.equals(onboardingDocumentReceivedCount, candidate.onboardingDocumentReceivedCount) &&
+            Objects.equals(onboardingDocumentSentCount, candidate.onboardingDocumentSentCount) &&
+            Objects.equals(onboardingPercentComplete, candidate.onboardingPercentComplete) &&
+            Objects.equals(onboardingReceivedSent, candidate.onboardingReceivedSent) &&
+            Objects.equals(onboardingStatus, candidate.onboardingStatus) &&
+            Objects.equals(owner, candidate.owner) &&
+            Objects.equals(pager, candidate.pager) &&
+            Objects.equals(paperWorkOnFile, candidate.paperWorkOnFile) &&
+            Objects.equals(password, candidate.password) &&
+            Objects.equals(phone, candidate.phone) &&
+            Objects.equals(phone2, candidate.phone2) &&
+            Objects.equals(phone3, candidate.phone3) &&
+            Objects.equals(placements, candidate.placements) &&
+            Objects.equals(preferredContact, candidate.preferredContact) &&
+            Objects.equals(primarySkills, candidate.primarySkills) &&
+            Objects.equals(recentClientList, candidate.recentClientList) &&
+            Objects.equals(referredBy, candidate.referredBy) &&
+            Objects.equals(referredByPerson, candidate.referredByPerson) &&
+            Objects.equals(references, candidate.references) &&
+            Objects.equals(salary, candidate.salary) &&
+            Objects.equals(salaryLow, candidate.salaryLow) &&
+            Objects.equals(secondaryAddress, candidate.secondaryAddress) &&
+            Objects.equals(secondaryOwners, candidate.secondaryOwners) &&
+            Objects.equals(secondarySkills, candidate.secondarySkills) &&
+            Objects.equals(sendouts, candidate.sendouts) &&
+            Objects.equals(skillSet, candidate.skillSet) &&
+            Objects.equals(smsOptIn, candidate.smsOptIn) &&
+            Objects.equals(source, candidate.source) &&
+            Objects.equals(specialties, candidate.specialties) &&
+            Objects.equals(ssn, candidate.ssn) &&
+            Objects.equals(stateAddtionalWitholdingsAmount, candidate.stateAddtionalWitholdingsAmount) &&
+            Objects.equals(stateExemptions, candidate.stateExemptions) &&
+            Objects.equals(stateFilingStatus, candidate.stateFilingStatus) &&
+            Objects.equals(status, candidate.status) &&
+            Objects.equals(submissions, candidate.submissions) &&
+            Objects.equals(tasks, candidate.tasks) &&
+            Objects.equals(taxID, candidate.taxID) &&
+            Objects.equals(taxState, candidate.taxState) &&
+            Objects.equals(tearsheets, candidate.tearsheets) &&
+            Objects.equals(timeZoneOffsetEST, candidate.timeZoneOffsetEST) &&
+            Objects.equals(travelLimit, candidate.travelLimit) &&
+            Objects.equals(type, candidate.type) &&
+            Objects.equals(username, candidate.username) &&
+            Objects.equals(veteran, candidate.veteran) &&
+            Objects.equals(webResponses, candidate.webResponses) &&
+            Objects.equals(willRelocate, candidate.willRelocate) &&
+            Objects.equals(workAuthorized, candidate.workAuthorized) &&
+            Objects.equals(workHistories, candidate.workHistories) &&
+            Objects.equals(workPhone, candidate.workPhone) &&
+            Objects.equals(customEncryptedText1, candidate.customEncryptedText1) &&
+            Objects.equals(customEncryptedText2, candidate.customEncryptedText2) &&
+            Objects.equals(customEncryptedText3, candidate.customEncryptedText3) &&
+            Objects.equals(customEncryptedText4, candidate.customEncryptedText4) &&
+            Objects.equals(customEncryptedText5, candidate.customEncryptedText5) &&
+            Objects.equals(customEncryptedText6, candidate.customEncryptedText6) &&
+            Objects.equals(customEncryptedText7, candidate.customEncryptedText7) &&
+            Objects.equals(customEncryptedText8, candidate.customEncryptedText8) &&
+            Objects.equals(customEncryptedText9, candidate.customEncryptedText9) &&
+            Objects.equals(customEncryptedText10, candidate.customEncryptedText10) &&
+            Objects.equals(customObject1s, candidate.customObject1s) &&
+            Objects.equals(customObject2s, candidate.customObject2s) &&
+            Objects.equals(customObject3s, candidate.customObject3s) &&
+            Objects.equals(customObject4s, candidate.customObject4s) &&
+            Objects.equals(customObject5s, candidate.customObject5s) &&
+            Objects.equals(customObject6s, candidate.customObject6s) &&
+            Objects.equals(customObject7s, candidate.customObject7s) &&
+            Objects.equals(customObject8s, candidate.customObject8s) &&
+            Objects.equals(customObject9s, candidate.customObject9s) &&
+            Objects.equals(customObject10s, candidate.customObject10s);
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (luceneScore != null ? luceneScore.hashCode() : 0);
-        result = 31 * result + (id != null ? id.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + (branch != null ? branch.hashCode() : 0);
-        result = 31 * result + (canEnterTime != null ? canEnterTime.hashCode() : 0);
-        result = 31 * result + (businessSectors != null ? businessSectors.hashCode() : 0);
-        result = 31 * result + (categories != null ? categories.hashCode() : 0);
-        result = 31 * result + (category != null ? category.hashCode() : 0);
-        result = 31 * result + (certificationList != null ? certificationList.hashCode() : 0);
-        result = 31 * result + (certifications != null ? certifications.hashCode() : 0);
-        result = 31 * result + (clientCorporationBlackList != null ? clientCorporationBlackList.hashCode() : 0);
-        result = 31 * result + (clientCorporationWhiteList != null ? clientCorporationWhiteList.hashCode() : 0);
-        result = 31 * result + (comments != null ? comments.hashCode() : 0);
-        result = 31 * result + (companyName != null ? companyName.hashCode() : 0);
-        result = 31 * result + (companyURL != null ? companyURL.hashCode() : 0);
-        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-        result = 31 * result + (dateAvailable != null ? dateAvailable.hashCode() : 0);
-        result = 31 * result + (dateAvailableEnd != null ? dateAvailableEnd.hashCode() : 0);
-        result = 31 * result + (dateI9Expiration != null ? dateI9Expiration.hashCode() : 0);
-        result = 31 * result + (dateLastComment != null ? dateLastComment.hashCode() : 0);
-        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
-        result = 31 * result + (dateNextCall != null ? dateNextCall.hashCode() : 0);
-        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
-        result = 31 * result + (dayRate != null ? dayRate.hashCode() : 0);
-        result = 31 * result + (dayRateLow != null ? dayRateLow.hashCode() : 0);
-        result = 31 * result + (degreeList != null ? degreeList.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (desiredLocations != null ? desiredLocations.hashCode() : 0);
-        result = 31 * result + (disability != null ? disability.hashCode() : 0);
-        result = 31 * result + (educationDegree != null ? educationDegree.hashCode() : 0);
-        result = 31 * result + (educations != null ? educations.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (email2 != null ? email2.hashCode() : 0);
-        result = 31 * result + (email3 != null ? email3.hashCode() : 0);
-        result = 31 * result + (employeeType != null ? employeeType.hashCode() : 0);
-        result = 31 * result + (employmentPreference != null ? employmentPreference.hashCode() : 0);
-        result = 31 * result + (ethnicity != null ? ethnicity.hashCode() : 0);
-        result = 31 * result + (experience != null ? experience.hashCode() : 0);
-        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
-        result = 31 * result + (fax != null ? fax.hashCode() : 0);
-        result = 31 * result + (fax2 != null ? fax2.hashCode() : 0);
-        result = 31 * result + (fax3 != null ? fax3.hashCode() : 0);
-        result = 31 * result + (federalAddtionalWitholdingsAmount != null ? federalAddtionalWitholdingsAmount.hashCode() : 0);
-        result = 31 * result + (federalExemptions != null ? federalExemptions.hashCode() : 0);
-        result = 31 * result + (federalFilingStatus != null ? federalFilingStatus.hashCode() : 0);
-        result = 31 * result + (fileAttachments != null ? fileAttachments.hashCode() : 0);
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (gender != null ? gender.hashCode() : 0);
-        result = 31 * result + (hourlyRate != null ? hourlyRate.hashCode() : 0);
-        result = 31 * result + (hourlyRateLow != null ? hourlyRateLow.hashCode() : 0);
-        result = 31 * result + (interviews != null ? interviews.hashCode() : 0);
-        result = 31 * result + (i9OnFile != null ? i9OnFile.hashCode() : 0);
-        result = 31 * result + (isDayLightSavings != null ? isDayLightSavings.hashCode() : 0);
-        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
-        result = 31 * result + (isEditable != null ? isEditable.hashCode() : 0);
-        result = 31 * result + (isLockedOut != null ? isLockedOut.hashCode() : 0);
-        result = 31 * result + (isAnonymized != null ? isAnonymized.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (linkedPerson != null ? linkedPerson.hashCode() : 0);
-        result = 31 * result + (leads != null ? leads.hashCode() : 0);
-        result = 31 * result + (localAddtionalWitholdingsAmount != null ? localAddtionalWitholdingsAmount.hashCode() : 0);
-        result = 31 * result + (localExemptions != null ? localExemptions.hashCode() : 0);
-        result = 31 * result + (localFilingStatus != null ? localFilingStatus.hashCode() : 0);
-        result = 31 * result + (localTaxCode != null ? localTaxCode.hashCode() : 0);
-        result = 31 * result + (massMailOptOut != null ? massMailOptOut.hashCode() : 0);
-        result = 31 * result + (middleName != null ? middleName.hashCode() : 0);
-        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
-        result = 31 * result + (mobile != null ? mobile.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (namePrefix != null ? namePrefix.hashCode() : 0);
-        result = 31 * result + (nameSuffix != null ? nameSuffix.hashCode() : 0);
-        result = 31 * result + (nickName != null ? nickName.hashCode() : 0);
-        result = 31 * result + (notes != null ? notes.hashCode() : 0);
-        result = 31 * result + (numCategories != null ? numCategories.hashCode() : 0);
-        result = 31 * result + (numOwners != null ? numOwners.hashCode() : 0);
-        result = 31 * result + (occupation != null ? occupation.hashCode() : 0);
-        result = 31 * result + (owner != null ? owner.hashCode() : 0);
-        result = 31 * result + (pager != null ? pager.hashCode() : 0);
-        result = 31 * result + (paperWorkOnFile != null ? paperWorkOnFile.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (phone2 != null ? phone2.hashCode() : 0);
-        result = 31 * result + (phone3 != null ? phone3.hashCode() : 0);
-        result = 31 * result + (placements != null ? placements.hashCode() : 0);
-        result = 31 * result + (preferredContact != null ? preferredContact.hashCode() : 0);
-        result = 31 * result + (primarySkills != null ? primarySkills.hashCode() : 0);
-        result = 31 * result + (recentClientList != null ? recentClientList.hashCode() : 0);
-        result = 31 * result + (referredBy != null ? referredBy.hashCode() : 0);
-        result = 31 * result + (referredByPerson != null ? referredByPerson.hashCode() : 0);
-        result = 31 * result + (references != null ? references.hashCode() : 0);
-        result = 31 * result + (salary != null ? salary.hashCode() : 0);
-        result = 31 * result + (salaryLow != null ? salaryLow.hashCode() : 0);
-        result = 31 * result + (secondaryAddress != null ? secondaryAddress.hashCode() : 0);
-        result = 31 * result + (secondaryOwners != null ? secondaryOwners.hashCode() : 0);
-        result = 31 * result + (secondarySkills != null ? secondarySkills.hashCode() : 0);
-        result = 31 * result + (sendouts != null ? sendouts.hashCode() : 0);
-        result = 31 * result + (skillSet != null ? skillSet.hashCode() : 0);
-        result = 31 * result + (smsOptIn != null ? smsOptIn.hashCode() : 0);
-        result = 31 * result + (source != null ? source.hashCode() : 0);
-        result = 31 * result + (specialties != null ? specialties.hashCode() : 0);
-        result = 31 * result + (ssn != null ? ssn.hashCode() : 0);
-        result = 31 * result + (stateAddtionalWitholdingsAmount != null ? stateAddtionalWitholdingsAmount.hashCode() : 0);
-        result = 31 * result + (stateExemptions != null ? stateExemptions.hashCode() : 0);
-        result = 31 * result + (stateFilingStatus != null ? stateFilingStatus.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (submissions != null ? submissions.hashCode() : 0);
-        result = 31 * result + (tasks != null ? tasks.hashCode() : 0);
-        result = 31 * result + (taxID != null ? taxID.hashCode() : 0);
-        result = 31 * result + (taxState != null ? taxState.hashCode() : 0);
-        result = 31 * result + (tearsheets != null ? tearsheets.hashCode() : 0);
-        result = 31 * result + (timeZoneOffsetEST != null ? timeZoneOffsetEST.hashCode() : 0);
-        result = 31 * result + (travelLimit != null ? travelLimit.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (username != null ? username.hashCode() : 0);
-        result = 31 * result + (veteran != null ? veteran.hashCode() : 0);
-        result = 31 * result + (webResponses != null ? webResponses.hashCode() : 0);
-        result = 31 * result + (willRelocate != null ? willRelocate.hashCode() : 0);
-        result = 31 * result + (workAuthorized != null ? workAuthorized.hashCode() : 0);
-        result = 31 * result + (workHistories != null ? workHistories.hashCode() : 0);
-        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
-        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
-        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
-        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
-        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
-        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
-        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
-        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
-        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
-        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
-        result = 31 * result + (workPhone != null ? workPhone.hashCode() : 0);
-        result = 31 * result + ((customEncryptedText1 == null) ? 0 : customEncryptedText1.hashCode());
-        result = 31 * result + ((customEncryptedText2 == null) ? 0 : customEncryptedText2.hashCode());
-        result = 31 * result + ((customEncryptedText3 == null) ? 0 : customEncryptedText3.hashCode());
-        result = 31 * result + ((customEncryptedText4 == null) ? 0 : customEncryptedText4.hashCode());
-        result = 31 * result + ((customEncryptedText5 == null) ? 0 : customEncryptedText5.hashCode());
-        result = 31 * result + ((customEncryptedText6 == null) ? 0 : customEncryptedText6.hashCode());
-        result = 31 * result + ((customEncryptedText7 == null) ? 0 : customEncryptedText7.hashCode());
-        result = 31 * result + ((customEncryptedText8 == null) ? 0 : customEncryptedText8.hashCode());
-        result = 31 * result + ((customEncryptedText9 == null) ? 0 : customEncryptedText9.hashCode());
-        result = 31 * result + ((customEncryptedText10 == null) ? 0 : customEncryptedText10.hashCode());
-        return result;
+
+        return Objects.hash(super.hashCode(), luceneScore, id, address, branch, businessSectors, canEnterTime, categories, category, certificationList, certifications, clientCorporationBlackList, clientCorporationWhiteList, comments, companyName, companyURL, dateAdded, dateAvailable, dateAvailableEnd, dateI9Expiration, dateLastComment, dateLastModified, dateNextCall, dateOfBirth, dayRate, dayRateLow, degreeList, description, desiredLocations, disability, educationDegree, educations, email, email2, email3, employeeType, employmentPreference, ethnicity, experience, externalID, fax, fax2, fax3, federalAddtionalWitholdingsAmount, federalExemptions, federalFilingStatus, fileAttachments, firstName, gender, hourlyRate, hourlyRateLow, interviews, i9OnFile, isDayLightSavings, isDeleted, isEditable, isLockedOut, isAnonymized, lastName, linkedPerson, leads, localAddtionalWitholdingsAmount, localExemptions, localFilingStatus, localTaxCode, massMailOptOut, middleName, migrateGUID, mobile, name, namePrefix, nameSuffix, nickName, notes, numCategories, numOwners, occupation, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, owner, pager, paperWorkOnFile, password, phone, phone2, phone3, placements, preferredContact, primarySkills, recentClientList, referredBy, referredByPerson, references, salary, salaryLow, secondaryAddress, secondaryOwners, secondarySkills, sendouts, skillSet, smsOptIn, source, specialties, ssn, stateAddtionalWitholdingsAmount, stateExemptions, stateFilingStatus, status, submissions, tasks, taxID, taxState, tearsheets, timeZoneOffsetEST, travelLimit, type, username, veteran, webResponses, willRelocate, workAuthorized, workHistories, workPhone, customEncryptedText1, customEncryptedText2, customEncryptedText3, customEncryptedText4, customEncryptedText5, customEncryptedText6, customEncryptedText7, customEncryptedText8, customEncryptedText9, customEncryptedText10, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Candidate{");
-        sb.append("luceneScore=").append(luceneScore);
-        sb.append(", id=").append(id);
-        sb.append(", address=").append(address);
-        sb.append(", branch=").append(branch);
-        sb.append(", businessSectors=").append(businessSectors);
-        sb.append(", canEnterTime=").append(canEnterTime);
-        sb.append(", categories=").append(categories);
-        sb.append(", category=").append(category);
-        sb.append(", certificationList=").append(certificationList);
-        sb.append(", certifications='").append(certifications).append('\'');
-        sb.append(", clientCorporationBlackList=").append(clientCorporationBlackList);
-        sb.append(", clientCorporationWhiteList=").append(clientCorporationWhiteList);
-        sb.append(", comments='").append(comments).append('\'');
-        sb.append(", companyName='").append(companyName).append('\'');
-        sb.append(", companyURL='").append(companyURL).append('\'');
-        sb.append(", dateAdded=").append(dateAdded);
-        sb.append(", dateAvailable=").append(dateAvailable);
-        sb.append(", dateAvailableEnd=").append(dateAvailableEnd);
-        sb.append(", dateI9Expiration=").append(dateI9Expiration);
-        sb.append(", dateLastComment=").append(dateLastComment);
-        sb.append(", dateLastModified=").append(dateLastModified);
-        sb.append(", dateNextCall=").append(dateNextCall);
-        sb.append(", dateOfBirth=").append(dateOfBirth);
-        sb.append(", dayRate=").append(dayRate);
-        sb.append(", dayRateLow=").append(dayRateLow);
-        sb.append(", degreeList='").append(degreeList).append('\'');
-        sb.append(", description='").append(description).append('\'');
-        sb.append(", desiredLocations='").append(desiredLocations).append('\'');
-        sb.append(", disability='").append(disability).append('\'');
-        sb.append(", educationDegree='").append(educationDegree).append('\'');
-        sb.append(", educations=").append(educations);
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", email2='").append(email2).append('\'');
-        sb.append(", email3='").append(email3).append('\'');
-        sb.append(", employeeType='").append(employeeType).append('\'');
-        sb.append(", employmentPreference='").append(employmentPreference).append('\'');
-        sb.append(", ethnicity='").append(ethnicity).append('\'');
-        sb.append(", experience=").append(experience);
-        sb.append(", externalID='").append(externalID).append('\'');
-        sb.append(", fax='").append(fax).append('\'');
-        sb.append(", fax2='").append(fax2).append('\'');
-        sb.append(", fax3='").append(fax3).append('\'');
-        sb.append(", federalAddtionalWitholdingsAmount=").append(federalAddtionalWitholdingsAmount);
-        sb.append(", federalExemptions=").append(federalExemptions);
-        sb.append(", federalFilingStatus='").append(federalFilingStatus).append('\'');
-        sb.append(", fileAttachments=").append(fileAttachments);
-        sb.append(", firstName='").append(firstName).append('\'');
-        sb.append(", gender='").append(gender).append('\'');
-        sb.append(", hourlyRate=").append(hourlyRate);
-        sb.append(", hourlyRateLow=").append(hourlyRateLow);
-        sb.append(", interviews=").append(interviews);
-        sb.append(", i9OnFile=").append(i9OnFile);
-        sb.append(", isDayLightSavings=").append(isDayLightSavings);
-        sb.append(", isDeleted=").append(isDeleted);
-        sb.append(", isEditable=").append(isEditable);
-        sb.append(", isLockedOut=").append(isLockedOut);
-        sb.append(", isAnonymized=").append(isAnonymized);
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", linkedPerson=").append(linkedPerson);
-        sb.append(", leads=").append(leads);
-        sb.append(", localAddtionalWitholdingsAmount=").append(localAddtionalWitholdingsAmount);
-        sb.append(", localExemptions=").append(localExemptions);
-        sb.append(", localFilingStatus='").append(localFilingStatus).append('\'');
-        sb.append(", localTaxCode='").append(localTaxCode).append('\'');
-        sb.append(", massMailOptOut=").append(massMailOptOut);
-        sb.append(", middleName='").append(middleName).append('\'');
-        sb.append(", migrateGUID=").append(migrateGUID);
-        sb.append(", mobile='").append(mobile).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", namePrefix='").append(namePrefix).append('\'');
-        sb.append(", nameSuffix='").append(nameSuffix).append('\'');
-        sb.append(", nickName='").append(nickName).append('\'');
-        sb.append(", notes=").append(notes);
-        sb.append(", numCategories=").append(numCategories);
-        sb.append(", numOwners=").append(numOwners);
-        sb.append(", occupation='").append(occupation).append('\'');
-        sb.append(", owner=").append(owner);
-        sb.append(", pager='").append(pager).append('\'');
-        sb.append(", paperWorkOnFile='").append(paperWorkOnFile).append('\'');
-        sb.append(", password='").append(password).append('\'');
-        sb.append(", phone='").append(phone).append('\'');
-        sb.append(", phone2='").append(phone2).append('\'');
-        sb.append(", phone3='").append(phone3).append('\'');
-        sb.append(", placements=").append(placements);
-        sb.append(", preferredContact='").append(preferredContact).append('\'');
-        sb.append(", primarySkills=").append(primarySkills);
-        sb.append(", recentClientList='").append(recentClientList).append('\'');
-        sb.append(", referredBy='").append(referredBy).append('\'');
-        sb.append(", referredByPerson=").append(referredByPerson);
-        sb.append(", references=").append(references);
-        sb.append(", salary=").append(salary);
-        sb.append(", salaryLow=").append(salaryLow);
-        sb.append(", secondaryAddress=").append(secondaryAddress);
-        sb.append(", secondaryOwners=").append(secondaryOwners);
-        sb.append(", secondarySkills=").append(secondarySkills);
-        sb.append(", sendouts=").append(sendouts);
-        sb.append(", skillSet='").append(skillSet).append('\'');
-        sb.append(", smsOptIn=").append(smsOptIn);
-        sb.append(", source='").append(source).append('\'');
-        sb.append(", specialties=").append(specialties);
-        sb.append(", ssn='").append(ssn).append('\'');
-        sb.append(", stateAddtionalWitholdingsAmount=").append(stateAddtionalWitholdingsAmount);
-        sb.append(", stateExemptions=").append(stateExemptions);
-        sb.append(", stateFilingStatus='").append(stateFilingStatus).append('\'');
-        sb.append(", status='").append(status).append('\'');
-        sb.append(", submissions=").append(submissions);
-        sb.append(", tasks=").append(tasks);
-        sb.append(", taxID='").append(taxID).append('\'');
-        sb.append(", taxState='").append(taxState).append('\'');
-        sb.append(", tearsheets=").append(tearsheets);
-        sb.append(", timeZoneOffsetEST=").append(timeZoneOffsetEST);
-        sb.append(", travelLimit=").append(travelLimit);
-        sb.append(", type='").append(type).append('\'');
-        sb.append(", username='").append(username).append('\'');
-        sb.append(", veteran='").append(veteran).append('\'');
-        sb.append(", webResponses=").append(webResponses);
-        sb.append(", willRelocate=").append(willRelocate);
-        sb.append(", workAuthorized=").append(workAuthorized);
-        sb.append(", workHistories=").append(workHistories);
-        sb.append(", customObject1s=").append(customObject1s);
-        sb.append(", customObject2s=").append(customObject2s);
-        sb.append(", customObject3s=").append(customObject3s);
-        sb.append(", customObject4s=").append(customObject4s);
-        sb.append(", customObject5s=").append(customObject5s);
-        sb.append(", customObject6s=").append(customObject6s);
-        sb.append(", customObject7s=").append(customObject7s);
-        sb.append(", customObject8s=").append(customObject8s);
-        sb.append(", customObject9s=").append(customObject9s);
-        sb.append(", customObject10s=").append(customObject10s);
-        sb.append(", \ncustomEncryptedText1=").append(customEncryptedText1);
-        sb.append(", \ncustomEncryptedText2=").append(customEncryptedText2);
-        sb.append(", \ncustomEncryptedText3=").append(customEncryptedText3);
-        sb.append(", \ncustomEncryptedText4=").append(customEncryptedText4);
-        sb.append(", \ncustomEncryptedText5=").append(customEncryptedText5);
-        sb.append(", \ncustomEncryptedText6=").append(customEncryptedText6);
-        sb.append(", \ncustomEncryptedText7=").append(customEncryptedText7);
-        sb.append(", \ncustomEncryptedText8=").append(customEncryptedText8);
-        sb.append(", \ncustomEncryptedText9=").append(customEncryptedText9);
-        sb.append(", \ncustomEncryptedText10=").append(customEncryptedText10);
-        sb.append(", workPhone='").append(workPhone).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "Candidate{" +
+            "luceneScore=" + luceneScore +
+            ", id=" + id +
+            ", address=" + address +
+            ", branch=" + branch +
+            ", businessSectors=" + businessSectors +
+            ", canEnterTime=" + canEnterTime +
+            ", categories=" + categories +
+            ", category=" + category +
+            ", certificationList=" + certificationList +
+            ", certifications='" + certifications + '\'' +
+            ", clientCorporationBlackList=" + clientCorporationBlackList +
+            ", clientCorporationWhiteList=" + clientCorporationWhiteList +
+            ", comments='" + comments + '\'' +
+            ", companyName='" + companyName + '\'' +
+            ", companyURL='" + companyURL + '\'' +
+            ", dateAdded=" + dateAdded +
+            ", dateAvailable=" + dateAvailable +
+            ", dateAvailableEnd=" + dateAvailableEnd +
+            ", dateI9Expiration=" + dateI9Expiration +
+            ", dateLastComment=" + dateLastComment +
+            ", dateLastModified=" + dateLastModified +
+            ", dateNextCall=" + dateNextCall +
+            ", dateOfBirth=" + dateOfBirth +
+            ", dayRate=" + dayRate +
+            ", dayRateLow=" + dayRateLow +
+            ", degreeList='" + degreeList + '\'' +
+            ", description='" + description + '\'' +
+            ", desiredLocations='" + desiredLocations + '\'' +
+            ", disability='" + disability + '\'' +
+            ", educationDegree='" + educationDegree + '\'' +
+            ", educations=" + educations +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
+            ", employeeType='" + employeeType + '\'' +
+            ", employmentPreference='" + employmentPreference + '\'' +
+            ", ethnicity='" + ethnicity + '\'' +
+            ", experience=" + experience +
+            ", externalID='" + externalID + '\'' +
+            ", fax='" + fax + '\'' +
+            ", fax2='" + fax2 + '\'' +
+            ", fax3='" + fax3 + '\'' +
+            ", federalAddtionalWitholdingsAmount=" + federalAddtionalWitholdingsAmount +
+            ", federalExemptions=" + federalExemptions +
+            ", federalFilingStatus='" + federalFilingStatus + '\'' +
+            ", fileAttachments=" + fileAttachments +
+            ", firstName='" + firstName + '\'' +
+            ", gender='" + gender + '\'' +
+            ", hourlyRate=" + hourlyRate +
+            ", hourlyRateLow=" + hourlyRateLow +
+            ", interviews=" + interviews +
+            ", i9OnFile=" + i9OnFile +
+            ", isDayLightSavings=" + isDayLightSavings +
+            ", isDeleted=" + isDeleted +
+            ", isEditable=" + isEditable +
+            ", isLockedOut=" + isLockedOut +
+            ", isAnonymized=" + isAnonymized +
+            ", lastName='" + lastName + '\'' +
+            ", linkedPerson=" + linkedPerson +
+            ", leads=" + leads +
+            ", localAddtionalWitholdingsAmount=" + localAddtionalWitholdingsAmount +
+            ", localExemptions=" + localExemptions +
+            ", localFilingStatus='" + localFilingStatus + '\'' +
+            ", localTaxCode='" + localTaxCode + '\'' +
+            ", massMailOptOut=" + massMailOptOut +
+            ", middleName='" + middleName + '\'' +
+            ", migrateGUID=" + migrateGUID +
+            ", mobile='" + mobile + '\'' +
+            ", name='" + name + '\'' +
+            ", namePrefix='" + namePrefix + '\'' +
+            ", nameSuffix='" + nameSuffix + '\'' +
+            ", nickName='" + nickName + '\'' +
+            ", notes=" + notes +
+            ", numCategories=" + numCategories +
+            ", numOwners=" + numOwners +
+            ", occupation='" + occupation + '\'' +
+            ", onboardingDocumentReceivedCount=" + onboardingDocumentReceivedCount +
+            ", onboardingDocumentSentCount=" + onboardingDocumentSentCount +
+            ", onboardingPercentComplete=" + onboardingPercentComplete +
+            ", onboardingReceivedSent=" + onboardingReceivedSent +
+            ", onboardingStatus='" + onboardingStatus + '\'' +
+            ", owner=" + owner +
+            ", pager='" + pager + '\'' +
+            ", paperWorkOnFile='" + paperWorkOnFile + '\'' +
+            ", password='" + password + '\'' +
+            ", phone='" + phone + '\'' +
+            ", phone2='" + phone2 + '\'' +
+            ", phone3='" + phone3 + '\'' +
+            ", placements=" + placements +
+            ", preferredContact='" + preferredContact + '\'' +
+            ", primarySkills=" + primarySkills +
+            ", recentClientList='" + recentClientList + '\'' +
+            ", referredBy='" + referredBy + '\'' +
+            ", referredByPerson=" + referredByPerson +
+            ", references=" + references +
+            ", salary=" + salary +
+            ", salaryLow=" + salaryLow +
+            ", secondaryAddress=" + secondaryAddress +
+            ", secondaryOwners=" + secondaryOwners +
+            ", secondarySkills=" + secondarySkills +
+            ", sendouts=" + sendouts +
+            ", skillSet='" + skillSet + '\'' +
+            ", smsOptIn=" + smsOptIn +
+            ", source='" + source + '\'' +
+            ", specialties=" + specialties +
+            ", ssn='" + ssn + '\'' +
+            ", stateAddtionalWitholdingsAmount=" + stateAddtionalWitholdingsAmount +
+            ", stateExemptions=" + stateExemptions +
+            ", stateFilingStatus='" + stateFilingStatus + '\'' +
+            ", status='" + status + '\'' +
+            ", submissions=" + submissions +
+            ", tasks=" + tasks +
+            ", taxID='" + taxID + '\'' +
+            ", taxState='" + taxState + '\'' +
+            ", tearsheets=" + tearsheets +
+            ", timeZoneOffsetEST=" + timeZoneOffsetEST +
+            ", travelLimit=" + travelLimit +
+            ", type='" + type + '\'' +
+            ", username='" + username + '\'' +
+            ", veteran='" + veteran + '\'' +
+            ", webResponses=" + webResponses +
+            ", willRelocate=" + willRelocate +
+            ", workAuthorized=" + workAuthorized +
+            ", workHistories=" + workHistories +
+            ", workPhone='" + workPhone + '\'' +
+            ", customEncryptedText1='" + customEncryptedText1 + '\'' +
+            ", customEncryptedText2='" + customEncryptedText2 + '\'' +
+            ", customEncryptedText3='" + customEncryptedText3 + '\'' +
+            ", customEncryptedText4='" + customEncryptedText4 + '\'' +
+            ", customEncryptedText5='" + customEncryptedText5 + '\'' +
+            ", customEncryptedText6='" + customEncryptedText6 + '\'' +
+            ", customEncryptedText7='" + customEncryptedText7 + '\'' +
+            ", customEncryptedText8='" + customEncryptedText8 + '\'' +
+            ", customEncryptedText9='" + customEncryptedText9 + '\'' +
+            ", customEncryptedText10='" + customEncryptedText10 + '\'' +
+            ", customObject1s=" + customObject1s +
+            ", customObject2s=" + customObject2s +
+            ", customObject3s=" + customObject3s +
+            ", customObject4s=" + customObject4s +
+            ", customObject5s=" + customObject5s +
+            ", customObject6s=" + customObject6s +
+            ", customObject7s=" + customObject7s +
+            ", customObject8s=" + customObject8s +
+            ", customObject9s=" + customObject9s +
+            ", customObject10s=" + customObject10s +
+            '}';
     }
 }

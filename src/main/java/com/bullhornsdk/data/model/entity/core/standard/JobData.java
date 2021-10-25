@@ -5,6 +5,9 @@ import java.util.Objects;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
@@ -28,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-public abstract class JobData extends CustomFieldsC implements BullhornEntity {
+public abstract class JobData extends CustomFieldsD implements BullhornEntity {
 
 	private BigDecimal luceneScore;
 
@@ -87,6 +90,8 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 
 	private DateTime dateLastModified;
 
+	private DateTime dateLastPublished;
+
 	@JsonIgnore
 	private String degreeList;
 
@@ -133,6 +138,10 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 
 	@JsonIgnore
 	private String jobBoardList;
+
+	private Location location;
+
+	private Double markUpPercentage;
 
 	private OneToMany<Note> notes;
 
@@ -347,6 +356,9 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 	public void setBillRateCategoryID(Integer billRateCategoryID) {
 		this.billRateCategoryID = billRateCategoryID;
 	}
+
+
+
 
 	@JsonProperty("bonusPackage")
 	public String getBonusPackage() {
@@ -1221,6 +1233,36 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
         this.customObject10s = customObject10s;
     }
 
+    @JsonProperty("location")
+    public Location getLocation() {
+        return location;
+    }
+
+    @JsonProperty("location")
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    @JsonProperty("dateLastPublished")
+    public DateTime getDateLastPublished() {
+        return dateLastPublished;
+    }
+
+    @JsonProperty("dateLastPublished")
+    public void setDateLastPublished(DateTime dateLastPublished) {
+        this.dateLastPublished = dateLastPublished;
+    }
+
+    @JsonProperty("markUpPercentage")
+    public Double getMarkUpPercentage() {
+        return markUpPercentage;
+    }
+
+    @JsonProperty("markUpPercentage")
+    public void setMarkUpPercentage(Double markUpPercentage) {
+        this.markUpPercentage = markUpPercentage;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -1252,6 +1294,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
             Objects.equals(dateEnd, jobData.dateEnd) &&
             Objects.equals(dateLastExported, jobData.dateLastExported) &&
             Objects.equals(dateLastModified, jobData.dateLastModified) &&
+            Objects.equals(dateLastPublished, jobData.dateLastPublished) &&
             Objects.equals(degreeList, jobData.degreeList) &&
             Objects.equals(description, jobData.description) &&
             Objects.equals(durationWeeks, jobData.durationWeeks) &&
@@ -1270,6 +1313,8 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
             Objects.equals(isOpen, jobData.isOpen) &&
             Objects.equals(isPublic, jobData.isPublic) &&
             Objects.equals(jobBoardList, jobData.jobBoardList) &&
+            Objects.equals(location, jobData.location) &&
+            Objects.equals(markUpPercentage, jobData.markUpPercentage) &&
             Objects.equals(notes, jobData.notes) &&
             Objects.equals(numOpenings, jobData.numOpenings) &&
             Objects.equals(onSite, jobData.onSite) &&
@@ -1323,7 +1368,8 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), luceneScore, id, address, appointments, approvedPlacements, assignedUsers, benefits, billRateCategoryID, bonusPackage, branch, branchCode, businessSectors, categories, certificationList, certifications, certificationGroups, clientBillRate, clientContact, clientCorporation, costCenter, dateAdded, dateClosed, dateEnd, dateLastExported, dateLastModified, degreeList, description, durationWeeks, educationDegree, employmentType, externalCategoryID, externalID, feeArrangement, hoursOfOperation, hoursPerWeek, interviews, isClientEditable, isDeleted, isInterviewRequired, isJobcastPublished, isOpen, isPublic, jobBoardList, notes, numOpenings, onSite, optionsPackage, opportunity, owner, payRate, placements, publicDescription, publishedZip, reasonClosed, reportTo, reportToClientContact, responseUser, salary, salaryUnit, sendouts, skillList, skills, source, specialties, startDate, status, submissions, tasks, taxRate, taxStatus, tearsheets, timeUnits, title, travelRequirements, type, usersAssigned, webResponses, willRelocate, willRelocateInt, willSponsor, workersCompRate, yearsRequired, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+
+        return Objects.hash(super.hashCode(), luceneScore, id, address, appointments, approvedPlacements, assignedUsers, benefits, billRateCategoryID, bonusPackage, branch, branchCode, businessSectors, categories, certificationList, certifications, certificationGroups, clientBillRate, clientContact, clientCorporation, costCenter, dateAdded, dateClosed, dateEnd, dateLastExported, dateLastModified, dateLastPublished, degreeList, description, durationWeeks, educationDegree, employmentType, externalCategoryID, externalID, feeArrangement, hoursOfOperation, hoursPerWeek, interviews, isClientEditable, isDeleted, isInterviewRequired, isJobcastPublished, isOpen, isPublic, jobBoardList, location, markUpPercentage, notes, numOpenings, onSite, optionsPackage, opportunity, owner, payRate, placements, publicDescription, publishedZip, reasonClosed, reportTo, reportToClientContact, responseUser, salary, salaryUnit, sendouts, skillList, skills, source, specialties, startDate, status, submissions, tasks, taxRate, taxStatus, tearsheets, timeUnits, title, travelRequirements, type, usersAssigned, webResponses, willRelocate, willRelocateInt, willSponsor, workersCompRate, yearsRequired, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
     @Override
@@ -1421,6 +1467,7 @@ public abstract class JobData extends CustomFieldsC implements BullhornEntity {
             ", customObject8s=" + customObject8s +
             ", customObject9s=" + customObject9s +
             ", customObject10s=" + customObject10s +
+            ", location=" + location +
             '}';
     }
 }

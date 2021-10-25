@@ -1,181 +1,283 @@
 {
-    "entity": "BillMasterTransactionSalesTaxRate",
-    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSalesTaxRate?fields=*",
-    "label": "Bill Master Transaction Sales Tax Rate",
-    "dateLastModified": "1602085163524",
-    "fields": [
-        {
+  "entity": "BillMasterTransactionSalesTaxRate",
+  "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSalesTaxRate?fields=*",
+  "label": "Bill Master Transaction Sales Tax Rate",
+  "dateLastModified": "1613419497952",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer",
+      "optional": false
+    },
+    {
+      "name": "adjustmentSequenceNumber",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "Adjustment Sequence Number",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "sortOrder": 20,
+      "hint": "",
+      "description": "",
+      "systemRequired": false
+    },
+    {
+      "name": "allSalesTaxRate",
+      "type": "TO_ONE",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "All Sales Tax Rate",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "optionsType": "AllSalesTaxRate",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/AllSalesTaxRate",
+      "hideFromSearch": false,
+      "sortOrder": 30,
+      "hint": "",
+      "description": "",
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "AllSalesTaxRate",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/AllSalesTaxRate?fields=*",
+        "label": "All Sales Tax Rate",
+        "dateLastModified": "1613419498309",
+        "fields": [
+          {
             "name": "id",
             "type": "ID",
-            "dataType": "Integer"
-        },
-        {
-            "name": "adjustmentSequenceNumber",
-            "type": "SCALAR",
             "dataType": "Integer",
-            "confidential": false,
-            "label": "Adjustment Sequence Number",
-            "hideFromSearch": false
-        },
-        {
-            "name": "allSalesTaxRate",
-            "type": "TO_ONE",
-            "confidential": false,
-            "label": "All Sales Tax Rate",
-            "optionsType": "AllSalesTaxRate",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/AllSalesTaxRate",
-            "hideFromSearch": false,
-            "associatedEntity": {
-                "entity": "AllSalesTaxRate",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/AllSalesTaxRate?fields=*",
-                "label": "All Sales Tax Rate",
-                "dateLastModified": "1602252031403",
-                "fields": [
-                    {
-                        "name": "id",
-                        "type": "ID",
-                        "dataType": "Integer"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "baseAmount",
-            "type": "SCALAR",
-            "dataType": "BigDecimal",
-            "confidential": false,
-            "label": "Base Amount",
-            "hideFromSearch": false
-        },
-        {
-            "name": "billMasterTransaction",
-            "type": "TO_ONE",
-            "confidential": false,
-            "label": "Bill Master Transaction",
-            "optionsType": "BillMasterTransaction",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransaction",
-            "hideFromSearch": false,
-            "associatedEntity": {
-                "entity": "BillMasterTransaction",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransaction?fields=*",
-                "label": "Bill Transaction Entry",
-                "dateLastModified": "1601627283543",
-                "fields": [
-                    {
-                        "name": "id",
-                        "type": "ID",
-                        "dataType": "Integer"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "billMasterTransactionSalesTaxDetail",
-            "type": "TO_ONE",
-            "confidential": false,
-            "label": "Bill Master Transaction Sales Tax Detail",
-            "optionsType": "BillMasterTransactionSalesTaxDetail",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSalesTaxDetail",
-            "hideFromSearch": false,
-            "associatedEntity": {
-                "entity": "BillMasterTransactionSalesTaxDetail",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSalesTaxDetail?fields=*",
-                "label": "Bill Master Transaction Sales Tax Detail",
-                "dateLastModified": "1602085163384",
-                "fields": [
-                    {
-                        "name": "id",
-                        "type": "ID",
-                        "dataType": "Integer"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "currencyUnit",
-            "type": "TO_ONE",
-            "confidential": false,
-            "label": "Currency Unit",
-            "optionsType": "CurrencyUnit",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/CurrencyUnit",
-            "hideFromSearch": false,
-            "associatedEntity": {
-                "entity": "CurrencyUnit",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/CurrencyUnit?fields=*",
-                "label": "Currency Unit",
-                "dateLastModified": "1601627278594",
-                "fields": [
-                    {
-                        "name": "id",
-                        "type": "ID",
-                        "dataType": "Integer"
-                    },
-                    {
-                        "name": "alphabeticCode",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 3,
-                        "confidential": false,
-                        "label": "Alphabetic Code",
-                        "hideFromSearch": false
-                    },
-                    {
-                        "name": "name",
-                        "type": "SCALAR",
-                        "dataType": "String",
-                        "maxLength": 100,
-                        "confidential": false,
-                        "label": "Name",
-                        "hideFromSearch": false
-                    }
-                ]
-            }
-        },
-        {
-            "name": "dateAdded",
-            "type": "SCALAR",
-            "dataType": "Timestamp",
-            "confidential": false,
-            "label": "Date Added",
-            "hideFromSearch": false
-        },
-        {
-            "name": "reversalOfTransactionSalesTaxRate",
-            "type": "TO_ONE",
-            "confidential": false,
-            "label": "Reversal Of Transaction Sales Tax Rate",
-            "optionsType": "BillMasterTransactionSalesTaxRate",
-            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSalesTaxRate",
-            "hideFromSearch": false,
-            "associatedEntity": {
-                "entity": "BillMasterTransactionSalesTaxRate",
-                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSalesTaxRate?fields=*",
-                "label": "Bill Master Transaction Sales Tax Rate",
-                "dateLastModified": "1602085163524",
-                "fields": [
-                    {
-                        "name": "id",
-                        "type": "ID",
-                        "dataType": "Integer"
-                    }
-                ]
-            }
-        },
-        {
-            "name": "salesTaxRateVersionID",
-            "type": "SCALAR",
+            "optional": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "baseAmount",
+      "type": "SCALAR",
+      "dataType": "BigDecimal",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "Base Amount",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "sortOrder": 40,
+      "hint": "",
+      "description": "",
+      "systemRequired": false
+    },
+    {
+      "name": "billMasterTransaction",
+      "type": "TO_ONE",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "Bill Master Transaction",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "optionsType": "BillMasterTransaction",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransaction",
+      "hideFromSearch": false,
+      "sortOrder": 50,
+      "hint": "",
+      "description": "",
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "BillMasterTransaction",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransaction?fields=*",
+        "label": "Bill Transaction Entry",
+        "dateLastModified": "1613416605309",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
             "dataType": "Integer",
-            "confidential": false,
-            "label": "Sales Tax Rate Version ID",
-            "hideFromSearch": false
-        },
-        {
-            "name": "taxAmount",
+            "optional": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "billMasterTransactionSalesTaxDetail",
+      "type": "TO_ONE",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "Bill Master Transaction Sales Tax Detail",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "optionsType": "BillMasterTransactionSalesTaxDetail",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSalesTaxDetail",
+      "hideFromSearch": false,
+      "sortOrder": 60,
+      "hint": "",
+      "description": "",
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "BillMasterTransactionSalesTaxDetail",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSalesTaxDetail?fields=*",
+        "label": "Bill Master Transaction Sales Tax Detail",
+        "dateLastModified": "1613419433386",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "currencyUnit",
+      "type": "TO_ONE",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "Currency Unit",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "optionsType": "CurrencyUnit",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/CurrencyUnit",
+      "hideFromSearch": false,
+      "sortOrder": 70,
+      "hint": "",
+      "description": "",
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "CurrencyUnit",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/CurrencyUnit?fields=*",
+        "label": "Currency Unit",
+        "dateLastModified": "1613416602854",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          },
+          {
+            "name": "alphabeticCode",
             "type": "SCALAR",
-            "dataType": "BigDecimal",
+            "dataType": "String",
+            "maxLength": 3,
             "confidential": false,
-            "label": "Tax Amount",
-            "hideFromSearch": false
-        }
-    ]
+            "optional": false,
+            "label": "Alphabetic Code",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+          },
+          {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "Date Added",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "sortOrder": 80,
+      "hint": "",
+      "description": "",
+      "systemRequired": false
+    },
+    {
+      "name": "reversalOfTransactionSalesTaxRate",
+      "type": "TO_ONE",
+      "confidential": false,
+      "optional": true,
+      "label": "Reversal Of Transaction Sales Tax Rate",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "BillMasterTransactionSalesTaxRate",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/BillMasterTransactionSalesTaxRate",
+      "hideFromSearch": false,
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "BillMasterTransactionSalesTaxRate",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/BillMasterTransactionSalesTaxRate?fields=*",
+        "label": "Bill Master Transaction Sales Tax Rate",
+        "dateLastModified": "1613419497952",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "salesTaxRateVersionID",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": true,
+      "label": "Sales Tax Rate Version",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "sortOrder": 100,
+      "hint": "",
+      "description": "",
+      "systemRequired": false
+    },
+    {
+      "name": "taxAmount",
+      "type": "SCALAR",
+      "dataType": "BigDecimal",
+      "dataSpecialization": "SYSTEM",
+      "confidential": false,
+      "optional": false,
+      "label": "Tax Amount",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "sortOrder": 110,
+      "hint": "",
+      "description": "",
+      "systemRequired": false
+    }
+  ]
 }

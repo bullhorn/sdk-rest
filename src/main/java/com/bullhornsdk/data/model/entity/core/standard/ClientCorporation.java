@@ -36,6 +36,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorpor
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -59,6 +60,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
@@ -70,9 +72,9 @@ import java.math.BigDecimal;
 		"customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
 		"customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateFounded", "dateLastModified", "department",
 		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "linkedinProfileName", "name", "notes", "numEmployees", "numOffices",
-		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "workWeekStart",
+		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "userOwners", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s" })
+        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName" })
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
 		SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -144,13 +146,23 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	@JsonIgnore
 	private String invoiceFormat;
 
+	private OneToMany<Location> locations;
+
 	private OneToMany<Lead> leads;
 
     @JsonIgnore
     @Size(max = 200)
     private String linkedinProfileName;
 
-	@JsonIgnore
+    @JsonIgnore
+    @Size(max = 200)
+    private String twitterHandle;
+
+    @JsonIgnore
+    @Size(max = 200)
+    private String facebookProfileName;
+
+    @JsonIgnore
 	@Size(max = 100)
 	private String name;
 
@@ -189,6 +201,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	@JsonIgnore
 	@Size(max = 200)
 	private String trackTitle;
+
+    private OneToMany<CorporateUser> userOwners;
 
 	private Integer workWeekStart;
 
@@ -271,12 +285,12 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	public ClientCorporation() {
 		super();
 	}
-	
+
 	public ClientCorporation(Integer id) {
 		super();
 		this.id = id;
 	}
-	
+
 	@JsonProperty("id")
 	public Integer getId() {
 		return id;
@@ -552,6 +566,26 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.linkedinProfileName = linkedinProfileName;
     }
 
+    @JsonProperty("twitterHandle")
+    public String getTwitterHandle() {
+        return twitterHandle;
+    }
+
+    @JsonIgnore
+    public void setTwitterHandle(String twitterHandle) {
+        this.twitterHandle = twitterHandle;
+    }
+
+    @JsonProperty("facebookProfileName")
+    public String getFacebookProfileName() {
+        return facebookProfileName;
+    }
+
+    @JsonIgnore
+    public void setFacebookProfileName(String facebookProfileName) {
+        this.facebookProfileName = facebookProfileName;
+    }
+
 	@JsonProperty("name")
 	public String getName() {
 		return name;
@@ -682,6 +716,17 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 	public void setTrackTitle(String trackTitle) {
 		this.trackTitle = trackTitle;
 	}
+
+    @JsonProperty("userOwners")
+    public OneToMany<CorporateUser> getUserOwners() {
+        return userOwners;
+    }
+
+    @ReadOnly
+    @JsonProperty("userOwners")
+    public void setUserOwners(OneToMany<CorporateUser> userOwners) {
+        this.userOwners = userOwners;
+    }
 
 	@JsonProperty("workWeekStart")
 	public Integer getWorkWeekStart() {
@@ -1144,180 +1189,111 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.customObject35s = customObject35s;
     }
 
+    @JsonProperty("locations")
+    public OneToMany<Location> getLocations() {
+        return locations;
+    }
+
+    @JsonProperty("locations")
+    public void setLocations(OneToMany<Location> locations) {
+        this.locations = locations;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-
         ClientCorporation that = (ClientCorporation) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (address != null ? !address.equals(that.address) : that.address != null) return false;
-        if (annualRevenue != null ? !annualRevenue.equals(that.annualRevenue) : that.annualRevenue != null)
-            return false;
-        if (billingAddress != null ? !billingAddress.equals(that.billingAddress) : that.billingAddress != null)
-            return false;
-        if (billingContact != null ? !billingContact.equals(that.billingContact) : that.billingContact != null)
-            return false;
-        if (billingFrequency != null ? !billingFrequency.equals(that.billingFrequency) : that.billingFrequency != null)
-            return false;
-        if (billingPhone != null ? !billingPhone.equals(that.billingPhone) : that.billingPhone != null) return false;
-        if (branch != null ? !branch.equals(that.branch) : that.branch != null) return false;
-        if (businessSectorList != null ? !businessSectorList.equals(that.businessSectorList) : that.businessSectorList != null)
-            return false;
-        if (childClientCorporations != null ? !childClientCorporations.equals(that.childClientCorporations) : that.childClientCorporations != null)
-            return false;
-        if (clientContacts != null ? !clientContacts.equals(that.clientContacts) : that.clientContacts != null)
-            return false;
-        if (companyDescription != null ? !companyDescription.equals(that.companyDescription) : that.companyDescription != null)
-            return false;
-        if (companyURL != null ? !companyURL.equals(that.companyURL) : that.companyURL != null) return false;
-        if (competitors != null ? !competitors.equals(that.competitors) : that.competitors != null) return false;
-        if (culture != null ? !culture.equals(that.culture) : that.culture != null) return false;
-        if (dateAdded != null ? !dateAdded.equals(that.dateAdded) : that.dateAdded != null) return false;
-        if (dateFounded != null ? !dateFounded.equals(that.dateFounded) : that.dateFounded != null) return false;
-        if (dateLastModified != null ? !dateLastModified.equals(that.dateLastModified) : that.dateLastModified != null)
-            return false;
-        if (department != null ? !department.equals(that.department) : that.department != null) return false;
-        if (externalID != null ? !externalID.equals(that.externalID) : that.externalID != null) return false;
-        if (fax != null ? !fax.equals(that.fax) : that.fax != null) return false;
-        if (feeArrangement != null ? !feeArrangement.equals(that.feeArrangement) : that.feeArrangement != null)
-            return false;
-        if (funding != null ? !funding.equals(that.funding) : that.funding != null) return false;
-        if (industryList != null ? !industryList.equals(that.industryList) : that.industryList != null) return false;
-        if (invoiceFormat != null ? !invoiceFormat.equals(that.invoiceFormat) : that.invoiceFormat != null)
-            return false;
-        if (leads != null ? !leads.equals(that.leads) : that.leads != null) return false;
-        if (linkedinProfileName != null ? !linkedinProfileName.equals(that.linkedinProfileName) : that.linkedinProfileName != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (notes != null ? !notes.equals(that.notes) : that.notes != null) return false;
-        if (numEmployees != null ? !numEmployees.equals(that.numEmployees) : that.numEmployees != null) return false;
-        if (numOffices != null ? !numOffices.equals(that.numOffices) : that.numOffices != null) return false;
-        if (ownership != null ? !ownership.equals(that.ownership) : that.ownership != null) return false;
-        if (owners != null ? !owners.equals(that.owners) : that.owners != null) return false;
-        if (parentClientCorporation != null ? !parentClientCorporation.equals(that.parentClientCorporation) : that.parentClientCorporation != null)
-            return false;
-        if (phone != null ? !phone.equals(that.phone) : that.phone != null) return false;
-        if (revenue != null ? !revenue.equals(that.revenue) : that.revenue != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (taxRate != null ? !taxRate.equals(that.taxRate) : that.taxRate != null) return false;
-        if (tickerSymbol != null ? !tickerSymbol.equals(that.tickerSymbol) : that.tickerSymbol != null) return false;
-        if (trackTitle != null ? !trackTitle.equals(that.trackTitle) : that.trackTitle != null) return false;
-        if (workWeekStart != null ? !workWeekStart.equals(that.workWeekStart) : that.workWeekStart != null)
-            return false;
-        if (requirements != null ? !requirements.equals(that.requirements) : that.requirements != null)
-            return false;
-        if (certificationGroups != null ? !certificationGroups.equals(that.certificationGroups) : that.certificationGroups != null)
-            return false;
-        if (customObject1s != null ? !customObject1s.equals(that.customObject1s) : that.customObject1s != null)
-            return false;
-        if (customObject2s != null ? !customObject2s.equals(that.customObject2s) : that.customObject2s != null)
-            return false;
-        if (customObject3s != null ? !customObject3s.equals(that.customObject3s) : that.customObject3s != null)
-            return false;
-        if (customObject4s != null ? !customObject4s.equals(that.customObject4s) : that.customObject4s != null)
-            return false;
-        if (customObject5s != null ? !customObject5s.equals(that.customObject5s) : that.customObject5s != null)
-            return false;
-        if (customObject6s != null ? !customObject6s.equals(that.customObject6s) : that.customObject6s != null)
-            return false;
-        if (customObject7s != null ? !customObject7s.equals(that.customObject7s) : that.customObject7s != null)
-            return false;
-        if (customObject8s != null ? !customObject8s.equals(that.customObject8s) : that.customObject8s != null)
-            return false;
-        if (customObject9s != null ? !customObject9s.equals(that.customObject9s) : that.customObject9s != null)
-            return false;
-        if (customObject10s != null ? !customObject10s.equals(that.customObject10s) : that.customObject10s != null)
-            return false;
-        if (customObject11s != null ? !customObject11s.equals(that.customObject11s) : that.customObject11s != null)
-            return false;
-        if (customObject12s != null ? !customObject12s.equals(that.customObject12s) : that.customObject12s != null)
-            return false;
-        if (customObject13s != null ? !customObject13s.equals(that.customObject13s) : that.customObject13s != null)
-            return false;
-        if (customObject14s != null ? !customObject14s.equals(that.customObject14s) : that.customObject14s != null)
-            return false;
-        if (customObject15s != null ? !customObject15s.equals(that.customObject15s) : that.customObject15s != null)
-            return false;
-        if (customObject16s != null ? !customObject16s.equals(that.customObject16s) : that.customObject16s != null)
-            return false;
-        if (customObject17s != null ? !customObject17s.equals(that.customObject17s) : that.customObject17s != null)
-            return false;
-        if (customObject18s != null ? !customObject18s.equals(that.customObject18s) : that.customObject18s != null)
-            return false;
-        if (customObject19s != null ? !customObject19s.equals(that.customObject19s) : that.customObject19s != null)
-            return false;
-        return customObject20s != null ? customObject20s.equals(that.customObject20s) : that.customObject20s == null;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(address, that.address) &&
+            Objects.equals(annualRevenue, that.annualRevenue) &&
+            Objects.equals(billingAddress, that.billingAddress) &&
+            Objects.equals(billingContact, that.billingContact) &&
+            Objects.equals(billingFrequency, that.billingFrequency) &&
+            Objects.equals(billingPhone, that.billingPhone) &&
+            Objects.equals(branch, that.branch) &&
+            Objects.equals(businessSectorList, that.businessSectorList) &&
+            Objects.equals(childClientCorporations, that.childClientCorporations) &&
+            Objects.equals(clientContacts, that.clientContacts) &&
+            Objects.equals(companyDescription, that.companyDescription) &&
+            Objects.equals(companyURL, that.companyURL) &&
+            Objects.equals(competitors, that.competitors) &&
+            Objects.equals(culture, that.culture) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(dateFounded, that.dateFounded) &&
+            Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(department, that.department) &&
+            Objects.equals(externalID, that.externalID) &&
+            Objects.equals(fax, that.fax) &&
+            Objects.equals(feeArrangement, that.feeArrangement) &&
+            Objects.equals(funding, that.funding) &&
+            Objects.equals(industryList, that.industryList) &&
+            Objects.equals(invoiceFormat, that.invoiceFormat) &&
+            Objects.equals(locations, that.locations) &&
+            Objects.equals(leads, that.leads) &&
+            Objects.equals(linkedinProfileName, that.linkedinProfileName) &&
+            Objects.equals(twitterHandle, that.twitterHandle) &&
+            Objects.equals(facebookProfileName, that.facebookProfileName) &&
+            Objects.equals(name, that.name) &&
+            Objects.equals(notes, that.notes) &&
+            Objects.equals(numEmployees, that.numEmployees) &&
+            Objects.equals(numOffices, that.numOffices) &&
+            Objects.equals(ownership, that.ownership) &&
+            Objects.equals(owners, that.owners) &&
+            Objects.equals(parentClientCorporation, that.parentClientCorporation) &&
+            Objects.equals(phone, that.phone) &&
+            Objects.equals(revenue, that.revenue) &&
+            Objects.equals(status, that.status) &&
+            Objects.equals(taxRate, that.taxRate) &&
+            Objects.equals(tickerSymbol, that.tickerSymbol) &&
+            Objects.equals(trackTitle, that.trackTitle) &&
+            Objects.equals(userOwners, that.userOwners) &&
+            Objects.equals(workWeekStart, that.workWeekStart) &&
+            Objects.equals(requirements, that.requirements) &&
+            Objects.equals(certificationGroups, that.certificationGroups) &&
+            Objects.equals(certifications, that.certifications) &&
+            Objects.equals(customObject1s, that.customObject1s) &&
+            Objects.equals(customObject2s, that.customObject2s) &&
+            Objects.equals(customObject3s, that.customObject3s) &&
+            Objects.equals(customObject4s, that.customObject4s) &&
+            Objects.equals(customObject5s, that.customObject5s) &&
+            Objects.equals(customObject6s, that.customObject6s) &&
+            Objects.equals(customObject7s, that.customObject7s) &&
+            Objects.equals(customObject8s, that.customObject8s) &&
+            Objects.equals(customObject9s, that.customObject9s) &&
+            Objects.equals(customObject10s, that.customObject10s) &&
+            Objects.equals(customObject11s, that.customObject11s) &&
+            Objects.equals(customObject12s, that.customObject12s) &&
+            Objects.equals(customObject13s, that.customObject13s) &&
+            Objects.equals(customObject14s, that.customObject14s) &&
+            Objects.equals(customObject15s, that.customObject15s) &&
+            Objects.equals(customObject16s, that.customObject16s) &&
+            Objects.equals(customObject17s, that.customObject17s) &&
+            Objects.equals(customObject18s, that.customObject18s) &&
+            Objects.equals(customObject19s, that.customObject19s) &&
+            Objects.equals(customObject20s, that.customObject20s) &&
+            Objects.equals(customObject21s, that.customObject21s) &&
+            Objects.equals(customObject22s, that.customObject22s) &&
+            Objects.equals(customObject23s, that.customObject23s) &&
+            Objects.equals(customObject24s, that.customObject24s) &&
+            Objects.equals(customObject25s, that.customObject25s) &&
+            Objects.equals(customObject26s, that.customObject26s) &&
+            Objects.equals(customObject27s, that.customObject27s) &&
+            Objects.equals(customObject28s, that.customObject28s) &&
+            Objects.equals(customObject29s, that.customObject29s) &&
+            Objects.equals(customObject30s, that.customObject30s) &&
+            Objects.equals(customObject31s, that.customObject31s) &&
+            Objects.equals(customObject32s, that.customObject32s) &&
+            Objects.equals(customObject33s, that.customObject33s) &&
+            Objects.equals(customObject34s, that.customObject34s) &&
+            Objects.equals(customObject35s, that.customObject35s);
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (id != null ? id.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
-        result = 31 * result + (annualRevenue != null ? annualRevenue.hashCode() : 0);
-        result = 31 * result + (billingAddress != null ? billingAddress.hashCode() : 0);
-        result = 31 * result + (billingContact != null ? billingContact.hashCode() : 0);
-        result = 31 * result + (billingFrequency != null ? billingFrequency.hashCode() : 0);
-        result = 31 * result + (billingPhone != null ? billingPhone.hashCode() : 0);
-        result = 31 * result + (branch != null ? branch.hashCode() : 0);
-        result = 31 * result + (businessSectorList != null ? businessSectorList.hashCode() : 0);
-        result = 31 * result + (childClientCorporations != null ? childClientCorporations.hashCode() : 0);
-        result = 31 * result + (clientContacts != null ? clientContacts.hashCode() : 0);
-        result = 31 * result + (companyDescription != null ? companyDescription.hashCode() : 0);
-        result = 31 * result + (companyURL != null ? companyURL.hashCode() : 0);
-        result = 31 * result + (competitors != null ? competitors.hashCode() : 0);
-        result = 31 * result + (culture != null ? culture.hashCode() : 0);
-        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-        result = 31 * result + (dateFounded != null ? dateFounded.hashCode() : 0);
-        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
-        result = 31 * result + (department != null ? department.hashCode() : 0);
-        result = 31 * result + (externalID != null ? externalID.hashCode() : 0);
-        result = 31 * result + (fax != null ? fax.hashCode() : 0);
-        result = 31 * result + (feeArrangement != null ? feeArrangement.hashCode() : 0);
-        result = 31 * result + (funding != null ? funding.hashCode() : 0);
-        result = 31 * result + (industryList != null ? industryList.hashCode() : 0);
-        result = 31 * result + (invoiceFormat != null ? invoiceFormat.hashCode() : 0);
-        result = 31 * result + (leads != null ? leads.hashCode() : 0);
-        result = 31 * result + (linkedinProfileName != null ? linkedinProfileName.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (notes != null ? notes.hashCode() : 0);
-        result = 31 * result + (numEmployees != null ? numEmployees.hashCode() : 0);
-        result = 31 * result + (numOffices != null ? numOffices.hashCode() : 0);
-        result = 31 * result + (ownership != null ? ownership.hashCode() : 0);
-        result = 31 * result + (owners != null ? owners.hashCode() : 0);
-        result = 31 * result + (parentClientCorporation != null ? parentClientCorporation.hashCode() : 0);
-        result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (revenue != null ? revenue.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (taxRate != null ? taxRate.hashCode() : 0);
-        result = 31 * result + (tickerSymbol != null ? tickerSymbol.hashCode() : 0);
-        result = 31 * result + (trackTitle != null ? trackTitle.hashCode() : 0);
-        result = 31 * result + (workWeekStart != null ? workWeekStart.hashCode() : 0);
-        result = 31 * result + (requirements != null ? requirements.hashCode() : 0);
-        result = 31 * result + (certificationGroups != null ? certificationGroups.hashCode() : 0);
-        result = 31 * result + (customObject1s != null ? customObject1s.hashCode() : 0);
-        result = 31 * result + (customObject2s != null ? customObject2s.hashCode() : 0);
-        result = 31 * result + (customObject3s != null ? customObject3s.hashCode() : 0);
-        result = 31 * result + (customObject4s != null ? customObject4s.hashCode() : 0);
-        result = 31 * result + (customObject5s != null ? customObject5s.hashCode() : 0);
-        result = 31 * result + (customObject6s != null ? customObject6s.hashCode() : 0);
-        result = 31 * result + (customObject7s != null ? customObject7s.hashCode() : 0);
-        result = 31 * result + (customObject8s != null ? customObject8s.hashCode() : 0);
-        result = 31 * result + (customObject9s != null ? customObject9s.hashCode() : 0);
-        result = 31 * result + (customObject10s != null ? customObject10s.hashCode() : 0);
-        result = 31 * result + (customObject11s != null ? customObject11s.hashCode() : 0);
-        result = 31 * result + (customObject12s != null ? customObject12s.hashCode() : 0);
-        result = 31 * result + (customObject13s != null ? customObject13s.hashCode() : 0);
-        result = 31 * result + (customObject14s != null ? customObject14s.hashCode() : 0);
-        result = 31 * result + (customObject15s != null ? customObject15s.hashCode() : 0);
-        result = 31 * result + (customObject16s != null ? customObject16s.hashCode() : 0);
-        result = 31 * result + (customObject17s != null ? customObject17s.hashCode() : 0);
-        result = 31 * result + (customObject18s != null ? customObject18s.hashCode() : 0);
-        result = 31 * result + (customObject19s != null ? customObject19s.hashCode() : 0);
-        result = 31 * result + (customObject20s != null ? customObject20s.hashCode() : 0);
-        return result;
+
+        return Objects.hash(super.hashCode(), id, address, annualRevenue, billingAddress, billingContact, billingFrequency, billingPhone, branch, businessSectorList, childClientCorporations, clientContacts, companyDescription, companyURL, competitors, culture, dateAdded, dateFounded, dateLastModified, department, externalID, fax, feeArrangement, funding, industryList, invoiceFormat, locations, leads, linkedinProfileName, twitterHandle, facebookProfileName, name, notes, numEmployees, numOffices, ownership, owners, parentClientCorporation, phone, revenue, status, taxRate, tickerSymbol, trackTitle, userOwners, workWeekStart, requirements, certificationGroups, certifications, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject11s, customObject12s, customObject13s, customObject14s, customObject15s, customObject16s, customObject17s, customObject18s, customObject19s, customObject20s, customObject21s, customObject22s, customObject23s, customObject24s, customObject25s, customObject26s, customObject27s, customObject28s, customObject29s, customObject30s, customObject31s, customObject32s, customObject33s, customObject34s, customObject35s);
     }
 
     @Override
@@ -1350,6 +1326,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", invoiceFormat='").append(invoiceFormat).append('\'');
         sb.append(", leads=").append(leads);
         sb.append(", linkedinProfileName='").append(linkedinProfileName).append('\'');
+        sb.append(", twitterHandle='").append(twitterHandle).append('\'');
+        sb.append(", facebookProfileName='").append(facebookProfileName).append('\'');
         sb.append(", name='").append(name).append('\'');
         sb.append(", notes='").append(notes).append('\'');
         sb.append(", numEmployees=").append(numEmployees);
@@ -1363,6 +1341,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", taxRate=").append(taxRate);
         sb.append(", tickerSymbol='").append(tickerSymbol).append('\'');
         sb.append(", trackTitle='").append(trackTitle).append('\'');
+        sb.append(", userOwners=").append(userOwners);
         sb.append(", workWeekStart=").append(workWeekStart);
         sb.append(", requirements=").append(requirements);
         sb.append(", certificationGroups=").append(certificationGroups);

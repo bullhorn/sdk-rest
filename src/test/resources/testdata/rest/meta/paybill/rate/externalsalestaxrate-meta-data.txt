@@ -1,0 +1,290 @@
+{
+  "entity": "ExternalSalesTaxRate",
+  "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/ExternalSalesTaxRate?fields=*",
+  "label": "External Sales Tax Rate",
+  "dateLastModified": "1613419564622",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer",
+      "optional": false
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": false,
+      "label": "Date Added",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "dateLastModified",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "optional": false,
+      "label": "Date Last Modified",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "effectiveDate",
+      "type": "SCALAR",
+      "dataType": "Date",
+      "confidential": false,
+      "optional": false,
+      "label": "Effective Date",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "effectiveEndDate",
+      "type": "SCALAR",
+      "dataType": "Date",
+      "confidential": false,
+      "optional": true,
+      "label": "Effective End Date",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "jurisdictionName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 200,
+      "confidential": false,
+      "optional": false,
+      "label": "Jurisdiction Name",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "jurisdictionType",
+      "type": "TO_ONE",
+      "dataType": "SimplifiedOptionsLookup",
+      "confidential": false,
+      "optional": false,
+      "label": "Jurisdiction Type",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "TaxJurisdictionTypeLookup",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/TaxJurisdictionTypeLookup",
+      "hideFromSearch": false,
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "TaxJurisdictionTypeLookup",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/TaxJurisdictionTypeLookup?fields=*",
+        "label": "Tax Jurisdiction Type Lookup",
+        "dateLastModified": "1613416607380",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          },
+          {
+            "name": "label",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Label",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "label",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 305,
+      "confidential": false,
+      "optional": true,
+      "label": "Label",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "rate",
+      "type": "SCALAR",
+      "dataType": "BigDecimal",
+      "confidential": false,
+      "optional": false,
+      "label": "Rate",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "source",
+      "type": "TO_ONE",
+      "dataType": "SimplifiedOptionsLookup",
+      "confidential": false,
+      "optional": false,
+      "label": "Source",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "SalesTaxRateSourceLookup",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/SalesTaxRateSourceLookup",
+      "hideFromSearch": false,
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "SalesTaxRateSourceLookup",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/SalesTaxRateSourceLookup?fields=*",
+        "label": "Sales Tax Rate Source Lookup",
+        "dateLastModified": "1613416607444",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          },
+          {
+            "name": "label",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Label",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "stateID",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "optional": true,
+      "label": "State ID",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "taxType",
+      "type": "TO_ONE",
+      "dataType": "SimplifiedOptionsLookup",
+      "confidential": false,
+      "optional": false,
+      "label": "Tax Type",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "optionsType": "TaxTypeLookup",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/TaxTypeLookup",
+      "hideFromSearch": false,
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "TaxTypeLookup",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/TaxTypeLookup?fields=*",
+        "label": "Tax Type Lookup",
+        "dateLastModified": "1613416607500",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          },
+          {
+            "name": "label",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": true,
+            "label": "Label",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "versionID",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "optional": false,
+      "label": "Version ID",
+      "required": false,
+      "readOnly": false,
+      "multiValue": false,
+      "hideFromSearch": false,
+      "systemRequired": false
+    },
+    {
+      "name": "versions",
+      "type": "TO_MANY",
+      "confidential": false,
+      "optional": true,
+      "label": "Versions",
+      "required": false,
+      "readOnly": true,
+      "multiValue": false,
+      "optionsType": "ExternalSalesTaxRateVersion",
+      "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/options/ExternalSalesTaxRateVersion",
+      "hideFromSearch": false,
+      "systemRequired": false,
+      "associatedEntity": {
+        "entity": "ExternalSalesTaxRateVersion",
+        "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/6a1jk9/meta/ExternalSalesTaxRateVersion?fields=*",
+        "label": "External Sales Tax Rate Version",
+        "dateLastModified": "1613475506384",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+          }
+        ]
+      }
+    }
+  ]
+}

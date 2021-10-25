@@ -1,0 +1,606 @@
+{
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 1,
+      "allSalesTaxRate": {
+        "id": 27
+      },
+      "baseAmount": 2987.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "dateAdded": 1611756613803,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 78
+      },
+      "jurisdictionName": "Georgia",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.010000,
+      "salesTaxRate": {
+        "id": 27,
+        "label": "Georgia Test Rate",
+        "effectiveDate": "2020-12-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 26,
+        "jurisdictionName": "Georgia"
+      },
+      "taxAmount": 29.880000
+    },
+    {
+      "id": 2,
+      "allSalesTaxRate": {
+        "id": 27
+      },
+      "baseAmount": 440.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "dateAdded": 1611756613803,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 79
+      },
+      "jurisdictionName": "Georgia",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.010000,
+      "salesTaxRate": {
+        "id": 27,
+        "label": "Georgia Test Rate",
+        "effectiveDate": "2020-12-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 26,
+        "jurisdictionName": "Georgia"
+      },
+      "taxAmount": 4.400000
+    },
+    {
+      "id": 3,
+      "allSalesTaxRate": {
+        "id": 20
+      },
+      "baseAmount": 2987.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 2
+      },
+      "dateAdded": 1611759998090,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 85
+      },
+      "jurisdictionName": "Philadelphia, PA",
+      "jurisdictionType": {
+        "id": 1,
+        "label": "City"
+      },
+      "rate": 0.015552,
+      "salesTaxRate": {
+        "id": 20,
+        "label": "Philadelphia PA - Sales Taxes",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 19,
+        "jurisdictionName": "Philadelphia, PA"
+      },
+      "taxAmount": 46.460000
+    },
+    {
+      "id": 4,
+      "allSalesTaxRate": {
+        "id": 22
+      },
+      "baseAmount": 2987.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "dateAdded": 1611759998090,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 85
+      },
+      "jurisdictionName": "Pennsylvania",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 22,
+        "label": "Pennsylvania",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 21,
+        "jurisdictionName": "Pennsylvania"
+      },
+      "taxAmount": 179.260000
+    },
+    {
+      "id": 5,
+      "allSalesTaxRate": {
+        "id": 20
+      },
+      "baseAmount": 440.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 2
+      },
+      "dateAdded": 1611759998090,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 86
+      },
+      "jurisdictionName": "Philadelphia, PA",
+      "jurisdictionType": {
+        "id": 1,
+        "label": "City"
+      },
+      "rate": 0.015552,
+      "salesTaxRate": {
+        "id": 20,
+        "label": "Philadelphia PA - Sales Taxes",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 19,
+        "jurisdictionName": "Philadelphia, PA"
+      },
+      "taxAmount": 6.840000
+    },
+    {
+      "id": 6,
+      "allSalesTaxRate": {
+        "id": 22
+      },
+      "baseAmount": 440.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "dateAdded": 1611759998090,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 86
+      },
+      "jurisdictionName": "Pennsylvania",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 22,
+        "label": "Pennsylvania",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 21,
+        "jurisdictionName": "Pennsylvania"
+      },
+      "taxAmount": 26.400000
+    },
+    {
+      "id": 7,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 4000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "dateAdded": 1611763814767,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 88
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 120.000000
+    },
+    {
+      "id": 8,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 6000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 5
+      },
+      "dateAdded": 1611763827573,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 89
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 180.000000
+    },
+    {
+      "id": 9,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 8000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 6
+      },
+      "dateAdded": 1611763838130,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 90
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 240.000000
+    },
+    {
+      "id": 10,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 10000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 7
+      },
+      "dateAdded": 1611763856823,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 91
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 300.000000
+    },
+    {
+      "id": 11,
+      "allSalesTaxRate": {
+        "id": 27
+      },
+      "baseAmount": 2987.600000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 8
+      },
+      "dateAdded": 1611767279657,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 92
+      },
+      "jurisdictionName": "Georgia",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.010000,
+      "salesTaxRate": {
+        "id": 27,
+        "label": "Georgia Test Rate",
+        "effectiveDate": "2020-12-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 26,
+        "jurisdictionName": "Georgia"
+      },
+      "taxAmount": 29.880000
+    },
+    {
+      "id": 12,
+      "allSalesTaxRate": {
+        "id": 27
+      },
+      "baseAmount": 396.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 8
+      },
+      "dateAdded": 1611767279657,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 93
+      },
+      "jurisdictionName": "Georgia",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.010000,
+      "salesTaxRate": {
+        "id": 27,
+        "label": "Georgia Test Rate",
+        "effectiveDate": "2020-12-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 26,
+        "jurisdictionName": "Georgia"
+      },
+      "taxAmount": 3.960000
+    },
+    {
+      "id": 13,
+      "allSalesTaxRate": {
+        "id": 5
+      },
+      "baseAmount": 2347.770000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 9
+      },
+      "dateAdded": 1611776606890,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 94
+      },
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "rate": 0.080000,
+      "salesTaxRate": {
+        "id": 5,
+        "label": "Cuyahoga OH 8% Sales Tax",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 4,
+        "jurisdictionName": "Cuyahoga"
+      },
+      "taxAmount": 187.820000
+    },
+    {
+      "id": 14,
+      "allSalesTaxRate": {
+        "id": 6
+      },
+      "baseAmount": 2684.410000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 10
+      },
+      "dateAdded": 1611779735187,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 95
+      },
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 6,
+        "label": "DC Sales Tax 6.00%",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 5,
+        "jurisdictionName": "DC"
+      },
+      "taxAmount": 161.060000
+    },
+    {
+      "id": 15,
+      "allSalesTaxRate": {
+        "id": 6
+      },
+      "baseAmount": -2684.410000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 10
+      },
+      "dateAdded": 1611779879360,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 96
+      },
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 6,
+        "label": "DC Sales Tax 6.00%",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 5,
+        "jurisdictionName": "DC"
+      },
+      "taxAmount": -161.060000
+    },
+    {
+      "id": 16,
+      "allSalesTaxRate": {
+        "id": 6
+      },
+      "baseAmount": 2684.410000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 11
+      },
+      "dateAdded": 1611780458290,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 97
+      },
+      "jurisdictionName": "DC",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.060000,
+      "salesTaxRate": {
+        "id": 6,
+        "label": "DC Sales Tax 6.00%",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 5,
+        "jurisdictionName": "DC"
+      },
+      "taxAmount": 161.060000
+    },
+    {
+      "id": 17,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 8000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 12
+      },
+      "dateAdded": 1611786915277,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 99
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 240.000000
+    },
+    {
+      "id": 18,
+      "allSalesTaxRate": {
+        "id": 1
+      },
+      "baseAmount": 12000.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 13
+      },
+      "dateAdded": 1611786924677,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 100
+      },
+      "jurisdictionName": "Alabama",
+      "jurisdictionType": {
+        "id": 4,
+        "label": "State"
+      },
+      "rate": 0.030000,
+      "salesTaxRate": {
+        "id": 1,
+        "label": "Alabama Services Tax",
+        "effectiveDate": "2020-01-01",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 1,
+        "jurisdictionName": "Alabama"
+      },
+      "taxAmount": 360.000000
+    },
+    {
+      "id": 19,
+      "allSalesTaxRate": {
+        "id": 5
+      },
+      "baseAmount": 3332.000000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 14
+      },
+      "dateAdded": 1611862056423,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 101
+      },
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "rate": 0.080000,
+      "salesTaxRate": {
+        "id": 5,
+        "label": "Cuyahoga OH 8% Sales Tax",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 4,
+        "jurisdictionName": "Cuyahoga"
+      },
+      "taxAmount": 266.560000
+    },
+    {
+      "id": 20,
+      "allSalesTaxRate": {
+        "id": 5
+      },
+      "baseAmount": 499.800000,
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 14
+      },
+      "dateAdded": 1611862056423,
+      "externalSalesTaxRate": null,
+      "invoiceStatementLineItem": {
+        "id": 102
+      },
+      "jurisdictionName": "Cuyahoga",
+      "jurisdictionType": {
+        "id": 2,
+        "label": "County"
+      },
+      "rate": 0.080000,
+      "salesTaxRate": {
+        "id": 5,
+        "label": "Cuyahoga OH 8% Sales Tax",
+        "effectiveDate": "2020-12-17",
+        "effectiveEndDate": "2999-12-31",
+        "versionID": 4,
+        "jurisdictionName": "Cuyahoga"
+      },
+      "taxAmount": 39.980000
+    }
+  ]
+}
