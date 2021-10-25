@@ -386,6 +386,8 @@ public enum BullhornEntityInfo {
     PERSON("Person", Person.class, PersonWrapper.class, PersonListWrapper.class, null, null),
     PLACEMENT("Placement", Placement.class, PlacementWrapper.class, PlacementListWrapper.class, "PlacementEditHistory",
         "PlacementEditHistoryFieldChange"),
+    DOCUMENT_DATA_FLOWBACK("DocumentDataFlowback", DocumentDataFlowback.class, DocumentDataFlowbackWrapper.class, DocumentDataFlowbackListWrapper.class, null,
+        null),
     PLACEMENT_CHANGE_REQUEST("PlacementChangeRequest", PlacementChangeRequest.class, PlacementChangeRequestWrapper.class,
         PlacementChangeRequestListWrapper.class, "PlacementChangeRequestEditHistory", "PlacementChangeRequestEditHistoryFieldChange"),
     PLACEMENT_CERTIFICATION("PlacementCertification", PlacementCertification.class, PlacementCertificationWrapper.class,
