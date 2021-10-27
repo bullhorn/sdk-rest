@@ -31,6 +31,9 @@ import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransacti
 import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSalesTaxDetail
 import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSurchargeDetail
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.BillMasterTransactionDistributionBatch
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistributionBatch
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
@@ -46,7 +49,6 @@ import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTran
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayMasterTransaction
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.UnbilledRevenueGeneralLedgerExportStatusLookup
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
-import com.bullhornsdk.data.model.entity.core.paybill.distribution.*
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
@@ -62,7 +64,6 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsRespo
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
-import com.bullhornsdk.data.model.response.list.LocalTaxFormLookupListWrapper
 import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils

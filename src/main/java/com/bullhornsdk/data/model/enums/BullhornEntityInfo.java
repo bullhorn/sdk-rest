@@ -127,7 +127,6 @@ import com.bullhornsdk.data.model.entity.core.paybill.distribution.*;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
-import com.bullhornsdk.data.model.entity.file.*;
 import com.bullhornsdk.data.model.entity.report.Report;
 import com.bullhornsdk.data.model.entity.file.BillableChargeFileAttachment;
 import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
@@ -599,9 +598,9 @@ public enum BullhornEntityInfo {
     CERTIFICATION_REQUIREMENT_STATUS_LOOKUP("CertificationRequirementStatusLookup", CertificationRequirementStatusLookup.class, CertificationRequirementStatusLookupWrapper.class, CertificationRequirementStatusLookupListWrapper.class, null, null),
 
     // Onboarding365 Entities
-    LOCAL_TAX_FORM("LocalTaxForm", LocalTaxForm.class, LocalTaxFormLookupWrapper.class, LocalTaxFormLookupListWrapper.class, null, null),
-    STATE_TAX_FORM("StateTaxForm", StateTaxForm.class, StateTaxFormLookupWrapper.class, StateTaxFormLookupListWrapper.class, null, null),
-    FEDERAL_TAX_FORM("FederalTaxForm", FederalTaxForm.class, FederalTaxFormLookupWrapper.class, FederalTaxFormLookupListWrapper.class, null, null);
+    LOCAL_TAX_FORM("LocalTaxForm", LocalTaxForm.class, LocalTaxFormWrapper.class, LocalTaxFormListWrapper.class, null, null),
+    STATE_TAX_FORM("StateTaxForm", StateTaxForm.class, StateTaxFormWrapper.class, StateTaxFormListWrapper.class, null, null),
+    FEDERAL_TAX_FORM("FederalTaxForm", FederalTaxForm.class, FederalTaxFormWrapper.class, FederalTaxFormListWrapper.class, null, null);
 
     private final String name;
 

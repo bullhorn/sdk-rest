@@ -7,6 +7,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"data", "count", "start"})
-public class StateTaxFormLookupListWrapper extends StandardListWrapper<StateTaxForm> {
+public class StateTaxFormListWrapper extends StandardListWrapper<StateTaxForm> {
 
 }
