@@ -97,7 +97,7 @@ public class DocumentDataFlowback implements QueryEntity {
         return additionalInfo;
     }
 
-    @JsonProperty("additionalInfo")
+    @JsonIgnore
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
@@ -107,7 +107,7 @@ public class DocumentDataFlowback implements QueryEntity {
         return businessKey;
     }
 
-    @JsonProperty("businessKey")
+    @JsonIgnore
     public void setBusinessKey(String businessKey) {
         this.businessKey = businessKey;
     }
@@ -157,7 +157,7 @@ public class DocumentDataFlowback implements QueryEntity {
         return documentType;
     }
 
-    @JsonProperty("documentType")
+    @JsonIgnore
     public void setDocumentType(String documentType) {
         this.documentType = documentType;
     }
@@ -167,7 +167,7 @@ public class DocumentDataFlowback implements QueryEntity {
         return documentTypeId;
     }
 
-    @JsonProperty("documentTypeId")
+    @JsonIgnore
     public void setDocumentTypeId(String documentTypeId) {
         this.documentTypeId = documentTypeId;
     }
@@ -177,7 +177,7 @@ public class DocumentDataFlowback implements QueryEntity {
         return friendlyName;
     }
 
-    @JsonProperty("friendlyName")
+    @JsonIgnore
     public void setFriendlyName(String friendlyName) {
         this.friendlyName = friendlyName;
     }
@@ -197,7 +197,7 @@ public class DocumentDataFlowback implements QueryEntity {
         return name;
     }
 
-    @JsonProperty("name")
+    @JsonIgnore
     public void setName(String name) {
         this.name = name;
     }
@@ -207,7 +207,7 @@ public class DocumentDataFlowback implements QueryEntity {
         return uniqueId;
     }
 
-    @JsonProperty("uniqueId")
+    @JsonIgnore
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
     }

@@ -2,7 +2,7 @@ package com.bullhornsdk.data.model.entity.core.onboarding365.forms;
 
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsE;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsH;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
@@ -21,7 +21,7 @@ import java.util.Objects;
     "customText1", "customText2", "customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customText10",
     "dateAdded", "dateLastModified", "federalAdditionalWithholdingsAmount", "federalExemptions", "federalExtraWithholdingAmount", "federalFilingStatus",
     "isDeleted", "isExempt", "otherDeductionsAmount", "otherIncomeAmount", "totalDependentClaimAmount", "twoJobs"})
-public class FederalTaxForm extends CustomFieldsE implements QueryEntity {
+public class FederalTaxForm extends CustomFieldsH implements QueryEntity {
 
     private Integer id;
 
@@ -158,7 +158,7 @@ public class FederalTaxForm extends CustomFieldsE implements QueryEntity {
         return federalFilingStatus;
     }
 
-    @JsonProperty("federalFilingStatus")
+    @JsonIgnore
     public void setFederalFilingStatus(String federalFilingStatus) {
         this.federalFilingStatus = federalFilingStatus;
     }

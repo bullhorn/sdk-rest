@@ -2,7 +2,7 @@ package com.bullhornsdk.data.model.entity.core.onboarding365.forms;
 
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsE;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsH;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
@@ -20,7 +20,7 @@ import java.util.Objects;
     "customInt1", "customInt2", "customInt3", "customInt4", "customInt5", "customMoney1", "customMoney2", "customMoney3", "customMoney4", "customMoney5",
     "customText1", "customText2", "customText3","customText4", "customText5","customText6", "customText7", "customText8", "customText9", "customText10",
     "dateAdded", "dateLastModified", "isDeleted", "isExempt", "localAdditionalWithholdingsAmount", "localExemptions", "localFilingStatus", "localTaxCode", "localTaxStateID"})
-public class LocalTaxForm extends CustomFieldsE implements QueryEntity {
+public class LocalTaxForm extends CustomFieldsH implements QueryEntity {
 
     private Integer id;
 
@@ -143,7 +143,7 @@ public class LocalTaxForm extends CustomFieldsE implements QueryEntity {
         return localFilingStatus;
     }
 
-    @JsonProperty("localFilingStatus")
+    @JsonIgnore
     public void setLocalFilingStatus(String localFilingStatus) {
         this.localFilingStatus = localFilingStatus;
     }
@@ -153,7 +153,7 @@ public class LocalTaxForm extends CustomFieldsE implements QueryEntity {
         return localTaxCode;
     }
 
-    @JsonProperty("localTaxCode")
+    @JsonIgnore
     public void setLocalTaxCode(String localTaxCode) {
         this.localTaxCode = localTaxCode;
     }

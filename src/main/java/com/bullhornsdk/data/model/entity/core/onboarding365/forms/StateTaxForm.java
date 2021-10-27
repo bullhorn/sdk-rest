@@ -2,7 +2,7 @@ package com.bullhornsdk.data.model.entity.core.onboarding365.forms;
 
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsE;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsH;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
@@ -20,7 +20,7 @@ import java.util.Objects;
     "customInt1", "customInt2", "customInt3", "customInt4", "customInt5", "customMoney1", "customMoney2", "customMoney3", "customMoney4", "customMoney5",
     "customText1", "customText2", "customText3","customText4", "customText5","customText6", "customText7", "customText8", "customText9", "customText10",
     "dateAdded", "dateLastModified", "isDeleted", "isExempt", "stateAdditionalWithholdingsAmount", "stateExemptions", "stateFilingStatus", "taxStateID"})
-public class StateTaxForm extends CustomFieldsE implements QueryEntity {
+public class StateTaxForm extends CustomFieldsH implements QueryEntity {
 
     private Integer id;
 
@@ -139,7 +139,7 @@ public class StateTaxForm extends CustomFieldsE implements QueryEntity {
         return stateFilingStatus;
     }
 
-    @JsonProperty("stateFilingStatus")
+    @JsonIgnore
     public void setStateFilingStatus(String stateFilingStatus) {
         this.stateFilingStatus = stateFilingStatus;
     }
