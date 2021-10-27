@@ -18,6 +18,9 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
 import com.bullhornsdk.data.model.entity.core.paybill.Location
@@ -28,6 +31,9 @@ import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransacti
 import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSalesTaxDetail
 import com.bullhornsdk.data.model.entity.core.paybill.detail.BillMasterTransactionSurchargeDetail
 import com.bullhornsdk.data.model.entity.core.paybill.discount.Discount
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.BillMasterTransactionDistributionBatch
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistributionBatch
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*
@@ -43,7 +49,6 @@ import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTran
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.PayMasterTransaction
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.UnbilledRevenueGeneralLedgerExportStatusLookup
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit
-import com.bullhornsdk.data.model.entity.core.paybill.distribution.*
 import com.bullhornsdk.data.model.entity.core.standard.*
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
@@ -646,6 +651,10 @@ public class MockDataLoader {
         entityFiles.put(PlacementCustomObject.class, "customobject/placementcustomobject-data.txt");
         entityFiles.put(UserCustomObject.class, "customobject/usercustomobject-data.txt");
 
+        entityFiles.put(LocalTaxForm.class, "onboarding365/localtaxform-data.txt");
+        entityFiles.put(StateTaxForm.class, "onboarding365/statetaxform-data.txt");
+        entityFiles.put(FederalTaxForm.class, "onboarding365/federaltaxform-data.txt");
+
         return entityFiles;
     }
 
@@ -868,6 +877,10 @@ public class MockDataLoader {
         entityMetaFiles.put(JobOrderCustomObject.class, "meta/customobject/jobordercustomobject-meta-data.txt");
         entityMetaFiles.put(PlacementCustomObject.class, "meta/customobject/placementcustomobject-meta-data.txt");
         entityMetaFiles.put(UserCustomObject.class, "meta/customobject/usercustomobject-meta-data.txt");
+
+        entityMetaFiles.put(LocalTaxForm.class, "meta/onboarding365/localtaxform-meta-data.txt");
+        entityMetaFiles.put(StateTaxForm.class, "meta/onboarding365/statetaxform-meta-data.txt");
+        entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-meta-data.txt");
 
         return entityMetaFiles;
     }
