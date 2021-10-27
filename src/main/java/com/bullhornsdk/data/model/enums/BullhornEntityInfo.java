@@ -89,6 +89,9 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
@@ -593,7 +596,12 @@ public enum BullhornEntityInfo {
     INVOICE_STATEMENT_EXPORT("InvoiceStatementExport", InvoiceStatementExport.class, InvoiceStatementExportWrapper.class, InvoiceStatementExportListWrapper.class, null, null),
 
     // Specialized Lookup Entities
-    CERTIFICATION_REQUIREMENT_STATUS_LOOKUP("CertificationRequirementStatusLookup", CertificationRequirementStatusLookup.class, CertificationRequirementStatusLookupWrapper.class, CertificationRequirementStatusLookupListWrapper.class, null, null);
+    CERTIFICATION_REQUIREMENT_STATUS_LOOKUP("CertificationRequirementStatusLookup", CertificationRequirementStatusLookup.class, CertificationRequirementStatusLookupWrapper.class, CertificationRequirementStatusLookupListWrapper.class, null, null),
+
+    // Onboarding365 Entities
+    LOCAL_TAX_FORM("LocalTaxForm", LocalTaxForm.class, LocalTaxFormLookupWrapper.class, LocalTaxFormLookupListWrapper.class, null, null),
+    STATE_TAX_FORM("StateTaxForm", StateTaxForm.class, StateTaxFormLookupWrapper.class, StateTaxFormLookupListWrapper.class, null, null),
+    FEDERAL_TAX_FORM("FederalTaxForm", FederalTaxForm.class, FederalTaxFormLookupWrapper.class, FederalTaxFormLookupListWrapper.class, null, null);
 
     private final String name;
 

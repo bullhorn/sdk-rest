@@ -18,6 +18,9 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
 import com.bullhornsdk.data.model.entity.core.paybill.Location
@@ -59,6 +62,7 @@ import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsRespo
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
+import com.bullhornsdk.data.model.response.list.LocalTaxFormLookupListWrapper
 import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils
@@ -646,6 +650,10 @@ public class MockDataLoader {
         entityFiles.put(PlacementCustomObject.class, "customobject/placementcustomobject-data.txt");
         entityFiles.put(UserCustomObject.class, "customobject/usercustomobject-data.txt");
 
+        entityFiles.put(LocalTaxForm.class, "onboarding365/localtaxform-data.txt");
+        entityFiles.put(StateTaxForm.class, "onboarding365/statetaxform-data.txt");
+        entityFiles.put(FederalTaxForm.class, "onboarding365/federaltaxform-data.txt");
+
         return entityFiles;
     }
 
@@ -868,6 +876,10 @@ public class MockDataLoader {
         entityMetaFiles.put(JobOrderCustomObject.class, "meta/customobject/jobordercustomobject-meta-data.txt");
         entityMetaFiles.put(PlacementCustomObject.class, "meta/customobject/placementcustomobject-meta-data.txt");
         entityMetaFiles.put(UserCustomObject.class, "meta/customobject/usercustomobject-meta-data.txt");
+
+        entityMetaFiles.put(LocalTaxForm.class, "meta/onboarding365/localtaxform-data.txt");
+        entityMetaFiles.put(StateTaxForm.class, "meta/onboarding365/statetaxform-data.txt");
+        entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-data.txt");
 
         return entityMetaFiles;
     }

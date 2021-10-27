@@ -1,0 +1,898 @@
+{
+    "entity": "StateTaxForm",
+    "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/StateTaxForm?fields=*",
+    "label": "State Tax Form",
+    "dateLastModified": "1635294347245",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "candidate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Candidate",
+            "optionsType": "Candidate",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/options/Candidate",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Candidate",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/Candidate?fields=*",
+                "label": "Talent",
+                "dateLastModified": "1635353280177",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "State Exempt Expires",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate4",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate5",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "State Addtl Exemptions",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney1",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Provincial Exempt Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney2",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney3",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney4",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney5",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "State Addtl %",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText10",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText2",
+            "options": [
+                {
+                    "value": "No",
+                    "label": "No"
+                },
+                {
+                    "value": "Yes",
+                    "label": "Yes"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText8",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "options": [
+                {
+                    "value": "0",
+                    "label": "No"
+                },
+                {
+                    "value": "1",
+                    "label": "Yes"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "isExempt",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "State Exempt Indicator",
+            "options": [
+                {
+                    "value": false,
+                    "label": "No"
+                },
+                {
+                    "value": true,
+                    "label": "Yes"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "stateAdditionalWithholdingsAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "State Addtl Amt Per pay period",
+            "hideFromSearch": false
+        },
+        {
+            "name": "stateExemptions",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "State Exempt Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "stateFilingStatus",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 10,
+            "confidential": false,
+            "label": "State Marital Status",
+            "options": [
+                {
+                    "value": "AK-N",
+                    "label": "Not Applicable"
+                },
+                {
+                    "value": "AL-0",
+                    "label": "Single/married claim no exemptions-status 0 AL form A-4"
+                },
+                {
+                    "value": "AL-B",
+                    "label": "Married Filing Separately (MS)"
+                },
+                {
+                    "value": "AL-H",
+                    "label": "Head of Family"
+                },
+                {
+                    "value": "AL-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "AL-S",
+                    "label": "Single/married claim half exemptions-line 2 of AL A-4 = S"
+                },
+                {
+                    "value": "AR-0",
+                    "label": "No Personal Exemptions"
+                },
+                {
+                    "value": "AR-N",
+                    "label": "Not Applicable"
+                },
+                {
+                    "value": "AZ-A",
+                    "label": "5.10%"
+                },
+                {
+                    "value": "AZ-B",
+                    "label": "4.20%"
+                },
+                {
+                    "value": "AZ-C",
+                    "label": "3.60%"
+                },
+                {
+                    "value": "AZ-D",
+                    "label": "2.70%"
+                },
+                {
+                    "value": "AZ-E",
+                    "label": "1.80%"
+                },
+                {
+                    "value": "AZ-F",
+                    "label": "1.30%"
+                },
+                {
+                    "value": "AZ-G",
+                    "label": "0.80%"
+                },
+                {
+                    "value": "CA-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "CA-M",
+                    "label": "Married (one income)"
+                },
+                {
+                    "value": "CA-S",
+                    "label": "Single or Married with two or more incomes"
+                },
+                {
+                    "value": "CO-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "CO-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "CO-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "CT-0",
+                    "label": "Connecticut Withholding Code D"
+                },
+                {
+                    "value": "CT-B",
+                    "label": "Connecticut Withholding Code A"
+                },
+                {
+                    "value": "CT-H",
+                    "label": "Connecticut Withholding Code B"
+                },
+                {
+                    "value": "CT-M",
+                    "label": "Connecticut Withholding Code C"
+                },
+                {
+                    "value": "CT-N",
+                    "label": "Default - No Connecticut Form CT-W4 received from talent"
+                },
+                {
+                    "value": "CT-S",
+                    "label": "Connecticut Withholding Code F"
+                },
+                {
+                    "value": "DC-B",
+                    "label": "Married filing separately OR on same return"
+                },
+                {
+                    "value": "DC-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "DC-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "DC-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "DE-B",
+                    "label": "Married separate return"
+                },
+                {
+                    "value": "DE-M",
+                    "label": "Married joint return"
+                },
+                {
+                    "value": "DE-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "FL-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "GA-B",
+                    "label": "Married separate/joint return both spouses working (B D)"
+                },
+                {
+                    "value": "GA-H",
+                    "label": "Head of Household (E)"
+                },
+                {
+                    "value": "GA-M",
+                    "label": "Married joint return one spouse working (C)"
+                },
+                {
+                    "value": "GA-S",
+                    "label": "Single allowance (A)"
+                },
+                {
+                    "value": "HI-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "HI-S",
+                    "label": "Single or Unmarried Head of Household"
+                },
+                {
+                    "value": "IA-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "IA-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "IA-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "ID-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "ID-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "IL-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "IN-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "KS-M",
+                    "label": "Joint (married and spouse does not work)"
+                },
+                {
+                    "value": "KS-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "KY-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "LA-0",
+                    "label": "No exemption claimed (Louisiana Form L-4 Line 6=0)"
+                },
+                {
+                    "value": "LA-M",
+                    "label": "Louisiana Form L-4 Line 6 = 2"
+                },
+                {
+                    "value": "LA-S",
+                    "label": "Louisiana Form L-4 Line 6 = 1"
+                },
+                {
+                    "value": "MA-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "MA-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "MA-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "MA-T",
+                    "label": "Married or single taxpayer with 1 blind exemption"
+                },
+                {
+                    "value": "MA-V",
+                    "label": "Married exemption with two additional blind exemptions"
+                },
+                {
+                    "value": "MA-Y",
+                    "label": "Claims Head of Household and Blind Exemption"
+                },
+                {
+                    "value": "MD-M",
+                    "label": "Married or Head of Household"
+                },
+                {
+                    "value": "MD-S",
+                    "label": "Single or Married but withhold at Single rate"
+                },
+                {
+                    "value": "ME-B",
+                    "label": "Married but withhold at Single Rate"
+                },
+                {
+                    "value": "ME-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "ME-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "MI-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "MN-B",
+                    "label": "Married but withhold at higher Single Rate"
+                },
+                {
+                    "value": "MN-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "MN-S",
+                    "label": "Single; Married-legally separated; Spouse nonresident alien"
+                },
+                {
+                    "value": "MO-B",
+                    "label": "Married talent and spouse both work."
+                },
+                {
+                    "value": "MO-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "MO-M",
+                    "label": "Married - spouse does not work"
+                },
+                {
+                    "value": "MO-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "MS-B",
+                    "label": "Married both spouses working"
+                },
+                {
+                    "value": "MS-H",
+                    "label": "Head of Family"
+                },
+                {
+                    "value": "MS-M",
+                    "label": "Married one spouse working"
+                },
+                {
+                    "value": "MS-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "MT-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "NC-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "NC-M",
+                    "label": "Married or Qualifying Widow(er)"
+                },
+                {
+                    "value": "NC-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "ND-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "ND-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "ND-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "NE-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "NE-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "NE-T",
+                    "label": "Single documented exemption for NE LB223 min w/h req"
+                },
+                {
+                    "value": "NE-U",
+                    "label": "Married documented exemption for NE LB223 min w/h req"
+                },
+                {
+                    "value": "NH-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "NJ-B",
+                    "label": "Married/Civil Union filing separately (use Table A)"
+                },
+                {
+                    "value": "NJ-C",
+                    "label": "Use Rate Table C"
+                },
+                {
+                    "value": "NJ-D",
+                    "label": "Use Rate Table D"
+                },
+                {
+                    "value": "NJ-E",
+                    "label": "Use Rate Table E"
+                },
+                {
+                    "value": "NJ-H",
+                    "label": "Head of Household (use Table B)"
+                },
+                {
+                    "value": "NJ-M",
+                    "label": "Married/Civil Union filing jointly (use Table B)"
+                },
+                {
+                    "value": "NJ-S",
+                    "label": "Single (use Table A)"
+                },
+                {
+                    "value": "NM-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "NM-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "NM-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "NV-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "NY-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "NY-S",
+                    "label": "Single or Head of Household"
+                },
+                {
+                    "value": "OH-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "OK-M",
+                    "label": "Married use regular table"
+                },
+                {
+                    "value": "OK-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "OR-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "OR-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "PA-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "PR-0",
+                    "label": "Claiming no personal exemption"
+                },
+                {
+                    "value": "PR-B",
+                    "label": "Married claiming 1/2 of personal exemption"
+                },
+                {
+                    "value": "PR-J",
+                    "label": "Joint Custody"
+                },
+                {
+                    "value": "PR-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "PR-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "RI-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "SC-B",
+                    "label": "Married but withhold at the higher Single rate"
+                },
+                {
+                    "value": "SC-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "SC-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "SD-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "TN-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "TX-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "UT-H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "UT-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "UT-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "VA-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "VI-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "VI-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "VT-M",
+                    "label": "Married or Civil Union"
+                },
+                {
+                    "value": "VT-S",
+                    "label": "Single or Civil Union withhold at the higher Single rate"
+                },
+                {
+                    "value": "WA-N",
+                    "label": "Not applicable"
+                },
+                {
+                    "value": "WI-M",
+                    "label": "Married"
+                },
+                {
+                    "value": "WI-S",
+                    "label": "Single"
+                },
+                {
+                    "value": "WV-B",
+                    "label": "Two Earner Percentage Method"
+                },
+                {
+                    "value": "WV-N",
+                    "label": "Single HOH or Married non-wrkg spouse wages from one job"
+                },
+                {
+                    "value": "WY-N",
+                    "label": "Not applicable"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "taxStateID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Tax State",
+            "optionsType": "State",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/options/State",
+            "hideFromSearch": false
+        }
+    ]
+}
