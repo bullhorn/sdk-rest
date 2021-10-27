@@ -878,9 +878,9 @@ public class MockDataLoader {
         entityMetaFiles.put(PlacementCustomObject.class, "meta/customobject/placementcustomobject-meta-data.txt");
         entityMetaFiles.put(UserCustomObject.class, "meta/customobject/usercustomobject-meta-data.txt");
 
-        entityMetaFiles.put(LocalTaxForm.class, "meta/onboarding365/localtaxform-data.txt");
-        entityMetaFiles.put(StateTaxForm.class, "meta/onboarding365/statetaxform-data.txt");
-        entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-data.txt");
+        entityMetaFiles.put(LocalTaxForm.class, "meta/onboarding365/localtaxform-meta-data.txt");
+        entityMetaFiles.put(StateTaxForm.class, "meta/onboarding365/statetaxform-meta-data.txt");
+        entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-meta-data.txt");
 
         return entityMetaFiles;
     }
