@@ -1,7 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.onboarding365.forms;
 
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsH;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
@@ -20,7 +20,7 @@ import java.util.Objects;
     "customInt1", "customInt2", "customInt3", "customInt4", "customInt5", "customMoney1", "customMoney2", "customMoney3", "customMoney4", "customMoney5",
     "customText1", "customText2", "customText3","customText4", "customText5","customText6", "customText7", "customText8", "customText9", "customText10",
     "dateAdded", "dateLastModified", "isDeleted", "isExempt", "localAdditionalWithholdingsAmount", "localExemptions", "localFilingStatus", "localTaxCode", "localTaxStateID"})
-public class LocalTaxForm extends CustomFieldsH implements QueryEntity {
+public class LocalTaxForm extends CustomFieldsH implements QueryEntity, CreateEntity, UpdateEntity, DateLastModifiedEntity, SoftDeleteEntity {
 
     private Integer id;
 
@@ -99,12 +99,12 @@ public class LocalTaxForm extends CustomFieldsH implements QueryEntity {
     }
 
     @JsonProperty("isDeleted")
-    public Boolean getDeleted() {
+    public Boolean getIsDeleted() {
         return isDeleted;
     }
 
     @JsonProperty("isDeleted")
-    public void setDeleted(Boolean deleted) {
+    public void setIsDeleted(Boolean deleted) {
         isDeleted = deleted;
     }
 

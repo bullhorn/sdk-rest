@@ -119,6 +119,12 @@ public class TestEntities {
 
     private Integer placementFileAttachmentId;
 
+    private Integer localTaxFormId;
+
+    private Integer stateTaxFormId;
+
+    private Integer federalTaxFormId;
+
     public TestEntities() {
         super();
         this.appointmentId = 1;
@@ -228,6 +234,12 @@ public class TestEntities {
         this.opportunityFileAttachmentId = 1;
 
         this.placementFileAttachmentId = 1;
+
+        this.localTaxFormId = 1;
+
+        this.stateTaxFormId = 1;
+
+        this.federalTaxFormId = 1;
 
     }
 
@@ -663,118 +675,90 @@ public class TestEntities {
         this.placementFileAttachmentId = placementFileAttachmentId;
     }
 
+    public Integer getLocalTaxFormId() {
+        return localTaxFormId;
+    }
+
+    public void setLocalTaxFormId(Integer localTaxFormId) {
+        this.localTaxFormId = localTaxFormId;
+    }
+
+    public Integer getStateTaxFormId() {
+        return stateTaxFormId;
+    }
+
+    public void setStateTaxFormId(Integer stateTaxFormId) {
+        this.stateTaxFormId = stateTaxFormId;
+    }
+
+    public Integer getFederalTaxFormId() {
+        return federalTaxFormId;
+    }
+
+    public void setFederalTaxFormId(Integer federalTaxFormId) {
+        this.federalTaxFormId = federalTaxFormId;
+    }
+
     @Override
     public String toString() {
-        return new StringBuilder("TestEntities {")
-            .append("\n\t\"appointmentId\": ")
-            .append(appointmentId)
-            .append(",\n\t\"appointmentAttendeeId\": ")
-            .append(appointmentAttendeeId)
-            .append(",\n\t\"branchId\": ")
-            .append(branchId)
-            .append(",\n\t\"businessSectorId\": ")
-            .append(businessSectorId)
-            .append(",\n\t\"candidateId\": ")
-            .append(candidateId)
-            .append(",\n\t\"candidateCertificationId\": ")
-            .append(candidateCertificationId)
-            .append(",\n\t\"candidateEducationId\": ")
-            .append(candidateEducationId)
-            .append(",\n\t\"candidateReferenceId\": ")
-            .append(candidateReferenceId)
-            .append(",\n\t\"candidateWorkHistoryId\": ")
-            .append(candidateWorkHistoryId)
-            .append(",\n\t\"categoryId\": ")
-            .append(categoryId)
-            .append(",\n\t\"certificationId\": ")
-            .append(certificationId)
-            .append(",\n\t\"certificationGroupId\": ")
-            .append(certificationGroupId)
-            .append(",\n\t\"clientContactId\": ")
-            .append(clientContactId)
-            .append(",\n\t\"clientCorporationId\": ")
-            .append(clientCorporationId)
-            .append(",\n\t\"corporateUserId\": ")
-            .append(corporateUserId)
-            .append(",\n\t\"corporationDepartmentId\": ")
-            .append(corporationDepartmentId)
-            .append(",\n\t\"countryId\": ")
-            .append(countryId)
-            .append(",\n\t\"departmentId\": ")
-            .append(departmentId)
-            .append(",\n\t\"distributionListId\": ")
-            .append(distributionListId)
-            .append(",\n\t\"fileId\": ")
-            .append(fileId)
-            .append(",\n\t\"goalTargetId\": ")
-            .append(goalTargetId)
-            .append(",\n\t\"housingComplexId\": ")
-            .append(housingComplexId)
-            .append(",\n\t\"jobOrderId\": ")
-            .append(jobOrderId)
-            .append(",\n\t\"jobBoardPostId\": ")
-            .append(jobBoardPostId)
-            .append(",\n\t\"jobSubmissionId\": ")
-            .append(jobSubmissionId)
-            .append(",\n\t\"jobSubmissionHistoryId\": ")
-            .append(jobSubmissionHistoryId)
-            .append(",\n\t\"leadId\": ")
-            .append(leadId)
-            .append(",\n\t\"noteId\": ")
-            .append(noteId)
-            .append(",\n\t\"noteIdList\": ")
-            .append(noteIdList)
-            .append(",\n\t\"noteEntityId\": ")
-            .append(noteEntityId)
-            .append(",\n\t\"opportunityId\": ")
-            .append(opportunityId)
-            .append(",\n\t\"placementId\": ")
-            .append(placementId)
-            .append(",\n\t\"placementCertificationId\": ")
-            .append(placementCertificationId)
-            .append(",\n\t\"placementChangeRequestId\": ")
-            .append(placementChangeRequestId)
-            .append(",\n\t\"placementCommissionId\": ")
-            .append(placementCommissionId)
-            .append(",\n\t\"sendoutId\": ")
-            .append(sendoutId)
-            .append(",\n\t\"skillId\": ")
-            .append(skillId)
-            .append(",\n\t\"specialtyId\": ")
-            .append(specialtyId)
-            .append(",\n\t\"stateId\": ")
-            .append(stateId)
-            .append(",\n\t\"taskId\": ")
-            .append(taskId)
-            .append(",\n\t\"tearsheetId\": ")
-            .append(tearsheetId)
-            .append(",\n\t\"timeUnitId\": ")
-            .append(timeUnitId)
-            .append(",\n\t\"workersCompensationId\": ")
-            .append(workersCompensationId)
-            .append(",\n\t\"workersCompensationRateId\": ")
-            .append(workersCompensationRateId)
-            .append(",\n\t\"allCustomObjectsId\": ")
-            .append(allCustomObjectsId)
-            .append(",\n\t\"requestId\": ")
-            .append(requestId)
-            .append(",\n\t\"subscriptionId\": ")
-            .append('\'').append(subscriptionId).append('\'')
-            .append(",\n\t\"candidateFileAttachmentId\": ")
-            .append(candidateFileAttachmentId)
-            .append(",\n\t\"certificationFileAttachmentId\": ")
-            .append(certificationFileAttachmentId)
-            .append(",\n\t\"clientContactFileAttachmentId\": ")
-            .append(clientContactFileAttachmentId)
-            .append(",\n\t\"clientCorporationFileAttachmentId\": ")
-            .append(clientCorporationFileAttachmentId)
-            .append(",\n\t\"jobOrderFileAttachmentId\": ")
-            .append(jobOrderFileAttachmentId)
-            .append(",\n\t\"opportunityFileAttachmentId\": ")
-            .append(opportunityFileAttachmentId)
-            .append(",\n\t\"placementFileAttachmentId\": ")
-            .append(placementFileAttachmentId)
-            .append("\n}")
-            .toString();
+        return "TestEntities{" +
+            "appointmentId=" + appointmentId +
+            ", appointmentAttendeeId=" + appointmentAttendeeId +
+            ", branchId=" + branchId +
+            ", businessSectorId=" + businessSectorId +
+            ", candidateId=" + candidateId +
+            ", candidateCertificationId=" + candidateCertificationId +
+            ", candidateEducationId=" + candidateEducationId +
+            ", candidateReferenceId=" + candidateReferenceId +
+            ", candidateWorkHistoryId=" + candidateWorkHistoryId +
+            ", categoryId=" + categoryId +
+            ", certificationId=" + certificationId +
+            ", certificationGroupId=" + certificationGroupId +
+            ", clientContactId=" + clientContactId +
+            ", clientCorporationId=" + clientCorporationId +
+            ", corporateUserId=" + corporateUserId +
+            ", corporationDepartmentId=" + corporationDepartmentId +
+            ", countryId=" + countryId +
+            ", departmentId=" + departmentId +
+            ", distributionListId=" + distributionListId +
+            ", fileId=" + fileId +
+            ", goalTargetId=" + goalTargetId +
+            ", housingComplexId=" + housingComplexId +
+            ", jobOrderId=" + jobOrderId +
+            ", jobBoardPostId=" + jobBoardPostId +
+            ", jobSubmissionId=" + jobSubmissionId +
+            ", jobSubmissionHistoryId=" + jobSubmissionHistoryId +
+            ", leadId=" + leadId +
+            ", noteId=" + noteId +
+            ", noteIdList=" + noteIdList +
+            ", noteEntityId=" + noteEntityId +
+            ", opportunityId=" + opportunityId +
+            ", placementId=" + placementId +
+            ", placementCertificationId=" + placementCertificationId +
+            ", placementChangeRequestId=" + placementChangeRequestId +
+            ", placementCommissionId=" + placementCommissionId +
+            ", sendoutId=" + sendoutId +
+            ", skillId=" + skillId +
+            ", specialtyId=" + specialtyId +
+            ", stateId=" + stateId +
+            ", taskId=" + taskId +
+            ", tearsheetId=" + tearsheetId +
+            ", timeUnitId=" + timeUnitId +
+            ", workersCompensationId=" + workersCompensationId +
+            ", workersCompensationRateId=" + workersCompensationRateId +
+            ", allCustomObjectsId=" + allCustomObjectsId +
+            ", requestId=" + requestId +
+            ", subscriptionId='" + subscriptionId + '\'' +
+            ", candidateFileAttachmentId=" + candidateFileAttachmentId +
+            ", certificationFileAttachmentId=" + certificationFileAttachmentId +
+            ", clientContactFileAttachmentId=" + clientContactFileAttachmentId +
+            ", clientCorporationFileAttachmentId=" + clientCorporationFileAttachmentId +
+            ", jobOrderFileAttachmentId=" + jobOrderFileAttachmentId +
+            ", opportunityFileAttachmentId=" + opportunityFileAttachmentId +
+            ", placementFileAttachmentId=" + placementFileAttachmentId +
+            ", localTaxFormId=" + localTaxFormId +
+            ", stateTaxFormId=" + stateTaxFormId +
+            ", federalTaxFormId=" + federalTaxFormId +
+            '}';
     }
 }

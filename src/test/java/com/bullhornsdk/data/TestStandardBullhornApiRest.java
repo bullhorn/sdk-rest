@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -755,6 +758,27 @@ public class TestStandardBullhornApiRest extends BaseTest {
         OpportunityCustomObjectInstance1 entity = bullhornData.findEntity(OpportunityCustomObjectInstance1.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
 
         assertNotNull("OpportunityCustomObjectInstance1 is null", entity);
+    }
+
+    @Test
+    public void testFindLocalTaxForm() {
+        LocalTaxForm entity = bullhornData.findEntity(LocalTaxForm.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+        assertNotNull("LocalTaxForm is null", entity);
+    }
+
+    @Test
+    public void testFindStateTaxForm() {
+        StateTaxForm entity = bullhornData.findEntity(StateTaxForm.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+        assertNotNull("StateTaxForm is null", entity);
+    }
+
+    @Test
+    public void testFindFederalTaxForm() {
+        FederalTaxForm entity = bullhornData.findEntity(FederalTaxForm.class, testEntities.getAllCustomObjectsId(), this.getFieldSet());
+
+        assertNotNull("FederalTaxForm is null", entity);
     }
 
     private Set<String> getFieldSet() {

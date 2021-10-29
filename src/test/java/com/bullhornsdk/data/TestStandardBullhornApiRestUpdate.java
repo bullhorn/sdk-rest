@@ -5,6 +5,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
@@ -734,6 +737,69 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
         PlacementFileAttachment updatedEntity = bullhornData.findEntity(PlacementFileAttachment.class, testEntities.getPlacementFileAttachmentId(), Sets.newHashSet("id", "description"));
         entity.setDescription(previousValue);
         this.runAssertions(response, newValue, updatedEntity.getDescription());
+
+    }
+
+    @Test
+    public void testUpdateLocalTaxForm() {
+
+        LocalTaxForm entity = bullhornData.findEntity(LocalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "localFilingStatus"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getLocalFilingStatus();
+
+        newValue = previousValue + "toad";
+
+        entity.setLocalFilingStatus(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        LocalTaxForm updatedEntity = bullhornData.findEntity(LocalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "localFilingStatus"));
+        entity.setLocalFilingStatus(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getLocalFilingStatus());
+
+    }
+
+    @Test
+    public void testUpdateStateTaxForm() {
+
+        StateTaxForm entity = bullhornData.findEntity(StateTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "stateFilingStatus"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getStateFilingStatus();
+
+        newValue = previousValue + "toad";
+
+        entity.setStateFilingStatus(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        StateTaxForm updatedEntity = bullhornData.findEntity(StateTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "stateFilingStatus"));
+        entity.setStateFilingStatus(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getStateFilingStatus());
+
+    }
+
+    @Test
+    public void testUpdateFederalTaxForm() {
+
+        FederalTaxForm entity = bullhornData.findEntity(FederalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "federalFilingStatus"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getFederalFilingStatus();
+
+        newValue = previousValue + "toad";
+
+        entity.setFederalFilingStatus(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        FederalTaxForm updatedEntity = bullhornData.findEntity(FederalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "federalFilingStatus"));
+        entity.setFederalFilingStatus(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getFederalFilingStatus());
 
     }
 
