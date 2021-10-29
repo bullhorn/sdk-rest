@@ -3,6 +3,9 @@ package com.bullhornsdk.data;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.file.*;
 import org.apache.log4j.Logger;
@@ -530,6 +533,31 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
         ListWrapper<PlacementFileAttachment> wrapper = bullhornData.query(PlacementFileAttachment.class, where, null, queryParams);
 
         runAssertions("ListWrapper<PlacementFileAttachment>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryLocalTaxForm() {
+
+        ListWrapper<LocalTaxForm> wrapper = bullhornData.query(LocalTaxForm.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<LocalTaxForm>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryStateTaxForm() {
+
+        ListWrapper<StateTaxForm> wrapper = bullhornData.query(StateTaxForm.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<StateTaxForm>", wrapper);
+
+    }@Test
+    public void testQueryFederalTaxForm() {
+
+        ListWrapper<FederalTaxForm> wrapper = bullhornData.query(FederalTaxForm.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<FederalTaxForm>", wrapper);
 
     }
 

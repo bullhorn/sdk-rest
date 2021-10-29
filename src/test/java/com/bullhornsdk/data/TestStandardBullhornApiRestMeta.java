@@ -5,6 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
@@ -337,6 +340,30 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
 		MetaData<TimeUnit> meta = bullhornData.getMetaData(TimeUnit.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, TimeUnit.class);
+
+	}
+
+	@Test
+	public void testMetaLocalTaxForm() {
+
+		MetaData<LocalTaxForm> meta = bullhornData.getMetaData(LocalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+		runAssertions(meta, LocalTaxForm.class);
+
+	}
+
+	@Test
+	public void testMetaStateTaxForm() {
+
+		MetaData<StateTaxForm> meta = bullhornData.getMetaData(StateTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+		runAssertions(meta, StateTaxForm.class);
+
+	}
+
+	@Test
+	public void testMetaFederalTaxForm() {
+
+		MetaData<FederalTaxForm> meta = bullhornData.getMetaData(FederalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+		runAssertions(meta, FederalTaxForm.class);
 
 	}
 
