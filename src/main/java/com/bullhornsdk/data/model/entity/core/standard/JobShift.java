@@ -8,31 +8,27 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
 
-import java.sql.Timestamp;
-import java.time.OffsetDateTime;
 import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "dateLastModified", "endTime", "fillRatio", "isClosed", "isDeleted", "jobOrder",  "location",
+@JsonPropertyOrder({ "id", "dateAdded", "dateLastModified", "endTime", "fillRatio", "isClosed", "jobOrder",  "location",
     "name", "notes", "numAssigned", "openings", "reasonClosed", "sequenceID", "startTime" })
-public class JobShift extends AbstractEntity implements SearchEntity, UpdateEntity, CreateEntity,
-    SoftDeleteEntity, AssociationEntity {
+public class JobShift extends AbstractEntity implements UpdateEntity, HardDeleteEntity, CreateEntity, DateLastModifiedEntity {
 
     private Integer id;
 
-    private Timestamp dateAdded;
+    private DateTime dateAdded;
 
-    private Timestamp dateLastModified;
+    private DateTime dateLastModified;
 
-    private OffsetDateTime endTime;
+    private DateTime endTime;
 
     private Double fillRatio;
 
     private Boolean isClosed;
-
-    private Boolean isDeleted;
 
     private JobOrder jobOrder;
 
@@ -50,7 +46,7 @@ public class JobShift extends AbstractEntity implements SearchEntity, UpdateEnti
 
     private String sequenceID;
 
-    private OffsetDateTime startTime;
+    private DateTime startTime;
 
     public JobShift() { super(); }
 
@@ -73,28 +69,28 @@ public class JobShift extends AbstractEntity implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("dateAdded")
-    public Timestamp getDateAdded() {
+    public DateTime getDateAdded() {
         return dateAdded;
     }
 
     @JsonProperty("dateAdded")
-    public void setDateAdded(Timestamp dateAdded) { this.dateAdded = dateAdded; }
+    public void setDateAdded(DateTime dateAdded) { this.dateAdded = dateAdded; }
 
     @JsonProperty("dateLastModified")
-    public Timestamp getDateLastModified() {
+    public DateTime getDateLastModified() {
         return dateLastModified;
     }
 
     @JsonProperty("dateLastModified")
-    public void setDateLastModified(Timestamp dateLastModified) { this.dateLastModified = dateLastModified; }
+    public void setDateLastModified(DateTime dateLastModified) { this.dateLastModified = dateLastModified; }
 
     @JsonProperty("endTime")
-    public OffsetDateTime getEndTime() {
+    public DateTime getEndTime() {
         return endTime;
     }
 
     @JsonProperty("endTime")
-    public void setEndTime(OffsetDateTime endTime) { this.endTime = endTime; }
+    public void setEndTime(DateTime endTime) { this.endTime = endTime; }
 
     @JsonProperty("fillRatio")
     public Double getFillRatio() {
@@ -109,16 +105,6 @@ public class JobShift extends AbstractEntity implements SearchEntity, UpdateEnti
 
     @JsonProperty("isClosed")
     public void setIsClosed(Boolean isClosed) { this.isClosed = isClosed; }
-
-    @JsonProperty("isDeleted")
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    @JsonProperty("isDeleted")
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
 
     @JsonProperty("jobOrder")
     public JobOrder getJobOrder() {
@@ -201,12 +187,12 @@ public class JobShift extends AbstractEntity implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("startTime")
-    public OffsetDateTime getStartTime() {
+    public DateTime getStartTime() {
         return startTime;
     }
 
     @JsonProperty("startTime")
-    public void setStartTime(OffsetDateTime startTime) { this.startTime = startTime; }
+    public void setStartTime(DateTime startTime) { this.startTime = startTime; }
 
     @Override
     public boolean equals(Object o) {
@@ -220,7 +206,6 @@ public class JobShift extends AbstractEntity implements SearchEntity, UpdateEnti
             Objects.equals(endTime, jobShift.endTime) &&
             Objects.equals(fillRatio, jobShift.fillRatio) &&
             Objects.equals(isClosed, jobShift.isClosed) &&
-            Objects.equals(isDeleted, jobShift.isDeleted) &&
             Objects.equals(jobOrder, jobShift.jobOrder) &&
             Objects.equals(location, jobShift.location) &&
             Objects.equals(name, jobShift.name) &&
@@ -234,7 +219,7 @@ public class JobShift extends AbstractEntity implements SearchEntity, UpdateEnti
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, dateAdded, dateLastModified, endTime, fillRatio, isClosed, isDeleted, jobOrder, location, name, notes, numAssigned, openings, reasonClosed, sequenceID, startTime);
+        return Objects.hash(super.hashCode(), id, dateAdded, dateLastModified, endTime, fillRatio, isClosed, jobOrder, location, name, notes, numAssigned, openings, reasonClosed, sequenceID, startTime);
     }
 
     @Override
@@ -246,7 +231,6 @@ public class JobShift extends AbstractEntity implements SearchEntity, UpdateEnti
             ", endTime=" + endTime +
             ", fillRatio=" + fillRatio +
             ", isClosed=" + isClosed +
-            ", isDeleted=" + isDeleted +
             ", jobOrder=" + jobOrder +
             ", location='" + location +
             ", name=" + name + '\'' +
