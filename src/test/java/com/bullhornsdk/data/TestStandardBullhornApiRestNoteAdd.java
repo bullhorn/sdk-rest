@@ -4,20 +4,17 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.joda.time.DateTime;
 import org.joda.time.format.ISODateTimeFormat;
 import org.junit.Test;
 
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.Person;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 
 public class TestStandardBullhornApiRestNoteAdd extends BaseTest {
-	
+
 	public TestStandardBullhornApiRestNoteAdd() {
 		super();
 	}
@@ -58,6 +55,10 @@ public class TestStandardBullhornApiRestNoteAdd extends BaseTest {
 		Placement placement = new Placement(testEntities.getPlacementId());
 		OneToMany<Placement> placements = new OneToMany<Placement>(placement);
 		note.setPlacements(placements);
+		// set jobShifts to associate with jobShifts
+        JobShift jobShift = new JobShift(testEntities.getJobShiftId());
+        OneToMany<JobShift> jobShifts = new OneToMany<>(jobShift);
+        note.setJobShifts(jobShifts);
 
 		// set personReference to associate with Person
 		Person personReference = new Person(testEntities.getCandidateId());
