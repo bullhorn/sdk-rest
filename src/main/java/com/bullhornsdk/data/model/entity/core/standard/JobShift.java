@@ -16,7 +16,7 @@ import java.util.Objects;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "dateAdded", "dateLastModified", "endTime", "fillRatio", "isClosed", "jobOrder",  "location",
     "name", "notes", "numAssigned", "openings", "reasonClosed", "sequenceID", "startTime" })
-public class JobShift extends AbstractEntity implements UpdateEntity, HardDeleteEntity, CreateEntity, DateLastModifiedEntity {
+public class JobShift extends AbstractEntity implements QueryEntity, UpdateEntity, HardDeleteEntity, CreateEntity, DateLastModifiedEntity {
 
     private Integer id;
 
@@ -198,7 +198,6 @@ public class JobShift extends AbstractEntity implements UpdateEntity, HardDelete
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         JobShift jobShift = (JobShift) o;
         return Objects.equals(id, jobShift.id) &&
             Objects.equals(dateAdded, jobShift.dateAdded) &&
@@ -219,13 +218,13 @@ public class JobShift extends AbstractEntity implements UpdateEntity, HardDelete
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, dateAdded, dateLastModified, endTime, fillRatio, isClosed, jobOrder, location, name, notes, numAssigned, openings, reasonClosed, sequenceID, startTime);
+        return Objects.hash(id, dateAdded, dateLastModified, endTime, fillRatio, isClosed, jobOrder, location, name, notes, numAssigned, openings, reasonClosed, sequenceID, startTime);
     }
 
     @Override
     public String toString() {
-        return "Note{" +
-            ", id=" + id +
+        return "JobShift{" +
+            "id=" + id +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
             ", endTime=" + endTime +

@@ -19,9 +19,9 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
 
 /**
  * Tests the "query" request
- * 
+ *
  * @author magnus.palm
- * 
+ *
  */
 
 public class TestStandardBullhornApiRestQuery extends BaseTest {
@@ -132,7 +132,7 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 		runAssertions("ListWrapper<ClientContact>", wrapper);
 
 	}
-	
+
 	@Test
 	public void testQueryClientContact1() {
 
@@ -321,6 +321,14 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
         ListWrapper<JobBoardPost> wrapper = bullhornData.query(JobBoardPost.class, where, null, queryParams);
         runAssertions("ListWrapper<JobBoardPost>", wrapper);
+
+    }
+
+    @Test
+    public void testQueryJobShift() {
+
+        ListWrapper<JobShift> wrapper = bullhornData.query(JobShift.class, where, null, queryParams);
+        runAssertions("ListWrapper<JobShift>", wrapper);
 
     }
 

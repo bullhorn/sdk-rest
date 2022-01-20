@@ -736,6 +736,191 @@
                 "data": []
             },
             "startTime": "2022-01-05T04:00:00-05:00"
-        }
+        },
+        {
+                    "id": 16,
+                    "dateAdded": 1641944677107,
+                    "dateLastModified": 1641944677107,
+                    "endTime": "2022-01-12T01:45:34Z",
+                    "fillRatio": 0.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 839,
+                        "title": "Automater1641944734684"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Automater",
+                    "notes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": null,
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "startTime": "2022-01-11T23:45:34Z"
+                },
+                {
+                    "id": 17,
+                    "dateAdded": 1641944580087,
+                    "dateLastModified": 1641944580087,
+                    "endTime": "2022-01-12T01:45:34Z",
+                    "fillRatio": 0.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 838,
+                        "title": "Automater1641944734684"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Automater",
+                    "notes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": null,
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "startTime": "2022-01-11T23:45:34Z"
+                },
+                {
+                    "id": 18,
+                    "dateAdded": 1641335457057,
+                    "dateLastModified": 1642534421563,
+                    "endTime": null,
+                    "fillRatio": 0.0,
+                    "isClosed": true,
+                    "jobOrder": {
+                        "id": 547,
+                        "title": "Tech"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Tech",
+                    "notes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": "Candidate Cancelled",
+                    "sequenceID": "B4C7CBC2-B6A8-4D69-9D59-5E45662B330A",
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "startTime": "2022-01-04T06:00:00-06:00"
+                },
+                {
+                    "id": 19,
+                    "dateAdded": 1641329254803,
+                    "dateLastModified": 1641329254803,
+                    "endTime": null,
+                    "fillRatio": 0.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 518,
+                        "title": "Placement4"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Placement4 @ 001Company0909Dom",
+                    "notes": {
+                        "total": 2,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": "4164C31A-23A3-47F6-9789-61A7F912729F",
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "startTime": "2022-01-05T04:00:00-05:00"
+                },
+                {
+                    "id": 20,
+                    "dateAdded": 1641329152137,
+                    "dateLastModified": 1641481813357,
+                    "endTime": null,
+                    "fillRatio": 1.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 518,
+                        "title": "Placement4"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "no",
+                    "notes": {
+                        "total": 2,
+                        "data": []
+                    },
+                    "numAssigned": 1,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": "1ACA3BCC-1C40-42AE-9C4D-5CB5F7DD68A6",
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "startTime": "2022-01-04T04:00:00-05:00"
+                }
     ]
 }

@@ -451,7 +451,7 @@ public class MockDataLoader {
         entityFiles.put(UserHousingComplexUnit.class, "userhousingcomplexunit-data.txt");
         entityFiles.put(JobBoardPost.class, "jobboardpost-data.txt");
         entityFiles.put(JobOrder.class, "joborder-data.txt");
-        entityFiles.put(JobShift.class, "jobshift-meta-data.txt")
+        entityFiles.put(JobShift.class, "jobshift-data.txt")
         entityFiles.put(JobSubmission.class, "jobsubmission-data.txt");
         entityFiles.put(JobSubmissionHistory.class, "jobsubmissionhistory-data.txt");
         entityFiles.put(Lead.class, "lead-data.txt");
