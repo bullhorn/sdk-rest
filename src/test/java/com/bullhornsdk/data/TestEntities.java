@@ -59,6 +59,8 @@ public class TestEntities {
 
     private Integer jobBoardPostId;
 
+    private Integer jobShiftId;
+
     private Integer jobSubmissionId;
 
     private Integer jobSubmissionHistoryId;
@@ -174,6 +176,8 @@ public class TestEntities {
         this.jobOrderId = 1;
 
         this.jobBoardPostId = 1;
+
+        this.jobShiftId = 1;
 
         this.jobSubmissionId = 1;
 
@@ -425,6 +429,14 @@ public class TestEntities {
 
     public void setJobBoardPostId(Integer jobBoardPostId) {
         this.jobBoardPostId = jobBoardPostId;
+    }
+
+    public Integer getJobShiftId() {
+        return jobShiftId;
+    }
+
+    public void setJobShiftId(Integer jobShiftId) {
+        this.jobShiftId = jobShiftId;
     }
 
     public Integer getJobSubmissionId() {

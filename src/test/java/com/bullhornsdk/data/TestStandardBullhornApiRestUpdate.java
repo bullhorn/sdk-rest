@@ -366,6 +366,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
 	}
 
+    @Test
+    public void testUpdateJobShift() {
+
+        JobShift entity = bullhornData.findEntity(JobShift.class, testEntities.getJobShiftId(), Sets.newHashSet("id", "name"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getName();
+
+        newValue = previousValue + "toad";
+
+        entity.setName(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        JobShift updatedEntity = bullhornData.findEntity(JobShift.class, testEntities.getJobShiftId(), Sets.newHashSet("id", "name"));
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
+
+    }
+
 	@Test
 	public void testUpdateJobSubmission() {
 
@@ -809,6 +830,6 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		assertTrue("value not updated correctly", valueShouldBe.equals(valueIs));
 	}
 
-	
+
 
 }

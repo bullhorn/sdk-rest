@@ -575,6 +575,26 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
         this.runAssertions(response, entity, newEntity);
     }
 
+    @Test
+    public void testCreateJobShift() {
+
+        JobShift entity = bullhornData.findEntity(JobShift.class, testEntities.getJobShiftId(), Sets.newHashSet("id"));
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        JobShift newEntity = bullhornData.findEntity(JobShift.class, response.getChangedEntityId(), Sets.newHashSet("id"));
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) JobShift.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+
+    }
+
     private <E extends CreateEntity> void runAssertions(CreateResponse response, E oldEntity, E newEntity) {
         assertNotNull("response is null", response);
         assertFalse("Validation failed", response.hasValidationErrors());
