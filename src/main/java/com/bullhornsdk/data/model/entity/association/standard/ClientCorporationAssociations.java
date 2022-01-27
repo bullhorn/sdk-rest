@@ -37,10 +37,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorpor
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.CertificationGroup;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
 import java.util.ArrayList;
@@ -97,6 +94,7 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance33> customObject33s = instantiateAssociationField("customObject33s", ClientCorporationCustomObjectInstance33.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance34> customObject34s = instantiateAssociationField("customObject34s", ClientCorporationCustomObjectInstance34.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance35> customObject35s = instantiateAssociationField("customObject35s", ClientCorporationCustomObjectInstance35.class);
+    private final AssociationField<ClientCorporation, CorporateUser> userOwners = instantiateAssociationField("userOwners", CorporateUser.class);
 
     public ClientCorporationAssociations() {
         super();
@@ -261,6 +259,10 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
         return customObject35s;
     }
 
+    public AssociationField<ClientCorporation, CorporateUser> userOwners() {
+        return userOwners;
+    }
+
 
     private <E extends BullhornEntity> AssociationField<ClientCorporation, E> instantiateAssociationField(String associationName,
                                                                                                       Class<E> associationType) {
@@ -310,6 +312,7 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
             allAssociations.add(customObject33s());
             allAssociations.add(customObject34s());
             allAssociations.add(customObject35s());
+            allAssociations.add(userOwners());
         }
         return allAssociations;
 
