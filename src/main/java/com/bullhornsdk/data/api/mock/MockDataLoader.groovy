@@ -449,6 +449,7 @@ public class MockDataLoader {
         entityFiles.put(HousingComplexFurnitureDelivery.class, "housingcomplexfurnituredelivery-data.txt");
         entityFiles.put(HousingComplexUtilityAccount.class, "housingcomplexutilityaccount-data.txt");
         entityFiles.put(UserHousingComplexUnit.class, "userhousingcomplexunit-data.txt");
+        entityFiles.put(CandidateTaxInfo.class, "candidatetaxinfo-data.txt");
         entityFiles.put(JobBoardPost.class, "jobboardpost-data.txt");
         entityFiles.put(JobOrder.class, "joborder-data.txt");
         entityFiles.put(JobShift.class, "jobshift-data.txt")
@@ -700,6 +701,7 @@ public class MockDataLoader {
         entityMetaFiles.put(Opportunity.class, "meta/opportunity-meta-data.txt");
         entityMetaFiles.put(Person.class, "meta/person-meta-data.txt");
         entityMetaFiles.put(Placement.class, "meta/placement-meta-data.txt");
+        entityMetaFiles.put(CandidateTaxInfo.class, "meta/candidatetaxinfo-meta-data.txt");
         entityMetaFiles.put(DocumentDataFlowback.class, "meta/documentdataflowback-meta-data.txt");
         entityMetaFiles.put(PlacementCertification.class, "meta/placementcertification-meta-data.txt");
         entityMetaFiles.put(PlacementChangeRequest.class, "meta/placementchangerequest-meta-data.txt");

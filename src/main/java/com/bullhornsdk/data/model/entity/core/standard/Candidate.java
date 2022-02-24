@@ -56,7 +56,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 		"customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
         "customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
         "customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
-        "customText39", "customText4", "customText40", "customText5", "customText6",
+        "customText39", "customText4", "customText40", "customText5", "customText6", "twoJobs", "isExempt", "totalDependentClaimAmount",
+        "otherIncomeAmount", "otherDeductionsAmount",
 		"customText7", "customText8", "customText9", "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3",
         "customTextBlock4", "customTextBlock5", "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9",
         "dateAdded", "dateAvailable", "dateAvailableEnd", "dateI9Expiration", "dateLastComment", "dateLastModified", "dateNextCall",
@@ -397,6 +398,16 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 	@JsonIgnore
 	@Size(max = 100)
 	private String type;
+
+    private Boolean twoJobs;
+
+    private BigDecimal totalDependentClaimAmount;
+
+    private BigDecimal otherIncomeAmount;
+
+    private BigDecimal otherDeductionsAmount;
+
+    private Boolean isExempt;
 
 	@JsonIgnore
 	private String username;
@@ -1811,6 +1822,56 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 	public void setWorkPhone(String workPhone) {
 		this.workPhone = workPhone;
 	}
+
+    @JsonProperty("twoJobs")
+    public Boolean getTwoJobs() {
+        return twoJobs;
+    }
+
+    @JsonProperty("twoJobs")
+    public void setTwoJobs(Boolean twoJobs) {
+        this.twoJobs = twoJobs;
+    }
+
+    @JsonProperty("totalDependentClaimAmount")
+    public BigDecimal getTotalDependentClaimAmount() {
+        return totalDependentClaimAmount;
+    }
+
+    @JsonProperty("totalDependentClaimAmount")
+    public void setTotalDependentClaimAmount(BigDecimal totalDependentClaimAmount) {
+        this.totalDependentClaimAmount = totalDependentClaimAmount;
+    }
+
+    @JsonProperty("otherIncomeAmount")
+    public BigDecimal getOtherIncomeAmount() {
+        return otherIncomeAmount;
+    }
+
+    @JsonProperty("otherIncomeAmount")
+    public void setOtherIncomeAmount(BigDecimal otherIncomeAmount) {
+        this.otherIncomeAmount = otherIncomeAmount;
+    }
+
+    @JsonProperty("otherDeductionsAmount")
+    public BigDecimal getOtherDeductionsAmount() {
+        return otherDeductionsAmount;
+    }
+
+    @JsonProperty("otherDeductionsAmount")
+    public void setOtherDeductionsAmount(BigDecimal otherDeductionsAmount) {
+        this.otherDeductionsAmount = otherDeductionsAmount;
+    }
+
+    @JsonProperty("isExempt")
+    public Boolean getIsExempt() {
+        return isExempt;
+    }
+
+    @JsonProperty("isExempt")
+    public void setIsExempt(Boolean isExempt) {
+        this.isExempt = isExempt;
+    }
 
     @JsonProperty("customEncryptedText1")
     public String getCustomEncryptedText1() {

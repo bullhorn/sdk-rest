@@ -1,0 +1,234 @@
+{
+  "entity": "CandidateTaxInfo",
+  "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/CandidateTaxInfo?fields=*",
+  "label": "Candidate Tax Info",
+  "dateLastModified": "1645716055411",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer"
+    },
+    {
+      "name": "candidate",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Candidate",
+      "optionsType": "Candidate",
+      "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/options/Candidate",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Candidate",
+        "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/Candidate?fields=*",
+        "label": "Talent",
+        "dateLastModified": "1645716053660",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "First Name",
+            "hideFromSearch": false
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Last Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "customDate1",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Custom Date 1",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customDate2",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Custom Date 2",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customDate3",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Custom Date 3",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customInt1",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "FICA Indicator",
+      "options": [
+        {
+          "value": 0,
+          "label": "No"
+        },
+        {
+          "value": 1,
+          "label": "Yes"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "customInt2",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "Custom Int 2",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customInt3",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "Custom Int 3",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customText1",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Custom Text 1",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customText2",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Custom Text 2",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customText3",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Custom Text 3",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customText4",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Custom Text 4",
+      "hideFromSearch": false
+    },
+    {
+      "name": "customText5",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Custom Text 5",
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateI9Expiration",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Work Authorization Expires",
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateOfBirth",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date of Birth",
+      "hideFromSearch": false
+    },
+    {
+      "name": "i9OnFile",
+      "type": "SCALAR",
+      "dataType": "Boolean",
+      "confidential": false,
+      "label": "I-9 On File",
+      "hideFromSearch": false
+    },
+    {
+      "name": "militaryDomicileExpiration",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Military Domicile Expiration",
+      "hideFromSearch": false
+    },
+    {
+      "name": "militaryDomicileState",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Military Domicile State",
+      "options": [
+        {
+          "value": "Yes",
+          "label": "Yes"
+        },
+        {
+          "value": "No",
+          "label": "No"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "ssn",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 18,
+      "confidential": false,
+      "label": "SSN/SIN",
+      "hideFromSearch": false
+    },
+    {
+      "name": "taxID",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 18,
+      "confidential": false,
+      "label": "Work Authorization Number",
+      "hideFromSearch": false
+    },
+    {
+      "name": "taxIDIndicator",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Tax ID Indicator",
+      "hideFromSearch": false
+    }
+  ]
+}
