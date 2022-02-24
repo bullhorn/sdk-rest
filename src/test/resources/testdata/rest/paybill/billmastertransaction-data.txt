@@ -46,7 +46,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 2,
@@ -92,7 +93,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 3,
@@ -138,7 +140,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 4,
@@ -184,7 +187,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 5,
@@ -230,7 +234,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 6,
@@ -276,7 +281,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 7,
@@ -322,7 +328,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 8,
@@ -368,7 +375,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 9,
@@ -414,7 +422,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 10,
@@ -460,7 +469,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 11,
@@ -506,7 +516,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 12,
@@ -552,7 +563,9 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
+
         },
 		{
             "id": 13,
@@ -598,7 +611,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 14,
@@ -644,7 +658,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 15,
@@ -690,7 +705,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 16,
@@ -736,7 +752,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 17,
@@ -782,7 +799,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 18,
@@ -828,7 +846,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 19,
@@ -874,7 +893,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
 		{
             "id": 20,
@@ -920,7 +940,8 @@
             "unitOfMeasure": {
                 "id": 1,
                 "label": "Hours"
-            }
+            },
+            "unbilledRevenueGeneralLedgerExportStatusLookup": null
         }
     ]
 }

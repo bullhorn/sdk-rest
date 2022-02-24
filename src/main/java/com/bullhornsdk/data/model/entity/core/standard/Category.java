@@ -44,7 +44,7 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 
 	private OneToMany<Skill> skills;
 
-	private OneToMany<Category> specialties;
+	private OneToMany<Specialty> specialties;
 
 	@JsonIgnore
 	@Size(max = 20)
@@ -152,12 +152,12 @@ public class Category extends AbstractEntity implements QueryEntity, Association
 	}
 
 	@JsonProperty("specialties")
-	public OneToMany<Category> getSpecialties() {
+	public OneToMany<Specialty> getSpecialties() {
 		return specialties;
 	}
 
 	@JsonProperty("specialties")
-	public void setSpecialties(OneToMany<Category> specialties) {
+	public void setSpecialties(OneToMany<Specialty> specialties) {
 		this.specialties = specialties;
 	}
 

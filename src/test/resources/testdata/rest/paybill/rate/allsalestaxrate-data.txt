@@ -1,0 +1,970 @@
+{
+	"start": 0,
+	"count": 20,
+	"data": [
+		{
+			"id": 1,
+			"amount": 0,
+			"dateAdded": 1601490524377,
+			"dateLastModified": 1601490524377,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Connecticut",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "CT",
+			"owner": null,
+			"rate": 0.0635,
+			"reportingCodeName": "CT",
+			"salesTaxRate": {
+				"id": 19,
+				"label": "CT",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 22,
+				"jurisdictionName": "Connecticut"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 7,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 2,
+			"amount": 0,
+			"dateAdded": 1601490524377,
+			"dateLastModified": 1601490524377,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Connecticut",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "CT",
+			"owner": null,
+			"rate": 0.0635,
+			"reportingCodeName": "CT",
+			"salesTaxRate": {
+				"id": 19,
+				"label": "CT",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 22,
+				"jurisdictionName": "Connecticut"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 7,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 3,
+			"amount": 0,
+			"dateAdded": 1601491009333,
+			"dateLastModified": 1601491009333,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Pennsylvania",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "PA",
+			"owner": null,
+			"rate": 0.06,
+			"reportingCodeName": "PA",
+			"salesTaxRate": {
+				"id": 20,
+				"label": "PA",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 23,
+				"jurisdictionName": "Pennsylvania"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 43,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 4,
+			"amount": 0,
+			"dateAdded": 1601491058430,
+			"dateLastModified": 1601491058430,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Allegheny (Pittsburgh)",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Pittsburgh",
+			"owner": null,
+			"rate": 0.01,
+			"reportingCodeName": "Pittsburgh",
+			"salesTaxRate": {
+				"id": 21,
+				"label": "Pittsburgh",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 24,
+				"jurisdictionName": "Allegheny (Pittsburgh)"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 43,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 5,
+			"amount": 0,
+			"dateAdded": 1601491110410,
+			"dateLastModified": 1601491110410,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Philadelphia",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Philadelphia County",
+			"owner": null,
+			"rate": 0.02,
+			"reportingCodeName": "Philadelphia County",
+			"salesTaxRate": {
+				"id": 22,
+				"label": "Philadelphia County",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 25,
+				"jurisdictionName": "Philadelphia"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 43,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 6,
+			"amount": 0,
+			"dateAdded": 1601491150633,
+			"dateLastModified": 1601491150633,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Ohio",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "OH",
+			"owner": null,
+			"rate": 0.0575,
+			"reportingCodeName": "OH",
+			"salesTaxRate": {
+				"id": 23,
+				"label": "OH",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 26,
+				"jurisdictionName": "Ohio"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 39,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 7,
+			"amount": 0,
+			"dateAdded": 1601491239460,
+			"dateLastModified": 1601491239460,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Hamilton",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Hamilton County",
+			"owner": null,
+			"rate": 0.0125,
+			"reportingCodeName": "Hamilton County",
+			"salesTaxRate": {
+				"id": 24,
+				"label": "Hamilton County",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 27,
+				"jurisdictionName": "Hamilton"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 39,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 8,
+			"amount": 0,
+			"dateAdded": 1601491281317,
+			"dateLastModified": 1601491281317,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Pickaway",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Pickaway County",
+			"owner": null,
+			"rate": 0.015,
+			"reportingCodeName": "Pickaway County",
+			"salesTaxRate": {
+				"id": 25,
+				"label": "Pickaway County",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 28,
+				"jurisdictionName": "Pickaway"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 39,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 9,
+			"amount": 0,
+			"dateAdded": 1601491329440,
+			"dateLastModified": 1601491329440,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Franklin",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Franklin County",
+			"owner": null,
+			"rate": 0.0175,
+			"reportingCodeName": "Franklin County",
+			"salesTaxRate": {
+				"id": 26,
+				"label": "Franklin County",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 29,
+				"jurisdictionName": "Franklin"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 39,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 10,
+			"amount": 0,
+			"dateAdded": 1601491360560,
+			"dateLastModified": 1601491360560,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Warren",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Warren County",
+			"owner": null,
+			"rate": 0.0125,
+			"reportingCodeName": "Warren County",
+			"salesTaxRate": {
+				"id": 27,
+				"label": "Warren County",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 30,
+				"jurisdictionName": "Warren"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 39,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 11,
+			"amount": 0,
+			"dateAdded": 1601492150903,
+			"dateLastModified": 1601492150903,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Summit",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Summit County",
+			"owner": null,
+			"rate": 0.01,
+			"reportingCodeName": "Summit County",
+			"salesTaxRate": {
+				"id": 28,
+				"label": "Summit County",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 31,
+				"jurisdictionName": "Summit"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 39,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 12,
+			"amount": 0,
+			"dateAdded": 1601492194887,
+			"dateLastModified": 1601492194887,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Washington D.C.",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "DC",
+			"owner": null,
+			"rate": 0.06,
+			"reportingCodeName": "DC",
+			"salesTaxRate": {
+				"id": 29,
+				"label": "DC",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 32,
+				"jurisdictionName": "Washington D.C."
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 9,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 13,
+			"amount": 0,
+			"dateAdded": 1601492225427,
+			"dateLastModified": 1601492225427,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "New Mexico",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "NM",
+			"owner": null,
+			"rate": 0.05125,
+			"reportingCodeName": "NM",
+			"salesTaxRate": {
+				"id": 30,
+				"label": "NM",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 33,
+				"jurisdictionName": "New Mexico"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 34,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 14,
+			"amount": 0,
+			"dateAdded": 1601492305233,
+			"dateLastModified": 1601492305233,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Carlsbad",
+			"jurisdictionType": {
+				"id": 1,
+				"label": "City"
+			},
+			"label": "Carlsbad",
+			"owner": null,
+			"rate": 0.02521,
+			"reportingCodeName": "Carlsbad",
+			"salesTaxRate": {
+				"id": 31,
+				"label": "Carlsbad",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 34,
+				"jurisdictionName": "Carlsbad"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 34,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 15,
+			"amount": 0,
+			"dateAdded": 1601492344783,
+			"dateLastModified": 1601492344783,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Albuquerque",
+			"jurisdictionType": {
+				"id": 1,
+				"label": "City"
+			},
+			"label": "Albuquerque",
+			"owner": null,
+			"rate": 0.01438,
+			"reportingCodeName": "Albuquerque",
+			"salesTaxRate": {
+				"id": 32,
+				"label": "Albuquerque",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 35,
+				"jurisdictionName": "Albuquerque"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 34,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 16,
+			"amount": 0,
+			"dateAdded": 1601492426370,
+			"dateLastModified": 1601492876507,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Bernalilo",
+			"jurisdictionType": {
+				"id": 2,
+				"label": "County"
+			},
+			"label": "Bernalilo County",
+			"owner": null,
+			"rate": 0.01312,
+			"reportingCodeName": "Bernalilo County",
+			"salesTaxRate": {
+				"id": 33,
+				"label": "Bernalilo County",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 36,
+				"jurisdictionName": "Bernalilo"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 34,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 17,
+			"amount": 0,
+			"dateAdded": 1606247545677,
+			"dateLastModified": 1606247545677,
+			"effectiveDate": "1951-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Test DM8",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "Test DM8",
+			"owner": {
+				"id": 467,
+				"firstName": "Mark",
+				"lastName": "Green"
+			},
+			"rate": 0.01,
+			"reportingCodeName": null,
+			"salesTaxRate": {
+				"id": 34,
+				"label": "Test DM8",
+				"effectiveDate": "1951-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 37,
+				"jurisdictionName": "Test DM8"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": null,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 18,
+			"amount": 0,
+			"dateAdded": 1601490524377,
+			"dateLastModified": 1601490524377,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Connecticut",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "CT",
+			"owner": null,
+			"rate": 0.0635,
+			"reportingCodeName": "CT",
+			"salesTaxRate": {
+				"id": 19,
+				"label": "CT",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 22,
+				"jurisdictionName": "Connecticut"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 7,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 19,
+			"amount": 0,
+			"dateAdded": 1601490524377,
+			"dateLastModified": 1601490524377,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Connecticut",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "CT",
+			"owner": null,
+			"rate": 0.0635,
+			"reportingCodeName": "CT",
+			"salesTaxRate": {
+				"id": 19,
+				"label": "CT",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 22,
+				"jurisdictionName": "Connecticut"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 7,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		},
+		{
+			"id": 20,
+			"amount": 0,
+			"dateAdded": 1601490524377,
+			"dateLastModified": 1601490524377,
+			"effectiveDate": "2020-01-01",
+			"effectiveEndDate": "2999-12-31",
+			"externalSalesTaxRate": null,
+			"generalLedgerAccount": null,
+			"generalLedgerSegment1": null,
+			"generalLedgerSegment2": null,
+			"generalLedgerSegment3": null,
+			"generalLedgerSegment4": null,
+			"generalLedgerSegment5": null,
+			"generalLedgerServiceCode": null,
+			"isDeleted": false,
+			"isFirst": true,
+			"jurisdictionName": "Connecticut",
+			"jurisdictionType": {
+				"id": 4,
+				"label": "State"
+			},
+			"label": "CT",
+			"owner": null,
+			"rate": 0.0635,
+			"reportingCodeName": "CT",
+			"salesTaxRate": {
+				"id": 19,
+				"label": "CT",
+				"effectiveDate": "2020-01-01",
+				"effectiveEndDate": "2999-12-31",
+				"versionID": 22,
+				"jurisdictionName": "Connecticut"
+			},
+			"source": {
+				"id": 1,
+				"label": "Manual"
+			},
+			"stateID": 7,
+			"taxType": {
+				"id": 2,
+				"label": "Percent"
+			},
+			"type": {
+				"id": 1,
+				"label": "Location Based Tax"
+			}
+		}
+	]
+}

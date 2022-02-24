@@ -1,470 +1,466 @@
 {
-    "start": 0,
-    "count": 20,
-    "data": [
-        {
-            "id": 1,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 441.600000,
-            "billMasterTransaction": {
-                "id": 17
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601490557050,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 28.041600
-        },
-        {
-            "id": 2,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 162.000000,
-            "billMasterTransaction": {
-                "id": 18
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601490557050,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 10.287000
-        },
-        {
-            "id": 3,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 552.000000,
-            "billMasterTransaction": {
-                "id": 19
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601490557050,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 35.052000
-        },
-        {
-            "id": 4,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 662.400000,
-            "billMasterTransaction": {
-                "id": 20
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601490557050,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 42.062400
-        },
-        {
-            "id": 5,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 552.000000,
-            "billMasterTransaction": {
-                "id": 21
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601490557050,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 35.052000
-        },
-        {
-            "id": 6,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 161.582400,
-            "billMasterTransaction": {
-                "id": 22
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 4
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601493864480,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 10.260482
-        },
-        {
-            "id": 7,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 161.582400,
-            "billMasterTransaction": {
-                "id": 23
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 4
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601493864480,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 10.260482
-        },
-        {
-            "id": 8,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 161.582400,
-            "billMasterTransaction": {
-                "id": 24
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 4
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601493864480,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 10.260482
-        },
-        {
-            "id": 9,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 161.582400,
-            "billMasterTransaction": {
-                "id": 25
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 4
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601493864480,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 10.260482
-        },
-        {
-            "id": 10,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 161.582400,
-            "billMasterTransaction": {
-                "id": 26
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 4
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601493864480,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 10.260482
-        },
-        {
-            "id": 11,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 144.270000,
-            "billMasterTransaction": {
-                "id": 27
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 5
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601651934013,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 9.161145
-        },
-        {
-            "id": 12,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 141.384600,
-            "billMasterTransaction": {
-                "id": 28
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 5
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601651934013,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 8.977922
-        },
-        {
-            "id": 13,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 164.880000,
-            "billMasterTransaction": {
-                "id": 29
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 5
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601651934013,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 10.469880
-        },
-        {
-            "id": 14,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 201.978000,
-            "billMasterTransaction": {
-                "id": 30
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 5
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601651934013,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 12.825603
-        },
-        {
-            "id": 15,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": -662.400000,
-            "billMasterTransaction": {
-                "id": 20
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601988176700,
-            "reversalOfTransactionSalesTaxRate": {
-                "id": 9
-            },
-            "salesTaxRateVersionID": null,
-            "taxAmount": -42.062400
-        },
-        {
-            "id": 16,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": -162.000000,
-            "billMasterTransaction": {
-                "id": 18
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601988176707,
-            "reversalOfTransactionSalesTaxRate": {
-                "id": 7
-            },
-            "salesTaxRateVersionID": null,
-            "taxAmount": -10.287000
-        },
-        {
-            "id": 17,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 0.000000,
-            "billMasterTransaction": {
-                "id": 20
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601988176707,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 0.000000
-        },
-        {
-            "id": 18,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 0.000000,
-            "billMasterTransaction": {
-                "id": 21
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601988176713,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 0.000000
-        },
-        {
-            "id": 19,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 0.000000,
-            "billMasterTransaction": {
-                "id": 18
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601988176713,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 0.000000
-        },
-        {
-            "id": 20,
-            "adjustmentSequenceNumber": 1,
-            "allSalesTaxRate": {
-                "id": 3
-            },
-            "baseAmount": 0.000000,
-            "billMasterTransaction": {
-                "id": 17
-            },
-            "billMasterTransactionSalesTaxDetail": {
-                "id": 2
-            },
-            "currencyUnit": {
-                "id": 166,
-                "alphabeticCode": "USD",
-                "name": "US Dollar"
-            },
-            "dateAdded": 1601988176717,
-            "reversalOfTransactionSalesTaxRate": null,
-            "salesTaxRateVersionID": null,
-            "taxAmount": 0.000000
-        }
-    ]
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 1,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 617.400000,
+      "billMasterTransaction": {
+        "id": 16
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606146386740,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 39.204900
+    },
+    {
+      "id": 2,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 548.800000,
+      "billMasterTransaction": {
+        "id": 17
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606146386740,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 34.848800
+    },
+    {
+      "id": 3,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 617.400000,
+      "billMasterTransaction": {
+        "id": 18
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606146386740,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 39.204900
+    },
+    {
+      "id": 4,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 480.200000,
+      "billMasterTransaction": {
+        "id": 19
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606146386740,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 30.492700
+    },
+    {
+      "id": 5,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 548.800000,
+      "billMasterTransaction": {
+        "id": 20
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606146386740,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 34.848800
+    },
+    {
+      "id": 6,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 0.000000,
+      "billMasterTransaction": {
+        "id": 22
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606146386740,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 0.000000
+    },
+    {
+      "id": 7,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": -617.400000,
+      "billMasterTransaction": {
+        "id": 21
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 1
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606146386793,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": -39.204900
+    },
+    {
+      "id": 8,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 20000.000000,
+      "billMasterTransaction": {
+        "id": 467
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 2
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606232525713,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 1270.000000
+    },
+    {
+      "id": 9,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 541.212000,
+      "billMasterTransaction": {
+        "id": 522
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606254131450,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 34.366962
+    },
+    {
+      "id": 10,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 548.800000,
+      "billMasterTransaction": {
+        "id": 523
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606254131450,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 34.848800
+    },
+    {
+      "id": 11,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 541.212000,
+      "billMasterTransaction": {
+        "id": 524
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606254131450,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 34.366962
+    },
+    {
+      "id": 12,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 541.212000,
+      "billMasterTransaction": {
+        "id": 525
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606254131450,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 34.366962
+    },
+    {
+      "id": 13,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 3
+      },
+      "baseAmount": 541.212000,
+      "billMasterTransaction": {
+        "id": 526
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 3
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606254131450,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 34.366962
+    },
+    {
+      "id": 14,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 7
+      },
+      "baseAmount": 150.000000,
+      "billMasterTransaction": {
+        "id": 168
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606838189407,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 8.625000
+    },
+    {
+      "id": 15,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 7
+      },
+      "baseAmount": 150.000000,
+      "billMasterTransaction": {
+        "id": 169
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606838189407,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 8.625000
+    },
+    {
+      "id": 16,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 7
+      },
+      "baseAmount": 1200.000000,
+      "billMasterTransaction": {
+        "id": 170
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606838189407,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 69.000000
+    },
+    {
+      "id": 17,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 7
+      },
+      "baseAmount": 1200.000000,
+      "billMasterTransaction": {
+        "id": 171
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606838189407,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 69.000000
+    },
+    {
+      "id": 18,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 7
+      },
+      "baseAmount": 150.000000,
+      "billMasterTransaction": {
+        "id": 172
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606838189407,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 8.625000
+    },
+    {
+      "id": 19,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 7
+      },
+      "baseAmount": 1200.000000,
+      "billMasterTransaction": {
+        "id": 173
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606838189407,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 69.000000
+    },
+    {
+      "id": 20,
+      "adjustmentSequenceNumber": 1,
+      "allSalesTaxRate": {
+        "id": 7
+      },
+      "baseAmount": 150.000000,
+      "billMasterTransaction": {
+        "id": 174
+      },
+      "billMasterTransactionSalesTaxDetail": {
+        "id": 4
+      },
+      "currencyUnit": {
+        "id": 166,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1606838189407,
+      "reversalOfTransactionSalesTaxRate": null,
+      "salesTaxRateVersionID": null,
+      "taxAmount": 8.625000
+    }
+  ]
 }

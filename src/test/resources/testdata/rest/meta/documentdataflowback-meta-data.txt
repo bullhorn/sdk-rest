@@ -1,0 +1,156 @@
+{
+   "entity":"DocumentDataFlowback",
+   "entityMetaUrl":"https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/DocumentDataFlowback?fields=*",
+   "label":"Document Data Flowback",
+   "dateLastModified":"1634745194335",
+   "fields":[
+      {
+         "name":"id",
+         "type":"ID",
+         "dataType":"Integer"
+      },
+      {
+         "name":"acceptDateAtUTC",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Accept Date At UTC",
+         "hideFromSearch":false
+      },
+      {
+         "name":"additionalInfo",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":2147483647,
+         "confidential":false,
+         "label":"Additional Info",
+         "hideFromSearch":false
+      },
+      {
+         "name":"businessKey",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":2147483647,
+         "confidential":false,
+         "label":"Business Key",
+         "hideFromSearch":false
+      },
+      {
+         "name":"candidate",
+         "type":"TO_ONE",
+         "confidential":false,
+         "label":"Candidate",
+         "optionsType":"Candidate",
+         "optionsUrl":"https://rest91.bullhornstaffing.com/rest-services/7agk5s/options/Candidate",
+         "hideFromSearch":false,
+         "associatedEntity":{
+            "entity":"Candidate",
+            "entityMetaUrl":"https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/Candidate?fields=*",
+            "label":"Talent",
+            "dateLastModified":"1634846270761",
+            "fields":[
+               {
+                  "name":"id",
+                  "type":"ID",
+                  "dataType":"Integer"
+               },
+               {
+                  "name":"firstName",
+                  "type":"SCALAR",
+                  "dataType":"String",
+                  "maxLength":50,
+                  "confidential":false,
+                  "label":"First Name",
+                  "hideFromSearch":false
+               },
+               {
+                  "name":"lastName",
+                  "type":"SCALAR",
+                  "dataType":"String",
+                  "maxLength":50,
+                  "confidential":false,
+                  "label":"Last Name",
+                  "hideFromSearch":false
+               }
+            ]
+         }
+      },
+      {
+         "name":"certifyDateAtUTC",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Certify Date At UTC",
+         "hideFromSearch":false
+      },
+      {
+         "name":"dateAdded",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Date Added",
+         "hideFromSearch":false
+      },
+      {
+         "name":"dateLastModified",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Date Last Modified",
+         "hideFromSearch":false
+      },
+      {
+         "name":"documentType",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":255,
+         "confidential":false,
+         "label":"Document Type",
+         "hideFromSearch":false
+      },
+      {
+         "name":"documentTypeId",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":36,
+         "confidential":false,
+         "label":"Document Type Id",
+         "hideFromSearch":false
+      },
+      {
+         "name":"friendlyName",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":2147483647,
+         "confidential":false,
+         "label":"Friendly Name",
+         "hideFromSearch":false
+      },
+      {
+         "name":"generatedDateAtUTC",
+         "type":"SCALAR",
+         "dataType":"Timestamp",
+         "confidential":false,
+         "label":"Generated Date At UTC",
+         "hideFromSearch":false
+      },
+      {
+         "name":"name",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":2147483647,
+         "confidential":false,
+         "label":"Name",
+         "hideFromSearch":false
+      },
+      {
+         "name":"uniqueId",
+         "type":"SCALAR",
+         "dataType":"String",
+         "maxLength":36,
+         "confidential":false,
+         "label":"Unique Id",
+         "hideFromSearch":false
+      }
+   ]
+}

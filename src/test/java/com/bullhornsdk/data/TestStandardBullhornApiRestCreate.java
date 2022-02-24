@@ -3,6 +3,9 @@ package com.bullhornsdk.data;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
@@ -510,6 +513,83 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
 
         this.entityId = response.getChangedEntityId();
         this.deleteType = (Class<D>) Task.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+
+    }
+
+    @Test
+    public void testLocalTaxForm() {
+
+        LocalTaxForm entity = bullhornData.findEntity(LocalTaxForm.class, testEntities.getTaskId(), Sets.newHashSet("id"));
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        LocalTaxForm newEntity = bullhornData.findEntity(LocalTaxForm.class, response.getChangedEntityId(), Sets.newHashSet("id"));
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) LocalTaxForm.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+    }
+
+    @Test
+    public void testStateTaxForm() {
+
+        StateTaxForm entity = bullhornData.findEntity(StateTaxForm.class, testEntities.getTaskId(), Sets.newHashSet("id"));
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        StateTaxForm newEntity = bullhornData.findEntity(StateTaxForm.class, response.getChangedEntityId(), Sets.newHashSet("id"));
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) StateTaxForm.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+    }
+
+    @Test
+    public void testFederalTaxForm() {
+
+        FederalTaxForm entity = bullhornData.findEntity(FederalTaxForm.class, testEntities.getTaskId(), Sets.newHashSet("id"));
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        FederalTaxForm newEntity = bullhornData.findEntity(FederalTaxForm.class, response.getChangedEntityId(), Sets.newHashSet("id"));
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) FederalTaxForm.class;
+        entity.setId(oldId);
+        this.runAssertions(response, entity, newEntity);
+    }
+
+    @Test
+    public void testCreateJobShift() {
+
+        JobShift entity = bullhornData.findEntity(JobShift.class, testEntities.getJobShiftId(), Sets.newHashSet("id"));
+
+        Integer oldId = entity.getId();
+
+        entity.setId(null);
+
+        CreateResponse response = bullhornData.insertEntity(entity);
+
+        JobShift newEntity = bullhornData.findEntity(JobShift.class, response.getChangedEntityId(), Sets.newHashSet("id"));
+
+        this.entityId = response.getChangedEntityId();
+        this.deleteType = (Class<D>) JobShift.class;
         entity.setId(oldId);
         this.runAssertions(response, entity, newEntity);
 

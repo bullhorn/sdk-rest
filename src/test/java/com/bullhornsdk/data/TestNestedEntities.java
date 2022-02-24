@@ -3,6 +3,7 @@ package com.bullhornsdk.data;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import com.bullhornsdk.data.model.entity.core.standard.JobShift;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
@@ -166,5 +167,15 @@ public class TestNestedEntities extends BaseTest {
 		assertNotNull(entity.getPlacement().getCustomText2());
 		assertNull(entity.getPlacement().getCustomText3());
 	}
+
+    @Test
+    public void testJobShift_notes() {
+
+        JobShift entity = bullhornData.findEntity(JobShift.class,
+            testEntities.getJobShiftId(), Sets.newHashSet("id", "notes(id,action)"));
+
+        assertNotNull(entity.getNotes().getData());
+        assertNotNull(entity.getNotes().getTotal());
+    }
 
 }

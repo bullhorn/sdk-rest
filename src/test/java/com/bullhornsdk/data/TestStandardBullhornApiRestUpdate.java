@@ -5,6 +5,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
@@ -362,6 +365,27 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
 	}
+
+    @Test
+    public void testUpdateJobShift() {
+
+        JobShift entity = bullhornData.findEntity(JobShift.class, testEntities.getJobShiftId(), Sets.newHashSet("id", "name"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getName();
+
+        newValue = previousValue + "toad";
+
+        entity.setName(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        JobShift updatedEntity = bullhornData.findEntity(JobShift.class, testEntities.getJobShiftId(), Sets.newHashSet("id", "name"));
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
+
+    }
 
 	@Test
 	public void testUpdateJobSubmission() {
@@ -737,12 +761,75 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
+    @Test
+    public void testUpdateLocalTaxForm() {
+
+        LocalTaxForm entity = bullhornData.findEntity(LocalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "localFilingStatus"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getLocalFilingStatus();
+
+        newValue = previousValue + "toad";
+
+        entity.setLocalFilingStatus(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        LocalTaxForm updatedEntity = bullhornData.findEntity(LocalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "localFilingStatus"));
+        entity.setLocalFilingStatus(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getLocalFilingStatus());
+
+    }
+
+    @Test
+    public void testUpdateStateTaxForm() {
+
+        StateTaxForm entity = bullhornData.findEntity(StateTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "stateFilingStatus"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getStateFilingStatus();
+
+        newValue = previousValue + "toad";
+
+        entity.setStateFilingStatus(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        StateTaxForm updatedEntity = bullhornData.findEntity(StateTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "stateFilingStatus"));
+        entity.setStateFilingStatus(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getStateFilingStatus());
+
+    }
+
+    @Test
+    public void testUpdateFederalTaxForm() {
+
+        FederalTaxForm entity = bullhornData.findEntity(FederalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "federalFilingStatus"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getFederalFilingStatus();
+
+        newValue = previousValue + "toad";
+
+        entity.setFederalFilingStatus(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity);
+
+        FederalTaxForm updatedEntity = bullhornData.findEntity(FederalTaxForm.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "federalFilingStatus"));
+        entity.setFederalFilingStatus(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getFederalFilingStatus());
+
+    }
+
 	private void runAssertions(UpdateResponse response, String valueShouldBe, String valueIs) {
 		assertNotNull("response is null", response);
 		assertFalse("Validation failed", response.hasValidationErrors());
 		assertTrue("value not updated correctly", valueShouldBe.equals(valueIs));
 	}
 
-	
+
 
 }

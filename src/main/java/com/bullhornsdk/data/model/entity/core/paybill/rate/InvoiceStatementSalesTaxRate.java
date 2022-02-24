@@ -16,19 +16,22 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "baseAmount", "billMasterTransactionSalesTaxDetail", "dateAdded", "invoiceStatement", "jurisdictionName", "jurisdictionType",
-    "rate", "taxAmount"
+@JsonPropertyOrder({"id", "allSalesTaxRate", "baseAmount", "billMasterTransactionSalesTaxDetail", "dateAdded", "invoiceStatement",
+    "jurisdictionName", "jurisdictionType", "rate", "salesTaxRate", "taxAmount"
 })
 public class InvoiceStatementSalesTaxRate extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
 
     private Integer id;
+    private AllSalesTaxRate allSalesTaxRate;
     private BigDecimal baseAmount;
     private BillMasterTransactionSalesTaxDetail billMasterTransactionSalesTaxDetail;
     private DateTime dateAdded;
+    private ExternalSalesTaxRate externalSalesTaxRate;
     private InvoiceStatement invoiceStatement;
     private String jurisdictionName;
     private SimplifiedOptionsLookup jurisdictionType;
     private BigDecimal rate;
+    private SalesTaxRate salesTaxRate;
     private BigDecimal taxAmount;
 
     @Override
@@ -42,6 +45,16 @@ public class InvoiceStatementSalesTaxRate extends AbstractEntity implements Quer
     @JsonProperty("id")
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @JsonProperty("allSalesTaxRate")
+    public AllSalesTaxRate getAllSalesTaxRate() {
+        return allSalesTaxRate;
+    }
+
+    @JsonProperty("allSalesTaxRate")
+    public void setAllSalesTaxRate(AllSalesTaxRate allSalesTaxRate) {
+        this.allSalesTaxRate = allSalesTaxRate;
     }
 
     @JsonProperty("baseAmount")
@@ -72,6 +85,16 @@ public class InvoiceStatementSalesTaxRate extends AbstractEntity implements Quer
     @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+    @JsonProperty("externalSalesTaxRate")
+    public ExternalSalesTaxRate getExternalSalesTaxRate() {
+        return externalSalesTaxRate;
+    }
+
+    @JsonProperty("externalSalesTaxRate")
+    public void setExternalSalesTaxRate(ExternalSalesTaxRate externalSalesTaxRate) {
+        this.externalSalesTaxRate = externalSalesTaxRate;
     }
 
     @JsonProperty("invoiceStatement")
@@ -114,6 +137,16 @@ public class InvoiceStatementSalesTaxRate extends AbstractEntity implements Quer
         this.rate = rate;
     }
 
+    @JsonProperty("salesTaxRate")
+    public SalesTaxRate getSalesTaxRate() {
+        return salesTaxRate;
+    }
+
+    @JsonProperty("salesTaxRate")
+    public void setSalesTaxRate(SalesTaxRate salesTaxRate) {
+        this.salesTaxRate = salesTaxRate;
+    }
+
     @JsonProperty("taxAmount")
     public BigDecimal getTaxAmount() {
         return taxAmount;
@@ -129,26 +162,19 @@ public class InvoiceStatementSalesTaxRate extends AbstractEntity implements Quer
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InvoiceStatementSalesTaxRate that = (InvoiceStatementSalesTaxRate) o;
-        return Objects.equals(id, that.id) &&
-            Objects.equals(baseAmount, that.baseAmount) &&
-            Objects.equals(billMasterTransactionSalesTaxDetail, that.billMasterTransactionSalesTaxDetail) &&
-            Objects.equals(dateAdded, that.dateAdded) &&
-            Objects.equals(invoiceStatement, that.invoiceStatement) &&
-            Objects.equals(jurisdictionName, that.jurisdictionName) &&
-            Objects.equals(jurisdictionType, that.jurisdictionType) &&
-            Objects.equals(rate, that.rate) &&
-            Objects.equals(taxAmount, that.taxAmount);
+        return Objects.equals(id, that.id) && Objects.equals(allSalesTaxRate, that.allSalesTaxRate) && Objects.equals(baseAmount, that.baseAmount) && Objects.equals(billMasterTransactionSalesTaxDetail, that.billMasterTransactionSalesTaxDetail) && Objects.equals(dateAdded, that.dateAdded) && Objects.equals(invoiceStatement, that.invoiceStatement) && Objects.equals(jurisdictionName, that.jurisdictionName) && Objects.equals(jurisdictionType, that.jurisdictionType) && Objects.equals(rate, that.rate) && Objects.equals(salesTaxRate, that.salesTaxRate) && Objects.equals(taxAmount, that.taxAmount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, baseAmount, billMasterTransactionSalesTaxDetail, dateAdded, invoiceStatement, jurisdictionName, jurisdictionType, rate, taxAmount);
+        return Objects.hash(id, allSalesTaxRate, baseAmount, billMasterTransactionSalesTaxDetail, dateAdded, invoiceStatement, jurisdictionName, jurisdictionType, rate, salesTaxRate, taxAmount);
     }
 
     @Override
     public String toString() {
         return "InvoiceStatementSalesTaxRate{" +
             "id=" + id +
+            ", allSalesTaxRate=" + allSalesTaxRate +
             ", baseAmount=" + baseAmount +
             ", billMasterTransactionSalesTaxDetail=" + billMasterTransactionSalesTaxDetail +
             ", dateAdded=" + dateAdded +
@@ -156,6 +182,7 @@ public class InvoiceStatementSalesTaxRate extends AbstractEntity implements Quer
             ", jurisdictionName='" + jurisdictionName + '\'' +
             ", jurisdictionType=" + jurisdictionType +
             ", rate=" + rate +
+            ", salesTaxRate=" + salesTaxRate +
             ", taxAmount=" + taxAmount +
             '}';
     }

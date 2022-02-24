@@ -1,0 +1,506 @@
+{
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 1,
+      "amount": 0.000000,
+      "dateAdded": 1598533087250,
+      "dateLastModified": 1598535586630,
+      "effectiveDate": "2020-01-01",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Alabama",
+      "label": "Alabama Services Tax",
+      "rate": 0.030000,
+      "reportingCodeName": "AL",
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 2,
+      "amount": 0.000000,
+      "dateAdded": 1600947903163,
+      "dateLastModified": 1600947903163,
+      "effectiveDate": "2020-09-24",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "California",
+      "label": "California",
+      "rate": 0.000000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 3,
+      "amount": 0.000000,
+      "dateAdded": 1608226200850,
+      "dateLastModified": 1608226200850,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Connecticut",
+      "label": "Connecticut Sales Tax 6.35%",
+      "rate": 0.063500,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 4,
+      "amount": 0.000000,
+      "dateAdded": 1608227780167,
+      "dateLastModified": 1608227780167,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Cuyahoga",
+      "label": "Cuyahoga OH 8% Sales Tax",
+      "rate": 0.080000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 5,
+      "amount": 0.000000,
+      "dateAdded": 1608227810577,
+      "dateLastModified": 1608227810577,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "DC",
+      "label": "DC Sales Tax 6.00%",
+      "rate": 0.060000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 6,
+      "amount": 0.000000,
+      "dateAdded": 1608228279447,
+      "dateLastModified": 1608228279447,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "FRANKLIN SALES TAX",
+      "label": "FRANKLIN SALES TAX",
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 7,
+      "amount": 0.000000,
+      "dateAdded": 1608228313627,
+      "dateLastModified": 1608228313627,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "GST Federal & Provincial Taxes",
+      "label": "GST Federal & Provincial Taxes",
+      "rate": 0.100000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 8,
+      "amount": 0.000000,
+      "dateAdded": 1608228330640,
+      "dateLastModified": 1608228330640,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "GST Tax - AP",
+      "label": "GST Tax - AP",
+      "rate": 0.050000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 9,
+      "amount": 0.000000,
+      "dateAdded": 1608228344937,
+      "dateLastModified": 1608228344937,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "GST Tax - AR",
+      "label": "GST Tax - AR",
+      "rate": 0.050000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 10,
+      "amount": 0.000000,
+      "dateAdded": 1608228412790,
+      "dateLastModified": 1608228412790,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Hamilton",
+      "label": "Hamilton OH 7.0 % Sales Tax",
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 11,
+      "amount": 0.000000,
+      "dateAdded": 1608228442573,
+      "dateLastModified": 1608228503773,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Hawaii",
+      "label": "HAWAII SALES TAX 4.5%",
+      "rate": 0.045000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 12,
+      "amount": 0.000000,
+      "dateAdded": 1608228537660,
+      "dateLastModified": 1608228537660,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Tax - AP",
+      "label": "HST Tax - AP",
+      "rate": 0.130000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 13,
+      "amount": 0.000000,
+      "dateAdded": 1608228573913,
+      "dateLastModified": 1608228573913,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Purchase - British Columbi",
+      "label": "HST Purchase - British Columbi",
+      "rate": 0.120000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 14,
+      "amount": 0.000000,
+      "dateAdded": 1608228668797,
+      "dateLastModified": 1608228668797,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Sales Tax",
+      "label": "HST Sales Tax",
+      "rate": 0.130000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 15,
+      "amount": 0.000000,
+      "dateAdded": 1608228684307,
+      "dateLastModified": 1608228684307,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Sales Tax  - British Colum",
+      "label": "HST Sales Tax  - British Colum",
+      "rate": 0.120000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 16,
+      "amount": 0.000000,
+      "dateAdded": 1608228698823,
+      "dateLastModified": 1608228698823,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "HST Sales Taxes 10%",
+      "label": "HST Sales Taxes 10%",
+      "rate": 0.100000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 17,
+      "amount": 0.000000,
+      "dateAdded": 1608228723897,
+      "dateLastModified": 1608228825707,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Iowa",
+      "label": "IOWA 7% SALES TAX",
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 18,
+      "amount": 0.000000,
+      "dateAdded": 1608228794027,
+      "dateLastModified": 1608228794027,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Iowa",
+      "label": "IOWA SALES TAX - 6%",
+      "rate": 0.060000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 19,
+      "amount": 0.000000,
+      "dateAdded": 1608228916650,
+      "dateLastModified": 1608228945070,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Philadelphia, PA",
+      "label": "Philadelphia PA - Sales Taxes",
+      "rate": 0.015552,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    },
+    {
+      "id": 20,
+      "amount": 0.000000,
+      "dateAdded": 1608229022590,
+      "dateLastModified": 1608229022590,
+      "effectiveDate": "2020-12-17",
+      "effectiveEndDate": "2999-12-31",
+      "isFirst": true,
+      "jurisdictionName": "Pittsburgh, PA",
+      "label": "Pittsburgh PA - Sales Taxes",
+      "rate": 0.070000,
+      "reportingCodeName": null,
+      "source": {
+        "id": 1,
+        "label": "Manual"
+      },
+      "status": {
+        "id": 1,
+        "label": "Active"
+      },
+      "taxType": {
+        "id": 2,
+        "label": "Percent"
+      }
+    }
+  ]
+}

@@ -5,49 +5,18 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
+import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import org.junit.Test;
 
-import com.bullhornsdk.data.model.entity.core.standard.Appointment;
-import com.bullhornsdk.data.model.entity.core.standard.AppointmentAttendee;
-import com.bullhornsdk.data.model.entity.core.standard.Branch;
-import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateCertification;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateReference;
-import com.bullhornsdk.data.model.entity.core.standard.CandidateWorkHistory;
-import com.bullhornsdk.data.model.entity.core.standard.Category;
-import com.bullhornsdk.data.model.entity.core.standard.Certification;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
-import com.bullhornsdk.data.model.entity.core.standard.Country;
-import com.bullhornsdk.data.model.entity.core.standard.Department;
-import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
-import com.bullhornsdk.data.model.entity.core.standard.JobBoardPost;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.NoteEntity;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCertification;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementCommission;
-import com.bullhornsdk.data.model.entity.core.standard.Sendout;
-import com.bullhornsdk.data.model.entity.core.standard.Skill;
-import com.bullhornsdk.data.model.entity.core.standard.Specialty;
-import com.bullhornsdk.data.model.entity.core.standard.State;
-import com.bullhornsdk.data.model.entity.core.standard.Task;
-import com.bullhornsdk.data.model.entity.core.standard.TimeUnit;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 
 public class TestStandardBullhornApiRestMeta extends BaseTest {
-	
+
 	public TestStandardBullhornApiRestMeta() {
 		super();
 	}
@@ -219,6 +188,14 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
+    @Test
+    public void testMetaJobShift() {
+
+        MetaData<JobShift> meta = bullhornData.getMetaData(JobShift.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, JobShift.class);
+
+    }
+
 	@Test
 	public void testMetaJobSubmission() {
 
@@ -337,6 +314,30 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
 		MetaData<TimeUnit> meta = bullhornData.getMetaData(TimeUnit.class, MetaParameter.FULL, this.getFieldSet());
 		runAssertions(meta, TimeUnit.class);
+
+	}
+
+	@Test
+	public void testMetaLocalTaxForm() {
+
+		MetaData<LocalTaxForm> meta = bullhornData.getMetaData(LocalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+		runAssertions(meta, LocalTaxForm.class);
+
+	}
+
+	@Test
+	public void testMetaStateTaxForm() {
+
+		MetaData<StateTaxForm> meta = bullhornData.getMetaData(StateTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+		runAssertions(meta, StateTaxForm.class);
+
+	}
+
+	@Test
+	public void testMetaFederalTaxForm() {
+
+		MetaData<FederalTaxForm> meta = bullhornData.getMetaData(FederalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+		runAssertions(meta, FederalTaxForm.class);
 
 	}
 

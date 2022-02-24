@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "action", "bhTimeStamp", "candidates", "clientContacts", "commentingPerson", "comments", "corporateUsers",
-		"dateAdded", "dateLastModified", "entities", "externalID", "isDeleted", "jobOrder", "jobOrders", "leads", "migrateGUID", "minutesSpent",
+		"dateAdded", "dateLastModified", "entities", "externalID", "isDeleted", "jobOrder", "jobOrders", "jobShifts" , "leads", "migrateGUID", "minutesSpent",
         "opportunities", "personReference", "placements" })
 public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity, DateLastModifiedEntity {
 
@@ -63,6 +63,8 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 
 	private OneToMany<JobOrder> jobOrders;
 
+    private OneToMany<JobShift> jobShifts;
+
     private OneToMany<Lead> leads;
 
 	private String migrateGUID;
@@ -86,7 +88,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 
 	/**
 	 * Returns the entity with the required fields for an insert set.
-	 * 
+	 *
 	 * @return
 	 */
 	public Note instantiateForInsert() {
@@ -262,6 +264,16 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 		this.jobOrders = jobOrders;
 	}
 
+    @JsonProperty("jobShifts")
+    public OneToMany<JobShift> getJobShifts() {
+        return jobShifts;
+    }
+
+    @JsonProperty("jobShifts")
+    public void setJobShifts(OneToMany<JobShift> jobShifts) {
+        this.jobShifts = jobShifts;
+    }
+
     @JsonProperty("leads")
     public OneToMany<Lead> getLeads() {
         return leads;
@@ -349,6 +361,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
         if (isDeleted != null ? !isDeleted.equals(note.isDeleted) : note.isDeleted != null) return false;
         if (jobOrder != null ? !jobOrder.equals(note.jobOrder) : note.jobOrder != null) return false;
         if (jobOrders != null ? !jobOrders.equals(note.jobOrders) : note.jobOrders != null) return false;
+        if (jobShifts != null ? !jobShifts.equals(note.jobShifts) : note.jobShifts != null) return false;
         if (leads != null ? !leads.equals(note.leads) : note.leads != null) return false;
         if (migrateGUID != null ? !migrateGUID.equals(note.migrateGUID) : note.migrateGUID != null) return false;
         if (minutesSpent != null ? !minutesSpent.equals(note.minutesSpent) : note.minutesSpent != null) return false;
@@ -378,6 +391,7 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
         result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
         result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
         result = 31 * result + (jobOrders != null ? jobOrders.hashCode() : 0);
+        result = 31 * result + (jobShifts != null ? jobShifts.hashCode() : 0);
         result = 31 * result + (leads != null ? leads.hashCode() : 0);
         result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
         result = 31 * result + (minutesSpent != null ? minutesSpent.hashCode() : 0);
@@ -425,6 +439,8 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
                 .append(jobOrder)
                 .append(",\n\t\"jobOrders\": ")
                 .append(jobOrders)
+                .append(",\n\t\"jobShifts\": ")
+                .append(jobShifts)
                 .append(",\n\t\"leads\": ")
                 .append(leads)
                 .append(",\n\t\"migrateGUID\": ")

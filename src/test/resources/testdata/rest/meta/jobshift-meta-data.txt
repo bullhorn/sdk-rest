@@ -1,0 +1,525 @@
+{
+    "entity": "JobShift",
+    "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/JobShift?fields=*",
+    "label": "Shift",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added-shift",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified-shift",
+            "hideFromSearch": false
+        },
+        {
+            "name": "endTime",
+            "type": "SCALAR",
+            "dataType": "OffsetDateTime",
+            "confidential": false,
+            "label": "End Time-shift",
+            "hideFromSearch": false
+        },
+        {
+            "name": "fillRatio",
+            "type": "SCALAR",
+            "dataType": "Double",
+            "confidential": false,
+            "label": "Fill Ratio",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isClosed",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Closed",
+            "options": [
+                {
+                    "value": false,
+                    "label": "Open"
+                },
+                {
+                    "value": true,
+                    "label": "Closed"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "jobOrder",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Job Posting-shift",
+            "optionsType": "JobOrder",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/JobOrder",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "JobOrder",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/JobOrder?fields=*",
+                "label": "Job",
+                "dateLastModified": "1642608996955",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Title",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "jobShiftAssignments",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Job Shift Assignments",
+            "optionsType": "JobShiftAssignment",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/JobShiftAssignment",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "JobShiftAssignment",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/JobShiftAssignment?fields=*",
+                "label": "Shift Assignment",
+                "dateLastModified": "1642608997369",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "jobShiftSubmissions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Job Shift Submissions",
+            "optionsType": "JobShiftSubmission",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/JobShiftSubmission",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "JobShiftSubmission",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/JobShiftSubmission?fields=*",
+                "label": "Job Shift Submission",
+                "dateLastModified": "1642608997687",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "location",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Location",
+            "optionsType": "Location",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/Location",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Location",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/Location?fields=*",
+                "label": "Location",
+                "dateLastModified": "1642608997719",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "clientCorporation",
+                        "type": "TO_ONE",
+                        "confidential": false,
+                        "label": "clientCorporationID",
+                        "optionsType": "ClientCorporation",
+                        "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/ClientCorporation",
+                        "hideFromSearch": false,
+                        "associatedEntity": {
+                            "entity": "ClientCorporation",
+                            "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/ClientCorporation?fields=*",
+                            "label": "Company",
+                            "dateLastModified": "1642608997807",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer"
+                                },
+                                {
+                                    "name": "name",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 100,
+                                    "confidential": false,
+                                    "label": "Company Name",
+                                    "hideFromSearch": false
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "candidate",
+                        "type": "TO_ONE",
+                        "confidential": false,
+                        "label": "candidateUserID",
+                        "optionsType": "Candidate",
+                        "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/Candidate",
+                        "hideFromSearch": false,
+                        "associatedEntity": {
+                            "entity": "Candidate",
+                            "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/Candidate?fields=*",
+                            "label": "Candidate",
+                            "dateLastModified": "1642608998568",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer"
+                                },
+                                {
+                                    "name": "firstName",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 50,
+                                    "confidential": false,
+                                    "label": "First Name",
+                                    "hideFromSearch": false
+                                },
+                                {
+                                    "name": "lastName",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 50,
+                                    "confidential": false,
+                                    "label": "Last Name",
+                                    "hideFromSearch": false
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Title",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective Date",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveEndDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "effectiveEndDate",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "versionID",
+                        "type": "SCALAR",
+                        "dataType": "Integer",
+                        "confidential": false,
+                        "label": "LocationVersionID",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "externalID",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Location Code",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "address",
+                        "type": "COMPOSITE",
+                        "dataType": "AddressWithStateID",
+                        "confidential": false,
+                        "label": "Address",
+                        "hideFromSearch": false,
+                        "fields": [
+                            {
+                                "name": "address1",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 100,
+                                "confidential": false,
+                                "label": "Address 1",
+                                "hideFromSearch": false
+                            },
+                            {
+                                "name": "address2",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 100,
+                                "confidential": false,
+                                "label": "Address 2",
+                                "hideFromSearch": false
+                            },
+                            {
+                                "name": "city",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 100,
+                                "confidential": false,
+                                "label": "City",
+                                "hideFromSearch": false
+                            },
+                            {
+                                "name": "state",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 100,
+                                "confidential": false,
+                                "label": "State",
+                                "optionsType": "State",
+                                "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/State",
+                                "hideFromSearch": false
+                            },
+                            {
+                                "name": "zip",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 100,
+                                "confidential": false,
+                                "label": "Zip",
+                                "hideFromSearch": false
+                            },
+                            {
+                                "name": "countryID",
+                                "type": "SCALAR",
+                                "dataType": "Integer",
+                                "confidential": false,
+                                "label": "Country",
+                                "optionsType": "Country",
+                                "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/Country",
+                                "hideFromSearch": false
+                            },
+                            {
+                                "name": "countryCode",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 0
+                            },
+                            {
+                                "name": "countryName",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 0
+                            },
+                            {
+                                "name": "stateID",
+                                "type": "SCALAR",
+                                "dataType": "Integer"
+                            },
+                            {
+                                "name": "stateName",
+                                "type": "SCALAR",
+                                "dataType": "String",
+                                "maxLength": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 150,
+            "confidential": false,
+            "label": "Shift Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "notes",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Notes",
+            "optionsType": "Note",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/Note",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Note",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/Note?fields=*",
+                "label": "Note",
+                "dateLastModified": "1642608999053",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "numAssigned",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Num Assigned",
+            "hideFromSearch": false
+        },
+        {
+            "name": "openings",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Openings-shift",
+            "hideFromSearch": false
+        },
+        {
+            "name": "reasonClosed",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 150,
+            "confidential": false,
+            "label": "Reason Closed",
+            "options": [
+                {
+                    "value": "Cancelled",
+                    "label": "Cancelled"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "sequenceID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "label": "Sequence-shift",
+            "hideFromSearch": false
+        },
+        {
+            "name": "shift",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Shift Definition",
+            "optionsType": "Shift",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/Shift",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Shift",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/Shift?fields=*",
+                "label": "Shift Definition",
+                "dateLastModified": "1642608999086",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 150,
+                        "confidential": false,
+                        "label": "name_",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "shiftPosition",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Shift Position",
+            "optionsType": "ShiftPosition",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/ShiftPosition",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "ShiftPosition",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/ShiftPosition?fields=*",
+                "label": "Shift Position",
+                "dateLastModified": "1642608999111",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 150,
+                        "confidential": false,
+                        "label": "Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "shiftTypes",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Shift Types",
+            "optionsType": "ShiftType",
+            "optionsUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/options/ShiftType",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "ShiftType",
+                "entityMetaUrl": "http://vonthedon-backend.bh-bos2.bullhorn.com:8182/rest-services/bn410/meta/ShiftType?fields=*",
+                "label": "Shift Type",
+                "dateLastModified": "1642608999140",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "startTime",
+            "type": "SCALAR",
+            "dataType": "OffsetDateTime",
+            "confidential": false,
+            "label": "Start Time-shift",
+            "hideFromSearch": false
+        }
+    ]
+}

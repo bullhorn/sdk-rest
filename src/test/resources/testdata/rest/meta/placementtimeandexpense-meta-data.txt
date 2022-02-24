@@ -1,0 +1,473 @@
+{
+  "entity": "PlacementTimeAndExpense",
+  "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/724kgg/meta/PlacementTimeAndExpense?fields=*",
+  "label": "Placement Time And Expense",
+  "dateLastModified": "1609939694289",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer"
+    },
+    {
+      "name": "alternateWorkSchedule",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 50,
+      "confidential": false,
+      "label": "Alternate Work Schedule",
+      "options": [
+        {
+          "value": "",
+          "label": "standard 7 days a week"
+        },
+        {
+          "value": "980",
+          "label": "9/80 template"
+        },
+        {
+          "value": "410",
+          "label": "4/10 rule"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "approvalMethod",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 32,
+      "confidential": false,
+      "label": "Approval Method",
+      "options": [
+        {
+          "value": "ELEC",
+          "label": "Email/Electronic Approval"
+        },
+        {
+          "value": "ASAP",
+          "label": "Fax Approver/ASAP"
+        },
+        {
+          "value": "NAR",
+          "label": "No approval required"
+        },
+        {
+          "value": "CLNT",
+          "label": "Client Attached Approval"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "backupExpenseApproverEmail",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 132,
+      "confidential": false,
+      "label": "Backup Expense Approver Email",
+      "hideFromSearch": false
+    },
+    {
+      "name": "backupExpenseApproverFName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "Backup Expense Approver First Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "backupExpenseApproverLName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "Backup Expense Approver Last Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "backupNoBillExpenseApproverEmail",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 132,
+      "confidential": false,
+      "label": "Backup No Bill Expense Approver Email",
+      "hideFromSearch": false
+    },
+    {
+      "name": "backupNoBillExpenseApproverFirstName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "Backup No Bill Expense Approver First Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "backupNoBillExpenseApproverLastName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "Backup No Bill Expense Approver Last Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "branding",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 32,
+      "confidential": false,
+      "label": "Branding",
+      "hideFromSearch": false
+    },
+    {
+      "name": "clientDepartmentCode",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Client Department Code",
+      "hideFromSearch": false
+    },
+    {
+      "name": "clockMapping",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 32,
+      "confidential": false,
+      "label": "Clock Mapping",
+      "hideFromSearch": false
+    },
+    {
+      "name": "departmentAbbr",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 8,
+      "confidential": false,
+      "label": "Department Abbreviation",
+      "hideFromSearch": false
+    },
+    {
+      "name": "departmentMapping",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Department Mapping",
+      "hideFromSearch": false
+    },
+    {
+      "name": "departmentName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 30,
+      "confidential": false,
+      "label": "Department Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "dtBillingFactor",
+      "type": "SCALAR",
+      "dataType": "BigDecimal",
+      "confidential": false,
+      "label": "DT Billing Factor",
+      "hideFromSearch": false
+    },
+    {
+      "name": "employeeBadge",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "Employee Badge",
+      "hideFromSearch": false
+    },
+    {
+      "name": "employeeCPAFlag",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1,
+      "confidential": false,
+      "label": "Employee CPA Flag",
+      "options": [
+        {
+          "value": "0",
+          "label": "Off"
+        },
+        {
+          "value": "1",
+          "label": "On"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "employeeOtType",
+      "type": "SCALAR",
+      "dataType": "Integer",
+      "confidential": false,
+      "label": "EmployeeOTType",
+      "options": [
+        {
+          "value": 0,
+          "label": "Default OT Rules"
+        },
+        {
+          "value": 1,
+          "label": "No OT calculated"
+        },
+        {
+          "value": 2,
+          "label": "Exempt"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "expenseApproverEmail",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 132,
+      "confidential": false,
+      "label": "Expense Approver Email",
+      "hideFromSearch": false
+    },
+    {
+      "name": "expenseApproverFName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "Expense Approver First Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "expenseApproverLName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "Expense Approver Last Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "expenseIndicator",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1,
+      "confidential": false,
+      "label": "Expense Indicator",
+      "options": [
+        {
+          "value": "0",
+          "label": "Off"
+        },
+        {
+          "value": "1",
+          "label": "On"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "inOutIndicator",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1,
+      "confidential": false,
+      "label": "In Out Indicator",
+      "options": [
+        {
+          "value": "",
+          "label": "Default"
+        },
+        {
+          "value": "0",
+          "label": "Hours per day"
+        },
+        {
+          "value": "1",
+          "label": "In/Out template"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "noBillExpenseApproverEmail",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 132,
+      "confidential": false,
+      "label": "No Bill Expense Approver Email",
+      "hideFromSearch": false
+    },
+    {
+      "name": "noBillExpenseApproverFirstName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "No Bill Expense Approver First Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "noBillExpenseApproverLastName",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "No Bill Expense Approver Last Name",
+      "hideFromSearch": false
+    },
+    {
+      "name": "payRules",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 50,
+      "confidential": false,
+      "label": "Pay Rules",
+      "hideFromSearch": false
+    },
+    {
+      "name": "proxyCPAFlag",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1,
+      "confidential": false,
+      "label": "Proxy CPA Flag",
+      "options": [
+        {
+          "value": "0",
+          "label": "Off"
+        },
+        {
+          "value": "1",
+          "label": "On"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "rounding",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 10,
+      "confidential": false,
+      "label": "Rounding",
+      "options": [
+        {
+          "value": "NONE",
+          "label": "Actual (no rounding)"
+        },
+        {
+          "value": "TRND",
+          "label": "1/10 Hr Rounding"
+        },
+        {
+          "value": "QRND",
+          "label": "1/4 Hr Rounding"
+        },
+        {
+          "value": "TENT",
+          "label": "1/10 Hr Entry"
+        },
+        {
+          "value": "QENT",
+          "label": "1/4 Hr Entry"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "timeAndExpenseBranch",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 32,
+      "confidential": false,
+      "label": "Time and Expense Branch",
+      "options": [
+        {
+          "value": "VMS – Friday End",
+          "label": "VMS – Friday End"
+        },
+        {
+          "value": "VMS – Saturday End",
+          "label": "VMS – Saturday End"
+        },
+        {
+          "value": "VMS – Sunday End",
+          "label": "VMS – Sunday End"
+        },
+        {
+          "value": "Standard – Friday End",
+          "label": "Standard – Friday End"
+        },
+        {
+          "value": "Standard – Saturday End",
+          "label": "Standard – Saturday End"
+        },
+        {
+          "value": "Standard – Sunday End",
+          "label": "Standard – Sunday End"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "timeAndExpenseSource",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 1,
+      "confidential": false,
+      "label": "Time and Expense Source",
+      "options": [
+        {
+          "value": "W",
+          "label": "Web"
+        },
+        {
+          "value": "V",
+          "label": "VMS Provider"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "vmsAssignmentNumber",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 32,
+      "confidential": false,
+      "label": "VMS Assignment Number",
+      "hideFromSearch": false
+    },
+    {
+      "name": "vmsCostCenter",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 32,
+      "confidential": false,
+      "label": "VMS Cost Center",
+      "hideFromSearch": false
+    },
+    {
+      "name": "vmsEmployeeID",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 20,
+      "confidential": false,
+      "label": "VMS Employee ID",
+      "hideFromSearch": false
+    },
+    {
+      "name": "vmsRequisitionID",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 32,
+      "confidential": false,
+      "label": "VMS Requisition ID",
+      "hideFromSearch": false
+    }
+  ]
+}

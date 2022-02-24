@@ -1,0 +1,926 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "dateAdded": 1642612581897,
+            "dateLastModified": 1642612581897,
+            "endTime": "2022-01-25T16:00:00+13:00",
+            "fillRatio": 0.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 752,
+                "title": "New Zealand (+12)"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 0,
+                "data": []
+            },
+            "location": null,
+            "name": "New Zealand (+12)",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": "B3DACEE1-561D-4B00-8D17-CC1934685CF5",
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 1,
+                "data": []
+            },
+            "startTime": "2022-01-25T13:00:00+13:00"
+        },
+        {
+            "id": 2,
+            "dateAdded": 1642612540630,
+            "dateLastModified": 1642612540630,
+            "endTime": "2022-01-26T16:00:00-05:00",
+            "fillRatio": 0.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 549,
+                "title": "Receptionist"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 0,
+                "data": []
+            },
+            "location": null,
+            "name": "1pm",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": "A76247E3-58A0-4EBA-B045-A0497217ECA7",
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 1,
+                "data": []
+            },
+            "startTime": "2022-01-26T13:00:00-05:00"
+        },
+        {
+            "id": 3,
+            "dateAdded": 1642612241823,
+            "dateLastModified": 1642612241823,
+            "endTime": null,
+            "fillRatio": 0.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 496,
+                "title": "Find Match Cred & Spec"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 0,
+                "data": []
+            },
+            "location": null,
+            "name": "Find Match Cred & Spec",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": "281ABDCF-637E-4E86-8E8C-BB79497B843F",
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 0,
+                "data": []
+            },
+            "startTime": "2022-01-20T17:00:00-05:00"
+        },
+        {
+            "id": 4,
+            "dateAdded": 1642608398220,
+            "dateLastModified": 1642608398220,
+            "endTime": null,
+            "fillRatio": 0.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 569,
+                "title": "Software Test Engineer"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 0,
+                "data": []
+            },
+            "location": {
+                "id": 106,
+                "clientCorporation": {
+                    "id": 1,
+                    "name": "A Paddys Pub"
+                },
+                "candidate": null,
+                "title": "OG Paddys Pub",
+                "effectiveDate": "2021-05-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 144,
+                "externalID": "OG PP",
+                "address": {
+                    "address1": null,
+                    "address2": null,
+                    "city": null,
+                    "state": null,
+                    "stateID": null,
+                    "stateName": null,
+                    "zip": null,
+                    "countryID": 1,
+                    "countryName": "United States",
+                    "countryCode": "US"
+                }
+            },
+            "name": "Test Engineer",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": "20FE0FFE-9398-40CA-AE9F-C69D750AF161",
+            "shift": {
+                "id": 72,
+                "name": "WHOA That was cool!"
+            },
+            "shiftPosition": {
+                "id": 79,
+                "name": "Shift Manager"
+            },
+            "shiftTypes": {
+                "total": 0,
+                "data": []
+            },
+            "startTime": "2022-01-19T13:00:00-05:00"
+        },
+        {
+            "id": 5,
+            "dateAdded": 1642545221467,
+            "dateLastModified": 1642545221467,
+            "endTime": null,
+            "fillRatio": 3.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 752,
+                "title": "New Zealand (+12)"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 3,
+                "data": []
+            },
+            "location": null,
+            "name": "New Zealand (+12)",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 3,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": "3B01C703-8E7E-402E-A4FA-0BA4F9CF91FC",
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 0,
+                "data": []
+            },
+            "startTime": "2022-01-18T14:32:00+13:00"
+        },
+        {
+            "id": 6,
+            "dateAdded": 1642540769187,
+            "dateLastModified": 1642540849557,
+            "endTime": null,
+            "fillRatio": 0.0,
+            "isClosed": true,
+            "jobOrder": {
+                "id": 510,
+                "title": "0906Placement"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 1,
+                "data": []
+            },
+            "location": null,
+            "name": "0906Placement @ AnnaB Corp.",
+            "notes": {
+                "total": 1,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": "Candidate Cancelled",
+            "sequenceID": "39F6EEF6-BF07-44E4-851C-DDB0A0050082",
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 0,
+                "data": []
+            },
+            "startTime": "2022-01-18T01:00:00-05:00"
+        },
+        {
+            "id": 7,
+            "dateAdded": 1642534048397,
+            "dateLastModified": 1642540897143,
+            "endTime": "2022-01-18T18:00:00-06:00",
+            "fillRatio": 0.0,
+            "isClosed": true,
+            "jobOrder": {
+                "id": 547,
+                "title": "Tech"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 1,
+                "data": []
+            },
+            "location": {
+                "id": 205,
+                "clientCorporation": {
+                    "id": 249,
+                    "name": "BJC Healthcare"
+                },
+                "candidate": null,
+                "title": "Different Medical Center",
+                "effectiveDate": "2021-11-17",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 252,
+                "externalID": "1551",
+                "address": {
+                    "address1": "333 W Jefferson st ",
+                    "address2": null,
+                    "city": "St.Louis",
+                    "state": "MO",
+                    "stateID": 28,
+                    "stateName": "Missouri",
+                    "zip": "33222",
+                    "countryID": 1,
+                    "countryName": "United States",
+                    "countryCode": "US"
+                }
+            },
+            "name": "Tech @ BJC Healthcare",
+            "notes": {
+                "total": 1,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": "Candidate Cancelled",
+            "sequenceID": "28DE35FC-F35E-4439-9370-A451FB40F5D2",
+            "shift": {
+                "id": 44,
+                "name": "Nurse AM"
+            },
+            "shiftPosition": {
+                "id": 98,
+                "name": "Nurse"
+            },
+            "shiftTypes": {
+                "total": 3,
+                "data": []
+            },
+            "startTime": "2022-01-18T06:00:00-06:00"
+        },
+        {
+            "id": 8,
+            "dateAdded": 1642534028610,
+            "dateLastModified": 1642534421567,
+            "endTime": "2022-01-17T17:00:00-06:00",
+            "fillRatio": 0.0,
+            "isClosed": true,
+            "jobOrder": {
+                "id": 547,
+                "title": "Tech"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 1,
+                "data": []
+            },
+            "location": {
+                "id": 204,
+                "clientCorporation": {
+                    "id": 249,
+                    "name": "BJC Healthcare"
+                },
+                "candidate": null,
+                "title": "Missouri Baptist Medical Center",
+                "effectiveDate": "2021-10-27",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 251,
+                "externalID": "1550",
+                "address": {
+                    "address1": "3015 North Ballas Road",
+                    "address2": null,
+                    "city": "St. Louis",
+                    "state": "MO",
+                    "stateID": 28,
+                    "stateName": "Missouri",
+                    "zip": "63131",
+                    "countryID": 1,
+                    "countryName": "United States",
+                    "countryCode": "US"
+                }
+            },
+            "name": "Tech @ BJC Healthcare",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": "Candidate Cancelled",
+            "sequenceID": "3ADE1BDF-621F-4199-8C7E-866A6934AEA8",
+            "shift": {
+                "id": 45,
+                "name": "Tech AM"
+            },
+            "shiftPosition": {
+                "id": 99,
+                "name": "Tech"
+            },
+            "shiftTypes": {
+                "total": 2,
+                "data": []
+            },
+            "startTime": "2022-01-17T08:00:00-06:00"
+        },
+        {
+            "id": 9,
+            "dateAdded": 1642532649500,
+            "dateLastModified": 1642533316250,
+            "endTime": "2022-01-17T17:00:00-06:00",
+            "fillRatio": 0.0,
+            "isClosed": true,
+            "jobOrder": {
+                "id": 547,
+                "title": "Tech"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 1,
+                "data": []
+            },
+            "location": {
+                "id": 204,
+                "clientCorporation": {
+                    "id": 249,
+                    "name": "BJC Healthcare"
+                },
+                "candidate": null,
+                "title": "Missouri Baptist Medical Center",
+                "effectiveDate": "2021-10-27",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 251,
+                "externalID": "1550",
+                "address": {
+                    "address1": "3015 North Ballas Road",
+                    "address2": null,
+                    "city": "St. Louis",
+                    "state": "MO",
+                    "stateID": 28,
+                    "stateName": "Missouri",
+                    "zip": "63131",
+                    "countryID": 1,
+                    "countryName": "United States",
+                    "countryCode": "US"
+                }
+            },
+            "name": "Test",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": "Client Cancelled",
+            "sequenceID": "88AD75C4-3154-4A34-A719-D5B2B61AD22F",
+            "shift": {
+                "id": 45,
+                "name": "Tech AM"
+            },
+            "shiftPosition": {
+                "id": 99,
+                "name": "Tech"
+            },
+            "shiftTypes": {
+                "total": 2,
+                "data": []
+            },
+            "startTime": "2022-01-17T08:00:00-06:00"
+        },
+        {
+            "id": 10,
+            "dateAdded": 1642532600820,
+            "dateLastModified": 1642532687730,
+            "endTime": "2022-01-18T17:00:00-06:00",
+            "fillRatio": 0.0,
+            "isClosed": true,
+            "jobOrder": {
+                "id": 547,
+                "title": "Tech"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 1,
+                "data": []
+            },
+            "location": {
+                "id": 205,
+                "clientCorporation": {
+                    "id": 249,
+                    "name": "BJC Healthcare"
+                },
+                "candidate": null,
+                "title": "Different Medical Center",
+                "effectiveDate": "2021-11-17",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 252,
+                "externalID": "1551",
+                "address": {
+                    "address1": "333 W Jefferson st ",
+                    "address2": null,
+                    "city": "St.Louis",
+                    "state": "MO",
+                    "stateID": 28,
+                    "stateName": "Missouri",
+                    "zip": "33222",
+                    "countryID": 1,
+                    "countryName": "United States",
+                    "countryCode": "US"
+                }
+            },
+            "name": "Test ",
+            "notes": {
+                "total": 1,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": "Client Cancelled",
+            "sequenceID": "11AA716E-FD14-4B59-B675-1058FD5AE1A0",
+            "shift": {
+                "id": 45,
+                "name": "Tech AM"
+            },
+            "shiftPosition": {
+                "id": 99,
+                "name": "Tech"
+            },
+            "shiftTypes": {
+                "total": 2,
+                "data": []
+            },
+            "startTime": "2022-01-18T08:00:00-06:00"
+        },
+        {
+            "id": 11,
+            "dateAdded": 1642532302510,
+            "dateLastModified": 1642532355720,
+            "endTime": "2022-01-19T17:00:00-06:00",
+            "fillRatio": 0.0,
+            "isClosed": true,
+            "jobOrder": {
+                "id": 547,
+                "title": "Tech"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 1,
+                "data": []
+            },
+            "location": {
+                "id": 205,
+                "clientCorporation": {
+                    "id": 249,
+                    "name": "BJC Healthcare"
+                },
+                "candidate": null,
+                "title": "Different Medical Center",
+                "effectiveDate": "2021-11-17",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 252,
+                "externalID": "1551",
+                "address": {
+                    "address1": "333 W Jefferson st ",
+                    "address2": null,
+                    "city": "St.Louis",
+                    "state": "MO",
+                    "stateID": 28,
+                    "stateName": "Missouri",
+                    "zip": "33222",
+                    "countryID": 1,
+                    "countryName": "United States",
+                    "countryCode": "US"
+                }
+            },
+            "name": "Test Tech",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": "Candidate Cancelled",
+            "sequenceID": "FCFC2A76-B8AA-473A-B015-90B9DADC1DFC",
+            "shift": {
+                "id": 45,
+                "name": "Tech AM"
+            },
+            "shiftPosition": {
+                "id": 99,
+                "name": "Tech"
+            },
+            "shiftTypes": {
+                "total": 2,
+                "data": []
+            },
+            "startTime": "2022-01-19T08:00:00-06:00"
+        },
+        {
+            "id": 12,
+            "dateAdded": 1641944677107,
+            "dateLastModified": 1641944677107,
+            "endTime": "2022-01-12T01:45:34Z",
+            "fillRatio": 0.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 839,
+                "title": "Automater1641944734684"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 0,
+                "data": []
+            },
+            "location": null,
+            "name": "Automater",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": null,
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 1,
+                "data": []
+            },
+            "startTime": "2022-01-11T23:45:34Z"
+        },
+        {
+            "id": 13,
+            "dateAdded": 1641944580087,
+            "dateLastModified": 1641944580087,
+            "endTime": "2022-01-12T01:45:34Z",
+            "fillRatio": 0.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 838,
+                "title": "Automater1641944734684"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 0,
+                "data": []
+            },
+            "location": null,
+            "name": "Automater",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": null,
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 1,
+                "data": []
+            },
+            "startTime": "2022-01-11T23:45:34Z"
+        },
+        {
+            "id": 14,
+            "dateAdded": 1641335457057,
+            "dateLastModified": 1642534421563,
+            "endTime": null,
+            "fillRatio": 0.0,
+            "isClosed": true,
+            "jobOrder": {
+                "id": 547,
+                "title": "Tech"
+            },
+            "jobShiftAssignments": {
+                "total": 0,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 1,
+                "data": []
+            },
+            "location": null,
+            "name": "Tech",
+            "notes": {
+                "total": 0,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": "Candidate Cancelled",
+            "sequenceID": "B4C7CBC2-B6A8-4D69-9D59-5E45662B330A",
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 0,
+                "data": []
+            },
+            "startTime": "2022-01-04T06:00:00-06:00"
+        },
+        {
+            "id": 15,
+            "dateAdded": 1641329254803,
+            "dateLastModified": 1641329254803,
+            "endTime": null,
+            "fillRatio": 0.0,
+            "isClosed": false,
+            "jobOrder": {
+                "id": 518,
+                "title": "Placement4"
+            },
+            "jobShiftAssignments": {
+                "total": 1,
+                "data": []
+            },
+            "jobShiftSubmissions": {
+                "total": 0,
+                "data": []
+            },
+            "location": null,
+            "name": "Placement4 @ 001Company0909Dom",
+            "notes": {
+                "total": 2,
+                "data": []
+            },
+            "numAssigned": 0,
+            "openings": 1,
+            "reasonClosed": null,
+            "sequenceID": "4164C31A-23A3-47F6-9789-61A7F912729F",
+            "shift": null,
+            "shiftPosition": null,
+            "shiftTypes": {
+                "total": 0,
+                "data": []
+            },
+            "startTime": "2022-01-05T04:00:00-05:00"
+        },
+        {
+                    "id": 16,
+                    "dateAdded": 1641944677107,
+                    "dateLastModified": 1641944677107,
+                    "endTime": "2022-01-12T01:45:34Z",
+                    "fillRatio": 0.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 839,
+                        "title": "Automater1641944734684"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Automater",
+                    "notes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": null,
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "startTime": "2022-01-11T23:45:34Z"
+                },
+                {
+                    "id": 17,
+                    "dateAdded": 1641944580087,
+                    "dateLastModified": 1641944580087,
+                    "endTime": "2022-01-12T01:45:34Z",
+                    "fillRatio": 0.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 838,
+                        "title": "Automater1641944734684"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Automater",
+                    "notes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": null,
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "startTime": "2022-01-11T23:45:34Z"
+                },
+                {
+                    "id": 18,
+                    "dateAdded": 1641335457057,
+                    "dateLastModified": 1642534421563,
+                    "endTime": null,
+                    "fillRatio": 0.0,
+                    "isClosed": true,
+                    "jobOrder": {
+                        "id": 547,
+                        "title": "Tech"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Tech",
+                    "notes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": "Candidate Cancelled",
+                    "sequenceID": "B4C7CBC2-B6A8-4D69-9D59-5E45662B330A",
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "startTime": "2022-01-04T06:00:00-06:00"
+                },
+                {
+                    "id": 19,
+                    "dateAdded": 1641329254803,
+                    "dateLastModified": 1641329254803,
+                    "endTime": null,
+                    "fillRatio": 0.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 518,
+                        "title": "Placement4"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "Placement4 @ 001Company0909Dom",
+                    "notes": {
+                        "total": 2,
+                        "data": []
+                    },
+                    "numAssigned": 0,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": "4164C31A-23A3-47F6-9789-61A7F912729F",
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "startTime": "2022-01-05T04:00:00-05:00"
+                },
+                {
+                    "id": 20,
+                    "dateAdded": 1641329152137,
+                    "dateLastModified": 1641481813357,
+                    "endTime": null,
+                    "fillRatio": 1.0,
+                    "isClosed": false,
+                    "jobOrder": {
+                        "id": 518,
+                        "title": "Placement4"
+                    },
+                    "jobShiftAssignments": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "jobShiftSubmissions": {
+                        "total": 1,
+                        "data": []
+                    },
+                    "location": null,
+                    "name": "no",
+                    "notes": {
+                        "total": 2,
+                        "data": []
+                    },
+                    "numAssigned": 1,
+                    "openings": 1,
+                    "reasonClosed": null,
+                    "sequenceID": "1ACA3BCC-1C40-42AE-9C4D-5CB5F7DD68A6",
+                    "shift": null,
+                    "shiftPosition": null,
+                    "shiftTypes": {
+                        "total": 0,
+                        "data": []
+                    },
+                    "startTime": "2022-01-04T04:00:00-05:00"
+                }
+    ]
+}

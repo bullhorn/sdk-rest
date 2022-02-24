@@ -1,0 +1,414 @@
+{
+    "entity": "FederalTaxForm",
+    "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/FederalTaxForm?fields=*",
+    "label": "Federal Tax Form",
+    "dateLastModified": "1635332213320",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "candidate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Candidate",
+            "optionsType": "Candidate",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/options/Candidate",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Candidate",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/7agk5s/meta/Candidate?fields=*",
+                "label": "Talent",
+                "dateLastModified": "1635353280177",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "customDate1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Federal Exempt Expires",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate4",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customDate5",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "customDate5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customInt5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customInt5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney1",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney1",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney2",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney3",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney4",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customMoney5",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "customMoney5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Federal Marital Status (2019 and earlier)",
+            "options": [
+                {
+                    "value": "S",
+                    "label": "Single"
+                },
+                {
+                    "value": "M",
+                    "label": "Married"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText10",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText2",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText3",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText4",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText5",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText6",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText7",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText8",
+            "hideFromSearch": false
+        },
+        {
+            "name": "customText9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "customText9",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "federalAdditionalWithholdingsAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Federal Additional Withholding",
+            "hideFromSearch": false
+        },
+        {
+            "name": "federalExemptions",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Federal Withholding (2019 and earlier)",
+            "hideFromSearch": false
+        },
+        {
+            "name": "federalExtraWithholdingAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Federal Extra Withholding Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "federalFilingStatus",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 10,
+            "confidential": false,
+            "label": "Federal Marital Status",
+            "options": [
+                {
+                    "value": "M",
+                    "label": "Married"
+                },
+                {
+                    "value": "H",
+                    "label": "Head of Household"
+                },
+                {
+                    "value": "S",
+                    "label": "Single"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "options": [
+                {
+                    "value": "0",
+                    "label": "No"
+                },
+                {
+                    "value": "1",
+                    "label": "Yes"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "isExempt",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Federal Exempt Indicator",
+            "options": [
+                {
+                    "value": false,
+                    "label": "No"
+                },
+                {
+                    "value": true,
+                    "label": "Yes"
+                }
+            ],
+            "hideFromSearch": false
+        },
+        {
+            "name": "otherDeductionsAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Federal Other Deduction Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "otherIncomeAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Fed Other Income",
+            "hideFromSearch": false
+        },
+        {
+            "name": "totalDependentClaimAmount",
+            "type": "SCALAR",
+            "dataType": "BigDecimal",
+            "confidential": false,
+            "label": "Fed Dependent Amount / Total Claim Amount",
+            "hideFromSearch": false
+        },
+        {
+            "name": "twoJobs",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Fed Multiple Jobs or Spouse Works",
+            "options": [
+                {
+                    "value": false,
+                    "label": "No"
+                },
+                {
+                    "value": true,
+                    "label": "Yes"
+                }
+            ],
+            "hideFromSearch": false
+        }
+    ]
+}

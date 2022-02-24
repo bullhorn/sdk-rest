@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.bullhornsdk.data.model.parameter.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
@@ -31,15 +32,6 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.OptionsParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper;
@@ -380,6 +372,17 @@ public interface BullhornData {
 	 * @return a Map of setting name to setting value
 	 */
 	public Map<String, Object> getSettings(Set<String> settingSet);
+
+    /**
+     *
+     * Returns the Settings for passed in name(s).
+     *
+     * @param settingSet  settings to return data for. Pass in null for all settings.
+     * @param params optional parameter of privateLabelId
+     *
+     * @return a Map of setting name to setting value
+     */
+    public Map<String, Object> getSettings(Set<String> settingSet, SettingsParams params);
 
 	/**
 	 * Returns a valid bhRestToken to be used in a bh rest api call.
@@ -785,6 +788,16 @@ public interface BullhornData {
 	 * @return Settings object
 	 */
 	public Settings getSettingsObject(Set<SettingsFields> fieldsSet);
+
+    /**
+     * Get the settings object
+     *
+     * @param fieldsSet the set of fields on the settings object you need back. Size of this set has be to greater than 0
+     * @param params optional parameter of privateLabelId
+     *
+     * @return Settings object
+     */
+    public Settings getSettingsObject(Set<SettingsFields> fieldsSet, SettingsParams params);
 
     /**
      * Gets the current state of the Execute Form Triggers boolean that will execute any applicable existing rest form triggers
