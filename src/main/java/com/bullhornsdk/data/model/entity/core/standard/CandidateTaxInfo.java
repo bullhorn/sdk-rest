@@ -42,6 +42,12 @@ public class CandidateTaxInfo extends CustomFieldsA implements QueryEntity, Upda
     @Size(max = 100)
     private String taxIDIndicator;
 
+    public CandidateTaxInfo() {}
+
+    public CandidateTaxInfo(Integer id) {
+        this.id = id;
+    }
+
     @Override
     @JsonProperty("id")
     public Integer getId() {
