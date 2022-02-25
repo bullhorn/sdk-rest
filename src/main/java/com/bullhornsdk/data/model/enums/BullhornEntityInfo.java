@@ -416,7 +416,8 @@ public enum BullhornEntityInfo {
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
 
-
+    CANDIDATE_TAX_INFO("CandidateTaxInfo", CandidateTaxInfo.class, CandidateTaxInfoWrapper.class, CandidateTaxInfoListWrapper.class, "CandidateTaxInfoEditHistory",
+        null),
     // placementRateCard Entities
     PLACEMENT_RATE_CARD("PlacementRateCard", PlacementRateCard.class, PlacementRateCardWrapper.class, PlacementRateCardListWrapper.class, "PlacementRateCardEditHistory",
         "PlacementRateCardEditHistoryFieldChange"),
