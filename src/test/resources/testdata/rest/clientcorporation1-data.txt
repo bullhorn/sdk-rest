@@ -74,6 +74,7 @@
             "department": {
                 "id": 1
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": "(617) 464-2440",
             "feeArrangement": 0,
@@ -178,6 +179,7 @@
             "department": {
                 "id": 2
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "(617) 464-2440",
             "feeArrangement": 0,
@@ -284,6 +286,7 @@
             "department": {
                 "id": 3
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
@@ -390,6 +393,7 @@
             "department": {
                 "id": 4
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0.25,
@@ -494,6 +498,7 @@
             "department": {
                 "id": 5
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
@@ -592,6 +597,7 @@
             "department": {
                 "id": 6
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": "(617) 464-2440",
             "feeArrangement": 0,
@@ -690,6 +696,7 @@
             "department": {
                 "id": 7
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": "(617) 464-2440",
             "feeArrangement": 0,
@@ -788,6 +795,7 @@
             "department": {
                 "id": 8
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": "(617) 464-2440",
             "feeArrangement": 0,
@@ -886,6 +894,7 @@
             "department": {
                 "id": 9
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": "(617) 464-2440",
             "feeArrangement": 0,
@@ -990,6 +999,7 @@
             "department": {
                 "id": 10
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
@@ -1094,6 +1104,7 @@
             "department": {
                 "id": 11
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
@@ -1198,6 +1209,7 @@
             "department": {
                 "id": 12
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
@@ -1304,6 +1316,7 @@
             "department": {
                 "id": 13
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0.12,
@@ -1402,6 +1415,7 @@
             "department": {
                 "id": 14
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": null,
             "feeArrangement": 0,
@@ -1506,6 +1520,7 @@
             "department": {
                 "id": 15
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
@@ -1604,6 +1619,7 @@
             "department": {
                 "id": 16
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": null,
             "feeArrangement": 0,
@@ -1702,6 +1718,7 @@
             "department": {
                 "id": 17
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": null,
             "feeArrangement": 0,
@@ -1800,6 +1817,7 @@
             "department": {
                 "id": 9284
             },
+            "exemptionStatus": null,
             "externalID": null,
             "fax": null,
             "feeArrangement": 0,
@@ -1904,6 +1922,7 @@
             "department": {
                 "id": 19
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
@@ -2008,6 +2027,7 @@
             "department": {
                 "id": 20
             },
+            "exemptionStatus": null,
             "externalID": "",
             "fax": "",
             "feeArrangement": 0,
