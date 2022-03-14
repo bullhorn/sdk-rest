@@ -69,16 +69,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance9;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance2;
@@ -142,161 +133,13 @@ import com.bullhornsdk.data.model.response.list.customobject.ClientCorporationCu
 import com.bullhornsdk.data.model.response.list.customobject.JobOrderCustomObjectListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObjectListWrapper;
 import com.bullhornsdk.data.model.response.list.customobject.UserCustomObjectListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance11ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance12ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance13ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance14ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance15ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance16ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance17ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance18ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance19ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance20ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance21ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance22ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance23ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance24ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance25ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance26ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance27ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance28ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance29ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance30ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance31ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance32ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance33ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance34ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance35ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.ClientCorporationCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.JobOrderCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.OpportunityCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PersonCustomObjectInstance9ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance10ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance1ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance2ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance3ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance4ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance5ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance6ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance7ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance8ListWrapper;
-import com.bullhornsdk.data.model.response.list.customobjectinstances.PlacementCustomObjectInstance9ListWrapper;
+import com.bullhornsdk.data.model.response.list.customobjectinstances.*;
 import com.bullhornsdk.data.model.response.single.*;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.UserCustomObjectWrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance11Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance12Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance13Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance14Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance15Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance16Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance17Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance18Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance19Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance20Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance21Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance22Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance23Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance24Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance25Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance26Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance27Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance28Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance29Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance30Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance31Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance32Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance33Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance34Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance35Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.ClientCorporationCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.JobOrderCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.OpportunityCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PersonCustomObjectInstance9Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance10Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance1Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance2Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance3Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance4Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance5Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance6Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance7Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance8Wrapper;
-import com.bullhornsdk.data.model.response.single.customobjectinstances.PlacementCustomObjectInstance9Wrapper;
+import com.bullhornsdk.data.model.response.single.customobjectinstances.*;
 
 /**
  * Enum that contains the following information about the RestEntities:
@@ -585,6 +428,21 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_8("PersonCustomObjectInstance8", PersonCustomObjectInstance8.class, PersonCustomObjectInstance8Wrapper.class, PersonCustomObjectInstance8ListWrapper.class, "PersonCustomObject8EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_9("PersonCustomObjectInstance9", PersonCustomObjectInstance9.class, PersonCustomObjectInstance9Wrapper.class, PersonCustomObjectInstance9ListWrapper.class, "PersonCustomObject9EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_10("PersonCustomObjectInstance10", PersonCustomObjectInstance10.class, PersonCustomObjectInstance10Wrapper.class, PersonCustomObjectInstance10ListWrapper.class, "PersonCustomObject10EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_11("PersonCustomObjectInstance11", PersonCustomObjectInstance11.class, PersonCustomObjectInstance11Wrapper.class, PersonCustomObjectInstance11ListWrapper.class, "PersonCustomObject11EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_12("PersonCustomObjectInstance12", PersonCustomObjectInstance12.class, PersonCustomObjectInstance12Wrapper.class, PersonCustomObjectInstance12ListWrapper.class, "PersonCustomObject12EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_13("PersonCustomObjectInstance13", PersonCustomObjectInstance13.class, PersonCustomObjectInstance13Wrapper.class, PersonCustomObjectInstance13ListWrapper.class, "PersonCustomObject13EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_14("PersonCustomObjectInstance14", PersonCustomObjectInstance14.class, PersonCustomObjectInstance14Wrapper.class, PersonCustomObjectInstance14ListWrapper.class, "PersonCustomObject14EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_15("PersonCustomObjectInstance15", PersonCustomObjectInstance15.class, PersonCustomObjectInstance15Wrapper.class, PersonCustomObjectInstance15ListWrapper.class, "PersonCustomObject15EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_16("PersonCustomObjectInstance16", PersonCustomObjectInstance16.class, PersonCustomObjectInstance16Wrapper.class, PersonCustomObjectInstance16ListWrapper.class, "PersonCustomObject16EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_17("PersonCustomObjectInstance17", PersonCustomObjectInstance17.class, PersonCustomObjectInstance17Wrapper.class, PersonCustomObjectInstance17ListWrapper.class, "PersonCustomObject17EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_18("PersonCustomObjectInstance18", PersonCustomObjectInstance18.class, PersonCustomObjectInstance18Wrapper.class, PersonCustomObjectInstance18ListWrapper.class, "PersonCustomObject18EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_19("PersonCustomObjectInstance19", PersonCustomObjectInstance19.class, PersonCustomObjectInstance19Wrapper.class, PersonCustomObjectInstance19ListWrapper.class, "PersonCustomObject19EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_20("PersonCustomObjectInstance20", PersonCustomObjectInstance20.class, PersonCustomObjectInstance20Wrapper.class, PersonCustomObjectInstance20ListWrapper.class, "PersonCustomObject20EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_21("PersonCustomObjectInstance21", PersonCustomObjectInstance21.class, PersonCustomObjectInstance21Wrapper.class, PersonCustomObjectInstance21ListWrapper.class, "PersonCustomObject21EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_22("PersonCustomObjectInstance22", PersonCustomObjectInstance22.class, PersonCustomObjectInstance22Wrapper.class, PersonCustomObjectInstance22ListWrapper.class, "PersonCustomObject22EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_23("PersonCustomObjectInstance23", PersonCustomObjectInstance23.class, PersonCustomObjectInstance23Wrapper.class, PersonCustomObjectInstance23ListWrapper.class, "PersonCustomObject23EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_24("PersonCustomObjectInstance24", PersonCustomObjectInstance24.class, PersonCustomObjectInstance24Wrapper.class, PersonCustomObjectInstance24ListWrapper.class, "PersonCustomObject24EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_25("PersonCustomObjectInstance25", PersonCustomObjectInstance25.class, PersonCustomObjectInstance25Wrapper.class, PersonCustomObjectInstance25ListWrapper.class, "PersonCustomObject25EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
 
     // File Attachment Entities
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),
