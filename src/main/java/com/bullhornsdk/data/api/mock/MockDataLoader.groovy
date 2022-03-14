@@ -636,6 +636,21 @@ public class MockDataLoader {
         entityFiles.put(PersonCustomObjectInstance8.class, "customobjectinstances/personcustomobjectinstance8-data.txt");
         entityFiles.put(PersonCustomObjectInstance9.class, "customobjectinstances/personcustomobjectinstance9-data.txt");
         entityFiles.put(PersonCustomObjectInstance10.class, "customobjectinstances/personcustomobjectinstance10-data.txt");
+        entityFiles.put(PersonCustomObjectInstance11.class, "customobjectinstances/personcustomobjectinstance11-data.txt");
+        entityFiles.put(PersonCustomObjectInstance12.class, "customobjectinstances/personcustomobjectinstance12-data.txt");
+        entityFiles.put(PersonCustomObjectInstance13.class, "customobjectinstances/personcustomobjectinstance13-data.txt");
+        entityFiles.put(PersonCustomObjectInstance14.class, "customobjectinstances/personcustomobjectinstance14-data.txt");
+        entityFiles.put(PersonCustomObjectInstance15.class, "customobjectinstances/personcustomobjectinstance15-data.txt");
+        entityFiles.put(PersonCustomObjectInstance16.class, "customobjectinstances/personcustomobjectinstance16-data.txt");
+        entityFiles.put(PersonCustomObjectInstance17.class, "customobjectinstances/personcustomobjectinstance17-data.txt");
+        entityFiles.put(PersonCustomObjectInstance18.class, "customobjectinstances/personcustomobjectinstance18-data.txt");
+        entityFiles.put(PersonCustomObjectInstance19.class, "customobjectinstances/personcustomobjectinstance19-data.txt");
+        entityFiles.put(PersonCustomObjectInstance20.class, "customobjectinstances/personcustomobjectinstance20-data.txt");
+        entityFiles.put(PersonCustomObjectInstance21.class, "customobjectinstances/personcustomobjectinstance21-data.txt");
+        entityFiles.put(PersonCustomObjectInstance22.class, "customobjectinstances/personcustomobjectinstance22-data.txt");
+        entityFiles.put(PersonCustomObjectInstance23.class, "customobjectinstances/personcustomobjectinstance23-data.txt");
+        entityFiles.put(PersonCustomObjectInstance24.class, "customobjectinstances/personcustomobjectinstance24-data.txt");
+        entityFiles.put(PersonCustomObjectInstance25.class, "customobjectinstances/personcustomobjectinstance25-data.txt");
 
         entityFiles.put(CandidateFileAttachment.class, "file/candidatefileattachment-data.txt");
         entityFiles.put(CertificationFileAttachment.class, "file/certificationfileattachment-data.txt");
@@ -876,6 +891,21 @@ public class MockDataLoader {
         entityMetaFiles.put(PersonCustomObjectInstance8.class, "meta/customobjectinstances/personcustomobjectinstance8-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance9.class, "meta/customobjectinstances/personcustomobjectinstance9-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance10.class, "meta/customobjectinstances/personcustomobjectinstance10-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance11.class, "meta/customobjectinstances/personcustomobjectinstance11-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance12.class, "meta/customobjectinstances/personcustomobjectinstance12-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance13.class, "meta/customobjectinstances/personcustomobjectinstance13-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance14.class, "meta/customobjectinstances/personcustomobjectinstance14-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance15.class, "meta/customobjectinstances/personcustomobjectinstance15-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance16.class, "meta/customobjectinstances/personcustomobjectinstance16-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance17.class, "meta/customobjectinstances/personcustomobjectinstance17-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance18.class, "meta/customobjectinstances/personcustomobjectinstance18-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance19.class, "meta/customobjectinstances/personcustomobjectinstance19-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance20.class, "meta/customobjectinstances/personcustomobjectinstance20-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance21.class, "meta/customobjectinstances/personcustomobjectinstance21-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance22.class, "meta/customobjectinstances/personcustomobjectinstance22-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance23.class, "meta/customobjectinstances/personcustomobjectinstance23-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance24.class, "meta/customobjectinstances/personcustomobjectinstance24-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance25.class, "meta/customobjectinstances/personcustomobjectinstance25-meta-data.txt");
 
         entityMetaFiles.put(ClientCorporationCustomObject.class, "meta/customobject/clientcorporationcustomobject-meta-data.txt");
         entityMetaFiles.put(JobOrderCustomObject.class, "meta/customobject/jobordercustomobject-meta-data.txt");
