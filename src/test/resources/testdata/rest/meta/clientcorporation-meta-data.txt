@@ -1017,6 +1017,73 @@
             }
         },
         {
+            "name": "exemptionStatus",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "optional": true,
+            "label": "Sales Tax Exemption Status",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "ClientCorporationTaxExemptionStatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/ClientCorporationTaxExemptionStatusLookup",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Exempt",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "Non-Exempt",
+                    "readOnly": false
+                },
+                {
+                    "value": 3,
+                    "label": "Self-Pay",
+                    "readOnly": false
+                }
+            ],
+            "defaultValue": 2,
+            "hideFromSearch": false,
+            "sortOrder": 10060,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "ClientCorporationTaxExemptionStatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/ClientCorporationTaxExemptionStatusLookup?fields=*",
+                "label": "Client Corporation Tax Exemption Status Lookup",
+                "dateLastModified": "1647015860989",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Label",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
             "name": "externalID",
             "type": "SCALAR",
             "dataType": "String",
