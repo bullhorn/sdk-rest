@@ -204,6 +204,9 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
 	private BigDecimal overtimeRate;
 
+    @JsonIgnore
+    private String payGroup;
+
 	private BigDecimal payRate;
 
 	@JsonIgnore
@@ -825,7 +828,17 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.overtimeRate = overtimeRate;
 	}
 
-	@JsonProperty("payRate")
+    @JsonProperty("payGroup")
+    public String getPayGroup() {
+        return payGroup;
+    }
+
+    @JsonIgnore
+    public void setPayGroup(String payGroup) {
+        this.payGroup = payGroup;
+    }
+
+    @JsonProperty("payRate")
 	public BigDecimal getPayRate() {
 		return payRate;
 	}
@@ -1237,6 +1250,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(otherHourlyFeeComments, placement.otherHourlyFeeComments) &&
             Objects.equals(overtimeMarkUpPercentage, placement.overtimeMarkUpPercentage) &&
             Objects.equals(overtimeRate, placement.overtimeRate) &&
+            Objects.equals(payGroup, placement.payGroup) &&
             Objects.equals(payRate, placement.payRate) &&
             Objects.equals(projectCodeList, placement.projectCodeList) &&
             Objects.equals(recruitingManagerPercentGrossMargin, placement.recruitingManagerPercentGrossMargin) &&
@@ -1272,7 +1286,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
     @Override
@@ -1332,6 +1346,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", otherHourlyFeeComments='" + otherHourlyFeeComments + '\'' +
             ", overtimeMarkUpPercentage=" + overtimeMarkUpPercentage +
             ", overtimeRate=" + overtimeRate +
+            ", payGroup=" + payGroup +
             ", payRate=" + payRate +
             ", projectCodeList='" + projectCodeList + '\'' +
             ", recruitingManagerPercentGrossMargin=" + recruitingManagerPercentGrossMargin +

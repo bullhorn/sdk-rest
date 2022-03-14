@@ -37,6 +37,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorpor
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -74,7 +75,7 @@ import java.util.Objects;
 		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "linkedinProfileName", "name", "notes", "numEmployees", "numOffices",
 		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "userOwners", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName" })
+        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName", "exemptionStatus" })
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
 		SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -161,6 +162,10 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @JsonIgnore
     @Size(max = 200)
     private String facebookProfileName;
+
+    @JsonIgnore
+    @Size(max = 100)
+    private SimplifiedOptionsLookup exemptionStatus;
 
     @JsonIgnore
 	@Size(max = 100)
@@ -586,7 +591,17 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.facebookProfileName = facebookProfileName;
     }
 
-	@JsonProperty("name")
+    @JsonProperty("exemptionStatus")
+    public SimplifiedOptionsLookup getExemptionStatus() {
+        return exemptionStatus;
+    }
+
+    @JsonProperty("exemptionStatus")
+    public void setExemptionStatus(SimplifiedOptionsLookup exemptionStatus) {
+        this.exemptionStatus = exemptionStatus;
+    }
+
+    @JsonProperty("name")
 	public String getName() {
 		return name;
 	}
@@ -1199,6 +1214,8 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.locations = locations;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -1235,6 +1252,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
             Objects.equals(linkedinProfileName, that.linkedinProfileName) &&
             Objects.equals(twitterHandle, that.twitterHandle) &&
             Objects.equals(facebookProfileName, that.facebookProfileName) &&
+            Objects.equals(exemptionStatus, that.exemptionStatus) &&
             Objects.equals(name, that.name) &&
             Objects.equals(notes, that.notes) &&
             Objects.equals(numEmployees, that.numEmployees) &&
@@ -1293,7 +1311,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, address, annualRevenue, billingAddress, billingContact, billingFrequency, billingPhone, branch, businessSectorList, childClientCorporations, clientContacts, companyDescription, companyURL, competitors, culture, dateAdded, dateFounded, dateLastModified, department, externalID, fax, feeArrangement, funding, industryList, invoiceFormat, locations, leads, linkedinProfileName, twitterHandle, facebookProfileName, name, notes, numEmployees, numOffices, ownership, owners, parentClientCorporation, phone, revenue, status, taxRate, tickerSymbol, trackTitle, userOwners, workWeekStart, requirements, certificationGroups, certifications, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject11s, customObject12s, customObject13s, customObject14s, customObject15s, customObject16s, customObject17s, customObject18s, customObject19s, customObject20s, customObject21s, customObject22s, customObject23s, customObject24s, customObject25s, customObject26s, customObject27s, customObject28s, customObject29s, customObject30s, customObject31s, customObject32s, customObject33s, customObject34s, customObject35s);
+        return Objects.hash(super.hashCode(), id, address, annualRevenue, billingAddress, billingContact, billingFrequency, billingPhone, branch, businessSectorList, childClientCorporations, clientContacts, companyDescription, companyURL, competitors, culture, dateAdded, dateFounded, dateLastModified, department, externalID, fax, feeArrangement, funding, industryList, invoiceFormat, locations, leads, linkedinProfileName, twitterHandle, facebookProfileName, exemptionStatus, name, notes, numEmployees, numOffices, ownership, owners, parentClientCorporation, phone, revenue, status, taxRate, tickerSymbol, trackTitle, userOwners, workWeekStart, requirements, certificationGroups, certifications, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject11s, customObject12s, customObject13s, customObject14s, customObject15s, customObject16s, customObject17s, customObject18s, customObject19s, customObject20s, customObject21s, customObject22s, customObject23s, customObject24s, customObject25s, customObject26s, customObject27s, customObject28s, customObject29s, customObject30s, customObject31s, customObject32s, customObject33s, customObject34s, customObject35s);
     }
 
     @Override
@@ -1328,6 +1346,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         sb.append(", linkedinProfileName='").append(linkedinProfileName).append('\'');
         sb.append(", twitterHandle='").append(twitterHandle).append('\'');
         sb.append(", facebookProfileName='").append(facebookProfileName).append('\'');
+        sb.append(", exemptionStatus='").append(exemptionStatus).append('\'');
         sb.append(", name='").append(name).append('\'');
         sb.append(", notes='").append(notes).append('\'');
         sb.append(", numEmployees=").append(numEmployees);
