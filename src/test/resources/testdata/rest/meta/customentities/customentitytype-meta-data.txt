@@ -1,0 +1,41 @@
+{
+    "entity": "CustomEntityType",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CustomEntityType?fields=*",
+    "label": "Custom Entity Type",
+    "fields":
+    [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "name",
+            "hideFromSearch": false,
+            "optional": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "dateAdded",
+            "hideFromSearch": false,
+            "optional": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "dateLastModified",
+            "hideFromSearch": false,
+            "optional": false
+        }
+    ]
+}

@@ -1,0 +1,1175 @@
+{
+    "entity": "CustomEntity",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/CustomEntity?fields=*",
+    "label": "Custom Entity",
+    "fields":
+    [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "customEntityType",
+            "type": "SCALAR",
+            "dataType": "TO_ONE",
+            "confidential": false,
+            "label": "customEntityTypeID",
+            "hideFromSearch": false,
+            "optional": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "dateAdded",
+            "hideFromSearch": false,
+            "optional": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "dateLastModified",
+            "hideFromSearch": false,
+            "optional": false
+        },
+        {
+            "name": "migrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "migrateGUID",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text6",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text7",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text8",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text9",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text10",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text11",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text11",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text12",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text12",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text13",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text13",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text14",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text14",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text15",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text15",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text16",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text16",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text17",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text17",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text18",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text18",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text19",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text19",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text20",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text20",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text21",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text21",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text22",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text22",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text23",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text23",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text24",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text24",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text25",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text25",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text26",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text26",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text27",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text27",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text28",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text28",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text29",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text29",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text30",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text30",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text31",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text31",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text32",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text32",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text33",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text33",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text34",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text34",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text35",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text35",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text36",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text36",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text37",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text37",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text38",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text38",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text39",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text39",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "text40",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "text40",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock1",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock2",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock3",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock4",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock5",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock6",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock6",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock7",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock7",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock8",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock8",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock9",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock9",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "textBlock10",
+            "type": "SCALAR",
+            "dataType": "String",
+            "confidential": false,
+            "label": "textBlock10",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int6",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int6",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int7",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int7",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int8",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int8",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int9",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int9",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int10",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int10",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int11",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int11",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int12",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int12",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int13",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int13",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int14",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int14",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "int15",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "int15",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float1",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float2",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float3",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float4",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float5",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float6",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float6",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float7",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float7",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float8",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float8",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float9",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float9",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float10",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float10",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float11",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float11",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float12",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float12",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float13",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float13",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float14",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float14",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "float15",
+            "type": "SCALAR",
+            "dataType": "Float",
+            "confidential": false,
+            "label": "float15",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date1",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date2",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date3",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date4",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date5",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date6",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date6",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date7",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date7",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date8",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date8",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date9",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date9",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date10",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date10",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date11",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date11",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date12",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date12",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date13",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date13",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date14",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date14",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "date15",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "date15",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "userID1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "userID1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "userID2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "userID2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "userID3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "userID3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "userID4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "userID4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "userID5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "userID5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "clientCorporationID1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "clientCorporationID1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "clientCorporationID2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "clientCorporationID2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "clientCorporationID3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "clientCorporationID3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "clientCorporationID4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "clientCorporationID4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "clientCorporationID5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "clientCorporationID5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "jobOrderID1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "jobOrderID1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "jobOrderID2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "jobOrderID2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "jobOrderID3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "jobOrderID3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "jobOrderID4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "jobOrderID4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "jobOrderID5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "jobOrderID5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "opportunityID1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "opportunityID1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "opportunityID2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "opportunityID2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "opportunityID3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "opportunityID3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "opportunityID4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "opportunityID4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "opportunityID5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "opportunityID5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "placementID1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "placementID1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "placementID2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "placementID2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "placementID3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "placementID3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "placementID4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "placementID4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "placementID5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "placementID5",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "customEntityID1",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customEntityID1",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "customEntityID2",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customEntityID2",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "customEntityID3",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customEntityID3",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "customEntityID4",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customEntityID4",
+            "hideFromSearch": false,
+            "optional": true
+        },
+        {
+            "name": "customEntityID5",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "customEntityID5",
+            "hideFromSearch": false,
+            "optional": true
+        }
+    ]
+}

@@ -10,6 +10,8 @@ import com.bullhornsdk.data.model.entity.core.certificationrequirement.Candidate
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement;
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement;
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.optionslookup.CertificationRequirementStatusLookup;
+import com.bullhornsdk.data.model.entity.core.customentities.CustomEntity;
+import com.bullhornsdk.data.model.entity.core.customentities.CustomEntityType;
 import com.bullhornsdk.data.model.entity.core.customobject.ClientCorporationCustomObject;
 import com.bullhornsdk.data.model.entity.core.customobject.JobOrderCustomObject;
 import com.bullhornsdk.data.model.entity.core.customobject.PlacementCustomObject;
@@ -135,6 +137,7 @@ import com.bullhornsdk.data.model.response.list.customobject.PlacementCustomObje
 import com.bullhornsdk.data.model.response.list.customobject.UserCustomObjectListWrapper;
 import com.bullhornsdk.data.model.response.list.customobjectinstances.*;
 import com.bullhornsdk.data.model.response.single.*;
+import com.bullhornsdk.data.model.response.single.CustomEntityTypeWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.ClientCorporationCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.JobOrderCustomObjectWrapper;
 import com.bullhornsdk.data.model.response.single.customobject.PlacementCustomObjectWrapper;
@@ -347,6 +350,9 @@ public enum BullhornEntityInfo {
     CERTIFICATION_REQUIREMENT("CertificationRequirement", CertificationRequirement.class, CertificationRequirementWrapper.class, CertificationRequirementListWrapper.class, "CertificationRequirementEditHistory", "CertificationRequirementEditHistoryFieldChange"),
     JOB_SUBMISSION_CERTIFICATION_REQUIREMENT("JobSubmissionCertificationRequirement", JobSubmissionCertificationRequirement.class, JobSubmissionCertificationRequirementWrapper.class, JobSubmissionCertificationRequirementListWrapper.class, "JobSubmissionCertificationRequirementEditHistory", "JobSubmissionCertificationRequirementEditHistoryFieldChange"),
 
+    // Custom Entities
+    CUSTOM_ENTITY_TYPE("CustomEntityType", CustomEntityType.class, CustomEntityTypeWrapper.class, CustomEntityTypeListWrapper.class, "CustomEntityTypeEditHistory","CustomEntityTypeFieldChange"),
+    CUSTOM_ENTITY("CustomEntity", CustomEntity.class, CustomEntityWrapper.class, CustomEntityListWrapper.class, "CustomEntityEditHistory","CustomEntityFieldChange"),
 
     // Custom Objects
     CLIENT_CORPORATION_CUSTOM_OBJECT("ClientCorporationCustomObject", ClientCorporationCustomObject.class, ClientCorporationCustomObjectWrapper.class, ClientCorporationCustomObjectListWrapper.class, null, null),
