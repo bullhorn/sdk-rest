@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.standard;
+package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
@@ -14,7 +14,7 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "alias", "billCurrencyUnit", "billRate", "earnCode", "externalID", "migrateGUID", "payCurrencyUnit", "payRate", "placementRateCardLineGroup" })
+@JsonPropertyOrder({"id", "alias", "billCurrencyUnit", "billRate", "earnCode", "externalID", "migrateGUID", "payCurrencyUnit", "payRate", "placementRateCardLineGroup"})
 public class PlacementRateCardLine extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
 
     private Integer id;
@@ -39,7 +39,6 @@ public class PlacementRateCardLine extends AbstractEntity implements QueryEntity
     private BigDecimal payRate;
 
     private PlacementRateCardLineGroup placementRateCardLineGroup;
-
 
 
     @Override
