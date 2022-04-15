@@ -116,7 +116,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 75.000000,
             "migrateGUID": null,
@@ -242,7 +242,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 100.000000,
             "migrateGUID": null,
@@ -356,7 +356,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": null,
             "markupValue": null,
             "migrateGUID": null,
@@ -486,7 +486,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 0.4000,
             "markupValue": 2.000000,
             "migrateGUID": null,
@@ -616,7 +616,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 50.000000,
             "migrateGUID": null,
@@ -746,7 +746,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 75.000000,
             "migrateGUID": null,
@@ -876,7 +876,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 100.000000,
             "migrateGUID": null,
@@ -1002,7 +1002,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 60.000000,
             "migrateGUID": null,
@@ -1128,7 +1128,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 90.000000,
             "migrateGUID": null,
@@ -1254,7 +1254,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 120.000000,
             "migrateGUID": null,
@@ -1368,7 +1368,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": null,
             "markupValue": null,
             "migrateGUID": null,
@@ -1498,7 +1498,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 0.4000,
             "markupValue": 2.000000,
             "migrateGUID": null,
@@ -1628,7 +1628,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 60.000000,
             "migrateGUID": null,
@@ -1758,7 +1758,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 90.000000,
             "migrateGUID": null,
@@ -1888,7 +1888,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 120.000000,
             "migrateGUID": null,
@@ -2014,7 +2014,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 50.000000,
             "migrateGUID": null,
@@ -2140,7 +2140,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 75.000000,
             "migrateGUID": null,
@@ -2266,10 +2266,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
-            "jobOrderRateCardLineGroup": {
-                "id": 1
-            }
+            },
             "markupPercent": 2.0000,
             "markupValue": 100.000000,
             "migrateGUID": null,
@@ -2383,7 +2380,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": null,
             "markupValue": null,
             "migrateGUID": null,
@@ -2513,7 +2510,7 @@
             "externalID": null,
             "jobOrderRateCardLineGroup": {
                 "id": 1
-            }
+            },
             "markupPercent": 0.4000,
             "markupValue": 2.000000,
             "migrateGUID": null,

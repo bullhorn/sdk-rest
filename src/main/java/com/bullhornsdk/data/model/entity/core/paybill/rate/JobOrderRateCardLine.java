@@ -97,7 +97,7 @@ public class JobOrderRateCardLine extends CustomFieldsI implements QueryEntity, 
         return billMultiplier;
     }
 
-    @JsonProperty("billRate")
+    @JsonProperty("billMultiplier")
     public void setBillMultiplier(BigDecimal billMultiplier) {
         this.billMultiplier = billMultiplier;
     }
