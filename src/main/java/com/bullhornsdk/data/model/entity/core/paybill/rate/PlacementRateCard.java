@@ -1,5 +1,7 @@
-package com.bullhornsdk.data.model.entity.core.standard;
+package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
+import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
+import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.*;
@@ -10,7 +12,7 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "owner", "placement", "placementRateCardLineGroups", "rootExternalID", "rootMigrateGUID", "versionID", "versions" })
+@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "owner", "placement", "placementRateCardLineGroups", "rootExternalID", "rootMigrateGUID", "versionID", "versions"})
 public class PlacementRateCard extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, EditHistoryEntity {
 
     private Integer id;

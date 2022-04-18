@@ -487,10 +487,15 @@ public class MockDataLoader {
         entityFiles.put(InvoiceStatementMessageTemplate.class, "paybill/invoiceStatementMessageTemplate-data.txt");
         entityFiles.put(CurrencyUnit.class, "paybill/currencyUnit-data.txt");
 
-        entityFiles.put(PlacementRateCard.class, "placementratecard-data.txt");
-        entityFiles.put(PlacementRateCardLine.class, "placementratecardline-data.txt");
-        entityFiles.put(PlacementRateCardLineGroup.class, "placementratecardlinegroup-data.txt");
-        entityFiles.put(PlacementRateCardVersion.class, "placementratecardversion-data.txt");
+        entityFiles.put(JobOrderRateCard.class, "paybill/rate/joborderratecard-data.txt");
+        entityFiles.put(JobOrderRateCardLine.class, "paybill/rate/joborderratecardline-data.txt");
+        entityFiles.put(JobOrderRateCardLineGroup.class, "paybill/rate/joborderratecardlinegroup-data.txt");
+        entityFiles.put(JobOrderRateCardVersion.class, "paybill/rate/joborderratecardversion-data.txt");
+
+        entityFiles.put(PlacementRateCard.class, "paybill/rate/placementratecard-data.txt");
+        entityFiles.put(PlacementRateCardLine.class, "paybill/rate/placementratecardline-data.txt");
+        entityFiles.put(PlacementRateCardLineGroup.class, "paybill/rate/placementratecardlinegroup-data.txt");
+        entityFiles.put(PlacementRateCardVersion.class, "paybill/rate/placementratecardversion-data.txt");
 
         entityFiles.put(PlacementTimeAndExpense.class, "placementtimeandexpense-data.txt");
 
@@ -737,10 +742,15 @@ public class MockDataLoader {
         entityMetaFiles.put(Location.class, "meta/paybill/location-meta-data.txt");
         entityMetaFiles.put(InvoiceTerm.class, "meta/paybill/invoiceterm-meta-data.txt");
 
-        entityMetaFiles.put(PlacementRateCard.class, "meta/placementratecard-meta-data.txt");
-        entityMetaFiles.put(PlacementRateCardLine.class, "meta/placementratecardline-meta-data.txt");
-        entityMetaFiles.put(PlacementRateCardLineGroup.class, "meta/placementratecardlinegroup-meta-data.txt");
-        entityMetaFiles.put(PlacementRateCardVersion.class, "meta/placementratecardversion-meta-data.txt");
+        entityMetaFiles.put(JobOrderRateCard.class, "meta/paybill/rate/joborderratecard-meta-data.txt");
+        entityMetaFiles.put(JobOrderRateCardLine.class, "meta/paybill/rate/joborderratecardline-meta-data.txt");
+        entityMetaFiles.put(JobOrderRateCardLineGroup.class, "meta/paybill/rate/joborderratecardlinegroup-meta-data.txt");
+        entityMetaFiles.put(JobOrderRateCardVersion.class, "meta/paybill/rate/joborderratecardversion-meta-data.txt");
+
+        entityMetaFiles.put(PlacementRateCard.class, "meta/paybill/rate/placementratecard-meta-data.txt");
+        entityMetaFiles.put(PlacementRateCardLine.class, "meta/paybill/rate/placementratecardline-meta-data.txt");
+        entityMetaFiles.put(PlacementRateCardLineGroup.class, "meta/paybill/rate/placementratecardlinegroup-meta-data.txt");
+        entityMetaFiles.put(PlacementRateCardVersion.class, "meta/paybill/rate/placementratecardversion-meta-data.txt");
 
         entityMetaFiles.put(PlacementTimeAndExpense.class, "meta/placementtimeandexpense-meta-data.txt");
 

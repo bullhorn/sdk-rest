@@ -1,4 +1,4 @@
-package com.bullhornsdk.data.model.entity.core.standard;
+package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup;
 import com.bullhornsdk.data.model.entity.core.type.*;
@@ -13,7 +13,7 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "earnCodeGroup", "externalID", "isBase", "migrateGUID", "placementRateCard", "placementRateCardLines", "placementRateCardVersion" })
+@JsonPropertyOrder({"id", "earnCodeGroup", "externalID", "isBase", "migrateGUID", "placementRateCard", "placementRateCardLines", "placementRateCardVersion"})
 public class PlacementRateCardLineGroup extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
 
     private Integer id;
@@ -33,8 +33,6 @@ public class PlacementRateCardLineGroup extends AbstractEntity implements QueryE
     private OneToMany<PlacementRateCardLine> placementRateCardLines;
 
     private PlacementRateCardVersion placementRateCardVersion;
-
-
 
 
     @Override

@@ -1,0 +1,246 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "dateAdded": 1644516571977,
+            "dateLastModified": 1644516572667,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 2,
+            "dateAdded": 1644532025123,
+            "dateLastModified": 1646753410263,
+            "effectiveDate": "2021-12-01",
+            "effectiveEndDate": "2022-01-02",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 3,
+            "dateAdded": 1644892987027,
+            "dateLastModified": 1644892987027,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2022-03-06",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 4,
+            "dateAdded": 1644892987140,
+            "dateLastModified": 1644892987140,
+            "effectiveDate": "2022-03-07",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 5,
+            "dateAdded": 1644934981840,
+            "dateLastModified": 1644934984030,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 6,
+            "dateAdded": 1645201396500,
+            "dateLastModified": 1645201397743,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 7,
+            "dateAdded": 1647299135730,
+            "dateLastModified": 1647313243953,
+            "effectiveDate": "2022-03-14",
+            "effectiveEndDate": "2022-03-14",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 8,
+            "dateAdded": 1647299161267,
+            "dateLastModified": 1647299161447,
+            "effectiveDate": "2022-03-15",
+            "effectiveEndDate": "2022-03-15",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 9,
+            "dateAdded": 1647299685687,
+            "dateLastModified": 1647299686203,
+            "effectiveDate": "2022-03-16",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 10,
+            "dateAdded": 1647313272743,
+            "dateLastModified": 1647313272843,
+            "effectiveDate": "2022-03-13",
+            "effectiveEndDate": "2022-03-13",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 11,
+            "dateAdded": 1644516571977,
+            "dateLastModified": 1644516572667,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 12,
+            "dateAdded": 1644532025123,
+            "dateLastModified": 1646753410263,
+            "effectiveDate": "2021-12-01",
+            "effectiveEndDate": "2022-01-02",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 13,
+            "dateAdded": 1644892987027,
+            "dateLastModified": 1644892987027,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2022-03-06",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 14,
+            "dateAdded": 1644892987140,
+            "dateLastModified": 1644892987140,
+            "effectiveDate": "2022-03-07",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 15,
+            "dateAdded": 1644934981840,
+            "dateLastModified": 1644934984030,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 16,
+            "dateAdded": 1645201396500,
+            "dateLastModified": 1645201397743,
+            "effectiveDate": "2022-01-03",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 17,
+            "dateAdded": 1647299135730,
+            "dateLastModified": 1647313243953,
+            "effectiveDate": "2022-03-14",
+            "effectiveEndDate": "2022-03-14",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 18,
+            "dateAdded": 1647299161267,
+            "dateLastModified": 1647299161447,
+            "effectiveDate": "2022-03-15",
+            "effectiveEndDate": "2022-03-15",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 19,
+            "dateAdded": 1647299685687,
+            "dateLastModified": 1647299686203,
+            "effectiveDate": "2022-03-16",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "jobOrderRateCardLineGroups": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 20,
+            "dateAdded": 1647313272743,
+            "dateLastModified": 1647313272843,
+            "effectiveDate": "2022-03-13",
+            "effectiveEndDate": "2022-03-13",
+            "isFirst": true,
+            "jobOrderRateCardLineGroups": {
+                "total": 1,
+                "data": []
+            }
+        }
+    ]
+}

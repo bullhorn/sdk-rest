@@ -1,16 +1,19 @@
-package com.bullhornsdk.data.model.entity.core.standard;
+package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "isFirst", "placementRateCardLineGroups" })
-public class PlacementRateCardVersion extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
+@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "isFirst", "jobOrderRateCardLineGroups"})
+public class JobOrderRateCardVersion extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
 
     private Integer id;
 
@@ -24,7 +27,7 @@ public class PlacementRateCardVersion extends AbstractEntity implements QueryEnt
 
     private Boolean isFirst;
 
-    private OneToMany<PlacementRateCardLineGroup> placementRateCardLineGroups;
+    private OneToMany<JobOrderRateCardLineGroup> jobOrderRateCardLineGroups;
 
     @Override
     @JsonProperty("id")
@@ -88,45 +91,45 @@ public class PlacementRateCardVersion extends AbstractEntity implements QueryEnt
         isFirst = first;
     }
 
-    @JsonProperty("placementRateCardLineGroups")
-    public OneToMany<PlacementRateCardLineGroup> getPlacementRateCardLineGroups() {
-        return placementRateCardLineGroups;
+    @JsonProperty("jobOrderRateCardLineGroups")
+    public OneToMany<JobOrderRateCardLineGroup> getJobOrderRateCardLineGroups() {
+        return jobOrderRateCardLineGroups;
     }
 
-    @JsonProperty("placementRateCardLineGroups")
-    public void setPlacementRateCardLineGroups(OneToMany<PlacementRateCardLineGroup> placementRateCardLineGroups) {
-        this.placementRateCardLineGroups = placementRateCardLineGroups;
+    @JsonProperty("jobOrderRateCardLineGroups")
+    public void setJobOrderRateCardLineGroups(OneToMany<JobOrderRateCardLineGroup> jobOrderRateCardLineGroups) {
+        this.jobOrderRateCardLineGroups = jobOrderRateCardLineGroups;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PlacementRateCardVersion that = (PlacementRateCardVersion) o;
+        JobOrderRateCardVersion that = (JobOrderRateCardVersion) o;
         return Objects.equals(id, that.id) &&
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
             Objects.equals(effectiveDate, that.effectiveDate) &&
             Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
             Objects.equals(isFirst, that.isFirst) &&
-            Objects.equals(placementRateCardLineGroups, that.placementRateCardLineGroups);
+            Objects.equals(jobOrderRateCardLineGroups, that.jobOrderRateCardLineGroups);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dateAdded, dateLastModified, effectiveDate, effectiveEndDate, isFirst, placementRateCardLineGroups);
+        return Objects.hash(id, dateAdded, dateLastModified, effectiveDate, effectiveEndDate, isFirst, jobOrderRateCardLineGroups);
     }
 
     @Override
     public String toString() {
-        return "PlacementRateCardVersion{" +
+        return "JobOrderRateCardVersion{" +
             "id=" + id +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
             ", effectiveDate=" + effectiveDate +
             ", effectiveEndDate=" + effectiveEndDate +
             ", isFirst=" + isFirst +
-            ", placementRateCardLineGroups=" + placementRateCardLineGroups +
+            ", jobOrderRateCardLineGroups=" + jobOrderRateCardLineGroups +
             '}';
     }
 }
