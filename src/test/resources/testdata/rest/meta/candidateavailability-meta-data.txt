@@ -1,0 +1,94 @@
+{
+    "entity": "CandidateAvailability",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/CandidateAvailability?fields=*",
+    "label": "Candidate Availability",
+    "dateLastModified": "1651065491558",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer"
+        },
+        {
+            "name": "candidate",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Candidate",
+            "optionsType": "Candidate",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/Candidate",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Candidate",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/Candidate?fields=*",
+                "label": "Candidate",
+                "dateLastModified": "1651065464549",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Candidate First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Candidate Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "endTime",
+            "type": "SCALAR",
+            "dataType": "OffsetDateTime",
+            "confidential": false,
+            "label": "End Time",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isAvailable",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Available",
+            "hideFromSearch": false
+        },
+        {
+            "name": "startTime",
+            "type": "SCALAR",
+            "dataType": "OffsetDateTime",
+            "confidential": false,
+            "label": "Start Time",
+            "hideFromSearch": false
+        },
+        {
+            "name": "type",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Type",
+            "hideFromSearch": false
+        }
+    ]
+}
