@@ -1,0 +1,606 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "earnCodeGroup": {
+                "id": 1,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "jobOrderRateCard": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1
+            },
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 2,
+            "earnCodeGroup": {
+                "id": 57,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 2,
+                    "label": "Pay Only",
+                    "allowPay": true,
+                    "allowBill": false
+                },
+                "isRateRequired": false
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1
+            },
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 3,
+            "earnCodeGroup": {
+                "id": 2,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1
+            },
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 4,
+            "earnCodeGroup": {
+                "id": 6,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 1
+            },
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 1,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 5,
+            "earnCodeGroup": {
+                "id": 1,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 2,
+                "effectiveDate": "2021-12-01",
+                "effectiveEndDate": "2022-01-02"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 6,
+            "earnCodeGroup": {
+                "id": 57,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 2,
+                    "label": "Pay Only",
+                    "allowPay": true,
+                    "allowBill": false
+                },
+                "isRateRequired": false
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 2,
+                "effectiveDate": "2021-12-01",
+                "effectiveEndDate": "2022-01-02"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 7,
+            "earnCodeGroup": {
+                "id": 2,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 2,
+                "effectiveDate": "2021-12-01",
+                "effectiveEndDate": "2022-01-02"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 8,
+            "earnCodeGroup": {
+                "id": 6,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 2,
+                "effectiveDate": "2021-12-01",
+                "effectiveEndDate": "2022-01-02"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 9,
+            "earnCodeGroup": {
+                "id": 1,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 3,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2022-03-06"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 10,
+            "earnCodeGroup": {
+                "id": 57,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 2,
+                    "label": "Pay Only",
+                    "allowPay": true,
+                    "allowBill": false
+                },
+                "isRateRequired": false
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 3,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2022-03-06"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 11,
+            "earnCodeGroup": {
+                "id": 2,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 3,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2022-03-06"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 12,
+            "earnCodeGroup": {
+                "id": 6,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": null,
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 3,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2022-03-06"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 13,
+            "earnCodeGroup": {
+                "id": 1,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "jobOrderRateCard": {
+                "id": 2,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 4
+            },
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 4,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 14,
+            "earnCodeGroup": {
+                "id": 57,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 2,
+                    "label": "Pay Only",
+                    "allowPay": true,
+                    "allowBill": false
+                },
+                "isRateRequired": false
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 2,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 4
+            },
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 4,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 15,
+            "earnCodeGroup": {
+                "id": 2,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 2,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 4
+            },
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 4,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 16,
+            "earnCodeGroup": {
+                "id": 6,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 2,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 4
+            },
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 4,
+                "effectiveDate": "2022-03-07",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 17,
+            "earnCodeGroup": {
+                "id": 1,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "jobOrderRateCard": {
+                "id": 3,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 5
+            },
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 5,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 18,
+            "earnCodeGroup": {
+                "id": 2,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 3,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 5
+            },
+            "jobOrderRateCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 5,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 19,
+            "earnCodeGroup": {
+                "id": 6,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "jobOrderRateCard": {
+                "id": 3,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 5
+            },
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 5,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        },
+        {
+            "id": 20,
+            "earnCodeGroup": {
+                "id": 1,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "jobOrderRateCard": {
+                "id": 4,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 6
+            },
+            "jobOrderRateCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "jobOrderRateCardVersion": {
+                "id": 6,
+                "effectiveDate": "2022-01-03",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "migrateGUID": null
+        }
+    ]
+}

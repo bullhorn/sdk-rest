@@ -1,8 +1,9 @@
-package com.bullhornsdk.data.model.entity.core.standard;
+package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsI;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -14,8 +15,14 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "alias", "billCurrencyUnit", "billRate", "earnCode", "externalID", "migrateGUID", "payCurrencyUnit", "payRate", "placementRateCardLineGroup" })
-public class PlacementRateCardLine extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
+@JsonPropertyOrder({"id", "alias", "billCurrencyUnit", "billRate", "earnCode",
+    "customFloat1", "customFloat2", "customFloat3", "customFloat4", "customFloat5",
+    "customInt1", "customInt2", "customInt3", "customInt4", "customInt5",
+    "customRate1", "customRate2", "customRate3", "customRate4", "customRate5",
+    "customText1", "customText2", "customText3", "customText4", "customText5",
+    "customText6", "customText7", "customText8", "customText9", "customText10",
+    "externalID", "migrateGUID", "payCurrencyUnit", "payRate", "placementRateCardLineGroup"})
+public class PlacementRateCardLine extends CustomFieldsI implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
 
     private Integer id;
 
@@ -39,7 +46,6 @@ public class PlacementRateCardLine extends AbstractEntity implements QueryEntity
     private BigDecimal payRate;
 
     private PlacementRateCardLineGroup placementRateCardLineGroup;
-
 
 
     @Override
@@ -148,21 +154,14 @@ public class PlacementRateCardLine extends AbstractEntity implements QueryEntity
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         PlacementRateCardLine that = (PlacementRateCardLine) o;
-        return Objects.equals(id, that.id) &&
-            Objects.equals(alias, that.alias) &&
-            Objects.equals(billCurrencyUnit, that.billCurrencyUnit) &&
-            Objects.equals(earnCode, that.earnCode) &&
-            Objects.equals(externalID, that.externalID) &&
-            Objects.equals(migrateGUID, that.migrateGUID) &&
-            Objects.equals(payCurrencyUnit, that.payCurrencyUnit) &&
-            Objects.equals(payRate, that.payRate) &&
-            Objects.equals(placementRateCardLineGroup, that.placementRateCardLineGroup);
+        return Objects.equals(id, that.id) && Objects.equals(alias, that.alias) && Objects.equals(billCurrencyUnit, that.billCurrencyUnit) && Objects.equals(billRate, that.billRate) && Objects.equals(earnCode, that.earnCode) && Objects.equals(externalID, that.externalID) && Objects.equals(migrateGUID, that.migrateGUID) && Objects.equals(payCurrencyUnit, that.payCurrencyUnit) && Objects.equals(payRate, that.payRate) && Objects.equals(placementRateCardLineGroup, that.placementRateCardLineGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, alias, billCurrencyUnit, earnCode, externalID, migrateGUID, payCurrencyUnit, payRate, placementRateCardLineGroup);
+        return Objects.hash(super.hashCode(), id, alias, billCurrencyUnit, billRate, earnCode, externalID, migrateGUID, payCurrencyUnit, payRate, placementRateCardLineGroup);
     }
 
     @Override
@@ -171,6 +170,7 @@ public class PlacementRateCardLine extends AbstractEntity implements QueryEntity
             "id=" + id +
             ", alias='" + alias + '\'' +
             ", billCurrencyUnit=" + billCurrencyUnit +
+            ", billRate=" + billRate +
             ", earnCode=" + earnCode +
             ", externalID='" + externalID + '\'' +
             ", migrateGUID='" + migrateGUID + '\'' +
@@ -179,4 +179,5 @@ public class PlacementRateCardLine extends AbstractEntity implements QueryEntity
             ", placementRateCardLineGroup=" + placementRateCardLineGroup +
             '}';
     }
+
 }

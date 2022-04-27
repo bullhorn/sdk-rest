@@ -1,6 +1,6 @@
 package com.bullhornsdk.data.model.response.list;
 
-import com.bullhornsdk.data.model.entity.core.standard.PlacementRateCardVersion;
+import com.bullhornsdk.data.model.entity.core.paybill.rate.PlacementRateCardVersion;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 

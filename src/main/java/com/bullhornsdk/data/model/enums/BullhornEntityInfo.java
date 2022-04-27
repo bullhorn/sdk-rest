@@ -261,7 +261,18 @@ public enum BullhornEntityInfo {
 
     CANDIDATE_TAX_INFO("CandidateTaxInfo", CandidateTaxInfo.class, CandidateTaxInfoWrapper.class, CandidateTaxInfoListWrapper.class, "CandidateTaxInfoEditHistory",
         null),
-    // placementRateCard Entities
+
+    // JobOrderRateCard Entities
+    JOB_ORDER_RATE_CARD("JobOrderRateCard", JobOrderRateCard.class, JobOrderRateCardWrapper.class, JobOrderRateCardListWrapper.class, "JobOrderRateCardEditHistory",
+        "JobOrderRateCardEditHistoryFieldChange"),
+    JOB_ORDER_RATE_CARD_LINE("JobOrderRateCardLine", JobOrderRateCardLine.class, JobOrderRateCardLineWrapper.class, JobOrderRateCardLineListWrapper.class, "JobOrderRateCardLineEditHistory",
+        "JobOrderRateCardLineEditHistoryFieldChange"),
+    JOB_ORDER_RATE_CARD_LINE_GROUP("JobOrderRateCardLineGroup", JobOrderRateCardLineGroup.class, JobOrderRateCardLineGroupWrapper.class, JobOrderRateCardLineGroupListWrapper.class, "JobOrderRateCardLineGroupEditHistory",
+        "JobOrderRateCardLineGroupEditHistoryFieldChange"),
+    JOB_ORDER_RATE_CARD_VERSION("JobOrderRateCardVersion", JobOrderRateCardVersion.class, JobOrderRateCardVersionWrapper.class, JobOrderRateCardVersionListWrapper.class, "JobOrderRateCardVersionEditHistory",
+        "JobOrderRateCardVersionEditHistoryFieldChange"),
+
+    // PlacementRateCard Entities
     PLACEMENT_RATE_CARD("PlacementRateCard", PlacementRateCard.class, PlacementRateCardWrapper.class, PlacementRateCardListWrapper.class, "PlacementRateCardEditHistory",
         "PlacementRateCardEditHistoryFieldChange"),
     PLACEMENT_RATE_CARD_LINE("PlacementRateCardLine", PlacementRateCardLine.class, PlacementRateCardLineWrapper.class, PlacementRateCardLineListWrapper.class, "PlacementRateCardLineEditHistory",
