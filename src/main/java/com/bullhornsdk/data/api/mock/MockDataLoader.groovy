@@ -677,6 +677,8 @@ public class MockDataLoader {
         entityFiles.put(StateTaxForm.class, "onboarding365/statetaxform-data.txt");
         entityFiles.put(FederalTaxForm.class, "onboarding365/federaltaxform-data.txt");
 
+        entityFiles.put(CandidateAvailability.class, "candidateavailability-data.txt");
+
         return entityFiles;
     }
 
@@ -925,6 +927,8 @@ public class MockDataLoader {
         entityMetaFiles.put(LocalTaxForm.class, "meta/onboarding365/localtaxform-meta-data.txt");
         entityMetaFiles.put(StateTaxForm.class, "meta/onboarding365/statetaxform-meta-data.txt");
         entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-meta-data.txt");
+
+        entityMetaFiles.put(CandidateAvailability.class, "meta/candidateavailability-meta-data.txt");
 
         return entityMetaFiles;
     }
