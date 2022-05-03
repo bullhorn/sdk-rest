@@ -76,7 +76,8 @@ import java.util.Objects;
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
-        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense" })
+        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense",
+        "legalBusinessEntityID" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -256,6 +257,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private Integer workWeekStart;
 
 	private WorkersCompensationRate workersCompensationRate;
+
+    private String legalBusinessEntityID;
 
     private OneToMany<PlacementCustomObjectInstance1> customObject1s;
 
@@ -1039,6 +1042,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	    this.workersCompensationRate = workersCompensationRate;
 	}
 
+    @JsonProperty("legalBusinessEntityID")
+    public String getLegalBusinessEntityID() {
+        return legalBusinessEntityID;
+    }
+
+    @JsonProperty("legalBusinessEntityID")
+    public void setLegalBusinessEntityID(String legalBusinessEntityID) {
+        this.legalBusinessEntityID = legalBusinessEntityID;
+    }
+
     @JsonProperty("fileAttachments")
     public OneToMany<StandardFileAttachment> getFileAttachments() {
         return fileAttachments;
@@ -1271,6 +1284,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(vendorClientCorporation, placement.vendorClientCorporation) &&
             Objects.equals(workWeekStart, placement.workWeekStart) &&
             Objects.equals(workersCompensationRate, placement.workersCompensationRate) &&
+            Objects.equals(legalBusinessEntityID, placement.legalBusinessEntityID) &&
             Objects.equals(customObject1s, placement.customObject1s) &&
             Objects.equals(customObject2s, placement.customObject2s) &&
             Objects.equals(customObject3s, placement.customObject3s) &&
@@ -1286,7 +1300,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, legalBusinessEntityID, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
     @Override
@@ -1367,6 +1381,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", vendorClientCorporation=" + vendorClientCorporation +
             ", workWeekStart=" + workWeekStart +
             ", workersCompensationRate=" + workersCompensationRate +
+            ", legalBusinessEntityID=" + legalBusinessEntityID +
             ", customObject1s=" + customObject1s +
             ", customObject2s=" + customObject2s +
             ", customObject3s=" + customObject3s +
