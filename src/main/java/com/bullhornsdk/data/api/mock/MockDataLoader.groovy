@@ -679,6 +679,8 @@ public class MockDataLoader {
 
         entityFiles.put(CandidateAvailability.class, "candidateavailability-data.txt");
 
+        entityFiles.put(LegalBusinessEntity.class, "legalbusinessentity-data.txt");
+
         return entityFiles;
     }
 
@@ -929,6 +931,8 @@ public class MockDataLoader {
         entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-meta-data.txt");
 
         entityMetaFiles.put(CandidateAvailability.class, "meta/candidateavailability-meta-data.txt");
+
+        entityMetaFiles.put(LegalBusinessEntity.class, "meta/legalbusinessentity-meta-data.txt");
 
         return entityMetaFiles;
     }

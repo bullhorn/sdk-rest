@@ -230,6 +230,7 @@ public enum BullhornEntityInfo {
     JOB_SUBMISSION_HISTORY("JobSubmissionHistory", JobSubmissionHistory.class, JobSubmissionHistoryWrapper.class,
         JobSubmissionHistoryListWrapper.class, null, null),
     LEAD("Lead", Lead.class, LeadWrapper.class, LeadListWrapper.class, "UserEditHistory", "UserEditHistoryFieldChange"),
+    LEGAL_BUSINESS_ENTITY("LegalBusinessEntity", LegalBusinessEntity.class, LegalBusinessEntityWrapper.class, LegalBusinessEntityListWrapper.class, null, null),
     LOGIN_RESTRICTIONS("LoginRestrictions", null, null, null, null, null),
     NOTE("Note", Note.class, NoteWrapper.class, NoteListWrapper.class, null, null),
     NOTE_ENTITY("NoteEntity", NoteEntity.class, NoteEntityWrapper.class, NoteEntityListWrapper.class, null, null),
