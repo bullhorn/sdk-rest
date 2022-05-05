@@ -1,247 +1,246 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import java.math.BigDecimal;
-import java.util.Objects;
-
-import javax.validation.constraints.Size;
-
+import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.*;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
-import org.joda.time.DateTime;
-
-import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.model.response.file.standard.StandardFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.joda.time.DateTime;
+
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
+import java.util.Objects;
 
 public abstract class JobData extends CustomFieldsD implements BullhornEntity {
 
-	private BigDecimal luceneScore;
+    private BigDecimal luceneScore;
 
-	private Integer id;
+    private Integer id;
 
-	private Address address;
+    private Address address;
 
-	private OneToMany<Specialty> appointments;
+    private OneToMany<Appointment> appointments;
 
-	private OneToMany<Placement> approvedPlacements;
+    private OneToMany<Placement> approvedPlacements;
 
-	private OneToMany<CorporateUser> assignedUsers;
+    private OneToMany<CorporateUser> assignedUsers;
 
-	@JsonIgnore
-	private String benefits;
+    @JsonIgnore
+    private String benefits;
 
-	private Integer billRateCategoryID;
+    private Integer billRateCategoryID;
 
-	@JsonIgnore
-	private String bonusPackage;
+    private BillingProfile billingProfile;
 
-	private Branch branch;
+    @JsonIgnore
+    private String bonusPackage;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String branchCode;
+    private Branch branch;
 
-	private OneToMany<BusinessSector> businessSectors;
+    @JsonIgnore
+    @Size(max = 100)
+    private String branchCode;
 
-	private OneToMany<Category> categories;
+    private OneToMany<BusinessSector> businessSectors;
 
-	@JsonIgnore
-	private String certificationList;
+    private OneToMany<Category> categories;
 
-	private OneToMany<Certification> certifications;
+    @JsonIgnore
+    private String certificationList;
+
+    private OneToMany<Certification> certifications;
 
     private OneToMany<CertificationGroup> certificationGroups;
 
-	private BigDecimal clientBillRate;
+    private BigDecimal clientBillRate;
 
-	private ClientContact clientContact;
+    private ClientContact clientContact;
 
-	private ClientCorporation clientCorporation;
+    private ClientCorporation clientCorporation;
 
-	@JsonIgnore
-	@Size(max = 30)
-	private String costCenter;
+    @JsonIgnore
+    @Size(max = 30)
+    private String costCenter;
 
-	private DateTime dateAdded;
+    private DateTime dateAdded;
 
-	private DateTime dateClosed;
+    private DateTime dateClosed;
 
-	private DateTime dateEnd;
+    private DateTime dateEnd;
 
-	private DateTime dateLastExported;
+    private DateTime dateLastExported;
 
-	private DateTime dateLastModified;
+    private DateTime dateLastModified;
 
-	private DateTime dateLastPublished;
+    private DateTime dateLastPublished;
 
-	@JsonIgnore
-	private String degreeList;
+    @JsonIgnore
+    private String degreeList;
 
-	@Size(max = 200000)
-	private String description;
+    @Size(max = 200000)
+    private String description;
 
-	private BigDecimal durationWeeks;
+    private BigDecimal durationWeeks;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String educationDegree;
+    @JsonIgnore
+    @Size(max = 50)
+    private String educationDegree;
 
-	@JsonIgnore
-	@Size(max = 200)
-	private String employmentType;
+    @JsonIgnore
+    @Size(max = 200)
+    private String employmentType;
 
-	private Integer externalCategoryID;
+    private Integer externalCategoryID;
 
-	@JsonIgnore
-	@Size(max = 30)
-	private String externalID;
+    @JsonIgnore
+    @Size(max = 30)
+    private String externalID;
 
-	private BigDecimal feeArrangement;
+    private BigDecimal feeArrangement;
 
-	@JsonIgnore
-	@Size(max = 30)
-	private String hoursOfOperation;
+    private OneToMany<StandardFileAttachment> fileAttachments;
 
-	private BigDecimal hoursPerWeek;
+    @JsonIgnore
+    @Size(max = 30)
+    private String hoursOfOperation;
 
-	private OneToMany<Appointment> interviews;
+    private BigDecimal hoursPerWeek;
 
-	private Boolean isClientEditable;
+    private OneToMany<Appointment> interviews;
 
-	private Boolean isDeleted;
+    private Boolean isClientEditable;
 
-	private Boolean isInterviewRequired;
+    private Boolean isDeleted;
 
-	private Object isJobcastPublished;
+    private Boolean isInterviewRequired;
 
-	private Boolean isOpen;
+    private Object isJobcastPublished;
 
-	private Integer isPublic;
+    private Boolean isOpen;
 
-	@JsonIgnore
-	private String jobBoardList;
+    private Integer isPublic;
 
-	private Location location;
+    private Boolean isWorkFromHome;
 
-	private Double markUpPercentage;
+    @JsonIgnore
+    private String jobBoardList;
 
-	private OneToMany<Note> notes;
+    private Integer jobOrderRateCardID;
 
-	private Integer numOpenings;
+    private Location location;
 
-	@JsonIgnore
-	private String onSite;
+    private Double markUpPercentage;
 
-	@JsonIgnore
-	private String optionsPackage;
+    private OneToMany<Note> notes;
 
-	private Opportunity opportunity;
+    private Integer numOpenings;
 
-	private CorporateUser owner;
+    @JsonIgnore
+    private String onSite;
 
-	private BigDecimal payRate;
+    @JsonIgnore
+    private String optionsPackage;
 
-	private OneToMany<Placement> placements;
+    private Opportunity opportunity;
 
-	@JsonIgnore
-	@Size(max = 200000)
-	private String publicDescription;
+    private CorporateUser owner;
 
-	@JsonIgnore
-	@Size(max = 18)
-	private String publishedZip;
+    private BigDecimal payRate;
 
-	@JsonIgnore
-	private String reasonClosed;
+    private OneToMany<Placement> placements;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String reportTo;
+    @JsonIgnore
+    @Size(max = 200000)
+    private String publicDescription;
 
-	private ClientContact reportToClientContact;
+    private Category publishedCategory;
 
-	private CorporateUser responseUser;
+    @JsonIgnore
+    @Size(max = 18)
+    private String publishedZip;
 
-	private BigDecimal salary;
+    @JsonIgnore
+    private String reasonClosed;
 
-	@JsonIgnore
-	@Size(max = 12)
-	private String salaryUnit;
+    @JsonIgnore
+    @Size(max = 100)
+    private String reportTo;
 
-	private OneToMany<Sendout> sendouts;
+    private ClientContact reportToClientContact;
 
-	@JsonIgnore
-	private String skillList;
+    private CorporateUser responseUser;
 
-	private OneToMany<Skill> skills;
+    private BigDecimal salary;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String source;
+    @JsonIgnore
+    @Size(max = 12)
+    private String salaryUnit;
 
-	private OneToMany<Specialty> specialties;
+    private OneToMany<Sendout> sendouts;
 
-	private DateTime startDate;
+    @JsonIgnore
+    private String skillList;
 
-	@JsonIgnore
-	@Size(max = 200)
-	private String status;
+    private OneToMany<Skill> skills;
 
-	private OneToMany<JobSubmission> submissions;
+    @JsonIgnore
+    @Size(max = 100)
+    private String source;
 
-	private OneToMany<Task> tasks;
+    private OneToMany<Specialty> specialties;
 
-	private BigDecimal taxRate;
+    private DateTime startDate;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String taxStatus;
+    @JsonIgnore
+    @Size(max = 200)
+    private String status;
+
+    private OneToMany<JobSubmission> submissions;
+
+    private OneToMany<Task> tasks;
+
+    private BigDecimal taxRate;
+
+    @JsonIgnore
+    @Size(max = 20)
+    private String taxStatus;
 
     private OneToMany<Tearsheet> tearsheets;
 
-	private OneToMany<TimeUnit> timeUnits;
+    private OneToMany<TimeUnit> timeUnits;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String title;
+    @JsonIgnore
+    @Size(max = 100)
+    private String title;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String travelRequirements;
+    @JsonIgnore
+    @Size(max = 50)
+    private String travelRequirements;
 
-	private Integer type;
+    private Integer type;
 
-	private String usersAssigned;
+    private String usersAssigned;
 
-	private OneToMany<JobSubmission> webResponses;
+    private OneToMany<JobSubmission> webResponses;
 
-	private Boolean willRelocate;
+    private Boolean willRelocate;
 
-	private Integer willRelocateInt;
+    private Integer willRelocateInt;
 
-	private Boolean willSponsor;
+    private Boolean willSponsor;
 
-	private WorkersCompensationRate workersCompRate;
+    private WorkersCompensationRate workersCompRate;
 
-	private Integer yearsRequired;
+    private Integer yearsRequired;
 
     private OneToMany<JobOrderCustomObjectInstance1> customObject1s;
 
@@ -263,112 +262,119 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
 
     private OneToMany<JobOrderCustomObjectInstance10> customObject10s;
 
-	public JobData() {
-		super();
-	}
+    public JobData() {
+        super();
+    }
 
-	public JobData(Integer id) {
-		super();
-		this.id = id;
-	}
+    public JobData(Integer id) {
+        super();
+        this.id = id;
+    }
 
-	@JsonIgnore
-	public BigDecimal getLuceneScore() {
-		return luceneScore;
-	}
+    @JsonIgnore
+    public BigDecimal getLuceneScore() {
+        return luceneScore;
+    }
 
-	@JsonProperty("_score")
-	public void setLuceneScore(BigDecimal luceneScore) {
-		this.luceneScore = luceneScore;
-	}
+    @JsonProperty("_score")
+    public void setLuceneScore(BigDecimal luceneScore) {
+        this.luceneScore = luceneScore;
+    }
 
-	@Override
-	@JsonProperty("id")
-	public Integer getId() {
-		return id;
-	}
-
-    @ReadOnly
-	@Override
-	@JsonProperty("id")
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	@JsonProperty("address")
-	public Address getAddress() {
-		return address;
-	}
-
-	@JsonProperty("address")
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	@JsonIgnore
-	public OneToMany<Specialty> getAppointments() {
-		return appointments;
-	}
+    @Override
+    @JsonProperty("id")
+    public Integer getId() {
+        return id;
+    }
 
     @ReadOnly
-	@JsonProperty("appointments")
-	public void setAppointments(OneToMany<Specialty> appointments) {
-		this.appointments = appointments;
-	}
+    @Override
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@JsonIgnore
-	public OneToMany<Placement> getApprovedPlacements() {
-		return approvedPlacements;
-	}
+    @JsonProperty("address")
+    public Address getAddress() {
+        return address;
+    }
+
+    @JsonProperty("address")
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @JsonIgnore
+    public OneToMany<Appointment> getAppointments() {
+        return appointments;
+    }
 
     @ReadOnly
-	@JsonProperty("approvedPlacements")
-	public void setApprovedPlacements(OneToMany<Placement> approvedPlacements) {
-		this.approvedPlacements = approvedPlacements;
-	}
+    @JsonProperty("appointments")
+    public void setAppointments(OneToMany<Appointment> appointments) {
+        this.appointments = appointments;
+    }
 
-	@JsonIgnore
-	public OneToMany<CorporateUser> getAssignedUsers() {
-		return assignedUsers;
-	}
+    @JsonIgnore
+    public OneToMany<Placement> getApprovedPlacements() {
+        return approvedPlacements;
+    }
 
-	@JsonProperty("assignedUsers")
-	public void setAssignedUsers(OneToMany<CorporateUser> assignedUsers) {
-		this.assignedUsers = assignedUsers;
-	}
+    @ReadOnly
+    @JsonProperty("approvedPlacements")
+    public void setApprovedPlacements(OneToMany<Placement> approvedPlacements) {
+        this.approvedPlacements = approvedPlacements;
+    }
 
-	@JsonProperty("benefits")
-	public String getBenefits() {
-		return benefits;
-	}
+    @JsonIgnore
+    public OneToMany<CorporateUser> getAssignedUsers() {
+        return assignedUsers;
+    }
 
-	@JsonIgnore
-	public void setBenefits(String benefits) {
-		this.benefits = benefits;
-	}
+    @JsonProperty("assignedUsers")
+    public void setAssignedUsers(OneToMany<CorporateUser> assignedUsers) {
+        this.assignedUsers = assignedUsers;
+    }
 
-	@JsonProperty("billRateCategoryID")
-	public Integer getBillRateCategoryID() {
-		return billRateCategoryID;
-	}
+    @JsonProperty("benefits")
+    public String getBenefits() {
+        return benefits;
+    }
 
-	@JsonProperty("billRateCategoryID")
-	public void setBillRateCategoryID(Integer billRateCategoryID) {
-		this.billRateCategoryID = billRateCategoryID;
-	}
+    @JsonIgnore
+    public void setBenefits(String benefits) {
+        this.benefits = benefits;
+    }
 
+    @JsonProperty("billRateCategoryID")
+    public Integer getBillRateCategoryID() {
+        return billRateCategoryID;
+    }
 
+    @JsonProperty("billRateCategoryID")
+    public void setBillRateCategoryID(Integer billRateCategoryID) {
+        this.billRateCategoryID = billRateCategoryID;
+    }
 
+    @JsonProperty("billingProfile")
+    public BillingProfile getBillingProfile() {
+        return billingProfile;
+    }
 
-	@JsonProperty("bonusPackage")
-	public String getBonusPackage() {
-		return bonusPackage;
-	}
+    @JsonProperty("billingProfile")
+    public void setBillingProfile(BillingProfile billingProfile) {
+        this.billingProfile = billingProfile;
+    }
 
-	@JsonIgnore
-	public void setBonusPackage(String bonusPackage) {
-		this.bonusPackage = bonusPackage;
-	}
+    @JsonProperty("bonusPackage")
+    public String getBonusPackage() {
+        return bonusPackage;
+    }
+
+    @JsonIgnore
+    public void setBonusPackage(String bonusPackage) {
+        this.bonusPackage = bonusPackage;
+    }
 
     @JsonProperty("branch")
     public Branch getBranch() {
@@ -381,54 +387,54 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
     }
 
     @JsonProperty("branchCode")
-	public String getBranchCode() {
-		return branchCode;
-	}
+    public String getBranchCode() {
+        return branchCode;
+    }
 
-	@JsonIgnore
-	public void setBranchCode(String branchCode) {
-		this.branchCode = branchCode;
-	}
+    @JsonIgnore
+    public void setBranchCode(String branchCode) {
+        this.branchCode = branchCode;
+    }
 
-	@JsonIgnore
-	public OneToMany<BusinessSector> getBusinessSectors() {
-		return businessSectors;
-	}
+    @JsonIgnore
+    public OneToMany<BusinessSector> getBusinessSectors() {
+        return businessSectors;
+    }
 
-	@JsonProperty("businessSectors")
-	public void setBusinessSectors(OneToMany<BusinessSector> businessSectors) {
-		this.businessSectors = businessSectors;
-	}
+    @JsonProperty("businessSectors")
+    public void setBusinessSectors(OneToMany<BusinessSector> businessSectors) {
+        this.businessSectors = businessSectors;
+    }
 
-	@JsonIgnore
-	public OneToMany<Category> getCategories() {
-		return categories;
-	}
+    @JsonIgnore
+    public OneToMany<Category> getCategories() {
+        return categories;
+    }
 
-	@JsonProperty("categories")
-	public void setCategories(OneToMany<Category> categories) {
-		this.categories = categories;
-	}
+    @JsonProperty("categories")
+    public void setCategories(OneToMany<Category> categories) {
+        this.categories = categories;
+    }
 
-	@JsonProperty("certificationList")
-	public String getCertificationList() {
-		return certificationList;
-	}
+    @JsonProperty("certificationList")
+    public String getCertificationList() {
+        return certificationList;
+    }
 
-	@JsonIgnore
-	public void setCertificationList(String certificationList) {
-		this.certificationList = certificationList;
-	}
+    @JsonIgnore
+    public void setCertificationList(String certificationList) {
+        this.certificationList = certificationList;
+    }
 
-	@JsonIgnore
-	public OneToMany<Certification> getCertifications() {
-		return certifications;
-	}
+    @JsonIgnore
+    public OneToMany<Certification> getCertifications() {
+        return certifications;
+    }
 
-	@JsonProperty("certifications")
-	public void setCertifications(OneToMany<Certification> certifications) {
-		this.certifications = certifications;
-	}
+    @JsonProperty("certifications")
+    public void setCertifications(OneToMany<Certification> certifications) {
+        this.certifications = certifications;
+    }
 
     @JsonIgnore
     public OneToMany<CertificationGroup> getCertificationGroups() {
@@ -442,605 +448,645 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
 
 
     @JsonProperty("clientBillRate")
-	public BigDecimal getClientBillRate() {
-		return clientBillRate;
-	}
+    public BigDecimal getClientBillRate() {
+        return clientBillRate;
+    }
 
-	@JsonProperty("clientBillRate")
-	public void setClientBillRate(BigDecimal clientBillRate) {
-		this.clientBillRate = clientBillRate;
-	}
+    @JsonProperty("clientBillRate")
+    public void setClientBillRate(BigDecimal clientBillRate) {
+        this.clientBillRate = clientBillRate;
+    }
 
-	@JsonProperty("clientContact")
-	public ClientContact getClientContact() {
-		return clientContact;
-	}
+    @JsonProperty("clientContact")
+    public ClientContact getClientContact() {
+        return clientContact;
+    }
 
-	@JsonProperty("clientContact")
-	public void setClientContact(ClientContact clientContact) {
-		this.clientContact = clientContact;
-	}
+    @JsonProperty("clientContact")
+    public void setClientContact(ClientContact clientContact) {
+        this.clientContact = clientContact;
+    }
 
-	@JsonProperty("clientCorporation")
-	public ClientCorporation getClientCorporation() {
-		return clientCorporation;
-	}
+    @JsonProperty("clientCorporation")
+    public ClientCorporation getClientCorporation() {
+        return clientCorporation;
+    }
 
-	@JsonProperty("clientCorporation")
-	public void setClientCorporation(ClientCorporation clientCorporation) {
-		this.clientCorporation = clientCorporation;
-	}
+    @JsonProperty("clientCorporation")
+    public void setClientCorporation(ClientCorporation clientCorporation) {
+        this.clientCorporation = clientCorporation;
+    }
 
-	@JsonProperty("costCenter")
-	public String getCostCenter() {
-		return costCenter;
-	}
+    @JsonProperty("costCenter")
+    public String getCostCenter() {
+        return costCenter;
+    }
 
-	@JsonIgnore
-	public void setCostCenter(String costCenter) {
-		this.costCenter = costCenter;
-	}
+    @JsonIgnore
+    public void setCostCenter(String costCenter) {
+        this.costCenter = costCenter;
+    }
 
     @JsonProperty("dateAdded")
-	public DateTime getDateAdded() {
-		return dateAdded;
-	}
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
 
     @ReadOnly
-	@JsonProperty("dateAdded")
-	public void setDateAdded(DateTime dateAdded) {
-		this.dateAdded = dateAdded;
-	}
+    @JsonProperty("dateAdded")
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
 
-	@JsonProperty("dateClosed")
-	public DateTime getDateClosed() {
-		return dateClosed;
-	}
+    @JsonProperty("dateClosed")
+    public DateTime getDateClosed() {
+        return dateClosed;
+    }
 
-	@JsonProperty("dateClosed")
-	public void setDateClosed(DateTime dateClosed) {
-		this.dateClosed = dateClosed;
-	}
+    @JsonProperty("dateClosed")
+    public void setDateClosed(DateTime dateClosed) {
+        this.dateClosed = dateClosed;
+    }
 
-	@JsonProperty("dateEnd")
-	public DateTime getDateEnd() {
-		return dateEnd;
-	}
+    @JsonProperty("dateEnd")
+    public DateTime getDateEnd() {
+        return dateEnd;
+    }
 
-	@JsonProperty("dateEnd")
-	public void setDateEnd(DateTime dateEnd) {
-		this.dateEnd = dateEnd;
-	}
+    @JsonProperty("dateEnd")
+    public void setDateEnd(DateTime dateEnd) {
+        this.dateEnd = dateEnd;
+    }
 
-	@JsonProperty("dateLastExported")
-	public DateTime getDateLastExported() {
-		return dateLastExported;
-	}
-
-    @ReadOnly
-	@JsonProperty("dateLastExported")
-	public void setDateLastExported(DateTime dateLastExported) {
-		this.dateLastExported = dateLastExported;
-	}
-
-	@JsonProperty("dateLastModified")
-	public DateTime getDateLastModified() {
-		return dateLastModified;
-	}
+    @JsonProperty("dateLastExported")
+    public DateTime getDateLastExported() {
+        return dateLastExported;
+    }
 
     @ReadOnly
-	@JsonProperty("dateLastModified")
-	public void setDateLastModified(DateTime dateLastModified) {
-		this.dateLastModified = dateLastModified;
-	}
+    @JsonProperty("dateLastExported")
+    public void setDateLastExported(DateTime dateLastExported) {
+        this.dateLastExported = dateLastExported;
+    }
 
-	@JsonProperty("degreeList")
-	public String getDegreeList() {
-		return degreeList;
-	}
-
-	@JsonIgnore
-	public void setDegreeList(String degreeList) {
-		this.degreeList = degreeList;
-	}
-
-	@JsonProperty("description")
-	public String getDescription() {
-		return description;
-	}
-
-	@JsonIgnore
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	@JsonProperty("durationWeeks")
-	public BigDecimal getDurationWeeks() {
-		return durationWeeks;
-	}
-
-	@JsonProperty("durationWeeks")
-	public void setDurationWeeks(BigDecimal durationWeeks) {
-		this.durationWeeks = durationWeeks;
-	}
-
-	@JsonProperty("educationDegree")
-	public String getEducationDegree() {
-		return educationDegree;
-	}
-
-	@JsonIgnore
-	public void setEducationDegree(String educationDegree) {
-		this.educationDegree = educationDegree;
-	}
-
-	@JsonProperty("employmentType")
-	public String getEmploymentType() {
-		return employmentType;
-	}
-
-	@JsonIgnore
-	public void setEmploymentType(String employmentType) {
-		this.employmentType = employmentType;
-	}
-
-	@JsonProperty("externalCategoryID")
-	public Integer getExternalCategoryID() {
-		return externalCategoryID;
-	}
-
-	@JsonProperty("externalCategoryID")
-	public void setExternalCategoryID(Integer externalCategoryID) {
-		this.externalCategoryID = externalCategoryID;
-	}
-
-	@JsonProperty("externalID")
-	public String getExternalID() {
-		return externalID;
-	}
-
-	@JsonIgnore
-	public void setExternalID(String externalID) {
-		this.externalID = externalID;
-	}
-
-	@JsonProperty("feeArrangement")
-	public BigDecimal getFeeArrangement() {
-		return feeArrangement;
-	}
-
-	@JsonProperty("feeArrangement")
-	public void setFeeArrangement(BigDecimal feeArrangement) {
-		this.feeArrangement = feeArrangement;
-	}
-
-	@JsonProperty("hoursOfOperation")
-	public String getHoursOfOperation() {
-		return hoursOfOperation;
-	}
-
-	@JsonIgnore
-	public void setHoursOfOperation(String hoursOfOperation) {
-		this.hoursOfOperation = hoursOfOperation;
-	}
-
-	@JsonProperty("hoursPerWeek")
-	public BigDecimal getHoursPerWeek() {
-		return hoursPerWeek;
-	}
-
-	@JsonProperty("hoursPerWeek")
-	public void setHoursPerWeek(BigDecimal hoursPerWeek) {
-		this.hoursPerWeek = hoursPerWeek;
-	}
-
-	@JsonIgnore
-	public OneToMany<Appointment> getInterviews() {
-		return interviews;
-	}
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
 
     @ReadOnly
-	@JsonProperty("interviews")
-	public void setInterviews(OneToMany<Appointment> interviews) {
-		this.interviews = interviews;
-	}
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
+    }
 
-	@JsonProperty("isClientEditable")
-	public Boolean getIsClientEditable() {
-		return isClientEditable;
-	}
+    @JsonProperty("degreeList")
+    public String getDegreeList() {
+        return degreeList;
+    }
 
-	@JsonProperty("isClientEditable")
-	public void setIsClientEditable(Boolean isClientEditable) {
-		this.isClientEditable = isClientEditable;
-	}
+    @JsonIgnore
+    public void setDegreeList(String degreeList) {
+        this.degreeList = degreeList;
+    }
 
-	@JsonProperty("isDeleted")
-	public Boolean getIsDeleted() {
-		return isDeleted;
-	}
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
+    }
 
-	@JsonProperty("isDeleted")
-	public void setIsDeleted(Boolean isDeleted) {
-		this.isDeleted = isDeleted;
-	}
+    @JsonIgnore
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	@JsonProperty("isInterviewRequired")
-	public Boolean getIsInterviewRequired() {
-		return isInterviewRequired;
-	}
+    @JsonProperty("durationWeeks")
+    public BigDecimal getDurationWeeks() {
+        return durationWeeks;
+    }
 
-	@JsonProperty("isInterviewRequired")
-	public void setIsInterviewRequired(Boolean isInterviewRequired) {
-		this.isInterviewRequired = isInterviewRequired;
-	}
+    @JsonProperty("durationWeeks")
+    public void setDurationWeeks(BigDecimal durationWeeks) {
+        this.durationWeeks = durationWeeks;
+    }
 
-	@JsonProperty("isJobcastPublished")
-	public Object getIsJobcastPublished() {
-		return isJobcastPublished;
-	}
+    @JsonProperty("educationDegree")
+    public String getEducationDegree() {
+        return educationDegree;
+    }
 
-	@JsonProperty("isJobcastPublished")
-	public void setIsJobcastPublished(String isJobcastPublished) {
-		this.isJobcastPublished = isJobcastPublished;
-	}
+    @JsonIgnore
+    public void setEducationDegree(String educationDegree) {
+        this.educationDegree = educationDegree;
+    }
 
-	@JsonProperty("isOpen")
-	public Boolean getIsOpen() {
-		return isOpen;
-	}
+    @JsonProperty("employmentType")
+    public String getEmploymentType() {
+        return employmentType;
+    }
 
-	@JsonProperty("isOpen")
-	public void setIsOpen(Boolean isOpen) {
-		this.isOpen = isOpen;
-	}
+    @JsonIgnore
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
+    }
 
-	@JsonProperty("isPublic")
-	public Integer getIsPublic() {
-		return isPublic;
-	}
+    @JsonProperty("externalCategoryID")
+    public Integer getExternalCategoryID() {
+        return externalCategoryID;
+    }
 
-	@JsonProperty("isPublic")
-	public void setIsPublic(Integer isPublic) {
-		this.isPublic = isPublic;
-	}
+    @JsonProperty("externalCategoryID")
+    public void setExternalCategoryID(Integer externalCategoryID) {
+        this.externalCategoryID = externalCategoryID;
+    }
 
-	@JsonProperty("jobBoardList")
-	public String getJobBoardList() {
-		return jobBoardList;
-	}
+    @JsonProperty("externalID")
+    public String getExternalID() {
+        return externalID;
+    }
 
-	@JsonIgnore
-	public void setJobBoardList(String jobBoardList) {
-		this.jobBoardList = jobBoardList;
-	}
+    @JsonIgnore
+    public void setExternalID(String externalID) {
+        this.externalID = externalID;
+    }
 
-	@JsonIgnore
-	public OneToMany<Note> getNotes() {
-		return notes;
-	}
+    @JsonProperty("feeArrangement")
+    public BigDecimal getFeeArrangement() {
+        return feeArrangement;
+    }
 
-    @ReadOnly
-	@JsonProperty("notes")
-	public void setNotes(OneToMany<Note> notes) {
-		this.notes = notes;
-	}
+    @JsonProperty("feeArrangement")
+    public void setFeeArrangement(BigDecimal feeArrangement) {
+        this.feeArrangement = feeArrangement;
+    }
 
-	@JsonProperty("numOpenings")
-	public Integer getNumOpenings() {
-		return numOpenings;
-	}
+    @JsonProperty("fileAttachments")
+    public OneToMany<StandardFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
 
-	@JsonProperty("numOpenings")
-	public void setNumOpenings(Integer numOpenings) {
-		this.numOpenings = numOpenings;
-	}
+    @JsonProperty("fileAttachments")
+    public void setFileAttachments(OneToMany<StandardFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
+    }
 
-	@JsonProperty("onSite")
-	public String getOnSite() {
-		return onSite;
-	}
+    @JsonProperty("hoursOfOperation")
+    public String getHoursOfOperation() {
+        return hoursOfOperation;
+    }
 
-	@JsonIgnore
-	public void setOnSite(String onSite) {
-		this.onSite = onSite;
-	}
+    @JsonIgnore
+    public void setHoursOfOperation(String hoursOfOperation) {
+        this.hoursOfOperation = hoursOfOperation;
+    }
 
-	@JsonProperty("optionsPackage")
-	public String getOptionsPackage() {
-		return optionsPackage;
-	}
+    @JsonProperty("hoursPerWeek")
+    public BigDecimal getHoursPerWeek() {
+        return hoursPerWeek;
+    }
 
-	@JsonIgnore
-	public void setOptionsPackage(String optionsPackage) {
-		this.optionsPackage = optionsPackage;
-	}
+    @JsonProperty("hoursPerWeek")
+    public void setHoursPerWeek(BigDecimal hoursPerWeek) {
+        this.hoursPerWeek = hoursPerWeek;
+    }
 
-	@JsonProperty("opportunity")
-	public Opportunity getOpportunity() {
-		return opportunity;
-	}
-
-	@JsonProperty("opportunity")
-	public void setOpportunity(Opportunity opportunity) {
-		this.opportunity = opportunity;
-	}
-
-	@JsonProperty("owner")
-	public CorporateUser getOwner() {
-		return owner;
-	}
-
-	@JsonProperty("owner")
-	public void setOwner(CorporateUser owner) {
-		this.owner = owner;
-	}
-
-	@JsonProperty("payRate")
-	public BigDecimal getPayRate() {
-		return payRate;
-	}
-
-	@JsonProperty("payRate")
-	public void setPayRate(BigDecimal payRate) {
-		this.payRate = payRate;
-	}
-
-	@JsonIgnore
-	public OneToMany<Placement> getPlacements() {
-		return placements;
-	}
+    @JsonIgnore
+    public OneToMany<Appointment> getInterviews() {
+        return interviews;
+    }
 
     @ReadOnly
-	@JsonProperty("placements")
-	public void setPlacements(OneToMany<Placement> placements) {
-		this.placements = placements;
-	}
+    @JsonProperty("interviews")
+    public void setInterviews(OneToMany<Appointment> interviews) {
+        this.interviews = interviews;
+    }
 
-	@JsonProperty("publicDescription")
-	public String getPublicDescription() {
-		return publicDescription;
-	}
+    @JsonProperty("isClientEditable")
+    public Boolean getIsClientEditable() {
+        return isClientEditable;
+    }
 
-	@JsonIgnore
-	public void setPublicDescription(String publicDescription) {
-		this.publicDescription = publicDescription;
-	}
+    @JsonProperty("isClientEditable")
+    public void setIsClientEditable(Boolean isClientEditable) {
+        this.isClientEditable = isClientEditable;
+    }
 
-	@JsonProperty("publishedZip")
-	public String getPublishedZip() {
-		return publishedZip;
-	}
+    @JsonProperty("isDeleted")
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
 
-	@JsonIgnore
-	public void setPublishedZip(String publishedZip) {
-		this.publishedZip = publishedZip;
-	}
+    @JsonProperty("isDeleted")
+    public void setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
 
-	@JsonProperty("reasonClosed")
-	public String getReasonClosed() {
-		return reasonClosed;
-	}
+    @JsonProperty("isInterviewRequired")
+    public Boolean getIsInterviewRequired() {
+        return isInterviewRequired;
+    }
 
-	@JsonIgnore
-	public void setReasonClosed(String reasonClosed) {
-		this.reasonClosed = reasonClosed;
-	}
+    @JsonProperty("isInterviewRequired")
+    public void setIsInterviewRequired(Boolean isInterviewRequired) {
+        this.isInterviewRequired = isInterviewRequired;
+    }
 
-	@JsonProperty("reportTo")
-	public String getReportTo() {
-		return reportTo;
-	}
+    @JsonProperty("isJobcastPublished")
+    public Object getIsJobcastPublished() {
+        return isJobcastPublished;
+    }
 
-	@JsonIgnore
-	public void setReportTo(String reportTo) {
-		this.reportTo = reportTo;
-	}
+    @JsonProperty("isJobcastPublished")
+    public void setIsJobcastPublished(String isJobcastPublished) {
+        this.isJobcastPublished = isJobcastPublished;
+    }
+
+    @JsonProperty("isOpen")
+    public Boolean getIsOpen() {
+        return isOpen;
+    }
+
+    @JsonProperty("isOpen")
+    public void setIsOpen(Boolean isOpen) {
+        this.isOpen = isOpen;
+    }
+
+    @JsonProperty("isPublic")
+    public Integer getIsPublic() {
+        return isPublic;
+    }
+
+    @JsonProperty("isPublic")
+    public void setIsPublic(Integer isPublic) {
+        this.isPublic = isPublic;
+    }
+
+    @JsonProperty("isWorkFromHome")
+    public Boolean getIsWorkFromHome() {
+        return isWorkFromHome;
+    }
+
+    @JsonProperty("isWorkFromHome")
+    public void setIsWorkFromHome(Boolean isWorkFromHome) {
+        this.isWorkFromHome = isWorkFromHome;
+    }
+
+    @JsonProperty("jobBoardList")
+    public String getJobBoardList() {
+        return jobBoardList;
+    }
+
+    @JsonIgnore
+    public void setJobBoardList(String jobBoardList) {
+        this.jobBoardList = jobBoardList;
+    }
+
+    @JsonProperty("jobOrderRateCardID")
+    public Integer getJobOrderRateCardID() {
+        return jobOrderRateCardID;
+    }
+
+    @JsonProperty("jobOrderRateCardID")
+    public void setJobOrderRateCardID(Integer jobOrderRateCardID) {
+        this.jobOrderRateCardID = jobOrderRateCardID;
+    }
+
+    @JsonIgnore
+    public OneToMany<Note> getNotes() {
+        return notes;
+    }
+
+    @ReadOnly
+    @JsonProperty("notes")
+    public void setNotes(OneToMany<Note> notes) {
+        this.notes = notes;
+    }
+
+    @JsonProperty("numOpenings")
+    public Integer getNumOpenings() {
+        return numOpenings;
+    }
+
+    @JsonProperty("numOpenings")
+    public void setNumOpenings(Integer numOpenings) {
+        this.numOpenings = numOpenings;
+    }
+
+    @JsonProperty("onSite")
+    public String getOnSite() {
+        return onSite;
+    }
+
+    @JsonIgnore
+    public void setOnSite(String onSite) {
+        this.onSite = onSite;
+    }
+
+    @JsonProperty("optionsPackage")
+    public String getOptionsPackage() {
+        return optionsPackage;
+    }
+
+    @JsonIgnore
+    public void setOptionsPackage(String optionsPackage) {
+        this.optionsPackage = optionsPackage;
+    }
+
+    @JsonProperty("opportunity")
+    public Opportunity getOpportunity() {
+        return opportunity;
+    }
+
+    @JsonProperty("opportunity")
+    public void setOpportunity(Opportunity opportunity) {
+        this.opportunity = opportunity;
+    }
+
+    @JsonProperty("owner")
+    public CorporateUser getOwner() {
+        return owner;
+    }
+
+    @JsonProperty("owner")
+    public void setOwner(CorporateUser owner) {
+        this.owner = owner;
+    }
+
+    @JsonProperty("payRate")
+    public BigDecimal getPayRate() {
+        return payRate;
+    }
+
+    @JsonProperty("payRate")
+    public void setPayRate(BigDecimal payRate) {
+        this.payRate = payRate;
+    }
+
+    @JsonIgnore
+    public OneToMany<Placement> getPlacements() {
+        return placements;
+    }
+
+    @ReadOnly
+    @JsonProperty("placements")
+    public void setPlacements(OneToMany<Placement> placements) {
+        this.placements = placements;
+    }
+
+    @JsonProperty("publicDescription")
+    public String getPublicDescription() {
+        return publicDescription;
+    }
+
+    @JsonIgnore
+    public void setPublicDescription(String publicDescription) {
+        this.publicDescription = publicDescription;
+    }
+
+    @JsonProperty("publishedCategory")
+    public Category getPublishedCategory() {
+        return publishedCategory;
+    }
+
+    @JsonProperty("publishedCategory")
+    public void setPublishedCategory(Category publishedCategory) {
+        this.publishedCategory = publishedCategory;
+    }
+
+    @JsonProperty("publishedZip")
+    public String getPublishedZip() {
+        return publishedZip;
+    }
+
+    @JsonIgnore
+    public void setPublishedZip(String publishedZip) {
+        this.publishedZip = publishedZip;
+    }
+
+    @JsonProperty("reasonClosed")
+    public String getReasonClosed() {
+        return reasonClosed;
+    }
+
+    @JsonIgnore
+    public void setReasonClosed(String reasonClosed) {
+        this.reasonClosed = reasonClosed;
+    }
+
+    @JsonProperty("reportTo")
+    public String getReportTo() {
+        return reportTo;
+    }
+
+    @JsonIgnore
+    public void setReportTo(String reportTo) {
+        this.reportTo = reportTo;
+    }
 
     @JsonProperty("reportToClientContact")
-	public ClientContact getReportToClientContact() {
-		return reportToClientContact;
-	}
+    public ClientContact getReportToClientContact() {
+        return reportToClientContact;
+    }
 
-	@JsonProperty("reportToClientContact")
-	public void setReportToClientContact(ClientContact reportToClientContact) {
-		this.reportToClientContact = reportToClientContact;
-	}
+    @JsonProperty("reportToClientContact")
+    public void setReportToClientContact(ClientContact reportToClientContact) {
+        this.reportToClientContact = reportToClientContact;
+    }
 
-	@JsonProperty("responseUser")
-	public CorporateUser getResponseUser() {
-		return responseUser;
-	}
+    @JsonProperty("responseUser")
+    public CorporateUser getResponseUser() {
+        return responseUser;
+    }
 
-	@JsonProperty("responseUser")
-	public void setResponseUser(CorporateUser responseUser) {
-		this.responseUser = responseUser;
-	}
+    @JsonProperty("responseUser")
+    public void setResponseUser(CorporateUser responseUser) {
+        this.responseUser = responseUser;
+    }
 
-	@JsonProperty("salary")
-	public BigDecimal getSalary() {
-		return salary;
-	}
+    @JsonProperty("salary")
+    public BigDecimal getSalary() {
+        return salary;
+    }
 
-	@JsonProperty("salary")
-	public void setSalary(BigDecimal salary) {
-		this.salary = salary;
-	}
+    @JsonProperty("salary")
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
 
-	@JsonProperty("salaryUnit")
-	public String getSalaryUnit() {
-		return salaryUnit;
-	}
+    @JsonProperty("salaryUnit")
+    public String getSalaryUnit() {
+        return salaryUnit;
+    }
 
-	@JsonIgnore
-	public void setSalaryUnit(String salaryUnit) {
-		this.salaryUnit = salaryUnit;
-	}
+    @JsonIgnore
+    public void setSalaryUnit(String salaryUnit) {
+        this.salaryUnit = salaryUnit;
+    }
 
-	@JsonIgnore
-	public OneToMany<Sendout> getSendouts() {
-		return sendouts;
-	}
-
-    @ReadOnly
-	@JsonProperty("sendouts")
-	public void setSendouts(OneToMany<Sendout> sendouts) {
-		this.sendouts = sendouts;
-	}
-
-	@JsonProperty("skillList")
-	public String getSkillList() {
-		return skillList;
-	}
-
-	@JsonIgnore
-	public void setSkillList(String skillList) {
-		this.skillList = skillList;
-	}
-
-	@JsonIgnore
-	public OneToMany<Skill> getSkills() {
-		return skills;
-	}
-
-	@JsonProperty("skills")
-	public void setSkills(OneToMany<Skill> skills) {
-		this.skills = skills;
-	}
-
-	@JsonProperty("source")
-	public String getSource() {
-		return source;
-	}
-
-	@JsonIgnore
-	public void setSource(String source) {
-		this.source = source;
-	}
-
-	@JsonIgnore
-	public OneToMany<Specialty> getSpecialties() {
-		return specialties;
-	}
-
-	@JsonProperty("specialties")
-	public void setSpecialties(OneToMany<Specialty> specialties) {
-		this.specialties = specialties;
-	}
-
-	@JsonProperty("startDate")
-	public DateTime getStartDate() {
-		return startDate;
-	}
-
-	@JsonProperty("startDate")
-	public void setStartDate(DateTime startDate) {
-		this.startDate = startDate;
-	}
-
-	@JsonProperty("status")
-	public String getStatus() {
-		return status;
-	}
-
-	@JsonIgnore
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	@JsonIgnore
-	public OneToMany<JobSubmission> getSubmissions() {
-		return submissions;
-	}
+    @JsonIgnore
+    public OneToMany<Sendout> getSendouts() {
+        return sendouts;
+    }
 
     @ReadOnly
-	@JsonProperty("submissions")
-	public void setSubmissions(OneToMany<JobSubmission> submissions) {
-		this.submissions = submissions;
-	}
+    @JsonProperty("sendouts")
+    public void setSendouts(OneToMany<Sendout> sendouts) {
+        this.sendouts = sendouts;
+    }
 
-	@JsonIgnore
-	public OneToMany<Task> getTasks() {
-		return tasks;
-	}
+    @JsonProperty("skillList")
+    public String getSkillList() {
+        return skillList;
+    }
+
+    @JsonIgnore
+    public void setSkillList(String skillList) {
+        this.skillList = skillList;
+    }
+
+    @JsonIgnore
+    public OneToMany<Skill> getSkills() {
+        return skills;
+    }
+
+    @JsonProperty("skills")
+    public void setSkills(OneToMany<Skill> skills) {
+        this.skills = skills;
+    }
+
+    @JsonProperty("source")
+    public String getSource() {
+        return source;
+    }
+
+    @JsonIgnore
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    @JsonIgnore
+    public OneToMany<Specialty> getSpecialties() {
+        return specialties;
+    }
+
+    @JsonProperty("specialties")
+    public void setSpecialties(OneToMany<Specialty> specialties) {
+        this.specialties = specialties;
+    }
+
+    @JsonProperty("startDate")
+    public DateTime getStartDate() {
+        return startDate;
+    }
+
+    @JsonProperty("startDate")
+    public void setStartDate(DateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    @JsonProperty("status")
+    public String getStatus() {
+        return status;
+    }
+
+    @JsonIgnore
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @JsonIgnore
+    public OneToMany<JobSubmission> getSubmissions() {
+        return submissions;
+    }
 
     @ReadOnly
-	@JsonProperty("tasks")
-	public void setTasks(OneToMany<Task> tasks) {
-		this.tasks = tasks;
-	}
+    @JsonProperty("submissions")
+    public void setSubmissions(OneToMany<JobSubmission> submissions) {
+        this.submissions = submissions;
+    }
 
-	@JsonProperty("taxRate")
-	public BigDecimal getTaxRate() {
-		return taxRate;
-	}
-
-	@JsonProperty("taxRate")
-	public void setTaxRate(BigDecimal taxRate) {
-		this.taxRate = taxRate;
-	}
-
-	@JsonProperty("taxStatus")
-	public String getTaxStatus() {
-		return taxStatus;
-	}
-
-	@JsonIgnore
-	public void setTaxStatus(String taxStatus) {
-		this.taxStatus = taxStatus;
-	}
-
-	@JsonIgnore
-	public OneToMany<Tearsheet> getTearsheets() {
-		return tearsheets;
-	}
-
-	@ReadOnly
-	@JsonProperty("tearsheets")
-	public void setTearsheets(OneToMany<Tearsheet> tearsheets) {
-		this.tearsheets = tearsheets;
-	}
-
-	@JsonIgnore
-	public OneToMany<TimeUnit> getTimeUnits() {
-		return timeUnits;
-	}
+    @JsonIgnore
+    public OneToMany<Task> getTasks() {
+        return tasks;
+    }
 
     @ReadOnly
-	@JsonProperty("timeUnits")
-	public void setTimeUnits(OneToMany<TimeUnit> timeUnits) {
-		this.timeUnits = timeUnits;
-	}
+    @JsonProperty("tasks")
+    public void setTasks(OneToMany<Task> tasks) {
+        this.tasks = tasks;
+    }
 
-	@JsonProperty("title")
-	public String getTitle() {
-		return title;
-	}
+    @JsonProperty("taxRate")
+    public BigDecimal getTaxRate() {
+        return taxRate;
+    }
 
-	@JsonIgnore
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    @JsonProperty("taxRate")
+    public void setTaxRate(BigDecimal taxRate) {
+        this.taxRate = taxRate;
+    }
 
-	@JsonProperty("travelRequirements")
-	public String getTravelRequirements() {
-		return travelRequirements;
-	}
+    @JsonProperty("taxStatus")
+    public String getTaxStatus() {
+        return taxStatus;
+    }
 
-	@JsonIgnore
-	public void setTravelRequirements(String travelRequirements) {
-		this.travelRequirements = travelRequirements;
-	}
+    @JsonIgnore
+    public void setTaxStatus(String taxStatus) {
+        this.taxStatus = taxStatus;
+    }
 
-	@JsonProperty("type")
-	public Integer getType() {
-		return type;
-	}
+    @JsonIgnore
+    public OneToMany<Tearsheet> getTearsheets() {
+        return tearsheets;
+    }
 
-	@JsonProperty("type")
-	public void setType(Integer type) {
-		this.type = type;
-	}
+    @ReadOnly
+    @JsonProperty("tearsheets")
+    public void setTearsheets(OneToMany<Tearsheet> tearsheets) {
+        this.tearsheets = tearsheets;
+    }
+
+    @JsonIgnore
+    public OneToMany<TimeUnit> getTimeUnits() {
+        return timeUnits;
+    }
+
+    @ReadOnly
+    @JsonProperty("timeUnits")
+    public void setTimeUnits(OneToMany<TimeUnit> timeUnits) {
+        this.timeUnits = timeUnits;
+    }
+
+    @JsonProperty("title")
+    public String getTitle() {
+        return title;
+    }
+
+    @JsonIgnore
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @JsonProperty("travelRequirements")
+    public String getTravelRequirements() {
+        return travelRequirements;
+    }
+
+    @JsonIgnore
+    public void setTravelRequirements(String travelRequirements) {
+        this.travelRequirements = travelRequirements;
+    }
+
+    @JsonProperty("type")
+    public Integer getType() {
+        return type;
+    }
+
+    @JsonProperty("type")
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
     @JsonProperty("usersAssigned")
     public String getUsersAssigned() {
@@ -1053,65 +1099,65 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
     }
 
     @JsonIgnore
-	public OneToMany<JobSubmission> getWebResponses() {
-		return webResponses;
-	}
+    public OneToMany<JobSubmission> getWebResponses() {
+        return webResponses;
+    }
 
     @ReadOnly
-	@JsonProperty("webResponses")
-	public void setWebResponses(OneToMany<JobSubmission> webResponses) {
-		this.webResponses = webResponses;
-	}
+    @JsonProperty("webResponses")
+    public void setWebResponses(OneToMany<JobSubmission> webResponses) {
+        this.webResponses = webResponses;
+    }
 
-	@JsonProperty("willRelocate")
-	public Boolean getWillRelocate() {
-		return willRelocate;
-	}
+    @JsonProperty("willRelocate")
+    public Boolean getWillRelocate() {
+        return willRelocate;
+    }
 
-	@JsonProperty("willRelocate")
-	public void setWillRelocate(Boolean willRelocate) {
-		this.willRelocate = willRelocate;
-	}
+    @JsonProperty("willRelocate")
+    public void setWillRelocate(Boolean willRelocate) {
+        this.willRelocate = willRelocate;
+    }
 
-	@JsonProperty("willRelocateInt")
-	public Integer getWillRelocateInt() {
-		return willRelocateInt;
-	}
+    @JsonProperty("willRelocateInt")
+    public Integer getWillRelocateInt() {
+        return willRelocateInt;
+    }
 
-	@JsonProperty("willRelocateInt")
-	public void setWillRelocateInt(Integer willRelocateInt) {
-		this.willRelocateInt = willRelocateInt;
-	}
+    @JsonProperty("willRelocateInt")
+    public void setWillRelocateInt(Integer willRelocateInt) {
+        this.willRelocateInt = willRelocateInt;
+    }
 
-	@JsonProperty("willSponsor")
-	public Boolean getWillSponsor() {
-		return willSponsor;
-	}
+    @JsonProperty("willSponsor")
+    public Boolean getWillSponsor() {
+        return willSponsor;
+    }
 
-	@JsonProperty("willSponsor")
-	public void setWillSponsor(Boolean willSponsor) {
-		this.willSponsor = willSponsor;
-	}
+    @JsonProperty("willSponsor")
+    public void setWillSponsor(Boolean willSponsor) {
+        this.willSponsor = willSponsor;
+    }
 
-	@JsonProperty("workersCompRate")
+    @JsonProperty("workersCompRate")
     public WorkersCompensationRate getWorkersCompRate() {
-	    return workersCompRate;
-	}
+        return workersCompRate;
+    }
 
-	@JsonProperty("workersCompRate")
+    @JsonProperty("workersCompRate")
     public void setWorkersCompRate(WorkersCompensationRate workersCompRate) {
-	    this.workersCompRate = workersCompRate;
-	}
+        this.workersCompRate = workersCompRate;
+    }
 
-	@JsonProperty("yearsRequired")
-	public Integer getYearsRequired() {
-		return yearsRequired;
-	}
+    @JsonProperty("yearsRequired")
+    public Integer getYearsRequired() {
+        return yearsRequired;
+    }
 
-	@JsonProperty("yearsRequired")
-	public void setYearsRequired(Integer yearsRequired) {
-		this.yearsRequired = yearsRequired;
-	}
+    @JsonProperty("yearsRequired")
+    public void setYearsRequired(Integer yearsRequired) {
+        this.yearsRequired = yearsRequired;
+    }
 
     @JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
@@ -1269,107 +1315,12 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         JobData jobData = (JobData) o;
-        return Objects.equals(luceneScore, jobData.luceneScore) &&
-            Objects.equals(id, jobData.id) &&
-            Objects.equals(address, jobData.address) &&
-            Objects.equals(appointments, jobData.appointments) &&
-            Objects.equals(approvedPlacements, jobData.approvedPlacements) &&
-            Objects.equals(assignedUsers, jobData.assignedUsers) &&
-            Objects.equals(benefits, jobData.benefits) &&
-            Objects.equals(billRateCategoryID, jobData.billRateCategoryID) &&
-            Objects.equals(bonusPackage, jobData.bonusPackage) &&
-            Objects.equals(branch, jobData.branch) &&
-            Objects.equals(branchCode, jobData.branchCode) &&
-            Objects.equals(businessSectors, jobData.businessSectors) &&
-            Objects.equals(categories, jobData.categories) &&
-            Objects.equals(certificationList, jobData.certificationList) &&
-            Objects.equals(certifications, jobData.certifications) &&
-            Objects.equals(certificationGroups, jobData.certificationGroups) &&
-            Objects.equals(clientBillRate, jobData.clientBillRate) &&
-            Objects.equals(clientContact, jobData.clientContact) &&
-            Objects.equals(clientCorporation, jobData.clientCorporation) &&
-            Objects.equals(costCenter, jobData.costCenter) &&
-            Objects.equals(dateAdded, jobData.dateAdded) &&
-            Objects.equals(dateClosed, jobData.dateClosed) &&
-            Objects.equals(dateEnd, jobData.dateEnd) &&
-            Objects.equals(dateLastExported, jobData.dateLastExported) &&
-            Objects.equals(dateLastModified, jobData.dateLastModified) &&
-            Objects.equals(dateLastPublished, jobData.dateLastPublished) &&
-            Objects.equals(degreeList, jobData.degreeList) &&
-            Objects.equals(description, jobData.description) &&
-            Objects.equals(durationWeeks, jobData.durationWeeks) &&
-            Objects.equals(educationDegree, jobData.educationDegree) &&
-            Objects.equals(employmentType, jobData.employmentType) &&
-            Objects.equals(externalCategoryID, jobData.externalCategoryID) &&
-            Objects.equals(externalID, jobData.externalID) &&
-            Objects.equals(feeArrangement, jobData.feeArrangement) &&
-            Objects.equals(hoursOfOperation, jobData.hoursOfOperation) &&
-            Objects.equals(hoursPerWeek, jobData.hoursPerWeek) &&
-            Objects.equals(interviews, jobData.interviews) &&
-            Objects.equals(isClientEditable, jobData.isClientEditable) &&
-            Objects.equals(isDeleted, jobData.isDeleted) &&
-            Objects.equals(isInterviewRequired, jobData.isInterviewRequired) &&
-            Objects.equals(isJobcastPublished, jobData.isJobcastPublished) &&
-            Objects.equals(isOpen, jobData.isOpen) &&
-            Objects.equals(isPublic, jobData.isPublic) &&
-            Objects.equals(jobBoardList, jobData.jobBoardList) &&
-            Objects.equals(location, jobData.location) &&
-            Objects.equals(markUpPercentage, jobData.markUpPercentage) &&
-            Objects.equals(notes, jobData.notes) &&
-            Objects.equals(numOpenings, jobData.numOpenings) &&
-            Objects.equals(onSite, jobData.onSite) &&
-            Objects.equals(optionsPackage, jobData.optionsPackage) &&
-            Objects.equals(opportunity, jobData.opportunity) &&
-            Objects.equals(owner, jobData.owner) &&
-            Objects.equals(payRate, jobData.payRate) &&
-            Objects.equals(placements, jobData.placements) &&
-            Objects.equals(publicDescription, jobData.publicDescription) &&
-            Objects.equals(publishedZip, jobData.publishedZip) &&
-            Objects.equals(reasonClosed, jobData.reasonClosed) &&
-            Objects.equals(reportTo, jobData.reportTo) &&
-            Objects.equals(reportToClientContact, jobData.reportToClientContact) &&
-            Objects.equals(responseUser, jobData.responseUser) &&
-            Objects.equals(salary, jobData.salary) &&
-            Objects.equals(salaryUnit, jobData.salaryUnit) &&
-            Objects.equals(sendouts, jobData.sendouts) &&
-            Objects.equals(skillList, jobData.skillList) &&
-            Objects.equals(skills, jobData.skills) &&
-            Objects.equals(source, jobData.source) &&
-            Objects.equals(specialties, jobData.specialties) &&
-            Objects.equals(startDate, jobData.startDate) &&
-            Objects.equals(status, jobData.status) &&
-            Objects.equals(submissions, jobData.submissions) &&
-            Objects.equals(tasks, jobData.tasks) &&
-            Objects.equals(taxRate, jobData.taxRate) &&
-            Objects.equals(taxStatus, jobData.taxStatus) &&
-            Objects.equals(tearsheets, jobData.tearsheets) &&
-            Objects.equals(timeUnits, jobData.timeUnits) &&
-            Objects.equals(title, jobData.title) &&
-            Objects.equals(travelRequirements, jobData.travelRequirements) &&
-            Objects.equals(type, jobData.type) &&
-            Objects.equals(usersAssigned, jobData.usersAssigned) &&
-            Objects.equals(webResponses, jobData.webResponses) &&
-            Objects.equals(willRelocate, jobData.willRelocate) &&
-            Objects.equals(willRelocateInt, jobData.willRelocateInt) &&
-            Objects.equals(willSponsor, jobData.willSponsor) &&
-            Objects.equals(workersCompRate, jobData.workersCompRate) &&
-            Objects.equals(yearsRequired, jobData.yearsRequired) &&
-            Objects.equals(customObject1s, jobData.customObject1s) &&
-            Objects.equals(customObject2s, jobData.customObject2s) &&
-            Objects.equals(customObject3s, jobData.customObject3s) &&
-            Objects.equals(customObject4s, jobData.customObject4s) &&
-            Objects.equals(customObject5s, jobData.customObject5s) &&
-            Objects.equals(customObject6s, jobData.customObject6s) &&
-            Objects.equals(customObject7s, jobData.customObject7s) &&
-            Objects.equals(customObject8s, jobData.customObject8s) &&
-            Objects.equals(customObject9s, jobData.customObject9s) &&
-            Objects.equals(customObject10s, jobData.customObject10s);
+        return Objects.equals(luceneScore, jobData.luceneScore) && Objects.equals(id, jobData.id) && Objects.equals(address, jobData.address) && Objects.equals(appointments, jobData.appointments) && Objects.equals(approvedPlacements, jobData.approvedPlacements) && Objects.equals(assignedUsers, jobData.assignedUsers) && Objects.equals(benefits, jobData.benefits) && Objects.equals(billRateCategoryID, jobData.billRateCategoryID) && Objects.equals(billingProfile, jobData.billingProfile) && Objects.equals(bonusPackage, jobData.bonusPackage) && Objects.equals(branch, jobData.branch) && Objects.equals(branchCode, jobData.branchCode) && Objects.equals(businessSectors, jobData.businessSectors) && Objects.equals(categories, jobData.categories) && Objects.equals(certificationList, jobData.certificationList) && Objects.equals(certifications, jobData.certifications) && Objects.equals(certificationGroups, jobData.certificationGroups) && Objects.equals(clientBillRate, jobData.clientBillRate) && Objects.equals(clientContact, jobData.clientContact) && Objects.equals(clientCorporation, jobData.clientCorporation) && Objects.equals(costCenter, jobData.costCenter) && Objects.equals(dateAdded, jobData.dateAdded) && Objects.equals(dateClosed, jobData.dateClosed) && Objects.equals(dateEnd, jobData.dateEnd) && Objects.equals(dateLastExported, jobData.dateLastExported) && Objects.equals(dateLastModified, jobData.dateLastModified) && Objects.equals(dateLastPublished, jobData.dateLastPublished) && Objects.equals(degreeList, jobData.degreeList) && Objects.equals(description, jobData.description) && Objects.equals(durationWeeks, jobData.durationWeeks) && Objects.equals(educationDegree, jobData.educationDegree) && Objects.equals(employmentType, jobData.employmentType) && Objects.equals(externalCategoryID, jobData.externalCategoryID) && Objects.equals(externalID, jobData.externalID) && Objects.equals(feeArrangement, jobData.feeArrangement) && Objects.equals(fileAttachments, jobData.fileAttachments) && Objects.equals(hoursOfOperation, jobData.hoursOfOperation) && Objects.equals(hoursPerWeek, jobData.hoursPerWeek) && Objects.equals(interviews, jobData.interviews) && Objects.equals(isClientEditable, jobData.isClientEditable) && Objects.equals(isDeleted, jobData.isDeleted) && Objects.equals(isInterviewRequired, jobData.isInterviewRequired) && Objects.equals(isJobcastPublished, jobData.isJobcastPublished) && Objects.equals(isOpen, jobData.isOpen) && Objects.equals(isPublic, jobData.isPublic) && Objects.equals(isWorkFromHome, jobData.isWorkFromHome) && Objects.equals(jobBoardList, jobData.jobBoardList) && Objects.equals(jobOrderRateCardID, jobData.jobOrderRateCardID) && Objects.equals(location, jobData.location) && Objects.equals(markUpPercentage, jobData.markUpPercentage) && Objects.equals(notes, jobData.notes) && Objects.equals(numOpenings, jobData.numOpenings) && Objects.equals(onSite, jobData.onSite) && Objects.equals(optionsPackage, jobData.optionsPackage) && Objects.equals(opportunity, jobData.opportunity) && Objects.equals(owner, jobData.owner) && Objects.equals(payRate, jobData.payRate) && Objects.equals(placements, jobData.placements) && Objects.equals(publicDescription, jobData.publicDescription) && Objects.equals(publishedCategory, jobData.publishedCategory) && Objects.equals(publishedZip, jobData.publishedZip) && Objects.equals(reasonClosed, jobData.reasonClosed) && Objects.equals(reportTo, jobData.reportTo) && Objects.equals(reportToClientContact, jobData.reportToClientContact) && Objects.equals(responseUser, jobData.responseUser) && Objects.equals(salary, jobData.salary) && Objects.equals(salaryUnit, jobData.salaryUnit) && Objects.equals(sendouts, jobData.sendouts) && Objects.equals(skillList, jobData.skillList) && Objects.equals(skills, jobData.skills) && Objects.equals(source, jobData.source) && Objects.equals(specialties, jobData.specialties) && Objects.equals(startDate, jobData.startDate) && Objects.equals(status, jobData.status) && Objects.equals(submissions, jobData.submissions) && Objects.equals(tasks, jobData.tasks) && Objects.equals(taxRate, jobData.taxRate) && Objects.equals(taxStatus, jobData.taxStatus) && Objects.equals(tearsheets, jobData.tearsheets) && Objects.equals(timeUnits, jobData.timeUnits) && Objects.equals(title, jobData.title) && Objects.equals(travelRequirements, jobData.travelRequirements) && Objects.equals(type, jobData.type) && Objects.equals(usersAssigned, jobData.usersAssigned) && Objects.equals(webResponses, jobData.webResponses) && Objects.equals(willRelocate, jobData.willRelocate) && Objects.equals(willRelocateInt, jobData.willRelocateInt) && Objects.equals(willSponsor, jobData.willSponsor) && Objects.equals(workersCompRate, jobData.workersCompRate) && Objects.equals(yearsRequired, jobData.yearsRequired) && Objects.equals(customObject1s, jobData.customObject1s) && Objects.equals(customObject2s, jobData.customObject2s) && Objects.equals(customObject3s, jobData.customObject3s) && Objects.equals(customObject4s, jobData.customObject4s) && Objects.equals(customObject5s, jobData.customObject5s) && Objects.equals(customObject6s, jobData.customObject6s) && Objects.equals(customObject7s, jobData.customObject7s) && Objects.equals(customObject8s, jobData.customObject8s) && Objects.equals(customObject9s, jobData.customObject9s) && Objects.equals(customObject10s, jobData.customObject10s);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(super.hashCode(), luceneScore, id, address, appointments, approvedPlacements, assignedUsers, benefits, billRateCategoryID, bonusPackage, branch, branchCode, businessSectors, categories, certificationList, certifications, certificationGroups, clientBillRate, clientContact, clientCorporation, costCenter, dateAdded, dateClosed, dateEnd, dateLastExported, dateLastModified, dateLastPublished, degreeList, description, durationWeeks, educationDegree, employmentType, externalCategoryID, externalID, feeArrangement, hoursOfOperation, hoursPerWeek, interviews, isClientEditable, isDeleted, isInterviewRequired, isJobcastPublished, isOpen, isPublic, jobBoardList, location, markUpPercentage, notes, numOpenings, onSite, optionsPackage, opportunity, owner, payRate, placements, publicDescription, publishedZip, reasonClosed, reportTo, reportToClientContact, responseUser, salary, salaryUnit, sendouts, skillList, skills, source, specialties, startDate, status, submissions, tasks, taxRate, taxStatus, tearsheets, timeUnits, title, travelRequirements, type, usersAssigned, webResponses, willRelocate, willRelocateInt, willSponsor, workersCompRate, yearsRequired, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+        return Objects.hash(super.hashCode(), luceneScore, id, address, appointments, approvedPlacements, assignedUsers, benefits, billRateCategoryID, billingProfile, bonusPackage, branch, branchCode, businessSectors, categories, certificationList, certifications, certificationGroups, clientBillRate, clientContact, clientCorporation, costCenter, dateAdded, dateClosed, dateEnd, dateLastExported, dateLastModified, dateLastPublished, degreeList, description, durationWeeks, educationDegree, employmentType, externalCategoryID, externalID, feeArrangement, fileAttachments, hoursOfOperation, hoursPerWeek, interviews, isClientEditable, isDeleted, isInterviewRequired, isJobcastPublished, isOpen, isPublic, isWorkFromHome, jobBoardList, jobOrderRateCardID, location, markUpPercentage, notes, numOpenings, onSite, optionsPackage, opportunity, owner, payRate, placements, publicDescription, publishedCategory, publishedZip, reasonClosed, reportTo, reportToClientContact, responseUser, salary, salaryUnit, sendouts, skillList, skills, source, specialties, startDate, status, submissions, tasks, taxRate, taxStatus, tearsheets, timeUnits, title, travelRequirements, type, usersAssigned, webResponses, willRelocate, willRelocateInt, willSponsor, workersCompRate, yearsRequired, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
     @Override
@@ -1383,6 +1334,7 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
             ", assignedUsers=" + assignedUsers +
             ", benefits='" + benefits + '\'' +
             ", billRateCategoryID=" + billRateCategoryID +
+            ", billingProfile=" + billingProfile +
             ", bonusPackage='" + bonusPackage + '\'' +
             ", branch=" + branch +
             ", branchCode='" + branchCode + '\'' +
@@ -1400,6 +1352,7 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
             ", dateEnd=" + dateEnd +
             ", dateLastExported=" + dateLastExported +
             ", dateLastModified=" + dateLastModified +
+            ", dateLastPublished=" + dateLastPublished +
             ", degreeList='" + degreeList + '\'' +
             ", description='" + description + '\'' +
             ", durationWeeks=" + durationWeeks +
@@ -1408,6 +1361,7 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
             ", externalCategoryID=" + externalCategoryID +
             ", externalID='" + externalID + '\'' +
             ", feeArrangement=" + feeArrangement +
+            ", fileAttachments=" + fileAttachments +
             ", hoursOfOperation='" + hoursOfOperation + '\'' +
             ", hoursPerWeek=" + hoursPerWeek +
             ", interviews=" + interviews +
@@ -1417,7 +1371,11 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
             ", isJobcastPublished=" + isJobcastPublished +
             ", isOpen=" + isOpen +
             ", isPublic=" + isPublic +
+            ", isWorkFromHome=" + isWorkFromHome +
             ", jobBoardList='" + jobBoardList + '\'' +
+            ", jobOrderRateCardID=" + jobOrderRateCardID +
+            ", location=" + location +
+            ", markUpPercentage=" + markUpPercentage +
             ", notes=" + notes +
             ", numOpenings=" + numOpenings +
             ", onSite='" + onSite + '\'' +
@@ -1427,6 +1385,7 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
             ", payRate=" + payRate +
             ", placements=" + placements +
             ", publicDescription='" + publicDescription + '\'' +
+            ", publishedCategory=" + publishedCategory +
             ", publishedZip='" + publishedZip + '\'' +
             ", reasonClosed='" + reasonClosed + '\'' +
             ", reportTo='" + reportTo + '\'' +
@@ -1467,7 +1426,6 @@ public abstract class JobData extends CustomFieldsD implements BullhornEntity {
             ", customObject8s=" + customObject8s +
             ", customObject9s=" + customObject9s +
             ", customObject10s=" + customObject10s +
-            ", location=" + location +
             '}';
     }
 }
