@@ -26,6 +26,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -120,6 +135,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 40,
             "interviews": {
@@ -132,7 +151,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -149,6 +170,10 @@
                 "data": []
             },
             "publicDescription": "",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "02210",
             "reasonClosed": "",
             "reportTo": "abc",
@@ -227,6 +252,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -321,6 +361,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 40,
             "interviews": {
@@ -333,7 +377,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 4,
                 "data": []
@@ -350,6 +396,10 @@
                 "data": []
             },
             "publicDescription": "",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "02210",
             "reasonClosed": "",
             "reportTo": "",
@@ -432,6 +482,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -526,6 +591,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -538,7 +607,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 2,
                 "data": []
@@ -555,6 +626,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>fdasfs</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "34433",
             "reasonClosed": "",
             "reportTo": "",
@@ -633,6 +708,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -727,6 +817,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -739,7 +833,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": -1,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -756,6 +852,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>TBD</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "34332",
             "reasonClosed": "",
             "reportTo": "",
@@ -834,6 +934,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -928,6 +1043,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -940,7 +1059,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -957,6 +1078,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>\r\n<P>&nbsp;</P></DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -1035,6 +1160,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -1129,6 +1269,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -1141,7 +1285,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": -1,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 3,
                 "data": []
@@ -1158,6 +1304,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Develop Multithreaded applications</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "02137",
             "reasonClosed": "",
             "reportTo": "",
@@ -1236,6 +1386,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -1330,6 +1495,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 40,
             "interviews": {
@@ -1342,7 +1511,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -1359,6 +1530,10 @@
                 "data": []
             },
             "publicDescription": "",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "33333",
             "reasonClosed": "",
             "reportTo": "",
@@ -1437,6 +1612,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -1531,6 +1721,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -1543,7 +1737,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 1,
                 "data": []
@@ -1560,6 +1756,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Anyone have time to fight orcs? And has a nursing certification?</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -1638,6 +1838,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -1732,6 +1947,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -1744,7 +1963,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -1761,6 +1982,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -1839,6 +2064,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -1933,6 +2173,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -1945,7 +2189,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -1962,6 +2208,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -2040,6 +2290,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -2134,6 +2399,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -2146,7 +2415,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -2163,6 +2434,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -2241,6 +2516,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -2335,6 +2625,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -2347,7 +2641,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 2,
                 "data": []
@@ -2364,6 +2660,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -2442,6 +2742,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -2536,6 +2851,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -2548,7 +2867,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -2565,6 +2886,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -2643,6 +2968,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -2737,6 +3077,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -2749,7 +3093,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -2766,6 +3112,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -2844,6 +3194,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -2938,6 +3303,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -2950,7 +3319,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -2967,6 +3338,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -3045,6 +3420,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -3139,6 +3529,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -3151,7 +3545,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -3168,6 +3564,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -3246,6 +3646,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -3340,6 +3755,10 @@
             "externalCategoryID": 0,
             "externalID": "Yes",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -3352,7 +3771,9 @@
             "isJobcastPublished": null,
             "isOpen": true,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 1,
                 "data": []
@@ -3369,6 +3790,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Harvey Nash JLV Test VI</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -3541,6 +3966,10 @@
             "externalCategoryID": null,
             "externalID": null,
             "feeArrangement": null,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 40,
             "interviews": {
@@ -3553,7 +3982,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -3570,6 +4001,10 @@
                 "data": []
             },
             "publicDescription": null,
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": null,
             "reasonClosed": null,
             "reportTo": "",
@@ -3646,6 +4081,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -3740,6 +4190,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -3752,7 +4206,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 1,
                 "data": []
@@ -3769,6 +4225,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>test</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
@@ -3847,6 +4307,21 @@
             },
             "benefits": null,
             "billRateCategoryID": 0,
+            "billingProfile": {
+                            "id": 9965,
+                            "clientCorporation": {
+                                "id": 23463,
+                                "name": "AHF Healthcare Center - Oakland - CSU - Stafferlink"
+                            },
+                            "title": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink - Default Billing Profile",
+                            "effectiveDate": "2021-01-01",
+                            "effectiveEndDate": "2999-12-31",
+                            "versionID": 8259,
+                            "billingClientCorporation": {
+                                "id": 61141,
+                                "name": "AHF (Aids Healthcare Foundation) (PARENT) - CSU - Stafferlink"
+                            }
+                        },
             "bonusPackage": "",
             "branchCode": "",
             "businessSectors": {
@@ -3941,6 +4416,10 @@
             "externalCategoryID": 0,
             "externalID": "",
             "feeArrangement": 0,
+			"fileAttachments": {
+                "total": 0,
+                "data": []
+            },
             "hoursOfOperation": null,
             "hoursPerWeek": 0,
             "interviews": {
@@ -3953,7 +4432,9 @@
             "isJobcastPublished": null,
             "isOpen": false,
             "isPublic": 0,
+			"isWorkFromHome": null,
             "jobBoardList": null,
+			"jobOrderRateCardID": null,
             "notes": {
                 "total": 0,
                 "data": []
@@ -3970,6 +4451,10 @@
                 "data": []
             },
             "publicDescription": "<DIV>Anyone have time to fight orcs? And has a nursing certification?</DIV>",
+			"publishedCategory": {
+                "id": 155370,
+                "name": "RN-Dialysis"
+            },
             "publishedZip": "",
             "reasonClosed": "",
             "reportTo": "",
