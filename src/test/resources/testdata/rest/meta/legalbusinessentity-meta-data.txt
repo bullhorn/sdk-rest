@@ -1,0 +1,219 @@
+{
+    "entity": "LegalBusinessEntity",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/724kgg/meta/LegalBusinessEntity?fields=*",
+    "label": "Legal Business Entity",
+    "dateLastModified": "1651524719774",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false
+        },
+        {
+            "name": "countryID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "optional": false,
+            "label": "Country ID",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": true,
+            "label": "Date Last Modified",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "defaultCurrencyUnit",
+            "type": "TO_ONE",
+            "confidential": false,
+            "optional": false,
+            "label": "Default Currency Unit",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CurrencyUnit",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/724kgg/options/CurrencyUnit",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "CurrencyUnit",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/724kgg/meta/CurrencyUnit?fields=*",
+                "label": "Currency Unit",
+                "dateLastModified": "1651525365252",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "alphabeticCode",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 3,
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Alphabetic Code",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "optional": false,
+            "label": "Is Deleted",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "legalEntityNumber",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 200,
+            "confidential": false,
+            "optional": false,
+            "label": "Legal Entity Number",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "legalName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 200,
+            "confidential": false,
+            "optional": false,
+            "label": "Legal Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "shortName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 30,
+            "confidential": false,
+            "optional": false,
+            "label": "Short Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "statusLookup",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "optional": false,
+            "label": "Status Lookup",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "StatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/724kgg/options/StatusLookup",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "StatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/724kgg/meta/StatusLookup?fields=*",
+                "label": "Status Lookup",
+                "dateLastModified": "1651525370102",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Label",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        }
+    ]
+}
