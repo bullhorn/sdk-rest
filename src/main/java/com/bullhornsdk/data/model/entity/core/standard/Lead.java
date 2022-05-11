@@ -867,7 +867,7 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 		return division;
 	}
 
-	@JsonProperty("division")
+    @JsonIgnore
 	public void setDivision(String division) {
 		this.division = division;
 	}
