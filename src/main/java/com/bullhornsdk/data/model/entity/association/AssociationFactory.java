@@ -3,9 +3,11 @@ package com.bullhornsdk.data.model.entity.association;
 import com.bullhornsdk.data.model.entity.association.paybill.BillingProfileAssociations;
 import com.bullhornsdk.data.model.entity.association.paybill.InvoiceTermAssociations;
 import com.bullhornsdk.data.model.entity.association.paybill.LocationAssociations;
+import com.bullhornsdk.data.model.entity.association.paybill.UnbilledRevenueDistributionAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.*;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -38,6 +40,7 @@ public class AssociationFactory {
     private static final BillingProfileAssociations billingProfileAssociations = BillingProfileAssociations.getInstance();
     private static final LocationAssociations locationAssociations = LocationAssociations.getInstance();
     private static final InvoiceTermAssociations invoiceTermAssociations = InvoiceTermAssociations.getInstance();
+    private static final UnbilledRevenueDistributionAssociations unbilledRevenueDistributionAssociations = UnbilledRevenueDistributionAssociations.getInstance();
 
     /**
      * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
@@ -136,6 +139,10 @@ public class AssociationFactory {
 
         if (type == Location.class) {
             return (EntityAssociations<T>) locationAssociations;
+        }
+
+        if (type == UnbilledRevenueDistribution.class) {
+            return (EntityAssociations<T>) unbilledRevenueDistributionAssociations;
         }
 
         return null;
@@ -307,6 +314,15 @@ public class AssociationFactory {
      */
     public static WorkersCompensationAssociations workersCompensationAssociations() {
         return workersCompensationAssociations;
+    }
+
+    /**
+     * Returns the associations for UnbilledRevenueDistributionAssociations
+     *
+     * @return
+     */
+    public static UnbilledRevenueDistributionAssociations unbilledRevenueDistributionAssociations() {
+        return unbilledRevenueDistributionAssociations;
     }
 
 }

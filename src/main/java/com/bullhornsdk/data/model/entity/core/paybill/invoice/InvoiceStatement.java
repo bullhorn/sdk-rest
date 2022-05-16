@@ -32,7 +32,7 @@ import java.util.Objects;
     "invoiceStatementNumber", "invoiceStatementFinalizedDate", "invoiceStatementOrigin", "invoiceStatementTemplate", "invoiceStatementType", "invoiceTerm",
     "isDeleted", "isCredited", "isFinalized", "isReinstated", "lineItems", "lineItemTotal", "owner", "paymentTerms",
     "previousBalance", "purchaseOrderNumber", "rawInvoiceStatementNumber", "remitInstructions", "splitBys",
-    "status", "subtotal", "surcharges", "surchargeTotal", "taxAmount", "taxes", "taxTotal", "total"
+    "status", "subtotal", "surchargeAmount", "surcharges", "surchargeTotal", "taxAmount", "taxes", "taxTotal", "total"
 })
 public class InvoiceStatement extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, SoftDeleteEntity {
 
@@ -92,6 +92,7 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
     private OneToMany<InvoiceStatementSplitBy> splitBys;
     private WorkflowOptionsLookup status;
     private BigDecimal subtotal;
+    private BigDecimal surchargeAmount;
     private BigDecimal surchargeTotal;
     private OneToMany<InvoiceStatementSurcharge> surcharges;
     private BigDecimal taxAmount;
@@ -551,6 +552,16 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
         this.subtotal = subtotal;
     }
 
+    @JsonProperty("surchargeAmount")
+    public BigDecimal getSurchargeAmount() {
+        return surchargeAmount;
+    }
+
+    @JsonProperty("surchargeAmount")
+    public void setSurchargeAmount(BigDecimal surchargeAmount) {
+        this.surchargeAmount = surchargeAmount;
+    }
+
     @JsonProperty("surcharges")
     public OneToMany<InvoiceStatementSurcharge> getSurcharges() {
         return surcharges;
@@ -662,7 +673,6 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
         this.taxAmount = taxAmount;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -717,6 +727,7 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
             Objects.equals(splitBys, that.splitBys) &&
             Objects.equals(status, that.status) &&
             Objects.equals(subtotal, that.subtotal) &&
+            Objects.equals(surchargeAmount, that.surchargeAmount) &&
             Objects.equals(surchargeTotal, that.surchargeTotal) &&
             Objects.equals(surcharges, that.surcharges) &&
             Objects.equals(taxAmount, that.taxAmount) &&
@@ -727,7 +738,8 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, billingAddress, billingAttention, billingClientContact, billingCorporateUser, billingPeriodEndDate, billingProfile, billingScheduleID, clientCorporation, creditedByInvoiceStatement, creditOfInvoiceStatement, currencyUnit, dateAdded, dateLastModified, deliveryMethod, deliveryStatus, discounts, discountTotal, discountAmount, effectiveDate, dueDate, emailErrorReason, finalizedSubtotal, finalizedTotal, generalLedgerExportStatusLookup, invoiceStatementDate, invoiceStatementExports, invoiceStatementExportsBatches, invoiceStatementNumber, invoiceStatementFinalizedDate, invoiceStatementOrigin, invoiceStatementTemplate, invoiceStatementType, invoiceTerm, isDeleted, isCredited, isFinalized, isReinstated, lineItems, lineItemTotal, owner, paymentTerms, previousBalance, purchaseOrderNumber, rawInvoiceStatementNumber, remitInstructions, splitBys, status, subtotal, surchargeTotal, surcharges, taxAmount, taxTotal, taxes, total);
+
+        return Objects.hash(id, billingAddress, billingAttention, billingClientContact, billingCorporateUser, billingPeriodEndDate, billingProfile, billingScheduleID, clientCorporation, creditedByInvoiceStatement, creditOfInvoiceStatement, currencyUnit, dateAdded, dateLastModified, deliveryMethod, deliveryStatus, discounts, discountTotal, discountAmount, effectiveDate, dueDate, emailErrorReason, finalizedSubtotal, finalizedTotal, generalLedgerExportStatusLookup, invoiceStatementDate, invoiceStatementExports, invoiceStatementExportsBatches, invoiceStatementNumber, invoiceStatementFinalizedDate, invoiceStatementOrigin, invoiceStatementTemplate, invoiceStatementType, invoiceTerm, isDeleted, isCredited, isFinalized, isReinstated, lineItems, lineItemTotal, owner, paymentTerms, previousBalance, purchaseOrderNumber, rawInvoiceStatementNumber, remitInstructions, splitBys, status, subtotal, surchargeAmount, surchargeTotal, surcharges, taxAmount, taxTotal, taxes, total);
     }
 
     @Override
@@ -782,6 +794,7 @@ public class InvoiceStatement extends AbstractEntity implements QueryEntity, Upd
             ", splitBys=" + splitBys +
             ", status=" + status +
             ", subtotal=" + subtotal +
+            ", surchargeAmount=" + surchargeAmount +
             ", surchargeTotal=" + surchargeTotal +
             ", surcharges=" + surcharges +
             ", taxAmount=" + taxAmount +

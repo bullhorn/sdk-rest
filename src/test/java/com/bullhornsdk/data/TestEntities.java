@@ -127,6 +127,8 @@ public class TestEntities {
 
     private Integer federalTaxFormId;
 
+    private Integer unbilledRevenueDistributionId;
+
     public TestEntities() {
         super();
         this.appointmentId = 1;
@@ -244,6 +246,8 @@ public class TestEntities {
         this.stateTaxFormId = 1;
 
         this.federalTaxFormId = 1;
+
+        this.unbilledRevenueDistributionId = 1;
 
     }
 
@@ -711,6 +715,14 @@ public class TestEntities {
         this.federalTaxFormId = federalTaxFormId;
     }
 
+    public Integer getUnbilledRevenueDistributionId() {
+        return unbilledRevenueDistributionId;
+    }
+
+    public void setUnbilledRevenueDistributionId(Integer unbilledRevenueDistributionId) {
+        this.unbilledRevenueDistributionId = unbilledRevenueDistributionId;
+    }
+
     @Override
     public String toString() {
         return "TestEntities{" +
@@ -738,6 +750,7 @@ public class TestEntities {
             ", housingComplexId=" + housingComplexId +
             ", jobOrderId=" + jobOrderId +
             ", jobBoardPostId=" + jobBoardPostId +
+            ", jobShiftId=" + jobShiftId +
             ", jobSubmissionId=" + jobSubmissionId +
             ", jobSubmissionHistoryId=" + jobSubmissionHistoryId +
             ", leadId=" + leadId +
@@ -771,6 +784,7 @@ public class TestEntities {
             ", localTaxFormId=" + localTaxFormId +
             ", stateTaxFormId=" + stateTaxFormId +
             ", federalTaxFormId=" + federalTaxFormId +
+            ", unbilledRevenueDistributionId=" + unbilledRevenueDistributionId +
             '}';
     }
 }

@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution;
 import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.log4j.Logger;
@@ -139,6 +140,23 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
                 associationIds.add(linkedIds.getData().get(0).getId());
                 testAssociation(Lead.class, testEntities.getLeadId(), associationIds, association);
+
+            }
+        }
+    }
+
+    @Test
+    public void testAssociateUnbilledRevenueDistribution() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        UnbilledRevenueDistribution entity = bullhornData.findEntity(UnbilledRevenueDistribution.class, testEntities.getUnbilledRevenueDistributionId(), getAssociationFieldSet(AssociationFactory.unbilledRevenueDistributionAssociations()));
+        for (AssociationField<UnbilledRevenueDistribution, ? extends BullhornEntity> association : AssociationFactory.unbilledRevenueDistributionAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(UnbilledRevenueDistribution.class, testEntities.getUnbilledRevenueDistributionId(), associationIds, association);
 
             }
         }

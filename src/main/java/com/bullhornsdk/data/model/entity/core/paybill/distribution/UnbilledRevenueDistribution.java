@@ -25,7 +25,7 @@ import java.util.Objects;
     "dateAdded", "dateLastModified", "debitAmount", "description",
     "invoiceStatementLineDistributionTypeLookup", "unbilledRevenueDistributionBatch"
 })
-public class UnbilledRevenueDistribution extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity {
+public class UnbilledRevenueDistribution extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
     private String accountingCode;
