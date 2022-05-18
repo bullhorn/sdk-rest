@@ -4,11 +4,7 @@ import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.StandardAssociationField;
 import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution;
-import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
-import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTermVersion;
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
 import java.util.ArrayList;

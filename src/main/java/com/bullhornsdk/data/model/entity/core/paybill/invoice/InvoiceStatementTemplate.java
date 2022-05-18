@@ -15,7 +15,8 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "description", "type", "dateLastModified"})
+@JsonPropertyOrder({"id", "contentSubType", "contentType", "dateAdded", "dateLastModified", "description", "directory", "fileExtension", "fileOwner", "fileSize",
+    "name", "type"})
 public class InvoiceStatementTemplate implements QueryEntity, DateLastModifiedEntity {
 
     private Integer id;

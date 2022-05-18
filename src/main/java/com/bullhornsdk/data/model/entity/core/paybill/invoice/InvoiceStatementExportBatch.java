@@ -19,11 +19,11 @@ import java.util.Objects;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "batchStatus", "invoiceStatement", "dateAdded", "dateLastModified", "owner"})
-public class InvoiceStatementExportBatch extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity {
+public class InvoiceStatementExportBatch extends AbstractEntity implements QueryEntity, DateLastModifiedEntity {
 
     private Integer id;
     private SimplifiedOptionsLookup batchStatus;
-    private OneToMany<InvoiceStatement> invoiceStatement;
+    private InvoiceStatement invoiceStatement;
     private DateTime dateAdded;
     private DateTime dateLastModified;
     private CorporateUser owner;
@@ -60,12 +60,12 @@ public class InvoiceStatementExportBatch extends AbstractEntity implements Query
     }
 
     @JsonProperty("invoiceStatement")
-    public OneToMany<InvoiceStatement> getInvoiceStatement() {
+    public InvoiceStatement getInvoiceStatement() {
         return invoiceStatement;
     }
 
     @JsonProperty("invoiceStatement")
-    public void setInvoiceStatements(OneToMany<InvoiceStatement> invoiceStatement) {
+    public void setInvoiceStatements(InvoiceStatement invoiceStatement) {
         this.invoiceStatement = invoiceStatement;
     }
 

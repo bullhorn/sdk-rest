@@ -22,7 +22,7 @@ import java.util.Objects;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "batchStatus", "billMasterTransactions", "billableCharges", "dateAdded",
     "dateLastModified", "owner"})
-public class InvoiceStatementBatch extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity {
+public class InvoiceStatementBatch extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
     private SimplifiedOptionsLookup batchStatus;
