@@ -10,6 +10,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
 import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.log4j.Logger;
@@ -139,6 +141,108 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
                 associationIds.add(linkedIds.getData().get(0).getId());
                 testAssociation(Lead.class, testEntities.getLeadId(), associationIds, association);
+
+            }
+        }
+    }
+
+    @Test
+    public void testAssociateUnbilledRevenueDistribution() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        UnbilledRevenueDistribution entity = bullhornData.findEntity(UnbilledRevenueDistribution.class, testEntities.getUnbilledRevenueDistributionId(), getAssociationFieldSet(AssociationFactory.unbilledRevenueDistributionAssociations()));
+        for (AssociationField<UnbilledRevenueDistribution, ? extends BullhornEntity> association : AssociationFactory.unbilledRevenueDistributionAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(UnbilledRevenueDistribution.class, testEntities.getUnbilledRevenueDistributionId(), associationIds, association);
+
+            }
+        }
+    }
+
+    @Test
+    public void testAssociateInvoiceTerm() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        InvoiceTerm entity = bullhornData.findEntity(InvoiceTerm.class, testEntities.getInvoiceTermId(), getAssociationFieldSet(AssociationFactory.invoiceTermAssociations()));
+        for (AssociationField<InvoiceTerm, ? extends BullhornEntity> association : AssociationFactory.invoiceTermAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(InvoiceTerm.class, testEntities.getInvoiceTermId(), associationIds, association);
+
+            }
+        }
+    }
+
+    @Test
+    public void testAssociateInvoiceStatementLineItem() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        InvoiceStatementLineItem entity = bullhornData.findEntity(InvoiceStatementLineItem.class, testEntities.getInvoiceStatementLineItemId(), getAssociationFieldSet(AssociationFactory.invoiceStatementLineItemAssociations()));
+        for (AssociationField<InvoiceStatementLineItem, ? extends BullhornEntity> association : AssociationFactory.invoiceStatementLineItemAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(InvoiceStatementLineItem.class, testEntities.getInvoiceStatementLineItemId(), associationIds, association);
+
+            }
+        }
+    }
+
+    @Test
+    public void testAssociateInvoiceStatement() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        InvoiceStatement entity = bullhornData.findEntity(InvoiceStatement.class, testEntities.getInvoiceStatementId(), getAssociationFieldSet(AssociationFactory.invoiceStatementAssociations()));
+        for (AssociationField<InvoiceStatement, ? extends BullhornEntity> association : AssociationFactory.invoiceStatementAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(InvoiceStatement.class, testEntities.getInvoiceStatementId(), associationIds, association);
+
+            }
+        }
+    }
+
+    @Test
+    public void testAssociateInvoiceStatementBatch() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        InvoiceStatementBatch entity = bullhornData.findEntity(InvoiceStatementBatch.class, testEntities.getInvoiceStatementBatchId(), getAssociationFieldSet(AssociationFactory.invoiceStatementBatchAssociations()));
+        for (AssociationField<InvoiceStatementBatch, ? extends BullhornEntity> association : AssociationFactory.invoiceStatementBatchAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(InvoiceStatementBatch.class, testEntities.getInvoiceStatementBatchId(), associationIds, association);
+
+            }
+        }
+    }
+
+    @Test
+    public void testAssociateInvoiceStatementDistributionBatch() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        InvoiceStatementDistributionBatch entity = bullhornData.findEntity(InvoiceStatementDistributionBatch.class, testEntities.getInvoiceStatementDistributionBatchId(), getAssociationFieldSet(AssociationFactory.invoiceStatementDistributionBatchAssociations()));
+        for (AssociationField<InvoiceStatementDistributionBatch, ? extends BullhornEntity> association : AssociationFactory.invoiceStatementDistributionBatchAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(InvoiceStatementDistributionBatch.class, testEntities.getInvoiceStatementDistributionBatchId(), associationIds, association);
 
             }
         }

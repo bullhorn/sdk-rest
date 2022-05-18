@@ -4,10 +4,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOp
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
@@ -15,7 +12,7 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "accountingCode", "creditAmount", "currencyUnit", "dateAdded", "dateLastModified", "debitAmount", "description",
+@JsonPropertyOrder({"id", "accountingCode", "creditAmount", "currencyUnit", "dateAdded", "dateLastModified", "customText1", "customText2", "debitAmount", "description",
     "invoiceStatement", "invoiceStatementDistributionBatch", "invoiceStatementLineDistributionTypeLookup", "invoiceStatementLineItem"
 })
 public class InvoiceStatementLineDistribution extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity {
@@ -26,6 +23,10 @@ public class InvoiceStatementLineDistribution extends AbstractEntity implements 
     private CurrencyUnit currencyUnit;
     private DateTime dateAdded;
     private DateTime dateLastModified;
+    @JsonIgnore
+    private String customText1;
+    @JsonIgnore
+    private String customText2;
     private BigDecimal debitAmount;
     private String description;
     private InvoiceStatement invoiceStatement;
@@ -117,6 +118,26 @@ public class InvoiceStatementLineDistribution extends AbstractEntity implements 
         this.description = description;
     }
 
+    @JsonProperty("customText1")
+    public String getCustomText1() {
+        return customText1;
+    }
+
+    @JsonProperty("customText1")
+    public void setCustomText1(String customText1) {
+        this.customText1 = customText1;
+    }
+
+    @JsonProperty("customText2")
+    public String getCustomText2() {
+        return customText2;
+    }
+
+    @JsonProperty("customText2")
+    public void setCustomText2(String customText2) {
+        this.customText2 = customText2;
+    }
+
     @JsonProperty("invoiceStatement")
     public InvoiceStatement getInvoiceStatement() {
         return invoiceStatement;
@@ -168,6 +189,8 @@ public class InvoiceStatementLineDistribution extends AbstractEntity implements 
             Objects.equals(currencyUnit, that.currencyUnit) &&
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
+            Objects.equals(customText1, that.customText1) &&
+            Objects.equals(customText2, that.customText2) &&
             Objects.equals(debitAmount, that.debitAmount) &&
             Objects.equals(description, that.description) &&
             Objects.equals(invoiceStatement, that.invoiceStatement) &&
@@ -178,7 +201,8 @@ public class InvoiceStatementLineDistribution extends AbstractEntity implements 
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, accountingCode, creditAmount, currencyUnit, dateAdded, dateLastModified, debitAmount, description, invoiceStatement, invoiceStatementDistributionBatch, invoiceStatementLineDistributionTypeLookup, invoiceStatementLineItem);
+
+        return Objects.hash(id, accountingCode, creditAmount, currencyUnit, dateAdded, dateLastModified, customText1, customText2, debitAmount, description, invoiceStatement, invoiceStatementDistributionBatch, invoiceStatementLineDistributionTypeLookup, invoiceStatementLineItem);
     }
 
     @Override
@@ -190,6 +214,8 @@ public class InvoiceStatementLineDistribution extends AbstractEntity implements 
             ", currencyUnit=" + currencyUnit +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
+            ", customText1='" + customText1 + '\'' +
+            ", customText2='" + customText2 + '\'' +
             ", debitAmount=" + debitAmount +
             ", description='" + description + '\'' +
             ", invoiceStatement=" + invoiceStatement +

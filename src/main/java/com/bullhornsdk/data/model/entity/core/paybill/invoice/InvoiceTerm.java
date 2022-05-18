@@ -1,8 +1,11 @@
 package com.bullhornsdk.data.model.entity.core.paybill.invoice;
 
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.rate.DiscountRate;
+import com.bullhornsdk.data.model.entity.core.paybill.rate.SurchargeRate;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
+import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
@@ -30,11 +33,11 @@ import java.util.Objects;
     "customText4", "customText5", "customText6", "customText7",
     "customText8", "customText9", "customTextBlock1", "customTextBlock2",
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
-    "dateAdded", "dateLastModified", "description", "effectiveDate",
+    "dateAdded", "dateLastModified", "description", "discountRates", "effectiveDate",
     "effectiveEndDate", "externalID", "fileTypesForInvoicing", "generalLedgerAccountsReceivable", "includeAttachments",
     "invoiceApprovedTimecardsRequired", "invoiceGroupBy", "invoiceOn", "invoiceSplitBy",
-    "invoiceStatementTemplate", "invoiceSummarizeBy", "isDeleted", "isFirst", "paymentTerms",
-    "purchaseOrderRequired", "remitInstructions", "status", "title", "versionID", "versions", "waitForTimecards"})
+    "invoiceStatementTemplate", "invoiceSummarizeBy", "isDeleted", "isFirst", "owner", "payBillCycle", "paymentTerms",
+    "purchaseOrderRequired", "remitInstructions", "status", "surchargeRates", "title", "versionID", "versions", "waitForTimecards"})
 public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, EffectiveDateEntity,
     DateLastModifiedEntity, SoftDeleteEntity, AssociationEntity {
 
@@ -52,6 +55,8 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
 
     @JsonIgnore
     private String description;
+
+    private OneToMany<DiscountRate> discountRates;
 
     private String effectiveDate;
 
@@ -87,6 +92,10 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
 
     private Boolean isFirst;
 
+    private CorporateUser owner;
+
+    private PayBillCycle payBillCycle;
+
     @JsonIgnore
     private String paymentTerms;
 
@@ -97,6 +106,8 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
 
     @JsonIgnore
     private String status;
+
+    private OneToMany<SurchargeRate> surchargeRates;
 
     @JsonIgnore
     private String title;
@@ -202,6 +213,16 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
     @JsonIgnore
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @JsonProperty("discountRates")
+    public OneToMany<DiscountRate> getDiscountRates() {
+        return discountRates;
+    }
+
+    @JsonProperty("discountRates")
+    public void setDiscountRates(OneToMany<DiscountRate> discountRates) {
+        this.discountRates = discountRates;
     }
 
     @JsonProperty("effectiveDate")
@@ -354,16 +375,6 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
         this.purchaseOrderRequired = purchaseOrderRequired;
     }
 
-    @JsonProperty("isDeleted")
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    @JsonProperty("isDeleted")
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
     @JsonProperty("remitInstructions")
     public String getRemitInstructions() {
         return remitInstructions;
@@ -382,6 +393,51 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
     @JsonIgnore
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @JsonProperty("isDeleted")
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    @JsonProperty("isDeleted")
+    public void setIsDeleted(Boolean deleted) {
+        isDeleted = deleted;
+    }
+
+    @JsonProperty("isFirst")
+    public Boolean getFirst() {
+        return isFirst;
+    }
+
+    @JsonProperty("owner")
+    public CorporateUser getOwner() {
+        return owner;
+    }
+
+    @JsonProperty("owner")
+    public void setOwner(CorporateUser owner) {
+        this.owner = owner;
+    }
+
+    @JsonProperty("payBillCycle")
+    public PayBillCycle getPayBillCycle() {
+        return payBillCycle;
+    }
+
+    @JsonProperty("payBillCycle")
+    public void setPayBillCycle(PayBillCycle payBillCycle) {
+        this.payBillCycle = payBillCycle;
+    }
+
+    @JsonProperty("surchargeRates")
+    public OneToMany<SurchargeRate> getSurchargeRates() {
+        return surchargeRates;
+    }
+
+    @JsonProperty("surchargeRates")
+    public void setSurchargeRates(OneToMany<SurchargeRate> surchargeRates) {
+        this.surchargeRates = surchargeRates;
     }
 
     @JsonProperty("title")
@@ -437,6 +493,7 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
             Objects.equals(description, that.description) &&
+            Objects.equals(discountRates, that.discountRates) &&
             Objects.equals(effectiveDate, that.effectiveDate) &&
             Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
             Objects.equals(externalID, that.externalID) &&
@@ -451,10 +508,13 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
             Objects.equals(invoiceSummarizeBy, that.invoiceSummarizeBy) &&
             Objects.equals(isDeleted, that.isDeleted) &&
             Objects.equals(isFirst, that.isFirst) &&
+            Objects.equals(owner, that.owner) &&
+            Objects.equals(payBillCycle, that.payBillCycle) &&
             Objects.equals(paymentTerms, that.paymentTerms) &&
             Objects.equals(purchaseOrderRequired, that.purchaseOrderRequired) &&
             Objects.equals(remitInstructions, that.remitInstructions) &&
             Objects.equals(status, that.status) &&
+            Objects.equals(surchargeRates, that.surchargeRates) &&
             Objects.equals(title, that.title) &&
             Objects.equals(versionID, that.versionID) &&
             Objects.equals(versions, that.versions) &&
@@ -463,7 +523,8 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, approvalRequired, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, effectiveDate, effectiveEndDate, externalID, fileTypesForInvoicing, generalLedgerAccountsReceivable, includeAttachments, invoiceApprovedTimecardsRequired, invoiceGroupBy, invoiceOn, invoiceSplitBy, invoiceStatementTemplate, invoiceSummarizeBy, isDeleted, isFirst, paymentTerms, purchaseOrderRequired, remitInstructions, status, title, versionID, versions, waitForTimecards);
+
+        return Objects.hash(super.hashCode(), id, approvalRequired, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, discountRates, effectiveDate, effectiveEndDate, externalID, fileTypesForInvoicing, generalLedgerAccountsReceivable, includeAttachments, invoiceApprovedTimecardsRequired, invoiceGroupBy, invoiceOn, invoiceSplitBy, invoiceStatementTemplate, invoiceSummarizeBy, isDeleted, isFirst, owner, payBillCycle, paymentTerms, purchaseOrderRequired, remitInstructions, status, surchargeRates, title, versionID, versions, waitForTimecards);
     }
 
     @Override
@@ -476,8 +537,9 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
             ", description='" + description + '\'' +
-            ", effectiveDate=" + effectiveDate +
-            ", effectiveEndDate=" + effectiveEndDate +
+            ", discountRates=" + discountRates +
+            ", effectiveDate='" + effectiveDate + '\'' +
+            ", effectiveEndDate='" + effectiveEndDate + '\'' +
             ", externalID='" + externalID + '\'' +
             ", fileTypesForInvoicing=" + fileTypesForInvoicing +
             ", generalLedgerAccountsReceivable=" + generalLedgerAccountsReceivable +
@@ -490,10 +552,13 @@ public class InvoiceTerm extends CustomFieldsB implements QueryEntity, UpdateEnt
             ", invoiceSummarizeBy='" + invoiceSummarizeBy + '\'' +
             ", isDeleted=" + isDeleted +
             ", isFirst=" + isFirst +
+            ", owner=" + owner +
+            ", payBillCycle=" + payBillCycle +
             ", paymentTerms='" + paymentTerms + '\'' +
             ", purchaseOrderRequired=" + purchaseOrderRequired +
             ", remitInstructions='" + remitInstructions + '\'' +
             ", status='" + status + '\'' +
+            ", surchargeRates=" + surchargeRates +
             ", title='" + title + '\'' +
             ", versionID=" + versionID +
             ", versions=" + versions +

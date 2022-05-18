@@ -127,6 +127,20 @@ public class TestEntities {
 
     private Integer federalTaxFormId;
 
+    private Integer unbilledRevenueDistributionId;
+
+    private Integer invoiceTermVersionId;
+
+    private Integer invoiceTermId;
+
+    private Integer invoiceStatementLineItemId;
+
+    private Integer invoiceStatementBatchId;
+
+    private Integer invoiceStatementId;
+
+    private Integer invoiceStatementDistributionBatchId;
+
     public TestEntities() {
         super();
         this.appointmentId = 1;
@@ -245,6 +259,19 @@ public class TestEntities {
 
         this.federalTaxFormId = 1;
 
+        this.unbilledRevenueDistributionId = 1;
+
+        this.invoiceTermVersionId = 1;
+
+        this.invoiceTermId = 1;
+
+        this.invoiceStatementLineItemId = 1;
+
+        this.invoiceStatementBatchId = 1;
+
+        this.invoiceStatementId = 1;
+
+        this.invoiceStatementDistributionBatchId = 1;
     }
 
     public Integer getAppointmentId() {
@@ -711,6 +738,62 @@ public class TestEntities {
         this.federalTaxFormId = federalTaxFormId;
     }
 
+    public Integer getUnbilledRevenueDistributionId() {
+        return unbilledRevenueDistributionId;
+    }
+
+    public void setUnbilledRevenueDistributionId(Integer unbilledRevenueDistributionId) {
+        this.unbilledRevenueDistributionId = unbilledRevenueDistributionId;
+    }
+
+    public Integer getInvoiceTermVersionId() {
+        return invoiceTermVersionId;
+    }
+
+    public void setInvoiceTermVersionId(Integer invoiceTermVersionId) {
+        this.invoiceTermVersionId = invoiceTermVersionId;
+    }
+
+    public Integer getInvoiceTermId() {
+        return invoiceTermId;
+    }
+
+    public void setInvoiceTermId(Integer invoiceTermId) {
+        this.invoiceTermId = invoiceTermId;
+    }
+
+    public Integer getInvoiceStatementLineItemId() {
+        return invoiceStatementLineItemId;
+    }
+
+    public void setInvoiceStatementLineItemId(Integer invoiceStatementLineItem) {
+        this.invoiceStatementLineItemId = invoiceStatementLineItem;
+    }
+
+    public Integer getInvoiceStatementBatchId() {
+        return invoiceStatementBatchId;
+    }
+
+    public void setInvoiceStatementBatchId(Integer invoiceStatementBatchId) {
+        this.invoiceStatementBatchId = invoiceStatementBatchId;
+    }
+
+    public Integer getInvoiceStatementDistributionBatchId() {
+        return invoiceStatementDistributionBatchId;
+    }
+
+    public void setInvoiceStatementDistributionBatchId(Integer invoiceStatementDistributionBatchId) {
+        this.invoiceStatementDistributionBatchId = invoiceStatementDistributionBatchId;
+    }
+
+    public Integer getInvoiceStatementId() {
+        return invoiceStatementId;
+    }
+
+    public void setInvoiceStatementId(Integer invoiceStatementId) {
+        this.invoiceStatementId = invoiceStatementId;
+    }
+
     @Override
     public String toString() {
         return "TestEntities{" +
@@ -738,6 +821,7 @@ public class TestEntities {
             ", housingComplexId=" + housingComplexId +
             ", jobOrderId=" + jobOrderId +
             ", jobBoardPostId=" + jobBoardPostId +
+            ", jobShiftId=" + jobShiftId +
             ", jobSubmissionId=" + jobSubmissionId +
             ", jobSubmissionHistoryId=" + jobSubmissionHistoryId +
             ", leadId=" + leadId +
@@ -771,6 +855,13 @@ public class TestEntities {
             ", localTaxFormId=" + localTaxFormId +
             ", stateTaxFormId=" + stateTaxFormId +
             ", federalTaxFormId=" + federalTaxFormId +
+            ", unbilledRevenueDistributionId=" + unbilledRevenueDistributionId +
+            ", invoiceTermVersionId=" + invoiceTermVersionId +
+            ", invoiceTermId=" + invoiceTermId +
+            ", invoiceStatementLineItemId=" + invoiceStatementLineItemId +
+            ", invoiceStatementBatchId=" + invoiceStatementBatchId +
+            ", invoiceStatementId=" + invoiceStatementId +
+            ", invoiceStatementDistributionBatchId=" + invoiceStatementDistributionBatchId +
             '}';
     }
 }

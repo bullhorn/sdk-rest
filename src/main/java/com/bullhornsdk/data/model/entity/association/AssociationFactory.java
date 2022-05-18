@@ -1,12 +1,11 @@
 package com.bullhornsdk.data.model.entity.association;
 
-import com.bullhornsdk.data.model.entity.association.paybill.BillingProfileAssociations;
-import com.bullhornsdk.data.model.entity.association.paybill.InvoiceTermAssociations;
-import com.bullhornsdk.data.model.entity.association.paybill.LocationAssociations;
+import com.bullhornsdk.data.model.entity.association.paybill.*;
 import com.bullhornsdk.data.model.entity.association.standard.*;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
-import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
+import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -38,6 +37,12 @@ public class AssociationFactory {
     private static final BillingProfileAssociations billingProfileAssociations = BillingProfileAssociations.getInstance();
     private static final LocationAssociations locationAssociations = LocationAssociations.getInstance();
     private static final InvoiceTermAssociations invoiceTermAssociations = InvoiceTermAssociations.getInstance();
+    private static final InvoiceStatementAssociations invoiceStatementAssociations = InvoiceStatementAssociations.getInstance();
+    private static final InvoiceStatementBatchAssociations invoiceStatementBatchAssociations = InvoiceStatementBatchAssociations.getInstance();
+    private static final InvoiceStatementDistributionBatchAssociations invoiceStatementDistributionBatchAssociations = InvoiceStatementDistributionBatchAssociations.getInstance();
+    private static final InvoiceStatementLineItemAssociations invoiceStatementLineItemAssociations = InvoiceStatementLineItemAssociations.getInstance();
+    private static final InvoiceTermVersionAssociations invoiceTermVersionAssociations = InvoiceTermVersionAssociations.getInstance();
+    private static final UnbilledRevenueDistributionAssociations unbilledRevenueDistributionAssociations = UnbilledRevenueDistributionAssociations.getInstance();
 
     /**
      * Returns the AssociationField for the passed in entity type (Candiate, ClientContact etc.), with the association name of the
@@ -134,8 +139,36 @@ public class AssociationFactory {
             return (EntityAssociations<T>) invoiceTermAssociations;
         }
 
+        if (type == InvoiceTermVersion.class) {
+            return (EntityAssociations<T>) invoiceTermVersionAssociations;
+        }
+
+        if (type == InvoiceStatement.class) {
+            return (EntityAssociations<T>) invoiceStatementAssociations;
+        }
+
+        if (type == InvoiceStatementBatch.class) {
+            return (EntityAssociations<T>) invoiceStatementBatchAssociations;
+        }
+
+        if (type == InvoiceStatementDistributionBatch.class) {
+            return (EntityAssociations<T>) invoiceStatementDistributionBatchAssociations;
+        }
+
+        if (type == InvoiceStatementLineItem.class) {
+            return (EntityAssociations<T>) invoiceStatementLineItemAssociations;
+        }
+
+        if (type == InvoiceTermVersion.class) {
+            return (EntityAssociations<T>) invoiceTermVersionAssociations;
+        }
+
         if (type == Location.class) {
             return (EntityAssociations<T>) locationAssociations;
+        }
+
+        if (type == UnbilledRevenueDistribution.class) {
+            return (EntityAssociations<T>) unbilledRevenueDistributionAssociations;
         }
 
         return null;
@@ -307,6 +340,60 @@ public class AssociationFactory {
      */
     public static WorkersCompensationAssociations workersCompensationAssociations() {
         return workersCompensationAssociations;
+    }
+
+    /**
+     * Returns the associations for InvoiceTermVersion
+     *
+     * @return
+     */
+    public static InvoiceTermVersionAssociations invoiceTermVersionAssociations() {
+        return invoiceTermVersionAssociations;
+    }
+
+    /**
+     * Returns the associations for InvoiceStatement
+     *
+     * @return
+     */
+    public static InvoiceStatementAssociations invoiceStatementAssociations() {
+        return invoiceStatementAssociations;
+    }
+
+    /**
+     * Returns the associations for InvoiceTermVersion
+     *
+     * @return
+     */
+    public static InvoiceStatementLineItemAssociations invoiceStatementLineItemAssociations() {
+        return invoiceStatementLineItemAssociations;
+    }
+
+    /**
+     * Returns the associations for InvoiceStatementBatch
+     *
+     * @return
+     */
+    public static InvoiceStatementBatchAssociations invoiceStatementBatchAssociations() {
+        return invoiceStatementBatchAssociations;
+    }
+
+    /**
+     * Returns the associations for InvoiceStatementDistributionBatch
+     *
+     * @return
+     */
+    public static InvoiceStatementDistributionBatchAssociations invoiceStatementDistributionBatchAssociations() {
+        return invoiceStatementDistributionBatchAssociations;
+    }
+
+    /**
+     * Returns the associations for UnbilledRevenueDistributionAssociations
+     *
+     * @return
+     */
+    public static UnbilledRevenueDistributionAssociations unbilledRevenueDistributionAssociations() {
+        return unbilledRevenueDistributionAssociations;
     }
 
 }

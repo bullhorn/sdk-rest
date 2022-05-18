@@ -4,6 +4,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 
@@ -27,12 +28,12 @@ import java.util.Objects;
     "customText8", "customText9", "customTextBlock1", "customTextBlock2",
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "description", "effectiveDate",
-    "effectiveEndDate", "externalID", "generalLedgerAccountsReceivable", "includeAttachments",
+    "effectiveEndDate", "externalID", "fileTypesForInvoicing", "generalLedgerAccountsReceivable", "includeAttachments",
     "invoiceApprovedTimecardsRequired", "invoiceGroupBy", "invoiceOn", "invoiceSplitBy",
-    "invoiceStatementTemplate", "invoiceSummarizeBy", "isFirst", "paymentTerms",
+    "invoiceStatementTemplate", "invoiceSummarizeBy", "isFirst", "payBillCycle", "paymentTerms",
     "purchaseOrderRequired", "remitInstructions", "status", "title", "waitForTimecards"})
 public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
-    UpdateEntity, CreateEntity, DateLastModifiedEntity, EffectiveDateEntity {
+    UpdateEntity, CreateEntity, DateLastModifiedEntity, EffectiveDateEntity, AssociationEntity {
 
     private Integer id;
 
@@ -49,6 +50,8 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
 
     @JsonIgnore
     private String externalID;
+
+    private OneToMany<BillingSyncBatchFileTypeLookup> fileTypesForInvoicing;
 
     private GeneralLedgerAccount generalLedgerAccountsReceivable;
 
@@ -75,6 +78,8 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
     private String invoiceSummarizeBy;
 
     private Boolean isFirst;
+
+    private PayBillCycle payBillCycle;
 
     @JsonIgnore
     private String paymentTerms;
@@ -357,28 +362,57 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
         this.waitForTimecards = waitForTimecards;
     }
 
+    @JsonProperty("fileTypesForInvoicing")
+    public OneToMany<BillingSyncBatchFileTypeLookup> getFileTypesForInvoicing() {
+        return fileTypesForInvoicing;
+    }
+
+    @JsonProperty("fileTypesForInvoicing")
+    public void setFileTypesForInvoicing(OneToMany<BillingSyncBatchFileTypeLookup> fileTypesForInvoicing) {
+        this.fileTypesForInvoicing = fileTypesForInvoicing;
+    }
+
+    @JsonProperty("isFirst")
+    public Boolean getFirst() {
+        return isFirst;
+    }
+
+    @JsonProperty("payBillCycle")
+    public PayBillCycle getPayBillCycle() {
+        return payBillCycle;
+    }
+
+    @JsonProperty("payBillCycle")
+    public void setPayBillCycle(PayBillCycle payBillCycle) {
+        this.payBillCycle = payBillCycle;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         InvoiceTermVersion that = (InvoiceTermVersion) o;
-        return isFirst == that.isFirst &&
-            Objects.equals(id, that.id) &&
+        return Objects.equals(id, that.id) &&
             Objects.equals(approvalRequired, that.approvalRequired) &&
             Objects.equals(currencyUnit, that.currencyUnit) &&
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
             Objects.equals(description, that.description) &&
             Objects.equals(externalID, that.externalID) &&
+            Objects.equals(fileTypesForInvoicing, that.fileTypesForInvoicing) &&
             Objects.equals(generalLedgerAccountsReceivable, that.generalLedgerAccountsReceivable) &&
             Objects.equals(includeAttachments, that.includeAttachments) &&
             Objects.equals(invoiceApprovedTimecardsRequired, that.invoiceApprovedTimecardsRequired) &&
             Objects.equals(invoiceGroupBy, that.invoiceGroupBy) &&
             Objects.equals(invoiceOn, that.invoiceOn) &&
             Objects.equals(invoiceSplitBy, that.invoiceSplitBy) &&
+            Objects.equals(effectiveDate, that.effectiveDate) &&
+            Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
             Objects.equals(invoiceStatementTemplate, that.invoiceStatementTemplate) &&
             Objects.equals(invoiceSummarizeBy, that.invoiceSummarizeBy) &&
+            Objects.equals(isFirst, that.isFirst) &&
+            Objects.equals(payBillCycle, that.payBillCycle) &&
             Objects.equals(paymentTerms, that.paymentTerms) &&
             Objects.equals(purchaseOrderRequired, that.purchaseOrderRequired) &&
             Objects.equals(remitInstructions, that.remitInstructions) &&
@@ -389,7 +423,8 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, approvalRequired, currencyUnit, dateAdded, dateLastModified, description, externalID, generalLedgerAccountsReceivable, includeAttachments, invoiceApprovedTimecardsRequired, invoiceGroupBy, invoiceOn, invoiceSplitBy, invoiceStatementTemplate, invoiceSummarizeBy, isFirst, paymentTerms, purchaseOrderRequired, remitInstructions, status, title, waitForTimecards);
+
+        return Objects.hash(super.hashCode(), id, approvalRequired, currencyUnit, dateAdded, dateLastModified, description, externalID, fileTypesForInvoicing, generalLedgerAccountsReceivable, includeAttachments, invoiceApprovedTimecardsRequired, invoiceGroupBy, invoiceOn, invoiceSplitBy, effectiveDate, effectiveEndDate, invoiceStatementTemplate, invoiceSummarizeBy, isFirst, payBillCycle, paymentTerms, purchaseOrderRequired, remitInstructions, status, title, waitForTimecards);
     }
 
     @Override
@@ -402,15 +437,19 @@ public class InvoiceTermVersion extends CustomFieldsB implements QueryEntity,
             ", dateLastModified=" + dateLastModified +
             ", description='" + description + '\'' +
             ", externalID='" + externalID + '\'' +
+            ", fileTypesForInvoicing=" + fileTypesForInvoicing +
             ", generalLedgerAccountsReceivable=" + generalLedgerAccountsReceivable +
             ", includeAttachments=" + includeAttachments +
             ", invoiceApprovedTimecardsRequired=" + invoiceApprovedTimecardsRequired +
             ", invoiceGroupBy='" + invoiceGroupBy + '\'' +
             ", invoiceOn='" + invoiceOn + '\'' +
             ", invoiceSplitBy='" + invoiceSplitBy + '\'' +
+            ", effectiveDate='" + effectiveDate + '\'' +
+            ", effectiveEndDate='" + effectiveEndDate + '\'' +
             ", invoiceStatementTemplate=" + invoiceStatementTemplate +
             ", invoiceSummarizeBy='" + invoiceSummarizeBy + '\'' +
             ", isFirst=" + isFirst +
+            ", payBillCycle=" + payBillCycle +
             ", paymentTerms='" + paymentTerms + '\'' +
             ", purchaseOrderRequired=" + purchaseOrderRequired +
             ", remitInstructions='" + remitInstructions + '\'' +

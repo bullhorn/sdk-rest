@@ -24,6 +24,7 @@ public class InvoiceStatementTax extends AbstractEntity implements QueryEntity, 
     private Integer id;
     private BigDecimal finalizedValue;
     private InvoiceStatement invoiceStatement;
+    private Boolean isDeleted;
     private Tax tax;
 
     public InvoiceStatementTax() {
@@ -67,9 +68,14 @@ public class InvoiceStatementTax extends AbstractEntity implements QueryEntity, 
         this.invoiceStatement = invoiceStatement;
     }
 
-    @Override
+    @JsonProperty("isDeleted")
     public Boolean getIsDeleted() {
-        return null;
+        return isDeleted;
+    }
+
+    @JsonProperty("isDeleted")
+    public void setIsDeleted(Boolean deleted) {
+        isDeleted = deleted;
     }
 
     @JsonProperty("tax")
@@ -83,16 +89,6 @@ public class InvoiceStatementTax extends AbstractEntity implements QueryEntity, 
     }
 
     @Override
-    public String toString() {
-        return "InvoiceStatementTax{" +
-            "id=" + id +
-            ", finalizedValue=" + finalizedValue +
-            ", invoiceStatement=" + invoiceStatement +
-            ", tax=" + tax +
-            '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -100,11 +96,24 @@ public class InvoiceStatementTax extends AbstractEntity implements QueryEntity, 
         return Objects.equals(id, that.id) &&
             Objects.equals(finalizedValue, that.finalizedValue) &&
             Objects.equals(invoiceStatement, that.invoiceStatement) &&
+            Objects.equals(isDeleted, that.isDeleted) &&
             Objects.equals(tax, that.tax);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, finalizedValue, invoiceStatement, tax);
+
+        return Objects.hash(id, finalizedValue, invoiceStatement, isDeleted, tax);
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementTax{" +
+            "id=" + id +
+            ", finalizedValue=" + finalizedValue +
+            ", invoiceStatement=" + invoiceStatement +
+            ", isDeleted=" + isDeleted +
+            ", tax=" + tax +
+            '}';
     }
 }
