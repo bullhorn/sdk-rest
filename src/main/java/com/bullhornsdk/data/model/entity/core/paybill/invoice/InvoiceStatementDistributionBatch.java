@@ -19,7 +19,7 @@ import java.util.Objects;
 @JsonPropertyOrder({"id", "accountingDate", "batchStatus", "canvasReport", "dateAdded", "dateLastModified", "invoiceStatementLineDistributions",
     "invoiceStatements", "owner"
 })
-public class InvoiceStatementDistributionBatch extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity {
+public class InvoiceStatementDistributionBatch extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
     private DateTime accountingDate;

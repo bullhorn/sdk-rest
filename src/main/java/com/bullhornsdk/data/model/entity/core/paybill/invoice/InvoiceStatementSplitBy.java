@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
 
 import java.util.Objects;
 
@@ -15,10 +16,11 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "invoiceStatement", "field", "value", "displayValue", "sortOrder"})
+@JsonPropertyOrder({"id", "dateAdded", "invoiceStatement", "field", "value", "displayValue", "sortOrder"})
 public class InvoiceStatementSplitBy extends AbstractEntity implements QueryEntity {
 
     private Integer id;
+    private DateTime dateAdded;
     private InvoiceStatement invoiceStatement;
     private String field;
     private String value;
@@ -45,13 +47,23 @@ public class InvoiceStatementSplitBy extends AbstractEntity implements QueryEnti
         this.id = id;
     }
 
+    @JsonProperty("dateAdded")
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
+
+    @JsonProperty("dateAdded")
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
     @JsonProperty("invoiceStatement")
-    public InvoiceStatement getInvoiceStatementLineItem() {
+    public InvoiceStatement getInvoiceStatement() {
         return invoiceStatement;
     }
 
     @JsonProperty("invoiceStatement")
-    public void invoiceStatement(InvoiceStatement invoiceStatement) {
+    public void setInvoiceStatement(InvoiceStatement invoiceStatement) {
         this.invoiceStatement = invoiceStatement;
     }
 
@@ -96,23 +108,12 @@ public class InvoiceStatementSplitBy extends AbstractEntity implements QueryEnti
     }
 
     @Override
-    public String toString() {
-        return "InvoiceStatementSplitBy{" +
-            "id=" + id +
-            ", invoiceStatement=" + invoiceStatement +
-            ", field='" + field + '\'' +
-            ", value='" + value + '\'' +
-            ", displayValue='" + displayValue + '\'' +
-            ", sortOrder=" + sortOrder +
-            '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InvoiceStatementSplitBy that = (InvoiceStatementSplitBy) o;
         return Objects.equals(id, that.id) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(invoiceStatement, that.invoiceStatement) &&
             Objects.equals(field, that.field) &&
             Objects.equals(value, that.value) &&
@@ -122,6 +123,20 @@ public class InvoiceStatementSplitBy extends AbstractEntity implements QueryEnti
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, invoiceStatement, field, value, displayValue, sortOrder);
+
+        return Objects.hash(id, dateAdded, invoiceStatement, field, value, displayValue, sortOrder);
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceStatementSplitBy{" +
+            "id=" + id +
+            ", dateAdded=" + dateAdded +
+            ", invoiceStatement=" + invoiceStatement +
+            ", field='" + field + '\'' +
+            ", value='" + value + '\'' +
+            ", displayValue='" + displayValue + '\'' +
+            ", sortOrder=" + sortOrder +
+            '}';
     }
 }

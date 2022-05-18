@@ -14,12 +14,14 @@ import java.util.Objects;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "messageText", "name", "owner", "subject" })
+@JsonPropertyOrder({ "id", "dateAdded", "fromEmail", "messageText", "name", "owner", "subject" })
 public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntity, CreateEntity {
 
     private Integer id;
 
     private DateTime dateAdded;
+
+    private String fromEmail;
 
     private String messageText;
 
@@ -60,6 +62,16 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
     @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
         this.dateAdded = dateAdded;
+    }
+
+    @JsonProperty("fromEmail")
+    public String getFromEmail() {
+        return fromEmail;
+    }
+
+    @JsonProperty("fromEmail")
+    public void setFromEmail(String fromEmail) {
+        this.fromEmail = fromEmail;
     }
 
     @JsonProperty("messageText")
@@ -109,6 +121,7 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
         InvoiceStatementMessageTemplate that = (InvoiceStatementMessageTemplate) o;
         return Objects.equals(id, that.id) &&
             Objects.equals(dateAdded, that.dateAdded) &&
+            Objects.equals(fromEmail, that.fromEmail) &&
             Objects.equals(messageText, that.messageText) &&
             Objects.equals(name, that.name) &&
             Objects.equals(owner, that.owner) &&
@@ -117,7 +130,8 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dateAdded, messageText, name, owner, subject);
+
+        return Objects.hash(id, dateAdded, fromEmail, messageText, name, owner, subject);
     }
 
     @Override
@@ -125,6 +139,7 @@ public class InvoiceStatementMessageTemplate implements QueryEntity, UpdateEntit
         return "InvoiceStatementMessageTemplate{" +
             "id=" + id +
             ", dateAdded=" + dateAdded +
+            ", fromEmail='" + fromEmail + '\'' +
             ", messageText='" + messageText + '\'' +
             ", name='" + name + '\'' +
             ", owner=" + owner +
