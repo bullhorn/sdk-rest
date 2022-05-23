@@ -13,6 +13,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -69,7 +70,8 @@ import java.util.Objects;
         "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5",
         "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateAdded", "dateBegin",
 		"dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
-		"employmentType", "fee", "flatFee", "fileAttachments", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
+		"employmentType", "fee", "flatFee", "fileAttachments", "generalLedgerSegment1", "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4",
+        "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
 		"jobOrder", "jobSubmission", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
         "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
 		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
@@ -154,6 +156,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	private BigDecimal flatFee;
 
     private OneToMany<StandardFileAttachment> fileAttachments;
+
+    private GeneralLedgerSegment1 generalLedgerSegment1;
+
+    private GeneralLedgerSegment2 generalLedgerSegment2;
+
+    private GeneralLedgerSegment3 generalLedgerSegment3;
+
+    private GeneralLedgerSegment4 generalLedgerSegment4;
+
+    private GeneralLedgerSegment5 generalLedgerSegment5;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -616,6 +628,56 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 	public void setFlatFee(BigDecimal flatFee) {
 		this.flatFee = flatFee;
 	}
+
+    @JsonProperty("generalLedgerSegment1")
+    public GeneralLedgerSegment1 getGeneralLedgerSegment1() {
+        return generalLedgerSegment1;
+    }
+
+    @JsonProperty("generalLedgerSegment1")
+    public void setGeneralLedgerSegment1(GeneralLedgerSegment1 generalLedgerSegment1) {
+        this.generalLedgerSegment1 = generalLedgerSegment1;
+    }
+
+    @JsonProperty("generalLedgerSegment2")
+    public GeneralLedgerSegment2 getGeneralLedgerSegment2() {
+        return generalLedgerSegment2;
+    }
+
+    @JsonProperty("generalLedgerSegment2")
+    public void setGeneralLedgerSegment2(GeneralLedgerSegment2 generalLedgerSegment2) {
+        this.generalLedgerSegment2 = generalLedgerSegment2;
+    }
+
+    @JsonProperty("generalLedgerSegment3")
+    public GeneralLedgerSegment3 getGeneralLedgerSegment3() {
+        return generalLedgerSegment3;
+    }
+
+    @JsonProperty("generalLedgerSegment3")
+    public void setGeneralLedgerSegment3(GeneralLedgerSegment3 generalLedgerSegment3) {
+        this.generalLedgerSegment3 = generalLedgerSegment3;
+    }
+
+    @JsonProperty("generalLedgerSegment4")
+    public GeneralLedgerSegment4 getGeneralLedgerSegment4() {
+        return generalLedgerSegment4;
+    }
+
+    @JsonProperty("generalLedgerSegment4")
+    public void setGeneralLedgerSegment4(GeneralLedgerSegment4 generalLedgerSegment4) {
+        this.generalLedgerSegment4 = generalLedgerSegment4;
+    }
+
+    @JsonProperty("generalLedgerSegment5")
+    public GeneralLedgerSegment5 getGeneralLedgerSegment5() {
+        return generalLedgerSegment5;
+    }
+
+    @JsonProperty("generalLedgerSegment5")
+    public void setGeneralLedgerSegment5(GeneralLedgerSegment5 generalLedgerSegment5) {
+        this.generalLedgerSegment5 = generalLedgerSegment5;
+    }
 
 	@JsonProperty("hoursOfOperation")
 	public String getHoursOfOperation() {
@@ -1229,6 +1291,11 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(fee, placement.fee) &&
             Objects.equals(flatFee, placement.flatFee) &&
             Objects.equals(fileAttachments, placement.fileAttachments) &&
+            Objects.equals(generalLedgerSegment1, placement.generalLedgerSegment1) &&
+            Objects.equals(generalLedgerSegment2, placement.generalLedgerSegment2) &&
+            Objects.equals(generalLedgerSegment3, placement.generalLedgerSegment3) &&
+            Objects.equals(generalLedgerSegment4, placement.generalLedgerSegment4) &&
+            Objects.equals(generalLedgerSegment5, placement.generalLedgerSegment5) &&
             Objects.equals(hoursOfOperation, placement.hoursOfOperation) &&
             Objects.equals(hoursPerDay, placement.hoursPerDay) &&
             Objects.equals(housingManagerID, placement.housingManagerID) &&
@@ -1286,7 +1353,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
     }
 
     @Override
@@ -1325,6 +1392,11 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", fee=" + fee +
             ", flatFee=" + flatFee +
             ", fileAttachments=" + fileAttachments +
+            ", generalLedgerSegment1=" + generalLedgerSegment1 +
+            ", generalLedgerSegment2=" + generalLedgerSegment2 +
+            ", generalLedgerSegment3=" + generalLedgerSegment3 +
+            ", generalLedgerSegment4=" + generalLedgerSegment4 +
+            ", generalLedgerSegment5=" + generalLedgerSegment5 +
             ", hoursOfOperation='" + hoursOfOperation + '\'' +
             ", hoursPerDay=" + hoursPerDay +
             ", housingManagerID=" + housingManagerID +

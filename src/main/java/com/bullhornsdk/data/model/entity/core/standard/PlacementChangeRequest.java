@@ -1,9 +1,11 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import org.joda.time.DateTime;
 
@@ -38,7 +40,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
         "customText39", "customText4", "customText40", "customText5", "customText6", "customText7", "customText8", "customText9",
         "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded",
         "dateApproved", "dateBegin", "dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated",
-        "durationWeeks", "employeeType", "employmentType", "fee", "hoursOfOperation", "hoursPerDay", "housingManagerID",
+        "durationWeeks", "employeeType", "employmentType", "fee", "generalLedgerSegment1", "generalLedgerSegment2",
+        "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID",
         "housingStatus", "migrateGUID", "optionsPackage", "otExemption", "otherHourlyFee", "otherHourlyFeeComments",
         "overtimeRate", "payRate", "placement", "recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType",
         "reportTo", "requestCustomDate1", "requestCustomDate2", "requestCustomDate3", "requestCustomFloat1",
@@ -105,6 +108,16 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     private String employmentType;
 
     private BigDecimal fee;
+
+    private GeneralLedgerSegment1 generalLedgerSegment1;
+
+    private GeneralLedgerSegment2 generalLedgerSegment2;
+
+    private GeneralLedgerSegment3 generalLedgerSegment3;
+
+    private GeneralLedgerSegment4 generalLedgerSegment4;
+
+    private GeneralLedgerSegment5 generalLedgerSegment5;
 
     @JsonIgnore
     @Size(max = 100)
@@ -507,6 +520,56 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     @JsonProperty("fee")
     public void setFee(BigDecimal fee) {
         this.fee = fee;
+    }
+
+    @JsonProperty("generalLedgerSegment1")
+    public GeneralLedgerSegment1 getGeneralLedgerSegment1() {
+        return generalLedgerSegment1;
+    }
+
+    @JsonProperty("generalLedgerSegment1")
+    public void setGeneralLedgerSegment1(GeneralLedgerSegment1 generalLedgerSegment1) {
+        this.generalLedgerSegment1 = generalLedgerSegment1;
+    }
+
+    @JsonProperty("generalLedgerSegment2")
+    public GeneralLedgerSegment2 getGeneralLedgerSegment2() {
+        return generalLedgerSegment2;
+    }
+
+    @JsonProperty("generalLedgerSegment2")
+    public void setGeneralLedgerSegment2(GeneralLedgerSegment2 generalLedgerSegment2) {
+        this.generalLedgerSegment2 = generalLedgerSegment2;
+    }
+
+    @JsonProperty("generalLedgerSegment3")
+    public GeneralLedgerSegment3 getGeneralLedgerSegment3() {
+        return generalLedgerSegment3;
+    }
+
+    @JsonProperty("generalLedgerSegment3")
+    public void setGeneralLedgerSegment3(GeneralLedgerSegment3 generalLedgerSegment3) {
+        this.generalLedgerSegment3 = generalLedgerSegment3;
+    }
+
+    @JsonProperty("generalLedgerSegment4")
+    public GeneralLedgerSegment4 getGeneralLedgerSegment4() {
+        return generalLedgerSegment4;
+    }
+
+    @JsonProperty("generalLedgerSegment4")
+    public void setGeneralLedgerSegment4(GeneralLedgerSegment4 generalLedgerSegment4) {
+        this.generalLedgerSegment4 = generalLedgerSegment4;
+    }
+
+    @JsonProperty("generalLedgerSegment5")
+    public GeneralLedgerSegment5 getGeneralLedgerSegment5() {
+        return generalLedgerSegment5;
+    }
+
+    @JsonProperty("generalLedgerSegment5")
+    public void setGeneralLedgerSegment5(GeneralLedgerSegment5 generalLedgerSegment5) {
+        this.generalLedgerSegment5 = generalLedgerSegment5;
     }
 
     @JsonProperty("hoursOfOperation")
@@ -1144,6 +1207,11 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         result = prime * result + ((employeeType == null) ? 0 : employeeType.hashCode());
         result = prime * result + ((employmentType == null) ? 0 : employmentType.hashCode());
         result = prime * result + ((fee == null) ? 0 : fee.hashCode());
+        result = prime * result + ((generalLedgerSegment1 == null) ? 0 : generalLedgerSegment1.hashCode());
+        result = prime * result + ((generalLedgerSegment2 == null) ? 0 : generalLedgerSegment2.hashCode());
+        result = prime * result + ((generalLedgerSegment3 == null) ? 0 : generalLedgerSegment3.hashCode());
+        result = prime * result + ((generalLedgerSegment4 == null) ? 0 : generalLedgerSegment4.hashCode());
+        result = prime * result + ((generalLedgerSegment5 == null) ? 0 : generalLedgerSegment5.hashCode());
         result = prime * result + ((hoursOfOperation == null) ? 0 : hoursOfOperation.hashCode());
         result = prime * result + ((hoursPerDay == null) ? 0 : hoursPerDay.hashCode());
         result = prime * result + ((housingManagerID == null) ? 0 : housingManagerID.hashCode());
@@ -1323,6 +1391,31 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
             if (other.fee != null)
                 return false;
         } else if (!fee.equals(other.fee))
+            return false;
+        if (generalLedgerSegment1 == null) {
+            if (other.generalLedgerSegment1 != null)
+                return false;
+        } else if (!generalLedgerSegment1.equals(other.generalLedgerSegment1))
+            return false;
+        if (generalLedgerSegment2 == null) {
+            if (other.generalLedgerSegment2 != null)
+                return false;
+        } else if (!generalLedgerSegment2.equals(other.generalLedgerSegment2))
+            return false;
+        if (generalLedgerSegment3 == null) {
+            if (other.generalLedgerSegment3 != null)
+                return false;
+        } else if (!generalLedgerSegment3.equals(other.generalLedgerSegment3))
+            return false;
+        if (generalLedgerSegment4 == null) {
+            if (other.generalLedgerSegment4 != null)
+                return false;
+        } else if (!generalLedgerSegment4.equals(other.generalLedgerSegment4))
+            return false;
+        if (generalLedgerSegment5 == null) {
+            if (other.generalLedgerSegment5 != null)
+                return false;
+        } else if (!generalLedgerSegment5.equals(other.generalLedgerSegment5))
             return false;
         if (hoursOfOperation == null) {
             if (other.hoursOfOperation != null)
@@ -1684,6 +1777,16 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         builder.append(employmentType);
         builder.append(", \nfee=");
         builder.append(fee);
+        builder.append(", \ngeneralLedgerSegment1=");
+        builder.append(generalLedgerSegment1);
+        builder.append(", \ngeneralLedgerSegment2=");
+        builder.append(generalLedgerSegment2);
+        builder.append(", \ngeneralLedgerSegment3=");
+        builder.append(generalLedgerSegment3);
+        builder.append(", \ngeneralLedgerSegment4=");
+        builder.append(generalLedgerSegment4);
+        builder.append(", \ngeneralLedgerSegment5=");
+        builder.append(generalLedgerSegment5);
         builder.append(", \nhoursOfOperation=");
         builder.append(hoursOfOperation);
         builder.append(", \nhoursPerDay=");
