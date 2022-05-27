@@ -114,6 +114,7 @@ public class CandidateWorkHistory extends AbstractEntity implements QueryEntity,
 	@JsonProperty("salary2")
 	private BigDecimal salary2;
 
+    @JsonIgnore
 	@Size(max = 20)
 	private String salaryType;
 
