@@ -76,10 +76,15 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
     private BigDecimal float8;
     private BigDecimal float9;
     private BigDecimal float10;
+    @JsonIgnore
     private String textBlock1;
+    @JsonIgnore
     private String textBlock2;
+    @JsonIgnore
     private String textBlock3;
+    @JsonIgnore
     private String textBlock4;
+    @JsonIgnore
     private String textBlock5;
     private DateTime date1;
 	private DateTime date2;
@@ -533,6 +538,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return textBlock1;
     }
 
+    @JsonIgnore
     @JsonProperty("textBlock1")
     public void setTextBlock1(String textBlock1) {
         this.textBlock1 = textBlock1;
@@ -543,6 +549,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return textBlock2;
     }
 
+    @JsonIgnore
     @JsonProperty("textBlock2")
     public void setTextBlock2(String textBlock2) {
         this.textBlock2 = textBlock2;
@@ -553,6 +560,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return textBlock3;
     }
 
+    @JsonIgnore
     @JsonProperty("textBlock3")
     public void setTextBlock3(String textBlock3) {
         this.textBlock3 = textBlock3;
@@ -563,6 +571,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return textBlock4;
     }
 
+    @JsonIgnore
     @JsonProperty("textBlock4")
     public void setTextBlock4(String textBlock4) {
         this.textBlock4 = textBlock4;
@@ -573,6 +582,7 @@ public abstract class CustomObjectInstance extends AbstractEntity implements Que
         return textBlock5;
     }
 
+    @JsonIgnore
     @JsonProperty("textBlock5")
     public void setTextBlock5(String textBlock5) {
         this.textBlock5 = textBlock5;
