@@ -74,12 +74,12 @@ public class GeneralLedgerServiceCode implements QueryEntity, UpdateEntity, Soft
     }
 
     @JsonProperty("isActive")
-    public Boolean getActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
     @JsonProperty("isActive")
-    public void setActive(Boolean active) {
+    public void setIsActive(Boolean active) {
         isActive = active;
     }
 
