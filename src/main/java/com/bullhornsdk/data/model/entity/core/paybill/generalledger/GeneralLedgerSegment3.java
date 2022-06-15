@@ -15,7 +15,6 @@ public class GeneralLedgerSegment3 extends GeneralLedgerSegment {
 
     public GeneralLedgerSegment3() {
         super();
-        this.setGeneralLedgerSegmentType(new GeneralLedgerSegmentType(3));
     }
 
 }

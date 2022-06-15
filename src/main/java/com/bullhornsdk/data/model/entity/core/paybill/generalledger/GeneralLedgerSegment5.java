@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 public class GeneralLedgerSegment5 extends GeneralLedgerSegment {
     public GeneralLedgerSegment5() {
         super();
-        this.setGeneralLedgerSegmentType(new GeneralLedgerSegmentType(5));
     }
 
 }
