@@ -1,17 +1,32 @@
 package com.bullhornsdk.data.model.entity.core.paybill.earncode;
 
-import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
-import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
-import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.entity.customfields.CustomFieldsA;
-import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.*;
-import org.joda.time.DateTime;
+import java.util.Objects;
 
 import javax.validation.constraints.Size;
-import java.util.Objects;
+
+import org.joda.time.DateTime;
+
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerAccount;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment1;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment2;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment3;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment4;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerSegment5;
+import com.bullhornsdk.data.model.entity.core.paybill.generalledger.GeneralLedgerServiceCode;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
+import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
+import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
+import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
+import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsA;
+import com.bullhornsdk.data.util.ReadOnly;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonRootName;
 
 /**
  * Created by mkesmetzis 23-Apr-20
@@ -22,8 +37,8 @@ import java.util.Objects;
     "customInt1", "customInt2", "customInt3", "customText1", "customText10", "customText11", "customText12", "customText13",
     "customText14", "customText15", "customText16", "customText17", "customText18", "customText19", "customText2",
     "customText20", "customText3", "customText4", "customText5", "customText6", "customText7", "customText8", "customText9",
-    "dateAdded", "dateLastModified", "description", "earnCodeGroup", "earnCodeTypeLookup", "externalID", "isDeleted",
-    "owner", "status", "title", "generalLedgerServiceCode", "generalLedgerBillAccount", "generalLedgerPayAccount",
+    "dateAdded", "dateLastModified", "description", "earnCodeGroup", "earnCodeTypeLookup", "externalID",
+    "owner", "title", "generalLedgerServiceCode", "generalLedgerBillAccount", "generalLedgerPayAccount",
     "generalLedgerSegment1", "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5"})
 public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -37,10 +52,7 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
     @Size(max = 100)
     private String code;
     private String externalID;
-    private Boolean isDeleted;
     private CorporateUser owner;
-    @Size(max = 100)
-    private String status;
     private String title;
     private GeneralLedgerServiceCode generalLedgerServiceCode;
     private GeneralLedgerAccount generalLedgerBillAccount;
@@ -85,16 +97,6 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
         this.dateLastModified = dateLastModified;
     }
 
-    @JsonProperty("isDeleted")
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    @JsonProperty("isDeleted")
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
     @JsonProperty("generalLedgerSegment1")
     public GeneralLedgerSegment1 getGeneralLedgerSegment1() {
         return generalLedgerSegment1;
@@ -133,16 +135,6 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
     @JsonProperty("externalID")
     public void setExternalID(String externalID) {
         this.externalID = externalID;
-    }
-
-    @JsonProperty("status")
-    public String getStatus() {
-        return status;
-    }
-
-    @JsonProperty("status")
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     @JsonProperty("generalLedgerSegment2")
@@ -270,9 +262,7 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
             Objects.equals(earnCodeTypeLookup, earnCode.earnCodeTypeLookup) &&
             Objects.equals(code, earnCode.code) &&
             Objects.equals(externalID, earnCode.externalID) &&
-            Objects.equals(isDeleted, earnCode.isDeleted) &&
             Objects.equals(owner, earnCode.owner) &&
-            Objects.equals(status, earnCode.status) &&
             Objects.equals(title, earnCode.title) &&
             Objects.equals(generalLedgerServiceCode, earnCode.generalLedgerServiceCode) &&
             Objects.equals(generalLedgerBillAccount, earnCode.generalLedgerBillAccount) &&
@@ -286,7 +276,7 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, dateAdded, dateLastModified, description, earnCodeGroup, earnCodeTypeLookup, code, externalID, isDeleted, owner, status, title, generalLedgerServiceCode, generalLedgerBillAccount, generalLedgerPayAccount, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5);
+        return Objects.hash(super.hashCode(), id, dateAdded, dateLastModified, description, earnCodeGroup, earnCodeTypeLookup, code, externalID, owner, title, generalLedgerServiceCode, generalLedgerBillAccount, generalLedgerPayAccount, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5);
     }
 
     @Override
@@ -300,9 +290,7 @@ public class EarnCode extends CustomFieldsA implements QueryEntity, UpdateEntity
             ", earnCodeTypeLookup=" + earnCodeTypeLookup +
             ", code='" + code + '\'' +
             ", externalID='" + externalID + '\'' +
-            ", isDeleted=" + isDeleted +
             ", owner=" + owner +
-            ", status='" + status + '\'' +
             ", title='" + title + '\'' +
             ", generalLedgerServiceCode=" + generalLedgerServiceCode +
             ", generalLedgerBillAccount=" + generalLedgerBillAccount +
