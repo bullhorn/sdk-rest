@@ -14,6 +14,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -43,7 +44,7 @@ import java.util.Objects;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "appointments", "approvingClientContact", "backupApprovingClientContact", "billingClientContact",
-		"billingFrequency", "billingProfile", "bonusPackage", "branch", "candidate", "placementCertifications", "changeRequests", "clientBillRate", "clientOvertimeRate",
+		"billingFrequency", "billingProfile", "bonusPackage", "branch", "bteSyncStatus", "candidate", "placementCertifications", "changeRequests", "clientBillRate", "clientOvertimeRate",
         "comments", "commissions", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3", "correlatedCustomFloat1",
 		"correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1", "correlatedCustomInt2", "correlatedCustomInt3",
 		"correlatedCustomText1", "correlatedCustomText10", "correlatedCustomText2", "correlatedCustomText3", "correlatedCustomText4",
@@ -72,7 +73,7 @@ import java.util.Objects;
 		"dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
 		"employmentType", "fee", "flatFee", "fileAttachments", "generalLedgerSegment1", "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4",
         "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
-		"jobOrder", "jobSubmission", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
+		"jobOrder", "jobSubmission", "lastBteSyncDate", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
         "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
 		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
@@ -288,6 +289,10 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     private OneToMany<PlacementCustomObjectInstance9> customObject9s;
 
     private OneToMany<PlacementCustomObjectInstance10> customObject10s;
+
+    private SimplifiedOptionsLookup bteSyncStatus;
+
+    private DateTime lastBteSyncDate;
 
 	public Placement() {
 		super();
@@ -1250,6 +1255,26 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @JsonProperty("timeAndExpense")
     public void setTimeAndExpense(PlacementTimeAndExpense timeAndExpense) {
         this.timeAndExpense = timeAndExpense;
+    }
+
+    @JsonProperty("bteSyncStatus")
+    public SimplifiedOptionsLookup getBteSyncStatus() {
+        return bteSyncStatus;
+    }
+
+    @JsonProperty("bteSyncStatus")
+    public void setBteSyncStatus(SimplifiedOptionsLookup bteSyncStatus) {
+        this.bteSyncStatus = bteSyncStatus;
+    }
+
+    @JsonProperty("lastBteSyncDate")
+    public DateTime getLastBteSyncDate() {
+        return lastBteSyncDate;
+    }
+
+    @JsonProperty("lastBteSyncDate")
+    public void setLastBteSyncDate(DateTime lastBteSyncDate) {
+        this.lastBteSyncDate = lastBteSyncDate;
     }
 
     @Override

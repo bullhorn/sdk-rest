@@ -26,6 +26,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -165,6 +166,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -239,6 +241,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -378,6 +381,7 @@
             "jobSubmission": {
                 "id": 2
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -444,6 +448,7 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -583,6 +588,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -650,6 +656,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -789,6 +796,7 @@
             "jobSubmission": {
                 "id": 3
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -863,6 +871,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -1002,6 +1011,7 @@
             "jobSubmission": {
                 "id": 1165
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -1068,6 +1078,7 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -1207,6 +1218,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -1274,6 +1286,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -1413,6 +1426,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -1487,6 +1501,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -1626,6 +1641,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -1692,6 +1708,7 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -1831,6 +1848,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -1898,6 +1916,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -2037,6 +2056,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -2111,6 +2131,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -2250,6 +2271,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -2316,6 +2338,7 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -2455,6 +2478,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -2522,6 +2546,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -2661,6 +2686,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -2727,6 +2753,7 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -2866,6 +2893,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -2933,6 +2961,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3072,6 +3101,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -3146,6 +3176,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3285,6 +3316,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -3359,6 +3391,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3498,6 +3531,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -3572,6 +3606,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3711,6 +3746,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -3777,6 +3813,7 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -3916,6 +3953,7 @@
             "jobSubmission": {
                 "id": 1
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
@@ -3983,6 +4021,7 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
+            "bteSyncStatus": null,
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -4122,6 +4161,7 @@
             "jobSubmission": {
                 "id": 4
             },
+            "lastBteSyncDate": null,
             "migrateGUID": null,
             "notes": {
                 "total": 0,
