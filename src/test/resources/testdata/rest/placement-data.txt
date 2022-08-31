@@ -27,7 +27,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -244,7 +244,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -453,7 +453,7 @@
             "billingFrequency": null,
             "bonusPackage": null,
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 6,
@@ -663,7 +663,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -880,7 +880,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -1089,7 +1089,7 @@
             "billingFrequency": null,
             "bonusPackage": null,
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 6,
@@ -1299,7 +1299,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -1516,7 +1516,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -1725,7 +1725,7 @@
             "billingFrequency": null,
             "bonusPackage": null,
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 6,
@@ -1935,7 +1935,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -2152,7 +2152,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -2361,7 +2361,7 @@
             "billingFrequency": null,
             "bonusPackage": null,
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 6,
@@ -2571,7 +2571,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -2780,7 +2780,7 @@
             "billingFrequency": null,
             "bonusPackage": null,
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 6,
@@ -2990,7 +2990,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -3207,7 +3207,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -3424,7 +3424,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -3641,7 +3641,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
@@ -3850,7 +3850,7 @@
             "billingFrequency": null,
             "bonusPackage": null,
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 6,
@@ -4060,7 +4060,7 @@
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
             "bteSyncStatus": {
-                "id": 1,
+                "id": 1
             },
             "candidate": {
                 "id": 1,
