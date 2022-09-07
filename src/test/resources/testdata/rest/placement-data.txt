@@ -26,7 +26,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -241,7 +243,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -448,7 +452,9 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -656,7 +662,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -871,7 +879,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -1078,7 +1088,9 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -1286,7 +1298,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -1501,7 +1515,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -1708,7 +1724,9 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -1916,7 +1934,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -2131,7 +2151,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -2338,7 +2360,9 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -2546,7 +2570,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -2753,7 +2779,9 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -2961,7 +2989,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3176,7 +3206,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3391,7 +3423,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3606,7 +3640,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
@@ -3813,7 +3849,9 @@
             },
             "billingFrequency": null,
             "bonusPackage": null,
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 6,
                 "firstName": "Fresh",
@@ -4021,7 +4059,9 @@
             },
             "billingFrequency": "Weekly",
             "bonusPackage": "0",
-            "bteSyncStatus": null,
+            "bteSyncStatus": {
+                "id": 1
+            },
             "candidate": {
                 "id": 1,
                 "firstName": "Toad",
