@@ -541,6 +541,7 @@ public class MockDataLoader {
         entityFiles.put(EarnCodeGroup.class, "paybill/earncodegroup-data.txt");
         entityFiles.put(InvoiceStatement.class, "paybill/invoicestatement-data.txt");
         entityFiles.put(InvoiceStatementBatch.class, "paybill/invoicestatementbatch-data.txt");
+        entityFiles.put(InvoiceStatementHistory.class, "paybill/invoicestatementhistory-data.txt");
         entityFiles.put(InvoiceStatementDiscount.class, "paybill/invoicestatementdiscount-data.txt");
         entityFiles.put(InvoiceStatementExportBatch.class, "paybill/invoicestatementexportbatch-data.txt");
         entityFiles.put(InvoiceStatementLineItem.class, "paybill/invoicestatementlineitem-data.txt");

@@ -10,6 +10,7 @@ import java.util.Set;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementHistory;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -751,6 +752,14 @@ public class TestStandardBullhornApiRest extends BaseTest {
 
         assertNotNull("JobShift is null", entity);
 
+    }
+
+    @Test
+    public void testFindInvoiceStatementHistory() {
+
+        InvoiceStatementHistory entity = bullhornData.findEntity(InvoiceStatementHistory.class, testEntities.getInvoiceStatementHistoryId(), getFieldSet());
+
+        assertNotNull("InvoiceStatementHistory is null", entity);
     }
 
     private Set<String> getFieldSet() {
