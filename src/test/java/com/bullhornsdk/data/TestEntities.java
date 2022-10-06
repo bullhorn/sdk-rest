@@ -141,6 +141,8 @@ public class TestEntities {
 
     private Integer invoiceStatementDistributionBatchId;
 
+    private Integer invoiceStatementHistoryId;
+
     public TestEntities() {
         super();
         this.appointmentId = 1;
@@ -272,6 +274,8 @@ public class TestEntities {
         this.invoiceStatementId = 1;
 
         this.invoiceStatementDistributionBatchId = 1;
+
+        this.invoiceStatementHistoryId = 1;
     }
 
     public Integer getAppointmentId() {
@@ -794,6 +798,14 @@ public class TestEntities {
         this.invoiceStatementId = invoiceStatementId;
     }
 
+    public Integer getInvoiceStatementHistoryId() {
+        return invoiceStatementHistoryId;
+    }
+
+    public void setInvoiceStatementHistoryId(Integer invoiceStatementHistoryId) {
+        this.invoiceStatementHistoryId = invoiceStatementHistoryId;
+    }
+
     @Override
     public String toString() {
         return "TestEntities{" +
@@ -862,6 +874,7 @@ public class TestEntities {
             ", invoiceStatementBatchId=" + invoiceStatementBatchId +
             ", invoiceStatementId=" + invoiceStatementId +
             ", invoiceStatementDistributionBatchId=" + invoiceStatementDistributionBatchId +
+            ", invoiceStatementHistoryId=" + invoiceStatementHistoryId +
             '}';
     }
 }

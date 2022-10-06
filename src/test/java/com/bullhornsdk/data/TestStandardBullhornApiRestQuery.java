@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementHistory;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.file.*;
 import org.apache.log4j.Logger;
@@ -567,6 +568,13 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
         runAssertions("ListWrapper<FederalTaxForm>", wrapper);
 
+    }
+
+    @Test
+    public void testQueryInvoiceStatementHistory() {
+        ListWrapper<InvoiceStatementHistory> wrapper = bullhornData.query(InvoiceStatementHistory.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<InvoiceStatementHistory>", wrapper);
     }
 
 	private <T extends BullhornEntity> void runAssertions(String wrapperName, ListWrapper<T> wrapper) {

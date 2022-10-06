@@ -346,6 +346,7 @@ public enum BullhornEntityInfo {
     INVOICE_STATEMENT_DISCOUNT_RATE("InvoiceStatementDiscountRate", InvoiceStatementDiscountRate.class, InvoiceStatementDiscountRateWrapper.class, InvoiceStatementDiscountRateListWrapper.class, null, null),
     INVOICE_STATEMENT_SALES_TAX_RATE("InvoiceStatementSalesTaxRate", InvoiceStatementSalesTaxRate.class, InvoiceStatementSalesTaxRateWrapper.class, InvoiceStatementSalesTaxRateListWrapper.class, null, null),
     INVOICE_STATEMENT_SURCHARGE_RATE("InvoiceStatementSurchargeRate", InvoiceStatementSurchargeRate.class, InvoiceStatementSurchargeRateWrapper.class, InvoiceStatementSurchargeRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_HISTORY("InvoiceStatementHistory", InvoiceStatementHistory.class, InvoiceStatementHistoryWrapper.class, InvoiceStatementHistoryListWrapper.class, null, null),
     SALES_TAX_RATE("SalesTaxRate", SalesTaxRate.class, SalesTaxRateWrapper.class, SalesTaxRateListWrapper.class, "SalesTaxRateEditHistory", "SalesTaxRateEditHistoryFieldChange"),
     SALES_TAX_RATE_VERSION("SalesTaxRateVersion", SalesTaxRateVersion.class, SalesTaxRateVersionWrapper.class, SalesTaxRateVersionListWrapper.class, null, null),
     SURCHARGE_RATE("SurchargeRate", SurchargeRate.class, SurchargeRateWrapper.class, SurchargeRateListWrapper.class, null, null),
