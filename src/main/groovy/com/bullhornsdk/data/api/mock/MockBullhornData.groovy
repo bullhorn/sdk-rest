@@ -155,6 +155,16 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
+    public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity, Set<String> nullBypassFields) {
+
+        CrudResponse response = null;
+
+        response = mockDataHandler.updateEntity(entity, nullBypassFields);
+
+        return (C) response;
+    }
+
+    @Override
     public <C extends CrudResponse, T extends UpdateEntity> List<C> updateMultipleEntities(List<T> entityList) {
         List<C> responseList = new ArrayList<C>();
         entityList.each {

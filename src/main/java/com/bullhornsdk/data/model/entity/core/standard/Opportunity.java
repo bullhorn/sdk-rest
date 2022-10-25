@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance2;
@@ -24,18 +25,14 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "actualCloseDate", "address", "appointments", "assignedDate", "assignedUsers", "benefits", "billRateCategoryID", "bonusPackage", "branch", "branchCode", "businessSector",
 		"businessSectors", "campaignSource", "category", "categories", "certifications", "clientContact", "clientCorporation", "committed", "customDate1", "customDate2", "customDate3",
@@ -50,9 +47,9 @@ import java.math.BigDecimal;
 public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
-	
+
 	private Integer id;
-	
+
 	private CorporateUser owner;
 
 	@JsonIgnore
@@ -64,13 +61,13 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 
 	@Size(max = 200000)
 	private String description;
-	
+
 	private DateTime estimatedStartDate;
-	
+
 	private BigDecimal estimatedHoursPerWeek;
-	
+
 	private BigDecimal estimatedDuration;
-	
+
 	private BigDecimal salary;
 
 	@JsonIgnore
@@ -88,41 +85,41 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	@JsonIgnore
 	@Size(max = 100)
 	private String branchCode;
-	
+
 	private Boolean isOpen;
-	
+
 	private Address address;
-	
+
 	private DateTime dateAdded;
-	
+
 	private Boolean isDeleted;
-	
+
 	private Integer externalCategoryID;
 
 	@JsonIgnore
 	@Size(max = 200)
 	private String status;
-	
+
 	private ClientContact clientContact;
-	
+
 	private Integer priority;
-	
+
 	private Boolean isClientContact;
-	
+
 	private DateTime dateClientInterview;
-	
+
 	private Integer isPublic;
-	
+
 	private Integer numOpenings;
-	
+
 	private Boolean isExtendable;
-	
+
 	private Integer yearsRequired;
 
 	@JsonIgnore
 	@Size(max = 30)
 	private String externalID;
-	
+
 	private DateTime actualCloseDate;
 
 	@JsonIgnore
@@ -130,26 +127,26 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 
 	@JsonIgnore
 	private String salaryRange;
-	
+
 	private Boolean committed;
-	
+
 	private Boolean willRelocate;
 
 	@JsonIgnore
 	@Size(max = 50)
 	private String educationDegree;
-	
+
 	private ClientContact reportToClientContact;
-	
+
 	private DateTime estimatedEndDate;
-	
+
 	private Boolean isInterviewRequired;
-	
+
 	@JsonIgnore
 	private String benefits;
 
 	private String costCenter;
-	
+
 	private String reportTo;
 
 	@JsonIgnore
@@ -163,7 +160,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	@JsonIgnore
 	@Size(max = 200000)
 	private String publicDescription;
-	
+
 	private String hoursOfOperation;
 
 	@JsonIgnore
@@ -172,84 +169,84 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 
 	@JsonIgnore
 	private String optionsPackage;
-	
+
 	@JsonIgnore
 	private String bonusPackage;
-	
+
 	private OneToMany<JobOrder> jobOrders;
-	
+
 	private ClientCorporation clientCorporation;
-	
+
 	private BigDecimal expectedPayRate;
-	
+
 	private BigDecimal expectedFee;
-	
+
 	private Boolean isClientEditable;
-	
+
 	private CorporateUser responseUser;
-	
+
 	private Integer billRateCategoryID;
-	
+
 	private DateTime expectedCloseDate;
-	
+
 	private DateTime assignedDate;
-	
+
 	private String jobOrderUUID;
 
 	@JsonIgnore
 	@Size(max = 18)
 	private String publishedZip;
-	
+
 	private String migrateGUID;
-	
+
 	private BigDecimal taxRate;
-	
+
 	private Boolean isOpportunity;
-	
+
 	private DateTime dateLastExported;
-	
+
 	private DateTime ignoreUntilDate;
-	
+
 	private OneToMany<Appointment> appointments;
-	
+
 	private OneToMany<Task> tasks;
-	
+
 	private OneToMany<Certification> certifications;
-	
+
 	private OneToMany<CorporateUser> assignedUsers;
-	
+
 	private OneToMany<Category> categories;
-	
+
 	private Category category;
-	
+
 	private BusinessSector businessSector;
-	
+
 	private OneToMany<Specialty> specialties;
-	
+
 	private OneToMany<Skill> skills;
-	
+
 	private OneToMany<Note> notes;
-	
+
 	private OneToMany<BusinessSector> businessSectors;
-	
+
 	private OneToMany<JobSubmission> webResponses;
-	
+
 	private DateTime effectiveDate;
-	
+
 	private Lead lead;
 
 	@JsonIgnore
 	@Size(max = 100)
 	private String campaignSource;
-	
+
 	private BigDecimal markUpPercentage;
-	
+
 	private BigDecimal winProbabilityPercent;
-	
+
 	private BigDecimal dealValue;
-	
+
 	private BigDecimal weightedDealValue;
-	
+
 	private DateTime dateLastModified;
 
 	private OneToMany<Tearsheet> tearsheets;
@@ -273,7 +270,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
     private OneToMany<JobOrderCustomObjectInstance9> customObject9s;
 
     private OneToMany<JobOrderCustomObjectInstance10> customObject10s;
-	
+
 	public Opportunity() {
 		super();
 	}

@@ -1,5 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
+import com.fasterxml.jackson.annotation.JsonFilter;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
@@ -11,11 +13,10 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "address", "appointments", "approvedPlacements", "assignedUsers", "benefits", "billRateCategoryID", "billingProfile",
     "bonusPackage", "branch", "branchCode", "businessSectors", "categories", "certificationGroups", "certificationList", "certifications",
