@@ -19,7 +19,7 @@ import java.util.Objects;
     "customDate6", "customDate7", "customDate8", "customDate9", "customText1", "customText10", "customText2", "customText3",
     "customText4", "customText5", "customText6", "customText7", "customText8", "customText9", "customTextBlock1",
     "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "customTextBlock6",
-    "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateCertified", "dateExpiration", "dateLastModified",
+    "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateAdded", "dateCertified", "dateExpiration", "dateLastModified",
     "displayStatus", "fileAttachments", "isComplete", "isDeleted", "issuedBy", "licenseNumber", "licenseType",
     "location", "modifyingUser", "name", "results", "status"})
 public class CandidateCertification extends CustomFieldsE implements UpdateEntity, CreateEntity, QueryEntity, SoftDeleteEntity,
@@ -42,6 +42,8 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
     private Integer compact;
 
     private Integer copyOnFile;
+
+    private DateTime dateAdded;
 
     private DateTime dateCertified;
 
@@ -152,6 +154,17 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
     @JsonProperty("copyOnFile")
     public void setCopyOnFile(Integer copyOnFile) {
         this.copyOnFile = copyOnFile;
+    }
+
+    @JsonProperty("dateAdded")
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
+
+    @ReadOnly
+    @JsonProperty("dateAdded")
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
     }
 
     @JsonProperty("dateCertified")
@@ -326,6 +339,7 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
             ", comments='" + comments + '\'' +
             ", compact=" + compact +
             ", copyOnFile=" + copyOnFile +
+            ", dateAdded=" + dateAdded +
             ", dateCertified=" + dateCertified +
             ", dateExpiration=" + dateExpiration +
             ", dateLastModified=" + dateLastModified +
@@ -358,6 +372,7 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
             Objects.equals(comments, that.comments) &&
             Objects.equals(compact, that.compact) &&
             Objects.equals(copyOnFile, that.copyOnFile) &&
+            Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateCertified, that.dateCertified) &&
             Objects.equals(dateExpiration, that.dateExpiration) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
@@ -377,7 +392,7 @@ public class CandidateCertification extends CustomFieldsE implements UpdateEntit
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, boardCertification, candidate, certification, certificationFileAttachments, comments, compact, copyOnFile, dateCertified, dateExpiration, dateLastModified, displayStatus, isComplete, fileAttachments, issuedBy, licenseNumber, licenseType, location, modifyingUser, name, results, status, isDeleted);
+        return Objects.hash(super.hashCode(), id, boardCertification, candidate, certification, certificationFileAttachments, comments, compact, copyOnFile, dateAdded, dateCertified, dateExpiration, dateLastModified, displayStatus, isComplete, fileAttachments, issuedBy, licenseNumber, licenseType, location, modifyingUser, name, results, status, isDeleted);
     }
 
 
