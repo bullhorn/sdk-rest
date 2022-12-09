@@ -28,6 +28,7 @@ import com.bullhornsdk.data.model.response.list.FastFindListWrapper
 import com.bullhornsdk.data.model.response.list.IdListWrapper
 import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.resume.ParsedResume
+import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse
 import org.apache.log4j.Logger
@@ -264,6 +265,11 @@ public class MockBullhornData implements BullhornData {
                                                FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
         return mockDataHandler.parseResumeThenAddfile(type, entityId, file, externalId, fileParams, resumeFileParseParams);
 
+    }
+
+    @Override
+    ParsedResumeAsEntity parseResumeAsNewCandidate(MultipartFile resume, ResumeAsNewEntityParams params) {
+        return mockDataHandler.parseResumeAsNewCandidate(resume, params);
     }
 
     @Override

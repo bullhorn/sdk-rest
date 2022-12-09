@@ -14,7 +14,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
-import com.bullhornsdk.data.model.parameter.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -76,6 +75,18 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
+import com.bullhornsdk.data.model.parameter.AssociationParams;
+import com.bullhornsdk.data.model.parameter.CorpNotesParams;
+import com.bullhornsdk.data.model.parameter.EntityParams;
+import com.bullhornsdk.data.model.parameter.FastFindParams;
+import com.bullhornsdk.data.model.parameter.FileParams;
+import com.bullhornsdk.data.model.parameter.OptionsParams;
+import com.bullhornsdk.data.model.parameter.QueryParams;
+import com.bullhornsdk.data.model.parameter.ResumeAsNewEntityParams;
+import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
+import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
+import com.bullhornsdk.data.model.parameter.SearchParams;
+import com.bullhornsdk.data.model.parameter.SettingsParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams;
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams;
@@ -105,7 +116,9 @@ import com.bullhornsdk.data.model.response.list.NoteListWrapper;
 import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper;
 import com.bullhornsdk.data.model.response.list.StandardListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
+import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume;
+import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResumeAsEntity;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse;
@@ -553,6 +566,24 @@ public class StandardBullhornData implements BullhornData {
                                                FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
         return this.addFileThenHandleParseResume(type, entityId, file, externalId, fileParams, resumeFileParseParams);
 
+    }
+
+    @Override
+    public ParsedResumeAsEntity parseResumeAsNewCandidate(MultipartFile resume, ResumeAsNewEntityParams params) {
+        if (!restFileManager.validFile(resume)) {
+            return restFileManager.handleNotValidFileFormat(resume);
+        }
+
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForResumeAsNewCandidate(params, resume);
+        String url = restUrlFactory.assembleParseResumeAsNewEntityUrl(params);
+
+        MultiValueMap<String, Object> multiValueMap = addResumeToMultiValueMap(resume);
+
+        ParsedResumeAsEntity parsedResumeAsEntity = putResume(url, multiValueMap, StandardParsedResumeAsEntity.class, uriVariables, getMultipartHeadersForResumeParse());
+
+        restFileManager.deleteTempResume(multiValueMap);
+
+        return parsedResumeAsEntity;
     }
 
     /**
@@ -1370,17 +1401,24 @@ public class StandardBullhornData implements BullhornData {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForResumeFileParse(params, resume);
         String url = restUrlFactory.assembleParseResumeFileUrl(params);
 
+        MultiValueMap<String, Object> multiValueMap = addResumeToMultiValueMap(resume);
+
+        ParsedResume response = this.parseResume(url, multiValueMap, uriVariables);
+
+        restFileManager.deleteTempResume(multiValueMap);
+
+        return (P) response;
+    }
+
+    private MultiValueMap<String, Object> addResumeToMultiValueMap(MultipartFile resume) {
         MultiValueMap<String, Object> multiValueMap = null;
         try {
             multiValueMap = restFileManager.addResumeToMultiValueMap(resume);
         } catch (IOException e) {
             log.error("Error creating temp file", e);
         }
-        ParsedResume response = this.parseResume(url, multiValueMap, uriVariables);
 
-        restFileManager.deleteTempResume(multiValueMap);
-
-        return (P) response;
+        return multiValueMap;
     }
 
     /**
@@ -1981,9 +2019,9 @@ public class StandardBullhornData implements BullhornData {
 
 	/*
      * *************************************************************************
-	 * 
+	 *
 	 * Methods making the actual REST calls.
-	 * 
+	 *
 	 * *************************************************************************
 	 */
 
@@ -2134,8 +2172,18 @@ public class StandardBullhornData implements BullhornData {
         }
     }
 
-    protected <T> T postResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
+    protected <T> T putResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
+        if (headers == null) {
+            headers = new HttpHeaders();
+        }
 
+        HttpEntity<Object> requestEntity = new HttpEntity<Object>(requestPayLoad, headers);
+
+        ResponseEntity<T> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, returnType, uriVariables);
+        return responseEntity.getBody();
+    }
+
+    protected <T> T postResume(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables, HttpHeaders headers) {
         if (headers == null) {
             headers = new HttpHeaders();
         }
@@ -2144,7 +2192,6 @@ public class StandardBullhornData implements BullhornData {
 
         ResponseEntity<T> responseEntity = restTemplate.exchange(url, HttpMethod.POST, requestEntity, returnType, uriVariables);
         return responseEntity.getBody();
-
     }
 
     protected HttpHeaders getMultipartHeadersForFileAttachement(String fileName) {
