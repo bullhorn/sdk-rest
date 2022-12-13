@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.enums;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,7 +17,7 @@ public enum BhRestEnvironment {
 	BH_NEXT("BH-Next"),
 	BH_PRODUCTION("BH-Production");
 
-	private static Logger log = Logger.getLogger(BhRestEnvironment.class);
+	private static Logger log = LogManager.getLogger(BhRestEnvironment.class);
 	private final String name;
 
 	private BhRestEnvironment(String name) {

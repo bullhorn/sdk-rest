@@ -40,7 +40,8 @@ import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResumeAsEntity
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.lang3.StringUtils
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.codehaus.groovy.runtime.NullObject
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
@@ -61,7 +62,7 @@ import java.io.File as JavaFile
 
 public class MockDataHandler {
 
-	private final static Logger log = Logger.getLogger(MockDataHandler.class);
+	private final static Logger log = LogManager.getLogger(MockDataHandler.class);
 	private final MockDataLoader mockDataLoader;
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;

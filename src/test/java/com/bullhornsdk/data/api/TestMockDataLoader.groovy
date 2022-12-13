@@ -8,14 +8,15 @@ import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test
 
 import static org.junit.Assert.assertFalse
 
 public class TestMockDataLoader {
 
-	private final static Logger log = Logger.getLogger(TestMockDataHandler.class);
+	private final static Logger log = LogManager.getLogger(TestMockDataHandler.class);
 	private MockDataLoader mockDataLoader = new MockDataLoader();
 
 

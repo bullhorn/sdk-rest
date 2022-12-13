@@ -5,7 +5,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.Sets;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.After;
@@ -16,7 +17,7 @@ import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.response.crud.UpdateResponse;
 
 public class TestStandardBullhornApiRestDateHandling<T extends UpdateEntity> extends BaseTest {
-	private final Logger log = Logger.getLogger(TestStandardBullhornApiRestDateHandling.class);
+	private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestDateHandling.class);
 
 	private T entity;
 

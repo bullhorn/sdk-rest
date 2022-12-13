@@ -13,7 +13,8 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.json.JSONException;
@@ -52,7 +53,7 @@ public class RestApiSession {
 
 	private static final String REFRESH_TOKEN_GRANT_TYPE = "refresh_token";
 
-	private static Logger log = Logger.getLogger(RestApiSession.class);
+	private static Logger log = LogManager.getLogger(RestApiSession.class);
 
 	private RestTemplate restTemplate;
 

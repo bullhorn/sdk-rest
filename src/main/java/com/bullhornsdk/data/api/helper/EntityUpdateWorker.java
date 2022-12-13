@@ -2,7 +2,8 @@ package com.bullhornsdk.data.api.helper;
 
 import java.util.concurrent.Callable;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.bullhornsdk.data.api.BullhornData;
 import com.bullhornsdk.data.exception.RestApiException;
@@ -14,7 +15,7 @@ public class EntityUpdateWorker<C extends CrudResponse> implements Callable<C> {
 
 	private final BullhornData bullhornApiRest;
 	private final UpdateEntity entity;
-	private final Logger log = Logger.getLogger(EntityUpdateWorker.class);
+	private final Logger log = LogManager.getLogger(EntityUpdateWorker.class);
 
 	public EntityUpdateWorker(BullhornData bullhornApiRest, UpdateEntity entity) {
 		super();

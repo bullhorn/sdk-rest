@@ -6,7 +6,8 @@ import java.util.Arrays;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
 import org.springframework.util.FileCopyUtils;
 
@@ -16,7 +17,7 @@ import com.bullhornsdk.data.model.response.file.FileWrapper;
 
 public final class StandardFileWrapper implements FileWrapper {
 
-    private static Logger log = Logger.getLogger(StandardFileWrapper.class);
+    private static Logger log = LogManager.getLogger(StandardFileWrapper.class);
 
     private byte[] fileContentAsByteArray;
 

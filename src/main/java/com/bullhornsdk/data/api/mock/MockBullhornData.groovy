@@ -31,7 +31,8 @@ import com.bullhornsdk.data.model.response.resume.ParsedResume
 import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
 
@@ -48,7 +49,7 @@ public class MockBullhornData implements BullhornData {
     private final MockDataHandler mockDataHandler;
     private final RestErrorHandler restErrorHandler;
     private final RestApiSession restSession;
-    private final Logger log = Logger.getLogger(MockBullhornData.class);
+    private final Logger log = LogManager.getLogger(MockBullhornData.class);
     protected Boolean executeFormTriggers = false;
 
 

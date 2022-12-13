@@ -15,7 +15,8 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
@@ -142,7 +143,7 @@ import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscrib
  */
 
 public class StandardBullhornData implements BullhornData {
-    protected static Logger log = Logger.getLogger(StandardBullhornData.class);
+    protected static Logger log = LogManager.getLogger(StandardBullhornData.class);
 
     protected final RestApiSession restSession;
 
