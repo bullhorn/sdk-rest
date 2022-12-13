@@ -29,9 +29,8 @@ public class EntityUpdateWorker<C extends CrudResponse> implements Callable<C> {
 		try {
 			response = bullhornApiRest.updateEntity(entity);
 		} catch (RestApiException e) {
-			log.error(
-					"Error updating entity of type " + entity.getClass().getSimpleName() + " with id " + entity.getId(),
-					e);
+            String message = "Error updating entity of type " + entity.getClass().getSimpleName() + " with id " + entity.getId();
+			log.error(message, e);
 		}
 		return response;
 	}

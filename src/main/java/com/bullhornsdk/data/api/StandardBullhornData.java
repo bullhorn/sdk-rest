@@ -1452,11 +1452,9 @@ public class StandardBullhornData implements BullhornData {
             response = new StandardParsedResume();
             response.setErrorCode(error.getStatusCode().name());
             response.setErrorMessage("BH api responded with the following message: " + error.getResponseBodyAsString());
-            log.error("Failed to parse resume after " + RESUME_PARSE_RETRY + " tries. Response body from bh rest apis = "
-                    + error.getResponseBodyAsString());
+            log.error("Failed to parse resume after {} tries. Response body from bh rest apis = {}", RESUME_PARSE_RETRY, error.getResponseBodyAsString());
         } else {
-            log.info(error.getResponseBodyAsString() + " Try " + tryNumber + " out of " + RESUME_PARSE_RETRY
-                    + ". Trying again. Response body from bh rest apis = " + error.getResponseBodyAsString());
+            log.info("{} Try {} out of {}. Trying again. Response body from bh rest apis = {}", error.getResponseBodyAsString(), tryNumber, RESUME_PARSE_RETRY, error.getResponseBodyAsString());
         }
 
         return response;
@@ -1635,7 +1633,7 @@ public class StandardBullhornData implements BullhornData {
 
             fileWrapper = new StandardFileWrapper(fileContent, correctMetaData);
         } catch (Exception e) {
-            log.error("Error getting file with id: " + fileId + " for " + type.getSimpleName() + " with id:" + entityId);
+            log.error("Error getting file with id: {} for {} with id:{}", fileId, type.getSimpleName(), entityId);
         }
 
         return fileWrapper;
@@ -2145,9 +2143,9 @@ public class StandardBullhornData implements BullhornData {
         } else if (error.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
             isTooManyRequestsError = true;
         }
-        log.error(
-                "HttpStatusCodeError making api call. Try number:" + tryNumber + " out of " + API_RETRY + ". Http status code: "
-                        + error.getStatusCode() + ". Response body: " + error.getResponseBodyAsString(), error);
+        String errorMessage = "HttpStatusCodeError making api call. Try number:" + tryNumber + " out of " + API_RETRY + ". Http status code: "
+            + error.getStatusCode() + ". Response body: " + error.getResponseBodyAsString();
+        log.error(errorMessage, error);
         if (tryNumber >= API_RETRY && !isTooManyRequestsError) {
             throw new RestApiException("HttpStatusCodeError making api call with url variables " + uriVariables.toString()
                     + ". Http status code: " + error.getStatusCode().toString() + ". Response body: " + error == null ? ""
@@ -2157,7 +2155,8 @@ public class StandardBullhornData implements BullhornData {
     }
 
     protected void handleApiError(int tryNumber, Exception e) {
-        log.error("Error making api call. Try number:" + tryNumber + " out of " + API_RETRY, e);
+        String message = "Error making api call. Try number:" + tryNumber + " out of " + API_RETRY;
+        log.error(message, e);
     }
 
     protected void resetBhRestToken(Map<String, String> uriVariables) {

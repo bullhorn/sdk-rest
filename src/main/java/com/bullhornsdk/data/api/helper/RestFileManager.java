@@ -81,7 +81,7 @@ public class RestFileManager {
         try {
             FileUtils.deleteDirectory(newFolder);
         } catch (IOException e) {
-            log.info("Unable to delete temp file " + filePath);
+            log.info("Unable to delete temp file {}", filePath);
         }
 
     }
@@ -104,7 +104,7 @@ public class RestFileManager {
         File file = fileSystemResource.getFile();
 
         if (!file.delete()) {
-            log.info("Unable to delete temp resume " + file.getAbsolutePath());
+            log.info("Unable to delete temp resume {}", file.getAbsolutePath());
         }
     }
 

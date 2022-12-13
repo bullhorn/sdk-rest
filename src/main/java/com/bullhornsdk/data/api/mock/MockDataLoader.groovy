@@ -343,7 +343,7 @@ public class MockDataLoader {
             jsonDataString = IOUtils.toString(data.getInputStream(), "UTF-8");
 
         } catch (IOException e) {
-            log.error("Unable to load test data from filename: " + fileName);
+            log.error("Unable to load test data from filename: {}", fileName);
             throw new IllegalArgumentException("Unable to load test data from filename: " + fileName, e);
         }
 

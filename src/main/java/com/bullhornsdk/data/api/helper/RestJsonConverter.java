@@ -110,7 +110,8 @@ public class RestJsonConverter {
         try {
             jsonString = objectMapperStandard.writeValueAsString(entity);
         } catch (JsonProcessingException e) {
-            log.error("Error deserializing entity of type" + entity.getClass() + " to jsonString.", e);
+            String message = "Error deserializing entity of type" + entity.getClass() + " to jsonString.";
+            log.error(message, e);
         }
         return jsonString;
     }

@@ -51,17 +51,8 @@ public class AbstractEntity {
 		try {
 			PropertyUtils.setProperty(this, name,
 					this.convertListToString(value));
-		} catch (IllegalAccessException e) {
-			log.debug("Error setting field " + name + " with value " + value
-					+ " on entity " + this.getClass().getSimpleName());
-			this.additionalProperties.put(name, value);
-		} catch (InvocationTargetException e) {
-			log.debug("Error setting field " + name + " with value " + value
-					+ " on entity " + this.getClass().getSimpleName());
-			this.additionalProperties.put(name, value);
-		} catch (NoSuchMethodException e) {
-			log.debug("Error setting field " + name + " with value " + value
-					+ " on entity " + this.getClass().getSimpleName());
+		} catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+			log.debug("Error setting field {} with value {} on entity {}", name, value, this.getClass().getSimpleName());
 			this.additionalProperties.put(name, value);
 		}
 

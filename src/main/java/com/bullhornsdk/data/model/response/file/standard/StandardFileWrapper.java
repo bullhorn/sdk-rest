@@ -49,8 +49,7 @@ public final class StandardFileWrapper implements FileWrapper {
         super();
 
         if (fileContent == null) {
-            log.error("fileContent is null in StandardFileWrapper for filemeta.id=" + fileMeta.getId()
-                    + ". This means there was an issue finding the file content using the bullhorn apis. The file could be lost");
+            log.error("fileContent is null in StandardFileWrapper for filemeta.id={}. This means there was an issue finding the file content using the bullhorn apis. The file could be lost", fileMeta.getId());
             this.base64RawFileContent = null;
             this.contentType = null;
         } else {
@@ -87,8 +86,7 @@ public final class StandardFileWrapper implements FileWrapper {
     @Override
     public String getBase64RawFileContent() {
         if (base64RawFileContent == null) {
-            log.error("base64RawFileContent is null in StandardFileWrapper for filemeta.id=" + id
-                    + ". This means there was an issue finding the file content using the bullhorn apis. The file could be lost");
+            log.error("base64RawFileContent is null in StandardFileWrapper for filemeta.id={}. This means there was an issue finding the file content using the bullhorn apis. The file could be lost", id);
         }
         return base64RawFileContent;
     }
@@ -113,7 +111,8 @@ public final class StandardFileWrapper implements FileWrapper {
             FileCopyUtils.copy(getFileContentAsByteArray(), tempFile);
             file = tempFile;
         } catch (IOException e) {
-            log.error("Error while creating temp file: " + name, e);
+            String message = "Error while creating temp file: " + name;
+            log.error(message, e);
         }
 
     }
