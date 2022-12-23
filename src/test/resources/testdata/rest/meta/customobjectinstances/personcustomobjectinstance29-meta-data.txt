@@ -1,0 +1,154 @@
+{
+  "entity": "PersonCustomObjectInstance29",
+  "entityMetaUrl": "https://rest29.bullhornstaffing.com/rest-services/76ncu1/meta/PersonCustomObjectInstance29?fields=*",
+  "label": "Préf de notification",
+  "dateLastModified": "1671563268467",
+  "fields": [
+    {
+      "name": "id",
+      "type": "ID",
+      "dataType": "Integer",
+      "label": "ID"
+    },
+    {
+      "name": "date1",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date de l'e-mail",
+      "hideFromSearch": false
+    },
+    {
+      "name": "date2",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date du SMS",
+      "hideFromSearch": false
+    },
+    {
+      "name": "date3",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date de la notification par téléphone",
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateAdded",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date Added",
+      "hideFromSearch": false
+    },
+    {
+      "name": "dateLastModified",
+      "type": "SCALAR",
+      "dataType": "Timestamp",
+      "confidential": false,
+      "label": "Date Last Modified",
+      "hideFromSearch": false
+    },
+    {
+      "name": "person",
+      "type": "TO_ONE",
+      "confidential": false,
+      "label": "Person",
+      "optionsType": "Person",
+      "optionsUrl": "https://rest29.bullhornstaffing.com/rest-services/76ncu1/options/Person",
+      "hideFromSearch": false,
+      "associatedEntity": {
+        "entity": "Person",
+        "entityMetaUrl": "https://rest29.bullhornstaffing.com/rest-services/76ncu1/meta/Person?fields=*",
+        "label": "Person",
+        "dateLastModified": "1670859542674",
+        "fields": [
+          {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "label": "ID"
+          },
+          {
+            "name": "firstName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "First Name",
+            "hideFromSearch": false
+          },
+          {
+            "name": "lastName",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 50,
+            "confidential": false,
+            "label": "Last Name",
+            "hideFromSearch": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "text1",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Courriel accepté?",
+      "options": [
+        {
+          "value": "Oui",
+          "label": "Oui"
+        },
+        {
+          "value": "Non",
+          "label": "Non"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "text2",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "SMS accepté?",
+      "options": [
+        {
+          "value": "Oui",
+          "label": "Oui"
+        },
+        {
+          "value": "Non",
+          "label": "Non"
+        }
+      ],
+      "hideFromSearch": false
+    },
+    {
+      "name": "text3",
+      "type": "SCALAR",
+      "dataType": "String",
+      "maxLength": 100,
+      "confidential": false,
+      "label": "Notification par téléphone acceptée?",
+      "options": [
+        {
+          "value": "Oui",
+          "label": "Oui"
+        },
+        {
+          "value": "Non",
+          "label": "Non"
+        }
+      ],
+      "hideFromSearch": false
+    }
+  ],
+  "staticTemplateName": "Prefdenotification",
+  "tabName": "Préf de notification"
+}
