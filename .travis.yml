@@ -1,11 +1,20 @@
 language: java
 
-install: mvn install -DskipTests=true -Dgpg.skip=true
+before_install:
+  - nvm install $NODE_VERSION
+  - curl -s "https://get.sdkman.io" | bash
+  - source "$HOME/.sdkman/bin/sdkman-init.sh"
+  - sdk install java 17.0.5-open
+  - sdk use java 17.0.5-open
+
+install:
+  - mvn install -DskipTests=true -Dgpg.skip=true
+  - npm install
 
 dist: trusty
 
-jdk:
-  - oraclejdk8
+#jdk:
+#  - oraclejdk8
 
 env:
   - NODE_VERSION="5.12.0"
@@ -13,12 +22,6 @@ env:
 cache:
   directories:
     - node_modules
-
-before_install:
-  - nvm install $NODE_VERSION
-
-install:
-  - npm install
 
 after_success:
   - mvn test jacoco:report coveralls:report
