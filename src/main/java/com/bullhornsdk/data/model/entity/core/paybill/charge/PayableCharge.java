@@ -31,7 +31,7 @@ import java.util.Objects;
     "currencyUnit", "dateAdded", "dateLastModified", "description", "employeeType", "generalLedgerSegment1",
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
     "generalLedgerServiceCode", "jobOrder", "payMasters", "payableTransactions", "periodEndDate", "placement",
-    "readyToBillOverride", "status", "subTotal", "transactionStatus", "transactionType"
+    "readyToBillOverride", "status", "subtotal", "transactionStatus", "transactionType"
 })
 public class PayableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
 
@@ -59,7 +59,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
     private Placement placement;
     private Boolean readyToBillOverride;
     private SpecializedOptionsLookup status;
-    private BigDecimal subTotal;
+    private BigDecimal subtotal;
     private TransactionStatus transactionStatus;
     private TransactionType transactionType;
 
@@ -307,14 +307,14 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
         this.status = status;
     }
 
-    @JsonProperty("subTotal")
+    @JsonProperty("subtotal")
     public BigDecimal getSubTotal() {
-        return subTotal;
+        return subtotal;
     }
 
-    @JsonProperty("subTotal")
-    public void setSubTotal(BigDecimal subTotal) {
-        this.subTotal = subTotal;
+    @JsonProperty("subtotal")
+    public void setSubTotal(BigDecimal subtotal) {
+        this.subtotal = subtotal;
     }
 
     @JsonProperty("transactionStatus")
@@ -364,7 +364,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
             ", placement=" + placement +
             ", readyToBillOverride=" + readyToBillOverride +
             ", status=" + status +
-            ", subTotal=" + subTotal +
+            ", subtotal=" + subtotal +
             ", transactionStatus=" + transactionStatus +
             ", transactionType=" + transactionType +
             '}';
@@ -398,14 +398,14 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
             Objects.equals(placement, that.placement) &&
             Objects.equals(readyToBillOverride, that.readyToBillOverride) &&
             Objects.equals(status, that.status) &&
-            Objects.equals(subTotal, that.subTotal) &&
+            Objects.equals(subtotal, that.subtotal) &&
             Objects.equals(transactionStatus, that.transactionStatus) &&
             Objects.equals(transactionType, that.transactionType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subTotal, transactionStatus, transactionType);
+        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subtotal, transactionStatus, transactionType);
     }
 
 }
