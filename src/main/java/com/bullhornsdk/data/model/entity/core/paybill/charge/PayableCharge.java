@@ -30,8 +30,9 @@ import java.util.Objects;
 @JsonPropertyOrder({"id", "addedByUser", "canExport", "candidate", "clientCorporation",
     "currencyUnit", "dateAdded", "dateLastModified", "description", "employeeType", "generalLedgerSegment1",
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
-    "generalLedgerServiceCode", "jobOrder", "payMasters", "payableTransactions", "periodEndDate", "placement",
+    "generalLedgerServiceCode", "jobOrder", "locationState", "payMasters", "payableTransactions", "periodEndDate", "placement",
     "readyToBillOverride", "status", "subtotal", "transactionStatus", "transactionType"
+
 })
 public class PayableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
 
@@ -53,6 +54,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
     private GeneralLedgerSegment5 generalLedgerSegment5;
     private GeneralLedgerServiceCode generalLedgerServiceCode;
     private JobOrder jobOrder;
+    private String locationState;
     private OneToMany<PayMaster> payMasters;
     private OneToMany<PayableTransaction> payableTransactions;
     private String periodEndDate;
@@ -257,6 +259,16 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
         this.jobOrder = jobOrder;
     }
 
+    @JsonProperty("locationState")
+    public String getLocationState() {
+        return locationState;
+    }
+
+    @JsonProperty("locationState")
+    public void setLocationState(String locationState) {
+        this.locationState = locationState;
+    }
+
     @JsonProperty("payMasters")
     public OneToMany<PayMaster> getPayMasters() {
         return payMasters;
@@ -358,6 +370,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
             ", generalLedgerSegment5=" + generalLedgerSegment5 +
             ", generalLedgerServiceCode=" + generalLedgerServiceCode +
             ", jobOrder=" + jobOrder +
+            ", locationState=" + locationState +
             ", payMasters=" + payMasters +
             ", payableTransactions=" + payableTransactions +
             ", periodEndDate='" + periodEndDate + '\'' +
@@ -392,6 +405,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
             Objects.equals(generalLedgerSegment5, that.generalLedgerSegment5) &&
             Objects.equals(generalLedgerServiceCode, that.generalLedgerServiceCode) &&
             Objects.equals(jobOrder, that.jobOrder) &&
+            Objects.equals(locationState, that.locationState) &&
             Objects.equals(payMasters, that.payMasters) &&
             Objects.equals(payableTransactions, that.payableTransactions) &&
             Objects.equals(periodEndDate, that.periodEndDate) &&
@@ -405,7 +419,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subtotal, transactionStatus, transactionType);
+        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, locationState, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subτotal, transactionStatus, transactionType);
     }
 
 }
