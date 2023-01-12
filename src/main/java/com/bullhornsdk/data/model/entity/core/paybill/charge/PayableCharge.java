@@ -32,7 +32,6 @@ import java.util.Objects;
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
     "generalLedgerServiceCode", "jobOrder", "locationState", "payMasters", "payableTransactions", "periodEndDate", "placement",
     "readyToBillOverride", "status", "subtotal", "transactionStatus", "transactionType"
-
 })
 public class PayableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
 
