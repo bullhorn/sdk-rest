@@ -308,12 +308,12 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
     }
 
     @JsonProperty("subtotal")
-    public BigDecimal getSubTotal() {
+    public BigDecimal getSubtotal() {
         return subtotal;
     }
 
     @JsonProperty("subtotal")
-    public void setSubTotal(BigDecimal subtotal) {
+    public void setSubtotal(BigDecimal subtotal) {
         this.subtotal = subtotal;
     }
 
