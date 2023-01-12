@@ -418,7 +418,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, locationState, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subτotal, transactionStatus, transactionType);
+        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, locationState, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subtotal, transactionStatus, transactionType);
     }
 
 }
