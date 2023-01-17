@@ -1,14 +1,12 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.association.AssociationFactory;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
@@ -160,8 +158,8 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
     }
 
     private <T extends AssociationEntity, E extends BullhornEntity> void assertResponse(Class<T> type, List<E> response) {
-        assertNotNull(type.getSimpleName() + " is null", response);
-        assertFalse("No records fetched " + type.getSimpleName(), response.isEmpty());
+        Assertions.assertNotNull(response, type.getSimpleName() + " is null");
+        Assertions.assertFalse(response.isEmpty(), "No records fetched " + type.getSimpleName());
     }
 
     private <T extends AssociationEntity> void setUpAssociation(Class<T> type, Integer entityId, Set<Integer> associationIds,
@@ -175,8 +173,8 @@ public class TestStandardBullhornApiRestGetAssociations extends BaseTest {
     }
 
     private void assertCrudResponse(Class<? extends AssociationEntity> type, CrudResponse response) {
-        assertNotNull(type.getSimpleName() + " is null", response);
-        assertFalse("Error occurred while associating to the " + type.getSimpleName(), response.isError());
+        Assertions.assertNotNull(response, type.getSimpleName() + " is null");
+        Assertions.assertFalse(response.isError(), "Error occurred while associating to the " + type.getSimpleName());
     }
 
 }

@@ -1,8 +1,5 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
@@ -10,7 +7,8 @@ import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementHi
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.file.*;
 import org.apache.log4j.Logger;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.UserType;
@@ -26,34 +24,34 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
  */
 
 public class TestStandardBullhornApiRestQuery extends BaseTest {
-	private final Logger log = Logger.getLogger(TestStandardBullhornApiRestQuery.class);
+    private final Logger log = Logger.getLogger(TestStandardBullhornApiRestQuery.class);
 
-	private String where = "id>0";
+    private String where = "id>0";
 
-	private QueryParams queryParams;
+    private QueryParams queryParams;
 
-	public TestStandardBullhornApiRestQuery() {
-		super();
-		this.queryParams = ParamFactory.queryParams();
+    public TestStandardBullhornApiRestQuery() {
+        super();
+        this.queryParams = ParamFactory.queryParams();
 
-	}
+    }
 
-	@Test
-	public void testQueryAppointment() {
+    @Test
+    public void testQueryAppointment() {
 
-		ListWrapper<Appointment> wrapper = bullhornData.query(Appointment.class, where, null, queryParams);
+        ListWrapper<Appointment> wrapper = bullhornData.query(Appointment.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Appointment>", wrapper);
-	}
+        runAssertions("ListWrapper<Appointment>", wrapper);
+    }
 
-	@Test
-	public void testQueryAppointmentAttendee() {
+    @Test
+    public void testQueryAppointmentAttendee() {
 
-		ListWrapper<AppointmentAttendee> wrapper = bullhornData.query(AppointmentAttendee.class, where, null, queryParams);
+        ListWrapper<AppointmentAttendee> wrapper = bullhornData.query(AppointmentAttendee.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<AppointmentAttendee>", wrapper);
+        runAssertions("ListWrapper<AppointmentAttendee>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryBranch() {
@@ -64,13 +62,13 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryBusinessSector() {
+    @Test
+    public void testQueryBusinessSector() {
 
-		ListWrapper<BusinessSector> wrapper = bullhornData.query(BusinessSector.class, where, null, queryParams);
+        ListWrapper<BusinessSector> wrapper = bullhornData.query(BusinessSector.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<BusinessSector>", wrapper);
-	}
+        runAssertions("ListWrapper<BusinessSector>", wrapper);
+    }
 
     @Test
     public void testQueryCandidateCertification() {
@@ -81,76 +79,76 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryCandidateEducation() {
+    @Test
+    public void testQueryCandidateEducation() {
 
-		ListWrapper<CandidateEducation> wrapper = bullhornData.query(CandidateEducation.class, where, null, queryParams);
+        ListWrapper<CandidateEducation> wrapper = bullhornData.query(CandidateEducation.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<CandidateEducation>", wrapper);
+        runAssertions("ListWrapper<CandidateEducation>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryCandidateReference() {
+    @Test
+    public void testQueryCandidateReference() {
 
-		ListWrapper<CandidateReference> wrapper = bullhornData.query(CandidateReference.class, where, null, queryParams);
+        ListWrapper<CandidateReference> wrapper = bullhornData.query(CandidateReference.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<CandidateEducation>", wrapper);
+        runAssertions("ListWrapper<CandidateEducation>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryCandidateWorkHistory() {
+    @Test
+    public void testQueryCandidateWorkHistory() {
 
-		ListWrapper<CandidateWorkHistory> wrapper = bullhornData.query(CandidateWorkHistory.class, where, null, queryParams);
+        ListWrapper<CandidateWorkHistory> wrapper = bullhornData.query(CandidateWorkHistory.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<CandidateWorkHistory>", wrapper);
-	}
+        runAssertions("ListWrapper<CandidateWorkHistory>", wrapper);
+    }
 
-	@Test
-	public void testQueryCategory() {
+    @Test
+    public void testQueryCategory() {
 
-		ListWrapper<Category> wrapper = bullhornData.query(Category.class, where, null, queryParams);
+        ListWrapper<Category> wrapper = bullhornData.query(Category.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Category>", wrapper);
+        runAssertions("ListWrapper<Category>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryCertification() {
+    @Test
+    public void testQueryCertification() {
 
-		ListWrapper<Certification> wrapper = bullhornData.query(Certification.class, where, null, queryParams);
+        ListWrapper<Certification> wrapper = bullhornData.query(Certification.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Certification>", wrapper);
+        runAssertions("ListWrapper<Certification>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryClientContact() {
+    @Test
+    public void testQueryClientContact() {
 
-		ListWrapper<ClientContact> wrapper = bullhornData.query(ClientContact.class, where, null, queryParams);
+        ListWrapper<ClientContact> wrapper = bullhornData.query(ClientContact.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<ClientContact>", wrapper);
+        runAssertions("ListWrapper<ClientContact>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryClientContact1() {
+    @Test
+    public void testQueryClientContact1() {
 
-		ListWrapper<ClientContact1> wrapper = bullhornData.query(ClientContact1.class, where, null, queryParams);
+        ListWrapper<ClientContact1> wrapper = bullhornData.query(ClientContact1.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<ClientContact1>", wrapper);
+        runAssertions("ListWrapper<ClientContact1>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryClientCorporation() {
+    @Test
+    public void testQueryClientCorporation() {
 
-		ListWrapper<ClientCorporation> wrapper = bullhornData.query(ClientCorporation.class, where, null, queryParams);
+        ListWrapper<ClientCorporation> wrapper = bullhornData.query(ClientCorporation.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<ClientCorporation>", wrapper);
+        runAssertions("ListWrapper<ClientCorporation>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryClientCorporation1() {
@@ -161,33 +159,33 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryCorporateUser() {
+    @Test
+    public void testQueryCorporateUser() {
 
-		String where = "isDeleted=true";
-		ListWrapper<CorporateUser> wrapper = bullhornData.query(CorporateUser.class, where, null, queryParams);
-		assertTrue(wrapper.getCount() == 1);
-		runAssertions("ListWrapper<CorporateUser>", wrapper);
+        String where = "isDeleted=true";
+        ListWrapper<CorporateUser> wrapper = bullhornData.query(CorporateUser.class, where, null, queryParams);
+        Assertions.assertTrue(wrapper.getCount() == 1);
+        runAssertions("ListWrapper<CorporateUser>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryCorporationDepartment() {
+    @Test
+    public void testQueryCorporationDepartment() {
 
-		ListWrapper<CorporationDepartment> wrapper = bullhornData.query(CorporationDepartment.class, where, null, queryParams);
+        ListWrapper<CorporationDepartment> wrapper = bullhornData.query(CorporationDepartment.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<CorporationDepartment>", wrapper);
+        runAssertions("ListWrapper<CorporationDepartment>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryCountry() {
+    @Test
+    public void testQueryCountry() {
 
-		ListWrapper<Country> wrapper = bullhornData.query(Country.class, where, null, queryParams);
+        ListWrapper<Country> wrapper = bullhornData.query(Country.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Country>", wrapper);
+        runAssertions("ListWrapper<Country>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryDepartment() {
@@ -243,79 +241,79 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryHousingComplexGreaterThan() {
+    @Test
+    public void testQueryHousingComplexGreaterThan() {
 
-		ListWrapper<HousingComplex> wrapper = bullhornData.query(HousingComplex.class, "id > 10", null, queryParams);
+        ListWrapper<HousingComplex> wrapper = bullhornData.query(HousingComplex.class, "id > 10", null, queryParams);
 
-		assertTrue(wrapper.getCount() == 10);
-		runAssertions("ListWrapper<HousingComplex>", wrapper);
+        Assertions.assertTrue(wrapper.getCount() == 10);
+        runAssertions("ListWrapper<HousingComplex>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryJobOrderGreaterThan() {
+    @Test
+    public void testQueryJobOrderGreaterThan() {
 
-		ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id > 10", null, queryParams);
+        ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id > 10", null, queryParams);
 
-		assertTrue(wrapper.getCount() == 10);
-		runAssertions("ListWrapper<JobOrder>", wrapper);
+        Assertions.assertTrue(wrapper.getCount() == 10);
+        runAssertions("ListWrapper<JobOrder>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryJobOrderGreaterThanEqualTo() {
+    @Test
+    public void testQueryJobOrderGreaterThanEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id >= 10", null, queryParams);
+        ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id >= 10", null, queryParams);
 
-		assertTrue(wrapper.getCount() == 11);
-		runAssertions("ListWrapper<JobOrder>", wrapper);
+        Assertions.assertTrue(wrapper.getCount() == 11);
+        runAssertions("ListWrapper<JobOrder>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryJobOrderLessThan() {
+    @Test
+    public void testQueryJobOrderLessThan() {
 
-		ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id < 5", null, queryParams);
+        ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id < 5", null, queryParams);
 
-		assertTrue(wrapper.getCount() == 4);
-		runAssertions("ListWrapper<JobOrder>", wrapper);
+        Assertions.assertTrue(wrapper.getCount() == 4);
+        runAssertions("ListWrapper<JobOrder>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryJobOrderLessThanEqualTo() {
+    @Test
+    public void testQueryJobOrderLessThanEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id <= 5", null, queryParams);
+        ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id <= 5", null, queryParams);
 
-		assertTrue(wrapper.getCount() == 5);
-		runAssertions("ListWrapper<JobOrder>", wrapper);
+        Assertions.assertTrue(wrapper.getCount() == 5);
+        runAssertions("ListWrapper<JobOrder>", wrapper);
 
-		ListWrapper<JobOrder> wrapper2 = bullhornData.query(JobOrder.class, "status = 'Submitted'", null, queryParams);
+        ListWrapper<JobOrder> wrapper2 = bullhornData.query(JobOrder.class, "status = 'Submitted'", null, queryParams);
 
-		assertTrue(wrapper2.getCount() == 2);
+        Assertions.assertTrue(wrapper2.getCount() == 2);
 
-	}
+    }
 
-	@Test
-	public void testQueryJobOrderEqualTo() {
+    @Test
+    public void testQueryJobOrderEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id = 5", null, queryParams);
+        ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id = 5", null, queryParams);
 
-		assertTrue(wrapper.getCount() == 1);
-		runAssertions("ListWrapper<JobOrder>", wrapper);
+        Assertions.assertTrue(wrapper.getCount() == 1);
+        runAssertions("ListWrapper<JobOrder>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryJobOrderNotEqualTo() {
+    @Test
+    public void testQueryJobOrderNotEqualTo() {
 
-		ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id <> 5", null, queryParams);
+        ListWrapper<JobOrder> wrapper = bullhornData.query(JobOrder.class, "id <> 5", null, queryParams);
 
-		assertTrue(wrapper.getCount() == 19);
-		runAssertions("ListWrapper<JobOrder>", wrapper);
+        Assertions.assertTrue(wrapper.getCount() == 19);
+        runAssertions("ListWrapper<JobOrder>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryJobBoardPost() {
@@ -333,21 +331,21 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryJobSubmission() {
+    @Test
+    public void testQueryJobSubmission() {
 
-		ListWrapper<JobSubmission> wrapper = bullhornData.query(JobSubmission.class, where, null, queryParams);
-		runAssertions("ListWrapper<JobSubmission>", wrapper);
+        ListWrapper<JobSubmission> wrapper = bullhornData.query(JobSubmission.class, where, null, queryParams);
+        runAssertions("ListWrapper<JobSubmission>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryJobSubmissionHistory() {
+    @Test
+    public void testQueryJobSubmissionHistory() {
 
-		ListWrapper<JobSubmissionHistory> wrapper = bullhornData.query(JobSubmissionHistory.class, where, null, queryParams);
-		runAssertions("ListWrapper<JobSubmissionHistory>", wrapper);
+        ListWrapper<JobSubmissionHistory> wrapper = bullhornData.query(JobSubmissionHistory.class, where, null, queryParams);
+        runAssertions("ListWrapper<JobSubmissionHistory>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryLead() {
@@ -357,13 +355,13 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
         runAssertions("ListWrapper<Lead>", wrapper);
     }
 
-	@Test
-	public void testQueryNoteEntity() {
+    @Test
+    public void testQueryNoteEntity() {
 
-		ListWrapper<NoteEntity> wrapper = bullhornData.query(NoteEntity.class, where, null, queryParams);
+        ListWrapper<NoteEntity> wrapper = bullhornData.query(NoteEntity.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Note>", wrapper);
-	}
+        runAssertions("ListWrapper<Note>", wrapper);
+    }
 
     @Test
     public void testQueryOpportunity() {
@@ -373,14 +371,14 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
         runAssertions("ListWrapper<Opportunity>", wrapper);
     }
 
-	@Test
-	public void testQueryPlacement() {
+    @Test
+    public void testQueryPlacement() {
 
-		ListWrapper<Placement> wrapper = bullhornData.query(Placement.class, where, null, queryParams);
+        ListWrapper<Placement> wrapper = bullhornData.query(Placement.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<ClientContact>", wrapper);
+        runAssertions("ListWrapper<ClientContact>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryPlacementCertification() {
@@ -391,87 +389,87 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryPlacementChangeRequest() {
+    @Test
+    public void testQueryPlacementChangeRequest() {
 
-		ListWrapper<PlacementChangeRequest> wrapper = bullhornData.query(PlacementChangeRequest.class, where, null, queryParams);
+        ListWrapper<PlacementChangeRequest> wrapper = bullhornData.query(PlacementChangeRequest.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<PlacementChangeRequest>", wrapper);
+        runAssertions("ListWrapper<PlacementChangeRequest>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryPlacementCommission() {
+    @Test
+    public void testQueryPlacementCommission() {
 
-		ListWrapper<PlacementCommission> wrapper = bullhornData.query(PlacementCommission.class, where, null, queryParams);
+        ListWrapper<PlacementCommission> wrapper = bullhornData.query(PlacementCommission.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<PlacementCommission>", wrapper);
+        runAssertions("ListWrapper<PlacementCommission>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryPlacementCommission_2() {
+    @Test
+    public void testQueryPlacementCommission_2() {
 
-		String query = "placement.id=" + testEntities.getPlacementId() + " AND user.id IS NOT NULL";
-		ListWrapper<PlacementCommission> wrapper = bullhornData.query(PlacementCommission.class, query, null, queryParams);
+        String query = "placement.id=" + testEntities.getPlacementId() + " AND user.id IS NOT NULL";
+        ListWrapper<PlacementCommission> wrapper = bullhornData.query(PlacementCommission.class, query, null, queryParams);
 
-		runAssertions("ListWrapper<PlacementCommission>", wrapper);
+        runAssertions("ListWrapper<PlacementCommission>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQuerySendout() {
+    @Test
+    public void testQuerySendout() {
 
-		ListWrapper<Sendout> wrapper = bullhornData.query(Sendout.class, where, null, queryParams);
+        ListWrapper<Sendout> wrapper = bullhornData.query(Sendout.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Sendout>", wrapper);
+        runAssertions("ListWrapper<Sendout>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQuerySkill() {
+    @Test
+    public void testQuerySkill() {
 
-		ListWrapper<Skill> wrapper = bullhornData.query(Skill.class, where, null, queryParams);
+        ListWrapper<Skill> wrapper = bullhornData.query(Skill.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Skill>", wrapper);
+        runAssertions("ListWrapper<Skill>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQuerySpecialty() {
+    @Test
+    public void testQuerySpecialty() {
 
-		ListWrapper<Specialty> wrapper = bullhornData.query(Specialty.class, where, null, queryParams);
+        ListWrapper<Specialty> wrapper = bullhornData.query(Specialty.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Specialty>", wrapper);
+        runAssertions("ListWrapper<Specialty>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryState() {
+    @Test
+    public void testQueryState() {
 
-		ListWrapper<State> wrapper = bullhornData.query(State.class, where, null, queryParams);
+        ListWrapper<State> wrapper = bullhornData.query(State.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<State>", wrapper);
+        runAssertions("ListWrapper<State>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryTask() {
+    @Test
+    public void testQueryTask() {
 
-		ListWrapper<Task> wrapper = bullhornData.query(Task.class, where, null, queryParams);
+        ListWrapper<Task> wrapper = bullhornData.query(Task.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Task>", wrapper);
+        runAssertions("ListWrapper<Task>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryTimeUnit() {
+    @Test
+    public void testQueryTimeUnit() {
 
-		ListWrapper<TimeUnit> wrapper = bullhornData.query(TimeUnit.class, where, null, queryParams);
+        ListWrapper<TimeUnit> wrapper = bullhornData.query(TimeUnit.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<TimeUnit>", wrapper);
+        runAssertions("ListWrapper<TimeUnit>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryUserType() {
@@ -577,11 +575,11 @@ public class TestStandardBullhornApiRestQuery extends BaseTest {
         runAssertions("ListWrapper<InvoiceStatementHistory>", wrapper);
     }
 
-	private <T extends BullhornEntity> void runAssertions(String wrapperName, ListWrapper<T> wrapper) {
-		assertNotNull(wrapperName + " is null", wrapper);
-		assertNotNull(wrapperName + ".data is null", wrapper.getData());
-		assertTrue(wrapperName + ".data is empty", wrapper.getData() != null && wrapper.getData().size() > 0);
-		assertTrue(wrapperName + ".data.size() is not equal to count", wrapper.getData().size() == wrapper.getCount());
-	}
+    private <T extends BullhornEntity> void runAssertions(String wrapperName, ListWrapper<T> wrapper) {
+        Assertions.assertNotNull(wrapper, wrapperName + " is null");
+        Assertions.assertNotNull(wrapper.getData(), wrapperName + ".data is null");
+        Assertions.assertTrue(wrapper.getData() != null && wrapper.getData().size() > 0, wrapperName + ".data is empty");
+        Assertions.assertTrue(wrapper.getData().size() == wrapper.getCount(), wrapperName + ".data.size() is not equal to count");
+    }
 
 }

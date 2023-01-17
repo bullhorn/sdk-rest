@@ -1,7 +1,5 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
@@ -9,7 +7,8 @@ import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
@@ -17,30 +16,30 @@ import com.bullhornsdk.data.model.enums.MetaParameter;
 
 public class TestStandardBullhornApiRestMeta extends BaseTest {
 
-	public TestStandardBullhornApiRestMeta() {
-		super();
-	}
+    public TestStandardBullhornApiRestMeta() {
+        super();
+    }
 
-	@Test
-	public void testMetaAppointment() {
+    @Test
+    public void testMetaAppointment() {
 
-		MetaData<Appointment> meta = bullhornData.getMetaData(Appointment.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Appointment.class);
-	}
+        MetaData<Appointment> meta = bullhornData.getMetaData(Appointment.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Appointment.class);
+    }
 
-	private <T extends BullhornEntity> void runAssertions(MetaData<T> metaData, Class<T> type) {
-		assertNotNull("metaData is null", metaData);
-		assertNotNull("metaData.fields is null", metaData.getFields());
-		assertTrue("problem with getting meta data for" + type.getSimpleName(), type.getSimpleName().equals(metaData.getEntity()));
-	}
+    private <T extends BullhornEntity> void runAssertions(MetaData<T> metaData, Class<T> type) {
+        Assertions.assertNotNull(metaData, "metaData is null");
+        Assertions.assertNotNull(metaData.getFields(), "metaData.fields is null");
+        Assertions.assertTrue(type.getSimpleName().equals(metaData.getEntity()), "problem with getting meta data for" + type.getSimpleName());
+    }
 
-	@Test
-	public void testMetaAppointmentAttendee() {
+    @Test
+    public void testMetaAppointmentAttendee() {
 
-		MetaData<AppointmentAttendee> meta = bullhornData.getMetaData(AppointmentAttendee.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, AppointmentAttendee.class);
+        MetaData<AppointmentAttendee> meta = bullhornData.getMetaData(AppointmentAttendee.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, AppointmentAttendee.class);
 
-	}
+    }
 
     @Test
     public void testMetaBranch() {
@@ -50,21 +49,21 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
-	@Test
-	public void testMetaBusinessSector() {
+    @Test
+    public void testMetaBusinessSector() {
 
-		MetaData<BusinessSector> meta = bullhornData.getMetaData(BusinessSector.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, BusinessSector.class);
+        MetaData<BusinessSector> meta = bullhornData.getMetaData(BusinessSector.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, BusinessSector.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCandidate() {
+    @Test
+    public void testMetaCandidate() {
 
-		MetaData<Candidate> meta = bullhornData.getMetaData(Candidate.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Candidate.class);
+        MetaData<Candidate> meta = bullhornData.getMetaData(Candidate.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Candidate.class);
 
-	}
+    }
 
     @Test
     public void testMetaCandidateCertification() {
@@ -74,87 +73,87 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
-	@Test
-	public void testMetaCandidateEducation() {
+    @Test
+    public void testMetaCandidateEducation() {
 
-		MetaData<CandidateEducation> meta = bullhornData.getMetaData(CandidateEducation.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, CandidateEducation.class);
+        MetaData<CandidateEducation> meta = bullhornData.getMetaData(CandidateEducation.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, CandidateEducation.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCandidateReference() {
+    @Test
+    public void testMetaCandidateReference() {
 
-		MetaData<CandidateReference> meta = bullhornData.getMetaData(CandidateReference.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, CandidateReference.class);
+        MetaData<CandidateReference> meta = bullhornData.getMetaData(CandidateReference.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, CandidateReference.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCandidateWorkHistory() {
+    @Test
+    public void testMetaCandidateWorkHistory() {
 
-		MetaData<CandidateWorkHistory> meta = bullhornData.getMetaData(CandidateWorkHistory.class, MetaParameter.FULL,
-				this.getFieldSet());
-		runAssertions(meta, CandidateWorkHistory.class);
+        MetaData<CandidateWorkHistory> meta = bullhornData.getMetaData(CandidateWorkHistory.class, MetaParameter.FULL,
+            this.getFieldSet());
+        runAssertions(meta, CandidateWorkHistory.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCategory() {
+    @Test
+    public void testMetaCategory() {
 
-		MetaData<Category> meta = bullhornData.getMetaData(Category.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Category.class);
+        MetaData<Category> meta = bullhornData.getMetaData(Category.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Category.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCertification() {
+    @Test
+    public void testMetaCertification() {
 
-		MetaData<Certification> meta = bullhornData.getMetaData(Certification.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Certification.class);
+        MetaData<Certification> meta = bullhornData.getMetaData(Certification.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Certification.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaClientContact() {
+    @Test
+    public void testMetaClientContact() {
 
-		MetaData<ClientContact> meta = bullhornData.getMetaData(ClientContact.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, ClientContact.class);
+        MetaData<ClientContact> meta = bullhornData.getMetaData(ClientContact.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, ClientContact.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaClientCorporation() {
+    @Test
+    public void testMetaClientCorporation() {
 
-		MetaData<ClientCorporation> meta = bullhornData.getMetaData(ClientCorporation.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, ClientCorporation.class);
+        MetaData<ClientCorporation> meta = bullhornData.getMetaData(ClientCorporation.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, ClientCorporation.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCorporateUser() {
+    @Test
+    public void testMetaCorporateUser() {
 
-		MetaData<CorporateUser> meta = bullhornData.getMetaData(CorporateUser.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, CorporateUser.class);
+        MetaData<CorporateUser> meta = bullhornData.getMetaData(CorporateUser.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, CorporateUser.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCorporationDepartment() {
+    @Test
+    public void testMetaCorporationDepartment() {
 
-		MetaData<CorporationDepartment> meta = bullhornData.getMetaData(CorporationDepartment.class, MetaParameter.FULL,
-				this.getFieldSet());
-		runAssertions(meta, CorporationDepartment.class);
+        MetaData<CorporationDepartment> meta = bullhornData.getMetaData(CorporationDepartment.class, MetaParameter.FULL,
+            this.getFieldSet());
+        runAssertions(meta, CorporationDepartment.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaCountry() {
+    @Test
+    public void testMetaCountry() {
 
-		MetaData<Country> meta = bullhornData.getMetaData(Country.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Country.class);
+        MetaData<Country> meta = bullhornData.getMetaData(Country.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Country.class);
 
-	}
+    }
 
     @Test
     public void testMetaDepartment() {
@@ -172,13 +171,13 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
-	@Test
-	public void testMetaJobOrder() {
+    @Test
+    public void testMetaJobOrder() {
 
-		MetaData<JobOrder> meta = bullhornData.getMetaData(JobOrder.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, JobOrder.class);
+        MetaData<JobOrder> meta = bullhornData.getMetaData(JobOrder.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, JobOrder.class);
 
-	}
+    }
 
     @Test
     public void testMetaJobBoardPost() {
@@ -196,13 +195,13 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
-	@Test
-	public void testMetaJobSubmission() {
+    @Test
+    public void testMetaJobSubmission() {
 
-		MetaData<JobSubmission> meta = bullhornData.getMetaData(JobSubmission.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, JobSubmission.class);
+        MetaData<JobSubmission> meta = bullhornData.getMetaData(JobSubmission.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, JobSubmission.class);
 
-	}
+    }
 
     @Test
     public void testMetaLead() {
@@ -212,21 +211,21 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
-	@Test
-	public void testMetaNote() {
+    @Test
+    public void testMetaNote() {
 
-		MetaData<Note> meta = bullhornData.getMetaData(Note.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Note.class);
+        MetaData<Note> meta = bullhornData.getMetaData(Note.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Note.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaNoteEntity() {
+    @Test
+    public void testMetaNoteEntity() {
 
-		MetaData<NoteEntity> meta = bullhornData.getMetaData(NoteEntity.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, NoteEntity.class);
+        MetaData<NoteEntity> meta = bullhornData.getMetaData(NoteEntity.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, NoteEntity.class);
 
-	}
+    }
 
     @Test
     public void testMetaOpportunity() {
@@ -236,13 +235,13 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
-	@Test
-	public void testMetaPlacement() {
+    @Test
+    public void testMetaPlacement() {
 
-		MetaData<Placement> meta = bullhornData.getMetaData(Placement.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Placement.class);
+        MetaData<Placement> meta = bullhornData.getMetaData(Placement.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Placement.class);
 
-	}
+    }
 
     @Test
     public void testMetaPlacementCertification() {
@@ -252,100 +251,100 @@ public class TestStandardBullhornApiRestMeta extends BaseTest {
 
     }
 
-	@Test
-	public void testMetaPlacementChangeRequest() {
+    @Test
+    public void testMetaPlacementChangeRequest() {
 
-		MetaData<PlacementChangeRequest> meta = bullhornData.getMetaData(PlacementChangeRequest.class, MetaParameter.FULL,
-				this.getFieldSet());
-		runAssertions(meta, PlacementChangeRequest.class);
+        MetaData<PlacementChangeRequest> meta = bullhornData.getMetaData(PlacementChangeRequest.class, MetaParameter.FULL,
+            this.getFieldSet());
+        runAssertions(meta, PlacementChangeRequest.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaPlacementCommission() {
+    @Test
+    public void testMetaPlacementCommission() {
 
-		MetaData<PlacementCommission> meta = bullhornData.getMetaData(PlacementCommission.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, PlacementCommission.class);
+        MetaData<PlacementCommission> meta = bullhornData.getMetaData(PlacementCommission.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, PlacementCommission.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaSendout() {
+    @Test
+    public void testMetaSendout() {
 
-		MetaData<Sendout> meta = bullhornData.getMetaData(Sendout.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Sendout.class);
+        MetaData<Sendout> meta = bullhornData.getMetaData(Sendout.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Sendout.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaSkill() {
+    @Test
+    public void testMetaSkill() {
 
-		MetaData<Skill> meta = bullhornData.getMetaData(Skill.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Skill.class);
+        MetaData<Skill> meta = bullhornData.getMetaData(Skill.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Skill.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaSpecialty() {
+    @Test
+    public void testMetaSpecialty() {
 
-		MetaData<Specialty> meta = bullhornData.getMetaData(Specialty.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Specialty.class);
+        MetaData<Specialty> meta = bullhornData.getMetaData(Specialty.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Specialty.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaState() {
+    @Test
+    public void testMetaState() {
 
-		MetaData<State> meta = bullhornData.getMetaData(State.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, State.class);
+        MetaData<State> meta = bullhornData.getMetaData(State.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, State.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaTask() {
+    @Test
+    public void testMetaTask() {
 
-		MetaData<Task> meta = bullhornData.getMetaData(Task.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, Task.class);
+        MetaData<Task> meta = bullhornData.getMetaData(Task.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, Task.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaTimeUnit() {
+    @Test
+    public void testMetaTimeUnit() {
 
-		MetaData<TimeUnit> meta = bullhornData.getMetaData(TimeUnit.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, TimeUnit.class);
+        MetaData<TimeUnit> meta = bullhornData.getMetaData(TimeUnit.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, TimeUnit.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaLocalTaxForm() {
+    @Test
+    public void testMetaLocalTaxForm() {
 
-		MetaData<LocalTaxForm> meta = bullhornData.getMetaData(LocalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, LocalTaxForm.class);
+        MetaData<LocalTaxForm> meta = bullhornData.getMetaData(LocalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, LocalTaxForm.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaStateTaxForm() {
+    @Test
+    public void testMetaStateTaxForm() {
 
-		MetaData<StateTaxForm> meta = bullhornData.getMetaData(StateTaxForm.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, StateTaxForm.class);
+        MetaData<StateTaxForm> meta = bullhornData.getMetaData(StateTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, StateTaxForm.class);
 
-	}
+    }
 
-	@Test
-	public void testMetaFederalTaxForm() {
+    @Test
+    public void testMetaFederalTaxForm() {
 
-		MetaData<FederalTaxForm> meta = bullhornData.getMetaData(FederalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
-		runAssertions(meta, FederalTaxForm.class);
+        MetaData<FederalTaxForm> meta = bullhornData.getMetaData(FederalTaxForm.class, MetaParameter.FULL, this.getFieldSet());
+        runAssertions(meta, FederalTaxForm.class);
 
-	}
+    }
 
-	private Set<String> getFieldSet() {
-		return null;
-		// Set<String> fieldSet = new LinkedHashSet<String>();
-		// fieldSet.add("id");
-		// return fieldSet;
-	}
+    private Set<String> getFieldSet() {
+        return null;
+        // Set<String> fieldSet = new LinkedHashSet<String>();
+        // fieldSet.add("id");
+        // return fieldSet;
+    }
 
 }
