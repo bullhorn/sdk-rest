@@ -457,6 +457,7 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_24("PersonCustomObjectInstance24", PersonCustomObjectInstance24.class, PersonCustomObjectInstance24Wrapper.class, PersonCustomObjectInstance24ListWrapper.class, "PersonCustomObject24EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_25("PersonCustomObjectInstance25", PersonCustomObjectInstance25.class, PersonCustomObjectInstance25Wrapper.class, PersonCustomObjectInstance25ListWrapper.class, "PersonCustomObject25EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_29("PersonCustomObjectInstance29", PersonCustomObjectInstance29.class, PersonCustomObjectInstance29Wrapper.class, PersonCustomObjectInstance29ListWrapper.class, "PersonCustomObject29EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_30("PersonCustomObjectInstance30", PersonCustomObjectInstance30.class, PersonCustomObjectInstance30Wrapper.class, PersonCustomObjectInstance30ListWrapper.class, "PersonCustomObject30EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
 
     // File Attachment Entities
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),
