@@ -38,7 +38,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     private final AssociationField<Candidate, PersonCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", PersonCustomObjectInstance9.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", PersonCustomObjectInstance10.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance29> customObject29s = instantiateAssociationField("customObject29s", PersonCustomObjectInstance29.class);
-
+    private final AssociationField<Candidate, PersonCustomObjectInstance30> customObject30s = instantiateAssociationField("customObject30s", PersonCustomObjectInstance30.class);
 
     private List<AssociationField<Candidate, ? extends BullhornEntity>> allAssociations;
     private static final CandidateAssociations INSTANCE = new CandidateAssociations();
@@ -129,6 +129,10 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
         return customObject29s;
     }
 
+    public AssociationField<Candidate, PersonCustomObjectInstance30> customObject30s() {
+        return customObject30s;
+    }
+
     private <E extends BullhornEntity> AssociationField<Candidate, E> instantiateAssociationField(String associationName, Class<E> associationType) {
         return new StandardAssociationField<Candidate, E>(associationName, associationType);
     }
@@ -157,7 +161,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
             allAssociations.add(customObject29s());
-
+            allAssociations.add(customObject30s());
         }
         return allAssociations;
 
