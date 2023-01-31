@@ -5,6 +5,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOp
 import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsJ;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 
@@ -23,9 +24,12 @@ import java.util.Objects;
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "accountingCode", "billMasterTransactions", "creditAmount", "currencyUnit",
     "dateAdded", "dateLastModified", "debitAmount", "description",
-    "invoiceStatementLineDistributionTypeLookup", "unbilledRevenueDistributionBatch"
+    "invoiceStatementLineDistributionTypeLookup", "unbilledRevenueDistributionBatch",
+    "customDate1", "customDate2", "customDate3",
+    "customInt1", "customInt2", "customInt3", "customInt4", "customInt5",
+    "customText1", "customText2", "customText3", "customText4", "customText5"
 })
-public class UnbilledRevenueDistribution extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
+public class UnbilledRevenueDistribution extends CustomFieldsJ implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
     private String accountingCode;
