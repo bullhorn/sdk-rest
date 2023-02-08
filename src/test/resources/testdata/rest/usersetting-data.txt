@@ -1,0 +1,267 @@
+{
+    "total": 335,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "dateAdded": 1665698086403,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "isListOnboarded",
+            "value": "TRUE"
+        },
+        {
+            "id": 2,
+            "dateAdded": 1665697634070,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "javaTimezoneDisplay",
+            "value": "Central Standard Time"
+        },
+        {
+            "id": 3,
+            "dateAdded": 1665697634000,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "javaTimezoneId",
+            "value": "America/Chicago"
+        },
+        {
+            "id": 4,
+            "dateAdded": 1665697590260,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "mobileEnabled",
+            "value": "0"
+        },
+        {
+            "id": 5,
+            "dateAdded": 1665697587693,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "novoEnabled",
+            "value": "1"
+        },
+        {
+            "id": 6,
+            "dateAdded": 1665697587683,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "universalSearchEnabled",
+            "value": "0"
+        },
+        {
+            "id": 7,
+            "dateAdded": 1665697587680,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "sendInvitationsToOwner",
+            "value": "FALSE"
+        },
+        {
+            "id": 8,
+            "dateAdded": 1665697587673,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "openOutboundMailInDefaultClient",
+            "value": "TRUE"
+        },
+        {
+            "id": 9,
+            "dateAdded": 1665697587663,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "inboundEmailConfig",
+            "value": "3"
+        },
+        {
+            "id": 10,
+            "dateAdded": 1665697587653,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "sPlatformEnabled",
+            "value": "1"
+        },
+        {
+            "id": 11,
+            "dateAdded": 1665697587630,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "defaultCharset",
+            "value": "UTF-8"
+        },
+        {
+            "id": 12,
+            "dateAdded": 1665697634070,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "javaTimezoneDisplay",
+            "value": "Central Standard Time"
+        },
+        {
+            "id": 13,
+            "dateAdded": 1665697634000,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "javaTimezoneId",
+            "value": "America/Chicago"
+        },
+        {
+            "id": 14,
+            "dateAdded": 1665697590260,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "mobileEnabled",
+            "value": "0"
+        },
+        {
+            "id": 15,
+            "dateAdded": 1665697587693,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "novoEnabled",
+            "value": "1"
+        },
+        {
+            "id": 16,
+            "dateAdded": 1665697587683,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "universalSearchEnabled",
+            "value": "0"
+        },
+        {
+            "id": 17,
+            "dateAdded": 1665697587680,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "sendInvitationsToOwner",
+            "value": "FALSE"
+        },
+        {
+            "id": 18,
+            "dateAdded": 1665697587673,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "openOutboundMailInDefaultClient",
+            "value": "TRUE"
+        },
+        {
+            "id": 19,
+            "dateAdded": 1665697587663,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "inboundEmailConfig",
+            "value": "3"
+        },
+        {
+            "id": 20,
+            "dateAdded": 1665697587653,
+            "isPersistent": true,
+            "person": {
+                "id": 1,
+                "_subtype": "CorporateUser",
+                "firstName": "Test",
+                "lastName": "Testing"
+            },
+            "setting": "sPlatformEnabled",
+            "value": "1"
+        }
+    ]
+}
