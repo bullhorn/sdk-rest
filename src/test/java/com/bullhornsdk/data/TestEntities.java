@@ -97,6 +97,8 @@ public class TestEntities {
 
     private Integer timeUnitId;
 
+    private Integer userSettingId;
+
     private Integer workersCompensationId;
 
     private Integer workersCompensationRateId;
@@ -230,6 +232,8 @@ public class TestEntities {
         this.tearsheetId = 1;
 
         this.timeUnitId = 1;
+
+        this.userSettingId = 1;
 
         this.workersCompensationId = 1;
 
@@ -598,6 +602,14 @@ public class TestEntities {
         this.timeUnitId = timeUnitId;
     }
 
+    public Integer getUserSettingId() {
+        return userSettingId;
+    }
+
+    public void setUserSettingId(Integer userSettingId) {
+        this.userSettingId = userSettingId;
+    }
+
     public Integer getTearsheetId() {
         return tearsheetId;
     }
@@ -852,6 +864,7 @@ public class TestEntities {
             ", taskId=" + taskId +
             ", tearsheetId=" + tearsheetId +
             ", timeUnitId=" + timeUnitId +
+            ", userSettingId=" + userSettingId +
             ", workersCompensationId=" + workersCompensationId +
             ", workersCompensationRateId=" + workersCompensationRateId +
             ", allCustomObjectsId=" + allCustomObjectsId +
