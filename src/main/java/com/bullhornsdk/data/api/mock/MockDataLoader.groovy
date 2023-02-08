@@ -740,6 +740,7 @@ public class MockDataLoader {
         entityMetaFiles.put(State.class, "meta/state-meta-data.txt");
         entityMetaFiles.put(Task.class, "meta/task-meta-data.txt");
         entityMetaFiles.put(TimeUnit.class, "meta/timeunit-meta-data.txt");
+        entityMetaFiles.put(UserSetting.class, "meta/usersetting-meta-data.txt");
         entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
         entityMetaFiles.put(WorkersCompensation.class, "meta/workerscompensation-meta-data.txt");
         entityMetaFiles.put(WorkersCompensationRate.class, "meta/workerscompensationrate-meta-data.txt");
