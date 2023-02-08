@@ -5,7 +5,6 @@ import java.util.Objects;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "dateAdded", "isPersistent", "person", "setting", "value" })
-public class UserSetting extends AbstractEntity implements BullhornEntity, QueryEntity {
+public class UserSetting extends AbstractEntity implements QueryEntity {
     private Integer id;
 
     private DateTime dateAdded;
