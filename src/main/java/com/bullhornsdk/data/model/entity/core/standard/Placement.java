@@ -79,7 +79,7 @@ import java.util.Objects;
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
-        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense" })
+        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense", "placementShiftSet" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -122,6 +122,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     private Location location;
 
     private PlacementTimeAndExpense timeAndExpense;
+
+    private PlacementShiftSet placementShiftSet;
 
 	@JsonIgnore
 	@Size(max = 100)
@@ -1257,6 +1259,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.timeAndExpense = timeAndExpense;
     }
 
+    @JsonProperty("placementShiftSet")
+    public PlacementShiftSet getPlacementShiftSet() {
+        return placementShiftSet;
+    }
+
+    @JsonProperty("placementShiftSet")
+    public void setPlacementShiftSet(PlacementShiftSet placementShiftSet) {
+        this.placementShiftSet = placementShiftSet;
+    }
+
     @JsonProperty("bteSyncStatus")
     public SimplifiedOptionsLookup getBteSyncStatus() {
         return bteSyncStatus;
@@ -1301,6 +1313,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(commissions, placement.commissions) &&
             Objects.equals(location, placement.location) &&
             Objects.equals(timeAndExpense, placement.timeAndExpense) &&
+            Objects.equals(placementShiftSet, placement.placementShiftSet) &&
             Objects.equals(costCenter, placement.costCenter) &&
             Objects.equals(dateAdded, placement.dateAdded) &&
             Objects.equals(dateBegin, placement.dateBegin) &&
@@ -1380,7 +1393,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
+        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, placementShiftSet, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
     }
 
     @Override
@@ -1404,6 +1417,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", commissions=" + commissions +
             ", location=" + location +
             ", timeAndExpense=" + timeAndExpense +
+            ", placementShiftSet=" + placementShiftSet +
             ", costCenter='" + costCenter + '\'' +
             ", dateAdded=" + dateAdded +
             ", dateBegin=" + dateBegin +
