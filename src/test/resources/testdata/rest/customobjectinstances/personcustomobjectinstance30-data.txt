@@ -1,0 +1,380 @@
+{
+  "start": 0,
+  "count": 20,
+  "data": [
+    {
+      "id": 90238,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1668441637887,
+      "dateLastModified": 1668441637887,
+      "person": {
+        "id": 566472,
+        "_subtype": "Candidate",
+        "firstName": "AGNES",
+        "lastName": "ALEXA"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 87325,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 1,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 2,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 3,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 4,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 5,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 6,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 7,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 8,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 9,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 10,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 11,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 12,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 13,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 14,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 15,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 16,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 17,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 18,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 19,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    },
+    {
+      "id": 20,
+      "date1": null,
+      "date2": null,
+      "date3": null,
+      "dateAdded": 1666675006130,
+      "dateLastModified": 1667403445230,
+      "person": {
+        "id": 350,
+        "_subtype": "Candidate",
+        "firstName": "Mandy",
+        "lastName": "Bullhorn"
+      },
+      "text1": "Oui",
+      "text2": "Oui",
+      "text3": "Oui"
+    }
+  ]
+}

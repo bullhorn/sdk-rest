@@ -140,12 +140,12 @@ public class CanvasReport extends AbstractEntity implements QueryEntity, UpdateE
     }
 
     @JsonProperty("isDeleted")
-    public Boolean getΙsDeleted() {
+    public Boolean getIsDeleted() {
         return isDeleted;
     }
 
     @JsonProperty("isDeleted")
-    public void setΙsDeleted(Boolean isDeleted) {
+    public void setIsDeleted(Boolean isDeleted) {
         this.isDeleted = isDeleted;
     }
 

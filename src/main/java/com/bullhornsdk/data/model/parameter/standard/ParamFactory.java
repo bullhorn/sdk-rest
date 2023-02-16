@@ -4,9 +4,9 @@ import com.bullhornsdk.data.model.parameter.*;
 
 /**
  * Factory that handles instantiations of RequestParameters for the different api calls.
- * 
+ *
  * @author Magnus Fiore Palm
- * 
+ *
  */
 public class ParamFactory {
 
@@ -45,7 +45,7 @@ public class ParamFactory {
     public static AssociationParams associationParams() {
         return StandardAssociationParams.getInstance();
     }
-    
+
     public static CorpNotesParams corpNotesParams() {
     	return StandardCorpNotesParams.getInstance();
     }
@@ -56,6 +56,10 @@ public class ParamFactory {
 
     public static SettingsParams settingsParams() {
         return StandardSettingsParams.getInstance();
+    }
+
+    public static ResumeAsNewEntityParams resumeAsNewEntityParams() {
+        return StandardResumeAsNewEntityParams.getInstance();
     }
 
 }

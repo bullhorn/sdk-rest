@@ -256,6 +256,7 @@ public enum BullhornEntityInfo {
     TEARSHEET("Tearsheet", Tearsheet.class, TearsheetWrapper.class, TearsheetListWrapper.class, null, null),
     TEARSHEET_MEMBER("TearsheetMember", TearsheetMember.class, TearsheetMemberWrapper.class, TearsheetMemberListWrapper.class, null, null),
     TIME_UNIT("TimeUnit", TimeUnit.class, TimeUnitWrapper.class, TimeUnitListWrapper.class, null, null),
+    USER_SETTING("UserSetting", UserSetting.class, UserSettingWrapper.class, UserSettingListWrapper.class, null, null),
     USER_TYPE("UserType", UserType.class, UserTypeWrapper.class, UserTypeListWrapper.class, null, null),
     WORKERS_COMPENSATION("WorkersCompensation", WorkersCompensation.class, WorkersCompensationWrapper.class, WorkersCompensationListWrapper.class, null, null),
     WORKERS_COMPENSATION_RATE("WorkersCompensationRate", WorkersCompensationRate.class, WorkersCompensationRateWrapper.class, WorkersCompensationRateListWrapper.class, null, null),
@@ -288,7 +289,7 @@ public enum BullhornEntityInfo {
     PLACEMENT_TIME_AND_EXPENSE("PlacementTimeAndExpense", PlacementTimeAndExpense.class, PlacementTimeAndExpenseWrapper.class, PlacementTimeAndExpenseListWrapper.class, "PlacementTimeAndExpenseEditHistory", "PlacementTimeAndExpenseEditHistoryFieldChange"),
 
         // PayBill Entities
-    LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, null, null),
+    LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, "LocationEditHistory", "LocationEditHistoryFieldChange"),
     BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
     GENERAL_LEDGER_ACCOUNT("GeneralLedgerAccount", GeneralLedgerAccount.class, GeneralLedgerAccountWrapper.class, GeneralLedgerAccountListWrapper.class, null, null),
     INVOICE_STATEMENT_TEMPLATE("InvoiceStatementTemplate", InvoiceStatementTemplate.class, InvoiceStatementTemplateWrapper.class, InvoiceStatementTemplateListWrapper.class, null, null),
@@ -346,6 +347,7 @@ public enum BullhornEntityInfo {
     INVOICE_STATEMENT_DISCOUNT_RATE("InvoiceStatementDiscountRate", InvoiceStatementDiscountRate.class, InvoiceStatementDiscountRateWrapper.class, InvoiceStatementDiscountRateListWrapper.class, null, null),
     INVOICE_STATEMENT_SALES_TAX_RATE("InvoiceStatementSalesTaxRate", InvoiceStatementSalesTaxRate.class, InvoiceStatementSalesTaxRateWrapper.class, InvoiceStatementSalesTaxRateListWrapper.class, null, null),
     INVOICE_STATEMENT_SURCHARGE_RATE("InvoiceStatementSurchargeRate", InvoiceStatementSurchargeRate.class, InvoiceStatementSurchargeRateWrapper.class, InvoiceStatementSurchargeRateListWrapper.class, null, null),
+    INVOICE_STATEMENT_HISTORY("InvoiceStatementHistory", InvoiceStatementHistory.class, InvoiceStatementHistoryWrapper.class, InvoiceStatementHistoryListWrapper.class, null, null),
     SALES_TAX_RATE("SalesTaxRate", SalesTaxRate.class, SalesTaxRateWrapper.class, SalesTaxRateListWrapper.class, "SalesTaxRateEditHistory", "SalesTaxRateEditHistoryFieldChange"),
     SALES_TAX_RATE_VERSION("SalesTaxRateVersion", SalesTaxRateVersion.class, SalesTaxRateVersionWrapper.class, SalesTaxRateVersionListWrapper.class, null, null),
     SURCHARGE_RATE("SurchargeRate", SurchargeRate.class, SurchargeRateWrapper.class, SurchargeRateListWrapper.class, null, null),
@@ -455,6 +457,8 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_23("PersonCustomObjectInstance23", PersonCustomObjectInstance23.class, PersonCustomObjectInstance23Wrapper.class, PersonCustomObjectInstance23ListWrapper.class, "PersonCustomObject23EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_24("PersonCustomObjectInstance24", PersonCustomObjectInstance24.class, PersonCustomObjectInstance24Wrapper.class, PersonCustomObjectInstance24ListWrapper.class, "PersonCustomObject24EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_25("PersonCustomObjectInstance25", PersonCustomObjectInstance25.class, PersonCustomObjectInstance25Wrapper.class, PersonCustomObjectInstance25ListWrapper.class, "PersonCustomObject25EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_29("PersonCustomObjectInstance29", PersonCustomObjectInstance29.class, PersonCustomObjectInstance29Wrapper.class, PersonCustomObjectInstance29ListWrapper.class, "PersonCustomObject29EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_30("PersonCustomObjectInstance30", PersonCustomObjectInstance30.class, PersonCustomObjectInstance30Wrapper.class, PersonCustomObjectInstance30ListWrapper.class, "PersonCustomObject30EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
 
     // File Attachment Entities
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),

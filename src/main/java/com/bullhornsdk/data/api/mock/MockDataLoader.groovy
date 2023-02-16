@@ -475,6 +475,7 @@ public class MockDataLoader {
         entityFiles.put(Tearsheet.class, "tearsheet-data.txt");
         entityFiles.put(TearsheetMember.class, "tearsheetmember-data.txt");
         entityFiles.put(TimeUnit.class, "timeunit-data.txt");
+        entityFiles.put(UserSetting.class, "usersetting-data.txt");
         entityFiles.put(UserType.class, "usertype-data.txt");
         entityFiles.put(WorkersCompensation.class, "workerscompensation-data.txt");
         entityFiles.put(WorkersCompensationRate.class, "workerscompensationrate-data.txt");
@@ -541,6 +542,7 @@ public class MockDataLoader {
         entityFiles.put(EarnCodeGroup.class, "paybill/earncodegroup-data.txt");
         entityFiles.put(InvoiceStatement.class, "paybill/invoicestatement-data.txt");
         entityFiles.put(InvoiceStatementBatch.class, "paybill/invoicestatementbatch-data.txt");
+        entityFiles.put(InvoiceStatementHistory.class, "paybill/invoicestatementhistory-data.txt");
         entityFiles.put(InvoiceStatementDiscount.class, "paybill/invoicestatementdiscount-data.txt");
         entityFiles.put(InvoiceStatementExportBatch.class, "paybill/invoicestatementexportbatch-data.txt");
         entityFiles.put(InvoiceStatementLineItem.class, "paybill/invoicestatementlineitem-data.txt");
@@ -656,6 +658,8 @@ public class MockDataLoader {
         entityFiles.put(PersonCustomObjectInstance23.class, "customobjectinstances/personcustomobjectinstance23-data.txt");
         entityFiles.put(PersonCustomObjectInstance24.class, "customobjectinstances/personcustomobjectinstance24-data.txt");
         entityFiles.put(PersonCustomObjectInstance25.class, "customobjectinstances/personcustomobjectinstance25-data.txt");
+        entityFiles.put(PersonCustomObjectInstance29.class, "customobjectinstances/personcustomobjectinstance29-data.txt");
+        entityFiles.put(PersonCustomObjectInstance30.class, "customobjectinstances/personcustomobjectinstance30-data.txt");
 
         entityFiles.put(CandidateFileAttachment.class, "file/candidatefileattachment-data.txt");
         entityFiles.put(CertificationFileAttachment.class, "file/certificationfileattachment-data.txt");
@@ -736,6 +740,7 @@ public class MockDataLoader {
         entityMetaFiles.put(State.class, "meta/state-meta-data.txt");
         entityMetaFiles.put(Task.class, "meta/task-meta-data.txt");
         entityMetaFiles.put(TimeUnit.class, "meta/timeunit-meta-data.txt");
+        entityMetaFiles.put(UserSetting.class, "meta/usersetting-meta-data.txt");
         entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
         entityMetaFiles.put(WorkersCompensation.class, "meta/workerscompensation-meta-data.txt");
         entityMetaFiles.put(WorkersCompensationRate.class, "meta/workerscompensationrate-meta-data.txt");
@@ -918,6 +923,8 @@ public class MockDataLoader {
         entityMetaFiles.put(PersonCustomObjectInstance23.class, "meta/customobjectinstances/personcustomobjectinstance23-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance24.class, "meta/customobjectinstances/personcustomobjectinstance24-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance25.class, "meta/customobjectinstances/personcustomobjectinstance25-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance29.class, "meta/customobjectinstances/personcustomobjectinstance29-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance30.class, "meta/customobjectinstances/personcustomobjectinstance30-meta-data.txt");
 
         entityMetaFiles.put(ClientCorporationCustomObject.class, "meta/customobject/clientcorporationcustomobject-meta-data.txt");
         entityMetaFiles.put(JobOrderCustomObject.class, "meta/customobject/jobordercustomobject-meta-data.txt");
