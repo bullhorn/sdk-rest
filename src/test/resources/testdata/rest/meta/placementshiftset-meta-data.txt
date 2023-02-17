@@ -1,0 +1,254 @@
+{
+    "entity": "PlacementShiftSet",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/meta/PlacementShiftSet?fields=*",
+    "label": "Shift Identification",
+    "dateLastModified": "1676669168399",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "label": "ID"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "effectiveDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Effective Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "effectiveEndDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Effective End Date",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "owner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "user",
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/options/CorporateUser",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1676669168793",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "placement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Placement",
+            "optionsType": "Placement",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/options/Placement",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Placement",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/meta/Placement?fields=*",
+                "label": "Placement",
+                "dateLastModified": "1676669168906",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "placementShiftSetVersions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Placement Shift Set Versions",
+            "optionsType": "PlacementShiftSetVersion",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/options/PlacementShiftSetVersion",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PlacementShiftSetVersion",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/meta/PlacementShiftSetVersion?fields=*",
+                "label": "Placement Shift Set Version",
+                "dateLastModified": "1676669169503",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "effectiveDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective Date",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveEndDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective End Date",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "rootMigrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "label": "Root Migrate GUID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "shifts",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Shifts",
+            "optionsType": "Shift",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/options/Shift",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Shift",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/meta/Shift?fields=*",
+                "label": "Shift Definition",
+                "dateLastModified": "1676669169558",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 150,
+                        "confidential": false,
+                        "label": "name_",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "versionID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Version ID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "versionMigrateGUID",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 36,
+            "confidential": false,
+            "label": "Version Migrate GUID",
+            "hideFromSearch": false
+        },
+        {
+            "name": "versions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Versions",
+            "optionsType": "PlacementShiftSetVersion",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/options/PlacementShiftSetVersion",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "PlacementShiftSetVersion",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/bn410/meta/PlacementShiftSetVersion?fields=*",
+                "label": "Placement Shift Set Version",
+                "dateLastModified": "1676669169503",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "effectiveDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective Date",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "effectiveEndDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "label": "Effective End Date",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        }
+    ]
+}
