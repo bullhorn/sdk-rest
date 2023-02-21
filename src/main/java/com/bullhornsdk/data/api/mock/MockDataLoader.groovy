@@ -466,6 +466,7 @@ public class MockDataLoader {
         entityFiles.put(PlacementChangeRequest.class, "placementchangerequest-data.txt");
         entityFiles.put(PlacementCommission.class, "placementcommission-data.txt");
         entityFiles.put(PlacementShiftSet.class, "placementshiftset-data.txt");
+        entityFiles.put(PlacementShiftSetVersion.class, "placementshiftsetVersion-data.txt");
         entityFiles.put(PrivateLabel.class, "privatelabel-data.txt");
         entityFiles.put(Report.class, "report-data.txt");
         entityFiles.put(Sendout.class, "sendout-data.txt");
