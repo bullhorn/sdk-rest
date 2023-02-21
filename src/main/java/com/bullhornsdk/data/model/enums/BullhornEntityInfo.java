@@ -288,6 +288,10 @@ public enum BullhornEntityInfo {
     // placementTimeAndExpense Entities
     PLACEMENT_TIME_AND_EXPENSE("PlacementTimeAndExpense", PlacementTimeAndExpense.class, PlacementTimeAndExpenseWrapper.class, PlacementTimeAndExpenseListWrapper.class, "PlacementTimeAndExpenseEditHistory", "PlacementTimeAndExpenseEditHistoryFieldChange"),
 
+    // PlacementShiftSet Entities
+    PLACEMENT_SHIFT_SET("PlacementShiftSet", PlacementShiftSet.class, PlacementShiftSetWrapper.class, PlacementShiftSetListWrapper.class, "PlacementShiftSetEditHistory", "PlacementShiftSetEditHistoryFieldChange"),
+    PLACEMENT_SHIFT_SET_VERSION("PlacementShiftSetVersion", PlacementShiftSetVersion.class, PlacementShiftSetVersionWrapper.class, PlacementShiftSetVersionListWrapper.class, "PlacementShiftSetVersionEditHistory", "PlacementShiftSetVersionEditHistoryFieldChange"),
+
         // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, "LocationEditHistory", "LocationEditHistoryFieldChange"),
     BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),

@@ -145,6 +145,8 @@ public class TestEntities {
 
     private Integer invoiceStatementHistoryId;
 
+    private Integer placementShiftSetId;
+
     public TestEntities() {
         super();
         this.appointmentId = 1;
@@ -280,6 +282,8 @@ public class TestEntities {
         this.invoiceStatementDistributionBatchId = 1;
 
         this.invoiceStatementHistoryId = 1;
+
+        this.placementShiftSetId = 1;
     }
 
     public Integer getAppointmentId() {
@@ -818,6 +822,12 @@ public class TestEntities {
         this.invoiceStatementHistoryId = invoiceStatementHistoryId;
     }
 
+    public Integer getPlacementShiftSetId() { return placementShiftSetId; }
+
+    public void setPlacementShiftSetId(Integer placementShiftSetId) {
+        this.placementShiftSetId = placementShiftSetId;
+    }
+
     @Override
     public String toString() {
         return "TestEntities{" +
@@ -888,6 +898,7 @@ public class TestEntities {
             ", invoiceStatementId=" + invoiceStatementId +
             ", invoiceStatementDistributionBatchId=" + invoiceStatementDistributionBatchId +
             ", invoiceStatementHistoryId=" + invoiceStatementHistoryId +
+            ", placementShiftSetId=" + placementShiftSetId +
             '}';
     }
 }
