@@ -329,7 +329,7 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
             if (linkedIds != null && !linkedIds.getData().isEmpty()) {
 
                 associationIds.add(linkedIds.getData().get(0).getId());
-                testAssociation(PlacementShiftSet.class, testEntities.getInvoiceTermId(), associationIds, association);
+                testAssociation(PlacementShiftSet.class, testEntities.getPlacementShiftSetId(), associationIds, association);
 
             }
         }
