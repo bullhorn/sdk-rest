@@ -4,6 +4,7 @@ import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import com.bullhornsdk.data.model.entity.embedded.Address;
@@ -17,6 +18,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Objects;
 
 @JsonFilter(DynamicNullValueFilter.FILTER_NAME)
@@ -54,7 +56,10 @@ import java.util.Objects;
 		"submissions", "ssn", "stateAddtionalWitholdingsAmount", "stateExemptions", "stateFilingStatus", "status", "tasks", "taxID",
 		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
-        "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
+        "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject29s", "activePlacements",
+        "addressSourceLocation", "addressSourceLocation", "candidateSource", "clientRating", "distributionLists",
+        "estaffGUID", "latestComment", "locations", "maritalStatus", "ownerCorporation", "payrollClientStartDate",
+        "payrollStatus", "privateLabel", "shifts", "tobaccoUser", "travelMethod"})
 public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -460,7 +465,43 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     private OneToMany<PersonCustomObjectInstance10> customObject10s;
 
-	public Candidate() {
+    private OneToMany<PersonCustomObjectInstance29> customObject29s;
+
+    private OneToMany<PersonCustomObjectInstance30> customObject30s;
+
+    private OneToMany<Placement> activePlacements;
+
+    private Location addressSourceLocation;
+
+    private CandidateSource candidateSource;
+
+    private BigInteger clientRating;
+
+    private OneToMany<DistributionList> distributionLists;
+
+    private String estaffGUID;
+
+    private OneToMany<CandidateComment> latestComment;
+
+    private OneToMany<Location> locations;
+
+    private String maritalStatus;
+
+    private ClientCorporation ownerCorporation;
+
+    private DateTime payrollClientStartDate;
+
+    private String payrollStatus;
+
+    private PrivateLabel privateLabel;
+
+    private OneToMany<Shift> shifts;
+
+    private String tobaccoUser;
+
+    private String travelMethod;
+
+    public Candidate() {
 		super();
 	}
 
@@ -2104,6 +2145,158 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         this.customObject10s = customObject10s;
     }
 
+    @JsonProperty("customObject29s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance29> getCustomObject29s() {
+        return customObject29s;
+    }
+
+    @JsonProperty("customObject29s")
+    public void setCustomObject29s(OneToMany<PersonCustomObjectInstance29> customObject29s) {
+        this.customObject29s = customObject29s;
+    }
+
+    @JsonProperty("customObject30s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance30> getCustomObject30s() {
+        return customObject30s;
+    }
+
+    @JsonProperty("customObject30s")
+    public void setCustomObject30s(OneToMany<PersonCustomObjectInstance30> customObject30s) {
+        this.customObject30s = customObject30s;
+    }
+
+    public OneToMany<Placement> getActivePlacements() {
+        return activePlacements;
+    }
+
+    public void setActivePlacements(OneToMany<Placement> activePlacements) {
+        this.activePlacements = activePlacements;
+    }
+
+    public Location getAddressSourceLocation() {
+        return addressSourceLocation;
+    }
+
+    public void setAddressSourceLocation(Location addressSourceLocation) {
+        this.addressSourceLocation = addressSourceLocation;
+    }
+
+    public CandidateSource getCandidateSource() {
+        return candidateSource;
+    }
+
+    public void setCandidateSource(CandidateSource candidateSource) {
+        this.candidateSource = candidateSource;
+    }
+
+    public BigInteger getClientRating() {
+        return clientRating;
+    }
+
+    public void setClientRating(BigInteger clientRating) {
+        this.clientRating = clientRating;
+    }
+
+    public OneToMany<DistributionList> getDistributionLists() {
+        return distributionLists;
+    }
+
+    public void setDistributionLists(OneToMany<DistributionList> distributionLists) {
+        this.distributionLists = distributionLists;
+    }
+
+    public String getEstaffGUID() {
+        return estaffGUID;
+    }
+
+    public void setEstaffGUID(String estaffGUID) {
+        this.estaffGUID = estaffGUID;
+    }
+
+    public OneToMany<CandidateComment> getLatestComment() {
+        return latestComment;
+    }
+
+    public void setLatestComment(OneToMany<CandidateComment> latestComment) {
+        this.latestComment = latestComment;
+    }
+
+    public OneToMany<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(OneToMany<Location> locations) {
+        this.locations = locations;
+    }
+
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public ClientCorporation getOwnerCorporation() {
+        return ownerCorporation;
+    }
+
+    public void setOwnerCorporation(ClientCorporation ownerCorporation) {
+        this.ownerCorporation = ownerCorporation;
+    }
+
+    public DateTime getPayrollClientStartDate() {
+        return payrollClientStartDate;
+    }
+
+    public void setPayrollClientStartDate(DateTime payrollClientStartDate) {
+        this.payrollClientStartDate = payrollClientStartDate;
+    }
+
+    public String getPayrollStatus() {
+        return payrollStatus;
+    }
+
+    public void setPayrollStatus(String payrollStatus) {
+        this.payrollStatus = payrollStatus;
+    }
+
+    public PrivateLabel getPrivateLabel() {
+        return privateLabel;
+    }
+
+    public void setPrivateLabel(PrivateLabel privateLabel) {
+        this.privateLabel = privateLabel;
+    }
+
+    public OneToMany<Shift> getShifts() {
+        return shifts;
+    }
+
+    public void setShifts(OneToMany<Shift> shifts) {
+        this.shifts = shifts;
+    }
+
+    public String getTobaccoUser() {
+        return tobaccoUser;
+    }
+
+    public void setTobaccoUser(String tobaccoUser) {
+        this.tobaccoUser = tobaccoUser;
+    }
+
+    public String getTravelMethod() {
+        return travelMethod;
+    }
+
+    public void setTravelMethod(String travelMethod) {
+        this.travelMethod = travelMethod;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -2256,13 +2449,14 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
             Objects.equals(customObject7s, candidate.customObject7s) &&
             Objects.equals(customObject8s, candidate.customObject8s) &&
             Objects.equals(customObject9s, candidate.customObject9s) &&
-            Objects.equals(customObject10s, candidate.customObject10s);
+            Objects.equals(customObject10s, candidate.customObject10s) &&
+            Objects.equals(customObject29s, candidate.customObject29s);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), luceneScore, id, address, branch, businessSectors, canEnterTime, categories, category, certificationList, certifications, clientCorporationBlackList, clientCorporationWhiteList, comments, companyName, companyURL, dateAdded, dateAvailable, dateAvailableEnd, dateI9Expiration, dateLastComment, dateLastModified, dateLastPayrollProviderSync, dateNextCall, dateOfBirth, dayRate, dayRateLow, degreeList, description, desiredLocations, disability, educationDegree, educations, email, email2, email3, employeeType, employmentPreference, ethnicity, experience, externalID, fax, fax2, fax3, federalAddtionalWitholdingsAmount, federalExtraWithholdingAmount, federalExemptions, federalFilingStatus, fileAttachments, firstName, gender, hourlyRate, hourlyRateLow, interviews, i9OnFile, isDayLightSavings, isDeleted, isEditable, isLockedOut, isAnonymized, lastName, linkedPerson, leads, localAddtionalWitholdingsAmount, localExemptions, localFilingStatus, localTaxCode, massMailOptOut, middleName, migrateGUID, mobile, name, namePrefix, nameSuffix, nickName, notes, numCategories, numOwners, occupation, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, owner, pager, paperWorkOnFile, password, phone, phone2, phone3, placements, preferredContact, primarySkills, recentClientList, referredBy, referredByPerson, references, salary, salaryLow, secondaryAddress, secondaryOwners, secondarySkills, sendouts, skillSet, smsOptIn, source, specialties, ssn, stateAddtionalWitholdingsAmount, stateExemptions, stateFilingStatus, status, submissions, tasks, taxID, taxState, tearsheets, timeZoneOffsetEST, travelLimit, type, username, veteran, webResponses, willRelocate, workAuthorized, workHistories, workPhone, customEncryptedText1, customEncryptedText2, customEncryptedText3, customEncryptedText4, customEncryptedText5, customEncryptedText6, customEncryptedText7, customEncryptedText8, customEncryptedText9, customEncryptedText10, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s);
+        return Objects.hash(super.hashCode(), luceneScore, id, address, branch, businessSectors, canEnterTime, categories, category, certificationList, certifications, clientCorporationBlackList, clientCorporationWhiteList, comments, companyName, companyURL, dateAdded, dateAvailable, dateAvailableEnd, dateI9Expiration, dateLastComment, dateLastModified, dateLastPayrollProviderSync, dateNextCall, dateOfBirth, dayRate, dayRateLow, degreeList, description, desiredLocations, disability, educationDegree, educations, email, email2, email3, employeeType, employmentPreference, ethnicity, experience, externalID, fax, fax2, fax3, federalAddtionalWitholdingsAmount, federalExtraWithholdingAmount, federalExemptions, federalFilingStatus, fileAttachments, firstName, gender, hourlyRate, hourlyRateLow, interviews, i9OnFile, isDayLightSavings, isDeleted, isEditable, isLockedOut, isAnonymized, lastName, linkedPerson, leads, localAddtionalWitholdingsAmount, localExemptions, localFilingStatus, localTaxCode, massMailOptOut, middleName, migrateGUID, mobile, name, namePrefix, nameSuffix, nickName, notes, numCategories, numOwners, occupation, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, owner, pager, paperWorkOnFile, password, phone, phone2, phone3, placements, preferredContact, primarySkills, recentClientList, referredBy, referredByPerson, references, salary, salaryLow, secondaryAddress, secondaryOwners, secondarySkills, sendouts, skillSet, smsOptIn, source, specialties, ssn, stateAddtionalWitholdingsAmount, stateExemptions, stateFilingStatus, status, submissions, tasks, taxID, taxState, tearsheets, timeZoneOffsetEST, travelLimit, type, username, veteran, webResponses, willRelocate, workAuthorized, workHistories, workPhone, customEncryptedText1, customEncryptedText2, customEncryptedText3, customEncryptedText4, customEncryptedText5, customEncryptedText6, customEncryptedText7, customEncryptedText8, customEncryptedText9, customEncryptedText10, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject29s);
     }
 
     @Override
@@ -2415,6 +2609,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
             ", customObject8s=" + customObject8s +
             ", customObject9s=" + customObject9s +
             ", customObject10s=" + customObject10s +
+            ", customObject29s=" + customObject29s +
             '}';
     }
 }

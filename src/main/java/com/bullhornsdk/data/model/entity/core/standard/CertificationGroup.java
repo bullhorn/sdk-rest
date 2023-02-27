@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "name", "privateLabel", "certifications" })
+@JsonPropertyOrder({ "id", "name", "privateLabel", "certifications", "dateAdded", "dateLastModified", "migrateGUID" })
 public class CertificationGroup extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DeleteEntity, AssociationEntity {
 
     private Integer id;
@@ -29,6 +29,12 @@ public class CertificationGroup extends AbstractEntity implements QueryEntity, U
     private Integer privateLabelID;
 
     private OneToMany<Certification> certifications;
+
+    private DateTime dateAdded;
+
+    private DateTime dateLastModified;
+
+    private String migrateGUID;
 
     @Override
     @JsonProperty("id")
@@ -69,6 +75,30 @@ public class CertificationGroup extends AbstractEntity implements QueryEntity, U
 
     public void setCertifications(OneToMany<Certification> certifications) {
         this.certifications = certifications;
+    }
+
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
+    }
+
+    public String getMigrateGUID() {
+        return migrateGUID;
+    }
+
+    public void setMigrateGUID(String migrateGUID) {
+        this.migrateGUID = migrateGUID;
     }
 
     @Override

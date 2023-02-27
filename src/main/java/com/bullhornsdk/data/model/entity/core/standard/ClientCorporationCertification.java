@@ -19,7 +19,7 @@ import org.joda.time.DateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "certification", "alternateCertifications", "clientCorporation", "comments", "dateLastModified", "modifyingUser",
-    "offsetDays", "quantity", "isDeleted" })
+    "offsetDays", "quantity", "isDeleted", "location", "migrateGUID" })
 public class ClientCorporationCertification extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity {
 
     private Integer id;
@@ -45,6 +45,8 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
     private CorporateUser modifyingUser;
 
     private Boolean isDeleted;
+
+    private String migrateGUID;
 
     @Override
     @JsonProperty("id")
@@ -147,6 +149,14 @@ public class ClientCorporationCertification extends AbstractEntity implements Qu
     @JsonProperty("isDeleted")
     public void setIsDeleted(Boolean isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public String getMigrateGUID() {
+        return migrateGUID;
+    }
+
+    public void setMigrateGUID(String migrateGUID) {
+        this.migrateGUID = migrateGUID;
     }
 
     @Override

@@ -51,6 +51,7 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -72,7 +73,8 @@ import java.util.Objects;
 		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "linkedinProfileName", "name", "notes", "numEmployees", "numOffices",
 		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "userOwners", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName", "exemptionStatus" })
+        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName", "exemptionStatus",
+        "clientContactNotes", "clientCorporationFiles", "fileAttachments", "owners", "stats", "timeAndLaborEnabledDate"})
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
 		SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -283,6 +285,18 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     private OneToMany<ClientCorporationCustomObjectInstance34> customObject34s;
 
     private OneToMany<ClientCorporationCustomObjectInstance35> customObject35s;
+
+    private OneToMany<Note> clientContactNotes;
+
+    private OneToMany<ClientCorporationFile> clientCorporationFiles;
+
+    private OneToMany<ClientCorporationFileAttachment> fileAttachments;
+
+    private OneToMany<CorporateUser> owners;
+
+    private ClientCorporationRatios stats;
+
+    private DateTime timeAndLaborEnabledDate;
 
 	public ClientCorporation() {
 		super();
@@ -1211,7 +1225,49 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.locations = locations;
     }
 
+    public OneToMany<Note> getClientContactNotes() {
+        return clientContactNotes;
+    }
 
+    public void setClientContactNotes(OneToMany<Note> clientContactNotes) {
+        this.clientContactNotes = clientContactNotes;
+    }
+
+    public OneToMany<ClientCorporationFile> getClientCorporationFiles() {
+        return clientCorporationFiles;
+    }
+
+    public void setClientCorporationFiles(OneToMany<ClientCorporationFile> clientCorporationFiles) {
+        this.clientCorporationFiles = clientCorporationFiles;
+    }
+
+    public OneToMany<ClientCorporationFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
+
+    public void setFileAttachments(OneToMany<ClientCorporationFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
+    }
+
+    public void setOwners(OneToMany<CorporateUser> owners) {
+        this.owners = owners;
+    }
+
+    public ClientCorporationRatios getStats() {
+        return stats;
+    }
+
+    public void setStats(ClientCorporationRatios stats) {
+        this.stats = stats;
+    }
+
+    public DateTime getTimeAndLaborEnabledDate() {
+        return timeAndLaborEnabledDate;
+    }
+
+    public void setTimeAndLaborEnabledDate(DateTime timeAndLaborEnabledDate) {
+        this.timeAndLaborEnabledDate = timeAndLaborEnabledDate;
+    }
 
     @Override
     public boolean equals(Object o) {

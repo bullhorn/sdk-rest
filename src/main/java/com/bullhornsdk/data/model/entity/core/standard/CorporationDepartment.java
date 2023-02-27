@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
@@ -15,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "name" })
+@JsonPropertyOrder({ "id", "dateAdded", "description", "enabled", "name", "groupings" })
 public class CorporationDepartment extends AbstractEntity implements QueryEntity, AllRecordsEntity {
 
     private Integer id;
@@ -31,6 +32,8 @@ public class CorporationDepartment extends AbstractEntity implements QueryEntity
     @JsonIgnore
     @Size(max = 100)
     private String name;
+
+    private OneToMany<UserDepartmentGrouping> groupings;
 
     @Override
     @JsonProperty("id")
@@ -82,6 +85,14 @@ public class CorporationDepartment extends AbstractEntity implements QueryEntity
     @JsonIgnore
     public void setName(String name) {
         this.name = name;
+    }
+
+    public OneToMany<UserDepartmentGrouping> getGroupings() {
+        return groupings;
+    }
+
+    public void setGroupings(OneToMany<UserDepartmentGrouping> groupings) {
+        this.groupings = groupings;
     }
 
     @Override
