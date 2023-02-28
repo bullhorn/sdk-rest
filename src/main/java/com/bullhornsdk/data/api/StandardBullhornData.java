@@ -1227,7 +1227,7 @@ public class StandardBullhornData implements BullhornData {
         CrudResponse response;
 
         try {
-            String jsonString = restJsonConverter.convertEntityToJsonString(entity);
+            String jsonString = restJsonConverter.convertEntityToJsonString(entity, nullBypassFields);
             response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, entity.getId());

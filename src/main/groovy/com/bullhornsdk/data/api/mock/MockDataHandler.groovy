@@ -1067,7 +1067,8 @@ public class MockDataHandler {
 
 				Object newValue = descriptor.getReadMethod().invoke(from);
 				if ((newValue != null || fieldsToBypass.contains(descriptor.getName())) && !"id".equals(descriptor.getName())) {
-					descriptor.getWriteMethod().invoke(to, newValue);
+                    // Pass array to invoke method to allow null values
+					descriptor.getWriteMethod().invoke(to, [newValue] as Object[]);
 				}
 
 			}
