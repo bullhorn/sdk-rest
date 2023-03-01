@@ -40,7 +40,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "type",
     "user",
     "usersSharedWith",
-    "uuid"
+    "uuid",
+    "isEncrypted"
 })
 public class PlacementFileAttachment extends EntityFileAttachment {
 

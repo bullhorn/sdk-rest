@@ -8,6 +8,7 @@ import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.bullhornsdk.data.validation.BullhornUUID;
@@ -24,7 +25,8 @@ import javax.validation.constraints.Size;
 @JsonPropertyOrder({ "id", "candidate", "childTasks", "clientContact", "dateAdded", "dateBegin", "dateCompleted", "dateEnd",
 		"dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission", "lead",
 		"migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "priority", "placement", "recurrenceDayBits", "recurrenceFrequency",
-		"recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type" })
+		"recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type",
+        "assignees", "childTaskOwners", "clientContactReferences", "communicationMethod", "isTask", "location", "secondaryOwners"})
 public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity,
 		DateLastModifiedEntity, EditHistoryEntity {
 
@@ -102,6 +104,20 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 
 	@Size(max = 30)
 	private String type;
+
+    private OneToMany<CorporateUser> assignees;
+
+    private OneToMany<CorporateUser> childTaskOwners;
+
+    private OneToMany<ClientContact> clientContactReferences;
+
+    private String communicationMethod;
+
+    private Integer isTask;
+
+    private String location;
+
+    private OneToMany<CorporateUser> secondaryOwners;
 
 	public Task() {
 		super();
@@ -471,7 +487,63 @@ public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, C
 		this.type = type;
 	}
 
-	@Override
+    public OneToMany<CorporateUser> getAssignees() {
+        return assignees;
+    }
+
+    public void setAssignees(OneToMany<CorporateUser> assignees) {
+        this.assignees = assignees;
+    }
+
+    public OneToMany<CorporateUser> getChildTaskOwners() {
+        return childTaskOwners;
+    }
+
+    public void setChildTaskOwners(OneToMany<CorporateUser> childTaskOwners) {
+        this.childTaskOwners = childTaskOwners;
+    }
+
+    public OneToMany<ClientContact> getClientContactReferences() {
+        return clientContactReferences;
+    }
+
+    public void setClientContactReferences(OneToMany<ClientContact> clientContactReferences) {
+        this.clientContactReferences = clientContactReferences;
+    }
+
+    public String getCommunicationMethod() {
+        return communicationMethod;
+    }
+
+    public void setCommunicationMethod(String communicationMethod) {
+        this.communicationMethod = communicationMethod;
+    }
+
+    public Integer getIsTask() {
+        return isTask;
+    }
+
+    public void setIsTask(Integer isTask) {
+        this.isTask = isTask;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public OneToMany<CorporateUser> getSecondaryOwners() {
+        return secondaryOwners;
+    }
+
+    public void setSecondaryOwners(OneToMany<CorporateUser> secondaryOwners) {
+        this.secondaryOwners = secondaryOwners;
+    }
+
+    @Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
