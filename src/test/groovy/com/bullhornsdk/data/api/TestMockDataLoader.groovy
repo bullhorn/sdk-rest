@@ -37,21 +37,21 @@ public class TestMockDataLoader {
             } else {
                 assert value.size() >= 20;
             }
-			
+
 		}
-		
-		
+
+
 		Map<String,String> fileNames = mockDataLoader.getEntityFileNames();
 
 		fileNames.each{key,value ->
 			assert entityData.get(key) != null;
 			assert value.size() > 0;
-			
+
 		}
-	
+
 	}
-	
-	
+
+
 	@Test
 	public void testLoadMetaTestData(){
 
@@ -60,18 +60,18 @@ public class TestMockDataLoader {
 		metaData.each { key,value ->
 			assert value.getEntity().equals(key.getSimpleName());
 		}
-		
+
 		Map<String,String> fileNames = mockDataLoader.getMetaDataFileNames();
 
 		fileNames.each{key,value ->
 			assert metaData.get(key) != null;
 			assert value.size() > 0;
-			
+
 		}
-	
+
 	}
-	
-	
+
+
 	@Test
 	public void testLoadSearchFieldData(){
 
@@ -80,15 +80,15 @@ public class TestMockDataLoader {
 		searchFields.each { key,value ->
 			assert value.size() > 0;
 		}
-		
+
 		Map<String,String> fileNames = mockDataLoader.getSearchFieldFileNames()
 
 		fileNames.each{key,value ->
 			assert searchFields.get(key) != null;
 			assert value.size() > 0;
-			
+
 		}
-	
+
 	}
 
 	@Test
