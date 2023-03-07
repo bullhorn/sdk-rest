@@ -1,10 +1,11 @@
  package com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation;
 
- import com.fasterxml.jackson.annotation.JsonInclude;
+ import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
+ import com.fasterxml.jackson.annotation.JsonFilter;
  import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  import com.fasterxml.jackson.annotation.JsonRootName;
 
- @JsonInclude(JsonInclude.Include.NON_NULL)
+ @JsonFilter(DynamicNullValueFilter.FILTER_NAME)
  @JsonRootName(value = "data")
  @JsonPropertyOrder({ "id", "clientCorporation", "text1", "text2", "text3", "text4", "text5", "text6", "text7", "text8", "text9", "text10", "text11", "text12", "text13",
          "text14", "text15", "text16", "text17", "text18", "text19", "text20", "int1", "int2", "int3", "int4", "int5", "int6", "int7", "int8", "int9",

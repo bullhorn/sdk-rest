@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill;
 
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -19,7 +20,7 @@ import java.util.Objects;
 /**
  * Created by fayranne.lipton 4/3/2020
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "address", "candidate", "clientCorporation",
     "customDate1", "customDate2", "customDate3",

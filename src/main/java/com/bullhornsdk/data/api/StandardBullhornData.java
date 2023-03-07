@@ -347,6 +347,15 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
+    public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity, Set<String> nullBypassFields) {
+        return this.handleUpdateEntityWithNullBypass(entity, nullBypassFields);
+    }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public <C extends CrudResponse, T extends UpdateEntity> List<C> updateMultipleEntities(List<T> entityList) {
         return this.handleMultipleUpdates(entityList);
     }
@@ -1193,6 +1202,32 @@ public class StandardBullhornData implements BullhornData {
 
         try {
             String jsonString = restJsonConverter.convertEntityToJsonString(entity);
+            response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
+        } catch (HttpStatusCodeException error) {
+            response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, entity.getId());
+        }
+
+        return (C) response;
+    }
+
+    /**
+     * Makes the "entity" api call for updating entities, allowing for null bypassing
+     * <p>
+     * HTTP Method: POST
+     *
+     * @param entity
+     * @param nullBypassFields
+     * @return a UpdateResponse
+     */
+    protected <C extends CrudResponse, T extends UpdateEntity> C handleUpdateEntityWithNullBypass(T entity, Set<String> nullBypassFields) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityUpdate(
+            BullhornEntityInfo.getTypesRestEntityName(entity.getClass()), entity.getId());
+        String url = restUrlFactory.assembleEntityUrlForUpdate();
+
+        CrudResponse response;
+
+        try {
+            String jsonString = restJsonConverter.convertEntityToJsonString(entity, nullBypassFields);
             response = this.performPostRequest(url, jsonString, UpdateResponse.class, uriVariables);
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new UpdateResponse(), error, entity.getId());
