@@ -219,6 +219,7 @@ public enum BullhornEntityInfo {
     HOUSING_COMPLEX_UNIT("HousingComplexUnit", HousingComplexUnit.class, HousingComplexUnitWrapper.class, HousingComplexUnitListWrapper.class, null, null),
     HOUSING_COMPLEX_FURNITURE_DELIVERY("HousingComplexFurnitureDelivery", HousingComplexFurnitureDelivery.class, HousingComplexFurnitureDeliveryWrapper.class, HousingComplexFurnitureDeliveryListWrapper.class, null, null),
     HOUSING_COMPLEX_UTILITY_ACCOUNT("HousingComplexUtilityAccount", HousingComplexUtilityAccount.class, HousingComplexUtilityAccountWrapper.class, HousingComplexUtilityAccountListWrapper.class, null, null),
+    HOUSING_COMPLEX_AMENITY("HousingComplexAmenity", HousingComplexAmenity.class, HousingComplexAmenityWrapper.class, HousingComplexAmenityListWrapper.class, null, null),
     USER_HOUSING_COMPLEX_UNIT("UserHousingComplexUnit", UserHousingComplexUnit.class, UserHousingComplexUnitWrapper.class, UserHousingComplexUnitListWrapper.class, null, null),
     JOB_ORDER("JobOrder", JobOrder.class, JobOrderWrapper.class, JobOrderListWrapper.class, "JobOrderEditHistory",
         "JobOrderEditHistoryFieldChange"),
@@ -262,6 +263,14 @@ public enum BullhornEntityInfo {
 
     CANDIDATE_TAX_INFO("CandidateTaxInfo", CandidateTaxInfo.class, CandidateTaxInfoWrapper.class, CandidateTaxInfoListWrapper.class, "CandidateTaxInfoEditHistory",
         null),
+
+    CANDIDATE_COMMENT("CandidateComment", CandidateComment.class, CandidateCommentWrapper.class, CandidateCommentListWrapper.class, null, null),
+    CANDIDATE_SOURCE("CandidateSource", CandidateSource.class, CandidateSourceWrapper.class, CandidateSourceListWrapper.class, null, null),
+    CORPORATION("Corporation", Corporation.class, CorporationWrapper.class, CorporationListWrapper.class, null, null),
+    SHIFT("Shift", Shift.class, ShiftWrapper.class, ShiftListWrapper.class, null, null),
+    TEARSHEET_RECIPIENT("TearsheetRecipient", TearsheetRecipient.class, TearsheetRecipientWrapper.class, TearsheetRecipientListWrapper.class, null, null),
+    USER_DEPARTMENT_GROUPING("UserDepartmentGrouping", UserDepartmentGrouping.class, UserDepartmentGroupingWrapper.class, UserDepartmentGroupingListWrapper.class, null, null),
+    ZIP_CODE_GIS("ZipCodeGis", ZipCodeGis.class, ZipCodeGisWrapper.class, null,null, null),
 
     // JobOrderRateCard Entities
     JOB_ORDER_RATE_CARD("JobOrderRateCard", JobOrderRateCard.class, JobOrderRateCardWrapper.class, JobOrderRateCardListWrapper.class, "JobOrderRateCardEditHistory",

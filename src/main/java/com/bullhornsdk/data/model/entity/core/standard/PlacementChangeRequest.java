@@ -1,18 +1,17 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 import javax.validation.constraints.Size;
 
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -324,7 +323,7 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
 
     private BigDecimal flatFee;
 
-    private OneToMany<HousingAmenity> housingAmenities;
+    private OneToMany<HousingComplexAmenity> housingAmenities;
 
     private Boolean isMultirate;
 
@@ -334,7 +333,7 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
 
     private String payGroup;
 
-    private PayrollEmployeeTypeLookup payrollEmployeeType;
+    private SimplifiedOptionsLookup payrollEmployeeType;
 
     private String positionCode;
 
@@ -1272,11 +1271,11 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         this.flatFee = flatFee;
     }
 
-    public OneToMany<HousingAmenity> getHousingAmenities() {
+    public OneToMany<HousingComplexAmenity> getHousingAmenities() {
         return housingAmenities;
     }
 
-    public void setHousingAmenities(OneToMany<HousingAmenity> housingAmenities) {
+    public void setHousingAmenities(OneToMany<HousingComplexAmenity> housingAmenities) {
         this.housingAmenities = housingAmenities;
     }
 
@@ -1312,11 +1311,11 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         this.payGroup = payGroup;
     }
 
-    public PayrollEmployeeTypeLookup getPayrollEmployeeType() {
+    public SimplifiedOptionsLookup getPayrollEmployeeType() {
         return payrollEmployeeType;
     }
 
-    public void setPayrollEmployeeType(PayrollEmployeeTypeLookup payrollEmployeeType) {
+    public void setPayrollEmployeeType(SimplifiedOptionsLookup payrollEmployeeType) {
         this.payrollEmployeeType = payrollEmployeeType;
     }
 

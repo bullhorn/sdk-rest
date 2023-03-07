@@ -176,8 +176,6 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 
     private OneToMany<DistributionList> favoriteSavedSearches;
 
-    private
-
 	@JsonIgnore
 	@Size(max = 100)
 	private String username;

@@ -74,7 +74,7 @@ import java.util.Objects;
 		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "userOwners", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName", "exemptionStatus",
-        "clientContactNotes", "clientCorporationFiles", "fileAttachments", "owners", "stats", "timeAndLaborEnabledDate"})
+        "clientContactNotes", "fileAttachments", "owners", "stats", "timeAndLaborEnabledDate"})
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
 		SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -288,11 +288,7 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
 
     private OneToMany<Note> clientContactNotes;
 
-    private OneToMany<ClientCorporationFile> clientCorporationFiles;
-
     private OneToMany<ClientCorporationFileAttachment> fileAttachments;
-
-    private OneToMany<CorporateUser> owners;
 
     private ClientCorporationRatios stats;
 
@@ -1233,24 +1229,12 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.clientContactNotes = clientContactNotes;
     }
 
-    public OneToMany<ClientCorporationFile> getClientCorporationFiles() {
-        return clientCorporationFiles;
-    }
-
-    public void setClientCorporationFiles(OneToMany<ClientCorporationFile> clientCorporationFiles) {
-        this.clientCorporationFiles = clientCorporationFiles;
-    }
-
     public OneToMany<ClientCorporationFileAttachment> getFileAttachments() {
         return fileAttachments;
     }
 
     public void setFileAttachments(OneToMany<ClientCorporationFileAttachment> fileAttachments) {
         this.fileAttachments = fileAttachments;
-    }
-
-    public void setOwners(OneToMany<CorporateUser> owners) {
-        this.owners = owners;
     }
 
     public ClientCorporationRatios getStats() {

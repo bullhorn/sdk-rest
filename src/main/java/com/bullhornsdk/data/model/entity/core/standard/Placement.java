@@ -324,7 +324,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
     private Integer expiringCredentials;
 
-    private OneToMany<HousingAmenities> housingAmenities;
+    private OneToMany<HousingComplexAmenity> housingAmenities;
 
     private Integer incompleteRequirements;
 
@@ -338,9 +338,9 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
     private OneToMany<CorporateUser> owners;
 
-    private PayrollEmployeeTypeLookup payrollEmployeeType;
+    private SimplifiedOptionsLookup payrollEmployeeType;
 
-    private PayrollSyncStatusLookup payrollSyncStatus;
+    private SimplifiedOptionsLookup payrollSyncStatus;
 
     private Integer pendingChangeRequests;
 
@@ -1450,11 +1450,11 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.expiringCredentials = expiringCredentials;
     }
 
-    public OneToMany<HousingAmenities> getHousingAmenities() {
+    public OneToMany<HousingComplexAmenity> getHousingAmenities() {
         return housingAmenities;
     }
 
-    public void setHousingAmenities(OneToMany<HousingAmenities> housingAmenities) {
+    public void setHousingAmenities(OneToMany<HousingComplexAmenity> housingAmenities) {
         this.housingAmenities = housingAmenities;
     }
 
@@ -1506,19 +1506,19 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.owners = owners;
     }
 
-    public PayrollEmployeeTypeLookup getPayrollEmployeeType() {
+    public SimplifiedOptionsLookup getPayrollEmployeeType() {
         return payrollEmployeeType;
     }
 
-    public void setPayrollEmployeeType(PayrollEmployeeTypeLookup payrollEmployeeType) {
+    public void setPayrollEmployeeType(SimplifiedOptionsLookup payrollEmployeeType) {
         this.payrollEmployeeType = payrollEmployeeType;
     }
 
-    public PayrollSyncStatusLookup getPayrollSyncStatus() {
+    public SimplifiedOptionsLookup getPayrollSyncStatus() {
         return payrollSyncStatus;
     }
 
-    public void setPayrollSyncStatus(PayrollSyncStatusLookup payrollSyncStatus) {
+    public void setPayrollSyncStatus(SimplifiedOptionsLookup payrollSyncStatus) {
         this.payrollSyncStatus = payrollSyncStatus;
     }
 

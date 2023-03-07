@@ -49,8 +49,6 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
 
     private Integer numTimesRead;
 
-    private UserMessage userMessage;
-
     public Sendout() {
         super();
     }
@@ -187,14 +185,6 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
 
     public void setNumTimesRead(Integer numTimesRead) {
         this.numTimesRead = numTimesRead;
-    }
-
-    public UserMessage getUserMessage() {
-        return userMessage;
-    }
-
-    public void setUserMessage(UserMessage userMessage) {
-        this.userMessage = userMessage;
     }
 
     @Override

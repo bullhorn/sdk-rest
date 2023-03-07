@@ -17,8 +17,6 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
 
     private Integer isPublic;
 
-    private OneToMany<UserCustomObjectAttribute> attributes;
-
     private Integer corporationID;
 
     private DateTime dateAdded;
@@ -34,8 +32,6 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
     private Boolean isHidden;
 
     private String name;
-
-    private OneToMany<UserCustomObjectDepartment> objectDepartments;
 
     private Integer objectNumber;
 
@@ -83,14 +79,6 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
     @JsonIgnore
     public void setIsPublic(Integer isPublic) {
         this.isPublic = isPublic;
-    }
-
-    public OneToMany<UserCustomObjectAttribute> getAttributes() {
-        return attributes;
-    }
-
-    public void setAttributes(OneToMany<UserCustomObjectAttribute> attributes) {
-        this.attributes = attributes;
     }
 
     @Override
@@ -169,14 +157,6 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
     @Override
     public void setName(String name) {
         this.name = name;
-    }
-
-    public OneToMany<UserCustomObjectDepartment> getObjectDepartments() {
-        return objectDepartments;
-    }
-
-    public void setObjectDepartments(OneToMany<UserCustomObjectDepartment> objectDepartments) {
-        this.objectDepartments = objectDepartments;
     }
 
     @Override
