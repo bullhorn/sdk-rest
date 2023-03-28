@@ -18,6 +18,10 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
+import com.bullhornsdk.data.model.entity.core.eds.EdsData
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityType
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityTypeSchemaVersion
+import com.bullhornsdk.data.model.entity.core.eds.EdsSourceSystem
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
@@ -685,6 +689,12 @@ public class MockDataLoader {
 
         entityFiles.put(CandidateAvailability.class, "candidateavailability-data.txt");
 
+        // enterprise data store
+        entityFiles.put(EdsData.class, "eds/edsdata-data.txt");
+        entityFiles.put(EdsEntityType.class, "eds/entitytype-data.txt");
+        entityFiles.put(EdsEntityTypeSchemaVersion.class, "eds/entitytypeschemaversion-data.txt");
+        entityFiles.put(EdsSourceSystem.class, "eds/sourcesystem-data.txt");
+
         return entityFiles;
     }
 
@@ -939,6 +949,12 @@ public class MockDataLoader {
         entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-meta-data.txt");
 
         entityMetaFiles.put(CandidateAvailability.class, "meta/candidateavailability-meta-data.txt");
+
+        // enterprise data store
+        entityMetaFiles.put(EdsData.class, "meta/eds/edsdata-meta-data.txt");
+        entityMetaFiles.put(EdsEntityType.class, "meta/eds/entitytype-meta-data.txt");
+        entityMetaFiles.put(EdsEntityTypeSchemaVersion.class, "meta/eds/entitytypeschemaversion-meta-data.txt");
+        entityMetaFiles.put(EdsSourceSystem.class, "meta/eds/sourcesystem-meta-data.txt");
 
         return entityMetaFiles;
     }

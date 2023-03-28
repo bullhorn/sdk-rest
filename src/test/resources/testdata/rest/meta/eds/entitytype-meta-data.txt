@@ -1,0 +1,101 @@
+{
+    "entity": "EdsEntityType",
+    "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/EdsEntityType?fields=*",
+    "label": "Eds Entity Type",
+    "dateLastModified": "1679566503485",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "label": "ID"
+        },
+        {
+            "name": "display",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 64,
+            "confidential": false,
+            "label": "Display",
+            "hideFromSearch": false
+        },
+        {
+            "name": "edsData",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Eds Data",
+            "optionsType": "EdsData",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/options/EdsData",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "EdsData",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/EdsData?fields=*",
+                "label": "Eds Data",
+                "dateLastModified": "1679566503302",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "edsEntityTypeSchemaVersions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Eds Entity Type Schema Versions",
+            "optionsType": "EdsEntityTypeSchemaVersion",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/options/EdsEntityTypeSchemaVersion",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "EdsEntityTypeSchemaVersion",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/EdsEntityTypeSchemaVersion?fields=*",
+                "label": "Eds Entity Type Schema Version",
+                "dateLastModified": "1679566503937",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 64,
+            "confidential": false,
+            "label": "Name",
+            "hideFromSearch": false
+        },
+        {
+            "name": "sourceSystem",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Source System",
+            "optionsType": "EdsSourceSystem",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/options/EdsSourceSystem",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "EdsSourceSystem",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/EdsSourceSystem?fields=*",
+                "label": "Eds Source System",
+                "dateLastModified": "1679566523003",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    }
+                ]
+            }
+        }
+    ]
+}
