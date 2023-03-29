@@ -1,0 +1,221 @@
+{
+    "entity": "EdsData",
+    "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/EdsData?fields=*",
+    "label": "Eds Data",
+    "dateLastModified": "1679566503302",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "label": "ID"
+        },
+        {
+            "name": "appointmentId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Appointment Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "billableChargeId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Billable Charge Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "candidateId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Candidate Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "clientContactId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Client Contact Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "clientCorporationId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Client Corporation Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "corporateUserId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Corporate User Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateAddedInSourceSystem",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added In Source System",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified",
+            "hideFromSearch": false
+        },
+        {
+            "name": "dateLastModifiedInSourceSystem",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified In Source System",
+            "hideFromSearch": false
+        },
+        {
+            "name": "entityType",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Entity Type",
+            "optionsType": "EdsEntityType",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/options/EdsEntityType",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "EdsEntityType",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/EdsEntityType?fields=*",
+                "label": "Eds Entity Type",
+                "dateLastModified": "1679566503485",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "entityTypeSchemaVersion",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Entity Type Schema Version",
+            "optionsType": "EdsEntityTypeSchemaVersion",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/options/EdsEntityTypeSchemaVersion",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "EdsEntityTypeSchemaVersion",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/EdsEntityTypeSchemaVersion?fields=*",
+                "label": "Eds Entity Type Schema Version",
+                "dateLastModified": "1679566503937",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted",
+            "hideFromSearch": false
+        },
+        {
+            "name": "jobOrderId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Job Order Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "jobSubmissionId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Job Submission Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "leadId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Lead Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "noteId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Note Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "opportunityId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Opportunity Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "payableChargeId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Payable Charge Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "payload",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Payload",
+            "hideFromSearch": false
+        },
+        {
+            "name": "placementId",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Placement Id",
+            "hideFromSearch": false
+        },
+        {
+            "name": "sourceId",
+            "type": "SCALAR",
+            "dataType": "Long",
+            "confidential": false,
+            "label": "Source Id",
+            "hideFromSearch": false
+        }
+    ]
+}

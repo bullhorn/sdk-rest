@@ -1,0 +1,586 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 2,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 3,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 4,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 5,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 6,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 7,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 8,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 9,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 10,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 11,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 12,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 13,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 14,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 15,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 16,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 17,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 18,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 19,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        },
+        {
+            "id": 20,
+            "appointmentId": null,
+            "billableChargeId": null,
+            "candidateId": null,
+            "clientContactId": null,
+            "clientCorporationId": null,
+            "corporateUserId": null,
+            "dateAdded": 1679921299822,
+            "dateAddedInSourceSystem": 1665762392903,
+            "dateLastModified": 1679921299822,
+            "dateLastModifiedInSourceSystem": 1665762392903,
+            "entityType": {
+                "id": 1
+            },
+            "entityTypeSchemaVersion": {
+                "id": 1
+            },
+            "isDeleted": false,
+            "jobOrderId": null,
+            "jobSubmissionId": null,
+            "leadId": null,
+            "noteId": null,
+            "opportunityId": null,
+            "payableChargeId": null,
+            "payload": "{\"Customer_Id\":1,\n\"Id\":15220,\n\"Type\":”Send”,\n\"Url\":null,\n\"PageTitle\":null,\n\"Description\":null,\n\"EmailTemplate_Id\":17483,\n\"TextMessageTemplate_Id\":null,\n\"BullhornCandidateId\":99999,\n\"BullhornLeadId\":null,\n\"BullhornJobId\":null,\n\"DateCreated\":\"2023-02-27T16:42:11.27\",\n\"DateModified\":null}",
+            "placementId": null,
+            "sourceId": 1
+        }
+    ]
+}

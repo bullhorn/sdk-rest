@@ -80,6 +80,10 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.eds.EdsData;
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityType;
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityTypeSchemaVersion;
+import com.bullhornsdk.data.model.entity.core.eds.EdsSourceSystem;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
@@ -481,7 +485,13 @@ public enum BullhornEntityInfo {
     // Onboarding365 Entities
     LOCAL_TAX_FORM("LocalTaxForm", LocalTaxForm.class, LocalTaxFormWrapper.class, LocalTaxFormListWrapper.class, null, null),
     STATE_TAX_FORM("StateTaxForm", StateTaxForm.class, StateTaxFormWrapper.class, StateTaxFormListWrapper.class, null, null),
-    FEDERAL_TAX_FORM("FederalTaxForm", FederalTaxForm.class, FederalTaxFormWrapper.class, FederalTaxFormListWrapper.class, null, null);
+    FEDERAL_TAX_FORM("FederalTaxForm", FederalTaxForm.class, FederalTaxFormWrapper.class, FederalTaxFormListWrapper.class, null, null),
+
+    // Enterprise Data Store Entities
+    EDS_DATA("EdsData", EdsData.class, EdsDataWrapper.class, EdsDataListWrapper.class, null, null),
+    EDS_ENTITY_TYPE("EdsEntityType", EdsEntityType.class, EdsEntityTypeWrapper.class, EdsEntityTypeListWrapper.class, null, null),
+    EDS_ENTITY_TYPE_SCHEMA_VERSION("EdsEntityTypeSchemaVersion", EdsEntityTypeSchemaVersion.class, EdsEntityTypeSchemaVersionWrapper.class, EdsEntityTypeSchemaVersionListWrapper.class, null, null),
+    EDS_SOURCE_SYSTEM("EdsSourceSystem", EdsSourceSystem.class, EdsSourceSystemWrapper.class, EdsSourceSystemListWrapper.class, null, null);
 
     private final String name;
 
