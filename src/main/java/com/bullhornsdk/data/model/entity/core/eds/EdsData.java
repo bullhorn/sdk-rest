@@ -1,8 +1,5 @@
 package com.bullhornsdk.data.model.entity.core.eds;
 
-import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
-import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
-import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
@@ -34,17 +31,17 @@ public class EdsData implements QueryEntity, UpdateEntity, CreateEntity, DateLas
     private Boolean isDeleted;
     private Integer candidateId;
     private Integer clientCorporationId;
-    private ClientContact clientContactId;
-    private JobOrder jobOrderId;
-    private JobSubmission jobSubmissionId;
-    private CorporateUser corporateUserId;
-    private Lead leadId;
-    private Opportunity opportunityId;
-    private Placement placementId;
-    private Appointment appointmentId;
-    private Note noteId;
-    private PayableCharge payableChargeId;
-    private BillableCharge billableChargeId;
+    private Integer clientContactId;
+    private Integer jobOrderId;
+    private Integer jobSubmissionId;
+    private Integer corporateUserId;
+    private Integer leadId;
+    private Integer opportunityId;
+    private Integer placementId;
+    private Integer appointmentId;
+    private Integer noteId;
+    private Integer payableChargeId;
+    private Integer billableChargeId;
 
     @Override
     @JsonProperty("id")
@@ -170,112 +167,112 @@ public class EdsData implements QueryEntity, UpdateEntity, CreateEntity, DateLas
     }
 
     @JsonProperty("clientContactId")
-    public ClientContact getClientContactId() {
+    public Integer getClientContactId() {
         return clientContactId;
     }
 
     @JsonProperty("clientContactId")
-    public void setClientContactId(ClientContact clientContactId) {
+    public void setClientContactId(Integer clientContactId) {
         this.clientContactId = clientContactId;
     }
 
     @JsonProperty("jobOrderId")
-    public JobOrder getJobOrderId() {
+    public Integer getJobOrderId() {
         return jobOrderId;
     }
 
     @JsonProperty("jobOrderId")
-    public void setJobOrderId(JobOrder jobOrderId) {
+    public void setJobOrderId(Integer jobOrderId) {
         this.jobOrderId = jobOrderId;
     }
 
     @JsonProperty("jobSubmissionId")
-    public JobSubmission getJobSubmissionId() {
+    public Integer getJobSubmissionId() {
         return jobSubmissionId;
     }
 
     @JsonProperty("jobSubmissionId")
-    public void setJobSubmissionId(JobSubmission jobSubmissionId) {
+    public void setJobSubmissionId(Integer jobSubmissionId) {
         this.jobSubmissionId = jobSubmissionId;
     }
 
     @JsonProperty("corporateUserId")
-    public CorporateUser getCorporateUserId() {
+    public Integer getCorporateUserId() {
         return corporateUserId;
     }
 
     @JsonProperty("corporateUserId")
-    public void setCorporateUserId(CorporateUser corporateUserId) {
+    public void setCorporateUserId(Integer corporateUserId) {
         this.corporateUserId = corporateUserId;
     }
 
     @JsonProperty("leadId")
-    public Lead getLeadId() {
+    public Integer getLeadId() {
         return leadId;
     }
 
     @JsonProperty("leadId")
-    public void setLeadId(Lead leadId) {
+    public void setLeadId(Integer leadId) {
         this.leadId = leadId;
     }
 
     @JsonProperty("opportunityId")
-    public Opportunity getOpportunityId() {
+    public Integer getOpportunityId() {
         return opportunityId;
     }
 
     @JsonProperty("opportunityId")
-    public void setOpportunityId(Opportunity opportunityId) {
+    public void setOpportunityId(Integer opportunityId) {
         this.opportunityId = opportunityId;
     }
 
     @JsonProperty("placementId")
-    public Placement getPlacementId() {
+    public Integer getPlacementId() {
         return placementId;
     }
 
     @JsonProperty("placementId")
-    public void setPlacementId(Placement placementId) {
+    public void setPlacementId(Integer placementId) {
         this.placementId = placementId;
     }
 
     @JsonProperty("appointmentId")
-    public Appointment getAppointmentId() {
+    public Integer getAppointmentId() {
         return appointmentId;
     }
 
     @JsonProperty("appointmentId")
-    public void setAppointmentId(Appointment appointmentId) {
+    public void setAppointmentId(Integer appointmentId) {
         this.appointmentId = appointmentId;
     }
 
     @JsonProperty("noteId")
-    public Note getNoteId() {
+    public Integer getNoteId() {
         return noteId;
     }
 
     @JsonProperty("noteId")
-    public void setNoteId(Note noteId) {
+    public void setNoteId(Integer noteId) {
         this.noteId = noteId;
     }
 
     @JsonProperty("payableChargeId")
-    public PayableCharge getPayableChargeId() {
+    public Integer getPayableChargeId() {
         return payableChargeId;
     }
 
     @JsonProperty("payableChargeId")
-    public void setPayableChargeId(PayableCharge payableChargeId) {
+    public void setPayableChargeId(Integer payableChargeId) {
         this.payableChargeId = payableChargeId;
     }
 
     @JsonProperty("billableChargeId")
-    public BillableCharge getBillableChargeId() {
+    public Integer getBillableChargeId() {
         return billableChargeId;
     }
 
     @JsonProperty("billableChargeId")
-    public void setBillableChargeId(BillableCharge billableChargeId) {
+    public void setBillableChargeId(Integer billableChargeId) {
         this.billableChargeId = billableChargeId;
     }
 
