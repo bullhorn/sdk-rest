@@ -80,16 +80,17 @@ public class TestMockBullhornApiRest extends BaseTest {
 
     @Test
     public void testFindEntityFail() {
-        Assertions.assertThrows(RestApiException, { -> },"REST API Exception thrown" );
-        JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB, [ "id" ] as Set);
+        Assertions.assertThrows(RestApiException, { ->
+            JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB, [ "id" ] as Set);
+        },"REST API Exception thrown" );
 
     }
 
     @Test
     public void testFindEntityFailWithFields() {
-        Assertions.assertThrows(RestApiException, { -> },"REST API Exception thrown" );
-        JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB,null);
-
+        Assertions.assertThrows(RestApiException, { ->
+            JobOrder job = mockBullhornApiRest.findEntity(JobOrder.class, NON_EXISTING_JOB,null);
+        },"REST API Exception thrown" );
     }
 
     @Test
@@ -355,19 +356,20 @@ public class TestMockBullhornApiRest extends BaseTest {
 
     @Test
     public void testGenericUpdateFail() {
-        Assertions.assertThrows(RestApiException, { -> },"REST API Exception thrown" );
-        String newStatus = "STABLE";
-        JobOrder preUpdateEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
+        Assertions.assertThrows(RestApiException, { ->
+            String newStatus = "STABLE";
+            JobOrder preUpdateEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
 
-        JobOrder update = new JobOrder(NON_EXISTING_JOB);
+            JobOrder update = new JobOrder(NON_EXISTING_JOB);
 
-        update.setStatus(newStatus);
-        UpdateResponse response = mockBullhornApiRest.updateEntity(update);
-        JobOrder updatedEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
+            update.setStatus(newStatus);
+            UpdateResponse response = mockBullhornApiRest.updateEntity(update);
+            JobOrder updatedEntity = mockBullhornApiRest.findEntity(JobOrder.class, JOB_ORDER_ID, [ "id", "status" ] as Set);
 
-        updatedEntity.setStatus(preUpdateEntity.getStatus());
+            updatedEntity.setStatus(preUpdateEntity.getStatus());
 
-        Assertions.assertEquals(updatedEntity, preUpdateEntity);
+            Assertions.assertEquals(updatedEntity, preUpdateEntity);
+        },"REST API Exception thrown" );
     }
 
 
@@ -407,12 +409,13 @@ public class TestMockBullhornApiRest extends BaseTest {
 
     @Test
     public void testDeleteEntityFail() {
-        Assertions.assertThrows(RestApiException, { -> },"REST API Exception thrown" );
-        mockBullhornApiRest.deleteEntity(JobOrder.class, NON_EXISTING_JOB);
+        Assertions.assertThrows(RestApiException, { ->
+            mockBullhornApiRest.deleteEntity(JobOrder.class, NON_EXISTING_JOB);
 
-        List<JobOrder> jobs = mockBullhornApiRest.queryForList(JobOrder.class, "id="+JOB_ORDER_ID+" AND isDeleted=false",["*"] as Set, null);
+            List<JobOrder> jobs = mockBullhornApiRest.queryForList(JobOrder.class, "id="+JOB_ORDER_ID+" AND isDeleted=false",["*"] as Set, null);
 
-        assert jobs.isEmpty();
+            assert jobs.isEmpty();
+        },"REST API Exception thrown" );
     }
 
     @Test

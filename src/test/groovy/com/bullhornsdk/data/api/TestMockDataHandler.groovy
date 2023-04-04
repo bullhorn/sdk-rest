@@ -92,9 +92,10 @@ public class TestMockDataHandler {
 
     @Test
     public void testVerifySearchFieldsCandidateFail(){
-        Assertions.assertThrows(IllegalArgumentException, { -> },"Illegal Argument Exception thrown" );
-        String query = "(idBooga:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
-        mockDataHandler.verifySearchFields(query, Candidate.class);
+        Assertions.assertThrows(IllegalArgumentException, { ->
+            String query = "(idBooga:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
+            mockDataHandler.verifySearchFields(query, Candidate.class);
+        },"Illegal Argument Exception thrown" );
     }
 
     @Test
@@ -105,16 +106,18 @@ public class TestMockDataHandler {
 
     @Test
     public void testVerifySearchFieldsPlacementFail(){
-        Assertions.assertThrows(IllegalArgumentException, { -> },"Illegal Argument Exception thrown" );
-        String query = "(idBooga:12 AND name:hello) OR ((status:Approved and candidate.firstName:test) and (owner.id:test))";
-        mockDataHandler.verifySearchFields(query, Placement.class);
+        Assertions.assertThrows(IllegalArgumentException, { ->
+            String query = "(idBooga:12 AND name:hello) OR ((status:Approved and candidate.firstName:test) and (owner.id:test))";
+            mockDataHandler.verifySearchFields(query, Placement.class);
+        },"Illegal Argument Exception thrown" );
     }
 
     @Test
     public void testVerifySearchFieldsPlacementFail2(){
-        Assertions.assertThrows(IllegalArgumentException, { -> },"Illegal Argument Exception thrown" );
-        String query = "(id:12 AND name:hello) OR ((status:Approved and candidate.firstName:test) and (owner.id:test))";
-        mockDataHandler.verifySearchFields(query, Placement.class);
+        Assertions.assertThrows(IllegalArgumentException, { ->
+            String query = "(id:12 AND name:hello) OR ((status:Approved and candidate.firstName:test) and (owner.id:test))";
+            mockDataHandler.verifySearchFields(query, Placement.class);
+        },"Illegal Argument Exception thrown" );
     }
 
     @Test
@@ -126,9 +129,10 @@ public class TestMockDataHandler {
 
     @Test
     public void testVerifySearchFieldsClientContactFail(){
-        Assertions.assertThrows(IllegalArgumentException, { -> },"Illegal Argument Exception thrown" );
-        String query = "(idBooga:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
-        mockDataHandler.verifySearchFields(query, ClientContact.class);
+        Assertions.assertThrows(IllegalArgumentException, { ->
+            String query = "(idBooga:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
+            mockDataHandler.verifySearchFields(query, ClientContact.class);
+        },"Illegal Argument Exception thrown" );
     }
 
     @Test
@@ -139,9 +143,10 @@ public class TestMockDataHandler {
 
     @Test
     public void testVerifySearchFieldsClientCorporationFail(){
-        Assertions.assertThrows(IllegalArgumentException, { -> },"Illegal Argument Exception thrown" );
-        String query = "(idBooga:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
-        mockDataHandler.verifySearchFields(query, ClientCorporation.class);
+        Assertions.assertThrows(IllegalArgumentException, { ->
+            String query = "(idBooga:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
+            mockDataHandler.verifySearchFields(query, ClientCorporation.class);
+        },"Illegal Argument Exception thrown" );
     }
 
     @Test
@@ -152,9 +157,11 @@ public class TestMockDataHandler {
 
     @Test
     public void testVerifySearchFieldsJobOrderFail(){
-        Assertions.assertThrows(IllegalArgumentException, { -> },"Illegal Argument Exception thrown" );
-        String query = "(id:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
-        mockDataHandler.verifySearchFields(query, JobOrder.class);
+        Assertions.assertThrows(IllegalArgumentException, { ->
+            String query = "(id:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
+            mockDataHandler.verifySearchFields(query, JobOrder.class);
+        },"Illegal Argument Exception thrown" );
+
     }
 
     @Test
@@ -166,9 +173,10 @@ public class TestMockDataHandler {
 
     @Test
     public void testVerifySearchFieldsJobSubmissionFail(){
-        Assertions.assertThrows(IllegalArgumentException, { -> },"Illegal Argument Exception thrown" );
-        String query = "(id:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
-        mockDataHandler.verifySearchFields(query, JobSubmission.class);
+        Assertions.assertThrows(IllegalArgumentException, { ->
+            String query = "(id:12 AND name:hello) OR ((status:Approved and firstName:toad) and (owner.id:test))";
+            mockDataHandler.verifySearchFields(query, JobSubmission.class);
+        },"Illegal Argument Exception thrown" );
     }
 
     @Test

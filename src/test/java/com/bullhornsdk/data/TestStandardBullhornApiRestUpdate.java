@@ -843,7 +843,7 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
     private void runAssertions(UpdateResponse response, String valueShouldBe, String valueIs) {
         Assertions.assertNotNull(response, "response is null");
         Assertions.assertFalse(response.hasValidationErrors(), "Validation failed");
-        Assertions.assertTrue(valueShouldBe.equals(valueIs), "value not updated correctly");
+        Assertions.assertEquals(valueShouldBe, valueIs, "value not updated correctly");
     }
 
 
