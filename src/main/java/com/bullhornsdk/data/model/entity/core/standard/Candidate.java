@@ -481,8 +481,6 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     private String estaffGUID;
 
-    private OneToMany<CandidateComment> latestComment;
-
     private OneToMany<Location> locations;
 
     private String maritalStatus;
@@ -2215,14 +2213,6 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     public void setEstaffGUID(String estaffGUID) {
         this.estaffGUID = estaffGUID;
-    }
-
-    public OneToMany<CandidateComment> getLatestComment() {
-        return latestComment;
-    }
-
-    public void setLatestComment(OneToMany<CandidateComment> latestComment) {
-        this.latestComment = latestComment;
     }
 
     public OneToMany<Location> getLocations() {

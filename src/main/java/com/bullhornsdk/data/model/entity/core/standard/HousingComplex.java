@@ -25,8 +25,7 @@ import javax.validation.constraints.Size;
     "customTextBlock5", "dateAdded", "fax", "isDeleted", "name", "owner", "phone", "units", "whiteListClientCorporations",
     "customContactID1", "customContactID2", "customContactID3", "customText6", "customText7", "customText8", "customText9",
     "customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16",
-    "customText17", "customText18", "customText19", "customText20", "migrateGUID", "whitelistClientCorporations",
-    "zipCodeGis"})
+    "customText17", "customText18", "customText19", "customText20", "migrateGUID", "whitelistClientCorporations"})
 public class HousingComplex extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
 
     private Integer id;
@@ -70,8 +69,6 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
     private OneToMany<ClientCorporation> whitelistClientCorporations;
 
     private OneToMany<HousingComplexAmenity> amenities;
-
-    private ZipCodeGis zipCodeGis;
 
     public HousingComplex() {
         super();
@@ -278,14 +275,6 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
 
     public void setAmenities(OneToMany<HousingComplexAmenity> amenities) {
         this.amenities = amenities;
-    }
-
-    public ZipCodeGis getZipCodeGis() {
-        return zipCodeGis;
-    }
-
-    public void setZipCodeGis(ZipCodeGis zipCodeGis) {
-        this.zipCodeGis = zipCodeGis;
     }
 
     @Override

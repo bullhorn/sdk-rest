@@ -264,13 +264,8 @@ public enum BullhornEntityInfo {
     CANDIDATE_TAX_INFO("CandidateTaxInfo", CandidateTaxInfo.class, CandidateTaxInfoWrapper.class, CandidateTaxInfoListWrapper.class, "CandidateTaxInfoEditHistory",
         null),
 
-    CANDIDATE_COMMENT("CandidateComment", CandidateComment.class, CandidateCommentWrapper.class, CandidateCommentListWrapper.class, null, null),
     CANDIDATE_SOURCE("CandidateSource", CandidateSource.class, CandidateSourceWrapper.class, CandidateSourceListWrapper.class, null, null),
     CORPORATION("Corporation", Corporation.class, CorporationWrapper.class, CorporationListWrapper.class, null, null),
-    SHIFT("Shift", Shift.class, ShiftWrapper.class, ShiftListWrapper.class, null, null),
-    TEARSHEET_RECIPIENT("TearsheetRecipient", TearsheetRecipient.class, TearsheetRecipientWrapper.class, TearsheetRecipientListWrapper.class, null, null),
-    USER_DEPARTMENT_GROUPING("UserDepartmentGrouping", UserDepartmentGrouping.class, UserDepartmentGroupingWrapper.class, UserDepartmentGroupingListWrapper.class, null, null),
-    ZIP_CODE_GIS("ZipCodeGis", ZipCodeGis.class, ZipCodeGisWrapper.class, null,null, null),
 
     // JobOrderRateCard Entities
     JOB_ORDER_RATE_CARD("JobOrderRateCard", JobOrderRateCard.class, JobOrderRateCardWrapper.class, JobOrderRateCardListWrapper.class, "JobOrderRateCardEditHistory",
