@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.api
 
+import com.bullhornsdk.data.api.mock.MockBullhornData
 import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity;
 
 
@@ -16,7 +17,6 @@ import org.springframework.util.FileCopyUtils
 import org.springframework.web.client.HttpStatusCodeException
 import org.springframework.web.multipart.MultipartFile
 import com.bullhornsdk.data.BaseTest
-import com.bullhornsdk.data.api.mock.MockBullhornData
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationFactory
 import com.bullhornsdk.data.model.entity.core.standard.Candidate

@@ -820,6 +820,26 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
+    @Test
+    public void testNullValueBypassing() {
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "phone"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getPhone();
+
+        newValue = null;
+
+        //noinspection ConstantValue
+        entity.setPhone(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity, Sets.newHashSet("phone"));
+
+        Candidate updatedEntity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "phone"));
+        entity.setPhone(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getPhone());
+    }
+
     private void runAssertions(UpdateResponse response, String valueShouldBe, String valueIs) {
         Assertions.assertNotNull(response, "response is null");
         Assertions.assertFalse(response.hasValidationErrors(), "Validation failed");
