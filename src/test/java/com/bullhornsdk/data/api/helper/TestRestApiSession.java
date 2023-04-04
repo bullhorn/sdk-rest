@@ -4,9 +4,9 @@ import java.io.IOException;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
-import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.BaseTest;
@@ -14,11 +14,7 @@ import com.bullhornsdk.data.api.BullhornRestCredentials;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.Matchers.emptyString;
-
-@Ignore
+@Disabled("Ignore tests involving Rest Connections")
 public class TestRestApiSession extends BaseTest {
 
     private RestApiSession restApiSession;
