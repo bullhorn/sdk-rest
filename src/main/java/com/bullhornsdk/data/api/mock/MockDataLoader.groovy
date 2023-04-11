@@ -18,6 +18,10 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
+import com.bullhornsdk.data.model.entity.core.eds.EdsData
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityType
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityTypeSchemaVersion
+import com.bullhornsdk.data.model.entity.core.eds.EdsSourceSystem
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
@@ -466,6 +470,8 @@ public class MockDataLoader {
         entityFiles.put(PlacementCertification.class, "placementcertification-data.txt");
         entityFiles.put(PlacementChangeRequest.class, "placementchangerequest-data.txt");
         entityFiles.put(PlacementCommission.class, "placementcommission-data.txt");
+        entityFiles.put(PlacementShiftSet.class, "placementshiftset-data.txt");
+        entityFiles.put(PlacementShiftSetVersion.class, "placementshiftsetVersion-data.txt");
         entityFiles.put(PrivateLabel.class, "privatelabel-data.txt");
         entityFiles.put(Report.class, "report-data.txt");
         entityFiles.put(Sendout.class, "sendout-data.txt");
@@ -476,6 +482,7 @@ public class MockDataLoader {
         entityFiles.put(Tearsheet.class, "tearsheet-data.txt");
         entityFiles.put(TearsheetMember.class, "tearsheetmember-data.txt");
         entityFiles.put(TimeUnit.class, "timeunit-data.txt");
+        entityFiles.put(UserSetting.class, "usersetting-data.txt");
         entityFiles.put(UserType.class, "usertype-data.txt");
         entityFiles.put(WorkersCompensation.class, "workerscompensation-data.txt");
         entityFiles.put(WorkersCompensationRate.class, "workerscompensationrate-data.txt");
@@ -683,6 +690,12 @@ public class MockDataLoader {
 
         entityFiles.put(CandidateAvailability.class, "candidateavailability-data.txt");
 
+        // enterprise data store
+        entityFiles.put(EdsData.class, "eds/edsdata-data.txt");
+        entityFiles.put(EdsEntityType.class, "eds/entitytype-data.txt");
+        entityFiles.put(EdsEntityTypeSchemaVersion.class, "eds/entitytypeschemaversion-data.txt");
+        entityFiles.put(EdsSourceSystem.class, "eds/sourcesystem-data.txt");
+
         return entityFiles;
     }
 
@@ -732,6 +745,7 @@ public class MockDataLoader {
         entityMetaFiles.put(PlacementCertification.class, "meta/placementcertification-meta-data.txt");
         entityMetaFiles.put(PlacementChangeRequest.class, "meta/placementchangerequest-meta-data.txt");
         entityMetaFiles.put(PlacementCommission.class, "meta/placementcommission-meta-data.txt");
+        entityMetaFiles.put(PlacementShiftSet.class, "meta/placementshiftset-meta-data.txt");
         entityMetaFiles.put(PrivateLabel.class, "meta/privatelabel-meta-data.txt");
         entityMetaFiles.put(Report.class, "meta/report-meta-data.txt")
         entityMetaFiles.put(Sendout.class, "meta/sendout-meta-data.txt");
@@ -740,6 +754,7 @@ public class MockDataLoader {
         entityMetaFiles.put(State.class, "meta/state-meta-data.txt");
         entityMetaFiles.put(Task.class, "meta/task-meta-data.txt");
         entityMetaFiles.put(TimeUnit.class, "meta/timeunit-meta-data.txt");
+        entityMetaFiles.put(UserSetting.class, "meta/usersetting-meta-data.txt");
         entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
         entityMetaFiles.put(WorkersCompensation.class, "meta/workerscompensation-meta-data.txt");
         entityMetaFiles.put(WorkersCompensationRate.class, "meta/workerscompensationrate-meta-data.txt");
@@ -935,6 +950,12 @@ public class MockDataLoader {
         entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-meta-data.txt");
 
         entityMetaFiles.put(CandidateAvailability.class, "meta/candidateavailability-meta-data.txt");
+
+        // enterprise data store
+        entityMetaFiles.put(EdsData.class, "meta/eds/edsdata-meta-data.txt");
+        entityMetaFiles.put(EdsEntityType.class, "meta/eds/entitytype-meta-data.txt");
+        entityMetaFiles.put(EdsEntityTypeSchemaVersion.class, "meta/eds/entitytypeschemaversion-meta-data.txt");
+        entityMetaFiles.put(EdsSourceSystem.class, "meta/eds/sourcesystem-meta-data.txt");
 
         return entityMetaFiles;
     }
