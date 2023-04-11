@@ -13,7 +13,8 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.json.JSONException;
@@ -52,7 +53,7 @@ public class RestApiSession {
 
 	private static final String REFRESH_TOKEN_GRANT_TYPE = "refresh_token";
 
-	private static Logger log = Logger.getLogger(RestApiSession.class);
+	private static Logger log = LogManager.getLogger(RestApiSession.class);
 
 	private RestTemplate restTemplate;
 
@@ -137,7 +138,8 @@ public class RestApiSession {
 				break;
 			} catch (Exception e) {
 				if (tryNumber < SESSION_RETRY) {
-					log.error("Error creating REST session. Try number: " + tryNumber + " out of " + SESSION_RETRY + " trying again.", e);
+                    String message = "Error creating REST session. Try number: " + tryNumber + " out of " + SESSION_RETRY + " trying again.";
+					log.error(message, e);
 				} else {
 					log.error("Final error creating REST session. Shutting down.", e);
 
@@ -244,9 +246,9 @@ public class RestApiSession {
 
 			restUrl = (String) responseJson.get("restUrl");
 		} catch (RestClientException | IOException e) {
-			log.error("Failed to login. " + responseJson, e);
-
-			throw new RestApiException("Failed to login and get BhRestToken: " + responseJson, e);
+            String message = "Failed to login and get BhRestToken: " + responseJson;
+			log.error(message, e);
+			throw new RestApiException(message, e);
 		}
 	}
 
@@ -426,9 +428,10 @@ public class RestApiSession {
 
             return this.loginInfo;
         } catch(RestClientException | JSONException e) {
-            log.error("Error occurred dynamically determining REST urls with username " + restCredentials.getUsername(), e);
+            String message = "Error occurred dynamically determining REST urls with username " + restCredentials.getUsername();
+            log.error(message, e);
 
-            throw new RestApiException("Failed to dynamically determine REST urls with username " + restCredentials.getUsername());
+            throw new RestApiException(message);
         }
     }
 

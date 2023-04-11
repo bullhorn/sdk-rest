@@ -6,7 +6,8 @@ import java.io.StringWriter;
 import java.nio.charset.Charset;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,7 +29,7 @@ import org.springframework.web.client.UnknownHttpStatusCodeException;
  */
 public class CustomResponseErrorHandler extends DefaultResponseErrorHandler {
 
-    private static Logger log = Logger.getLogger(CustomResponseErrorHandler.class);
+    private static Logger log = LogManager.getLogger(CustomResponseErrorHandler.class);
 
     @Override
     public void handleError(ClientHttpResponse response) throws IOException {

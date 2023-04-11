@@ -4,8 +4,6 @@ import org.joda.time.DateTime;
 
 import com.esotericsoftware.kryo.Kryo;
 
-import de.javakaffee.kryoserializers.jodatime.JodaDateTimeSerializer;
-
 public class KryoObjectCopyHelper {
 
 	public static <T> T copy(T entity) {

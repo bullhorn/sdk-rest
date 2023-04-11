@@ -71,14 +71,15 @@ import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.core.io.ClassPathResource
 
 import java.util.concurrent.ConcurrentHashMap
 
 public class MockDataLoader {
 
-    private final static Logger log = Logger.getLogger(MockDataLoader.class);
+    private final static Logger log = LogManager.getLogger(MockDataLoader.class);
     private final RestJsonConverter restJsonConverter;
 
     private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMapCache;
@@ -346,7 +347,7 @@ public class MockDataLoader {
             jsonDataString = IOUtils.toString(data.getInputStream(), "UTF-8");
 
         } catch (IOException e) {
-            log.error("Unable to load test data from filename: " + fileName);
+            log.error("Unable to load test data from filename: {}", fileName);
             throw new IllegalArgumentException("Unable to load test data from filename: " + fileName, e);
         }
 

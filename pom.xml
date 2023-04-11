@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.4.58</version>
+    <version>1.4.59</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
@@ -161,9 +161,9 @@
         </dependency>
 
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.19.0</version>
         </dependency>
 
         <dependency>
@@ -191,12 +191,6 @@
             <groupId>com.esotericsoftware.kryo</groupId>
             <artifactId>kryo</artifactId>
             <version>2.24.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>de.javakaffee</groupId>
-            <artifactId>kryo-serializers</artifactId>
-            <version>0.37</version>
         </dependency>
 
         <dependency>

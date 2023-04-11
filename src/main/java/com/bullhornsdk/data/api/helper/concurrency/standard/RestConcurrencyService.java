@@ -9,13 +9,14 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService;
 
 public class RestConcurrencyService implements ConcurrencyService {
 
-	private static Logger log = Logger.getLogger(RestConcurrencyService.class);
+	private static Logger log = LogManager.getLogger(RestConcurrencyService.class);
 
 	@Override
 	public <T, C extends Callable<T>> List<T> spinThreadsAndWaitForResult(List<C> taskList) {

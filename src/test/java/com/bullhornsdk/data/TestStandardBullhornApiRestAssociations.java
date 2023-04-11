@@ -15,7 +15,8 @@ import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementShiftSet;
 import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.association.AssociationFactory;
@@ -37,7 +38,7 @@ import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 
 public class TestStandardBullhornApiRestAssociations extends BaseTest {
-    private final Logger log = Logger.getLogger(TestStandardBullhornApiRestAssociations.class);
+    private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestAssociations.class);
 
     public TestStandardBullhornApiRestAssociations() {
         super();

@@ -40,7 +40,8 @@ import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResumeAsEntity
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.lang3.StringUtils
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.codehaus.groovy.runtime.NullObject
 import org.joda.time.DateTime
 import org.springframework.web.multipart.MultipartFile
@@ -61,7 +62,7 @@ import java.io.File as JavaFile
 
 public class MockDataHandler {
 
-	private final static Logger log = Logger.getLogger(MockDataHandler.class);
+	private final static Logger log = LogManager.getLogger(MockDataHandler.class);
 	private final MockDataLoader mockDataLoader;
 	private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMap;
 	private Map<Class<? extends BullhornEntity>, MetaData<?>> restMetaDataMap;
@@ -232,9 +233,10 @@ public class MockDataHandler {
 		try {
 			updateExistingEntityWithNewNonNullValues(entity, existingEntity);
 		} catch (Exception e) {
+            String message = "Error updating entity of type: " + entity.getClass().getSimpleName() + " with id: " + entity.getId();
 			response.setErrorCode("500");
-			response.setErrorMessage("Error updating entity of type: " + entity.getClass().getSimpleName() + " with id: " + entity.getId());
-			log.error("Error updating entity of type: " + entity.getClass().getSimpleName() + " with id: " + entity.getId(), e);
+			response.setErrorMessage(message);
+			log.error(message, e);
 		}
 
 		return (C) response;
@@ -896,7 +898,6 @@ public class MockDataHandler {
 			}else {
 			   containsValue = (field1 == value1);
 			}
-			//log.info("field1 = "+field1+" value1 = "+value1+" containsValue = "+containsValue);
 			return containsValue;
 		};
 
@@ -1100,7 +1101,7 @@ public class MockDataHandler {
             try {
                 setValueFromPath(copyOfFromEntity,toEntity,fullPath)
             } catch(MissingPropertyException e) {
-                log.error("Missing property " + e.getProperty() + " on entity " + fromEntity.getClass().getSimpleName());
+                log.error("Missing property {} on entity {}", e.getProperty(), fromEntity.getClass().getSimpleName());
             }
 		}
 
@@ -1134,7 +1135,7 @@ public class MockDataHandler {
 				try {
                     setValueFromPath(fromProperty,toProperty, partialPath)
                 } catch(MissingPropertyException e) {
-                    log.error("Missing property " + e.getProperty() + " on entity " + to.getClass().getSimpleName());
+                    log.error("Missing property {} on entity {}", e.getProperty(), to.getClass().getSimpleName());
                 }
 
                 if(!parentPropertyIsOneToMany(fromProperty,toProperty,path)){
@@ -1144,11 +1145,11 @@ public class MockDataHandler {
 			}
 
 		}else if(fromProperty == null || fromProperty instanceof NullObject){
-			log.debug("fromProperty is null, no need to set the toProperty then. ");
+			log.debug("fromProperty is null, no need to set the toProperty then.");
 		}else if(parentPropertyIsOneToMany(fromProperty,toProperty,path)){
 			//All fields on the OneToMany are set under propertyIsOneToMany.
 		    //Field selection for OneToMany is not currently supported.
-		    log.debug("parent is OneToMany: "+path);
+		    log.debug("parent is OneToMany: {}", path);
 		}else if(propertyIsOneToMany(fromProperty,toProperty,path)){
 			toProperty?."${path}" = fromProperty?."${path}";
 		}else if(propertyIsNullNestedRestEntity(fromProperty,toProperty,path)){

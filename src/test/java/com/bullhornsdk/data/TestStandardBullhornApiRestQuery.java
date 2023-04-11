@@ -9,7 +9,8 @@ import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementHistory;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.file.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
@@ -26,7 +27,7 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
  */
 
 public class TestStandardBullhornApiRestQuery extends BaseTest {
-	private final Logger log = Logger.getLogger(TestStandardBullhornApiRestQuery.class);
+	private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestQuery.class);
 
 	private String where = "id>0";
 
