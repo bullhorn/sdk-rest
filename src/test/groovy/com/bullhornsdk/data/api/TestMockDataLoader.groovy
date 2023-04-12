@@ -9,97 +9,96 @@ import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import org.apache.log4j.Logger
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
-import static org.junit.Assert.assertFalse
 
 public class TestMockDataLoader {
 
-	private final static Logger log = Logger.getLogger(TestMockDataHandler.class);
-	private MockDataLoader mockDataLoader = new MockDataLoader();
+    private final static Logger log = Logger.getLogger(TestMockDataHandler.class);
+    private MockDataLoader mockDataLoader = new MockDataLoader();
 
 
     @Test
     public void testLoadData() {
         Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> testData = mockDataLoader.getEntityTestData();
 
-        assertFalse(testData.isEmpty());
+        Assertions.assertFalse(testData.isEmpty());
     }
 
-	@Test
-	public void testLoadEntityData(){
+    @Test
+    public void testLoadEntityData(){
 
-		Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> entityData = mockDataLoader.getEntityTestData();
+        Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> entityData = mockDataLoader.getEntityTestData();
 
-		entityData.each { key,value ->
+		    entityData.each { key,value ->
             assert value.size() >= 1;
-
-		}
-
-
-		Map<String,String> fileNames = mockDataLoader.getEntityFileNames();
-
-		fileNames.each{key,value ->
-			assert entityData.get(key) != null;
-			assert value.size() > 0;
-
-		}
-
-	}
+        }
 
 
-	@Test
-	public void testLoadMetaTestData(){
+        Map<String,String> fileNames = mockDataLoader.getEntityFileNames();
 
-		Map<Class<? extends BullhornEntity>, MetaData<?>> metaData = mockDataLoader.getMetaTestData();
+        fileNames.each{key,value ->
+            assert entityData.get(key) != null;
+            assert value.size() > 0;
 
-		metaData.each { key,value ->
-			assert value.getEntity().equals(key.getSimpleName());
-		}
+        }
 
-		Map<String,String> fileNames = mockDataLoader.getMetaDataFileNames();
-
-		fileNames.each{key,value ->
-			assert metaData.get(key) != null;
-			assert value.size() > 0;
-
-		}
-
-	}
+    }
 
 
-	@Test
-	public void testLoadSearchFieldData(){
+    @Test
+    public void testLoadMetaTestData(){
 
-		Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFields = mockDataLoader.getSearchFields();
+        Map<Class<? extends BullhornEntity>, MetaData<?>> metaData = mockDataLoader.getMetaTestData();
 
-		searchFields.each { key,value ->
-			assert value.size() > 0;
-		}
+        metaData.each { key,value ->
+            assert value.getEntity().equals(key.getSimpleName());
+        }
 
-		Map<String,String> fileNames = mockDataLoader.getSearchFieldFileNames()
+        Map<String,String> fileNames = mockDataLoader.getMetaDataFileNames();
 
-		fileNames.each{key,value ->
-			assert searchFields.get(key) != null;
-			assert value.size() > 0;
+        fileNames.each{key,value ->
+            assert metaData.get(key) != null;
+            assert value.size() > 0;
 
-		}
+        }
 
-	}
+    }
 
-	@Test
-	public void testGetEditHistory(){
 
-		List<EditHistory> result = mockDataLoader.getEditHistoryList();
-		assertFalse(result.isEmpty());
+    @Test
+    public void testLoadSearchFieldData(){
 
-	}
+        Map<Class<? extends SearchEntity>, List<MockSearchField>> searchFields = mockDataLoader.getSearchFields();
 
-	@Test
-	public void testGetEditHistoryFieldChange(){
+        searchFields.each { key,value ->
+            assert value.size() > 0;
+        }
 
-		List<FieldChange> result = mockDataLoader.getEditHistoryFieldChangeList();
-		assertFalse(result.isEmpty());
+        Map<String,String> fileNames = mockDataLoader.getSearchFieldFileNames()
 
-	}
+        fileNames.each{key,value ->
+            assert searchFields.get(key) != null;
+            assert value.size() > 0;
+
+        }
+
+    }
+
+    @Test
+    public void testGetEditHistory(){
+
+        List<EditHistory> result = mockDataLoader.getEditHistoryList();
+        Assertions.assertFalse(result.isEmpty());
+
+    }
+
+    @Test
+    public void testGetEditHistoryFieldChange(){
+
+        List<FieldChange> result = mockDataLoader.getEditHistoryFieldChangeList();
+        Assertions.assertFalse(result.isEmpty());
+
+    }
 }

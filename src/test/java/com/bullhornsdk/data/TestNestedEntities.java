@@ -1,172 +1,170 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-
 import com.bullhornsdk.data.model.entity.core.standard.JobShift;
 import org.apache.log4j.Logger;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.google.common.collect.Sets;
 
 public class TestNestedEntities extends BaseTest {
-	private final Logger log = Logger.getLogger(TestNestedEntities.class);
+    private final Logger log = Logger.getLogger(TestNestedEntities.class);
 
-	public TestNestedEntities() {
-		super();
-	}
+    public TestNestedEntities() {
+        super();
+    }
 
-	@Test
-	public void testFindCandidate() {
+    @Test
+    public void testFindCandidate() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id"));
 
-		assertNotNull("Candidate is null", entity);
+        Assertions.assertNotNull(entity, "Candidate is null");
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_educations() {
+    @Test
+    public void testFindCandidate_educations() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "educations"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "educations"));
 
-		assertNotNull(entity.getEducations().getTotal());
-		assertNotNull(entity.getEducations().getData());
+        Assertions.assertNotNull(entity.getEducations().getTotal());
+        Assertions.assertNotNull(entity.getEducations().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_notes() {
+    @Test
+    public void testFindCandidate_notes() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "notes"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "notes"));
 
-		assertNotNull(entity.getNotes().getTotal());
-		assertNotNull(entity.getNotes().getData());
+        Assertions.assertNotNull(entity.getNotes().getTotal());
+        Assertions.assertNotNull(entity.getNotes().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_clientCorporationWhiteList() {
+    @Test
+    public void testFindCandidate_clientCorporationWhiteList() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "clientCorporationWhiteList(id,name)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "clientCorporationWhiteList(id,name)"));
 
-		assertNotNull(entity.getClientCorporationWhiteList().getTotal());
-		assertNotNull(entity.getClientCorporationWhiteList().getData());
+        Assertions.assertNotNull(entity.getClientCorporationWhiteList().getTotal());
+        Assertions.assertNotNull(entity.getClientCorporationWhiteList().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_clientCorporationBlackList() {
+    @Test
+    public void testFindCandidate_clientCorporationBlackList() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "clientCorporationBlackList(id,name)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "clientCorporationBlackList(id,name)"));
 
-		assertNotNull(entity.getClientCorporationBlackList().getTotal());
-		assertNotNull(entity.getClientCorporationBlackList().getData());
+        Assertions.assertNotNull(entity.getClientCorporationBlackList().getTotal());
+        Assertions.assertNotNull(entity.getClientCorporationBlackList().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_fileAttachments() {
+    @Test
+    public void testFindCandidate_fileAttachments() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "fileAttachments(id,name)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "fileAttachments(id,name)"));
 
-		assertNotNull(entity.getFileAttachments().getTotal());
-		assertNotNull(entity.getFileAttachments().getData());
+        Assertions.assertNotNull(entity.getFileAttachments().getTotal());
+        Assertions.assertNotNull(entity.getFileAttachments().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_interviews() {
+    @Test
+    public void testFindCandidate_interviews() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "interviews(id,dateAdded,type)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "interviews(id,dateAdded,type)"));
 
-		assertNotNull(entity.getInterviews().getTotal());
-		assertNotNull(entity.getInterviews().getData());
+        Assertions.assertNotNull(entity.getInterviews().getTotal());
+        Assertions.assertNotNull(entity.getInterviews().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_placements() {
+    @Test
+    public void testFindCandidate_placements() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "placements(id,customText2)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "placements(id,customText2)"));
 
-		assertNotNull(entity.getPlacements().getTotal());
-		assertNotNull(entity.getPlacements().getData());
+        Assertions.assertNotNull(entity.getPlacements().getTotal());
+        Assertions.assertNotNull(entity.getPlacements().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_sendouts() {
+    @Test
+    public void testFindCandidate_sendouts() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "sendouts(id,dateAdded)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "sendouts(id,dateAdded)"));
 
-		assertNotNull(entity.getSendouts().getTotal());
-		assertNotNull(entity.getSendouts().getData());
+        Assertions.assertNotNull(entity.getSendouts().getTotal());
+        Assertions.assertNotNull(entity.getSendouts().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_jobSubmissions() {
+    @Test
+    public void testFindCandidate_jobSubmissions() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "submissions(id,status)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "submissions(id,status)"));
 
-		assertNotNull(entity.getSubmissions().getTotal());
-		assertNotNull(entity.getSubmissions().getData());
+        Assertions.assertNotNull(entity.getSubmissions().getTotal());
+        Assertions.assertNotNull(entity.getSubmissions().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_webResponses() {
+    @Test
+    public void testFindCandidate_webResponses() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "webResponses(id,status)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "webResponses(id,status)"));
 
-		assertNotNull(entity.getWebResponses().getTotal());
-		assertNotNull(entity.getWebResponses().getData());
+        Assertions.assertNotNull(entity.getWebResponses().getTotal());
+        Assertions.assertNotNull(entity.getWebResponses().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_workHistories() {
+    @Test
+    public void testFindCandidate_workHistories() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "workHistories(id,dateAdded)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "workHistories(id,dateAdded)"));
 
-		assertNotNull(entity.getWorkHistories().getTotal());
-		assertNotNull(entity.getWorkHistories().getData());
+        Assertions.assertNotNull(entity.getWorkHistories().getTotal());
+        Assertions.assertNotNull(entity.getWorkHistories().getData());
 
-	}
+    }
 
-	@Test
-	public void testFindCandidate_references() {
+    @Test
+    public void testFindCandidate_references() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
-				Sets.newHashSet("id", "references(id,companyName)"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(),
+            Sets.newHashSet("id", "references(id,companyName)"));
 
-		assertNotNull(entity.getReferences().getTotal());
-		assertNotNull(entity.getReferences().getData());
+        Assertions.assertNotNull(entity.getReferences().getTotal());
+        Assertions.assertNotNull(entity.getReferences().getData());
 
-	}
+    }
 
-	@Test
-	public void testPlacementChangeRequest_placement() {
+    @Test
+    public void testPlacementChangeRequest_placement() {
 
-		PlacementChangeRequest entity = bullhornData.findEntity(PlacementChangeRequest.class,
-				testEntities.getPlacementChangeRequestId(), Sets.newHashSet("id", "placement(id,customText2)"));
+        PlacementChangeRequest entity = bullhornData.findEntity(PlacementChangeRequest.class,
+            testEntities.getPlacementChangeRequestId(), Sets.newHashSet("id", "placement(id,customText2)"));
 
-		assertNotNull(entity.getPlacement().getId());
-		assertNotNull(entity.getPlacement().getCustomText2());
-		assertNull(entity.getPlacement().getCustomText3());
-	}
+        Assertions.assertNotNull(entity.getPlacement().getId());
+        Assertions.assertNotNull(entity.getPlacement().getCustomText2());
+        Assertions.assertNull(entity.getPlacement().getCustomText3());
+    }
 
     @Test
     public void testJobShift_notes() {
@@ -174,8 +172,8 @@ public class TestNestedEntities extends BaseTest {
         JobShift entity = bullhornData.findEntity(JobShift.class,
             testEntities.getJobShiftId(), Sets.newHashSet("id", "notes(id,action)"));
 
-        assertNotNull(entity.getNotes().getData());
-        assertNotNull(entity.getNotes().getTotal());
+        Assertions.assertNotNull(entity.getNotes().getData());
+        Assertions.assertNotNull(entity.getNotes().getTotal());
     }
 
 }

@@ -2,16 +2,7 @@ package com.bullhornsdk.data.model.entity.association.standard;
 
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
@@ -46,6 +37,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     private final AssociationField<Candidate, PersonCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", PersonCustomObjectInstance8.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", PersonCustomObjectInstance9.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", PersonCustomObjectInstance10.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance29> customObject29s = instantiateAssociationField("customObject29s", PersonCustomObjectInstance29.class);
 
 
     private List<AssociationField<Candidate, ? extends BullhornEntity>> allAssociations;
@@ -133,6 +125,10 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
         return customObject10s;
     }
 
+    public AssociationField<Candidate, PersonCustomObjectInstance29> customObject29s() {
+        return customObject29s;
+    }
+
     private <E extends BullhornEntity> AssociationField<Candidate, E> instantiateAssociationField(String associationName, Class<E> associationType) {
         return new StandardAssociationField<Candidate, E>(associationName, associationType);
     }
@@ -160,6 +156,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
+            allAssociations.add(customObject29s());
 
         }
         return allAssociations;

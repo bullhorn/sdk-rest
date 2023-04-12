@@ -1,7 +1,7 @@
 package com.bullhornsdk.data.api
 
 import com.google.common.collect.Sets
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 public class TestGroovySyntax {
 

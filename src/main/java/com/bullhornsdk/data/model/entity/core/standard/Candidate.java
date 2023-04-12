@@ -56,10 +56,10 @@ import java.util.Objects;
 		"submissions", "ssn", "stateAddtionalWitholdingsAmount", "stateExemptions", "stateFilingStatus", "status", "tasks", "taxID",
 		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
-        "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject29s", "activePlacements",
-        "addressSourceLocation", "addressSourceLocation", "candidateSource", "clientRating", "distributionLists",
-        "estaffGUID", "latestComment", "locations", "maritalStatus", "ownerCorporation", "payrollClientStartDate",
-        "payrollStatus", "privateLabel", "shifts", "tobaccoUser", "travelMethod"})
+    "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject29s", "activePlacements",
+    "addressSourceLocation", "addressSourceLocation", "candidateSource", "clientRating", "distributionLists",
+    "estaffGUID", "latestComment", "locations", "maritalStatus", "ownerCorporation", "payrollClientStartDate",
+    "payrollStatus", "privateLabel", "shifts", "tobaccoUser", "travelMethod"})
 public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 

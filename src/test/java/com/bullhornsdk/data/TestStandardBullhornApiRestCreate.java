@@ -1,16 +1,14 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.apache.log4j.Logger;
-import org.junit.After;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DeleteEntity;
@@ -32,12 +30,12 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
      * TODO: UNCOMMENT THE testCreatePlacement() method once the API issue around deleting placements is resolved
      */
 
-    @After
+    @AfterEach
     public void removeTheEntityAfterCreation() {
         if (entityId != null && deleteType != null) {
             DeleteResponse response = bullhornData.deleteEntity(deleteType, entityId);
-            assertNotNull("Error deleting entity", response);
-            assertFalse("Error deleting entity", response.isError());
+            Assertions.assertNotNull(response, "Error deleting entity");
+            Assertions.assertFalse(response.isError(), "Error deleting entity");
         }
     }
 
@@ -596,13 +594,13 @@ public class TestStandardBullhornApiRestCreate<C extends CreateEntity, D extends
     }
 
     private <E extends CreateEntity> void runAssertions(CreateResponse response, E oldEntity, E newEntity) {
-        assertNotNull("response is null", response);
-        assertFalse("Validation failed", response.hasValidationErrors());
-        assertNotNull("no entityId in response", response.getChangedEntityId());
-        assertFalse("response is error", response.isError());
-        assertNotNull("new entity null", newEntity);
-        assertNotNull("new entity id null", newEntity.getId());
-        assertFalse("new and old entity ids are the same", oldEntity.getId().intValue() == newEntity.getId().intValue());
+        Assertions.assertNotNull(response, "response is null");
+        Assertions.assertFalse(response.hasValidationErrors(), "Validation failed");
+        Assertions.assertNotNull(response.getChangedEntityId(), "no entityId in response");
+        Assertions.assertFalse(response.isError(), "response is error");
+        Assertions.assertNotNull(newEntity, "new entity null");
+        Assertions.assertNotNull(newEntity.getId(), "new entity id null");
+        Assertions.assertFalse(oldEntity.getId().intValue() == newEntity.getId().intValue(), "new and old entity ids are the same");
     }
 
 
