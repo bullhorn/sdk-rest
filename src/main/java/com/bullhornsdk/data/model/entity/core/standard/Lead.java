@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -30,7 +31,7 @@ import java.math.BigDecimal;
 		"customTextBlock5", "dateAdded", "dateLastComment", "dateLastModified", "dateLastVisited", "description", "distributionLists", "division", "email", "email2", "email3", "fax", "fax2", "fax3",
 		"firstName", "history", "isDayLightSavingsTime", "isDeleted", "lastName", "leadSource", "massMailOptOut", "middleName", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes",
 		"numEmployees", "occupation", "owner", "ownerCorporation", "pager", "phone", "phone2", "phone3", "preferredContact", "primarySkills", "priority", "referredByPerson", "reportToPerson", "role",
-		"salary", "salaryLow", "secondaryAddress", "secondarySkills", "skillSet", "smsOptIn", "specialties", "status", "tearsheets", "timeZoneOffsetEST", "type", "willRelocate" })
+		"salary", "salaryLow", "secondaryAddress", "secondarySkills", "skillSet", "smsOptIn", "specialties", "status", "tearsheets", "timeZoneOffsetEST", "type", "willRelocate", "addressSourceLocation" })
 public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private Integer id;
@@ -241,6 +242,8 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	// TODO:: ADD userIntegrations MAYBE?
 
 	private Boolean willRelocate;
+
+    private Location addressSourceLocation;
 
 	public Lead() {
 		super();
@@ -971,6 +974,14 @@ public class Lead extends CustomFieldsB implements SearchEntity, QueryEntity, Up
 	public void setTearsheets(OneToMany<Integer> tearsheets) {
 		this.tearsheets = tearsheets;
 	}
+
+    public Location getAddressSourceLocation() {
+        return addressSourceLocation;
+    }
+
+    public void setAddressSourceLocation(Location addressSourceLocation) {
+        this.addressSourceLocation = addressSourceLocation;
+    }
 
     @Override
     public boolean equals(Object o) {

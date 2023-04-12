@@ -20,7 +20,7 @@ import java.util.Objects;
 @JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "candidate", "clientContact", "clientCorporation", "dateAdded", "email", "isRead", "jobOrder", "jobSubmission",
-    "migrateGUID", "user" })
+    "migrateGUID", "user", "numTimesRead", "userMessage" })
 public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity {
 
     private Integer id;
@@ -46,6 +46,8 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     private String migrateGUID;
 
     private CorporateUser user;
+
+    private Integer numTimesRead;
 
     public Sendout() {
         super();
@@ -175,6 +177,14 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     @JsonProperty("user")
     public void setUser(CorporateUser user) {
         this.user = user;
+    }
+
+    public Integer getNumTimesRead() {
+        return numTimesRead;
+    }
+
+    public void setNumTimesRead(Integer numTimesRead) {
+        this.numTimesRead = numTimesRead;
     }
 
     @Override

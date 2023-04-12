@@ -19,10 +19,13 @@ import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "address", "billingContactID", "comments", "complexManagerID", "complexOwnerID", "contactName", "customDate1",
-	"customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customText1",
-	"customText2", "customText3", "customText4", "customText5", "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4",
-	"customTextBlock5", "dateAdded", "fax", "isDeleted", "name", "owner", "phone", "units", "whiteListClientCorporations"})
+@JsonPropertyOrder({"id", "address", "billingContactID", "comments", "complexManagerID", "complexOwnerID", "contactName", "customDate1",
+    "customDate2", "customDate3", "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customText1",
+    "customText2", "customText3", "customText4", "customText5", "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4",
+    "customTextBlock5", "dateAdded", "fax", "isDeleted", "name", "owner", "phone", "units", "whiteListClientCorporations",
+    "customContactID1", "customContactID2", "customContactID3", "customText6", "customText7", "customText8", "customText9",
+    "customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16",
+    "customText17", "customText18", "customText19", "customText20", "migrateGUID", "whitelistClientCorporations"})
 public class HousingComplex extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
 
     private Integer id;
@@ -39,13 +42,13 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
 
     @Size(max = 40)
     private String contactName;
-    
+
     private Integer customContactID1;
 
     private Integer customContactID2;
-    
+
     private Integer customContactID3;
-    
+
     private DateTime dateAdded;
 
     @Size(max = 20)
@@ -65,183 +68,185 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
 
     private OneToMany<ClientCorporation> whitelistClientCorporations;
 
+    private OneToMany<HousingComplexAmenity> amenities;
+
     public HousingComplex() {
-	super();
+        super();
     }
 
     /**
      * Returns the entity with the required fields for an insert set.
-     * 
+     *
      * @return
      */
-	public HousingComplex instantiateForInsert() {
-		HousingComplex entity = new HousingComplex();
-		entity.setIsDeleted(Boolean.FALSE);
-		return entity;
+    public HousingComplex instantiateForInsert() {
+        HousingComplex entity = new HousingComplex();
+        entity.setIsDeleted(Boolean.FALSE);
+        return entity;
     }
 
     @Override
     @JsonProperty("id")
     public Integer getId() {
-	return id;
+        return id;
     }
 
     @ReadOnly
     @Override
     @JsonProperty("id")
     public void setId(Integer id) {
-	this.id = id;
+        this.id = id;
     }
 
     @JsonProperty("address")
     public Address getAddress() {
-	return address;
+        return address;
     }
 
     @JsonProperty("address")
     public void setAddress(Address address) {
-	this.address = address;
+        this.address = address;
     }
 
     @JsonProperty("billingContactID")
     public Integer getBillingContactID() {
-	return billingContactID;
+        return billingContactID;
     }
 
     @JsonProperty("billingContactID")
     public void setBillingContactID(Integer billingContactID) {
-	this.billingContactID = billingContactID;
+        this.billingContactID = billingContactID;
     }
 
     @JsonProperty("comments")
     public String getComments() {
-	return comments;
+        return comments;
     }
 
     @JsonProperty("comments")
     public void setComments(String comments) {
-	this.comments = comments;
+        this.comments = comments;
     }
 
     @JsonProperty("complexManagerID")
     public Integer getComplexManagerID() {
-	return complexManagerID;
+        return complexManagerID;
     }
 
     @JsonProperty("complexManagerID")
     public void setComplexManagerID(Integer billingContactID) {
-	this.complexManagerID = billingContactID;
+        this.complexManagerID = billingContactID;
     }
 
     @JsonProperty("complexOwnerID")
     public Integer getComplexOwnerID() {
-	return complexOwnerID;
+        return complexOwnerID;
     }
 
     @JsonProperty("complexOwnerID")
     public void setComplexOwnerID(Integer billingContactID) {
-	this.complexOwnerID = billingContactID;
+        this.complexOwnerID = billingContactID;
     }
 
     @JsonProperty("contactName")
     public String getContactName() {
-	return contactName;
+        return contactName;
     }
 
     @JsonProperty("contactName")
     public void setContactName(String contactName) {
-	this.contactName = contactName;
+        this.contactName = contactName;
     }
-    
+
     @JsonProperty("customContactID1")
     public Integer getCustomContactID1() {
-	return customContactID1;
+        return customContactID1;
     }
 
     @JsonProperty("customContactID1")
     public void setCustomContactID1(Integer customContactID1) {
-	this.customContactID1 = customContactID1;
+        this.customContactID1 = customContactID1;
     }
-    
+
     @JsonProperty("customContactID2")
     public Integer getCustomContactID2() {
-	return customContactID2;
+        return customContactID2;
     }
 
     @JsonProperty("customContactID2")
     public void setCustomContactID2(Integer customContactID2) {
-	this.customContactID2 = customContactID2;
+        this.customContactID2 = customContactID2;
     }
-    
+
     @JsonProperty("customContactID3")
     public Integer getCustomContactID3() {
-	return customContactID3;
+        return customContactID3;
     }
 
     @JsonProperty("customContactID3")
     public void setCustomContactID3(Integer customContactID3) {
-	this.customContactID3 = customContactID3;
+        this.customContactID3 = customContactID3;
     }
 
     @JsonProperty("dateAdded")
     public DateTime getDateAdded() {
-	return dateAdded;
+        return dateAdded;
     }
 
     @ReadOnly
     @JsonProperty("dateAdded")
     public void setDateAdded(DateTime dateAdded) {
-	this.dateAdded = dateAdded;
+        this.dateAdded = dateAdded;
     }
 
     @JsonProperty("fax")
     public String getFax() {
-	return fax;
+        return fax;
     }
 
     @JsonIgnore
     public void setFax(String fax) {
-	this.fax = fax;
+        this.fax = fax;
     }
 
     @JsonProperty("isDeleted")
     public Boolean getIsDeleted() {
-	return isDeleted;
+        return isDeleted;
     }
 
     @JsonProperty("isDeleted")
     public void setIsDeleted(Boolean isDeleted) {
-	this.isDeleted = isDeleted;
+        this.isDeleted = isDeleted;
     }
 
     @JsonProperty("name")
     public String getName() {
-	return name;
+        return name;
     }
 
     @JsonProperty("name")
     public void setName(String name) {
-	this.name = name;
+        this.name = name;
     }
 
     @JsonProperty("owner")
     public CorporateUser getOwner() {
-	return owner;
+        return owner;
     }
 
     @JsonProperty("owner")
     public void setOwner(CorporateUser owner) {
-	this.owner = owner;
+        this.owner = owner;
     }
 
     @JsonProperty("phone")
     public String getPhone() {
-	return phone;
+        return phone;
     }
 
     @JsonIgnore
     public void setPhone(String phone) {
-	this.phone = phone;
+        this.phone = phone;
     }
 
     @JsonProperty("units")
@@ -262,6 +267,14 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
     @JsonProperty("whitelistClientCorporations")
     public void setWhitelistClientCorporations(OneToMany<ClientCorporation> whitelistClientCorporations) {
         this.whitelistClientCorporations = whitelistClientCorporations;
+    }
+
+    public OneToMany<HousingComplexAmenity> getAmenities() {
+        return amenities;
+    }
+
+    public void setAmenities(OneToMany<HousingComplexAmenity> amenities) {
+        this.amenities = amenities;
     }
 
     @Override
@@ -297,74 +310,74 @@ public class HousingComplex extends CustomFieldsB implements QueryEntity, Update
         HousingComplex other = (HousingComplex) obj;
         if (address == null) {
             if (other.address != null)
-            return false;
+                return false;
         } else if (!address.equals(other.address))
             return false;
         if (billingContactID == null) {
             if (other.billingContactID != null)
-            return false;
+                return false;
         } else if (!billingContactID.equals(other.billingContactID))
             return false;
         if (comments == null) {
             if (other.comments != null)
-            return false;
+                return false;
         } else if (!comments.equals(other.comments))
             return false;
         if (complexManagerID == null) {
             if (other.complexManagerID != null)
-            return false;
+                return false;
         } else if (!complexManagerID.equals(other.complexManagerID))
             return false;
         if (complexOwnerID == null) {
             if (other.complexOwnerID != null)
-            return false;
+                return false;
         } else if (!complexOwnerID.equals(other.complexOwnerID))
             return false;
         if (contactName == null) {
             if (other.contactName != null)
-            return false;
+                return false;
         } else if (!contactName.equals(other.contactName))
             return false;
         if (dateAdded == null) {
             if (other.dateAdded != null)
-            return false;
+                return false;
         } else if (!dateAdded.equals(other.dateAdded))
             return false;
         if (fax == null) {
             if (other.fax != null)
-            return false;
+                return false;
         } else if (!fax.equals(other.fax))
             return false;
         if (id == null) {
             if (other.id != null)
-            return false;
+                return false;
         } else if (!id.equals(other.id))
             return false;
         if (isDeleted == null) {
             if (other.isDeleted != null)
-            return false;
+                return false;
         } else if (!isDeleted.equals(other.isDeleted))
             return false;
         if (name == null) {
             if (other.name != null)
-            return false;
+                return false;
         } else if (!name.equals(other.name))
             return false;
         if (owner == null) {
             if (other.owner != null)
-            return false;
+                return false;
         } else if (!owner.equals(other.owner))
             return false;
         if (phone == null) {
             if (other.phone != null)
-            return false;
+                return false;
         } else if (!phone.equals(other.phone))
             return false;
         if (units != null ? !units.equals(other.units) : other.units != null)
             return false;
         if (whitelistClientCorporations == null) {
             if (other.whitelistClientCorporations != null)
-            return false;
+                return false;
         } else if (!whitelistClientCorporations.equals(other.whitelistClientCorporations))
             return false;
         return true;

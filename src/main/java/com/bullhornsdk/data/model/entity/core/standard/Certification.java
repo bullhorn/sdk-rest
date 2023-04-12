@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
+import java.math.BigInteger;
 import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -17,7 +18,10 @@ import java.util.Objects;
     "customInt1", "customInt2", "customInt3", "customText1", "customText2", "customText3", "customText4", "customText5",
     "customText6", "customText7", "customText8", "customText9", "customText10", "customTextBlock1",
     "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded", "dateLastModified",
-    "description", "expirationDateOptional", "migrateGUID", "name", "privateLabels", "specialty", "state"})
+    "description", "expirationDateOptional", "migrateGUID", "name", "privateLabels", "specialty", "state", "category",
+    "code", "defaultExpirationReminderDays", "equivalents", "hasLicenseNumber", "isAbstract", "isStateRequired",
+    "isStateSpecific", "isTransferable", "isTwoSided", "licenseNumberRequired", "numSupplementalsRequired",
+    "requiresFileAttachment", "skills", "specialties", "supplementals", "type"})
 public class Certification extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, DeleteEntity, AllRecordsEntity, DateLastModifiedEntity {
 
     private Integer id;
@@ -49,6 +53,39 @@ public class Certification extends CustomFieldsB implements QueryEntity, UpdateE
     private DateTime dateAdded;
     private DateTime dateLastModified;
 
+    private OneToMany<Category> categories;
+
+    private String code;
+
+    private BigInteger defaultExpirationReminderDays;
+
+    private OneToMany<Certification> equivalents;
+
+    private Boolean hasLicenseNumber;
+
+    private Boolean isAbstract;
+
+    private Boolean isStateRequired;
+
+    private Boolean isStateSpecific;
+
+    private Boolean isTransferable;
+
+    private Boolean isTwoSided;
+
+    private Boolean licenseNumberRequired;
+
+    private BigInteger numSupplementalsRequired;
+
+    private Boolean requiresFileAttachment;
+
+    private OneToMany<Skill> skills;
+
+    private OneToMany<Specialty> specialties;
+
+    private OneToMany<Certification> supplementals;
+
+    private String type;
 
     @Override
     @JsonProperty("id")
@@ -182,6 +219,142 @@ public class Certification extends CustomFieldsB implements QueryEntity, UpdateE
     @JsonProperty("dateLastModified")
     public void setDateLastModified(DateTime dateLastModified) {
         this.dateLastModified = dateLastModified;
+    }
+
+    public OneToMany<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(OneToMany<Category> categories) {
+        this.categories = categories;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public BigInteger getDefaultExpirationReminderDays() {
+        return defaultExpirationReminderDays;
+    }
+
+    public void setDefaultExpirationReminderDays(BigInteger defaultExpirationReminderDays) {
+        this.defaultExpirationReminderDays = defaultExpirationReminderDays;
+    }
+
+    public OneToMany<Certification> getEquivalents() {
+        return equivalents;
+    }
+
+    public void setEquivalents(OneToMany<Certification> equivalents) {
+        this.equivalents = equivalents;
+    }
+
+    public Boolean getHasLicenseNumber() {
+        return hasLicenseNumber;
+    }
+
+    public void setHasLicenseNumber(Boolean hasLicenseNumber) {
+        this.hasLicenseNumber = hasLicenseNumber;
+    }
+
+    public Boolean getAbstract() {
+        return isAbstract;
+    }
+
+    public void setAbstract(Boolean anAbstract) {
+        isAbstract = anAbstract;
+    }
+
+    public Boolean getStateRequired() {
+        return isStateRequired;
+    }
+
+    public void setStateRequired(Boolean stateRequired) {
+        isStateRequired = stateRequired;
+    }
+
+    public Boolean getStateSpecific() {
+        return isStateSpecific;
+    }
+
+    public void setStateSpecific(Boolean stateSpecific) {
+        isStateSpecific = stateSpecific;
+    }
+
+    public Boolean getTransferable() {
+        return isTransferable;
+    }
+
+    public void setTransferable(Boolean transferable) {
+        isTransferable = transferable;
+    }
+
+    public Boolean getTwoSided() {
+        return isTwoSided;
+    }
+
+    public void setTwoSided(Boolean twoSided) {
+        isTwoSided = twoSided;
+    }
+
+    public Boolean getLicenseNumberRequired() {
+        return licenseNumberRequired;
+    }
+
+    public void setLicenseNumberRequired(Boolean licenseNumberRequired) {
+        this.licenseNumberRequired = licenseNumberRequired;
+    }
+
+    public BigInteger getNumSupplementalsRequired() {
+        return numSupplementalsRequired;
+    }
+
+    public void setNumSupplementalsRequired(BigInteger numSupplementalsRequired) {
+        this.numSupplementalsRequired = numSupplementalsRequired;
+    }
+
+    public Boolean getRequiresFileAttachment() {
+        return requiresFileAttachment;
+    }
+
+    public void setRequiresFileAttachment(Boolean requiresFileAttachment) {
+        this.requiresFileAttachment = requiresFileAttachment;
+    }
+
+    public OneToMany<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(OneToMany<Skill> skills) {
+        this.skills = skills;
+    }
+
+    public OneToMany<Specialty> getSpecialties() {
+        return specialties;
+    }
+
+    public void setSpecialties(OneToMany<Specialty> specialties) {
+        this.specialties = specialties;
+    }
+
+    public OneToMany<Certification> getSupplementals() {
+        return supplementals;
+    }
+
+    public void setSupplementals(OneToMany<Certification> supplementals) {
+        this.supplementals = supplementals;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

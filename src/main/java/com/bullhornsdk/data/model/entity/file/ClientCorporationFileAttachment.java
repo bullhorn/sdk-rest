@@ -36,7 +36,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "owner",
     "type",
     "usersSharedWith",
-    "uuid"
+    "uuid",
+    "isEncrypted"
 })
 public class ClientCorporationFileAttachment extends EntityFileAttachment {
 

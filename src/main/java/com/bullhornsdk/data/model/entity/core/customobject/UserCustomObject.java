@@ -1,13 +1,14 @@
 package com.bullhornsdk.data.model.entity.core.customobject;
 
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.fasterxml.jackson.annotation.*;
+import org.joda.time.DateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
+@JsonPropertyOrder({"attributes", "corporationID", "dateAdded", "description", "displayType", "enabled", "icon", "isHIidden",
+    "name", "objectDepartments", "objectNumber", "reportID", "staticTemplateName", "tabName", "useClientDefinedName"})
 public class UserCustomObject extends CustomObjectBase implements QueryEntity {
 
     private Integer id;
@@ -15,6 +16,32 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
     private String type;
 
     private Integer isPublic;
+
+    private Integer corporationID;
+
+    private DateTime dateAdded;
+
+    private String description;
+
+    private String displayType;
+
+    private Boolean enabled;
+
+    private String icon;
+
+    private Boolean isHidden;
+
+    private String name;
+
+    private Integer objectNumber;
+
+    private Integer reportID;
+
+    private String staticTemplateName;
+
+    private String tabName;
+
+    private Boolean useClientDefinedName;
 
     public UserCustomObject() {
         super();
@@ -25,10 +52,14 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
     }
 
     @Override
-    public Integer getId() { return this.id; }
+    public Integer getId() {
+        return this.id;
+    }
 
     @Override
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     @JsonProperty("type")
     public String getType() {
@@ -48,6 +79,134 @@ public class UserCustomObject extends CustomObjectBase implements QueryEntity {
     @JsonIgnore
     public void setIsPublic(Integer isPublic) {
         this.isPublic = isPublic;
+    }
+
+    @Override
+    public Integer getCorporationID() {
+        return corporationID;
+    }
+
+    @Override
+    public void setCorporationID(Integer corporationID) {
+        this.corporationID = corporationID;
+    }
+
+    @Override
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
+
+    @Override
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String getDisplayType() {
+        return displayType;
+    }
+
+    @Override
+    public void setDisplayType(String displayType) {
+        this.displayType = displayType;
+    }
+
+    @Override
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    @Override
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    @Override
+    public String getIcon() {
+        return icon;
+    }
+
+    @Override
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public Boolean getHidden() {
+        return isHidden;
+    }
+
+    public void setHidden(Boolean hidden) {
+        isHidden = hidden;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public Integer getObjectNumber() {
+        return objectNumber;
+    }
+
+    @Override
+    public void setObjectNumber(Integer objectNumber) {
+        this.objectNumber = objectNumber;
+    }
+
+    @Override
+    public Integer getReportID() {
+        return reportID;
+    }
+
+    @Override
+    public void setReportID(Integer reportID) {
+        this.reportID = reportID;
+    }
+
+    @Override
+    public String getStaticTemplateName() {
+        return staticTemplateName;
+    }
+
+    @Override
+    public void setStaticTemplateName(String staticTemplateName) {
+        this.staticTemplateName = staticTemplateName;
+    }
+
+    @Override
+    public String getTabName() {
+        return tabName;
+    }
+
+    @Override
+    public void setTabName(String tabName) {
+        this.tabName = tabName;
+    }
+
+    @Override
+    public Boolean getUseClientDefinedName() {
+        return useClientDefinedName;
+    }
+
+    @Override
+    public void setUseClientDefinedName(Boolean useClientDefinedName) {
+        this.useClientDefinedName = useClientDefinedName;
     }
 
     @Override

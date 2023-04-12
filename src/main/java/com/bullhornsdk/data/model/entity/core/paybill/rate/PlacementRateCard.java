@@ -12,7 +12,9 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "owner", "placement", "placementRateCardLineGroups", "rootExternalID", "rootMigrateGUID", "versionID", "versions"})
+@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "owner", "placement",
+    "placementRateCardLineGroups", "rootExternalID", "rootMigrateGUID", "versionID", "versions",
+    "isActive", "isDeleted"})
 public class PlacementRateCard extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, EditHistoryEntity {
 
     private Integer id;
@@ -40,6 +42,10 @@ public class PlacementRateCard extends AbstractEntity implements QueryEntity, Up
     private Integer versionID;
 
     private OneToMany<PlacementRateCardVersion> versions;
+
+    private Boolean isActive;
+
+    private Boolean isDeleted;
 
 
     @Override
@@ -162,6 +168,22 @@ public class PlacementRateCard extends AbstractEntity implements QueryEntity, Up
     @JsonProperty("versions")
     public void setVersions(OneToMany<PlacementRateCardVersion> versions) {
         this.versions = versions;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
+
+    public Boolean getDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
     }
 
     @Override

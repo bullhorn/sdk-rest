@@ -24,7 +24,7 @@ import java.math.BigDecimal;
     "customTextBlock4", "customTextBlock5", "dateAdded", "dateLeaseBegin", "dateLeaseEnd", "dateOfDeposit", "dateOfRefund",
     "firstMonthProRate", "furnitureDeliveries", "housingComplex", "isDeleted", "isDepositRefundable", "isLeaseOnFile", "maxOccupants",
     "migrateGUID", "monthlyRent", "name", "occupants", "penalties", "securityDeposit", "unitManagerID", "userHousingComplexUnits",
-    "utilityAccounts" })
+    "utilityAccounts", "amenities" })
 public class HousingComplexUnit extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity {
 
     private Integer id;
@@ -82,6 +82,8 @@ public class HousingComplexUnit extends CustomFieldsB implements QueryEntity, Up
 
     private OneToMany<HousingComplexUtilityAccount>  utilityAccounts;
 
+    private OneToMany<HousingComplexAmenity> amenities;
+
 
     public HousingComplexUnit() {
 	super();
@@ -89,7 +91,7 @@ public class HousingComplexUnit extends CustomFieldsB implements QueryEntity, Up
 
     /**
      * Returns the entity with the required fields for an insert set.
-     * 
+     *
      * @return
      */
 	public HousingComplexUnit instantiateForInsert() {
@@ -143,7 +145,7 @@ public class HousingComplexUnit extends CustomFieldsB implements QueryEntity, Up
     public void setCustomContactID1(Integer customContactID1) {
 	this.customContactID1 = customContactID1;
     }
-    
+
     @JsonProperty("customContactID2")
     public Integer getCustomContactID2() {
 	return customContactID2;
@@ -154,7 +156,7 @@ public class HousingComplexUnit extends CustomFieldsB implements QueryEntity, Up
     public void setCustomContactID2(Integer customContactID2) {
 	this.customContactID2 = customContactID2;
     }
-    
+
     @JsonProperty("customContactID3")
     public Integer getCustomContactID3() {
 	return customContactID3;
@@ -383,14 +385,30 @@ public class HousingComplexUnit extends CustomFieldsB implements QueryEntity, Up
     }
 
     @JsonProperty("utilityAccounts")
-    public OneToMany<HousingComplexUtilityAccount> getHousingComplexUtilityAccounts() {
+    public OneToMany<HousingComplexUtilityAccount> getUtilityAccounts() {
         return utilityAccounts;
     }
 
     @ReadOnly
     @JsonProperty("utilityAccounts")
-    public void setHousingComplexUtilityAccounts(OneToMany<HousingComplexUtilityAccount> utilityAccounts) {
+    public void setUtilityAccounts(OneToMany<HousingComplexUtilityAccount> utilityAccounts) {
         this.utilityAccounts = utilityAccounts;
+    }
+
+    public OneToMany<HousingComplexFurnitureDelivery> getFurnitureDeliveries() {
+        return furnitureDeliveries;
+    }
+
+    public void setFurnitureDeliveries(OneToMany<HousingComplexFurnitureDelivery> furnitureDeliveries) {
+        this.furnitureDeliveries = furnitureDeliveries;
+    }
+
+    public OneToMany<HousingComplexAmenity> getAmenities() {
+        return amenities;
+    }
+
+    public void setAmenities(OneToMany<HousingComplexAmenity> amenities) {
+        this.amenities = amenities;
     }
 
     @Override
