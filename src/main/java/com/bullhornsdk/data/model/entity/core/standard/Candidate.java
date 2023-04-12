@@ -499,7 +499,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     private String travelMethod;
 
-  public Candidate() {
+    public Candidate() {
 		super();
 	}
 
