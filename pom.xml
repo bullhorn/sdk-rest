@@ -270,6 +270,7 @@
                     <configuration>
                         <compilerId>groovy-eclipse-compiler</compilerId>
                         <release>17</release>
+                        <fork>true</fork>
                     </configuration>
                     <dependencies>
                         <dependency>

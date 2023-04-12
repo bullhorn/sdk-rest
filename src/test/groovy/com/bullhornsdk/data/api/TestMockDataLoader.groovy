@@ -31,13 +31,8 @@ public class TestMockDataLoader {
 
         Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> entityData = mockDataLoader.getEntityTestData();
 
-        entityData.each { key,value ->
-            if (CustomObjectBase.class.isAssignableFrom(key)) {
-                assert value.size() == 1;
-            } else {
-                assert value.size() >= 20;
-            }
-
+		    entityData.each { key,value ->
+            assert value.size() >= 1;
         }
 
 

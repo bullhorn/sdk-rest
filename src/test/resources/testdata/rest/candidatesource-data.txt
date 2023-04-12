@@ -1,0 +1,32 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "accountNumber": "Testing account number",
+            "address": {
+                "address1": "100th Testing St.",
+                "address2": "",
+                "city": "Miami",
+                "state": "Florida",
+                "zip": "33166"
+            },
+            "candidate": {
+                "id": 19322,
+                "firstName": "PAA",
+                "lastName": "TestUser"
+            },
+            "corporation": {
+                "id": 2774
+            },
+            "fax": "",
+            "fee": 100.0000,
+            "feeType": "Per Day",
+            "migrateGUID": null,
+            "name": "Test Source",
+            "phone": "555-6743-3456",
+            "type": "Agency"
+        }
+    ]
+}

@@ -5,6 +5,7 @@ import javax.validation.constraints.Size;
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -12,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "enabled", "name" })
+@JsonPropertyOrder({ "id", "enabled", "name", "categories" })
 public class Skill extends AbstractEntity implements QueryEntity, AllRecordsEntity {
 
     private Integer id;
@@ -21,6 +22,8 @@ public class Skill extends AbstractEntity implements QueryEntity, AllRecordsEnti
 
     @Size(max = 100)
     private String name;
+
+    private OneToMany<Category> categories;
 
     @Override
     @JsonProperty("id")
@@ -52,6 +55,14 @@ public class Skill extends AbstractEntity implements QueryEntity, AllRecordsEnti
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
+    }
+
+    public OneToMany<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(OneToMany<Category> categories) {
+        this.categories = categories;
     }
 
     @Override

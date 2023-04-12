@@ -4,6 +4,7 @@ import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import com.bullhornsdk.data.model.entity.embedded.Address;
@@ -17,6 +18,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Objects;
 
 @JsonFilter(DynamicNullValueFilter.FILTER_NAME)
@@ -54,7 +56,10 @@ import java.util.Objects;
 		"submissions", "ssn", "stateAddtionalWitholdingsAmount", "stateExemptions", "stateFilingStatus", "status", "tasks", "taxID",
 		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
-        "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject29s" })
+    "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject29s", "activePlacements",
+    "addressSourceLocation", "addressSourceLocation", "candidateSource", "clientRating", "distributionLists",
+    "estaffGUID", "latestComment", "locations", "maritalStatus", "ownerCorporation", "payrollClientStartDate",
+    "payrollStatus", "privateLabel", "shifts", "tobaccoUser", "travelMethod"})
 public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -462,7 +467,39 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     private OneToMany<PersonCustomObjectInstance29> customObject29s;
 
-	public Candidate() {
+    private OneToMany<PersonCustomObjectInstance30> customObject30s;
+
+    private OneToMany<Placement> activePlacements;
+
+    private Location addressSourceLocation;
+
+    private CandidateSource candidateSource;
+
+    private BigInteger clientRating;
+
+    private OneToMany<DistributionList> distributionLists;
+
+    private String estaffGUID;
+
+    private OneToMany<Location> locations;
+
+    private String maritalStatus;
+
+    private ClientCorporation ownerCorporation;
+
+    private DateTime payrollClientStartDate;
+
+    private String payrollStatus;
+
+    private PrivateLabel privateLabel;
+
+    private OneToMany<Shift> shifts;
+
+    private String tobaccoUser;
+
+    private String travelMethod;
+
+  public Candidate() {
 		super();
 	}
 
@@ -2116,6 +2153,138 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     @JsonProperty("customObject29s")
     public void setCustomObject29s(OneToMany<PersonCustomObjectInstance29> customObject29s) {
         this.customObject29s = customObject29s;
+    }
+
+    @JsonProperty("customObject30s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance30> getCustomObject30s() {
+        return customObject30s;
+    }
+
+    @JsonProperty("customObject30s")
+    public void setCustomObject30s(OneToMany<PersonCustomObjectInstance30> customObject30s) {
+        this.customObject30s = customObject30s;
+    }
+
+    public OneToMany<Placement> getActivePlacements() {
+        return activePlacements;
+    }
+
+    public void setActivePlacements(OneToMany<Placement> activePlacements) {
+        this.activePlacements = activePlacements;
+    }
+
+    public Location getAddressSourceLocation() {
+        return addressSourceLocation;
+    }
+
+    public void setAddressSourceLocation(Location addressSourceLocation) {
+        this.addressSourceLocation = addressSourceLocation;
+    }
+
+    public CandidateSource getCandidateSource() {
+        return candidateSource;
+    }
+
+    public void setCandidateSource(CandidateSource candidateSource) {
+        this.candidateSource = candidateSource;
+    }
+
+    public BigInteger getClientRating() {
+        return clientRating;
+    }
+
+    public void setClientRating(BigInteger clientRating) {
+        this.clientRating = clientRating;
+    }
+
+    public OneToMany<DistributionList> getDistributionLists() {
+        return distributionLists;
+    }
+
+    public void setDistributionLists(OneToMany<DistributionList> distributionLists) {
+        this.distributionLists = distributionLists;
+    }
+
+    public String getEstaffGUID() {
+        return estaffGUID;
+    }
+
+    public void setEstaffGUID(String estaffGUID) {
+        this.estaffGUID = estaffGUID;
+    }
+
+    public OneToMany<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(OneToMany<Location> locations) {
+        this.locations = locations;
+    }
+
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public ClientCorporation getOwnerCorporation() {
+        return ownerCorporation;
+    }
+
+    public void setOwnerCorporation(ClientCorporation ownerCorporation) {
+        this.ownerCorporation = ownerCorporation;
+    }
+
+    public DateTime getPayrollClientStartDate() {
+        return payrollClientStartDate;
+    }
+
+    public void setPayrollClientStartDate(DateTime payrollClientStartDate) {
+        this.payrollClientStartDate = payrollClientStartDate;
+    }
+
+    public String getPayrollStatus() {
+        return payrollStatus;
+    }
+
+    public void setPayrollStatus(String payrollStatus) {
+        this.payrollStatus = payrollStatus;
+    }
+
+    public PrivateLabel getPrivateLabel() {
+        return privateLabel;
+    }
+
+    public void setPrivateLabel(PrivateLabel privateLabel) {
+        this.privateLabel = privateLabel;
+    }
+
+    public OneToMany<Shift> getShifts() {
+        return shifts;
+    }
+
+    public void setShifts(OneToMany<Shift> shifts) {
+        this.shifts = shifts;
+    }
+
+    public String getTobaccoUser() {
+        return tobaccoUser;
+    }
+
+    public void setTobaccoUser(String tobaccoUser) {
+        this.tobaccoUser = tobaccoUser;
+    }
+
+    public String getTravelMethod() {
+        return travelMethod;
+    }
+
+    public void setTravelMethod(String travelMethod) {
+        this.travelMethod = travelMethod;
     }
 
     @Override

@@ -1,16 +1,17 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.*;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
-import com.bullhornsdk.data.model.entity.embedded.LinkedId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,41 +20,49 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "approvingUser", "billingClientContact", "billingFrequency", "bonusPackage", "clientBillRate",
-        "clientOvertimeRate", "comments", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3",
-        "correlatedCustomFloat1", "correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1",
-        "correlatedCustomInt2", "correlatedCustomInt3", "correlatedCustomText1", "correlatedCustomText10",
-        "correlatedCustomText2", "correlatedCustomText3", "correlatedCustomText4", "correlatedCustomText5",
-        "correlatedCustomText6", "correlatedCustomText7", "correlatedCustomText8", "correlatedCustomText9",
-        "correlatedCustomTextBlock1", "correlatedCustomTextBlock2", "correlatedCustomTextBlock3", "costCenter",
-        "customBillRate1", "customBillRate10", "customBillRate2", "customBillRate3", "customBillRate4", "customBillRate5",
-        "customBillRate6", "customBillRate7", "customBillRate8", "customBillRate9", "customDate1", "customDate2", "customDate3",
-        "customEncryptedText1", "customEncryptedText2", "customEncryptedText3", "customEncryptedText4", "customEncryptedText5",
-        "customEncryptedText6", "customEncryptedText7", "customEncryptedText8", "customEncryptedText9",  "customEncryptedText10",
-        "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customPayRate1",
-        "customPayRate10", "customPayRate2", "customPayRate3", "customPayRate4", "customPayRate5", "customPayRate6",
-        "customPayRate7", "customPayRate8", "customPayRate9", "customText1", "customText10", "customText11", "customText12",
-        "customText13", "customText14", "customText15", "customText16", "customText17", "customText18", "customText19",
-        "customText2", "customText20", "customText21", "customText22", "customText23", "customText24", "customText25",
-        "customText26", "customText27", "customText28", "customText29", "customText3", "customText30", "customText31",
-        "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
-        "customText39", "customText4", "customText40", "customText5", "customText6", "customText7", "customText8", "customText9",
-        "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded",
-        "dateApproved", "dateBegin", "dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated",
-        "durationWeeks", "employeeType", "employmentType", "fee", "generalLedgerSegment1", "generalLedgerSegment2",
-        "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID",
-        "housingStatus", "migrateGUID", "optionsPackage", "otExemption", "otherHourlyFee", "otherHourlyFeeComments",
-        "overtimeRate", "payRate", "placement", "recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType",
-        "reportTo", "requestCustomDate1", "requestCustomDate2", "requestCustomDate3", "requestCustomFloat1",
-        "requestCustomFloat2", "requestCustomFloat3", "requestCustomInt1", "requestCustomInt2", "requestCustomInt3",
-        "requestCustomText1", "requestCustomText10", "requestCustomText11", "requestCustomText12", "requestCustomText13",
-        "requestCustomText14", "requestCustomText15", "requestCustomText16", "requestCustomText17", "requestCustomText18",
-        "requestCustomText19", "requestCustomText2", "requestCustomText20", "requestCustomText3", "requestCustomText4",
-        "requestCustomText5", "requestCustomText6", "requestCustomText7", "requestCustomText8", "requestCustomText9",
-        "requestCustomTextBlock1", "requestCustomTextBlock2", "requestCustomTextBlock3", "requestCustomTextBlock4",
-        "requestCustomTextBlock5", "requestStatus", "requestType", "requestingUser", "salary", "salaryUnit",
-        "salesManagerPercentGrossMargin", "statementClientContact", "status", "terminationReason", "vendorClientCorporation",
-        "workWeekStart" })
+@JsonPropertyOrder({"id", "approvingUser", "billingClientContact", "billingFrequency", "bonusPackage", "clientBillRate",
+    "clientOvertimeRate", "comments", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3",
+    "correlatedCustomFloat1", "correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1",
+    "correlatedCustomInt2", "correlatedCustomInt3", "correlatedCustomText1", "correlatedCustomText10",
+    "correlatedCustomText2", "correlatedCustomText3", "correlatedCustomText4", "correlatedCustomText5",
+    "correlatedCustomText6", "correlatedCustomText7", "correlatedCustomText8", "correlatedCustomText9",
+    "correlatedCustomTextBlock1", "correlatedCustomTextBlock2", "correlatedCustomTextBlock3", "costCenter",
+    "customBillRate1", "customBillRate10", "customBillRate2", "customBillRate3", "customBillRate4", "customBillRate5",
+    "customBillRate6", "customBillRate7", "customBillRate8", "customBillRate9", "customDate1", "customDate2", "customDate3",
+    "customEncryptedText1", "customEncryptedText2", "customEncryptedText3", "customEncryptedText4", "customEncryptedText5",
+    "customEncryptedText6", "customEncryptedText7", "customEncryptedText8", "customEncryptedText9", "customEncryptedText10",
+    "customFloat1", "customFloat2", "customFloat3", "customInt1", "customInt2", "customInt3", "customPayRate1",
+    "customPayRate10", "customPayRate2", "customPayRate3", "customPayRate4", "customPayRate5", "customPayRate6",
+    "customPayRate7", "customPayRate8", "customPayRate9", "customText1", "customText10", "customText11", "customText12",
+    "customText13", "customText14", "customText15", "customText16", "customText17", "customText18", "customText19",
+    "customText2", "customText20", "customText21", "customText22", "customText23", "customText24", "customText25",
+    "customText26", "customText27", "customText28", "customText29", "customText3", "customText30", "customText31",
+    "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
+    "customText39", "customText4", "customText40", "customText5", "customText6", "customText7", "customText8", "customText9",
+    "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "dateAdded",
+    "dateApproved", "dateBegin", "dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated",
+    "durationWeeks", "employeeType", "employmentType", "fee", "generalLedgerSegment1", "generalLedgerSegment2",
+    "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID",
+    "housingStatus", "migrateGUID", "optionsPackage", "otExemption", "otherHourlyFee", "otherHourlyFeeComments",
+    "overtimeRate", "payRate", "placement", "recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType",
+    "reportTo", "requestCustomDate1", "requestCustomDate2", "requestCustomDate3", "requestCustomFloat1",
+    "requestCustomFloat2", "requestCustomFloat3", "requestCustomInt1", "requestCustomInt2", "requestCustomInt3",
+    "requestCustomText1", "requestCustomText10", "requestCustomText11", "requestCustomText12", "requestCustomText13",
+    "requestCustomText14", "requestCustomText15", "requestCustomText16", "requestCustomText17", "requestCustomText18",
+    "requestCustomText19", "requestCustomText2", "requestCustomText20", "requestCustomText3", "requestCustomText4",
+    "requestCustomText5", "requestCustomText6", "requestCustomText7", "requestCustomText8", "requestCustomText9",
+    "requestCustomTextBlock1", "requestCustomTextBlock2", "requestCustomTextBlock3", "requestCustomTextBlock4",
+    "requestCustomTextBlock5", "requestStatus", "requestType", "requestingUser", "salary", "salaryUnit",
+    "salesManagerPercentGrossMargin", "statementClientContact", "status", "terminationReason", "vendorClientCorporation",
+    "workWeekStart", "approvingClientContact", "backupApprovingClientContact", "benefitGroup", "customDate5", "customDate6", "customDate7",
+    "customDate8", "customDate9", "customDate10", "customDate11", "customDate12", "customDate13", "customFloat4", "customFloat5",
+    "customFloat6", "customFloat7", "customFloat8", "customFloat9", "customFloat10", "customFloat11", "customFloat12", "customFloat13",
+    "customFloat14", "customFloat15", "customFloat16", "customFloat17", "customFloat18", "customFloat19", "customFloat20", "customFloat21",
+    "customFloat22", "customFloat23", "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customInt10",
+    "customInt11", "customInt12", "customInt13", "customInt14", "customInt15", "customInt16", "customInt17", "customInt18", "customInt19", "customInt20", "customInt21",
+    "customInt22", "customInt23", "customText41", "customText42", "customText43", "customText44", "customText45", "customText46", "customText47",
+    "customText48", "customText49", "customText50", "customText51", "customText52", "customText53", "customText54", "customText55", "customText56", "customText57", "customText58",
+    "customText59", "customText60"})
 public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity, CreateEntity, UpdateEntity, HardDeleteEntity, EditHistoryEntity {
 
     private Integer id;
@@ -301,6 +310,38 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
     private ClientCorporation vendorClientCorporation;
 
     private Integer workWeekStart;
+
+    private ClientContact approvingClientContact;
+
+    private ClientContact backupApprovingClientContact;
+
+    private String benefitGroup;
+
+    private DateTime employmentStartDate;
+
+    private DateTime estimatedEndDate;
+
+    private BigDecimal flatFee;
+
+    private OneToMany<HousingComplexAmenity> housingAmenities;
+
+    private Boolean isMultirate;
+
+    private Location location;
+
+    private BigDecimal markUpPercentage;
+
+    private String payGroup;
+
+    private SimplifiedOptionsLookup payrollEmployeeType;
+
+    private String positionCode;
+
+    private BigDecimal taxRate;
+
+    private String taxState;
+
+    private WorkersCompensationRate workersCompRate;
 
     @JsonProperty("id")
     public Integer getId() {
@@ -1182,6 +1223,134 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         this.workWeekStart = workWeekStart;
     }
 
+    public ClientContact getApprovingClientContact() {
+        return approvingClientContact;
+    }
+
+    public void setApprovingClientContact(ClientContact approvingClientContact) {
+        this.approvingClientContact = approvingClientContact;
+    }
+
+    public ClientContact getBackupApprovingClientContact() {
+        return backupApprovingClientContact;
+    }
+
+    public void setBackupApprovingClientContact(ClientContact backupApprovingClientContact) {
+        this.backupApprovingClientContact = backupApprovingClientContact;
+    }
+
+    public String getBenefitGroup() {
+        return benefitGroup;
+    }
+
+    public void setBenefitGroup(String benefitGroup) {
+        this.benefitGroup = benefitGroup;
+    }
+
+    public DateTime getEmploymentStartDate() {
+        return employmentStartDate;
+    }
+
+    public void setEmploymentStartDate(DateTime employmentStartDate) {
+        this.employmentStartDate = employmentStartDate;
+    }
+
+    public DateTime getEstimatedEndDate() {
+        return estimatedEndDate;
+    }
+
+    public void setEstimatedEndDate(DateTime estimatedEndDate) {
+        this.estimatedEndDate = estimatedEndDate;
+    }
+
+    public BigDecimal getFlatFee() {
+        return flatFee;
+    }
+
+    public void setFlatFee(BigDecimal flatFee) {
+        this.flatFee = flatFee;
+    }
+
+    public OneToMany<HousingComplexAmenity> getHousingAmenities() {
+        return housingAmenities;
+    }
+
+    public void setHousingAmenities(OneToMany<HousingComplexAmenity> housingAmenities) {
+        this.housingAmenities = housingAmenities;
+    }
+
+    public Boolean getMultirate() {
+        return isMultirate;
+    }
+
+    public void setMultirate(Boolean multirate) {
+        isMultirate = multirate;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public BigDecimal getMarkUpPercentage() {
+        return markUpPercentage;
+    }
+
+    public void setMarkUpPercentage(BigDecimal markUpPercentage) {
+        this.markUpPercentage = markUpPercentage;
+    }
+
+    public String getPayGroup() {
+        return payGroup;
+    }
+
+    public void setPayGroup(String payGroup) {
+        this.payGroup = payGroup;
+    }
+
+    public SimplifiedOptionsLookup getPayrollEmployeeType() {
+        return payrollEmployeeType;
+    }
+
+    public void setPayrollEmployeeType(SimplifiedOptionsLookup payrollEmployeeType) {
+        this.payrollEmployeeType = payrollEmployeeType;
+    }
+
+    public String getPositionCode() {
+        return positionCode;
+    }
+
+    public void setPositionCode(String positionCode) {
+        this.positionCode = positionCode;
+    }
+
+    public BigDecimal getTaxRate() {
+        return taxRate;
+    }
+
+    public void setTaxRate(BigDecimal taxRate) {
+        this.taxRate = taxRate;
+    }
+
+    public String getTaxState() {
+        return taxState;
+    }
+
+    public void setTaxState(String taxState) {
+        this.taxState = taxState;
+    }
+
+    public WorkersCompensationRate getWorkersCompRate() {
+        return workersCompRate;
+    }
+
+    public void setWorkersCompRate(WorkersCompensationRate workersCompRate) {
+        this.workersCompRate = workersCompRate;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -1226,7 +1395,7 @@ public class PlacementChangeRequest extends CustomFieldsD implements QueryEntity
         result = prime * result + ((payRate == null) ? 0 : payRate.hashCode());
         result = prime * result + ((placement == null) ? 0 : placement.hashCode());
         result = prime * result
-                + ((recruitingManagerPercentGrossMargin == null) ? 0 : recruitingManagerPercentGrossMargin.hashCode());
+            + ((recruitingManagerPercentGrossMargin == null) ? 0 : recruitingManagerPercentGrossMargin.hashCode());
         result = prime * result + ((referralFee == null) ? 0 : referralFee.hashCode());
         result = prime * result + ((referralFeeType == null) ? 0 : referralFeeType.hashCode());
         result = prime * result + ((reportTo == null) ? 0 : reportTo.hashCode());

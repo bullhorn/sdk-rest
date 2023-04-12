@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
@@ -158,6 +159,22 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
 	private Integer timeZoneOffsetEST;
 
     private DateTime userDateAdded;
+
+    private Location addressSourceLocation;
+
+    private Branch branch;
+
+    private String companyName;
+
+    private DateTime dateLastModified;
+
+    private OneToMany<CorporateUser> delegations;
+
+    private String departmentIdList;
+
+    private OneToMany<DistributionList> distributionLists;
+
+    private OneToMany<DistributionList> favoriteSavedSearches;
 
 	@JsonIgnore
 	@Size(max = 100)

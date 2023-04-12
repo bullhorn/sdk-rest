@@ -36,122 +36,131 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Objects;
 
 @JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "appointments", "approvingClientContact", "backupApprovingClientContact", "billingClientContact",
-		"billingFrequency", "billingProfile", "bonusPackage", "branch", "bteSyncStatus", "candidate", "placementCertifications", "changeRequests", "clientBillRate", "clientOvertimeRate",
-        "comments", "commissions", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3", "correlatedCustomFloat1",
-		"correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1", "correlatedCustomInt2", "correlatedCustomInt3",
-		"correlatedCustomText1", "correlatedCustomText10", "correlatedCustomText2", "correlatedCustomText3", "correlatedCustomText4",
-		"correlatedCustomText5", "correlatedCustomText6", "correlatedCustomText7", "correlatedCustomText8", "correlatedCustomText9",
-		"correlatedCustomTextBlock1", "correlatedCustomTextBlock2", "correlatedCustomTextBlock3", "costCenter", "customBillRate1",
-		"customBillRate10", "customBillRate2", "customBillRate3", "customBillRate4", "customBillRate5", "customBillRate6",
-		"customBillRate7", "customBillRate8", "customBillRate9", "customDate1", "customDate10","customDate11", "customDate12", "customDate13",
-        "customDate2", "customDate3", "customDate4", "customDate5", "customDate6", "customDate7", "customDate8", "customDate9", "customEncryptedText1",
-        "customEncryptedText2", "customEncryptedText3", "customEncryptedText4", "customEncryptedText5", "customEncryptedText6", "customEncryptedText7",
-        "customEncryptedText8", "customEncryptedText9",  "customEncryptedText10", "customFloat1", "customFloat10", "customFloat11","customFloat12",
-        "customFloat13", "customFloat14", "customFloat15", "customFloat16", "customFloat17", "customFloat18", "customFloat19", "customFloat2",
-        "customFloat20", "customFloat21", "customFloat22", "customFloat23", "customFloat3", "customFloat4", "customFloat5", "customFloat6",
-        "customFloat7", "customFloat8", "customFloat9","customInt1", "customInt10", "customInt11", "customInt12", "customInt13", "customInt14",
-        "customInt15", "customInt16", "customInt17", "customInt18", "customInt19", "customInt2", "customInt20", "customInt21", "customInt22", "customInt23",
-        "customInt3", "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customPayRate1", "customPayRate10", "customPayRate2",
-		"customPayRate3", "customPayRate4", "customPayRate5", "customPayRate6", "customPayRate7", "customPayRate8", "customPayRate9",
-		"customText1", "customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16",
-		"customText17", "customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
-		"customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
-		"customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
-		"customText39", "customText4", "customText40", "customText41", "customText42", "customText43", "customText44", "customText45", "customText46",
-        "customText47", "customText48", "customText49", "customText5", "customText51", "customText52", "customText53", "customText54", "customText55",
-        "customText56", "customText57", "customText58", "customText59", "customText6", "customText60", "customText7", "customText8", "customText9",
-        "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5",
-        "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateAdded", "dateBegin",
-		"dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
-		"employmentType", "fee", "flatFee", "fileAttachments", "generalLedgerSegment1", "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4",
-        "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
-		"jobOrder", "jobSubmission", "lastBteSyncDate", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
-        "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
-		"otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
-		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
-		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
-		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
-        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense" })
+@JsonPropertyOrder({"id", "appointments", "approvingClientContact", "backupApprovingClientContact", "billingClientContact",
+    "billingFrequency", "billingProfile", "bonusPackage", "branch", "bteSyncStatus", "candidate", "placementCertifications", "changeRequests", "clientBillRate", "clientOvertimeRate",
+    "comments", "commissions", "correlatedCustomDate1", "correlatedCustomDate2", "correlatedCustomDate3", "correlatedCustomFloat1",
+    "correlatedCustomFloat2", "correlatedCustomFloat3", "correlatedCustomInt1", "correlatedCustomInt2", "correlatedCustomInt3",
+    "correlatedCustomText1", "correlatedCustomText10", "correlatedCustomText2", "correlatedCustomText3", "correlatedCustomText4",
+    "correlatedCustomText5", "correlatedCustomText6", "correlatedCustomText7", "correlatedCustomText8", "correlatedCustomText9",
+    "correlatedCustomTextBlock1", "correlatedCustomTextBlock2", "correlatedCustomTextBlock3", "costCenter", "customBillRate1",
+    "customBillRate10", "customBillRate2", "customBillRate3", "customBillRate4", "customBillRate5", "customBillRate6",
+    "customBillRate7", "customBillRate8", "customBillRate9", "customDate1", "customDate10", "customDate11", "customDate12", "customDate13",
+    "customDate2", "customDate3", "customDate4", "customDate5", "customDate6", "customDate7", "customDate8", "customDate9", "customEncryptedText1",
+    "customEncryptedText2", "customEncryptedText3", "customEncryptedText4", "customEncryptedText5", "customEncryptedText6", "customEncryptedText7",
+    "customEncryptedText8", "customEncryptedText9", "customEncryptedText10", "customFloat1", "customFloat10", "customFloat11", "customFloat12",
+    "customFloat13", "customFloat14", "customFloat15", "customFloat16", "customFloat17", "customFloat18", "customFloat19", "customFloat2",
+    "customFloat20", "customFloat21", "customFloat22", "customFloat23", "customFloat3", "customFloat4", "customFloat5", "customFloat6",
+    "customFloat7", "customFloat8", "customFloat9", "customInt1", "customInt10", "customInt11", "customInt12", "customInt13", "customInt14",
+    "customInt15", "customInt16", "customInt17", "customInt18", "customInt19", "customInt2", "customInt20", "customInt21", "customInt22", "customInt23",
+    "customInt3", "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customPayRate1", "customPayRate10", "customPayRate2",
+    "customPayRate3", "customPayRate4", "customPayRate5", "customPayRate6", "customPayRate7", "customPayRate8", "customPayRate9",
+    "customText1", "customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16",
+    "customText17", "customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
+    "customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
+    "customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
+    "customText39", "customText4", "customText40", "customText41", "customText42", "customText43", "customText44", "customText45", "customText46",
+    "customText47", "customText48", "customText49", "customText5", "customText51", "customText52", "customText53", "customText54", "customText55",
+    "customText56", "customText57", "customText58", "customText59", "customText6", "customText60", "customText7", "customText8", "customText9",
+    "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5",
+    "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateAdded", "dateBegin",
+    "dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
+    "employmentType", "fee", "flatFee", "fileAttachments", "generalLedgerSegment1", "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4",
+    "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
+    "jobOrder", "jobSubmission", "lastBteSyncDate", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
+    "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
+    "otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
+    "recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
+    "salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
+    "timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
+    "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense", "placementShiftSet",
+    "approvedChangeRequests", "approvedPlacementRateCardChangeRequests", "benefitGroup", "canEnterTime", "clientContact", "clientCorporation",
+    "clientRating", "customText50", "draftPlacementRateCardChangeRequests", "employmentStartDate", "estaffGUID", "estimatedEndDate",
+    "expiringCredentials", "housingAmenities", "incompleteRequirements", "isMultirate", "isWorkFromHome", "lastApprovedPlacementChangeRequest",
+    "owner", "owners", "payGroup", "payrollEmployeeType", "payrollSyncStatus", "pendingChangeRequests", "pendingPlacementRateCardChangeRequests",
+    "placementHistories", "positionCode", "quitJob", "readyForReviewPlacementRateCardChangeRequests", "rejectedPlacementRateCardChangeRequests",
+    "requestRevisionPlacementRateCardChangeRequests", "shift", "userHousingComplexUnits"})
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
-		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
+    FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
-	private Integer id;
+    private Integer id;
 
-	private OneToMany<Appointment> appointments;
+    private OneToMany<Appointment> appointments;
 
-	private ClientContact approvingClientContact;
+    private ClientContact approvingClientContact;
 
-	private ClientContact backupApprovingClientContact;
+    private ClientContact backupApprovingClientContact;
 
-	private ClientContact billingClientContact;
+    private ClientContact billingClientContact;
 
-	private BillingProfile billingProfile;
+    private BillingProfile billingProfile;
 
-	@JsonIgnore
-	@Size(max = 30)
-	private String billingFrequency;
+    @JsonIgnore
+    @Size(max = 30)
+    private String billingFrequency;
 
-	@JsonIgnore
-	private String bonusPackage;
+    @JsonIgnore
+    private String bonusPackage;
 
-	private Branch branch;
+    private Branch branch;
 
-	private Candidate candidate;
+    private Candidate candidate;
 
     private OneToMany<PlacementCertification> placementCertifications;
 
-	private OneToMany<PlacementChangeRequest> changeRequests;
+    private OneToMany<PlacementChangeRequest> changeRequests;
 
-	private BigDecimal clientBillRate;
+    private BigDecimal clientBillRate;
 
-	private BigDecimal clientOvertimeRate;
+    private BigDecimal clientOvertimeRate;
 
-	@JsonIgnore
-	private String comments;
+    @JsonIgnore
+    private String comments;
 
-	private OneToMany<PlacementCommission> commissions;
+    private OneToMany<PlacementCommission> commissions;
 
     private Location location;
 
     private PlacementTimeAndExpense timeAndExpense;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String costCenter;
+    private PlacementShiftSet placementShiftSet;
 
-	private DateTime dateAdded;
+    @JsonIgnore
+    @Size(max = 100)
+    private String costCenter;
 
-	private DateTime dateBegin;
+    private DateTime dateAdded;
 
-	private DateTime dateClientEffective;
+    private DateTime dateBegin;
 
-	private DateTime dateEffective;
+    private DateTime dateClientEffective;
 
-	private DateTime dateEnd;
+    private DateTime dateEffective;
 
-	private DateTime dateLastModified;
+    private DateTime dateEnd;
 
-	private Integer daysGuaranteed;
+    private DateTime dateLastModified;
 
-	private Integer daysProRated;
+    private Integer daysGuaranteed;
 
-	private BigDecimal durationWeeks;
+    private Integer daysProRated;
 
-	@JsonIgnore
-	@Size(max = 30)
-	private String employeeType;
+    private BigDecimal durationWeeks;
 
-	@JsonIgnore
-	private String employmentType;
+    @JsonIgnore
+    @Size(max = 30)
+    private String employeeType;
 
-	private BigDecimal fee;
+    @JsonIgnore
+    private String employmentType;
 
-	private BigDecimal flatFee;
+    private BigDecimal fee;
+
+    private BigDecimal flatFee;
 
     private OneToMany<StandardFileAttachment> fileAttachments;
 
@@ -165,107 +174,107 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
     private GeneralLedgerSegment5 generalLedgerSegment5;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String hoursOfOperation;
+    @JsonIgnore
+    @Size(max = 100)
+    private String hoursOfOperation;
 
-	private BigDecimal hoursPerDay;
+    private BigDecimal hoursPerDay;
 
-	private Integer housingManagerID;
+    private Integer housingManagerID;
 
-	@JsonIgnore
-	private String housingStatus;
+    @JsonIgnore
+    private String housingStatus;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String invoiceGroupName;
+    @JsonIgnore
+    @Size(max = 100)
+    private String invoiceGroupName;
 
-	private JobOrder jobOrder;
+    private JobOrder jobOrder;
 
-	private JobSubmission jobSubmission;
+    private JobSubmission jobSubmission;
 
-	private Object migrateGUID;
+    private Object migrateGUID;
 
-	@JsonIgnore
-	private String optionsPackage;
+    @JsonIgnore
+    private String optionsPackage;
 
-	private Integer onboardingDocumentReceivedCount;
+    private Integer onboardingDocumentReceivedCount;
 
-	private Integer onboardingDocumentSentCount;
+    private Integer onboardingDocumentSentCount;
 
-	private Integer onboardingPercentComplete;
+    private Integer onboardingPercentComplete;
 
-	private OnboardingReceivedSent onboardingReceivedSent;
+    private OnboardingReceivedSent onboardingReceivedSent;
 
-	private String onboardingStatus;
+    private String onboardingStatus;
 
-	private Integer otExemption;
+    private Integer otExemption;
 
-	private BigDecimal otherHourlyFee;
+    private BigDecimal otherHourlyFee;
 
-	private BigDecimal markUpPercentage;
+    private BigDecimal markUpPercentage;
 
-	private OneToMany<Note> notes;
+    private OneToMany<Note> notes;
 
-	@JsonIgnore
-	private String otherHourlyFeeComments;
+    @JsonIgnore
+    private String otherHourlyFeeComments;
 
-	private BigDecimal overtimeMarkUpPercentage;
+    private BigDecimal overtimeMarkUpPercentage;
 
-	private BigDecimal overtimeRate;
+    private BigDecimal overtimeRate;
 
     @JsonIgnore
     private String payGroup;
 
-	private BigDecimal payRate;
+    private BigDecimal payRate;
 
-	@JsonIgnore
-	private String projectCodeList;
+    @JsonIgnore
+    private String projectCodeList;
 
-	private BigDecimal recruitingManagerPercentGrossMargin;
+    private BigDecimal recruitingManagerPercentGrossMargin;
 
-	private BigDecimal referralFee;
+    private BigDecimal referralFee;
 
-	@JsonIgnore
-	private String referralFeeType;
+    @JsonIgnore
+    private String referralFeeType;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String reportTo;
+    @JsonIgnore
+    @Size(max = 100)
+    private String reportTo;
 
-	private BigDecimal reportedMargin;
+    private BigDecimal reportedMargin;
 
-	private BigDecimal salary;
+    private BigDecimal salary;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String salaryUnit;
+    @JsonIgnore
+    @Size(max = 20)
+    private String salaryUnit;
 
-	private BigDecimal salesManagerPercentGrossMargin;
+    private BigDecimal salesManagerPercentGrossMargin;
 
-	private ClientContact statementClientContact;
+    private ClientContact statementClientContact;
 
-	@JsonIgnore
-	@Size(max = 30)
-	private String status;
+    @JsonIgnore
+    @Size(max = 30)
+    private String status;
 
-	private OneToMany<Task> tasks;
+    private OneToMany<Task> tasks;
 
-	private BigDecimal taxRate;
+    private BigDecimal taxRate;
 
-	@JsonIgnore
-	private String taxState;
+    @JsonIgnore
+    private String taxState;
 
-	@JsonIgnore
-	private String terminationReason;
+    @JsonIgnore
+    private String terminationReason;
 
-	private OneToMany<TimeUnit> timeUnits;
+    private OneToMany<TimeUnit> timeUnits;
 
-	private ClientCorporation vendorClientCorporation;
+    private ClientCorporation vendorClientCorporation;
 
-	private Integer workWeekStart;
+    private Integer workWeekStart;
 
-	private WorkersCompensationRate workersCompensationRate;
+    private WorkersCompensationRate workersCompensationRate;
 
     private OneToMany<PlacementCustomObjectInstance1> customObject1s;
 
@@ -291,100 +300,160 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
     private DateTime lastBteSyncDate;
 
-	public Placement() {
-		super();
-	}
+    private Integer approvedChangeRequests;
 
-	public Placement(Integer id) {
-		super();
-		this.id = id;
-	}
+    private Integer approvedPlacementRateCardChangeRequests;
 
-	public Placement instantiateForInsert(){
-		Placement placement = new Placement();
-		placement.setDateBegin(new DateTime());
-		placement.setDaysProRated(0);
-		placement.setDurationWeeks(new BigDecimal(1.0));
-		placement.setEmployeeType("W2");
-		placement.setFee(new BigDecimal(1.0));
-		placement.setHoursPerDay(new BigDecimal(1.0));
-		placement.setPayRate(new BigDecimal(1.0));
-		placement.setRecruitingManagerPercentGrossMargin(new BigDecimal(1.0));
-		placement.setReferralFee(new BigDecimal(1.0));
-		placement.setSalary(new BigDecimal(1.0));
-		placement.setSalaryUnit("Dollars");
-		placement.setSalesManagerPercentGrossMargin(new BigDecimal(1.0));
-		placement.setStatus("Submitted");
-		placement.setCandidate(new Candidate(1));
-		placement.setJobOrder(new JobOrder(1));
-		placement.setDaysGuaranteed(1);
-		placement.setEmploymentType("Contract");
-		return placement;
-	}
+    private String benefitGroup;
 
-	@Override
-	@JsonProperty("id")
-	public Integer getId() {
-		return id;
-	}
+    private Boolean canEnterTime;
+
+    private ClientContact clientContact;
+
+    private ClientCorporation clientCorporation;
+
+    private Integer clientRating;
+
+    private Integer draftPlacementRateCardChangeRequests;
+
+    private DateTime employmentStartDate;
+
+    private String estaffGUID;
+
+    private DateTime estimatedEndDate;
+
+    private Integer expiringCredentials;
+
+    private OneToMany<HousingComplexAmenity> housingAmenities;
+
+    private Integer incompleteRequirements;
+
+    private Boolean isMultirate;
+
+    private Boolean isWorkFromHome;
+
+    private PlacementChangeRequest lastApprovedPlacementChangeRequest;
+
+    private CorporateUser owner;
+
+    private OneToMany<CorporateUser> owners;
+
+    private SimplifiedOptionsLookup payrollEmployeeType;
+
+    private SimplifiedOptionsLookup payrollSyncStatus;
+
+    private Integer pendingChangeRequests;
+
+    private Integer pendingPlacementRateCardChangeRequests;
+
+    private String positionCode;
+
+    private Boolean quitJob;
+
+    private Integer readyForReviewPlacementRateCardChangeRequests;
+
+    private Integer rejectedPlacementRateCardChangeRequests;
+
+    private Integer requestRevisionPlacementRateCardChangeRequests;
+
+    private Shift shift;
+
+    private OneToMany<UserHousingComplexUnit> userHousingComplexUnits;
+
+    public Placement() {
+        super();
+    }
+
+    public Placement(Integer id) {
+        super();
+        this.id = id;
+    }
+
+    public Placement instantiateForInsert() {
+        Placement placement = new Placement();
+        placement.setDateBegin(new DateTime());
+        placement.setDaysProRated(0);
+        placement.setDurationWeeks(new BigDecimal(1.0));
+        placement.setEmployeeType("W2");
+        placement.setFee(new BigDecimal(1.0));
+        placement.setHoursPerDay(new BigDecimal(1.0));
+        placement.setPayRate(new BigDecimal(1.0));
+        placement.setRecruitingManagerPercentGrossMargin(new BigDecimal(1.0));
+        placement.setReferralFee(new BigDecimal(1.0));
+        placement.setSalary(new BigDecimal(1.0));
+        placement.setSalaryUnit("Dollars");
+        placement.setSalesManagerPercentGrossMargin(new BigDecimal(1.0));
+        placement.setStatus("Submitted");
+        placement.setCandidate(new Candidate(1));
+        placement.setJobOrder(new JobOrder(1));
+        placement.setDaysGuaranteed(1);
+        placement.setEmploymentType("Contract");
+        return placement;
+    }
+
+    @Override
+    @JsonProperty("id")
+    public Integer getId() {
+        return id;
+    }
 
     @ReadOnly
-	@Override
-	@JsonProperty("id")
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Override
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@JsonIgnore
-	public OneToMany<Appointment> getAppointments() {
-		return appointments;
-	}
+    @JsonIgnore
+    public OneToMany<Appointment> getAppointments() {
+        return appointments;
+    }
 
     @ReadOnly
-	@JsonProperty("appointments")
-	public void setAppointments(OneToMany<Appointment> appointments) {
-		this.appointments = appointments;
-	}
+    @JsonProperty("appointments")
+    public void setAppointments(OneToMany<Appointment> appointments) {
+        this.appointments = appointments;
+    }
 
-	@JsonProperty("approvingClientContact")
-	public ClientContact getApprovingClientContact() {
-		return approvingClientContact;
-	}
+    @JsonProperty("approvingClientContact")
+    public ClientContact getApprovingClientContact() {
+        return approvingClientContact;
+    }
 
-	@JsonProperty("approvingClientContact")
-	public void setApprovingClientContact(ClientContact approvingClientContact) {
-		this.approvingClientContact = approvingClientContact;
-	}
+    @JsonProperty("approvingClientContact")
+    public void setApprovingClientContact(ClientContact approvingClientContact) {
+        this.approvingClientContact = approvingClientContact;
+    }
 
-	@JsonProperty("backupApprovingClientContact")
-	public ClientContact getBackupApprovingClientContact() {
-		return backupApprovingClientContact;
-	}
+    @JsonProperty("backupApprovingClientContact")
+    public ClientContact getBackupApprovingClientContact() {
+        return backupApprovingClientContact;
+    }
 
-	@JsonProperty("backupApprovingClientContact")
-	public void setBackupApprovingClientContact(ClientContact backupApprovingClientContact) {
-		this.backupApprovingClientContact = backupApprovingClientContact;
-	}
+    @JsonProperty("backupApprovingClientContact")
+    public void setBackupApprovingClientContact(ClientContact backupApprovingClientContact) {
+        this.backupApprovingClientContact = backupApprovingClientContact;
+    }
 
-	@JsonProperty("billingClientContact")
-	public ClientContact getBillingClientContact() {
-		return billingClientContact;
-	}
+    @JsonProperty("billingClientContact")
+    public ClientContact getBillingClientContact() {
+        return billingClientContact;
+    }
 
-	@JsonProperty("billingClientContact")
-	public void setBillingClientContact(ClientContact billingClientContact) {
-		this.billingClientContact = billingClientContact;
-	}
+    @JsonProperty("billingClientContact")
+    public void setBillingClientContact(ClientContact billingClientContact) {
+        this.billingClientContact = billingClientContact;
+    }
 
-	@JsonProperty("billingFrequency")
-	public String getBillingFrequency() {
-		return billingFrequency;
-	}
+    @JsonProperty("billingFrequency")
+    public String getBillingFrequency() {
+        return billingFrequency;
+    }
 
-	@JsonIgnore
-	public void setBillingFrequency(String billingFrequency) {
-		this.billingFrequency = billingFrequency;
-	}
+    @JsonIgnore
+    public void setBillingFrequency(String billingFrequency) {
+        this.billingFrequency = billingFrequency;
+    }
 
     @JsonProperty("billingProfile")
     public BillingProfile getBillingProfile() {
@@ -397,16 +466,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     }
 
     @JsonProperty("bonusPackage")
-	public String getBonusPackage() {
-		return bonusPackage;
-	}
+    public String getBonusPackage() {
+        return bonusPackage;
+    }
 
-	@JsonIgnore
-	public void setBonusPackage(String bonusPackage) {
-		this.bonusPackage = bonusPackage;
-	}
+    @JsonIgnore
+    public void setBonusPackage(String bonusPackage) {
+        this.bonusPackage = bonusPackage;
+    }
 
-	@JsonProperty("branch")
+    @JsonProperty("branch")
     public Branch getBranch() {
         return branch;
     }
@@ -417,14 +486,14 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     }
 
     @JsonProperty("candidate")
-	public Candidate getCandidate() {
-		return candidate;
-	}
+    public Candidate getCandidate() {
+        return candidate;
+    }
 
-	@JsonProperty("candidate")
-	public void setCandidate(Candidate candidate) {
-		this.candidate = candidate;
-	}
+    @JsonProperty("candidate")
+    public void setCandidate(Candidate candidate) {
+        this.candidate = candidate;
+    }
 
     @JsonIgnore
     public OneToMany<PlacementCertification> getPlacementCertifications() {
@@ -437,199 +506,199 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.placementCertifications = placementCertifications;
     }
 
-	@JsonIgnore
-	public OneToMany<PlacementChangeRequest> getChangeRequests() {
-		return changeRequests;
-	}
+    @JsonIgnore
+    public OneToMany<PlacementChangeRequest> getChangeRequests() {
+        return changeRequests;
+    }
 
     @ReadOnly
-	@JsonProperty("changeRequests")
-	public void setChangeRequests(OneToMany<PlacementChangeRequest> changeRequests) {
-		this.changeRequests = changeRequests;
-	}
+    @JsonProperty("changeRequests")
+    public void setChangeRequests(OneToMany<PlacementChangeRequest> changeRequests) {
+        this.changeRequests = changeRequests;
+    }
 
-	@JsonProperty("clientBillRate")
-	public BigDecimal getClientBillRate() {
-		return clientBillRate;
-	}
+    @JsonProperty("clientBillRate")
+    public BigDecimal getClientBillRate() {
+        return clientBillRate;
+    }
 
-	@JsonProperty("clientBillRate")
-	public void setClientBillRate(BigDecimal clientBillRate) {
-		this.clientBillRate = clientBillRate;
-	}
+    @JsonProperty("clientBillRate")
+    public void setClientBillRate(BigDecimal clientBillRate) {
+        this.clientBillRate = clientBillRate;
+    }
 
-	@JsonProperty("clientOvertimeRate")
-	public BigDecimal getClientOvertimeRate() {
-		return clientOvertimeRate;
-	}
+    @JsonProperty("clientOvertimeRate")
+    public BigDecimal getClientOvertimeRate() {
+        return clientOvertimeRate;
+    }
 
-	@JsonProperty("clientOvertimeRate")
-	public void setClientOvertimeRate(BigDecimal clientOvertimeRate) {
-		this.clientOvertimeRate = clientOvertimeRate;
-	}
+    @JsonProperty("clientOvertimeRate")
+    public void setClientOvertimeRate(BigDecimal clientOvertimeRate) {
+        this.clientOvertimeRate = clientOvertimeRate;
+    }
 
-	@JsonProperty("comments")
-	public String getComments() {
-		return comments;
-	}
+    @JsonProperty("comments")
+    public String getComments() {
+        return comments;
+    }
 
-	@JsonIgnore
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
+    @JsonIgnore
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
 
-	@JsonIgnore
-	public OneToMany<PlacementCommission> getCommissions() {
-		return commissions;
-	}
-
-    @ReadOnly
-	@JsonProperty("commissions")
-	public void setCommissions(OneToMany<PlacementCommission> commissions) {
-		this.commissions = commissions;
-	}
-
-	@JsonProperty("costCenter")
-	public String getCostCenter() {
-		return costCenter;
-	}
-
-	@JsonIgnore
-	public void setCostCenter(String costCenter) {
-		this.costCenter = costCenter;
-	}
-
-	@JsonProperty("dateAdded")
-	public DateTime getDateAdded() {
-		return dateAdded;
-	}
+    @JsonIgnore
+    public OneToMany<PlacementCommission> getCommissions() {
+        return commissions;
+    }
 
     @ReadOnly
-	@JsonProperty("dateAdded")
-	public void setDateAdded(DateTime dateAdded) {
-		this.dateAdded = dateAdded;
-	}
+    @JsonProperty("commissions")
+    public void setCommissions(OneToMany<PlacementCommission> commissions) {
+        this.commissions = commissions;
+    }
 
-	@JsonProperty("dateBegin")
-	public DateTime getDateBegin() {
-		return dateBegin;
-	}
+    @JsonProperty("costCenter")
+    public String getCostCenter() {
+        return costCenter;
+    }
 
-	@JsonProperty("dateBegin")
-	public void setDateBegin(DateTime dateBegin) {
-		this.dateBegin = dateBegin;
-	}
+    @JsonIgnore
+    public void setCostCenter(String costCenter) {
+        this.costCenter = costCenter;
+    }
 
-	@JsonProperty("dateClientEffective")
-	public DateTime getDateClientEffective() {
-		return dateClientEffective;
-	}
-
-	@JsonProperty("dateClientEffective")
-	public void setDateClientEffective(DateTime dateClientEffective) {
-		this.dateClientEffective = dateClientEffective;
-	}
-
-	@JsonProperty("dateEffective")
-	public DateTime getDateEffective() {
-		return dateEffective;
-	}
-
-	@JsonProperty("dateEffective")
-	public void setDateEffective(DateTime dateEffective) {
-		this.dateEffective = dateEffective;
-	}
-
-	@JsonProperty("dateEnd")
-	public DateTime getDateEnd() {
-		return dateEnd;
-	}
-
-	@JsonProperty("dateEnd")
-	public void setDateEnd(DateTime dateEnd) {
-		this.dateEnd = dateEnd;
-	}
-
-	@JsonProperty("dateLastModified")
-	public DateTime getDateLastModified() {
-		return dateLastModified;
-	}
+    @JsonProperty("dateAdded")
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
 
     @ReadOnly
-	@JsonProperty("dateLastModified")
-	public void setDateLastModified(DateTime dateLastModified) {
-		this.dateLastModified = dateLastModified;
-	}
+    @JsonProperty("dateAdded")
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
 
-	@JsonProperty("daysGuaranteed")
-	public Integer getDaysGuaranteed() {
-		return daysGuaranteed;
-	}
+    @JsonProperty("dateBegin")
+    public DateTime getDateBegin() {
+        return dateBegin;
+    }
 
-	@JsonProperty("daysGuaranteed")
-	public void setDaysGuaranteed(Integer daysGuaranteed) {
-		this.daysGuaranteed = daysGuaranteed;
-	}
+    @JsonProperty("dateBegin")
+    public void setDateBegin(DateTime dateBegin) {
+        this.dateBegin = dateBegin;
+    }
 
-	@JsonProperty("daysProRated")
-	public Integer getDaysProRated() {
-		return daysProRated;
-	}
+    @JsonProperty("dateClientEffective")
+    public DateTime getDateClientEffective() {
+        return dateClientEffective;
+    }
 
-	@JsonProperty("daysProRated")
-	public void setDaysProRated(Integer daysProRated) {
-		this.daysProRated = daysProRated;
-	}
+    @JsonProperty("dateClientEffective")
+    public void setDateClientEffective(DateTime dateClientEffective) {
+        this.dateClientEffective = dateClientEffective;
+    }
 
-	@JsonProperty("durationWeeks")
-	public BigDecimal getDurationWeeks() {
-		return durationWeeks;
-	}
+    @JsonProperty("dateEffective")
+    public DateTime getDateEffective() {
+        return dateEffective;
+    }
 
-	@JsonProperty("durationWeeks")
-	public void setDurationWeeks(BigDecimal durationWeeks) {
-		this.durationWeeks = durationWeeks;
-	}
+    @JsonProperty("dateEffective")
+    public void setDateEffective(DateTime dateEffective) {
+        this.dateEffective = dateEffective;
+    }
 
-	@JsonProperty("employeeType")
-	public String getEmployeeType() {
-		return employeeType;
-	}
+    @JsonProperty("dateEnd")
+    public DateTime getDateEnd() {
+        return dateEnd;
+    }
 
-	@JsonIgnore
-	public void setEmployeeType(String employeeType) {
-		this.employeeType = employeeType;
-	}
+    @JsonProperty("dateEnd")
+    public void setDateEnd(DateTime dateEnd) {
+        this.dateEnd = dateEnd;
+    }
 
-	@JsonProperty("employmentType")
-	public String getEmploymentType() {
-		return employmentType;
-	}
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
 
-	@JsonIgnore
-	public void setEmploymentType(String employmentType) {
-		this.employmentType = employmentType;
-	}
+    @ReadOnly
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
+    }
 
-	@JsonProperty("fee")
-	public BigDecimal getFee() {
-		return fee;
-	}
+    @JsonProperty("daysGuaranteed")
+    public Integer getDaysGuaranteed() {
+        return daysGuaranteed;
+    }
 
-	@JsonProperty("fee")
-	public void setFee(BigDecimal fee) {
-		this.fee = fee;
-	}
+    @JsonProperty("daysGuaranteed")
+    public void setDaysGuaranteed(Integer daysGuaranteed) {
+        this.daysGuaranteed = daysGuaranteed;
+    }
 
-	@JsonProperty("flatFee")
-	public BigDecimal getFlatFee() {
-		return flatFee;
-	}
+    @JsonProperty("daysProRated")
+    public Integer getDaysProRated() {
+        return daysProRated;
+    }
 
-	@JsonProperty("flatFee")
-	public void setFlatFee(BigDecimal flatFee) {
-		this.flatFee = flatFee;
-	}
+    @JsonProperty("daysProRated")
+    public void setDaysProRated(Integer daysProRated) {
+        this.daysProRated = daysProRated;
+    }
+
+    @JsonProperty("durationWeeks")
+    public BigDecimal getDurationWeeks() {
+        return durationWeeks;
+    }
+
+    @JsonProperty("durationWeeks")
+    public void setDurationWeeks(BigDecimal durationWeeks) {
+        this.durationWeeks = durationWeeks;
+    }
+
+    @JsonProperty("employeeType")
+    public String getEmployeeType() {
+        return employeeType;
+    }
+
+    @JsonIgnore
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
+    }
+
+    @JsonProperty("employmentType")
+    public String getEmploymentType() {
+        return employmentType;
+    }
+
+    @JsonIgnore
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
+    }
+
+    @JsonProperty("fee")
+    public BigDecimal getFee() {
+        return fee;
+    }
+
+    @JsonProperty("fee")
+    public void setFee(BigDecimal fee) {
+        this.fee = fee;
+    }
+
+    @JsonProperty("flatFee")
+    public BigDecimal getFlatFee() {
+        return flatFee;
+    }
+
+    @JsonProperty("flatFee")
+    public void setFlatFee(BigDecimal flatFee) {
+        this.flatFee = flatFee;
+    }
 
     @JsonProperty("generalLedgerSegment1")
     public GeneralLedgerSegment1 getGeneralLedgerSegment1() {
@@ -681,126 +750,126 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.generalLedgerSegment5 = generalLedgerSegment5;
     }
 
-	@JsonProperty("hoursOfOperation")
-	public String getHoursOfOperation() {
-		return hoursOfOperation;
-	}
+    @JsonProperty("hoursOfOperation")
+    public String getHoursOfOperation() {
+        return hoursOfOperation;
+    }
 
-	@JsonIgnore
-	public void setHoursOfOperation(String hoursOfOperation) {
-		this.hoursOfOperation = hoursOfOperation;
-	}
+    @JsonIgnore
+    public void setHoursOfOperation(String hoursOfOperation) {
+        this.hoursOfOperation = hoursOfOperation;
+    }
 
-	@JsonProperty("hoursPerDay")
-	public BigDecimal getHoursPerDay() {
-		return hoursPerDay;
-	}
+    @JsonProperty("hoursPerDay")
+    public BigDecimal getHoursPerDay() {
+        return hoursPerDay;
+    }
 
-	@JsonProperty("hoursPerDay")
-	public void setHoursPerDay(BigDecimal hoursPerDay) {
-		this.hoursPerDay = hoursPerDay;
-	}
+    @JsonProperty("hoursPerDay")
+    public void setHoursPerDay(BigDecimal hoursPerDay) {
+        this.hoursPerDay = hoursPerDay;
+    }
 
-	@JsonProperty("housingManagerID")
-	public Integer getHousingManagerID() {
-		return housingManagerID;
-	}
+    @JsonProperty("housingManagerID")
+    public Integer getHousingManagerID() {
+        return housingManagerID;
+    }
 
-	@JsonProperty("housingManagerID")
-	public void setHousingManagerID(Integer housingManagerID) {
-		this.housingManagerID = housingManagerID;
-	}
+    @JsonProperty("housingManagerID")
+    public void setHousingManagerID(Integer housingManagerID) {
+        this.housingManagerID = housingManagerID;
+    }
 
-	@JsonProperty("housingStatus")
-	public String getHousingStatus() {
-		return housingStatus;
-	}
+    @JsonProperty("housingStatus")
+    public String getHousingStatus() {
+        return housingStatus;
+    }
 
-	@JsonIgnore
-	public void setHousingStatus(String housingStatus) {
-		this.housingStatus = housingStatus;
-	}
+    @JsonIgnore
+    public void setHousingStatus(String housingStatus) {
+        this.housingStatus = housingStatus;
+    }
 
-	@JsonProperty("invoiceGroupName")
-	public String getInvoiceGroupName() {
-		return invoiceGroupName;
-	}
+    @JsonProperty("invoiceGroupName")
+    public String getInvoiceGroupName() {
+        return invoiceGroupName;
+    }
 
-	@JsonIgnore
-	public void setInvoiceGroupName(String invoiceGroupName) {
-		this.invoiceGroupName = invoiceGroupName;
-	}
+    @JsonIgnore
+    public void setInvoiceGroupName(String invoiceGroupName) {
+        this.invoiceGroupName = invoiceGroupName;
+    }
 
-	@JsonProperty("jobOrder")
-	public JobOrder getJobOrder() {
-		return jobOrder;
-	}
+    @JsonProperty("jobOrder")
+    public JobOrder getJobOrder() {
+        return jobOrder;
+    }
 
-	@JsonProperty("jobOrder")
-	public void setJobOrder(JobOrder jobOrder) {
-		this.jobOrder = jobOrder;
-	}
+    @JsonProperty("jobOrder")
+    public void setJobOrder(JobOrder jobOrder) {
+        this.jobOrder = jobOrder;
+    }
 
-	@JsonIgnore
-	public JobSubmission getJobSubmission() {
-		return jobSubmission;
-	}
+    @JsonIgnore
+    public JobSubmission getJobSubmission() {
+        return jobSubmission;
+    }
 
-	@JsonProperty("jobSubmission")
-	public void setJobSubmission(JobSubmission jobSubmission) {
-		this.jobSubmission = jobSubmission;
-	}
+    @JsonProperty("jobSubmission")
+    public void setJobSubmission(JobSubmission jobSubmission) {
+        this.jobSubmission = jobSubmission;
+    }
 
-	@JsonProperty("markUpPercentage")
-	public BigDecimal getMarkUpPercentage() {
-		return markUpPercentage;
-	}
+    @JsonProperty("markUpPercentage")
+    public BigDecimal getMarkUpPercentage() {
+        return markUpPercentage;
+    }
 
-	@JsonProperty("markUpPercentage")
-	public void setMarkUpPercentage(BigDecimal markUpPercentage) {
-		this.markUpPercentage = markUpPercentage;
-	}
+    @JsonProperty("markUpPercentage")
+    public void setMarkUpPercentage(BigDecimal markUpPercentage) {
+        this.markUpPercentage = markUpPercentage;
+    }
 
-	@JsonProperty("notes")
-	public OneToMany<Note> getNotes() {
-		return notes;
-	}
+    @JsonProperty("notes")
+    public OneToMany<Note> getNotes() {
+        return notes;
+    }
 
     @ReadOnly
-	@JsonProperty("notes")
-	public void setNotes(OneToMany<Note> notes) {
-		this.notes = notes;
-	}
+    @JsonProperty("notes")
+    public void setNotes(OneToMany<Note> notes) {
+        this.notes = notes;
+    }
 
-	@JsonProperty("overtimeMarkUpPercentage")
-	public BigDecimal getOvertimeMarkUpPercentage() {
-		return overtimeMarkUpPercentage;
-	}
+    @JsonProperty("overtimeMarkUpPercentage")
+    public BigDecimal getOvertimeMarkUpPercentage() {
+        return overtimeMarkUpPercentage;
+    }
 
-	@JsonProperty("overtimeMarkUpPercentage")
-	public void setOvertimeMarkUpPercentage(BigDecimal overtimeMarkUpPercentage) {
-		this.overtimeMarkUpPercentage = overtimeMarkUpPercentage;
-	}
+    @JsonProperty("overtimeMarkUpPercentage")
+    public void setOvertimeMarkUpPercentage(BigDecimal overtimeMarkUpPercentage) {
+        this.overtimeMarkUpPercentage = overtimeMarkUpPercentage;
+    }
 
-	@JsonProperty("migrateGUID")
-	public Object getMigrateGUID() {
-		return migrateGUID;
-	}
+    @JsonProperty("migrateGUID")
+    public Object getMigrateGUID() {
+        return migrateGUID;
+    }
 
-	@JsonProperty("migrateGUID")
-	public void setMigrateGUID(Object migrateGUID) {
-		this.migrateGUID = migrateGUID;
-	}
+    @JsonProperty("migrateGUID")
+    public void setMigrateGUID(Object migrateGUID) {
+        this.migrateGUID = migrateGUID;
+    }
 
-	@JsonProperty("optionsPackage")
-	public String getOptionsPackage() {
-		return optionsPackage;
-	}
+    @JsonProperty("optionsPackage")
+    public String getOptionsPackage() {
+        return optionsPackage;
+    }
 
-	@JsonIgnore
-	public void setOptionsPackage(String optionsPackage) {
-		this.optionsPackage = optionsPackage;
-	}
+    @JsonIgnore
+    public void setOptionsPackage(String optionsPackage) {
+        this.optionsPackage = optionsPackage;
+    }
 
     @JsonProperty("onboardingDocumentReceivedCount")
     public Integer getOnboardingDocumentReceivedCount() {
@@ -853,44 +922,44 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     }
 
     @JsonProperty("otExemption")
-	public Integer getOtExemption() {
-		return otExemption;
-	}
+    public Integer getOtExemption() {
+        return otExemption;
+    }
 
-	@JsonProperty("otExemption")
-	public void setOtExemption(Integer otExemption) {
-		this.otExemption = otExemption;
-	}
+    @JsonProperty("otExemption")
+    public void setOtExemption(Integer otExemption) {
+        this.otExemption = otExemption;
+    }
 
-	@JsonProperty("otherHourlyFee")
-	public BigDecimal getOtherHourlyFee() {
-		return otherHourlyFee;
-	}
+    @JsonProperty("otherHourlyFee")
+    public BigDecimal getOtherHourlyFee() {
+        return otherHourlyFee;
+    }
 
-	@JsonProperty("otherHourlyFee")
-	public void setOtherHourlyFee(BigDecimal otherHourlyFee) {
-		this.otherHourlyFee = otherHourlyFee;
-	}
+    @JsonProperty("otherHourlyFee")
+    public void setOtherHourlyFee(BigDecimal otherHourlyFee) {
+        this.otherHourlyFee = otherHourlyFee;
+    }
 
-	@JsonProperty("otherHourlyFeeComments")
-	public String getOtherHourlyFeeComments() {
-		return otherHourlyFeeComments;
-	}
+    @JsonProperty("otherHourlyFeeComments")
+    public String getOtherHourlyFeeComments() {
+        return otherHourlyFeeComments;
+    }
 
-	@JsonIgnore
-	public void setOtherHourlyFeeComments(String otherHourlyFeeComments) {
-		this.otherHourlyFeeComments = otherHourlyFeeComments;
-	}
+    @JsonIgnore
+    public void setOtherHourlyFeeComments(String otherHourlyFeeComments) {
+        this.otherHourlyFeeComments = otherHourlyFeeComments;
+    }
 
-	@JsonProperty("overtimeRate")
-	public BigDecimal getOvertimeRate() {
-		return overtimeRate;
-	}
+    @JsonProperty("overtimeRate")
+    public BigDecimal getOvertimeRate() {
+        return overtimeRate;
+    }
 
-	@JsonProperty("overtimeRate")
-	public void setOvertimeRate(BigDecimal overtimeRate) {
-		this.overtimeRate = overtimeRate;
-	}
+    @JsonProperty("overtimeRate")
+    public void setOvertimeRate(BigDecimal overtimeRate) {
+        this.overtimeRate = overtimeRate;
+    }
 
     @JsonProperty("payGroup")
     public String getPayGroup() {
@@ -903,205 +972,205 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     }
 
     @JsonProperty("payRate")
-	public BigDecimal getPayRate() {
-		return payRate;
-	}
+    public BigDecimal getPayRate() {
+        return payRate;
+    }
 
-	@JsonProperty("payRate")
-	public void setPayRate(BigDecimal payRate) {
-		this.payRate = payRate;
-	}
+    @JsonProperty("payRate")
+    public void setPayRate(BigDecimal payRate) {
+        this.payRate = payRate;
+    }
 
-	@JsonProperty("projectCodeList")
-	public String getProjectCodeList() {
-		return projectCodeList;
-	}
+    @JsonProperty("projectCodeList")
+    public String getProjectCodeList() {
+        return projectCodeList;
+    }
 
-	@JsonIgnore
-	public void setProjectCodeList(String projectCodeList) {
-		this.projectCodeList = projectCodeList;
-	}
+    @JsonIgnore
+    public void setProjectCodeList(String projectCodeList) {
+        this.projectCodeList = projectCodeList;
+    }
 
-	@JsonProperty("recruitingManagerPercentGrossMargin")
-	public BigDecimal getRecruitingManagerPercentGrossMargin() {
-		return recruitingManagerPercentGrossMargin;
-	}
+    @JsonProperty("recruitingManagerPercentGrossMargin")
+    public BigDecimal getRecruitingManagerPercentGrossMargin() {
+        return recruitingManagerPercentGrossMargin;
+    }
 
-	@JsonProperty("recruitingManagerPercentGrossMargin")
-	public void setRecruitingManagerPercentGrossMargin(BigDecimal recruitingManagerPercentGrossMargin) {
-		this.recruitingManagerPercentGrossMargin = recruitingManagerPercentGrossMargin;
-	}
+    @JsonProperty("recruitingManagerPercentGrossMargin")
+    public void setRecruitingManagerPercentGrossMargin(BigDecimal recruitingManagerPercentGrossMargin) {
+        this.recruitingManagerPercentGrossMargin = recruitingManagerPercentGrossMargin;
+    }
 
-	@JsonProperty("referralFee")
-	public BigDecimal getReferralFee() {
-		return referralFee;
-	}
+    @JsonProperty("referralFee")
+    public BigDecimal getReferralFee() {
+        return referralFee;
+    }
 
-	@JsonProperty("referralFee")
-	public void setReferralFee(BigDecimal referralFee) {
-		this.referralFee = referralFee;
-	}
+    @JsonProperty("referralFee")
+    public void setReferralFee(BigDecimal referralFee) {
+        this.referralFee = referralFee;
+    }
 
-	@JsonProperty("referralFeeType")
-	public String getReferralFeeType() {
-		return referralFeeType;
-	}
+    @JsonProperty("referralFeeType")
+    public String getReferralFeeType() {
+        return referralFeeType;
+    }
 
-	@JsonIgnore
-	public void setReferralFeeType(String referralFeeType) {
-		this.referralFeeType = referralFeeType;
-	}
+    @JsonIgnore
+    public void setReferralFeeType(String referralFeeType) {
+        this.referralFeeType = referralFeeType;
+    }
 
-	@JsonProperty("reportTo")
-	public String getReportTo() {
-		return reportTo;
-	}
+    @JsonProperty("reportTo")
+    public String getReportTo() {
+        return reportTo;
+    }
 
-	@JsonIgnore
-	public void setReportTo(String reportTo) {
-		this.reportTo = reportTo;
-	}
+    @JsonIgnore
+    public void setReportTo(String reportTo) {
+        this.reportTo = reportTo;
+    }
 
-	@JsonProperty("reportedMargin")
-	public BigDecimal getReportedMargin() {
-		return reportedMargin;
-	}
+    @JsonProperty("reportedMargin")
+    public BigDecimal getReportedMargin() {
+        return reportedMargin;
+    }
 
-	@JsonProperty("reportedMargin")
-	public void setReportedMargin(BigDecimal reportedMargin) {
-		this.reportedMargin = reportedMargin;
-	}
+    @JsonProperty("reportedMargin")
+    public void setReportedMargin(BigDecimal reportedMargin) {
+        this.reportedMargin = reportedMargin;
+    }
 
-	@JsonProperty("salary")
-	public BigDecimal getSalary() {
-		return salary;
-	}
+    @JsonProperty("salary")
+    public BigDecimal getSalary() {
+        return salary;
+    }
 
-	@JsonProperty("salary")
-	public void setSalary(BigDecimal salary) {
-		this.salary = salary;
-	}
+    @JsonProperty("salary")
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
 
-	@JsonProperty("salaryUnit")
-	public String getSalaryUnit() {
-		return salaryUnit;
-	}
+    @JsonProperty("salaryUnit")
+    public String getSalaryUnit() {
+        return salaryUnit;
+    }
 
-	@JsonIgnore
-	public void setSalaryUnit(String salaryUnit) {
-		this.salaryUnit = salaryUnit;
-	}
+    @JsonIgnore
+    public void setSalaryUnit(String salaryUnit) {
+        this.salaryUnit = salaryUnit;
+    }
 
-	@JsonProperty("salesManagerPercentGrossMargin")
-	public BigDecimal getSalesManagerPercentGrossMargin() {
-		return salesManagerPercentGrossMargin;
-	}
+    @JsonProperty("salesManagerPercentGrossMargin")
+    public BigDecimal getSalesManagerPercentGrossMargin() {
+        return salesManagerPercentGrossMargin;
+    }
 
-	@JsonProperty("salesManagerPercentGrossMargin")
-	public void setSalesManagerPercentGrossMargin(BigDecimal salesManagerPercentGrossMargin) {
-		this.salesManagerPercentGrossMargin = salesManagerPercentGrossMargin;
-	}
+    @JsonProperty("salesManagerPercentGrossMargin")
+    public void setSalesManagerPercentGrossMargin(BigDecimal salesManagerPercentGrossMargin) {
+        this.salesManagerPercentGrossMargin = salesManagerPercentGrossMargin;
+    }
 
-	@JsonProperty("statementClientContact")
-	public ClientContact getStatementClientContact() {
-		return statementClientContact;
-	}
+    @JsonProperty("statementClientContact")
+    public ClientContact getStatementClientContact() {
+        return statementClientContact;
+    }
 
-	@JsonProperty("statementClientContact")
-	public void setStatementClientContact(ClientContact statementClientContact) {
-		this.statementClientContact = statementClientContact;
-	}
+    @JsonProperty("statementClientContact")
+    public void setStatementClientContact(ClientContact statementClientContact) {
+        this.statementClientContact = statementClientContact;
+    }
 
-	@JsonProperty("status")
-	public String getStatus() {
-		return status;
-	}
+    @JsonProperty("status")
+    public String getStatus() {
+        return status;
+    }
 
-	@JsonIgnore
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    @JsonIgnore
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	@JsonIgnore
-	public OneToMany<Task> getTasks() {
-		return tasks;
-	}
+    @JsonIgnore
+    public OneToMany<Task> getTasks() {
+        return tasks;
+    }
 
     @ReadOnly
-	@JsonProperty("tasks")
-	public void setTasks(OneToMany<Task> tasks) {
-		this.tasks = tasks;
-	}
+    @JsonProperty("tasks")
+    public void setTasks(OneToMany<Task> tasks) {
+        this.tasks = tasks;
+    }
 
-	@JsonProperty("taxRate")
-	public BigDecimal getTaxRate() {
-		return taxRate;
-	}
+    @JsonProperty("taxRate")
+    public BigDecimal getTaxRate() {
+        return taxRate;
+    }
 
-	@JsonProperty("taxRate")
-	public void setTaxRate(BigDecimal taxRate) {
-		this.taxRate = taxRate;
-	}
+    @JsonProperty("taxRate")
+    public void setTaxRate(BigDecimal taxRate) {
+        this.taxRate = taxRate;
+    }
 
-	@JsonProperty("taxState")
-	public String getTaxState() {
-		return taxState;
-	}
+    @JsonProperty("taxState")
+    public String getTaxState() {
+        return taxState;
+    }
 
-	@JsonIgnore
-	public void setTaxState(String taxState) {
-		this.taxState = taxState;
-	}
+    @JsonIgnore
+    public void setTaxState(String taxState) {
+        this.taxState = taxState;
+    }
 
-	@JsonProperty("terminationReason")
-	public String getTerminationReason() {
-		return terminationReason;
-	}
+    @JsonProperty("terminationReason")
+    public String getTerminationReason() {
+        return terminationReason;
+    }
 
-	@JsonIgnore
-	public void setTerminationReason(String terminationReason) {
-		this.terminationReason = terminationReason;
-	}
+    @JsonIgnore
+    public void setTerminationReason(String terminationReason) {
+        this.terminationReason = terminationReason;
+    }
 
-	@JsonIgnore
-	public OneToMany<TimeUnit> getTimeUnits() {
-		return timeUnits;
-	}
+    @JsonIgnore
+    public OneToMany<TimeUnit> getTimeUnits() {
+        return timeUnits;
+    }
 
-	@JsonProperty("timeUnits")
-	public void setTimeUnits(OneToMany<TimeUnit> timeUnits) {
-		this.timeUnits = timeUnits;
-	}
+    @JsonProperty("timeUnits")
+    public void setTimeUnits(OneToMany<TimeUnit> timeUnits) {
+        this.timeUnits = timeUnits;
+    }
 
-	@JsonProperty("vendorClientCorporation")
-	public ClientCorporation getVendorClientCorporation() {
-		return vendorClientCorporation;
-	}
+    @JsonProperty("vendorClientCorporation")
+    public ClientCorporation getVendorClientCorporation() {
+        return vendorClientCorporation;
+    }
 
-	@JsonProperty("vendorClientCorporation")
-	public void setVendorClientCorporation(ClientCorporation vendorClientCorporation) {
-		this.vendorClientCorporation = vendorClientCorporation;
-	}
+    @JsonProperty("vendorClientCorporation")
+    public void setVendorClientCorporation(ClientCorporation vendorClientCorporation) {
+        this.vendorClientCorporation = vendorClientCorporation;
+    }
 
-	@JsonProperty("workWeekStart")
-	public Integer getWorkWeekStart() {
-		return workWeekStart;
-	}
+    @JsonProperty("workWeekStart")
+    public Integer getWorkWeekStart() {
+        return workWeekStart;
+    }
 
-	@JsonProperty("workWeekStart")
-	public void setWorkWeekStart(Integer workWeekStart) {
-		this.workWeekStart = workWeekStart;
-	}
+    @JsonProperty("workWeekStart")
+    public void setWorkWeekStart(Integer workWeekStart) {
+        this.workWeekStart = workWeekStart;
+    }
 
-	@JsonProperty("workersCompensationRate")
+    @JsonProperty("workersCompensationRate")
     public WorkersCompensationRate getWorkersCompensationRate() {
-	    return workersCompensationRate;
-	}
+        return workersCompensationRate;
+    }
 
-	@JsonProperty("workersCompensationRate")
+    @JsonProperty("workersCompensationRate")
     public void setWorkersCompensationRate(WorkersCompensationRate workersCompensationRate) {
-	    this.workersCompensationRate = workersCompensationRate;
-	}
+        this.workersCompensationRate = workersCompensationRate;
+    }
 
     @JsonProperty("fileAttachments")
     public OneToMany<StandardFileAttachment> getFileAttachments() {
@@ -1254,6 +1323,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.timeAndExpense = timeAndExpense;
     }
 
+    @JsonProperty("placementShiftSet")
+    public PlacementShiftSet getPlacementShiftSet() {
+        return placementShiftSet;
+    }
+
+    @JsonProperty("placementShiftSet")
+    public void setPlacementShiftSet(PlacementShiftSet placementShiftSet) {
+        this.placementShiftSet = placementShiftSet;
+    }
+
     @JsonProperty("bteSyncStatus")
     public SimplifiedOptionsLookup getBteSyncStatus() {
         return bteSyncStatus;
@@ -1272,6 +1351,247 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @JsonProperty("lastBteSyncDate")
     public void setLastBteSyncDate(DateTime lastBteSyncDate) {
         this.lastBteSyncDate = lastBteSyncDate;
+    }
+
+
+    public Integer getApprovedChangeRequests() {
+        return approvedChangeRequests;
+    }
+
+    public void setApprovedChangeRequests(Integer approvedChangeRequests) {
+        this.approvedChangeRequests = approvedChangeRequests;
+    }
+
+    public Integer getApprovedPlacementRateCardChangeRequests() {
+        return approvedPlacementRateCardChangeRequests;
+    }
+
+    public void setApprovedPlacementRateCardChangeRequests(Integer approvedPlacementRateCardChangeRequests) {
+        this.approvedPlacementRateCardChangeRequests = approvedPlacementRateCardChangeRequests;
+    }
+
+    public String getBenefitGroup() {
+        return benefitGroup;
+    }
+
+    public void setBenefitGroup(String benefitGroup) {
+        this.benefitGroup = benefitGroup;
+    }
+
+    public Boolean getCanEnterTime() {
+        return canEnterTime;
+    }
+
+    public void setCanEnterTime(Boolean canEnterTime) {
+        this.canEnterTime = canEnterTime;
+    }
+
+    public ClientContact getClientContact() {
+        return clientContact;
+    }
+
+    public void setClientContact(ClientContact clientContact) {
+        this.clientContact = clientContact;
+    }
+
+    public ClientCorporation getClientCorporation() {
+        return clientCorporation;
+    }
+
+    public void setClientCorporation(ClientCorporation clientCorporation) {
+        this.clientCorporation = clientCorporation;
+    }
+
+    public Integer getClientRating() {
+        return clientRating;
+    }
+
+    public void setClientRating(Integer clientRating) {
+        this.clientRating = clientRating;
+    }
+
+    public Integer getDraftPlacementRateCardChangeRequests() {
+        return draftPlacementRateCardChangeRequests;
+    }
+
+    public void setDraftPlacementRateCardChangeRequests(Integer draftPlacementRateCardChangeRequests) {
+        this.draftPlacementRateCardChangeRequests = draftPlacementRateCardChangeRequests;
+    }
+
+    public DateTime getEmploymentStartDate() {
+        return employmentStartDate;
+    }
+
+    public void setEmploymentStartDate(DateTime employmentStartDate) {
+        this.employmentStartDate = employmentStartDate;
+    }
+
+    public String getEstaffGUID() {
+        return estaffGUID;
+    }
+
+    public void setEstaffGUID(String estaffGUID) {
+        this.estaffGUID = estaffGUID;
+    }
+
+    public DateTime getEstimatedEndDate() {
+        return estimatedEndDate;
+    }
+
+    public void setEstimatedEndDate(DateTime estimatedEndDate) {
+        this.estimatedEndDate = estimatedEndDate;
+    }
+
+    public Integer getExpiringCredentials() {
+        return expiringCredentials;
+    }
+
+    public void setExpiringCredentials(Integer expiringCredentials) {
+        this.expiringCredentials = expiringCredentials;
+    }
+
+    public OneToMany<HousingComplexAmenity> getHousingAmenities() {
+        return housingAmenities;
+    }
+
+    public void setHousingAmenities(OneToMany<HousingComplexAmenity> housingAmenities) {
+        this.housingAmenities = housingAmenities;
+    }
+
+    public Integer getIncompleteRequirements() {
+        return incompleteRequirements;
+    }
+
+    public void setIncompleteRequirements(Integer incompleteRequirements) {
+        this.incompleteRequirements = incompleteRequirements;
+    }
+
+    public Boolean getMultirate() {
+        return isMultirate;
+    }
+
+    public void setMultirate(Boolean multirate) {
+        isMultirate = multirate;
+    }
+
+    public Boolean getWorkFromHome() {
+        return isWorkFromHome;
+    }
+
+    public void setWorkFromHome(Boolean workFromHome) {
+        isWorkFromHome = workFromHome;
+    }
+
+    public PlacementChangeRequest getLastApprovedPlacementChangeRequest() {
+        return lastApprovedPlacementChangeRequest;
+    }
+
+    public void setLastApprovedPlacementChangeRequest(PlacementChangeRequest lastApprovedPlacementChangeRequest) {
+        this.lastApprovedPlacementChangeRequest = lastApprovedPlacementChangeRequest;
+    }
+
+    public CorporateUser getOwner() {
+        return owner;
+    }
+
+    public void setOwner(CorporateUser owner) {
+        this.owner = owner;
+    }
+
+    public OneToMany<CorporateUser> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(OneToMany<CorporateUser> owners) {
+        this.owners = owners;
+    }
+
+    public SimplifiedOptionsLookup getPayrollEmployeeType() {
+        return payrollEmployeeType;
+    }
+
+    public void setPayrollEmployeeType(SimplifiedOptionsLookup payrollEmployeeType) {
+        this.payrollEmployeeType = payrollEmployeeType;
+    }
+
+    public SimplifiedOptionsLookup getPayrollSyncStatus() {
+        return payrollSyncStatus;
+    }
+
+    public void setPayrollSyncStatus(SimplifiedOptionsLookup payrollSyncStatus) {
+        this.payrollSyncStatus = payrollSyncStatus;
+    }
+
+    public Integer getPendingChangeRequests() {
+        return pendingChangeRequests;
+    }
+
+    public void setPendingChangeRequests(Integer pendingChangeRequests) {
+        this.pendingChangeRequests = pendingChangeRequests;
+    }
+
+    public Integer getPendingPlacementRateCardChangeRequests() {
+        return pendingPlacementRateCardChangeRequests;
+    }
+
+    public void setPendingPlacementRateCardChangeRequests(Integer pendingPlacementRateCardChangeRequests) {
+        this.pendingPlacementRateCardChangeRequests = pendingPlacementRateCardChangeRequests;
+    }
+
+    public String getPositionCode() {
+        return positionCode;
+    }
+
+    public void setPositionCode(String positionCode) {
+        this.positionCode = positionCode;
+    }
+
+    public Boolean getQuitJob() {
+        return quitJob;
+    }
+
+    public void setQuitJob(Boolean quitJob) {
+        this.quitJob = quitJob;
+    }
+
+    public Integer getReadyForReviewPlacementRateCardChangeRequests() {
+        return readyForReviewPlacementRateCardChangeRequests;
+    }
+
+    public void setReadyForReviewPlacementRateCardChangeRequests(Integer readyForReviewPlacementRateCardChangeRequests) {
+        this.readyForReviewPlacementRateCardChangeRequests = readyForReviewPlacementRateCardChangeRequests;
+    }
+
+    public Integer getRejectedPlacementRateCardChangeRequests() {
+        return rejectedPlacementRateCardChangeRequests;
+    }
+
+    public void setRejectedPlacementRateCardChangeRequests(Integer rejectedPlacementRateCardChangeRequests) {
+        this.rejectedPlacementRateCardChangeRequests = rejectedPlacementRateCardChangeRequests;
+    }
+
+    public Integer getRequestRevisionPlacementRateCardChangeRequests() {
+        return requestRevisionPlacementRateCardChangeRequests;
+    }
+
+    public void setRequestRevisionPlacementRateCardChangeRequests(Integer requestRevisionPlacementRateCardChangeRequests) {
+        this.requestRevisionPlacementRateCardChangeRequests = requestRevisionPlacementRateCardChangeRequests;
+    }
+
+    public Shift getShift() {
+        return shift;
+    }
+
+    public void setShift(Shift shift) {
+        this.shift = shift;
+    }
+
+    public OneToMany<UserHousingComplexUnit> getUserHousingComplexUnits() {
+        return userHousingComplexUnits;
+    }
+
+    public void setUserHousingComplexUnits(OneToMany<UserHousingComplexUnit> userHousingComplexUnits) {
+        this.userHousingComplexUnits = userHousingComplexUnits;
     }
 
     @Override
@@ -1298,6 +1618,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(commissions, placement.commissions) &&
             Objects.equals(location, placement.location) &&
             Objects.equals(timeAndExpense, placement.timeAndExpense) &&
+            Objects.equals(placementShiftSet, placement.placementShiftSet) &&
             Objects.equals(costCenter, placement.costCenter) &&
             Objects.equals(dateAdded, placement.dateAdded) &&
             Objects.equals(dateBegin, placement.dateBegin) &&
@@ -1377,7 +1698,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
+        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, placementShiftSet, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
     }
 
     @Override
@@ -1401,6 +1722,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", commissions=" + commissions +
             ", location=" + location +
             ", timeAndExpense=" + timeAndExpense +
+            ", placementShiftSet=" + placementShiftSet +
             ", costCenter='" + costCenter + '\'' +
             ", dateAdded=" + dateAdded +
             ", dateBegin=" + dateBegin +

@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import javax.validation.constraints.Size;
 
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
@@ -14,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "enabled", "name", "parentCategory" })
+@JsonPropertyOrder({ "id", "dateAdded", "enabled", "name", "parentCategory", "privateLabels" })
 public class Specialty extends AbstractEntity implements QueryEntity, AllRecordsEntity {
 
 	private Integer id;
@@ -27,6 +28,8 @@ public class Specialty extends AbstractEntity implements QueryEntity, AllRecords
 	private String name;
 
 	private Category parentCategory;
+
+    private OneToMany<PrivateLabel> privateLabels;
 
     public Specialty() {
         super();
@@ -89,7 +92,15 @@ public class Specialty extends AbstractEntity implements QueryEntity, AllRecords
 		this.parentCategory = parentCategory;
 	}
 
-	@Override
+    public OneToMany<PrivateLabel> getPrivateLabels() {
+        return privateLabels;
+    }
+
+    public void setPrivateLabels(OneToMany<PrivateLabel> privateLabels) {
+        this.privateLabels = privateLabels;
+    }
+
+    @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;

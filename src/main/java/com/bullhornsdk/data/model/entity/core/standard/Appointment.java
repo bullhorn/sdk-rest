@@ -24,7 +24,7 @@ import javax.validation.constraints.Size;
         "communicationMethod", "dateAdded", "dateBegin", "dateEnd", "dateLastModified", "description", "isAllDay", "isDeleted",
         "isPrivate", "jobOrder", "lead", "location", "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentAppointment", "placement",
         "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
-        "showTimeAs", "subject", "timeZoneID", "type" })
+        "showTimeAs", "subject", "timeZoneID", "type", "jobSubmission" })
 public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity,
         DateLastModifiedEntity, EditHistoryEntity, AssociationEntity {
     private Integer id;
@@ -100,6 +100,8 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     private String subject;
 
     private String timeZoneID;
+
+    private JobSubmission jobSubmission;
 
     @JsonIgnore
     @Size(max = 30)

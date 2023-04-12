@@ -27,7 +27,7 @@ import java.util.Objects;
     "customText21", "customText22", "customText23", "customText24", "customText25",
     "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "dateWebResponse", "endDate", "isDeleted", "isHidden", "jobOrder", "jobSubmissionCertificationRequirements",
-    "migrateGUID", "owners", "payRate", "salary", "sendingUser", "source", "startDate", "status", "tasks"})
+    "migrateGUID", "owners", "payRate", "salary", "sendingUser", "source", "startDate", "status", "tasks", "latestAppointment"})
 public class JobSubmission extends CustomFieldsD implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
     private Integer id;
