@@ -19,14 +19,10 @@ public class RestJsonConverter {
 
     private static Logger log = LogManager.getLogger(RestJsonConverter.class);
 
-    private final ObjectMapper objectMapperWrapped;
-
-    private final ObjectMapper objectMapperStandard;
+    private final ObjectMapper objectMapper;
 
     public RestJsonConverter() {
-        super();
-        this.objectMapperWrapped = createObjectMapperWithRootUnWrap();
-        this.objectMapperStandard = createObjectMapper();
+        this.objectMapper = createObjectMapper();
     }
 
     /*
@@ -37,10 +33,10 @@ public class RestJsonConverter {
 
     /**
      * Create the ObjectMapper that deserializes entity to json String.
-     * 
+     *
      * Registers the JodaModule to convert DateTime so-called epoch timestamp (number of milliseconds since January 1st, 1970,
      * UTC)
-     * 
+     *
      * @return
      */
     private ObjectMapper createObjectMapper() {
@@ -50,45 +46,9 @@ public class RestJsonConverter {
         return mapper;
     }
 
-    /**
-     * Creates the ObjectMapper that serializes json to entity. Wraps the root (most often "data").
-     * 
-     * See @JsonRootName on the RestEntities
-     * 
-     * @return
-     */
-    private ObjectMapper createObjectMapperWithRootUnWrap() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
-        mapper.addHandler(new CustomDeserializationProblemHandler());
-       
-        
-        mapper.registerModule(new JodaModule());
-        return mapper;
-    }
-
-    /**
-     * Converts a jsonString to an object of type T. Unwraps from root, most often this means that the "data" tag is ignored and
-     * that the entity is created from within that data tag.
-     * 
-     * @param jsonString
-     *            the returned json from the api call.
-     * @param type
-     *            the type to convert to
-     * @return a type T
-     */
-    public <T> T jsonToEntityUnwrapRoot(String jsonString, Class<T> type) {
-        return jsonToEntity(jsonString, type, this.objectMapperWrapped);
-    }
-
-    public <T> T jsonToEntityDoNotUnwrapRoot(String jsonString, Class<T> type) {
-        return jsonToEntity(jsonString, type, this.objectMapperStandard);
-    }
-
-    public <T> T jsonToEntity(String jsonString, Class<T> type, ObjectMapper objectMapper) {
-
+    public <T> T jsonToEntity(String jsonString, Class<T> type) {
         try {
-            return objectMapper.readValue(jsonString, type);
+            return this.objectMapper.readValue(jsonString, type);
         } catch(JsonParseException e) {
             throw new RestMappingException("Error mapping jsonString to " + type + ". jsonString = " + jsonString, e);
         } catch(JsonMappingException e) {
@@ -100,7 +60,7 @@ public class RestJsonConverter {
 
     /**
      * Takes a BullhornEntity and converts it to a String in json format.
-     * 
+     *
      * @param entity
      *            a BullhornEntity
      * @return the jsonString
@@ -108,7 +68,7 @@ public class RestJsonConverter {
     public <T extends BullhornEntity> String convertEntityToJsonString(T entity) {
         String jsonString = "";
         try {
-            jsonString = objectMapperStandard.writeValueAsString(entity);
+            jsonString = this.objectMapper.writeValueAsString(entity);
         } catch (JsonProcessingException e) {
             String message = "Error deserializing entity of type" + entity.getClass() + " to jsonString.";
             log.error(message, e);
