@@ -232,46 +232,46 @@ public class MockDataLoader {
 
     public void reloadEditHistoryResults() {
         String jsonData = getFileData("edithistory/edithistory-data.txt");
-        EditHistoryListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, EditHistoryListWrapper.class);
+        EditHistoryListWrapper listWrapper = restJsonConverter.jsonToEntity(jsonData, EditHistoryListWrapper.class);
         this.editHistoryList = listWrapper.getData();
     }
 
     public void reloadEditHistoryFieldChangeResults() {
         String jsonData = getFileData("edithistory/fieldchange-data.txt");
-        FieldChangeListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, FieldChangeListWrapper.class);
+        FieldChangeListWrapper listWrapper = restJsonConverter.jsonToEntity(jsonData, FieldChangeListWrapper.class);
         this.editHistoryFieldChangeList = listWrapper.getData();
     }
 
     public void reloadFastFindResults() {
 
         String jsonData = getFileData("fastfind-data.txt");
-        FastFindListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, FastFindListWrapper.class);
+        FastFindListWrapper listWrapper = restJsonConverter.jsonToEntity(jsonData, FastFindListWrapper.class);
         this.fastFindResultList = listWrapper.getData();
     }
 
     public void reloadGetEventsResponses() {
         String jsonData = getFileData("event-data.txt");
-        StandardGetEventsResponse eventsResponse = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, StandardGetEventsResponse.class);
+        StandardGetEventsResponse eventsResponse = restJsonConverter.jsonToEntity(jsonData, StandardGetEventsResponse.class);
         this.getEventsResponse = eventsResponse;
     }
 
     public void reloadGetLastRequestIdResponses() {
         String jsonData = getFileData("lastrequestid-data.txt");
-        StandardGetLastRequestIdResponse response = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, StandardGetLastRequestIdResponse.class);
+        StandardGetLastRequestIdResponse response = restJsonConverter.jsonToEntity(jsonData, StandardGetLastRequestIdResponse.class);
         this.getLastRequestIdResponse = response;
     }
 
     public void reloadSettingsResults() {
 
         String jsonData = getFileData("settings-data.txt");
-        Map<String, Object> resultData = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, Map.class);
+        Map<String, Object> resultData = restJsonConverter.jsonToEntity(jsonData, Map.class);
         this.settingsResultMap = resultData;
     }
 
     public void reloadSettingsObjectResults() {
 
         String jsonData = getFileData("settings-data.txt");
-        Settings resultData = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, Settings.class);
+        Settings resultData = restJsonConverter.jsonToEntity(jsonData, Settings.class);
         this.settingsObjectResult = resultData;
     }
 
@@ -328,7 +328,7 @@ public class MockDataLoader {
 
     public void reloadPropertyOptionsResults() {
         String jsonData = getFileData("propertyoptions-data.txt");
-        PropertyOptionsListWrapper listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, PropertyOptionsListWrapper.class);
+        PropertyOptionsListWrapper listWrapper = restJsonConverter.jsonToEntity(jsonData, PropertyOptionsListWrapper.class);
         this.propertyOptionsResultList = listWrapper.getData();
     }
 
@@ -366,7 +366,7 @@ public class MockDataLoader {
      */
     private <T extends BullhornEntity> List<T> jsonStringToEntityList(String jsonData, Class<T> type) {
 
-        ListWrapper<T> listWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, BullhornEntityInfo.getTypesListWrapperType(type));
+        ListWrapper<T> listWrapper = restJsonConverter.jsonToEntity(jsonData, BullhornEntityInfo.getTypesListWrapperType(type));
 
         return listWrapper.getData();
 
@@ -381,7 +381,7 @@ public class MockDataLoader {
      * @return
      */
     private <T extends BullhornEntity> MetaData<T> jsonStringToMetaData(String jsonData) {
-        return restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, StandardMetaData.class);
+        return restJsonConverter.jsonToEntity(jsonData, StandardMetaData.class);
     }
 
     /**
@@ -391,7 +391,7 @@ public class MockDataLoader {
      */
     private List<MockSearchField> jsonStringToMockSearchFields(String jsonData) {
 
-        MockSearchFieldWrapper fieldsWrapper = restJsonConverter.jsonToEntityDoNotUnwrapRoot(jsonData, MockSearchFieldWrapper.class);
+        MockSearchFieldWrapper fieldsWrapper = restJsonConverter.jsonToEntity(jsonData, MockSearchFieldWrapper.class);
 
         return fieldsWrapper.getSearchFields();
 
