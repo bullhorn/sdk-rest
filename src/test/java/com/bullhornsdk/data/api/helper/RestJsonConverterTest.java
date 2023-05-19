@@ -12,8 +12,8 @@ import com.bullhornsdk.data.model.response.single.StandardWrapper;
 import com.bullhornsdk.data.model.response.single.Wrapper;
 import com.google.common.collect.Sets;
 import org.json.JSONObject;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -52,7 +52,7 @@ public class RestJsonConverterTest extends BaseTest {
         "\"total\": 1, " +
         "\"File\": { \"fileContent\": \"SomeContent\", \"name\":\"FileName\" }}";
 
-    @Before
+    @BeforeEach
     public void setUp() {
         candidate = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "firstName"));
     }
