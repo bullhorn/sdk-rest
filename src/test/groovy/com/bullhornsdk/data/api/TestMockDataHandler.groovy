@@ -1,9 +1,9 @@
 package com.bullhornsdk.data.api
 
 import com.bullhornsdk.data.api.mock.MockDataHandler
-import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.core.standard.*
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test
 
 public class TestMockDataHandler {
 
-    private final static Logger log = Logger.getLogger(TestMockDataHandler.class);
+    private final static Logger log = LogManager.getLogger(TestMockDataHandler.class);
     private static MockDataHandler mockDataHandler;
 
 

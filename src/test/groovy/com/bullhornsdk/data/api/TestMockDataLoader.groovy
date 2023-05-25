@@ -2,20 +2,20 @@ package com.bullhornsdk.data.api
 
 import com.bullhornsdk.data.api.mock.MockDataLoader
 import com.bullhornsdk.data.api.mock.MockSearchField
-import com.bullhornsdk.data.model.entity.core.customobject.CustomObjectBase
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity
 import com.bullhornsdk.data.model.entity.meta.MetaData
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 
 public class TestMockDataLoader {
 
-    private final static Logger log = Logger.getLogger(TestMockDataHandler.class);
+    private final static Logger log = LogManager.getLogger(TestMockDataHandler.class);
     private MockDataLoader mockDataLoader = new MockDataLoader();
 
 
