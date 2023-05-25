@@ -5,7 +5,8 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.LinkedMultiValueMap;
@@ -20,7 +21,7 @@ public class RestFileManager {
 
     private final String formFileName = "file";
 
-    private static Logger log = Logger.getLogger(RestFileManager.class);
+    private static Logger log = LogManager.getLogger(RestFileManager.class);
 
     /**
      * Will create a unique sub folder in the temp directory. This is done so that we can name the file with the original file
@@ -80,7 +81,7 @@ public class RestFileManager {
         try {
             FileUtils.deleteDirectory(newFolder);
         } catch (IOException e) {
-            log.info("Unable to delete temp file " + filePath);
+            log.info("Unable to delete temp file {}", filePath);
         }
 
     }
@@ -103,7 +104,7 @@ public class RestFileManager {
         File file = fileSystemResource.getFile();
 
         if (!file.delete()) {
-            log.info("Unable to delete temp resume " + file.getAbsolutePath());
+            log.info("Unable to delete temp resume {}", file.getAbsolutePath());
         }
     }
 

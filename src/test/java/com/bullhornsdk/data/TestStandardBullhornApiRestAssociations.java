@@ -9,9 +9,11 @@ import java.util.stream.Collectors;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
+import com.bullhornsdk.data.model.entity.core.standard.PlacementShiftSet;
 import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -34,7 +36,7 @@ import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 
 public class TestStandardBullhornApiRestAssociations extends BaseTest {
-    private final Logger log = Logger.getLogger(TestStandardBullhornApiRestAssociations.class);
+    private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestAssociations.class);
 
     public TestStandardBullhornApiRestAssociations() {
         super();
@@ -311,6 +313,23 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
                 associationIds.add(linkedIds.getData().get(0).getId());
 
                 testAssociation(DistributionList.class, testEntities.getDistributionListId(), associationIds, association);
+            }
+        }
+    }
+
+    @Test
+    public void testAssociatePlacementShiftSet() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        PlacementShiftSet entity = bullhornData.findEntity(PlacementShiftSet.class, testEntities.getPlacementShiftSetId(), getAssociationFieldSet(AssociationFactory.placementShiftSetAssociations()));
+        for (AssociationField<PlacementShiftSet, ? extends BullhornEntity> association : AssociationFactory.placementShiftSetAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(PlacementShiftSet.class, testEntities.getPlacementShiftSetId(), associationIds, association);
+
             }
         }
     }

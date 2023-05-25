@@ -3,7 +3,8 @@ package com.bullhornsdk.data;
 import com.bullhornsdk.data.model.entity.core.standard.FastFindResult;
 import com.bullhornsdk.data.model.parameter.FastFindParams;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ import java.util.List;
  */
 
 public class TestStandardBullhornApiRestFastFind extends BaseTest {
-    private final Logger log = Logger.getLogger(TestStandardBullhornApiRestSearch.class);
+	private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestSearch.class);
 
 
     private FastFindParams fastFindParams;

@@ -1,6 +1,8 @@
 package com.bullhornsdk.data.api.helper;
 
 import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.bullhornsdk.data.exception.RestMappingException;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -11,15 +13,13 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
-import org.apache.log4j.Logger;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
 public class RestJsonConverter {
 
-    private static Logger log = Logger.getLogger(RestJsonConverter.class);
+    private static Logger log = LogManager.getLogger(RestJsonConverter.class);
 
     private final ObjectMapper objectMapper;
 

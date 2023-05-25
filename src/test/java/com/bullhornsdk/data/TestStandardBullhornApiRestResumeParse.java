@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,7 @@ import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 
 public class TestStandardBullhornApiRestResumeParse extends BaseTest {
-    private final Logger log = Logger.getLogger(TestStandardBullhornApiRestResumeParse.class);
+	private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestResumeParse.class);
 
     private final static String FILE_NAME = "Amy L";
 

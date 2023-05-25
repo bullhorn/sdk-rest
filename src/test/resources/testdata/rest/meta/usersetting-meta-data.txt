@@ -1,0 +1,88 @@
+{
+    "entity": "UserSetting",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/7va709/meta/UserSetting?fields=*",
+    "label": "User Setting",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "label": "ID"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added",
+            "hideFromSearch": false
+        },
+        {
+            "name": "isPersistent",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Persistent",
+            "hideFromSearch": false
+        },
+        {
+            "name": "person",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Person",
+            "optionsType": "Person",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/7va709/options/Person",
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "Person",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/7va709/meta/Person?fields=*",
+                "label": "Person",
+                "dateLastModified": "1675868029961",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "First Name",
+                        "hideFromSearch": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "label": "Last Name",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "setting",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "label": "Setting",
+            "hideFromSearch": false
+        },
+        {
+            "name": "value",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 2147483647,
+            "confidential": false,
+            "label": "Value",
+            "hideFromSearch": false
+        }
+    ]
+}

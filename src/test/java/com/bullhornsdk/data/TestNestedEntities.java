@@ -1,7 +1,8 @@
 package com.bullhornsdk.data;
 
 import com.bullhornsdk.data.model.entity.core.standard.JobShift;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ import com.bullhornsdk.data.model.entity.core.standard.PlacementChangeRequest;
 import com.google.common.collect.Sets;
 
 public class TestNestedEntities extends BaseTest {
-    private final Logger log = Logger.getLogger(TestNestedEntities.class);
+	private final Logger log = LogManager.getLogger(TestNestedEntities.class);
 
     public TestNestedEntities() {
         super();

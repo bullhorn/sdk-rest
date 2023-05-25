@@ -18,6 +18,10 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.*
 import com.bullhornsdk.data.model.entity.core.edithistory.EditHistory
 import com.bullhornsdk.data.model.entity.core.edithistory.FieldChange
+import com.bullhornsdk.data.model.entity.core.eds.EdsData
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityType
+import com.bullhornsdk.data.model.entity.core.eds.EdsEntityTypeSchemaVersion
+import com.bullhornsdk.data.model.entity.core.eds.EdsSourceSystem
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
@@ -67,14 +71,15 @@ import com.bullhornsdk.data.model.response.list.ListWrapper
 import com.bullhornsdk.data.model.response.list.PropertyOptionsListWrapper
 import com.bullhornsdk.data.util.copy.KryoObjectCopyHelper
 import org.apache.commons.io.IOUtils
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.core.io.ClassPathResource
 
 import java.util.concurrent.ConcurrentHashMap
 
 public class MockDataLoader {
 
-    private final static Logger log = Logger.getLogger(MockDataLoader.class);
+    private final static Logger log = LogManager.getLogger(MockDataLoader.class);
     private final RestJsonConverter restJsonConverter;
 
     private Map<Class<? extends BullhornEntity>, Map<Integer, ? extends BullhornEntity>> restEntityMapCache;
@@ -342,7 +347,7 @@ public class MockDataLoader {
             jsonDataString = IOUtils.toString(data.getInputStream(), "UTF-8");
 
         } catch (IOException e) {
-            log.error("Unable to load test data from filename: " + fileName);
+            log.error("Unable to load test data from filename: {}", fileName);
             throw new IllegalArgumentException("Unable to load test data from filename: " + fileName, e);
         }
 
@@ -361,7 +366,7 @@ public class MockDataLoader {
      */
     private <T extends BullhornEntity> List<T> jsonStringToEntityList(String jsonData, Class<T> type) {
 
-            ListWrapper<T> listWrapper = restJsonConverter.jsonToEntity(jsonData, BullhornEntityInfo.getTypesListWrapperType(type));
+        ListWrapper<T> listWrapper = restJsonConverter.jsonToEntity(jsonData, BullhornEntityInfo.getTypesListWrapperType(type));
 
         return listWrapper.getData();
 
@@ -468,6 +473,8 @@ public class MockDataLoader {
         entityFiles.put(PlacementCertification.class, "placementcertification-data.txt");
         entityFiles.put(PlacementChangeRequest.class, "placementchangerequest-data.txt");
         entityFiles.put(PlacementCommission.class, "placementcommission-data.txt");
+        entityFiles.put(PlacementShiftSet.class, "placementshiftset-data.txt");
+        entityFiles.put(PlacementShiftSetVersion.class, "placementshiftsetVersion-data.txt");
         entityFiles.put(PrivateLabel.class, "privatelabel-data.txt");
         entityFiles.put(Report.class, "report-data.txt");
         entityFiles.put(Sendout.class, "sendout-data.txt");
@@ -478,6 +485,7 @@ public class MockDataLoader {
         entityFiles.put(Tearsheet.class, "tearsheet-data.txt");
         entityFiles.put(TearsheetMember.class, "tearsheetmember-data.txt");
         entityFiles.put(TimeUnit.class, "timeunit-data.txt");
+        entityFiles.put(UserSetting.class, "usersetting-data.txt");
         entityFiles.put(UserType.class, "usertype-data.txt");
         entityFiles.put(WorkersCompensation.class, "workerscompensation-data.txt");
         entityFiles.put(WorkersCompensationRate.class, "workerscompensationrate-data.txt");
@@ -688,6 +696,12 @@ public class MockDataLoader {
 
         entityFiles.put(CandidateAvailability.class, "candidateavailability-data.txt");
 
+        // enterprise data store
+        entityFiles.put(EdsData.class, "eds/edsdata-data.txt");
+        entityFiles.put(EdsEntityType.class, "eds/entitytype-data.txt");
+        entityFiles.put(EdsEntityTypeSchemaVersion.class, "eds/entitytypeschemaversion-data.txt");
+        entityFiles.put(EdsSourceSystem.class, "eds/sourcesystem-data.txt");
+
         return entityFiles;
     }
 
@@ -737,6 +751,7 @@ public class MockDataLoader {
         entityMetaFiles.put(PlacementCertification.class, "meta/placementcertification-meta-data.txt");
         entityMetaFiles.put(PlacementChangeRequest.class, "meta/placementchangerequest-meta-data.txt");
         entityMetaFiles.put(PlacementCommission.class, "meta/placementcommission-meta-data.txt");
+        entityMetaFiles.put(PlacementShiftSet.class, "meta/placementshiftset-meta-data.txt");
         entityMetaFiles.put(PrivateLabel.class, "meta/privatelabel-meta-data.txt");
         entityMetaFiles.put(Report.class, "meta/report-meta-data.txt")
         entityMetaFiles.put(Sendout.class, "meta/sendout-meta-data.txt");
@@ -745,6 +760,7 @@ public class MockDataLoader {
         entityMetaFiles.put(State.class, "meta/state-meta-data.txt");
         entityMetaFiles.put(Task.class, "meta/task-meta-data.txt");
         entityMetaFiles.put(TimeUnit.class, "meta/timeunit-meta-data.txt");
+        entityMetaFiles.put(UserSetting.class, "meta/usersetting-meta-data.txt");
         entityMetaFiles.put(UserType.class, "meta/usertype-meta-data.txt");
         entityMetaFiles.put(WorkersCompensation.class, "meta/workerscompensation-meta-data.txt");
         entityMetaFiles.put(WorkersCompensationRate.class, "meta/workerscompensationrate-meta-data.txt");
@@ -928,6 +944,7 @@ public class MockDataLoader {
         entityMetaFiles.put(PersonCustomObjectInstance24.class, "meta/customobjectinstances/personcustomobjectinstance24-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance25.class, "meta/customobjectinstances/personcustomobjectinstance25-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance29.class, "meta/customobjectinstances/personcustomobjectinstance29-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance30.class, "meta/customobjectinstances/personcustomobjectinstance30-meta-data.txt");
 
         entityMetaFiles.put(ClientCorporationCustomObject.class, "meta/customobject/clientcorporationcustomobject-meta-data.txt");
         entityMetaFiles.put(JobOrderCustomObject.class, "meta/customobject/jobordercustomobject-meta-data.txt");
@@ -939,6 +956,12 @@ public class MockDataLoader {
         entityMetaFiles.put(FederalTaxForm.class, "meta/onboarding365/federaltaxform-meta-data.txt");
 
         entityMetaFiles.put(CandidateAvailability.class, "meta/candidateavailability-meta-data.txt");
+
+        // enterprise data store
+        entityMetaFiles.put(EdsData.class, "meta/eds/edsdata-meta-data.txt");
+        entityMetaFiles.put(EdsEntityType.class, "meta/eds/entitytype-meta-data.txt");
+        entityMetaFiles.put(EdsEntityTypeSchemaVersion.class, "meta/eds/entitytypeschemaversion-meta-data.txt");
+        entityMetaFiles.put(EdsSourceSystem.class, "meta/eds/sourcesystem-meta-data.txt");
 
         return entityMetaFiles;
     }

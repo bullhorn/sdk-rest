@@ -9,7 +9,8 @@ import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementHistory;
 import com.bullhornsdk.data.model.entity.core.standard.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +23,7 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.google.common.collect.Sets;
 
 public class TestStandardBullhornApiRest extends BaseTest {
-    private final Logger log = Logger.getLogger(TestStandardBullhornApiRest.class);
+    private final Logger log = LogManager.getLogger(TestStandardBullhornApiRest.class);
 
     public TestStandardBullhornApiRest() {
         super();

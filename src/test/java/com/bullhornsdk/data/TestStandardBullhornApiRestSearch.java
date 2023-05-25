@@ -3,7 +3,8 @@ package com.bullhornsdk.data;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +26,7 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
  */
 
 public class TestStandardBullhornApiRestSearch extends BaseTest {
-    private final Logger log = Logger.getLogger(TestStandardBullhornApiRestSearch.class);
+	private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestSearch.class);
 
     private String query = "id:1*";
 

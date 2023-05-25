@@ -97,6 +97,8 @@ public class TestEntities {
 
     private Integer timeUnitId;
 
+    private Integer userSettingId;
+
     private Integer workersCompensationId;
 
     private Integer workersCompensationRateId;
@@ -142,6 +144,8 @@ public class TestEntities {
     private Integer invoiceStatementDistributionBatchId;
 
     private Integer invoiceStatementHistoryId;
+
+    private Integer placementShiftSetId;
 
     public TestEntities() {
         super();
@@ -231,6 +235,8 @@ public class TestEntities {
 
         this.timeUnitId = 1;
 
+        this.userSettingId = 1;
+
         this.workersCompensationId = 1;
 
         this.workersCompensationRateId = 1;
@@ -276,6 +282,8 @@ public class TestEntities {
         this.invoiceStatementDistributionBatchId = 1;
 
         this.invoiceStatementHistoryId = 1;
+
+        this.placementShiftSetId = 1;
     }
 
     public Integer getAppointmentId() {
@@ -598,6 +606,14 @@ public class TestEntities {
         this.timeUnitId = timeUnitId;
     }
 
+    public Integer getUserSettingId() {
+        return userSettingId;
+    }
+
+    public void setUserSettingId(Integer userSettingId) {
+        this.userSettingId = userSettingId;
+    }
+
     public Integer getTearsheetId() {
         return tearsheetId;
     }
@@ -806,6 +822,12 @@ public class TestEntities {
         this.invoiceStatementHistoryId = invoiceStatementHistoryId;
     }
 
+    public Integer getPlacementShiftSetId() { return placementShiftSetId; }
+
+    public void setPlacementShiftSetId(Integer placementShiftSetId) {
+        this.placementShiftSetId = placementShiftSetId;
+    }
+
     @Override
     public String toString() {
         return "TestEntities{" +
@@ -852,6 +874,7 @@ public class TestEntities {
             ", taskId=" + taskId +
             ", tearsheetId=" + tearsheetId +
             ", timeUnitId=" + timeUnitId +
+            ", userSettingId=" + userSettingId +
             ", workersCompensationId=" + workersCompensationId +
             ", workersCompensationRateId=" + workersCompensationRateId +
             ", allCustomObjectsId=" + allCustomObjectsId +
@@ -875,6 +898,7 @@ public class TestEntities {
             ", invoiceStatementId=" + invoiceStatementId +
             ", invoiceStatementDistributionBatchId=" + invoiceStatementDistributionBatchId +
             ", invoiceStatementHistoryId=" + invoiceStatementHistoryId +
+            ", placementShiftSetId=" + placementShiftSetId +
             '}';
     }
 }

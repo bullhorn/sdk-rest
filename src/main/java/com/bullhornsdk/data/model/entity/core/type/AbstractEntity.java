@@ -9,7 +9,8 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.bullhornsdk.data.util.RestUtil;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -27,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
  */
 public class AbstractEntity {
 
-	private final static Logger log = Logger.getLogger(AbstractEntity.class);
+	private final static Logger log = LogManager.getLogger(AbstractEntity.class);
 
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -50,17 +51,8 @@ public class AbstractEntity {
 		try {
 			PropertyUtils.setProperty(this, name,
 					this.convertListToString(value));
-		} catch (IllegalAccessException e) {
-			log.debug("Error setting field " + name + " with value " + value
-					+ " on entity " + this.getClass().getSimpleName());
-			this.additionalProperties.put(name, value);
-		} catch (InvocationTargetException e) {
-			log.debug("Error setting field " + name + " with value " + value
-					+ " on entity " + this.getClass().getSimpleName());
-			this.additionalProperties.put(name, value);
-		} catch (NoSuchMethodException e) {
-			log.debug("Error setting field " + name + " with value " + value
-					+ " on entity " + this.getClass().getSimpleName());
+		} catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+			log.debug("Error setting field {} with value {} on entity {}", name, value, this.getClass().getSimpleName());
 			this.additionalProperties.put(name, value);
 		}
 
