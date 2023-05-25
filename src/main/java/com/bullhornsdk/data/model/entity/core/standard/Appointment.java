@@ -478,6 +478,16 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     }
 
 
+    @JsonProperty("jobSubmission")
+    public JobSubmission getJobSubmission() {
+        return jobSubmission;
+    }
+
+    @JsonProperty("jobSubmission")
+    public void setJobSubmission(JobSubmission jobSubmission) {
+        this.jobSubmission = jobSubmission;
+    }
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -646,7 +656,5 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
         result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
-
-
 
 }
