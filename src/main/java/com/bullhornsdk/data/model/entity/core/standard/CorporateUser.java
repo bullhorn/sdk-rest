@@ -666,46 +666,6 @@ public class CorporateUser extends CustomFieldsA implements QueryEntity, Associa
         this.corporation = corporation;
     }
 
-    @JsonProperty("isDayLightSavings")
-    public Boolean getDayLightSavings() {
-        return isDayLightSavings;
-    }
-
-    @JsonProperty("isDayLightSavings")
-    public void setDayLightSavings(Boolean dayLightSavings) {
-        isDayLightSavings = dayLightSavings;
-    }
-
-    @JsonProperty("isDeleted")
-    public Boolean getDeleted() {
-        return isDeleted;
-    }
-
-    @JsonProperty("isDeleted")
-    public void setDeleted(Boolean deleted) {
-        isDeleted = deleted;
-    }
-
-    @JsonProperty("isLockedOut")
-    public Boolean getLockedOut() {
-        return isLockedOut;
-    }
-
-    @JsonProperty("isLockedOut")
-    public void setLockedOut(Boolean lockedOut) {
-        isLockedOut = lockedOut;
-    }
-
-    @JsonProperty("isOutboundFaxEnabled")
-    public Boolean getOutboundFaxEnabled() {
-        return isOutboundFaxEnabled;
-    }
-
-    @JsonProperty("isOutboundFaxEnabled")
-    public void setOutboundFaxEnabled(Boolean outboundFaxEnabled) {
-        isOutboundFaxEnabled = outboundFaxEnabled;
-    }
-
     @JsonProperty("addressSourceLocation")
     public Location getAddressSourceLocation() {
         return addressSourceLocation;
