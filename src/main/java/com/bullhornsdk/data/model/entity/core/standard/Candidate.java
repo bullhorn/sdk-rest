@@ -2164,146 +2164,218 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         this.customObject10s = customObject10s;
     }
 
+    @JsonProperty("customObject11s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance11> getCustomObject11s() {
         return customObject11s;
     }
 
+    @JsonProperty("customObject11s")
     public void setCustomObject11s(OneToMany<PersonCustomObjectInstance11> customObject11s) {
         this.customObject11s = customObject11s;
     }
 
+    @JsonProperty("customObject12s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance12> getCustomObject12s() {
         return customObject12s;
     }
 
+    @JsonProperty("customObject12s")
     public void setCustomObject12s(OneToMany<PersonCustomObjectInstance12> customObject12s) {
         this.customObject12s = customObject12s;
     }
 
+    @JsonProperty("customObject13s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance13> getCustomObject13s() {
         return customObject13s;
     }
 
+    @JsonProperty("customObject13s")
     public void setCustomObject13s(OneToMany<PersonCustomObjectInstance13> customObject13s) {
         this.customObject13s = customObject13s;
     }
 
+    @JsonProperty("customObject14s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance14> getCustomObject14s() {
         return customObject14s;
     }
 
+    @JsonProperty("customObject14s")
     public void setCustomObject14s(OneToMany<PersonCustomObjectInstance14> customObject14s) {
         this.customObject14s = customObject14s;
     }
 
+    @JsonProperty("customObject15s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance15> getCustomObject15s() {
         return customObject15s;
     }
 
+    @JsonProperty("customObject15s")
     public void setCustomObject15s(OneToMany<PersonCustomObjectInstance15> customObject15s) {
         this.customObject15s = customObject15s;
     }
 
+    @JsonProperty("customObject16s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance16> getCustomObject16s() {
         return customObject16s;
     }
 
+    @JsonProperty("customObject16s")
     public void setCustomObject16s(OneToMany<PersonCustomObjectInstance16> customObject16s) {
         this.customObject16s = customObject16s;
     }
 
+    @JsonProperty("customObject17s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance17> getCustomObject17s() {
         return customObject17s;
     }
 
+    @JsonProperty("customObject17s")
     public void setCustomObject17s(OneToMany<PersonCustomObjectInstance17> customObject17s) {
         this.customObject17s = customObject17s;
     }
 
+    @JsonProperty("customObject18s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance18> getCustomObject18s() {
         return customObject18s;
     }
 
+    @JsonProperty("customObject18s")
     public void setCustomObject18s(OneToMany<PersonCustomObjectInstance18> customObject18s) {
         this.customObject18s = customObject18s;
     }
 
+    @JsonProperty("customObject19s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance19> getCustomObject19s() {
         return customObject19s;
     }
 
+    @JsonProperty("customObject19s")
     public void setCustomObject19s(OneToMany<PersonCustomObjectInstance19> customObject19s) {
         this.customObject19s = customObject19s;
     }
 
+    @JsonProperty("customObject20s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance20> getCustomObject20s() {
         return customObject20s;
     }
 
+    @JsonProperty("customObject20s")
     public void setCustomObject20s(OneToMany<PersonCustomObjectInstance20> customObject20s) {
         this.customObject20s = customObject20s;
     }
 
+    @JsonProperty("customObject21s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance21> getCustomObject21s() {
         return customObject21s;
     }
 
+    @JsonProperty("customObject21s")
     public void setCustomObject21s(OneToMany<PersonCustomObjectInstance21> customObject21s) {
         this.customObject21s = customObject21s;
     }
 
+    @JsonProperty("customObject22s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance22> getCustomObject22s() {
         return customObject22s;
     }
 
+    @JsonProperty("customObject22s")
     public void setCustomObject22s(OneToMany<PersonCustomObjectInstance22> customObject22s) {
         this.customObject22s = customObject22s;
     }
 
+    @JsonProperty("customObject23s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance23> getCustomObject23s() {
         return customObject23s;
     }
 
+    @JsonProperty("customObject23s")
     public void setCustomObject23s(OneToMany<PersonCustomObjectInstance23> customObject23s) {
         this.customObject23s = customObject23s;
     }
 
+    @JsonProperty("customObject24s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance24> getCustomObject24s() {
         return customObject24s;
     }
 
+    @JsonProperty("customObject24s")
     public void setCustomObject24s(OneToMany<PersonCustomObjectInstance24> customObject24s) {
         this.customObject24s = customObject24s;
     }
 
+    @JsonProperty("customObject25s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance25> getCustomObject25s() {
         return customObject25s;
     }
 
+    @JsonProperty("customObject25s")
     public void setCustomObject25s(OneToMany<PersonCustomObjectInstance25> customObject25s) {
         this.customObject25s = customObject25s;
     }
 
+    @JsonProperty("customObject26s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance26> getCustomObject26s() {
         return customObject26s;
     }
 
+    @JsonProperty("customObject26s")
     public void setCustomObject26s(OneToMany<PersonCustomObjectInstance26> customObject26s) {
         this.customObject26s = customObject26s;
     }
 
+    @JsonProperty("customObject27s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance27> getCustomObject27s() {
         return customObject27s;
     }
 
+    @JsonProperty("customObject27s")
     public void setCustomObject27s(OneToMany<PersonCustomObjectInstance27> customObject27s) {
         this.customObject27s = customObject27s;
     }
 
+    @JsonProperty("customObject28s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public OneToMany<PersonCustomObjectInstance28> getCustomObject28s() {
         return customObject28s;
     }
 
+    @JsonProperty("customObject28s")
     public void setCustomObject28s(OneToMany<PersonCustomObjectInstance28> customObject28s) {
         this.customObject28s = customObject28s;
     }
