@@ -36,7 +36,6 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Objects;
 
 @JsonFilter(DynamicNullValueFilter.FILTER_NAME)
@@ -373,16 +372,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         Placement placement = new Placement();
         placement.setDateBegin(new DateTime());
         placement.setDaysProRated(0);
-        placement.setDurationWeeks(new BigDecimal(1.0));
+        placement.setDurationWeeks(new BigDecimal("1.0"));
         placement.setEmployeeType("W2");
-        placement.setFee(new BigDecimal(1.0));
-        placement.setHoursPerDay(new BigDecimal(1.0));
-        placement.setPayRate(new BigDecimal(1.0));
-        placement.setRecruitingManagerPercentGrossMargin(new BigDecimal(1.0));
-        placement.setReferralFee(new BigDecimal(1.0));
-        placement.setSalary(new BigDecimal(1.0));
+        placement.setFee(new BigDecimal("1.0"));
+        placement.setHoursPerDay(new BigDecimal("1.0"));
+        placement.setPayRate(new BigDecimal("1.0"));
+        placement.setRecruitingManagerPercentGrossMargin(new BigDecimal("1.0"));
+        placement.setReferralFee(new BigDecimal("1.0"));
+        placement.setSalary(new BigDecimal("1.0"));
         placement.setSalaryUnit("Dollars");
-        placement.setSalesManagerPercentGrossMargin(new BigDecimal(1.0));
+        placement.setSalesManagerPercentGrossMargin(new BigDecimal("1.0"));
         placement.setStatus("Submitted");
         placement.setCandidate(new Candidate(1));
         placement.setJobOrder(new JobOrder(1));
