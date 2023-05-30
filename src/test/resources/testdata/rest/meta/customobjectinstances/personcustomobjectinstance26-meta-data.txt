@@ -1,7 +1,7 @@
 {
-    "entity": "PersonCustomObjectInstance29",
-    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/PersonCustomObjectInstance29?fields=*",
-    "label": "Person Custom Object Instance29",
+    "entity": "PersonCustomObjectInstance26",
+    "entityMetaUrl": "https://rest9.bullhornstaffing.com/rest-services/4kxk4/meta/PersonCustomObjectInstance26?fields=*",
+    "label": "Person Custom Object Instance26",
     "fields": [
         {
             "name": "id",

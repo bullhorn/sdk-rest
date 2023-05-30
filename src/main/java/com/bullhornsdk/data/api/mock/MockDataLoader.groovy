@@ -665,8 +665,16 @@ public class MockDataLoader {
         entityFiles.put(PersonCustomObjectInstance23.class, "customobjectinstances/personcustomobjectinstance23-data.txt");
         entityFiles.put(PersonCustomObjectInstance24.class, "customobjectinstances/personcustomobjectinstance24-data.txt");
         entityFiles.put(PersonCustomObjectInstance25.class, "customobjectinstances/personcustomobjectinstance25-data.txt");
+        entityFiles.put(PersonCustomObjectInstance25.class, "customobjectinstances/personcustomobjectinstance26-data.txt");
+        entityFiles.put(PersonCustomObjectInstance25.class, "customobjectinstances/personcustomobjectinstance27-data.txt");
+        entityFiles.put(PersonCustomObjectInstance25.class, "customobjectinstances/personcustomobjectinstance28-data.txt");
         entityFiles.put(PersonCustomObjectInstance29.class, "customobjectinstances/personcustomobjectinstance29-data.txt");
         entityFiles.put(PersonCustomObjectInstance30.class, "customobjectinstances/personcustomobjectinstance30-data.txt");
+        entityFiles.put(PersonCustomObjectInstance30.class, "customobjectinstances/personcustomobjectinstance31-data.txt");
+        entityFiles.put(PersonCustomObjectInstance30.class, "customobjectinstances/personcustomobjectinstance32-data.txt");
+        entityFiles.put(PersonCustomObjectInstance30.class, "customobjectinstances/personcustomobjectinstance33-data.txt");
+        entityFiles.put(PersonCustomObjectInstance30.class, "customobjectinstances/personcustomobjectinstance34-data.txt");
+        entityFiles.put(PersonCustomObjectInstance30.class, "customobjectinstances/personcustomobjectinstance35-data.txt");
 
         entityFiles.put(CandidateFileAttachment.class, "file/candidatefileattachment-data.txt");
         entityFiles.put(CertificationFileAttachment.class, "file/certificationfileattachment-data.txt");
