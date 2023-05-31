@@ -474,6 +474,12 @@ public enum BullhornEntityInfo {
     PERSON_CUSTOM_OBJECT_INSTANCE_28("PersonCustomObjectInstance28", PersonCustomObjectInstance28.class, PersonCustomObjectInstance28Wrapper.class, PersonCustomObjectInstance28ListWrapper.class, "PersonCustomObject28EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_29("PersonCustomObjectInstance29", PersonCustomObjectInstance29.class, PersonCustomObjectInstance29Wrapper.class, PersonCustomObjectInstance29ListWrapper.class, "PersonCustomObject29EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
     PERSON_CUSTOM_OBJECT_INSTANCE_30("PersonCustomObjectInstance30", PersonCustomObjectInstance30.class, PersonCustomObjectInstance30Wrapper.class, PersonCustomObjectInstance30ListWrapper.class, "PersonCustomObject30EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_31("PersonCustomObjectInstance31", PersonCustomObjectInstance31.class, PersonCustomObjectInstance31Wrapper.class, PersonCustomObjectInstance31ListWrapper.class, "PersonCustomObject31EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_32("PersonCustomObjectInstance32", PersonCustomObjectInstance32.class, PersonCustomObjectInstance32Wrapper.class, PersonCustomObjectInstance32ListWrapper.class, "PersonCustomObject32EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_33("PersonCustomObjectInstance33", PersonCustomObjectInstance33.class, PersonCustomObjectInstance33Wrapper.class, PersonCustomObjectInstance33ListWrapper.class, "PersonCustomObject33EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_34("PersonCustomObjectInstance34", PersonCustomObjectInstance34.class, PersonCustomObjectInstance34Wrapper.class, PersonCustomObjectInstance34ListWrapper.class, "PersonCustomObject34EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+    PERSON_CUSTOM_OBJECT_INSTANCE_35("PersonCustomObjectInstance35", PersonCustomObjectInstance35.class, PersonCustomObjectInstance35Wrapper.class, PersonCustomObjectInstance35ListWrapper.class, "PersonCustomObject35EditHistory", "PersonCustomObjectEditHistoryFieldChange"),
+
 
     // File Attachment Entities
     CANDIDATE_FILE_ATTACHMENT("CandidateFileAttachment", CandidateFileAttachment.class, CandidateFileAttachmentWrapper.class, CandidateFileAttachmentListWrapper.class, null, null),
