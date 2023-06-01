@@ -1,9 +1,7 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.core.standard.Branch;
 import com.bullhornsdk.data.model.entity.core.standard.BusinessSector;
@@ -24,30 +22,30 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
 
 /**
  * Tests the "query" request
- * 
+ *
  * @author magnus.palm
- * 
+ *
  */
 
 public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
-	
-	private String where = "id>0 AND id<21";
 
-	private QueryParams queryParams;
+    private String where = "id>0 AND id<21";
 
-	public TestStandardBullhornApiRestQueryForAll() {
-		super();
-		this.queryParams = ParamFactory.queryParams();
+    private QueryParams queryParams;
 
-	}
+    public TestStandardBullhornApiRestQueryForAll() {
+        super();
+        this.queryParams = ParamFactory.queryParams();
 
-	@Test
-	public void testQueryBusinessSector() {
+    }
 
-		ListWrapper<BusinessSector> wrapper = bullhornData.queryForAllRecords(BusinessSector.class, where, null, queryParams);
+    @Test
+    public void testQueryBusinessSector() {
 
-		runAssertions("ListWrapper<BusinessSector>", wrapper);
-	}
+        ListWrapper<BusinessSector> wrapper = bullhornData.queryForAllRecords(BusinessSector.class, where, null, queryParams);
+
+        runAssertions("ListWrapper<BusinessSector>", wrapper);
+    }
 
     @Test
     public void testQueryBranch() {
@@ -57,33 +55,33 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
         runAssertions("ListWrapper<Branch>", wrapper);
     }
 
-	@Test
-	public void testQueryCategory() {
+    @Test
+    public void testQueryCategory() {
 
-		ListWrapper<Category> wrapper = bullhornData.queryForAllRecords(Category.class, where, null, queryParams);
+        ListWrapper<Category> wrapper = bullhornData.queryForAllRecords(Category.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Category>", wrapper);
+        runAssertions("ListWrapper<Category>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryCertification() {
+    @Test
+    public void testQueryCertification() {
 
-		ListWrapper<Certification> wrapper = bullhornData.queryForAllRecords(Certification.class, where, null, queryParams);
+        ListWrapper<Certification> wrapper = bullhornData.queryForAllRecords(Certification.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Certification>", wrapper);
+        runAssertions("ListWrapper<Certification>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQueryCorporationDepartment() {
+    @Test
+    public void testQueryCorporationDepartment() {
 
-		ListWrapper<CorporationDepartment> wrapper = bullhornData.queryForAllRecords(CorporationDepartment.class, where, null,
-				queryParams);
+        ListWrapper<CorporationDepartment> wrapper = bullhornData.queryForAllRecords(CorporationDepartment.class, where, null,
+            queryParams);
 
-		runAssertions("ListWrapper<CorporationDepartment>", wrapper);
+        runAssertions("ListWrapper<CorporationDepartment>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryCountry() {
@@ -94,14 +92,14 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryDepartment() {
+    @Test
+    public void testQueryDepartment() {
 
-		ListWrapper<Department> wrapper = bullhornData.queryForAllRecords(Department.class, where, null, queryParams);
+        ListWrapper<Department> wrapper = bullhornData.queryForAllRecords(Department.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Department>", wrapper);
+        runAssertions("ListWrapper<Department>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryPrivateLabel() {
@@ -112,23 +110,23 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
     }
 
-	@Test
-	public void testQuerySkill() {
+    @Test
+    public void testQuerySkill() {
 
-		ListWrapper<Skill> wrapper = bullhornData.queryForAllRecords(Skill.class, where, null, queryParams);
+        ListWrapper<Skill> wrapper = bullhornData.queryForAllRecords(Skill.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Skill>", wrapper);
+        runAssertions("ListWrapper<Skill>", wrapper);
 
-	}
+    }
 
-	@Test
-	public void testQuerySpecialty() {
+    @Test
+    public void testQuerySpecialty() {
 
-		ListWrapper<Specialty> wrapper = bullhornData.queryForAllRecords(Specialty.class, where, null, queryParams);
+        ListWrapper<Specialty> wrapper = bullhornData.queryForAllRecords(Specialty.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<Specialty>", wrapper);
+        runAssertions("ListWrapper<Specialty>", wrapper);
 
-	}
+    }
 
     @Test
     public void testQueryWorkersCompensation() {
@@ -139,18 +137,18 @@ public class TestStandardBullhornApiRestQueryForAll extends BaseTest {
 
     }
 
-	@Test
-	public void testQueryState() {
-		ListWrapper<State> wrapper = bullhornData.queryForAllRecords(State.class, where, null, queryParams);
+    @Test
+    public void testQueryState() {
+        ListWrapper<State> wrapper = bullhornData.queryForAllRecords(State.class, where, null, queryParams);
 
-		runAssertions("ListWrapper<State>", wrapper);
-	}
+        runAssertions("ListWrapper<State>", wrapper);
+    }
 
-	private <T extends BullhornEntity> void runAssertions(String wrapperName, ListWrapper<T> wrapper) {
-		assertNotNull(wrapperName + " is null", wrapper);
-		assertNotNull(wrapperName + ".data is null", wrapper.getData());
-		assertTrue(wrapperName + ".data is empty", wrapper.getData() != null && wrapper.getData().size() > 0);
-		assertTrue(wrapperName + ".data.size() is not equal to count", wrapper.getData().size() == wrapper.getCount());
-	}
+    private <T extends BullhornEntity> void runAssertions(String wrapperName, ListWrapper<T> wrapper) {
+        Assertions.assertNotNull(wrapper, wrapperName + " is null");
+        Assertions.assertNotNull(wrapper.getData(), wrapperName + ".data is null");
+        Assertions.assertTrue(wrapper.getData() != null && wrapper.getData().size() > 0, wrapperName + ".data is empty");
+        Assertions.assertTrue(wrapper.getData().size() == wrapper.getCount(), wrapperName + ".data.size() is not equal to count");
+    }
 
 }

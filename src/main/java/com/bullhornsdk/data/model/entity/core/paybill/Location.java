@@ -1,6 +1,8 @@
 package com.bullhornsdk.data.model.entity.core.paybill;
 
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
+import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 import com.bullhornsdk.data.model.entity.core.type.*;
@@ -19,7 +21,7 @@ import java.util.Objects;
 /**
  * Created by fayranne.lipton 4/3/2020
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "address", "candidate", "clientCorporation",
     "customDate1", "customDate2", "customDate3",
@@ -33,7 +35,7 @@ import java.util.Objects;
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "description", "effectiveDate",
     "effectiveEndDate", "externalID", "isBillTo", "isDeleted", "isSoldTo",
-    "isWorkSite", "declineToApplyTaxes", "owner", "status", "title", "versionID", "versions"})
+    "isWorkSite", "declineToApplyTaxes", "owner", "status", "title", "versionID", "versions", "clientContacts"})
 public class Location extends CustomFieldsB implements QueryEntity,
     UpdateEntity, CreateEntity, SoftDeleteEntity, DateLastModifiedEntity, EffectiveDateEntity, AssociationEntity, EditHistoryEntity {
 
@@ -83,6 +85,8 @@ public class Location extends CustomFieldsB implements QueryEntity,
     private OneToMany<LocationVersion> versions;
 
     private Boolean isDeleted;
+
+    private OneToMany<ClientContact> clientContacts;
 
     /**
      * Returns the entity with the required fields for an insert set.

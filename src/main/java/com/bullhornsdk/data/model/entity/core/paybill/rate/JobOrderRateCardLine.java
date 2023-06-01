@@ -2,15 +2,13 @@ package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
 import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCode;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsI;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -25,8 +23,8 @@ import java.util.Objects;
     "customText1", "customText2", "customText3", "customText4", "customText5",
     "customText6", "customText7", "customText8", "customText9", "customText10",
     "externalID", "jobOrderRateCardLineGroup", "markupPercent", "markupValue", "migrateGUID",
-    "payCurrencyUnit", "payMultiplier", "payRate"})
-public class JobOrderRateCardLine extends CustomFieldsI implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
+    "payCurrencyUnit", "payMultiplier", "payRate", "dateLastModified"})
+public class JobOrderRateCardLine extends CustomFieldsI implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity {
 
     private Integer id;
 
@@ -58,6 +56,8 @@ public class JobOrderRateCardLine extends CustomFieldsI implements QueryEntity, 
     private BigDecimal payMultiplier;
 
     private BigDecimal payRate;
+
+    private DateTime dateLastModified;
 
 
     @Override
@@ -200,6 +200,15 @@ public class JobOrderRateCardLine extends CustomFieldsI implements QueryEntity, 
     @JsonProperty("payRate")
     public void setPayRate(BigDecimal payRate) {
         this.payRate = payRate;
+    }
+
+    @Override
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
     }
 
     @Override

@@ -1,16 +1,17 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance10;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance2;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance3;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance4;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance5;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance6;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance7;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance8;
-import com.bullhornsdk.data.model.entity.core.customobjectinstances.joborder.JobOrderCustomObjectInstance9;
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance1;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance10;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance2;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance3;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance4;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance5;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance6;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance7;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance8;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -23,19 +24,16 @@ import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsC;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "actualCloseDate", "address", "appointments", "assignedDate", "assignedUsers", "benefits", "billRateCategoryID", "bonusPackage", "branch", "branchCode", "businessSector",
 		"businessSectors", "campaignSource", "category", "categories", "certifications", "clientContact", "clientCorporation", "committed", "customDate1", "customDate2", "customDate3",
@@ -50,9 +48,9 @@ import java.math.BigDecimal;
 public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;
-	
+
 	private Integer id;
-	
+
 	private CorporateUser owner;
 
 	@JsonIgnore
@@ -64,13 +62,13 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 
 	@Size(max = 200000)
 	private String description;
-	
+
 	private DateTime estimatedStartDate;
-	
+
 	private BigDecimal estimatedHoursPerWeek;
-	
+
 	private BigDecimal estimatedDuration;
-	
+
 	private BigDecimal salary;
 
 	@JsonIgnore
@@ -88,41 +86,41 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	@JsonIgnore
 	@Size(max = 100)
 	private String branchCode;
-	
+
 	private Boolean isOpen;
-	
+
 	private Address address;
-	
+
 	private DateTime dateAdded;
-	
+
 	private Boolean isDeleted;
-	
+
 	private Integer externalCategoryID;
 
 	@JsonIgnore
 	@Size(max = 200)
 	private String status;
-	
+
 	private ClientContact clientContact;
-	
+
 	private Integer priority;
-	
+
 	private Boolean isClientContact;
-	
+
 	private DateTime dateClientInterview;
-	
+
 	private Integer isPublic;
-	
+
 	private Integer numOpenings;
-	
+
 	private Boolean isExtendable;
-	
+
 	private Integer yearsRequired;
 
 	@JsonIgnore
 	@Size(max = 30)
 	private String externalID;
-	
+
 	private DateTime actualCloseDate;
 
 	@JsonIgnore
@@ -130,26 +128,26 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 
 	@JsonIgnore
 	private String salaryRange;
-	
+
 	private Boolean committed;
-	
+
 	private Boolean willRelocate;
 
 	@JsonIgnore
 	@Size(max = 50)
 	private String educationDegree;
-	
+
 	private ClientContact reportToClientContact;
-	
+
 	private DateTime estimatedEndDate;
-	
+
 	private Boolean isInterviewRequired;
-	
+
 	@JsonIgnore
 	private String benefits;
 
 	private String costCenter;
-	
+
 	private String reportTo;
 
 	@JsonIgnore
@@ -163,7 +161,7 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	@JsonIgnore
 	@Size(max = 200000)
 	private String publicDescription;
-	
+
 	private String hoursOfOperation;
 
 	@JsonIgnore
@@ -172,108 +170,114 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 
 	@JsonIgnore
 	private String optionsPackage;
-	
+
 	@JsonIgnore
 	private String bonusPackage;
-	
+
 	private OneToMany<JobOrder> jobOrders;
-	
+
 	private ClientCorporation clientCorporation;
-	
+
 	private BigDecimal expectedPayRate;
-	
+
 	private BigDecimal expectedFee;
-	
+
 	private Boolean isClientEditable;
-	
+
 	private CorporateUser responseUser;
-	
+
 	private Integer billRateCategoryID;
-	
+
 	private DateTime expectedCloseDate;
-	
+
 	private DateTime assignedDate;
-	
+
 	private String jobOrderUUID;
 
 	@JsonIgnore
 	@Size(max = 18)
 	private String publishedZip;
-	
+
 	private String migrateGUID;
-	
+
 	private BigDecimal taxRate;
-	
+
 	private Boolean isOpportunity;
-	
+
 	private DateTime dateLastExported;
-	
+
 	private DateTime ignoreUntilDate;
-	
+
 	private OneToMany<Appointment> appointments;
-	
+
 	private OneToMany<Task> tasks;
-	
+
 	private OneToMany<Certification> certifications;
-	
+
 	private OneToMany<CorporateUser> assignedUsers;
-	
+
 	private OneToMany<Category> categories;
-	
+
 	private Category category;
-	
+
 	private BusinessSector businessSector;
-	
+
 	private OneToMany<Specialty> specialties;
-	
+
 	private OneToMany<Skill> skills;
-	
+
 	private OneToMany<Note> notes;
-	
+
 	private OneToMany<BusinessSector> businessSectors;
-	
+
 	private OneToMany<JobSubmission> webResponses;
-	
+
 	private DateTime effectiveDate;
-	
+
 	private Lead lead;
 
 	@JsonIgnore
 	@Size(max = 100)
 	private String campaignSource;
-	
+
 	private BigDecimal markUpPercentage;
-	
+
 	private BigDecimal winProbabilityPercent;
-	
+
 	private BigDecimal dealValue;
-	
+
 	private BigDecimal weightedDealValue;
-	
+
 	private DateTime dateLastModified;
 
 	private OneToMany<Tearsheet> tearsheets;
 
-    private OneToMany<JobOrderCustomObjectInstance1> customObject1s;
+    private OneToMany<OpportunityCustomObjectInstance1> customObject1s;
 
-    private OneToMany<JobOrderCustomObjectInstance2> customObject2s;
+    private OneToMany<OpportunityCustomObjectInstance2> customObject2s;
 
-    private OneToMany<JobOrderCustomObjectInstance3> customObject3s;
+    private OneToMany<OpportunityCustomObjectInstance3> customObject3s;
 
-    private OneToMany<JobOrderCustomObjectInstance4> customObject4s;
+    private OneToMany<OpportunityCustomObjectInstance4> customObject4s;
 
-    private OneToMany<JobOrderCustomObjectInstance5> customObject5s;
+    private OneToMany<OpportunityCustomObjectInstance5> customObject5s;
 
-    private OneToMany<JobOrderCustomObjectInstance6> customObject6s;
+    private OneToMany<OpportunityCustomObjectInstance6> customObject6s;
 
-    private OneToMany<JobOrderCustomObjectInstance7> customObject7s;
+    private OneToMany<OpportunityCustomObjectInstance7> customObject7s;
 
-    private OneToMany<JobOrderCustomObjectInstance8> customObject8s;
+    private OneToMany<OpportunityCustomObjectInstance8> customObject8s;
 
-    private OneToMany<JobOrderCustomObjectInstance9> customObject9s;
+    private OneToMany<OpportunityCustomObjectInstance9> customObject9s;
 
-    private OneToMany<JobOrderCustomObjectInstance10> customObject10s;
-	
+    private OneToMany<OpportunityCustomObjectInstance10> customObject10s;
+
+    private OneToMany<OpportunityFileAttachment> fileAttachments;
+
+    private Shift shift;
+
+    private WorkersCompensationRate workersCompRate;
+
 	public Opportunity() {
 		super();
 	}
@@ -1177,120 +1181,120 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
 	@JsonProperty("customObject1s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance1> getCustomObject1s() {
+    public OneToMany<OpportunityCustomObjectInstance1> getCustomObject1s() {
         return customObject1s;
     }
 
     @JsonProperty("customObject1s")
-    public void setCustomObject1s(OneToMany<JobOrderCustomObjectInstance1> customObject1s) {
+    public void setCustomObject1s(OneToMany<OpportunityCustomObjectInstance1> customObject1s) {
         this.customObject1s = customObject1s;
     }
 
     @JsonProperty("customObject2s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance2> getCustomObject2s() {
+    public OneToMany<OpportunityCustomObjectInstance2> getCustomObject2s() {
         return customObject2s;
     }
 
     @JsonProperty("customObject2s")
-    public void setCustomObject2s(OneToMany<JobOrderCustomObjectInstance2> customObject2s) {
+    public void setCustomObject2s(OneToMany<OpportunityCustomObjectInstance2> customObject2s) {
         this.customObject2s = customObject2s;
     }
 
     @JsonProperty("customObject3s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance3> getCustomObject3s() {
+    public OneToMany<OpportunityCustomObjectInstance3> getCustomObject3s() {
         return customObject3s;
     }
 
     @JsonProperty("customObject3s")
-    public void setCustomObject3s(OneToMany<JobOrderCustomObjectInstance3> customObject3s) {
+    public void setCustomObject3s(OneToMany<OpportunityCustomObjectInstance3> customObject3s) {
         this.customObject3s = customObject3s;
     }
 
     @JsonProperty("customObject4s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance4> getCustomObject4s() {
+    public OneToMany<OpportunityCustomObjectInstance4> getCustomObject4s() {
         return customObject4s;
     }
 
     @JsonProperty("customObject4s")
-    public void setCustomObject4s(OneToMany<JobOrderCustomObjectInstance4> customObject4s) {
+    public void setCustomObject4s(OneToMany<OpportunityCustomObjectInstance4> customObject4s) {
         this.customObject4s = customObject4s;
     }
 
     @JsonProperty("customObject5s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance5> getCustomObject5s() {
+    public OneToMany<OpportunityCustomObjectInstance5> getCustomObject5s() {
         return customObject5s;
     }
 
     @JsonProperty("customObject5s")
-    public void setCustomObject5s(OneToMany<JobOrderCustomObjectInstance5> customObject5s) {
+    public void setCustomObject5s(OneToMany<OpportunityCustomObjectInstance5> customObject5s) {
         this.customObject5s = customObject5s;
     }
 
     @JsonProperty("customObject6s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance6> getCustomObject6s() {
+    public OneToMany<OpportunityCustomObjectInstance6> getCustomObject6s() {
         return customObject6s;
     }
 
     @JsonProperty("customObject6s")
-    public void setCustomObject6s(OneToMany<JobOrderCustomObjectInstance6> customObject6s) {
+    public void setCustomObject6s(OneToMany<OpportunityCustomObjectInstance6> customObject6s) {
         this.customObject6s = customObject6s;
     }
 
     @JsonProperty("customObject7s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance7> getCustomObject7s() {
+    public OneToMany<OpportunityCustomObjectInstance7> getCustomObject7s() {
         return customObject7s;
     }
 
     @JsonProperty("customObject7s")
-    public void setCustomObject7s(OneToMany<JobOrderCustomObjectInstance7> customObject7s) {
+    public void setCustomObject7s(OneToMany<OpportunityCustomObjectInstance7> customObject7s) {
         this.customObject7s = customObject7s;
     }
 
     @JsonProperty("customObject8s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance8> getCustomObject8s() {
+    public OneToMany<OpportunityCustomObjectInstance8> getCustomObject8s() {
         return customObject8s;
     }
 
     @JsonProperty("customObject8s")
-    public void setCustomObject8s(OneToMany<JobOrderCustomObjectInstance8> customObject8s) {
+    public void setCustomObject8s(OneToMany<OpportunityCustomObjectInstance8> customObject8s) {
         this.customObject8s = customObject8s;
     }
 
     @JsonProperty("customObject9s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance9> getCustomObject9s() {
+    public OneToMany<OpportunityCustomObjectInstance9> getCustomObject9s() {
         return customObject9s;
     }
 
     @JsonProperty("customObject9s")
-    public void setCustomObject9s(OneToMany<JobOrderCustomObjectInstance9> customObject9s) {
+    public void setCustomObject9s(OneToMany<OpportunityCustomObjectInstance9> customObject9s) {
         this.customObject9s = customObject9s;
     }
 
     @JsonProperty("customObject10s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    public OneToMany<JobOrderCustomObjectInstance10> getCustomObject10s() {
+    public OneToMany<OpportunityCustomObjectInstance10> getCustomObject10s() {
         return customObject10s;
     }
 
     @JsonProperty("customObject10s")
-    public void setCustomObject10s(OneToMany<JobOrderCustomObjectInstance10> customObject10s) {
+    public void setCustomObject10s(OneToMany<OpportunityCustomObjectInstance10> customObject10s) {
         this.customObject10s = customObject10s;
     }
 

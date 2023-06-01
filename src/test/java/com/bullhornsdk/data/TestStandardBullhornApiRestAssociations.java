@@ -1,8 +1,5 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.List;
@@ -17,7 +14,8 @@ import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.association.AssociationFactory;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
@@ -355,8 +353,8 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
     }
 
     private void assertCrudResponse(Class<? extends AssociationEntity> type, CrudResponse response) {
-        assertNotNull(type.getSimpleName() + " is null", response);
-        assertFalse("Error occurred while associating to the " + type.getSimpleName(), response.isError());
+        Assertions.assertNotNull(response, type.getSimpleName() + " is null");
+        Assertions.assertFalse(response.isError(), "Error occurred while associating to the " + type.getSimpleName());
     }
 
 }

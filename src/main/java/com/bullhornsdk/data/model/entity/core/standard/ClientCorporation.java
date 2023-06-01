@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance11;
@@ -50,12 +51,9 @@ import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
 
@@ -63,7 +61,7 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "address", "annualRevenue", "billingAddress", "billingContact", "billingFrequency", "billingPhone",
         "branch", "businessSectorList", "certifications", "requirements", "certificationGroups", "childClientCorporations", "clientContacts",
@@ -75,7 +73,8 @@ import java.util.Objects;
 		"externalID", "fax", "feeArrangement", "funding", "industryList", "invoiceFormat", "leads", "linkedinProfileName", "name", "notes", "numEmployees", "numOffices",
 		"ownership", "parentClientCorporation", "phone", "revenue", "status", "taxRate", "tickerSymbol", "trackTitle", "userOwners", "workWeekStart",
         "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName", "exemptionStatus" })
+        "customObject8s", "customObject9s", "customObject10s", "locations", "twitterHandle","facebookProfileName", "exemptionStatus",
+        "clientContactNotes", "fileAttachments", "owners", "stats", "timeAndLaborEnabledDate"})
 public class ClientCorporation extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, FileEntity, AssociationEntity,
 		SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -286,6 +285,14 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
     private OneToMany<ClientCorporationCustomObjectInstance34> customObject34s;
 
     private OneToMany<ClientCorporationCustomObjectInstance35> customObject35s;
+
+    private OneToMany<Note> clientContactNotes;
+
+    private OneToMany<ClientCorporationFileAttachment> fileAttachments;
+
+    private ClientCorporationRatios stats;
+
+    private DateTime timeAndLaborEnabledDate;
 
 	public ClientCorporation() {
 		super();
@@ -1214,7 +1221,37 @@ public class ClientCorporation extends CustomFieldsB implements QueryEntity, Upd
         this.locations = locations;
     }
 
+    public OneToMany<Note> getClientContactNotes() {
+        return clientContactNotes;
+    }
 
+    public void setClientContactNotes(OneToMany<Note> clientContactNotes) {
+        this.clientContactNotes = clientContactNotes;
+    }
+
+    public OneToMany<ClientCorporationFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
+
+    public void setFileAttachments(OneToMany<ClientCorporationFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
+    }
+
+    public ClientCorporationRatios getStats() {
+        return stats;
+    }
+
+    public void setStats(ClientCorporationRatios stats) {
+        this.stats = stats;
+    }
+
+    public DateTime getTimeAndLaborEnabledDate() {
+        return timeAndLaborEnabledDate;
+    }
+
+    public void setTimeAndLaborEnabledDate(DateTime timeAndLaborEnabledDate) {
+        this.timeAndLaborEnabledDate = timeAndLaborEnabledDate;
+    }
 
     @Override
     public boolean equals(Object o) {

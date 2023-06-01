@@ -1,0 +1,45 @@
+{
+    "total": 1,
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "address": {
+                "address1": "Bullhorn",
+                "address2": "Professional Services",
+                "city": "Boston",
+                "countryCode": "US",
+                "countryID": 1,
+                "countryName": "United States                                                   ",
+                "state": "MA",
+                "timezone": "America/New_York",
+                "zip": "02210"
+            },
+            "companyURL": "",
+            "dateAdded": 1274217672723,
+            "dateBillingBegin": null,
+            "dateBillingEnd": null,
+            "enabled": true,
+            "externalID": "",
+            "fax": "",
+            "flatMonthlyFee": 0.0000,
+            "flatStorageLimitMB": 0,
+            "inboundListenerEmail": null,
+            "minimumMonthlyFee": 0.0000,
+            "name": "PS Sandbox Corporation",
+            "newLeadEmail": null,
+            "perUserStorageLimitMB": 0,
+            "phone": "",
+            "privateLabel": {
+                "id": 4072,
+                "name": "PS Sandbox"
+            },
+            "privateLabels": {
+                "total": 24,
+                "data": []
+            },
+            "storageFee": 0.0000
+        }
+    ]
+}

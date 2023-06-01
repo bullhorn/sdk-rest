@@ -1,19 +1,21 @@
 package com.bullhornsdk.data.api.helper;
 
-import java.io.IOException;
-
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import com.bullhornsdk.data.exception.RestMappingException;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.ser.FilterProvider;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Set;
 
 public class RestJsonConverter {
 
@@ -43,6 +45,7 @@ public class RestJsonConverter {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JodaModule());
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        mapper.setFilterProvider(createFieldFilter(Collections.emptySet()));
         return mapper;
     }
 
@@ -70,9 +73,30 @@ public class RestJsonConverter {
         try {
             jsonString = this.objectMapper.writeValueAsString(entity);
         } catch (JsonProcessingException e) {
-            String message = "Error deserializing entity of type" + entity.getClass() + " to jsonString.";
-            log.error(message, e);
+            log.error("Error deserializing entity of type" + entity.getClass() + " to jsonString.", e);
         }
         return jsonString;
+    }
+
+    /**
+     * Takes a BullhornEntity and converts it to a String in json format, optionally including null values.
+     *
+     * @param entity
+     *            a BullhornEntity
+     * @param nullBypassFields fields to include regardless of whether they are null.
+     * @return the jsonString
+     */
+    public <T extends BullhornEntity> String convertEntityToJsonString(T entity, Set<String> nullBypassFields) {
+        String jsonString = "";
+        try {
+            jsonString = this.objectMapper.writer(createFieldFilter(nullBypassFields)).writeValueAsString(entity);
+        } catch (JsonProcessingException e) {
+            log.error("Error deserializing entity of type" + entity.getClass() + " to jsonString.", e);
+        }
+        return jsonString;
+    }
+
+    private FilterProvider createFieldFilter(Set<String> nullBypassFields) {
+        return new SimpleFilterProvider().addFilter(DynamicNullValueFilter.FILTER_NAME, new DynamicNullValueFilter(nullBypassFields));
     }
 }

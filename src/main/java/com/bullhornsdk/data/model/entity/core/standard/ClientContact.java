@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance10;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance2;
@@ -11,6 +12,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.Perso
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance7;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance8;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
@@ -25,18 +27,14 @@ import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.validator.constraints.Email;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "address", "branch", "businessSectors", "categories",
 		"category", "certifications", "clientContactID", "clientCorporation",
@@ -62,7 +60,9 @@ import javax.validation.constraints.Size;
 		"specialties", "status", "tearsheets", "timeZoneOffsetEST", "trackTitle", "type",
 		"username", "customObject1s", "customObject2s", "customObject3s",
         "customObject4s", "customObject5s", "customObject6s", "customObject7s",
-        "customObject8s", "customObject9s", "customObject10s" })
+        "customObject8s", "customObject9s", "customObject10s", "activePlacements", "addressSourceLocation",
+    "appointments", "clientLocations", "companyName", "desiredLocations", "distributionLists", "isAnonymized", "jobOrders",
+    "jobSubmissions", "opportunities", "placements", "privateLabel", "sendouts", "skillSet", "stats", "tasks"})
 public class ClientContact extends CustomFieldsB implements QueryEntity,
 		UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
@@ -285,6 +285,42 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
     private OneToMany<PersonCustomObjectInstance9> customObject9s;
 
     private OneToMany<PersonCustomObjectInstance10> customObject10s;
+
+    private OneToMany<Placement> activePlacements;
+
+    private Location addressSourceLocation;
+
+    private OneToMany<Appointment> appointments;
+
+    private OneToMany<Location> clientLocations;
+
+    private String companyName;
+
+    private String desiredLocations;
+
+    private OneToMany<DistributionList> distributionLists;
+
+    private OneToMany<Appointment> interviews;
+
+    private Boolean isAnonymized;
+
+    private OneToMany<JobOrder> jobOrders;
+
+    private OneToMany<JobSubmission> jobSubmissions;
+
+    private OneToMany<Opportunity> opportunities;
+
+    private OneToMany<Placement> placements;
+
+    private PrivateLabel privateLabel;
+
+    private OneToMany<Sendout> sendouts;
+
+    private String skillSet;
+
+    private ClientContactRatios stats;
+
+    private OneToMany<Task> tasks;
 
 	public ClientContact() {
 		super();
@@ -1122,6 +1158,150 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
     @JsonProperty("customObject10s")
     public void setCustomObject10s(OneToMany<PersonCustomObjectInstance10> customObject10s) {
         this.customObject10s = customObject10s;
+    }
+
+    public OneToMany<Placement> getActivePlacements() {
+        return activePlacements;
+    }
+
+    public void setActivePlacements(OneToMany<Placement> activePlacements) {
+        this.activePlacements = activePlacements;
+    }
+
+    public Location getAddressSourceLocation() {
+        return addressSourceLocation;
+    }
+
+    public void setAddressSourceLocation(Location addressSourceLocation) {
+        this.addressSourceLocation = addressSourceLocation;
+    }
+
+    public OneToMany<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(OneToMany<Appointment> appointments) {
+        this.appointments = appointments;
+    }
+
+    public OneToMany<Location> getClientLocations() {
+        return clientLocations;
+    }
+
+    public void setClientLocations(OneToMany<Location> clientLocations) {
+        this.clientLocations = clientLocations;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getDesiredLocations() {
+        return desiredLocations;
+    }
+
+    public void setDesiredLocations(String desiredLocations) {
+        this.desiredLocations = desiredLocations;
+    }
+
+    public OneToMany<DistributionList> getDistributionLists() {
+        return distributionLists;
+    }
+
+    public void setDistributionLists(OneToMany<DistributionList> distributionLists) {
+        this.distributionLists = distributionLists;
+    }
+
+    public OneToMany<Appointment> getInterviews() {
+        return interviews;
+    }
+
+    public void setInterviews(OneToMany<Appointment> interviews) {
+        this.interviews = interviews;
+    }
+
+    public Boolean getAnonymized() {
+        return isAnonymized;
+    }
+
+    public void setAnonymized(Boolean anonymized) {
+        isAnonymized = anonymized;
+    }
+
+    public OneToMany<JobOrder> getJobOrders() {
+        return jobOrders;
+    }
+
+    public void setJobOrders(OneToMany<JobOrder> jobOrders) {
+        this.jobOrders = jobOrders;
+    }
+
+    public OneToMany<JobSubmission> getJobSubmissions() {
+        return jobSubmissions;
+    }
+
+    public void setJobSubmissions(OneToMany<JobSubmission> jobSubmissions) {
+        this.jobSubmissions = jobSubmissions;
+    }
+
+    public OneToMany<Opportunity> getOpportunities() {
+        return opportunities;
+    }
+
+    public void setOpportunities(OneToMany<Opportunity> opportunities) {
+        this.opportunities = opportunities;
+    }
+
+    public OneToMany<Placement> getPlacements() {
+        return placements;
+    }
+
+    public void setPlacements(OneToMany<Placement> placements) {
+        this.placements = placements;
+    }
+
+    public PrivateLabel getPrivateLabel() {
+        return privateLabel;
+    }
+
+    public void setPrivateLabel(PrivateLabel privateLabel) {
+        this.privateLabel = privateLabel;
+    }
+
+    public OneToMany<Sendout> getSendouts() {
+        return sendouts;
+    }
+
+    public void setSendouts(OneToMany<Sendout> sendouts) {
+        this.sendouts = sendouts;
+    }
+
+    public String getSkillSet() {
+        return skillSet;
+    }
+
+    public void setSkillSet(String skillSet) {
+        this.skillSet = skillSet;
+    }
+
+    public ClientContactRatios getStats() {
+        return stats;
+    }
+
+    public void setStats(ClientContactRatios stats) {
+        this.stats = stats;
+    }
+
+    public OneToMany<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(OneToMany<Task> tasks) {
+        this.tasks = tasks;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsD;
@@ -13,7 +14,7 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "appointments", "billRate", "branch", "candidate", "comments",
     "customDate1", "customDate2", "customDate3", "customDate4", "customDate5",
@@ -26,7 +27,7 @@ import java.util.Objects;
     "customText21", "customText22", "customText23", "customText24", "customText25",
     "customTextBlock1", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5",
     "dateAdded", "dateLastModified", "dateWebResponse", "endDate", "isDeleted", "isHidden", "jobOrder", "jobSubmissionCertificationRequirements",
-    "migrateGUID", "owners", "payRate", "salary", "sendingUser", "source", "startDate", "status", "tasks"})
+    "migrateGUID", "owners", "payRate", "salary", "sendingUser", "source", "startDate", "status", "tasks", "latestAppointment"})
 public class JobSubmission extends CustomFieldsD implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
 
     private Integer id;

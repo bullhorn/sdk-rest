@@ -425,6 +425,7 @@ public class MockDataLoader {
         entityFiles.put(CandidateCertification.class, "candidatecertification-data.txt");
         entityFiles.put(CandidateEducation.class, "candidateeducation-data.txt");
         entityFiles.put(CandidateReference.class, "candidatereference-data.txt");
+        entityFiles.put(CandidateSource.class, "candidatesource-data.txt");
         entityFiles.put(CandidateWorkHistory.class, "candidateworkhistory-data.txt");
         entityFiles.put(Category.class, "category-data.txt");
         entityFiles.put(Certification.class, "certification-data.txt");
@@ -444,12 +445,14 @@ public class MockDataLoader {
         entityFiles.put(ClientCorporationCertification.class, "clientcorporationcertification-data.txt");
         entityFiles.put(CorporateUser.class, "corporateuser-data.txt");
         entityFiles.put(CorporationDepartment.class, "corporationdepartment-data.txt");
+        entityFiles.put(Corporation.class, "corporation-data.txt");
         entityFiles.put(Country.class, "country-data.txt");
         entityFiles.put(Department.class, "department-data.txt");
         entityFiles.put(DistributionList.class, "distributionlist-data.txt");
         entityFiles.put(File.class, "file-data.txt");
         entityFiles.put(GoalTarget.class, "goaltarget-data.txt");
         entityFiles.put(HousingComplex.class, "housingcomplex-data.txt");
+        entityFiles.put(HousingComplexAmenity.class, "housingcomplexamenity-data.txt");
         entityFiles.put(HousingComplexUnit.class, "housingcomplexunit-data.txt");
         entityFiles.put(HousingComplexFurnitureDelivery.class, "housingcomplexfurnituredelivery-data.txt");
         entityFiles.put(HousingComplexUtilityAccount.class, "housingcomplexutilityaccount-data.txt");

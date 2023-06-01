@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "code", "country", "name" })
+@JsonPropertyOrder({ "id", "code", "country", "name", "importTaxes" })
 public class State extends AbstractEntity implements QueryEntity, AllRecordsEntity {
 
     private Integer id;
@@ -20,6 +20,8 @@ public class State extends AbstractEntity implements QueryEntity, AllRecordsEnti
     private Country country;
 
     private String name;
+
+    private Boolean importTaxes;
 
     @Override
     @JsonProperty("id")
@@ -61,6 +63,14 @@ public class State extends AbstractEntity implements QueryEntity, AllRecordsEnti
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Boolean getImportTaxes() {
+        return importTaxes;
+    }
+
+    public void setImportTaxes(Boolean importTaxes) {
+        this.importTaxes = importTaxes;
     }
 
     @Override
@@ -121,6 +131,6 @@ public class State extends AbstractEntity implements QueryEntity, AllRecordsEnti
         return builder.toString();
     }
 
-   
+
 
 }

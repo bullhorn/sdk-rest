@@ -17,7 +17,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "dateAdded", "groupName", "groupName", "isPrivate", "isReadOnly", "members", "migrateGUID", "name", "owner", "searchURL", "type"})
+@JsonPropertyOrder({"id", "dateAdded", "groupName", "groupName", "isPrivate", "isReadOnly", "members", "migrateGUID", "name", "owner", "searchURL", "type",
+    "description", "restrictListToRecordType"})
 public class DistributionList extends AbstractEntity implements QueryEntity, HardDeleteEntity, UpdateEntity, AssociationEntity {
 
     private Integer id;
@@ -49,6 +50,8 @@ public class DistributionList extends AbstractEntity implements QueryEntity, Har
 
     @Size(max = 30)
     private String type;
+
+    private String restrictListToRecordType;
 
     @Override
     @JsonProperty("id")
@@ -171,22 +174,30 @@ public class DistributionList extends AbstractEntity implements QueryEntity, Har
         this.type = type;
     }
 
+    public String getRestrictListToRecordType() {
+        return restrictListToRecordType;
+    }
+
+    public void setRestrictListToRecordType(String restrictListToRecordType) {
+        this.restrictListToRecordType = restrictListToRecordType;
+    }
+
     @Override
     public String toString() {
         return "DistributionList{" +
-                "id=" + id +
-                ", dateAdded=" + dateAdded +
-                ", description='" + description + '\'' +
-                ", groupName='" + groupName + '\'' +
-                ", isPrivate=" + isPrivate +
-                ", isReadOnly=" + isReadOnly +
-                ", members=" + members +
-                ", migrateGUID='" + migrateGUID + '\'' +
-                ", name='" + name + '\'' +
-                ", owner=" + owner +
-                ", searchURL='" + searchURL + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+            "id=" + id +
+            ", dateAdded=" + dateAdded +
+            ", description='" + description + '\'' +
+            ", groupName='" + groupName + '\'' +
+            ", isPrivate=" + isPrivate +
+            ", isReadOnly=" + isReadOnly +
+            ", members=" + members +
+            ", migrateGUID='" + migrateGUID + '\'' +
+            ", name='" + name + '\'' +
+            ", owner=" + owner +
+            ", searchURL='" + searchURL + '\'' +
+            ", type='" + type + '\'' +
+            '}';
     }
 
     @Override

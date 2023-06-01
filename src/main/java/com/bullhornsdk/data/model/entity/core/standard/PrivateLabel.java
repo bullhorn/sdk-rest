@@ -16,7 +16,10 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id" })
+@JsonPropertyOrder({"id", "attributeList", "businessSector", "certifications", "childPrivateLabels", "coBrandedTitle",
+    "coBrandedURL", "corporateUsers", "corporations", "dateAdded", "defaultWebLeadRecruiter", "description", "enabled", "footerHTML",
+    "headerHTML", "keyWords", "name", "noLookAndFeel", "privateLabelAttributes", "styleHTML", "title", "typer", "updateCanvas", "url",
+    "userType",})
 public class PrivateLabel extends AbstractEntity implements QueryEntity, AllRecordsEntity {
 
     private Integer id;
@@ -522,33 +525,33 @@ public class PrivateLabel extends AbstractEntity implements QueryEntity, AllReco
     @Override
     public String toString() {
         return "PrivateLabel{" +
-                "id=" + id +
-                ", attributeList=" + attributeList +
-                ", businessSectors=" + businessSectors +
-                ", certifications=" + certifications +
-                ", childPrivateLabels=" + childPrivateLabels +
-                ", coBrandedTitle=" + coBrandedTitle +
-                ", coBrandedURL=" + coBrandedURL +
-                ", corporateUsers=" + corporateUsers +
-                ", corporations=" + corporations +
-                ", dateAdded=" + dateAdded +
-                ", defaultWebLeadRecruiter=" + defaultWebLeadRecruiter +
-                ", description=" + description +
-                ", enabled=" + enabled +
-                ", footerHTML=" + footerHTML +
-                ", headerHTML=" + headerHTML +
-                ", keyWords=" + keyWords +
-                ", name=" + name +
-                ", noLookAndFeel=" + noLookAndFeel +
-                ", onLoadScript=" + onLoadScript +
-                ", parentPrivateLabel=" + parentPrivateLabel +
-                ", privateLabelAttributes=" + privateLabelAttributes +
-                ", splashPage=" + splashPage +
-                ", styleHTML=" + styleHTML +
-                ", title=" + title +
-                ", type=" + type +
-                ", userType=" + userType +
-                '}';
+            "id=" + id +
+            ", attributeList=" + attributeList +
+            ", businessSectors=" + businessSectors +
+            ", certifications=" + certifications +
+            ", childPrivateLabels=" + childPrivateLabels +
+            ", coBrandedTitle=" + coBrandedTitle +
+            ", coBrandedURL=" + coBrandedURL +
+            ", corporateUsers=" + corporateUsers +
+            ", corporations=" + corporations +
+            ", dateAdded=" + dateAdded +
+            ", defaultWebLeadRecruiter=" + defaultWebLeadRecruiter +
+            ", description=" + description +
+            ", enabled=" + enabled +
+            ", footerHTML=" + footerHTML +
+            ", headerHTML=" + headerHTML +
+            ", keyWords=" + keyWords +
+            ", name=" + name +
+            ", noLookAndFeel=" + noLookAndFeel +
+            ", onLoadScript=" + onLoadScript +
+            ", parentPrivateLabel=" + parentPrivateLabel +
+            ", privateLabelAttributes=" + privateLabelAttributes +
+            ", splashPage=" + splashPage +
+            ", styleHTML=" + styleHTML +
+            ", title=" + title +
+            ", type=" + type +
+            ", userType=" + userType +
+            '}';
     }
 
 }

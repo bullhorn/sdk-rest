@@ -36,7 +36,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "opportunity",
     "type",
     "usersSharedWith",
-    "uuid"
+    "uuid",
+    "isEncrypted"
 })
 public class OpportunityFileAttachment extends EntityFileAttachment {
 

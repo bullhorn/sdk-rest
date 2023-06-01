@@ -1,8 +1,10 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.*;
 import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
+import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsF;
 import com.bullhornsdk.data.model.entity.embedded.Address;
@@ -16,258 +18,265 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Objects;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "address", "branch", "businessSectors", "canEnterTime", "categories", "category", "certificationList", "certifications",
-		"clientCorporationBlackList", "clientCorporationWhiteList", "comments", "companyName", "companyURL", "customDate1", "customDate10",
-        "customDate11", "customDate12", "customDate13","customDate2", "customDate3", "customDate4", "customDate5", "customDate6", "customDate7",
-        "customDate8", "customDate9", "customFloat1", "customFloat10", "customFloat11","customFloat12", "customFloat13", "customFloat14", "customFloat15",
-        "customFloat16", "customFloat17", "customFloat18", "customFloat19", "customFloat2", "customFloat20", "customFloat21", "customFloat22",
-        "customFloat23", "customFloat3", "customFloat4", "customFloat5", "customFloat6", "customFloat7", "customFloat8", "customFloat9",
-        "customInt1", "customInt10", "customInt11", "customInt12", "customInt13", "customInt14", "customInt15", "customInt16",
-        "customInt17", "customInt18", "customInt19", "customInt2", "customInt20", "customInt21", "customInt22", "customInt23",
-        "customInt3", "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customText1",
-		"customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16", "customText17",
-		"customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
-        "customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
-        "customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
-        "customText39", "customText4", "customText40", "customText5", "customText6", "twoJobs", "isExempt", "totalDependentClaimAmount",
-        "otherIncomeAmount", "otherDeductionsAmount",
-		"customText7", "customText8", "customText9", "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3",
-        "customTextBlock4", "customTextBlock5", "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9",
-        "dateAdded", "dateAvailable", "dateAvailableEnd", "dateI9Expiration", "dateLastComment", "dateLastModified", "dateLastPayrollProviderSync", "dateNextCall",
-		"dateOfBirth", "dayRate", "dayRateLow", "degreeList", "description", "desiredLocations", "disability", "educationDegree",
-		"educations", "email", "email2", "email3", "employeeType", "employmentPreference", "customEncryptedText1", "customEncryptedText2",
-        "customEncryptedText3", "customEncryptedText4", "customEncryptedText5", "customEncryptedText6", "customEncryptedText7", "customEncryptedText8",
-        "customEncryptedText9",  "customEncryptedText10", "ethnicity", "experience", "externalID", "fax",
-		"fax2", "fax3", "federalAddtionalWitholdingsAmount", "federalExtraWithholdingAmount", "federalExemptions", "federalFilingStatus", "fileAttachments", "firstName",
-		"gender", "hourlyRate", "hourlyRateLow", "i9OnFile", "isAnonymized", "isDayLightSavings", "isDeleted", "isEditable", "isLockedOut", "interviews",
-		"lastName", "linkedPerson", "leads", "localAddtionalWitholdingsAmount", "localExemptions", "localFilingStatus", "localTaxCode",
-		"massMailOptOut", "middleName", "migrateGUID", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes", "numCategories",
-		"numOwners", "occupation", "owner", "pager", "paperWorkOnFile", "password", "phone", "phone2", "phone3", "placements",
-        "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
-		"preferredContact", "primarySkills", "recentClientList", "referredBy", "referredByPerson", "references", "salary", "salaryLow",
-		"secondaryAddress", "secondaryOwners", "secondarySkills", "sendouts", "skillSet", "smsOptIn", "source", "specialties",
-		"submissions", "ssn", "stateAddtionalWitholdingsAmount", "stateExemptions", "stateFilingStatus", "status", "tasks", "taxID",
-		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
-		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
-        "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject29s" })
+@JsonPropertyOrder({"id", "address", "branch", "businessSectors", "canEnterTime", "categories", "category", "certificationList", "certifications",
+    "clientCorporationBlackList", "clientCorporationWhiteList", "comments", "companyName", "companyURL", "customDate1", "customDate10",
+    "customDate11", "customDate12", "customDate13", "customDate2", "customDate3", "customDate4", "customDate5", "customDate6", "customDate7",
+    "customDate8", "customDate9", "customFloat1", "customFloat10", "customFloat11", "customFloat12", "customFloat13", "customFloat14", "customFloat15",
+    "customFloat16", "customFloat17", "customFloat18", "customFloat19", "customFloat2", "customFloat20", "customFloat21", "customFloat22",
+    "customFloat23", "customFloat3", "customFloat4", "customFloat5", "customFloat6", "customFloat7", "customFloat8", "customFloat9",
+    "customInt1", "customInt10", "customInt11", "customInt12", "customInt13", "customInt14", "customInt15", "customInt16",
+    "customInt17", "customInt18", "customInt19", "customInt2", "customInt20", "customInt21", "customInt22", "customInt23",
+    "customInt3", "customInt4", "customInt5", "customInt6", "customInt7", "customInt8", "customInt9", "customText1",
+    "customText10", "customText11", "customText12", "customText13", "customText14", "customText15", "customText16", "customText17",
+    "customText18", "customText19", "customText2", "customText20", "customText21", "customText22", "customText23",
+    "customText24", "customText25", "customText26", "customText27", "customText28", "customText29", "customText3", "customText30",
+    "customText31", "customText32", "customText33", "customText34", "customText35", "customText36", "customText37", "customText38",
+    "customText39", "customText4", "customText40", "customText5", "customText6", "twoJobs", "isExempt", "totalDependentClaimAmount",
+    "otherIncomeAmount", "otherDeductionsAmount",
+    "customText7", "customText8", "customText9", "customTextBlock1", "customTextBlock10", "customTextBlock2", "customTextBlock3",
+    "customTextBlock4", "customTextBlock5", "customTextBlock6", "customTextBlock7", "customTextBlock8", "customTextBlock9",
+    "dateAdded", "dateAvailable", "dateAvailableEnd", "dateI9Expiration", "dateLastComment", "dateLastModified", "dateLastPayrollProviderSync", "dateNextCall",
+    "dateOfBirth", "dayRate", "dayRateLow", "degreeList", "description", "desiredLocations", "disability", "educationDegree",
+    "educations", "email", "email2", "email3", "employeeType", "employmentPreference", "customEncryptedText1", "customEncryptedText2",
+    "customEncryptedText3", "customEncryptedText4", "customEncryptedText5", "customEncryptedText6", "customEncryptedText7", "customEncryptedText8",
+    "customEncryptedText9", "customEncryptedText10", "ethnicity", "experience", "externalID", "fax",
+    "fax2", "fax3", "federalAddtionalWitholdingsAmount", "federalExtraWithholdingAmount", "federalExemptions", "federalFilingStatus", "fileAttachments", "firstName",
+    "gender", "hourlyRate", "hourlyRateLow", "i9OnFile", "isAnonymized", "isDayLightSavings", "isDeleted", "isEditable", "isLockedOut", "interviews",
+    "lastName", "linkedPerson", "leads", "localAddtionalWitholdingsAmount", "localExemptions", "localFilingStatus", "localTaxCode",
+    "massMailOptOut", "middleName", "migrateGUID", "mobile", "name", "namePrefix", "nameSuffix", "nickName", "notes", "numCategories",
+    "numOwners", "occupation", "owner", "pager", "paperWorkOnFile", "password", "phone", "phone2", "phone3", "placements",
+    "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
+    "preferredContact", "primarySkills", "recentClientList", "referredBy", "referredByPerson", "references", "salary", "salaryLow",
+    "secondaryAddress", "secondaryOwners", "secondarySkills", "sendouts", "skillSet", "smsOptIn", "source", "specialties",
+    "submissions", "ssn", "stateAddtionalWitholdingsAmount", "stateExemptions", "stateFilingStatus", "status", "tasks", "taxID",
+    "taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
+    "workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
+    "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject11s", "customObject12s", "customObject13s",
+    "customObject14s", "customObject15s", "customObject16s", "customObject17s", "customObject18s", "customObject19s",
+    "customObject20s", "customObject21s", "customObject22s", "customObject23s", "customObject24s", "customObject25s",
+    "customObject26s", "customObject27s", "customObject28s", "customObject29s", "customObject30s", "activePlacements",
+    "addressSourceLocation", "addressSourceLocation", "candidateSource", "clientRating", "distributionLists",
+    "estaffGUID", "latestComment", "locations", "maritalStatus", "ownerCorporation", "payrollClientStartDate",
+    "payrollStatus", "privateLabel", "shifts", "tobaccoUser", "travelMethod"})
 public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
-		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
+    AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
-	private BigDecimal luceneScore;
+    private BigDecimal luceneScore;
 
-	private Integer id;
+    private Integer id;
 
-	private Address address;
+    private Address address;
 
-	private Branch branch;
+    private Branch branch;
 
-	private OneToMany<BusinessSector> businessSectors;
+    private OneToMany<BusinessSector> businessSectors;
 
-	private Boolean canEnterTime;
+    private Boolean canEnterTime;
 
-	private OneToMany<Category> categories;
+    private OneToMany<Category> categories;
 
-	private Category category;
+    private Category category;
 
-	private OneToMany<CandidateCertification> certificationList;
+    private OneToMany<CandidateCertification> certificationList;
 
-	@JsonIgnore
-	private String certifications;
+    @JsonIgnore
+    private String certifications;
 
-	private OneToMany<ClientCorporation> clientCorporationBlackList;
+    private OneToMany<ClientCorporation> clientCorporationBlackList;
 
-	private OneToMany<ClientCorporation> clientCorporationWhiteList;
+    private OneToMany<ClientCorporation> clientCorporationWhiteList;
 
-	@JsonIgnore
-	private String comments;
+    @JsonIgnore
+    private String comments;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String companyName;
+    @JsonIgnore
+    @Size(max = 100)
+    private String companyName;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String companyURL;
+    @JsonIgnore
+    @Size(max = 100)
+    private String companyURL;
 
-	private DateTime dateAdded;
+    private DateTime dateAdded;
 
-	private DateTime dateAvailable;
+    private DateTime dateAvailable;
 
-	private DateTime dateAvailableEnd;
+    private DateTime dateAvailableEnd;
 
-	private DateTime dateI9Expiration;
+    private DateTime dateI9Expiration;
 
-	private DateTime dateLastComment;
+    private DateTime dateLastComment;
 
-	private DateTime dateLastModified;
+    private DateTime dateLastModified;
 
     private DateTime dateLastPayrollProviderSync;
 
-	private DateTime dateNextCall;
+    private DateTime dateNextCall;
 
-	private DateTime dateOfBirth;
+    private DateTime dateOfBirth;
 
-	private BigDecimal dayRate;
+    private BigDecimal dayRate;
 
-	private BigDecimal dayRateLow;
+    private BigDecimal dayRateLow;
 
-	@JsonIgnore
-	private String degreeList;
+    @JsonIgnore
+    private String degreeList;
 
-	@JsonIgnore
-	private String description;
+    @JsonIgnore
+    private String description;
 
-	@JsonIgnore
-	private String desiredLocations;
+    @JsonIgnore
+    private String desiredLocations;
 
-	@JsonIgnore
-	@Size(max = 1)
-	private String disability;
+    @JsonIgnore
+    @Size(max = 1)
+    private String disability;
 
-	@JsonIgnore
-	private String educationDegree;
+    @JsonIgnore
+    private String educationDegree;
 
-	private OneToMany<CandidateEducation> educations;
+    private OneToMany<CandidateEducation> educations;
 
-	@JsonIgnore
-	@Email
-	@Size(max = 100)
-	private String email;
+    @JsonIgnore
+    @Email
+    @Size(max = 100)
+    private String email;
 
-	@JsonIgnore
-	@Email
-	@Size(max = 100)
-	private String email2;
+    @JsonIgnore
+    @Email
+    @Size(max = 100)
+    private String email2;
 
-	@JsonIgnore
-	@Email
-	@Size(max = 100)
-	private String email3;
+    @JsonIgnore
+    @Email
+    @Size(max = 100)
+    private String email3;
 
-	@JsonIgnore
-	@Size(max = 30)
-	private String employeeType;
+    @JsonIgnore
+    @Size(max = 30)
+    private String employeeType;
 
-	@JsonIgnore
-	@Size(max = 200)
-	private String employmentPreference;
+    @JsonIgnore
+    @Size(max = 200)
+    private String employmentPreference;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String ethnicity;
+    @JsonIgnore
+    @Size(max = 50)
+    private String ethnicity;
 
-	private Integer experience;
+    private Integer experience;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String externalID;
+    @JsonIgnore
+    @Size(max = 50)
+    private String externalID;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String fax;
+    @JsonIgnore
+    @Size(max = 20)
+    private String fax;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String fax2;
+    @JsonIgnore
+    @Size(max = 20)
+    private String fax2;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String fax3;
+    @JsonIgnore
+    @Size(max = 20)
+    private String fax3;
 
-	private BigDecimal federalAddtionalWitholdingsAmount;
+    private BigDecimal federalAddtionalWitholdingsAmount;
 
     private BigDecimal federalExtraWithholdingAmount;
 
-	private Integer federalExemptions;
+    private Integer federalExemptions;
 
-	@JsonIgnore
-	private String federalFilingStatus;
+    @JsonIgnore
+    private String federalFilingStatus;
 
-	private OneToMany<StandardFileAttachment> fileAttachments;
+    private OneToMany<StandardFileAttachment> fileAttachments;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String firstName;
+    @JsonIgnore
+    @Size(max = 50)
+    private String firstName;
 
-	@JsonIgnore
-	@Size(max = 6)
-	private String gender;
+    @JsonIgnore
+    @Size(max = 6)
+    private String gender;
 
-	private BigDecimal hourlyRate;
+    private BigDecimal hourlyRate;
 
-	private BigDecimal hourlyRateLow;
+    private BigDecimal hourlyRateLow;
 
-	private OneToMany<Appointment> interviews;
+    private OneToMany<Appointment> interviews;
 
-	private Integer i9OnFile;
+    private Integer i9OnFile;
 
-	private Boolean isDayLightSavings;
+    private Boolean isDayLightSavings;
 
-	private Boolean isDeleted;
+    private Boolean isDeleted;
 
-	private Boolean isEditable;
+    private Boolean isEditable;
 
-	private Boolean isLockedOut;
+    private Boolean isLockedOut;
 
     private Boolean isAnonymized;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String lastName;
+    @JsonIgnore
+    @Size(max = 50)
+    private String lastName;
 
-	private Person linkedPerson;
+    private Person linkedPerson;
 
-	private OneToMany<Lead> leads;
+    private OneToMany<Lead> leads;
 
-	private BigDecimal localAddtionalWitholdingsAmount;
+    private BigDecimal localAddtionalWitholdingsAmount;
 
-	private Integer localExemptions;
+    private Integer localExemptions;
 
-	@JsonIgnore
-	private String localFilingStatus;
+    @JsonIgnore
+    private String localFilingStatus;
 
-	@JsonIgnore
-	private String localTaxCode;
+    @JsonIgnore
+    private String localTaxCode;
 
-	private Boolean massMailOptOut;
+    private Boolean massMailOptOut;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String middleName;
+    @JsonIgnore
+    @Size(max = 50)
+    private String middleName;
 
-	private Object migrateGUID;
+    private Object migrateGUID;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String mobile;
+    @JsonIgnore
+    @Size(max = 20)
+    private String mobile;
 
-	@JsonIgnore
-	private String name;
+    @JsonIgnore
+    private String name;
 
-	@JsonIgnore
-	@Size(max = 5)
-	private String namePrefix;
+    @JsonIgnore
+    @Size(max = 5)
+    private String namePrefix;
 
-	@JsonIgnore
-	@Size(max = 5)
-	private String nameSuffix;
+    @JsonIgnore
+    @Size(max = 5)
+    private String nameSuffix;
 
-	@JsonIgnore
-	private String nickName;
+    @JsonIgnore
+    private String nickName;
 
-	private OneToMany<Note> notes;
+    private OneToMany<Note> notes;
 
-	private Integer numCategories;
+    private Integer numCategories;
 
-	private Integer numOwners;
+    private Integer numOwners;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String occupation;
+    @JsonIgnore
+    @Size(max = 50)
+    private String occupation;
 
     private Integer onboardingDocumentReceivedCount;
 
@@ -279,106 +288,106 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     private String onboardingStatus;
 
-	private CorporateUser owner;
+    private CorporateUser owner;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String pager;
+    @JsonIgnore
+    @Size(max = 20)
+    private String pager;
 
-	@JsonIgnore
-	private String paperWorkOnFile;
+    @JsonIgnore
+    private String paperWorkOnFile;
 
-	@JsonIgnore
-	private String password;
+    @JsonIgnore
+    private String password;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String phone;
+    @JsonIgnore
+    @Size(max = 20)
+    private String phone;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String phone2;
+    @JsonIgnore
+    @Size(max = 20)
+    private String phone2;
 
-	@JsonIgnore
-	@Size(max = 20)
-	private String phone3;
+    @JsonIgnore
+    @Size(max = 20)
+    private String phone3;
 
-	private OneToMany<Placement> placements;
+    private OneToMany<Placement> placements;
 
-	@JsonIgnore
-	@Size(max = 15)
-	private String preferredContact;
+    @JsonIgnore
+    @Size(max = 15)
+    private String preferredContact;
 
-	private OneToMany<Skill> primarySkills;
+    private OneToMany<Skill> primarySkills;
 
-	@JsonIgnore
-	private String recentClientList;
+    @JsonIgnore
+    private String recentClientList;
 
-	@JsonIgnore
-	@Size(max = 50)
-	private String referredBy;
+    @JsonIgnore
+    @Size(max = 50)
+    private String referredBy;
 
-	private Person referredByPerson;
+    private Person referredByPerson;
 
-	private OneToMany<CandidateReference> references;
+    private OneToMany<CandidateReference> references;
 
-	private BigDecimal salary;
+    private BigDecimal salary;
 
-	private BigDecimal salaryLow;
+    private BigDecimal salaryLow;
 
-	private Address secondaryAddress;
+    private Address secondaryAddress;
 
-	private OneToMany<CorporateUser> secondaryOwners;
+    private OneToMany<CorporateUser> secondaryOwners;
 
-	private OneToMany<Skill> secondarySkills;
+    private OneToMany<Skill> secondarySkills;
 
-	private OneToMany<Sendout> sendouts;
+    private OneToMany<Sendout> sendouts;
 
-	@JsonIgnore
-	private String skillSet;
+    @JsonIgnore
+    private String skillSet;
 
-	private Boolean smsOptIn;
+    private Boolean smsOptIn;
 
-	@JsonIgnore
-	private String source;
+    @JsonIgnore
+    private String source;
 
-	private OneToMany<Specialty> specialties;
+    private OneToMany<Specialty> specialties;
 
-	@JsonIgnore
-	@Size(max = 18)
-	private String ssn;
+    @JsonIgnore
+    @Size(max = 18)
+    private String ssn;
 
-	private BigDecimal stateAddtionalWitholdingsAmount;
+    private BigDecimal stateAddtionalWitholdingsAmount;
 
-	private Integer stateExemptions;
+    private Integer stateExemptions;
 
-	@JsonIgnore
-	private String stateFilingStatus;
+    @JsonIgnore
+    private String stateFilingStatus;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String status;
+    @JsonIgnore
+    @Size(max = 100)
+    private String status;
 
-	private OneToMany<JobSubmission> submissions;
+    private OneToMany<JobSubmission> submissions;
 
-	private OneToMany<Task> tasks;
+    private OneToMany<Task> tasks;
 
-	@JsonIgnore
-	@Size(max = 18)
-	private String taxID;
+    @JsonIgnore
+    @Size(max = 18)
+    private String taxID;
 
-	@JsonIgnore
-	private String taxState;
+    @JsonIgnore
+    private String taxState;
 
-	private OneToMany<Tearsheet> tearsheets;
+    private OneToMany<Tearsheet> tearsheets;
 
-	private Integer timeZoneOffsetEST;
+    private Integer timeZoneOffsetEST;
 
-	private Integer travelLimit;
+    private Integer travelLimit;
 
-	@JsonIgnore
-	@Size(max = 100)
-	private String type;
+    @JsonIgnore
+    @Size(max = 100)
+    private String type;
 
     private Boolean twoJobs;
 
@@ -390,20 +399,20 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
 
     private Boolean isExempt;
 
-	@JsonIgnore
-	private String username;
+    @JsonIgnore
+    private String username;
 
-	@JsonIgnore
-	@Size(max = 1)
-	private String veteran;
+    @JsonIgnore
+    @Size(max = 1)
+    private String veteran;
 
-	private OneToMany<JobSubmission> webResponses;
+    private OneToMany<JobSubmission> webResponses;
 
-	private Boolean willRelocate;
+    private Boolean willRelocate;
 
-	private Boolean workAuthorized;
+    private Boolean workAuthorized;
 
-	private OneToMany<CandidateWorkHistory> workHistories;
+    private OneToMany<CandidateWorkHistory> workHistories;
 
     @JsonIgnore
     @Size(max = 20)
@@ -458,117 +467,165 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     private OneToMany<PersonCustomObjectInstance9> customObject9s;
 
     private OneToMany<PersonCustomObjectInstance10> customObject10s;
+    private OneToMany<PersonCustomObjectInstance11> customObject11s;
+    private OneToMany<PersonCustomObjectInstance12> customObject12s;
+    private OneToMany<PersonCustomObjectInstance13> customObject13s;
+    private OneToMany<PersonCustomObjectInstance14> customObject14s;
+    private OneToMany<PersonCustomObjectInstance15> customObject15s;
+    private OneToMany<PersonCustomObjectInstance16> customObject16s;
+    private OneToMany<PersonCustomObjectInstance17> customObject17s;
+    private OneToMany<PersonCustomObjectInstance18> customObject18s;
+    private OneToMany<PersonCustomObjectInstance19> customObject19s;
+    private OneToMany<PersonCustomObjectInstance20> customObject20s;
+    private OneToMany<PersonCustomObjectInstance21> customObject21s;
+    private OneToMany<PersonCustomObjectInstance22> customObject22s;
+    private OneToMany<PersonCustomObjectInstance23> customObject23s;
+    private OneToMany<PersonCustomObjectInstance24> customObject24s;
+    private OneToMany<PersonCustomObjectInstance25> customObject25s;
+    private OneToMany<PersonCustomObjectInstance26> customObject26s;
+    private OneToMany<PersonCustomObjectInstance27> customObject27s;
+    private OneToMany<PersonCustomObjectInstance28> customObject28s;
 
     private OneToMany<PersonCustomObjectInstance29> customObject29s;
 
     private OneToMany<PersonCustomObjectInstance30> customObject30s;
 
+    private OneToMany<Placement> activePlacements;
+
+    private Location addressSourceLocation;
+
+    private CandidateSource candidateSource;
+
+    private BigInteger clientRating;
+
+    private OneToMany<DistributionList> distributionLists;
+
+    private String estaffGUID;
+
+    private OneToMany<Location> locations;
+
+    private String maritalStatus;
+
+    private ClientCorporation ownerCorporation;
+
+    private DateTime payrollClientStartDate;
+
+    private String payrollStatus;
+
+    private PrivateLabel privateLabel;
+
+    private OneToMany<Shift> shifts;
+
+    private String tobaccoUser;
+
+    private String travelMethod;
+
     public Candidate() {
-		super();
-	}
+        super();
+    }
 
-	public Candidate(Integer id) {
-		super();
-		this.id = id;
-	}
+    public Candidate(Integer id) {
+        super();
+        this.id = id;
+    }
 
-	/**
-	 * Returns the entity with the required fields for an insert set.
-	 *
-	 * @return
-	 */
-	public Candidate instantiateForInsert() {
-		Candidate entity = new Candidate();
-		entity.setCategory(new Category(512973));
-		entity.setComments("New lead candidate");
-		entity.setEmployeeType("W2");
-		entity.setIsDeleted(Boolean.FALSE);
-		entity.setIsEditable(Boolean.TRUE);
-		entity.setPreferredContact("Email");
-		entity.setStatus("New Lead");
-		entity.setOwner(new CorporateUser(1));
-		entity.setName("");
-		entity.setFirstName("");
-		entity.setLastName("");
-		entity.setUsername(new DateTime().toString());
-		entity.setPassword("secret");
-		return entity;
-	}
+    /**
+     * Returns the entity with the required fields for an insert set.
+     *
+     * @return
+     */
+    public Candidate instantiateForInsert() {
+        Candidate entity = new Candidate();
+        entity.setCategory(new Category(512973));
+        entity.setComments("New lead candidate");
+        entity.setEmployeeType("W2");
+        entity.setIsDeleted(Boolean.FALSE);
+        entity.setIsEditable(Boolean.TRUE);
+        entity.setPreferredContact("Email");
+        entity.setStatus("New Lead");
+        entity.setOwner(new CorporateUser(1));
+        entity.setName("");
+        entity.setFirstName("");
+        entity.setLastName("");
+        entity.setUsername(new DateTime().toString());
+        entity.setPassword("secret");
+        return entity;
+    }
 
-	public static void setRequiredFieldsForInsert(Candidate candidate) {
-		if (candidate.getCategory() == null) {
-			candidate.setCategory(new Category(512973));
-		}
-		if (candidate.getComments() == null) {
-			candidate.setComments("New lead candidate");
-		}
-		if (candidate.getEmployeeType() == null) {
-			candidate.setEmployeeType("W2");
-		}
-		if (candidate.getIsDeleted() == null) {
-			candidate.setIsDeleted(Boolean.FALSE);
-		}
-		if (candidate.getIsEditable() == null) {
-			candidate.setIsEditable(Boolean.FALSE);
-		}
-		if (candidate.getPreferredContact() == null) {
-			candidate.setPreferredContact("Email");
-		}
-		if (candidate.getStatus() == null) {
-			candidate.setStatus("New Lead");
-		}
-		if (candidate.getOwner() == null) {
-			candidate.setOwner(new CorporateUser(1));
-		}
-		if (candidate.getUsername() == null) {
-			candidate.setUsername(new DateTime().toString());
-		}
-		if (candidate.getPassword() == null) {
-			candidate.setPassword("secret");
-		}
+    public static void setRequiredFieldsForInsert(Candidate candidate) {
+        if (candidate.getCategory() == null) {
+            candidate.setCategory(new Category(512973));
+        }
+        if (candidate.getComments() == null) {
+            candidate.setComments("New lead candidate");
+        }
+        if (candidate.getEmployeeType() == null) {
+            candidate.setEmployeeType("W2");
+        }
+        if (candidate.getIsDeleted() == null) {
+            candidate.setIsDeleted(Boolean.FALSE);
+        }
+        if (candidate.getIsEditable() == null) {
+            candidate.setIsEditable(Boolean.FALSE);
+        }
+        if (candidate.getPreferredContact() == null) {
+            candidate.setPreferredContact("Email");
+        }
+        if (candidate.getStatus() == null) {
+            candidate.setStatus("New Lead");
+        }
+        if (candidate.getOwner() == null) {
+            candidate.setOwner(new CorporateUser(1));
+        }
+        if (candidate.getUsername() == null) {
+            candidate.setUsername(new DateTime().toString());
+        }
+        if (candidate.getPassword() == null) {
+            candidate.setPassword("secret");
+        }
 
-		if (candidate.getName() == null) {
-			if (candidate.getFirstName() != null && candidate.getLastName() != null) {
-				candidate.setName(candidate.getFirstName() + " " + candidate.getLastName());
-			} else {
-				candidate.setName("");
-			}
-		}
+        if (candidate.getName() == null) {
+            if (candidate.getFirstName() != null && candidate.getLastName() != null) {
+                candidate.setName(candidate.getFirstName() + " " + candidate.getLastName());
+            } else {
+                candidate.setName("");
+            }
+        }
 
-	}
+    }
 
-	@JsonIgnore
-	public BigDecimal getLuceneScore() {
-		return luceneScore;
-	}
+    @JsonIgnore
+    public BigDecimal getLuceneScore() {
+        return luceneScore;
+    }
 
-	@JsonProperty("_score")
-	public void setLuceneScore(BigDecimal luceneScore) {
-		this.luceneScore = luceneScore;
-	}
+    @JsonProperty("_score")
+    public void setLuceneScore(BigDecimal luceneScore) {
+        this.luceneScore = luceneScore;
+    }
 
-	@Override
-	@JsonProperty("id")
-	public Integer getId() {
-		return id;
-	}
+    @Override
+    @JsonProperty("id")
+    public Integer getId() {
+        return id;
+    }
 
     @ReadOnly
-	@Override
-	@JsonProperty("id")
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @Override
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@JsonProperty("address")
-	public Address getAddress() {
-		return address;
-	}
+    @JsonProperty("address")
+    public Address getAddress() {
+        return address;
+    }
 
-	@JsonProperty("address")
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+    @JsonProperty("address")
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     @JsonProperty("branch")
     public Branch getBranch() {
@@ -581,14 +638,14 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     }
 
     @JsonIgnore
-	public OneToMany<BusinessSector> getBusinessSectors() {
-		return businessSectors;
-	}
+    public OneToMany<BusinessSector> getBusinessSectors() {
+        return businessSectors;
+    }
 
-	@JsonProperty("businessSectors")
-	public void setBusinessSectors(OneToMany<BusinessSector> businessSectors) {
-		this.businessSectors = businessSectors;
-	}
+    @JsonProperty("businessSectors")
+    public void setBusinessSectors(OneToMany<BusinessSector> businessSectors) {
+        this.businessSectors = businessSectors;
+    }
 
     @JsonProperty("canEnterTime")
     public Boolean getCanEnterTime() {
@@ -600,161 +657,161 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         this.canEnterTime = canEnterTime;
     }
 
-	@JsonIgnore
-	public OneToMany<Category> getCategories() {
-		return categories;
-	}
+    @JsonIgnore
+    public OneToMany<Category> getCategories() {
+        return categories;
+    }
 
-	@JsonProperty("categories")
-	public void setCategories(OneToMany<Category> categories) {
-		this.categories = categories;
-	}
+    @JsonProperty("categories")
+    public void setCategories(OneToMany<Category> categories) {
+        this.categories = categories;
+    }
 
-	@JsonProperty("category")
-	public Category getCategory() {
-		return category;
-	}
+    @JsonProperty("category")
+    public Category getCategory() {
+        return category;
+    }
 
-	@JsonProperty("category")
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-
-	@JsonIgnore
-	public OneToMany<CandidateCertification> getCertificationList() {
-		return certificationList;
-	}
-
-    @ReadOnly
-	@JsonProperty("certificationList")
-	public void setCertificationList(OneToMany<CandidateCertification> certificationList) {
-		this.certificationList = certificationList;
-	}
-
-	@JsonProperty("certifications")
-	public String getCertifications() {
-		return certifications;
-	}
-
-	@JsonIgnore
-	public void setCertifications(String certifications) {
-		this.certifications = certifications;
-	}
-
-	@JsonProperty("clientCorporationBlackList")
-	public OneToMany<ClientCorporation> getClientCorporationBlackList() {
-		return clientCorporationBlackList;
-	}
-
-    @ReadOnly
-	@JsonProperty("clientCorporationBlackList")
-	public void setClientCorporationBlackList(OneToMany<ClientCorporation> clientCorporationBlackList) {
-		this.clientCorporationBlackList = clientCorporationBlackList;
-	}
-
-	@JsonProperty("clientCorporationWhiteList")
-	public OneToMany<ClientCorporation> getClientCorporationWhiteList() {
-		return clientCorporationWhiteList;
-	}
-
-    @ReadOnly
-	@JsonProperty("clientCorporationWhiteList")
-	public void setClientCorporationWhiteList(OneToMany<ClientCorporation> clientCorporationWhiteList) {
-		this.clientCorporationWhiteList = clientCorporationWhiteList;
-	}
-
-	@JsonProperty("comments")
-	public String getComments() {
-		return comments;
-	}
+    @JsonProperty("category")
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     @JsonIgnore
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
+    public OneToMany<CandidateCertification> getCertificationList() {
+        return certificationList;
+    }
 
-	@JsonProperty("companyName")
-	public String getCompanyName() {
-		return companyName;
-	}
+    @ReadOnly
+    @JsonProperty("certificationList")
+    public void setCertificationList(OneToMany<CandidateCertification> certificationList) {
+        this.certificationList = certificationList;
+    }
+
+    @JsonProperty("certifications")
+    public String getCertifications() {
+        return certifications;
+    }
 
     @JsonIgnore
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
+    public void setCertifications(String certifications) {
+        this.certifications = certifications;
+    }
 
-	@JsonProperty("companyURL")
-	public String getCompanyURL() {
-		return companyURL;
-	}
-
-	@JsonIgnore
-	public void setCompanyURL(String companyURL) {
-		this.companyURL = companyURL;
-	}
-
-	@JsonProperty("dateAdded")
-	public DateTime getDateAdded() {
-		return dateAdded;
-	}
+    @JsonProperty("clientCorporationBlackList")
+    public OneToMany<ClientCorporation> getClientCorporationBlackList() {
+        return clientCorporationBlackList;
+    }
 
     @ReadOnly
-	@JsonProperty("dateAdded")
-	public void setDateAdded(DateTime dateAdded) {
-		this.dateAdded = dateAdded;
-	}
+    @JsonProperty("clientCorporationBlackList")
+    public void setClientCorporationBlackList(OneToMany<ClientCorporation> clientCorporationBlackList) {
+        this.clientCorporationBlackList = clientCorporationBlackList;
+    }
 
-	@JsonProperty("dateAvailable")
-	public DateTime getDateAvailable() {
-		return dateAvailable;
-	}
-
-	@JsonProperty("dateAvailable")
-	public void setDateAvailable(DateTime dateAvailable) {
-		this.dateAvailable = dateAvailable;
-	}
-
-	@JsonProperty("dateAvailableEnd")
-	public DateTime getDateAvailableEnd() {
-		return dateAvailableEnd;
-	}
-
-	@JsonProperty("dateAvailableEnd")
-	public void setDateAvailableEnd(DateTime dateAvailableEnd) {
-		this.dateAvailableEnd = dateAvailableEnd;
-	}
-
-	@JsonProperty("dateI9Expiration")
-	public DateTime getDateI9Expiration() {
-		return dateI9Expiration;
-	}
-
-	@JsonProperty("dateI9Expiration")
-	public void setDateI9Expiration(DateTime dateI9Expiration) {
-		this.dateI9Expiration = dateI9Expiration;
-	}
-
-	@JsonProperty("dateLastComment")
-	public DateTime getDateLastComment() {
-		return dateLastComment;
-	}
+    @JsonProperty("clientCorporationWhiteList")
+    public OneToMany<ClientCorporation> getClientCorporationWhiteList() {
+        return clientCorporationWhiteList;
+    }
 
     @ReadOnly
-	@JsonProperty("dateLastComment")
-	public void setDateLastComment(DateTime dateLastComment) {
-		this.dateLastComment = dateLastComment;
-	}
+    @JsonProperty("clientCorporationWhiteList")
+    public void setClientCorporationWhiteList(OneToMany<ClientCorporation> clientCorporationWhiteList) {
+        this.clientCorporationWhiteList = clientCorporationWhiteList;
+    }
 
-	@JsonProperty("dateLastModified")
-	public DateTime getDateLastModified() {
-		return dateLastModified;
-	}
+    @JsonProperty("comments")
+    public String getComments() {
+        return comments;
+    }
+
+    @JsonIgnore
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    @JsonProperty("companyName")
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    @JsonIgnore
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    @JsonProperty("companyURL")
+    public String getCompanyURL() {
+        return companyURL;
+    }
+
+    @JsonIgnore
+    public void setCompanyURL(String companyURL) {
+        this.companyURL = companyURL;
+    }
+
+    @JsonProperty("dateAdded")
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
 
     @ReadOnly
-	@JsonProperty("dateLastModified")
-	public void setDateLastModified(DateTime dateLastModified) {
-		this.dateLastModified = dateLastModified;
-	}
+    @JsonProperty("dateAdded")
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
+    @JsonProperty("dateAvailable")
+    public DateTime getDateAvailable() {
+        return dateAvailable;
+    }
+
+    @JsonProperty("dateAvailable")
+    public void setDateAvailable(DateTime dateAvailable) {
+        this.dateAvailable = dateAvailable;
+    }
+
+    @JsonProperty("dateAvailableEnd")
+    public DateTime getDateAvailableEnd() {
+        return dateAvailableEnd;
+    }
+
+    @JsonProperty("dateAvailableEnd")
+    public void setDateAvailableEnd(DateTime dateAvailableEnd) {
+        this.dateAvailableEnd = dateAvailableEnd;
+    }
+
+    @JsonProperty("dateI9Expiration")
+    public DateTime getDateI9Expiration() {
+        return dateI9Expiration;
+    }
+
+    @JsonProperty("dateI9Expiration")
+    public void setDateI9Expiration(DateTime dateI9Expiration) {
+        this.dateI9Expiration = dateI9Expiration;
+    }
+
+    @JsonProperty("dateLastComment")
+    public DateTime getDateLastComment() {
+        return dateLastComment;
+    }
+
+    @ReadOnly
+    @JsonProperty("dateLastComment")
+    public void setDateLastComment(DateTime dateLastComment) {
+        this.dateLastComment = dateLastComment;
+    }
+
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    @ReadOnly
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
+    }
 
     @JsonProperty("dateLastPayrollProviderSync")
     public DateTime getDateLastPayrollProviderSync() {
@@ -767,225 +824,225 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("dateNextCall")
-	public DateTime getDateNextCall() {
-		return dateNextCall;
-	}
+    public DateTime getDateNextCall() {
+        return dateNextCall;
+    }
 
-	@JsonProperty("dateNextCall")
-	public void setDateNextCall(DateTime dateNextCall) {
-		this.dateNextCall = dateNextCall;
-	}
+    @JsonProperty("dateNextCall")
+    public void setDateNextCall(DateTime dateNextCall) {
+        this.dateNextCall = dateNextCall;
+    }
 
-	@JsonProperty("dateOfBirth")
-	public DateTime getDateOfBirth() {
-		return dateOfBirth;
-	}
+    @JsonProperty("dateOfBirth")
+    public DateTime getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-	@JsonProperty("dateOfBirth")
-	public void setDateOfBirth(DateTime dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
+    @JsonProperty("dateOfBirth")
+    public void setDateOfBirth(DateTime dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-	@JsonProperty("dayRate")
-	public BigDecimal getDayRate() {
-		return dayRate;
-	}
+    @JsonProperty("dayRate")
+    public BigDecimal getDayRate() {
+        return dayRate;
+    }
 
-	@JsonProperty("dayRate")
-	public void setDayRate(BigDecimal dayRate) {
-		this.dayRate = dayRate;
-	}
+    @JsonProperty("dayRate")
+    public void setDayRate(BigDecimal dayRate) {
+        this.dayRate = dayRate;
+    }
 
-	@JsonProperty("dayRateLow")
-	public BigDecimal getDayRateLow() {
-		return dayRateLow;
-	}
+    @JsonProperty("dayRateLow")
+    public BigDecimal getDayRateLow() {
+        return dayRateLow;
+    }
 
-	@JsonProperty("dayRateLow")
-	public void setDayRateLow(BigDecimal dayRateLow) {
-		this.dayRateLow = dayRateLow;
-	}
+    @JsonProperty("dayRateLow")
+    public void setDayRateLow(BigDecimal dayRateLow) {
+        this.dayRateLow = dayRateLow;
+    }
 
-	@JsonProperty("degreeList")
-	public String getDegreeList() {
-		return degreeList;
-	}
-
-	@JsonIgnore
-	public void setDegreeList(String degreeList) {
-		this.degreeList = degreeList;
-	}
-
-	@JsonProperty("description")
-	public String getDescription() {
-		return description;
-	}
+    @JsonProperty("degreeList")
+    public String getDegreeList() {
+        return degreeList;
+    }
 
     @JsonIgnore
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDegreeList(String degreeList) {
+        this.degreeList = degreeList;
+    }
 
-	@JsonProperty("desiredLocations")
-	public String getDesiredLocations() {
-		return desiredLocations;
-	}
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
+    }
 
-	@JsonIgnore
-	public void setDesiredLocations(String desiredLocations) {
-		this.desiredLocations = desiredLocations;
-	}
+    @JsonIgnore
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	@JsonProperty("disability")
-	public String getDisability() {
-		return disability;
-	}
+    @JsonProperty("desiredLocations")
+    public String getDesiredLocations() {
+        return desiredLocations;
+    }
 
-	@JsonIgnore
-	public void setDisability(String disability) {
-		this.disability = disability;
-	}
+    @JsonIgnore
+    public void setDesiredLocations(String desiredLocations) {
+        this.desiredLocations = desiredLocations;
+    }
 
-	@JsonProperty("educationDegree")
-	public String getEducationDegree() {
-		return educationDegree;
-	}
+    @JsonProperty("disability")
+    public String getDisability() {
+        return disability;
+    }
 
-	@JsonIgnore
-	public void setEducationDegree(String educationDegree) {
-		this.educationDegree = educationDegree;
-	}
+    @JsonIgnore
+    public void setDisability(String disability) {
+        this.disability = disability;
+    }
 
-	@JsonProperty("educations")
-	public OneToMany<CandidateEducation> getEducations() {
-		return educations;
-	}
+    @JsonProperty("educationDegree")
+    public String getEducationDegree() {
+        return educationDegree;
+    }
+
+    @JsonIgnore
+    public void setEducationDegree(String educationDegree) {
+        this.educationDegree = educationDegree;
+    }
+
+    @JsonProperty("educations")
+    public OneToMany<CandidateEducation> getEducations() {
+        return educations;
+    }
 
     @ReadOnly
-	@JsonProperty("educations")
-	public void setEducations(OneToMany<CandidateEducation> educations) {
-		this.educations = educations;
-	}
+    @JsonProperty("educations")
+    public void setEducations(OneToMany<CandidateEducation> educations) {
+        this.educations = educations;
+    }
 
-	@JsonProperty("email")
-	public String getEmail() {
-		return email;
-	}
-
-    @JsonIgnore
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	@JsonProperty("email2")
-	public String getEmail2() {
-		return email2;
-	}
+    @JsonProperty("email")
+    public String getEmail() {
+        return email;
+    }
 
     @JsonIgnore
-	public void setEmail2(String email2) {
-		this.email2 = email2;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	@JsonProperty("email3")
-	public String getEmail3() {
-		return email3;
-	}
-
-    @JsonIgnore
-	public void setEmail3(String email3) {
-		this.email3 = email3;
-	}
-
-	@JsonProperty("employeeType")
-	public String getEmployeeType() {
-		return employeeType;
-	}
-
-	@JsonIgnore
-	public void setEmployeeType(String employeeType) {
-		this.employeeType = employeeType;
-	}
-
-	@JsonProperty("employmentPreference")
-	public String getEmploymentPreference() {
-		return employmentPreference;
-	}
-
-	@JsonIgnore
-	public void setEmploymentPreference(String employmentPreference) {
-		this.employmentPreference = employmentPreference;
-	}
-
-	@JsonProperty("ethnicity")
-	public String getEthnicity() {
-		return ethnicity;
-	}
-
-	@JsonIgnore
-	public void setEthnicity(String ethnicity) {
-		this.ethnicity = ethnicity;
-	}
-
-	@JsonProperty("experience")
-	public Integer getExperience() {
-		return experience;
-	}
-
-	@JsonProperty("experience")
-	public void setExperience(Integer experience) {
-		this.experience = experience;
-	}
-
-	@JsonProperty("externalID")
-	public String getExternalID() {
-		return externalID;
-	}
+    @JsonProperty("email2")
+    public String getEmail2() {
+        return email2;
+    }
 
     @JsonIgnore
-	public void setExternalID(String externalID) {
-		this.externalID = externalID;
-	}
+    public void setEmail2(String email2) {
+        this.email2 = email2;
+    }
 
-	@JsonProperty("fax")
-	public String getFax() {
-		return fax;
-	}
-
-    @JsonIgnore
-	public void setFax(String fax) {
-		this.fax = fax;
-	}
-
-	@JsonProperty("fax2")
-	public String getFax2() {
-		return fax2;
-	}
+    @JsonProperty("email3")
+    public String getEmail3() {
+        return email3;
+    }
 
     @JsonIgnore
-	public void setFax2(String fax2) {
-		this.fax2 = fax2;
-	}
+    public void setEmail3(String email3) {
+        this.email3 = email3;
+    }
 
-	@JsonProperty("fax3")
-	public String getFax3() {
-		return fax3;
-	}
+    @JsonProperty("employeeType")
+    public String getEmployeeType() {
+        return employeeType;
+    }
 
     @JsonIgnore
-	public void setFax3(String fax3) {
-		this.fax3 = fax3;
-	}
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
+    }
 
-	@JsonProperty("federalAddtionalWitholdingsAmount")
-	public BigDecimal getFederalAddtionalWitholdingsAmount() {
-		return federalAddtionalWitholdingsAmount;
-	}
+    @JsonProperty("employmentPreference")
+    public String getEmploymentPreference() {
+        return employmentPreference;
+    }
 
-	@JsonProperty("federalAddtionalWitholdingsAmount")
-	public void setFederalAddtionalWitholdingsAmount(BigDecimal federalAddtionalWitholdingsAmount) {
-		this.federalAddtionalWitholdingsAmount = federalAddtionalWitholdingsAmount;
-	}
+    @JsonIgnore
+    public void setEmploymentPreference(String employmentPreference) {
+        this.employmentPreference = employmentPreference;
+    }
+
+    @JsonProperty("ethnicity")
+    public String getEthnicity() {
+        return ethnicity;
+    }
+
+    @JsonIgnore
+    public void setEthnicity(String ethnicity) {
+        this.ethnicity = ethnicity;
+    }
+
+    @JsonProperty("experience")
+    public Integer getExperience() {
+        return experience;
+    }
+
+    @JsonProperty("experience")
+    public void setExperience(Integer experience) {
+        this.experience = experience;
+    }
+
+    @JsonProperty("externalID")
+    public String getExternalID() {
+        return externalID;
+    }
+
+    @JsonIgnore
+    public void setExternalID(String externalID) {
+        this.externalID = externalID;
+    }
+
+    @JsonProperty("fax")
+    public String getFax() {
+        return fax;
+    }
+
+    @JsonIgnore
+    public void setFax(String fax) {
+        this.fax = fax;
+    }
+
+    @JsonProperty("fax2")
+    public String getFax2() {
+        return fax2;
+    }
+
+    @JsonIgnore
+    public void setFax2(String fax2) {
+        this.fax2 = fax2;
+    }
+
+    @JsonProperty("fax3")
+    public String getFax3() {
+        return fax3;
+    }
+
+    @JsonIgnore
+    public void setFax3(String fax3) {
+        this.fax3 = fax3;
+    }
+
+    @JsonProperty("federalAddtionalWitholdingsAmount")
+    public BigDecimal getFederalAddtionalWitholdingsAmount() {
+        return federalAddtionalWitholdingsAmount;
+    }
+
+    @JsonProperty("federalAddtionalWitholdingsAmount")
+    public void setFederalAddtionalWitholdingsAmount(BigDecimal federalAddtionalWitholdingsAmount) {
+        this.federalAddtionalWitholdingsAmount = federalAddtionalWitholdingsAmount;
+    }
 
     @JsonProperty("federalExtraWithholdingAmount")
     public BigDecimal getFederalExtraWithholdingAmount() {
@@ -998,136 +1055,136 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     }
 
     @JsonProperty("federalExemptions")
-	public Integer getFederalExemptions() {
-		return federalExemptions;
-	}
+    public Integer getFederalExemptions() {
+        return federalExemptions;
+    }
 
-	@JsonProperty("federalExemptions")
-	public void setFederalExemptions(Integer federalExemptions) {
-		this.federalExemptions = federalExemptions;
-	}
+    @JsonProperty("federalExemptions")
+    public void setFederalExemptions(Integer federalExemptions) {
+        this.federalExemptions = federalExemptions;
+    }
 
-	@JsonProperty("federalFilingStatus")
-	public String getFederalFilingStatus() {
-		return federalFilingStatus;
-	}
-
-	@JsonIgnore
-	public void setFederalFilingStatus(String federalFilingStatus) {
-		this.federalFilingStatus = federalFilingStatus;
-	}
-
-	@JsonProperty("fileAttachments")
-	public OneToMany<StandardFileAttachment> getFileAttachments() {
-		return fileAttachments;
-	}
-
-    @ReadOnly
-	@JsonProperty("fileAttachments")
-	public void setFileAttachments(OneToMany<StandardFileAttachment> fileAttachments) {
-		this.fileAttachments = fileAttachments;
-	}
-
-	@JsonProperty("firstName")
-	public String getFirstName() {
-		return firstName;
-	}
+    @JsonProperty("federalFilingStatus")
+    public String getFederalFilingStatus() {
+        return federalFilingStatus;
+    }
 
     @JsonIgnore
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setFederalFilingStatus(String federalFilingStatus) {
+        this.federalFilingStatus = federalFilingStatus;
+    }
 
-	@JsonProperty("gender")
-	public String getGender() {
-		return gender;
-	}
-
-    @JsonIgnore
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	@JsonProperty("hourlyRate")
-	public BigDecimal getHourlyRate() {
-		return hourlyRate;
-	}
-
-	@JsonProperty("hourlyRate")
-	public void setHourlyRate(BigDecimal hourlyRate) {
-		this.hourlyRate = hourlyRate;
-	}
-
-	@JsonProperty("hourlyRateLow")
-	public BigDecimal getHourlyRateLow() {
-		return hourlyRateLow;
-	}
-
-	@JsonProperty("hourlyRateLow")
-	public void setHourlyRateLow(BigDecimal hourlyRateLow) {
-		this.hourlyRateLow = hourlyRateLow;
-	}
-
-	@JsonProperty("interviews")
-	public OneToMany<Appointment> getInterviews() {
-		return interviews;
-	}
+    @JsonProperty("fileAttachments")
+    public OneToMany<StandardFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
 
     @ReadOnly
-	@JsonProperty("interviews")
-	public void setInterviews(OneToMany<Appointment> interviews) {
-		this.interviews = interviews;
-	}
+    @JsonProperty("fileAttachments")
+    public void setFileAttachments(OneToMany<StandardFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
+    }
 
-	@JsonProperty("i9OnFile")
-	public Integer getI9OnFile() {
-		return i9OnFile;
-	}
+    @JsonProperty("firstName")
+    public String getFirstName() {
+        return firstName;
+    }
 
-	@JsonProperty("i9OnFile")
-	public void setI9OnFile(Integer i9OnFile) {
-		this.i9OnFile = i9OnFile;
-	}
+    @JsonIgnore
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	@JsonProperty("isDayLightSavings")
-	public Boolean getIsDayLightSavings() {
-		return isDayLightSavings;
-	}
+    @JsonProperty("gender")
+    public String getGender() {
+        return gender;
+    }
 
-	@JsonProperty("isDayLightSavings")
-	public void setIsDayLightSavings(Boolean isDayLightSavings) {
-		this.isDayLightSavings = isDayLightSavings;
-	}
+    @JsonIgnore
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	@JsonProperty("isDeleted")
-	public Boolean getIsDeleted() {
-		return isDeleted;
-	}
+    @JsonProperty("hourlyRate")
+    public BigDecimal getHourlyRate() {
+        return hourlyRate;
+    }
 
-	@JsonProperty("isDeleted")
-	public void setIsDeleted(Boolean isDeleted) {
-		this.isDeleted = isDeleted;
-	}
+    @JsonProperty("hourlyRate")
+    public void setHourlyRate(BigDecimal hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
 
-	@JsonProperty("isEditable")
-	public Boolean getIsEditable() {
-		return isEditable;
-	}
+    @JsonProperty("hourlyRateLow")
+    public BigDecimal getHourlyRateLow() {
+        return hourlyRateLow;
+    }
 
-	@JsonProperty("isEditable")
-	public void setIsEditable(Boolean isEditable) {
-		this.isEditable = isEditable;
-	}
+    @JsonProperty("hourlyRateLow")
+    public void setHourlyRateLow(BigDecimal hourlyRateLow) {
+        this.hourlyRateLow = hourlyRateLow;
+    }
 
-	@JsonProperty("isLockedOut")
-	public Boolean getIsLockedOut() {
-		return isLockedOut;
-	}
+    @JsonProperty("interviews")
+    public OneToMany<Appointment> getInterviews() {
+        return interviews;
+    }
 
-	@JsonProperty("isLockedOut")
-	public void setIsLockedOut(Boolean isLockedOut) {
-		this.isLockedOut = isLockedOut;
-	}
+    @ReadOnly
+    @JsonProperty("interviews")
+    public void setInterviews(OneToMany<Appointment> interviews) {
+        this.interviews = interviews;
+    }
+
+    @JsonProperty("i9OnFile")
+    public Integer getI9OnFile() {
+        return i9OnFile;
+    }
+
+    @JsonProperty("i9OnFile")
+    public void setI9OnFile(Integer i9OnFile) {
+        this.i9OnFile = i9OnFile;
+    }
+
+    @JsonProperty("isDayLightSavings")
+    public Boolean getIsDayLightSavings() {
+        return isDayLightSavings;
+    }
+
+    @JsonProperty("isDayLightSavings")
+    public void setIsDayLightSavings(Boolean isDayLightSavings) {
+        this.isDayLightSavings = isDayLightSavings;
+    }
+
+    @JsonProperty("isDeleted")
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    @JsonProperty("isDeleted")
+    public void setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
+    @JsonProperty("isEditable")
+    public Boolean getIsEditable() {
+        return isEditable;
+    }
+
+    @JsonProperty("isEditable")
+    public void setIsEditable(Boolean isEditable) {
+        this.isEditable = isEditable;
+    }
+
+    @JsonProperty("isLockedOut")
+    public Boolean getIsLockedOut() {
+        return isLockedOut;
+    }
+
+    @JsonProperty("isLockedOut")
+    public void setIsLockedOut(Boolean isLockedOut) {
+        this.isLockedOut = isLockedOut;
+    }
 
     @JsonProperty("isAnonymized")
     public Boolean getIsAnonymized() {
@@ -1139,196 +1196,196 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         this.isAnonymized = isAnonymized;
     }
 
-	@JsonProperty("lastName")
-	public String getLastName() {
-		return lastName;
-	}
+    @JsonProperty("lastName")
+    public String getLastName() {
+        return lastName;
+    }
 
     @JsonIgnore
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	@JsonProperty("linkedPerson")
-	public Person getLinkedPerson() {
-		return linkedPerson;
-	}
+    @JsonProperty("linkedPerson")
+    public Person getLinkedPerson() {
+        return linkedPerson;
+    }
 
-	@JsonProperty("linkedPerson")
-	public void setLinkedPerson(Person linkedPerson) {
-		this.linkedPerson = linkedPerson;
-	}
+    @JsonProperty("linkedPerson")
+    public void setLinkedPerson(Person linkedPerson) {
+        this.linkedPerson = linkedPerson;
+    }
 
-	@JsonProperty("leads")
-	public OneToMany<Lead> getLeads() {
-		return leads;
-	}
+    @JsonProperty("leads")
+    public OneToMany<Lead> getLeads() {
+        return leads;
+    }
 
-	@JsonProperty("leads")
-	public void setLeads(OneToMany<Lead> leads) {
-		this.leads = leads;
-	}
+    @JsonProperty("leads")
+    public void setLeads(OneToMany<Lead> leads) {
+        this.leads = leads;
+    }
 
-	@JsonProperty("localAddtionalWitholdingsAmount")
-	public BigDecimal getLocalAddtionalWitholdingsAmount() {
-		return localAddtionalWitholdingsAmount;
-	}
+    @JsonProperty("localAddtionalWitholdingsAmount")
+    public BigDecimal getLocalAddtionalWitholdingsAmount() {
+        return localAddtionalWitholdingsAmount;
+    }
 
-	@JsonProperty("localAddtionalWitholdingsAmount")
-	public void setLocalAddtionalWitholdingsAmount(BigDecimal localAddtionalWitholdingsAmount) {
-		this.localAddtionalWitholdingsAmount = localAddtionalWitholdingsAmount;
-	}
+    @JsonProperty("localAddtionalWitholdingsAmount")
+    public void setLocalAddtionalWitholdingsAmount(BigDecimal localAddtionalWitholdingsAmount) {
+        this.localAddtionalWitholdingsAmount = localAddtionalWitholdingsAmount;
+    }
 
-	@JsonProperty("localExemptions")
-	public Integer getLocalExemptions() {
-		return localExemptions;
-	}
+    @JsonProperty("localExemptions")
+    public Integer getLocalExemptions() {
+        return localExemptions;
+    }
 
-	@JsonProperty("localExemptions")
-	public void setLocalExemptions(Integer localExemptions) {
-		this.localExemptions = localExemptions;
-	}
+    @JsonProperty("localExemptions")
+    public void setLocalExemptions(Integer localExemptions) {
+        this.localExemptions = localExemptions;
+    }
 
-	@JsonProperty("localFilingStatus")
-	public String getLocalFilingStatus() {
-		return localFilingStatus;
-	}
-
-	@JsonIgnore
-	public void setLocalFilingStatus(String localFilingStatus) {
-		this.localFilingStatus = localFilingStatus;
-	}
-
-	@JsonProperty("localTaxCode")
-	public String getLocalTaxCode() {
-		return localTaxCode;
-	}
-
-	@JsonIgnore
-	public void setLocalTaxCode(String localTaxCode) {
-		this.localTaxCode = localTaxCode;
-	}
-
-	@JsonProperty("massMailOptOut")
-	public Boolean getMassMailOptOut() {
-		return massMailOptOut;
-	}
-
-	@JsonProperty("massMailOptOut")
-	public void setMassMailOptOut(Boolean massMailOptOut) {
-		this.massMailOptOut = massMailOptOut;
-	}
-
-	@JsonProperty("middleName")
-	public String getMiddleName() {
-		return middleName;
-	}
+    @JsonProperty("localFilingStatus")
+    public String getLocalFilingStatus() {
+        return localFilingStatus;
+    }
 
     @JsonIgnore
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
+    public void setLocalFilingStatus(String localFilingStatus) {
+        this.localFilingStatus = localFilingStatus;
+    }
 
-	@JsonProperty("migrateGUID")
-	public Object getMigrateGUID() {
-		return migrateGUID;
-	}
-
-	@JsonProperty("migrateGUID")
-	public void setMigrateGUID(Object migrateGUID) {
-		this.migrateGUID = migrateGUID;
-	}
-
-	@JsonProperty("mobile")
-	public String getMobile() {
-		return mobile;
-	}
+    @JsonProperty("localTaxCode")
+    public String getLocalTaxCode() {
+        return localTaxCode;
+    }
 
     @JsonIgnore
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+    public void setLocalTaxCode(String localTaxCode) {
+        this.localTaxCode = localTaxCode;
+    }
 
-	@JsonProperty("name")
-	public String getName() {
-		return name;
-	}
+    @JsonProperty("massMailOptOut")
+    public Boolean getMassMailOptOut() {
+        return massMailOptOut;
+    }
+
+    @JsonProperty("massMailOptOut")
+    public void setMassMailOptOut(Boolean massMailOptOut) {
+        this.massMailOptOut = massMailOptOut;
+    }
+
+    @JsonProperty("middleName")
+    public String getMiddleName() {
+        return middleName;
+    }
 
     @JsonIgnore
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
 
-	@JsonProperty("namePrefix")
-	public String getNamePrefix() {
-		return namePrefix;
-	}
+    @JsonProperty("migrateGUID")
+    public Object getMigrateGUID() {
+        return migrateGUID;
+    }
 
-	@JsonIgnore
-	public void setNamePrefix(String namePrefix) {
-		this.namePrefix = namePrefix;
-	}
+    @JsonProperty("migrateGUID")
+    public void setMigrateGUID(Object migrateGUID) {
+        this.migrateGUID = migrateGUID;
+    }
 
-	@JsonProperty("nameSuffix")
-	public String getNameSuffix() {
-		return nameSuffix;
-	}
+    @JsonProperty("mobile")
+    public String getMobile() {
+        return mobile;
+    }
 
-	@JsonIgnore
-	public void setNameSuffix(String nameSuffix) {
-		this.nameSuffix = nameSuffix;
-	}
+    @JsonIgnore
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-	@JsonProperty("nickName")
-	public String getNickName() {
-		return nickName;
-	}
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
 
-	@JsonIgnore
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
+    @JsonIgnore
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@JsonProperty("notes")
-	public OneToMany<Note> getNotes() {
-		return notes;
-	}
+    @JsonProperty("namePrefix")
+    public String getNamePrefix() {
+        return namePrefix;
+    }
+
+    @JsonIgnore
+    public void setNamePrefix(String namePrefix) {
+        this.namePrefix = namePrefix;
+    }
+
+    @JsonProperty("nameSuffix")
+    public String getNameSuffix() {
+        return nameSuffix;
+    }
+
+    @JsonIgnore
+    public void setNameSuffix(String nameSuffix) {
+        this.nameSuffix = nameSuffix;
+    }
+
+    @JsonProperty("nickName")
+    public String getNickName() {
+        return nickName;
+    }
+
+    @JsonIgnore
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    @JsonProperty("notes")
+    public OneToMany<Note> getNotes() {
+        return notes;
+    }
 
     @ReadOnly
-	@JsonProperty("notes")
-	public void setNotes(OneToMany<Note> notes) {
-		this.notes = notes;
-	}
+    @JsonProperty("notes")
+    public void setNotes(OneToMany<Note> notes) {
+        this.notes = notes;
+    }
 
-	@JsonProperty("numCategories")
-	public Integer getNumCategories() {
-		return numCategories;
-	}
+    @JsonProperty("numCategories")
+    public Integer getNumCategories() {
+        return numCategories;
+    }
 
-	@JsonProperty("numCategories")
-	public void setNumCategories(Integer numCategories) {
-		this.numCategories = numCategories;
-	}
+    @JsonProperty("numCategories")
+    public void setNumCategories(Integer numCategories) {
+        this.numCategories = numCategories;
+    }
 
-	@JsonProperty("numOwners")
-	public Integer getNumOwners() {
-		return numOwners;
-	}
+    @JsonProperty("numOwners")
+    public Integer getNumOwners() {
+        return numOwners;
+    }
 
-	@JsonProperty("numOwners")
-	public void setNumOwners(Integer numOwners) {
-		this.numOwners = numOwners;
-	}
+    @JsonProperty("numOwners")
+    public void setNumOwners(Integer numOwners) {
+        this.numOwners = numOwners;
+    }
 
-	@JsonProperty("occupation")
-	public String getOccupation() {
-		return occupation;
-	}
+    @JsonProperty("occupation")
+    public String getOccupation() {
+        return occupation;
+    }
 
-	@JsonIgnore
-	public void setOccupation(String occupation) {
-		this.occupation = occupation;
-	}
+    @JsonIgnore
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
 
     @JsonProperty("onboardingDocumentReceivedCount")
     public Integer getOnboardingDocumentReceivedCount() {
@@ -1380,452 +1437,452 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         this.onboardingStatus = onboardingStatus;
     }
 
-	@JsonProperty("owner")
-	public CorporateUser getOwner() {
-		return owner;
-	}
+    @JsonProperty("owner")
+    public CorporateUser getOwner() {
+        return owner;
+    }
 
-	@JsonProperty("owner")
-	public void setOwner(CorporateUser owner) {
-		this.owner = owner;
-	}
+    @JsonProperty("owner")
+    public void setOwner(CorporateUser owner) {
+        this.owner = owner;
+    }
 
-	@JsonProperty("pager")
-	public String getPager() {
-		return pager;
-	}
-
-    @JsonIgnore
-	public void setPager(String pager) {
-		this.pager = pager;
-	}
-
-	@JsonProperty("paperWorkOnFile")
-	public String getPaperWorkOnFile() {
-		return paperWorkOnFile;
-	}
-
-	@JsonIgnore
-	public void setPaperWorkOnFile(String paperWorkOnFile) {
-		this.paperWorkOnFile = paperWorkOnFile;
-	}
-
-	@JsonProperty("password")
-	public String getPassword() {
-		return password;
-	}
-
-	@JsonProperty("password")
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	@JsonProperty("phone")
-	public String getPhone() {
-		return phone;
-	}
+    @JsonProperty("pager")
+    public String getPager() {
+        return pager;
+    }
 
     @JsonIgnore
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setPager(String pager) {
+        this.pager = pager;
+    }
 
-	@JsonProperty("phone2")
-	public String getPhone2() {
-		return phone2;
-	}
-
-    @JsonIgnore
-	public void setPhone2(String phone2) {
-		this.phone2 = phone2;
-	}
-
-	@JsonProperty("phone3")
-	public String getPhone3() {
-		return phone3;
-	}
+    @JsonProperty("paperWorkOnFile")
+    public String getPaperWorkOnFile() {
+        return paperWorkOnFile;
+    }
 
     @JsonIgnore
-	public void setPhone3(String phone3) {
-		this.phone3 = phone3;
-	}
+    public void setPaperWorkOnFile(String paperWorkOnFile) {
+        this.paperWorkOnFile = paperWorkOnFile;
+    }
 
-	@JsonProperty("placements")
-	public OneToMany<Placement> getPlacements() {
-		return placements;
-	}
+    @JsonProperty("password")
+    public String getPassword() {
+        return password;
+    }
+
+    @JsonProperty("password")
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @JsonProperty("phone")
+    public String getPhone() {
+        return phone;
+    }
+
+    @JsonIgnore
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @JsonProperty("phone2")
+    public String getPhone2() {
+        return phone2;
+    }
+
+    @JsonIgnore
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
+    }
+
+    @JsonProperty("phone3")
+    public String getPhone3() {
+        return phone3;
+    }
+
+    @JsonIgnore
+    public void setPhone3(String phone3) {
+        this.phone3 = phone3;
+    }
+
+    @JsonProperty("placements")
+    public OneToMany<Placement> getPlacements() {
+        return placements;
+    }
 
     @ReadOnly
-	@JsonProperty("placements")
-	public void setPlacements(OneToMany<Placement> placements) {
-		this.placements = placements;
-	}
+    @JsonProperty("placements")
+    public void setPlacements(OneToMany<Placement> placements) {
+        this.placements = placements;
+    }
 
-	@JsonProperty("preferredContact")
-	public String getPreferredContact() {
-		return preferredContact;
-	}
-
-	@JsonIgnore
-	public void setPreferredContact(String preferredContact) {
-		this.preferredContact = preferredContact;
-	}
-
-	@JsonIgnore
-	public OneToMany<Skill> getPrimarySkills() {
-		return primarySkills;
-	}
-
-	@JsonProperty("primarySkills")
-	public void setPrimarySkills(OneToMany<Skill> primarySkills) {
-		this.primarySkills = primarySkills;
-	}
-
-	@JsonProperty("recentClientList")
-	public String getRecentClientList() {
-		return recentClientList;
-	}
-
-	@JsonIgnore
-	public void setRecentClientList(String recentClientList) {
-		this.recentClientList = recentClientList;
-	}
-
-	@JsonProperty("referredBy")
-	public String getReferredBy() {
-		return referredBy;
-	}
-
-	@JsonIgnore
-	public void setReferredBy(String referredBy) {
-		this.referredBy = referredBy;
-	}
-
-	@JsonProperty("referredByPerson")
-	public Person getReferredByPerson() {
-		return referredByPerson;
-	}
-
-	@JsonProperty("referredByPerson")
-	public void setReferredByPerson(Person referredByPerson) {
-		this.referredByPerson = referredByPerson;
-	}
-
-	@JsonProperty("references")
-	public OneToMany<CandidateReference> getReferences() {
-		return references;
-	}
-
-    @ReadOnly
-	@JsonProperty("references")
-	public void setReferences(OneToMany<CandidateReference> references) {
-		this.references = references;
-	}
-
-	@JsonProperty("salary")
-	public BigDecimal getSalary() {
-		return salary;
-	}
-
-	@JsonProperty("salary")
-	public void setSalary(BigDecimal salary) {
-		this.salary = salary;
-	}
-
-	@JsonProperty("salaryLow")
-	public BigDecimal getSalaryLow() {
-		return salaryLow;
-	}
-
-	@JsonProperty("salaryLow")
-	public void setSalaryLow(BigDecimal salaryLow) {
-		this.salaryLow = salaryLow;
-	}
-
-	@JsonProperty("secondaryAddress")
-	public Address getSecondaryAddress() {
-		return secondaryAddress;
-	}
-
-	@JsonProperty("secondaryAddress")
-	public void setSecondaryAddress(Address secondaryAddress) {
-		this.secondaryAddress = secondaryAddress;
-	}
-
-	@JsonIgnore
-	public OneToMany<CorporateUser> getSecondaryOwners() {
-		return secondaryOwners;
-	}
-
-	@JsonProperty("secondaryOwners")
-	public void setSecondaryOwners(OneToMany<CorporateUser> secondaryOwners) {
-		this.secondaryOwners = secondaryOwners;
-	}
-
-	@JsonIgnore
-	public OneToMany<Skill> getSecondarySkills() {
-		return secondarySkills;
-	}
-
-	@JsonProperty("secondarySkills")
-	public void setSecondarySkills(OneToMany<Skill> secondarySkills) {
-		this.secondarySkills = secondarySkills;
-	}
-
-	@JsonProperty("sendouts")
-	public OneToMany<Sendout> getSendouts() {
-		return sendouts;
-	}
-
-    @ReadOnly
-	@JsonProperty("sendouts")
-	public void setSendouts(OneToMany<Sendout> sendouts) {
-		this.sendouts = sendouts;
-	}
-
-	@JsonProperty("skillSet")
-	public String getSkillSet() {
-		return skillSet;
-	}
-
-	@JsonIgnore
-	public void setSkillSet(String skillSet) {
-		this.skillSet = skillSet;
-	}
-
-	@JsonProperty("smsOptIn")
-	public Boolean getSmsOptIn() {
-		return smsOptIn;
-	}
-
-	@JsonProperty("smsOptIn")
-	public void setSmsOptIn(Boolean smsOptIn) {
-		this.smsOptIn = smsOptIn;
-	}
-
-	@JsonProperty("source")
-	public String getSource() {
-		return source;
-	}
-
-	@JsonIgnore
-	public void setSource(String source) {
-		this.source = source;
-	}
-
-	@JsonIgnore
-	public OneToMany<Specialty> getSpecialties() {
-		return specialties;
-	}
-
-	@JsonProperty("specialties")
-	public void setSpecialties(OneToMany<Specialty> specialties) {
-		this.specialties = specialties;
-	}
-
-	@JsonProperty("ssn")
-	public String getSsn() {
-		return ssn;
-	}
-
-	@JsonProperty("ssn")
-	public void setSsn(String ssn) {
-		this.ssn = ssn;
-	}
-
-	@JsonProperty("stateAddtionalWitholdingsAmount")
-	public BigDecimal getStateAddtionalWitholdingsAmount() {
-		return stateAddtionalWitholdingsAmount;
-	}
-
-	@JsonProperty("stateAddtionalWitholdingsAmount")
-	public void setStateAddtionalWitholdingsAmount(BigDecimal stateAddtionalWitholdingsAmount) {
-		this.stateAddtionalWitholdingsAmount = stateAddtionalWitholdingsAmount;
-	}
-
-	@JsonProperty("stateExemptions")
-	public Integer getStateExemptions() {
-		return stateExemptions;
-	}
-
-	@JsonProperty("stateExemptions")
-	public void setStateExemptions(Integer stateExemptions) {
-		this.stateExemptions = stateExemptions;
-	}
-
-	@JsonProperty("stateFilingStatus")
-	public String getStateFilingStatus() {
-		return stateFilingStatus;
-	}
-
-	@JsonIgnore
-	public void setStateFilingStatus(String stateFilingStatus) {
-		this.stateFilingStatus = stateFilingStatus;
-	}
-
-	@JsonProperty("status")
-	public String getStatus() {
-		return status;
-	}
-
-	@JsonIgnore
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	@JsonProperty("submissions")
-	public OneToMany<JobSubmission> getSubmissions() {
-		return submissions;
-	}
-
-    @ReadOnly
-	@JsonProperty("submissions")
-	public void setSubmissions(OneToMany<JobSubmission> submissions) {
-		this.submissions = submissions;
-	}
-
-	@JsonProperty("tasks")
-	public OneToMany<Task> getTasks() {
-		return tasks;
-	}
-
-    @ReadOnly
-	@JsonProperty("tasks")
-	public void setTasks(OneToMany<Task> tasks) {
-		this.tasks = tasks;
-	}
-
-	@JsonProperty("taxID")
-	public String getTaxID() {
-		return taxID;
-	}
-
-	@JsonIgnore
-	public void setTaxID(String taxID) {
-		this.taxID = taxID;
-	}
-
-	@JsonProperty("taxState")
-	public String getTaxState() {
-		return taxState;
-	}
+    @JsonProperty("preferredContact")
+    public String getPreferredContact() {
+        return preferredContact;
+    }
 
     @JsonIgnore
-	public void setTaxState(String taxState) {
-		this.taxState = taxState;
-	}
-
-	@JsonProperty("tearsheets")
-	public OneToMany<Tearsheet> getTearsheets() {
-		return tearsheets;
-	}
-
-	@JsonProperty("tearsheets")
-	public void setTearsheets(OneToMany<Tearsheet> tearsheets) {
-		this.tearsheets = tearsheets;
-	}
-
-	@JsonProperty("timeZoneOffsetEST")
-	public Integer getTimeZoneOffsetEST() {
-		return timeZoneOffsetEST;
-	}
-
-	@JsonProperty("timeZoneOffsetEST")
-	public void setTimeZoneOffsetEST(Integer timeZoneOffsetEST) {
-		this.timeZoneOffsetEST = timeZoneOffsetEST;
-	}
-
-	@JsonProperty("travelLimit")
-	public Integer getTravelLimit() {
-		return travelLimit;
-	}
-
-	@JsonProperty("travelLimit")
-	public void setTravelLimit(Integer travelLimit) {
-		this.travelLimit = travelLimit;
-	}
-
-	@JsonProperty("type")
-	public String getType() {
-		return type;
-	}
-
-	@JsonIgnore
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	@JsonProperty("username")
-	public String getUsername() {
-		return username;
-	}
+    public void setPreferredContact(String preferredContact) {
+        this.preferredContact = preferredContact;
+    }
 
     @JsonIgnore
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public OneToMany<Skill> getPrimarySkills() {
+        return primarySkills;
+    }
 
-	@JsonProperty("veteran")
-	public String getVeteran() {
-		return veteran;
-	}
+    @JsonProperty("primarySkills")
+    public void setPrimarySkills(OneToMany<Skill> primarySkills) {
+        this.primarySkills = primarySkills;
+    }
+
+    @JsonProperty("recentClientList")
+    public String getRecentClientList() {
+        return recentClientList;
+    }
 
     @JsonIgnore
-	public void setVeteran(String veteran) {
-		this.veteran = veteran;
-	}
+    public void setRecentClientList(String recentClientList) {
+        this.recentClientList = recentClientList;
+    }
 
-	@JsonProperty("webResponses")
-	public OneToMany<JobSubmission> getWebResponses() {
-		return webResponses;
-	}
+    @JsonProperty("referredBy")
+    public String getReferredBy() {
+        return referredBy;
+    }
+
+    @JsonIgnore
+    public void setReferredBy(String referredBy) {
+        this.referredBy = referredBy;
+    }
+
+    @JsonProperty("referredByPerson")
+    public Person getReferredByPerson() {
+        return referredByPerson;
+    }
+
+    @JsonProperty("referredByPerson")
+    public void setReferredByPerson(Person referredByPerson) {
+        this.referredByPerson = referredByPerson;
+    }
+
+    @JsonProperty("references")
+    public OneToMany<CandidateReference> getReferences() {
+        return references;
+    }
 
     @ReadOnly
-	@JsonProperty("webResponses")
-	public void setWebResponses(OneToMany<JobSubmission> webResponses) {
-		this.webResponses = webResponses;
-	}
+    @JsonProperty("references")
+    public void setReferences(OneToMany<CandidateReference> references) {
+        this.references = references;
+    }
 
-	@JsonProperty("willRelocate")
-	public Boolean getWillRelocate() {
-		return willRelocate;
-	}
+    @JsonProperty("salary")
+    public BigDecimal getSalary() {
+        return salary;
+    }
 
-	@JsonProperty("willRelocate")
-	public void setWillRelocate(Boolean willRelocate) {
-		this.willRelocate = willRelocate;
-	}
+    @JsonProperty("salary")
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
 
-	@JsonProperty("workAuthorized")
-	public Boolean getWorkAuthorized() {
-		return workAuthorized;
-	}
+    @JsonProperty("salaryLow")
+    public BigDecimal getSalaryLow() {
+        return salaryLow;
+    }
 
-	@JsonProperty("workAuthorized")
-	public void setWorkAuthorized(Boolean workAuthorized) {
-		this.workAuthorized = workAuthorized;
-	}
+    @JsonProperty("salaryLow")
+    public void setSalaryLow(BigDecimal salaryLow) {
+        this.salaryLow = salaryLow;
+    }
 
-	@JsonProperty("workHistories")
-	public OneToMany<CandidateWorkHistory> getWorkHistories() {
-		return workHistories;
-	}
+    @JsonProperty("secondaryAddress")
+    public Address getSecondaryAddress() {
+        return secondaryAddress;
+    }
 
-    @ReadOnly
-	@JsonProperty("workHistories")
-	public void setWorkHistories(OneToMany<CandidateWorkHistory> workHistories) {
-		this.workHistories = workHistories;
-	}
-
-	@JsonProperty("workPhone")
-	public String getWorkPhone() {
-		return workPhone;
-	}
+    @JsonProperty("secondaryAddress")
+    public void setSecondaryAddress(Address secondaryAddress) {
+        this.secondaryAddress = secondaryAddress;
+    }
 
     @JsonIgnore
-	public void setWorkPhone(String workPhone) {
-		this.workPhone = workPhone;
-	}
+    public OneToMany<CorporateUser> getSecondaryOwners() {
+        return secondaryOwners;
+    }
+
+    @JsonProperty("secondaryOwners")
+    public void setSecondaryOwners(OneToMany<CorporateUser> secondaryOwners) {
+        this.secondaryOwners = secondaryOwners;
+    }
+
+    @JsonIgnore
+    public OneToMany<Skill> getSecondarySkills() {
+        return secondarySkills;
+    }
+
+    @JsonProperty("secondarySkills")
+    public void setSecondarySkills(OneToMany<Skill> secondarySkills) {
+        this.secondarySkills = secondarySkills;
+    }
+
+    @JsonProperty("sendouts")
+    public OneToMany<Sendout> getSendouts() {
+        return sendouts;
+    }
+
+    @ReadOnly
+    @JsonProperty("sendouts")
+    public void setSendouts(OneToMany<Sendout> sendouts) {
+        this.sendouts = sendouts;
+    }
+
+    @JsonProperty("skillSet")
+    public String getSkillSet() {
+        return skillSet;
+    }
+
+    @JsonIgnore
+    public void setSkillSet(String skillSet) {
+        this.skillSet = skillSet;
+    }
+
+    @JsonProperty("smsOptIn")
+    public Boolean getSmsOptIn() {
+        return smsOptIn;
+    }
+
+    @JsonProperty("smsOptIn")
+    public void setSmsOptIn(Boolean smsOptIn) {
+        this.smsOptIn = smsOptIn;
+    }
+
+    @JsonProperty("source")
+    public String getSource() {
+        return source;
+    }
+
+    @JsonIgnore
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    @JsonIgnore
+    public OneToMany<Specialty> getSpecialties() {
+        return specialties;
+    }
+
+    @JsonProperty("specialties")
+    public void setSpecialties(OneToMany<Specialty> specialties) {
+        this.specialties = specialties;
+    }
+
+    @JsonProperty("ssn")
+    public String getSsn() {
+        return ssn;
+    }
+
+    @JsonProperty("ssn")
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    @JsonProperty("stateAddtionalWitholdingsAmount")
+    public BigDecimal getStateAddtionalWitholdingsAmount() {
+        return stateAddtionalWitholdingsAmount;
+    }
+
+    @JsonProperty("stateAddtionalWitholdingsAmount")
+    public void setStateAddtionalWitholdingsAmount(BigDecimal stateAddtionalWitholdingsAmount) {
+        this.stateAddtionalWitholdingsAmount = stateAddtionalWitholdingsAmount;
+    }
+
+    @JsonProperty("stateExemptions")
+    public Integer getStateExemptions() {
+        return stateExemptions;
+    }
+
+    @JsonProperty("stateExemptions")
+    public void setStateExemptions(Integer stateExemptions) {
+        this.stateExemptions = stateExemptions;
+    }
+
+    @JsonProperty("stateFilingStatus")
+    public String getStateFilingStatus() {
+        return stateFilingStatus;
+    }
+
+    @JsonIgnore
+    public void setStateFilingStatus(String stateFilingStatus) {
+        this.stateFilingStatus = stateFilingStatus;
+    }
+
+    @JsonProperty("status")
+    public String getStatus() {
+        return status;
+    }
+
+    @JsonIgnore
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @JsonProperty("submissions")
+    public OneToMany<JobSubmission> getSubmissions() {
+        return submissions;
+    }
+
+    @ReadOnly
+    @JsonProperty("submissions")
+    public void setSubmissions(OneToMany<JobSubmission> submissions) {
+        this.submissions = submissions;
+    }
+
+    @JsonProperty("tasks")
+    public OneToMany<Task> getTasks() {
+        return tasks;
+    }
+
+    @ReadOnly
+    @JsonProperty("tasks")
+    public void setTasks(OneToMany<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    @JsonProperty("taxID")
+    public String getTaxID() {
+        return taxID;
+    }
+
+    @JsonIgnore
+    public void setTaxID(String taxID) {
+        this.taxID = taxID;
+    }
+
+    @JsonProperty("taxState")
+    public String getTaxState() {
+        return taxState;
+    }
+
+    @JsonIgnore
+    public void setTaxState(String taxState) {
+        this.taxState = taxState;
+    }
+
+    @JsonProperty("tearsheets")
+    public OneToMany<Tearsheet> getTearsheets() {
+        return tearsheets;
+    }
+
+    @JsonProperty("tearsheets")
+    public void setTearsheets(OneToMany<Tearsheet> tearsheets) {
+        this.tearsheets = tearsheets;
+    }
+
+    @JsonProperty("timeZoneOffsetEST")
+    public Integer getTimeZoneOffsetEST() {
+        return timeZoneOffsetEST;
+    }
+
+    @JsonProperty("timeZoneOffsetEST")
+    public void setTimeZoneOffsetEST(Integer timeZoneOffsetEST) {
+        this.timeZoneOffsetEST = timeZoneOffsetEST;
+    }
+
+    @JsonProperty("travelLimit")
+    public Integer getTravelLimit() {
+        return travelLimit;
+    }
+
+    @JsonProperty("travelLimit")
+    public void setTravelLimit(Integer travelLimit) {
+        this.travelLimit = travelLimit;
+    }
+
+    @JsonProperty("type")
+    public String getType() {
+        return type;
+    }
+
+    @JsonIgnore
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @JsonProperty("username")
+    public String getUsername() {
+        return username;
+    }
+
+    @JsonIgnore
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @JsonProperty("veteran")
+    public String getVeteran() {
+        return veteran;
+    }
+
+    @JsonIgnore
+    public void setVeteran(String veteran) {
+        this.veteran = veteran;
+    }
+
+    @JsonProperty("webResponses")
+    public OneToMany<JobSubmission> getWebResponses() {
+        return webResponses;
+    }
+
+    @ReadOnly
+    @JsonProperty("webResponses")
+    public void setWebResponses(OneToMany<JobSubmission> webResponses) {
+        this.webResponses = webResponses;
+    }
+
+    @JsonProperty("willRelocate")
+    public Boolean getWillRelocate() {
+        return willRelocate;
+    }
+
+    @JsonProperty("willRelocate")
+    public void setWillRelocate(Boolean willRelocate) {
+        this.willRelocate = willRelocate;
+    }
+
+    @JsonProperty("workAuthorized")
+    public Boolean getWorkAuthorized() {
+        return workAuthorized;
+    }
+
+    @JsonProperty("workAuthorized")
+    public void setWorkAuthorized(Boolean workAuthorized) {
+        this.workAuthorized = workAuthorized;
+    }
+
+    @JsonProperty("workHistories")
+    public OneToMany<CandidateWorkHistory> getWorkHistories() {
+        return workHistories;
+    }
+
+    @ReadOnly
+    @JsonProperty("workHistories")
+    public void setWorkHistories(OneToMany<CandidateWorkHistory> workHistories) {
+        this.workHistories = workHistories;
+    }
+
+    @JsonProperty("workPhone")
+    public String getWorkPhone() {
+        return workPhone;
+    }
+
+    @JsonIgnore
+    public void setWorkPhone(String workPhone) {
+        this.workPhone = workPhone;
+    }
 
     @JsonProperty("twoJobs")
     public Boolean getTwoJobs() {
@@ -2107,6 +2164,222 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         this.customObject10s = customObject10s;
     }
 
+    @JsonProperty("customObject11s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance11> getCustomObject11s() {
+        return customObject11s;
+    }
+
+    @JsonProperty("customObject11s")
+    public void setCustomObject11s(OneToMany<PersonCustomObjectInstance11> customObject11s) {
+        this.customObject11s = customObject11s;
+    }
+
+    @JsonProperty("customObject12s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance12> getCustomObject12s() {
+        return customObject12s;
+    }
+
+    @JsonProperty("customObject12s")
+    public void setCustomObject12s(OneToMany<PersonCustomObjectInstance12> customObject12s) {
+        this.customObject12s = customObject12s;
+    }
+
+    @JsonProperty("customObject13s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance13> getCustomObject13s() {
+        return customObject13s;
+    }
+
+    @JsonProperty("customObject13s")
+    public void setCustomObject13s(OneToMany<PersonCustomObjectInstance13> customObject13s) {
+        this.customObject13s = customObject13s;
+    }
+
+    @JsonProperty("customObject14s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance14> getCustomObject14s() {
+        return customObject14s;
+    }
+
+    @JsonProperty("customObject14s")
+    public void setCustomObject14s(OneToMany<PersonCustomObjectInstance14> customObject14s) {
+        this.customObject14s = customObject14s;
+    }
+
+    @JsonProperty("customObject15s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance15> getCustomObject15s() {
+        return customObject15s;
+    }
+
+    @JsonProperty("customObject15s")
+    public void setCustomObject15s(OneToMany<PersonCustomObjectInstance15> customObject15s) {
+        this.customObject15s = customObject15s;
+    }
+
+    @JsonProperty("customObject16s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance16> getCustomObject16s() {
+        return customObject16s;
+    }
+
+    @JsonProperty("customObject16s")
+    public void setCustomObject16s(OneToMany<PersonCustomObjectInstance16> customObject16s) {
+        this.customObject16s = customObject16s;
+    }
+
+    @JsonProperty("customObject17s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance17> getCustomObject17s() {
+        return customObject17s;
+    }
+
+    @JsonProperty("customObject17s")
+    public void setCustomObject17s(OneToMany<PersonCustomObjectInstance17> customObject17s) {
+        this.customObject17s = customObject17s;
+    }
+
+    @JsonProperty("customObject18s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance18> getCustomObject18s() {
+        return customObject18s;
+    }
+
+    @JsonProperty("customObject18s")
+    public void setCustomObject18s(OneToMany<PersonCustomObjectInstance18> customObject18s) {
+        this.customObject18s = customObject18s;
+    }
+
+    @JsonProperty("customObject19s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance19> getCustomObject19s() {
+        return customObject19s;
+    }
+
+    @JsonProperty("customObject19s")
+    public void setCustomObject19s(OneToMany<PersonCustomObjectInstance19> customObject19s) {
+        this.customObject19s = customObject19s;
+    }
+
+    @JsonProperty("customObject20s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance20> getCustomObject20s() {
+        return customObject20s;
+    }
+
+    @JsonProperty("customObject20s")
+    public void setCustomObject20s(OneToMany<PersonCustomObjectInstance20> customObject20s) {
+        this.customObject20s = customObject20s;
+    }
+
+    @JsonProperty("customObject21s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance21> getCustomObject21s() {
+        return customObject21s;
+    }
+
+    @JsonProperty("customObject21s")
+    public void setCustomObject21s(OneToMany<PersonCustomObjectInstance21> customObject21s) {
+        this.customObject21s = customObject21s;
+    }
+
+    @JsonProperty("customObject22s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance22> getCustomObject22s() {
+        return customObject22s;
+    }
+
+    @JsonProperty("customObject22s")
+    public void setCustomObject22s(OneToMany<PersonCustomObjectInstance22> customObject22s) {
+        this.customObject22s = customObject22s;
+    }
+
+    @JsonProperty("customObject23s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance23> getCustomObject23s() {
+        return customObject23s;
+    }
+
+    @JsonProperty("customObject23s")
+    public void setCustomObject23s(OneToMany<PersonCustomObjectInstance23> customObject23s) {
+        this.customObject23s = customObject23s;
+    }
+
+    @JsonProperty("customObject24s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance24> getCustomObject24s() {
+        return customObject24s;
+    }
+
+    @JsonProperty("customObject24s")
+    public void setCustomObject24s(OneToMany<PersonCustomObjectInstance24> customObject24s) {
+        this.customObject24s = customObject24s;
+    }
+
+    @JsonProperty("customObject25s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance25> getCustomObject25s() {
+        return customObject25s;
+    }
+
+    @JsonProperty("customObject25s")
+    public void setCustomObject25s(OneToMany<PersonCustomObjectInstance25> customObject25s) {
+        this.customObject25s = customObject25s;
+    }
+
+    @JsonProperty("customObject26s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance26> getCustomObject26s() {
+        return customObject26s;
+    }
+
+    @JsonProperty("customObject26s")
+    public void setCustomObject26s(OneToMany<PersonCustomObjectInstance26> customObject26s) {
+        this.customObject26s = customObject26s;
+    }
+
+    @JsonProperty("customObject27s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance27> getCustomObject27s() {
+        return customObject27s;
+    }
+
+    @JsonProperty("customObject27s")
+    public void setCustomObject27s(OneToMany<PersonCustomObjectInstance27> customObject27s) {
+        this.customObject27s = customObject27s;
+    }
+
+    @JsonProperty("customObject28s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance28> getCustomObject28s() {
+        return customObject28s;
+    }
+
+    @JsonProperty("customObject28s")
+    public void setCustomObject28s(OneToMany<PersonCustomObjectInstance28> customObject28s) {
+        this.customObject28s = customObject28s;
+    }
+
     @JsonProperty("customObject29s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -2129,6 +2402,126 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     @JsonProperty("customObject30s")
     public void setCustomObject30s(OneToMany<PersonCustomObjectInstance30> customObject30s) {
         this.customObject30s = customObject30s;
+    }
+
+    public OneToMany<Placement> getActivePlacements() {
+        return activePlacements;
+    }
+
+    public void setActivePlacements(OneToMany<Placement> activePlacements) {
+        this.activePlacements = activePlacements;
+    }
+
+    public Location getAddressSourceLocation() {
+        return addressSourceLocation;
+    }
+
+    public void setAddressSourceLocation(Location addressSourceLocation) {
+        this.addressSourceLocation = addressSourceLocation;
+    }
+
+    public CandidateSource getCandidateSource() {
+        return candidateSource;
+    }
+
+    public void setCandidateSource(CandidateSource candidateSource) {
+        this.candidateSource = candidateSource;
+    }
+
+    public BigInteger getClientRating() {
+        return clientRating;
+    }
+
+    public void setClientRating(BigInteger clientRating) {
+        this.clientRating = clientRating;
+    }
+
+    public OneToMany<DistributionList> getDistributionLists() {
+        return distributionLists;
+    }
+
+    public void setDistributionLists(OneToMany<DistributionList> distributionLists) {
+        this.distributionLists = distributionLists;
+    }
+
+    public String getEstaffGUID() {
+        return estaffGUID;
+    }
+
+    public void setEstaffGUID(String estaffGUID) {
+        this.estaffGUID = estaffGUID;
+    }
+
+    public OneToMany<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(OneToMany<Location> locations) {
+        this.locations = locations;
+    }
+
+    public String getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(String maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
+    public ClientCorporation getOwnerCorporation() {
+        return ownerCorporation;
+    }
+
+    public void setOwnerCorporation(ClientCorporation ownerCorporation) {
+        this.ownerCorporation = ownerCorporation;
+    }
+
+    public DateTime getPayrollClientStartDate() {
+        return payrollClientStartDate;
+    }
+
+    public void setPayrollClientStartDate(DateTime payrollClientStartDate) {
+        this.payrollClientStartDate = payrollClientStartDate;
+    }
+
+    public String getPayrollStatus() {
+        return payrollStatus;
+    }
+
+    public void setPayrollStatus(String payrollStatus) {
+        this.payrollStatus = payrollStatus;
+    }
+
+    public PrivateLabel getPrivateLabel() {
+        return privateLabel;
+    }
+
+    public void setPrivateLabel(PrivateLabel privateLabel) {
+        this.privateLabel = privateLabel;
+    }
+
+    public OneToMany<Shift> getShifts() {
+        return shifts;
+    }
+
+    public void setShifts(OneToMany<Shift> shifts) {
+        this.shifts = shifts;
+    }
+
+    public String getTobaccoUser() {
+        return tobaccoUser;
+    }
+
+    public void setTobaccoUser(String tobaccoUser) {
+        this.tobaccoUser = tobaccoUser;
+    }
+
+    public String getTravelMethod() {
+        return travelMethod;
+    }
+
+    public void setTravelMethod(String travelMethod) {
+        this.travelMethod = travelMethod;
     }
 
     @Override

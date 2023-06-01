@@ -13,7 +13,20 @@ A Java client library for working with the Bullhorn REST API. Handles authentica
 		<version>1.0</version>
 	</dependency>
 ```
+Note, as of version 2.0.0 the SDK is built using Java 17 so the default binaries are not compatible with <17 versioned applications.
+If you'd like to use JRE 8 compatible binaries, add the `<classifier>` tag in your dependency:
 
+```xml
+
+	<dependency>
+		<groupId>com.bullhorn</groupId>
+		<artifactId>sdk-rest</artifactId>
+		<version>2.0.0</version>
+        <classifier>jdk8</classifier>
+	</dependency>
+```
+
+Omission of the `<classifier>` tag will result in Maven downloading the JRE 17 binaries.
 
 ## Basic setup:
 

@@ -24,13 +24,15 @@ import java.util.Objects;
     "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "customTextBlock6",
     "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateAdded", "dateExpiration", "documentDeadline",
     "fileAttachments", "jobSubmission", "matchingCredentialCount", "modifyingUser", "owner", "placement", "status", "userCertificationName",
-    "userCertificationStatus"})
+    "userCertificationStatus", "isDeleted", "isRequired"})
 public class CertificationRequirement extends AbstractRequirement implements UpdateEntity, CreateEntity, QueryEntity,
     AssociationEntity, EditHistoryEntity {
 
     private Candidate candidate;
     private JobSubmission jobSubmission;
     private Placement placement;
+    private Boolean isDeleted;
+    private Boolean isRequired;
 
     public CertificationRequirement() {
     }
@@ -68,6 +70,22 @@ public class CertificationRequirement extends AbstractRequirement implements Upd
     @JsonProperty("placement")
     public void setPlacement(Placement placement) {
         this.placement = placement;
+    }
+
+    public Boolean getDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
+    }
+
+    public Boolean getRequired() {
+        return isRequired;
+    }
+
+    public void setRequired(Boolean required) {
+        isRequired = required;
     }
 
     @Override

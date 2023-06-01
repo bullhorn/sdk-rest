@@ -5,15 +5,12 @@ import java.util.Objects;
 import javax.validation.constraints.Size;
 
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
 
 /**
  * Created by mkesmetzis 27-Apr-20
@@ -28,15 +25,21 @@ import com.fasterxml.jackson.annotation.JsonRootName;
     "customTextBlock10", "customTextBlock2", "customTextBlock3", "customTextBlock4", "customTextBlock5", "customTextBlock6",
     "customTextBlock7", "customTextBlock8", "customTextBlock9", "dateAdded", "dateExpiration", "documentDeadline",
     "fileAttachments", "jobSubmission", "matchingCredentialCount", "modifyingUser", "owner", "status", "userCertificationName",
-    "userCertificationStatus"})
+    "userCertificationStatus", "dateLastModified", "isDeleted", "isRequired", "migrateGUID"})
 public class JobSubmissionCertificationRequirement extends AbstractRequirement implements UpdateEntity, CreateEntity, QueryEntity,
-    AssociationEntity, EditHistoryEntity {
+    AssociationEntity, EditHistoryEntity, DateLastModifiedEntity {
 
     private JobSubmission jobSubmission;
     @Size(max = 100)
     private String userCertificationName;
     @Size(max = 30)
     private String userCertificationStatus;
+
+    private DateTime dateLastModified;
+
+    private Boolean isRequired;
+
+    private String migrateGUID;
 
     public JobSubmissionCertificationRequirement() {
     }
@@ -75,6 +78,31 @@ public class JobSubmissionCertificationRequirement extends AbstractRequirement i
     @JsonProperty("userCertificationStatus")
     public void setUserCertificationStatus(String userCertificationStatus) {
         this.userCertificationStatus = userCertificationStatus;
+    }
+
+    @Override
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
+    }
+
+    public Boolean getRequired() {
+        return isRequired;
+    }
+
+    public void setRequired(Boolean required) {
+        isRequired = required;
+    }
+
+    public String getMigrateGUID() {
+        return migrateGUID;
+    }
+
+    public void setMigrateGUID(String migrateGUID) {
+        this.migrateGUID = migrateGUID;
     }
 
     @Override

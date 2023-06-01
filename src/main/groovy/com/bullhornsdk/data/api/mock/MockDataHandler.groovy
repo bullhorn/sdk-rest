@@ -214,13 +214,17 @@ public class MockDataHandler {
 		return (C) response;
 	}
 
+    public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity) {
+        return updateEntity(entity, Collections.emptySet());
+    }
+
 	/**
 	 * Updates the entity.
 	 *
 	 * @param entity
 	 * @return
 	 */
-	public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity) {
+	public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity, Set<String> nullBypassFields) {
 		Map<Integer, T> currentValues = (Map<Integer, T>) restEntityMap.get(entity.getClass());
 		CrudResponse response = new UpdateResponse();
 		response.setChangedEntityId(entity.getId());
@@ -231,7 +235,7 @@ public class MockDataHandler {
 			throw new RestApiException("No entity of type "+entity.getClass().getSimpleName()+" with id "+entity.getId()+" exists.");
 		}
 		try {
-			updateExistingEntityWithNewNonNullValues(entity, existingEntity);
+			updateExistingEntityWithNewNonNullOrBypassedValues(entity, existingEntity, nullBypassFields);
 		} catch (Exception e) {
             String message = "Error updating entity of type: " + entity.getClass().getSimpleName() + " with id: " + entity.getId();
 			response.setErrorCode("500");
@@ -1053,7 +1057,7 @@ public class MockDataHandler {
 	 *
 	 */
 
-	private <M> void updateExistingEntityWithNewNonNullValues(M from, M to) throws Exception {
+	private <M> void updateExistingEntityWithNewNonNullOrBypassedValues(M from, M to, Set<String> fieldsToBypass) throws Exception {
 		BeanInfo beanInfo = Introspector.getBeanInfo(to.getClass());
 
 		// Iterate over all the attributes
@@ -1063,8 +1067,9 @@ public class MockDataHandler {
 			if (descriptor.getWriteMethod() != null) {
 
 				Object newValue = descriptor.getReadMethod().invoke(from);
-				if (newValue != null && !"id".equals(descriptor.getName())) {
-					descriptor.getWriteMethod().invoke(to, newValue);
+				if ((newValue != null || fieldsToBypass.contains(descriptor.getName())) && !"id".equals(descriptor.getName())) {
+                    // Pass array to invoke method to allow null values
+					descriptor.getWriteMethod().invoke(to, [newValue] as Object[]);
 				}
 
 			}

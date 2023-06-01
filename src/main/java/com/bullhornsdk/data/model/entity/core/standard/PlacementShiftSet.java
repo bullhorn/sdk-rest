@@ -22,7 +22,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "placement", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "isDeleted", "isFirst", "versionID", "versions" })
+@JsonPropertyOrder({"id", "placement", "dateAdded", "dateLastModified", "effectiveDate", "effectiveEndDate", "isDeleted", "isFirst", "versionID", "versions",
+    "owner", "shifts"})
 public class PlacementShiftSet extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity,
     SoftDeleteEntity, EffectiveDateEntity, AssociationEntity {
 
@@ -36,8 +37,12 @@ public class PlacementShiftSet extends AbstractEntity implements QueryEntity, Up
     private Boolean isFirst;
     private Integer versionID;
     private OneToMany<PlacementShiftSetVersion> versions;
+    private CorporateUser owner;
+    private OneToMany<Shift> shifts;
 
-    public PlacementShiftSet() {}
+    public PlacementShiftSet() {
+    }
+
     public PlacementShiftSet(Integer id) {
         this.id = id;
     }
@@ -56,12 +61,12 @@ public class PlacementShiftSet extends AbstractEntity implements QueryEntity, Up
     }
 
     @JsonProperty("placement")
-    public Placement getplacement() {
+    public Placement getPlacement() {
         return placement;
     }
 
     @JsonProperty("placement")
-    public void setplacement(Placement placement) {
+    public void setPlacement(Placement placement) {
         this.placement = placement;
     }
 
@@ -145,7 +150,21 @@ public class PlacementShiftSet extends AbstractEntity implements QueryEntity, Up
         this.versions = versions;
     }
 
+    public CorporateUser getOwner() {
+        return owner;
+    }
 
+    public void setOwner(CorporateUser owner) {
+        this.owner = owner;
+    }
+
+    public OneToMany<Shift> getShifts() {
+        return shifts;
+    }
+
+    public void setShifts(OneToMany<Shift> shifts) {
+        this.shifts = shifts;
+    }
 
     @Override
     public boolean equals(Object o) {

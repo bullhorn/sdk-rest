@@ -1,12 +1,13 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.HardDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
@@ -16,10 +17,10 @@ import org.joda.time.DateTime;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "candidate", "clientContact", "clientCorporation", "dateAdded", "email", "isRead", "jobOrder", "jobSubmission",
-    "migrateGUID", "user" })
+    "migrateGUID", "user", "numTimesRead", "userMessage" })
 public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity {
 
     private Integer id;
@@ -45,6 +46,8 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     private String migrateGUID;
 
     private CorporateUser user;
+
+    private Integer numTimesRead;
 
     public Sendout() {
         super();
@@ -174,6 +177,14 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     @JsonProperty("user")
     public void setUser(CorporateUser user) {
         this.user = user;
+    }
+
+    public Integer getNumTimesRead() {
+        return numTimesRead;
+    }
+
+    public void setNumTimesRead(Integer numTimesRead) {
+        this.numTimesRead = numTimesRead;
     }
 
     @Override

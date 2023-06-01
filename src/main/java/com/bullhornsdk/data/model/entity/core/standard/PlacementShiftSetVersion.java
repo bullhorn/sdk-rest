@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 
 import java.util.Objects;
 
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
@@ -18,7 +19,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "placementShiftSetID", "effectiveDate", "effectiveEndDate", "isFirst" })
+@JsonPropertyOrder({"id", "dateAdded", "dateLastModified", "placementShiftSetID", "effectiveDate", "effectiveEndDate", "isFirst",
+    "shifts"})
 public class PlacementShiftSetVersion extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, EffectiveDateEntity {
 
     private Integer id;
@@ -28,6 +30,7 @@ public class PlacementShiftSetVersion extends AbstractEntity implements QueryEnt
     private String effectiveDate;
     private String effectiveEndDate;
     private Boolean isFirst;
+    private OneToMany<Shift> shifts;
 
 
     @Override
@@ -103,6 +106,13 @@ public class PlacementShiftSetVersion extends AbstractEntity implements QueryEnt
         this.placementShiftSetID = placementShiftSetID;
     }
 
+    public OneToMany<Shift> getShifts() {
+        return shifts;
+    }
+
+    public void setShifts(OneToMany<Shift> shifts) {
+        this.shifts = shifts;
+    }
 
     @Override
     public boolean equals(Object o) {

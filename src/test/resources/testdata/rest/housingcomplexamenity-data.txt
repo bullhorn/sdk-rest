@@ -1,0 +1,68 @@
+{
+    "total": 1,
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "amenityName": "amenityName",
+            "corporation": {
+                "id": 2774,
+                "name": "PS Sandbox Corporation"
+            },
+            "dateAdded": 1680301090000,
+            "housingComplexUnits": {
+                "total": 0,
+                "data": []
+            },
+            "housingComplexes": {
+                "total": 1,
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "Test Housing Complex DO NOT DELETE"
+                    }
+                ]
+            },
+            "isDeleted": false,
+            "migrateGUID": "",
+            "placementChangeRequests": {
+               "total": 1,
+               "data": [
+                   {
+                       "id": 1,
+                       "placement": {
+                           "id": 1
+                       },
+                       "requestStatus": "Approved",
+                       "requestType": "Pay Rate Change",
+                       "requestingUser": {
+                         "id": 1
+                       },
+                       "status": "Approved"
+                   }
+               ]
+           },
+            "placements": {
+               "total": 1,
+               "data": [
+                    {
+                        "id": 1,
+                        "candidate": {
+                            "id": 1,
+                            "firstName": "Toad",
+                            "lastName": "Toad"
+                        },
+                        "jobOrder": {
+                            "id": 1,
+                            "title": "Dubstep Artist"
+                        },
+                        "jobSubmission": {
+                            "id": 1
+                        }
+                    }
+               ]
+           }
+        }
+    ]
+}

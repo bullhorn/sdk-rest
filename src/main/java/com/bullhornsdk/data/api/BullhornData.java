@@ -266,6 +266,20 @@ public interface BullhornData {
 
 	public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity);
 
+    /**
+     * Updates an UpdateEntity that is a sub type of BullhornEntity and returns a CrudResponse with info on the update, such as warnings, errors
+     *  and validation errors. Additionally, a set of fields can be passed in order to include them into the payload regardless of whether they have
+     *  null values.
+     *
+     * Please note, the id of the passed in entity cannot be null.
+     *
+     * @param entity the entity to update, must have the id field set.
+     * @param nullBypassFields name of fields that should be included in the payload regardless of whether they have null values
+     *
+     * @return an UpdateResponse with updated entity information
+     */
+    public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity, Set<String> nullBypassFields);
+
 	/**
 	 * Same as updateEntity, but handles a list of entities to update.
 	 *

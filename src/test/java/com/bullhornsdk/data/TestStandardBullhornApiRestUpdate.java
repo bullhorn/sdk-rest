@@ -1,10 +1,5 @@
 package com.bullhornsdk.data;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
@@ -13,8 +8,9 @@ import com.google.common.collect.Sets;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
-import org.junit.After;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.file.CandidateFileAttachment;
@@ -31,64 +27,64 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 	private final Logger log = LogManager.getLogger(TestStandardBullhornApiRestUpdate.class);
 
 
-	private T entity;
+    private T entity;
 
-	private String previousValue;
+    private String previousValue;
 
-	private String newValue;
+    private String newValue;
 
-	public TestStandardBullhornApiRestUpdate() {
-		super();
-	}
+    public TestStandardBullhornApiRestUpdate() {
+        super();
+    }
 
-	@After
-	public void restoreEntityToInitialValue() {
-		if (entity != null) {
-			UpdateResponse response = bullhornData.updateEntity(entity);
-			assertFalse("Error restoring entity. Validation errors", response.hasValidationErrors());
-			assertFalse("Error restoring entity. Error.", response.isError());
-		}
-	}
+    @AfterEach
+    public void restoreEntityToInitialValue() {
+        if (entity != null) {
+            UpdateResponse response = bullhornData.updateEntity(entity);
+            Assertions.assertFalse(response.hasValidationErrors(), "Error restoring entity. Validation errors");
+            Assertions.assertFalse(response.isError(), "Error restoring entity. Error.");
+        }
+    }
 
-	@Test
-	public void testGenericUpdate() {
-		String newStatus = "STABLE";
-		JobOrder preUpdateEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "status"));
+    @Test
+    public void testGenericUpdate() {
+        String newStatus = "STABLE";
+        JobOrder preUpdateEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "status"));
 
-		JobOrder update = new JobOrder(testEntities.getJobOrderId());
+        JobOrder update = new JobOrder(testEntities.getJobOrderId());
 
-		update.setStatus(newStatus);
-		UpdateResponse response = bullhornData.updateEntity(update);
-		JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "status"));
+        update.setStatus(newStatus);
+        UpdateResponse response = bullhornData.updateEntity(update);
+        JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "status"));
 
-		this.runAssertions(response, newStatus, updatedEntity.getStatus());
+        this.runAssertions(response, newStatus, updatedEntity.getStatus());
 
-		updatedEntity.setStatus(preUpdateEntity.getStatus());
+        updatedEntity.setStatus(preUpdateEntity.getStatus());
 
-		assertEquals(updatedEntity, preUpdateEntity);
+        Assertions.assertEquals(updatedEntity, preUpdateEntity);
 
-	}
+    }
 
-	@Test
-	public void testUpdateAppointment() {
+    @Test
+    public void testUpdateAppointment() {
 
-		Appointment entity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId(), Sets.newHashSet("id", "subject"));
+        Appointment entity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId(), Sets.newHashSet("id", "subject"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getSubject();
+        previousValue = entity.getSubject();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setSubject(newValue);
+        entity.setSubject(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Appointment updatedEntity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId(), Sets.newHashSet("id", "subject"));
-		entity.setSubject(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getSubject());
+        Appointment updatedEntity = bullhornData.findEntity(Appointment.class, testEntities.getAppointmentId(), Sets.newHashSet("id", "subject"));
+        entity.setSubject(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getSubject());
 
-	}
+    }
 
     @Test
     public void testUpdateBranch() {
@@ -111,28 +107,28 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
-	@Test
-	public void testUpdateCandidate() {
+    @Test
+    public void testUpdateCandidate() {
 
-		Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "customText1", "customText5", "isDeleted"));
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "customText1", "customText5", "isDeleted"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getCustomText1();
+        previousValue = entity.getCustomText1();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setCustomText1(newValue);
-		entity.setCustomText5("test");
-		entity.setIsDeleted(Boolean.FALSE);
+        entity.setCustomText1(newValue);
+        entity.setCustomText5("test");
+        entity.setIsDeleted(Boolean.FALSE);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Candidate updatedEntity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "customText1", "customText5", "isDeleted"));
-		entity.setCustomText1(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+        Candidate updatedEntity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "customText1", "customText5", "isDeleted"));
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
-	}
+    }
 
     @Test
     public void testUpdateCandidateCertification() {
@@ -155,131 +151,131 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
-	@Test
-	public void testUpdateCandidateEducation() {
+    @Test
+    public void testUpdateCandidateEducation() {
 
-		CandidateEducation entity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId(), Sets.newHashSet("id", "customText4"));
+        CandidateEducation entity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId(), Sets.newHashSet("id", "customText4"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getCustomText4();
+        previousValue = entity.getCustomText4();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setCustomText4(newValue);
+        entity.setCustomText4(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		CandidateEducation updatedEntity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId(), Sets.newHashSet("id", "customText4"));
-		entity.setCustomText4(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getCustomText4());
+        CandidateEducation updatedEntity = bullhornData.findEntity(CandidateEducation.class, testEntities.getCandidateEducationId(), Sets.newHashSet("id", "customText4"));
+        entity.setCustomText4(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText4());
 
-	}
+    }
 
-	@Test
-	public void testUpdateCandidateReference() {
+    @Test
+    public void testUpdateCandidateReference() {
 
-		CandidateReference entity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId(), Sets.newHashSet("id", "customText1"));
+        CandidateReference entity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId(), Sets.newHashSet("id", "customText1"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getCustomText1();
+        previousValue = entity.getCustomText1();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setCustomText1(newValue);
+        entity.setCustomText1(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		CandidateReference updatedEntity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId(), Sets.newHashSet("id", "customText1"));
-		entity.setCustomText1(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+        CandidateReference updatedEntity = bullhornData.findEntity(CandidateReference.class, testEntities.getCandidateReferenceId(), Sets.newHashSet("id", "customText1"));
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
-	}
+    }
 
-	@Test
-	public void testUpdateCandidateWorkHistory() {
+    @Test
+    public void testUpdateCandidateWorkHistory() {
 
-		CandidateWorkHistory entity = bullhornData.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId(), Sets.newHashSet("id", "customText1"));
+        CandidateWorkHistory entity = bullhornData.findEntity(CandidateWorkHistory.class, testEntities.getCandidateWorkHistoryId(), Sets.newHashSet("id", "customText1"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getCustomText1();
+        previousValue = entity.getCustomText1();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setCustomText1(newValue);
+        entity.setCustomText1(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		CandidateWorkHistory updatedEntity = bullhornData.findEntity(CandidateWorkHistory.class,
-				testEntities.getCandidateWorkHistoryId(), Sets.newHashSet("id", "customText1"));
-		entity.setCustomText1(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+        CandidateWorkHistory updatedEntity = bullhornData.findEntity(CandidateWorkHistory.class,
+            testEntities.getCandidateWorkHistoryId(), Sets.newHashSet("id", "customText1"));
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
-	}
+    }
 
-	public void testUpdateCertification() {
+    public void testUpdateCertification() {
 
-		Certification entity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId(), Sets.newHashSet("id", "name"));
+        Certification entity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId(), Sets.newHashSet("id", "name"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getName();
+        previousValue = entity.getName();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setName(newValue);
+        entity.setName(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Certification updatedEntity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId(), Sets.newHashSet("id", "name"));
-		entity.setName(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getName());
+        Certification updatedEntity = bullhornData.findEntity(Certification.class, testEntities.getCertificationId(), Sets.newHashSet("id", "name"));
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
 
-	}
+    }
 
-	@Test
-	public void testUpdateClientContact() {
+    @Test
+    public void testUpdateClientContact() {
 
-		ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId(), Sets.newHashSet("id", "name"));
+        ClientContact entity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId(), Sets.newHashSet("id", "name"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getName();
+        previousValue = entity.getName();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setName(newValue);
+        entity.setName(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		ClientContact updatedEntity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId(), Sets.newHashSet("id", "name"));
-		entity.setName(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getName());
+        ClientContact updatedEntity = bullhornData.findEntity(ClientContact.class, testEntities.getClientContactId(), Sets.newHashSet("id", "name"));
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
 
-	}
+    }
 
-	@Test
-	public void testUpdateClientCorporation() {
+    @Test
+    public void testUpdateClientCorporation() {
 
-		ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId(), Sets.newHashSet("id", "name"));
+        ClientCorporation entity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId(), Sets.newHashSet("id", "name"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getName();
+        previousValue = entity.getName();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setName(newValue);
+        entity.setName(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		ClientCorporation updatedEntity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId(), Sets.newHashSet("id", "name"));
-		entity.setName(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getName());
+        ClientCorporation updatedEntity = bullhornData.findEntity(ClientCorporation.class, testEntities.getClientCorporationId(), Sets.newHashSet("id", "name"));
+        entity.setName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getName());
 
-	}
+    }
 
     @Test
     public void testUpdateDepartment() {
@@ -323,49 +319,49 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
-	@Test
-	public void testUpdateHousingComplex() {
+    @Test
+    public void testUpdateHousingComplex() {
 
-		HousingComplex entity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId(), Sets.newHashSet("id", "customText1", "isDeleted"));
+        HousingComplex entity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId(), Sets.newHashSet("id", "customText1", "isDeleted"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getCustomText1();
+        previousValue = entity.getCustomText1();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setCustomText1(newValue);
-		entity.setIsDeleted(false);
+        entity.setCustomText1(newValue);
+        entity.setIsDeleted(false);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		HousingComplex updatedEntity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId(), Sets.newHashSet("id", "customText1", "isDeleted"));
-		entity.setCustomText1(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+        HousingComplex updatedEntity = bullhornData.findEntity(HousingComplex.class, testEntities.getHousingComplexId(), Sets.newHashSet("id", "customText1", "isDeleted"));
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
-	}
+    }
 
-	@Test
-	public void testUpdateJobOrder() {
+    @Test
+    public void testUpdateJobOrder() {
 
-		JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "customText1", "isDeleted"));
+        JobOrder entity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "customText1", "isDeleted"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getCustomText1();
+        previousValue = entity.getCustomText1();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setCustomText1(newValue);
-		entity.setIsDeleted(false);
+        entity.setCustomText1(newValue);
+        entity.setIsDeleted(false);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "customText1", "isDeleted"));
-		entity.setCustomText1(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+        JobOrder updatedEntity = bullhornData.findEntity(JobOrder.class, testEntities.getJobOrderId(), Sets.newHashSet("id", "customText1", "isDeleted"));
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
-	}
+    }
 
     @Test
     public void testUpdateJobShift() {
@@ -388,28 +384,28 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
-	@Test
-	public void testUpdateJobSubmission() {
+    @Test
+    public void testUpdateJobSubmission() {
 
         String previousCustomTextValue;
         String newCustomTextValue;
 
-		JobSubmission entity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId(), Sets.newHashSet("id", "customText1", "source"));
+        JobSubmission entity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId(), Sets.newHashSet("id", "customText1", "source"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getSource();
-		newValue = previousValue + "toad";
-		entity.setSource(newValue);
+        previousValue = entity.getSource();
+        newValue = previousValue + "toad";
+        entity.setSource(newValue);
 
         previousCustomTextValue = entity.getCustomText1();
         newCustomTextValue = previousCustomTextValue + "ribbit";
         entity.setCustomText1(newCustomTextValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		JobSubmission updatedEntity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId(), Sets.newHashSet("id", "customText1", "source"));
-		entity.setSource(previousValue);
+        JobSubmission updatedEntity = bullhornData.findEntity(JobSubmission.class, testEntities.getJobSubmissionId(), Sets.newHashSet("id", "customText1", "source"));
+        entity.setSource(previousValue);
         entity.setCustomText1(previousCustomTextValue);
         this.runAssertions(response, newValue, updatedEntity.getSource());
         this.runAssertions(response, newCustomTextValue, updatedEntity.getCustomText1());
@@ -437,54 +433,54 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
-	@Test
-	public void testUpdateNote() {
+    @Test
+    public void testUpdateNote() {
 
         String previousExternalIDValue;
         String newExternalIDValue;
 
-		Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId(), Sets.newHashSet("id", "comments", "externalID"));
+        Note entity = bullhornData.findEntity(Note.class, testEntities.getNoteId(), Sets.newHashSet("id", "comments", "externalID"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getComments();
-		newValue = previousValue + "toad";
-		entity.setComments(newValue);
+        previousValue = entity.getComments();
+        newValue = previousValue + "toad";
+        entity.setComments(newValue);
 
         previousExternalIDValue = entity.getExternalID();
         newExternalIDValue = previousExternalIDValue + "ribbit";
         entity.setExternalID(newExternalIDValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Note updatedEntity = bullhornData.findEntity(Note.class, testEntities.getNoteId(), Sets.newHashSet("id", "comments", "externalID"));
-		entity.setComments(previousValue);
+        Note updatedEntity = bullhornData.findEntity(Note.class, testEntities.getNoteId(), Sets.newHashSet("id", "comments", "externalID"));
+        entity.setComments(previousValue);
         entity.setExternalID(previousExternalIDValue);
 
-		this.runAssertions(response, newValue, updatedEntity.getComments());
+        this.runAssertions(response, newValue, updatedEntity.getComments());
         this.runAssertions(response, newExternalIDValue, updatedEntity.getExternalID());
     }
 
-	@Test
-	public void testUpdateNoteEntity() {
+    @Test
+    public void testUpdateNoteEntity() {
 
-		NoteEntity entity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId(), Sets.newHashSet("id", "targetEntityName"));
+        NoteEntity entity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId(), Sets.newHashSet("id", "targetEntityName"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getTargetEntityName();
+        previousValue = entity.getTargetEntityName();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setTargetEntityName(newValue);
+        entity.setTargetEntityName(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		NoteEntity updatedEntity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId(), Sets.newHashSet("id", "targetEntityName"));
-		entity.setTargetEntityName(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getTargetEntityName());
+        NoteEntity updatedEntity = bullhornData.findEntity(NoteEntity.class, testEntities.getNoteEntityId(), Sets.newHashSet("id", "targetEntityName"));
+        entity.setTargetEntityName(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getTargetEntityName());
 
-	}
+    }
 
     @Test
     public void testUpdateOpportunity() {
@@ -507,26 +503,26 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
-	@Test
-	public void testUpdatePlacement() {
+    @Test
+    public void testUpdatePlacement() {
 
-		Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId(), Sets.newHashSet("id", "customText1"));
+        Placement entity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId(), Sets.newHashSet("id", "customText1"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getCustomText1();
+        previousValue = entity.getCustomText1();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setCustomText1(newValue);
+        entity.setCustomText1(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Placement updatedEntity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId(), Sets.newHashSet("id", "customText1"));
-		entity.setCustomText1(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getCustomText1());
+        Placement updatedEntity = bullhornData.findEntity(Placement.class, testEntities.getPlacementId(), Sets.newHashSet("id", "customText1"));
+        entity.setCustomText1(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getCustomText1());
 
-	}
+    }
 
     @Test
     public void testUpdatePlacementCertification() {
@@ -544,76 +540,76 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
         PlacementCertification updatedEntity = bullhornData.findEntity(PlacementCertification.class, testEntities.getPlacementCertificationId(), Sets.newHashSet("id", "dateLastModified"));
 
         // assertions
-        assertNotNull("response is null", response);
-        assertFalse("Validation failed", response.hasValidationErrors());
-        assertTrue("value not updated correctly", newValueDateTime.equals(updatedEntity.getDateLastModified()));
+        Assertions.assertNotNull(response, "response is null");
+        Assertions.assertFalse(response.hasValidationErrors(), "Validation failed");
+        Assertions.assertTrue(newValueDateTime.equals(updatedEntity.getDateLastModified()), "value not updated correctly");
     }
 
-	@Test
-	public void testUpdatePlacementCommission() {
-		PlacementCommission entity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId(), Sets.newHashSet("id", "comments"));
+    @Test
+    public void testUpdatePlacementCommission() {
+        PlacementCommission entity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId(), Sets.newHashSet("id", "comments"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getComments();
+        previousValue = entity.getComments();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setComments(newValue);
+        entity.setComments(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		PlacementCommission updatedEntity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId(), Sets.newHashSet("id", "comments"));
-		entity.setComments(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getComments());
+        PlacementCommission updatedEntity = bullhornData.findEntity(PlacementCommission.class, testEntities.getPlacementCommissionId(), Sets.newHashSet("id", "comments"));
+        entity.setComments(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getComments());
 
-	}
+    }
 
-	@Test
-	public void testUpdateSendout() {
+    @Test
+    public void testUpdateSendout() {
 
-		Sendout entity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId(), Sets.newHashSet("id", "email"));
+        Sendout entity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId(), Sets.newHashSet("id", "email"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getEmail();
+        previousValue = entity.getEmail();
 
-		if (previousValue == null) {
-			newValue = "toad@toad.com";
-		} else {
-			newValue = previousValue + "toad";
-		}
+        if (previousValue == null) {
+            newValue = "toad@toad.com";
+        } else {
+            newValue = previousValue + "toad";
+        }
 
-		entity.setEmail(newValue);
+        entity.setEmail(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Sendout updatedEntity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId(), Sets.newHashSet("id", "email"));
-		entity.setEmail(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getEmail());
+        Sendout updatedEntity = bullhornData.findEntity(Sendout.class, testEntities.getSendoutId(), Sets.newHashSet("id", "email"));
+        entity.setEmail(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getEmail());
 
-	}
+    }
 
-	@Test
-	public void testUpdateTask() {
+    @Test
+    public void testUpdateTask() {
 
-		Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId(), Sets.newHashSet("id", "description"));
+        Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId(), Sets.newHashSet("id", "description"));
 
-		this.entity = (T) entity;
+        this.entity = (T) entity;
 
-		previousValue = entity.getDescription();
+        previousValue = entity.getDescription();
 
-		newValue = previousValue + "toad";
+        newValue = previousValue + "toad";
 
-		entity.setDescription(newValue);
+        entity.setDescription(newValue);
 
-		UpdateResponse response = bullhornData.updateEntity(entity);
+        UpdateResponse response = bullhornData.updateEntity(entity);
 
-		Task updatedEntity = bullhornData.findEntity(Task.class, testEntities.getTaskId(), Sets.newHashSet("id", "description"));
-		entity.setDescription(previousValue);
-		this.runAssertions(response, newValue, updatedEntity.getDescription());
+        Task updatedEntity = bullhornData.findEntity(Task.class, testEntities.getTaskId(), Sets.newHashSet("id", "description"));
+        entity.setDescription(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getDescription());
 
-	}
+    }
 
     @Test
     public void testUpdateCandidateFileAttachment() {
@@ -825,11 +821,31 @@ public class TestStandardBullhornApiRestUpdate<T extends UpdateEntity> extends B
 
     }
 
-	private void runAssertions(UpdateResponse response, String valueShouldBe, String valueIs) {
-		assertNotNull("response is null", response);
-		assertFalse("Validation failed", response.hasValidationErrors());
-		assertTrue("value not updated correctly", valueShouldBe.equals(valueIs));
-	}
+    @Test
+    public void testNullValueBypassing() {
+        Candidate entity = bullhornData.findEntity(Candidate.class, testEntities.getLocalTaxFormId(), Sets.newHashSet("id", "phone"));
+
+        this.entity = (T) entity;
+
+        previousValue = entity.getPhone();
+
+        newValue = null;
+
+        //noinspection ConstantValue
+        entity.setPhone(newValue);
+
+        UpdateResponse response = bullhornData.updateEntity(entity, Sets.newHashSet("phone"));
+
+        Candidate updatedEntity = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "phone"));
+        entity.setPhone(previousValue);
+        this.runAssertions(response, newValue, updatedEntity.getPhone());
+    }
+
+    private void runAssertions(UpdateResponse response, String valueShouldBe, String valueIs) {
+        Assertions.assertNotNull(response, "response is null");
+        Assertions.assertFalse(response.hasValidationErrors(), "Validation failed");
+        Assertions.assertEquals(valueShouldBe, valueIs, "value not updated correctly");
+    }
 
 
 

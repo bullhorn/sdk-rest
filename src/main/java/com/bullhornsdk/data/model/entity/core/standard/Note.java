@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
+import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
@@ -9,21 +10,17 @@ import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.util.ReadOnly;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonFilter(DynamicNullValueFilter.FILTER_NAME)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "action", "bhTimeStamp", "candidates", "clientContacts", "commentingPerson", "comments", "corporateUsers",
 		"dateAdded", "dateLastModified", "entities", "externalID", "isDeleted", "jobOrder", "jobOrders", "jobShifts" , "leads", "migrateGUID", "minutesSpent",
-        "opportunities", "personReference", "placements" })
+        "opportunities", "personReference", "placements", "linkedInID", "people", "primaryDepartmentName", "truestDateAdded" })
 public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, AssociationEntity, DateLastModifiedEntity {
 
 	private BigDecimal luceneScore;
@@ -76,6 +73,14 @@ public class Note extends AbstractEntity implements SearchEntity, UpdateEntity, 
 	private Person personReference;
 
 	private OneToMany<Placement> placements;
+
+    private String linkedInID;
+
+    private OneToMany<Person> people;
+
+    private String primaryDepartmentName;
+
+    private DateTime truestDateAdded;
 
 	public Note() {
 		super();

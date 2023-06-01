@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -21,8 +22,9 @@ import java.util.Objects;
     "customRate1", "customRate2", "customRate3", "customRate4", "customRate5",
     "customText1", "customText2", "customText3", "customText4", "customText5",
     "customText6", "customText7", "customText8", "customText9", "customText10",
-    "externalID", "migrateGUID", "payCurrencyUnit", "payRate", "placementRateCardLineGroup"})
-public class PlacementRateCardLine extends CustomFieldsI implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
+    "externalID", "migrateGUID", "payCurrencyUnit", "payRate", "placementRateCardLineGroup",
+    "payMultiplier", "billMultiplier", "markupPercent", "markupValue", "dateLastModified"})
+public class PlacementRateCardLine extends CustomFieldsI implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity, DateLastModifiedEntity {
 
     private Integer id;
 
@@ -47,6 +49,15 @@ public class PlacementRateCardLine extends CustomFieldsI implements QueryEntity,
 
     private PlacementRateCardLineGroup placementRateCardLineGroup;
 
+    private BigDecimal payMultiplier;
+
+    private BigDecimal billMultiplier;
+
+    private BigDecimal markupPercent;
+
+    private BigDecimal markupValue;
+
+    private DateTime dateLastModified;
 
     @Override
     @JsonProperty("id")
@@ -148,6 +159,47 @@ public class PlacementRateCardLine extends CustomFieldsI implements QueryEntity,
     @JsonProperty("placementRateCardLineGroup")
     public void setPlacementRateCardLineGroup(PlacementRateCardLineGroup placementRateCardLineGroup) {
         this.placementRateCardLineGroup = placementRateCardLineGroup;
+    }
+
+    public BigDecimal getPayMultiplier() {
+        return payMultiplier;
+    }
+
+    public void setPayMultiplier(BigDecimal payMultiplier) {
+        this.payMultiplier = payMultiplier;
+    }
+
+    public BigDecimal getBillMultiplier() {
+        return billMultiplier;
+    }
+
+    public void setBillMultiplier(BigDecimal billMultiplier) {
+        this.billMultiplier = billMultiplier;
+    }
+
+    public BigDecimal getMarkupPercent() {
+        return markupPercent;
+    }
+
+    public void setMarkupPercent(BigDecimal markupPercent) {
+        this.markupPercent = markupPercent;
+    }
+
+    public BigDecimal getMarkupValue() {
+        return markupValue;
+    }
+
+    public void setMarkupValue(BigDecimal markupValue) {
+        this.markupValue = markupValue;
+    }
+
+    @Override
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
     }
 
     @Override

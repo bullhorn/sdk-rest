@@ -37,8 +37,27 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     private final AssociationField<Candidate, PersonCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", PersonCustomObjectInstance8.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", PersonCustomObjectInstance9.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", PersonCustomObjectInstance10.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance11> customObject11s = instantiateAssociationField("customObject11s", PersonCustomObjectInstance11.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance12> customObject12s = instantiateAssociationField("customObject12s", PersonCustomObjectInstance12.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance13> customObject13s = instantiateAssociationField("customObject13s", PersonCustomObjectInstance13.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance14> customObject14s = instantiateAssociationField("customObject14s", PersonCustomObjectInstance14.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance15> customObject15s = instantiateAssociationField("customObject15s", PersonCustomObjectInstance15.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance16> customObject16s = instantiateAssociationField("customObject16s", PersonCustomObjectInstance16.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance17> customObject17s = instantiateAssociationField("customObject17s", PersonCustomObjectInstance17.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance18> customObject18s = instantiateAssociationField("customObject18s", PersonCustomObjectInstance18.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance19> customObject19s = instantiateAssociationField("customObject19s", PersonCustomObjectInstance19.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance20> customObject20s = instantiateAssociationField("customObject20s", PersonCustomObjectInstance20.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance21> customObject21s = instantiateAssociationField("customObject21s", PersonCustomObjectInstance21.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance22> customObject22s = instantiateAssociationField("customObject22s", PersonCustomObjectInstance22.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance23> customObject23s = instantiateAssociationField("customObject23s", PersonCustomObjectInstance23.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance24> customObject24s = instantiateAssociationField("customObject24s", PersonCustomObjectInstance24.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance25> customObject25s = instantiateAssociationField("customObject25s", PersonCustomObjectInstance25.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance26> customObject26s = instantiateAssociationField("customObject26s", PersonCustomObjectInstance26.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance27> customObject27s = instantiateAssociationField("customObject27s", PersonCustomObjectInstance27.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance28> customObject28s = instantiateAssociationField("customObject28s", PersonCustomObjectInstance28.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance29> customObject29s = instantiateAssociationField("customObject29s", PersonCustomObjectInstance29.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance30> customObject30s = instantiateAssociationField("customObject30s", PersonCustomObjectInstance30.class);
+
 
     private List<AssociationField<Candidate, ? extends BullhornEntity>> allAssociations;
     private static final CandidateAssociations INSTANCE = new CandidateAssociations();
@@ -125,6 +144,79 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
         return customObject10s;
     }
 
+
+    public AssociationField<Candidate, PersonCustomObjectInstance11> customObject11s() {
+        return customObject11s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance12> customObject12s() {
+        return customObject12s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance13> customObject13s() {
+        return customObject13s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance14> customObject14s() {
+        return customObject14s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance15> customObject15s() {
+        return customObject15s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance16> customObject16s() {
+        return customObject16s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance17> customObject17s() {
+        return customObject17s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance18> customObject18s() {
+        return customObject18s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance19> customObject19s() {
+        return customObject19s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance20> customObject20s() {
+        return customObject20s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance21> customObject21s() {
+        return customObject21s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance22> customObject22s() {
+        return customObject22s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance23> customObject23s() {
+        return customObject23s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance24> customObject24s() {
+        return customObject24s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance25> customObject25s() {
+        return customObject25s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance26> customObject26s() {
+        return customObject26s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance27> customObject27s() {
+        return customObject27s;
+    }
+
+    public AssociationField<Candidate, PersonCustomObjectInstance28> customObject28s() {
+        return customObject28s;
+    }
+
     public AssociationField<Candidate, PersonCustomObjectInstance29> customObject29s() {
         return customObject29s;
     }
@@ -160,8 +252,27 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
+            allAssociations.add(customObject11s());
+            allAssociations.add(customObject12s());
+            allAssociations.add(customObject13s());
+            allAssociations.add(customObject14s());
+            allAssociations.add(customObject15s());
+            allAssociations.add(customObject16s());
+            allAssociations.add(customObject17s());
+            allAssociations.add(customObject18s());
+            allAssociations.add(customObject19s());
+            allAssociations.add(customObject20s());
+            allAssociations.add(customObject21s());
+            allAssociations.add(customObject22s());
+            allAssociations.add(customObject23s());
+            allAssociations.add(customObject24s());
+            allAssociations.add(customObject25s());
+            allAssociations.add(customObject26s());
+            allAssociations.add(customObject27s());
+            allAssociations.add(customObject28s());
             allAssociations.add(customObject29s());
             allAssociations.add(customObject30s());
+
         }
         return allAssociations;
 
