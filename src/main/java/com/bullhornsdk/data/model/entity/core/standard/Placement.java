@@ -1465,18 +1465,22 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.incompleteRequirements = incompleteRequirements;
     }
 
+    @JsonProperty("isMultirate")
     public Boolean getMultirate() {
         return isMultirate;
     }
 
+    @JsonProperty("isMultirate")
     public void setMultirate(Boolean multirate) {
         isMultirate = multirate;
     }
 
+    @JsonProperty("isWorkFromHome")
     public Boolean getWorkFromHome() {
         return isWorkFromHome;
     }
 
+    @JsonProperty("isWorkFromHome")
     public void setWorkFromHome(Boolean workFromHome) {
         isWorkFromHome = workFromHome;
     }
