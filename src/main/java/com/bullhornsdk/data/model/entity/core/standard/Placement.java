@@ -14,6 +14,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.PayBillCycle;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
@@ -79,7 +80,8 @@ import java.util.Objects;
 		"recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
 		"salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
 		"timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
-        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense", "placementShiftSet" })
+        "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense", "placementShiftSet",
+        "timesheetCycle" })
 public class Placement extends CustomFieldsD implements SearchEntity, QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity,
 		FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -223,6 +225,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     private String payGroup;
 
 	private BigDecimal payRate;
+
+    private PayBillCycle timesheetCycle;
 
 	@JsonIgnore
 	private String projectCodeList;
@@ -917,7 +921,17 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 		this.payRate = payRate;
 	}
 
-	@JsonProperty("projectCodeList")
+    @JsonProperty("timesheetCycle")
+    public PayBillCycle getTimesheetCycle() {
+        return timesheetCycle;
+    }
+
+    @JsonProperty("timesheetCycle")
+    public void setTimesheetCycle(PayBillCycle timesheetCycle) {
+        this.timesheetCycle = timesheetCycle;
+    }
+
+    @JsonProperty("projectCodeList")
 	public String getProjectCodeList() {
 		return projectCodeList;
 	}
@@ -1358,6 +1372,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(payGroup, placement.payGroup) &&
             Objects.equals(payRate, placement.payRate) &&
             Objects.equals(projectCodeList, placement.projectCodeList) &&
+            Objects.equals(timesheetCycle, placement.timesheetCycle) &&
             Objects.equals(recruitingManagerPercentGrossMargin, placement.recruitingManagerPercentGrossMargin) &&
             Objects.equals(referralFee, placement.referralFee) &&
             Objects.equals(referralFeeType, placement.referralFeeType) &&
@@ -1393,7 +1408,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, placementShiftSet, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
+        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, placementShiftSet, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, timesheetCycle, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
     }
 
     @Override
@@ -1461,6 +1476,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", overtimeRate=" + overtimeRate +
             ", payGroup=" + payGroup +
             ", payRate=" + payRate +
+            ", timesheetCycle=" + timesheetCycle +
             ", projectCodeList='" + projectCodeList + '\'' +
             ", recruitingManagerPercentGrossMargin=" + recruitingManagerPercentGrossMargin +
             ", referralFee=" + referralFee +

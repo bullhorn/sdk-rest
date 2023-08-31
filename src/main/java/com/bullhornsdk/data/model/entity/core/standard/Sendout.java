@@ -19,7 +19,7 @@ import java.util.Objects;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "candidate", "clientContact", "clientCorporation", "dateAdded", "email", "isRead", "jobOrder", "jobSubmission",
-    "migrateGUID", "user" })
+    "migrateGUID", "user", "numTimesRead" })
 public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, HardDeleteEntity {
 
     private Integer id;
@@ -45,6 +45,8 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
     private String migrateGUID;
 
     private CorporateUser user;
+
+    private Integer numTimesRead;
 
     public Sendout() {
         super();
@@ -176,6 +178,16 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
         this.user = user;
     }
 
+    @JsonProperty("numTimesRead")
+    public Integer getNumTimesRead() {
+        return numTimesRead;
+    }
+
+    @JsonProperty("numTimesRead")
+    public void setNumTimesRead(Integer numTimesRead) {
+        this.numTimesRead = numTimesRead;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -191,13 +203,14 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
             Objects.equals(jobOrder, sendout.jobOrder) &&
             Objects.equals(jobSubmission, sendout.jobSubmission) &&
             Objects.equals(migrateGUID, sendout.migrateGUID) &&
-            Objects.equals(user, sendout.user);
+            Objects.equals(user, sendout.user) &&
+            Objects.equals(numTimesRead, sendout.numTimesRead);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, candidate, clientContact, clientCorporation, dateAdded, email, isRead, jobOrder, jobSubmission, migrateGUID, user);
+        return Objects.hash(id, candidate, clientContact, clientCorporation, dateAdded, email, isRead, jobOrder, jobSubmission, migrateGUID, user, numTimesRead);
     }
 
     @Override
@@ -213,7 +226,8 @@ public class Sendout extends AbstractEntity implements QueryEntity, UpdateEntity
             ", jobOrder=" + jobOrder +
             ", jobSubmission=" + jobSubmission +
             ", migrateGUID='" + migrateGUID + '\'' +
-            ", user=" + user +
+            ", user=" + user + '\'' +
+            ", numTimesRead=" + numTimesRead +
             '}';
     }
 }
