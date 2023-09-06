@@ -4,6 +4,9 @@ import com.bullhornsdk.data.BaseTest;
 import com.bullhornsdk.data.exception.RestMappingException;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
+import com.bullhornsdk.data.model.entity.core.standard.Note;
+import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent;
 import com.bullhornsdk.data.model.response.list.ListWrapper;
@@ -17,14 +20,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class RestJsonConverterTest extends BaseTest {
     private RestJsonConverter restJsonConverter = new RestJsonConverter();
     private Candidate candidate;
+    private Note note;
 
     private final String singleEntityJson = "{ \"data\": { \"id\": 1, \"status\":\"Approved\" }}";
 
@@ -55,6 +59,7 @@ public class RestJsonConverterTest extends BaseTest {
     @BeforeEach
     public void setUp() {
         candidate = bullhornData.findEntity(Candidate.class, testEntities.getCandidateId(), Sets.newHashSet("id", "firstName"));
+        note = bullhornData.findEntity(Note.class, testEntities.getNoteId(), Sets.newHashSet("id"));
     }
 
     @Test
@@ -62,7 +67,7 @@ public class RestJsonConverterTest extends BaseTest {
         RestJsonConverter jsonConverter = new RestJsonConverter();
         JSONObject expected = new JSONObject("{\"id\": 1,\"firstName\": \"Want\"}");
         JSONObject result = new JSONObject(jsonConverter.convertEntityToJsonString(candidate));
-        assertTrue("JSON conversion includes unexpected fields, or does not include expected fields", expected.similar(result));
+        assertTrue(expected.similar(result), "JSON conversion includes unexpected fields, or does not include expected fields");
     }
 
     @Test
@@ -70,7 +75,7 @@ public class RestJsonConverterTest extends BaseTest {
         RestJsonConverter jsonConverter = new RestJsonConverter();
         JSONObject expected = new JSONObject("{\"id\": 1,\"firstName\": \"Want\", \"lastName\": null}");
         JSONObject result = new JSONObject(jsonConverter.convertEntityToJsonString(candidate, Sets.newHashSet("lastName")));
-        assertTrue("JSON conversion includes unexpected fields, or does not include expected fields", expected.similar(result));
+        assertTrue(expected.similar(result), "JSON conversion includes unexpected fields, or does not include expected fields");
     }
 
     @Test
@@ -153,5 +158,29 @@ public class RestJsonConverterTest extends BaseTest {
         StandardFileContent file = wrapper.getFile();
         assertEquals("SomeContent", file.getFileContent());
         assertEquals("FileName", file.getName());
+    }
+
+    @Test
+    public void testOneToManySerializesToReplaceAll() {
+        note.setPlacements(new OneToMany<>(new Placement(1)));
+        JSONObject actual = new JSONObject(this.restJsonConverter.convertEntityToJsonString(note));
+        JSONObject expected = new JSONObject("{\"placements\": {\"replaceAll\": [1]}, \"id\": 1}");
+        assertTrue(actual.similar(expected), "JSON conversion did not conform to replaceAll standard");
+    }
+
+    @Test
+    public void testOneToManySerializesToReplaceAllOnEmptyArray() {
+        note.setPlacements(new OneToMany<>());
+        JSONObject actual = new JSONObject(this.restJsonConverter.convertEntityToJsonString(note));
+        JSONObject expected = new JSONObject("{\"placements\": {\"replaceAll\": []}, \"id\": 1}");
+        assertTrue(actual.similar(expected), "JSON conversion did not conform to replaceAll standard");
+    }
+
+    @Test
+    public void testOneToManySerializesToReplaceAllOnMultipleArray() {
+        note.setPlacements(new OneToMany<>(new Placement(1), new Placement(2), new Placement(3)));
+        JSONObject actual = new JSONObject(this.restJsonConverter.convertEntityToJsonString(note));
+        JSONObject expected = new JSONObject("{\"placements\": {\"replaceAll\": [1, 2, 3]}, \"id\": 1}");
+        assertTrue(actual.similar(expected), "JSON conversion did not conform to replaceAll standard");
     }
 }

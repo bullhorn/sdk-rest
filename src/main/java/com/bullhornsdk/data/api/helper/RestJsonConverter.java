@@ -1,6 +1,8 @@
 package com.bullhornsdk.data.api.helper;
 
 import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
+import com.bullhornsdk.data.api.helper.json.replaceall.ReplaceAllModule;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.bullhornsdk.data.exception.RestMappingException;
@@ -44,6 +46,7 @@ public class RestJsonConverter {
     private ObjectMapper createObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JodaModule());
+        mapper.registerModule(new ReplaceAllModule());
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         mapper.setFilterProvider(createFieldFilter(Collections.emptySet()));
         return mapper;
@@ -89,7 +92,10 @@ public class RestJsonConverter {
     public <T extends BullhornEntity> String convertEntityToJsonString(T entity, Set<String> nullBypassFields) {
         String jsonString = "";
         try {
-            jsonString = this.objectMapper.writer(createFieldFilter(nullBypassFields)).writeValueAsString(entity);
+            ObjectWriter writer = nullBypassFields == null
+                ? this.objectMapper.writer()
+                : this.objectMapper.writer(createFieldFilter(nullBypassFields));
+            jsonString = writer.writeValueAsString(entity);
         } catch (JsonProcessingException e) {
             log.error("Error deserializing entity of type" + entity.getClass() + " to jsonString.", e);
         }
