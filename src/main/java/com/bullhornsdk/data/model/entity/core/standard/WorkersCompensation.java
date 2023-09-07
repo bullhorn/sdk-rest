@@ -3,7 +3,9 @@ package com.bullhornsdk.data.model.entity.core.standard;
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.AllRecordsEntity;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "code", "description", "name", "state", "rates" })
-public class WorkersCompensation extends AbstractEntity implements QueryEntity, AssociationEntity, AllRecordsEntity {
+public class WorkersCompensation extends AbstractEntity implements QueryEntity, AssociationEntity, AllRecordsEntity, CreateEntity, UpdateEntity {
 
     private Integer id;
 
