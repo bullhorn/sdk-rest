@@ -4,6 +4,7 @@ import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
@@ -31,7 +32,7 @@ import java.util.Objects;
     "dateAdded", "dateLastModified", "description", "effectiveDate",
     "effectiveEndDate", "externalID", "isBillTo", "isFirst", "isSoldTo",
     "isWorkSite", "status", "title" })
-public class LocationVersion implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity {
+public class LocationVersion extends CustomFieldsB implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity {
 
     private Integer id;
 

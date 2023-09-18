@@ -90,6 +90,7 @@ import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
+import com.bullhornsdk.data.model.entity.core.paybill.LocationVersion;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge;
@@ -296,8 +297,9 @@ public enum BullhornEntityInfo {
     PLACEMENT_SHIFT_SET("PlacementShiftSet", PlacementShiftSet.class, PlacementShiftSetWrapper.class, PlacementShiftSetListWrapper.class, "PlacementShiftSetEditHistory", "PlacementShiftSetEditHistoryFieldChange"),
     PLACEMENT_SHIFT_SET_VERSION("PlacementShiftSetVersion", PlacementShiftSetVersion.class, PlacementShiftSetVersionWrapper.class, PlacementShiftSetVersionListWrapper.class, "PlacementShiftSetVersionEditHistory", "PlacementShiftSetVersionEditHistoryFieldChange"),
 
-        // PayBill Entities
+    // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, "LocationEditHistory", "LocationEditHistoryFieldChange"),
+    LOCATION_VERSION("LocationVersion", LocationVersion.class, LocationVersionWrapper.class, LocationVersionListWrapper.class, null, null),
     BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
     GENERAL_LEDGER_ACCOUNT("GeneralLedgerAccount", GeneralLedgerAccount.class, GeneralLedgerAccountWrapper.class, GeneralLedgerAccountListWrapper.class, null, null),
     INVOICE_STATEMENT_TEMPLATE("InvoiceStatementTemplate", InvoiceStatementTemplate.class, InvoiceStatementTemplateWrapper.class, InvoiceStatementTemplateListWrapper.class, null, null),

@@ -147,6 +147,10 @@ public class TestEntities {
 
     private Integer placementShiftSetId;
 
+    private Integer locationVersionId;
+
+    private Integer locationId;
+
     public TestEntities() {
         super();
         this.appointmentId = 1;
@@ -828,6 +832,22 @@ public class TestEntities {
         this.placementShiftSetId = placementShiftSetId;
     }
 
+    public Integer getLocationVersionId() {
+        return locationVersionId;
+    }
+
+    public void setLocationVersionId(Integer locationVersionId) {
+        this.locationVersionId = locationVersionId;
+    }
+
+    public Integer getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Integer locationId) {
+        this.locationId = locationId;
+    }
+
     @Override
     public String toString() {
         return "TestEntities{" +
@@ -899,6 +919,8 @@ public class TestEntities {
             ", invoiceStatementDistributionBatchId=" + invoiceStatementDistributionBatchId +
             ", invoiceStatementHistoryId=" + invoiceStatementHistoryId +
             ", placementShiftSetId=" + placementShiftSetId +
+            ", locationVersionId=" + locationVersionId +
+            ", locationId=" + locationId +
             '}';
     }
 }

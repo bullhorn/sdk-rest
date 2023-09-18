@@ -28,6 +28,7 @@ import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
 import com.bullhornsdk.data.model.entity.core.paybill.Location
+import com.bullhornsdk.data.model.entity.core.paybill.LocationVersion
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayableCharge
@@ -490,6 +491,7 @@ public class MockDataLoader {
         entityFiles.put(BillingProfile.class, "paybill/billingprofile-data.txt");
         entityFiles.put(InvoiceTerm.class, "paybill/invoiceterm-data.txt");
         entityFiles.put(Location.class, "paybill/location-data.txt");
+        entityFiles.put(LocationVersion.class, "paybill/locationversion-data.txt");
         entityFiles.put(GeneralLedgerAccount.class, "paybill/generalLedgerAccount-data.txt");
         entityFiles.put(InvoiceStatementTemplate.class, "paybill/invoiceStatementTemplate-data.txt");
         entityFiles.put(InvoiceStatementMessageTemplate.class, "paybill/invoiceStatementMessageTemplate-data.txt");
