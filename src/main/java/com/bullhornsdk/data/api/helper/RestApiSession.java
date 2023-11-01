@@ -89,6 +89,14 @@ public class RestApiSession {
         createSession();
     }
 
+    public RestApiSession(BullhornRestCredentials bullhornRestCredentials, String bhRestToken, DateTime dateTimeBhRestTokenWillExpire, String restUrl) {
+        this.restCredentials = bullhornRestCredentials;
+        this.restTemplate = RestTemplateFactory.getInstance();
+        this.dateTimeBhRestTokenWillExpire = dateTimeBhRestTokenWillExpire;
+        this.setBhRestToken(bhRestToken);
+        this.restUrl = restUrl;
+    }
+
     /**
      * Returns the BhRestToken to be used when making rest api calls.
      *
