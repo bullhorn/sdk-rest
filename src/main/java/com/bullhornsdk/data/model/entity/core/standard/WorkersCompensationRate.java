@@ -5,7 +5,9 @@ import java.math.BigDecimal;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
+import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
+import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -14,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "startDate", "endDate", "privateLabel", "rate", "compensation" })
-public class WorkersCompensationRate extends AbstractEntity implements QueryEntity {
+public class WorkersCompensationRate extends AbstractEntity implements QueryEntity, CreateEntity, UpdateEntity {
 
     private Integer id;
 
