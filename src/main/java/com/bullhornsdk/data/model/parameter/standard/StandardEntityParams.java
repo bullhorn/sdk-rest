@@ -1,9 +1,9 @@
 package com.bullhornsdk.data.model.parameter.standard;
 
+import com.bullhornsdk.data.model.parameter.EntityParams;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import com.bullhornsdk.data.model.parameter.EntityParams;
 
 public class StandardEntityParams implements EntityParams {
 
@@ -11,7 +11,6 @@ public class StandardEntityParams implements EntityParams {
 
     private StandardEntityParams() {
         super();
-
         this.showEditable = false;
     }
 
@@ -20,17 +19,16 @@ public class StandardEntityParams implements EntityParams {
         return params;
     }
 
-    
+
     public void setShowEditable(boolean showEditable) {
         this.showEditable = showEditable;
-
     }
 
     @Override
     public String getUrlString() {
         StringBuilder url = new StringBuilder();
 
-        if (showEditable != false) {
+        if (showEditable) {
             url.append("&showEditable={showEditable}");
         }
 
@@ -41,8 +39,8 @@ public class StandardEntityParams implements EntityParams {
     public Map<String, String> getParameterMap() {
         Map<String, String> uriVariables = new LinkedHashMap<String, String>();
 
-        if (showEditable != false) {
-            uriVariables.put("showEditable", "" + showEditable);
+        if (showEditable) {
+            uriVariables.put("showEditable", "" + true);
         }
 
         return uriVariables;

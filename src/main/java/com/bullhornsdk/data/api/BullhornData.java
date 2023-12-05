@@ -1,12 +1,5 @@
 package com.bullhornsdk.data.api;
 
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import org.springframework.web.multipart.MultipartFile;
-
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
 import com.bullhornsdk.data.api.helper.RestApiSession;
 import com.bullhornsdk.data.exception.RestApiException;
@@ -56,6 +49,12 @@ import com.bullhornsdk.data.model.response.list.ListWrapper;
 import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Core bullhorn data service, handles api calls and data mapping.
@@ -408,6 +407,13 @@ public interface BullhornData {
      * @return a Map of setting name to setting value
      */
     public Map<String, Object> getSettings(Set<String> settingSet, SettingsParams params);
+
+    /**
+     * Returns uniqueCallId used to identify rest requests.
+     *
+     * @return UniqueCallId
+     */
+    public String getUniqueCallId();
 
 	/**
 	 * Returns a valid bhRestToken to be used in a bh rest api call.
