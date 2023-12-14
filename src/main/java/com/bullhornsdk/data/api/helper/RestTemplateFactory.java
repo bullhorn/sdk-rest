@@ -15,6 +15,7 @@ import org.springframework.http.converter.support.AllEncompassingFormHttpMessage
 import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
 import org.springframework.http.converter.xml.SourceHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.DefaultUriBuilderFactory;
 
 public class RestTemplateFactory {
 
@@ -34,6 +35,9 @@ public class RestTemplateFactory {
 		messageConverters.add(new Jaxb2RootElementHttpMessageConverter());
 		messageConverters.add(new MappingJackson2HttpMessageConverter());
 
-		return new RestTemplate(messageConverters);
+		RestTemplate newTemplate = new RestTemplate(messageConverters);
+		newTemplate.setUriTemplateHandler(new DefaultUriBuilderFactory());
+
+		return newTemplate;
 	}
 }
