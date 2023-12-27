@@ -5,6 +5,7 @@ import com.bullhornsdk.data.model.entity.core.paybill.earncode.EarnCodeGroup;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
@@ -18,4 +19,14 @@ public class ClientCorporationRateAgreementCardLineGroup extends AbstractEntity 
     String externalID;
     Boolean isBase;
     String migrateGUID;
+
+    @JsonProperty("id")
+    public Integer getId() {
+        return id;
+    }
+
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

@@ -8,6 +8,7 @@ import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.joda.time.DateTime;
 
@@ -60,4 +61,24 @@ public class JobCode extends AbstractEntity implements QueryEntity, UpdateEntity
     CorporateUser owner;
     String status;
     String title;
+
+    @JsonProperty("id")
+    public Integer getId() {
+        return id;
+    }
+
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Override
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
+
+    @Override
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
 }
