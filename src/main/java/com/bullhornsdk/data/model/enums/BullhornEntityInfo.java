@@ -89,6 +89,7 @@ import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm;
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport;
+import com.bullhornsdk.data.model.entity.core.paybill.JobCode;
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge;
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch;
@@ -367,7 +368,12 @@ public enum BullhornEntityInfo {
     UNBILLED_REVENUE_DISTRIBUTION("UnbilledRevenueDistribution", UnbilledRevenueDistribution.class, UnbilledRevenueDistributionWrapper.class, UnbilledRevenueDistributionListWrapper.class, null, null),
     UNBILLED_REVENUE_DISTRIBUTION_BATCH("UnbilledRevenueDistributionBatch", UnbilledRevenueDistributionBatch.class, UnbilledRevenueDistributionBatchWrapper.class, UnbilledRevenueDistributionBatchListWrapper.class, null, null),
     UNBILLED_REVENUE_GENERAL_LEDGER_EXPORT_STATUS_LOOKUP("UnbilledRevenueGeneralLedgerExportStatusLookup", UnbilledRevenueGeneralLedgerExportStatusLookup.class, UnbilledRevenueGeneralLedgerExportStatusLookupWrapper.class, UnbilledRevenueGeneralLedgerExportStatusLookupListWrapper.class, null, null),
-
+    JOB_CODE("JobCode", JobCode.class, JobCodeWrapper.class, JobCodeListWrapper.class, "JobCodeEditHistory", "JobCodeEditHistoryFieldChange"),
+    // ClientCorporationRateAgreementCard entities
+    CLIENT_CORPORATION_RATE_AGREEMENT_CARD("ClientCorporationRateAgreementCard", ClientCorporationRateAgreementCard.class, ClientCorporationRateAgreementCardWrapper.class, ClientCorporationRateAgreementCardListWrapper.class, "ClientCorporationRateAgreementCardEditHistory", "ClientCorporationRateAgreementCardEditHistoryFieldChange"),
+    CLIENT_CORPORATION_RATE_AGREEMENT_CARD_LINE("ClientCorporationRateAgreementCardLine", ClientCorporationRateAgreementCardLine.class, ClientCorporationRateAgreementCardLineWrapper.class, ClientCorporationRateAgreementCardLineListWrapper.class, null, "ClientCorporationRateAgreementCardLineEditHistoryFieldChange"),
+    CLIENT_CORPORATION_RATE_AGREEMENT_CARD_LINE_GROUP("ClientCorporationRateAgreementCardLineGroup", ClientCorporationRateAgreementCardLineGroup.class, ClientCorporationRateAgreementCardLineGroupWrapper.class, ClientCorporationRateAgreementCardLineGroupListWrapper.class, "ClientCorporationRateAgreementCardLineGroupEditHistory", "ClientCorporationRateAgreementCardLineGroupEditHistoryFieldChange"),
+    CLIENT_CORPORATION_RATE_AGREEMENT_CARD_VERSION("ClientCorporationRateAgreementCardVersion", ClientCorporationRateAgreementCardVersion.class, ClientCorporationRateAgreementCardVersionWrapper.class, ClientCorporationRateAgreementCardVersionListWrapper.class, null, null),
     // Certification Requirements
     CANDIDATE_CERTIFICATION_REQUIREMENT("CandidateCertificationRequirement", CandidateCertificationRequirement.class, CandidateCertificationRequirementWrapper.class, CandidateCertificationRequirementListWrapper.class, "CandidateCertificationRequirementEditHistory", "CandidateCertificationRequirementEditHistoryFieldChange"),
     CERTIFICATION_REQUIREMENT("CertificationRequirement", CertificationRequirement.class, CertificationRequirementWrapper.class, CertificationRequirementListWrapper.class, "CertificationRequirementEditHistory", "CertificationRequirementEditHistoryFieldChange"),
