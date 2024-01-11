@@ -10,8 +10,10 @@ import com.bullhornsdk.data.model.entity.core.standard.Specialty;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.Getter;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
@@ -34,20 +36,42 @@ public class ClientCorporationRateAgreementCard extends AbstractEntity implement
     BigInteger customInt1;
     BigInteger customInt2;
     BigInteger customInt3;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText1;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText2;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText3;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText4;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText5;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText6;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText7;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText8;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText9;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText10;
     DateTime dateAdded;
     DateTime dateLastModified;
     String effectiveDate;
     String effectiveEndDate;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String employmentTypes;
     Boolean isDeleted;
     OneToMany<JobCode> jobCodes;
@@ -56,6 +80,8 @@ public class ClientCorporationRateAgreementCard extends AbstractEntity implement
     String rootExternalID;
     String rootMigrateGUID;
     OneToMany<Specialty> specialties;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String states;
     SimplifiedOptionsLookup statusLookup;
     Integer versionID;

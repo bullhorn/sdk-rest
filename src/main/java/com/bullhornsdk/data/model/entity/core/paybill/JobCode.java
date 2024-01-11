@@ -8,8 +8,10 @@ import com.bullhornsdk.data.model.entity.core.standard.CorporationDepartment;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.Getter;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
@@ -29,28 +31,74 @@ public class JobCode extends AbstractEntity implements QueryEntity, UpdateEntity
     Integer customInt1;
     Integer customInt2;
     Integer customInt3;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText1;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText2;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText3;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText4;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText5;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText6;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText7;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText8;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText9;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText10;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText11;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText12;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText13;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText14;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText15;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText16;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText17;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText18;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText19;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customText20;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customTextBlock1;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customTextBlock2;
+    @JsonIgnore
+    @Getter(onMethod = @__(@JsonProperty))
     String customTextBlock3;
     DateTime dateAdded;
     DateTime dateLastModified;

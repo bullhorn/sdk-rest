@@ -1,0 +1,1344 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132774,
+                "name": "Alexium Inc."
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1702927989310,
+            "dateLastModified": 1702927990358,
+            "effectiveDate": "2023-12-18",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 1,
+                "data": []
+            },
+            "name": "Alexium Inc - Clerical rate 12.13.2023",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": null,
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 205,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 204,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132772,
+                "name": "Amcor, Inc"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1701804991833,
+            "dateLastModified": 1701804992177,
+            "effectiveDate": "2023-12-04",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Amcor - Industrial Recruited - Dec 2023",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 204,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 203,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 120951,
+                "name": "BOSSAR PACKAGING, S.L."
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 3,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699647767893,
+            "dateLastModified": 1699647825842,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "BOSSAR PACKAGING - Industrial Recruited - 5.2020",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 203,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 202,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132529,
+                "name": "M.A. INDUSTRIES"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699647450319,
+            "dateLastModified": 1699647451301,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "M.A. INDUSTRIES - Industrial Recruited - 1.2019",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 202,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 201,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132529,
+                "name": "M.A. INDUSTRIES"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699647414509,
+            "dateLastModified": 1699647415537,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "M.A. INDUSTRIES - Clerical Recruited - 1.2019",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 201,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 200,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132540,
+                "name": "E.G.O. NORTH AMERICA"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699647333272,
+            "dateLastModified": 1699647334816,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "E.G.O. NORTH AMERICA - Industrial Recruited - 6.2021",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 200,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 199,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 106612,
+                "name": "KASON INDUSTRIES"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699647209879,
+            "dateLastModified": 1699647210172,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "KASON INDUSTRIES - Industrial Recruited - 4.2021",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 199,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 198,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132536,
+                "name": "YAMAHA MOTOR MANUFACTURING CORPORATION OF AMERCA"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699647119122,
+            "dateLastModified": 1699647119346,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "YAMAHA MOTOR MANUFACTURING CORPORATION OF AMERCA - Industrial Recruited - 8.2020",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 198,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 197,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 112302,
+                "name": "FC&A PUBLISHING"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699647015851,
+            "dateLastModified": 1699647016094,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "FC&A PUBLISHING - Industrial Recruited - 11.2017",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 197,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 196,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 109499,
+                "name": "UNITED RADIO"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699646937687,
+            "dateLastModified": 1699646937870,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "United Radio - Industrial Recruited - 2.2018",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 196,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 195,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 106796,
+                "name": "NEWCO USA INDUSTRIAL SERVICES"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699646845319,
+            "dateLastModified": 1699646845555,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "NEWCO USA INDUSTRIAL SERVICES - Industrial Recruited - ",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 195,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 194,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 112314,
+                "name": "MALLAGHAN"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699646722891,
+            "dateLastModified": 1699646723843,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Mallaghan - Industrial Payrolled - 11.2019",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 194,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 193,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 112314,
+                "name": "MALLAGHAN"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699646677323,
+            "dateLastModified": 1699646678432,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Mallaghan - Industrial Recruited - 11.2019",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 193,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 192,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132535,
+                "name": "TOSCA LTD"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699645980745,
+            "dateLastModified": 1699645980998,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Tosca Ltd - Industrial Payrolled - 9.2020",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 192,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 191,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132535,
+                "name": "TOSCA LTD"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699645938759,
+            "dateLastModified": 1699645939734,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Tosca Ltd - Industrial Recruited - 9.2020",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 191,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 190,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132452,
+                "name": "CUSTOM MOLDED PRODUCTS, INC."
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699645832556,
+            "dateLastModified": 1699645834040,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "CUSTOM MOLDED PRODUCTS - Industrial Recruited - 11.2022",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 190,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 189,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 123304,
+                "name": "YOKOGAWA CORPORATION OF AMERICA"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699645717085,
+            "dateLastModified": 1699645718181,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "YOKOGAWA CORPORATION OF AMERICA - Industrial Recruited - 10.2020",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 189,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 188,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132515,
+                "name": "FREUDENBERG-NOK"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699644914893,
+            "dateLastModified": 1699644915938,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Freudenberg-Nok - Industrial Recruited - 12.2016",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 188,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 187,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 132180,
+                "name": "RUTHERFORD EQUIPMENT"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699644838172,
+            "dateLastModified": 1699644839244,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Rutherford, Industrial, 8.25.2022",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 187,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 186,
+            "categories": {
+                "total": 0,
+                "data": []
+            },
+            "clientCorporation": {
+                "id": 119136,
+                "name": "MOBIS"
+            },
+            "clientCorporationRateAgreementCardLineGroups": {
+                "total": 1,
+                "data": []
+            },
+            "customDate1": null,
+            "customDate2": null,
+            "customDate3": null,
+            "customFloat1": null,
+            "customFloat2": null,
+            "customFloat3": null,
+            "customInt1": null,
+            "customInt2": null,
+            "customInt3": null,
+            "customText1": null,
+            "customText10": null,
+            "customText2": null,
+            "customText3": null,
+            "customText4": null,
+            "customText5": null,
+            "customText6": null,
+            "customText7": null,
+            "customText8": null,
+            "customText9": null,
+            "dateAdded": 1699644778868,
+            "dateLastModified": 1699644779886,
+            "effectiveDate": "2023-11-10",
+            "effectiveEndDate": "2999-12-31",
+            "employmentTypes": null,
+            "isDeleted": false,
+            "jobCodes": {
+                "total": 1,
+                "data": []
+            },
+            "locations": {
+                "total": 0,
+                "data": []
+            },
+            "name": "Mobis - Industrial Payrolled - 1.2013",
+            "rootExternalID": null,
+            "rootMigrateGUID": null,
+            "specialties": {
+                "total": 0,
+                "data": []
+            },
+            "states": [
+                "GA"
+            ],
+            "statusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "versionID": 186,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        }
+    ]
+}
