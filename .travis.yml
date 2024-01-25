@@ -1,15 +1,9 @@
 language: java
 
-before_install:
-  - curl -s "https://get.sdkman.io" | bash
-  - source "$HOME/.sdkman/bin/sdkman-init.sh"
-  - sdk install java oraclejdk8
-  - sdk use java oraclejdk8
+install: mvn install -DskipTests=true -Dgpg.skip=true
 
-install:
-  - mvn install -DskipTests=true -Dgpg.skip=true
-
-dist: trusty
+jdk:
+  - oraclejdk8
 
 after_success:
   - mvn test jacoco:report coveralls:report
