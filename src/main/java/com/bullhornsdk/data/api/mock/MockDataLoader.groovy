@@ -947,6 +947,7 @@ public class MockDataLoader {
         entityMetaFiles.put(PersonCustomObjectInstance23.class, "meta/customobjectinstances/personcustomobjectinstance23-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance24.class, "meta/customobjectinstances/personcustomobjectinstance24-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance25.class, "meta/customobjectinstances/personcustomobjectinstance25-meta-data.txt");
+        entityMetaFiles.put(PersonCustomObjectInstance27.class, "meta/customobjectinstances/personcustomobjectinstance27-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance29.class, "meta/customobjectinstances/personcustomobjectinstance29-meta-data.txt");
         entityMetaFiles.put(PersonCustomObjectInstance30.class, "meta/customobjectinstances/personcustomobjectinstance30-meta-data.txt");
 

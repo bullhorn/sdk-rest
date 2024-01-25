@@ -53,7 +53,7 @@ import java.util.Objects;
 		"submissions", "ssn", "stateAddtionalWitholdingsAmount", "stateExemptions", "stateFilingStatus", "status", "tasks", "taxID",
 		"taxState", "tearsheets", "timeZoneOffsetEST", "travelLimit", "type", "username", "veteran", "webResponses", "willRelocate", "workAuthorized",
 		"workHistories", "workPhone", "customObject1s", "customObject2s", "customObject3s", "customObject4s", "customObject5s", "customObject6s",
-        "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject29s" })
+        "customObject7s", "customObject8s", "customObject9s", "customObject10s", "customObject27s", "customObject29s" })
 public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
@@ -458,6 +458,8 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
     private OneToMany<PersonCustomObjectInstance9> customObject9s;
 
     private OneToMany<PersonCustomObjectInstance10> customObject10s;
+
+    private OneToMany<PersonCustomObjectInstance27> customObject27s;
 
     private OneToMany<PersonCustomObjectInstance29> customObject29s;
 
@@ -2107,6 +2109,18 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
         this.customObject10s = customObject10s;
     }
 
+    @JsonProperty("customObject27s")
+    @JsonSerialize(using = RestOneToManySerializer.class)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    public OneToMany<PersonCustomObjectInstance27> getCustomObject27s() {
+        return customObject27s;
+    }
+
+    @JsonProperty("customObject27s")
+    public void setCustomObject27s(OneToMany<PersonCustomObjectInstance27> customObject27s) {
+        this.customObject27s = customObject27s;
+    }
+
     @JsonProperty("customObject29s")
     @JsonSerialize(using = RestOneToManySerializer.class)
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -2284,13 +2298,14 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
             Objects.equals(customObject8s, candidate.customObject8s) &&
             Objects.equals(customObject9s, candidate.customObject9s) &&
             Objects.equals(customObject10s, candidate.customObject10s) &&
+            Objects.equals(customObject27s, candidate.customObject27s) &&
             Objects.equals(customObject29s, candidate.customObject29s);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), luceneScore, id, address, branch, businessSectors, canEnterTime, categories, category, certificationList, certifications, clientCorporationBlackList, clientCorporationWhiteList, comments, companyName, companyURL, dateAdded, dateAvailable, dateAvailableEnd, dateI9Expiration, dateLastComment, dateLastModified, dateLastPayrollProviderSync, dateNextCall, dateOfBirth, dayRate, dayRateLow, degreeList, description, desiredLocations, disability, educationDegree, educations, email, email2, email3, employeeType, employmentPreference, ethnicity, experience, externalID, fax, fax2, fax3, federalAddtionalWitholdingsAmount, federalExtraWithholdingAmount, federalExemptions, federalFilingStatus, fileAttachments, firstName, gender, hourlyRate, hourlyRateLow, interviews, i9OnFile, isDayLightSavings, isDeleted, isEditable, isLockedOut, isAnonymized, lastName, linkedPerson, leads, localAddtionalWitholdingsAmount, localExemptions, localFilingStatus, localTaxCode, massMailOptOut, middleName, migrateGUID, mobile, name, namePrefix, nameSuffix, nickName, notes, numCategories, numOwners, occupation, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, owner, pager, paperWorkOnFile, password, phone, phone2, phone3, placements, preferredContact, primarySkills, recentClientList, referredBy, referredByPerson, references, salary, salaryLow, secondaryAddress, secondaryOwners, secondarySkills, sendouts, skillSet, smsOptIn, source, specialties, ssn, stateAddtionalWitholdingsAmount, stateExemptions, stateFilingStatus, status, submissions, tasks, taxID, taxState, tearsheets, timeZoneOffsetEST, travelLimit, type, username, veteran, webResponses, willRelocate, workAuthorized, workHistories, workPhone, customEncryptedText1, customEncryptedText2, customEncryptedText3, customEncryptedText4, customEncryptedText5, customEncryptedText6, customEncryptedText7, customEncryptedText8, customEncryptedText9, customEncryptedText10, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject29s);
+        return Objects.hash(super.hashCode(), luceneScore, id, address, branch, businessSectors, canEnterTime, categories, category, certificationList, certifications, clientCorporationBlackList, clientCorporationWhiteList, comments, companyName, companyURL, dateAdded, dateAvailable, dateAvailableEnd, dateI9Expiration, dateLastComment, dateLastModified, dateLastPayrollProviderSync, dateNextCall, dateOfBirth, dayRate, dayRateLow, degreeList, description, desiredLocations, disability, educationDegree, educations, email, email2, email3, employeeType, employmentPreference, ethnicity, experience, externalID, fax, fax2, fax3, federalAddtionalWitholdingsAmount, federalExtraWithholdingAmount, federalExemptions, federalFilingStatus, fileAttachments, firstName, gender, hourlyRate, hourlyRateLow, interviews, i9OnFile, isDayLightSavings, isDeleted, isEditable, isLockedOut, isAnonymized, lastName, linkedPerson, leads, localAddtionalWitholdingsAmount, localExemptions, localFilingStatus, localTaxCode, massMailOptOut, middleName, migrateGUID, mobile, name, namePrefix, nameSuffix, nickName, notes, numCategories, numOwners, occupation, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, owner, pager, paperWorkOnFile, password, phone, phone2, phone3, placements, preferredContact, primarySkills, recentClientList, referredBy, referredByPerson, references, salary, salaryLow, secondaryAddress, secondaryOwners, secondarySkills, sendouts, skillSet, smsOptIn, source, specialties, ssn, stateAddtionalWitholdingsAmount, stateExemptions, stateFilingStatus, status, submissions, tasks, taxID, taxState, tearsheets, timeZoneOffsetEST, travelLimit, type, username, veteran, webResponses, willRelocate, workAuthorized, workHistories, workPhone, customEncryptedText1, customEncryptedText2, customEncryptedText3, customEncryptedText4, customEncryptedText5, customEncryptedText6, customEncryptedText7, customEncryptedText8, customEncryptedText9, customEncryptedText10, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, customObject27s, customObject29s);
     }
 
     @Override
@@ -2443,6 +2458,7 @@ public class Candidate extends CustomFieldsF implements SearchEntity, UpdateEnti
             ", customObject8s=" + customObject8s +
             ", customObject9s=" + customObject9s +
             ", customObject10s=" + customObject10s +
+            ", customObject27s=" + customObject27s +
             ", customObject29s=" + customObject29s +
             '}';
     }

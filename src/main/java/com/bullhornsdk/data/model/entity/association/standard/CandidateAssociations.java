@@ -37,6 +37,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     private final AssociationField<Candidate, PersonCustomObjectInstance8> customObject8s = instantiateAssociationField("customObject8s", PersonCustomObjectInstance8.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance9> customObject9s = instantiateAssociationField("customObject9s", PersonCustomObjectInstance9.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance10> customObject10s = instantiateAssociationField("customObject10s", PersonCustomObjectInstance10.class);
+    private final AssociationField<Candidate, PersonCustomObjectInstance27> customObject27s = instantiateAssociationField("customObject27s", PersonCustomObjectInstance27.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance29> customObject29s = instantiateAssociationField("customObject29s", PersonCustomObjectInstance29.class);
     private final AssociationField<Candidate, PersonCustomObjectInstance30> customObject30s = instantiateAssociationField("customObject30s", PersonCustomObjectInstance30.class);
 
@@ -124,6 +125,9 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
     public AssociationField<Candidate, PersonCustomObjectInstance10> customObject10s() {
         return customObject10s;
     }
+    public AssociationField<Candidate, PersonCustomObjectInstance27> customObject27s() {
+        return customObject27s;
+    }
 
     public AssociationField<Candidate, PersonCustomObjectInstance29> customObject29s() {
         return customObject29s;
@@ -160,6 +164,7 @@ public final class CandidateAssociations implements EntityAssociations<Candidate
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
+            allAssociations.add(customObject27s());
             allAssociations.add(customObject29s());
             allAssociations.add(customObject30s());
         }
