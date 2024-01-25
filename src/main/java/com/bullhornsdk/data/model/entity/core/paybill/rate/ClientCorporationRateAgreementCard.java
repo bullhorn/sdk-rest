@@ -91,34 +91,4 @@ public class ClientCorporationRateAgreementCard extends AbstractEntity implement
     SimplifiedOptionsLookup statusLookup;
     Integer versionID;
     OneToMany<ClientCorporationRateAgreementCardVersion> versions;
-
-//    @JsonProperty("id")
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    @JsonProperty("id")
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    @Override
-//    public DateTime getDateLastModified() {
-//        return dateLastModified;
-//    }
-//
-//    @Override
-//    public Boolean getIsDeleted() {
-//        return isDeleted;
-//    }
-//
-//    @Override
-//    public String getEffectiveDate() {
-//        return effectiveDate;
-//    }
-//
-//    @Override
-//    public String getEffectiveEndDate() {
-//        return effectiveEndDate;
-//    }
 }

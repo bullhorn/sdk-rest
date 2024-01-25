@@ -37,19 +37,4 @@ public class ClientCorporationRateAgreementCardLine extends CustomFieldsI implem
     CurrencyUnit payCurrencyUnit;
     BigDecimal payMultiplier;
     BigDecimal payRate;
-
-//    @JsonProperty("id")
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    @JsonProperty("id")
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    @Override
-//    public DateTime getDateLastModified() {
-//        return dateLastModified;
-//    }
 }

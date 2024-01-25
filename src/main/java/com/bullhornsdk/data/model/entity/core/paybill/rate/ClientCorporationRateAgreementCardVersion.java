@@ -86,29 +86,4 @@ public class ClientCorporationRateAgreementCardVersion extends AbstractEntity im
     @Getter(onMethod_ = {@JsonProperty})
     String states;
     SimplifiedOptionsLookup statusLookup;
-
-//    @JsonProperty("id")
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    @JsonProperty("id")
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    @Override
-//    public DateTime getDateLastModified() {
-//        return dateLastModified;
-//    }
-//
-//    @Override
-//    public String getEffectiveDate() {
-//        return effectiveDate;
-//    }
-//
-//    @Override
-//    public String getEffectiveEndDate() {
-//        return effectiveEndDate;
-//    }
 }
