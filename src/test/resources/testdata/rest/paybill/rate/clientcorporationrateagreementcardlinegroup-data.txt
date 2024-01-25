@@ -1,0 +1,646 @@
+{
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "clientCorporationRateAgreementCard": {
+                "id": 205,
+                "effectiveDate": "2023-12-18",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 205
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 205,
+                "effectiveDate": "2023-12-18",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 282,
+            "clientCorporationRateAgreementCard": {
+                "id": 204,
+                "effectiveDate": "2023-12-04",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 204
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 204,
+                "effectiveDate": "2023-12-04",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 280,
+            "clientCorporationRateAgreementCard": {
+                "id": 203,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 203
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 203,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 134,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "migrateGUID": null
+        },
+        {
+            "id": 279,
+            "clientCorporationRateAgreementCard": {
+                "id": 203,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 203
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 203,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 140,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "migrateGUID": null
+        },
+        {
+            "id": 278,
+            "clientCorporationRateAgreementCard": {
+                "id": 203,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 203
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 203,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 277,
+            "clientCorporationRateAgreementCard": {
+                "id": 202,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 202
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 202,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 276,
+            "clientCorporationRateAgreementCard": {
+                "id": 201,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 201
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 201,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 275,
+            "clientCorporationRateAgreementCard": {
+                "id": 200,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 200
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 200,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 274,
+            "clientCorporationRateAgreementCard": {
+                "id": 199,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 199
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 199,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 273,
+            "clientCorporationRateAgreementCard": {
+                "id": 198,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 198
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 198,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 272,
+            "clientCorporationRateAgreementCard": {
+                "id": 197,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 197
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 197,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 271,
+            "clientCorporationRateAgreementCard": {
+                "id": 196,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 196
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 196,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 270,
+            "clientCorporationRateAgreementCard": {
+                "id": 195,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 195
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 195,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 269,
+            "clientCorporationRateAgreementCard": {
+                "id": 194,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 194
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 194,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 268,
+            "clientCorporationRateAgreementCard": {
+                "id": 193,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 193
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 193,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 267,
+            "clientCorporationRateAgreementCard": {
+                "id": 192,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 192
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 192,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 266,
+            "clientCorporationRateAgreementCard": {
+                "id": 191,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 191
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 191,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 265,
+            "clientCorporationRateAgreementCard": {
+                "id": 190,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 190
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 190,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 264,
+            "clientCorporationRateAgreementCard": {
+                "id": 189,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 189
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 3,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 189,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 124,
+                "accruesOT": true,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": true,
+            "migrateGUID": null
+        },
+        {
+            "id": 263,
+            "clientCorporationRateAgreementCard": {
+                "id": 184,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31",
+                "versionID": 184
+            },
+            "clientCorporationRateAgreementCardLines": {
+                "total": 1,
+                "data": []
+            },
+            "clientCorporationRateAgreementCardVersion": {
+                "id": 184,
+                "effectiveDate": "2023-11-10",
+                "effectiveEndDate": "2999-12-31"
+            },
+            "earnCodeGroup": {
+                "id": 140,
+                "accruesOT": false,
+                "payBillOptionsLookup": {
+                    "id": 1,
+                    "label": "Pay & Bill",
+                    "allowPay": true,
+                    "allowBill": true
+                },
+                "isRateRequired": true
+            },
+            "externalID": null,
+            "isBase": false,
+            "migrateGUID": null
+        }
+    ]
+}

@@ -27,6 +27,7 @@ import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
+import com.bullhornsdk.data.model.entity.core.paybill.JobCode
 import com.bullhornsdk.data.model.entity.core.paybill.Location
 import com.bullhornsdk.data.model.entity.core.paybill.charge.BillableCharge
 import com.bullhornsdk.data.model.entity.core.paybill.charge.PayExportBatch
@@ -572,6 +573,12 @@ public class MockDataLoader {
         entityFiles.put(UnbilledRevenueDistribution.class, "paybill/unbilledrevenuedistribution-data.txt");
         entityFiles.put(UnbilledRevenueDistributionBatch.class, "paybill/unbilledrevenuedistributionbatch-data.txt");
         entityFiles.put(UnbilledRevenueGeneralLedgerExportStatusLookup.class, "paybill/unbilledrevenuegeneralledgerexportstatuslookup-data.txt");
+        entityFiles.put(JobCode.class, "paybill/jobcode-data.txt");
+
+        entityFiles.put(ClientCorporationRateAgreementCard.class, "paybill/rate/clientcorporationrateagreementcard-data.txt");
+        entityFiles.put(ClientCorporationRateAgreementCardLine.class, "paybill/rate/clientcorporationrateagreementcardline-data.txt");
+        entityFiles.put(ClientCorporationRateAgreementCardLineGroup.class, "paybill/rate/clientcorporationrateagreementcardlinegroup-data.txt");
+        entityFiles.put(ClientCorporationRateAgreementCardVersion.class, "paybill/rate/clientcorporationrateagreementcardversion-data.txt");
 
         entityFiles.put(CandidateCertificationRequirement.class, "candidatecertificationrequirement-data.txt");
         entityFiles.put(CertificationRequirement.class, "certificationrequirement-data.txt");
@@ -778,11 +785,17 @@ public class MockDataLoader {
         entityMetaFiles.put(JobOrderRateCardLine.class, "meta/paybill/rate/joborderratecardline-meta-data.txt");
         entityMetaFiles.put(JobOrderRateCardLineGroup.class, "meta/paybill/rate/joborderratecardlinegroup-meta-data.txt");
         entityMetaFiles.put(JobOrderRateCardVersion.class, "meta/paybill/rate/joborderratecardversion-meta-data.txt");
+        entityMetaFiles.put(JobCode.class, "meta/paybill/jobcode-meta-data.txt");
 
         entityMetaFiles.put(PlacementRateCard.class, "meta/paybill/rate/placementratecard-meta-data.txt");
         entityMetaFiles.put(PlacementRateCardLine.class, "meta/paybill/rate/placementratecardline-meta-data.txt");
         entityMetaFiles.put(PlacementRateCardLineGroup.class, "meta/paybill/rate/placementratecardlinegroup-meta-data.txt");
         entityMetaFiles.put(PlacementRateCardVersion.class, "meta/paybill/rate/placementratecardversion-meta-data.txt");
+
+        entityMetaFiles.put(ClientCorporationRateAgreementCard.class, "meta/paybill/rate/clientcorporationrateagreementcard-meta-data.txt");
+        entityMetaFiles.put(ClientCorporationRateAgreementCardLine.class, "meta/paybill/rate/clientcorporationrateagreementcardline-meta-data.txt");
+        entityMetaFiles.put(ClientCorporationRateAgreementCardLineGroup.class, "meta/paybill/rate/clientcorporationrateagreementcardlinegroup-meta-data.txt");
+        entityMetaFiles.put(ClientCorporationRateAgreementCardVersion.class, "meta/paybill/rate/clientcorporationrateagreementcardversion-meta-data.txt");
 
         entityMetaFiles.put(PlacementTimeAndExpense.class, "meta/placementtimeandexpense-meta-data.txt");
 

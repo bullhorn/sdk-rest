@@ -9,20 +9,20 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
-public class RestOneToManySerializer extends JsonSerializer<OneToMany<CustomObjectInstance>> {
+public class RestOneToManySerializer extends JsonSerializer<OneToMany<?>> {
 
 	public RestOneToManySerializer() {
 	}
 
 	@Override
-	public void serialize(OneToMany<CustomObjectInstance> value, JsonGenerator jgen, SerializerProvider provider)
+	public void serialize(OneToMany<?> value, JsonGenerator jgen, SerializerProvider provider)
 			throws IOException, JsonProcessingException {
 		jgen.writeStartArray();
-		
-		for(CustomObjectInstance customObjectInstance : value.getData()) {
-			jgen.writeObject(customObjectInstance);
+
+		for(Object object : value.getData()) {
+			jgen.writeObject(object);
 		}
-		
+
 		jgen.writeEndArray();
 	}
 
