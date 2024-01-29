@@ -8,8 +8,8 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 import java.io.IOException;
 
-public class OneToManySerializer extends StdSerializer<OneToMany<? extends BullhornEntity>> {
-    protected OneToManySerializer() {
+public class ReplaceAllSerializer extends StdSerializer<OneToMany<? extends BullhornEntity>> {
+    protected ReplaceAllSerializer() {
         super((Class<OneToMany<? extends BullhornEntity>>) (Class<?>) OneToMany.class);
     }
 
