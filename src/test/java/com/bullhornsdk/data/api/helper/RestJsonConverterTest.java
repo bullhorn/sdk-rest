@@ -2,6 +2,7 @@ package com.bullhornsdk.data.api.helper;
 
 import com.bullhornsdk.data.BaseTest;
 import com.bullhornsdk.data.exception.RestMappingException;
+import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance1;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
 import com.bullhornsdk.data.model.entity.core.standard.Note;
@@ -182,5 +183,17 @@ public class RestJsonConverterTest extends BaseTest {
         JSONObject actual = new JSONObject(this.restJsonConverter.convertEntityToJsonString(note));
         JSONObject expected = new JSONObject("{\"placements\": {\"replaceAll\": [1, 2, 3]}, \"id\": 1}");
         assertTrue(actual.similar(expected), "JSON conversion did not conform to replaceAll standard");
+    }
+
+    @Test
+    public void testRestOneToManySerializerDoesNotCollideWithReplaceAll() {
+        Placement placement = new Placement(1);
+        PlacementCustomObjectInstance1 placementCustomObjectInstance1 = new PlacementCustomObjectInstance1();
+        placementCustomObjectInstance1.setId(2);
+        placementCustomObjectInstance1.setText1("Test");
+        placement.setCustomObject1s(new OneToMany<>(placementCustomObjectInstance1));
+        JSONObject actual = new JSONObject(this.restJsonConverter.convertEntityToJsonString(placement));
+        JSONObject expected = new JSONObject("{\"id\": 1, \"customObject1s\": [{\"id\": 2, \"text1\": \"Test\"}]}");
+        assertTrue(actual.similar(expected), "OneToMany replaceAll serializer collided with RestOneToManySerializer");
     }
 }
