@@ -61,6 +61,7 @@ public class RestUriVariablesFactory {
     private static final String SETTINGS = "settings";
     private static final String SUBSCRIPTION_ID = "subscriptionId";
     private static final String WHERE = "where";
+    private static final String UNIQUE_CALL_ID = "uniqueCallId";
 
 	public RestUriVariablesFactory(BullhornData bullhornApiRest, RestFileManager restFileManager) {
 		super();
@@ -102,8 +103,8 @@ public class RestUriVariablesFactory {
 
     public Map<String, String> getUriVariablesForMeta(String entityType, MetaParameter metaParameter, Set<String> fieldSet, Integer privateLabelId) {
         Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-        String bhRestToken = bullhornApiRest.getBhRestToken();
-        uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
         uriVariables.put(ENTITY_TYPE, entityType);
 
         try {
@@ -282,6 +283,7 @@ public class RestUriVariablesFactory {
 
         uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
         uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
         uriVariables.put(QUERY, query);
 
         return uriVariables;
@@ -301,9 +303,8 @@ public class RestUriVariablesFactory {
 		}
 
 		Map<String, String> uriVariables = params.getParameterMap();
-
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(FORMAT, restFileManager.getFileParam(resume));
 		return uriVariables;
 	}
@@ -325,6 +326,7 @@ public class RestUriVariablesFactory {
 
         String bhRestToken = bullhornApiRest.getBhRestToken();
         uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
         uriVariables.put(FORMAT, restFileManager.getFileParam(resume));
         return uriVariables;
     }
@@ -343,8 +345,8 @@ public class RestUriVariablesFactory {
 
 		Map<String, String> uriVariables = params.getParameterMap();
 
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		return uriVariables;
 	}
 
@@ -357,9 +359,9 @@ public class RestUriVariablesFactory {
 	 * @return
 	 */
 	public Map<String, String> getUriVariablesForGetFile(BullhornEntityInfo entityInfo, Integer entityId, Integer fileId) {
-		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		Map<String, String> uriVariables = new LinkedHashMap<>();
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 		uriVariables.put(ENTITY_ID, entityId.toString());
 		uriVariables.put(FILE_ID, fileId.toString());
@@ -374,9 +376,9 @@ public class RestUriVariablesFactory {
 	 * @return
 	 */
 	public Map<String, String> getUriVariablesForGetEntityMetaFiles(BullhornEntityInfo entityInfo, Integer entityId) {
-		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		Map<String, String> uriVariables = new LinkedHashMap<>();
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 		uriVariables.put(ENTITY_ID, entityId.toString());
 
@@ -399,8 +401,8 @@ public class RestUriVariablesFactory {
 
 		Map<String, String> uriVariables = params.getParameterMap();
 
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(EXTERNAL_ID, externalId);
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 		uriVariables.put(ENTITY_ID, entityId.toString());
@@ -418,8 +420,8 @@ public class RestUriVariablesFactory {
 	public Map<String, String> getUriVariablesForAddFile(BullhornEntityInfo entityInfo, Integer entityId, FileMeta fileMeta) {
 		Map<String, String> uriVariables = fileMeta.getParameterMap();
 
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 		uriVariables.put(ENTITY_ID, entityId.toString());
 
@@ -439,9 +441,10 @@ public class RestUriVariablesFactory {
 	 * @return
 	 */
 	public Map<String, String> getUriVariablesDeleteFile(BullhornEntityInfo entityInfo, Integer entityId, Integer fileId) {
-		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		Map<String, String> uriVariables = new LinkedHashMap<>();
+
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 		uriVariables.put(ENTITY_ID, entityId.toString());
 		uriVariables.put(FILE_ID, fileId.toString());
@@ -450,9 +453,10 @@ public class RestUriVariablesFactory {
 
 	public <T extends AssociationEntity> Map<String, String> getUriVariablesForAssociateWithEntity(BullhornEntityInfo entityInfo,
 			Integer entityId, AssociationField<T, ? extends BullhornEntity> associationName, Set<Integer> associationIds) {
-		Map<String, String> uriVariables = new LinkedHashMap<String, String>();
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		Map<String, String> uriVariables = new LinkedHashMap<>();
+
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 		uriVariables.put(ENTITY_ID, entityId.toString());
 		uriVariables.put(ACCOCIATION_NAME, associationName.getAssociationFieldName());
@@ -488,8 +492,8 @@ public class RestUriVariablesFactory {
 
 		Map<String, String> uriVariables = params.getParameterMap();
 
-		String bhRestToken = bullhornApiRest.getBhRestToken();
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		String fields = this.convertFieldSetToString(fieldSet);
 		uriVariables.put(FIELDS, fields);
 		uriVariables.put(CLIENT_CORP_ID, clientCorporationID.toString());
@@ -504,9 +508,9 @@ public class RestUriVariablesFactory {
 	 * @param entityInfo
 	 */
 	public void addCommonUriVariables(Set<String> fieldSet, BullhornEntityInfo entityInfo, Map<String, String> uriVariables) {
-		String bhRestToken = bullhornApiRest.getBhRestToken();
 		String fields = convertFieldSetToString(fieldSet);
-		uriVariables.put(BH_REST_TOKEN, bhRestToken);
+		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(FIELDS, fields);
 		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
 	}
@@ -520,8 +524,8 @@ public class RestUriVariablesFactory {
      * @param entityInfo The bullhorn entity that is being modified by this call
      */
     private void addModifyingUriVariables(Map<String, String> uriVariables, BullhornEntityInfo entityInfo) {
-        String bhRestToken = bullhornApiRest.getBhRestToken();
-        uriVariables.put(BH_REST_TOKEN, bhRestToken);
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
+        uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
         uriVariables.put(ENTITY_TYPE, entityInfo.getName());
         uriVariables.put(EXECUTE_FORM_TRIGGERS, bullhornApiRest.getExecuteFormTriggers() ? "true" : "false");
     }
@@ -559,6 +563,7 @@ public class RestUriVariablesFactory {
 		Map<String, String> uriVariables = params.getParameterMap();
 
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(QUERY, query);
 
 		return uriVariables;
@@ -569,6 +574,7 @@ public class RestUriVariablesFactory {
 		Map<String, String> uriVariables = params.getParameterMap();
 
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 
 		try {
 		    uriVariables.put(SETTINGS, convertFieldSetToString(settingSet));
@@ -584,6 +590,7 @@ public class RestUriVariablesFactory {
         Map<String, String> uriVariables = new LinkedHashMap<String, String>();
 
         uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
         uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
 
         return uriVariables;
@@ -594,6 +601,7 @@ public class RestUriVariablesFactory {
         Map<String, String> uriVariables = new LinkedHashMap<String, String>();
 
         uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
         uriVariables.put(MAX_EVENTS, maxEvents.toString());
         uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
 
@@ -605,6 +613,7 @@ public class RestUriVariablesFactory {
         Map<String, String> uriVariables = new LinkedHashMap<String, String>();
 
         uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
         uriVariables.put(REQUEST_ID, requestId.toString());
         uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
 
@@ -636,6 +645,7 @@ public class RestUriVariablesFactory {
 																   List<EntityEventType> entityEventTypes){
 		Map<String, String> uriVariables = new LinkedHashMap<>();
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
 		uriVariables.put("type", eventType.typeValue());
 		if (EventType.ENTITY == eventType && entityClasses != null){
@@ -649,6 +659,7 @@ public class RestUriVariablesFactory {
 	public Map<String, String> getUriVariablesForUnsubscribeToEvents(String subscriptionId){
 		Map<String, String> uriVariables = new LinkedHashMap<>();
 		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
 		uriVariables.put(SUBSCRIPTION_ID, subscriptionId);
 		return uriVariables;
 	}
@@ -659,6 +670,7 @@ public class RestUriVariablesFactory {
         }
         Map<String, String> uriVariables = params.getParameterMap();
         uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
         uriVariables.put(ENTITY_TYPE, entityInfo.getName());
         return uriVariables;
     }
@@ -669,6 +681,7 @@ public class RestUriVariablesFactory {
         }
         Map<String, String> uriVariables = params.getParameterMap();
         uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
+        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
         uriVariables.put(ENTITY_TYPE, entityInfo.getName());
         uriVariables.put(OPTIONS_IDS, StringUtils.join(optionsIds, ","));
         return uriVariables;

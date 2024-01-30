@@ -242,6 +242,11 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
+    public String getUniqueCallId() {
+        return "mock-unique-call-id";
+    }
+
+    @Override
     public String getBhRestToken() {
         return "mock-bh-rest-token";
     }
