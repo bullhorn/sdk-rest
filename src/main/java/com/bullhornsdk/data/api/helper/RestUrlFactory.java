@@ -27,7 +27,8 @@ public class RestUrlFactory {
      */
 
     public String assembleEntityUrl(EntityParams params) {
-        return restUrl + "entity/{entityType}/{id}?fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "entity/{entityType}/{id}?fields={fields}&BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}" + params.getUrlString();
     }
 
     /**
@@ -36,7 +37,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityDeleteUrl() {
-        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
+        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     /**
@@ -45,7 +47,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForUpdate() {
-        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
+        return restUrl + "entity/{entityType}/{id}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     /**
@@ -54,7 +57,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleEntityUrlForInsert() {
-        return restUrl + "entity/{entityType}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}";
+        return restUrl + "entity/{entityType}?BhRestToken={bhRestToken}&executeFormTriggers={executeFormTriggers}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     /**
@@ -65,7 +69,8 @@ public class RestUrlFactory {
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
      */
     public String assembleQueryUrl(QueryParams params) {
-        return restUrl + "query/{entityType}?where={where}&fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "query/{entityType}?where={where}&fields={fields}&BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}" + params.getUrlString();
     }
 
     /**
@@ -76,7 +81,8 @@ public class RestUrlFactory {
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
      */
     public String assembleQueryUrlWithPost(QueryParams params) {
-        return restUrl + "query/{entityType}?fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "query/{entityType}?fields={fields}&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
+            + params.getUrlString();
     }
 
     /**
@@ -87,7 +93,8 @@ public class RestUrlFactory {
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
      */
     public String assembleSearchUrl(SearchParams params) {
-        return restUrl + "search/{entityType}?query={query}&fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "search/{entityType}?query={query}&fields={fields}&BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}" + params.getUrlString();
     }
 
     /**
@@ -98,7 +105,8 @@ public class RestUrlFactory {
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
      */
     public String assembleSearchUrlWithPost(SearchParams params) {
-        return restUrl + "search/{entityType}?fields={fields}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "search/{entityType}?fields={fields}&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
+            + params.getUrlString();
     }
 
     /**
@@ -110,7 +118,8 @@ public class RestUrlFactory {
      */
     public static String assembleIdSearchUrl(String restUrl,
                                              SearchParams params) {
-        return restUrl + "search/{entityType}?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "search/{entityType}?query={query}&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
+            + params.getUrlString();
     }
 
     /**
@@ -120,10 +129,12 @@ public class RestUrlFactory {
      */
     public String assembleEntityUrlForMeta(Integer privateLabelId) {
         if(privateLabelId == null) {
-            return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}&meta={meta}";
+            return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}&meta={meta}" +
+                "&uniqueCallId={uniqueCallId}";
         }
 
-        return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}&meta={meta}&privateLabelId={privateLabelId}";
+        return restUrl + "meta/{entityType}?fields={fields}&BhRestToken={bhRestToken}&meta={meta}&privateLabelId={privateLabelId}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     /**
@@ -133,7 +144,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleParseResumeFileUrl(ResumeFileParseParams params) {
-        return restUrl + "resume/parseToCandidate?format={format}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "resume/parseToCandidate?format={format}&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
+            + params.getUrlString();
     }
 
     /**
@@ -143,7 +155,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleParseResumeAsNewEntityUrl(ResumeAsNewEntityParams params) {
-        return restUrl + "services/ParseAs/newEntity?format={format}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "services/ParseAs/newEntity?format={format}&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
+            + params.getUrlString();
     }
 
     /**
@@ -153,7 +166,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleParseResumeTextUrl(ResumeTextParseParams params) {
-        return restUrl + "resume/parseToCandidateViaJson?BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "resume/parseToCandidateViaJson?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
+            + params.getUrlString();
     }
 
     /**
@@ -163,7 +177,7 @@ public class RestUrlFactory {
      */
 
     public String assemblePutFileUrl() {
-        return restUrl + "file/{entityType}/{entityId}?BhRestToken={bhRestToken}";
+        return restUrl + "file/{entityType}/{entityId}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}";
     }
 
     /**
@@ -173,7 +187,7 @@ public class RestUrlFactory {
      */
 
     public String assembleGetFileUrl() {
-        return restUrl + "file/{entityType}/{entityId}/{fileId}?BhRestToken={bhRestToken}";
+        return restUrl + "file/{entityType}/{entityId}/{fileId}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}";
     }
 
     /**
@@ -182,7 +196,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleGetEntityMetaFilesUrl() {
-        return restUrl + "entityFiles/{entityType}/{entityId}?BhRestToken={bhRestToken}";
+        return restUrl + "entityFiles/{entityType}/{entityId}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}";
     }
 
     /**
@@ -192,7 +206,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleAddFileUrl(FileParams params) {
-        return restUrl + "file/{entityType}/{entityId}/raw?BhRestToken={bhRestToken}&externalID={externalID}"
+        return restUrl + "file/{entityType}/{entityId}/raw?BhRestToken={bhRestToken}&externalID={externalID}" +
+            "&uniqueCallId={uniqueCallId}"
                 + params.getUrlString();
     }
 
@@ -203,7 +218,7 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleAddFileUrl(FileMeta fileMeta) {
-        return restUrl + "file/{entityType}/{entityId}/raw?BhRestToken={bhRestToken}"
+        return restUrl + "file/{entityType}/{entityId}/raw?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
                 + fileMeta.getUrlString();
     }
 
@@ -213,28 +228,32 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleDeleteFileUrl() {
-        return restUrl + "file/{entityType}/{entityId}/{fileId}?BhRestToken={bhRestToken}";
+        return restUrl + "file/{entityType}/{entityId}/{fileId}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}";
     }
 
     public String assembleEntityUrlForAssociateWithEntity() {
-        return restUrl + "entity/{entityType}/{entityId}/{associationName}/{associationIds}?BhRestToken={bhRestToken}";
+        return restUrl + "entity/{entityType}/{entityId}/{associationName}/{associationIds}?BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     public String assembleGetLastRequstIdUrl() {
-        return restUrl+"event/subscription/{subscriptionId}/lastRequestId?BhRestToken={bhRestToken}";
+        return restUrl+"event/subscription/{subscriptionId}/lastRequestId?BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     public String assembleGetEventsUrl() {
-        return restUrl+"event/subscription/{subscriptionId}?maxEvents={maxEvents}&BhRestToken={bhRestToken}";
+        return restUrl+"event/subscription/{subscriptionId}?maxEvents={maxEvents}&BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     public String assembleRegetEventsUrl() {
-        return restUrl+"event/subscription/{subscriptionId}?requestId={requestId}&BhRestToken={bhRestToken}";
+        return restUrl+"event/subscription/{subscriptionId}?requestId={requestId}&BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}";
     }
 
     public String assembleGetAssociationUrl(AssociationParams params) {
-        return restUrl + "entity/{entityType}/{entityId}/{associationName}?fields={fields}&BhRestToken={bhRestToken}&showTotalMatched=true"
-                + params.getUrlString();
+        return restUrl + "entity/{entityType}/{entityId}/{associationName}?fields={fields}&BhRestToken={bhRestToken}" +
+            "&uniqueCallId={uniqueCallId}&showTotalMatched=true" + params.getUrlString();
     }
 
     /**
@@ -244,8 +263,8 @@ public class RestUrlFactory {
      * @return
      */
     public String assembleCorpNotesUrl(CorpNotesParams params) {
-        return restUrl + "allCorpNotes?fields={fields}&BhRestToken={bhRestToken}&clientCorpId={clientCorpId}"
-                + params.getUrlString();
+        return restUrl + "allCorpNotes?fields={fields}&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}" +
+            "&clientCorpId={clientCorpId}" + params.getUrlString();
     }
 
     /**
@@ -256,24 +275,25 @@ public class RestUrlFactory {
      * @return the full url to use in the api call with {fieldName} type placeholders for the uriVariables
      */
     public String assembleFastFindUrl(FastFindParams params) {
-        return restUrl + "find?query={query}&BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "find?query={query}&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}" + params.getUrlString();
     }
 
 	public String assembleUrlForSettings(SettingsParams params) {
-        return restUrl + "settings/{settings}?BhRestToken={bhRestToken}" + params.getUrlString();
+        return restUrl + "settings/{settings}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}" + params.getUrlString();
 	}
 
     public String assembleSubscribeToEventsUrl(boolean withNames) {
-        return restUrl + "event/subscription/{subscriptionId}?type={type}&eventTypes={eventTypes}&BhRestToken={bhRestToken}"
-                + (withNames ? "&names={names}" : "");
+        return restUrl + "event/subscription/{subscriptionId}?type={type}&eventTypes={eventTypes}" +
+            "&BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}" + (withNames ? "&names={names}" : "");
     }
 
     public String assembleUnsubscribeToEventsUrl(){
-        return restUrl + "event/subscription/{subscriptionId}?BhRestToken={bhRestToken}";
+        return restUrl + "event/subscription/{subscriptionId}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}";
     }
 
     public String assembleOptionsUrl(OptionsParams params) {
-        return restUrl + "options/{entityType}/{optionsIds}?BhRestToken={bhRestToken}"+ params.getUrlString();
+        return restUrl + "options/{entityType}/{optionsIds}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}"
+            + params.getUrlString();
     }
 
 }

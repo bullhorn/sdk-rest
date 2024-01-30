@@ -1,37 +1,5 @@
 package com.bullhornsdk.data.api;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
-
-import com.bullhornsdk.data.model.response.single.StandardFileContentWrapper;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
 import com.bullhornsdk.data.api.helper.EntityUpdateWorker;
 import com.bullhornsdk.data.api.helper.FileWorker;
@@ -109,7 +77,6 @@ import com.bullhornsdk.data.model.response.file.FileContent;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
 import com.bullhornsdk.data.model.response.file.standard.StandardEntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse;
-import com.bullhornsdk.data.model.response.file.standard.StandardFileContent;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
 import com.bullhornsdk.data.model.response.list.IdListWrapper;
@@ -121,10 +88,42 @@ import com.bullhornsdk.data.model.response.resume.ParsedResume;
 import com.bullhornsdk.data.model.response.resume.ParsedResumeAsEntity;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResume;
 import com.bullhornsdk.data.model.response.resume.standard.StandardParsedResumeAsEntity;
+import com.bullhornsdk.data.model.response.single.StandardFileContentWrapper;
 import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscribeToEventsResponse;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.stream.Collectors;
 
 /**
  * Standard implementation of the BullhornData interface that manages all rest calls and data binding from/to json - java.
@@ -152,6 +151,8 @@ public class StandardBullhornData implements BullhornData {
 
     protected final String restUrl;
 
+    protected final String uniqueCallId;
+
     protected final RestJsonConverter restJsonConverter;
 
     protected final RestUrlFactory restUrlFactory;
@@ -177,18 +178,18 @@ public class StandardBullhornData implements BullhornData {
     protected Boolean executeFormTriggers = false;
 
     public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials) {
-        this.restSession = new RestApiSession(bullhornRestCredentials);
-        this.restTemplate = RestTemplateFactory.getInstance();
-        this.restUrl = restSession.getRestUrl();
-        this.restJsonConverter = new RestJsonConverter();
-        this.restUrlFactory = new RestUrlFactory(restUrl);
-        this.restFileManager = new RestFileManager();
-        this.restUriVariablesFactory = new RestUriVariablesFactory(this, this.restFileManager);
-        this.restErrorHandler = new RestErrorHandler();
-        this.concurrencyService = new RestConcurrencyService();
+        this(new RestApiSession(bullhornRestCredentials), null);
     }
 
     public StandardBullhornData(RestApiSession restApiSession) {
+        this(restApiSession, null);
+    }
+
+    public StandardBullhornData(BullhornRestCredentials bullhornRestCredentials, String uniqueCallIdPrefix) {
+        this(new RestApiSession(bullhornRestCredentials), uniqueCallIdPrefix);
+    }
+
+    public StandardBullhornData(RestApiSession restApiSession, String uniqueCallIdPrefix) {
         this.restSession = restApiSession;
         this.restTemplate = RestTemplateFactory.getInstance();
         this.restUrl = restSession.getRestUrl();
@@ -198,6 +199,11 @@ public class StandardBullhornData implements BullhornData {
         this.restUriVariablesFactory = new RestUriVariablesFactory(this, this.restFileManager);
         this.restErrorHandler = new RestErrorHandler();
         this.concurrencyService = new RestConcurrencyService();
+        if (StringUtils.isNotBlank(uniqueCallIdPrefix)) {
+            this.uniqueCallId = uniqueCallIdPrefix + "_" + UUID.randomUUID();
+        } else {
+            this.uniqueCallId = "CUSTOM_" + UUID.randomUUID();
+        }
     }
 
     public void setHttpRequestConnectTimeout(int connectTimeout) {
@@ -824,6 +830,14 @@ public class StandardBullhornData implements BullhornData {
 
     protected void setStart(AssociationParams params, int numberOfRecordsPulledAlready) {
         params.setStart(numberOfRecordsPulledAlready);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getUniqueCallId() {
+        return this.uniqueCallId;
     }
 
     /**
