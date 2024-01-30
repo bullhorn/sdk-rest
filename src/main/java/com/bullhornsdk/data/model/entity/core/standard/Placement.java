@@ -15,6 +15,8 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.Pl
 import com.bullhornsdk.data.model.entity.core.onboarding.OnboardingReceivedSent;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
+import com.bullhornsdk.data.model.entity.core.paybill.invoice.PayBillCycle;
+import com.bullhornsdk.data.model.entity.core.paybill.legalbusinessentity.LegalBusinessEntity;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
@@ -70,14 +72,14 @@ import java.util.Objects;
     "dateClientEffective", "dateEffective", "dateEnd", "dateLastModified", "daysGuaranteed", "daysProRated", "durationWeeks", "employeeType",
     "employmentType", "fee", "flatFee", "fileAttachments", "generalLedgerSegment1", "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4",
     "generalLedgerSegment5", "hoursOfOperation", "hoursPerDay", "housingManagerID", "housingStatus", "invoiceGroupName",
-    "jobOrder", "jobSubmission", "lastBteSyncDate", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
+    "jobOrder", "jobSubmission", "lastBteSyncDate", "legalBusinessEntity", "markUpPercentage", "migrateGUID", "notes", "overtimeMarkUpPercentage", "optionsPackage",
     "onboardingDocumentReceivedCount", "onboardingDocumentSentCount", "onboardingPercentComplete", "onboardingReceivedSent", "onboardingStatus",
     "otExemption", "otherHourlyFee", "otherHourlyFeeComments", "overtimeRate", "payRate", "projectCodeList",
     "recruitingManagerPercentGrossMargin", "referralFee", "referralFeeType", "reportTo", "reportedMargin", "salary", "salaryUnit",
     "salesManagerPercentGrossMargin", "statementClientContact", "status", "tasks", "taxRate", "taxState", "terminationReason",
     "timeUnits", "vendorClientCorporation", "workWeekStart", "workersCompensationRate", "customObject1s", "customObject2s", "customObject3s", "customObject4s",
     "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "location", "timeAndExpense", "placementShiftSet",
-    "approvedChangeRequests", "approvedPlacementRateCardChangeRequests", "benefitGroup", "canEnterTime", "clientContact", "clientCorporation",
+    "timesheetCycle", "approvedChangeRequests", "approvedPlacementRateCardChangeRequests", "benefitGroup", "canEnterTime", "clientContact", "clientCorporation",
     "clientRating", "customText50", "draftPlacementRateCardChangeRequests", "employmentStartDate", "estaffGUID", "estimatedEndDate",
     "expiringCredentials", "housingAmenities", "incompleteRequirements", "isMultirate", "isWorkFromHome", "lastApprovedPlacementChangeRequest",
     "owner", "owners", "payGroup", "payrollEmployeeType", "payrollSyncStatus", "pendingChangeRequests", "pendingPlacementRateCardChangeRequests",
@@ -192,6 +194,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
 
     private JobSubmission jobSubmission;
 
+    private LegalBusinessEntity legalBusinessEntity;
+
     private Object migrateGUID;
 
     @JsonIgnore
@@ -226,6 +230,8 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     private String payGroup;
 
     private BigDecimal payRate;
+
+    private PayBillCycle timesheetCycle;
 
     @JsonIgnore
     private String projectCodeList;
@@ -819,6 +825,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
         this.jobSubmission = jobSubmission;
     }
 
+    @JsonProperty("legalBusinessEntity")
+    public LegalBusinessEntity getLegalBusinessEntity() {
+        return legalBusinessEntity;
+    }
+
+    @JsonProperty("legalBusinessEntity")
+    public void setLegalBusinessEntity(LegalBusinessEntity legalBusinessEntity) {
+        this.legalBusinessEntity = legalBusinessEntity;
+    }
+
     @JsonProperty("markUpPercentage")
     public BigDecimal getMarkUpPercentage() {
         return markUpPercentage;
@@ -988,6 +1004,16 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @JsonIgnore
     public void setProjectCodeList(String projectCodeList) {
         this.projectCodeList = projectCodeList;
+    }
+
+    @JsonProperty("timesheetCycle")
+    public PayBillCycle getTimesheetCycle() {
+        return timesheetCycle;
+    }
+
+    @JsonProperty("timesheetCycle")
+    public void setTimesheetCycle(PayBillCycle timesheetCycle) {
+        this.timesheetCycle = timesheetCycle;
     }
 
     @JsonProperty("recruitingManagerPercentGrossMargin")
@@ -1649,6 +1675,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(invoiceGroupName, placement.invoiceGroupName) &&
             Objects.equals(jobOrder, placement.jobOrder) &&
             Objects.equals(jobSubmission, placement.jobSubmission) &&
+            Objects.equals(legalBusinessEntity, placement.legalBusinessEntity) &&
             Objects.equals(migrateGUID, placement.migrateGUID) &&
             Objects.equals(optionsPackage, placement.optionsPackage) &&
             Objects.equals(onboardingDocumentReceivedCount, placement.onboardingDocumentReceivedCount) &&
@@ -1666,6 +1693,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             Objects.equals(payGroup, placement.payGroup) &&
             Objects.equals(payRate, placement.payRate) &&
             Objects.equals(projectCodeList, placement.projectCodeList) &&
+            Objects.equals(timesheetCycle, placement.timesheetCycle) &&
             Objects.equals(recruitingManagerPercentGrossMargin, placement.recruitingManagerPercentGrossMargin) &&
             Objects.equals(referralFee, placement.referralFee) &&
             Objects.equals(referralFeeType, placement.referralFeeType) &&
@@ -1701,7 +1729,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, placementShiftSet, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
+        return Objects.hash(super.hashCode(), id, appointments, approvingClientContact, backupApprovingClientContact, billingClientContact, billingProfile, billingFrequency, bonusPackage, branch, candidate, placementCertifications, changeRequests, clientBillRate, clientOvertimeRate, comments, commissions, location, timeAndExpense, placementShiftSet, costCenter, dateAdded, dateBegin, dateClientEffective, dateEffective, dateEnd, dateLastModified, daysGuaranteed, daysProRated, durationWeeks, employeeType, employmentType, fee, flatFee, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, hoursOfOperation, hoursPerDay, housingManagerID, housingStatus, invoiceGroupName, jobOrder, jobSubmission, legalBusinessEntity, migrateGUID, optionsPackage, onboardingDocumentReceivedCount, onboardingDocumentSentCount, onboardingPercentComplete, onboardingReceivedSent, onboardingStatus, otExemption, otherHourlyFee, markUpPercentage, notes, otherHourlyFeeComments, overtimeMarkUpPercentage, overtimeRate, payGroup, payRate, projectCodeList, timesheetCycle, recruitingManagerPercentGrossMargin, referralFee, referralFeeType, reportTo, reportedMargin, salary, salaryUnit, salesManagerPercentGrossMargin, statementClientContact, status, tasks, taxRate, taxState, terminationReason, timeUnits, vendorClientCorporation, workWeekStart, workersCompensationRate, customObject1s, customObject2s, customObject3s, customObject4s, customObject5s, customObject6s, customObject7s, customObject8s, customObject9s, customObject10s, bteSyncStatus, lastBteSyncDate);
     }
 
     @Override
@@ -1753,6 +1781,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", invoiceGroupName='" + invoiceGroupName + '\'' +
             ", jobOrder=" + jobOrder +
             ", jobSubmission=" + jobSubmission +
+            ", legalBusinessEntity=" + legalBusinessEntity +
             ", migrateGUID=" + migrateGUID +
             ", optionsPackage='" + optionsPackage + '\'' +
             ", onboardingDocumentReceivedCount=" + onboardingDocumentReceivedCount +
@@ -1770,6 +1799,7 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
             ", payGroup=" + payGroup +
             ", payRate=" + payRate +
             ", projectCodeList='" + projectCodeList + '\'' +
+            ", timesheetCycle=" + timesheetCycle +
             ", recruitingManagerPercentGrossMargin=" + recruitingManagerPercentGrossMargin +
             ", referralFee=" + referralFee +
             ", referralFeeType='" + referralFeeType + '\'' +
