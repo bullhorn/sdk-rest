@@ -3,10 +3,7 @@ package com.bullhornsdk.data.api.helper;
 import com.bullhornsdk.data.BaseTest;
 import com.bullhornsdk.data.exception.RestMappingException;
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.placement.PlacementCustomObjectInstance1;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.JobSubmission;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileContent;
@@ -195,5 +192,15 @@ public class RestJsonConverterTest extends BaseTest {
         JSONObject actual = new JSONObject(this.restJsonConverter.convertEntityToJsonString(placement));
         JSONObject expected = new JSONObject("{\"id\": 1, \"customObject1s\": [{\"id\": 2, \"text1\": \"Test\"}]}");
         assertTrue(actual.similar(expected), "OneToMany replaceAll serializer collided with RestOneToManySerializer");
+    }
+
+    @Test
+    public void testReadOnlyAnnotationIgnoresFieldOnSerialization() {
+        JobOrder jobOrder = new JobOrder(1);
+        Placement placement = new Placement(2);
+        jobOrder.setPlacements(new OneToMany<>(placement));
+        JSONObject actual = new JSONObject(this.restJsonConverter.convertEntityToJsonString(jobOrder));
+        JSONObject expected = new JSONObject("{\"id\": 1}");
+        assertTrue(actual.similar(expected), "ReadOnly annotated field was included in payload");
     }
 }

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 public class ReplaceAllModule extends SimpleModule {
     public ReplaceAllModule() {
         addSerializer((Class<OneToMany<? extends BullhornEntity>>) (Class<?>) OneToMany.class, new ReplaceAllSerializer());
+
     }
 
     public String getModuleName() {
