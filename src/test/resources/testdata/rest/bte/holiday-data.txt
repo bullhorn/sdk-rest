@@ -1,0 +1,667 @@
+{
+    "total": 20,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "cronExpression": null,
+            "dateAdded": 1703193008975,
+            "dateLastModified": 1703193687726,
+            "description": "New Years hours paid/billed from 3pm NYE to 11pm New Years Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "New Years - Starts 3PM NYE to 11PM New Years Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 2,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 3,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 4,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 5,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 6,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 7,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 8,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 9,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 10,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 11,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 12,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 13,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 14,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 15,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 16,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 17,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 18,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 19,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 20,
+            "cronExpression": null,
+            "dateAdded": 1703193827676,
+            "dateLastModified": 1703193827679,
+            "description": "Christmas hours paid/billed from 3pm Christmas Eve to 11pm Christmas Day",
+            "duration": null,
+            "holidayCategoryLookup": {
+                "id": 4,
+                "label": "Company"
+            },
+            "holidayInstances": {
+                "total": 1,
+                "data": []
+            },
+            "holidayStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "isDeleted": false,
+            "isRun": false,
+            "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day",
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "nextOccurrence": null,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,607 @@
+{
+    "total": 20,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "addedAtUtc": 1694012276580,
+            "addedByUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "description": "All States OT after 40 and California",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1694094918952,
+            "modifyingUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "name": "Standard Rule Set",
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 2,
+            "addedAtUtc": 1694429484785,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Bill over 48 hours",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1694429542433,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Bill over 48 hours",
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 3,
+            "addedAtUtc": 1694429724256,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "weekly ot over 40",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1694429752868,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "weekly ot over 40",
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 4,
+            "addedAtUtc": 1694432713519,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Orientation 16 bill ",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1694432713622,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Orientation 16 bill ",
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 5,
+            "addedAtUtc": 1694432776555,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Weekly OT 40 Orientation bill up to 16",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1694433017539,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Weekly OT 40 Orientation bill up to 16",
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 6,
+            "addedAtUtc": 1694453292400,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Orientations 16 hrs billable cap",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1694453292482,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Orientations 16 hrs billable cap",
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 7,
+            "addedAtUtc": 1694456614516,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Weekly OT BIll > 45",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1694456614582,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Weekly OT BIll > 45",
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 8,
+            "addedAtUtc": 1696531195497,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "OT over 50 Bill",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1696531195703,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "OT over 50 Bill",
+            "timeLaborEvalRules": {
+                "total": 3,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 9,
+            "addedAtUtc": 1696533597058,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Sharp Chula - All Shifts hours daily Pay Rule",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1696533719187,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Sharp Chula - All Shifts hours daily Pay Rule",
+            "timeLaborEvalRules": {
+                "total": 4,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 3,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 10,
+            "addedAtUtc": 1696533693290,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Sharp Chula Shift 8 daily Bill Rule",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1696533693381,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Sharp Chula Shift 8 daily BIll Rule",
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 11,
+            "addedAtUtc": 1696533949619,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Sharp Chula Shift 10 hours Bill Rule",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1696533949760,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Sharp Chula Shift 10 hours Bill Rule",
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 12,
+            "addedAtUtc": 1696533989091,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "Sharp Chula Shift 12 hrs BIll Rule",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1696533989165,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Sharp Chula Shift 12 hrs BIll Rule",
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 13,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 14,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 15,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 16,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 17,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 18,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 19,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 20,
+            "addedAtUtc": 1701710310740,
+            "addedByUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "description": "Call Back hours worked not counted towards Overtime threshold on Bill Side",
+            "isDefault": false,
+            "lastModifiedAtUtc": 1701711492254,
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "name": "Call Back Billing Not Counted Towards OT",
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCalcTypes": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRulesCategories": {
+                "total": 1,
+                "data": []
+            }
+        }
+    ]
+}

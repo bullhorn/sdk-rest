@@ -1,0 +1,1254 @@
+{
+    "total": 20,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "addedAtUtc": 1618084806760,
+            "addedByUser": null,
+            "description": "Built-in rule",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1618084806760,
+            "modifyingUser": null,
+            "name": "Reversal",
+            "parameters": {},
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 106,
+                "label": "Reversal"
+            }
+        },
+        {
+            "id": 2,
+            "addedAtUtc": 1618084806760,
+            "addedByUser": null,
+            "description": "Built-in rule",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1618084806760,
+            "modifyingUser": null,
+            "name": "Expense Passthrough",
+            "parameters": {},
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 5,
+                "label": "Expenses"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 500,
+                "label": "Expense Passthrough"
+            }
+        },
+        {
+            "id": 3,
+            "addedAtUtc": 1618084806760,
+            "addedByUser": null,
+            "description": "Built-in rule",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1618084806760,
+            "modifyingUser": null,
+            "name": "Passthrough",
+            "parameters": {},
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 100,
+                "label": "Passthrough"
+            }
+        },
+        {
+            "id": 4,
+            "addedAtUtc": 1618084806760,
+            "addedByUser": null,
+            "description": "Built-in rule",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1618084806760,
+            "modifyingUser": null,
+            "name": "Eliminator",
+            "parameters": {},
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 114,
+                "label": "Eliminator"
+            }
+        },
+        {
+            "id": 5,
+            "addedAtUtc": 1622923094344,
+            "addedByUser": null,
+            "description": "Built-in rule",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1622923094344,
+            "modifyingUser": null,
+            "name": "NegligibleQuantity",
+            "parameters": {},
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 117,
+                "label": "Negligible Quantity"
+            }
+        },
+        {
+            "id": 6,
+            "addedAtUtc": 1644099264361,
+            "addedByUser": null,
+            "description": "<p>Group similar attributions together. Grouping criteria:</p><ul><li>Work date</li><li>Sheet</li><li>Rate</li><li>Earn code</li><li>External sheet</li><li>Version</li></ul>",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1644099264361,
+            "modifyingUser": null,
+            "name": "Summarization",
+            "parameters": {},
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 115,
+                "label": "Summarization"
+            }
+        },
+        {
+            "id": 7,
+            "addedAtUtc": 1696104927277,
+            "addedByUser": null,
+            "description": "Built-in rule",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1696104927277,
+            "modifyingUser": null,
+            "name": "Shift Pricing",
+            "parameters": {},
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 12,
+                "label": "System"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 1200,
+                "label": "Shift Pricing"
+            }
+        },
+        {
+            "id": 100,
+            "addedAtUtc": 1694025316409,
+            "addedByUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "description": "{\"templateParts\":{\"first\":\"When a time reporter reports time under {source} and the sum of hours is greater than {threshold{ctr}} hours in a period, then all hours after {threshold{ctr}} are attributed to {target}\",\"repeating\":\" until the sum of hours is greater than {threshold{ctr}}. <br><br>Hours after {threshold{ctr}} are attributed to {target}\",\"last\":\".\"},\"tags\":{\"source\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"the earn code(s) {sourceEarnCodes}\",\"2\":\"any {sourceEarnCodes} earn code\"},\"target\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"{thresholdTargetEarnCode{ctr}}\",\"2\":\"the corresponding {thresholdTargetEarnCode{ctr}} earn code\"}}}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694025316409,
+            "modifyingUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "name": "OT after 40",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 2,
+                    "ids": [
+                        1
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 2,
+                            "id": 2
+                        },
+                        "threshold": 40.0
+                    }
+                ],
+                "earnCodeLevel": 2,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 4,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 101,
+                "label": "Period Threshold"
+            }
+        },
+        {
+            "id": 101,
+            "addedAtUtc": 1694025396338,
+            "addedByUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "description": "Description defined in Novo",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694025822280,
+            "modifyingUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "name": "CA OT > 8, DT > 12 Daily",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 2,
+                    "ids": [
+                        1
+                    ]
+                },
+                "minWagePremiumAmount": null,
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 2,
+                            "id": 2
+                        },
+                        "threshold": 8.0
+                    },
+                    {
+                        "earnCode": {
+                            "type": 2,
+                            "id": 3
+                        },
+                        "threshold": 12.0
+                    }
+                ],
+                "earnCodeLevel": 2,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 9,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 118,
+                "label": "Daily Threshold"
+            }
+        },
+        {
+            "id": 103,
+            "addedAtUtc": 1694026245160,
+            "addedByUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "description": "When a time reporter works seven consecutive days and reports time under earn codes {sourceEarnCodes} in a given workweek, the first 8.0 hours worked on the seventh day are attributed under earn code {targetEarnCode1}, while hours worked on the seventh day in excess of 8.0 are attributed under earn code {targetEarnCode2}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694026475904,
+            "modifyingUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "name": "CA 7th Day",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 1,
+                    "ids": [
+                        1,
+                        11,
+                        14,
+                        18,
+                        21,
+                        76,
+                        8
+                    ]
+                },
+                "targetEarnCode1": {
+                    "type": 1,
+                    "id": 2
+                },
+                "targetEarnCode2": {
+                    "type": 1,
+                    "id": 3
+                },
+                "threshold": 8,
+                "consecutiveDays": 7,
+                "firstNthDayOnly": false,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 9,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 104,
+                "label": "7th Day Threshold"
+            }
+        },
+        {
+            "id": 104,
+            "addedAtUtc": 1694108939991,
+            "addedByUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "description": "{\"first\":\"When a time reporter reports time under the earn code(s) {sourceEarnCodes}, then the first {threshold} hours get attributed to {thresholdTargetEarnCode}.\",\"repeating\":\" <br><br>The next {threshold} hours will be attributed to {thresholdTargetEarnCode}.\",\"last\":\" <br><br>Any remaining hours will be attributed to original {sourceEarnCodes}.\"}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694474077670,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Orientation",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 1,
+                    "ids": [
+                        11
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 11
+                        },
+                        "threshold": 16.0
+                    },
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 95
+                        },
+                        "threshold": 24.0
+                    }
+                ],
+                "durationDays": 365,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 10,
+                "label": "Orientation"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 2,
+                "label": "Placement"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 3,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 1000,
+                "label": "Orientation"
+            }
+        },
+        {
+            "id": 105,
+            "addedAtUtc": 1694109246305,
+            "addedByUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "description": "The candidate is guaranteed to be paid {guaranteedHours} hours per period. If the reported hours under earn code(s) {sourceEarnCodes} are less than {guaranteedHours}, the difference will be paid as {targetEarnCode}.",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694109246305,
+            "modifyingUser": {
+                "id": 620861,
+                "firstName": "Bullhorn",
+                "lastName": "Admin 2022 NPE"
+            },
+            "name": "Guaranteed Hours",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 1,
+                    "ids": [
+                        1,
+                        21,
+                        14
+                    ]
+                },
+                "targetEarnCode": {
+                    "type": 1,
+                    "id": 1
+                },
+                "guaranteedHours": 32.0,
+                "frequency": 1,
+                "numberOfDays": null,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 9,
+                "label": "Exempt"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 2,
+                "label": "Placement"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 7,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 903,
+                "label": "Guaranteed Hours"
+            }
+        },
+        {
+            "id": 107,
+            "addedAtUtc": 1694443735926,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"templateParts\":{\"first\":\"When a time reporter reports time under {source} and the sum of hours is greater than {threshold{ctr}} hours in a period, then all hours after {threshold{ctr}} are attributed to {target}\",\"repeating\":\" until the sum of hours is greater than {threshold{ctr}}. <br><br>Hours after {threshold{ctr}} are attributed to {target}\",\"last\":\".\"},\"tags\":{\"source\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"the earn code(s) {sourceEarnCodes}\",\"2\":\"any {sourceEarnCodes} earn code\"},\"target\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"{thresholdTargetEarnCode{ctr}}\",\"2\":\"the corresponding {thresholdTargetEarnCode{ctr}} earn code\"}}}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694443859122,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Weekly  over 48",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 2,
+                    "ids": [
+                        1
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 2,
+                            "id": 2
+                        },
+                        "threshold": 48.0
+                    }
+                ],
+                "earnCodeLevel": 2,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 2,
+                "label": "Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 101,
+                "label": "Period Threshold"
+            }
+        },
+        {
+            "id": 108,
+            "addedAtUtc": 1694443980141,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"templateParts\":{\"first\":\"When a time reporter reports time under {source} and the sum of hours is greater than {threshold{ctr}} hours in a period, then all hours after {threshold{ctr}} are attributed to {target}\",\"repeating\":\" until the sum of hours is greater than {threshold{ctr}}. <br><br>Hours after {threshold{ctr}} are attributed to {target}\",\"last\":\".\"},\"tags\":{\"source\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"the earn code(s) {sourceEarnCodes}\",\"2\":\"any {sourceEarnCodes} earn code\"},\"target\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"{thresholdTargetEarnCode{ctr}}\",\"2\":\"the corresponding {thresholdTargetEarnCode{ctr}} earn code\"}}}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694443980141,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Weekly ot over 40",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 2,
+                    "ids": [
+                        1
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 2,
+                            "id": 2
+                        },
+                        "threshold": 40.0
+                    }
+                ],
+                "earnCodeLevel": 2,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 1,
+                "label": "Pay"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 101,
+                "label": "Period Threshold"
+            }
+        },
+        {
+            "id": 109,
+            "addedAtUtc": 1694446638040,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"first\":\"When a time reporter reports time under the earn code(s) {sourceEarnCodes}, then the first {threshold} hours get attributed to {thresholdTargetEarnCode}.\",\"repeating\":\" <br><br>The next {threshold} hours will be attributed to {thresholdTargetEarnCode}.\",\"last\":\" <br><br>Any remaining hours will be attributed to original {sourceEarnCodes}.\"}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": false,
+            "lastModifiedAtUtc": 1694473806503,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Orientation 16 billed over non billable",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 1,
+                    "ids": [
+                        11
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 11
+                        },
+                        "threshold": 16.0
+                    },
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 95
+                        },
+                        "threshold": 24.0
+                    }
+                ],
+                "durationDays": 365,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 1,
+                "label": "Pay"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 10,
+                "label": "Orientation"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 1000,
+                "label": "Orientation"
+            }
+        },
+        {
+            "id": 110,
+            "addedAtUtc": 1694446801399,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"first\":\"When a time reporter reports time under the earn code(s) {sourceEarnCodes}, then the first {threshold} hours get attributed to {thresholdTargetEarnCode}.\",\"repeating\":\" <br><br>The next {threshold} hours will be attributed to {thresholdTargetEarnCode}.\",\"last\":\" <br><br>Any remaining hours will be attributed to original {sourceEarnCodes}.\"}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": false,
+            "lastModifiedAtUtc": 1694446801399,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Orientation Bill up to 16",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 1,
+                    "ids": [
+                        11
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 11
+                        },
+                        "threshold": 16.0
+                    }
+                ],
+                "durationDays": 365,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 2,
+                "label": "Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 10,
+                "label": "Orientation"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 2,
+                "label": "Placement"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 1000,
+                "label": "Orientation"
+            }
+        },
+        {
+            "id": 111,
+            "addedAtUtc": 1694467570802,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"first\":\"When a time reporter reports time under the earn code(s) {sourceEarnCodes}, then the first {threshold} hours get attributed to {thresholdTargetEarnCode}.\",\"repeating\":\" <br><br>The next {threshold} hours will be attributed to {thresholdTargetEarnCode}.\",\"last\":\" <br><br>Any remaining hours will be attributed to original {sourceEarnCodes}.\"}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694467570802,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Orientations 16 hrs Billable Cap",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 1,
+                    "ids": [
+                        11
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 11
+                        },
+                        "threshold": 16.0
+                    },
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 95
+                        },
+                        "threshold": 30.0
+                    }
+                ],
+                "durationDays": 365,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 3,
+                "label": "Pay & Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 10,
+                "label": "Orientation"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 2,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 1000,
+                "label": "Orientation"
+            }
+        },
+        {
+            "id": 112,
+            "addedAtUtc": 1694470815360,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"templateParts\":{\"first\":\"When a time reporter reports time under {source} and the sum of hours is greater than {threshold{ctr}} hours in a period, then all hours after {threshold{ctr}} are attributed to {target}\",\"repeating\":\" until the sum of hours is greater than {threshold{ctr}}. <br><br>Hours after {threshold{ctr}} are attributed to {target}\",\"last\":\".\"},\"tags\":{\"source\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"the earn code(s) {sourceEarnCodes}\",\"2\":\"any {sourceEarnCodes} earn code\"},\"target\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"{thresholdTargetEarnCode{ctr}}\",\"2\":\"the corresponding {thresholdTargetEarnCode{ctr}} earn code\"}}}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1694470815360,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Weekly OT Bill 45",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 2,
+                    "ids": [
+                        1
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 2,
+                            "id": 2
+                        },
+                        "threshold": 45.0
+                    }
+                ],
+                "earnCodeLevel": 2,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 2,
+                "label": "Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 2,
+                "label": "Placement"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 101,
+                "label": "Period Threshold"
+            }
+        },
+        {
+            "id": 113,
+            "addedAtUtc": 1696545471629,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"templateParts\":{\"first\":\"When a time reporter reports time under {source} and the sum of hours is greater than {threshold{ctr}} hours in a period, then all hours after {threshold{ctr}} are attributed to {target}\",\"repeating\":\" until the sum of hours is greater than {threshold{ctr}}. <br><br>Hours after {threshold{ctr}} are attributed to {target}\",\"last\":\".\"},\"tags\":{\"source\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"the earn code(s) {sourceEarnCodes}\",\"2\":\"any {sourceEarnCodes} earn code\"},\"target\":{\"_key\":\"{earnCodeLevel}\",\"1\":\"{thresholdTargetEarnCode{ctr}}\",\"2\":\"the corresponding {thresholdTargetEarnCode{ctr}} earn code\"}}}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": false,
+            "lastModifiedAtUtc": 1696545471629,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Over after 50 Bill",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 2,
+                    "ids": [
+                        1
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 2,
+                            "id": 2
+                        },
+                        "threshold": 50.0
+                    }
+                ],
+                "earnCodeLevel": 2,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 2,
+                "label": "Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 1,
+                "label": "Threshold"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 2,
+                "label": "Placement"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 1,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 101,
+                "label": "Period Threshold"
+            }
+        },
+        {
+            "id": 114,
+            "addedAtUtc": 1696547153774,
+            "addedByUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "description": "{\"first\":\"When a time reporter reports time under the earn code(s) {sourceEarnCodes}, then the first {threshold} hours get attributed to {thresholdTargetEarnCode}.\",\"repeating\":\" <br><br>The next {threshold} hours will be attributed to {thresholdTargetEarnCode}.\",\"last\":\" <br><br>Any remaining hours will be attributed to original {sourceEarnCodes}.\"}",
+            "holidays": {
+                "total": 0,
+                "data": []
+            },
+            "isRun": true,
+            "lastModifiedAtUtc": 1696547153774,
+            "modifyingUser": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "name": "Orient 8 non billable 32",
+            "parameters": {
+                "sourceEarnCodes": {
+                    "type": 1,
+                    "ids": [
+                        11
+                    ]
+                },
+                "targetEarnCodeTiers": [
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 8
+                        },
+                        "threshold": 8.0
+                    },
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 11
+                        },
+                        "threshold": 32.0
+                    },
+                    {
+                        "earnCode": {
+                            "type": 1,
+                            "id": 10
+                        },
+                        "threshold": 4.0
+                    }
+                ],
+                "durationDays": 365,
+                "isSkippable": false
+            },
+            "states": {
+                "total": 0,
+                "data": []
+            },
+            "timeLaborCalcTypeLookup": {
+                "id": 2,
+                "label": "Bill"
+            },
+            "timeLaborEvalRuleCategoryLookup": {
+                "id": 10,
+                "label": "Orientation"
+            },
+            "timeLaborEvalRuleCombineCriteriaLookup": {
+                "id": 1,
+                "label": "Candidate"
+            },
+            "timeLaborEvalRuleStatusLookup": {
+                "id": 1,
+                "label": "Active"
+            },
+            "timeLaborEvalRuleTemplates": {
+                "total": 4,
+                "data": []
+            },
+            "timeLaborEvalRuleTypeLookup": {
+                "id": 1000,
+                "label": "Orientation"
+            }
+        }
+    ]
+}

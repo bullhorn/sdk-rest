@@ -1,0 +1,536 @@
+{
+    "entity": "Holiday",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/Holiday?fields=*",
+    "label": "Holiday",
+    "dateLastModified": "1708444962046",
+    "layouts": [
+        {
+            "name": "ListExpandedLeft",
+            "label": "List - Expanded Left",
+            "enabled": true
+        },
+        {
+            "name": "ListRow",
+            "label": "List - Row",
+            "enabled": true
+        }
+    ],
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false,
+            "label": "ID"
+        },
+        {
+            "name": "cronExpression",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Cron Expression",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 70,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 50,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Last Modified",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 60,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Description",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 90,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "duration",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Duration",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 80,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "holidayCategoryLookup",
+            "type": "TO_ONE",
+            "dataType": "SpecializedOptionsLookup",
+            "confidential": false,
+            "optional": true,
+            "label": "Category",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "SELECT",
+            "optionsType": "HolidayCategoryLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/HolidayCategoryLookup",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Federal",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "State",
+                    "readOnly": false
+                },
+                {
+                    "value": 3,
+                    "label": "Regional",
+                    "readOnly": false
+                },
+                {
+                    "value": 4,
+                    "label": "Company",
+                    "readOnly": false
+                }
+            ],
+            "hideFromSearch": false,
+            "sortOrder": 100,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "HolidayCategoryLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/HolidayCategoryLookup?fields=*",
+                "label": "Holiday Category Lookup",
+                "dateLastModified": "1708444967091",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Label",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "holidayInstances",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Holiday Instances",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "optionsType": "HolidayInstance",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/HolidayInstance",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "HolidayInstance",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/HolidayInstance?fields=*",
+                "label": "Holiday Occurrence",
+                "dateLastModified": "1708547788163",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "holidayStatusLookup",
+            "type": "TO_ONE",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "optional": false,
+            "label": "Status",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "inputType": "TILES",
+            "optionsType": "HolidayStatusLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/HolidayStatusLookup",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Active",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "Inactive",
+                    "readOnly": false
+                }
+            ],
+            "defaultValue": 1,
+            "hideFromSearch": false,
+            "sortOrder": 30,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "HolidayStatusLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/HolidayStatusLookup?fields=*",
+                "label": "Holiday Status Lookup",
+                "dateLastModified": "1708547788188",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Label",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Is Deleted",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 40,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "isRun",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Display Name",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 130,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "label",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Holiday Name",
+            "required": true,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 20,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "modifyingUser",
+            "type": "TO_ONE",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Modified By User",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/CorporateUser",
+            "hideFromSearch": false,
+            "sortOrder": 110,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1708054449646",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "First Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Last Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "nextOccurrence",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Next Occurrence",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 120,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "timeLaborEvalRules",
+            "type": "TO_MANY",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Time Labor Eval Rules",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "optionsType": "TimeLaborEvalRule",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/TimeLaborEvalRule",
+            "hideFromSearch": false,
+            "sortOrder": 140,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "TimeLaborEvalRule",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/TimeLaborEvalRule?fields=*",
+                "label": "Time & Labor Rule",
+                "dateLastModified": "1708435729237",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "dataSpecialization": "SYSTEM",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 20,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    },
+                    {
+                        "name": "states",
+                        "type": "TO_MANY",
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Applicable States",
+                        "required": false,
+                        "readOnly": true,
+                        "multiValue": true,
+                        "inputType": "SELECT",
+                        "optionsType": "NorthAmericaState",
+                        "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/NorthAmericaState",
+                        "hideFromSearch": false,
+                        "sortOrder": 130,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false,
+                        "associatedEntity": {
+                            "entity": "State",
+                            "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/State?fields=*",
+                            "label": "State",
+                            "dateLastModified": "1708079181969",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer",
+                                    "optional": false,
+                                    "label": "ID"
+                                },
+                                {
+                                    "name": "name",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 255,
+                                    "confidential": false,
+                                    "optional": false,
+                                    "label": "Name",
+                                    "required": false,
+                                    "readOnly": false,
+                                    "multiValue": false,
+                                    "hideFromSearch": false,
+                                    "systemRequired": false,
+                                    "shouldAddCustomEntityLabel": false
+                                },
+                                {
+                                    "name": "code",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 50,
+                                    "confidential": false,
+                                    "optional": true,
+                                    "label": "Code",
+                                    "required": false,
+                                    "readOnly": false,
+                                    "multiValue": false,
+                                    "hideFromSearch": false,
+                                    "systemRequired": false,
+                                    "shouldAddCustomEntityLabel": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

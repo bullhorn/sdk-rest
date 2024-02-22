@@ -3,6 +3,14 @@ package com.bullhornsdk.data.api.mock
 import com.bullhornsdk.data.api.helper.RestJsonConverter
 import com.bullhornsdk.data.api.helper.concurrency.ConcurrencyService
 import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyService
+import com.bullhornsdk.data.model.entity.core.bte.Holiday
+import com.bullhornsdk.data.model.entity.core.bte.HolidayInstance
+import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationBillRuleset
+import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationBillRulesetVersion
+import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationPayRuleset
+import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationPayRulesetVersion
+import com.bullhornsdk.data.model.entity.core.bte.rules.TimeLaborEvalRule
+import com.bullhornsdk.data.model.entity.core.bte.rules.TimeLaborEvalRuleTemplate
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement
@@ -714,6 +722,16 @@ public class MockDataLoader {
         entityFiles.put(EdsEntityTypeSchemaVersion.class, "eds/entitytypeschemaversion-data.txt");
         entityFiles.put(EdsSourceSystem.class, "eds/sourcesystem-data.txt");
 
+        // bte
+        entityFiles.put(ClientCorporationBillRuleset.class, "bte/rules/clientcorporationbillruleset-data.txt");
+        entityFiles.put(ClientCorporationBillRulesetVersion.class, "bte/rules/clientcorporationbillrulesetversion-data.txt");
+        entityFiles.put(ClientCorporationPayRuleset.class, "bte/rules/clientcorporationpayruleset-data.txt");
+        entityFiles.put(ClientCorporationPayRulesetVersion.class, "bte/rules/clientcorporationpayrulesetversion-data.txt");
+        entityFiles.put(TimeLaborEvalRule.class, "bte/rules/timelaborevalrule-data.txt");
+        entityFiles.put(TimeLaborEvalRuleTemplate.class, "bte/rules/timelaborevalruletemplate-data.txt");
+        entityFiles.put(Holiday.class, "bte/holiday-data.txt");
+        entityFiles.put(HolidayInstance.class, "bte/holidayinstance-data.txt");
+
         return entityFiles;
     }
 
@@ -980,6 +998,16 @@ public class MockDataLoader {
         entityMetaFiles.put(EdsEntityType.class, "meta/eds/entitytype-meta-data.txt");
         entityMetaFiles.put(EdsEntityTypeSchemaVersion.class, "meta/eds/entitytypeschemaversion-meta-data.txt");
         entityMetaFiles.put(EdsSourceSystem.class, "meta/eds/sourcesystem-meta-data.txt");
+
+        // bte
+        entityMetaFiles.put(ClientCorporationBillRuleset.class, "meta/bte/rules/clientcorporationbillruleset-meta-data.txt");
+        entityMetaFiles.put(ClientCorporationBillRulesetVersion.class, "meta/bte/rules/clientcorporationbillrulesetversion-meta-data.txt");
+        entityMetaFiles.put(ClientCorporationPayRuleset.class, "meta/bte/rules/clientcorporationpayruleset-meta-data.txt");
+        entityMetaFiles.put(ClientCorporationPayRulesetVersion.class, "meta/bte/rules/clientcorporationpayrulesetversion-meta-data.txt");
+        entityMetaFiles.put(TimeLaborEvalRule.class, "meta/bte/rules/timelaborevalrule-meta-data.txt");
+        entityMetaFiles.put(TimeLaborEvalRuleTemplate.class, "meta/bte/rules/timelaborevalruletemplate-meta-data.txt");
+        entityMetaFiles.put(Holiday.class, "meta/bte/holiday-meta-data.txt");
+        entityMetaFiles.put(HolidayInstance.class, "meta/bte/holidayinstance-meta-data.txt");
 
         return entityMetaFiles;
     }

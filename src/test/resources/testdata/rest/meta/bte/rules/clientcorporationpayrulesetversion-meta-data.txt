@@ -1,0 +1,198 @@
+{
+    "entity": "ClientCorporationPayRulesetVersion",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/ClientCorporationPayRulesetVersion?fields=*",
+    "label": "Client Corporation Pay Ruleset Version",
+    "dateLastModified": "1708444958840",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false,
+            "label": "ID"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Added",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "optional": false,
+            "label": "Date Last Modified",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "effectiveDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "optional": false,
+            "label": "Effective Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "effectiveEndDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "optional": true,
+            "label": "Effective End Date",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "isFirst",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "optional": false,
+            "label": "Is First",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "timeLaborEvalRules",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Time Labor Eval Rules",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "TimeLaborEvalRule",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/TimeLaborEvalRule",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "TimeLaborEvalRule",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/TimeLaborEvalRule?fields=*",
+                "label": "Time & Labor Rule",
+                "dateLastModified": "1708435729237",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "dataSpecialization": "SYSTEM",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 20,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    },
+                    {
+                        "name": "states",
+                        "type": "TO_MANY",
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Applicable States",
+                        "required": false,
+                        "readOnly": true,
+                        "multiValue": true,
+                        "inputType": "SELECT",
+                        "optionsType": "NorthAmericaState",
+                        "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/NorthAmericaState",
+                        "hideFromSearch": false,
+                        "sortOrder": 130,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false,
+                        "associatedEntity": {
+                            "entity": "State",
+                            "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/State?fields=*",
+                            "label": "State",
+                            "dateLastModified": "1708079181969",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer",
+                                    "optional": false,
+                                    "label": "ID"
+                                },
+                                {
+                                    "name": "name",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 255,
+                                    "confidential": false,
+                                    "optional": false,
+                                    "label": "Name",
+                                    "required": false,
+                                    "readOnly": false,
+                                    "multiValue": false,
+                                    "hideFromSearch": false,
+                                    "systemRequired": false,
+                                    "shouldAddCustomEntityLabel": false
+                                },
+                                {
+                                    "name": "code",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 50,
+                                    "confidential": false,
+                                    "optional": true,
+                                    "label": "Code",
+                                    "required": false,
+                                    "readOnly": false,
+                                    "multiValue": false,
+                                    "hideFromSearch": false,
+                                    "systemRequired": false,
+                                    "shouldAddCustomEntityLabel": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
