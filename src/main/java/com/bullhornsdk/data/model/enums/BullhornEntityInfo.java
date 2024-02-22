@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.bullhornsdk.data.model.entity.core.bte.Holiday;
+import com.bullhornsdk.data.model.entity.core.bte.HolidayInstance;
+import com.bullhornsdk.data.model.entity.core.bte.rules.*;
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement;
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CertificationRequirement;
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.JobSubmissionCertificationRequirement;
@@ -301,7 +304,7 @@ public enum BullhornEntityInfo {
     PLACEMENT_SHIFT_SET("PlacementShiftSet", PlacementShiftSet.class, PlacementShiftSetWrapper.class, PlacementShiftSetListWrapper.class, "PlacementShiftSetEditHistory", "PlacementShiftSetEditHistoryFieldChange"),
     PLACEMENT_SHIFT_SET_VERSION("PlacementShiftSetVersion", PlacementShiftSetVersion.class, PlacementShiftSetVersionWrapper.class, PlacementShiftSetVersionListWrapper.class, "PlacementShiftSetVersionEditHistory", "PlacementShiftSetVersionEditHistoryFieldChange"),
 
-        // PayBill Entities
+    // PayBill Entities
     LOCATION("Location", Location.class, LocationWrapper.class, LocationListWrapper.class, "LocationEditHistory", "LocationEditHistoryFieldChange"),
     BILLING_PROFILE("BillingProfile", BillingProfile.class, BillingProfileWrapper.class, BillingProfileListWrapper.class, null, null),
     GENERAL_LEDGER_ACCOUNT("GeneralLedgerAccount", GeneralLedgerAccount.class, GeneralLedgerAccountWrapper.class, GeneralLedgerAccountListWrapper.class, null, null),
@@ -510,8 +513,18 @@ public enum BullhornEntityInfo {
     EDS_DATA("EdsData", EdsData.class, EdsDataWrapper.class, EdsDataListWrapper.class, null, null),
     EDS_ENTITY_TYPE("EdsEntityType", EdsEntityType.class, EdsEntityTypeWrapper.class, EdsEntityTypeListWrapper.class, null, null),
     EDS_ENTITY_TYPE_SCHEMA_VERSION("EdsEntityTypeSchemaVersion", EdsEntityTypeSchemaVersion.class, EdsEntityTypeSchemaVersionWrapper.class, EdsEntityTypeSchemaVersionListWrapper.class, null, null),
-    EDS_SOURCE_SYSTEM("EdsSourceSystem", EdsSourceSystem.class, EdsSourceSystemWrapper.class, EdsSourceSystemListWrapper.class, null, null);
+    EDS_SOURCE_SYSTEM("EdsSourceSystem", EdsSourceSystem.class, EdsSourceSystemWrapper.class, EdsSourceSystemListWrapper.class, null, null),
 
+    // BTE
+    CLIENT_CORPORATION_BILL_RULESET("ClientCorporationBillRuleset", ClientCorporationBillRuleset.class, ClientCorporationBillRulesetWrapper.class, ClientCorporationBillRulesetListWrapper.class, "ClientCorporationBillRulesetEditHistory", "ClientCorporationBillRulesetEditHistoryFieldChange"),
+    CLIENT_CORPORATION_BILL_RULESET_VERSION("ClientCorporationBillRulesetVersion", ClientCorporationBillRulesetVersion.class, ClientCorporationBillRulesetVersionWrapper.class, ClientCorporationBillRulesetVersionListWrapper.class, null, null),
+    CLIENT_CORPORATION_PAY_RULESET("ClientCorporationPayRuleset", ClientCorporationPayRuleset.class, ClientCorporationPayRulesetWrapper.class, ClientCorporationPayRulesetListWrapper.class, "ClientCorporationPayRulesetEditHistory", "ClientCorporationPayRulesetEditHistoryFieldChange"),
+    CLIENT_CORPORATION_PAY_RULESET_VERSION("ClientCorporationPayRulesetVersion", ClientCorporationPayRulesetVersion.class, ClientCorporationPayRulesetVersionWrapper.class, ClientCorporationPayRulesetVersionListWrapper.class, null, null),
+    TIME_LABOR_EVAL_RULE("TimeLaborEvalRule", TimeLaborEvalRule.class, TimeLaborEvalRuleWrapper.class, TimeLaborEvalRuleListWrapper.class, null, null),
+    TIME_LABOR_EVAL_RULE_TEMPLATE("TimeLaborEvalRuleTemplate", TimeLaborEvalRuleTemplate.class, TimeLaborEvalRuleTemplateWrapper.class, TimeLaborEvalRuleTemplateListWrapper.class, null, null),
+    HOLIDAY("Holiday", Holiday.class, HolidayWrapper.class, HolidayListWrapper.class, null, null),
+    HOLIDAY_INSTANCE("HolidayInstance", HolidayInstance.class, HolidayInstanceWrapper.class, HolidayInstanceListWrapper.class, null, null),
+    ;
     private final String name;
 
     private final Class<?> type;

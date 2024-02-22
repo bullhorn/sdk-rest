@@ -1,0 +1,327 @@
+{
+    "total": 20,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "dateAdded": 1703193565303,
+            "dateLastModified": 1703193565303,
+            "endAt": 1704168000000,
+            "holiday": {
+                "id": 1,
+                "label": "New Years - Starts 3PM NYE to 11PM New Years Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1704052800000
+        },
+        {
+            "id": 2,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 3,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 4,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 5,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 6,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 7,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 8,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 9,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 10,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 11,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 12,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 13,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 14,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 15,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 16,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 17,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 18,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 19,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        },
+        {
+            "id": 20,
+            "dateAdded": 1703193827776,
+            "dateLastModified": 1703193827776,
+            "endAt": 1703563200000,
+            "holiday": {
+                "id": 2,
+                "label": "Christmas - Starts 3PM Christmas Eve to 11PM Christmas Day"
+            },
+            "modifyingUser": {
+                "id": 247367,
+                "firstName": "Jay",
+                "lastName": "Zawislak"
+            },
+            "startAt": 1703448000000
+        }
+    ]
+}

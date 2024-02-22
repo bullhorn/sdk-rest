@@ -1,0 +1,540 @@
+{
+    "entity": "TimeLaborEvalRuleTemplate",
+    "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/TimeLaborEvalRuleTemplate?fields=*",
+    "label": "Time & Labor Rule Template",
+    "dateLastModified": "1708079181919",
+    "layouts": [
+        {
+            "name": "ListExpandedLeft",
+            "label": "List - Expanded Left",
+            "enabled": true
+        },
+        {
+            "name": "ListRow",
+            "label": "List - Row",
+            "enabled": true
+        }
+    ],
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "optional": false,
+            "label": "ID"
+        },
+        {
+            "name": "addedAtUtc",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Added At Utc",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 60,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "addedByUser",
+            "type": "TO_ONE",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Added By User",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/CorporateUser",
+            "hideFromSearch": false,
+            "sortOrder": 50,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1708054449646",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "First Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Last Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "description",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 500,
+            "confidential": false,
+            "optional": true,
+            "label": "Description",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 30,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "isDefault",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Is Default",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 40,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "lastModifiedAtUtc",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Last Modified At Utc",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 80,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "modifyingUser",
+            "type": "TO_ONE",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": false,
+            "label": "Modifying User",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "CorporateUser",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/CorporateUser",
+            "hideFromSearch": false,
+            "sortOrder": 70,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "CorporateUser",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/CorporateUser?fields=*",
+                "label": "Corporate User",
+                "dateLastModified": "1708054449646",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "firstName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "First Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    },
+                    {
+                        "name": "lastName",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 50,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Last Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "name",
+            "type": "SCALAR",
+            "dataType": "String",
+            "maxLength": 100,
+            "confidential": false,
+            "optional": false,
+            "label": "Name",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "hideFromSearch": false,
+            "sortOrder": 20,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false
+        },
+        {
+            "name": "timeLaborEvalRules",
+            "type": "TO_MANY",
+            "confidential": false,
+            "optional": true,
+            "label": "Time Labor Eval Rules",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "TimeLaborEvalRule",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/TimeLaborEvalRule",
+            "hideFromSearch": false,
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "TimeLaborEvalRule",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/TimeLaborEvalRule?fields=*",
+                "label": "Time & Labor Rule",
+                "dateLastModified": "1708435729237",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "name",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "dataSpecialization": "SYSTEM",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Name",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "sortOrder": 20,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    },
+                    {
+                        "name": "states",
+                        "type": "TO_MANY",
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Applicable States",
+                        "required": false,
+                        "readOnly": true,
+                        "multiValue": true,
+                        "inputType": "SELECT",
+                        "optionsType": "NorthAmericaState",
+                        "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/NorthAmericaState",
+                        "hideFromSearch": false,
+                        "sortOrder": 130,
+                        "hint": "",
+                        "description": "",
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false,
+                        "associatedEntity": {
+                            "entity": "State",
+                            "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/State?fields=*",
+                            "label": "State",
+                            "dateLastModified": "1708079181969",
+                            "fields": [
+                                {
+                                    "name": "id",
+                                    "type": "ID",
+                                    "dataType": "Integer",
+                                    "optional": false,
+                                    "label": "ID"
+                                },
+                                {
+                                    "name": "name",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 255,
+                                    "confidential": false,
+                                    "optional": false,
+                                    "label": "Name",
+                                    "required": false,
+                                    "readOnly": false,
+                                    "multiValue": false,
+                                    "hideFromSearch": false,
+                                    "systemRequired": false,
+                                    "shouldAddCustomEntityLabel": false
+                                },
+                                {
+                                    "name": "code",
+                                    "type": "SCALAR",
+                                    "dataType": "String",
+                                    "maxLength": 50,
+                                    "confidential": false,
+                                    "optional": true,
+                                    "label": "Code",
+                                    "required": false,
+                                    "readOnly": false,
+                                    "multiValue": false,
+                                    "hideFromSearch": false,
+                                    "systemRequired": false,
+                                    "shouldAddCustomEntityLabel": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "timeLaborEvalRulesCalcTypes",
+            "type": "TO_MANY",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "optional": true,
+            "label": "Calculation Types",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "TimeLaborCalcTypeLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/TimeLaborCalcTypeLookup",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Pay",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "Bill",
+                    "readOnly": false
+                },
+                {
+                    "value": 3,
+                    "label": "Pay & Bill",
+                    "readOnly": false
+                }
+            ],
+            "hideFromSearch": false,
+            "sortOrder": 100,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "TimeLaborCalcTypeLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/TimeLaborCalcTypeLookup?fields=*",
+                "label": "Time Labor Calc Type Lookup",
+                "dateLastModified": "1708444962145",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Label",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "timeLaborEvalRulesCategories",
+            "type": "TO_MANY",
+            "dataType": "SimplifiedOptionsLookup",
+            "confidential": false,
+            "optional": true,
+            "label": "Categories",
+            "required": false,
+            "readOnly": false,
+            "multiValue": false,
+            "optionsType": "TimeLaborEvalRuleCategoryLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/options/TimeLaborEvalRuleCategoryLookup",
+            "options": [
+                {
+                    "value": 0,
+                    "label": "None",
+                    "readOnly": false
+                },
+                {
+                    "value": 1,
+                    "label": "Threshold",
+                    "readOnly": false
+                },
+                {
+                    "value": 2,
+                    "label": "PerDiem",
+                    "readOnly": false
+                },
+                {
+                    "value": 3,
+                    "label": "PeriodBasedRate",
+                    "readOnly": false
+                },
+                {
+                    "value": 4,
+                    "label": "Surplus",
+                    "readOnly": false
+                },
+                {
+                    "value": 5,
+                    "label": "Expenses",
+                    "readOnly": false
+                },
+                {
+                    "value": 6,
+                    "label": "Penalties",
+                    "readOnly": false
+                },
+                {
+                    "value": 7,
+                    "label": "Holidays",
+                    "readOnly": false
+                },
+                {
+                    "value": 8,
+                    "label": "Validation",
+                    "readOnly": false
+                },
+                {
+                    "value": 9,
+                    "label": "Exempt",
+                    "readOnly": false
+                },
+                {
+                    "value": 10,
+                    "label": "Orientation",
+                    "readOnly": false
+                },
+                {
+                    "value": 11,
+                    "label": "FLSA",
+                    "readOnly": false
+                },
+                {
+                    "value": 12,
+                    "label": "System",
+                    "readOnly": false
+                }
+            ],
+            "hideFromSearch": false,
+            "sortOrder": 110,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "TimeLaborEvalRuleCategoryLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/2ppp4p/meta/TimeLaborEvalRuleCategoryLookup?fields=*",
+                "label": "Time Labor Eval Rule Category Lookup",
+                "dateLastModified": "1708444962164",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "optional": true,
+                        "label": "Label",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        }
+    ]
+}

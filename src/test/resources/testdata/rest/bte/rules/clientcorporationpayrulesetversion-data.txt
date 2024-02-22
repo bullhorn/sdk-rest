@@ -1,0 +1,247 @@
+{
+    "total": 20,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 1,
+            "dateAdded": 1696534021602,
+            "dateLastModified": 1696534495223,
+            "effectiveDate": "2023-09-03",
+            "effectiveEndDate": "2024-01-20",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 3,
+                "data": []
+            }
+        },
+        {
+            "id": 2,
+            "dateAdded": 1706128680034,
+            "dateLastModified": 1706128680293,
+            "effectiveDate": "2024-01-21",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "timeLaborEvalRules": {
+                "total": 4,
+                "data": []
+            }
+        },
+        {
+            "id": 3,
+            "dateAdded": 1706215397993,
+            "dateLastModified": 1706215398195,
+            "effectiveDate": "2024-01-25",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 5,
+                "data": []
+            }
+        },
+        {
+            "id": 4,
+            "dateAdded": 1707217492710,
+            "dateLastModified": 1707217640873,
+            "effectiveDate": "2024-02-06",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 5,
+            "dateAdded": 1708445004262,
+            "dateLastModified": 1708514106115,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": false,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 6,
+            "dateAdded": 1708510203286,
+            "dateLastModified": 1708510203527,
+            "effectiveDate": "2024-02-01",
+            "effectiveEndDate": "2024-02-19",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 7,
+            "dateAdded": 1708512643393,
+            "dateLastModified": 1708512643512,
+            "effectiveDate": "2024-02-21",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 8,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 9,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 10,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 11,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 12,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 13,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 14,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 15,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 16,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 17,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 18,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 19,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 20,
+            "dateAdded": 1708514047289,
+            "dateLastModified": 1708516621605,
+            "effectiveDate": "2024-02-20",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            }
+        }
+    ]
+}

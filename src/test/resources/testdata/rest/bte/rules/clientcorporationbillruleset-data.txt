@@ -1,0 +1,527 @@
+{
+    "total": 20,
+    "start": 0,
+    "count": 20,
+    "data": [
+        {
+            "id": 20,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 19,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 18,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 17,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 16,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 15,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 14,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 13,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 12,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 11,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 10,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 9,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 8,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 7,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 6,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 5,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 4,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 3,
+            "clientCorporation": {
+                "id": 64183,
+                "name": "Jake's Test Contract"
+            },
+            "dateAdded": 1708514531980,
+            "dateLastModified": 1708514532211,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 5,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        },
+        {
+            "id": 2,
+            "clientCorporation": {
+                "id": 13688,
+                "name": "HealthTrust Workforce Solutions, LLC (GRANDPARENT)"
+            },
+            "dateAdded": 1708445021006,
+            "dateLastModified": 1708514519840,
+            "effectiveDate": "2024-02-22",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 696155,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 2,
+                "data": []
+            },
+            "versionID": 3,
+            "versions": {
+                "total": 1,
+                "data": []
+            }
+        },
+        {
+            "id": 1,
+            "clientCorporation": {
+                "id": 4564,
+                "name": "Sharp Chula Vista Medical Center"
+            },
+            "dateAdded": 1706214866759,
+            "dateLastModified": 1706214867057,
+            "effectiveDate": "2024-01-21",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User NPE"
+            },
+            "timeLaborEvalRules": {
+                "total": 3,
+                "data": []
+            },
+            "versionID": 2,
+            "versions": {
+                "total": 2,
+                "data": []
+            }
+        }
+    ]
+}
