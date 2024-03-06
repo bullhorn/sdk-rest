@@ -3,6 +3,8 @@ package com.bullhornsdk.data.exception;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class AuthorizationCodeException extends RestApiException {
 
     private static final Pattern GET_DETAIL_ERROR = Pattern.compile(".*?<p class=\"error\">(.*?)</p>", Pattern.DOTALL);
@@ -20,6 +22,10 @@ public class AuthorizationCodeException extends RestApiException {
     }
 
     private static String parseErrorMessageFromHtml(String responseBody) {
+        if (StringUtils.isBlank(responseBody)) {
+            return "";
+        }
+
         Matcher matcher = GET_DETAIL_ERROR.matcher(responseBody);
 
         if (matcher.find()) {
