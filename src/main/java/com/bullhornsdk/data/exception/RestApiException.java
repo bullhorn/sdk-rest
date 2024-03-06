@@ -1,16 +1,10 @@
-/**
- * 
- */
 package com.bullhornsdk.data.exception;
 
-/**
- * @author Yaniv Or-Shahar
- * 
- */
+
 public class RestApiException extends RuntimeException {
-    /**
-     * 
-     */
+
+    private String detailMessage;
+
     private static final long serialVersionUID = 1L;
 
     public RestApiException() {
@@ -27,6 +21,21 @@ public class RestApiException extends RuntimeException {
 
     public RestApiException(String message, Throwable cause) {
         super(message, cause);
+    }
+
+    public RestApiException(String message, String detailMessage) {
+        super(message);
+        this.detailMessage = detailMessage;
+    }
+
+
+    public RestApiException(String message, String detailMessage, Throwable cause) {
+        super(message, cause);
+        this.detailMessage = detailMessage;
+    }
+
+    public String getDetailMessage() {
+        return detailMessage;
     }
 
 }
