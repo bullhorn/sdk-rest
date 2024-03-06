@@ -1,6 +1,7 @@
 package com.bullhornsdk.data.api.helper;
 
 import com.bullhornsdk.data.api.BullhornRestCredentials;
+import com.bullhornsdk.data.exception.AuthorizationCodeException;
 import com.bullhornsdk.data.exception.RestApiException;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -18,20 +19,13 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-/**
- * Wraps rest api session management.
- * 
- * @author Yaniv Or-Shahar
- * @author Magnus Fiore Palm
- * 
- */
 
 @JsonIgnoreProperties({"sessionExpired"})
 public class RestApiSession {
@@ -134,6 +128,8 @@ public class RestApiSession {
                 AccessTokenInfo accessTokenInfo = getAccessToken(authCode);
                 login(accessTokenInfo);
                 break;
+            } catch (AuthorizationCodeException e) {
+                throw e;
             } catch (Exception e) {
                 if (tryNumber < SESSION_RETRY) {
                     String message = "Error creating REST session. Try number: " + tryNumber + " out of " + SESSION_RETRY + " trying again.";
@@ -168,7 +164,7 @@ public class RestApiSession {
 
     private String getAuthorizationCode(String url, Map<String, String> parameters, Boolean followRedirect) {
         try {
-            ResponseEntity<Void> response = restTemplate.exchange(url, HttpMethod.POST, HttpEntity.EMPTY, Void.class, parameters);
+            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, HttpEntity.EMPTY, String.class, parameters);
 
             URI location = response.getHeaders().getLocation();
 
@@ -180,11 +176,17 @@ public class RestApiSession {
                 return getAuthCode(location);
             }
 
-            throw new RestApiException("Failed to get authorization code.  Response had no Location header and code was: " + response.getStatusCodeValue());
+            throw new AuthorizationCodeException("Failed to get authorization code.  Response had no Location header and code was: " + response.getStatusCodeValue(), response.getBody());
+        } catch (AuthorizationCodeException e) {
+            throw e;
+        } catch (HttpStatusCodeException e ) {
+            LOG.error("Failed to get authorization code.", e);
+
+            throw new AuthorizationCodeException("Failed to get authorization code.", e.getResponseBodyAsString(), e);
         } catch (Exception e) {
             LOG.error("Failed to get authorization code.", e);
 
-            throw new RestApiException("Failed to get authorization code.", e);
+            throw new AuthorizationCodeException("Failed to get authorization code.", e);
         }
     }
 
