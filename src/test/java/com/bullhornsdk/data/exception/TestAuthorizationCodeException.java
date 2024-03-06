@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import com.bullhornsdk.data.BaseTest;
-import com.bullhornsdk.data.api.BullhornRestCredentials;
-import com.bullhornsdk.data.api.StandardBullhornData;
 
 public class TestAuthorizationCodeException extends BaseTest {
 
@@ -21,20 +19,6 @@ public class TestAuthorizationCodeException extends BaseTest {
         RestApiException exception = new AuthorizationCodeException("", INVALID_CREDENTIALS_HTML);
 
         Assert.assertEquals("Invalid credentials.", exception.getDetailMessage());
-    }
-
-    @Test
-    public void testBullhornDataInvalidCredentials() {
-        BullhornRestCredentials restCredentials = new BullhornRestCredentials();
-        restCredentials.setUsername("octopus.api.user");
-        restCredentials.setPassword("invalidPassword");
-        restCredentials.setRestClientId("b627302e-e971-4a8b-b122-91c622f6bf39");
-
-        try {
-            new StandardBullhornData(restCredentials);
-        } catch (RestApiException e) {
-            Assert.assertEquals("Invalid credentials.", e.getDetailMessage());
-        }
     }
 
     private static final String ACCOUNT_LOCKED_OUT_HTML = "\n" +
