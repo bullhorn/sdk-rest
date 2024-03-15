@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.Getter;
+import lombok.Setter;
+import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -118,6 +121,10 @@ public class PlacementTimeAndExpense extends AbstractEntity implements QueryEnti
 
     @Size(max = 32)
     private String vmsRequisitionID;
+
+    @Getter
+    @Setter
+    private DateTime timeAndLaborEnabledDate;
 
     @Override
     @JsonProperty("id")
