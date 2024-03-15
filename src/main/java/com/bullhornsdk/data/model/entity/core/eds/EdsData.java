@@ -21,7 +21,7 @@ import java.util.Objects;
 public class EdsData implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity {
     private Integer id;
     private EdsEntityType entityType;
-    private Integer sourceId;
+    private String sourceId;
     private EdsEntityTypeSchemaVersion entityTypeSchemaVersion;
     private DateTime dateAdded;
     private DateTime dateLastModified;
@@ -66,12 +66,12 @@ public class EdsData implements QueryEntity, UpdateEntity, CreateEntity, DateLas
     }
 
     @JsonProperty("sourceId")
-    public Integer getSourceId() {
+    public String getSourceId() {
         return sourceId;
     }
 
     @JsonProperty("sourceId")
-    public void setSourceId(Integer sourceId) {
+    public void setSourceId(String sourceId) {
         this.sourceId = sourceId;
     }
 
