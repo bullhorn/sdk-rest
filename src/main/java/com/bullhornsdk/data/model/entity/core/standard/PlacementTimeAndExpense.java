@@ -124,6 +124,7 @@ public class PlacementTimeAndExpense extends AbstractEntity implements QueryEnti
 
     @Getter
     @Setter
+    @JsonProperty("timeAndLaborEnabledDate")
     private DateTime timeAndLaborEnabledDate;
 
     @Override
