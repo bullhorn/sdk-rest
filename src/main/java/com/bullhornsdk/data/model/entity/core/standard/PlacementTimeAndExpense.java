@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.Getter;
+import lombok.Setter;
+import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -12,7 +15,7 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({ "id", "alternateWorkSchedule", "approvalMethod", "backupExpenseApproverEmail", "backupExpenseApproverFName", "backupExpenseApproverLName", "backupNoBillExpenseApproverEmail", "backupNoBillExpenseApproverFirstName", "backupNoBillExpenseApproverLastName", "branding", "clientDepartmentCode", "clockMapping", "departmentAbbr", "departmentMapping", "departmentName", "dtBillingFactor", "employeeBadge", "employeeCPAFlag", "employeeOtType", "expenseApproverEmail", "expenseApproverFName", "expenseApproverLName", "expenseIndicator", "inOutIndicator", "noBillExpenseApproverEmail", "noBillExpenseApproverFirstName", "noBillExpenseApproverLastName", "payRules", "proxyCPAFlag", "rounding", "timeAndExpenseBranch", "timeAndExpenseSource", "vmsAssignmentNumber", "vmsCostCenter", "vmsEmployeeID", "vmsRequisitionID" })
+@JsonPropertyOrder({ "id", "alternateWorkSchedule", "approvalMethod", "backupExpenseApproverEmail", "backupExpenseApproverFName", "backupExpenseApproverLName", "backupNoBillExpenseApproverEmail", "backupNoBillExpenseApproverFirstName", "backupNoBillExpenseApproverLastName", "branding", "clientDepartmentCode", "clockMapping", "departmentAbbr", "departmentMapping", "departmentName", "dtBillingFactor", "employeeBadge", "employeeCPAFlag", "employeeOtType", "expenseApproverEmail", "expenseApproverFName", "expenseApproverLName", "expenseIndicator", "inOutIndicator", "noBillExpenseApproverEmail", "noBillExpenseApproverFirstName", "noBillExpenseApproverLastName", "payRules", "proxyCPAFlag", "rounding", "timeAndExpenseBranch", "timeAndExpenseSource", "vmsAssignmentNumber", "vmsCostCenter", "vmsEmployeeID", "vmsRequisitionID", "timeAndLaborEnabledDate" })
 public class PlacementTimeAndExpense extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, EditHistoryEntity {
 
     private Integer id;
@@ -118,6 +121,11 @@ public class PlacementTimeAndExpense extends AbstractEntity implements QueryEnti
 
     @Size(max = 32)
     private String vmsRequisitionID;
+
+    @Getter
+    @Setter
+    @JsonProperty("timeAndLaborEnabledDate")
+    private DateTime timeAndLaborEnabledDate;
 
     @Override
     @JsonProperty("id")
