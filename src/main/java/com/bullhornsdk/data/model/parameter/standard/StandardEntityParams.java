@@ -10,8 +10,8 @@ import java.util.Map;
 @Data
 public class StandardEntityParams implements EntityParams {
 
-    Boolean showEditable;
-    LocalDate effectiveOn;
+    private Boolean showEditable;
+    private LocalDate effectiveOn;
 
     private StandardEntityParams() {
         super();
