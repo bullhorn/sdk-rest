@@ -220,8 +220,8 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
-        return this.handleGetEntity(type, id, fieldSet, ParamFactory.entityParams());
+    public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet, EntityParams entityParams) {
+        return this.handleGetEntity(type, id, fieldSet, entityParams);
     }
 
     /**

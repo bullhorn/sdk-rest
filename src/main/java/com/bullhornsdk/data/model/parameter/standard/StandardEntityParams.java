@@ -1,13 +1,17 @@
 package com.bullhornsdk.data.model.parameter.standard;
 
 import com.bullhornsdk.data.model.parameter.EntityParams;
+import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Data
 public class StandardEntityParams implements EntityParams {
 
-    private boolean showEditable;
+    Boolean showEditable;
+    LocalDate effectiveOn;
 
     private StandardEntityParams() {
         super();
@@ -19,17 +23,16 @@ public class StandardEntityParams implements EntityParams {
         return params;
     }
 
-
-    public void setShowEditable(boolean showEditable) {
-        this.showEditable = showEditable;
-    }
-
     @Override
     public String getUrlString() {
         StringBuilder url = new StringBuilder();
 
         if (showEditable) {
             url.append("&showEditable={showEditable}");
+        }
+
+        if (effectiveOn != null) {
+            url.append("&effectiveOn={effectiveOn}");
         }
 
         return url.toString();
@@ -41,6 +44,10 @@ public class StandardEntityParams implements EntityParams {
 
         if (showEditable) {
             uriVariables.put("showEditable", "" + true);
+        }
+
+        if (effectiveOn != null) {
+            uriVariables.put("effectiveOn", effectiveOn.toString());
         }
 
         return uriVariables;
