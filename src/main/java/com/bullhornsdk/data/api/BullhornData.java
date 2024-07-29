@@ -24,17 +24,7 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
-import com.bullhornsdk.data.model.parameter.AssociationParams;
-import com.bullhornsdk.data.model.parameter.CorpNotesParams;
-import com.bullhornsdk.data.model.parameter.FastFindParams;
-import com.bullhornsdk.data.model.parameter.FileParams;
-import com.bullhornsdk.data.model.parameter.OptionsParams;
-import com.bullhornsdk.data.model.parameter.QueryParams;
-import com.bullhornsdk.data.model.parameter.ResumeAsNewEntityParams;
-import com.bullhornsdk.data.model.parameter.ResumeFileParseParams;
-import com.bullhornsdk.data.model.parameter.ResumeTextParseParams;
-import com.bullhornsdk.data.model.parameter.SearchParams;
-import com.bullhornsdk.data.model.parameter.SettingsParams;
+import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper;
@@ -73,19 +63,31 @@ public interface BullhornData {
 	 */
 	public <T extends BullhornEntity, L extends ListWrapper<T>> L findMultipleEntity(Class<T> type, Set<Integer> idList, Set<String> fieldSet);
 
-	/**
-	 * Returns the entity of passed in type with the passed in id, fields to get are specifed by the fieldSet.
-	 *
-	 * @param type type of BullhornEntity
-	 * @param id id of BullhornEntity
-	 * @param fieldSet fields to query for
-	 *
-	 * @throws RestApiException when the api call fails
+    /**
+     * Returns the entity of passed in type with the passed in id, fields to get are specifed by the fieldSet.
      *
-	 * @return an entity of type T, or null if an error occurred
-	 */
-	public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet);
+     * @param type     type of BullhornEntity
+     * @param id       id of BullhornEntity
+     * @param fieldSet fields to query for
+     * @return an entity of type T, or null if an error occurred
+     * @throws RestApiException when the api call fails
+     */
+    public default <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
+        return findEntity(type, id, fieldSet, ParamFactory.entityParams());
+    }
 
+    /**
+     * Returns the entity of passed in type with the passed in id, fields to get are specifed by the fieldSet.
+     *
+     * @param type type of BullhornEntity
+     * @param id id of BullhornEntity
+     * @param fieldSet fields to query for
+     * @param entityParams extra parameters for query
+     * @throws RestApiException when the api call fails
+     *
+     * @return an entity of type T, or null if an error occurred
+     */
+    public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet, EntityParams entityParams);
 	/**
 	 * Queries for QueryEntity of type T and returns a List<T>.
 	 *
