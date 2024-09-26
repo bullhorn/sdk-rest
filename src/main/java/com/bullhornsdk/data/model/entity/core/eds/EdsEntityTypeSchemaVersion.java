@@ -13,13 +13,14 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "description", "edsData", "entityType", "schema"})
+@JsonPropertyOrder({"id", "description", "edsData", "entityType", "schema", "name"})
 public class EdsEntityTypeSchemaVersion implements QueryEntity, UpdateEntity, CreateEntity {
     private Integer id;
     private String description;
     private OneToMany<EdsData> edsData;
     private EdsEntityType entityType;
     private String schema;
+    private String name;
 
     @Override
     @JsonProperty("id")
@@ -73,15 +74,14 @@ public class EdsEntityTypeSchemaVersion implements QueryEntity, UpdateEntity, Cr
         this.schema = schema;
     }
 
-    @Override
-    public String toString() {
-        return "EntityTypeSchemaVersion{" +
-            "id=" + id +
-            ", description =" + description +
-            ", edsData =" + edsData +
-            ", entityType =" + entityType +
-            ", schema =" + schema +
-            '}';
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -89,19 +89,23 @@ public class EdsEntityTypeSchemaVersion implements QueryEntity, UpdateEntity, Cr
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EdsEntityTypeSchemaVersion that = (EdsEntityTypeSchemaVersion) o;
-        return Objects.equals(id, that.id) &&
-            Objects.equals(description, that.description) &&
-            Objects.equals(edsData, that.edsData) &&
-            Objects.equals(entityType, that.entityType) &&
-            Objects.equals(schema, that.schema);
+        return Objects.equals(id, that.id) && Objects.equals(description, that.description) && Objects.equals(edsData, that.edsData) && Objects.equals(entityType, that.entityType) && Objects.equals(schema, that.schema) && Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            description,
-            edsData,
-            entityType,
-            schema);
+        return Objects.hash(id, description, edsData, entityType, schema, name);
+    }
+
+    @Override
+    public String toString() {
+        return "EdsEntityTypeSchemaVersion{" +
+            "id=" + id +
+            ", description='" + description + '\'' +
+            ", edsData=" + edsData +
+            ", entityType=" + entityType +
+            ", schema='" + schema + '\'' +
+            ", name='" + name + '\'' +
+            '}';
     }
 }
