@@ -69,7 +69,7 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet) {
+    public <T extends BullhornEntity> T findEntity(Class<T> type, Integer id, Set<String> fieldSet, EntityParams entityParams) {
         return mockDataHandler.findEntity(type, id, fieldSet);
     }
 

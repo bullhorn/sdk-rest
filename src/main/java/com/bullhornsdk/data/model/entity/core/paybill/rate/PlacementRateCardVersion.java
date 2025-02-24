@@ -1,8 +1,10 @@
 package com.bullhornsdk.data.model.entity.core.paybill.rate;
 
+import com.bullhornsdk.data.api.helper.RestOneToManySerializer;
 import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
 
 import java.util.Objects;
@@ -89,6 +91,7 @@ public class PlacementRateCardVersion extends AbstractEntity implements QueryEnt
     }
 
     @JsonProperty("placementRateCardLineGroups")
+    @JsonSerialize(using = RestOneToManySerializer.class)
     public OneToMany<PlacementRateCardLineGroup> getPlacementRateCardLineGroups() {
         return placementRateCardLineGroups;
     }

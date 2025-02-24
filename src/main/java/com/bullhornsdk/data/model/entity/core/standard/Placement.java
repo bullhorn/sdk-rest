@@ -1502,12 +1502,12 @@ public class Placement extends CustomFieldsD implements SearchEntity, QueryEntit
     }
 
     @JsonProperty("isWorkFromHome")
-    public Boolean getWorkFromHome() {
+    public Boolean getIsWorkFromHome() {
         return isWorkFromHome;
     }
 
     @JsonProperty("isWorkFromHome")
-    public void setWorkFromHome(Boolean workFromHome) {
+    public void setIsWorkFromHome(Boolean workFromHome) {
         isWorkFromHome = workFromHome;
     }
 
