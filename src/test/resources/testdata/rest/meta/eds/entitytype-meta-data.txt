@@ -66,6 +66,14 @@
             }
         },
         {
+            "name": "isPrivate",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Private",
+            "hideFromSearch": false
+        },
+        {
             "name": "name",
             "type": "SCALAR",
             "dataType": "String",

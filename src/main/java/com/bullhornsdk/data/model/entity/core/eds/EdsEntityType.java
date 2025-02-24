@@ -13,7 +13,7 @@ import java.util.Objects;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
-@JsonPropertyOrder({"id", "sourceSystem", "edsData", "edsEntityTypeSchemaVersions", "name", "display"})
+@JsonPropertyOrder({"id", "sourceSystem", "edsData", "edsEntityTypeSchemaVersions", "name", "display", "isPrivate"})
 public class EdsEntityType implements QueryEntity, UpdateEntity, CreateEntity {
     private Integer id;
     private EdsSourceSystem sourceSystem;
@@ -21,6 +21,7 @@ public class EdsEntityType implements QueryEntity, UpdateEntity, CreateEntity {
     private OneToMany<EdsEntityTypeSchemaVersion> edsEntityTypeSchemaVersions;
     private String name;
     private String display;
+    private Boolean isPrivate;
 
     @Override
     @JsonProperty("id")
@@ -84,16 +85,14 @@ public class EdsEntityType implements QueryEntity, UpdateEntity, CreateEntity {
         this.display = display;
     }
 
-    @Override
-    public String toString() {
-        return "EdsEntityType{" +
-            "id=" + id +
-            ", sourceSystem =" + sourceSystem +
-            ", edsData =" + edsData +
-            ", edsEntityTypeSchemaVersions =" + edsEntityTypeSchemaVersions +
-            ", name =" + name +
-            ", display =" + display +
-            '}';
+    @JsonProperty("isPrivate")
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
+
+    @JsonProperty("isPrivate")
+    public void setIsPrivate(Boolean isPrivate) {
+        this.isPrivate = isPrivate;
     }
 
     @Override
@@ -101,21 +100,24 @@ public class EdsEntityType implements QueryEntity, UpdateEntity, CreateEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EdsEntityType that = (EdsEntityType) o;
-        return Objects.equals(id, that.id) &&
-            Objects.equals(sourceSystem, that.sourceSystem) &&
-            Objects.equals(edsData, that.edsData) &&
-            Objects.equals(edsEntityTypeSchemaVersions, that.edsEntityTypeSchemaVersions) &&
-            Objects.equals(name, that.name) &&
-            Objects.equals(display, that.display);
+        return Objects.equals(id, that.id) && Objects.equals(sourceSystem, that.sourceSystem) && Objects.equals(edsData, that.edsData) && Objects.equals(edsEntityTypeSchemaVersions, that.edsEntityTypeSchemaVersions) && Objects.equals(name, that.name) && Objects.equals(display, that.display) && Objects.equals(isPrivate, that.isPrivate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
-            sourceSystem,
-            edsData,
-            edsEntityTypeSchemaVersions,
-            name,
-            display);
+        return Objects.hash(id, sourceSystem, edsData, edsEntityTypeSchemaVersions, name, display, isPrivate);
+    }
+
+    @Override
+    public String toString() {
+        return "EdsEntityType{" +
+            "id=" + id +
+            ", sourceSystem=" + sourceSystem +
+            ", edsData=" + edsData +
+            ", edsEntityTypeSchemaVersions=" + edsEntityTypeSchemaVersions +
+            ", name='" + name + '\'' +
+            ", display='" + display + '\'' +
+            ", isPrivate=" + isPrivate +
+            '}';
     }
 }
