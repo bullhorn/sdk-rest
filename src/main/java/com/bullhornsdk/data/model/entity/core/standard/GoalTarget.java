@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -28,9 +29,9 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
 
     private String periodname;
 
-    private DateTime startDate;
+    private String startDate;
 
-    private DateTime endDate;
+    private String endDate;
 
     private Integer target;
 
@@ -88,22 +89,22 @@ public class GoalTarget implements AllRecordsEntity, CreateEntity, UpdateEntity,
     }
 
     @JsonProperty("startDate")
-    public DateTime getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
     @JsonProperty("startDate")
-    public void setStartDate(DateTime startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
     @JsonProperty("endDate")
-    public DateTime getEndDate() {
+    public String getEndDate() {
         return startDate;
     }
 
     @JsonProperty("endDate")
-    public void setEndDate(DateTime endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
