@@ -1,0 +1,37 @@
+{
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "actualStartTime": 1742291278173,
+            "clientCorporation": {
+            				"id": 2,
+            				"name": "Bullhorn"
+            			},
+            "isCancelled": false,
+            "candidate": {
+                            "id": 1,
+                            "firstName": "Joe",
+                            "lastName": "Smith"
+                        },
+            "jobShift": {
+                "id": 1,
+                "name": "New Zealand (+12)"
+            },
+            "placement": {
+                            "id": 1
+                        },
+            "dateLastModified": 1742291278203,
+            "reasonCancelled": null,
+            "dateAdded": 1742291278173,
+            "status": null,
+            "owner": {
+                            "id": 2,
+                            "firstName": "Bullhorn",
+                            "lastName": "Dev"
+                        },
+            "actualEndTime": 1742291278203,
+            "id": 1
+        }
+    ]
+}

@@ -233,6 +233,8 @@ public enum BullhornEntityInfo {
         "JobOrderEditHistoryFieldChange"),
     JOB_SHIFT("JobShift", JobShift.class, JobShiftWrapper.class, JobShiftListWrapper.class, null,
         null),
+    JOB_SHIFT_ASSIGNMENT("JobShiftAssignment", JobShiftAssignment.class, JobShiftAssignmentWrapper.class, JobShiftAssignmentListWrapper.class, null,
+        null),
     JOB_BOARD_POST("JobBoardPost", JobBoardPost.class, JobBoardPostWrapper.class, JobBoardPostListWrapper.class, null, null),
     JOB_SUBMISSION("JobSubmission", JobSubmission.class, JobSubmissionWrapper.class, JobSubmissionListWrapper.class,
         "JobSubmissionEditHistory", "JobSubmissionEditHistoryFieldChange"),
