@@ -45,25 +45,13 @@ public class JobShiftAssignment extends AbstractEntity implements QueryEntity, U
 
     private String status;
 
-    private String scheduledStartTime;
+    private DateTime scheduledStartTime;
 
-    private String scheduledEndTime;
+    private DateTime scheduledEndTime;
 
-    private Long actualStartTime;
+    private DateTime actualStartTime;
 
-    private Long actualEndTime;
-
-    private Long utcStartDate;
-
-    private Integer startingDayNumber;
-
-    private Integer startingDayMatchMask;
-
-    private Long utcEndDate;
-
-    private Integer endingDayNumber;
-
-    private Integer endingDayMatchMask;
+    private DateTime actualEndTime;
 
     private String reasonCancelled;
 
