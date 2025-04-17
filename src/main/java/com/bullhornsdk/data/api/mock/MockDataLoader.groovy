@@ -30,6 +30,7 @@ import com.bullhornsdk.data.model.entity.core.eds.EdsData
 import com.bullhornsdk.data.model.entity.core.eds.EdsEntityType
 import com.bullhornsdk.data.model.entity.core.eds.EdsEntityTypeSchemaVersion
 import com.bullhornsdk.data.model.entity.core.eds.EdsSourceSystem
+import com.bullhornsdk.data.model.entity.core.eds.SourceSystemTypeLookup
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
@@ -722,6 +723,7 @@ public class MockDataLoader {
         entityFiles.put(EdsEntityType.class, "eds/entitytype-data.txt");
         entityFiles.put(EdsEntityTypeSchemaVersion.class, "eds/entitytypeschemaversion-data.txt");
         entityFiles.put(EdsSourceSystem.class, "eds/sourcesystem-data.txt");
+        entityFiles.put(SourceSystemTypeLookup.class, "eds/sourcesystemtypelookup-data.txt");
 
         // bte
         entityFiles.put(ClientCorporationBillRuleset.class, "bte/rules/clientcorporationbillruleset-data.txt");

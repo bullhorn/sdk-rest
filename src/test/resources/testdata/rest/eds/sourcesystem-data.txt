@@ -10,7 +10,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test part2"
+            "name": "Analytics Test part2",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 19,
@@ -20,7 +23,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test"
+            "name": "Analytics Test",
+            "sourceSystemType": {
+                "id": 2
+            }
         },
         {
             "id": 18,
@@ -30,7 +36,10 @@
                 "data": [
                 ]
             },
-            "name": "SS1"
+            "name": "SS1",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 17,
@@ -40,7 +49,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test part2"
+            "name": "Analytics Test part2",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 16,
@@ -50,7 +62,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test"
+            "name": "Analytics Test",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 15,
@@ -60,7 +75,10 @@
                 "data": [
                 ]
             },
-            "name": "SS1"
+            "name": "SS1",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 14,
@@ -70,7 +88,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test part2"
+            "name": "Analytics Test part2",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 13,
@@ -80,7 +101,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test"
+            "name": "Analytics Test",
+            "sourceSystemType": {
+                "id": 1
+            }
         },
         {
             "id": 12,
@@ -90,7 +114,10 @@
                 "data": [
                 ]
             },
-            "name": "SS1"
+            "name": "SS1",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 11,
@@ -100,7 +127,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test part2"
+            "name": "Analytics Test part2",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 10,
@@ -110,7 +140,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test"
+            "name": "Analytics Test",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 9,
@@ -120,7 +153,10 @@
                 "data": [
                 ]
             },
-            "name": "SS1"
+            "name": "SS1",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 8,
@@ -130,7 +166,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test part2"
+            "name": "Analytics Test part2",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 7,
@@ -140,7 +179,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test"
+            "name": "Analytics Test",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 6,
@@ -150,7 +192,10 @@
                 "data": [
                 ]
             },
-            "name": "SS1"
+            "name": "SS1",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 5,
@@ -160,7 +205,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test part2"
+            "name": "Analytics Test part2",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 4,
@@ -170,7 +218,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test"
+            "name": "Analytics Test",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 3,
@@ -180,7 +231,10 @@
                 "data": [
                 ]
             },
-            "name": "SS1"
+            "name": "SS1",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 2,
@@ -190,7 +244,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test part2"
+            "name": "Analytics Test part2",
+            "sourceSystemType": {
+                "id": 3
+            }
         },
         {
             "id": 1,
@@ -200,7 +257,10 @@
                 "data": [
                 ]
             },
-            "name": "Analytics Test"
+            "name": "Analytics Test",
+            "sourceSystemType": {
+                "id": 3
+            }
         }
     ]
 }

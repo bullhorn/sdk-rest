@@ -1,0 +1,24 @@
+{
+    "start": 0,
+    "count": 3,
+    "data": [
+        {
+            "id": 1,
+            "label": "Internal",
+            "description": "Internal Test part2",
+            "isDeleted": false
+        },
+        {
+            "id": 2,
+            "label": "External",
+            "description": "External Test part2",
+            "isDeleted": false
+        },
+        {
+            "id": 3,
+            "label": "Bullhorn Test part2",
+            "description": "Bullhorn Test part2",
+            "isDeleted": false
+        }
+    ]
+}
