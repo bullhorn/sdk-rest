@@ -24,13 +24,13 @@ public class EdsSourceSystem implements QueryEntity, UpdateEntity, CreateEntity 
     @Getter(onMethod_ = @Override)
     @Setter(onMethod_ = @Override)
     private Integer id;
-    
+
     private String name;
 
     private String display;
 
     @JsonSerialize(using = RestOneToManySerializer.class)
-    private OneToMany<EdsEntityType> entityTypes;
+    private OneToMany<EdsEntityType> edsEntityTypes;
 
     private Boolean enabled;
 
