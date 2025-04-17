@@ -22,7 +22,7 @@ public class SourceSystemTypeLookup implements QueryEntity {
 
     private String description;
 
-    private String display;
+    private String label;
 
     private Boolean isDeleted;
 
