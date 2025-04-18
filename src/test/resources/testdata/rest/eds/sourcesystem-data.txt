@@ -11,6 +11,7 @@
                 ]
             },
             "name": "Analytics Test part2",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -24,6 +25,7 @@
                 ]
             },
             "name": "Analytics Test",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 2
             }
@@ -37,6 +39,7 @@
                 ]
             },
             "name": "SS1",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -50,6 +53,7 @@
                 ]
             },
             "name": "Analytics Test part2",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -63,6 +67,7 @@
                 ]
             },
             "name": "Analytics Test",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -76,6 +81,7 @@
                 ]
             },
             "name": "SS1",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -89,6 +95,7 @@
                 ]
             },
             "name": "Analytics Test part2",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -102,6 +109,7 @@
                 ]
             },
             "name": "Analytics Test",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 1
             }
@@ -115,6 +123,7 @@
                 ]
             },
             "name": "SS1",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -128,6 +137,7 @@
                 ]
             },
             "name": "Analytics Test part2",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -141,6 +151,7 @@
                 ]
             },
             "name": "Analytics Test",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -154,6 +165,7 @@
                 ]
             },
             "name": "SS1",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -167,6 +179,7 @@
                 ]
             },
             "name": "Analytics Test part2",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -180,6 +193,7 @@
                 ]
             },
             "name": "Analytics Test",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -193,6 +207,7 @@
                 ]
             },
             "name": "SS1",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -206,6 +221,7 @@
                 ]
             },
             "name": "Analytics Test part2",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -219,6 +235,7 @@
                 ]
             },
             "name": "Analytics Test",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -232,6 +249,7 @@
                 ]
             },
             "name": "SS1",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -245,6 +263,7 @@
                 ]
             },
             "name": "Analytics Test part2",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }
@@ -258,6 +277,7 @@
                 ]
             },
             "name": "Analytics Test",
+            "enabled": true,
             "sourceSystemType": {
                 "id": 3
             }

@@ -19,7 +19,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 19,
@@ -38,7 +39,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },{
             "id": 18,
             "display": "Test Entity",
@@ -56,7 +58,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": true
+            "isPrivate": true,
+            "enabled": true
         },
         {
             "id": 17,
@@ -75,7 +78,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": true
+            "isPrivate": true,
+            "enabled": true
         },{
             "id": 16,
             "display": "Test Entity",
@@ -93,7 +97,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": true
+            "isPrivate": true,
+            "enabled": true
         },
         {
             "id": 15,
@@ -112,7 +117,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },{
             "id": 14,
             "display": "Test Entity",
@@ -130,7 +136,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 13,
@@ -149,7 +156,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },{
             "id": 12,
             "display": "Test Entity",
@@ -167,7 +175,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 11,
@@ -186,7 +195,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },{
             "id": 10,
             "display": "Test Entity",
@@ -204,7 +214,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 9,
@@ -223,7 +234,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },{
             "id": 8,
             "display": "Test Entity",
@@ -241,7 +253,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 7,
@@ -260,7 +273,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 6,
@@ -279,7 +293,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 5,
@@ -298,7 +313,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 4,
@@ -317,7 +333,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 3,
@@ -336,7 +353,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 2,
@@ -355,7 +373,8 @@
             "sourceSystem": {
                 "id": 1
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         },
         {
             "id": 1,
@@ -374,7 +393,8 @@
             "sourceSystem": {
                 "id": 3
             },
-            "isPrivate": false
+            "isPrivate": false,
+            "enabled": true
         }
     ]
 }
