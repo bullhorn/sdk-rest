@@ -13,7 +13,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 19,
             "description": "Test Entity Schema",
@@ -25,7 +26,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 18,
             "description": "Test Entity Schema",
@@ -37,7 +39,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 17,
             "description": "Test Entity Schema",
@@ -49,7 +52,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 16,
             "description": "Test Entity Schema",
@@ -61,7 +65,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": false
         }, {
             "id": 15,
             "description": "Test Entity Schema",
@@ -73,7 +78,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 14,
             "description": "Test Entity Schema",
@@ -85,7 +91,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 13,
             "description": "Test Entity Schema",
@@ -97,7 +104,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 12,
             "description": "Test Entity Schema",
@@ -109,7 +117,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 11,
             "description": "Test Entity Schema",
@@ -121,7 +130,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 10,
             "description": "Test Entity Schema",
@@ -133,7 +143,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 9,
             "description": "Test Entity Schema",
@@ -145,7 +156,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 8,
             "description": "Test Entity Schema",
@@ -157,7 +169,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 7,
             "description": "Test Entity Schema",
@@ -169,7 +182,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 6,
             "description": "Test Entity Schema",
@@ -181,7 +195,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 5,
             "description": "Test Entity Schema",
@@ -193,7 +208,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 4,
             "description": "Test Entity Schema",
@@ -205,7 +221,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 3,
             "description": "Test Entity Schema",
@@ -217,7 +234,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 2,
             "description": "Test Entity Schema",
@@ -229,7 +247,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }, {
             "id": 1,
             "description": "Test Entity Schema",
@@ -241,7 +260,8 @@
             "entityType": {
                 "id": 2
             },
-            "schema": "{}"
+            "schema": "{}",
+            "enabled": true
         }
     ]
 }
