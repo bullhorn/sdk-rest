@@ -20,7 +20,7 @@ public class PlacementRateCardLineGroup extends AbstractEntity implements QueryE
 
     private Integer id;
 
-    private OneToMany<EarnCodeGroup> earnCodeGroup;
+    private EarnCodeGroup earnCodeGroup;
 
     @Size(max = 100)
     private String externalID;
@@ -50,12 +50,12 @@ public class PlacementRateCardLineGroup extends AbstractEntity implements QueryE
     }
 
     @JsonProperty("earnCodeGroup")
-    public OneToMany<EarnCodeGroup> getEarnCodeGroup() {
+    public EarnCodeGroup getEarnCodeGroup() {
         return earnCodeGroup;
     }
 
     @JsonProperty("earnCodeGroup")
-    public void setEarnCodeGroup(OneToMany<EarnCodeGroup> earnCodeGroup) {
+    public void setEarnCodeGroup(EarnCodeGroup earnCodeGroup) {
         this.earnCodeGroup = earnCodeGroup;
     }
 
