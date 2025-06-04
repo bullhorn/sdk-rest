@@ -112,13 +112,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -382,6 +376,22 @@ public class StandardBullhornData implements BullhornData {
     @Override
     public <C extends CrudResponse, T extends DeleteEntity> C deleteEntity(Class<T> type, Integer id) {
         return this.handleDeleteEntity(type, id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public <T extends DeleteEntity> DeleteResponse deleteMultipleEntities(Class<T> type, List<Integer> ids) {
+        if (ids.isEmpty()) {
+            throw new RuntimeException("Empty ID collection");
+        }
+
+        if (ids.size() == 1) {
+            return this.deleteEntity(type, ids.get(0));
+        }
+
+        return this.handleMultipleDeletes(type, ids);
     }
 
     /**
@@ -1297,24 +1307,38 @@ public class StandardBullhornData implements BullhornData {
             BullhornEntityInfo.getTypesRestEntityName(type), id);
         String url = restUrlFactory.assembleEntityDeleteUrl();
 
-        CrudResponse response = null;
+        CrudResponse response;
 
         try {
-
-            if (isSoftDeleteEntity(type)) {
-                String jsonString = "{\"isDeleted\" : true}";
-
-                response = this.performPostRequest(url, jsonString, DeleteResponse.class, uriVariables);
-            }
-
-            if (isHardDeleteEntity(type)) {
-                response = this.performCustomRequest(url, null, DeleteResponse.class, uriVariables, HttpMethod.DELETE, null);
-            }
+            response = this.performCustomRequest(url, null, DeleteResponse.class, uriVariables, HttpMethod.DELETE, null);
         } catch (HttpStatusCodeException error) {
             response = restErrorHandler.handleHttpFourAndFiveHundredErrors(new DeleteResponse(), error, id);
         }
 
         return (C) response;
+    }
+
+    protected <T extends DeleteEntity> DeleteResponse handleMultipleDeletes(Class<T> type, List<Integer> ids) {
+        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForEntityDelete(
+            BullhornEntityInfo.getTypesRestEntityName(type), ids);
+        String url = restUrlFactory.assembleEntityDeleteUrl();
+
+        Map<?, ?> rawResponse = this.performCustomRequest(url, null, Map.class, uriVariables, HttpMethod.DELETE, null);
+        if (!rawResponse.containsKey("message")) {
+            throw new RuntimeException("Multi-delete rawResponse had no message property");
+        }
+
+        Object rawMessage = rawResponse.get("message");
+
+        if (!(rawMessage instanceof String)) {
+            throw new RuntimeException("Multi-delete rawResponse message was not a String: " + rawMessage);
+        }
+
+        DeleteResponse response = new DeleteResponse();
+        Message message = new Message();
+        message.setDetailMessage((String) rawMessage);
+        response.addOneMessage(message);
+        return response;
     }
 
     protected <T extends DeleteEntity> boolean isSoftDeleteEntity(Class<T> type) {

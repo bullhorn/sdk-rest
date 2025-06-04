@@ -214,6 +214,11 @@ public class MockDataHandler {
 		return (C) response;
 	}
 
+    <T extends DeleteEntity> DeleteResponse deleteMultipleEntities(Class<T> type, List<Integer> id) {
+        id.forEach {deleteEntity(type, id as Integer)}
+        return new DeleteResponse();
+    }
+
     public <C extends CrudResponse, T extends UpdateEntity> C updateEntity(T entity) {
         return updateEntity(entity, Collections.emptySet());
     }

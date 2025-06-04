@@ -27,6 +27,7 @@ import com.bullhornsdk.data.model.file.FileMeta;
 import com.bullhornsdk.data.model.parameter.*;
 import com.bullhornsdk.data.model.parameter.standard.ParamFactory;
 import com.bullhornsdk.data.model.response.crud.CrudResponse;
+import com.bullhornsdk.data.model.response.crud.DeleteResponse;
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper;
 import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper;
 import com.bullhornsdk.data.model.response.event.GetEventsResponse;
@@ -311,6 +312,14 @@ public interface BullhornData {
 	 */
 	public <C extends CrudResponse, T extends DeleteEntity> C deleteEntity(Class<T> type, Integer id);
 
+    /**
+     * Deletes multiple entities at a time
+     * @param type
+     * @param ids
+     * @return
+     * @param <T>
+     */
+    <T extends DeleteEntity> DeleteResponse deleteMultipleEntities(Class<T> type, List<Integer> ids);
 	/**
 	 *
 	 * Returns the MetaData for passed in type.
