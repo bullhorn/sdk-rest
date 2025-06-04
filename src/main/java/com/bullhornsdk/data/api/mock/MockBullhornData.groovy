@@ -18,6 +18,7 @@ import com.bullhornsdk.data.model.parameter.*
 import com.bullhornsdk.data.model.parameter.standard.StandardQueryParams
 import com.bullhornsdk.data.model.parameter.standard.StandardSearchParams
 import com.bullhornsdk.data.model.response.crud.CrudResponse
+import com.bullhornsdk.data.model.response.crud.DeleteResponse
 import com.bullhornsdk.data.model.response.edithistory.EditHistoryListWrapper
 import com.bullhornsdk.data.model.response.edithistory.FieldChangeListWrapper
 import com.bullhornsdk.data.model.response.event.GetEventsResponse
@@ -189,6 +190,11 @@ public class MockBullhornData implements BullhornData {
     @Override
     public <C extends CrudResponse, T extends DeleteEntity> C deleteEntity(Class<T> type, Integer id) {
         return mockDataHandler.deleteEntity(type, id);
+    }
+
+    @Override
+    <T extends DeleteEntity> DeleteResponse deleteMultipleEntities(Class<T> type, List<Integer> ids) {
+        return mockDataHandler.deleteMultipleEntities(type, ids);
     }
 
     @Override

@@ -174,6 +174,13 @@ public class RestUriVariablesFactory {
 		return uriVariables;
 	}
 
+    public Map<String, String> getUriVariablesForEntityDelete(BullhornEntityInfo entityInfo, List<Integer> ids) {
+        Map<String, String> uriVariables = new LinkedHashMap<String, String>();
+        addModifyingUriVariables(uriVariables, entityInfo);
+        uriVariables.put(ID, ids.stream().map(String::valueOf).collect(Collectors.joining(",")));
+        return uriVariables;
+    }
+
 	/**
 	 * Returns the uri variables needed for a "entity" POST request
 	 *
