@@ -671,27 +671,64 @@
             "hideFromSearch": false
         },
         {
-            "name": "deliveryMethod",
-            "type": "SCALAR",
-            "dataType": "String",
-            "maxLength": 100,
+            "name": "deliveryMethodLookup",
+            "type": "TO_ONE",
+            "dataType": "SpecializedOptionsLookup",
             "confidential": false,
             "label": "Delivery Method",
+            "optionsType": "DeliveryMethodLookup",
+            "optionsUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/options/DeliveryMethodLookup",
             "options": [
                 {
-                    "value": "Email",
-                    "label": "Email"
+                    "value": 1,
+                    "label": "Print",
+                    "readOnly": false
                 },
                 {
-                    "value": "Print",
-                    "label": "Print"
+                    "value": 2,
+                    "label": "Do Not Print",
+                    "readOnly": false
                 },
                 {
-                    "value": "Do not print",
-                    "label": "Do not print"
+                    "value": 3,
+                    "label": "Email",
+                    "readOnly": false
+                },
+                {
+                    "value": 4,
+                    "label": "Do not send",
+                    "readOnly": true
+                },
+                {
+                    "value": 5,
+                    "label": "Consolidated Email",
+                    "readOnly": true
                 }
             ],
-            "hideFromSearch": false
+            "hideFromSearch": false,
+            "associatedEntity": {
+                "entity": "DeliveryMethodLookup",
+                "entityMetaUrl": "https://rest99.bullhornstaffing.com/rest-services/ns3r4/meta/DeliveryMethodLookup?fields=*",
+                "label": "Delivery Method Lookup",
+                "dateLastModified": "1749735854506",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "label",
+                        "type": "SCALAR",
+                        "dataType": "String",
+                        "maxLength": 100,
+                        "confidential": false,
+                        "label": "Label",
+                        "hideFromSearch": false
+                    }
+                ]
+            }
         },
         {
             "name": "description",
