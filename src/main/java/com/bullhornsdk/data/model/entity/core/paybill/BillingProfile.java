@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.core.paybill;
 
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -62,7 +63,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     private DateTime dateLastModified;
 
     @JsonIgnore
-    private String deliveryMethod;
+    private SpecializedOptionsLookup deliveryMethod;
 
     @JsonIgnore
     private String description;
@@ -217,12 +218,12 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("deliveryMethod")
-    public String getDeliveryMethod() {
+    public SpecializedOptionsLookup getDeliveryMethodLookup() {
         return deliveryMethod;
     }
 
     @JsonIgnore
-    public void setDeliveryMethod(String deliveryMethod) {
+    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
     }
 
