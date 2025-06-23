@@ -63,7 +63,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     private DateTime dateLastModified;
 
     @JsonIgnore
-    private SpecializedOptionsLookup deliveryMethod;
+    private SpecializedOptionsLookup deliveryMethodLookup;
 
     @JsonIgnore
     private String description;
@@ -217,14 +217,14 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.dateLastModified = dateLastModified;
     }
 
-    @JsonProperty("deliveryMethod")
+    @JsonProperty("deliveryMethodLookup")
     public SpecializedOptionsLookup getDeliveryMethodLookup() {
-        return deliveryMethod;
+        return deliveryMethodLookup;
     }
 
     @JsonIgnore
     public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethod) {
-        this.deliveryMethod = deliveryMethod;
+        this.deliveryMethodLookup = deliveryMethod;
     }
 
     @JsonProperty("description")
@@ -375,7 +375,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
             Objects.equals(clientCorporation, that.clientCorporation) &&
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
-            Objects.equals(deliveryMethod, that.deliveryMethod) &&
+            Objects.equals(deliveryMethodLookup, that.deliveryMethodLookup) &&
             Objects.equals(description, that.description) &&
             Objects.equals(effectiveDate, that.effectiveDate) &&
             Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
@@ -392,7 +392,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, bccRecipients, billingAttention, billingClientCorporation, billingContact, billingCorporateUser, billingLocation, ccRecipients, clientCorporation, dateAdded, dateLastModified, deliveryMethod, description, effectiveDate, effectiveEndDate, externalID, invoiceStatementMessageTemplate, invoiceTerm, isDeleted, owner, toRecipients, status, title, versionID, versions);
+        return Objects.hash(super.hashCode(), id, bccRecipients, billingAttention, billingClientCorporation, billingContact, billingCorporateUser, billingLocation, ccRecipients, clientCorporation, dateAdded, dateLastModified, deliveryMethodLookup, description, effectiveDate, effectiveEndDate, externalID, invoiceStatementMessageTemplate, invoiceTerm, isDeleted, owner, toRecipients, status, title, versionID, versions);
     }
 
     @Override
@@ -409,7 +409,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
             ", clientCorporation=" + clientCorporation +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
-            ", deliveryMethod='" + deliveryMethod + '\'' +
+            ", deliveryMethod='" + deliveryMethodLookup + '\'' +
             ", description='" + description + '\'' +
             ", effectiveDate=" + effectiveDate +
             ", effectiveEndDate=" + effectiveEndDate +
