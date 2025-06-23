@@ -33,7 +33,7 @@ import java.util.Objects;
     "customText4", "customText5", "customText6", "customText7",
     "customText8", "customText9", "customTextBlock1", "customTextBlock2",
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
-    "dateAdded", "dateLastModified", "deliveryMethod", "description", "effectiveDate",
+    "dateAdded", "dateLastModified", "deliveryMethodLookup", "description", "effectiveDate",
     "effectiveEndDate", "externalID", "invoiceStatementMessageTemplate", "invoiceTerm",
     "isDeleted", "owner", "toRecipients", "status", "title", "versionID", "versions"})
 public class BillingProfile extends CustomFieldsB implements QueryEntity,
@@ -409,7 +409,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
             ", clientCorporation=" + clientCorporation +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
-            ", deliveryMethod='" + deliveryMethodLookup + '\'' +
+            ", deliveryMethodLookup='" + deliveryMethodLookup + '\'' +
             ", description='" + description + '\'' +
             ", effectiveDate=" + effectiveDate +
             ", effectiveEndDate=" + effectiveEndDate +
