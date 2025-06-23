@@ -2,6 +2,7 @@ package com.bullhornsdk.data.model.entity.core.paybill;
 
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -32,7 +33,7 @@ import java.util.Objects;
     "customText4", "customText5", "customText6", "customText7",
     "customText8", "customText9", "customTextBlock1", "customTextBlock2",
     "customTextBlock3", "customTextBlock4", "customTextBlock5",
-    "dateAdded", "dateLastModified", "deliveryMethod", "description", "effectiveDate",
+    "dateAdded", "dateLastModified", "deliveryMethodLookup", "description", "effectiveDate",
     "effectiveEndDate", "externalID", "invoiceStatementMessageTemplate", "invoiceTerm",
     "isDeleted", "owner", "toRecipients", "status", "title", "versionID", "versions"})
 public class BillingProfile extends CustomFieldsB implements QueryEntity,
@@ -62,7 +63,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     private DateTime dateLastModified;
 
     @JsonIgnore
-    private String deliveryMethod;
+    private SpecializedOptionsLookup deliveryMethodLookup;
 
     @JsonIgnore
     private String description;
@@ -216,14 +217,14 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.dateLastModified = dateLastModified;
     }
 
-    @JsonProperty("deliveryMethod")
-    public String getDeliveryMethod() {
-        return deliveryMethod;
+    @JsonProperty("deliveryMethodLookup")
+    public SpecializedOptionsLookup getDeliveryMethodLookup() {
+        return deliveryMethodLookup;
     }
 
     @JsonIgnore
-    public void setDeliveryMethod(String deliveryMethod) {
-        this.deliveryMethod = deliveryMethod;
+    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethod) {
+        this.deliveryMethodLookup = deliveryMethod;
     }
 
     @JsonProperty("description")
@@ -374,7 +375,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
             Objects.equals(clientCorporation, that.clientCorporation) &&
             Objects.equals(dateAdded, that.dateAdded) &&
             Objects.equals(dateLastModified, that.dateLastModified) &&
-            Objects.equals(deliveryMethod, that.deliveryMethod) &&
+            Objects.equals(deliveryMethodLookup, that.deliveryMethodLookup) &&
             Objects.equals(description, that.description) &&
             Objects.equals(effectiveDate, that.effectiveDate) &&
             Objects.equals(effectiveEndDate, that.effectiveEndDate) &&
@@ -391,7 +392,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, bccRecipients, billingAttention, billingClientCorporation, billingContact, billingCorporateUser, billingLocation, ccRecipients, clientCorporation, dateAdded, dateLastModified, deliveryMethod, description, effectiveDate, effectiveEndDate, externalID, invoiceStatementMessageTemplate, invoiceTerm, isDeleted, owner, toRecipients, status, title, versionID, versions);
+        return Objects.hash(super.hashCode(), id, bccRecipients, billingAttention, billingClientCorporation, billingContact, billingCorporateUser, billingLocation, ccRecipients, clientCorporation, dateAdded, dateLastModified, deliveryMethodLookup, description, effectiveDate, effectiveEndDate, externalID, invoiceStatementMessageTemplate, invoiceTerm, isDeleted, owner, toRecipients, status, title, versionID, versions);
     }
 
     @Override
@@ -408,7 +409,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
             ", clientCorporation=" + clientCorporation +
             ", dateAdded=" + dateAdded +
             ", dateLastModified=" + dateLastModified +
-            ", deliveryMethod='" + deliveryMethod + '\'' +
+            ", deliveryMethodLookup='" + deliveryMethodLookup + '\'' +
             ", description='" + description + '\'' +
             ", effectiveDate=" + effectiveDate +
             ", effectiveEndDate=" + effectiveEndDate +
