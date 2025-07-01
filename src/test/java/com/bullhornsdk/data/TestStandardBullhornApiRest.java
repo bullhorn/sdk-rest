@@ -104,6 +104,15 @@ public class TestStandardBullhornApiRest extends BaseTest {
     }
 
     @Test
+    public void testFindCandidateHistory() {
+
+        CandidateHistory entity = bullhornData.findEntity(CandidateHistory.class, testEntities.getCandidateHistoryId(), Sets.newHashSet("id"));
+
+        assertNotNull("CandidateHistory is null", entity);
+
+    }
+
+    @Test
     public void testFindCategory() {
 
         Category entity = bullhornData.findEntity(Category.class, testEntities.getCategoryId(), Sets.newHashSet("id"));

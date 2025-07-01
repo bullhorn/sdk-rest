@@ -29,6 +29,8 @@ public class TestEntities {
 
     private Integer candidateWorkHistoryId;
 
+    private Integer candidateHistoryId;
+
     private Integer categoryId;
 
     private Integer certificationId;
@@ -170,6 +172,8 @@ public class TestEntities {
         this.candidateReferenceId = 1;
 
         this.candidateWorkHistoryId = 1;
+
+        this.candidateHistoryId = 1;
 
         this.categoryId = 1;
 
@@ -352,6 +356,14 @@ public class TestEntities {
 
     public void setCandidateWorkHistoryId(Integer candidateWorkHistoryId) {
         this.candidateWorkHistoryId = candidateWorkHistoryId;
+    }
+
+    public Integer getCandidateHistoryId() {
+        return candidateHistoryId;
+    }
+
+    public void setCandidateHistoryId(Integer candidateHistoryId) {
+        this.candidateHistoryId = candidateHistoryId;
     }
 
     public Integer getCategoryId() {
