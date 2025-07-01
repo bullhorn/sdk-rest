@@ -13,7 +13,7 @@ import java.util.Objects;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({"id", "candidate", "candidateID", "comments", "dateAdded", "migrateGUID", "modifyingUser", "status"})
-public class CandidateHistory extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity {
+public class CandidateHistory extends AbstractEntity implements QueryEntity {
     private Integer id;
     private Candidate candidate;
     private Integer candidateID;
