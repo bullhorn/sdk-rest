@@ -223,8 +223,8 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonIgnore
-    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethod) {
-        this.deliveryMethodLookup = deliveryMethod;
+    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethodLookup) {
+        this.deliveryMethodLookup = deliveryMethodLookup;
     }
 
     @JsonProperty("description")
