@@ -62,7 +62,6 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     private DateTime dateLastModified;
 
-    @JsonIgnore
     private SpecializedOptionsLookup deliveryMethodLookup;
 
     @JsonIgnore
@@ -222,9 +221,9 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         return deliveryMethodLookup;
     }
 
-    @JsonIgnore
-    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethod) {
-        this.deliveryMethodLookup = deliveryMethod;
+    @JsonProperty
+    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethodLookup) {
+        this.deliveryMethodLookup = deliveryMethodLookup;
     }
 
     @JsonProperty("description")
