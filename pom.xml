@@ -28,6 +28,12 @@
             <organization>Bullhorn</organization>
             <organizationUrl>http://www.bullhorn.com/</organizationUrl>
         </developer>
+        <developer>
+            <name>Trevor Swartz</name>
+            <email>trevor.swartz@bullhorn.com</email>
+            <organization>Bullhorn</organization>
+            <organizationUrl>http://www.bullhorn.com/</organizationUrl>
+        </developer>
     </developers>
 
     <scm>
@@ -443,7 +449,7 @@
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.8.0</version>
+                <version>0.7.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>central</publishingServerId>
