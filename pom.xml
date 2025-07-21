@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>2.4.2</version>
+    <version>2.5.0</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
@@ -25,6 +25,12 @@
         <developer>
             <name>John Sullivan</name>
             <email>john.sullivan@bullhorn.com</email>
+            <organization>Bullhorn</organization>
+            <organizationUrl>http://www.bullhorn.com/</organizationUrl>
+        </developer>
+        <developer>
+            <name>Trevor Swartz</name>
+            <email>trevor.swartz@bullhorn.com</email>
             <organization>Bullhorn</organization>
             <organizationUrl>http://www.bullhorn.com/</organizationUrl>
         </developer>
@@ -446,8 +452,8 @@
                 <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <serverId>ossrh-staging-api</serverId>
+                    <nexusUrl>https://ossrh-staging-api.central.sonatype.com</nexusUrl>
                     <skipStagingRepositoryClose>false</skipStagingRepositoryClose>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
