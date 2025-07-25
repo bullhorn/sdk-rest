@@ -31,6 +31,7 @@ public enum SettingsFields {
     CORPORATION_ID("corporationId"),
     CORPORATION_NAME("corporationName"),
     CURRENCY_FORMAT("currencyFormat"),
+    CUSTOM_BURDEN_RATES("customBurdenRates"),
     DASHBOARDS_ENABLED("dashboardsEnabled"),
     DEFAULT_CALENDAR_REMINDER("defaultCalendarReminder"),
     DEFAULT_LIST_COLUMNS_CANDIDATE("defaultListColumnsCandidate"),
