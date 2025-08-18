@@ -181,6 +181,8 @@ public enum BullhornEntityInfo {
         CandidateReferenceListWrapper.class, null, null),
     CANDIDATE_WORK_HISTORY("CandidateWorkHistory", CandidateWorkHistory.class, CandidateWorkHistoryWrapper.class,
         CandidateWorkHistoryListWrapper.class, null, null),
+    CANDIDATE_HISTORY("CandidateHistory", CandidateHistory.class, CandidateHistoryWrapper.class,
+        CandidateHistoryListWrapper.class, null, null),
     CANDIDATE_AVAILABILITY("CandidateAvailability", CandidateAvailability.class, CandidateAvailabilityWrapper.class, CandidateAvailabilityListWrapper.class, null, null),
     CATEGORY("Category", Category.class, CategoryWrapper.class, CategoryListWrapper.class, null, null),
     CERTIFICATION("Certification", Certification.class, CertificationWrapper.class, CertificationListWrapper.class, null, null),
