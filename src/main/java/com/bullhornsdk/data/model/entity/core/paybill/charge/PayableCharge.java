@@ -22,6 +22,7 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -66,7 +67,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
     private AccountingPeriod minAccountingPeriod;
     private OneToMany<PayMaster> payMasters;
     private OneToMany<PayableTransaction> payableTransactions;
-    private String periodEndDate;
+    private Date periodEndDate;
     private Placement placement;
     private Boolean readyToBillOverride;
     private SpecializedOptionsLookup status;
@@ -289,12 +290,12 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
     }
 
     @JsonProperty("periodEndDate")
-    public String getPeriodEndDate() {
+    public Date getPeriodEndDate() {
         return periodEndDate;
     }
 
     @JsonProperty("periodEndDate")
-    public void setPeriodEndDate(String periodEndDate) {
+    public void setPeriodEndDate(Date periodEndDate) {
         this.periodEndDate = periodEndDate;
     }
 

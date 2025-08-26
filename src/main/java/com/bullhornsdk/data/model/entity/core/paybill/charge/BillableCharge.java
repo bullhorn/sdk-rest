@@ -19,6 +19,7 @@ import lombok.Setter;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -98,7 +99,7 @@ public class BillableCharge extends AbstractEntity implements QueryEntity, Updat
     @Setter
     private AccountingPeriod minAccountingPeriod;
 
-    private DateTime periodEndDate;
+    private Date periodEndDate;
 
     private Placement placement;
 
@@ -400,12 +401,12 @@ public class BillableCharge extends AbstractEntity implements QueryEntity, Updat
     }
 
     @JsonProperty("periodEndDate")
-    public DateTime getPeriodEndDate() {
+    public Date getPeriodEndDate() {
         return periodEndDate;
     }
 
     @JsonProperty("periodEndDate")
-    public void setPeriodEndDate(DateTime periodEndDate) {
+    public void setPeriodEndDate(Date periodEndDate) {
         this.periodEndDate = periodEndDate;
     }
 
