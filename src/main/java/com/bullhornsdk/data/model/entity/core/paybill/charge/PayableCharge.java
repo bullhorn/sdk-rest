@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.charge;
 
+import com.bullhornsdk.data.model.entity.core.paybill.AccountingPeriod;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.paybill.master.PayMaster;
 import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
@@ -15,6 +16,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import lombok.Getter;
+import lombok.Setter;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
@@ -30,8 +33,9 @@ import java.util.Objects;
 @JsonPropertyOrder({"id", "addedByUser", "canExport", "candidate", "clientCorporation",
     "currencyUnit", "dateAdded", "dateLastModified", "description", "employeeType", "generalLedgerSegment1",
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
-    "generalLedgerServiceCode", "jobOrder", "locationState", "payMasters", "payableTransactions", "periodEndDate", "placement",
-    "readyToBillOverride", "status", "subtotal", "transactionStatus", "transactionType"
+    "generalLedgerServiceCode", "jobOrder", "locationState", "maxAccountingPeriod", "minAccountingPeriod",
+    "payMasters", "payableTransactions", "periodEndDate", "placement", "readyToBillOverride", "status", "subtotal",
+    "transactionStatus", "transactionType"
 })
 public class PayableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
 
@@ -54,6 +58,12 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
     private GeneralLedgerServiceCode generalLedgerServiceCode;
     private JobOrder jobOrder;
     private String locationState;
+    @Getter
+    @Setter
+    private AccountingPeriod maxAccountingPeriod;
+    @Getter
+    @Setter
+    private AccountingPeriod minAccountingPeriod;
     private OneToMany<PayMaster> payMasters;
     private OneToMany<PayableTransaction> payableTransactions;
     private String periodEndDate;
@@ -370,6 +380,8 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
             ", generalLedgerServiceCode=" + generalLedgerServiceCode +
             ", jobOrder=" + jobOrder +
             ", locationState=" + locationState +
+            ", maxAccountingPeriod=" + maxAccountingPeriod +
+            ", minAccountingPeriod=" + minAccountingPeriod +
             ", payMasters=" + payMasters +
             ", payableTransactions=" + payableTransactions +
             ", periodEndDate='" + periodEndDate + '\'' +
@@ -405,6 +417,8 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
             Objects.equals(generalLedgerServiceCode, that.generalLedgerServiceCode) &&
             Objects.equals(jobOrder, that.jobOrder) &&
             Objects.equals(locationState, that.locationState) &&
+            Objects.equals(maxAccountingPeriod, that.maxAccountingPeriod) &&
+            Objects.equals(minAccountingPeriod, that.minAccountingPeriod) &&
             Objects.equals(payMasters, that.payMasters) &&
             Objects.equals(payableTransactions, that.payableTransactions) &&
             Objects.equals(periodEndDate, that.periodEndDate) &&
@@ -418,7 +432,7 @@ public class PayableCharge extends AbstractEntity implements QueryEntity, Update
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, locationState, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subtotal, transactionStatus, transactionType);
+        return Objects.hash(id, addedByUser, canExport, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, employeeType, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, jobOrder, locationState, maxAccountingPeriod, minAccountingPeriod, payMasters, payableTransactions, periodEndDate, placement, readyToBillOverride, status, subtotal, transactionStatus, transactionType);
     }
 
 }

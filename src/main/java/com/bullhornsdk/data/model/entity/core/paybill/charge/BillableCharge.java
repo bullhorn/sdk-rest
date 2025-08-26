@@ -1,5 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.paybill.charge;
 
+import com.bullhornsdk.data.model.entity.core.paybill.AccountingPeriod;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.generalledger.*;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
@@ -13,6 +14,8 @@ import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.file.BillableChargeFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
@@ -27,8 +30,9 @@ import java.util.Objects;
     "billingCorporateUser", "billingFrequency", "billingProfile", "billingSchedule", "candidate", "clientCorporation",
     "currencyUnit", "dateAdded", "dateLastModified", "description", "fileAttachments", "generalLedgerSegment1",
     "generalLedgerSegment2", "generalLedgerSegment3", "generalLedgerSegment4", "generalLedgerSegment5",
-    "generalLedgerServiceCode", "invoiceTerm", "isInvoiced", "invoicedTransactions", "jobOrder", "periodEndDate", "placement",
-    "readyToBillOverride", "status", "subtotal", "summaryTransactions", "transactionStatus", "transactionType", "unbillableTransactions"})
+    "generalLedgerServiceCode", "invoiceTerm", "isInvoiced", "invoicedTransactions", "jobOrder", "maxAccountingPeriod",
+    "minAccountingPeriod", "periodEndDate", "placement", "readyToBillOverride", "status", "subtotal", "summaryTransactions",
+    "transactionStatus", "transactionType", "unbillableTransactions"})
 public class BillableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
@@ -85,6 +89,14 @@ public class BillableCharge extends AbstractEntity implements QueryEntity, Updat
     private BillableChargeInvoicedTransaction invoicedTransactions;
 
     private JobOrder jobOrder;
+
+    @Getter
+    @Setter
+    private AccountingPeriod maxAccountingPeriod;
+
+    @Getter
+    @Setter
+    private AccountingPeriod minAccountingPeriod;
 
     private DateTime periodEndDate;
 
@@ -509,6 +521,8 @@ public class BillableCharge extends AbstractEntity implements QueryEntity, Updat
             Objects.equals(isInvoiced, that.isInvoiced) &&
             Objects.equals(invoicedTransactions, that.invoicedTransactions) &&
             Objects.equals(jobOrder, that.jobOrder) &&
+            Objects.equals(maxAccountingPeriod, that.maxAccountingPeriod) &&
+            Objects.equals(minAccountingPeriod, that.minAccountingPeriod) &&
             Objects.equals(periodEndDate, that.periodEndDate) &&
             Objects.equals(placement, that.placement) &&
             Objects.equals(readyToBillOverride, that.readyToBillOverride) &&
@@ -522,7 +536,7 @@ public class BillableCharge extends AbstractEntity implements QueryEntity, Updat
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, addedByUser, billMasters, billableTransactions, billingClientContact, billingClientCorporation, billingCorporateUser, billingFrequency, billingProfile, billingSchedule, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, invoiceTerm, isInvoiced, invoicedTransactions, jobOrder, periodEndDate, placement, readyToBillOverride, status, subTotal, summaryTransactions, transactionStatus, transactionType, unbillableTransactions);
+        return Objects.hash(id, addedByUser, billMasters, billableTransactions, billingClientContact, billingClientCorporation, billingCorporateUser, billingFrequency, billingProfile, billingSchedule, candidate, clientCorporation, currencyUnit, dateAdded, dateLastModified, description, fileAttachments, generalLedgerSegment1, generalLedgerSegment2, generalLedgerSegment3, generalLedgerSegment4, generalLedgerSegment5, generalLedgerServiceCode, invoiceTerm, isInvoiced, invoicedTransactions, jobOrder, maxAccountingPeriod, minAccountingPeriod, periodEndDate, placement, readyToBillOverride, status, subTotal, summaryTransactions, transactionStatus, transactionType, unbillableTransactions);
     }
 
     @Override
@@ -555,6 +569,8 @@ public class BillableCharge extends AbstractEntity implements QueryEntity, Updat
             ", isInvoiced=" + isInvoiced +
             ", invoicedTransactions=" + invoicedTransactions +
             ", jobOrder=" + jobOrder +
+            ", maxAccountingPeriod=" + maxAccountingPeriod +
+            ", minAccountingPeriod=" + minAccountingPeriod +
             ", periodEndDate=" + periodEndDate +
             ", placement=" + placement +
             ", readyToBillOverride=" + readyToBillOverride +
