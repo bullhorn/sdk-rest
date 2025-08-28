@@ -34,7 +34,7 @@ import java.util.Objects;
     "generalLedgerServiceCode", "invoiceTerm", "isInvoiced", "invoicedTransactions", "jobOrder", "maxAccountingPeriod",
     "minAccountingPeriod", "periodEndDate", "placement", "readyToBillOverride", "status", "subtotal", "summaryTransactions",
     "transactionStatus", "transactionType", "unbillableTransactions"})
-public class BillableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, DateLastModifiedEntity, AssociationEntity {
+public class BillableCharge extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
 

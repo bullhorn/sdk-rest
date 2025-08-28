@@ -38,7 +38,7 @@ import java.util.Objects;
     "payMasters", "payableTransactions", "periodEndDate", "placement", "readyToBillOverride", "status", "subtotal",
     "transactionStatus", "transactionType"
 })
-public class PayableCharge extends AbstractEntity implements QueryEntity, UpdateEntity, DateLastModifiedEntity, AssociationEntity, CreateEntity {
+public class PayableCharge extends AbstractEntity implements QueryEntity, DateLastModifiedEntity, AssociationEntity {
 
     private Integer id;
     private CorporateUser addedByUser;
