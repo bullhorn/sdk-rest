@@ -2202,7 +2202,8 @@ public class StandardBullhornData implements BullhornData {
         } else {
             log.debug("Rate limited on attempt {}. Waiting before retry", tryNumber);
             try {
-                Thread.sleep(1000);
+                // For 3 attempts: attempt 1, 1s delay, attempt 2, 2s delay, attempt 3
+                Thread.sleep(500L << tryNumber);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 throw new RestApiException("Interrupted during rate limit backoff", e);
