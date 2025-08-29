@@ -2085,35 +2085,55 @@ public class StandardBullhornData implements BullhornData {
      * *************************************************************************
      */
 
-    public <T> T performGetRequest(String url, Class<T> returnType, Map<String, String> uriVariables) {
+    @FunctionalInterface
+    private interface ApiCall<T> {
+        T execute() throws HttpStatusCodeException;
+    }
 
+    private <T> T performRequestWithRetry(
+        ApiCall<T> apiCall,
+        Class<T> returnType,
+        Map<String, String> uriVariables,
+        String operation) {
         int tryNumber = 1;
-        while(tryNumber <= API_RETRY) {
+        while (tryNumber <= API_RETRY) {
             try {
-                return restTemplate.getForObject(url, returnType, uriVariables);
+                return apiCall.execute();
             } catch (HttpStatusCodeException error) {
                 if (!isRetryable(error)) {
-                    break;
+                    throw new RestApiException(
+                        "Non-retryable error %s %s. Http status: %s. Response: %s".formatted(
+                            operation,
+                            returnType.getSimpleName(),
+                            error.getStatusCode(),
+                            error.getResponseBodyAsString()),
+                        error);
                 }
 
-                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
-                if (isTooManyRequestsError) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        log.error("Error in performGetRequest", e);
-                    }
+                if (error.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
+                    handleRateLimitWithBackoff(tryNumber);
                 } else {
-                    tryNumber++;
+                    handleRetryableError(uriVariables, tryNumber, error);
                 }
             } catch (Exception e) {
                 handleApiError(tryNumber, e);
-                tryNumber++;
             }
+            tryNumber++;
         }
 
-        throw new RestApiException("Error getting " + returnType.getSimpleName() + " url variables " + uriVariables.toString());
+        throw new RestApiException("Error %s %s after %d attempts. Variables: %s".formatted(
+            operation,
+            returnType.getSimpleName(),
+            API_RETRY,
+            uriVariables));
+    }
 
+    public <T> T performGetRequest(String url, Class<T> returnType, Map<String, String> uriVariables) {
+        return performRequestWithRetry(
+            () -> restTemplate.getForObject(url, returnType, uriVariables),
+            returnType,
+            uriVariables,
+            "getting");
     }
 
     /**
@@ -2126,32 +2146,11 @@ public class StandardBullhornData implements BullhornData {
      * @return
      */
     protected <T> T performPostRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables) {
-        int tryNumber = 1;
-        while(tryNumber <= API_RETRY) {
-            try {
-                return restTemplate.postForObject(url, requestPayLoad, returnType, uriVariables);
-            } catch (HttpStatusCodeException error) {
-                if (!isRetryable(error)) {
-                    break;
-                }
-
-                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
-                if (isTooManyRequestsError) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        log.error("Error in performPostRequest", e);
-                    }
-                } else {
-                    tryNumber++;
-                }
-            } catch (Exception e) {
-                handleApiError(tryNumber, e);
-                tryNumber++;
-            }
-        }
-
-        throw new RestApiException("Error posting " + returnType.getSimpleName() + " url variables " + uriVariables.toString());
+        return performRequestWithRetry(
+            () -> restTemplate.postForObject(url, requestPayLoad, returnType, uriVariables),
+            returnType,
+            uriVariables,
+            "posting");
     }
 
     /**
@@ -2167,69 +2166,48 @@ public class StandardBullhornData implements BullhornData {
      */
     protected <T> T performCustomRequest(String url, Object requestPayLoad, Class<T> returnType, Map<String, String> uriVariables,
                                          HttpMethod httpMethod, HttpHeaders headers) {
-
-        if (headers == null) {
-            headers = new HttpHeaders();
-        }
-
-        HttpEntity<Object> requestEntity = new HttpEntity<Object>(requestPayLoad, headers);
-
-        int tryNumber = 1;
-        while(tryNumber <= API_RETRY) {
-            try {
-                ResponseEntity<T> responseEntity = restTemplate.exchange(url, httpMethod, requestEntity, returnType, uriVariables);
-                return responseEntity.getBody();
-            } catch (HttpStatusCodeException error) {
-                if (!isRetryable(error)) {
-                    break;
-                }
-
-                boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
-                if (isTooManyRequestsError) {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        log.error("Error in performCustomRequest", e);
-                    }
-                } else {
-                    tryNumber++;
-                }
-            } catch (RuntimeException e) {
-                handleApiError(tryNumber, e);
-                tryNumber++;
-            }
-        }
-
-        throw new RestApiException("Error posting " + returnType.getSimpleName() + " url variables " + uriVariables.toString());
+        HttpHeaders effectiveHeaders = headers == null ? new HttpHeaders() : headers;
+        HttpEntity<Object> requestEntity = new HttpEntity<>(requestPayLoad, effectiveHeaders);
+        return performRequestWithRetry(
+            () -> restTemplate.exchange(url, httpMethod, requestEntity, returnType, uriVariables).getBody(),
+            returnType,
+            uriVariables,
+            httpMethod.toString());
     }
 
-    /**
-     * @param uriVariables
-     * @param tryNumber
-     * @param error
-     * @throws RestApiException if tryNumber >= API_RETRY.
-     */
-    protected boolean handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
-        boolean isTooManyRequestsError = error.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS;
-        if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-            resetBhRestToken(uriVariables);
-        }
-
-        log.debug(
-            () -> "HttpStatusCodeError making api call. Try number:%d out of %d. Http status code: %s. Response body: %s".formatted(
+    protected void handleRetryableError(
+        Map<String, String> uriVariables,
+        int tryNumber,
+        HttpStatusCodeException error) {
+        String message = "Retryable error on attempt %d/%d. Status: %s. Body: %s".formatted(
             tryNumber,
             API_RETRY,
             error.getStatusCode(),
-            error.getResponseBodyAsString()),
-            error);
-        if (tryNumber >= API_RETRY && !isTooManyRequestsError) {
-            throw new RestApiException(
-                "HttpStatusCodeError making api call with url variables %s. Http status code: %s. Response body: %s".formatted(
-                    uriVariables.toString(),
-                    error.getStatusCode().toString(),
-                    error.getResponseBodyAsString()));
+            error.getResponseBodyAsString());
+
+        if (tryNumber >= API_RETRY) {
+            log.error(message, error);
+        } else {
+            log.debug(message, error);
+
+            if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
+                resetBhRestToken(uriVariables);
+            }
         }
-        return isTooManyRequestsError;
+    }
+
+    protected void handleRateLimitWithBackoff(int tryNumber) {
+        if (tryNumber >= API_RETRY) {
+            log.error("Rate limited on final attempt {}", tryNumber);
+        } else {
+            log.debug("Rate limited on attempt {}. Waiting before retry", tryNumber);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                throw new RestApiException("Interrupted during rate limit backoff", e);
+            }
+        }
     }
 
     protected boolean isRetryable(HttpStatusCodeException error) {
