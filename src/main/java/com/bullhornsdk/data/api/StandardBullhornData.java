@@ -2092,6 +2092,10 @@ public class StandardBullhornData implements BullhornData {
             try {
                 return restTemplate.getForObject(url, returnType, uriVariables);
             } catch (HttpStatusCodeException error) {
+                if (!isRetryable(error)) {
+                    break;
+                }
+
                 boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
                 if (isTooManyRequestsError) {
                     try {
@@ -2127,6 +2131,10 @@ public class StandardBullhornData implements BullhornData {
             try {
                 return restTemplate.postForObject(url, requestPayLoad, returnType, uriVariables);
             } catch (HttpStatusCodeException error) {
+                if (!isRetryable(error)) {
+                    break;
+                }
+
                 boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
                 if (isTooManyRequestsError) {
                     try {
@@ -2172,6 +2180,10 @@ public class StandardBullhornData implements BullhornData {
                 ResponseEntity<T> responseEntity = restTemplate.exchange(url, httpMethod, requestEntity, returnType, uriVariables);
                 return responseEntity.getBody();
             } catch (HttpStatusCodeException error) {
+                if (!isRetryable(error)) {
+                    break;
+                }
+
                 boolean isTooManyRequestsError = handleHttpStatusCodeError(uriVariables, tryNumber, error);
                 if (isTooManyRequestsError) {
                     try {
@@ -2198,26 +2210,53 @@ public class StandardBullhornData implements BullhornData {
      * @throws RestApiException if tryNumber >= API_RETRY.
      */
     protected boolean handleHttpStatusCodeError(Map<String, String> uriVariables, int tryNumber, HttpStatusCodeException error) {
-        boolean isTooManyRequestsError = false;
+        boolean isTooManyRequestsError = error.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS;
         if (error.getStatusCode() == HttpStatus.UNAUTHORIZED) {
             resetBhRestToken(uriVariables);
-        } else if (error.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
-            isTooManyRequestsError = true;
         }
-        String errorMessage = "HttpStatusCodeError making api call. Try number:" + tryNumber + " out of " + API_RETRY + ". Http status code: "
-            + error.getStatusCode() + ". Response body: " + error.getResponseBodyAsString();
-        log.error(errorMessage, error);
+
+        log.debug(
+            () -> "HttpStatusCodeError making api call. Try number:%d out of %d. Http status code: %s. Response body: %s".formatted(
+            tryNumber,
+            API_RETRY,
+            error.getStatusCode(),
+            error.getResponseBodyAsString()),
+            error);
         if (tryNumber >= API_RETRY && !isTooManyRequestsError) {
-            throw new RestApiException("HttpStatusCodeError making api call with url variables " + uriVariables.toString()
-                + ". Http status code: " + error.getStatusCode().toString() + ". Response body: " + error == null ? ""
-                : error.getResponseBodyAsString());
+            throw new RestApiException(
+                "HttpStatusCodeError making api call with url variables %s. Http status code: %s. Response body: %s".formatted(
+                    uriVariables.toString(),
+                    error.getStatusCode().toString(),
+                    error.getResponseBodyAsString()));
         }
         return isTooManyRequestsError;
     }
 
+    protected boolean isRetryable(HttpStatusCodeException error) {
+        HttpStatus statusCode = error.getStatusCode();
+        if (statusCode.is5xxServerError()) {
+            return true;
+        }
+
+        return switch (statusCode) {
+            case UNAUTHORIZED,
+                 PROXY_AUTHENTICATION_REQUIRED,
+                 REQUEST_TIMEOUT,
+                 TOO_MANY_REQUESTS,
+                 CONFLICT,
+                 LOCKED,
+                 TOO_EARLY -> true;
+            default -> false;
+        };
+    }
+
     protected void handleApiError(int tryNumber, Exception e) {
-        String message = "Error making api call. Try number:" + tryNumber + " out of " + API_RETRY;
-        log.error(message, e);
+        String message = "Error making api call. Try number:%d out of %d".formatted(tryNumber, API_RETRY);
+        if (tryNumber >= API_RETRY) {
+            log.error(message, e);
+        } else {
+            log.debug(message, e);
+        }
     }
 
     protected void resetBhRestToken(Map<String, String> uriVariables) {
