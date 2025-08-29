@@ -4,6 +4,10 @@
     "data": [
         {
             "id": 1,
+            "accountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -49,8 +53,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 2,
+            "accountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -96,8 +104,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 3,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -143,8 +155,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 4,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -190,8 +206,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 5,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -237,8 +257,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 6,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -284,8 +308,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 7,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -331,8 +359,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 8,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -378,8 +410,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 9,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -425,8 +461,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 10,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -472,8 +512,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 11,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -519,8 +563,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 12,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -565,10 +613,13 @@
                 "label": "Hours"
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
-
         },
-		{
+        {
             "id": 13,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -614,8 +665,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 14,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -661,8 +716,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 15,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -708,8 +767,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 16,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -755,8 +818,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 17,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -802,8 +869,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 18,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -849,8 +920,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 19,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {
@@ -896,8 +971,12 @@
             },
             "unbilledRevenueGeneralLedgerExportStatusLookup": null
         },
-		{
+        {
             "id": 20,
+            "accountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
             "adjustmentSequenceNumber": 0,
             "amount": 15.0000,
             "billMaster": {

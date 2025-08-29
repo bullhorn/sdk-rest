@@ -53,6 +53,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -74,7 +82,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 1,
             "addedByUser": {
                 "id": 2034545,
@@ -125,6 +133,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -146,7 +162,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 3,
             "addedByUser": {
                 "id": 2034545,
@@ -197,6 +213,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -218,7 +242,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 4,
             "addedByUser": {
                 "id": 2034545,
@@ -269,6 +293,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -290,7 +322,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 5,
             "addedByUser": {
                 "id": 2034545,
@@ -341,6 +373,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -362,7 +402,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 6,
             "addedByUser": {
                 "id": 2034545,
@@ -413,6 +453,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -434,7 +482,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 7,
             "addedByUser": {
                 "id": 2034545,
@@ -485,6 +533,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -506,7 +562,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 8,
             "addedByUser": {
                 "id": 2034545,
@@ -557,6 +613,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -578,7 +642,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 9,
             "addedByUser": {
                 "id": 2034545,
@@ -629,6 +693,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -650,7 +722,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 10,
             "addedByUser": {
                 "id": 2034545,
@@ -701,6 +773,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -722,7 +802,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 11,
             "addedByUser": {
                 "id": 2034545,
@@ -773,6 +853,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -794,7 +882,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 12,
             "addedByUser": {
                 "id": 2034545,
@@ -845,6 +933,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -866,7 +962,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 13,
             "addedByUser": {
                 "id": 2034545,
@@ -917,6 +1013,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -938,7 +1042,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 14,
             "addedByUser": {
                 "id": 2034545,
@@ -989,6 +1093,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -1010,7 +1122,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 15,
             "addedByUser": {
                 "id": 2034545,
@@ -1061,6 +1173,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -1082,7 +1202,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 16,
             "addedByUser": {
                 "id": 2034545,
@@ -1133,6 +1253,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -1154,7 +1282,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 17,
             "addedByUser": {
                 "id": 2034545,
@@ -1205,6 +1333,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -1226,7 +1362,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 18,
             "addedByUser": {
                 "id": 2034545,
@@ -1277,6 +1413,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -1298,7 +1442,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 19,
             "addedByUser": {
                 "id": 2034545,
@@ -1349,6 +1493,14 @@
                 "id": 97147,
                 "title": "test"
             },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
+            },
             "periodEndDate": "2020-04-23",
             "placement": {
                 "id": 2336015
@@ -1370,7 +1522,7 @@
                 "data": []
             }
         },
-		{
+        {
             "id": 20,
             "addedByUser": {
                 "id": 2034545,
@@ -1420,6 +1572,14 @@
             "jobOrder": {
                 "id": 97147,
                 "title": "test"
+            },
+            "maxAccountingPeriod": {
+                "id": 2,
+                "accountingPeriodDate": "2020-04-24"
+            },
+            "minAccountingPeriod": {
+                "id": 1,
+                "accountingPeriodDate": "2020-04-23"
             },
             "periodEndDate": "2020-04-23",
             "placement": {

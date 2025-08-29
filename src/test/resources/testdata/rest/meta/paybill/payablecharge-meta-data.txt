@@ -518,6 +518,102 @@
             }
         },
         {
+            "name": "maxAccountingPeriod",
+            "type": "TO_ONE",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Max Accounting Period",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "optionsType": "AccountingPeriod",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/options/AccountingPeriod",
+            "hideFromSearch": false,
+            "sortOrder": 400,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "AccountingPeriod",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/AccountingPeriod?fields=*",
+                "label": "Accounting Period",
+                "dateLastModified": "1756208620227",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "accountingPeriodDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Accounting Period Date",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
+            "name": "minAccountingPeriod",
+            "type": "TO_ONE",
+            "dataSpecialization": "SYSTEM",
+            "confidential": false,
+            "optional": true,
+            "label": "Min Accounting Period",
+            "required": false,
+            "readOnly": true,
+            "multiValue": false,
+            "optionsType": "AccountingPeriod",
+            "optionsUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/options/AccountingPeriod",
+            "hideFromSearch": false,
+            "sortOrder": 390,
+            "hint": "",
+            "description": "",
+            "systemRequired": false,
+            "shouldAddCustomEntityLabel": false,
+            "associatedEntity": {
+                "entity": "AccountingPeriod",
+                "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/12h5dd/meta/AccountingPeriod?fields=*",
+                "label": "Accounting Period",
+                "dateLastModified": "1756208620227",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "ID",
+                        "dataType": "Integer",
+                        "optional": false,
+                        "label": "ID"
+                    },
+                    {
+                        "name": "accountingPeriodDate",
+                        "type": "SCALAR",
+                        "dataType": "Date",
+                        "confidential": false,
+                        "optional": false,
+                        "label": "Accounting Period Date",
+                        "required": false,
+                        "readOnly": false,
+                        "multiValue": false,
+                        "hideFromSearch": false,
+                        "systemRequired": false,
+                        "shouldAddCustomEntityLabel": false
+                    }
+                ]
+            }
+        },
+        {
             "name": "payMasters",
             "type": "TO_MANY",
             "confidential": false,
