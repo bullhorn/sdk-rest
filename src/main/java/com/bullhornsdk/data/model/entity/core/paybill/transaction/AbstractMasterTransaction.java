@@ -1,11 +1,14 @@
 package com.bullhornsdk.data.model.entity.core.paybill.transaction;
 
+import com.bullhornsdk.data.model.entity.core.paybill.AccountingPeriod;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.paybill.unit.UnitOfMeasure;
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
@@ -18,6 +21,10 @@ import java.util.Objects;
 public class AbstractMasterTransaction extends AbstractEntity implements DateLastModifiedEntity {
 
     private Integer id;
+
+    @Getter
+    @Setter
+    private AccountingPeriod accountingPeriod;
 
     private Integer adjustmentSequenceNumber;
 
@@ -203,6 +210,7 @@ public class AbstractMasterTransaction extends AbstractEntity implements DateLas
     public String toString() {
         return "AbstractMasterTransaction{" +
             "id=" + id +
+            ", accountingPeriod=" + accountingPeriod +
             ", adjustmentSequenceNumber=" + adjustmentSequenceNumber +
             ", amount=" + amount +
             ", comment='" + comment + '\'' +
@@ -225,6 +233,7 @@ public class AbstractMasterTransaction extends AbstractEntity implements DateLas
         if (o == null || getClass() != o.getClass()) return false;
         AbstractMasterTransaction that = (AbstractMasterTransaction) o;
         return Objects.equals(id, that.id) &&
+            Objects.equals(accountingPeriod, that.accountingPeriod) &&
             Objects.equals(adjustmentSequenceNumber, that.adjustmentSequenceNumber) &&
             Objects.equals(amount, that.amount) &&
             Objects.equals(comment, that.comment) &&
@@ -242,6 +251,6 @@ public class AbstractMasterTransaction extends AbstractEntity implements DateLas
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, adjustmentSequenceNumber, amount, comment, currencyUnit, dateAdded, dateLastModified, quantity, rate, recordingDate, transactionOrigin, transactionStatus, transactionType, unitOfMeasure);
+        return Objects.hash(id, accountingPeriod, adjustmentSequenceNumber, amount, comment, currencyUnit, dateAdded, dateLastModified, quantity, rate, recordingDate, transactionOrigin, transactionStatus, transactionType, unitOfMeasure);
     }
 }

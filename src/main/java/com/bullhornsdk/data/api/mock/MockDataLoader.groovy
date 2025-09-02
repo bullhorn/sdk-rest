@@ -34,6 +34,7 @@ import com.bullhornsdk.data.model.entity.core.eds.SourceSystemTypeLookup
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.FederalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.LocalTaxForm
 import com.bullhornsdk.data.model.entity.core.onboarding365.forms.StateTaxForm
+import com.bullhornsdk.data.model.entity.core.paybill.AccountingPeriod
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile
 import com.bullhornsdk.data.model.entity.core.paybill.CanvasReport
 import com.bullhornsdk.data.model.entity.core.paybill.JobCode
@@ -548,6 +549,7 @@ public class MockDataLoader {
         entityFiles.put(SurchargeRate.class, "paybill/rate/surchargerate-data.txt");
 
         // TODO add v2 of PAY and Bill Entities data
+        entityFiles.put(AccountingPeriod.class, "paybill/accountingperiod-data.json");
         entityFiles.put(BillableCharge.class, "paybill/billablecharge-data.txt");
         entityFiles.put(PayableCharge.class, "paybill/payablecharge-data.txt");
         entityFiles.put(GeneralLedgerSegment.class, "paybill/generalledgersegment-data.txt");
@@ -824,6 +826,7 @@ public class MockDataLoader {
 
 
         // TODO v2 meta entities
+        entityMetaFiles.put(AccountingPeriod.class, "meta/paybill/accountingperiod-meta-data.json");
         entityMetaFiles.put(BillableCharge.class, "meta/paybill/billablecharge-meta-data.txt");
         entityMetaFiles.put(PayableCharge.class, "meta/paybill/payablecharge-meta-data.txt");
         entityMetaFiles.put(GeneralLedgerSegment.class, "meta/paybill/generalledgersegment-meta-data.txt");
