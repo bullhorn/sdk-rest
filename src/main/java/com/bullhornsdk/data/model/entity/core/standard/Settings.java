@@ -37,6 +37,7 @@ public class Settings{
     private Integer corporationId;
     private String corporationName;
     private String currencyFormat;
+    private String customBurdenRates;
     private boolean dashboardsEnabled;
     private Integer defaultCalendarReminder;
     private List<String> defaultListColumnsCandidate;
@@ -384,6 +385,15 @@ public class Settings{
     @JsonProperty("currencyFormat")
     public void setCurrencyFormat(String currencyFormat){
         this.currencyFormat = currencyFormat;
+    }
+
+    public String getCustomBurdenRates(){
+        return customBurdenRates;
+    }
+
+    @JsonProperty("customBurdenRates")
+    public void setCustomBurdenRates(String customBurdenRates){
+        this.customBurdenRates = customBurdenRates;
     }
 
     public boolean getDashboardsEnabled(){
