@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>1.7.1</version>
+    <version>1.7.2</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
@@ -285,16 +285,13 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.4.1</version>
                 <configuration>
-                    <sourcepath>${project.build.directory}/generated-sources/delombok</sourcepath>
                     <source>8</source>
-                    <detectJavaApiLink>false</detectJavaApiLink>
-                    <additionalJOptions>
-                        <additionalJOption>-Xdoclint:none</additionalJOption>
-                    </additionalJOptions>
+                    <doclint>none</doclint>
                 </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
+                        <inherited>false</inherited>
                         <goals>
                             <goal>jar</goal>
                         </goals>
