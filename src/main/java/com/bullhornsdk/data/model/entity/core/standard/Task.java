@@ -7,6 +7,7 @@ import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.bullhornsdk.data.validation.BullhornUUID;
@@ -21,586 +22,692 @@ import javax.validation.constraints.Size;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonRootName(value = "data")
 @JsonPropertyOrder({ "id", "candidate", "childTasks", "clientContact", "dateAdded", "dateBegin", "dateCompleted", "dateEnd",
-		"dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission", "lead",
-		"migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "priority", "placement", "recurrenceDayBits", "recurrenceFrequency",
-		"recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type" })
+    "dateLastModified", "description", "isCompleted", "isDeleted", "isPrivate", "isSystemTask", "jobOrder", "jobSubmission", "lead",
+    "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentTask", "priority", "placement", "recurrenceDayBits", "recurrenceFrequency",
+    "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type",
+    "assignees", "childTaskOwners", "clientContactReferences", "communicationMethod", "isTask", "location", "secondaryOwners"})
 public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity,
-		DateLastModifiedEntity, EditHistoryEntity {
+    DateLastModifiedEntity, EditHistoryEntity {
 
-	private Integer id;
+    private Integer id;
 
-	private Candidate candidate;
+    private Candidate candidate;
 
-	private OneToManyLinkedId childTasks;
+    private OneToManyLinkedId childTasks;
 
-	private ClientContact clientContact;
+    private ClientContact clientContact;
 
-	private DateTime dateAdded;
+    private DateTime dateAdded;
 
-	private DateTime dateBegin;
+    private DateTime dateBegin;
 
-	private DateTime dateCompleted;
+    private DateTime dateCompleted;
 
-	private DateTime dateEnd;
+    private DateTime dateEnd;
 
-	private DateTime dateLastModified;
+    private DateTime dateLastModified;
 
-	private String description;
+    private String description;
 
-	private Boolean isCompleted;
+    private Boolean isCompleted;
 
-	private Boolean isDeleted;
+    private Boolean isDeleted;
 
-	private Boolean isPrivate;
+    private Boolean isPrivate;
 
-	private Boolean isSystemTask;
+    private Boolean isSystemTask;
 
-	private JobOrder jobOrder;
+    private JobOrder jobOrder;
 
-	private JobSubmission jobSubmission;
+    private JobSubmission jobSubmission;
 
-	private Lead lead;
+    private Lead lead;
 
-	private String migrateGUID;
+    private String migrateGUID;
 
-	private Integer notificationMinutes;
+    private Integer notificationMinutes;
 
-	private Opportunity opportunity;
+    private Opportunity opportunity;
 
-	private CorporateUser owner;
+    private CorporateUser owner;
 
-	private Task parentTask;
+    private Task parentTask;
 
-	private Integer priority;
+    private Integer priority;
 
-	private Placement placement;
+    private Placement placement;
 
-	private Integer recurrenceDayBits;
+    private Integer recurrenceDayBits;
 
-	private Integer recurrenceFrequency;
+    private Integer recurrenceFrequency;
 
-	private Integer recurrenceMax;
+    private Integer recurrenceMax;
 
-	private Integer recurrenceMonthBits;
+    private Integer recurrenceMonthBits;
 
-	@Size(max = 10)
-	private String recurrenceStyle;
+    @Size(max = 10)
+    private String recurrenceStyle;
 
-	@Size(max = 1)
-	private String recurrenceType;
+    @Size(max = 1)
+    private String recurrenceType;
 
-	@Size(max = 100)
-	private String subject;
+    @Size(max = 100)
+    private String subject;
 
-	@BullhornUUID
-	@Size(max = 35)
-	private String taskUUID;
+    @BullhornUUID
+    @Size(max = 35)
+    private String taskUUID;
 
-	@Size(max = 50)
-	private String timeZoneID;
+    @Size(max = 50)
+    private String timeZoneID;
 
-	@Size(max = 30)
-	private String type;
+    @Size(max = 30)
+    private String type;
 
-	public Task() {
-		super();
-	}
+    private OneToMany<CorporateUser> assignees;
 
-	/**
-	 * Returns the entity with the required fields for an insert set.
-	 *
-	 * @return
-	 */
-	public Task instantiateForInsert() {
-		Task entity = new Task();
-		entity.setIsCompleted(Boolean.FALSE);
-		entity.setIsDeleted(Boolean.FALSE);
-		entity.setIsPrivate(Boolean.FALSE);
-		entity.setDateBegin(new DateTime());
-		entity.setDateEnd(new DateTime());
-		entity.setNotificationMinutes(0);
-		entity.setDescription("Test Task created by REST");
-		entity.setSubject("Task Created by REST");
-		entity.setType("Unknown");
-		return entity;
-	}
+    private OneToMany<CorporateUser> childTaskOwners;
 
-	@Override
-	@JsonProperty("id")
-	public Integer getId() {
-		return id;
-	}
+    private OneToMany<ClientContact> clientContactReferences;
 
-    @ReadOnly
-	@Override
-	@JsonProperty("id")
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private String communicationMethod;
 
-	@JsonProperty("candidate")
-	public Candidate getCandidate() {
-		return candidate;
-	}
+    private Integer isTask;
 
-	@JsonProperty("candidate")
-	public void setCandidate(Candidate candidate) {
-		this.candidate = candidate;
-	}
+    private String location;
 
-	@JsonProperty("childTasks")
-	public OneToManyLinkedId getChildTasks() {
-		return childTasks;
-	}
+    private OneToMany<CorporateUser> secondaryOwners;
+
+    public Task() {
+        super();
+    }
+
+    /**
+     * Returns the entity with the required fields for an insert set.
+     *
+     * @return
+     */
+    public Task instantiateForInsert() {
+        Task entity = new Task();
+        entity.setIsCompleted(Boolean.FALSE);
+        entity.setIsDeleted(Boolean.FALSE);
+        entity.setIsPrivate(Boolean.FALSE);
+        entity.setDateBegin(new DateTime());
+        entity.setDateEnd(new DateTime());
+        entity.setNotificationMinutes(0);
+        entity.setDescription("Test Task created by REST");
+        entity.setSubject("Task Created by REST");
+        entity.setType("Unknown");
+        return entity;
+    }
+
+    @Override
+    @JsonProperty("id")
+    public Integer getId() {
+        return id;
+    }
 
     @ReadOnly
-	@JsonProperty("childTasks")
-	public void setChildTasks(OneToManyLinkedId childTasks) {
-		this.childTasks = childTasks;
-	}
+    @Override
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@JsonProperty("clientContact")
-	public ClientContact getClientContact() {
-		return clientContact;
-	}
+    @JsonProperty("candidate")
+    public Candidate getCandidate() {
+        return candidate;
+    }
 
-	@JsonProperty("clientContact")
-	public void setClientContact(ClientContact clientContact) {
-		this.clientContact = clientContact;
-	}
+    @JsonProperty("candidate")
+    public void setCandidate(Candidate candidate) {
+        this.candidate = candidate;
+    }
 
-	@JsonProperty("dateAdded")
-	public DateTime getDateAdded() {
-		return dateAdded;
-	}
-
-	@JsonProperty("dateAdded")
-	public void setDateAdded(DateTime dateAdded) {
-		this.dateAdded = dateAdded;
-	}
-
-	@JsonProperty("dateBegin")
-	public DateTime getDateBegin() {
-		return dateBegin;
-	}
-
-	@JsonProperty("dateBegin")
-	public void setDateBegin(DateTime dateBegin) {
-		this.dateBegin = dateBegin;
-	}
-
-	@JsonProperty("dateCompleted")
-	public DateTime getDateCompleted() {
-		return dateCompleted;
-	}
-
-	@JsonProperty("dateCompleted")
-	public void setDateCompleted(DateTime dateCompleted) {
-		this.dateCompleted = dateCompleted;
-	}
-
-	@JsonProperty("dateEnd")
-	public DateTime getDateEnd() {
-		return dateEnd;
-	}
-
-	@JsonProperty("dateEnd")
-	public void setDateEnd(DateTime dateEnd) {
-		this.dateEnd = dateEnd;
-	}
-
-	@JsonProperty("dateLastModified")
-	public DateTime getDateLastModified() {
-		return dateLastModified;
-	}
+    @JsonProperty("childTasks")
+    public OneToManyLinkedId getChildTasks() {
+        return childTasks;
+    }
 
     @ReadOnly
-	@JsonProperty("dateLastModified")
-	public void setDateLastModified(DateTime dateLastModified) {
-		this.dateLastModified = dateLastModified;
-	}
+    @JsonProperty("childTasks")
+    public void setChildTasks(OneToManyLinkedId childTasks) {
+        this.childTasks = childTasks;
+    }
 
-	@JsonProperty("description")
-	public String getDescription() {
-		return description;
-	}
+    @JsonProperty("clientContact")
+    public ClientContact getClientContact() {
+        return clientContact;
+    }
 
-	@JsonProperty("description")
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    @JsonProperty("clientContact")
+    public void setClientContact(ClientContact clientContact) {
+        this.clientContact = clientContact;
+    }
 
-	@JsonProperty("isCompleted")
-	public Boolean getIsCompleted() {
-		return isCompleted;
-	}
+    @JsonProperty("dateAdded")
+    public DateTime getDateAdded() {
+        return dateAdded;
+    }
 
-	@JsonProperty("isCompleted")
-	public void setIsCompleted(Boolean isCompleted) {
-		this.isCompleted = isCompleted;
-	}
+    @JsonProperty("dateAdded")
+    public void setDateAdded(DateTime dateAdded) {
+        this.dateAdded = dateAdded;
+    }
 
-	@JsonProperty("isDeleted")
-	public Boolean getIsDeleted() {
-		return isDeleted;
-	}
+    @JsonProperty("dateBegin")
+    public DateTime getDateBegin() {
+        return dateBegin;
+    }
 
-	@JsonProperty("isDeleted")
-	public void setIsDeleted(Boolean isDeleted) {
-		this.isDeleted = isDeleted;
-	}
+    @JsonProperty("dateBegin")
+    public void setDateBegin(DateTime dateBegin) {
+        this.dateBegin = dateBegin;
+    }
 
-	@JsonProperty("isPrivate")
-	public Boolean getIsPrivate() {
-		return isPrivate;
-	}
+    @JsonProperty("dateCompleted")
+    public DateTime getDateCompleted() {
+        return dateCompleted;
+    }
 
-	@JsonProperty("isPrivate")
-	public void setIsPrivate(Boolean isPrivate) {
-		this.isPrivate = isPrivate;
-	}
+    @JsonProperty("dateCompleted")
+    public void setDateCompleted(DateTime dateCompleted) {
+        this.dateCompleted = dateCompleted;
+    }
 
-	@JsonProperty("isSystemTask")
-	public Boolean getIsSystemTask() {
-		return isSystemTask;
-	}
+    @JsonProperty("dateEnd")
+    public DateTime getDateEnd() {
+        return dateEnd;
+    }
 
-	@JsonProperty("isSystemTask")
-	public void setIsSystemTask(Boolean isSystemTask) {
-		this.isSystemTask = isSystemTask;
-	}
+    @JsonProperty("dateEnd")
+    public void setDateEnd(DateTime dateEnd) {
+        this.dateEnd = dateEnd;
+    }
 
-	@JsonProperty("jobOrder")
-	public JobOrder getJobOrder() {
-		return jobOrder;
-	}
+    @JsonProperty("dateLastModified")
+    public DateTime getDateLastModified() {
+        return dateLastModified;
+    }
 
-	@JsonProperty("jobOrder")
-	public void setJobOrder(JobOrder jobOrder) {
-		this.jobOrder = jobOrder;
-	}
+    @ReadOnly
+    @JsonProperty("dateLastModified")
+    public void setDateLastModified(DateTime dateLastModified) {
+        this.dateLastModified = dateLastModified;
+    }
 
-	@JsonProperty("jobSubmission")
-	public JobSubmission getJobSubmission() {
-		return jobSubmission;
-	}
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
+    }
 
-	@JsonProperty("jobSubmission")
-	public void setJobSubmission(JobSubmission jobSubmission) {
-		this.jobSubmission = jobSubmission;
-	}
+    @JsonProperty("description")
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	@JsonProperty("lead")
-	public Lead getLead() {
-		return lead;
-	}
+    @JsonProperty("isCompleted")
+    public Boolean getIsCompleted() {
+        return isCompleted;
+    }
 
-	@JsonProperty("lead")
-	public void setLead(Lead lead) {
-		this.lead = lead;
-	}
+    @JsonProperty("isCompleted")
+    public void setIsCompleted(Boolean isCompleted) {
+        this.isCompleted = isCompleted;
+    }
 
-	@JsonProperty("migrateGUID")
-	public String getMigrateGUID() {
-		return migrateGUID;
-	}
+    @JsonProperty("isDeleted")
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
 
-	@JsonProperty("migrateGUID")
-	public void setMigrateGUID(String migrateGUID) {
-		this.migrateGUID = migrateGUID;
-	}
+    @JsonProperty("isDeleted")
+    public void setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
 
-	@JsonProperty("notificationMinutes")
-	public Integer getNotificationMinutes() {
-		return notificationMinutes;
-	}
+    @JsonProperty("isPrivate")
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
 
-	@JsonProperty("notificationMinutes")
-	public void setNotificationMinutes(Integer notificationMinutes) {
-		this.notificationMinutes = notificationMinutes;
-	}
+    @JsonProperty("isPrivate")
+    public void setIsPrivate(Boolean isPrivate) {
+        this.isPrivate = isPrivate;
+    }
 
-	@JsonProperty("opportunity")
-	public Opportunity getOpportunity() {
-		return opportunity;
-	}
+    @JsonProperty("isSystemTask")
+    public Boolean getIsSystemTask() {
+        return isSystemTask;
+    }
 
-	@JsonProperty("opportunity")
-	public void setOpportunity(Opportunity opportunity) {
-		this.opportunity = opportunity;
-	}
+    @JsonProperty("isSystemTask")
+    public void setIsSystemTask(Boolean isSystemTask) {
+        this.isSystemTask = isSystemTask;
+    }
 
-	@JsonProperty("owner")
-	public CorporateUser getOwner() {
-		return owner;
-	}
+    @JsonProperty("jobOrder")
+    public JobOrder getJobOrder() {
+        return jobOrder;
+    }
 
-	@JsonProperty("owner")
-	public void setOwner(CorporateUser owner) {
-		this.owner = owner;
-	}
+    @JsonProperty("jobOrder")
+    public void setJobOrder(JobOrder jobOrder) {
+        this.jobOrder = jobOrder;
+    }
 
-	@JsonProperty("parentTask")
-	public Task getParentTask() {
-		return parentTask;
-	}
+    @JsonProperty("jobSubmission")
+    public JobSubmission getJobSubmission() {
+        return jobSubmission;
+    }
 
-	@JsonProperty("parentTask")
-	public void setParentTask(Task parentTask) {
-		this.parentTask = parentTask;
-	}
+    @JsonProperty("jobSubmission")
+    public void setJobSubmission(JobSubmission jobSubmission) {
+        this.jobSubmission = jobSubmission;
+    }
 
-	@JsonProperty("priority")
-	public Integer getPriority() {
-		return priority;
-	}
+    @JsonProperty("lead")
+    public Lead getLead() {
+        return lead;
+    }
 
-	@JsonProperty("priority")
-	public void setPriority(Integer priority) {
-		this.priority = priority;
-	}
+    @JsonProperty("lead")
+    public void setLead(Lead lead) {
+        this.lead = lead;
+    }
 
-	@JsonProperty("placement")
-	public Placement getPlacement() {
-		return placement;
-	}
+    @JsonProperty("migrateGUID")
+    public String getMigrateGUID() {
+        return migrateGUID;
+    }
 
-	@JsonProperty("placement")
-	public void setPlacement(Placement placement) {
-		this.placement = placement;
-	}
+    @JsonProperty("migrateGUID")
+    public void setMigrateGUID(String migrateGUID) {
+        this.migrateGUID = migrateGUID;
+    }
 
-	@JsonProperty("recurrenceDayBits")
-	public Integer getRecurrenceDayBits() {
-		return recurrenceDayBits;
-	}
+    @JsonProperty("notificationMinutes")
+    public Integer getNotificationMinutes() {
+        return notificationMinutes;
+    }
 
-	@JsonProperty("recurrenceDayBits")
-	public void setRecurrenceDayBits(Integer recurrenceDayBits) {
-		this.recurrenceDayBits = recurrenceDayBits;
-	}
+    @JsonProperty("notificationMinutes")
+    public void setNotificationMinutes(Integer notificationMinutes) {
+        this.notificationMinutes = notificationMinutes;
+    }
 
-	@JsonProperty("recurrenceFrequency")
-	public Integer getRecurrenceFrequency() {
-		return recurrenceFrequency;
-	}
+    @JsonProperty("opportunity")
+    public Opportunity getOpportunity() {
+        return opportunity;
+    }
 
-	@JsonProperty("recurrenceFrequency")
-	public void setRecurrenceFrequency(Integer recurrenceFrequency) {
-		this.recurrenceFrequency = recurrenceFrequency;
-	}
+    @JsonProperty("opportunity")
+    public void setOpportunity(Opportunity opportunity) {
+        this.opportunity = opportunity;
+    }
 
-	@JsonProperty("recurrenceMax")
-	public Integer getRecurrenceMax() {
-		return recurrenceMax;
-	}
+    @JsonProperty("owner")
+    public CorporateUser getOwner() {
+        return owner;
+    }
 
-	@JsonProperty("recurrenceMax")
-	public void setRecurrenceMax(Integer recurrenceMax) {
-		this.recurrenceMax = recurrenceMax;
-	}
+    @JsonProperty("owner")
+    public void setOwner(CorporateUser owner) {
+        this.owner = owner;
+    }
 
-	@JsonProperty("recurrenceMonthBits")
-	public Integer getRecurrenceMonthBits() {
-		return recurrenceMonthBits;
-	}
+    @JsonProperty("parentTask")
+    public Task getParentTask() {
+        return parentTask;
+    }
 
-	@JsonProperty("recurrenceMonthBits")
-	public void setRecurrenceMonthBits(Integer recurrenceMonthBits) {
-		this.recurrenceMonthBits = recurrenceMonthBits;
-	}
+    @JsonProperty("parentTask")
+    public void setParentTask(Task parentTask) {
+        this.parentTask = parentTask;
+    }
 
-	@JsonProperty("recurrenceStyle")
-	public String getRecurrenceStyle() {
-		return recurrenceStyle;
-	}
+    @JsonProperty("priority")
+    public Integer getPriority() {
+        return priority;
+    }
 
-	@JsonProperty("recurrenceStyle")
-	public void setRecurrenceStyle(String recurrenceStyle) {
-		this.recurrenceStyle = recurrenceStyle;
-	}
+    @JsonProperty("priority")
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
 
-	@JsonProperty("recurrenceType")
-	public String getRecurrenceType() {
-		return recurrenceType;
-	}
+    @JsonProperty("placement")
+    public Placement getPlacement() {
+        return placement;
+    }
 
-	@JsonProperty("recurrenceType")
-	public void setRecurrenceType(String recurrenceType) {
-		this.recurrenceType = recurrenceType;
-	}
+    @JsonProperty("placement")
+    public void setPlacement(Placement placement) {
+        this.placement = placement;
+    }
 
-	@JsonProperty("subject")
-	public String getSubject() {
-		return subject;
-	}
+    @JsonProperty("recurrenceDayBits")
+    public Integer getRecurrenceDayBits() {
+        return recurrenceDayBits;
+    }
 
-	@JsonProperty("subject")
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
+    @JsonProperty("recurrenceDayBits")
+    public void setRecurrenceDayBits(Integer recurrenceDayBits) {
+        this.recurrenceDayBits = recurrenceDayBits;
+    }
 
-	@JsonProperty("taskUUID")
-	public String getTaskUUID() {
-		return taskUUID;
-	}
+    @JsonProperty("recurrenceFrequency")
+    public Integer getRecurrenceFrequency() {
+        return recurrenceFrequency;
+    }
 
-	@JsonProperty("taskUUID")
-	public void setTaskUUID(String taskUUID) {
-		this.taskUUID = taskUUID;
-	}
+    @JsonProperty("recurrenceFrequency")
+    public void setRecurrenceFrequency(Integer recurrenceFrequency) {
+        this.recurrenceFrequency = recurrenceFrequency;
+    }
 
-	@JsonProperty("timeZoneID")
-	public String getTimeZoneID() {
-		return timeZoneID;
-	}
+    @JsonProperty("recurrenceMax")
+    public Integer getRecurrenceMax() {
+        return recurrenceMax;
+    }
 
-	@JsonProperty("timeZoneID")
-	public void setTimeZoneID(String timeZoneID) {
-		this.timeZoneID = timeZoneID;
-	}
+    @JsonProperty("recurrenceMax")
+    public void setRecurrenceMax(Integer recurrenceMax) {
+        this.recurrenceMax = recurrenceMax;
+    }
 
-	@JsonProperty("type")
-	public String getType() {
-		return type;
-	}
+    @JsonProperty("recurrenceMonthBits")
+    public Integer getRecurrenceMonthBits() {
+        return recurrenceMonthBits;
+    }
 
-	@JsonProperty("type")
-	public void setType(String type) {
-		this.type = type;
-	}
+    @JsonProperty("recurrenceMonthBits")
+    public void setRecurrenceMonthBits(Integer recurrenceMonthBits) {
+        this.recurrenceMonthBits = recurrenceMonthBits;
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
+    @JsonProperty("recurrenceStyle")
+    public String getRecurrenceStyle() {
+        return recurrenceStyle;
+    }
 
-		Task task = (Task) o;
+    @JsonProperty("recurrenceStyle")
+    public void setRecurrenceStyle(String recurrenceStyle) {
+        this.recurrenceStyle = recurrenceStyle;
+    }
 
-		if (id != null ? !id.equals(task.id) : task.id != null) return false;
-		if (candidate != null ? !candidate.equals(task.candidate) : task.candidate != null) return false;
-		if (childTasks != null ? !childTasks.equals(task.childTasks) : task.childTasks != null) return false;
-		if (clientContact != null ? !clientContact.equals(task.clientContact) : task.clientContact != null)
-			return false;
-		if (dateAdded != null ? !dateAdded.equals(task.dateAdded) : task.dateAdded != null) return false;
-		if (dateBegin != null ? !dateBegin.equals(task.dateBegin) : task.dateBegin != null) return false;
-		if (dateCompleted != null ? !dateCompleted.equals(task.dateCompleted) : task.dateCompleted != null)
-			return false;
-		if (dateEnd != null ? !dateEnd.equals(task.dateEnd) : task.dateEnd != null) return false;
-		if (dateLastModified != null ? !dateLastModified.equals(task.dateLastModified) : task.dateLastModified != null)
-			return false;
-		if (description != null ? !description.equals(task.description) : task.description != null) return false;
-		if (isCompleted != null ? !isCompleted.equals(task.isCompleted) : task.isCompleted != null) return false;
-		if (isDeleted != null ? !isDeleted.equals(task.isDeleted) : task.isDeleted != null) return false;
-		if (isPrivate != null ? !isPrivate.equals(task.isPrivate) : task.isPrivate != null) return false;
-		if (isSystemTask != null ? !isSystemTask.equals(task.isSystemTask) : task.isSystemTask != null) return false;
-		if (jobOrder != null ? !jobOrder.equals(task.jobOrder) : task.jobOrder != null) return false;
-		if (jobSubmission != null ? !jobSubmission.equals(task.jobSubmission) : task.jobSubmission != null)
-			return false;
-		if (lead != null ? !lead.equals(task.lead) : task.lead != null) return false;
-		if (migrateGUID != null ? !migrateGUID.equals(task.migrateGUID) : task.migrateGUID != null) return false;
-		if (notificationMinutes != null ? !notificationMinutes.equals(task.notificationMinutes) : task.notificationMinutes != null)
-			return false;
-		if (opportunity != null ? !opportunity.equals(task.opportunity) : task.opportunity != null) return false;
-		if (owner != null ? !owner.equals(task.owner) : task.owner != null) return false;
-		if (parentTask != null ? !parentTask.equals(task.parentTask) : task.parentTask != null) return false;
-		if (priority != null ? !priority.equals(task.priority) : task.priority != null) return false;
-		if (placement != null ? !placement.equals(task.placement) : task.placement != null) return false;
-		if (recurrenceDayBits != null ? !recurrenceDayBits.equals(task.recurrenceDayBits) : task.recurrenceDayBits != null)
-			return false;
-		if (recurrenceFrequency != null ? !recurrenceFrequency.equals(task.recurrenceFrequency) : task.recurrenceFrequency != null)
-			return false;
-		if (recurrenceMax != null ? !recurrenceMax.equals(task.recurrenceMax) : task.recurrenceMax != null)
-			return false;
-		if (recurrenceMonthBits != null ? !recurrenceMonthBits.equals(task.recurrenceMonthBits) : task.recurrenceMonthBits != null)
-			return false;
-		if (recurrenceStyle != null ? !recurrenceStyle.equals(task.recurrenceStyle) : task.recurrenceStyle != null)
-			return false;
-		if (recurrenceType != null ? !recurrenceType.equals(task.recurrenceType) : task.recurrenceType != null)
-			return false;
-		if (subject != null ? !subject.equals(task.subject) : task.subject != null) return false;
-		if (taskUUID != null ? !taskUUID.equals(task.taskUUID) : task.taskUUID != null) return false;
-		if (timeZoneID != null ? !timeZoneID.equals(task.timeZoneID) : task.timeZoneID != null) return false;
-		return !(type != null ? !type.equals(task.type) : task.type != null);
+    @JsonProperty("recurrenceType")
+    public String getRecurrenceType() {
+        return recurrenceType;
+    }
 
-	}
+    @JsonProperty("recurrenceType")
+    public void setRecurrenceType(String recurrenceType) {
+        this.recurrenceType = recurrenceType;
+    }
 
-	@Override
-	public int hashCode() {
-		int result = id != null ? id.hashCode() : 0;
-		result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
-		result = 31 * result + (childTasks != null ? childTasks.hashCode() : 0);
-		result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
-		result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
-		result = 31 * result + (dateBegin != null ? dateBegin.hashCode() : 0);
-		result = 31 * result + (dateCompleted != null ? dateCompleted.hashCode() : 0);
-		result = 31 * result + (dateEnd != null ? dateEnd.hashCode() : 0);
-		result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
-		result = 31 * result + (description != null ? description.hashCode() : 0);
-		result = 31 * result + (isCompleted != null ? isCompleted.hashCode() : 0);
-		result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
-		result = 31 * result + (isPrivate != null ? isPrivate.hashCode() : 0);
-		result = 31 * result + (isSystemTask != null ? isSystemTask.hashCode() : 0);
-		result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
-		result = 31 * result + (jobSubmission != null ? jobSubmission.hashCode() : 0);
-		result = 31 * result + (lead != null ? lead.hashCode() : 0);
-		result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
-		result = 31 * result + (notificationMinutes != null ? notificationMinutes.hashCode() : 0);
-		result = 31 * result + (opportunity != null ? opportunity.hashCode() : 0);
-		result = 31 * result + (owner != null ? owner.hashCode() : 0);
-		result = 31 * result + (parentTask != null ? parentTask.hashCode() : 0);
-		result = 31 * result + (priority != null ? priority.hashCode() : 0);
-		result = 31 * result + (placement != null ? placement.hashCode() : 0);
-		result = 31 * result + (recurrenceDayBits != null ? recurrenceDayBits.hashCode() : 0);
-		result = 31 * result + (recurrenceFrequency != null ? recurrenceFrequency.hashCode() : 0);
-		result = 31 * result + (recurrenceMax != null ? recurrenceMax.hashCode() : 0);
-		result = 31 * result + (recurrenceMonthBits != null ? recurrenceMonthBits.hashCode() : 0);
-		result = 31 * result + (recurrenceStyle != null ? recurrenceStyle.hashCode() : 0);
-		result = 31 * result + (recurrenceType != null ? recurrenceType.hashCode() : 0);
-		result = 31 * result + (subject != null ? subject.hashCode() : 0);
-		result = 31 * result + (taskUUID != null ? taskUUID.hashCode() : 0);
-		result = 31 * result + (timeZoneID != null ? timeZoneID.hashCode() : 0);
-		result = 31 * result + (type != null ? type.hashCode() : 0);
-		return result;
-	}
+    @JsonProperty("subject")
+    public String getSubject() {
+        return subject;
+    }
 
-	@Override
-	public String toString() {
-		return "Task{" +
-				"id=" + id +
-				", candidate=" + candidate +
-				", childTasks=" + childTasks +
-				", clientContact=" + clientContact +
-				", dateAdded=" + dateAdded +
-				", dateBegin=" + dateBegin +
-				", dateCompleted=" + dateCompleted +
-				", dateEnd=" + dateEnd +
-				", dateLastModified=" + dateLastModified +
-				", description='" + description + '\'' +
-				", isCompleted=" + isCompleted +
-				", isDeleted=" + isDeleted +
-				", isPrivate=" + isPrivate +
-				", isSystemTask=" + isSystemTask +
-				", jobOrder=" + jobOrder +
-				", jobSubmission=" + jobSubmission +
-				", lead=" + lead +
-				", migrateGUID='" + migrateGUID + '\'' +
-				", notificationMinutes=" + notificationMinutes +
-				", opportunity=" + opportunity +
-				", owner=" + owner +
-				", parentTask=" + parentTask +
-				", priority=" + priority +
-				", placement=" + placement +
-				", recurrenceDayBits=" + recurrenceDayBits +
-				", recurrenceFrequency=" + recurrenceFrequency +
-				", recurrenceMax=" + recurrenceMax +
-				", recurrenceMonthBits=" + recurrenceMonthBits +
-				", recurrenceStyle='" + recurrenceStyle + '\'' +
-				", recurrenceType='" + recurrenceType + '\'' +
-				", subject='" + subject + '\'' +
-				", taskUUID='" + taskUUID + '\'' +
-				", timeZoneID='" + timeZoneID + '\'' +
-				", type='" + type + '\'' +
-				'}';
-	}
+    @JsonProperty("subject")
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    @JsonProperty("taskUUID")
+    public String getTaskUUID() {
+        return taskUUID;
+    }
+
+    @JsonProperty("taskUUID")
+    public void setTaskUUID(String taskUUID) {
+        this.taskUUID = taskUUID;
+    }
+
+    @JsonProperty("timeZoneID")
+    public String getTimeZoneID() {
+        return timeZoneID;
+    }
+
+    @JsonProperty("timeZoneID")
+    public void setTimeZoneID(String timeZoneID) {
+        this.timeZoneID = timeZoneID;
+    }
+
+    @JsonProperty("type")
+    public String getType() {
+        return type;
+    }
+
+    @JsonProperty("type")
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @JsonProperty("assignees")
+    public OneToMany<CorporateUser> getAssignees() {
+        return assignees;
+    }
+
+    @JsonProperty("assignees")
+    public void setAssignees(OneToMany<CorporateUser> assignees) {
+        this.assignees = assignees;
+    }
+
+    @JsonProperty("childTaskOwners")
+    public OneToMany<CorporateUser> getChildTaskOwners() {
+        return childTaskOwners;
+    }
+
+    @JsonProperty("childTaskOwners")
+    public void setChildTaskOwners(OneToMany<CorporateUser> childTaskOwners) {
+        this.childTaskOwners = childTaskOwners;
+    }
+
+    @JsonProperty("clientContactReferences")
+    public OneToMany<ClientContact> getClientContactReferences() {
+        return clientContactReferences;
+    }
+
+    @JsonProperty("clientContactReferences")
+    public void setClientContactReferences(OneToMany<ClientContact> clientContactReferences) {
+        this.clientContactReferences = clientContactReferences;
+    }
+
+    @JsonProperty("communicationMethod")
+    public String getCommunicationMethod() {
+        return communicationMethod;
+    }
+
+    @JsonProperty("communicationMethod")
+    public void setCommunicationMethod(String communicationMethod) {
+        this.communicationMethod = communicationMethod;
+    }
+
+    @JsonProperty("isTask")
+    public Integer getIsTask() {
+        return isTask;
+    }
+
+    @JsonProperty("isTask")
+    public void setIsTask(Integer isTask) {
+        this.isTask = isTask;
+    }
+
+    @JsonProperty("location")
+    public String getLocation() {
+        return location;
+    }
+
+    @JsonProperty("location")
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    @JsonProperty("secondaryOwners")
+    public OneToMany<CorporateUser> getSecondaryOwners() {
+        return secondaryOwners;
+    }
+
+    @JsonProperty("secondaryOwners")
+    public void setSecondaryOwners(OneToMany<CorporateUser> secondaryOwners) {
+        this.secondaryOwners = secondaryOwners;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Task task = (Task) o;
+
+        if (id != null ? !id.equals(task.id) : task.id != null) return false;
+        if (candidate != null ? !candidate.equals(task.candidate) : task.candidate != null) return false;
+        if (childTasks != null ? !childTasks.equals(task.childTasks) : task.childTasks != null) return false;
+        if (clientContact != null ? !clientContact.equals(task.clientContact) : task.clientContact != null)
+            return false;
+        if (dateAdded != null ? !dateAdded.equals(task.dateAdded) : task.dateAdded != null) return false;
+        if (dateBegin != null ? !dateBegin.equals(task.dateBegin) : task.dateBegin != null) return false;
+        if (dateCompleted != null ? !dateCompleted.equals(task.dateCompleted) : task.dateCompleted != null)
+            return false;
+        if (dateEnd != null ? !dateEnd.equals(task.dateEnd) : task.dateEnd != null) return false;
+        if (dateLastModified != null ? !dateLastModified.equals(task.dateLastModified) : task.dateLastModified != null)
+            return false;
+        if (description != null ? !description.equals(task.description) : task.description != null) return false;
+        if (isCompleted != null ? !isCompleted.equals(task.isCompleted) : task.isCompleted != null) return false;
+        if (isDeleted != null ? !isDeleted.equals(task.isDeleted) : task.isDeleted != null) return false;
+        if (isPrivate != null ? !isPrivate.equals(task.isPrivate) : task.isPrivate != null) return false;
+        if (isSystemTask != null ? !isSystemTask.equals(task.isSystemTask) : task.isSystemTask != null) return false;
+        if (jobOrder != null ? !jobOrder.equals(task.jobOrder) : task.jobOrder != null) return false;
+        if (jobSubmission != null ? !jobSubmission.equals(task.jobSubmission) : task.jobSubmission != null)
+            return false;
+        if (lead != null ? !lead.equals(task.lead) : task.lead != null) return false;
+        if (migrateGUID != null ? !migrateGUID.equals(task.migrateGUID) : task.migrateGUID != null) return false;
+        if (notificationMinutes != null ? !notificationMinutes.equals(task.notificationMinutes) : task.notificationMinutes != null)
+            return false;
+        if (opportunity != null ? !opportunity.equals(task.opportunity) : task.opportunity != null) return false;
+        if (owner != null ? !owner.equals(task.owner) : task.owner != null) return false;
+        if (parentTask != null ? !parentTask.equals(task.parentTask) : task.parentTask != null) return false;
+        if (priority != null ? !priority.equals(task.priority) : task.priority != null) return false;
+        if (placement != null ? !placement.equals(task.placement) : task.placement != null) return false;
+        if (recurrenceDayBits != null ? !recurrenceDayBits.equals(task.recurrenceDayBits) : task.recurrenceDayBits != null)
+            return false;
+        if (recurrenceFrequency != null ? !recurrenceFrequency.equals(task.recurrenceFrequency) : task.recurrenceFrequency != null)
+            return false;
+        if (recurrenceMax != null ? !recurrenceMax.equals(task.recurrenceMax) : task.recurrenceMax != null)
+            return false;
+        if (recurrenceMonthBits != null ? !recurrenceMonthBits.equals(task.recurrenceMonthBits) : task.recurrenceMonthBits != null)
+            return false;
+        if (recurrenceStyle != null ? !recurrenceStyle.equals(task.recurrenceStyle) : task.recurrenceStyle != null)
+            return false;
+        if (recurrenceType != null ? !recurrenceType.equals(task.recurrenceType) : task.recurrenceType != null)
+            return false;
+        if (subject != null ? !subject.equals(task.subject) : task.subject != null) return false;
+        if (taskUUID != null ? !taskUUID.equals(task.taskUUID) : task.taskUUID != null) return false;
+        if (timeZoneID != null ? !timeZoneID.equals(task.timeZoneID) : task.timeZoneID != null) return false;
+        if (assignees != null ? !assignees.equals(task.assignees) : task.assignees != null) return false;
+        if (childTaskOwners != null ? !childTaskOwners.equals(task.childTaskOwners) : task.childTaskOwners != null) return false;
+        if (clientContactReferences != null ? !clientContactReferences.equals(task.clientContactReferences) : task.clientContactReferences != null) return false;
+        if (communicationMethod != null ? !communicationMethod.equals(task.communicationMethod) : task.communicationMethod != null) return false;
+        if (isTask != null ? !isTask.equals(task.isTask) : task.isTask != null) return false;
+        if (location != null ? !location.equals(task.location) : task.location != null) return false;
+        if (secondaryOwners != null ? !secondaryOwners.equals(task.secondaryOwners) : task.secondaryOwners != null) return false;
+        return !(type != null ? !type.equals(task.type) : task.type != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (candidate != null ? candidate.hashCode() : 0);
+        result = 31 * result + (childTasks != null ? childTasks.hashCode() : 0);
+        result = 31 * result + (clientContact != null ? clientContact.hashCode() : 0);
+        result = 31 * result + (dateAdded != null ? dateAdded.hashCode() : 0);
+        result = 31 * result + (dateBegin != null ? dateBegin.hashCode() : 0);
+        result = 31 * result + (dateCompleted != null ? dateCompleted.hashCode() : 0);
+        result = 31 * result + (dateEnd != null ? dateEnd.hashCode() : 0);
+        result = 31 * result + (dateLastModified != null ? dateLastModified.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (isCompleted != null ? isCompleted.hashCode() : 0);
+        result = 31 * result + (isDeleted != null ? isDeleted.hashCode() : 0);
+        result = 31 * result + (isPrivate != null ? isPrivate.hashCode() : 0);
+        result = 31 * result + (isSystemTask != null ? isSystemTask.hashCode() : 0);
+        result = 31 * result + (jobOrder != null ? jobOrder.hashCode() : 0);
+        result = 31 * result + (jobSubmission != null ? jobSubmission.hashCode() : 0);
+        result = 31 * result + (lead != null ? lead.hashCode() : 0);
+        result = 31 * result + (migrateGUID != null ? migrateGUID.hashCode() : 0);
+        result = 31 * result + (notificationMinutes != null ? notificationMinutes.hashCode() : 0);
+        result = 31 * result + (opportunity != null ? opportunity.hashCode() : 0);
+        result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (parentTask != null ? parentTask.hashCode() : 0);
+        result = 31 * result + (priority != null ? priority.hashCode() : 0);
+        result = 31 * result + (placement != null ? placement.hashCode() : 0);
+        result = 31 * result + (recurrenceDayBits != null ? recurrenceDayBits.hashCode() : 0);
+        result = 31 * result + (recurrenceFrequency != null ? recurrenceFrequency.hashCode() : 0);
+        result = 31 * result + (recurrenceMax != null ? recurrenceMax.hashCode() : 0);
+        result = 31 * result + (recurrenceMonthBits != null ? recurrenceMonthBits.hashCode() : 0);
+        result = 31 * result + (recurrenceStyle != null ? recurrenceStyle.hashCode() : 0);
+        result = 31 * result + (recurrenceType != null ? recurrenceType.hashCode() : 0);
+        result = 31 * result + (subject != null ? subject.hashCode() : 0);
+        result = 31 * result + (taskUUID != null ? taskUUID.hashCode() : 0);
+        result = 31 * result + (timeZoneID != null ? timeZoneID.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (assignees != null ? assignees.hashCode() : 0);
+        result = 31 * result + (childTaskOwners != null ? childTaskOwners.hashCode() : 0);
+        result = 31 * result + (clientContactReferences != null ? clientContactReferences.hashCode() : 0);
+        result = 31 * result + (communicationMethod != null ? communicationMethod.hashCode() : 0);
+        result = 31 * result + (isTask != null ? isTask.hashCode() : 0);
+        result = 31 * result + (location != null ? location.hashCode() : 0);
+        result = 31 * result + (secondaryOwners != null ? secondaryOwners.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+            "id=" + id +
+            ", candidate=" + candidate +
+            ", childTasks=" + childTasks +
+            ", clientContact=" + clientContact +
+            ", dateAdded=" + dateAdded +
+            ", dateBegin=" + dateBegin +
+            ", dateCompleted=" + dateCompleted +
+            ", dateEnd=" + dateEnd +
+            ", dateLastModified=" + dateLastModified +
+            ", description='" + description + '\'' +
+            ", isCompleted=" + isCompleted +
+            ", isDeleted=" + isDeleted +
+            ", isPrivate=" + isPrivate +
+            ", isSystemTask=" + isSystemTask +
+            ", jobOrder=" + jobOrder +
+            ", jobSubmission=" + jobSubmission +
+            ", lead=" + lead +
+            ", migrateGUID='" + migrateGUID + '\'' +
+            ", notificationMinutes=" + notificationMinutes +
+            ", opportunity=" + opportunity +
+            ", owner=" + owner +
+            ", parentTask=" + parentTask +
+            ", priority=" + priority +
+            ", placement=" + placement +
+            ", recurrenceDayBits=" + recurrenceDayBits +
+            ", recurrenceFrequency=" + recurrenceFrequency +
+            ", recurrenceMax=" + recurrenceMax +
+            ", recurrenceMonthBits=" + recurrenceMonthBits +
+            ", recurrenceStyle='" + recurrenceStyle + '\'' +
+            ", recurrenceType='" + recurrenceType + '\'' +
+            ", subject='" + subject + '\'' +
+            ", taskUUID='" + taskUUID + '\'' +
+            ", timeZoneID='" + timeZoneID + '\'' +
+            ", type='" + type + '\'' +
+            ", assignees=" + assignees +
+            ", childTaskOwners=" + childTaskOwners +
+            ", clientContactReferences=" + clientContactReferences +
+            ", communicationMethod='" + communicationMethod + '\'' +
+            ", isTask=" + isTask +
+            ", location=" + location + '\'' +
+            ", secondaryOwners=" + secondaryOwners +
+            '}';
+    }
 }
