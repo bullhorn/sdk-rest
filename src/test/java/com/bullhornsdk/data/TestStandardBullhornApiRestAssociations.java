@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.core.paybill.distribution.UnbilledRevenueDistribution;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
-import com.bullhornsdk.data.model.entity.core.standard.PlacementShiftSet;
+import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.logging.log4j.LogManager;
@@ -21,17 +21,6 @@ import org.junit.Test;
 
 import com.bullhornsdk.data.model.entity.association.AssociationFactory;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
-import com.bullhornsdk.data.model.entity.core.standard.Branch;
-import com.bullhornsdk.data.model.entity.core.standard.Candidate;
-import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
-import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
-import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
-import com.bullhornsdk.data.model.entity.core.standard.DistributionList;
-import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
-import com.bullhornsdk.data.model.entity.core.standard.Lead;
-import com.bullhornsdk.data.model.entity.core.standard.Note;
-import com.bullhornsdk.data.model.entity.core.standard.Opportunity;
-import com.bullhornsdk.data.model.entity.core.standard.Placement;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
@@ -334,6 +323,23 @@ public class TestStandardBullhornApiRestAssociations extends BaseTest {
 
             }
         }
+    }
+
+    @Test
+    public void testAssociateTask() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        Task entity = bullhornData.findEntity(Task.class, testEntities.getTaskId(), getAssociationFieldSet(AssociationFactory.taskAssociations()));
+        for (AssociationField<Task, ? extends BullhornEntity> association : AssociationFactory.taskAssociations().allAssociations()) {
+
+            Set<Integer> associationIds = new HashSet<Integer>();
+            OneToMany<? extends BullhornEntity> linkedIds = (OneToMany<? extends BullhornEntity>) PropertyUtils.getProperty(entity,
+                association.getAssociationFieldName());
+            if (linkedIds != null && !linkedIds.getData().isEmpty()) {
+
+                associationIds.add(linkedIds.getData().get(0).getId());
+                testAssociation(Task.class, testEntities.getTaskId(), associationIds, association);
+            }
+        }
+
     }
 
     private <T extends AssociationEntity> Set<String> getAssociationFieldSet(EntityAssociations<T> associations) {

@@ -33,6 +33,7 @@ public class AssociationFactory {
     private static final PlacementShiftSetAssociations placementShiftSetAssociations = PlacementShiftSetAssociations.getInstance();
     private static final OpportunityAssociations opportunityAssociations = OpportunityAssociations.getInstance();
     private static final LeadAssociations leadAssociations = LeadAssociations.getInstance();
+    private static final TaskAssociations taskAssociations = TaskAssociations.getInstance();
     private static final TearsheetAssociations tearsheetAssociations = TearsheetAssociations.getInstance();
     private static final WorkersCompensationAssociations workersCompensationAssociations = WorkersCompensationAssociations.getInstance();
     private static final BillingProfileAssociations billingProfileAssociations = BillingProfileAssociations.getInstance();
@@ -122,6 +123,10 @@ public class AssociationFactory {
 
         if (type == Lead.class) {
             return (EntityAssociations<T>) leadAssociations;
+        }
+
+        if (type == Task.class) {
+            return (EntityAssociations<T>) taskAssociations;
         }
 
         if (type == Tearsheet.class) {
@@ -309,6 +314,15 @@ public class AssociationFactory {
      */
     public static TearsheetAssociations tearsheetAssociations() {
         return tearsheetAssociations;
+    }
+
+    /**
+     * Returns the associations for Task
+     *
+     * @return
+     */
+    public static TaskAssociations taskAssociations() {
+        return taskAssociations;
     }
 
     /**
