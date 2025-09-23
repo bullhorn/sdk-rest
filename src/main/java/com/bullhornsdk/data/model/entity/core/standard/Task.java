@@ -1,12 +1,6 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
-import com.bullhornsdk.data.model.entity.core.type.CreateEntity;
-import com.bullhornsdk.data.model.entity.core.type.DateLastModifiedEntity;
-import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
-import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
-import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
-import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.core.type.*;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
@@ -27,7 +21,7 @@ import javax.validation.constraints.Size;
     "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType", "subject", "taskUUID", "timeZoneID", "type",
     "assignees", "childTaskOwners", "clientContactReferences", "communicationMethod", "isTask", "location", "secondaryOwners"})
 public class Task extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity,
-    DateLastModifiedEntity, EditHistoryEntity {
+    DateLastModifiedEntity, EditHistoryEntity, AssociationEntity {
 
     private Integer id;
 
