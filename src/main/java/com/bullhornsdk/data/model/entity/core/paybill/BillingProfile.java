@@ -2,7 +2,7 @@ package com.bullhornsdk.data.model.entity.core.paybill;
 
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
-import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.DeliveryMethodLookup;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -62,7 +62,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     private DateTime dateLastModified;
 
-    private SpecializedOptionsLookup deliveryMethodLookup;
+    private DeliveryMethodLookup deliveryMethodLookup;
 
     @JsonIgnore
     private String description;
@@ -217,12 +217,12 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("deliveryMethodLookup")
-    public SpecializedOptionsLookup getDeliveryMethodLookup() {
+    public DeliveryMethodLookup getDeliveryMethodLookup() {
         return deliveryMethodLookup;
     }
 
-    @JsonProperty
-    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethodLookup) {
+    @JsonProperty("deliveryMethodLookup")
+    public void setDeliveryMethodLookup(DeliveryMethodLookup deliveryMethodLookup) {
         this.deliveryMethodLookup = deliveryMethodLookup;
     }
 
