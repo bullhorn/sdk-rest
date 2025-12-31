@@ -2,7 +2,7 @@ package com.bullhornsdk.data.model.entity.core.paybill;
 
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceStatementMessageTemplate;
 import com.bullhornsdk.data.model.entity.core.paybill.invoice.InvoiceTerm;
-import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.DeliveryMethodLookup;
+import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SpecializedOptionsLookup;
 import com.bullhornsdk.data.model.entity.core.standard.ClientContact;
 import com.bullhornsdk.data.model.entity.core.standard.ClientCorporation;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
@@ -62,7 +62,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
 
     private DateTime dateLastModified;
 
-    private DeliveryMethodLookup deliveryMethodLookup;
+    private SpecializedOptionsLookup deliveryMethodLookup;
 
     @JsonIgnore
     private String description;
@@ -114,7 +114,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.id = id;
     }
 
-    @JsonIgnore
+    @JsonProperty("bccRecipients")
     public OneToMany<Person> getBccRecipients() {
         return bccRecipients;
     }
@@ -174,7 +174,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.billingLocation = billingLocation;
     }
 
-    @JsonIgnore
+    @JsonProperty("ccRecipients")
     public OneToMany<Person> getCcRecipients() {
         return ccRecipients;
     }
@@ -217,12 +217,12 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
     }
 
     @JsonProperty("deliveryMethodLookup")
-    public DeliveryMethodLookup getDeliveryMethodLookup() {
+    public SpecializedOptionsLookup getDeliveryMethodLookup() {
         return deliveryMethodLookup;
     }
 
-    @JsonProperty("deliveryMethodLookup")
-    public void setDeliveryMethodLookup(DeliveryMethodLookup deliveryMethodLookup) {
+    @JsonProperty
+    public void setDeliveryMethodLookup(SpecializedOptionsLookup deliveryMethodLookup) {
         this.deliveryMethodLookup = deliveryMethodLookup;
     }
 
@@ -306,7 +306,7 @@ public class BillingProfile extends CustomFieldsB implements QueryEntity,
         this.owner = owner;
     }
 
-    @JsonIgnore
+    @JsonProperty("toRecipients")
     public OneToMany<Person> getToRecipients() {
         return toRecipients;
     }

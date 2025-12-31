@@ -5,6 +5,7 @@ import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.association.standard.StandardAssociationField;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
 import com.bullhornsdk.data.model.entity.core.paybill.BillingProfileVersion;
+import com.bullhornsdk.data.model.entity.core.standard.Person;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
 
 import java.util.ArrayList;
@@ -16,6 +17,9 @@ import java.util.List;
 public class BillingProfileAssociations implements EntityAssociations<BillingProfile> {
 
     private List<AssociationField<BillingProfile, ? extends BullhornEntity>> allAssociations;
+    private final AssociationField<BillingProfile, Person> bccRecipients = instantiateAssociationField("bccRecipients", Person.class);
+    private final AssociationField<BillingProfile, Person> ccRecipients = instantiateAssociationField("ccRecipients", Person.class);
+    private final AssociationField<BillingProfile, Person> toRecipients = instantiateAssociationField("toRecipients", Person.class);
     private final AssociationField<BillingProfile, BillingProfileVersion> versions = instantiateAssociationField("versions", BillingProfileVersion.class);
 
     private static final BillingProfileAssociations INSTANCE = new BillingProfileAssociations();
@@ -28,18 +32,33 @@ public class BillingProfileAssociations implements EntityAssociations<BillingPro
         return INSTANCE;
     }
 
+    public AssociationField<BillingProfile, Person> bccRecipients() {
+        return bccRecipients;
+    }
+
+    public AssociationField<BillingProfile, Person> ccRecipients() {
+        return ccRecipients;
+    }
+
+    public AssociationField<BillingProfile, Person> toRecipients() {
+        return toRecipients;
+    }
+
     public AssociationField<BillingProfile, BillingProfileVersion> versions() {
         return versions;
     }
 
     private <E extends BullhornEntity> AssociationField<BillingProfile, E> instantiateAssociationField(String associationName, Class<E> associationType) {
-        return new StandardAssociationField<BillingProfile, E>(associationName, associationType);
+        return new StandardAssociationField<>(associationName, associationType);
     }
 
     @Override
     public List<AssociationField<BillingProfile, ? extends BullhornEntity>> allAssociations() {
         if (allAssociations == null) {
-            allAssociations = new ArrayList<AssociationField<BillingProfile, ? extends BullhornEntity>>();
+            allAssociations = new ArrayList<>();
+            allAssociations.add(bccRecipients());
+            allAssociations.add(ccRecipients());
+            allAssociations.add(toRecipients());
             allAssociations.add(versions());
 
         }
