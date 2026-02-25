@@ -39,6 +39,7 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorpor
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.clientcorporation.ClientCorporationCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
+import com.bullhornsdk.data.model.entity.file.ClientCorporationFileAttachment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,6 +96,7 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance34> customObject34s = instantiateAssociationField("customObject34s", ClientCorporationCustomObjectInstance34.class);
     private final AssociationField<ClientCorporation, ClientCorporationCustomObjectInstance35> customObject35s = instantiateAssociationField("customObject35s", ClientCorporationCustomObjectInstance35.class);
     private final AssociationField<ClientCorporation, CorporateUser> userOwners = instantiateAssociationField("userOwners", CorporateUser.class);
+    private final AssociationField<ClientCorporation, ClientCorporationFileAttachment> fileAttachments = instantiateAssociationField("fileAttachments", ClientCorporationFileAttachment.class);
 
     public ClientCorporationAssociations() {
         super();
@@ -263,6 +265,9 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
         return userOwners;
     }
 
+    public AssociationField<ClientCorporation, ClientCorporationFileAttachment> fileAttachments() {
+        return fileAttachments;
+    }
 
     private <E extends BullhornEntity> AssociationField<ClientCorporation, E> instantiateAssociationField(String associationName,
                                                                                                       Class<E> associationType) {
@@ -313,6 +318,7 @@ public final class ClientCorporationAssociations implements EntityAssociations<C
             allAssociations.add(customObject34s());
             allAssociations.add(customObject35s());
             allAssociations.add(userOwners());
+            allAssociations.add(fileAttachments());
         }
         return allAssociations;
 

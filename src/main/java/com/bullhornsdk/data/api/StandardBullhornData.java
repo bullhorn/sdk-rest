@@ -1,5 +1,37 @@
 package com.bullhornsdk.data.api;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.bullhornsdk.data.api.helper.EntityIdBoundaries;
 import com.bullhornsdk.data.api.helper.EntityUpdateWorker;
 import com.bullhornsdk.data.api.helper.FileWorker;
@@ -15,6 +47,7 @@ import com.bullhornsdk.data.api.helper.concurrency.standard.RestConcurrencyServi
 import com.bullhornsdk.data.exception.NotEnoughFieldsSpecifiedException;
 import com.bullhornsdk.data.exception.RestApiException;
 import com.bullhornsdk.data.exception.RestMappingException;
+import com.bullhornsdk.data.model.entity.association.AssociationFactory;
 import com.bullhornsdk.data.model.entity.association.AssociationField;
 import com.bullhornsdk.data.model.entity.core.standard.Candidate;
 import com.bullhornsdk.data.model.entity.core.standard.CandidateEducation;
@@ -37,6 +70,7 @@ import com.bullhornsdk.data.model.entity.core.type.QueryEntity;
 import com.bullhornsdk.data.model.entity.core.type.SearchEntity;
 import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
+import com.bullhornsdk.data.model.entity.file.EntityFileAttachment;
 import com.bullhornsdk.data.model.entity.meta.MetaData;
 import com.bullhornsdk.data.model.entity.meta.StandardMetaData;
 import com.bullhornsdk.data.model.enums.BullhornEntityInfo;
@@ -45,6 +79,7 @@ import com.bullhornsdk.data.model.enums.EventType;
 import com.bullhornsdk.data.model.enums.MetaParameter;
 import com.bullhornsdk.data.model.enums.SettingsFields;
 import com.bullhornsdk.data.model.file.FileMeta;
+import com.bullhornsdk.data.model.file.standard.StandardFileMeta;
 import com.bullhornsdk.data.model.parameter.AssociationParams;
 import com.bullhornsdk.data.model.parameter.CorpNotesParams;
 import com.bullhornsdk.data.model.parameter.EntityParams;
@@ -71,11 +106,9 @@ import com.bullhornsdk.data.model.response.event.GetEventsResponse;
 import com.bullhornsdk.data.model.response.event.GetLastRequestIdResponse;
 import com.bullhornsdk.data.model.response.event.standard.StandardGetEventsResponse;
 import com.bullhornsdk.data.model.response.event.standard.StandardGetLastRequestIdResponse;
-import com.bullhornsdk.data.model.response.file.EntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.FileApiResponse;
 import com.bullhornsdk.data.model.response.file.FileContent;
 import com.bullhornsdk.data.model.response.file.FileWrapper;
-import com.bullhornsdk.data.model.response.file.standard.StandardEntityMetaFiles;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileApiResponse;
 import com.bullhornsdk.data.model.response.file.standard.StandardFileWrapper;
 import com.bullhornsdk.data.model.response.list.FastFindListWrapper;
@@ -93,31 +126,7 @@ import com.bullhornsdk.data.model.response.subscribe.SubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.UnsubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardSubscribeToEventsResponse;
 import com.bullhornsdk.data.model.response.subscribe.standard.StandardUnsubscribeToEventsResponse;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
+import com.google.common.collect.Sets;
 
 /**
  * Standard implementation of the BullhornData interface that manages all rest calls and data binding from/to json - java.
@@ -158,6 +167,11 @@ public class StandardBullhornData implements BullhornData {
     protected final RestErrorHandler restErrorHandler;
 
     protected final ConcurrencyService concurrencyService;
+
+    protected static final Set<String> FILE_META_FIELDS = Sets.newHashSet(
+        "id", "type", "name", "description", "contentType", "contentSubType", "fileType", "externalID",
+        "dateAdded", "distribution", "fileUrl"
+    );
 
     protected final static int RESUME_PARSE_RETRY = 10;
 
@@ -487,7 +501,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public List<FileMeta> getFileMetaData(Class<? extends FileEntity> type, Integer entityId) {
+    public <T extends FileEntity & AssociationEntity> List<FileMeta> getFileMetaData(Class<T> type, Integer entityId) {
         return this.handleGetEntityMetaFiles(type, entityId);
     }
 
@@ -495,7 +509,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper getFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper getFile(Class<T> type, Integer entityId, Integer fileId) {
         return this.handleGetFileContentWithMetaData(type, entityId, fileId);
     }
 
@@ -503,7 +517,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public List<FileWrapper> getAllFiles(Class<? extends FileEntity> type, Integer entityId) {
+    public <T extends FileEntity & AssociationEntity> List<FileWrapper> getAllFiles(Class<T> type, Integer entityId) {
         return this.handleGetAllFileContentWithMetaData(type, entityId);
     }
 
@@ -511,7 +525,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, MultipartFile file, String externalId, FileParams params) {
         return this.handleAddFileWithMultipartFile(type, entityId, file, externalId, params, true);
     }
 
@@ -519,7 +533,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, File file, String externalId, FileParams params) {
         return this.handleAddFileWithFile(type, entityId, file, externalId, params, true);
     }
 
@@ -527,7 +541,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile) {
         return this.handleAddFileWithMultipartFile(type, entityId, file, externalId, params, deleteFile);
     }
 
@@ -535,7 +549,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile) {
         return this.handleAddFileWithFile(type, entityId, file, externalId, params, deleteFile);
     }
 
@@ -543,7 +557,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, FileMeta fileMeta) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
             entityId, fileMeta);
         String url = restUrlFactory.assemblePutFileUrl();
@@ -559,7 +573,7 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public FileWrapper updateFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper updateFile(Class<T> type, Integer entityId, FileMeta fileMeta) {
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
             entityId, fileMeta);
         String url = restUrlFactory.assembleGetFileUrl();
@@ -589,10 +603,9 @@ public class StandardBullhornData implements BullhornData {
      * {@inheritDoc}
      */
     @Override
-    public ParsedResume parseResumeThenAddfile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId,
-                                               FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
+    public <T extends FileEntity & AssociationEntity> ParsedResume parseResumeThenAddfile(Class<T> type, Integer entityId, MultipartFile file, String externalId,
+                                                                                          FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
         return this.addFileThenHandleParseResume(type, entityId, file, externalId, fileParams, resumeFileParseParams);
-
     }
 
     @Override
@@ -1629,7 +1642,7 @@ public class StandardBullhornData implements BullhornData {
      * @param entityId
      * @return
      */
-    protected List<FileWrapper> handleGetAllFileContentWithMetaData(Class<? extends FileEntity> type, Integer entityId) {
+    protected <T extends FileEntity & AssociationEntity> List<FileWrapper> handleGetAllFileContentWithMetaData(Class<T> type, Integer entityId) {
         List<FileMeta> metaDataList = this.handleGetEntityMetaFiles(type, entityId);
         // Create an ExecutorService with the number of processors available to the Java virtual machine.
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
@@ -1678,7 +1691,7 @@ public class StandardBullhornData implements BullhornData {
      * @param fileId
      * @return
      */
-    protected FileWrapper handleGetFileContentWithMetaData(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
+    protected <T extends FileEntity & AssociationEntity> FileWrapper handleGetFileContentWithMetaData(Class<T> type, Integer entityId, Integer fileId) {
         FileWrapper fileWrapper = null;
         try {
             FileContent fileContent = this.handleGetFileContent(type, entityId, fileId);
@@ -1707,17 +1720,15 @@ public class StandardBullhornData implements BullhornData {
      * @param entityId
      * @return
      */
-    protected List<FileMeta> handleGetEntityMetaFiles(Class<? extends FileEntity> type, Integer entityId) {
-        Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForGetEntityMetaFiles(
-            BullhornEntityInfo.getTypesRestEntityName(type), entityId);
-        String url = restUrlFactory.assembleGetEntityMetaFilesUrl();
-        String jsonString = this.performGetRequest(url, String.class, uriVariables);
-        EntityMetaFiles<? extends FileMeta> entityMetaFiles = restJsonConverter.jsonToEntity(jsonString,
-            StandardEntityMetaFiles.class);
-        if (entityMetaFiles == null || entityMetaFiles.getFileMetas() == null) {
-            return Collections.emptyList();
-        }
-        return (List<FileMeta>) entityMetaFiles.getFileMetas();
+    protected <T extends FileEntity & AssociationEntity, E extends EntityFileAttachment> List<FileMeta> handleGetEntityMetaFiles(Class<T> type, Integer entityId) {
+        AssociationField<T, E> associationField = AssociationFactory.getFileAttachmentAssociation(type);
+
+        AssociationParams params = ParamFactory.associationParams();
+        params.setStart(0);
+
+        List<EntityFileAttachment> fileAttachments = handleGetAllAssociations(type, Sets.newHashSet(entityId), associationField, FILE_META_FIELDS, params);
+
+        return fileAttachments.stream().map(StandardFileMeta::new).collect(Collectors.toList());
     }
 
     /**
@@ -1749,8 +1760,8 @@ public class StandardBullhornData implements BullhornData {
      * @param deleteFile
      * @return
      */
-    protected FileWrapper handleAddFileWithMultipartFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile multipartFile,
-                                                         String externalId, FileParams params, boolean deleteFile) {
+    protected <T extends FileEntity & AssociationEntity> FileWrapper handleAddFileWithMultipartFile(Class<T> type, Integer entityId, MultipartFile multipartFile,
+                                                                                                    String externalId, FileParams params, boolean deleteFile) {
 
         MultiValueMap<String, Object> multiValueMap = null;
         try {
@@ -1777,8 +1788,8 @@ public class StandardBullhornData implements BullhornData {
      * @param deleteFile
      * @return
      */
-    protected FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId,
-                                                FileParams params, boolean deleteFile) {
+    protected <T extends FileEntity & AssociationEntity> FileWrapper handleAddFileWithFile(Class<T> type, Integer entityId, File file, String externalId,
+                                                                                           FileParams params, boolean deleteFile) {
         MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
             entityId, externalId, params);
@@ -1787,7 +1798,7 @@ public class StandardBullhornData implements BullhornData {
         return this.handleAddFile(type, entityId, multiValueMap, url, uriVariables, file.getName(), deleteFile);
     }
 
-    protected FileWrapper handleAddFileWithFile(Class<? extends FileEntity> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
+    protected <T extends FileEntity & AssociationEntity> FileWrapper handleAddFileWithFile(Class<T> type, Integer entityId, File file, FileMeta fileMeta, boolean deleteFile) {
         MultiValueMap<String, Object> multiValueMap = restFileManager.addFileToMultiValueMap(file);
         Map<String, String> uriVariables = restUriVariablesFactory.getUriVariablesForAddFile(BullhornEntityInfo.getTypesRestEntityName(type),
             entityId, fileMeta);
@@ -1796,8 +1807,8 @@ public class StandardBullhornData implements BullhornData {
         return this.handleAddFile(type, entityId, multiValueMap, url, uriVariables, file.getName(), deleteFile);
     }
 
-    protected FileWrapper handleAddFile(Class<? extends FileEntity> type, Integer entityId, MultiValueMap<String, Object> multiValueMap ,
-                                        String url,  Map<String, String> uriVariables, String fileName, boolean deleteFile) {
+    protected <T extends FileEntity & AssociationEntity> FileWrapper handleAddFile(Class<T> type, Integer entityId, MultiValueMap<String, Object> multiValueMap ,
+                                                                                   String url,  Map<String, String> uriVariables, String fileName, boolean deleteFile) {
 
         StandardFileApiResponse fileApiResponse = this.performCustomRequest(url, multiValueMap, StandardFileApiResponse.class,
             uriVariables, HttpMethod.PUT, this.getMultipartHeadersForFileAttachement(fileName));
@@ -1855,8 +1866,9 @@ public class StandardBullhornData implements BullhornData {
      * @param params
      * @return
      */
-    protected <P extends ParsedResume> P addFileThenHandleParseResume(Class<? extends FileEntity> type, Integer entityId,
-                                                                      MultipartFile multipartFile, String externalId, FileParams fileParams, ResumeFileParseParams params) {
+    protected <P extends ParsedResume, T extends FileEntity & AssociationEntity> P addFileThenHandleParseResume(Class<T> type, Integer entityId,
+                                                                                                                MultipartFile multipartFile, String externalId,
+                                                                                                                FileParams fileParams, ResumeFileParseParams params) {
         FileWrapper fileWrapper = handleAddFileWithMultipartFile(type, entityId, multipartFile, externalId, fileParams, true);
         P parsedResume = this.handleParseResumeFile(multipartFile, params);
         if (!parsedResume.isError()) {
