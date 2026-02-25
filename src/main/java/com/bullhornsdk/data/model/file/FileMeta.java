@@ -42,14 +42,6 @@ public interface FileMeta {
 
 	public void setDistribution(String distribution);
 
-	public String getFileUrl();
-
-	public void setFileUrl(String fileUrl);
-
-	public String getFileContent();
-
-	public void setFileContent(String fileContent);
-
 	public DateTime getDateAdded();
 
 	public void setDateAdded(DateTime dateAdded);
