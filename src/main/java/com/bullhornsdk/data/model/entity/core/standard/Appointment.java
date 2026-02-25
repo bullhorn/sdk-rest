@@ -12,6 +12,7 @@ import com.bullhornsdk.data.model.entity.core.type.SoftDeleteEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
+import com.bullhornsdk.data.model.entity.file.AppointmentFileAttachment;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.bullhornsdk.data.validation.BullhornUUID;
 import com.fasterxml.jackson.annotation.*;
@@ -107,6 +108,8 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     @JsonIgnore
     @Size(max = 30)
     private String type;
+
+    private OneToMany<AppointmentFileAttachment> fileAttachments;
 
     @Override
     @JsonProperty("id")
@@ -487,6 +490,17 @@ public class Appointment extends AbstractEntity implements QueryEntity, UpdateEn
     @JsonProperty("jobSubmission")
     public void setJobSubmission(JobSubmission jobSubmission) {
         this.jobSubmission = jobSubmission;
+    }
+
+    @JsonProperty("fileAttachments")
+    public OneToMany<AppointmentFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
+
+    @ReadOnly
+    @JsonProperty("fileAttachments")
+    public void setFileAttachments(OneToMany<AppointmentFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
     }
 
     public boolean equals(Object o) {

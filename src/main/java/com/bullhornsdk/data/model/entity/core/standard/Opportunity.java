@@ -1298,6 +1298,17 @@ public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEnt
         this.customObject10s = customObject10s;
     }
 
+    @JsonProperty("fileAttachments")
+    public OneToMany<OpportunityFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
+
+    @ReadOnly
+    @JsonProperty("fileAttachments")
+    public void setFileAttachments(OneToMany<OpportunityFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
