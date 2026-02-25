@@ -19,6 +19,9 @@ hs_err_pid*
 *.iml
 .idea/*
 
+#AI
+/prompts
+
 #code coverage utilities
 node_modules/
 coverage/

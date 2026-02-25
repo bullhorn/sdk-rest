@@ -21,6 +21,7 @@ import com.bullhornsdk.data.model.entity.core.standard.JobOrder;
 import com.bullhornsdk.data.model.entity.core.standard.Skill;
 import com.bullhornsdk.data.model.entity.core.standard.Specialty;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
+import com.bullhornsdk.data.model.entity.file.JobOrderFileAttachment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,7 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
     private final AssociationField<JobOrder, Skill> skills = instantiateAssociationField("skills", Skill.class);
     private final AssociationField<JobOrder, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
     private final AssociationField<JobOrder, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
+    private final AssociationField<JobOrder, JobOrderFileAttachment> fileAttachments = instantiateAssociationField("fileAttachments", JobOrderFileAttachment.class);
 
     private List<AssociationField<JobOrder, ? extends BullhornEntity>> allAssociations;
 
@@ -97,6 +99,10 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
 
     public AssociationField<JobOrder, Specialty> specialties() {
         return specialties;
+    }
+
+    public AssociationField<JobOrder, JobOrderFileAttachment> fileAttachments() {
+        return fileAttachments;
     }
 
     public AssociationField<JobOrder, JobOrderCustomObjectInstance1> customObject1s() {
@@ -157,6 +163,7 @@ public final class JobOrderAssociations implements EntityAssociations<JobOrder> 
             allAssociations.add(skills());
             allAssociations.add(tearsheets());
             allAssociations.add(specialties());
+            allAssociations.add(fileAttachments());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());
