@@ -10,13 +10,15 @@ import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.file.EntityFileAttachment;
 import com.bullhornsdk.data.model.file.FileMeta;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "id", "type", "name", "description", "contentType", "contentSubType", "fileType", "externalID", "dateAdded", "distribution" })
+@JsonPropertyOrder({ "id", "type", "name", "description", "contentType", "contentSubType", "fileType", "externalID",
+		"dateAdded", "distribution", "fileUrl" })
 public class StandardFileMeta extends AbstractEntity implements FileMeta, UpdateEntity {
 
 	private Integer id;
@@ -38,6 +40,10 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 	private DateTime dateAdded;
 
 	private String distribution;
+
+	private String fileUrl;
+
+	private String fileContent;
 
     public StandardFileMeta() {
     }
@@ -175,6 +181,30 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		this.distribution = distribution;
 	}
 
+	@Override
+	@JsonProperty("fileUrl")
+	public String getFileUrl() {
+		return fileUrl;
+	}
+
+	@Override
+	@JsonProperty("fileUrl")
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+	}
+
+	@Override
+	@JsonProperty("fileContent")
+	public String getFileContent() {
+		return fileContent;
+	}
+
+	@Override
+	@JsonProperty("fileContent")
+	public void setFileContent(String fileContent) {
+		this.fileContent = fileContent;
+	}
+
 	@JsonIgnore
 	public String getUrlString() {
 		StringBuilder url = new StringBuilder();
@@ -205,6 +235,9 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		}
 		if (distribution != null) {
 			url.append("&distribution={distribution}");
+		}
+		if (fileUrl != null) {
+			url.append("&fileUrl={fileUrl}");
 		}
 
 		return url.toString();
@@ -238,6 +271,9 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		if (distribution != null) {
 			uriVariables.put("distribution", distribution);
 		}
+		if (fileUrl != null) {
+			uriVariables.put("fileUrl", fileUrl);
+		}
 
 		return uriVariables;
 	}
@@ -267,6 +303,8 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		builder.append(dateAdded);
 		builder.append("\n\tdistribution: ");
 		builder.append(distribution);
+		builder.append("\n\tfileUrl: ");
+		builder.append(fileUrl);
 		builder.append("\n}");
 		return builder.toString();
 	}
@@ -282,6 +320,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((externalID == null) ? 0 : externalID.hashCode());
 		result = prime * result + ((fileType == null) ? 0 : fileType.hashCode());
+		result = prime * result + ((fileUrl == null) ? 0 : fileUrl.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
@@ -328,6 +367,11 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 			if (other.fileType != null)
 				return false;
 		} else if (!fileType.equals(other.fileType))
+			return false;
+		if (fileUrl == null) {
+			if (other.fileUrl != null)
+				return false;
+		} else if (!fileUrl.equals(other.fileUrl))
 			return false;
 		if (id == null) {
 			if (other.id != null)
