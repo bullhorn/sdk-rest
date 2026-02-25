@@ -15,7 +15,6 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.Perso
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.person.PersonCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,6 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
     private final AssociationField<ClientContact, Skill> skills = instantiateAssociationField("skills", Skill.class);
     private final AssociationField<ClientContact, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
     private final AssociationField<ClientContact, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
-    private final AssociationField<ClientContact, ClientContactFileAttachment> fileAttachments = instantiateAssociationField("fileAttachments", ClientContactFileAttachment.class);
 
     private final AssociationField<ClientContact, PersonCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", PersonCustomObjectInstance1.class);
     private final AssociationField<ClientContact, PersonCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", PersonCustomObjectInstance2.class);
@@ -86,10 +84,6 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
 
     public AssociationField<ClientContact, Tearsheet> tearsheets() {
         return tearsheets;
-    }
-
-    public AssociationField<ClientContact, ClientContactFileAttachment> fileAttachments() {
-        return fileAttachments;
     }
 
     public AssociationField<ClientContact, PersonCustomObjectInstance1> customObject1s() {
@@ -157,7 +151,6 @@ public final class ClientContactAssociations implements EntityAssociations<Clien
             allAssociations.add(customObject8s());
             allAssociations.add(customObject9s());
             allAssociations.add(customObject10s());
-            allAssociations.add(fileAttachments());
         }
         return allAssociations;
 

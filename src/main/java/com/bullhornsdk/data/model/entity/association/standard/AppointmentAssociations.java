@@ -5,7 +5,6 @@ import com.bullhornsdk.data.model.entity.association.EntityAssociations;
 import com.bullhornsdk.data.model.entity.core.standard.Appointment;
 import com.bullhornsdk.data.model.entity.core.standard.Person;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.entity.file.AppointmentFileAttachment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,6 @@ public class AppointmentAssociations implements EntityAssociations<Appointment> 
     private final AssociationField<Appointment, Person> guests = instantiateAssociationField("guests",
             Person.class);
     private final AssociationField<Appointment, Appointment> childAppointments = instantiateAssociationField("childAppointments", Appointment.class);
-    private final AssociationField<Appointment, AppointmentFileAttachment> fileAttachments = instantiateAssociationField("fileAttachments", AppointmentFileAttachment.class);
 
     private List<AssociationField<Appointment, ? extends BullhornEntity>> allAssociations;
 
@@ -40,10 +38,6 @@ public class AppointmentAssociations implements EntityAssociations<Appointment> 
         return childAppointments;
     }
 
-    public AssociationField<Appointment, AppointmentFileAttachment> fileAttachments() {
-        return fileAttachments;
-    }
-
     private <E extends BullhornEntity> AssociationField<Appointment, E> instantiateAssociationField(String associationName,
                                                                                                   Class<E> associationType) {
         return new StandardAssociationField<Appointment, E>(associationName, associationType);
@@ -55,7 +49,6 @@ public class AppointmentAssociations implements EntityAssociations<Appointment> 
             allAssociations = new ArrayList<AssociationField<Appointment, ? extends BullhornEntity>>();
             allAssociations.add(guests());
             allAssociations.add(childAppointments());
-            allAssociations.add(fileAttachments());
         }
         return allAssociations;
 

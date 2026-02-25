@@ -8,7 +8,6 @@ import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
-import com.bullhornsdk.data.model.entity.file.EntityFileAttachment;
 import com.bullhornsdk.data.model.file.FileMeta;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -45,23 +44,7 @@ public class StandardFileMeta extends AbstractEntity implements FileMeta, Update
 
 	private String fileContent;
 
-    public StandardFileMeta() {
-    }
-
-    public StandardFileMeta(EntityFileAttachment fileAttachment) {
-        this.id = fileAttachment.getId();
-        this.type = fileAttachment.getType();
-        this.name = fileAttachment.getName();
-        this.description = fileAttachment.getDescription();
-        this.contentType = fileAttachment.getContentType();
-        this.contentSubType = fileAttachment.getContentSubType();
-        this.fileType = fileAttachment.getFileType();
-        this.externalID = fileAttachment.getExternalID();
-        this.dateAdded = fileAttachment.getDateAdded();
-        this.distribution = fileAttachment.getDistribution();
-    }
-
-    @Override
+	@Override
 	@JsonProperty("id")
 	public Integer getId() {
 		return id;

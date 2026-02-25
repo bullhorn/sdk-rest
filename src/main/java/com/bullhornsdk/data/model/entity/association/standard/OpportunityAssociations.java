@@ -14,7 +14,6 @@ import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.
 import com.bullhornsdk.data.model.entity.core.customobjectinstances.opportunity.OpportunityCustomObjectInstance9;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
-import com.bullhornsdk.data.model.entity.file.OpportunityFileAttachment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +35,6 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
     private final AssociationField<Opportunity, Skill> skills = instantiateAssociationField("skills", Skill.class);
     private final AssociationField<Opportunity, Specialty> specialties = instantiateAssociationField("specialties", Specialty.class);
     private final AssociationField<Opportunity, Tearsheet> tearsheets = instantiateAssociationField("tearsheets", Tearsheet.class);
-    private final AssociationField<Opportunity, OpportunityFileAttachment> fileAttachments = instantiateAssociationField("fileAttachments", OpportunityFileAttachment.class);
 
     private final AssociationField<Opportunity, OpportunityCustomObjectInstance1> customObject1s = instantiateAssociationField("customObject1s", OpportunityCustomObjectInstance1.class);
     private final AssociationField<Opportunity, OpportunityCustomObjectInstance2> customObject2s = instantiateAssociationField("customObject2s", OpportunityCustomObjectInstance2.class);
@@ -97,10 +95,6 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
         return tearsheets;
     }
 
-    public AssociationField<Opportunity, OpportunityFileAttachment> fileAttachments() {
-        return fileAttachments;
-    }
-
     public AssociationField<Opportunity, OpportunityCustomObjectInstance1> customObject1s() {
         return customObject1s;
     }
@@ -158,7 +152,6 @@ public final class OpportunityAssociations implements EntityAssociations<Opportu
             allAssociations.add(skills());
             allAssociations.add(specialties());
             allAssociations.add(tearsheets());
-            allAssociations.add(fileAttachments());
             allAssociations.add(customObject1s());
             allAssociations.add(customObject2s());
             allAssociations.add(customObject3s());

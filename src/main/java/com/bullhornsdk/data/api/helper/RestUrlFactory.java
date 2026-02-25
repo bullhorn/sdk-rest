@@ -195,8 +195,8 @@ public class RestUrlFactory {
      *
      * @return
      */
-    public String assembleGetEntityMetaFilesUrl(AssociationParams params) {
-        return restUrl + "entity/{entityType}/{entityId}/fileAttachments?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}&fields={fields}" + params.getUrlString();
+    public String assembleGetEntityMetaFilesUrl() {
+        return restUrl + "entityFiles/{entityType}/{entityId}?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}";
     }
 
     /**
