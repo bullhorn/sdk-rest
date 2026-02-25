@@ -169,8 +169,8 @@ public class StandardBullhornData implements BullhornData {
     protected final ConcurrencyService concurrencyService;
 
     protected static final Set<String> FILE_META_FIELDS = Sets.newHashSet(
-        "id", "type", "name", "description", "contentType", "contentSubType", "fileType", "externalID",
-        "dateAdded", "distribution", "fileUrl"
+        "id", "type", "name", "description", "contentType", "contentSubType",
+        "fileType", "externalID", "dateAdded", "distribution", "fileUrl"
     );
 
     protected final static int RESUME_PARSE_RETRY = 10;
