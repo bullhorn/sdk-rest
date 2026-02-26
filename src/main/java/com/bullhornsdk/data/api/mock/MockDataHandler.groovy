@@ -639,6 +639,14 @@ public class MockDataHandler {
 		return new StandardFileApiResponse([fileId:fileId,changeType:"DELETED"]);
 	}
 
+	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+		return createMockFileWrapper(fileMeta.getName());
+	}
+
+	public FileWrapper updateFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+		return createMockFileWrapper(fileMeta.getName());
+	}
+
 	/*
 	 * +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	 * ASSOCIATION HANDLING

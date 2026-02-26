@@ -503,8 +503,8 @@ public interface BullhornData {
      *
 	 * @return the ParsedResume. If the parse was successful, then the ParsedResume will contain a FileWrapper.
 	 */
-	public ParsedResume parseResumeThenAddfile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId,
-			FileParams fileParams, ResumeFileParseParams resumeFileParseParams);
+	public <T extends FileEntity & AssociationEntity> ParsedResume parseResumeThenAddfile(Class<T> type, Integer entityId, MultipartFile file, String externalId,
+                                                                                          FileParams fileParams, ResumeFileParseParams resumeFileParseParams);
 
     /**
      * Will parse a resume and save the parsed data if no duplicates are found.
@@ -528,7 +528,7 @@ public interface BullhornData {
      *
 	 * @return a FileWrapper with information about the attached file
 	 */
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params);
+	public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, File file, String externalId, FileParams params);
 
 	/**
 	 * Adds a file to the bh entity with the entityId, passing in a File.
@@ -539,7 +539,7 @@ public interface BullhornData {
 	 *
 	 * @return a FileWrapper with information about the attached file
 	 */
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta);
+	public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, FileMeta fileMeta);
 
 	/**
 	 * Adds a file to the bh entity with the entityId, passing in a File.
@@ -553,7 +553,7 @@ public interface BullhornData {
 	 *
 	 * @return a FileWrapper with information about the attached file
 	 */
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile);
+	public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile);
 
 	/**
 	 * Returns a file for the passed in FileEntity type. No FileMeta data included.
@@ -568,13 +568,16 @@ public interface BullhornData {
 
 	/**
 	 * Returns a list containing the FileMeta data for all files for the bullhorn type with entityId.
-	 *
+     *
+     * @deprecated Use getAssociation or getAllAssociations instead, passing in the fileAttachments AssociationField for the FileEntity type.
+     *  This call no longer returns the fileUrl or fileContent property; use getAssociation or getAllAssociations in combination with getFileContent instead.
+     *
 	 * @param type the bh type of the entity that has a file attached
 	 * @param entityId the entity of the bh entity with an attached file
      *
 	 * @return a List of FileMetas, one for each file on the requested entity
 	 */
-	public List<FileMeta> getFileMetaData(Class<? extends FileEntity> type, Integer entityId);
+	public <T extends FileEntity & AssociationEntity> List<FileMeta> getFileMetaData(Class<T> type, Integer entityId);
 
 	/**
 	 * Return file content + FileMeta data for a file
@@ -585,7 +588,7 @@ public interface BullhornData {
      *
 	 * @return a FileWrapper for the requested file
 	 */
-	public FileWrapper getFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId);
+	public <T extends FileEntity & AssociationEntity> FileWrapper getFile(Class<T> type, Integer entityId, Integer fileId);
 
 	/**
 	 * Return a list of file content + FileMeta data for a bullhorn entity.
@@ -595,7 +598,7 @@ public interface BullhornData {
      *
 	 * @return a List of FileWrappers, one for each file on the requested entity
 	 */
-	public List<FileWrapper> getAllFiles(Class<? extends FileEntity> type, Integer entityId);
+	public <T extends FileEntity & AssociationEntity> List<FileWrapper> getAllFiles(Class<T> type, Integer entityId);
 
 	/**
 	 * Adds a file to the bh entity with the entityId.
@@ -608,7 +611,7 @@ public interface BullhornData {
      *
 	 * @return a FileWrapper containing the added file
 	 */
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params);
+	public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, MultipartFile file, String externalId, FileParams params);
 
 	/**
 	 * Adds a file to the bh entity with the entityId.
@@ -622,7 +625,7 @@ public interface BullhornData {
 	 *
 	 * @return a FileWrapper containing the added file
 	 */
-	public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile);
+	public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile);
 
 	/**
 	 * Adds the resume file to the candidate. Also updates the description on that candidate with the resume text.
@@ -649,7 +652,7 @@ public interface BullhornData {
 	 *
 	 * @return a FileWrapper with the file information
 	 */
-	public FileWrapper updateFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta);
+	public <T extends FileEntity & AssociationEntity> FileWrapper updateFile(Class<T> type, Integer entityId, FileMeta fileMeta);
 
 	/**
 	 * Deletes a file from the bullhorn entity

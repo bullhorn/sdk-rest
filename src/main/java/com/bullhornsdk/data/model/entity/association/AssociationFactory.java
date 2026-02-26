@@ -9,6 +9,8 @@ import com.bullhornsdk.data.model.entity.core.paybill.invoice.*;
 import com.bullhornsdk.data.model.entity.core.standard.*;
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;
 import com.bullhornsdk.data.model.entity.core.type.BullhornEntity;
+import com.bullhornsdk.data.model.entity.core.type.FileEntity;
+import com.bullhornsdk.data.model.entity.file.EntityFileAttachment;
 
 /**
  * Central factory class when dealing with entity associations. In most cases client code will only need to deal with this factory
@@ -63,6 +65,12 @@ public class AssociationFactory {
 
         return entityAssociations.getAssociation(associationName);
 
+    }
+
+    public static <T extends FileEntity & AssociationEntity, E extends EntityFileAttachment> AssociationField<T, E> getFileAttachmentAssociation(Class<T> type) {
+        EntityAssociations<T> entityAssociations = getEntityAssociation(type);
+
+        return (AssociationField<T, E>) entityAssociations.getAssociation("fileAttachments");
     }
 
     @SuppressWarnings("unchecked")

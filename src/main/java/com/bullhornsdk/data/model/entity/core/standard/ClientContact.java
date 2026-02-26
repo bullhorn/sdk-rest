@@ -25,6 +25,7 @@ import com.bullhornsdk.data.model.entity.core.type.UpdateEntity;
 import com.bullhornsdk.data.model.entity.customfields.CustomFieldsB;
 import com.bullhornsdk.data.model.entity.embedded.Address;
 import com.bullhornsdk.data.model.entity.embedded.OneToMany;
+import com.bullhornsdk.data.model.entity.file.ClientContactFileAttachment;
 import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
@@ -321,6 +322,8 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
     private ClientContactRatios stats;
 
     private OneToMany<Task> tasks;
+
+    private OneToMany<ClientContactFileAttachment> fileAttachments;
 
 	public ClientContact() {
 		super();
@@ -1302,6 +1305,17 @@ public class ClientContact extends CustomFieldsB implements QueryEntity,
 
     public void setTasks(OneToMany<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    @JsonProperty("fileAttachments")
+    public OneToMany<ClientContactFileAttachment> getFileAttachments() {
+        return fileAttachments;
+    }
+
+    @ReadOnly
+    @JsonProperty("fileAttachments")
+    public void setFileAttachments(OneToMany<ClientContactFileAttachment> fileAttachments) {
+        this.fileAttachments = fileAttachments;
     }
 
     @Override

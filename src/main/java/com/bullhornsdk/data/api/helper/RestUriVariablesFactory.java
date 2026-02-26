@@ -382,11 +382,11 @@ public class RestUriVariablesFactory {
 	 * @param entityId
 	 * @return
 	 */
-	public Map<String, String> getUriVariablesForGetEntityMetaFiles(BullhornEntityInfo entityInfo, Integer entityId) {
-		Map<String, String> uriVariables = new LinkedHashMap<>();
-		uriVariables.put(BH_REST_TOKEN, bullhornApiRest.getBhRestToken());
-        uriVariables.put(UNIQUE_CALL_ID, bullhornApiRest.getUniqueCallId());
-		uriVariables.put(ENTITY_TYPE, entityInfo.getName());
+	public Map<String, String> getUriVariablesForGetEntityMetaFiles(BullhornEntityInfo entityInfo, Integer entityId, Set<String> fieldSet, AssociationParams params) {
+		Map<String, String> uriVariables = params.getParameterMap();
+
+        addCommonUriVariables(fieldSet, entityInfo, uriVariables);
+
 		uriVariables.put(ENTITY_ID, entityId.toString());
 
 		return uriVariables;

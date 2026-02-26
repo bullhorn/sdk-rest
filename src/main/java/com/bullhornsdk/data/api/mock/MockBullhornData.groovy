@@ -7,6 +7,9 @@ import com.bullhornsdk.data.api.helper.RestErrorHandler
 import com.bullhornsdk.data.exception.RestApiException
 import com.bullhornsdk.data.model.entity.association.AssociationField
 import com.bullhornsdk.data.model.entity.core.standard.*
+import com.bullhornsdk.data.model.entity.core.type.AssociationEntity
+import com.bullhornsdk.data.model.entity.core.type.BullhornEntity
+import com.bullhornsdk.data.model.entity.core.type.FileEntity
 import com.bullhornsdk.data.model.entity.core.type.*
 import com.bullhornsdk.data.model.entity.meta.MetaData
 import com.bullhornsdk.data.model.enums.EntityEventType
@@ -283,7 +286,7 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public ParsedResume parseResumeThenAddfile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId,
+    public <T extends FileEntity & AssociationEntity> ParsedResume parseResumeThenAddfile(Class<T> type, Integer entityId, MultipartFile file, String externalId,
                                                FileParams fileParams, ResumeFileParseParams resumeFileParseParams) {
         return mockDataHandler.parseResumeThenAddfile(type, entityId, file, externalId, fileParams, resumeFileParseParams);
 
@@ -295,12 +298,12 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, File file, String externalId, FileParams params) {
         return mockDataHandler.addFile(type, entityId, file, externalId, params);
     }
 
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, File file, String externalId, FileParams params, boolean deleteFile) {
         return mockDataHandler.addFile(type, entityId, file, externalId, params);
     }
 
@@ -310,32 +313,32 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public List<FileMeta> getFileMetaData(Class<? extends FileEntity> type, Integer entityId) {
+    public <T extends FileEntity & AssociationEntity> List<FileMeta> getFileMetaData(Class<T> type, Integer entityId) {
         return mockDataHandler.getFileMetaData(type, entityId);
     }
 
     @Override
-    public FileWrapper getFile(Class<? extends FileEntity> type, Integer entityId, Integer fileId) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper getFile(Class<T> type, Integer entityId, Integer fileId) {
         return mockDataHandler.getFile(type, entityId, fileId);
     }
 
     @Override
-    public List<FileWrapper> getAllFiles(Class<? extends FileEntity> type, Integer entityId) {
+    public <T extends FileEntity & AssociationEntity> List<FileWrapper> getAllFiles(Class<T> type, Integer entityId) {
         return mockDataHandler.getAllFiles(type, entityId);
     }
 
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, MultipartFile file, String externalId, FileParams params) {
         return mockDataHandler.addFile(type, entityId, file, externalId, params);
     }
 
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, MultipartFile file, String externalId, FileParams params, boolean deleteFile) {
         return mockDataHandler.addFile(type, entityId, file, externalId, params);
     }
 
     @Override
-    public FileWrapper addFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper addFile(Class<T> type, Integer entityId, FileMeta fileMeta) {
         return mockDataHandler.addFile(type, entityId, fileMeta);
     }
 
@@ -351,7 +354,7 @@ public class MockBullhornData implements BullhornData {
     }
 
     @Override
-    public FileWrapper updateFile(Class<? extends FileEntity> type, Integer entityId, FileMeta fileMeta) {
+    public <T extends FileEntity & AssociationEntity> FileWrapper updateFile(Class<T> type, Integer entityId, FileMeta fileMeta) {
         return mockDataHandler.updateFile(type, entityId, fileMeta);
     }
 
