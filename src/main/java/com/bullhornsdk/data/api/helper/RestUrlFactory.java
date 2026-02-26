@@ -198,6 +198,7 @@ public class RestUrlFactory {
      *
      * @return
      */
+    @Deprecated
     public String assembleGetEntityMetaFilesUrl() {
         return restUrl + "entity/{entityType}/{entityId}/fileAttachments?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}&fields={fields}" + params.getUrlString();
     }
