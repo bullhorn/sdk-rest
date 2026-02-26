@@ -577,7 +577,7 @@ public interface BullhornData {
      *
 	 * @return a List of FileMetas, one for each file on the requested entity
 	 */
-    @Deprecated(since = "2.6.0")
+    @Deprecated
 	public <T extends FileEntity & AssociationEntity> List<FileMeta> getFileMetaData(Class<T> type, Integer entityId);
 
 	/**
