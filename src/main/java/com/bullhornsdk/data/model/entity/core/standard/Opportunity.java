@@ -44,7 +44,7 @@ import java.math.BigDecimal;
 		"expectedFee", "expectedParRate", "externalCategoryID", "externalID", "history", "isDeleted", "ignoreUntilDate", "isOpen", "jobOrders", "lead", "markUpPercentage", "notes", "numOpenings",
 		"onSite", "optionsPackage", "owner", "priority", "publicDescription", "publishedZip", "reasonClosed", "salary", "salaryUnit", "skillList", "skills", "source", "specialties", "status",
 		"tasks", "tearsheets", "title", "type", "weightedDealValue", "willRelocate", "winProbabilityPercent", "yearsRequired", "customObject1s", "customObject2s", "customObject3s",
-        "customObject4s", "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s" })
+        "customObject4s", "customObject5s", "customObject6s", "customObject7s", "customObject8s", "customObject9s", "customObject10s", "fileAttachments" })
 public class Opportunity extends CustomFieldsC implements QueryEntity, SearchEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity, AssociationEntity, DateLastModifiedEntity, EditHistoryEntity {
 
 	private BigDecimal luceneScore;

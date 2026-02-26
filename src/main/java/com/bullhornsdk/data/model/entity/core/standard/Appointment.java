@@ -26,7 +26,7 @@ import javax.validation.constraints.Size;
         "communicationMethod", "dateAdded", "dateBegin", "dateEnd", "dateLastModified", "description", "isAllDay", "isDeleted",
         "isPrivate", "jobOrder", "lead", "location", "migrateGUID", "notificationMinutes", "opportunity", "owner", "parentAppointment", "placement",
         "recurrenceDayBits", "recurrenceFrequency", "recurrenceMax", "recurrenceMonthBits", "recurrenceStyle", "recurrenceType",
-        "showTimeAs", "subject", "timeZoneID", "type", "jobSubmission" })
+        "showTimeAs", "subject", "timeZoneID", "type", "jobSubmission", "fileAttachments" })
 public class Appointment extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
         DateLastModifiedEntity, EditHistoryEntity, AssociationEntity {
     private Integer id;

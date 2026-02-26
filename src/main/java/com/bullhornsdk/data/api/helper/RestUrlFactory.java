@@ -193,10 +193,14 @@ public class RestUrlFactory {
     /**
      * Assemble the url for a get entityFiles request
      *
+     * @deprecated see {@link com.bullhornsdk.data.api.BullhornData#getFileMetaData(Class, Integer)}
+     *  no longer used internally
+     *
      * @return
      */
-    public String assembleGetEntityMetaFilesUrl(AssociationParams params) {
-        return restUrl + "entity/{entityType}/{entityId}/fileAttachments?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}&fields={fields}" + params.getUrlString();
+    @Deprecated
+    public String assembleGetEntityMetaFilesUrl() {
+        return restUrl + "entity/{entityType}/{entityId}/fileAttachments?BhRestToken={bhRestToken}&uniqueCallId={uniqueCallId}&fields={fields}";
     }
 
     /**
