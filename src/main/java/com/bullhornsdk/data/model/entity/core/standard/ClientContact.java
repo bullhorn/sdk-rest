@@ -63,7 +63,7 @@ import javax.validation.constraints.Size;
         "customObject4s", "customObject5s", "customObject6s", "customObject7s",
         "customObject8s", "customObject9s", "customObject10s", "activePlacements", "addressSourceLocation",
     "appointments", "clientLocations", "companyName", "desiredLocations", "distributionLists", "isAnonymized", "jobOrders",
-    "jobSubmissions", "opportunities", "placements", "privateLabel", "sendouts", "skillSet", "stats", "tasks"})
+    "jobSubmissions", "opportunities", "placements", "privateLabel", "sendouts", "skillSet", "stats", "tasks", "fileAttachments"})
 public class ClientContact extends CustomFieldsB implements QueryEntity,
 		UpdateEntity, CreateEntity, SoftDeleteEntity, FileEntity,
 		AssociationEntity, SearchEntity, DateLastModifiedEntity, EditHistoryEntity {
