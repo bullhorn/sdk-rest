@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.joda.time.DateTime;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 /**
@@ -23,6 +24,7 @@ import java.math.BigDecimal;
 public class DirectDepositAccount extends AbstractEntity implements QueryEntity, UpdateEntity, CreateEntity,
     SoftDeleteEntity, DateLastModifiedEntity {
 
+    @NotNull
     private Integer id;
 
     private String accountNumber;
@@ -33,26 +35,34 @@ public class DirectDepositAccount extends AbstractEntity implements QueryEntity,
 
     private String bankName;
 
+    @NotNull
     private Candidate candidate;
 
+    @NotNull
     private CurrencyUnit currencyUnit;
 
+    @NotNull
     private DateTime dateAdded;
 
+    @NotNull
     private DateTime dateLastModified;
 
     private CorporateUser deletedByUser;
 
+    @NotNull
     private DirectDepositAccountTypeLookup directDepositAccountTypeLookup;
 
     private String institutionNumber;
 
+    @NotNull
     private Boolean isDeleted;
 
+    @NotNull
     private Integer paymentOrder;
 
     private BigDecimal percentValue;
 
+    @NotNull
     private Boolean remainder;
 
     private String transitNumber;
