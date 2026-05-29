@@ -218,6 +218,7 @@ public enum BullhornEntityInfo {
         CorporationDepartmentListWrapper.class, null, null),
     COUNTRY("Country", Country.class, CountryWrapper.class, CountryListWrapper.class, null, null),
     DEPARTMENT("Department", Department.class, DepartmentWrapper.class, DepartmentListWrapper.class, null, null),
+    DIRECT_DEPOSIT_ACCOUNT("DirectDepositAccount", DirectDepositAccount.class, DirectDepositAccountWrapper.class, DirectDepositAccountListWrapper.class, null, null),
     DISTRIBUTION_LIST("DistributionList", DistributionList.class, DistributionListWrapper.class, DistributionListListWrapper.class, null, null),
     FILE("File", File.class, FileEntityWrapper.class, FileEntityListWrapper.class, null, null),
     GOAL_TARGET("GoalTarget", GoalTarget.class, GoalTargetWrapper.class, GoalTargetListWrapper.class, null, null),
