@@ -459,6 +459,7 @@ public class MockDataLoader {
         entityFiles.put(Corporation.class, "corporation-data.txt");
         entityFiles.put(Country.class, "country-data.txt");
         entityFiles.put(Department.class, "department-data.txt");
+        entityFiles.put(DirectDepositAccount.class, "directdepositaccount-data.txt");
         entityFiles.put(DistributionList.class, "distributionlist-data.txt");
         entityFiles.put(File.class, "file-data.txt");
         entityFiles.put(GoalTarget.class, "goaltarget-data.txt");

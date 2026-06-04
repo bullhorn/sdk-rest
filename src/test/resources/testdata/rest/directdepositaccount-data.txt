@@ -1,0 +1,36 @@
+{
+  "start": 0,
+  "count": 1,
+  "data": [
+    {
+      "id": 1,
+      "accountNumber": "123456789",
+      "allocationMethod": "Percentage",
+      "amount": null,
+      "bankName": "Test Bank",
+      "candidate": {
+        "id": 1,
+        "firstName": "Test",
+        "lastName": "Candidate"
+      },
+      "currencyUnit": {
+        "id": 1,
+        "alphabeticCode": "USD",
+        "name": "US Dollar"
+      },
+      "dateAdded": 1609459200000,
+      "dateLastModified": 1609459200000,
+      "deletedByUser": null,
+      "directDepositAccountTypeLookup": {
+        "id": 1,
+        "label": "Checking"
+      },
+      "institutionNumber": null,
+      "isDeleted": false,
+      "paymentOrder": 1,
+      "percentValue": 100.00,
+      "remainder": true,
+      "transitNumber": null
+    }
+  ]
+}
