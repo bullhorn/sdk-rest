@@ -1,0 +1,19 @@
+{
+    "total": 1,
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "dateAdded": 1706128680034,
+            "dateLastModified": 1706128680293,
+            "effectiveDate": "2024-01-21",
+            "effectiveEndDate": "2999-12-31",
+            "isFirst": true,
+            "timeLaborEvalRules": {
+                "total": 0,
+                "data": []
+            }
+        }
+    ]
+}

@@ -9,6 +9,10 @@ import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationBillRul
 import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationBillRulesetVersion
 import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationPayRuleset
 import com.bullhornsdk.data.model.entity.core.bte.rules.ClientCorporationPayRulesetVersion
+import com.bullhornsdk.data.model.entity.core.bte.rules.PlacementBillRuleset
+import com.bullhornsdk.data.model.entity.core.bte.rules.PlacementBillRulesetVersion
+import com.bullhornsdk.data.model.entity.core.bte.rules.PlacementPayRuleset
+import com.bullhornsdk.data.model.entity.core.bte.rules.PlacementPayRulesetVersion
 import com.bullhornsdk.data.model.entity.core.bte.rules.TimeLaborEvalRule
 import com.bullhornsdk.data.model.entity.core.bte.rules.TimeLaborEvalRuleTemplate
 import com.bullhornsdk.data.model.entity.core.certificationrequirement.CandidateCertificationRequirement
@@ -733,6 +737,10 @@ public class MockDataLoader {
         entityFiles.put(ClientCorporationBillRulesetVersion.class, "bte/rules/clientcorporationbillrulesetversion-data.txt");
         entityFiles.put(ClientCorporationPayRuleset.class, "bte/rules/clientcorporationpayruleset-data.txt");
         entityFiles.put(ClientCorporationPayRulesetVersion.class, "bte/rules/clientcorporationpayrulesetversion-data.txt");
+        entityFiles.put(PlacementBillRuleset.class, "bte/rules/placementbillruleset-data.txt");
+        entityFiles.put(PlacementBillRulesetVersion.class, "bte/rules/placementbillrulesetversion-data.txt");
+        entityFiles.put(PlacementPayRuleset.class, "bte/rules/placementpayruleset-data.txt");
+        entityFiles.put(PlacementPayRulesetVersion.class, "bte/rules/placementpayrulesetversion-data.txt");
         entityFiles.put(TimeLaborEvalRule.class, "bte/rules/timelaborevalrule-data.txt");
         entityFiles.put(TimeLaborEvalRuleTemplate.class, "bte/rules/timelaborevalruletemplate-data.txt");
         entityFiles.put(Holiday.class, "bte/holiday-data.txt");
@@ -1011,6 +1019,10 @@ public class MockDataLoader {
         entityMetaFiles.put(ClientCorporationBillRulesetVersion.class, "meta/bte/rules/clientcorporationbillrulesetversion-meta-data.txt");
         entityMetaFiles.put(ClientCorporationPayRuleset.class, "meta/bte/rules/clientcorporationpayruleset-meta-data.txt");
         entityMetaFiles.put(ClientCorporationPayRulesetVersion.class, "meta/bte/rules/clientcorporationpayrulesetversion-meta-data.txt");
+        entityMetaFiles.put(PlacementBillRuleset.class, "meta/bte/rules/placementbillruleset-meta-data.txt");
+        entityMetaFiles.put(PlacementBillRulesetVersion.class, "meta/bte/rules/placementbillrulesetversion-meta-data.txt");
+        entityMetaFiles.put(PlacementPayRuleset.class, "meta/bte/rules/placementpayruleset-meta-data.txt");
+        entityMetaFiles.put(PlacementPayRulesetVersion.class, "meta/bte/rules/placementpayrulesetversion-meta-data.txt");
         entityMetaFiles.put(TimeLaborEvalRule.class, "meta/bte/rules/timelaborevalrule-meta-data.txt");
         entityMetaFiles.put(TimeLaborEvalRuleTemplate.class, "meta/bte/rules/timelaborevalruletemplate-meta-data.txt");
         entityMetaFiles.put(Holiday.class, "meta/bte/holiday-meta-data.txt");

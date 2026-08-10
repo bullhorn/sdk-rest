@@ -1,0 +1,56 @@
+{
+    "entity": "PlacementBillRulesetVersion",
+    "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/clj5s0/meta/PlacementBillRulesetVersion?fields=*",
+    "label": "Placement Bill Ruleset Version",
+    "dateLastModified": "1786381164783",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "label": "ID"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added"
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified"
+        },
+        {
+            "name": "effectiveDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Effective Date"
+        },
+        {
+            "name": "effectiveEndDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Effective End Date"
+        },
+        {
+            "name": "isFirst",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is First"
+        },
+        {
+            "name": "timeLaborEvalRules",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Time Labor Eval Rules",
+            "optionsType": "TimeLaborEvalRule"
+        }
+    ]
+}

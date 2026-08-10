@@ -1,0 +1,84 @@
+{
+    "entity": "PlacementPayRuleset",
+    "entityMetaUrl": "https://rest91.bullhornstaffing.com/rest-services/clj5s0/meta/PlacementPayRuleset?fields=*",
+    "label": "Placement Pay Ruleset",
+    "dateLastModified": "1786381161494",
+    "fields": [
+        {
+            "name": "id",
+            "type": "ID",
+            "dataType": "Integer",
+            "label": "ID"
+        },
+        {
+            "name": "dateAdded",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Added"
+        },
+        {
+            "name": "dateLastModified",
+            "type": "SCALAR",
+            "dataType": "Timestamp",
+            "confidential": false,
+            "label": "Date Last Modified"
+        },
+        {
+            "name": "effectiveDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Effective Date"
+        },
+        {
+            "name": "effectiveEndDate",
+            "type": "SCALAR",
+            "dataType": "Date",
+            "confidential": false,
+            "label": "Effective End Date"
+        },
+        {
+            "name": "isDeleted",
+            "type": "SCALAR",
+            "dataType": "Boolean",
+            "confidential": false,
+            "label": "Is Deleted"
+        },
+        {
+            "name": "owner",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Owner",
+            "optionsType": "CorporateUser"
+        },
+        {
+            "name": "placement",
+            "type": "TO_ONE",
+            "confidential": false,
+            "label": "Placement",
+            "optionsType": "Placement"
+        },
+        {
+            "name": "timeLaborEvalRules",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Time Labor Eval Rules",
+            "optionsType": "TimeLaborEvalRule"
+        },
+        {
+            "name": "versionID",
+            "type": "SCALAR",
+            "dataType": "Integer",
+            "confidential": false,
+            "label": "Version ID"
+        },
+        {
+            "name": "versions",
+            "type": "TO_MANY",
+            "confidential": false,
+            "label": "Versions",
+            "optionsType": "PlacementPayRulesetVersion"
+        }
+    ]
+}
