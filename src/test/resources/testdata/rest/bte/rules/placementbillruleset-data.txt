@@ -1,0 +1,32 @@
+{
+    "total": 1,
+    "start": 0,
+    "count": 1,
+    "data": [
+        {
+            "id": 1,
+            "placement": {
+                "id": 100
+            },
+            "dateAdded": 1706128680034,
+            "dateLastModified": 1706128680293,
+            "effectiveDate": "2024-01-21",
+            "effectiveEndDate": "2999-12-31",
+            "isDeleted": false,
+            "owner": {
+                "id": 616656,
+                "firstName": "BH2020",
+                "lastName": "Admin User"
+            },
+            "timeLaborEvalRules": {
+                "total": 0,
+                "data": []
+            },
+            "versionID": 2,
+            "versions": {
+                "total": 0,
+                "data": []
+            }
+        }
+    ]
+}
