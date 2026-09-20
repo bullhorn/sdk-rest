@@ -6,7 +6,6 @@ import javax.validation.constraints.Size;
 
 import org.joda.time.DateTime;
 
-import com.bullhornsdk.data.model.entity.core.type.AbstractEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

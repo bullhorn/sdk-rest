@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
 
-import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -59,7 +58,7 @@ public class UserHousingComplexUnit extends CustomFieldsB implements QueryEntity
 
     /**
      * Returns the entity with the required fields for an insert set.
-     * 
+     *
      * @return
      */
 	public UserHousingComplexUnit instantiateForInsert() {

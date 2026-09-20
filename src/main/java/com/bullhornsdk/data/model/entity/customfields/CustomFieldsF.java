@@ -6,7 +6,6 @@ import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 public class CustomFieldsF extends CustomFieldsB {
 

@@ -30,7 +30,7 @@ import com.bullhornsdk.data.model.entity.embedded.OneToManyLinkedId;
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.hibernate.validator.constraints.Email;
+import javax.validation.constraints.Email;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;

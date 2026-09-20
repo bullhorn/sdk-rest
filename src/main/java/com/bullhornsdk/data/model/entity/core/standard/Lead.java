@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Email;
+import javax.validation.constraints.Email;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.api.helper.json.DynamicNullValueFilter;
