@@ -156,13 +156,13 @@ public class BullhornRestCredentials {
 		builder.append(" {\n\tusername: ");
 		builder.append(username);
 		builder.append("\n\tpassword: ");
-		builder.append(password);
+		builder.append(password != null ? "***" : null);
 		builder.append("\n\trestTokenUrl: ");
 		builder.append(restTokenUrl);
 		builder.append("\n\trestClientId: ");
 		builder.append(restClientId);
 		builder.append("\n\trestClientSecret: ");
-		builder.append(restClientSecret);
+		builder.append(restClientSecret != null ? "***" : null);
 		builder.append("\n\trestLoginUrl: ");
 		builder.append(restLoginUrl);
 		builder.append("\n\trestSessionMinutesToLive: ");
