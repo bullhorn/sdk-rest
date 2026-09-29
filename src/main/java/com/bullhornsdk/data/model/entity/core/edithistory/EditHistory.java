@@ -4,7 +4,6 @@ package com.bullhornsdk.data.model.entity.core.edithistory;
  * Created by acrowe on 3/2/2016.
  */
 
-import com.bullhornsdk.data.model.entity.core.type.EditHistoryEntity;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;

@@ -1,16 +1,11 @@
 package com.bullhornsdk.data.model.entity.core.standard;
 
 import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.entity.customfields.BaseCustomFields;
-import com.bullhornsdk.data.model.entity.embedded.OneToMany;
-import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import org.joda.time.DateTime;
-
-import java.math.BigDecimal;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)

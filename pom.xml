@@ -5,7 +5,7 @@
 
     <groupId>com.bullhorn</groupId>
     <artifactId>sdk-rest</artifactId>
-    <version>2.7.0</version>
+    <version>3.0.0</version>
     <packaging>jar</packaging>
 
     <name>Bullhorn REST SDK</name>
@@ -45,7 +45,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.version>2.18.3</jackson.version>
-        <org.springframework.version>5.3.39</org.springframework.version>
+        <org.springframework.version>7.0.8</org.springframework.version>
         <additionalparam>-Xdoclint:none</additionalparam>
         <coveralls-version>4.2.0</coveralls-version>
         <jacoco-version>0.8.8</jacoco-version>
@@ -153,13 +153,7 @@
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
-            <version>1.1.0.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>5.3.6.Final</version>
+            <version>2.0.1.Final</version>
         </dependency>
 
         <dependency>
@@ -228,7 +222,13 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>2.3.2</version>
+            <version>4.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>4.0.5</version>
         </dependency>
 
         <dependency>
@@ -293,7 +293,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.13.0</version>
                 <configuration>
 
                     <compilerId>groovy-eclipse-compiler</compilerId>
@@ -310,32 +310,6 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>compile-java8</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <release>8</release>
-                            <fork>true</fork>
-                            <outputDirectory>${project.build.outputDirectory}_jdk8</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>compile-java17</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <release>17</release>
-                            <fork>true</fork>
-                            <outputDirectory>${project.build.outputDirectory}_jdk17</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
                 <dependencies>
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
@@ -358,28 +332,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.2</version>
-                <executions>
-                    <execution>
-                        <id>jar-jdk8</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>jdk8</classifier>
-                            <classesDirectory>${project.build.outputDirectory}_jdk8</classesDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>jar-jdk17</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>jdk17</classifier>
-                            <classesDirectory>${project.build.outputDirectory}_jdk17</classesDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

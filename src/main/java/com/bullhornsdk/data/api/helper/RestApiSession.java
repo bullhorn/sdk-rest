@@ -176,7 +176,7 @@ public class RestApiSession {
                 return getAuthCode(location);
             }
 
-            throw new AuthorizationCodeException("Failed to get authorization code.  Response had no Location header and code was: " + response.getStatusCodeValue(), response.getBody());
+            throw new AuthorizationCodeException("Failed to get authorization code.  Response had no Location header and code was: " + response.getStatusCode().value(), response.getBody());
         } catch (AuthorizationCodeException e) {
             throw e;
         } catch (HttpStatusCodeException e ) {
@@ -229,7 +229,7 @@ public class RestApiSession {
                 return response.getBody();
             }
 
-            throw new RestApiException("Failed to get access token.  Response was: " + response.getStatusCodeValue());
+            throw new RestApiException("Failed to get access token.  Response was: " + response.getStatusCode().value());
         } catch (Exception e) {
             LOG.error("Failed to get access token.", e);
 
@@ -258,7 +258,7 @@ public class RestApiSession {
                 if(location != null) {
                     login(location.toString(), Maps.newLinkedHashMap(), false);
                 } else {
-                    throw new RestApiException("Failed to get login and get BhRestToken.  Response was: " + response.getStatusCodeValue());
+                    throw new RestApiException("Failed to get login and get BhRestToken.  Response was: " + response.getStatusCode().value());
                 }
             } else if (response.getBody() != null) {
                 JSONObject responseJson = new JSONObject(response.getBody());
@@ -266,7 +266,7 @@ public class RestApiSession {
                 this.setBhRestToken(responseJson.getString("BhRestToken"));
                 this.restUrl = (String) responseJson.get("restUrl");
             } else {
-                throw new RestApiException("Failed to get login and get BhRestToken.  Response had no body and code was was: " + response.getStatusCodeValue());
+                throw new RestApiException("Failed to get login and get BhRestToken.  Response had no body and code was was: " + response.getStatusCode().value());
             }
         } catch (Exception e) {
             LOG.error("Failed to login and get BhRestToken", e);

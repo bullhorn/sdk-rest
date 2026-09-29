@@ -4,7 +4,7 @@ package com.bullhornsdk.data.model.entity.core.standard;
 import javax.validation.constraints.Size;
 
 import com.bullhornsdk.data.model.entity.core.paybill.Location;
-import org.hibernate.validator.constraints.Email;
+import javax.validation.constraints.Email;
 import org.joda.time.DateTime;
 
 import com.bullhornsdk.data.model.entity.core.type.AssociationEntity;

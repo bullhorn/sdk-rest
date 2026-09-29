@@ -1,20 +1,12 @@
 package com.bullhornsdk.data.model.entity.core.paybill.transaction;
 
-import com.bullhornsdk.data.model.entity.core.paybill.BillingProfile;
-import com.bullhornsdk.data.model.entity.core.paybill.optionslookup.SimplifiedOptionsLookup;
-import com.bullhornsdk.data.model.entity.core.paybill.transaction.BillMasterTransaction;
-import com.bullhornsdk.data.model.entity.core.paybill.unit.CurrencyUnit;
 import com.bullhornsdk.data.model.entity.core.type.*;
-import com.bullhornsdk.data.model.entity.embedded.Address;
-import com.bullhornsdk.data.model.entity.embedded.OneToMany;
 import com.bullhornsdk.data.model.entity.core.standard.CorporateUser;
 
 import com.bullhornsdk.data.util.ReadOnly;
 import com.fasterxml.jackson.annotation.*;
 import org.joda.time.DateTime;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Objects;
 
 /**

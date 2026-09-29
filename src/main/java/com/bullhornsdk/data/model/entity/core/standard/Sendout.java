@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonRootName;
-import org.hibernate.validator.constraints.Email;
+import javax.validation.constraints.Email;
 import org.joda.time.DateTime;
 
 import javax.validation.constraints.Size;

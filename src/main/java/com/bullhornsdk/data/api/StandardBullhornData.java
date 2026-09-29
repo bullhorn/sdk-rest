@@ -1524,7 +1524,7 @@ public class StandardBullhornData implements BullhornData {
         ParsedResume response = null;
         if (tryNumber >= RESUME_PARSE_RETRY) {
             response = new StandardParsedResume();
-            response.setErrorCode(error.getStatusCode().name());
+            response.setErrorCode(String.valueOf(error.getStatusCode().value()));
             response.setErrorMessage("BH api responded with the following message: " + error.getResponseBodyAsString());
             log.error("Failed to parse resume after {} tries. Response body from bh rest apis = {}", RESUME_PARSE_RETRY, error.getResponseBodyAsString());
         } else {
